@@ -38,6 +38,7 @@ When you create a web action, the result is a URL that can be used to trigger th
 {: #actions_web_extra}
 
 Web actions support the following features:
+{: important}
 
 | Feature | Description |
 | --- | --- |
