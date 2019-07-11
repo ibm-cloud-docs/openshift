@@ -25,7 +25,7 @@ subcollection: docker-for-bluemix
 # Custom tagging script test file
 {: #test}
 
-This mega-fun file includes tests to reflect the list that is included in test-cases.md.
+This super-fun file includes tests to reflect the list that is included in test-cases.md. Which means it includes some tests.
 {: shortdesc}
 
 
