@@ -33,7 +33,37 @@ When you create a web action, the result is a URL that can be used to trigger th
 
 
 
+## Why use web actions instead of standard actions?
 
+
+
+### 1. Run web actions anonymously
+
+Web action activations are associated with the user that created the action, rather than the caller of the action. Usually, for API calls to apps like Github, you would include a username and token with the API call for either a specific user or a functional ID. When you use a web action, those kinds of credentials are not required. 
+{: important}
+
+Though you are not required to use credentials with web actions, you can implement your own authentication and authorization, or OAuth flow. To configure a web action with credentials, see [Securing web actions](#actions_web_secure).
+
+### 2. Use any type of HTTP request
+
+By default, actions only accept `POST` requests, but web actions can be invoked through any of these HTTP methods: `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`, as well as `HEAD` and `OPTIONS`.
+
+### 3. Trigger a web action from anywhere
+
+When you create an {{site.data.keyword.openwhisk}} web action, you generate a URL to invoke that action from any web-based app. Actions that are not web actions require authentication and must respond with a JSON object. 
+
+A web action API path can be used with cURL, `wget`, or even be entered directly in your browser. A web action can be invoked by using a URL that is structured as follows: `https://<apihost>/api/v1/web/<namespace>/<packageName>/<actionName>.<ext>`.
+
+### 4. Create fewer {{site.data.keyword.openwhisk_short}} entities
+
+Because you can invoke a web action from anywhere, you are not required to create other {{site.data.keyword.openwhisk_short}} entities like triggers or rules.
+
+## How do web actions work?
+
+Web actions can be invoked without authentication and can be used to implement HTTP handlers that respond with `headers`, `statusCode`, and `body` content of different types.
+
+Web actions must return a JSON object. However, the controller treats a web action differently if its result includes one or more of the following as top-level [JSON properties](#web_action_properties).
+{: shortdesc}
 
 ## Available features of web actions
 {: #actions_web_extra}
