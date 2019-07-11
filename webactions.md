@@ -30,6 +30,8 @@ subcollection: cloud-functions
 When you create a web action, the result is a URL that can be used to trigger the action from any web app. 
 {: shortdesc}
 
+<!-- This is a comment --!>
+
 
 
 ## Available features of web actions
