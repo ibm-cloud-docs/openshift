@@ -22,7 +22,7 @@ subcollection: docker-for-bluemix
 {:download: .download}
 
 
-# Custom tagging script test file 4
+# Custom tagging script test file 5
 {: #test}
 
 This super-fun file includes tests to reflect the list that is included in test-cases.md. Which means it includes some tests.
