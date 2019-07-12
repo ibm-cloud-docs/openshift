@@ -67,7 +67,7 @@ This is a prod section with an ID.
 ## Images
 
 Prod images only go to prod if the image is used in prod content: ![prod image](images/icloud.png)
-
+![prod image](images/remote.png)
 
 
 ## Conrefs
