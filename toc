@@ -1,0 +1,11 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="openshift" audience="compute" arm="1680717" href="" path="containers"}
+OpenShift
+
+    {: .navgroup id="learn"}
+    webactions.md
+    webactions3.md
+    webactions4.md
+    
