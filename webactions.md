@@ -35,7 +35,7 @@ When you create a web action, the result is a URL that can be used to trigger th
 
 ## Why use web actions instead of standard actions?
 
-[image](images/Functions-logo-icon.png)
+![image](images/Functions-logo-icon.png)
 
 
 ### 1. Run web actions anonymously
