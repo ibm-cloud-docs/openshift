@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-12"
+lastupdated: "2019-07-15"
 
 keywords: test, file
 subcollection: docker-for-bluemix
@@ -22,7 +22,7 @@ subcollection: docker-for-bluemix
 {:download: .download}
 
 
-# Custom tagging script test file 7
+# Custom tagging script test file 8
 {: #test}
 
 This super-fun file includes tests to reflect the list that is included in test-cases.md. Which means it includes some tests.
