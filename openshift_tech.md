@@ -27,7 +27,7 @@ subcollection: containers
 The following diagram and table describe the default components that are set up in a Red Hat OpenShift on IBM Cloud architecture.
 {: shortdesc}
 
-![Red Hat OpenShift on IBM Cloud cluster architecture](images/cs_org_ov_both_ses_rhos.png)
+![Red Hat OpenShift on IBM Cloud cluster architecture](/images/cs_org_ov_both_ses_rhos.png)
 
 | Master components| Description |
 |:-----------------|:-----------------|

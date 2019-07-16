@@ -46,7 +46,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster in the {{site.data.keyword.conta
 Want to learn more about options such as creating a cluster in the CLI? Check out [Creating an OpenShift cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
 {: tip}
 
-1.  Log in to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../iconlaunch-glyph.svg "External link icon")](https://cloud.ibm.com/).
+1.  Log in to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
 2.  From the **Catalog**, click [**Red Hat OpenShift**](), and then click **Create**.
 3.  Choose your cluster setup details and name. 
     *   For **Select a plan**, choose **Standard**.
@@ -92,6 +92,7 @@ Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=ope
 * Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
 * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
 
+<br>
 For more information about working with your apps and routing services, see the [OpenShift Developer Guide](https://docs.openshift.com/container-platform/3.11/dev_guide/index.html).
 
 <br />

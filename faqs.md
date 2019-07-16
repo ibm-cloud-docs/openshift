@@ -57,6 +57,6 @@ The supported OpenShift version is 3.11, which includes Kubernetes 1.11.
 {: #charges}
 {: faq}
 
-placeholder
+For Red Hat OpenShift on IBM Cloud clusters, you are charged for the same components as in {{site.data.keyword.containerlong_notm}} clusters. For more information, see [What am I charged for when I use {{site.data.keyword.containerlong_notm}}?](/docs/containers?topic=containers-faqs#charges)
 
-
+Additionally, your worker nodes are installed with the Red Hat Enterprise Linux operating system, which increases the price of the [worker node machines](/docs/containers?topic=containers-faqs#nodes). You must also have an OpenShift license, which incurs monthly costs in addition to the hourly VM costs or monthly bare metal costs. The OpenShift license is for every two cores of the worker node flavor. If you delete your worker node before the end of the month, your monthly license is available for other worker nodes in the worker pool to use.

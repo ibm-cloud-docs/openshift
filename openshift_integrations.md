@@ -23,3 +23,7 @@ subcollection: containers
 
 # Enhancing cluster capabilities with integrations
 {: #openshift-integrations}
+
+{{site.data.keyword.containerlong_notm}} add-ons such as Istio, Knative, and the Kubernetes terminal are not available.
+
+Helm charts are not certified to work in OpenShift clusters, except {{site.data.keyword.cloud_notm}} Object Storage.
