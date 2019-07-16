@@ -1,0 +1,99 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="openshift" category="containers" audience="compute" href="/docs/openshift?topic=openshift-getting-started" path="openshift"}
+Red Hat OpenShift on IBM Cloud
+
+    {: .navgroup id="learn"}
+    getting-started.md
+
+    {: .topicgroup}
+    About
+        openshift_why.md
+        /containers/containers-infrastructure_providers
+        openshift_tech.md
+        
+    {: .topicgroup}
+    Your cluster strategy
+        /containers/containers-responsibilities_iks
+        /containers/containers-ha
+
+    {: .topicgroup}
+    Tutorials
+        openshift_tutorial.md
+        [OpenShift interactive learning portal](https://learn.openshift.com/)
+        [Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift)
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    openshift_cli_install.md
+    
+    {: .topicgroup}
+    Setting up clusters
+        /containers/containers-plan_clusters
+        /containers/containers-ha_clusters
+        /containers/containers-planning_worker_nodes
+        openshift_clusters.md
+        /containers/containers-add_workers
+    
+    {: .topicgroup}
+    Administering clusters
+        /containers/containers-update
+        /containers/containers-users
+        /containers/containers-remove
+        
+    {: .topicgroup}
+    Managing cluster network traffic
+        /containers/containers-firewall
+        /containers/containers-network_policies
+        /containers/containers-edge
+        /containers/containers-subnets  
+        
+     {: .topicgroup}
+    Deploying apps
+        openshift_images.md
+        openshift_app.md
+        openshift_routes.md
+
+    {: .topicgroup}
+    Storing data on persistent storage
+        /containers/containers-storage_planning
+        /containers/containers-kube_concepts
+        /containers/containers-file_storage
+        /containers/containers-block_storage
+        /containers/containers-vpc-block
+        /containers/containers-object_storage
+        /containers/containers-cleanup
+
+    openshift_integrations.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [Red Hat OpenShift Container Platform documentation](https://docs.openshift.com/)
+    
+    {: .topicgroup}
+    API reference
+        [IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/)
+        [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json)
+
+    {: .topicgroup}
+    CLI plug-in reference
+        /containers-cli-plugin/containers-cli-plugin-kubernetes-service-cli
+        /containers/containers-cs_cli_changelog
+
+    {: .topicgroup}
+    Version history
+        openshift_versions.md
+        openshift_versions_changelog.md
+        
+    /containers/containers-regions-and-zones
+    /containers/containers-access_reference
+    /containers/containers-at_events
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faqs.md
+    openshift_limitations.md
+    openshift_ts.md
+    {: .navgroup-end}     
+
