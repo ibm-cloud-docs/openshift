@@ -27,6 +27,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .navgroup id="howto"}
     openshift_cli_install.md
+    openshift_cli_install.md
     
     {: .topicgroup}
     Setting up clusters
