@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-07-17"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -24,13 +24,25 @@ subcollection: containers
 # Creating an OpenShift cluster
 {: #openshift-create-cluster}
 
+Create a Red Hat OpenShift on IBM Cloud cluster in {{site.data.keyword.containerlong_notm}}.
+{: shortdesc}
+
+## Prerequisites
+{: #openshift_cluster_prereqs}
+
+To create OpenShift clusters, complete the following prerequisite steps.
+
+1.  [Prepare your account to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). This step includes creating a billable account, setting up an API key with infrastructure permissions, making sure that you have Administrator access in {{site.data.keyword.cloud_notm}} IAM, planning resource groups, and setting up account networking.
+2.  [Prepare to create clusters](/docs/containers?topic=containers-clusters#prepare_cluster_level). This step includes planning cluster setup, estimating costs, and allowing network traffic through a firewall, if applicable.<p class="note">OpenShift clusters are available [only as standard cluster, not free](/docs/openshift?topic=openshift-faqs#openshift_free).</p>
+3.   [Install the {{site.data.keyword.cloud_notm}} and {[openshift]} CLIs](/docs/openshift?topic=openshift-openshift-cli).
+
 ## Creating a cluster with the console
 {: #openshift_create_cluster_console}
 
 Create a standard OpenShift cluster in the {{site.data.keyword.containerlong_notm}} console.
 {: shortdesc}
 
-Before you begin, [complete the prerequisites](#openshift_prereqs) to make sure that you have the appropriate permissions to create a cluster.
+Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
 
 1.  Create a cluster.
     1.  Log in to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
@@ -55,7 +67,7 @@ Before you begin, [complete the prerequisites](#openshift_prereqs) to make sure 
 Create a standard OpenShift cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
 
-Before you begin, [complete the prerequisites](#openshift_prereqs) to make sure that you have the appropriate permissions to create a cluster, the `ibmcloud` CLI and plug-ins, and the `oc` and `kubectl` CLIs.
+Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
 
 1.  Log in to the account that you set up to create OpenShift clusters. Target the **us-east** or **eu-gb** region and the resource group. If you have a federated account, include the `--sso` flag.
     ```

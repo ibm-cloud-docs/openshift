@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-07-17"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards
 
@@ -24,7 +24,7 @@ subcollection: containers
 # Service architecture
 {: #openshift-service-arch}
 
-The following diagram and table describe the default components that are set up in a Red Hat OpenShift on IBM Cloud architecture.
+The following diagram and table describe the default components that are set up in a Red Hat OpenShift on IBM Cloud architecture. For information about the OpenShift Container Platform architecture, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/index.html).
 {: shortdesc}
 
 ![Red Hat OpenShift on IBM Cloud cluster architecture](/images/cs_org_ov_both_ses_rhos.png)
