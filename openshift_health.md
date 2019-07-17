@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-07-17"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -25,6 +25,9 @@ subcollection: containers
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
+
+# Logging and monitoring your apps
+{: #openshift_health}
 
 
 

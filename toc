@@ -95,6 +95,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .navgroup id="help"}
     faqs.md
+    /containers/containers-iks-release
     openshift_limitations.md
     openshift_ts.md
     {: .navgroup-end}     
