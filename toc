@@ -59,11 +59,10 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     Storing data on persistent storage
-        /containers/containers-storage_planning
+        openshift_storage_planning.md
         /containers/containers-kube_concepts
         /containers/containers-file_storage
         /containers/containers-block_storage
-        /containers/containers-vpc-block
         /containers/containers-object_storage
         /containers/containers-cleanup
 
@@ -86,7 +85,6 @@ Red Hat OpenShift on IBM Cloud
     {: .topicgroup}
     Version history
         openshift_versions.md
-        openshift_versions_changelog.md
         
     /containers/containers-regions-and-zones
     /containers/containers-access_reference

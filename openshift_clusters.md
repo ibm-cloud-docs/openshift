@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-17"
+lastupdated: "2019-07-18"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -34,7 +34,10 @@ To create OpenShift clusters, complete the following prerequisite steps.
 
 1.  [Prepare your account to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). This step includes creating a billable account, setting up an API key with infrastructure permissions, making sure that you have Administrator access in {{site.data.keyword.cloud_notm}} IAM, planning resource groups, and setting up account networking.
 2.  [Prepare to create clusters](/docs/containers?topic=containers-clusters#prepare_cluster_level). This step includes planning cluster setup, estimating costs, and allowing network traffic through a firewall, if applicable.<p class="note">OpenShift clusters are available [only as standard cluster, not free](/docs/openshift?topic=openshift-faqs#openshift_free).</p>
-3.   [Install the {{site.data.keyword.cloud_notm}} and {[openshift]} CLIs](/docs/openshift?topic=openshift-openshift-cli).
+3.   [Install the {{site.data.keyword.cloud_notm}} and OpenShift CLIs](/docs/openshift?topic=openshift-openshift-cli).
+
+<br />
+
 
 ## Creating a cluster with the console
 {: #openshift_create_cluster_console}
@@ -119,11 +122,11 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     </tr>
     <tr>
     <td><code>--public-vlan <em>&lt;public_vlan_id&gt;</em></code></td>
-    <td>If you already have a public VLAN set up in your IBM Cloud infrastructure (SoftLayer) account for that zone, enter the ID of the public VLAN. To check available VLANs, run `ibmcloud ks vlans --zone <zone>`. <br><br>If you do not have a public VLAN in your account, do not specify this option. {{site.data.keyword.containerlong_notm}} automatically creates a public VLAN for you.</td>
+    <td>If you already have a public VLAN set up in your IBM Cloud infrastructure account for that zone, enter the ID of the public VLAN. To check available VLANs, run `ibmcloud ks vlans --zone <zone>`. <br><br>If you do not have a public VLAN in your account, do not specify this option. {{site.data.keyword.containerlong_notm}} automatically creates a public VLAN for you.</td>
     </tr>
     <tr>
     <td><code>--private-vlan <em>&lt;private_vlan_id&gt;</em></code></td>
-    <td>If you already have a private VLAN set up in your IBM Cloud infrastructure (SoftLayer) account for that zone, enter the ID of the private VLAN. To check available VLANs, run `ibmcloud ks vlans --zone <zone>`. <br><br>If you do not have a private VLAN in your account, do not specify this option. {{site.data.keyword.containerlong_notm}} automatically creates a private VLAN for you.</td>
+    <td>If you already have a private VLAN set up in your IBM Cloud infrastructure account for that zone, enter the ID of the private VLAN. To check available VLANs, run `ibmcloud ks vlans --zone <zone>`. <br><br>If you do not have a private VLAN in your account, do not specify this option. {{site.data.keyword.containerlong_notm}} automatically creates a private VLAN for you.</td>
     </tr>
     </tbody></table>
 3.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.</p>

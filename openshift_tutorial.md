@@ -149,6 +149,9 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
     * **Cluster Console**: For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts, RBAC roles and role bindings, and resource quotas. You can also see combined views of the status and events of the resources within the cluster.
 3.  To continue working with your cluster in the terminal: From the Service Console or Application Console, click your profile **IAM#user.name@email.com > Copy Login Command**. Paste the copied `oc` login command into your terminal to authenticate via the CLI.
 
+<br />
+
+
 ## Lesson 3: Deploying an app to your OpenShift cluster
 {: #openshift_deploy_app}
 

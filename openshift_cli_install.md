@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-17"
+lastupdated: "2019-07-18"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -24,7 +24,7 @@ subcollection: containers
 # Installing the Red Hat OpenShift Container Platform CLI
 {: #openshift-cli}
 
-You can use the {{site.data.keyword.containerlong_notm}} CLI (`ibmcloud oc`) to create and manage your OpenShift cluster infrastructure, such as creating clusters and worker nodes. You can use the OpenShift Origin CLI (`oc`) to manage the resources within your OpenShift cluster, such as projects, pods, and deployments. 
+You can use the {{site.data.keyword.containerlong_notm}} CLI alias for OpenShift (`ibmcloud oc`) to create and manage your OpenShift cluster infrastructure, such as creating clusters and worker nodes. You can use the OpenShift Origin CLI (`oc`) to manage the resources within your OpenShift cluster, such as projects, pods, and deployments. 
 
 ## Installing the IBM Cloud CLI and plug-ins
 {: #cli_ibmcloud_oc}
@@ -32,9 +32,12 @@ You can use the {{site.data.keyword.containerlong_notm}} CLI (`ibmcloud oc`) to 
 See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps) to install the following CLIs.
 {: shortdesc}
 
-* {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`)
+* {{site.data.keyword.cloud_notm}} CLI (`{[bx]}`)
 * {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc` alias for OpenShift clusters)
-* Container Registry plug-in (`ibmcloud cr`)
+* Container Registry plug-in (`{[bxcr]}`)
+
+<br />
+
 
 ## Installing the OpenShift Origin CLI (`oc`)
 {: #cli_oc}

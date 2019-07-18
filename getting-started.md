@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-07-18"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -55,7 +55,7 @@ Want to learn more about options such as creating a cluster in the CLI? Check ou
     *   For the **Location**, set the geography to **North America** or **Europe**, select either **Single zone** or **Multizone** availability, and then select **Washington, DC** or **London** worker zones.
     *   For **Default worker pool**, choose an available flavor for your worker nodes, ideally with at least 4 cores and 16 GB RAM.
     *   Set a number of worker nodes to create per zone, such as 3.
-4.  To finish, click **Create cluster**.<p class="note">Your cluster creation might take some time tcomplete. After the cluster state shows **Normal**, the cluster network and load-balancing componenttake about 10 more minutes to deploy and update the cluster domain that you use for the {[openshift_shor} web console and other routes. Wait until the cluster is ready before continuing to the next step bchecking that the **Ingress subdomain** follows a pattern o`<cluster_name>.<region>.containers.appdomain.cloud`.</p>
+4.  To finish, click **Create cluster**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing componenttake about 10 more minutes to deploy and update the cluster domain that you use for the {[openshift_shor]} web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.</p>
 
 <br />
 
