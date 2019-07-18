@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-07-18"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -37,6 +37,7 @@ With the **Red Hat OpenShift on IBM Cloud beta**, you can create {{site.data.key
 
 OpenShift worker nodes are available for paid accounts and standard clusters only. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
 {: note}
+
 
 ## Objectives
 {: #openshift_objectives}
