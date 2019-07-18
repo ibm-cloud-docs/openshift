@@ -31,7 +31,7 @@ subcollection: openshift
 ## Choosing a storage solution
 {: #choose_storage_solution}
 
-Before you can decide what type of storage is the right solution for you, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
+Before you can decide what type of storage is the right solution for you and your OpenShift clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
 {: shortdesc}
 
 1. Decide whether your data must be permanently stored, or if your data can be removed at any time.
