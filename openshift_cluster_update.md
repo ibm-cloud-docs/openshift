@@ -104,7 +104,7 @@ When the config map is not defined, the default is used. By default, a maximum o
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 - [Update the master](#master). The worker node version cannot be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [Kubernetes clusters](/docs/containers?topic=containers-cs_versions) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift_versions) version preparation guides.
-- If you want to apply a patch update, review the [Kubernetes clusters](/docs/containers?topic=containers-changelog#changelog) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift-versions) version changelog.
+- If you want to apply a patch update, review the [Kubernetes clusters](/docs/containers?topic=containers-changelog#changelog) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift_versions) version changelog.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/containers?topic=containers-users#platform). </br>
 
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
@@ -270,7 +270,7 @@ Before you begin:
 - [Set up a config map](#worker_node) to control how your worker nodes are updated.
 - [Update the master](#master). The worker node version cannot be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [Kubernetes clusters](/docs/containers?topic=containers-cs_versions) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift_versions) version preparation guides.
-- If you want to apply a patch update, review the [Kubernetes clusters](/docs/containers?topic=containers-changelog#changelog) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift-versions) version changelog.
+- If you want to apply a patch update, review the [Kubernetes clusters](/docs/containers?topic=containers-changelog#changelog) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift_versions) version changelog.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/containers?topic=containers-users#platform). </br>
 
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
