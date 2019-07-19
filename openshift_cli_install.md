@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-18"
+lastupdated: "2019-07-19"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
-subcollection: containers
+subcollection: openshift
 
 ---
 

@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-17"
+lastupdated: "2019-07-19"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
@@ -26,12 +26,38 @@ subcollection: containers
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 
-# Logging and monitoring your apps
+# Logging and monitoring
 {: #openshift_health}
 
 
 
-## Lesson 4: Setting up LogDNA and Sysdig add-ons to monitor cluster health
+For cluster metrics and app logging and monitoring, Red Hat OpenShift on IBM Cloud clusters include built-in tools to help you manage the health of your single cluster instance. You can also set up {{site.data.keyword.cloud}} tools for multi-cluster analysis or other use cases, such as {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
+{: shortdesc}
+
+## Using the built-in OpenShift logging and monitoring stack
+{: #openshift_logmet}
+
+By default, Red Hat OpenShift on IBM Cloud clusters are deployed with built-in logging and monitoring tools that are based on open source projects such as Prometheus, Elasticsearch, Fluentd, and Kibana. For more information, see the following OpenShift docs.
+{: shortdesc}
+
+* [Prometheus cluster monitoring ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html).
+* [Aggregating container logs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html).
+* [Aggregate logging sizing guidelines ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging_sizing.html).
+* [Enabling cluster metrics ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/cluster_metrics.html).
+
+<br />
+
+
+## Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools
+{: #openshift_other_logmet}
+
+For information about other logging and monitoring tools that you can set up, including {{site.data.keyword.cloud_notm}} services, see the following topics in the {{site.data.keyword.containershort_notm}} docs.
+{: shortdesc}
+
+* [Choosing a logging solution](/docs/containers?topic=containers-health#logging_overview).
+* [Choosing a monitoring solution](/docs/containers?topic=containers-health#view_metrics).
+
+## Setting up LogDNA and Sysdig add-ons to monitor cluster health
 {: #openshift_logdna_sysdig}
 
 Because OpenShift sets up stricter [Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html) by default than native Kubernetes, you might find that some apps or cluster add-ons that you use on native Kubernetes cannot be deployed on OpenShift in the same way. In particular, many images require to run as a `root` user or as a privileged container, which is prevented in OpenShift by default. In this lesson, you learn how to modify the default SCCs by creating privileged security accounts and updating the `securityContext` in the pod specification to use two popular {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
@@ -56,7 +82,7 @@ Before you begin, log in to your cluster as an administrator.
     {: screen}
 4.  Continue the lesson to set up [{{site.data.keyword.la_short}}](#openshift_logdna) and [{{site.data.keyword.mon_short}}](#openshift_sysdig).
 
-### Lesson 4a: Setting up LogDNA
+### Setting up LogDNA
 {: #openshift_logdna}
 
 Set up a project and privileged service account for {{site.data.keyword.la_full_notm}}. Then, create a {{site.data.keyword.la_short}} instance in your {{site.data.keyword.cloud_notm}} account. To integrate your {{site.data.keyword.la_short}} instance with your OpenShift cluster, you must modify the daemon set that is deployed to use the privileged service account to run as root.
@@ -195,7 +221,7 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
 
 For more information about how to use {{site.data.keyword.la_short}}, see the [Next steps docs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube#kube_next_steps).
 
-### Lesson 4b: Setting up Sysdig
+### Setting up Sysdig
 {: #openshift_sysdig}
 
 Create an {{site.data.keyword.mon_full_notm}} instance in your {{site.data.keyword.cloud_notm}} account. To integrate your {{site.data.keyword.mon_short}} instance with your OpenShift cluster, you must run a script that creates a project and privileged service account for the Sysdig agent.
@@ -322,5 +348,3 @@ Remove the {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} in
 2.  Remove the instances from your {{site.data.keyword.cloud_notm}} account.
     *   [Removing a {{site.data.keyword.la_short}} instance](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-remove).
     *   [Removing a {{site.data.keyword.mon_short}} instance](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-remove).
-
-<br />
