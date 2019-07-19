@@ -77,7 +77,7 @@ Any OpenShift clusters that you create during the beta remain for 30 days after 
 {: important}
 
 1.  Install the command-line tools.
-    *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud ks`), and {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+    *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`oc`), and {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
     *   [Install the OpenShift Origin (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/containers?topic=containers-cs_cli_install#cli_oc).
 2.  Log in to the account that you set up to create OpenShift clusters. Target the **us-east** or **eu-gb** region and the resource group. If you have a federated account, include the `--sso` flag.
     ```
@@ -86,17 +86,17 @@ Any OpenShift clusters that you create during the beta remain for 30 days after 
     {: pre}
 3.  Create a cluster. The following command creates a cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC.
     ```
-    ibmcloud ks cluster-create --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    oc cluster-create --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 4.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.</p>
     ```
-    ibmcloud ks cluster-get --cluster <cluster_name_or_ID>
+    oc cluster-get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 5.  Download the configuration files to connect to your cluster.
     ```
-    ibmcloud ks cluster-config --cluster <cluster_name_or_ID>
+    oc cluster-config --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -130,7 +130,7 @@ Any OpenShift clusters that you create during the beta remain for 30 days after 
     ```
     {: screen}
 
-    If you cannot perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud ks cluster-config --cluster <cluster_name_or_ID> --admin` command.
+    If you cannot perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `oc cluster-config --cluster <cluster_name_or_ID> --admin` command.
     {: tip}
 
 <br />

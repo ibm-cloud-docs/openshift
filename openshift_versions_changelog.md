@@ -22,4 +22,12 @@ subcollection: openshift
 {:preview: .preview}
 
 # Version changelog
-{: #openshift-versions}
+{: #openshift_changelog}
+
+View information of version changes for major, minor, and patch updates that are available for your Red Hat OpenShift on IBM Cloud clusters. Changes include updates to OpenShift, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
+{:shortdesc}
+
+Unless otherwise noted in the changelogs, the {{site.data.keyword.containerlong_notm}} provider version enables Kubernetes APIs and features that are at beta. Kubernetes alpha features, which are subject to change, are disabled.
+
+For more information about major, minor, and patch versions and preparation actions between minor versions, see [OpenShift versions](/docs/containers?topic=containers-cs_versions).
+{: tip}

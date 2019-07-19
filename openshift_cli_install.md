@@ -24,7 +24,7 @@ subcollection: openshift
 # Installing the Red Hat OpenShift Container Platform CLI
 {: #openshift-cli}
 
-You can use the {{site.data.keyword.containerlong_notm}} CLI alias for OpenShift (`ibmcloud oc`) to create and manage your OpenShift cluster infrastructure, such as creating clusters and worker nodes. You can use the OpenShift Origin CLI (`oc`) to manage the resources within your OpenShift cluster, such as projects, pods, and deployments. 
+You can use the {{site.data.keyword.containerlong_notm}} CLI alias for OpenShift (`oc`) to create and manage your OpenShift cluster infrastructure, such as creating clusters and worker nodes. You can use the OpenShift Origin CLI (`oc`) to manage the resources within your OpenShift cluster, such as projects, pods, and deployments. 
 
 ## Installing the IBM Cloud CLI and plug-ins
 {: #cli_ibmcloud_oc}
@@ -33,7 +33,7 @@ See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/conta
 {: shortdesc}
 
 * {{site.data.keyword.cloud_notm}} CLI (`{[bx]}`)
-* {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc` alias for OpenShift clusters)
+* {{site.data.keyword.containershort_notm}} plug-in (`oc` alias for OpenShift clusters)
 * Container Registry plug-in (`{[bxcr]}`)
 
 <br />
@@ -111,7 +111,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
     {: pre}
 2.  Get the **Master URL** of the cluster that you want to access. 
     ```
-    ibmcloud ks cluster-get --cluster <cluster_name_or_ID>
+    oc cluster-get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 3.  Use the API key and cluster URL to log in to your OpenShift cluster. The user name (`-u`) is `apikey`, the password (`-p`) is your API key value, and the `--server` is the service endpoint URL of the cluster master.
