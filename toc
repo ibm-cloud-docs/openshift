@@ -10,12 +10,13 @@ Red Hat OpenShift on IBM Cloud
     {: .topicgroup}
     About
         openshift_why.md
+        /containers/containers-infrastructure_providers
         openshift_tech.md
         
     {: .topicgroup}
     Your cluster strategy
-        openshift_responsibilities.md
-        openshift_ha.md
+        /containers/containers-responsibilities_iks
+        /containers/containers-ha
 
     {: .topicgroup}
     Tutorials
@@ -38,7 +39,7 @@ Red Hat OpenShift on IBM Cloud
     
     {: .topicgroup}
     Administering clusters
-        openshift_cluster_update.md
+        /containers/containers-update
         /containers/containers-users
         openshift_health.md
         /containers/containers-remove
@@ -58,7 +59,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     Storing data on persistent storage
-        /containers/containers-storage_planning
+        openshift_storage_planning.md
         /containers/containers-kube_concepts
         /containers/containers-file_storage
         /containers/containers-block_storage

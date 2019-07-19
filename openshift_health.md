@@ -6,7 +6,7 @@ lastupdated: "2019-07-19"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
-subcollection: openshift
+subcollection: containers
 
 ---
 
@@ -68,7 +68,7 @@ Before you begin, log in to your cluster as an administrator.
 2.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command** and paste the copied `oc` login command into your terminal to authenticate via the CLI.
 3.  Download the admin configuration files for your cluster.
     ```
-    oc cluster-config --cluster <cluster_name_or_ID> --admin
+    ibmcloud ks cluster-config --cluster <cluster_name_or_ID> --admin
     ```
     {: pre}
 
