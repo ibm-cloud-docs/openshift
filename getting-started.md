@@ -73,7 +73,7 @@ From the OpenShift console, you can deploy one of the built-in catalog apps.
     1.  In the *Information* tab, click **Next**.
     2.  In the *Configuration* tab, click **Try Sample Repository**.
     3.  In the *Results* tab, the `nodejs-ex` app is created. Click **Close**.
-5.  Wait a few minutes for pod to build. To check its status, click **Applications > Pods**>.
+5.  Wait a few minutes for pod to build. To check its status, click **Applications > Pods**.
 6.  When the pod is running, click **Applications > Routes**.
 7.  Click the **Hostname** of your `nodejs-ex` app. A new tab in your browser opens with a message similar to the following.
     ```
