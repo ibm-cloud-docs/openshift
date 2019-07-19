@@ -41,10 +41,10 @@ For more information, see:
 <br />
 
 
-## Comparison between OpenShift and native Kubernetes clusters
+## Comparison between OpenShift and community Kubernetes clusters
 {: #openshift_kubernetes}
 
-Both OpenShift and native Kubernetes clusters are production-ready container platforms that are tailored for enterprise workloads. The following table compares and contrasts some common characteristics that can help you choose which container platform is right for your use case.
+Both OpenShift and community Kubernetes clusters are production-ready container platforms that are tailored for enterprise workloads. The following table compares and contrasts some common characteristics that can help you choose which container platform is right for your use case.
 {: shortdesc}
 
 |Characteristics|Kubernetes clusters|OpenShift clusters|
@@ -64,4 +64,4 @@ Both OpenShift and native Kubernetes clusters are production-ready container pla
 |Simplified Kubernetes developer experience, with an app console that is suited for beginners| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Supported operating system| Ubuntu 16.64, 18.64 |Red Hat Enterprise Linux 7|
 |Preferred external traffic networking| Ingress | Router |
-{: caption="Characteristics of native Kubernetes and OpenShift clusters" caption-side="top"}
+{: caption="Characteristics of community Kubernetes and OpenShift clusters" caption-side="top"}

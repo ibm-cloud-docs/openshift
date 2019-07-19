@@ -70,13 +70,13 @@ Using both Red Hat OpenShift on IBM Cloud and Ubuntu native {{site.data.keyword.
         /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
         ```
         {: screen}
-3.  If you have clusters that run different versions of Kubernetes, such as an OpenShift cluster with version 1.11 and a native Kubernetes cluster with version 1.14.4, download each `kubectl` version binary file to a separate directory.
-    1.  Delete the `kubectl` binary file that comes with the `oc` installation, because this `kubectl` version does not work with native Kubernetes clusters.
+3.  If you have clusters that run different versions of Kubernetes, such as an OpenShift cluster with version 1.11 and a community Kubernetes cluster with version 1.14.4, download each `kubectl` version binary file to a separate directory.
+    1.  Delete the `kubectl` binary file that comes with the `oc` installation, because this `kubectl` version does not work with community Kubernetes clusters.
         ```
         rm /usr/local/bin/kubectl
         ```
         {: pre}
-    2.  [Download separate `kubectl` binary files](#kubectl) that match the versions of your OpenShift and native Kubernetes clusters.
+    2.  [Download separate `kubectl` binary files](#kubectl) that match the versions of your OpenShift and community Kubernetes clusters.
     3.  **Optional**: Set up an alias in your local terminal profile to point to separate binaries that match the version of `kubectl` your cluster needs.
 4.  **Optional**: [Enable autocompletion for `kubectl` commands ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion). The steps vary depending on the shell that you use. You can repeat the steps to enable autocompletion for `oc` commands. For example in bash on Linux, instead of `kubectl completion bash >/etc/bash_completion.d/kubectl`, you can run `oc completion bash >/etc/bash_completion.d/oc_completion`.
 

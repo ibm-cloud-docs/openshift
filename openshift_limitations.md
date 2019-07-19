@@ -34,7 +34,7 @@ The Red Hat OpenShift on IBM Cloud beta is released with the following limitatio
 
 *   You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then re-deploy the apps you try out in the Kubernetes cluster to your OpenShift cluster.
 *   Locations are available in two multizone metro areas, Washington, DC and London. Supported zones are `wdc04, wdc06, wdc07, lon04, lon05,` and `lon06`.
-*   You cannot create a cluster with worker nodes that run multiple operating systems, such as OpenShift on Red Hat Enterprise Linux and native Kubernetes on Ubuntu.
+*   You cannot create a cluster with worker nodes that run multiple operating systems, such as OpenShift on Red Hat Enterprise Linux and community Kubernetes on Ubuntu.
 
 
 

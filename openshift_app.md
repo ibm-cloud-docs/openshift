@@ -24,7 +24,7 @@ subcollection: openshift
 # Deploying apps in OpenShift clusters
 {: #openshift-apps}
 
-OpenShift sets up stricter security settings by default than native Kubernetes. 
+OpenShift sets up stricter security settings by default than community Kubernetes. 
 *   For example, apps that are configured to run as root might fail, with the pods in a `CrashLoopBackOff` status. To resolve this issue, you can either modify the default security context constraints or use an image that does not run as root.
 *  For more information, see the OpenShift docs for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).
 

@@ -6,7 +6,7 @@ lastupdated: "2019-07-19"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
@@ -60,7 +60,7 @@ For information about other logging and monitoring tools that you can set up, in
 ## Setting up LogDNA and Sysdig add-ons to monitor cluster health
 {: #openshift_logdna_sysdig}
 
-Because OpenShift sets up stricter [Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html) by default than native Kubernetes, you might find that some apps or cluster add-ons that you use on native Kubernetes cannot be deployed on OpenShift in the same way. In particular, many images require to run as a `root` user or as a privileged container, which is prevented in OpenShift by default. In this lesson, you learn how to modify the default SCCs by creating privileged security accounts and updating the `securityContext` in the pod specification to use two popular {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
+Because OpenShift sets up stricter [Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html) by default than community Kubernetes, you might find that some apps or cluster add-ons that you use on community Kubernetes cannot be deployed on OpenShift in the same way. In particular, many images require to run as a `root` user or as a privileged container, which is prevented in OpenShift by default. In this lesson, you learn how to modify the default SCCs by creating privileged security accounts and updating the `securityContext` in the pod specification to use two popular {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
 Before you begin, log in to your cluster as an administrator.
@@ -68,7 +68,7 @@ Before you begin, log in to your cluster as an administrator.
 2.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command** and paste the copied `oc` login command into your terminal to authenticate via the CLI.
 3.  Download the admin configuration files for your cluster.
     ```
-    ibmcloud ks cluster-config --cluster <cluster_name_or_ID> --admin
+    oc cluster-config --cluster <cluster_name_or_ID> --admin
     ```
     {: pre}
 

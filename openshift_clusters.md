@@ -110,7 +110,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     </tr>
     <tr>
       <td><code>--kube-version <em>&lt;openshift_version&gt;</em></code></td>
-      <td>You must choose a supported OpenShift version. OpenShift versions include a Kubernetes version that differs from the Kubernetes versions that are available on native Kubernetes Ubuntu clusters. To list available OpenShift versions, run `oc versions`. To create a cluster with the latest the patch version, you can specify just the major and minor version, such as ` 3.11_openshift`.<br><br>Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.</td>
+      <td>You must choose a supported OpenShift version. OpenShift versions include a Kubernetes version that differs from the Kubernetes versions that are available on community Kubernetes Ubuntu clusters. To list available OpenShift versions, run `oc versions`. To create a cluster with the latest the patch version, you can specify just the major and minor version, such as ` 3.11_openshift`.<br><br>Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.</td>
     </tr>
     <tr>
     <td><code>--machine-type <em>&lt;worker_node_flavor&gt;</em></code></td>

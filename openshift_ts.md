@@ -57,7 +57,7 @@ If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [r
 You do not have permissions to create a cluster.
 
 {: tsCauses}
-To create an OpenShift cluster, you must have the same permissions as you need to create a native Kubernetes cluster. The required permissions include infrastructure credentials for the region and resource group and {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) **Administrator** permissions.
+To create an OpenShift cluster, you must have the same permissions as you need to create a community Kubernetes cluster. The required permissions include infrastructure credentials for the region and resource group and {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) **Administrator** permissions.
 
 {: tsResolve}
 Review [Assigning cluster access](https://cloud.ibm.com/docs/containers?topic=containers-users) to learn how to set up infrastructure credentials for a region and resource group and how to assign users access through IAM.
@@ -227,7 +227,7 @@ Follow the instructions in the [Limitations topic](#openshift_limitations).
 Your pods are in a `CrashLoopBackOff` status.
 
 {: tsCauses}
-When you try to deploy an app that works on native Kubernetes platforms, you might see this status or a related error message because OpenShift sets up stricter security settings by default than native Kubernetes.
+When you try to deploy an app that works on community Kubernetes platforms, you might see this status or a related error message because OpenShift sets up stricter security settings by default than community Kubernetes.
 
 {: tsResolve}
 Make sure that you followed the docs that are linked in the [Limitations topic](#openshift_limitations).
