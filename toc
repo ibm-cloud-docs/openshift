@@ -10,7 +10,6 @@ Red Hat OpenShift on IBM Cloud
     {: .topicgroup}
     About
         openshift_why.md
-        /containers/containers-infrastructure_providers
         openshift_tech.md
         
     {: .topicgroup}
