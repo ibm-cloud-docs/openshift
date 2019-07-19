@@ -6,7 +6,7 @@ lastupdated: "2019-07-19"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
-subcollection: openshift
+subcollection: containers
 
 ---
 
