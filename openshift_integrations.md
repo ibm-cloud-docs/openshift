@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -25,4 +25,3 @@ subcollection: openshift
 {: #openshift_integrations}
 
 {{site.data.keyword.containerlong_notm}} add-ons such as Istio, Knative, and the Kubernetes terminal are not available. Helm charts are not certified to work in OpenShift clusters, except {{site.data.keyword.cloud_notm}} Object Storage. To install Helm, see the [{{site.data.keyword.containershort_notm}} docs](/docs/containers?topic=containers-helm).
-{: shortdesc}

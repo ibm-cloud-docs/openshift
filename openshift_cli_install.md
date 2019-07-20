@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-20"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -32,9 +32,9 @@ You can use the {{site.data.keyword.containerlong_notm}} CLI alias for OpenShift
 See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps) to install the following CLIs.
 {: shortdesc}
 
-* {{site.data.keyword.cloud_notm}} CLI (`{[bx]}`)
+* {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`)
 * {{site.data.keyword.containershort_notm}} plug-in (`oc` alias for OpenShift clusters)
-* Container Registry plug-in (`{[bxcr]}`)
+* Container Registry plug-in (`ibmcloud cr`)
 
 <br />
 
@@ -48,7 +48,7 @@ See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/conta
 To view a local version of the OpenShift dashboard and to deploy apps into your Red Hat OpenShift on IBM Cloud clusters, install the OpenShift Origin CLI (`oc`). The `oc` CLI includes a matching version of the Kubernetes CLI (`kubectl`). For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html).
 {: shortdesc}
 
-Using both Red Hat OpenShift on IBM Cloud and Ubuntu native {{site.data.keyword.containershort_notm}} clusters? The `oc` CLI comes with both the `oc` and `kubectl` binaries, but your different clusters might run different versions of Kubernetes, such as 1.11 on OpenShift and 1.13.8 on Ubuntu. Make sure to use the `kubectl` binary that matches your cluster `major.minor` Kubernetes version.
+Using both community Kubernetes and OpenShift clusters? The `oc` CLI comes with both the `oc` and `kubectl` binaries, but your different clusters might run different versions of Kubernetes, such as 1.11 on OpenShift and 1.13.8 on Ubuntu. Make sure to use the `kubectl` binary that matches your cluster `major.minor` Kubernetes version.
 {: note}
 
 1.  [Download the OpenShift Origin CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.okd.io/download.html) for your local operating system and OpenShift version. The current default OpenShift version is 3.11.

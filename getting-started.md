@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-20"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -88,7 +88,7 @@ From the OpenShift console, you can deploy one of the built-in catalog apps.
 ## What's next?
 {: #openshift_next}
 
-Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=openshift-tutorial) to:
+Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=openshift-openshift_tutorial) to:
 * Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
 * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
 
