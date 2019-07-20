@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-20"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -57,6 +57,9 @@ For information about other logging and monitoring tools that you can set up, in
 * [Choosing a logging solution](/docs/containers?topic=containers-health#logging_overview).
 * [Choosing a monitoring solution](/docs/containers?topic=containers-health#view_metrics).
 
+<br />
+
+
 ## Setting up LogDNA and Sysdig add-ons to monitor cluster health
 {: #openshift_logdna_sysdig}
 
@@ -81,6 +84,9 @@ Before you begin, log in to your cluster as an administrator.
     ```
     {: screen}
 4.  Continue the lesson to set up [{{site.data.keyword.la_short}}](#openshift_logdna) and [{{site.data.keyword.mon_short}}](#openshift_sysdig).
+
+<br />
+
 
 ### Setting up LogDNA
 {: #openshift_logdna}
@@ -221,6 +227,9 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
 
 For more information about how to use {{site.data.keyword.la_short}}, see the [Next steps docs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube#kube_next_steps).
 
+<br />
+
+
 ### Setting up Sysdig
 {: #openshift_sysdig}
 
@@ -329,6 +338,9 @@ Create an {{site.data.keyword.mon_full_notm}} instance in your {{site.data.keywo
 5.  From the [{{site.data.keyword.cloud_notm}} Observability > Monitoring console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.mon_short}} instance, click **View Sysdig**. The Sysdig dashboard opens, and you can begin to analyze your cluster metrics.
 
 For more information about how to use {{site.data.keyword.mon_short}}, see the [Next steps docs](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-kubernetes_cluster#kubernetes_cluster_next_steps).
+
+<br />
+
 
 ### Optional: Cleaning up
 {: #openshift_logdna_sysdig_cleanup}

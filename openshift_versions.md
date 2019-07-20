@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-20"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel
 
@@ -28,7 +28,7 @@ Red Hat OpenShift on IBM Cloud clusters run at OpenShift version 3.11, which inc
 {: shortdesc}
 
 For more information about the OpenShift  and Kubernetes project versions, review the following information.
-* [OpenShift Release Notes Overview ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/release_notes/index.html)
+* [OpenShift release notes overview ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/release_notes/index.html)
 * [Kubernetes changelog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md)
 
 ## Update types
@@ -84,7 +84,7 @@ Red Hat OpenShift on IBM Cloud was first generally available with OpenShift vers
 <tr>
   <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
   <td>3.11 / 1.11</td>
-  <td>01 Aug 2019</td>
+  <td>**Beta**: 5 Jun 2019</td>
   <td>`†`</td>
 </tr>
 </tbody>

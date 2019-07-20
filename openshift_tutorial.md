@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-20"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -260,6 +260,6 @@ If you took a break from the last lesson and started a new terminal, make sure t
 
 For more information about working with your apps and routing services, see the [OpenShift Developer Guide](https://docs.openshift.com/container-platform/3.11/dev_guide/index.html).
 
-Install two popular {{site.data.keyword.containerlong_notm}} add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=#openshift_logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=#openshift_sysdig).
+Install two popular {{site.data.keyword.containerlong_notm}} add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-openshift_health#openshift_logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-openshift_health#openshift_sysdig).
 
 
