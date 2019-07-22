@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -150,6 +150,25 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
     oc cluster-refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
+
+<br />
+
+
+## VPN server error due to infrastructure credentials
+{: #rhoks_ts_openvpn_login}
+
+{: tsSymptoms}
+After you create or update a cluster, the master status returns a VPN server configuration error message similar to the following.
+```
+VPN server configuration update failed. IBM Cloud support has been notified and is working to resolve this issue. 
+```
+{: screen}
+
+{: tsCauses}
+The infrastructure credentials that are associated with the resource group that the cluster is created in are missing (such as the API key owner is no longer part of the account) or missing required permissions.
+
+{: tsResolve}
+[Complete the troubleshooting guide](/docs/containers?topic=containers-cs_troubleshoot_clusters#cs_credentials) to check and update the infrastructure credentials that are used for the resource group.
 
 <br />
 
