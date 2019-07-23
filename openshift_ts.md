@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-22"
+lastupdated: "2019-07-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -83,7 +83,7 @@ The OpenVPN server could not be configured because the router IP address that is
 **Verify that your cluster has available subnets.**
 1.  Check that your cluster has a **Subnet CIDR** for public and private subnets. If you set up a private VLAN-only cluster, you might only have a private subnet.
     ```
-    oc cluster-get --cluster <cluster_name_or_ID> --showResources
+    ibmcloud oc cluster-get --cluster <cluster_name_or_ID> --showResources
     ```
     {: pre}
 
@@ -102,7 +102,7 @@ The OpenVPN server could not be configured because the router IP address that is
 3.  If the cluster does have a subnet, [check for available portable IP addresses](/docs/containers?topic=containers-subnets#review_ip) and if necessary, [add more portable IP address by adding a subnet](/docs/containers?topic=containers-subnets#adding_ips).
 4.  Refresh the master to restart the OpenVPN setup so that it uses the available subnet.
     ```
-    oc cluster-refresh --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster-refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -119,7 +119,7 @@ The OpenVPN server could not be configured because the router IP address that is
     {: pre}
 3.  After you resolve the Ingress pod issue, refresh the master to restart the Ingress setup.
     ```
-    oc cluster-refresh --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster-refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -130,7 +130,7 @@ The OpenVPN server could not be configured because the router IP address that is
 {: #rhoks_ts_openvpn_dns}
 
 {: tsSymptoms}
-Could not create a domain name service for the network load balancer ('oc nlb-dns-create') with the following error message:<ul>
+Could not create a domain name service for the network load balancer ('ibmcloud oc nlb-dns-create') with the following error message:<ul>
 <li><code>This action requires the Editor role for the cluster in IBM Cloud Container Service. Contact the IBM Cloud account administrator and request the required Identity and Access user role. (A0008)</code></li>
 <li><code>The specified cluster could not be found. (A0006)</code></li>
 <li><code>The input parameters in the request body are either incomplete or in the wrong format. Be sure to include all required parameters in your request in JSON format. (E0011)</code></li><ul>
@@ -147,7 +147,7 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
 2.  For cluster not found or incorrect input parameter errors, continue to the next step.
 3.  Refresh the master so that NLB DNS creation operation is retried.
     ```
-    oc cluster-refresh --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster-refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -215,7 +215,7 @@ Error from server (Forbidden): <resource> is forbidden: User "IAM#user@email.com
 You need to download the `admin` configuration files for your cluster in order to run commands that require the `cluster-admin` cluster role.
 
 {: tsResolve}
-Run `oc cluster-config --cluster <cluster_name_or_ID> --admin` and try again.
+Run `ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin` and try again.
 
 <br />
 

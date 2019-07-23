@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-20"
+lastupdated: "2019-07-23"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -71,7 +71,7 @@ Before you begin, log in to your cluster as an administrator.
 2.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command** and paste the copied `oc` login command into your terminal to authenticate via the CLI.
 3.  Download the admin configuration files for your cluster.
     ```
-    oc cluster-config --cluster <cluster_name_or_ID> --admin
+    ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin
     ```
     {: pre}
 
