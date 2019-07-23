@@ -24,7 +24,7 @@ subcollection: openshift
 # Why Red Hat OpenShift on IBM Cloud
 {: #why_openshift}
 
-{{site.data.keyword.openshiftlong}} is an extension of {{site.data.keyword.containerlong}}, where IBM manages OpenShift Container Platform for you.
+{{site.data.keyword.openshiftlong}} is an extension of {{site.data.keyword.containerlong}}, where IBM manages OpenShift Container Platform for you. You manage both your community Kubernetes and OpenShift clusters with the same {{site.data.keyword.containerlong_notm}} API, CLI, and console for a consistent user experience.
 {: shortdesc}
 
 ## Benefits of using the service

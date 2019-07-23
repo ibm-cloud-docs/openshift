@@ -29,7 +29,7 @@ subcollection: openshift
 # Tutorial: Creating an IBM Cloud Red Hat OpenShift Container Platform cluster (beta)
 {: #openshift_tutorial} 
 
-{{site.data.keyword.openshiftlong}} is available as a beta to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
+The {{site.data.keyword.openshiftlong}} **beta** is available as an extension of {{site.data.keyword.containerlong_notm}} to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong_notm}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
 {: preview}
 
 With the **Red Hat OpenShift on IBM Cloud beta**, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of managed {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-responsibilities_iks) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) that runs on Red Hat Enterprise Linux for your app deployments.

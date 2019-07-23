@@ -24,8 +24,11 @@ subcollection: openshift
 # Service architecture
 {: #openshift-service-arch}
 
-The following diagram and table describe the default components that are set up in a {{site.data.keyword.openshiftlong}} architecture. For information about the OpenShift Container Platform architecture, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/index.html).
+The following diagram and table describe the default components that are set up in a {{site.data.keyword.openshiftlong}} architecture.
 {: shortdesc}
+
+For information about the OpenShift Container Platform architecture, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/index.html).
+{: note}
 
 ![Red Hat OpenShift on IBM Cloud cluster architecture](/images/cs_org_ov_both_ses_rhos.png)
 

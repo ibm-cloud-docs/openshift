@@ -29,7 +29,7 @@ subcollection: openshift
 # Getting started tutorial (Beta)
 {: #getting-started}
 
-{{site.data.keyword.openshiftlong}} is available as a beta to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
+The {{site.data.keyword.openshiftlong}} **beta** is available as an extension of {{site.data.keyword.containerlong_notm}} to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong_notm}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
 {: preview}
 
 With the **Red Hat OpenShift on IBM Cloud beta**, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of managed {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-responsibilities_iks) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) that runs on Red Hat Enterprise Linux for your app deployments.
@@ -47,15 +47,15 @@ Want to learn more about options such as creating a cluster in the CLI? Check ou
 {: tip}
 
 1.  Log in to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
-2.  From the **Catalog**, click [**Red Hat OpenShift**](), and then click **Create**.
+2.  From the **Catalog**, click [**OpenShift Cluster** ![External link icon](../icons/launch-glyph.svg "External link icon")]](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster), and then click **Create**.
 3.  Choose your cluster setup details and name. 
     *   For **Select a plan**, choose **Standard**.
-    *   For the **Cluster type and version**, choose **OpenShift**. Red Hat OpenShift on IBM Cloud supports[openshift_short]} version 3.11 only, which includes Kubernetes version 1.11. The operating system iRed Hat Enterprise Linux 7.
+    *   For the **Cluster type and version**, choose **OpenShift**. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
     *   Fill out your cluster name, resource group, and tags.
     *   For the **Location**, set the geography to **North America** or **Europe**, select either **Single zone** or **Multizone** availability, and then select **Washington, DC** or **London** worker zones.
-    *   For **Default worker pool**, choose an available flavor for your worker nodes, ideally with at least 4 cores and 16 GB RAM.
-    *   Set a number of worker nodes to create per zone, such as 3.
-4.  To finish, click **Create cluster**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing componenttake about 10 more minutes to deploy and update the cluster domain that you use for the {[openshift_shor]} web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.</p>
+    *   For **Default worker pool**, choose an available flavor for your worker nodes, ideally with at least `4` cores and `16` GB RAM.
+    *   Set a number of worker nodes to create per zone, such as `3`.
+4.  To finish, click **Create cluster**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing componenttake about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort} web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.</p>
 
 <br />
 
@@ -80,7 +80,7 @@ From the OpenShift console, you can deploy one of the built-in catalog apps.
     Welcome to your Node.js application on OpenShift
     ```
     {: screen}
-8.  **Optional** To clean up the resources that you created, click the project name in the menu bar and then **View All Projects**. Click the **More options** icon > **Delete project**.
+8.  **Optional** To clean up the resources that you created, click the project name in the menu bar and then **View All Projects**. Click the **More options icon > Delete project**.
 
 <br />
 
