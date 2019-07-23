@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-23"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -24,7 +24,7 @@ subcollection: openshift
 # Deploying apps in OpenShift clusters
 {: #openshift_apps}
 
-With Red Hat OpenShift on IBM Cloud clusters, you can deploy apps from a remote file or repository such as GitHub with a single command. Also, your clusters come with various built-in services that you can use to help operate your cluster.
+With {{site.data.keyword.openshiftlong}} clusters, you can deploy apps from a remote file or repository such as GitHub with a single command. Also, your clusters come with various built-in services that you can use to help operate your cluster.
 {: shortdesc}
 
 To create a new app, use the `oc new-app` command. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/getting_started/developers_cli.html).

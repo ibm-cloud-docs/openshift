@@ -31,7 +31,7 @@ subcollection: openshift
 
 
 
-For cluster metrics and app logging and monitoring, Red Hat OpenShift on IBM Cloud clusters include built-in tools to help you manage the health of your single cluster instance. You can also set up {{site.data.keyword.cloud}} tools for multi-cluster analysis or other use cases, such as {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
+For cluster metrics and app logging and monitoring, {{site.data.keyword.openshiftlong}} clusters include built-in tools to help you manage the health of your single cluster instance. You can also set up {{site.data.keyword.cloud_notm}} tools for multi-cluster analysis or other use cases, such as {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
 ## Using the built-in OpenShift logging and monitoring stack

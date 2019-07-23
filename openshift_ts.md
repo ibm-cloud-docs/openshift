@@ -26,7 +26,7 @@ subcollection: openshift
 # Troubleshooting OpenShift clusters
 {: #openshift_troubleshoot}
 
-Review some known issues or common error messages that you might encounter when you use Red Hat OpenShift on IBM Cloud clusters.
+Review some known issues or common error messages that you might encounter when you use {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
 For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs.

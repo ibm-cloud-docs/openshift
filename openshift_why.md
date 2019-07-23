@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -24,7 +24,7 @@ subcollection: openshift
 # Why Red Hat OpenShift on IBM Cloud
 {: #why_openshift}
 
-Red Hat OpenShift on IBM Cloud is an extension of {{site.data.keyword.containerlong}}, where IBM manages OpenShift Container Platform for you.
+{{site.data.keyword.openshiftlong}} is an extension of {{site.data.keyword.containerlong}}, where IBM manages OpenShift Container Platform for you.
 {: shortdesc}
 
 ## Benefits of using the service

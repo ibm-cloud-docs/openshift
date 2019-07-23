@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -25,6 +25,9 @@ subcollection: openshift
 
 # FAQs
 {: #faqs}
+
+Review frequently asked questions for using {{site.data.keyword.openshiftlong}}.
+{: shortdesc}
 
 ## What container platforms are available for my cluster?
 {: #container_platforms}

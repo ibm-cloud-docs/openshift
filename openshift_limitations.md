@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -26,7 +26,7 @@ subcollection: openshift
 # Service limitations
 {: #openshift_limitations}
 
-The Red Hat OpenShift on IBM Cloud beta is released with the following limitations. For general product limitations, such as API calls or number of pods per worker node, see [{{site.data.keyword.containerlong_notm}} service limitations](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#tech_limits).
+The {{site.data.keyword.openshiftlong}} beta is released with the following limitations. For general product limitations, such as API calls or number of pods per worker node, see [{{site.data.keyword.containerlong_notm}} service limitations](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#tech_limits).
 {: shortdesc}
 
 ## Cluster

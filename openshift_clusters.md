@@ -24,7 +24,7 @@ subcollection: openshift
 # Creating an OpenShift cluster
 {: #openshift-create-cluster}
 
-Create a Red Hat OpenShift on IBM Cloud cluster in {{site.data.keyword.containerlong_notm}}.
+Create a {{site.data.keyword.openshiftlong}} cluster in {{site.data.keyword.containerlong_notm}}.
 {: shortdesc}
 
 ## Prerequisites

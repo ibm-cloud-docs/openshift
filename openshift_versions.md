@@ -24,7 +24,7 @@ subcollection: openshift
 # Version information and update actions
 {: #openshift_versions}
 
-Red Hat OpenShift on IBM Cloud clusters run at OpenShift version 3.11, which includes the Kubernetes project version 1.11. The worker node operating system is Red Hat Enterprise Linux 7.
+{{site.data.keyword.openshiftlong}} clusters run at OpenShift version 3.11, which includes the Kubernetes project version 1.11. The worker node operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
 For more information about the OpenShift  and Kubernetes project versions, review the following information.
