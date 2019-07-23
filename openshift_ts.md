@@ -29,13 +29,13 @@ subcollection: openshift
 Review some known issues or common error messages that you might encounter when you use {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs.
-* [Debugging your cluster](/docs/containers?topic=containers-cs_troubleshoot).
-* [Clusters and worker nodes](/docs/containers?topic=containers-cs_troubleshoot_clusters).
-* [Storage](/docs/containers?topic=containers-cs_troubleshoot_storage).
-* [Logging and monitoring](/docs/containers?topic=containers-cs_troubleshoot_health).
-* [Debugging Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress).
-* [Cluster networking](/docs/containers?topic=containers-cs_troubleshoot_network).
+For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs
+* [Debugging your cluster](/docs/containers?topic=containers-cs_troubleshoot)
+* [Clusters and worker nodes](/docs/containers?topic=containers-cs_troubleshoot_clusters)
+* [Storage](/docs/containers?topic=containers-cs_troubleshoot_storage)
+* [Logging and monitoring](/docs/containers?topic=containers-cs_troubleshoot_health)
+* [Debugging Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress)
+* [Cluster networking](/docs/containers?topic=containers-cs_troubleshoot_network)
 
 ## Feedback and questions
 {: #openshift_support}
@@ -200,11 +200,11 @@ Modify the registry console deployment so that you can access it externally.
 <br />
 
 
-## `oc` or `kubectl` commands fail
+## Missing projects or `oc` and `kubectl` commands fail
 {: #rhoks_ts_admin_config}
 
 {: tsSymptoms}
-When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
+You do not see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
 ```
 No resources found.
 Error from server (Forbidden): <resource> is forbidden: User "IAM#user@email.com" cannot list <resources> at the cluster scope: no RBAC policy matched
@@ -216,25 +216,6 @@ You need to download the `admin` configuration files for your cluster in order t
 
 {: tsResolve}
 Run `ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin` and try again.
-
-<br />
-
-
-## Cannot use `calicoctl`
-{: #rhoks_ts_calicoctl}
-
-{: tsSymptoms}
-When you try to use `calicoctl`, you get the following error.
-```
-Failed to create Calico API client: context deadline exceeded
-```
-{: screen}
-
-{: tsCauses}
-The Calico configuration file must be modified to update the `etcdEndpoint` field.
-
-{: tsResolve}
-Follow the instructions in the [Limitations topic](#openshift_limitations).
 
 <br />
 
