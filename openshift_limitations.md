@@ -44,3 +44,21 @@ The {{site.data.keyword.openshiftlong}} beta is released with the following limi
 {{site.data.keyword.cloud_notm}} file, block, and cloud object storage are supported. Portworx software-defined storage (SDS) is not supported.
 
 Because of the way that {{site.data.keyword.cloud_notm}} NFS file storage configures Linux user permissions, you might encounter errors when you use file storage. If so, you might need to configure [OpenShift Security Context Constraints ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html) or use a different storage type.
+
+## Metrics 
+{: #oc_limits_metrics}
+
+The [built-in Prometheus](/docs/openshift?topic=openshift-openshift_apps#openshift_access_oc_services) alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are managed in the cluster master, so you can ignore these alerts.
+
+Example alert:
+```
+alert: KubeControllerManagerDown
+expr: absent(up{job="kube-controllers"}
+  == 1)
+for: 15m
+labels:
+  severity: critical
+annotations:
+  message: KubeControllerManager has disappeared from Prometheus target discovery.
+```
+{: screen}
