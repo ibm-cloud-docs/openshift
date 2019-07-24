@@ -40,6 +40,7 @@ Red Hat OpenShift on IBM Cloud
     Administering clusters
         openshift_cluster_update.md
         /containers/containers-users
+        openshift_scc.md
         openshift_health.md
         /containers/containers-remove
         
