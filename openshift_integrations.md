@@ -89,6 +89,19 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
 You can add services to your Red Hat OpenShift on IBM Cloud cluster in various ways, including service binding, Helm charts, and operators. If you want to install open source software apps, make sure that these apps are compatible with your OpenShift cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.
 {: shortdesc}
 
+### IBM Cloud Paks
+{: #oc_cloud_paks}
+
+[IBM Cloud Paks&trade; ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized IBM middleware and open source software components that you are licensed to use in [IBM Passport Advantage]() as part of your hybrid cloud solution. IBM Cloud Paks run exclusively on OpenShift clusters, not community Kubernetes clusters. To use IBM Cloud Paks, you must set up your cluster environment as follows.
+{: shortdesc}
+
+1. In the project that you want to deploy the Cloud Pak to, make sure that you [set up the image pull secret to access images that are stored in {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-openshift-images#openshift_iccr).
+2. Import the Cloud Pak from Passport Advantage to your registry. Methods vary depending on the Cloud Pak.
+   * For public cloud environments, you can use the [`ibmcloud cr ppa-archive-load` CLI tool](/docs/services/Registry topic=registry-ts_index#ts_ppa_import).
+   * If you have ICP Common Services installed in your cluster, then you can use the [`cloudctl catalog load-archive` CLI tool (https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/app_center/add_package_offline.html).
+   * Some Cloud Paks such as {{site.data.keyword.icp4dfull_notm}} push the image to the registry for you as part of their installation process.
+3. Follow the instructions that are particular to each Cloud Pak installation, such as configuring the Helm chart values to work within OpenShift security context constraints.
+
 ### {{site.data.keyword.cloud_notm}} service binding
 {: #oc_service_binding}
 
