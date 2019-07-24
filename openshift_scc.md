@@ -30,19 +30,22 @@ subcollection: openshift
 With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).
 {: shortdesc}
 
-**Why do I set pod security policies?**</br>
+**Why do I set security context constraints?**</br>
 As a cluster admin, you want to control what happens in your cluster, especially actions that affect the cluster's security or readiness. Security context constraints can help you control what actions and access the pods in your container have, such as the usage of privileged containers, root namespaces, host networking and ports, volume types, host file systems, Linux permissions such as read-only or group IDs, and more.
 
 Trying to control which users have access to your cluster? See [Assigning cluster access](/docs/openshift?topic=containers-users) to set {{site.data.keyword.cloud_notm}} IAM and infrastructure permissions.
 {: tip}
 
-**Are any policies set by default?**</br>
+**Are any SCCs set by default?**</br>
 By default, Red Hat OpenShift on IBM Cloud clusters include a standard set of [OpenShift SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the [Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-psp#ibm_psp). These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
 
 **Can I use Kubernetes pod security policies instead?**</br>
 No. [Kubernetes pod security policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) (PSPs) are originally based on OpenShift SCCs. However, OpenShift 3.11 supports only SCCs, not PSPs.
 
 The default OpenShift SCCs are stricter than the default PSPs in community Kubernetes clusters. As such, app deployments that run in community Kubernetes clusters might need to be modified to run in OpenShift.
+
+<br />
+
 
 ## Customizing security context constraints
 {: #customize_sccs}
@@ -91,5 +94,5 @@ Do not edit existing OpenShift or IBM SCCs settings, except for `priority`, `use
 | `ibm-anyuid-hostaccess-scc`| Allows pods to run with any UID and GID, any volume, and full access to the host.<p class="important">Grant this SCC for only pods that require full access to the host and network.</p>|
 | `ibm-anyuid-hostpath-scc`| Allows pods to run with any UID and GID and any volume, including the host path.<p class="important">Grant this SCC for only pods that require access to `hostPath` volumes.</p>|
 | `ibm-anyuid-scc` | Allows pods to run with any UID and GID, but prevents access to the host.|
-| `ibm-privileged-scc`| Grants access to all privileged host features, and allows a pod to run with any UID and GID and any volume.<p class="important">Grant this SCC for only cluster administration that requires the most access possible.</p>|
+| `ibm-privileged-scc`| Grants access to all privileged host features, and allows a pod to run with any UID and GID and any volume.<p class="important">Grant this SCC for only cluster administration that requires the most access possible.</p> |
 {: caption="Default IBM security context constraints" caption-side="top"}
