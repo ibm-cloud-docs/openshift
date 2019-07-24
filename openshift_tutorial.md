@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-23"
+lastupdated: "2019-07-24"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -44,6 +44,8 @@ OpenShift worker nodes are available for paid accounts and standard clusters onl
 
 In the tutorial lessons, you create a standard Red Hat OpenShift on IBM Cloud cluster, open the OpenShift console, access built-in OpenShift components, deploy an app that uses {{site.data.keyword.cloud_notm}} services in an OpenShift project, and expose the app on an OpenShift route so that external users can access the service.
 {: shortdesc}
+
+![OpenShift tutorial diagram](images/roks_tutorial.png)
 
 ## Time required
 {: #openshift_time}
