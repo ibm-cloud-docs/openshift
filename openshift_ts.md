@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-23"
+lastupdated: "2019-07-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -14,7 +14,7 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-{:table: .aria-labeledby="caption"} 
+{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:note: .note}
@@ -29,7 +29,7 @@ subcollection: openshift
 Review some known issues or common error messages that you might encounter when you use {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs
+For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs:
 * [Debugging your cluster](/docs/containers?topic=containers-cs_troubleshoot)
 * [Clusters and worker nodes](/docs/containers?topic=containers-cs_troubleshoot_clusters)
 * [Storage](/docs/containers?topic=containers-cs_troubleshoot_storage)
@@ -76,7 +76,7 @@ CAE003: Unable to determine the ingress IP address for the network load balancer
 {: screen}
 
 {: tsCauses}
-The OpenVPN server could not be configured because the router IP address that is created for the network load balancer (NLB) could not be found. The router might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the Ingress setup did not complete.
+The OpenVPN server could not be configured because the router IP address that is created for the network load balancer (NLB) could not be found. The router might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the NLB setup did not complete.
 
 {: tsResolve}
 
@@ -106,10 +106,10 @@ The OpenVPN server could not be configured because the router IP address that is
     ```
     {: pre}
 
-**Verify that the Ingress setup completed successfully.**
-1.  Check that the `ibm-cloud-provider-ip-*` pods for Ingress are in a **Running** status.
+**Verify that the NLB setup completed successfully.**
+1.  Check that the `ibm-cloud-provider-ip-*` pods for the NLB are in a **Running** status.
     ```
-    oc get pods -n kube-system | grep alb
+    oc get pods -n ibm-system | grep ibm-cloud-provider-ip
     ```
     {: pre}
 2.  If a pod is not running, review the **Events** in the pod details to troubleshoot the issue further.
@@ -117,7 +117,7 @@ The OpenVPN server could not be configured because the router IP address that is
     oc describe pod -n kube-system <pod_name>
     ```
     {: pre}
-3.  After you resolve the Ingress pod issue, refresh the master to restart the Ingress setup.
+3.  After you resolve the NLB pod issue, refresh the master to restart the NLB setup.
     ```
     ibmcloud oc cluster-refresh --cluster <cluster_name_or_ID>
     ```
@@ -130,7 +130,7 @@ The OpenVPN server could not be configured because the router IP address that is
 {: #rhoks_ts_openvpn_dns}
 
 {: tsSymptoms}
-Could not create a domain name service for the network load balancer ('ibmcloud oc nlb-dns-create') with the following error message:<ul>
+Could not create a domain name service for the network load balancer (`ibmcloud oc nlb-dns-create`) with the following error message:<ul>
 <li><code>This action requires the Editor role for the cluster in IBM Cloud Container Service. Contact the IBM Cloud account administrator and request the required Identity and Access user role. (A0008)</code></li>
 <li><code>The specified cluster could not be found. (A0006)</code></li>
 <li><code>The input parameters in the request body are either incomplete or in the wrong format. Be sure to include all required parameters in your request in JSON format. (E0011)</code></li><ul>
@@ -160,7 +160,7 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
 {: tsSymptoms}
 After you create or update a cluster, the master status returns a VPN server configuration error message similar to the following.
 ```
-VPN server configuration update failed. IBM Cloud support has been notified and is working to resolve this issue. 
+VPN server configuration update failed. IBM Cloud support has been notified and is working to resolve this issue.
 ```
 {: screen}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-23"
+lastupdated: "2019-07-25"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -37,7 +37,7 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 ## Moving your apps to OpenShift
 {: #openshift_move_apps}
 
-OpenShift sets up stricter security settings by default than community Kubernetes. If you have apps that previously ran on community Kubernetes, you might need to modify your apps so that you can deploy them on OpenShift. 
+OpenShift sets up stricter security settings by default than community Kubernetes. If you have apps that previously ran on community Kubernetes, you might need to modify your apps so that you can deploy them on OpenShift.
 {: shortdesc}
 
 For example, apps that are configured to run as root might fail, with the pods in a `CrashLoopBackOff` status. To resolve this issue, you can either modify the default security context constraints or use an image that does not run as root.
@@ -65,7 +65,7 @@ For more information about the console, see the [OpenShift docs ![External link 
 ## Accessing built-in OpenShift services
 {: #openshift_access_oc_services}
 
-Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to help operate your cluster, such as the OpenShift console, Prometheus, and Grafana. For the beta, to access these services, you can use the local host of a [route ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html). The default route domain names follow a cluster-specific pattern of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.
+Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to help operate your cluster, such as the OpenShift console, Prometheus, and Grafana. For the beta, you can access these services by using the local host of a [route ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html). The default route domain names follow a cluster-specific pattern of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.
 {:shortdesc}
 
 You can access the built-in OpenShift service routes from the [console](#openshift_services_console) or [CLI](#openshift_services_cli). You might want to use the console to navigate through Kubernetes resources in one project. By using the CLI, you can list resources such as routes across projects.
@@ -74,11 +74,11 @@ You can access the built-in OpenShift service routes from the [console](#openshi
 {: #openshift_services_console}
 1.  From the OpenShift web console, in the dropdown menu in the OpenShift container platform menu bar, click **Application Console**.
 2.  Select the **default** project, then in the navigation pane, click **Applications > Pods**.
-3.  Verify that the **router** pods are in a **Running** status. The router functions as the ingress point for external network traffic. You can use the router to publicly expose the services in your cluster on the router's external IP address by using a route. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router proxies external requests for route host names to the IPs of the app pods that are identified by the service that you associated with the route host name.
+3.  Verify that the **router** pods are in a **Running** status. The router functions as the ingress point for external network traffic. You can use the router to publicly expose the services in your cluster on the router's external IP address by using a route. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router proxies external requests for route host names that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
 4.  From the **default** project navigation pane, click **Applications > Deployments** and then click the **registry-console** deployment. Your OpenShift cluster comes with an internal registry that you can use to manage local images for your deployments. To view your images, click **Applications > Routes** and open the registry console **Hostname** URL.
 5.  In the OpenShift container platform menu bar, from the dropdown menu, click **Cluster Console**.
 6.  From the navigation pane, expand **Monitoring**.
-7.  Click the built-in monitoring tool that you want to access, such as **Dashboards**. The Grafana route opens, `https://grafana-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.<p class="note">The first time that you access the host name, you might need to authenticate, such as by clicking **Log in with OpenShift** and authorizing access to your IAM identity.</p>
+7.  Click the built-in monitoring tool that you want to access, such as **Dashboards**. The Grafana route opens in the following format: `https://grafana-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.<p class="note">The first time that you access the host name, you might need to authenticate, such as by clicking **Log in with OpenShift** and authorizing access to your IAM identity.</p>
 
 ### Accessing built-in OpenShift services from the CLI
 {: #openshift_services_cli}
@@ -88,7 +88,7 @@ You can access the built-in OpenShift service routes from the [console](#openshi
     oc login https://c1-e.<region>.containers.cloud.ibm.com:<port> --token=<access_token>
     ```
     {: pre}
-2.  Verify that your router is deployed. The router functions as the ingress point for external network traffic. You can use the router to publicly expose the services in your cluster on the router's external IP address by using a route. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router proxies external requests for route host names to the IPs of the app pods that are identified by the service that you associated with the route host name.
+2.  Verify that your router is deployed. The router functions as the ingress point for external network traffic. You can use the router to publicly expose the services in your cluster on the router's external IP address by using a route. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router proxies external requests for route host names that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
     ```
     oc get svc router -n default
     ```

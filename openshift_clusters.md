@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-23"
+lastupdated: "2019-07-25"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -33,7 +33,7 @@ Create a {{site.data.keyword.openshiftlong}} cluster in {{site.data.keyword.cont
 To create OpenShift clusters, complete the following prerequisite steps.
 
 1.  [Prepare your account to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). This step includes creating a billable account, setting up an API key with infrastructure permissions, making sure that you have Administrator access in {{site.data.keyword.cloud_notm}} IAM, planning resource groups, and setting up account networking.
-2.  [Prepare to create clusters](/docs/containers?topic=containers-clusters#prepare_cluster_level). This step includes planning cluster setup, estimating costs, and allowing network traffic through a firewall, if applicable.<p class="note">OpenShift clusters are available [only as standard cluster, not free](/docs/openshift?topic=openshift-faqs#openshift_free).</p>
+2.  [Prepare to create clusters](/docs/containers?topic=containers-clusters#prepare_cluster_level). This step includes planning cluster setup, estimating costs, and if applicable, allowing network traffic through a firewall.<p class="note">OpenShift clusters are available [only as standard cluster, not free](/docs/openshift?topic=openshift-faqs#openshift_free).</p>
 3.   [Install the {{site.data.keyword.cloud_notm}} and OpenShift CLIs](/docs/openshift?topic=openshift-openshift-cli).
 
 <br />
@@ -83,7 +83,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     ```
     {: pre}
 
-    Example command to create a cluster with three workers nodes that have four cores and 16 GB memory in Washington, DC.
+    Example command to create a cluster with three workers nodes that have four cores and 16 GB memory in Washington, DC:
 
     ```
     ibmcloud oc cluster-create --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
@@ -102,7 +102,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     </tr>
     <tr>
     <td><code>--name <em>&lt;name&gt;</em></code></td>
-    <td>Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across {{site.data.keyword.cloud_notm}} regions.</td>
+    <td>Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphens (-), and must be 35 characters or fewer. Use a name that is unique across {{site.data.keyword.cloud_notm}} regions.</td>
     </tr>
     <tr>
     <td><code>--location <em>&lt;zone&gt;</em></code></td>
@@ -114,7 +114,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     </tr>
     <tr>
     <td><code>--machine-type <em>&lt;worker_node_flavor&gt;</em></code></td>
-    <td>Choose a machine type. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. To list available machine-types, run `ibmcloud oc machine-types --zone <zone>`.</td>
+    <td>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. To list available machine types, run `ibmcloud oc machine-types --zone <zone>`.</td>
     </tr>
     <tr>
     <td><code>--workers <em>&lt;number_of_worker_nodes_per_zone&gt;</em></code></td>
@@ -129,7 +129,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     <td>If you already have a private VLAN set up in your IBM Cloud infrastructure account for that zone, enter the ID of the private VLAN. To check available VLANs, run `ibmcloud oc vlans --zone <zone>`. <br><br>If you do not have a private VLAN in your account, do not specify this option. {{site.data.keyword.containerlong_notm}} automatically creates a private VLAN for you.</td>
     </tr>
     </tbody></table>
-3.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.<br><br>Is your cluster not in a **deployed** state? Check out the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway device, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).</p> 
+3.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.<br><br>Is your cluster not in a **deployed** state? Check out the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway device, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).</p>
 
     ```
     ibmcloud oc cluster-get --cluster <cluster_name_or_ID>
@@ -173,3 +173,12 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     {: screen}
 
 <br />
+
+
+## Next steps
+{: #next_steps}
+
+When the cluster is up and running, you can check out the following tasks:
+- If you created the cluster in a multizone capable zone, [spread worker nodes by adding a zone to your cluster](/docs/openshift?topic=containers-add_workers).
+- [Deploy an app in your cluster](/docs/containers?topic=openshift-openshift_apps).
+- [Expose your apps with routes](/docs/openshift?topic=openshift-openshift_routes).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-23"
+lastupdated: "2019-07-25"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -42,9 +42,6 @@ See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/conta
 ## Installing the OpenShift Origin CLI (`oc`)
 {: #cli_oc}
 
-[Red Hat OpenShift on IBM Cloud](/docs/containers?topic=containers-openshift_tutorial) is available as a beta to test out OpenShift clusters.
-{: preview}
-
 To view a local version of the OpenShift dashboard and to deploy apps into your Red Hat OpenShift on IBM Cloud clusters, install the OpenShift Origin CLI (`oc`). The `oc` CLI includes a matching version of the Kubernetes CLI (`kubectl`). For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html).
 {: shortdesc}
 
@@ -76,7 +73,7 @@ Using both community Kubernetes and OpenShift clusters? The `oc` CLI comes with 
         rm /usr/local/bin/kubectl
         ```
         {: pre}
-    2.  [Download separate `kubectl` binary files](#kubectl) that match the versions of your OpenShift and community Kubernetes clusters.
+    2.  [Download separate `kubectl` binary files](/docs/containers?topic=containers-cs_cli_install#kubectl) that match the versions of your OpenShift and community Kubernetes clusters.
     3.  **Optional**: Set up an alias in your local terminal profile to point to separate binaries that match the version of `kubectl` your cluster needs.
 4.  **Optional**: [Enable autocompletion for `kubectl` commands ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion). The steps vary depending on the shell that you use. You can repeat the steps to enable autocompletion for `oc` commands. For example in bash on Linux, instead of `kubectl completion bash >/etc/bash_completion.d/kubectl`, you can run `oc completion bash >/etc/bash_completion.d/oc_completion`.
 
@@ -91,7 +88,7 @@ For more information about the OpenShift Origin CLI, see the [`oc` commands docs
 ## Accessing an OpenShift cluster from the terminal or automation tools
 {: #openshift_cluster_login}
 
-Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) so that you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the OpenShift console, your IAM identity is used to generate an OpenShift login token that you can use to log in to the terminal. If you want to automate logging in to your cluster, you can create an IAM API key to use for the `oc login` command.
+Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). With IAM, you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the OpenShift console, your IAM identity is used to generate an OpenShift login token that you can use to log in to the terminal. You can automate logging in to your cluster by creating an IAM API key to use for the `oc login` command.
 {:shortdesc}
 
 **Before you begin**:
@@ -115,7 +112,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
     ibmcloud oc cluster-get --cluster <cluster_name_or_ID>
     ```
     {: pre}
-3.  Use the API key and cluster URL to log in to your OpenShift cluster. The user name (`-u`) is `apikey`, the password (`-p`) is your API key value, and the `--server` is the service endpoint URL of the cluster master.
+3.  Use the API key and cluster URL to log in to your OpenShift cluster. The user name (`-u`) is `apikey`, the password (`-p`) is your API key value, and the `--server` is the cluster master URL.
     ```
     oc login -u apikey -p <API_key> --server=<master_URL>
     ```

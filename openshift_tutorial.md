@@ -28,7 +28,7 @@ subcollection: openshift
 
 
 # Tutorial: Creating an IBM Cloud Red Hat OpenShift Container Platform cluster (beta)
-{: #openshift_tutorial} 
+{: #openshift_tutorial}
 
 The {{site.data.keyword.openshiftlong}} **beta** is available as an extension of {{site.data.keyword.containerlong_notm}} to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong_notm}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
 {: preview}
@@ -87,7 +87,7 @@ Any OpenShift clusters that you create during the beta remain for 30 days after 
     ibmcloud login -r (us-east|eu-gb) [-g default] [--sso]
     ```
     {: pre}
-3.  Create a cluster. The following command creates a cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC.
+3.  Create a cluster. The following command creates a cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlans --zone <zone>`.
     ```
     ibmcloud oc cluster-create --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
@@ -217,7 +217,7 @@ If you took a break from the last lesson and started a new terminal, make sure t
         hello-world   hello-world-hello.world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud    hello-world   8080-tcp   edge/Allow    None
         ```
         {: screen}
-5.  Access your app.
+5.  Access your app. Be sure to append `https://` to your route host name.
     ```
     curl https://hello-world-hello-world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud
     ```
@@ -264,5 +264,3 @@ If you took a break from the last lesson and started a new terminal, make sure t
 For more information about working with your apps and routing services, see the [OpenShift Developer Guide](https://docs.openshift.com/container-platform/3.11/dev_guide/index.html).
 
 Install two popular {{site.data.keyword.containerlong_notm}} add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-openshift_health#openshift_logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-openshift_health#openshift_sysdig).
-
-

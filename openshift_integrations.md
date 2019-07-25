@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-07-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -61,7 +61,7 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>The [Kubernetes Terminal add-on](/docs/containers?topic=containers-cs_cli_install#cli_web) is available for only community Kubernetes cluster, not OpenShift clusters.</dd>
 
   <dt>{{site.data.keyword.la_full_notm}}</dt>
-  <dd>Add log management capabilities to your cluster by deploying LogDNA as a third-party service to your worker nodes to manage logs from your pod containers. For more information, see the following docs.<ul> 
+  <dd>Add log management capabilities to your cluster by deploying LogDNA as a third-party service to your worker nodes to manage logs from your pod containers. For more information, see the following docs.<ul>
     <li>[About the LogDNA partnership](/docs/containers?topic=containers-service-partners#logdna-partner).</li>
     <li>[Setting up LogDNA in an OpenShift cluster](/docs/openshift?topic=openshift-openshift_health#openshift_logdna).</li>
     <li>[Tutorial: Managing Kubernetes cluster logs with {{site.data.keyword.loganalysisfull_notm}} with LogDNA](/docs/services/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-kube#kube).</li></ul></dd>
@@ -70,7 +70,7 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>[Razee ![External link icon](../icons/launch-glyph.svg "External link icon")](https://razee.io/) is an open-source project that automates and manages the deployment of Kubernetes resources across clusters, environments, and cloud providers, and helps you to visualize deployment information for your resources so that you can monitor the rollout process and find deployment issues more quickly. For more information about Razee and how to set up Razee in your cluster to automate your deployment process, see the [Razee documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/razee-io/Razee).</dd>
 
   <dt>{{site.data.keyword.mon_full_notm}}</dt>
-  <dd>Gain operational visibility into the performance and health of your apps by deploying Sysdig as a third-party service to your worker nodes to forward metrics to {{site.data.keyword.monitoringlong}}. For more information, see the following docs.<ul> 
+  <dd>Gain operational visibility into the performance and health of your apps by deploying Sysdig as a third-party service to your worker nodes to forward metrics to {{site.data.keyword.monitoringlong}}. For more information, see the following docs.<ul>
     <li>[About the Sysdig partnership](/docs/containers?topic=containers-service-partners#sydig-partner).</li>
     <li>[Setting up Sysdig in an OpenShift cluster](/docs/openshift?topic=openshift-openshift_health#openshift_sysdig).</li>
     <li>[Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/services/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster).</li></ul></dd>
@@ -98,8 +98,8 @@ You can add services to your Red Hat OpenShift on IBM Cloud cluster in various w
 1. In the project that you want to deploy the Cloud Pak to, make sure that you [set up the image pull secret to access images that are stored in {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-openshift-images#openshift_iccr).
 2. Import the Cloud Pak from Passport Advantage to your registry. Methods vary depending on the Cloud Pak.
    * For public cloud environments, you can use the [`ibmcloud cr ppa-archive-load` CLI tool](/docs/services/Registry topic=registry-ts_index#ts_ppa_import).
-   * If you have ICP Common Services installed in your cluster, then you can use the [`cloudctl catalog load-archive` CLI tool (https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/app_center/add_package_offline.html).
-   * Some Cloud Paks such as {{site.data.keyword.icp4dfull_notm}} push the image to the registry for you as part of their installation process.
+   * If you have ICP Common Services installed in your cluster, then you can use the [`cloudctl catalog load-archive` CLI tool](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/app_center/add_package_offline.html).
+   * Some Cloud Paks, such as {{site.data.keyword.icp4dfull_notm}}, push the image to the registry for you as part of their installation process.
 3. Follow the instructions that are particular to each Cloud Pak installation, such as configuring the Helm chart values to work within OpenShift security context constraints.
 
 ### {{site.data.keyword.cloud_notm}} service binding
@@ -118,4 +118,3 @@ To access {{site.data.keyword.cloud_notm}} services in your account, you can cre
 
 Instead of Helm, you might use [Operators ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html) to package, deploy, and update your apps. Operators are available for only OpenShift 4.1 versions. In the meantime, you can try out the [experimental {{site.data.keyword.cloud_notm}} Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/seed/olm/blob/master/pocs/openshift-ibmcloud/README.md).
 {: shortdesc}
- 
