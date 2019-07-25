@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-23"
+lastupdated: "2019-07-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -51,6 +51,15 @@ For more information, see [Comparison between OpenShift and community Kubernetes
 {: faq}
 
 You can create only standard OpenShift clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-clusters#clusters_free) and [deploy some apps](/docs/containers?topic=containers-app). Then, re-deploy the apps you try out in the Kubernetes cluster to your [OpenShift cluster](/docs/containers?topic=containers-openshift_tutorial#openshift_deploy_app).
+
+## Can I convert my beta OpenShift cluster to a GA cluster?
+{: #openshift_beta_convert}
+{: faq}
+
+The {{site.data.keyword.openshiftlong}} **beta** is available as an extension of {{site.data.keyword.containerlong_notm}} to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong_notm}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
+{: preview}
+
+When Red Hat OpenShift on IBM Cloud becomes generally available (GA), you can create a GA cluster and then re-deploy any apps that you use in the beta clusters before the beta clusters are removed. For an example of getting all the configuration files from a project, see the [OpenShift docs](https://docs.openshift.com/dedicated/admin_guide/assembly_backing-up-restoring-project-application.html).
 
 ## Which Kubernetes versions does the OpenShift service support?
 {: #supported_kube_versions}
