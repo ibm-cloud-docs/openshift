@@ -46,7 +46,7 @@ OpenShift worker nodes are available for paid accounts and standard clusters onl
 In the tutorial lessons, you create a standard Red Hat OpenShift on IBM Cloud cluster, open the OpenShift console, access built-in OpenShift components, deploy an app that uses {{site.data.keyword.cloud_notm}} services in an OpenShift project, and expose the app on an OpenShift route so that external users can access the service.
 {: shortdesc}
 
-![OpenShift tutorial diagram](/images/roks_tutorial.png)
+<img src="/images/roks_tutorial.png" width="600" alt="OpenShift tutorial diagram" style="width:600px; border-style: none"/>
 
 ## Time required
 {: #openshift_time}
