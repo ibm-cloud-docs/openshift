@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-07-25"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -25,6 +25,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
+
 
 # Tutorial: Creating an IBM Cloud Red Hat OpenShift Container Platform cluster (beta)
 {: #openshift_tutorial} 
