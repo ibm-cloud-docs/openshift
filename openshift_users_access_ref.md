@@ -743,7 +743,7 @@ The following table shows the Kubernetes resource permissions that are granted b
 Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding, predefined Kubernetes role-based access control (RBAC) role. If you plan to manage your own custom Kubernetes RBAC roles, see [Creating custom RBAC permissions for users, groups, or service accounts](/docs/containers?topic=containers-users#rbac).
 {: shortdesc}
 
-Wondering if you have the correct permissions to run a certain `{[kubectl]}` command on a resource in a namespace? Try the [`{[kubectl]} auth can-i` command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/generated/{[kubectl]}/{[kubectl]}-commands#-em-can-i-em-).
+Wondering if you have the correct permissions to run a certain `{[kubectl]}` command on a resource in a namespace? Try the [`{[kubectl]} auth can-i` command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em-).
 {: tip}
 
 The following table shows the permissions that are granted by each RBAC role to individual Kubernetes resources. Permissions are shown as which verbs a user with that role can complete against the resource, such as "get", "list", "describe", "create", or "delete".

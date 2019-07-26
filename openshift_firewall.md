@@ -30,7 +30,7 @@ Review these situations in which you might need to open specific ports and IP ad
 {:shortdesc}
 
 * [To run `ibmcloud` and `ibmcloud oc` commands](#firewall_bx) from your local system when corporate network policies prevent access to public internet endpoints via proxies or firewalls.
-* [To run `{[kubectl]}` commands](#firewall_{[kubectl]}) from your local system when corporate network policies prevent access to public internet endpoints via proxies or firewalls.
+* [To run `{[kubectl]}` commands](#firewall_kubectl) from your local system when corporate network policies prevent access to public internet endpoints via proxies or firewalls.
 * [To run `calicoctl` commands](#firewall_calicoctl) from your local system when corporate network policies prevent access to public internet endpoints via proxies or firewalls.
 * [To allow communication between the master and the worker nodes](#firewall_outbound) when either a firewall is set up for the worker nodes or the firewall settings are customized in your IBM Cloud infrastructure account.
 * [To allow the cluster to access resources over a firewall on the private network](#firewall_private).
@@ -78,7 +78,7 @@ If corporate network policies prevent access from your local system to public en
 
 
 ## Running `{[kubectl]}` commands from behind a firewall
-{: #firewall_{[kubectl]}}
+{: #firewall_kubectl}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `{[kubectl]}` commands, you must allow TCP access for the cluster.
 {:shortdesc}
@@ -197,9 +197,9 @@ To allow access for a specific cluster:
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `calicoctl` commands, you must allow TCP access for the Calico commands.
 {:shortdesc}
 
-Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`{[kubectl]}` commands](#firewall_{[kubectl]}).
+Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`{[kubectl]}` commands](#firewall_kubectl).
 
-1. Retrieve the IP address from the master URL that you used to allow the [`{[kubectl]}` commands](#firewall_{[kubectl]}).
+1. Retrieve the IP address from the master URL that you used to allow the [`{[kubectl]}` commands](#firewall_kubectl).
 
 2. Get the port for etcd.
 

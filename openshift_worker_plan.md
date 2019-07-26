@@ -327,7 +327,7 @@ If less CPU or memory is available than the worker node reserves, Kubernetes sta
 
 The resources that are reserved on your worker node depend on the amount of CPU and memory that your worker node comes with. {{site.data.keyword.containerlong_notm}} defines memory and CPU tiers as shown in the following tables. If your worker node comes with compute resources in multiple tiers, a percentage of your CPU and memory resources is reserved for each tier.
 
-To review how much compute resources are currently used on your worker node, run [`{[kubectl]} top node` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/{[kubectl]}/overview/#top).
+To review how much compute resources are currently used on your worker node, run [`{[kubectl]} top node` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#top).
 {: tip}
 
 | Memory tier | % or amount reserved | <code>b3c.4x16</code> worker node (16 GB) example | <code>mg1c.28x256</code> worker node (256 GB) example|
