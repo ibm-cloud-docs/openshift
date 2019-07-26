@@ -81,7 +81,7 @@ The OpenVPN server could not be configured because the router IP address that is
 {: tsResolve}
 
 **Verify that your cluster has available subnets.**
-1.  Check that your cluster has a **Subnet CIDR** for public and private subnets. If you set up a private VLAN-only cluster, you might only have a private subnet.
+1.  Check that your cluster has a **Subnet CIDR** for public and private subnets. If you set up a private VLAN-only cluster, you might have only a private subnet.
     ```
     ibmcloud oc cluster-get --cluster <cluster_name_or_ID> --showResources
     ```
