@@ -87,9 +87,6 @@ The following tables list the available multizone locations in Red Hat OpenShift
 To quickly determine whether a zone is multizone-capable, your can run `ibmcloud oc supported-locations` and look for the value in the `Multizone Metro` column.
 {: tip}
 
-{{site.data.keyword.cloud_notm}} resources used to be organized into regions that were accessed via [region-specific endpoints](#bluemix_regions). The tables list the previous regions for informational purposes. Going forward, you can use the [global endpoint](#endpoint) to move toward a region-less architecture.
-{: deprecated}
-
 **Multizone metro locations**
 
 <table summary="The table shows the available multizone metro locations in Red Hat OpenShift on IBM Cloud. Rows are to be read from the left to right.  Column one is the geography that the location is in, column two is the country of the location, column three is the metro of the location, column four is the data center, and column five is the deprecated region that the location used to be organized into.">
@@ -133,7 +130,7 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
     *   [Managing network traffic by using Ingress](/docs/containers?topic=containers-ingress-about).
     *   [Increasing the availability of your app](/docs/containers?topic=containers-app#increase_availability).
 
-3.  When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
+3.  When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
 
 <br />
 
@@ -164,7 +161,7 @@ When you log in to {{site.data.keyword.cloud_notm}}, you can access the {{site.d
 
 **Red Hat OpenShift on IBM Cloud CLI**:
 
-[Set up your CLI to use the `ibmcloud oc` plug-in](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_install). By default, you are logged in to the global Red Hat OpenShift on IBM Cloud endpoint, `https://containers.cloud.ibm.com`.
+[Set up your CLI to use the `ibmcloud oc` plug-in](/docs/openshift?topic=openshift-openshift-cli). By default, you are logged in to the global Red Hat OpenShift on IBM Cloud endpoint, `https://containers.cloud.ibm.com`.
 
 When you use the new global functionality in the Red Hat OpenShift on IBM Cloud CLI, consider the following changes from the legacy region-based functionality.
 
