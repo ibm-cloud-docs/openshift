@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-07-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,7 +39,7 @@ For more information, see [Comparison between OpenShift and community Kubernetes
 
 <dl>
   <dt>Kubernetes</dt>
-    <dd>[Kubernetes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/) is a production-grade, open source container orchestration platform that you can use to automate, scale, and manage your containerized apps that run on an Ubuntu operating system. With the [{{site.data.keyword.containerlong_notm}} version](/docs/containers?topic=containers-cs_versions#cs_versions), you get access to community Kubernetes API features that are considered **beta** or higher by the community. Kubernetes **alpha** features, which are subject to change, are generally not enabled by default. With Kubernetes, you can combine a variety of resources such as secrets, deployments, and services to securely create and manage highly available, containerized apps.<br><br>
+    <dd>[Kubernetes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/) is a production-grade, open source container orchestration platform that you can use to automate, scale, and manage your containerized apps that run on an Ubuntu operating system. With the [{{site.data.keyword.containerlong_notm}} version](/docs/containers?topic=containers-cs_versions#cs_versions), you get access to community Kubernetes API features that are considered **beta** or higher by the community. Kubernetes **alpha** features, which are subject to change, are generally not enabled by default. With Kubernetes, you can combine various resources such as secrets, deployments, and services to securely create and manage highly available, containerized apps.<br><br>
     To get started, [create a Kubernetes cluster](/docs/containers?topic=containers-cs_cluster_tutorial#cs_cluster_tutorial).</dd>
   <dt>OpenShift</dt>
     <dd>Red Hat OpenShift on IBM Cloud is a Kubernetes-based platform that is designed especially to accelerate your containerized app delivery processes that run on a Red Hat Enterprise Linux 7 operating system. You can orchestrate and scale your existing OpenShift workloads across on-prem and off-prem clouds for a portable, hybrid solution that works the same in multicloud scenarios. <br><br>
@@ -50,7 +50,7 @@ For more information, see [Comparison between OpenShift and community Kubernetes
 {: #openshift_free}
 {: faq}
 
-You can create only standard OpenShift clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-clusters#clusters_free) and [deploy some apps](/docs/containers?topic=containers-app). Then, re-deploy the apps you try out in the Kubernetes cluster to your [OpenShift cluster](/docs/containers?topic=containers-openshift_tutorial#openshift_deploy_app).
+You can create only standard OpenShift clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-clusters#clusters_free) and [deploy some apps](/docs/containers?topic=containers-app). Then, re-deploy the apps that you try out in the Kubernetes cluster to your [OpenShift cluster](/docs/containers?topic=containers-openshift_tutorial#openshift_deploy_app).
 
 ## Can I convert my beta OpenShift cluster to a GA cluster?
 {: #openshift_beta_convert}
