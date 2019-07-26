@@ -84,7 +84,7 @@ Red Hat OpenShift on IBM Cloud
     
     openshift_versions.md
         
-    /containers/containers-regions-and-zones
+    openshift_locations.md
     openshift_users_access_ref.md
     /containers/containers-at_events
     {: .navgroup-end}
