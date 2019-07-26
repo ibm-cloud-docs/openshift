@@ -592,7 +592,7 @@ ibmcloud oc cluster-addons --cluster CLUSTER
 ### `ibmcloud oc cluster-config`
 {: #cs_cluster_config}
 
-After logging in, download Kubernetes configuration data and certificates to connect to your cluster and run `{[kubectl]}` commands. The files are downloaded to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`.
+After logging in, download Kubernetes configuration data and certificates to connect to your cluster and run `oc` commands. The files are downloaded to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`.
 {: shortdesc}
 
 
@@ -730,7 +730,7 @@ diskEncryption: <em>false</em>
 <dd>**Standard clusters that run Kubernetes version 1.11 or later in [VRF-enabled accounts](/docs/resources?topic=resources-private-network-endpoints#getting-started)**: Enable the [private service endpoint](/docs/containers?topic=containers-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. In addition, you can choose to enable the public service endpoint by using the `--public-service-endpoint` flag to access your cluster over the internet. If you enable the private service endpoint only, you must be connected to the private VLAN to communicate with your Kubernetes master. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--public-service-endpoint</code></dt>
-<dd>**Standard clusters that run Kubernetes version 1.11 or later**: Enable the [public service endpoint](/docs/containers?topic=containers-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `{[kubectl]}` commands from your terminal. If you have a [VRF-enabled account](/docs/resources?topic=resources-private-network-endpoints#getting-started) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network. You can later disable the public service endpoint if you want a private-only cluster.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`.</dd>
+<dd>**Standard clusters that run Kubernetes version 1.11 or later**: Enable the [public service endpoint](/docs/containers?topic=containers-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. If you have a [VRF-enabled account](/docs/resources?topic=resources-private-network-endpoints#getting-started) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network. You can later disable the public service endpoint if you want a private-only cluster.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--workers WORKER</code></dt>
 <dd>The number of worker nodes that you want to deploy in your cluster. If you do not specify this option, a cluster with one worker node is created. This value is optional for standard clusters and is not available for free clusters.
@@ -961,7 +961,7 @@ For more information, see [Understanding how your cluster is authorized to pull 
 
 
 
-<p class="important">When you run this command, the creation of IAM credentials and image pull secrets is initiated and can take some time to complete. You cannot deploy containers that pull an image from the {{site.data.keyword.registrylong_notm}} `icr.io` domains until the image pull secrets are created. To check the image pull secrets, run `{[kubectl]} get secrets | grep icr`.</br></br>If you added IAM policies to an existing service ID, such as to restrict access to a regional registry, the service ID, IAM policies, and API key for the image pull secret are reset by this command.</p>
+<p class="important">When you run this command, the creation of IAM credentials and image pull secrets is initiated and can take some time to complete. You cannot deploy containers that pull an image from the {{site.data.keyword.registrylong_notm}} `icr.io` domains until the image pull secrets are created. To check the image pull secrets, run `oc get secrets | grep icr`.</br></br>If you added IAM policies to an existing service ID, such as to restrict access to a regional registry, the service ID, IAM policies, and API key for the image pull secret are reset by this command.</p>
 
 ```
 ibmcloud oc cluster-pull-secret-apply --cluster CLUSTER
@@ -1318,7 +1318,7 @@ ibmcloud oc va --container CONTAINER_ID [--extended] [--vulnerabilities] [--conf
 <dl>
 <dt><code>--container CONTAINER_ID</code></dt>
 <dd><p>The ID of the container. This value is required.</p>
-<p>To find the ID of your container:<ol><li>[Target the Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).</li><li>List your pods by running `{[kubectl]} get pods`.</li><li>Find the **Container ID** field in the output of the `{[kubectl]} describe pod <pod_name>` command. For example, `Container ID: containerd://1a11a1aa2b2b22223333c44444ccc555667d7dd777888e8ef99f1011121314g15`.</li><li>Remove the `containerd://` prefix from the ID before you use the container ID for the `ibmcloud oc va` command. For example, `1a11a1aa2b2b22223333c44444ccc555667d7dd777888e8ef99f1011121314g15`.</li></ol></p></dd>
+<p>To find the ID of your container:<ol><li>[Target the Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).</li><li>List your pods by running `oc get pods`.</li><li>Find the **Container ID** field in the output of the `oc describe pod <pod_name>` command. For example, `Container ID: containerd://1a11a1aa2b2b22223333c44444ccc555667d7dd777888e8ef99f1011121314g15`.</li><li>Remove the `containerd://` prefix from the ID before you use the container ID for the `ibmcloud oc va` command. For example, `1a11a1aa2b2b22223333c44444ccc555667d7dd777888e8ef99f1011121314g15`.</li></ol></p></dd>
 
 <dt><code>--extended</code></dt>
 <dd><p>Extend the command output to show more fix information for vulnerable packages. This value is optional.</p>
@@ -3241,7 +3241,7 @@ ibmcloud oc nlb-dns-add --cluster CLUSTER --ip IP --nlb-host HOST_NAME [--json] 
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>--ip <em>IP</em></code></dt>
-<dd>The NLB IP that you want to add to the host name. To see your NLB IPs, run <code>{[kubectl]} get svc</code>.</dd>
+<dd>The NLB IP that you want to add to the host name. To see your NLB IPs, run <code>oc get svc</code>.</dd>
 
 <dt><code>--nlb-host <em>HOST_NAME</em></code></dt>
 <dd>The host name that you want to add IPs to. To see existing host names, run <code>ibmcloud oc nlb-dnss</code>.</dd>
@@ -3281,7 +3281,7 @@ ibmcloud oc nlb-dns-create --cluster CLUSTER --ip IP [--json] [-s]
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>--ip <em>IP</em></code></dt>
-<dd>The network load balancer IP address that you want to register. To see your NLB IPs, run <code>{[kubectl]} get svc</code>. You can initially create the host name with only one IP address. If you have NLBs in each zone of a multizone cluster that expose one app, you can add the IPs of the other NLBs to the host name by running the [`ibmcloud oc nlb-dns-add` command](#cs_nlb-dns-add).</dd>
+<dd>The network load balancer IP address that you want to register. To see your NLB IPs, run <code>oc get svc</code>. You can initially create the host name with only one IP address. If you have NLBs in each zone of a multizone cluster that expose one app, you can add the IPs of the other NLBs to the host name by running the [`ibmcloud oc nlb-dns-add` command](#cs_nlb-dns-add).</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -3318,7 +3318,7 @@ ibmcloud oc nlb-dns-rm --cluster CLUSTER --ip IP --nlb-host HOST_NAME [--json] [
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>--ip <em>IP</em></code></dt>
-<dd>The NLB IP that you want to remove. To see your NLB IPs, run <code>{[kubectl]} get svc</code>.</dd>
+<dd>The NLB IP that you want to remove. To see your NLB IPs, run <code>oc get svc</code>.</dd>
 
 <dt><code>--nlb-host <em>HOST_NAME</em></code></dt>
 <dd>The host name that you want to remove an IP from. To see existing host names, run <code>ibmcloud oc nlb-dnss</code>.</dd>
@@ -3964,27 +3964,27 @@ Before you reboot your worker node, make sure that pods are rescheduled on other
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to remove.
    ```
-   {[kubectl]} get nodes
+   oc get nodes
    ```
    {: pre}
    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc workers --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 
 2. Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **name** of the worker node that you retrieved in the previous step.
    ```
-   {[kubectl]} cordon <worker_name>
+   oc cordon <worker_name>
    ```
    {: pre}
 
 3. Verify that pod scheduling is disabled for your worker node.
    ```
-   {[kubectl]} get nodes
+   oc get nodes
    ```
    {: pre}
    Your worker node is disabled for pod scheduling if the status displays **SchedulingDisabled**.
 
 4. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster.
   ```
-  {[kubectl]} drain <worker_name>
+  oc drain <worker_name>
   ```
   {: pre}
   This process can take a few minutes.
@@ -3994,9 +3994,9 @@ Before you reboot your worker node, make sure that pods are rescheduled on other
   ```
   {: pre}
 6. Wait about 5 minutes before you make your worker node available for pod scheduling to ensure that the reboot is finished. During the reboot, the state of your worker node does not change. The reboot of a worker node is usually completed in a few seconds.
-7. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `{[kubectl]} get nodes` command.
+7. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
   ```
-  {[kubectl]} uncordon <worker_name>
+  oc uncordon <worker_name>
   ```
   {: pre}
 
@@ -4054,24 +4054,24 @@ Before you reload your worker node, make sure that pods are rescheduled on other
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to reload.
    ```
-   {[kubectl]} get nodes
+   oc get nodes
    ```
    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc workers --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 2. Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **name** of the worker node that you retrieved in the previous step.
    ```
-   {[kubectl]} cordon <worker_name>
+   oc cordon <worker_name>
    ```
    {: pre}
 
 3. Verify that pod scheduling is disabled for your worker node.
    ```
-   {[kubectl]} get nodes
+   oc get nodes
    ```
    {: pre}
    Your worker node is disabled for pod scheduling if the status displays **SchedulingDisabled**.
  4. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster.
     ```
-    {[kubectl]} drain <worker_name>
+    oc drain <worker_name>
     ```
     {: pre}
     This process can take a few minutes.
@@ -4081,9 +4081,9 @@ Before you reload your worker node, make sure that pods are rescheduled on other
     ```
     {: pre}
  6. Wait for the reload to complete.
- 7. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `{[kubectl]} get nodes` command.
+ 7. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
     ```
-    {[kubectl]} uncordon <worker_name>
+    oc uncordon <worker_name>
     ```
 </br>
 
@@ -4135,25 +4135,25 @@ Before you remove your worker node, make sure that pods are rescheduled on other
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to remove.
    ```
-   {[kubectl]} get nodes
+   oc get nodes
    ```
    {: pre}
    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc workers --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 2. Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **name** of the worker node that you retrieved in the previous step.
    ```
-   {[kubectl]} cordon <worker_name>
+   oc cordon <worker_name>
    ```
    {: pre}
 
 3. Verify that pod scheduling is disabled for your worker node.
    ```
-   {[kubectl]} get nodes
+   oc get nodes
    ```
    {: pre}
    Your worker node is disabled for pod scheduling if the status displays **SchedulingDisabled**.
 4. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster.
    ```
-   {[kubectl]} drain <worker_name>
+   oc drain <worker_name>
    ```
    {: pre}
    This process can take a few minutes.
