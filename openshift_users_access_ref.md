@@ -32,7 +32,7 @@ When you [assign cluster permissions](/docs/containers?topic=containers-users), 
 ## {{site.data.keyword.cloud_notm}} IAM platform roles
 {: #iam_platform}
 
-{[product_name_notm}} is configured to use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles. {{site.data.keyword.cloud_notm}} IAM platform roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform roles also automatically set basic infrastructure permissions for users. To set platform roles, see [Assigning {{site.data.keyword.cloud_notm}} IAM platform permissions](/docs/containers?topic=containers-users#platform).
+Red Hat OpenShift on IBM Cloud is configured to use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles. {{site.data.keyword.cloud_notm}} IAM platform roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform roles also automatically set basic infrastructure permissions for users. To set platform roles, see [Assigning {{site.data.keyword.cloud_notm}} IAM platform permissions](/docs/containers?topic=containers-users#platform).
 {: shortdesc}
 
 <p class="tip">Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.</p>
@@ -52,7 +52,7 @@ Any user in your account who runs the CLI command or makes the API call for the 
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require no permissions in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require no permissions in Red Hat OpenShift on IBM Cloud</caption>
 <thead>
 <th id="none-actions-action">Action</th>
 <th id="none-actions-cli">CLI command</th>
@@ -60,12 +60,12 @@ Any user in your account who runs the CLI command or makes the API call for the 
 </thead>
 <tbody>
 <tr>
-<td>View a list of supported versions for managed add-ons in {[product_name_notm}}.</td>
+<td>View a list of supported versions for managed add-ons in Red Hat OpenShift on IBM Cloud.</td>
 <td><code>[ibmcloud oc addon-versions](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_addon_versions)</code></td>
 <td><code>[GET /v1/addon](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetAddons)</code></td>
 </tr>
 <tr>
-<td>Target or view the API endpoint for {[product_name_notm}}.</td>
+<td>Target or view the API endpoint for Red Hat OpenShift on IBM Cloud.</td>
 <td><code>[ibmcloud oc api](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cli_api)</code></td>
 <td>-</td>
 </tr>
@@ -80,7 +80,7 @@ Any user in your account who runs the CLI command or makes the API call for the 
 <td>-</td>
 </tr>
 <tr>
-<td>Deprecated: View a list of Kubernetes versions supported in {[product_name_notm}}.</td>
+<td>Deprecated: View a list of Kubernetes versions supported in Red Hat OpenShift on IBM Cloud.</td>
 <td><code>[ibmcloud oc kube-versions](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_kube_versions)</code></td>
 <td><code>[GET /v1/kube-versions](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetKubeVersions)</code></td>
 </tr>
@@ -95,12 +95,12 @@ Any user in your account who runs the CLI command or makes the API call for the 
 <td><code>[GET /v1/messages](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetMessages)</code></td>
 </tr>
 <tr>
-<td>Deprecated: Find the {[product_name_notm}} region that you are currently in.</td>
+<td>Deprecated: Find the Red Hat OpenShift on IBM Cloud region that you are currently in.</td>
 <td><code>[ibmcloud oc region](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_region)</code></td>
 <td>-</td>
 </tr>
 <tr>
-<td>Deprecated: Set the region for {[product_name_notm}}.</td>
+<td>Deprecated: Set the region for Red Hat OpenShift on IBM Cloud.</td>
 <td><code>[ibmcloud oc region-set](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_region-set)</code></td>
 <td>-</td>
 </tr>
@@ -110,12 +110,12 @@ Any user in your account who runs the CLI command or makes the API call for the 
 <td><code>[GET /v1/regions](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetRegions)</code></td>
 </tr>
 <tr>
-<td>View a list of supported locations in {[product_name_notm}}.</td>
+<td>View a list of supported locations in Red Hat OpenShift on IBM Cloud.</td>
 <td><code>[ibmcloud oc supported-locations](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_supported-locations)</code></td>
 <td><code>[GET /v1/locations](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/ListLocations)</code></td>
 </tr>
 <tr>
-<td>View a list of supported versions in {[product_name_notm}}.</td>
+<td>View a list of supported versions in Red Hat OpenShift on IBM Cloud.</td>
 <td><code>[ibmcloud oc versions](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_versions_command)</code></td>
 <td>-</td>
 </tr>
@@ -134,7 +134,7 @@ The **Viewer** platform role includes the [actions that require no permissions](
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require the Viewer platform role in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require the Viewer platform role in Red Hat OpenShift on IBM Cloud</caption>
 <thead>
 <th id="view-actions-mngt">Action</th>
 <th id="view-actions-cli">CLI command</th>
@@ -275,7 +275,7 @@ The **Editor** platform role includes the permissions that are granted by **View
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require the Editor platform role in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require the Editor platform role in Red Hat OpenShift on IBM Cloud</caption>
 <thead>
 <th id="editor-actions-mngt">Action</th>
 <th id="editor-actions-cli">CLI command</th>
@@ -442,7 +442,7 @@ The **Operator** platform role includes the permissions that are granted by **Vi
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require the Operator platform role in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require the Operator platform role in Red Hat OpenShift on IBM Cloud</caption>
 <thead>
 <th id="operator-mgmt">Action</th>
 <th id="operator-cli">CLI command</th>
@@ -554,7 +554,7 @@ The **Administrator** platform role includes all permissions that are granted by
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require the Administrator platform role in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require the Administrator platform role in Red Hat OpenShift on IBM Cloud</caption>
 <thead>
 <th id="admin-mgmt">Action</th>
 <th id="admin-cli">CLI command</th>

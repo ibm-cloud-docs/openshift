@@ -35,7 +35,7 @@ These use cases highlight how workloads on {[product_name_tm}} benefit from the 
 An IT Exec for a healthcare provider has business reporting and patient systems on-premises. Those systems go through slow enhancement cycles, which leads to stagnant patient service levels.
 {: shortdesc}
 
-Why {{site.data.keyword.cloud_notm}}: To improve patient service, the provider looked to {[product_name_notm}} and {{site.data.keyword.contdelivery_full}} to reduce IT spend and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently. Yet the on-premises environment hindered agile development. The provider also wanted to counteract increasing labor costs and a decreasing budget.
+Why {{site.data.keyword.cloud_notm}}: To improve patient service, the provider looked to Red Hat OpenShift on IBM Cloud and {{site.data.keyword.contdelivery_full}} to reduce IT spend and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently. Yet the on-premises environment hindered agile development. The provider also wanted to counteract increasing labor costs and a decreasing budget.
 
 Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
@@ -49,7 +49,7 @@ They started by containerizing their SaaS systems and putting them in the cloud.
 
 Accelerated development is a key win for the IT Exec. With the move to public cloud, Developers can experiment easily with Node.js SDK, pushing changes to Development and Test systems, scaled out on separate clusters. Those pushes were automated with open toolchains and {{site.data.keyword.contdelivery_full}}. Updates to the SaaS system no longer languished in slow, error-prone build processes. The Developers can deliver incremental updates to their users, daily or even more frequently.  Also, logging and monitoring for the SaaS systems, especially how the patient front-end and back-end reports interact, rapidly integrate into the system. Developers don’t waste time building complex logging systems, just to be able to troubleshoot live systems.
 
-Security first: With bare metal for {[product_name_notm}}, the sensitive patient workloads now have familiar isolation but within the flexibility of public cloud. From that core, Vulnerability Advisor provides scanning:
+Security first: With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive patient workloads now have familiar isolation but within the flexibility of public cloud. From that core, Vulnerability Advisor provides scanning:
 * Image vulnerability scanning
 * Policy scanning based on ISO 27k
 * Live container scanning
@@ -75,31 +75,31 @@ On-demand compute, storage, and I/O services run in the public cloud with secure
 * Consistently enforce policy-driven authentication to your services and APIs with a simple Ingress annotation. With declarative security you can ensure user authentication and token validation by using {{site.data.keyword.appid_short_notm}}.
 
 **Step 2: Lift and shift**
-* Migrate virtual machine images to container images that run in {[product_name_notm}} in the public cloud.
+* Migrate virtual machine images to container images that run in Red Hat OpenShift on IBM Cloud in the public cloud.
 * Provide standardized DevOps dashboards and practices through Kubernetes.
 * Enable on-demand scaling of compute for batch and other back-office workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to on-premises DBMS.
 * Private data center / on-premises capital costs are greatly reduced and replaced with a utility computing model that scales based on workload demand.
 
 **Step 3: Microservices and Garage Method**
-* Rearchitect apps into a set of cooperative microservices. That set runs within {[product_name_notm}} that is based on functional areas of the app with the most quality problems.
+* Rearchitect apps into a set of cooperative microservices. That set runs within Red Hat OpenShift on IBM Cloud that is based on functional areas of the app with the most quality problems.
 * Use {{site.data.keyword.cloudant}} with customer provided keys for caching data in the cloud.
 * Adopt continuous integration and delivery (CI/CD) practices so that Developers version and release a microservice on its own schedule as needed. {{site.data.keyword.contdelivery_full}} provides for workflow toolchains for CI/CD process along with image creation and vulnerability scanning of container images.
 * Adopt the agile and iterative development practices from the IBM Garage Method to enable frequent releases of new functions, patches, and fixes without downtime.
 
 **Technical solution**
-* {[product_name_notm}}
+* Red Hat OpenShift on IBM Cloud
 * {{site.data.keyword.cloudant}}
 * {{site.data.keyword.SecureGatewayfull}}
 * {{site.data.keyword.appid_short_notm}}
 
-For the most sensitive workloads, the clusters can be hosted in {[product_name_notm}} for Bare Metal. By using industry-standard containers technology, apps can initially be rehosted on {[product_name_notm}} quickly without major architectural changes. This change provides the immediate benefit of scalability.
+For the most sensitive workloads, the clusters can be hosted in Red Hat OpenShift on IBM Cloud for Bare Metal. By using industry-standard containers technology, apps can initially be rehosted on Red Hat OpenShift on IBM Cloud quickly without major architectural changes. This change provides the immediate benefit of scalability.
 
-They can replicate and scale the apps by using defined rules and the automated Kubernetes orchestrator. {[product_name_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services on demand. By using Kubernetes's deployment and runtime objects, the provider can monitor and manage upgrades to apps reliably.
+They can replicate and scale the apps by using defined rules and the automated Kubernetes orchestrator. Red Hat OpenShift on IBM Cloud provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services on demand. By using Kubernetes's deployment and runtime objects, the provider can monitor and manage upgrades to apps reliably.
 
-{{site.data.keyword.SecureGatewayfull}} is used to create a secure pipeline to on-premises databases and documents for apps that are rehosted to run in {[product_name_notm}}.
+{{site.data.keyword.SecureGatewayfull}} is used to create a secure pipeline to on-premises databases and documents for apps that are rehosted to run in Red Hat OpenShift on IBM Cloud.
 
-{{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query. To minimize queries to the back-office RDBMS, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps. These choices improve the front-end app usability and performance across the apps on {[product_name_notm}}.
+{{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query. To minimize queries to the back-office RDBMS, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps. These choices improve the front-end app usability and performance across the apps on Red Hat OpenShift on IBM Cloud.
 
 Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough though. The provider needs to go through a process and methods transformation as well. By adopting the practices of the IBM Garage Method, the provider can implement an agile and iterative delivery process that supports modern DevOps practices like CI/CD.
 
@@ -116,7 +116,7 @@ Much of the CI/CD process itself is automated with IBM's Continuous Delivery ser
 A Development Exec for a disease research nonprofit has academic and industry researchers who can't easily share research data. Instead, their work's isolated in pockets across the globe due to regional compliance regulations and centralized databases.
 {: shortdesc}
 
-Why {{site.data.keyword.cloud_notm}}: {[product_name_notm}} delivers secure compute that can host sensitive and performant data processing on an open platform. That global platform is hosted in near-by regions. So it's tied to local regulations that inspire patients’ and researchers’ confidence that their data is both protected locally and makes a difference in better health outcomes.
+Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud delivers secure compute that can host sensitive and performant data processing on an open platform. That global platform is hosted in near-by regions. So it's tied to local regulations that inspire patients’ and researchers’ confidence that their data is both protected locally and makes a difference in better health outcomes.
 
 Key technologies:
 * [Intelligent scheduling places workloads where needed](/docs/containers?topic=containers-regions-and-zones#regions-and-zones)
@@ -157,11 +157,11 @@ The compute cluster runs the PyTorch ML framework, and machine learning apps are
 
 The nonprofit also provides apps that run on non-bare metal nodes of the global cluster. The apps view and extract the aggregated data and the ML app output. These apps are accessible by a public endpoint, which is secured by the API Gateway to the world. Then, researchers and data analysts from everywhere can download data sets and do their own analysis.
 
-**Hosting research workloads on {[product_name_notm}}**
+**Hosting research workloads on Red Hat OpenShift on IBM Cloud**
 
-Developers started by deploying their research-sharing SaaS apps in containers with {[product_name_notm}}. They created clusters for a Development environment that allow worldwide Developers to collaboratively deploy app improvements quickly.
+Developers started by deploying their research-sharing SaaS apps in containers with Red Hat OpenShift on IBM Cloud. They created clusters for a Development environment that allow worldwide Developers to collaboratively deploy app improvements quickly.
 
-Security first: The Development Exec chose bare metal to host the research clusters. With bare metal for {[product_name_notm}}, the sensitive research workloads now have familiar isolation but within the flexibility of public cloud. Because this nonprofit also has a partnership with pharmaceutical companies, app security is crucial. Competition is fierce, and corporate espionage is possible. From that secure core, Vulnerability Advisor provides scanning:
+Security first: The Development Exec chose bare metal to host the research clusters. With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive research workloads now have familiar isolation but within the flexibility of public cloud. Because this nonprofit also has a partnership with pharmaceutical companies, app security is crucial. Competition is fierce, and corporate espionage is possible. From that secure core, Vulnerability Advisor provides scanning:
 * Image vulnerability scanning
 * Policy scanning based on ISO 27k
 * Live container scanning
@@ -178,37 +178,37 @@ Developers focus on domain problems, by using existing tools: Instead of writing
 On-demand compute, storage, and Node starter kits run in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.
 
 Technical solution:
-* {[product_name_notm}}
+* Red Hat OpenShift on IBM Cloud
 * {{site.data.keyword.openwhisk}}
 * {{site.data.keyword.cloudant}}
 * {{site.data.keyword.SecureGatewayfull}}
 
 **Step 1: Containerize apps by using microservices**
 * Use the Node.js starter kit from IBM to jump-start development.
-* Structure apps into a set of cooperative microservices within {[product_name_notm}} based on functional areas of the app and its dependencies.
-* Deploy research apps to containers in {[product_name_notm}}.
+* Structure apps into a set of cooperative microservices within Red Hat OpenShift on IBM Cloud based on functional areas of the app and its dependencies.
+* Deploy research apps to containers in Red Hat OpenShift on IBM Cloud.
 * Provide standardized DevOps dashboards through Kubernetes.
 * Enable on-demand scaling of compute for batch and other research workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to existing on-premises databases.
 
 **Step 2: Use secure and performant compute**
-* ML apps that require higher-performing compute are hosted on {[product_name_notm}} on Bare Metal. This ML cluster is centralized, so each regional cluster doesn't have the expense of bare metal workers; Kubernetes deployments are easier too.
+* ML apps that require higher-performing compute are hosted on Red Hat OpenShift on IBM Cloud on Bare Metal. This ML cluster is centralized, so each regional cluster doesn't have the expense of bare metal workers; Kubernetes deployments are easier too.
 * Vulnerability Advisor provides image, policy, container, and packaging scanning vulnerability scanning, for known malware.
 
 **Step 3: Ensure global availability**
 * After Developers build and test the apps in their Development and Test clusters, they use the IBM CI/CD toolchains to deploy apps into clusters across the globe.
-* Built-in HA tools in {[product_name_notm}} balance the workload within each geographic region, including self-healing and load balancing.
+* Built-in HA tools in Red Hat OpenShift on IBM Cloud balance the workload within each geographic region, including self-healing and load balancing.
 * With the toolchains and Helm deployment tools, the apps are also deployed to clusters across the globe, so workloads and data meet regional regulations.
 
 **Step 4: Data sharing**
 * {{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query.
 * To minimize queries to the regional databases, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps.
-* This choice improves the front-end app usability and performance across apps on {[product_name_notm}}.
-* While worker apps in {[product_name_notm}} analyze on-premises data and store results in {{site.data.keyword.cloudant}}, {{site.data.keyword.openwhisk}} reacts to changes and automatically sanitizes data on the incoming feeds of data.
+* This choice improves the front-end app usability and performance across apps on Red Hat OpenShift on IBM Cloud.
+* While worker apps in Red Hat OpenShift on IBM Cloud analyze on-premises data and store results in {{site.data.keyword.cloudant}}, {{site.data.keyword.openwhisk}} reacts to changes and automatically sanitizes data on the incoming feeds of data.
 * Similarly, notifications of research breakthroughs in one region can be triggered through data uploads so that all researchers can take advantage of new data.
 
 **Results**
-* With starter kits, {[product_name_notm}}, and IBM CI/CD tools, global Developers work across institutions and collaboratively develop research apps, with familiar and interoperable tools.
+* With starter kits, Red Hat OpenShift on IBM Cloud, and IBM CI/CD tools, global Developers work across institutions and collaboratively develop research apps, with familiar and interoperable tools.
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.
 * Researchers have access to clinical data and can share clinical data, while they comply with local regulations.
 * Patients who participate in disease research feel confident that their data is secure and making a difference, when it is shared with large research teams.
