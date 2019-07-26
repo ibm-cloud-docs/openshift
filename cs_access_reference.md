@@ -32,7 +32,7 @@ When you [assign cluster permissions](/docs/containers?topic=containers-users), 
 ## {{site.data.keyword.cloud_notm}} IAM platform roles
 {: #iam_platform}
 
-{[product_name_notm}} is configured to use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles. {{site.data.keyword.cloud_notm}} IAM platform roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform roles also automatically set basic infrastructure permissions for users. To set platform roles, see [Assigning {{site.data.keyword.cloud_notm}} IAM platform permissions](/docs/containers?topic=containers-users#platform).
+{{site.data.keyword.containerlong_notm}} is configured to use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles. {{site.data.keyword.cloud_notm}} IAM platform roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform roles also automatically set basic infrastructure permissions for users. To set platform roles, see [Assigning {{site.data.keyword.cloud_notm}} IAM platform permissions](/docs/containers?topic=containers-users#platform).
 {: shortdesc}
 
 <p class="tip">Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.</p>
@@ -52,7 +52,7 @@ Any user in your account who runs the CLI command or makes the API call for the 
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require no permissions in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require no permissions in {{site.data.keyword.containerlong_notm}}</caption>
 <thead>
 <th id="none-actions-action">Action</th>
 <th id="none-actions-cli">CLI command</th>
@@ -60,12 +60,12 @@ Any user in your account who runs the CLI command or makes the API call for the 
 </thead>
 <tbody>
 <tr>
-<td>View a list of supported versions for managed add-ons in {[product_name_notm}}.</td>
+<td>View a list of supported versions for managed add-ons in {{site.data.keyword.containerlong_notm}}.</td>
 <td><code>[ibmcloud ks addon-versions](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_addon_versions)</code></td>
 <td><code>[GET /v1/addon](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetAddons)</code></td>
 </tr>
 <tr>
-<td>Target or view the API endpoint for {[product_name_notm}}.</td>
+<td>Target or view the API endpoint for {{site.data.keyword.containerlong_notm}}.</td>
 <td><code>[ibmcloud ks api](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cli_api)</code></td>
 <td>-</td>
 </tr>
@@ -80,7 +80,7 @@ Any user in your account who runs the CLI command or makes the API call for the 
 <td>-</td>
 </tr>
 <tr>
-<td>Deprecated: View a list of Kubernetes versions supported in {[product_name_notm}}.</td>
+<td>Deprecated: View a list of Kubernetes versions supported in {{site.data.keyword.containerlong_notm}}.</td>
 <td><code>[ibmcloud ks kube-versions](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_kube_versions)</code></td>
 <td><code>[GET /v1/kube-versions](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetKubeVersions)</code></td>
 </tr>
@@ -95,12 +95,12 @@ Any user in your account who runs the CLI command or makes the API call for the 
 <td><code>[GET /v1/messages](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetMessages)</code></td>
 </tr>
 <tr>
-<td>Deprecated: Find the {[product_name_notm}} region that you are currently in.</td>
+<td>Deprecated: Find the {{site.data.keyword.containerlong_notm}} region that you are currently in.</td>
 <td><code>[ibmcloud ks region](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_region)</code></td>
 <td>-</td>
 </tr>
 <tr>
-<td>Deprecated: Set the region for {[product_name_notm}}.</td>
+<td>Deprecated: Set the region for {{site.data.keyword.containerlong_notm}}.</td>
 <td><code>[ibmcloud ks region-set](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_region-set)</code></td>
 <td>-</td>
 </tr>
@@ -110,12 +110,12 @@ Any user in your account who runs the CLI command or makes the API call for the 
 <td><code>[GET /v1/regions](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetRegions)</code></td>
 </tr>
 <tr>
-<td>View a list of supported locations in {[product_name_notm}}.</td>
+<td>View a list of supported locations in {{site.data.keyword.containerlong_notm}}.</td>
 <td><code>[ibmcloud ks supported-locations](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_supported-locations)</code></td>
 <td><code>[GET /v1/locations](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/ListLocations)</code></td>
 </tr>
 <tr>
-<td>View a list of supported versions in {[product_name_notm}}.</td>
+<td>View a list of supported versions in {{site.data.keyword.containerlong_notm}}.</td>
 <td><code>[ibmcloud ks versions](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_versions_command)</code></td>
 <td>-</td>
 </tr>
@@ -134,7 +134,7 @@ The **Viewer** platform role includes the [actions that require no permissions](
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require the Viewer platform role in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require the Viewer platform role in {{site.data.keyword.containerlong_notm}}</caption>
 <thead>
 <th id="view-actions-mngt">Action</th>
 <th id="view-actions-cli">CLI command</th>
@@ -162,7 +162,7 @@ The **Viewer** platform role includes the [actions that require no permissions](
 <td><code>[GET /v1/logging/{idOrName}/clusterkeyowner](https://containers.cloud.ibm.com/global/swagger-global-api/#/logging/GetClusterKeyOwner)</code></td>
 </tr>
 <tr>
-<td>Download Kubernetes configuration data and certificates to connect to your cluster and run `kubectl` commands.</td>
+<td>Download Kubernetes configuration data and certificates to connect to your cluster and run `{[kubectl]}` commands.</td>
 <td><code>[ibmcloud ks cluster-config](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config)</code></td>
 <td><code>[GET /v1/clusters/{idOrName}/config](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterConfig)</code></td>
 </tr>
@@ -275,7 +275,7 @@ The **Editor** platform role includes the permissions that are granted by **View
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require the Editor platform role in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require the Editor platform role in {{site.data.keyword.containerlong_notm}}</caption>
 <thead>
 <th id="editor-actions-mngt">Action</th>
 <th id="editor-actions-cli">CLI command</th>
@@ -442,7 +442,7 @@ The **Operator** platform role includes the permissions that are granted by **Vi
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require the Operator platform role in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require the Operator platform role in {{site.data.keyword.containerlong_notm}}</caption>
 <thead>
 <th id="operator-mgmt">Action</th>
 <th id="operator-cli">CLI command</th>
@@ -554,7 +554,7 @@ The **Administrator** platform role includes all permissions that are granted by
 {: shortdesc}
 
 <table>
-<caption>Overview of CLI commands and API calls that require the Administrator platform role in {[product_name_notm}}</caption>
+<caption>Overview of CLI commands and API calls that require the Administrator platform role in {{site.data.keyword.containerlong_notm}}</caption>
 <thead>
 <th id="admin-mgmt">Action</th>
 <th id="admin-cli">CLI command</th>
@@ -720,8 +720,16 @@ The following table shows the Kubernetes resource permissions that are granted b
         <li>Create RBAC roles and role bindings in a namespace or cluster roles and cluster role bindings in all namespaces</li>
         <li>Access the Kubernetes dashboard</li>
         <li>Create an Ingress resource that makes apps publicly available</li>
-        <li>Review cluster metrics such as with the <code>kubectl top pods</code>, <code>kubectl top nodes</code>, or <code>kubectl get nodes</code> commands</li></ul>
+        <li>Review cluster metrics such as with the <code>{[kubectl]} top pods</code>, <code>{[kubectl]} top nodes</code>, or <code>{[kubectl]} get nodes</code> commands</li></ul>
     </td>
+  </tr>
+    <tr>
+    <td>Any service role</td>
+    <td>**OpenShift clusters only**: All users of an OpenShift cluster are given the `basic-users` and `self-provisioners` cluster roles as applied by the `basic-users` and `self-provisioners` cluster role bindings.</td>
+    <td><ul>
+      <li>Get basic information about projects that the user has access to.</li>
+      <li>Create authorized resources in the projects that the user has access to.</li>
+      <li>For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_rbac.html).</li></ul></td>
   </tr>
 </tbody>
 </table>
@@ -735,7 +743,7 @@ The following table shows the Kubernetes resource permissions that are granted b
 Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding, predefined Kubernetes role-based access control (RBAC) role. If you plan to manage your own custom Kubernetes RBAC roles, see [Creating custom RBAC permissions for users, groups, or service accounts](/docs/containers?topic=containers-users#rbac).
 {: shortdesc}
 
-Wondering if you have the correct permissions to run a certain `kubectl` command on a resource in a namespace? Try the [`kubectl auth can-i` command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em-).
+Wondering if you have the correct permissions to run a certain `{[kubectl]}` command on a resource in a namespace? Try the [`{[kubectl]} auth can-i` command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em-).
 {: tip}
 
 The following table shows the permissions that are granted by each RBAC role to individual Kubernetes resources. Permissions are shown as which verbs a user with that role can complete against the resource, such as "get", "list", "describe", "create", or "delete".

@@ -31,7 +31,7 @@ Every {{site.data.keyword.containerlong}} cluster is set up with a network plug-
 
 If you have unique security requirements or you have a multizone cluster with VLAN spanning enabled, you can use Calico and Kubernetes to create network policies for a cluster. With Kubernetes network policies, you can specify the network traffic that you want to allow or block to and from a pod within a cluster. To set more advanced network policies such as blocking inbound (ingress) traffic to network load balancer (NLB) services, use Calico network policies.
 
-* [Kubernetes network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/network-policies/): These policies specify how pods can communicate with other pods and with external endpoints. As of Kubernetes version 1.8, both incoming and outgoing network traffic can be allowed or blocked based on protocol, port, and source or destination IP addresses. Traffic can also be filtered based on pod and namespace labels. Kubernetes network policies are applied by using `kubectl` commands or the Kubernetes APIs. When these policies are applied, they are automatically converted into Calico network policies and Calico enforces these policies.
+* [Kubernetes network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/network-policies/): These policies specify how pods can communicate with other pods and with external endpoints. As of Kubernetes version 1.8, both incoming and outgoing network traffic can be allowed or blocked based on protocol, port, and source or destination IP addresses. Traffic can also be filtered based on pod and namespace labels. Kubernetes network policies are applied by using `{[kubectl]}` commands or the Kubernetes APIs. When these policies are applied, they are automatically converted into Calico network policies and Calico enforces these policies.
 * [Calico network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/getting-started/bare-metal/policy/): These policies are a superset of the Kubernetes network policies and are applied by using `calicoctl` commands. Calico policies add the following features.
   * Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or CIDR.
   * Allow or block network traffic for pods across namespaces.
@@ -101,7 +101,7 @@ A default Kubernetes policy that limits access to the Kubernetes Dashboard is al
 <tbody>
  <tr>
   <td><code>kubernetes-dashboard</code></td>
-  <td>Provided in the <code>kube-system</code> namespace: Blocks all pods from accessing the Kubernetes Dashboard. This policy does not impact accessing the dashboard from the {{site.data.keyword.cloud_notm}} console or by using <code>kubectl proxy</code>. If a pod requires access to the dashboard, deploy the pod in a namespace that has the <code>kubernetes-dashboard-policy: allow</code> label.</td>
+  <td>Provided in the <code>kube-system</code> namespace: Blocks all pods from accessing the Kubernetes Dashboard. This policy does not impact accessing the dashboard from the {{site.data.keyword.cloud_notm}} console or by using <code>{[kubectl]} proxy</code>. If a pod requires access to the dashboard, deploy the pod in a namespace that has the <code>kubernetes-dashboard-policy: allow</code> label.</td>
  </tr>
 </tbody>
 </table>
@@ -718,7 +718,7 @@ To log denied traffic:
 
   2. Apply the policy.
     ```
-    kubectl apply -f <policy_name>.yaml
+    {[kubectl]} apply -f <policy_name>.yaml
     ```
     {: pre}
 

@@ -32,7 +32,7 @@ Design a network setup for your {{site.data.keyword.openshiftlong}} clusters tha
 
 Your containerized apps are hosted on compute hosts that are called worker nodes. Worker nodes are managed by the master. The communication setup between worker nodes and the master, other services, the Internet, or other private networks depends on how you set up your IBM Cloud infrastructure network.
 
-First time creating a cluster? First, try out the [creating {{site.data.keyword.openshiftshort} clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
+First time creating a cluster? First, try out the [creating OpenShift clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
 {: tip}
 
 To plan your cluster network setup, first [understand cluster network basics](#plan_basics). Then, you can review three potential cluster network setups that are suited to environment-based scenarios, including [running internet-facing app workloads](#internet-facing), [extending an on-premises data center with limited public access](#limited-public), and [extending an on-premises data center on the private network only](#private_clusters).
@@ -81,7 +81,7 @@ To secure communication over public and private service endpoints, {{site.data.k
 **Public service endpoint only**</br>
 If you don’t want to or cannot enable VRF for your account, your worker nodes can automatically connect to the Kubernetes master over the public VLAN through the public service endpoint.
 * Communication between worker nodes and master is established securely over the public network through the public service endpoint.
-* The master is publicly accessible to authorized cluster users only through the public service endpoint. Your cluster users can securely access your Kubernetes master over the internet to run `{[kubectl]}` commands, for example.
+* The master is publicly accessible to authorized cluster users only through the public service endpoint. Your cluster users can securely access your Kubernetes master over the internet to run `oc` commands, for example.
 
 **Public and private service endpoints**</br>
 To make your master publicly or privately accessible to cluster users, you can enable the public and private service endpoints. VRF is required in your {{site.data.keyword.cloud_notm}} account, and you must enable your account to use service endpoints. To enable VRF and service endpoints, run `ibmcloud account update --service-endpoint-enable true`.

@@ -62,7 +62,7 @@ To clean up persistent data:
 
 1.  List the PVCs in your cluster and note the **`NAME`** of the PVC, the **`STORAGECLASS`**, and the name of the PV that is bound to the PVC and shown as **`VOLUME`**.
     ```
-    kubectl get pvc
+    {[kubectl]} get pvc
     ```
     {: pre}
 
@@ -77,7 +77,7 @@ To clean up persistent data:
 
 2. Review the **`ReclaimPolicy`** and **`billingType`** for the storage class.
    ```
-   kubectl describe storageclass <storageclass_name>
+   {[kubectl]} describe storageclass <storageclass_name>
    ```
    {: pre}
 
@@ -89,7 +89,7 @@ To clean up persistent data:
 3. Remove any pods that mount the PVC.
    1. List the pods that mount the PVC.
       ```
-      kubectl get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+      {[kubectl]} get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
       ```
       {: pre}
 
@@ -103,25 +103,25 @@ To clean up persistent data:
 
    2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
       ```
-      kubectl delete pod <pod_name>
+      {[kubectl]} delete pod <pod_name>
       ```
       {: pre}
 
    3. Verify that the pod is removed.
       ```
-      kubectl get pods
+      {[kubectl]} get pods
       ```
       {: pre}
 
 4. Remove the PVC.
    ```
-   kubectl delete pvc <pvc_name>
+   {[kubectl]} delete pvc <pvc_name>
    ```
    {: pre}
 
 5. Review the status of your PV. Use the name of the PV that you retrieved earlier as **`VOLUME`**.
    ```
-   kubectl get pv <pv_name>
+   {[kubectl]} get pv <pv_name>
    ```
    {: pre}
 
@@ -129,13 +129,13 @@ To clean up persistent data:
 
 6. If your PV is not deleted, manually remove the PV.
    ```
-   kubectl delete pv <pv_name>
+   {[kubectl]} delete pv <pv_name>
    ```
    {: pre}
 
 7. Verify that the PV is removed.
    ```
-   kubectl get pv
+   {[kubectl]} get pv
    ```
    {: pre}
 

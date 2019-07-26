@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-26"
 
 keywords: kubernetes, iks
 
@@ -22,8 +22,6 @@ subcollection: containers
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
-
-
 
 # Understanding Kubernetes storage basics
 {: #kube_concepts}
@@ -148,13 +146,13 @@ If you cannot use one of the provided storage classes, you can create your own c
 
 2. Create the customized storage class.
    ```
-   kubectl apply -f <local_file_path>
+   {[kubectl]} apply -f <local_file_path>
    ```
    {: pre}
 
 3.  Verify that the customized storage class is created.
     ```
-    kubectl get storageclasses                                                        
+    {[kubectl]} get storageclasses                                                        
     ```
     {: pre}
 
@@ -164,7 +162,7 @@ If you cannot use one of the provided storage classes, you can create your own c
 
 5. Verify that your PVC is created and bound to a persistent volume (PV). This process might take a few minutes to complete.
    ```
-   kubectl get pvc
+   {[kubectl]} get pvc
    ```
    {: pre}
 
@@ -263,7 +261,7 @@ To update existing PVs:
     2.  Review the region and zone labels for your PVs.
 
         ```
-        kubectl describe pv pvc-ID-123456
+        {[kubectl]} describe pv pvc-ID-123456
         ```
         {: pre}
 
@@ -284,3 +282,5 @@ To update existing PVs:
 Now that you labeled your existing PVs, you can mount the PV to your multizone cluster. See the following links for more information.
 - Use [existing NFS file storage](/docs/containers?topic=containers-file_storage#existing_file)
 - Use [existing block storage](/docs/containers?topic=containers-block_storage#existing_block)
+
+
