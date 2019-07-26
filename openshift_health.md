@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-07-26"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -211,7 +211,7 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
     oc get pods
     ```
     {: pre}
-8.  From the [{{site.data.keyword.cloud_notm}} **Observability > Logging** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens. After a few minutes, your cluster's logs are displayed, and you can begin to analyze your logs.
+8.  From the [{{site.data.keyword.cloud_notm}} **Observability > Logging** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens. After a few minutes, your cluster's logs are displayed, and you can analyze your logs.
 
 For more information about how to use {{site.data.keyword.la_short}}, see the [Next steps docs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube#kube_next_steps).
 
@@ -323,7 +323,7 @@ Create an {{site.data.keyword.mon_full_notm}} instance in your {{site.data.keywo
     sysdig-agent-rhrgz   1/1       Running   0          1m
     ```
     {: screen}
-5.  From the [{{site.data.keyword.cloud_notm}} **Observability > Monitoring** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.mon_short}} instance, click **View Sysdig**. The Sysdig dashboard opens, and you can begin to analyze your cluster metrics.
+5.  From the [{{site.data.keyword.cloud_notm}} **Observability > Monitoring** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.mon_short}} instance, click **View Sysdig**. The Sysdig dashboard opens, and you can analyze your cluster metrics.
 
 For more information about how to use {{site.data.keyword.mon_short}}, see the [Next steps docs](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-kubernetes_cluster#kubernetes_cluster_next_steps).
 
@@ -352,7 +352,7 @@ Remove the {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} in
 ## Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools
 {: #openshift_other_logmet}
 
-For information about other logging and monitoring tools that you can set up, including {{site.data.keyword.cloud_notm}} services, see the following topics in the {{site.data.keyword.containershort_notm}} docs.
+For more information about other logging and monitoring tools that you can set up, including {{site.data.keyword.cloud_notm}} services, see the following topics in the {{site.data.keyword.containershort_notm}} docs.
 {: shortdesc}
 
 * [Choosing a logging solution](/docs/containers?topic=containers-health#logging_overview).
