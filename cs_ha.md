@@ -4,9 +4,9 @@ copyright:
   years: 2014, 2019
 lastupdated: "2019-07-26"
 
-keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
+keywords: kubernetes, iks, disaster recovery, dr, ha, hadr
 
-subcollection: openshift
+subcollection: containers
 
 ---
 
@@ -25,10 +25,10 @@ subcollection: openshift
 
 
 
-# High availability for OpenShift clusters
+# High availability for {{site.data.keyword.containerlong_notm}}
 {: #ha}
 
-Use the built-in OpenShift, Kubernetes, and {{site.data.keyword.containerlong}} features to make your OpenShift cluster more highly available and to protect your app from downtime when a component in your cluster fails.
+Use the built-in Kubernetes and {{site.data.keyword.containerlong}} features to make your cluster more highly available and to protect your app from downtime when a component in your cluster fails.
 {: shortdesc}
 
 High availability is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms.
