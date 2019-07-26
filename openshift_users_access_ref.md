@@ -162,7 +162,7 @@ The **Viewer** platform role includes the [actions that require no permissions](
 <td><code>[GET /v1/logging/{idOrName}/clusterkeyowner](https://containers.cloud.ibm.com/global/swagger-global-api/#/logging/GetClusterKeyOwner)</code></td>
 </tr>
 <tr>
-<td>Download Kubernetes configuration data and certificates to connect to your cluster and run `{[kubectl]}` commands.</td>
+<td>Download Kubernetes configuration data and certificates to connect to your cluster and run `oc` commands.</td>
 <td><code>[ibmcloud oc cluster-config](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config)</code></td>
 <td><code>[GET /v1/clusters/{idOrName}/config](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterConfig)</code></td>
 </tr>
@@ -710,7 +710,7 @@ The following table shows the Kubernetes resource permissions that are granted b
   </tr>
   <tr>
     <td id="service-role-manager" headers="service-role">Manager role</td>
-    <td headers="service-role-manager rbac-role">When scoped to one namespace: <strong><code>admin</code></strong> cluster role applied by the <strong><code>ibm-operate</code></strong> role binding in that namespace</br><br>When scoped to all namespaces: <strong><code>cluster-admin</code></strong> cluster role applied by the <strong><code>ibm-admin</code></strong> cluster role binding</td> that applies to all namespaces
+    <td headers="service-role-manager rbac-role">When scoped to one namespace: <strong><code>admin</code></strong> cluster role applied by the <strong><code>ibm-operate</code></strong> role binding in that namespace</br><br>When scoped to all namespaces: <strong><code>cluster-admin</code></strong> cluster role applied by the <strong><code>ibm-admin</code></strong> cluster role binding that applies to all namespaces</td> 
     <td headers="service-role-manager kube-perm">When scoped to one namespace:
       <ul><li>Read/write access to all resources in a namespace but not to resource quota or the namespace itself</li>
       <li>Create RBAC roles and role bindings in a namespace</li>
@@ -720,7 +720,7 @@ The following table shows the Kubernetes resource permissions that are granted b
         <li>Create RBAC roles and role bindings in a namespace or cluster roles and cluster role bindings in all namespaces</li>
         <li>Access the Kubernetes dashboard</li>
         <li>Create an Ingress resource that makes apps publicly available</li>
-        <li>Review cluster metrics such as with the <code>{[kubectl]} top pods</code>, <code>{[kubectl]} top nodes</code>, or <code>{[kubectl]} get nodes</code> commands</li></ul>
+        <li>Review cluster metrics such as with the <code>oc top pods</code>, <code>oc top nodes</code>, or <code>oc get nodes</code> commands</li></ul>
     </td>
   </tr>
     <tr>
@@ -743,7 +743,7 @@ The following table shows the Kubernetes resource permissions that are granted b
 Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding, predefined Kubernetes role-based access control (RBAC) role. If you plan to manage your own custom Kubernetes RBAC roles, see [Creating custom RBAC permissions for users, groups, or service accounts](/docs/containers?topic=containers-users#rbac).
 {: shortdesc}
 
-Wondering if you have the correct permissions to run a certain `{[kubectl]}` command on a resource in a namespace? Try the [`{[kubectl]} auth can-i` command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em-).
+Wondering if you have the correct permissions to run a certain `oc` command on a resource in a namespace? Try the [`oc auth can-i` command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em-).
 {: tip}
 
 The following table shows the permissions that are granted by each RBAC role to individual Kubernetes resources. Permissions are shown as which verbs a user with that role can complete against the resource, such as "get", "list", "describe", "create", or "delete".
