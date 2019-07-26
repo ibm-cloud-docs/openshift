@@ -723,6 +723,14 @@ The following table shows the Kubernetes resource permissions that are granted b
         <li>Review cluster metrics such as with the <code>kubectl top pods</code>, <code>kubectl top nodes</code>, or <code>kubectl get nodes</code> commands</li></ul>
     </td>
   </tr>
+    <tr>
+    <td>Any service role</td>
+    <td>**OpenShift clusters only**: All users of an OpenShift cluster are given the `basic-users` and `self-provisioners` cluster roles as applied by the `basic-users` and `self-provisioners` cluster role bindings.</td>
+    <td><ul>
+      <li>Get basic information about projects that the user has access to.</li>
+      <li>Create authorized resources in the projects that the user has access to.</li>
+      <li>For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_rbac.html).</li></ul></td>
+  </tr>
 </tbody>
 </table>
 
