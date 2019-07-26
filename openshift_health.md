@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-20"
+lastupdated: "2019-07-26"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -31,7 +31,7 @@ subcollection: openshift
 
 
 
-For cluster metrics and app logging and monitoring, Red Hat OpenShift on IBM Cloud clusters include built-in tools to help you manage the health of your single cluster instance. You can also set up {{site.data.keyword.cloud}} tools for multi-cluster analysis or other use cases, such as {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
+For cluster metrics and app logging and monitoring, {{site.data.keyword.openshiftlong}} clusters include built-in tools to help you manage the health of your single cluster instance. You can also set up {{site.data.keyword.cloud_notm}} tools for multi-cluster analysis or other use cases, such as {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
 ## Using the built-in OpenShift logging and monitoring stack
@@ -48,22 +48,10 @@ By default, Red Hat OpenShift on IBM Cloud clusters are deployed with built-in l
 <br />
 
 
-## Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools
-{: #openshift_other_logmet}
-
-For information about other logging and monitoring tools that you can set up, including {{site.data.keyword.cloud_notm}} services, see the following topics in the {{site.data.keyword.containershort_notm}} docs.
-{: shortdesc}
-
-* [Choosing a logging solution](/docs/containers?topic=containers-health#logging_overview).
-* [Choosing a monitoring solution](/docs/containers?topic=containers-health#view_metrics).
-
-<br />
-
-
 ## Setting up LogDNA and Sysdig add-ons to monitor cluster health
 {: #openshift_logdna_sysdig}
 
-Because OpenShift sets up stricter [Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html) by default than community Kubernetes, you might find that some apps or cluster add-ons that you use on community Kubernetes cannot be deployed on OpenShift in the same way. In particular, many images require to run as a `root` user or as a privileged container, which is prevented in OpenShift by default. In this lesson, you learn how to modify the default SCCs by creating privileged security accounts and updating the `securityContext` in the pod specification to use two popular {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
+Because OpenShift sets up stricter [Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html) by default than community Kubernetes, you might find that some apps or cluster add-ons that you use on community Kubernetes cannot be deployed on OpenShift in the same way. In particular, many images must run as a `root` user or as a privileged container, which is prevented in OpenShift by default. You can modify the default SCCs by creating privileged security accounts and updating the `securityContext` in the pod specification to use two popular {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
 Before you begin, log in to your cluster as an administrator.
@@ -71,7 +59,7 @@ Before you begin, log in to your cluster as an administrator.
 2.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command** and paste the copied `oc` login command into your terminal to authenticate via the CLI.
 3.  Download the admin configuration files for your cluster.
     ```
-    oc cluster-config --cluster <cluster_name_or_ID> --admin
+    ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin
     ```
     {: pre}
 
@@ -83,7 +71,7 @@ Before you begin, log in to your cluster as an administrator.
     export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>/kube-config-<datacenter>-<cluster_name>.yml
     ```
     {: screen}
-4.  Continue the lesson to set up [{{site.data.keyword.la_short}}](#openshift_logdna) and [{{site.data.keyword.mon_short}}](#openshift_sysdig).
+4.  Set up [{{site.data.keyword.la_short}}](#openshift_logdna) and [{{site.data.keyword.mon_short}}](#openshift_sysdig).
 
 <br />
 
@@ -223,7 +211,7 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
     oc get pods
     ```
     {: pre}
-8.  From the [{{site.data.keyword.cloud_notm}} Observability > Logging console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens. After a few minutes, your cluster's logs are displayed, and you can begin to analyze your logs.
+8.  From the [{{site.data.keyword.cloud_notm}} **Observability > Logging** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens. After a few minutes, your cluster's logs are displayed, and you can analyze your logs.
 
 For more information about how to use {{site.data.keyword.la_short}}, see the [Next steps docs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube#kube_next_steps).
 
@@ -291,7 +279,7 @@ Create an {{site.data.keyword.mon_full_notm}} instance in your {{site.data.keywo
         {: screen}
 3.  Run the script to set up an `ibm-observe` project with a privileged service account and a Kubernetes daemon set to deploy the Sysdig agent on every worker node of your Kubernetes cluster. The Sysdig agent collects metrics such as the worker node CPU usage, worker node memory usage, HTTP traffic to and from your containers, and data about several infrastructure components.
 
-    In the following command, replace <code><sysdig_access_key></code> and <code><sysdig_collector_endpoint></code> with the values from the service key that you created earlier. For <code>&lt;tag&gt;</code>, you can associate tags with your Sysdig agent, such as `role:service,location:us-south` to help you identify the environment that the metrics come from.
+    In the following command, replace <code>&lt;sysdig_access_key&gt;</code> and <code>&lt;sysdig_collector_endpoint&gt;</code> with the values from the service key that you created earlier. For <code>&lt;tag&gt;</code>, you can associate tags with your Sysdig agent, such as `role:service,location:us-south` to help you identify the environment that the metrics come from.
 
     ```
     curl -sL https://ibm.biz/install-sysdig-k8s-agent | bash -s -- -a <sysdig_access_key> -c <sysdig_collector_endpoint> -t <tag> -ac 'sysdig_capture_enabled: false' --openshift
@@ -335,7 +323,7 @@ Create an {{site.data.keyword.mon_full_notm}} instance in your {{site.data.keywo
     sysdig-agent-rhrgz   1/1       Running   0          1m
     ```
     {: screen}
-5.  From the [{{site.data.keyword.cloud_notm}} Observability > Monitoring console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.mon_short}} instance, click **View Sysdig**. The Sysdig dashboard opens, and you can begin to analyze your cluster metrics.
+5.  From the [{{site.data.keyword.cloud_notm}} **Observability > Monitoring** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.mon_short}} instance, click **View Sysdig**. The Sysdig dashboard opens, and you can analyze your cluster metrics.
 
 For more information about how to use {{site.data.keyword.mon_short}}, see the [Next steps docs](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-kubernetes_cluster#kubernetes_cluster_next_steps).
 
@@ -360,3 +348,15 @@ Remove the {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} in
 2.  Remove the instances from your {{site.data.keyword.cloud_notm}} account.
     *   [Removing a {{site.data.keyword.la_short}} instance](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-remove).
     *   [Removing a {{site.data.keyword.mon_short}} instance](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-remove).
+
+## Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools
+{: #openshift_other_logmet}
+
+For more information about other logging and monitoring tools that you can set up, including {{site.data.keyword.cloud_notm}} services, see the following topics in the {{site.data.keyword.containershort_notm}} docs.
+{: shortdesc}
+
+* [Choosing a logging solution](/docs/containers?topic=containers-health#logging_overview).
+* [Choosing a monitoring solution](/docs/containers?topic=containers-health#view_metrics).
+
+<br />
+

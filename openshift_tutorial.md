@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-20"
+lastupdated: "2019-07-25"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -26,10 +26,11 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 
-# Tutorial: Creating an IBM Cloud Red Hat OpenShift Container Platform cluster (beta)
-{: #openshift_tutorial} 
 
-Red Hat OpenShift on IBM Cloud is available as a beta to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
+# Tutorial: Creating an IBM Cloud Red Hat OpenShift Container Platform cluster (beta)
+{: #openshift_tutorial}
+
+The {{site.data.keyword.openshiftlong}} **beta** is available as an extension of {{site.data.keyword.containerlong_notm}} to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong_notm}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
 {: preview}
 
 With the **Red Hat OpenShift on IBM Cloud beta**, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of managed {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-responsibilities_iks) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) that runs on Red Hat Enterprise Linux for your app deployments.
@@ -44,6 +45,8 @@ OpenShift worker nodes are available for paid accounts and standard clusters onl
 
 In the tutorial lessons, you create a standard Red Hat OpenShift on IBM Cloud cluster, open the OpenShift console, access built-in OpenShift components, deploy an app that uses {{site.data.keyword.cloud_notm}} services in an OpenShift project, and expose the app on an OpenShift route so that external users can access the service.
 {: shortdesc}
+
+<img src="/images/roks_tutorial.png" width="600" alt="OpenShift tutorial diagram" style="width:600px; border-style: none"/>
 
 ## Time required
 {: #openshift_time}
@@ -77,26 +80,26 @@ Any OpenShift clusters that you create during the beta remain for 30 days after 
 {: important}
 
 1.  Install the command-line tools.
-    *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`oc`), and {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+    *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
     *   [Install the OpenShift Origin (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/containers?topic=containers-cs_cli_install#cli_oc).
 2.  Log in to the account that you set up to create OpenShift clusters. Target the **us-east** or **eu-gb** region and the resource group. If you have a federated account, include the `--sso` flag.
     ```
     ibmcloud login -r (us-east|eu-gb) [-g default] [--sso]
     ```
     {: pre}
-3.  Create a cluster. The following command creates a cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC.
+3.  Create a cluster. The following command creates a cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlans --zone <zone>`.
     ```
-    oc cluster-create --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster-create --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 4.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.</p>
     ```
-    oc cluster-get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster-get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 5.  Download the configuration files to connect to your cluster.
     ```
-    oc cluster-config --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster-config --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -130,7 +133,7 @@ Any OpenShift clusters that you create during the beta remain for 30 days after 
     ```
     {: screen}
 
-    If you cannot perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `oc cluster-config --cluster <cluster_name_or_ID> --admin` command.
+    If you cannot perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin` command.
     {: tip}
 
 <br />
@@ -214,7 +217,7 @@ If you took a break from the last lesson and started a new terminal, make sure t
         hello-world   hello-world-hello.world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud    hello-world   8080-tcp   edge/Allow    None
         ```
         {: screen}
-5.  Access your app.
+5.  Access your app. Be sure to append `https://` to your route host name.
     ```
     curl https://hello-world-hello-world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud
     ```
@@ -261,5 +264,3 @@ If you took a break from the last lesson and started a new terminal, make sure t
 For more information about working with your apps and routing services, see the [OpenShift Developer Guide](https://docs.openshift.com/container-platform/3.11/dev_guide/index.html).
 
 Install two popular {{site.data.keyword.containerlong_notm}} add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-openshift_health#openshift_logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-openshift_health#openshift_sysdig).
-
-

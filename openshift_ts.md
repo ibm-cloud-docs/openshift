@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-22"
+lastupdated: "2019-07-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -14,7 +14,7 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-{:table: .aria-labeledby="caption"} 
+{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:note: .note}
@@ -26,16 +26,16 @@ subcollection: openshift
 # Troubleshooting OpenShift clusters
 {: #openshift_troubleshoot}
 
-Review some known issues or common error messages that you might encounter when you use Red Hat OpenShift on IBM Cloud clusters.
+Review some known issues or common error messages that you might encounter when you use {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs.
-* [Debugging your cluster](/docs/containers?topic=containers-cs_troubleshoot).
-* [Clusters and worker nodes](/docs/containers?topic=containers-cs_troubleshoot_clusters).
-* [Storage](/docs/containers?topic=containers-cs_troubleshoot_storage).
-* [Logging and monitoring](/docs/containers?topic=containers-cs_troubleshoot_health).
-* [Debugging Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress).
-* [Cluster networking](/docs/containers?topic=containers-cs_troubleshoot_network).
+For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs:
+* [Debugging your cluster](/docs/containers?topic=containers-cs_troubleshoot)
+* [Clusters and worker nodes](/docs/containers?topic=containers-cs_troubleshoot_clusters)
+* [Storage](/docs/containers?topic=containers-cs_troubleshoot_storage)
+* [Logging and monitoring](/docs/containers?topic=containers-cs_troubleshoot_health)
+* [Debugging Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress)
+* [Cluster networking](/docs/containers?topic=containers-cs_troubleshoot_network)
 
 ## Feedback and questions
 {: #openshift_support}
@@ -76,14 +76,14 @@ CAE003: Unable to determine the ingress IP address for the network load balancer
 {: screen}
 
 {: tsCauses}
-The OpenVPN server could not be configured because the router IP address that is created for the network load balancer (NLB) could not be found. The router might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the Ingress setup did not complete.
+The OpenVPN server could not be configured because the router IP address that is created for the network load balancer (NLB) could not be found. The router might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the NLB setup did not complete.
 
 {: tsResolve}
 
 **Verify that your cluster has available subnets.**
-1.  Check that your cluster has a **Subnet CIDR** for public and private subnets. If you set up a private VLAN-only cluster, you might only have a private subnet.
+1.  Check that your cluster has a **Subnet CIDR** for public and private subnets. If you set up a private VLAN-only cluster, you might have only a private subnet.
     ```
-    oc cluster-get --cluster <cluster_name_or_ID> --showResources
+    ibmcloud oc cluster-get --cluster <cluster_name_or_ID> --showResources
     ```
     {: pre}
 
@@ -102,14 +102,14 @@ The OpenVPN server could not be configured because the router IP address that is
 3.  If the cluster does have a subnet, [check for available portable IP addresses](/docs/containers?topic=containers-subnets#review_ip) and if necessary, [add more portable IP address by adding a subnet](/docs/containers?topic=containers-subnets#adding_ips).
 4.  Refresh the master to restart the OpenVPN setup so that it uses the available subnet.
     ```
-    oc cluster-refresh --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster-refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-**Verify that the Ingress setup completed successfully.**
-1.  Check that the `ibm-cloud-provider-ip-*` pods for Ingress are in a **Running** status.
+**Verify that the NLB setup completed successfully.**
+1.  Check that the `ibm-cloud-provider-ip-*` pods for the NLB are in a **Running** status.
     ```
-    oc get pods -n kube-system | grep alb
+    oc get pods -n ibm-system | grep ibm-cloud-provider-ip
     ```
     {: pre}
 2.  If a pod is not running, review the **Events** in the pod details to troubleshoot the issue further.
@@ -117,9 +117,9 @@ The OpenVPN server could not be configured because the router IP address that is
     oc describe pod -n kube-system <pod_name>
     ```
     {: pre}
-3.  After you resolve the Ingress pod issue, refresh the master to restart the Ingress setup.
+3.  After you resolve the NLB pod issue, refresh the master to restart the NLB setup.
     ```
-    oc cluster-refresh --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster-refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -130,7 +130,7 @@ The OpenVPN server could not be configured because the router IP address that is
 {: #rhoks_ts_openvpn_dns}
 
 {: tsSymptoms}
-Could not create a domain name service for the network load balancer ('oc nlb-dns-create') with the following error message:<ul>
+Could not create a domain name service for the network load balancer (`ibmcloud oc nlb-dns-create`) with the following error message:<ul>
 <li><code>This action requires the Editor role for the cluster in IBM Cloud Container Service. Contact the IBM Cloud account administrator and request the required Identity and Access user role. (A0008)</code></li>
 <li><code>The specified cluster could not be found. (A0006)</code></li>
 <li><code>The input parameters in the request body are either incomplete or in the wrong format. Be sure to include all required parameters in your request in JSON format. (E0011)</code></li><ul>
@@ -147,7 +147,7 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
 2.  For cluster not found or incorrect input parameter errors, continue to the next step.
 3.  Refresh the master so that NLB DNS creation operation is retried.
     ```
-    oc cluster-refresh --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster-refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -160,7 +160,7 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
 {: tsSymptoms}
 After you create or update a cluster, the master status returns a VPN server configuration error message similar to the following.
 ```
-VPN server configuration update failed. IBM Cloud support has been notified and is working to resolve this issue. 
+VPN server configuration update failed. IBM Cloud support has been notified and is working to resolve this issue.
 ```
 {: screen}
 
@@ -200,11 +200,11 @@ Modify the registry console deployment so that you can access it externally.
 <br />
 
 
-## `oc` or `kubectl` commands fail
+## Missing projects or `oc` and `kubectl` commands fail
 {: #rhoks_ts_admin_config}
 
 {: tsSymptoms}
-When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
+You do not see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
 ```
 No resources found.
 Error from server (Forbidden): <resource> is forbidden: User "IAM#user@email.com" cannot list <resources> at the cluster scope: no RBAC policy matched
@@ -215,26 +215,7 @@ Error from server (Forbidden): <resource> is forbidden: User "IAM#user@email.com
 You need to download the `admin` configuration files for your cluster in order to run commands that require the `cluster-admin` cluster role.
 
 {: tsResolve}
-Run `oc cluster-config --cluster <cluster_name_or_ID> --admin` and try again.
-
-<br />
-
-
-## Cannot use `calicoctl`
-{: #rhoks_ts_calicoctl}
-
-{: tsSymptoms}
-When you try to use `calicoctl`, you get the following error.
-```
-Failed to create Calico API client: context deadline exceeded
-```
-{: screen}
-
-{: tsCauses}
-The Calico configuration file must be modified to update the `etcdEndpoint` field.
-
-{: tsResolve}
-Follow the instructions in the [Limitations topic](#openshift_limitations).
+Run `ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin` and try again.
 
 <br />
 
@@ -249,7 +230,7 @@ Your pods are in a `CrashLoopBackOff` status.
 When you try to deploy an app that works on community Kubernetes platforms, you might see this status or a related error message because OpenShift sets up stricter security settings by default than community Kubernetes.
 
 {: tsResolve}
-Make sure that you followed the docs that are linked in the [Limitations topic](#openshift_limitations).
+Make sure that you followed the docs in the [Moving your apps to OpenShift topic](/docs/openshift?topic=openshift-openshift_apps#openshift_move_apps).
 
 <br />
 
