@@ -188,7 +188,12 @@ Worker node flavors vary by zone. The following table includes the most recent v
 
 Bare metal machines are optimized for different use cases such as RAM-intensive, data-intensive, or GPU-intensive workloads.
 
-{[hardware-options.md]}
+Choose a machine type with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
+
+* **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
+* **SSD**: A solid-state drive storage device for high-performance data.
+* **Raw**: The storage device is unformatted and the full capacity is available for use.
+* **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
 {: #bm-table}
 <table>
@@ -263,7 +268,12 @@ For more storage solutions, see [Planning highly available persistent storage](/
 **What SDS flavors can I order?**</br>
 Worker node flavors vary by zone. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run . You can also review available [bare metal](#bm) or [VM](#vm) machine types.
 
-{[hardware-options.md]}
+Choose a machine type with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
+
+* **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
+* **SSD**: A solid-state drive storage device for high-performance data.
+* **Raw**: The storage device is unformatted and the full capacity is available for use.
+* **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
 {: #sds-table}
 <table>
