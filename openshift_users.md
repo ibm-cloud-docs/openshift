@@ -60,7 +60,7 @@ To see the specific {{site.data.keyword.containerlong_notm}} permissions by each
 <dt><a href="#platform">{{site.data.keyword.cloud_notm}} IAM platform and service roles</a></dt>
 <dd>{{site.data.keyword.containerlong_notm}} uses {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) platform and service roles to grant users access to the cluster.
 <ul><li>**Platform**: Platform roles determine the actions that users can perform on cluster infrastructure by using the {{site.data.keyword.containerlong_notm}} API, console, and CLI (`ibmcloud oc`). Platform roles do not grant access to the Kubernetes API. You can set the policies for these roles by resource group, region, or cluster instance. Although platform roles authorize you to perform infrastructure actions on the cluster, they do not grant access to the IBM Cloud infrastructure resources. Access to the IBM Cloud infrastructure resources is determined by the [API key that is set for the region](#api_key). Example actions that are permitted by platform roles are creating or removing clusters, binding services to a cluster, managing networking and storage resources, or adding extra worker nodes.<br><br>If you assign only platform roles to users, they cannot interact with Kubernetes resources within the cluster. They can, however, still perform the `ibmcloud oc cluster-config` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config). Then, you can authorize the users to perform select Kubernetes actions by using [custom RBAC policies](/docs/containers?topic=containers-users#role-binding). You might do this if your organization currently uses custom RBAC policies to control Kubernetes access and plans to continue using custom RBAC instead of service roles.</li>
-<li>**Service**: Service roles grant corresponding Kubernetes RBAC policies that a user is given within a cluster. As such, service roles grant access to the Kubernetes API, dashboard, and CLI (`kubectl`). You can scope the policy for service roles by resource group, region, or cluster instance. Further, you can also scope service roles to Kubernetes namespaces that are in all, individual, or region-wide clusters. When you scope a service role to a namespace, you cannot apply the policy to a resource group or assign a platform role at the same time. Example actions that are permitted by service roles are creating app deployments, adding namespaces, or setting up configmaps.<br><br>If you assign only service roles to users, they cannot view or interact with any {{site.data.keyword.containerlong_notm}} resources. For the users to access the cluster and use the cluster's Kubernetes resources, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster-config` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli). If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, give the users the platform **Viewer** role.</li></ul></dd>
+<li>**Service**: Service roles grant corresponding Kubernetes RBAC policies that a user is given within a cluster. As such, service roles grant access to the Kubernetes API, dashboard, and CLI (`{[kubectl]}`). You can scope the policy for service roles by resource group, region, or cluster instance. Further, you can also scope service roles to Kubernetes namespaces that are in all, individual, or region-wide clusters. When you scope a service role to a namespace, you cannot apply the policy to a resource group or assign a platform role at the same time. Example actions that are permitted by service roles are creating app deployments, adding namespaces, or setting up configmaps.<br><br>If you assign only service roles to users, they cannot view or interact with any {{site.data.keyword.containerlong_notm}} resources. For the users to access the cluster and use the cluster's Kubernetes resources, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster-config` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli). If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, give the users the platform **Viewer** role.</li></ul></dd>
 <dt><a href="#role-binding">RBAC</a></dt>
 <dd>In Kubernetes, role-based access control (RBAC) is a way of securing the resources inside your cluster. RBAC roles determine the Kubernetes actions that users can perform on those resources. Every user who is assigned a service role is automatically assigned a corresponding RBAC cluster role. This RBAC cluster role is applied either in a specific namespace or in all namespaces, depending on whether you scope the policy to a namespace.</br></br>
 Example actions that are permitted by RBAC roles are creating objects such as pods or reading pod logs.</dd>
@@ -637,7 +637,7 @@ Grant users access to your clusters by assigning {{site.data.keyword.cloud_notm}
         <ul><li>**For `"accountId"`**: Enter your {{site.data.keyword.cloud_notm}} account ID that you previously retrieved</li>
         <li>**For `"serviceName"`**: Leave the service name as given: `containers-kubernetes`.</li>
         <li>**For `"serviceInstance"`**: Enter your cluster ID. For multiple clusters, separate with a comma. To get your cluster ID, run `ibmcloud oc clusters`.</li>
-        <li>**For `"namespace"`**: Enter a Kubernetes namespace in your cluster. To list the namespaces in your cluster, run `kubectl get namespaces`. <p class="note">To assign the access policy to all namespaces in a cluster, remove the entire `{"name": "namespace", "value": "<namespace_name"}` entry.</p></li></td>
+        <li>**For `"namespace"`**: Enter a Kubernetes namespace in your cluster. To list the namespaces in your cluster, run `{[kubectl]} get namespaces`. <p class="note">To assign the access policy to all namespaces in a cluster, remove the entire `{"name": "namespace", "value": "<namespace_name"}` entry.</p></li></td>
         </tr>
       </tbody>
       </table>
@@ -666,26 +666,26 @@ Grant users access to your clusters by assigning {{site.data.keyword.cloud_notm}
     Check the role binding or cluster role binding for the role.
     *   Reader:
         ```
-        kubectl get rolebinding ibm-view -o yaml -n <namespace>
+        {[kubectl]} get rolebinding ibm-view -o yaml -n <namespace>
         ```
         {: pre}
     *   Writer:
         ```
-        kubectl get rolebinding ibm-edit -o yaml -n <namespace>
+        {[kubectl]} get rolebinding ibm-edit -o yaml -n <namespace>
         ```
         {: pre}
     *   Manager, scoped to a namespace:
         ```
-        kubectl get rolebinding ibm-operate -o yaml -n <namespace>
+        {[kubectl]} get rolebinding ibm-operate -o yaml -n <namespace>
         ```
         {: pre}
     *   Manager, all namespaces:
         ```
-        kubectl get clusterrolebinding ibm-admin -o yaml
+        {[kubectl]} get clusterrolebinding ibm-admin -o yaml
         ```
         {: pre}
 
-    **Example output**: You get the following example output if you assign user `user@email.com` and access group `team1` the **Reader** service role, and then run `kubectl get rolebinding ibm-view -o yaml -n default`.
+    **Example output**: You get the following example output if you assign user `user@email.com` and access group `team1` the **Reader** service role, and then run `{[kubectl]} get rolebinding ibm-view -o yaml -n default`.
 
     ```
     apiVersion: rbac.authorization.k8s.io/v1
@@ -823,11 +823,11 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
             </tr>
             <tr>
               <td><code>rules.resources</code></td>
-              <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. If you specify `"nodes"`, then the kind must be `ClusterRole`.</td>
+              <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/{[kubectl]}/cheatsheet/) to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. If you specify `"nodes"`, then the kind must be `ClusterRole`.</td>
             </tr>
             <tr>
               <td><code>rules.verbs</code></td>
-              <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/) that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`.</td>
+              <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{[kubectl]}.docs.kubernetes.io/) that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`.</td>
             </tr>
           </tbody>
         </table>
@@ -835,20 +835,20 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
     2. Create the role or cluster role in your cluster.
 
         ```
-        kubectl apply -f my_role.yaml
+        {[kubectl]} apply -f my_role.yaml
         ```
         {: pre}
 
     3. Verify that the role or cluster role is created.
       * Role:
           ```
-          kubectl get roles -n <namespace>
+          {[kubectl]} get roles -n <namespace>
           ```
           {: pre}
 
       * Cluster role:
           ```
-          kubectl get clusterroles
+          {[kubectl]} get clusterroles
           ```
           {: pre}
 
@@ -941,33 +941,33 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
     2. Create the role binding or cluster role binding resource in your cluster.
 
         ```
-        kubectl apply -f my_role_binding.yaml
+        {[kubectl]} apply -f my_role_binding.yaml
         ```
         {: pre}
 
     3.  Verify that the binding is created.
 
         ```
-        kubectl get rolebinding -n <namespace>
+        {[kubectl]} get rolebinding -n <namespace>
         ```
         {: pre}
 
 3. Optional: To enforce the same level of user access in other namespaces, you can copy the role bindings for those roles or cluster roles to other namespaces.
     1. Copy the role binding from one namespace to another namespace.
         ```
-        kubectl get rolebinding <role_binding_name> -o yaml | sed 's/<namespace_1>/<namespace_2>/g' | kubectl -n <namespace_2> create -f -
+        {[kubectl]} get rolebinding <role_binding_name> -o yaml | sed 's/<namespace_1>/<namespace_2>/g' | {[kubectl]} -n <namespace_2> create -f -
         ```
         {: pre}
 
         For example, to copy the `custom-role` role binding from the `default` namespace to the `testns` namespace:
         ```
-        kubectl get rolebinding custom-role -o yaml | sed 's/default/testns/g' | kubectl -n testns create -f -
+        {[kubectl]} get rolebinding custom-role -o yaml | sed 's/default/testns/g' | {[kubectl]} -n testns create -f -
         ```
         {: pre}
 
     2. Verify that the role binding is copied. If you added an {{site.data.keyword.cloud_notm}} IAM access group to the role binding, each user in that group is added individually, not as an access group ID.
         ```
-        kubectl get rolebinding -n <namespace_2>
+        {[kubectl]} get rolebinding -n <namespace_2>
         ```
         {: pre}
 
@@ -979,7 +979,7 @@ Now that you created and bound a custom Kubernetes RBAC role or cluster role, fo
 You can extend your users' existing permissions by aggregating, or combining, cluster roles with other cluster roles. When you assign a user an {{site.data.keyword.cloud_notm}} service role, the user is added to a [corresponding Kubernetes RBAC cluster role](/docs/containers?topic=containers-access_reference#service). However, you might want to allow certain users to perform additional operations. 
 {: shortdesc}
 
-For example, a user with the namespace-scoped `admin` cluster role cannot use the `kubectl top pods` command to view pod metrics for all the pods in the namespace. You might aggregate a cluster role so that users in the `admin` cluster role are authorized to run the `top pods` command. For more information, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
+For example, a user with the namespace-scoped `admin` cluster role cannot use the `{[kubectl]} top pods` command to view pod metrics for all the pods in the namespace. You might aggregate a cluster role so that users in the `admin` cluster role are authorized to run the `top pods` command. For more information, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
 
 **What are some common operations that I might want to extend permissions for a default cluster role?**<br>
 Review [the operations that each default RBAC cluster role permits](/docs/containers?topic=containers-access_reference#rbac_ref) to get a good idea of what your users can do, and then compare the permitted operations to what you want them to be able to do.
@@ -995,7 +995,7 @@ Error from server (Forbidden): pods.metrics.k8s.io is forbidden: User "IAM#mynam
 
 Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
-1.  Create a cluster role YAML file. In the `labels` section, specify the existing cluster role that you want to aggregate permissions to. The following example extends the predefined `admin` cluster role to allow users to run `kubectl top pods`. For more examples, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
+1.  Create a cluster role YAML file. In the `labels` section, specify the existing cluster role that you want to aggregate permissions to. The following example extends the predefined `admin` cluster role to allow users to run `{[kubectl]} top pods`. For more examples, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
     ```
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
@@ -1036,20 +1036,20 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
         </tr>
         <tr>
           <td><code>rules.resources</code></td>
-          <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`.</td>
+          <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/{[kubectl]}/cheatsheet/) to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`.</td>
         </tr>
         <tr>
           <td><code>rules.verbs</code></td>
-          <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/) that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`.</td>
+          <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{[kubectl]}.docs.kubernetes.io/) that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`.</td>
         </tr>
       </tbody>
     </table>
 2.  Create the cluster role in your cluster. Any users that have a role binding to the `admin` cluster role now have the additional permissions from the `view-pod-metrics` cluster role.
     ```
-    kubectl apply -f <cluster_role_file.yaml>
+    {[kubectl]} apply -f <cluster_role_file.yaml>
     ```
     {: pre}
-3.  Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and test the action, such as `kubectl top pods`.
+3.  Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and test the action, such as `{[kubectl]} top pods`.
 
 
 <br />
@@ -1289,7 +1289,7 @@ If you do not need custom RBAC permissions anymore, you can remove them.
 3. Save the file.
 4. Apply the changes in the role binding or cluster role binding resource in your cluster.
     ```
-    kubectl apply -f my_role_binding.yaml
+    {[kubectl]} apply -f my_role_binding.yaml
     ```
     {: pre}
 

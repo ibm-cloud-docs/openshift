@@ -76,7 +76,7 @@ To update the Kubernetes master _major_ or _minor_ version:
 
 3.  Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc clusters`.
 
-4.  Install the version of the [`kubectl cli`](/docs/containers?topic=containers-cs_cli_install#kubectl) that matches the API server version that runs in the master. [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/version-skew-policy/) `kubectl` client versions that are two or more versions apart from the server version (n +/- 2).
+4.  Install the version of the [`{[kubectl]} cli`](/docs/containers?topic=containers-cs_cli_install#{[kubectl]}) that matches the API server version that runs in the master. [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/version-skew-policy/) `{[kubectl]}` client versions that are two or more versions apart from the server version (n +/- 2).
 
 When the master update is complete, you can update your worker nodes.
 
@@ -122,7 +122,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 
 2. View the labels of a worker node. You can find the worker node labels in the **Labels** section of your CLI output. Every label consists of a `NodeSelectorKey` and a `NodeSelectorValue`.
    ```
-   kubectl describe node <private_worker_IP>
+   {[kubectl]} describe node <private_worker_IP>
    ```
    {: pre}
 
@@ -223,13 +223,13 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 
 4. Create the configuration map in your cluster.
    ```
-   kubectl apply -f <filepath/configmap.yaml>
+   {[kubectl]} apply -f <filepath/configmap.yaml>
    ```
    {: pre}
 
 5.  Verify that the config map is created.
     ```
-    kubectl get configmap --namespace kube-system
+    {[kubectl]} get configmap --namespace kube-system
     ```
     {: pre}
 
@@ -242,13 +242,13 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 
 7. Optional: Verify the events that are triggered by the config map and any validation errors that occur. The events can be reviewed in the  **Events** section of your CLI output.
    ```
-   kubectl describe -n kube-system cm ibm-cluster-update-configuration
+   {[kubectl]} describe -n kube-system cm ibm-cluster-update-configuration
    ```
    {: pre}
 
 8. Confirm that the update is complete by reviewing the Kubernetes version of your worker nodes.  
    ```
-   kubectl get nodes
+   {[kubectl]} get nodes
    ```
    {: pre}
 
@@ -256,7 +256,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 
 Next steps:
 -   Repeat the update process with other worker pools.
--   Inform developers who work in the cluster to update their `kubectl` CLI to the version of the Kubernetes master.
+-   Inform developers who work in the cluster to update their `{[kubectl]}` CLI to the version of the Kubernetes master.
 -   If the Kubernetes dashboard does not display utilization graphs, [delete the `kube-dashboard` pod](/docs/containers?topic=containers-cs_troubleshoot_health#cs_dashboard_graphs).
 
 
@@ -372,17 +372,17 @@ To update machine types:
 5.  To prevent downtime, reschedule the apps from the old worker nodes before you delete the old worker nodes.
     1.  Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **Private IP** of the worker node that you retrieved earlier, which is the worker node name in Kubernetes.
         ```
-        kubectl cordon <private_IP_address_of_worker_node>
+        {[kubectl]} cordon <private_IP_address_of_worker_node>
         ```
         {: pre}
     2.  Verify that pod scheduling is disabled for the worker node by checking that the status is **SchedulingDisabled**.
         ```
-        kubectl get nodes
+        {[kubectl]} get nodes
         ```
         {: pre}
     3.  Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. This process can take a few minutes.
         ```
-        kubectl drain <worker_name>
+        {[kubectl]} drain <worker_name>
         ```
         {: pre}
 6. Remove the old worker node. **Note**: If you are removing a machine type that is billed monthly (such as bare metal), you are charged for the entire the month.
@@ -443,7 +443,7 @@ Yes. Your cluster is deployed with the following managed components and associat
 You can view these resources by using the `addonmanager.kubernetes.io/mode: Reconcile` label. For example:
 
 ```
-kubectl get deployments --all-namespaces -l addonmanager.kubernetes.io/mode=Reconcile
+{[kubectl]} get deployments --all-namespaces -l addonmanager.kubernetes.io/mode=Reconcile
 ```
 {: pre}
 

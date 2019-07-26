@@ -43,7 +43,7 @@ To remove a cluster:
  
 1. Optional: From the CLI, save a copy of all data in your cluster to a local YAML file.
   ```
-  kubectl get all --all-namespaces -o yaml
+  {[kubectl]} get all --all-namespaces -o yaml
   ```
   {: pre}
 

@@ -303,7 +303,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
             {: pre}
         2.  Review the **Labels** field of the output.
             ```
-            kubectl describe node <worker_node_private_IP>
+            {[kubectl]} describe node <worker_node_private_IP>
             ```
             {: pre}
 

@@ -69,13 +69,13 @@ Before you begin:
 
   * To check individual worker nodes, review the **Labels** field of the output of the following command.
     ```
-    kubectl describe node <worker_node_private_IP>
+    {[kubectl]} describe node <worker_node_private_IP>
     ```
     {: pre}
 
 3. Retrieve all existing NLBs and ALBs in the cluster.
   ```
-  kubectl get services --all-namespaces | grep LoadBalancer
+  {[kubectl]} get services --all-namespaces | grep LoadBalancer
   ```
   {: pre}
 
@@ -95,7 +95,7 @@ Before you begin:
   {: note}
 
   ```
-  kubectl get service -n <namespace> <service_name> -o yaml | kubectl apply -f -
+  {[kubectl]} get service -n <namespace> <service_name> -o yaml | {[kubectl]} apply -f -
   ```
   {: pre}
 
@@ -110,7 +110,7 @@ Before you begin:
   * NLB pods:
     1. Confirm that the NLB pods are deployed to edge nodes. Search for the external IP address of the load balancer service that is listed in the output of step 3. Replace the periods (`.`) with hyphens (`-`). Example for the `webserver-lb` NLB that has an external IP address of `169.46.17.2`:
       ```
-      kubectl describe nodes -l dedicated=edge | grep "169-46-17-2"
+      {[kubectl]} describe nodes -l dedicated=edge | grep "169-46-17-2"
       ```
       {: pre}
 
@@ -122,7 +122,7 @@ Before you begin:
       {: screen}
     2. Confirm that no NLB pods are deployed to non-edge nodes. Example for the `webserver-lb` NLB that has an external IP address of `169.46.17.2`:
       ```
-      kubectl describe nodes -l dedicated!=edge | grep "169-46-17-2"
+      {[kubectl]} describe nodes -l dedicated!=edge | grep "169-46-17-2"
       ```
       {: pre}
       * If the NLB pods are correctly deployed to edge nodes, no NLB pods are returned. Your NLBs are successfully rescheduled onto only edge worker nodes.
@@ -131,7 +131,7 @@ Before you begin:
   * ALB pods:
     1. Confirm that all ALB pods are deployed to edge nodes. Search for the keyword `alb`. Each public and private ALB has two pods. Example:
       ```
-      kubectl describe nodes -l dedicated=edge | grep alb
+      {[kubectl]} describe nodes -l dedicated=edge | grep alb
       ```
       {: pre}
 
@@ -148,7 +148,7 @@ Before you begin:
 
     2. Confirm that no ALB pods are deployed to non-edge nodes. Example:
       ```
-      kubectl describe nodes -l dedicated!=edge | grep alb
+      {[kubectl]} describe nodes -l dedicated!=edge | grep alb
       ```
       {: pre}
       * If the ALB pods are correctly deployed to edge nodes, no ALB pods are returned. Your ALBs are successfully rescheduled onto only edge worker nodes.
@@ -157,13 +157,13 @@ Before you begin:
 6. If NLB or ALB pods are still deployed to non-edge nodes, you can delete the pods so that they redeploy to edge nodes. **Important**: Delete only one pod at a time, and verify that the pod is rescheduled onto an edge node before you delete other pods.
   1. Delete a pod. Example for if one of the `webserver-lb` NLB pods did not schedule to an edge node:
     ```
-    kubectl delete pod ibm-cloud-provider-ip-169-46-17-2-76fcb4965d-wz6dg
+    {[kubectl]} delete pod ibm-cloud-provider-ip-169-46-17-2-76fcb4965d-wz6dg
     ```
     {: pre}
 
   2. Verify that the pod is rescheduled onto an edge worker node. Rescheduling is automatic, but might take a few minutes. Example for the `webserver-lb` NLB that has an external IP address of `169.46.17.2`:
     ```
-    kubectl describe nodes -l dedicated=edge | grep "169-46-17-2"
+    {[kubectl]} describe nodes -l dedicated=edge | grep "169-46-17-2"
     ```
     {: pre}
 
@@ -195,14 +195,14 @@ Before you begin:
 
 1. Apply a taint to all worker nodes with the `dedicated=edge` label that prevents pods from running on the worker node and that removes pods that do not have the `dedicated=edge` label from the worker node. The pods that are removed are redeployed to other worker nodes with capacity.
   ```
-  kubectl taint node -l dedicated=edge dedicated=edge:NoSchedule dedicated=edge:NoExecute
+  {[kubectl]} taint node -l dedicated=edge dedicated=edge:NoSchedule dedicated=edge:NoExecute
   ```
   {: pre}
   Now, only pods with the `dedicated=edge` toleration are deployed to your edge worker nodes.
 
 2. Verify that your edge nodes are tainted.
   ```
-  kubectl describe nodes -l dedicated=edge | grep "Taint|Hostname"
+  {[kubectl]} describe nodes -l dedicated=edge | grep "Taint|Hostname"
   ```
   {: pre}
 
@@ -219,7 +219,7 @@ Before you begin:
 
 4. To remove a taint, run the following command.
     ```
-    kubectl taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-
+    {[kubectl]} taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-
     ```
     {: pre}
 

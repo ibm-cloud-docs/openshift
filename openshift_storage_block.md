@@ -69,7 +69,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 2.  Verify that Tiller is installed with a service account.
 
     ```
-    kubectl get serviceaccount -n kube-system tiller
+    {[kubectl]} get serviceaccount -n kube-system tiller
     ```
     {: pre}
 
@@ -145,7 +145,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 6. Verify that the installation was successful.
    ```
-   kubectl get pod -n kube-system | grep block
+   {[kubectl]} get pod -n kube-system | grep block
    ```
    {: pre}
 
@@ -160,7 +160,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 7. Verify that the storage classes for block storage were added to your cluster.
    ```
-   kubectl get storageclasses | grep block
+   {[kubectl]} get storageclasses | grep block
    ```
    {: pre}
 
@@ -220,7 +220,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 5. Optional: When you update the plug-in, the `default` storage class is unset. If you want to set the default storage class to a storage class of your choice, run the following command.
    ```
-   kubectl patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+   {[kubectl]} patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
    ```
    {: pre}
 
@@ -258,14 +258,14 @@ To remove the plug-in:
 
 3. Verify that the block storage pods are removed.
    ```
-   kubectl get pod -n kube-system | grep ibmcloud-block-storage-plugin
+   {[kubectl]} get pod -n kube-system | grep ibmcloud-block-storage-plugin
    ```
    {: pre}
    The removal of the pods is successful if no pods are displayed in your CLI output.
 
 4. Verify that the block storage classes are removed.
    ```
-   kubectl get storageclasses | grep block
+   {[kubectl]} get storageclasses | grep block
    ```
    {: pre}
    The removal of the storage classes is successful if no storage classes are displayed in your CLI output.
@@ -287,13 +287,13 @@ Make sure to choose your storage configuration carefully to have enough capacity
 
 1. List available storage classes in {{site.data.keyword.containerlong}}.
     ```
-    kubectl get storageclasses | grep block
+    {[kubectl]} get storageclasses | grep block
     ```
     {: pre}
 
     Example output:
     ```
-    $ kubectl get storageclasses
+    $ {[kubectl]} get storageclasses
     NAME                         TYPE
     ibmc-block-custom            ibm.io/ibmc-block
     ibmc-block-bronze            ibm.io/ibmc-block
@@ -308,7 +308,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
 
 2. Review the configuration of a storage class.
    ```
-   kubectl describe storageclass <storageclass_name>
+   {[kubectl]} describe storageclass <storageclass_name>
    ```
    {: pre}
 
@@ -507,7 +507,7 @@ To add block storage:
         </tr>
 	<tr>
 	<td><code>spec.storageClassName</code></td>
-	<td>The name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code><p>**Tip:** If you want to change the default storage class, run <code>kubectl patch storageclass &lt;storageclass&gt; -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'</code> and replace <code>&lt;storageclass&gt;</code> with the name of the storage class.</p></td>
+	<td>The name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code><p>**Tip:** If you want to change the default storage class, run <code>{[kubectl]} patch storageclass &lt;storageclass&gt; -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'</code> and replace <code>&lt;storageclass&gt;</code> with the name of the storage class.</p></td>
 	</tr>
         </tbody></table>
 
@@ -517,14 +517,14 @@ To add block storage:
 2.  Create the PVC.
 
     ```
-    kubectl apply -f mypvc.yaml
+    {[kubectl]} apply -f mypvc.yaml
     ```
     {: pre}
 
 3.  Verify that your PVC is created and bound to the PV. This process can take a few minutes.
 
     ```
-    kubectl describe pvc mypvc
+    {[kubectl]} describe pvc mypvc
     ```
     {: pre}
 
@@ -626,14 +626,14 @@ To add block storage:
 
 5.  Create the deployment.
      ```
-     kubectl apply -f <local_yaml_path>
+     {[kubectl]} apply -f <local_yaml_path>
      ```
      {: pre}
 
 6.  Verify that the PV is successfully mounted.
 
      ```
-     kubectl describe deployment <deployment_name>
+     {[kubectl]} describe deployment <deployment_name>
      ```
      {: pre}
 
@@ -705,7 +705,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
 1.  Optional: If you have storage that you provisioned with a `retain` storage class, when you remove the PVC, the PV and the physical storage device are not removed. To reuse the storage in your cluster, you must remove the PV first.
     1. List existing PVs.
        ```
-       kubectl get pv
+       {[kubectl]} get pv
        ```
        {: pre}
 
@@ -713,13 +713,13 @@ Before you can start to mount your existing storage to an app, you must retrieve
 
     2. Remove the PV.
        ```
-       kubectl delete pv <pv_name>
+       {[kubectl]} delete pv <pv_name>
        ```
        {: pre}
 
     3. Verify that the PV is removed.
        ```
-       kubectl get pv
+       {[kubectl]} get pv
        ```
        {: pre}
 
@@ -790,13 +790,13 @@ Before you can start to mount your existing storage to an app, you must retrieve
 
 3.  Create the PV in your cluster.
     ```
-    kubectl apply -f mypv.yaml
+    {[kubectl]} apply -f mypv.yaml
     ```
     {: pre}
 
 4. Verify that the PV is created.
     ```
-    kubectl get pv
+    {[kubectl]} get pv
     ```
     {: pre}
 
@@ -819,13 +819,13 @@ Before you can start to mount your existing storage to an app, you must retrieve
 
 6.  Create your PVC.
      ```
-     kubectl apply -f mypvc.yaml
+     {[kubectl]} apply -f mypvc.yaml
      ```
      {: pre}
 
 7.  Verify that your PVC is created and bound to the PV that you created earlier. This process can take a few minutes.
      ```
-     kubectl describe pvc mypvc
+     {[kubectl]} describe pvc mypvc
      ```
      {: pre}
 
@@ -887,7 +887,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you cannot start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results.
    1. List existing stateful sets in your cluster.
       ```
-      kubectl get statefulset --all-namespaces
+      {[kubectl]} get statefulset --all-namespaces
       ```
       {: pre}
 
@@ -900,7 +900,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
    2. View the **Pods Status** of each stateful set to ensure that the deployment of the stateful set is finished.  
       ```
-      kubectl describe statefulset <statefulset_name>
+      {[kubectl]} describe statefulset <statefulset_name>
       ```
       {: pre}
 
@@ -914,7 +914,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
                           billingType=hourly
                           region=us-south
                           zone=dal10
-      Annotations:        kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"podManagementPolicy":"Par...
+      Annotations:        {[kubectl]}.kubernetes.io/last-applied-configuration={"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"podManagementPolicy":"Par...
       Replicas:           3 desired | 3 total
       Pods Status:        0 Running / 3 Waiting / 0 Succeeded / 0 Failed
       Pod Template:
@@ -1137,23 +1137,23 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
      </tr>
      <tr>
      <td style="text-align:left"><code>spec.volumeClaimTemplates.</code></br><code>spec.storageClassName</code></td>
-     <td style="text-align:left">Enter the storage class that you want to use. To list existing storage classes, run <code>kubectl get storageclasses | grep block</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-block</code> provisioner so that your stateful set is provisioned with block storage.</td>
+     <td style="text-align:left">Enter the storage class that you want to use. To list existing storage classes, run <code>{[kubectl]} get storageclasses | grep block</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-block</code> provisioner so that your stateful set is provisioned with block storage.</td>
      </tr>
      </tbody></table>
 
 4. Create your stateful set.
    ```
-   kubectl apply -f statefulset.yaml
+   {[kubectl]} apply -f statefulset.yaml
    ```
    {: pre}
 
 5. Wait for your stateful set to be deployed.
    ```
-   kubectl describe statefulset <statefulset_name>
+   {[kubectl]} describe statefulset <statefulset_name>
    ```
    {: pre}
 
-   To see the current status of your PVCs, run `kubectl get pvc`. The name of your PVC is formatted as `<volume_name>-<statefulset_name>-<replica_number>`.
+   To see the current status of your PVCs, run `{[kubectl]} get pvc`. The name of your PVC is formatted as `<volume_name>-<statefulset_name>-<replica_number>`.
    {: tip}
 
 ### Static provisioning: Using existing PVCs with a stateful set
@@ -1186,13 +1186,13 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 3. Verify that the PVCs are used in your stateful set replica pods.
    1. List the pods in your cluster. Identify the pods that belong to your stateful set.
       ```
-      kubectl get pods
+      {[kubectl]} get pods
       ```
       {: pre}
 
    2. Verify that your existing PVC is mounted to your stateful set replica. Review the **`ClaimName`** in the **`Volumes`** section of your CLI output.
       ```
-      kubectl describe pod <pod_name>
+      {[kubectl]} describe pod <pod_name>
       ```
       {: pre}
 
@@ -1220,12 +1220,12 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 If you want to increase storage capacity or performance, you can modify your existing volume.
 {: shortdesc}
 
-For questions about billing and to find the steps for how to use the {{site.data.keyword.cloud_notm}} console to modify your storage, see [Expanding Block Storage capacity](/docs/infrastructure/BlockStorage?topic=BlockStorage-expandingcapacity#expandingcapacity) and [Adjusting IOPS](/docs/infrastructure/BlockStorage?topic=BlockStorage-adjustingIOPS). Updates that you make from the console are not reflected in the persistent volume (PV). To add this information to the PV, run `kubectl patch pv <pv_name>` and manually update the size and IOPS in the **Labels** and **Annotation** section of your PV.
+For questions about billing and to find the steps for how to use the {{site.data.keyword.cloud_notm}} console to modify your storage, see [Expanding Block Storage capacity](/docs/infrastructure/BlockStorage?topic=BlockStorage-expandingcapacity#expandingcapacity) and [Adjusting IOPS](/docs/infrastructure/BlockStorage?topic=BlockStorage-adjustingIOPS). Updates that you make from the console are not reflected in the persistent volume (PV). To add this information to the PV, run `{[kubectl]} patch pv <pv_name>` and manually update the size and IOPS in the **Labels** and **Annotation** section of your PV.
 {: tip}
 
 1. List the PVCs in your cluster and note the name of the associated PV from the **VOLUME** column.
    ```
-   kubectl get pvc
+   {[kubectl]} get pvc
    ```
    {: pre}
 
@@ -1238,7 +1238,7 @@ For questions about billing and to find the steps for how to use the {{site.data
 
 2. If you want to change the IOPS and the size for your block storage, edit the IOPS in the `metadata.labels.IOPS` section of your PV first. You can change to a lower or greater IOPS value. Make sure that you enter an IOPS that is supported for the storage type that you have. For example, if you have endurance block storage with 4 IOPS, you can change the IOPS to either 2 or 10. For more supported IOPS values, see [Deciding on your block storage configuration](/docs/containers?topic=containers-block_storage#block_predefined_storageclass).
    ```
-   kubectl edit pv <pv_name>
+   {[kubectl]} edit pv <pv_name>
    ```
    {: pre}
 
@@ -1247,13 +1247,13 @@ For questions about billing and to find the steps for how to use the {{site.data
 
 3. Edit the PVC and add the new size in the `spec.resources.requests.storage` section of your PVC. You can change to a greater size only up to the maximum capacity that is set by your storage class. You cannot downsize your existing storage. To see available sizes for your storage class, see [Deciding on the block storage configuration](/docs/containers?topic=containers-block_storage#block_predefined_storageclass).
    ```
-   kubectl edit pvc <pvc_name>
+   {[kubectl]} edit pvc <pvc_name>
    ```
    {: pre}
 
 4. Verify that the volume expansion is requested. The volume expansion is successfully requested when you see a `FileSystemResizePending` message in the **Conditions** section of your CLI output. 
    ```
-   kubectl describe pvc <pvc_name>
+   {[kubectl]} describe pvc <pvc_name>
    ```
    {: pre}
 
@@ -1269,7 +1269,7 @@ For questions about billing and to find the steps for how to use the {{site.data
 
 5. List all the pods that mount the PVC. If your PVC is mounted by a pod, the volume expansion is automatically processed. If your PVC is not mounted by a pod, you must mount the PVC to a pod so that the volume expansion can be processed. 
    ```
-   kubectl get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+   {[kubectl]} get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
    ```
    {: pre}
 
@@ -1279,7 +1279,7 @@ For questions about billing and to find the steps for how to use the {{site.data
 
 7. Monitor the volume expansion status. The volume expansion is complete when you see the `"message":"Success"` message in your CLI output.
    ```
-   kubectl get pv <pv_name> -o go-template=$'{{index .metadata.annotations "ibm.io/volume-expansion-status"}}\n'
+   {[kubectl]} get pv <pv_name> -o go-template=$'{{index .metadata.annotations "ibm.io/volume-expansion-status"}}\n'
    ```
    {: pre}
 
@@ -1291,7 +1291,7 @@ For questions about billing and to find the steps for how to use the {{site.data
 
 8. Verify that the size and IOPS are changed in the **Labels** section of your CLI output.
    ```
-   kubectl describe pv <pv_name>
+   {[kubectl]} describe pv <pv_name>
    ```
    {: pre}
 
@@ -1315,7 +1315,7 @@ Review the following backup and restore options for your block storage:
 
 <dl>
   <dt>Set up periodic snapshots</dt>
-  <dd><p>You can [set up periodic snapshots for your block storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-snapshots#snapshots), which is a read-only image that captures the state of the instance at a point in time. To store the snapshot, you must request snapshot space on your block storage. Snapshots are stored on the existing storage instance within the same zone. You can restore data from a snapshot if a user accidentally removes important data from the volume.</br></br> <strong>To create a snapshot for your volume: </strong><ol><li>[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)</li><li>Log in to the `ibmcloud sl` CLI. <pre class="pre"><code>ibmcloud sl init</code></pre></li><li>List existing PVs in your cluster. <pre class="pre"><code>kubectl get pv</code></pre></li><li>Get the details for the PV for which you want to create snapshot space and note the volume ID, the size, and the IOPS. <pre class="pre"><code>kubectl describe pv &lt;pv_name&gt;</code></pre> The size and IOPS are shown in the <strong>Labels</strong> section of your CLI output. To find the volume ID, review the <code>ibm.io/network-storage-id</code> annotation of your CLI output. </li><li>Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step. <pre class="pre"><code>ibmcloud sl block snapshot-order &lt;volume_ID&gt; --size &lt;size&gt; --tier &lt;iops&gt;</code></pre></li><li>Wait for the snapshot size to create. <pre class="pre"><code>ibmcloud sl block volume-detail &lt;volume_ID&gt;</code></pre>The snapshot size is successfully provisioned when the <strong>Snapshot Size (GB)</strong> in your CLI output changes from 0 to the size that you ordered. </li><li>Create the snapshot for your volume and note the ID of the snapshot that is created for you. <pre class="pre"><code>ibmcloud sl block snapshot-create &lt;volume_ID&gt;</code></pre></li><li>Verify that the snapshot is created successfully. <pre class="pre"><code>ibmcloud sl block snapshot-list &lt;volume_ID&gt;</code></pre></li></ol></br><strong>To restore data from a snapshot to an existing volume: </strong><pre class="pre"><code>ibmcloud sl block snapshot-restore &lt;volume_ID&gt; &lt;snapshot_ID&gt;</code></pre></p></dd>
+  <dd><p>You can [set up periodic snapshots for your block storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-snapshots#snapshots), which is a read-only image that captures the state of the instance at a point in time. To store the snapshot, you must request snapshot space on your block storage. Snapshots are stored on the existing storage instance within the same zone. You can restore data from a snapshot if a user accidentally removes important data from the volume.</br></br> <strong>To create a snapshot for your volume: </strong><ol><li>[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)</li><li>Log in to the `ibmcloud sl` CLI. <pre class="pre"><code>ibmcloud sl init</code></pre></li><li>List existing PVs in your cluster. <pre class="pre"><code>{[kubectl]} get pv</code></pre></li><li>Get the details for the PV for which you want to create snapshot space and note the volume ID, the size, and the IOPS. <pre class="pre"><code>{[kubectl]} describe pv &lt;pv_name&gt;</code></pre> The size and IOPS are shown in the <strong>Labels</strong> section of your CLI output. To find the volume ID, review the <code>ibm.io/network-storage-id</code> annotation of your CLI output. </li><li>Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step. <pre class="pre"><code>ibmcloud sl block snapshot-order &lt;volume_ID&gt; --size &lt;size&gt; --tier &lt;iops&gt;</code></pre></li><li>Wait for the snapshot size to create. <pre class="pre"><code>ibmcloud sl block volume-detail &lt;volume_ID&gt;</code></pre>The snapshot size is successfully provisioned when the <strong>Snapshot Size (GB)</strong> in your CLI output changes from 0 to the size that you ordered. </li><li>Create the snapshot for your volume and note the ID of the snapshot that is created for you. <pre class="pre"><code>ibmcloud sl block snapshot-create &lt;volume_ID&gt;</code></pre></li><li>Verify that the snapshot is created successfully. <pre class="pre"><code>ibmcloud sl block snapshot-list &lt;volume_ID&gt;</code></pre></li></ol></br><strong>To restore data from a snapshot to an existing volume: </strong><pre class="pre"><code>ibmcloud sl block snapshot-restore &lt;volume_ID&gt; &lt;snapshot_ID&gt;</code></pre></p></dd>
   <dt>Replicate snapshots to another zone</dt>
  <dd><p>To protect your data from a zone failure, you can [replicate snapshots](/docs/infrastructure/BlockStorage?topic=BlockStorage-replication#replication) to a block storage instance that is set up in another zone. Data can be replicated from the primary storage to the backup storage only. You cannot mount a replicated block storage instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.</p></dd>
  <dt>Duplicate storage</dt>
@@ -1324,13 +1324,13 @@ Review the following backup and restore options for your block storage:
   <dd><p>You can use the [**ibm-backup-restore image**](/docs/services/RegistryImages/ibm-backup-restore?topic=RegistryImages-ibmbackup_restore_starter#ibmbackup_restore_starter) to spin up a backup and restore pod in your cluster. This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.</p><p class="note">Block storage is mounted with an RWO access mode. This access allows only one pod to be mounted to the block storage at a time. To back up your data, you must unmount the app pod from the storage, mount it to your backup pod, back up the data, and remount the storage to your app pod. </p>
 To make your data even more highly available and protect your app from a zone failure, set up a second {{site.data.keyword.cos_short}} instance and replicate data across zones. If you need to restore data from your {{site.data.keyword.cos_short}} instance, use the restore script that is provided with the image.</dd>
 <dt>Copy data to and from pods and containers</dt>
-<dd><p>You can use the `kubectl cp` [command![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) to copy files and directories to and from pods or specific containers in your cluster.</p>
+<dd><p>You can use the `{[kubectl]} cp` [command![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/{[kubectl]}/overview/#cp) to copy files and directories to and from pods or specific containers in your cluster.</p>
 <p>Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) If you do not specify a container with <code>-c</code>, the command uses to the first available container in the pod.</p>
 <p>You can use the command in various ways:</p>
 <ul>
-<li>Copy data from your local machine to a pod in your cluster: <pre class="pre"><code>kubectl cp <var>&lt;local_filepath&gt;/&lt;filename&gt;</var> <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;</var></code></pre></li>
-<li>Copy data from a pod in your cluster to your local machine: <pre class="pre"><code>kubectl cp <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;/&lt;filename&gt;</var> <var>&lt;local_filepath&gt;/&lt;filename&gt;</var></code></pre></li>
-<li>Copy data from your local machine to a specific container that runs in a pod in your cluster: <pre class="pre"><code>kubectl cp <var>&lt;local_filepath&gt;/&lt;filename&gt;</var> <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;</var> -c <var>&lt;container&gt;</var></code></pre></li>
+<li>Copy data from your local machine to a pod in your cluster: <pre class="pre"><code>{[kubectl]} cp <var>&lt;local_filepath&gt;/&lt;filename&gt;</var> <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;</var></code></pre></li>
+<li>Copy data from a pod in your cluster to your local machine: <pre class="pre"><code>{[kubectl]} cp <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;/&lt;filename&gt;</var> <var>&lt;local_filepath&gt;/&lt;filename&gt;</var></code></pre></li>
+<li>Copy data from your local machine to a specific container that runs in a pod in your cluster: <pre class="pre"><code>{[kubectl]} cp <var>&lt;local_filepath&gt;/&lt;filename&gt;</var> <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;</var> -c <var>&lt;container&gt;</var></code></pre></li>
 </ul></dd>
   </dl>
 

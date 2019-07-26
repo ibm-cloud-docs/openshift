@@ -81,7 +81,7 @@ To secure communication over public and private service endpoints, {{site.data.k
 **Public service endpoint only**</br>
 If you don’t want to or cannot enable VRF for your account, your worker nodes can automatically connect to the Kubernetes master over the public VLAN through the public service endpoint.
 * Communication between worker nodes and master is established securely over the public network through the public service endpoint.
-* The master is publicly accessible to authorized cluster users only through the public service endpoint. Your cluster users can securely access your Kubernetes master over the internet to run `kubectl` commands, for example.
+* The master is publicly accessible to authorized cluster users only through the public service endpoint. Your cluster users can securely access your Kubernetes master over the internet to run `{[kubectl]}` commands, for example.
 
 **Public and private service endpoints**</br>
 To make your master publicly or privately accessible to cluster users, you can enable the public and private service endpoints. VRF is required in your {{site.data.keyword.cloud_notm}} account, and you must enable your account to use service endpoints. To enable VRF and service endpoints, run `ibmcloud account update --service-endpoint-enable true`.

@@ -86,13 +86,13 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
    **Example for using the API key:**
    ```
-   kubectl create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=<api_key> --from-literal=service-instance-id=<service_instance_guid>
+   {[kubectl]} create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=<api_key> --from-literal=service-instance-id=<service_instance_guid>
    ```
    {: pre}
 
    **Example for HMAC authentication:**
    ```
-   kubectl create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>    
+   {[kubectl]} create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>    
    ```
    {: pre}
 
@@ -123,7 +123,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 4. Verify that the secret is created in your namespace.
    ```
-   kubectl get secret
+   {[kubectl]} get secret
    ```
    {: pre}
 
@@ -165,7 +165,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 3. If you want to install the plug-in with Tiller, verify that Tiller is installed with a service account.
    ```
-   kubectl get serviceaccount -n kube-system tiller
+   {[kubectl]} get serviceaccount -n kube-system tiller
    ```
    {: pre}
 
@@ -239,7 +239,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
       Note:
          1. It is always recommended to install latest version of ibm-object-storage-plugin chart.
-         2. It is always recommended to have 'kubectl' client up-to-date.
+         2. It is always recommended to have '{[kubectl]}' client up-to-date.
       ```
       {: screen}
 
@@ -305,7 +305,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
    - **For Windows:**
      1. Retrieve the zone where your cluster is deployed and store the zone in an environment variable.
         ```
-        export DC_NAME=$(kubectl get cm cluster-info -n kube-system -o jsonpath='{.data.cluster-config\.json}' | grep datacenter | awk -F ': ' '{print $2}' | sed 's/\"//g' |sed 's/,//g')
+        export DC_NAME=$({[kubectl]} get cm cluster-info -n kube-system -o jsonpath='{.data.cluster-config\.json}' | grep datacenter | awk -F ': ' '{print $2}' | sed 's/\"//g' |sed 's/,//g')
         ```
         {: pre}
 
@@ -378,7 +378,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 10. Verify that the plug-in is installed correctly.
     ```
-    kubectl get pod -n default -o wide | grep object
+    {[kubectl]} get pod -n default -o wide | grep object
     ```
     {: pre}
 
@@ -389,11 +389,11 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ```
     {: screen}
 
-    The installation is successful when you see one `ibmcloud-object-storage-plugin` pod and one or more `ibmcloud-object-storage-driver` pods. The number of `ibmcloud-object-storage-driver` pods equals the number of worker nodes in your cluster. All pods must be in a `Running` state for the plug-in to function properly. If the pods fail, run `kubectl describe pod -n kube-system <pod_name>` to find the root cause for the failure.
+    The installation is successful when you see one `ibmcloud-object-storage-plugin` pod and one or more `ibmcloud-object-storage-driver` pods. The number of `ibmcloud-object-storage-driver` pods equals the number of worker nodes in your cluster. All pods must be in a `Running` state for the plug-in to function properly. If the pods fail, run `{[kubectl]} describe pod -n kube-system <pod_name>` to find the root cause for the failure.
 
 11. Verify that the storage classes are created successfully.
     ```
-    kubectl get storageclass | grep s3
+    {[kubectl]} get storageclass | grep s3
     ```
     {: pre}
 
@@ -489,7 +489,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 
 6. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded.  
    ```
-   kubectl rollout status deployment/ibmcloud-object-storage-plugin -n kube-system
+   {[kubectl]} rollout status deployment/ibmcloud-object-storage-plugin -n kube-system
    ```
    {: pre}
 
@@ -497,7 +497,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 
 7. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded.
    ```
-   kubectl rollout status ds/ibmcloud-object-storage-driver -n kube-system
+   {[kubectl]} rollout status ds/ibmcloud-object-storage-driver -n kube-system
    ```
    {: pre}
 
@@ -505,7 +505,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 
 8. Verify that the {{site.data.keyword.cos_full_notm}} pods are in a `Running` state.
    ```
-   kubectl get pods -n kube-system -o wide | grep object-storage
+   {[kubectl]} get pods -n kube-system -o wide | grep object-storage
    ```
    {: pre}
 
@@ -522,7 +522,7 @@ Removing the plug-in does not remove existing PVCs, PVs, or data. When you remov
 Before you begin:
 
 - [Target your CLI to the cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
-- Make sure that you do not have any PVCs or PVs in your cluster that use {{site.data.keyword.cos_full_notm}}. To list all pods that mount a specific PVC, run `kubectl get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"`.
+- Make sure that you do not have any PVCs or PVs in your cluster that use {{site.data.keyword.cos_full_notm}}. To list all pods that mount a specific PVC, run `{[kubectl]} get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"`.
 
 To remove the plug-in:
 
@@ -554,7 +554,7 @@ To remove the plug-in:
 
 2. Verify that the {{site.data.keyword.cos_full_notm}} pods are removed.
    ```
-   kubectl get pod -n kube-system | grep object-storage
+   {[kubectl]} get pod -n kube-system | grep object-storage
    ```
    {: pre}
 
@@ -562,7 +562,7 @@ To remove the plug-in:
 
 3. Verify that the storage classes are removed.
    ```
-   kubectl get storageclasses | grep s3
+   {[kubectl]} get storageclasses | grep s3
    ```
    {: pre}
 
@@ -598,7 +598,7 @@ To remove the plug-in:
 
 1. List available storage classes in {{site.data.keyword.containerlong_notm}}.
    ```
-   kubectl get storageclasses | grep s3
+   {[kubectl]} get storageclasses | grep s3
    ```
    {: pre}
 
@@ -631,7 +631,7 @@ To remove the plug-in:
 
 4. Review the detailed {{site.data.keyword.cos_full_notm}} bucket configuration for a storage class.
    ```
-   kubectl describe storageclass <storageclass_name>
+   {[kubectl]} describe storageclass <storageclass_name>
    ```
    {: pre}
 
@@ -795,7 +795,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
    </tr>
    <tr>
   <td><code>ibm.io/endpoint</code></td>
-  <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see [Additional endpoint information](/docs/services/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the <code>ibmc</code> Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private service endpoint that matches your cluster location. If the cluster is in one of the metro city zones, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private service endpoint for the metro city, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `kubectl describe storageclass <storageclassname>`. Make sure that you enter your service endpoint in the format `https://<s3fs_private_service_endpoint>` for private service endpoints, or `http://<s3fs_public_service_endpoint>` for public service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the <code>ibm.io/endpoint</code> option in your PVC YAML file. </td>
+  <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see [Additional endpoint information](/docs/services/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the <code>ibmc</code> Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private service endpoint that matches your cluster location. If the cluster is in one of the metro city zones, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private service endpoint for the metro city, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `{[kubectl]} describe storageclass <storageclassname>`. Make sure that you enter your service endpoint in the format `https://<s3fs_private_service_endpoint>` for private service endpoints, or `http://<s3fs_public_service_endpoint>` for public service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the <code>ibm.io/endpoint</code> option in your PVC YAML file. </td>
   </tr>
    <tr>
    <td><code>resources.requests.storage</code></td>
@@ -810,13 +810,13 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
 2. Create the PVC.
    ```
-   kubectl apply -f filepath/pvc.yaml
+   {[kubectl]} apply -f filepath/pvc.yaml
    ```
    {: pre}
 
 3. Verify that your PVC is created and bound to the PV.
    ```
-   kubectl get pvc
+   {[kubectl]} get pvc
    ```
    {: pre}
 
@@ -913,14 +913,14 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
 5.  Create the deployment.
      ```
-     kubectl apply -f <local_yaml_path>
+     {[kubectl]} apply -f <local_yaml_path>
      ```
      {: pre}
 
 6.  Verify that the PV is successfully mounted.
 
      ```
-     kubectl describe deployment <deployment_name>
+     {[kubectl]} describe deployment <deployment_name>
      ```
      {: pre}
 
@@ -942,7 +942,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 7. Verify that you can write data to your {{site.data.keyword.cos_full_notm}} service instance.
    1. Log in to the pod that mounts your PV.
       ```
-      kubectl exec <pod_name> -it bash
+      {[kubectl]} exec <pod_name> -it bash
       ```
       {: pre}
 
@@ -1150,7 +1150,7 @@ To deploy a stateful set that uses object storage:
     </tr>
     <tr>
     <td style="text-align:left"><code>spec.volumeClaimTemplates.metadata.</code></br><code>annotations.volume.beta.</code></br><code>kubernetes.io/storage-class</code></td>
-    <td style="text-align:left">Enter the storage class that you want to use. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the storage class that you want to use for your new bucket.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the storage class that you used to create your existing bucket. </li></ul></br>  To list existing storage classes, run <code>kubectl get storageclasses | grep s3</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-s3fs</code> provisioner so that your stateful set is provisioned with object storage.</td>
+    <td style="text-align:left">Enter the storage class that you want to use. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the storage class that you want to use for your new bucket.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the storage class that you used to create your existing bucket. </li></ul></br>  To list existing storage classes, run <code>{[kubectl]} get storageclasses | grep s3</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-s3fs</code> provisioner so that your stateful set is provisioned with object storage.</td>
     </tr>
     <tr>
     <td style="text-align:left"><code>spec.volumeClaimTemplates.</code></br><code>spec.storageClassName</code></td>

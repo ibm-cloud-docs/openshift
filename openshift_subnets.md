@@ -78,7 +78,7 @@ In {{site.data.keyword.containerlong_notm}}, VLANs have a limit of 40 subnets. I
 {: note}
 
 **Do the IP address for my worker nodes change?**</br>
-Your worker node is assigned an IP address on the public or private VLANs that your cluster uses. After the worker node is provisioned, the IP addresses do not change. For example, the worker node IP addresses persist across `reload`, `reboot`, and `update` operations. Additionally, the private IP address of the worker node is used for the worker node identity in most `kubectl` commands. If you change the VLANs that the worker pool uses, new worker nodes that are provisioned in that pool use the new VLANs for their IP addresses. Existing worker node IP addresses do not change, but you can choose to remove the worker nodes that use the old VLANs.
+Your worker node is assigned an IP address on the public or private VLANs that your cluster uses. After the worker node is provisioned, the IP addresses do not change. For example, the worker node IP addresses persist across `reload`, `reboot`, and `update` operations. Additionally, the private IP address of the worker node is used for the worker node identity in most `{[kubectl]}` commands. If you change the VLANs that the worker pool uses, new worker nodes that are provisioned in that pool use the new VLANs for their IP addresses. Existing worker node IP addresses do not change, but you can choose to remove the worker nodes that use the old VLANs.
 
 ### Network segmentation
 {: #basics_segmentation}
@@ -233,7 +233,7 @@ To list all of the portable IP addresses in your cluster, both used and availabl
 {: shortdesc}
 
 ```
-kubectl get cm ibm-cloud-provider-vlan-ip-config -n kube-system -o yaml
+{[kubectl]} get cm ibm-cloud-provider-vlan-ip-config -n kube-system -o yaml
 ```
 {: pre}
 
@@ -273,14 +273,14 @@ To list available portable public IP addresses:
 2.  Create the service in your cluster.
 
     ```
-    kubectl apply -f myservice.yaml
+    {[kubectl]} apply -f myservice.yaml
     ```
     {: pre}
 
 3.  Inspect the service.
 
     ```
-    kubectl describe service myservice
+    {[kubectl]} describe service myservice
     ```
     {: pre}
 
@@ -308,14 +308,14 @@ To delete an NLB or disable an ALB:
 
 1. List available services in your cluster.
     ```
-    kubectl get services | grep LoadBalancer
+    {[kubectl]} get services | grep LoadBalancer
     ```
     {: pre}
 
 2. Remove the load balancer service or disable the ALB that uses a public or private IP address.
   * Delete an NLB:
     ```
-    kubectl delete service <service_name>
+    {[kubectl]} delete service <service_name>
     ```
     {: pre}
   * Disable an ALB:
