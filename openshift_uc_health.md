@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -26,7 +26,7 @@ subcollection: openshift
 # Healthcare use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_health}
 
-These use cases highlight how workloads on {[product_name_tm}} benefit from the public cloud. They have secure compute on isolated bare metal, easy spin-up of clusters for faster development, migration from virtual machines, and data sharing in cloud databases.
+These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} benefit from the public cloud. They have secure compute on isolated bare metal, easy spin-up of clusters for faster development, migration from virtual machines, and data sharing in cloud databases.
 {: shortdesc}
 
 ## Healthcare provider migrates workloads from inefficient VMs to Ops-friendly containers for reporting and patient systems
