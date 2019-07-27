@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -26,7 +26,7 @@ subcollection: openshift
 # Transportation use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_transport}
 
-These use cases highlight how workloads on {[product_name_tm}} can
+These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} can
 take advantage of toolchains for rapid app updates and multiregion deployments across the globe. At the same time, these workloads can connect to existing back-end systems, use Watson AI for personalization, and access IOT data with {{site.data.keyword.messagehub_full}}.
 
 {: shortdesc}
