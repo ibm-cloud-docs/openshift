@@ -10,9 +10,17 @@ Red Hat OpenShift on IBM Cloud
     {: .topicgroup}
     About
         openshift_why.md
-        openshift_uc_intro.md
         openshift_tech.md
         
+    {: .topicgroup}
+    Use cases
+        openshift_uc_intro.md
+        openshift_uc_finance.md
+        openshift_uc_health.md
+        openshift_uc_retail.md
+        openshift_uc_transport.md
+        openshift_uc_gov.md
+
     {: .topicgroup}
     Your cluster strategy
         openshift_responsibilities.md
