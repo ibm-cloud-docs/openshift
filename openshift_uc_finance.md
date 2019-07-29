@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -101,7 +101,7 @@ This solution provides the immediate benefit of scalability. By using Kubernetes
 ## Payment tech company streamlines developer productivity, deploying AI-enabled tools to their partners 4 times faster
 {: #uc_payment_tech}
 
-A Development Exec has Developers that use on-premises traditional tools that slow down prototyping while they wait for hardware procurement.
+A Development Exec has Developers that use on-premises traditional <openshift>application </openshift> tools that slow down prototyping while they wait for hardware procurement.
 {: shortdesc}
 
 Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud provides spin-up of compute by using open-source standard technology. After the company moved to Red Hat OpenShift on IBM Cloud, Developers have access to DevOps friendly tools, such as portable and easily shared containers.
@@ -110,6 +110,8 @@ Then, Developers can experiment easily, pushing changes to Development and Test 
 
 Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)<openshift>
+* [IBM Cloud Pak for Applications](https://www.ibm.com/cloud/cloud-pak-for-applications)</openshift>
 * [Fraud prevention with {{site.data.keyword.watson}} AI](https://www.ibm.com/cloud/watson-studio)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime#nodejs_runtime)
