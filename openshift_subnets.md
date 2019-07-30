@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -397,6 +397,75 @@ To order a subnet:
 
 3. **Important**: To enable communication between workers that are on different subnets on the same VLAN, you must [enable routing between subnets on the same VLAN](#subnet-routing).
 
+### Adding portable IPs by adding existing subnets to your cluster
+{: #add-existing}
+
+You can get more portable IPs for NLB services by making an existing subnet in an IBM Cloud infrastructure account available to your cluster.
+{:shortdesc}
+
+Before you begin:
+-  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.Bluemix_notm}} IAM platform role](/docs/containers?topic=containers-users#platform) for the cluster.
+- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+
+To make a subnet available to your cluster:
+
+1. Review the IDs of the public or private VLANs on which you want to allocate the portable public or private IP addresses. You must select a public or private VLAN that an existing worker node is connected to.
+  ```
+  ibmcloud oc cluster-get --cluster <cluster_name_or_id> --showResources
+  ```
+  {: pre}
+
+  In the output, look for **VLAN ID**s in the **Subnet VLANs** section. Example output:
+  ```
+  Subnet VLANs
+  VLAN ID   Subnet CIDR          Public   User-managed
+  2234947   10.xxx.xx.xxx/29     false    false
+  2234945   169.xx.xxx.xxx/29    true     false
+  ```
+  {: screen}
+
+2. Get the ID of the subnet to use. Ensure that the subnet is on one of the VLAN IDs that you found in the previous step, and that the subnet is not already bound to another cluster.
+  ```
+  ibmcloud oc subnets
+  ```
+  {: pre}
+
+  In this example output, the subnet ID is `1602829`, which is on the VLAN ID `2234945`:
+  ```
+  Getting subnet list...
+  OK
+  ID        Network             Gateway          VLAN ID   Type      Bound Cluster
+  1550165   10.xxx.xx.xxx/26    10.xxx.xx.xxx    2234947   private
+  1602829   169.xx.xxx.xxx/28   169.xx.xxx.xxx   2234945   public
+  ```
+  {: screen}
+
+3. Make the subnet available to your cluster.
+  ```
+  ibmcloud oc cluster-subnet-add --cluster <cluster_name_or_id> --subnet-id <subnet_ID>
+  ```
+  {: pre}
+
+4. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
+  ```
+  ibmcloud oc cluster-get --showResources <cluster_name_or_ID>
+  ```
+  {: pre}
+
+  In this example output, a second subnet was added to the `2234945` public VLAN:
+  ```
+  Subnet VLANs
+  VLAN ID   Subnet CIDR          Public   User-managed
+  2234947   10.xxx.xx.xxx/29     false    false
+  2234945   169.xx.xxx.xxx/29    true     false
+  2234945   169.xx.xxx.xxx/29    true     false
+  ```
+  {: screen}
+
+5. **Important**: To enable communication between workers that are on different subnets on the same VLAN, you must [enable routing between subnets on the same VLAN](#subnet-routing).
+
+<br />
+
 
 
 ### Adding portable private IPs by adding user-managed subnets to private VLANs
@@ -509,6 +578,116 @@ However, if you have an existing router appliance, such as a [Virtual Router App
 To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan-spanning-get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get).
 {: tip}
 
+<br />
 
+
+## Removing subnets from a cluster
+{: #remove-subnets}
+
+If you no longer need subnets, you can remove them from your cluster. Subnets can only be detached from a cluster if none of the IP addresses derived from that subnet range are in use in your cluster.
+{: shortdesc}
+
+### Removing a subnet in an IBM Cloud infrastructure account from a cluster
+{: #remove-sl-subnets}
+
+Remove a subnet that is in your IBM Cloud infrastructure account from a cluster. After you remove the subnet, it is no longer available to your cluster, but it still exists in your IBM Cloud infrastructure account.
+{: shortdesc}
+
+<p class="note">Subnets can only be detached from a cluster if none of the IP addresses derived from that subnet range are in use in your cluster.</br></br>Portable public IP addresses are charged monthly. If you remove the subnet, you still must pay the monthly charge for the IP addresses, even if you used them only for a short amount of time.</p>
+
+1. Find the CIDR for the subnet that you want to remove.
+  ```
+  ibmcloud oc cluster-get --cluster <cluster_name> --showResources <cluster_name>
+  ```
+  {: pre}
+
+  In this example output, the CIDR of the subnet to be removed is `169.1.1.1/29`.
+  ```
+  Subnet VLANs
+  VLAN ID   Subnet CIDR          Public   User-managed
+  2234947   10.xxx.xx.xxx/29     false    false
+  2234945   169.xx.xxx.xxx/29    true     false
+  2234945   169.1.1.1/29         true     false
+  ```
+  {: screen}
+
+2. Using the CIDR that you found in the previous step, get the ID of the subnet to remove.
+  ```
+  ibmcloud oc subnets
+  ```
+  {: pre}
+
+  In this example output, the subnet with the `169.1.1.1/29` CIDR has the ID `1602829`.
+  ```
+  ID        Network             Gateway          VLAN ID   Type      Bound Cluster
+  ...
+  1602829   169.1.1.1/29        169.1.1.2        2234945   public    df253b6025d64944ab99ed63bb4567b6
+  ```
+  {: screen}
+
+3. Detach the subnet from your cluster. The subnet remains available in your IBM Cloud infrastructure account.
+  ```
+  ibmcloud oc cluster-subnet-detach --cluster <cluster_name_or_ID> --subnet-id <subnet_ID>
+  ```
+  {: pre}
+
+
+4. Verify that the subnet is no longer bound to your cluster.
+  ```
+  ibmcloud oc cluster-get --showResources <cluster_name>
+  ```
+  {: pre}
+
+  In this example output, the subnet with the `169.1.1.1/29` CIDR is removed.
+  ```
+  Subnet VLANs
+  VLAN ID   Subnet CIDR          Public   User-managed
+  2234947   10.xxx.xx.xxx/29     false    false
+  2234945   169.xx.xxx.xxx/29    true     false
+  ```
+  {: screen}
+
+### Removing a subnet in an on-premises network from a cluster
+{: #remove-user-subnets}
+
+Remove a private subnet that is in an on-premises network from a cluster. After you remove the subnet, it is no longer available to your cluster, but it still exists in your on-premises network.
+{: shortdesc}
+
+1. Find the CIDR and the VLAN ID for the subnet that you want to remove.
+  ```
+  ibmcloud oc cluster-get --cluster <cluster_name> --showResources
+  ```
+  {: pre}
+
+  In this example output, the CIDR of the subnet to be removed is `10.1.1.1/24` and the VLAN ID is `2234947`.
+  ```
+  Subnet VLANs
+  VLAN ID   Subnet CIDR       Public   User-managed
+  2234947   10.xxx.xx.xxx/29  false    false
+  2234945   169.xx.xxx.xxx/29 true     false
+  2234947   10.1.1.1/24       false    true
+  ```
+  {: screen}
+
+2. Using the CIDR and VLAN ID that you found in the previous step, remove the subnet from your cluster.
+  ```
+  ibmcloud oc cluster-user-subnet-rm --cluster <cluster_name_or_ID> --subnet-cidr <subnet_CIDR> --private-vlan <private_VLAN_ID>
+  ```
+  {: pre}
+
+3. Verify that the subnet is no longer bound to your cluster.
+  ```
+  ibmcloud oc cluster-get --showResources <cluster_name>
+  ```
+  {: pre}
+
+  In this example output, the subnet with the `10.1.1.1/24` CIDR is removed.
+  ```
+  Subnet VLANs
+  VLAN ID   Subnet CIDR          Public   User-managed
+  2234947   10.xxx.xx.xxx/29     false    false
+  2234945   169.xx.xxx.xxx/29    true     false
+  ```
+  {: screen}
 
 

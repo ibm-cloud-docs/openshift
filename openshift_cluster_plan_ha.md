@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhos, rhoks, multi az, multi-az, szr, mzr
 
@@ -45,7 +45,7 @@ To improve availability for your app and to allow failover for the case that one
 
 <img src="images/cs_cluster_singlezone.png" alt="High availability for clusters in a single zone" width="230" style="width:230px; border-style: none"/>
 
-By default, your single zone cluster is set up with a worker pool that is named `default`. The worker pool groups worker nodes with the same configuration, such as the machine type, that you defined during cluster creation. You can add more worker nodes to your cluster by [resizing an existing worker pool](/docs/containers?topic=containers-add_workers#resize_pool) or by [adding a new worker pool](/docs/containers?topic=containers-add_workers#add_pool).
+By default, your single zone cluster is set up with a worker pool that is named `default`. The worker pool groups worker nodes with the same configuration, such as the flavor, that you defined during cluster creation. You can add more worker nodes to your cluster by [resizing an existing worker pool](/docs/containers?topic=containers-add_workers#resize_pool) or by [adding a new worker pool](/docs/containers?topic=containers-add_workers#add_pool).
 
 When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. OpenShift automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#inter-pod-affinity-and-anti-affinity-beta-feature).
 
@@ -68,7 +68,7 @@ With Red Hat OpenShift on IBM Cloud, you can create multizone clusters. Your use
 {: shortdesc}
 
 **What is a worker pool?**</br>
-A worker pool is a collection of worker nodes with the same flavor, such as machine type, CPU, and memory. When you create a cluster, a default worker pool is automatically created for you. To spread the worker nodes in your pool across zones, add worker nodes to the pool, or update worker nodes, you can use new `ibmcloud oc worker-pool` commands.
+A worker pool is a collection of worker nodes with the same flavor (machine type), CPU, and memory. When you create a cluster, a default worker pool is automatically created for you. To spread the worker nodes in your pool across zones, add worker nodes to the pool, or update worker nodes, you can use new `ibmcloud oc worker-pool` commands.
 
 **Can I still use stand-alone worker nodes?**</br>
 The previous cluster setup of stand-alone worker nodes is supported, but deprecated. Be sure to [add a worker pool to your cluster](/docs/containers?topic=containers-planning_worker_nodes#add_pool), and then [use worker pools](/docs/containers?topic=containers-update#standalone_to_workerpool) to organize your worker nodes instead of stand-alone worker nodes.
@@ -144,7 +144,7 @@ The following table compares the old and new methods for a few common cluster ma
     <tr>
     <td>Add worker nodes to the cluster.</td>
     <td><p class="deprecated"><code>ibmcloud oc worker-add</code> to add stand-alone worker nodes.</p></td>
-    <td><ul><li>To add different machine types than your existing pool, create a new worker pool: <code>ibmcloud oc worker-pool-create</code> [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_pool_create).</li>
+    <td><ul><li>To add different flavors, or machine types, than your existing pool, create a new worker pool: <code>ibmcloud oc worker-pool-create</code> [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_pool_create).</li>
     <li>To add worker nodes to an existing pool, resize the number of nodes per zone in the pool: <code>ibmcloud oc worker-pool-resize</code> [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_pool_resize).</li></ul></td>
     </tr>
     <tr>

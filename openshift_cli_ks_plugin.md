@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-07-30"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -681,7 +681,7 @@ diskEncryption: <em>false</em>
 </dd>
 
 <dt><code>--hardware <em>HARDWARE</em></code></dt>
-<dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional for VM standard clusters and is not available for free clusters. For bare metal machine types, specify `dedicated`.</dd>
+<dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional for VM standard clusters and is not available for free clusters. For bare metal flavors, specify `dedicated`.</dd>
 
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>The zone where you want to create the cluster. This value is required for standard clusters. Free clusters can be created in the region that you target with the <code>ibmcloud oc region-set</code> command, but you cannot specify the zone.
@@ -692,7 +692,7 @@ diskEncryption: <em>false</em>
 </dd>
 
 <dt><code>--machine-type <em>MACHINE_TYPE</em></code></dt>
-<dd>Choose a worker node flavor. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual flavors vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc machine-types` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
+<dd>Choose a flavor, or machine type, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual flavors vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>The name for the cluster. This value is required. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
@@ -1508,7 +1508,37 @@ ibmcloud oc cluster-subnet-create --cluster my_cluster --size 8 --vlan 1764905
 
 </br>
 
+### `ibmcloud oc cluster-subnet-detach`
+{: #cs_cluster_subnet_detach}
 
+Detach a public or private portable subnet in an IBM Cloud infrastructure account from a cluster. The subnet remains available in your IBM Cloud infrastructure account. **Note**: Any services that were deployed to an IP address from the subnet remain active after the subnet is removed.
+{: shortdesc}
+
+<p class="note"><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic-only command.</p>
+
+```
+ibmcloud oc cluster-subnet-detach --cluster CLUSTER --subent-id SUBNET_ID [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required. To list your clusters, use the `ibmcloud oc clusters` [command](#cs_clusters).</dd>
+
+<dt><code>--vlan <em>VLAN_ID</em></code></dt>
+<dd>The ID of the public or private subnet that you want to detach. To find the subnet ID, first run <code>ibmcloud oc cluster-get --cluster &lt;cluster&gt; --showResources</code> and look for the subnet CIDR in the <strong>Subnet VLANs</strong> section of the output. Then, using the subnet CIDR, run <code>ibmcloud oc subnets</code> and look for the subnet's <strong>ID</staong>.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc cluster-subnet-detach --cluster my_cluster --subnet-id 1602829
+```
+{: pre}
+
+</br>
 
 ### `ibmcloud oc cluster-user-subnet-add`
 {: #cs_cluster_user_subnet_add}
@@ -2270,6 +2300,45 @@ ibmcloud oc credential-unset --region us-south
 
 </br>
 
+### `ibmcloud oc flavors` (`machine-types`)
+{: #cs_machine_types}
+
+View a list of available worker node flavors. Flavors vary by zone.
+{:shortdesc}
+
+
+
+Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/containers?topic=containers-security#encrypted_disk).
+
+You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal. [Learn more about your flavor options](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
+
+```
+ibmcloud oc flavors --zone ZONE [--json] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: None
+
+**Command options**:
+<dl>
+<dt><code>--zone <em>ZONE</em></code></dt>
+<dd>Enter the zone where you want to list available flavors. This value is required. To see available zones for classic clusters, run `ibmcloud oc zones`.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc flavors --zone dal10
+```
+{: pre}
+
+
+</br>
 
 ### `ibmcloud oc infra-permissions-get`
 {: #infra_permissions_get}
@@ -2347,45 +2416,6 @@ Manage Storage    required
 
 
 </br>
-
-
-### `ibmcloud oc machine-types`
-{: #cs_machine_types}
-
-View a list of available worker machine types for worker nodes in classic clusters. Machine types vary by zone.
-{:shortdesc}
-
-Each machine type includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/containers?topic=containers-security#encrypted_disk).
-
-You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal. [Learn more about your flavor options](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
-
-```
-ibmcloud oc machine-types --zone ZONE [--json] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: None
-
-**Command options**:
-<dl>
-<dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Enter the zone where you want to list available machine types. This value is required. To see available zones for classic clusters, run `ibmcloud oc zones`.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc machine-types --zone dal10
-```
-{: pre}
-
-</br>
-
 
 ### `ibmcloud oc vlan-spanning-get`
 {: #cs_vlan_spanning_get}
@@ -3812,7 +3842,7 @@ ibmcloud oc worker-add --cluster CLUSTER [--file FILE_LOCATION] [--hardware HARD
 <dt><code>--file <em>FILE_LOCATION</em></code></dt>
 <dd>The path to the YAML file to add worker nodes to the cluster. Instead of defining additional worker nodes by using the options provided in this command, you can use a YAML file. This value is optional.
 
-<p class="note">If you provide the same option in the command as the parameter in the YAML file, the value in the command takes precedence over the value in the YAML. For example, you define a machine type in your YAML file and use the <code>--machine-type</code> option in the command, the value that you entered in the command option overrides the value in the YAML file.</p>
+<p class="note">If you provide the same option in the command as the parameter in the YAML file, the value in the command takes precedence over the value in the YAML. For example, you define a flavor in your YAML file and use the <code>--machine-type</code> option in the command, the value that you entered in the command option overrides the value in the YAML file.</p>
 
 <pre class="codeblock">
 <code>name: <em>&lt;cluster_name_or_ID&gt;</em>
@@ -3840,7 +3870,7 @@ diskEncryption: <em>false</em></code></pre>
 </tr>
 <tr>
 <td><code><em>machine-type</em></code></td>
-<td>Replace <code><em>&lt;machine_type&gt;</em></code> with the type of machine that you want to deploy your worker nodes to. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the `ibmcloud oc machine-types` [command](#cs_machine_types).</td>
+<td>Replace <code><em>&lt;machine_type&gt;</em></code> with the flavor, or type of machine, that you want to deploy your worker nodes to. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual flavors vary by the zone in which you deploy the cluster. For more information, see the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types).</td>
 </tr>
 <tr>
 <td><code><em>private-vlan</em></code></td>
@@ -3852,7 +3882,7 @@ diskEncryption: <em>false</em></code></pre>
 </tr>
 <tr>
 <td><code>hardware</code></td>
-<td>For virtual machine types: The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources that are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`.</td>
+<td>For virtual flavors: The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources that are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`.</td>
 </tr>
 <tr>
 <td><code>workerNum</code></td>
@@ -3864,10 +3894,10 @@ diskEncryption: <em>false</em></code></pre>
 </tbody></table></p></dd>
 
 <dt><code>--hardware <em>HARDWARE</em></code></dt>
-<dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional. For bare metal machine types, specify `dedicated`.</dd>
+<dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional. For bare metal flavors, specify `dedicated`.</dd>
 
 <dt><code>--machine-type <em>MACHINE_TYPE</em></code></dt>
-<dd>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc machine-types` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
+<dd>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
 
 <dt><code>--workers <em>NUMBER</em></code></dt>
 <dd>An integer that represents the number of worker nodes to create in the cluster. The default value is 1. This value is optional.</dd>
@@ -4315,13 +4345,13 @@ ibmcloud oc worker-pool-create --name POOL_NAME --cluster CLUSTER --machine-type
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>--machine-type <em>MACHINE_TYPE</em></code></dt>
-<dd>Choose a machine type, or flavor. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc machine types` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
+<dd>Choose a machine type, or flavor. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (macine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
 
 <dt><code>--size-per-zone <em>WORKERS_PER_ZONE</em></code></dt>
 <dd>The number of workers to create in each zone. This value is required, and must be 1 or greater.</dd>
 
 <dt><code>--hardware <em>ISOLATION</em></code></dt>
-<dd>The level of hardware isolation for your worker node. Use `dedicated` if you want to have available physical resources that are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. For bare metal machine types, specify `dedicated`. This value is required.</dd>
+<dd>The level of hardware isolation for your worker node. Use `dedicated` if you want to have available physical resources that are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. For bare metal flavors, specify `dedicated`. This value is required.</dd>
 
 <dt><code>--labels <em>LABELS</em></code></dt>
 <dd>The labels that you want to assign to the workers in your pool. Example: `<key1>=<val1>`,`<key2>=<val2>`</dd>

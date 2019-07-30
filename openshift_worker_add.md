@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -112,16 +112,16 @@ You can add worker nodes to your cluster by creating a new worker pool.
    ```
    {: pre}
 
-3.  For each zone, review the [available machine types for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
+3.  For each zone, review the [available flavors for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
 
     ```
-    ibmcloud oc machine-types <zone>
+    ibmcloud oc flavors --zone <zone>
     ```
     {: pre}
 
 4. Create a worker pool. Include the `--labels` option to automatically label worker nodes that are in the pool with the label `key=value`. If you provision a bare metal worker pool, specify `--hardware dedicated`.
    ```
-   ibmcloud oc worker-pool-create --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <machine_type> --size-per-zone <number_of_workers_per_zone> --hardware <dedicated_or_shared> --labels <key=value>
+   ibmcloud oc worker-pool-create --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone> --hardware <dedicated_or_shared> --labels <key=value>
    ```
    {: pre}
 
@@ -247,15 +247,15 @@ If you have a cluster that was created after worker pools were introduced, you c
    ```
    {: pre}
 
-3. List available machine types in that zone.
+3. List available flavors in that zone.
    ```
-   ibmcloud oc machine-types --zone <zone>
+   ibmcloud oc flavors --zone <zone>
    ```
    {: pre}
 
-4. Add stand-alone worker nodes to the cluster. For bare metal machine types, specify `dedicated`.
+4. Add stand-alone worker nodes to the cluster. For bare metal flavors, specify `dedicated`.
    ```
-   ibmcloud oc worker-add --cluster <cluster_name_or_ID> --workers <number_of_worker_nodes> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --machine-type <machine_type> --hardware <shared_or_dedicated>
+   ibmcloud oc worker-add --cluster <cluster_name_or_ID> --workers <number_of_worker_nodes> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --machine-type <flavor> --hardware <shared_or_dedicated>
    ```
    {: pre}
 
