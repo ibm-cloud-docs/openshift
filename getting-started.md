@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-07-30"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -47,7 +47,7 @@ Want to learn more about options such as creating a cluster in the CLI? Check ou
 {: tip}
 
 1.  Log in to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
-2.  From the **Catalog**, click [**OpenShift Cluster** ![External link icon](../icons/launch-glyph.svg "External link icon")]](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster), and then click **Create**.
+2.  From the **Catalog**, click [**Red Hat OpenShift Cluster** ![External link icon](../icons/launch-glyph.svg "External link icon")]](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster), and then click **Create**.
 3.  Choose your cluster setup details and name.
     *   For **Select a plan**, choose **Standard**.
     *   For the **Cluster type and version**, choose **OpenShift**. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
