@@ -38,7 +38,7 @@ With the **Red Hat OpenShift on IBM Cloud beta**, you can create {{site.data.key
 To complete the getting started tutorial, use a Pay-As-You-Go {{site.data.keyword.cloud_notm}} account where you are the owner or have full Administrator privileges. This getting started tutorial focuses on setting up a cluster and sample app quickly. For more information on setting up your environment for OpenShift, check out the [Creating an IBM Cloud Red Hat OpenShift Container Platform cluster](/docs/openshift?topic=openshift-tutorial) tutorial.
 
 ## Creating an OpenShift cluster
-{: #openshift_create_cluster}
+{: #openshift_gs_cluster}
 
 Create a Red Hat OpenShift on IBM Cloud cluster in the {{site.data.keyword.containerlong_notm}} console. OpenShift clusters run version 3.11, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
@@ -61,7 +61,7 @@ Want to learn more about options such as creating a cluster in the CLI? Check ou
 
 
 ## Deploying an app with the OpenShift catalog
-{: #openshift_deploy_app}
+{: #openshift_gs_app}
 
 From the OpenShift console, you can deploy one of the built-in catalog apps.
 {: shortdesc}
@@ -86,7 +86,7 @@ From the OpenShift console, you can deploy one of the built-in catalog apps.
 
 
 ## What's next?
-{: #openshift_next}
+{: #openshift_gs_next}
 
 Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=openshift-openshift_tutorial) to:
 * Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
