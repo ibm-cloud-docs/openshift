@@ -30,7 +30,6 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} c
 take advantage of high availability, high-performance compute, easy spin-up of clusters for faster development, and AI from {{site.data.keyword.ibmwatson}}.
 {: shortdesc}
 
-
 ## Mortgage company trims costs and accelerates regulatory compliance
 {: #uc_mortgage}
 
@@ -102,12 +101,16 @@ This solution provides the immediate benefit of scalability. By using Kubernetes
 ## Payment tech company streamlines developer productivity, deploying AI-enabled tools to their partners 4 times faster
 {: #uc_payment_tech}
 
-A Development Exec has Developers that use on-premises <containers>traditional</containers> application development tools get a new face when they add on AI cloud services to apps with a click.
+A Development Exec has Developers that use on-premises <containers>traditional</containers> tools that slow down prototyping while they wait for hardware procurement.
+{: shortdesc}
+
+Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud provides spin-up of compute by using open-source standard technology. After the company moved to Red Hat OpenShift on IBM Cloud, Developers have access to DevOps friendly tools, such as portable and easily shared containers.
+
+Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their <containers>traditional</containers>  development tools get a new face when they add on AI cloud services to apps with a click.
 
 Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
-* [IBM Cloud Pak for Applications](https://www.ibm.com/cloud/cloud-pak-for-applications)
 * [Fraud prevention with {{site.data.keyword.watson}} AI](https://www.ibm.com/cloud/watson-studio)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime#nodejs_runtime)
@@ -140,7 +143,6 @@ On-demand compute, DevOps tools, and AI that run in public cloud with access to 
 
 Technical solution:
 * Red Hat OpenShift on IBM Cloud
-* IBM Cloud Pak for Applications
 * {{site.data.keyword.contdelivery_full}}
 * IBM Cloud Logging and Monitoring
 * {{site.data.keyword.ibmwatson_notm}} for Financial Services
@@ -157,7 +159,7 @@ Also, logging and monitoring for the tools, especially where they used {{site.da
 Security first: With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive payment tools now have familiar isolation but within the flexibility of public cloud. Scans for vulnerabilities and malware are run continuously.
 
 **Step 1: Lift and shift to secure compute**
-* Migrate virtual machine images to container images that run in Red Hat OpenShift on IBM Cloud in the public {{site.data.keyword.Bluemix_notm}}. Deploy IBM Cloud Pak for Applications, so that developers have their familiar application development tools on the cloud. 
+* Migrate virtual machine images to container images that run in Red Hat OpenShift on IBM Cloud in the public {{site.data.keyword.Bluemix_notm}}. 
 * From that core, Vulnerability Advisor provides image, policy, container, and packaging vulnerability scanning, for known malware.
 * Private data center / on-premises capital costs are greatly reduced and replaced with a utility computing model that scales based on workload demand.
 * Consistently enforce policy-driven authentication to your services and APIs with a simple Ingress annotation. With declarative security you can ensure user authentication and token validation by using {{site.data.keyword.appid_short_notm}}.
