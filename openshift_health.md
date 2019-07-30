@@ -57,21 +57,7 @@ Because OpenShift sets up stricter [Security Context Constraints (SCC) ![Externa
 Before you begin, log in to your cluster as an administrator.
 1.  Open your OpenShift console at `https://<master_URL>/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
 2.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command** and paste the copied `oc` login command into your terminal to authenticate via the CLI.
-3.  Download the admin configuration files for your cluster.
-    ```
-    ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin
-    ```
-    {: pre}
-
-    When the download of the configuration files is finished, a command is displayed that you can copy and paste to set the path to the local Kubernetes configuration file as an environment variable.
-
-    Example for OS X:
-
-    ```
-    export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>/kube-config-<datacenter>-<cluster_name>.yml
-    ```
-    {: screen}
-4.  Set up [{{site.data.keyword.la_short}}](#openshift_logdna) and [{{site.data.keyword.mon_short}}](#openshift_sysdig).
+3.  Set up [{{site.data.keyword.la_short}}](#openshift_logdna) and [{{site.data.keyword.mon_short}}](#openshift_sysdig).
 
 <br />
 
@@ -306,6 +292,9 @@ Remove the {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} in
     *   [Removing a {{site.data.keyword.la_short}} instance](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-remove).
     *   [Removing a {{site.data.keyword.mon_short}} instance](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-remove).
 
+<br />
+
+
 ## Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools
 {: #openshift_other_logmet}
 
@@ -314,6 +303,3 @@ For more information about other logging and monitoring tools that you can set u
 
 * [Choosing a logging solution](/docs/containers?topic=containers-health#logging_overview).
 * [Choosing a monitoring solution](/docs/containers?topic=containers-health#view_metrics).
-
-<br />
-
