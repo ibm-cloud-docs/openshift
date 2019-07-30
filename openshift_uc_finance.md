@@ -30,6 +30,7 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} c
 take advantage of high availability, high-performance compute, easy spin-up of clusters for faster development, and AI from {{site.data.keyword.ibmwatson}}.
 {: shortdesc}
 
+
 ## Mortgage company trims costs and accelerates regulatory compliance
 {: #uc_mortgage}
 
