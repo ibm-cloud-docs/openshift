@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-27"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,17 +35,18 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} b
 An IT Exec for a healthcare provider has business reporting and patient systems on-premises. Those systems go through slow enhancement cycles, which leads to stagnant patient service levels.
 {: shortdesc}
 
-Why {{site.data.keyword.cloud_notm}}: To improve patient service, the provider looked to Red Hat OpenShift on IBM Cloud and {{site.data.keyword.contdelivery_full}} to reduce IT spend and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently. Yet the on-premises environment hindered agile development. The provider also wanted to counteract increasing labor costs and a decreasing budget.
+Why {{site.data.keyword.cloud_notm}}: To improve patient service, the provider looked to Red Hat OpenShift on IBM Cloud and {{site.data.keyword.contdelivery_full}} to reduce IT spend and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently. <containers>Yet the on-premises environment hindered agile development.</containers> Yet, the provider's developers were overwhelmed with administering the hardware, network, and even the Kubernetes stack on their own. The provider also wanted to counteract increasing labor costs and a decreasing budget.
 
 Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
 * [Horizontal scaling](/docs/containers?topic=containers-app#highly_available_apps)
-* [Container security and isolation](/docs/containers?topic=containers-security#security)
+* [Container security and isolation](/docs/containers?topic=containers-security#security) 
+* [{{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/products/cloud-pak-for-data)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime#nodejs_runtime)
 * [Sign-on capability without changing app code by using {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-getting-started)
 
-They started by containerizing their SaaS systems and putting them in the cloud. From that first step, they went from over-built hardware in a private data center to customizable compute that reduces IT operations, maintenance, and energy. To host the SaaS systems, they easily designed Kubernetes clusters to fit their CPU, RAM, and storage needs. Another factor for decreased staff costs is that IBM manages Kubernetes, so the provider can focus on delivering better customer service.
+They started by containerizing their SaaS systems and putting them in the cloud. From that first step, they went from over-built hardware in a private data center to customizable compute that reduces IT operations, maintenance, and energy. To host the SaaS apps, they easily designed Kubernetes clusters to fit their CPU, RAM, and storage needs. They used {{site.data.keyword.icp4dfull_notm}} to provide the familiar analytics tools from their on-prem environment.  Another factor for decreased staff costs is that IBM manages Kubernetes, so the provider can focus on delivering better customer service. 
 
 Accelerated development is a key win for the IT Exec. With the move to public cloud, Developers can experiment easily with Node.js SDK, pushing changes to Development and Test systems, scaled out on separate clusters. Those pushes were automated with open toolchains and {{site.data.keyword.contdelivery_full}}. Updates to the SaaS system no longer languished in slow, error-prone build processes. The Developers can deliver incremental updates to their users, daily or even more frequently.  Also, logging and monitoring for the SaaS systems, especially how the patient front-end and back-end reports interact, rapidly integrate into the system. Developers don’t waste time building complex logging systems, just to be able to troubleshoot live systems.
 
@@ -76,6 +77,7 @@ On-demand compute, storage, and I/O services run in the public cloud with secure
 
 **Step 2: Lift and shift**
 * Migrate virtual machine images to container images that run in Red Hat OpenShift on IBM Cloud in the public cloud.
+* Deploy {{site.data.keyword.icp4dfull_notm}}, so that developers have their familiar analytics tools on the cloud.
 * Provide standardized DevOps dashboards and practices through Kubernetes.
 * Enable on-demand scaling of compute for batch and other back-office workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to on-premises DBMS.
@@ -88,7 +90,8 @@ On-demand compute, storage, and I/O services run in the public cloud with secure
 * Adopt the agile and iterative development practices from the IBM Garage Method to enable frequent releases of new functions, patches, and fixes without downtime.
 
 **Technical solution**
-* Red Hat OpenShift on IBM Cloud
+* Red Hat OpenShift on IBM Cloud 
+* {{site.data.keyword.icp4dfull_notm}}
 * {{site.data.keyword.cloudant}}
 * {{site.data.keyword.SecureGatewayfull}}
 * {{site.data.keyword.appid_short_notm}}
@@ -106,8 +109,9 @@ Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough 
 Much of the CI/CD process itself is automated with IBM's Continuous Delivery service in the Cloud. The provider can define workflow toolchains to prepare container images, check for vulnerabilities, and deploy them to the Kubernetes cluster.
 
 **Results**
-* Lifting the existing monolithic VMs into cloud-hosted containers was a first step that allowed the provider to save on capital costs and begin learning modern DevOps practices.
-* Rearchitecting monolithic apps to a set fine-grained microservices greatly reduced time to delivery for patches, bug fixes, and new features.
+* Lifting the existing monolithic VMs into cloud-hosted containers was a first step that allowed the provider to save on capital costs and begin learning modern DevOps practices. 
+* With the Cloud Pak deployed, the provider offloaded the full stack support of their data analytics tools to IBM, even the lifecycle management of those tools. Their developers were then unburdened from operations tasks and could focus on new features and updates. 
+* Rearchitecting key monolithic apps to a set fine-grained microservices greatly reduced time to delivery for patches, bug fixes, and new features.
 * In parallel, the provider implemented simple time-boxed iterations to get a handle on the existing technical debt.
 
 ## Research nonprofit securely hosts sensitive data while it grows research with partners
