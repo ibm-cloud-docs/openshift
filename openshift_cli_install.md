@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -67,7 +67,7 @@ Using both community Kubernetes and OpenShift clusters? The `oc` CLI comes with 
         /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
         ```
         {: screen}
-3.  If you have clusters that run different versions of Kubernetes, such as an OpenShift cluster with version 1.11 and a community Kubernetes cluster with version 1.14.4, download each `kubectl` version binary file to a separate directory.
+3.  If you have clusters that run different versions of Kubernetes, such as an OpenShift cluster with version 1.11 and a community Kubernetes cluster with version 1.15.1, download each `kubectl` version binary file to a separate directory.
     1.  Delete the `kubectl` binary file that comes with the `oc` installation, because this `kubectl` version does not work with community Kubernetes clusters.
         ```
         rm /usr/local/bin/kubectl
