@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -60,7 +60,7 @@ You do not have permissions to create a cluster.
 To create an OpenShift cluster, you must have the same permissions as you need to create a community Kubernetes cluster. The required permissions include infrastructure credentials for the region and resource group and {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) **Administrator** permissions.
 
 {: tsResolve}
-Review [Assigning cluster access](https://cloud.ibm.com/docs/containers?topic=containers-users) to learn how to set up infrastructure credentials for a region and resource group and how to assign users access through IAM.
+Review [Assigning cluster access](/docs/openshift?topic=openshift-users) to learn how to set up infrastructure credentials for a region and resource group and how to assign users access through IAM.
 
 <br />
 
