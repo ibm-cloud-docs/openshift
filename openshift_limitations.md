@@ -26,7 +26,7 @@ subcollection: openshift
 # Service limitations
 {: #openshift_limitations}
 
-The {{site.data.keyword.openshiftlong}} beta is released with the following limitations. For general product limitations, such as API calls or number of pods per worker node, see [{{site.data.keyword.containerlong_notm}} service limitations](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#tech_limits).
+Review the following limitations for {{site.data.keyword.openshiftlong}}. For general product limitations, such as API calls or number of pods per worker node, see [{{site.data.keyword.containerlong_notm}} service limitations](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#tech_limits).
 {: shortdesc}
 
 ## Cluster

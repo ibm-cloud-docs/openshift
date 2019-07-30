@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -33,7 +33,7 @@ Review frequently asked questions for using {{site.data.keyword.openshiftlong}}.
 {: #container_platforms}
 {: faq}
 
-With {{site.data.keyword.containerlong_notm}}, you can select from two container management platforms: the IBM version of community Kubernetes and Red Hat OpenShift on IBM Cloud (beta). The container platform that you select is installed on your cluster master and worker nodes. Later, you can [update the version](/docs/containers?topic=containers-update#update) but cannot roll back to a previous version or switch to a different container platform. If you want to use multiple container platforms, create a separate cluster for each.
+With {{site.data.keyword.containerlong_notm}}, you can select from two container management platforms: the IBM version of community Kubernetes and Red Hat OpenShift on IBM Cloud. The container platform that you select is installed on your cluster master and worker nodes. Later, you can [update the version](/docs/containers?topic=containers-update#update) but cannot roll back to a previous version or switch to a different container platform. If you want to use multiple container platforms, create a separate cluster for each.
 
 For more information, see [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-why_openshift#openshift_kubernetes).
 
@@ -56,10 +56,7 @@ You can create only standard OpenShift clusters. If you want to test out the cap
 {: #openshift_beta_convert}
 {: faq}
 
-The {{site.data.keyword.openshiftlong}} **beta** is available as an extension of {{site.data.keyword.containerlong_notm}} to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong_notm}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
-{: preview}
-
-When Red Hat OpenShift on IBM Cloud becomes generally available (GA), you can create a GA cluster and then re-deploy any apps that you use in the beta clusters before the beta clusters are removed. For an example of getting all the configuration files from a project, see the [OpenShift docs](https://docs.openshift.com/dedicated/admin_guide/assembly_backing-up-restoring-project-application.html).
+You can create a GA cluster and then re-deploy any apps that you use in the beta clusters before the beta clusters are removed. For an example of getting all the configuration files from a project, see the [OpenShift docs](https://docs.openshift.com/dedicated/admin_guide/assembly_backing-up-restoring-project-application.html).
 
 ## Which Kubernetes versions does the OpenShift service support?
 {: #supported_kube_versions}
