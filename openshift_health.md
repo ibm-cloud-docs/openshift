@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-30"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -57,21 +57,7 @@ Because OpenShift sets up stricter [Security Context Constraints (SCC) ![Externa
 Before you begin, log in to your cluster as an administrator.
 1.  Open your OpenShift console at `https://<master_URL>/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
 2.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command** and paste the copied `oc` login command into your terminal to authenticate via the CLI.
-3.  Download the admin configuration files for your cluster.
-    ```
-    ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin
-    ```
-    {: pre}
-
-    When the download of the configuration files is finished, a command is displayed that you can copy and paste to set the path to the local Kubernetes configuration file as an environment variable.
-
-    Example for OS X:
-
-    ```
-    export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>/kube-config-<datacenter>-<cluster_name>.yml
-    ```
-    {: screen}
-4.  Set up [{{site.data.keyword.la_short}}](#openshift_logdna) and [{{site.data.keyword.mon_short}}](#openshift_sysdig).
+3.  Set up [{{site.data.keyword.la_short}}](#openshift_logdna) and [{{site.data.keyword.mon_short}}](#openshift_sysdig).
 
 <br />
 
@@ -158,60 +144,17 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
      oc create secret generic logdna-agent-key --from-literal=logdna-agent-key=<logDNA_ingestion_key>
     ```
     {: pre}
-5.  Create a Kubernetes daemon set to deploy the LogDNA agent on every worker node of your Kubernetes cluster. The LogDNA agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod. By default, logs are collected from all namespaces, including `kube-system`, and automatically forwarded to the {{site.data.keyword.la_short}} service.
+5.  Create a Kubernetes daemon set to deploy the LogDNA agent on every worker node of your OpenShift cluster. The LogDNA agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod. By default, logs are collected from all namespaces, including `kube-system`, and automatically forwarded to the {{site.data.keyword.la_short}} service.
     ```
-    oc create -f https://assets.us-south.logging.cloud.ibm.com/clients/logdna-agent-ds.yaml
+    oc create -f https://raw.githubusercontent.com/logdna/logdna-agent/master/logdna-agent-ds-os.yml
     ```
     {: pre}
-6.  Edit the LogDNA agent daemon set configuration to refer to the service account that you previously created and to set the security context to privileged.
-    1.  Download a local copy of the configuration file to edit.
-        ```
-        oc get ds logdna-agent -n logdna -o yaml > logdna-ds.yaml
-        ```
-        {: pre}
-    2.  In the configuration file, add the following specifications.
-        *   In `spec.template.spec`, add `serviceAccount: logdna`.
-        *   In `spec.template.spec.containers`, add `securityContext: privileged: true`.
-        *   If you created your {{site.data.keyword.la_short}} instance in a region other than `us-south`, update the `spec.template.spec.containers.env` environment variable values for the `LDAPIHOST` and `LDLOGHOST` with the `<region>`.
-
-        Example:
-        ```
-        apiVersion: extensions/v1beta1
-        kind: DaemonSet
-        spec:
-          ...
-          template:
-            ...
-            spec:
-              serviceAccount: logdna
-              containers:
-              - securityContext:
-                  privileged: true
-                ...
-                env:
-                - name: LOGDNA_AGENT_KEY
-                  valueFrom:
-                    secretKeyRef:
-                      key: logdna-agent-key
-                      name: logdna-agent-key
-                - name: LDAPIHOST
-                  value: api.<region>.logging.cloud.ibm.com
-                - name: LDLOGHOST
-                  value: logs.<region>.logging.cloud.ibm.com
-              ...
-        ```
-        {: screen}
-    3.  Save the configuration file and apply your changes.
-        ```
-        oc apply -f logdna-ds.yaml
-        ```
-        {: pre}
-7.  Verify that the `logdna-agent` pod on each node is in a **Running** status.
+6.  Verify that the `logdna-agent` pod on each node is in a **Running** status.
     ```
     oc get pods
     ```
     {: pre}
-8.  From the [{{site.data.keyword.cloud_notm}} **Observability > Logging** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens. After a few minutes, your cluster's logs are displayed, and you can analyze your logs.
+7.  From the [{{site.data.keyword.cloud_notm}} **Observability > Logging** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens. After a few minutes, your cluster's logs are displayed, and you can analyze your logs.
 
 For more information about how to use {{site.data.keyword.la_short}}, see the [Next steps docs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube#kube_next_steps).
 
@@ -349,6 +292,9 @@ Remove the {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} in
     *   [Removing a {{site.data.keyword.la_short}} instance](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-remove).
     *   [Removing a {{site.data.keyword.mon_short}} instance](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-remove).
 
+<br />
+
+
 ## Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools
 {: #openshift_other_logmet}
 
@@ -357,6 +303,3 @@ For more information about other logging and monitoring tools that you can set u
 
 * [Choosing a logging solution](/docs/containers?topic=containers-health#logging_overview).
 * [Choosing a monitoring solution](/docs/containers?topic=containers-health#view_metrics).
-
-<br />
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -86,7 +86,7 @@ Do not remove policies that are applied to a host endpoint unless you fully unde
    </tr>
    <tr>
     <td><code>allow-vrrp</code></td>
-    <td>Allow VRRP packets, which are used to monitor and move virtual IP addresses between worker nodes.</td>
+    <td>Allows VRRP packets, which are used to monitor and move virtual IP addresses between worker nodes.</td>
    </tr>
   </tbody>
 </table>

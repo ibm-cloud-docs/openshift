@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -85,8 +85,8 @@ Any user in your account who runs the CLI command or makes the API call for the 
 <td><code>[GET /v1/kube-versions](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetKubeVersions)</code></td>
 </tr>
 <tr>
-<td>View a list of available machine types for your worker nodes.</td>
-<td><code>[ibmcloud oc machine-types](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_machine_types)</code></td>
+<td>View a list of available flavors for your worker nodes.</td>
+<td><code>[ibmcloud oc flavors](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_machine_types) (machine-types)</code></td>
 <td><code>[GET /v1/datacenters/{datacenter}/machine-types](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetDatacenterMachineTypes)</code></td>
 </tr>
 <tr>
@@ -219,6 +219,11 @@ The **Viewer** platform role includes the [actions that require no permissions](
 <td>List all services that are bound to a specific namespace.</td>
 <td>-</td>
 <td><code>[GET /v1/clusters/{idOrName}/services/{namespace}](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/ListServicesInNamespace)</code></td>
+</tr>
+<tr>
+<td>List all IBM Cloud infrastructure subnets that are bound to a cluster.</td>
+<td>-</td>
+<td><code>[GET /v1/clusters/{idOrName}/subnets](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterSubnets)</code></td>
 </tr>
 <tr>
 <td>List all user-managed subnets that are bound to a cluster.</td>
@@ -470,6 +475,11 @@ The **Operator** platform role includes the permissions that are granted by **Vi
 <td><code>[POST /v1/clusters/{idOrName}/vlans/{vlanId}](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/CreateClusterSubnet)</code></td>
 </tr>
 <tr>
+<td>Detach a subnet from a cluster.</td>
+<td><code>[ibmcloud oc cluster-subnet-detach](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_subnet_detach)</code></td>
+<td><code>[DELETE /v1/clusters/{idOrName}/subnets/{subnetId}](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/DetachClusterSubnet)</code></td>
+</tr>
+<tr>
 <td>Update a cluster.</td>
 <td><code>[ibmcloud oc cluster-update](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update)</code></td>
 <td><code>[PUT /v1/clusters/{idOrName}](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/UpdateCluster)</code></td>
@@ -678,7 +688,7 @@ The **Administrator** platform role includes all permissions that are granted by
 Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding Kubernetes role-based access control (RBAC) role in a specific namespace. To learn more about service access roles, see [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/containers?topic=containers-users#platform). Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.
 {: shortdesc}
 
-Looking for which Kubernetes actions each service role grants through RBAC? See [Kubernetes resource permissions per RBAC role](#rbac_ref). To learn more about RBAC roles, see [Assigning RBAC permissions](/docs/containers?topic=containers-users#role-binding) and [Extending existing permissions by aggregating cluster roles](https://cloud.ibm.com/docs/containers?topic=containers-users#rbac_aggregate).
+Looking for which Kubernetes actions each service role grants through RBAC? See [Kubernetes resource permissions per RBAC role](#rbac_ref). To learn more about RBAC roles, see [Assigning RBAC permissions](/docs/containers?topic=containers-users#role-binding) and [Extending existing permissions by aggregating cluster roles](/docs/containers?topic=containers-users#rbac_aggregate).
 {: tip}
 
 The following table shows the Kubernetes resource permissions that are granted by each service role and its corresponding RBAC role.
@@ -710,7 +720,7 @@ The following table shows the Kubernetes resource permissions that are granted b
   </tr>
   <tr>
     <td id="service-role-manager" headers="service-role">Manager role</td>
-    <td headers="service-role-manager rbac-role">When scoped to one namespace: <strong><code>admin</code></strong> cluster role applied by the <strong><code>ibm-operate</code></strong> role binding in that namespace</br><br>When scoped to all namespaces: <strong><code>cluster-admin</code></strong> cluster role applied by the <strong><code>ibm-admin</code></strong> cluster role binding that applies to all namespaces</td> 
+    <td headers="service-role-manager rbac-role">When scoped to one namespace: <strong><code>admin</code></strong> cluster role applied by the <strong><code>ibm-operate</code></strong> role binding in that namespace</br><br>When scoped to all namespaces: <strong><code>cluster-admin</code></strong> cluster role applied by the <strong><code>ibm-admin</code></strong> cluster role binding that applies to all namespaces</td>
     <td headers="service-role-manager kube-perm">When scoped to one namespace:
       <ul><li>Read/write access to all resources in a namespace but not to resource quota or the namespace itself</li>
       <li>Create RBAC roles and role bindings in a namespace</li>

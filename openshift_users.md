@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -27,7 +27,7 @@ subcollection: openshift
 {: #users}
 
 As a cluster administrator, you can define access policies for your {{site.data.keyword.openshiftlong}} clusters to create different levels of access for different users. For example, you can authorize certain users to work with cluster infrastructure resources and others to deploy only containers.
-{: shortdesc} 
+{: shortdesc}
 
 ## Understanding access policies and roles
 {: #access_policies}
@@ -973,10 +973,10 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
 Now that you created and bound a custom Kubernetes RBAC role or cluster role, follow up with users. Ask them to test an action that they have permission to complete due to the role, such as deleting a pod.
 
-### Extending existing permissions by aggregating cluster roles 
+### Extending existing permissions by aggregating cluster roles
 {: #rbac_aggregate}
 
-You can extend your users' existing permissions by aggregating, or combining, cluster roles with other cluster roles. When you assign a user an {{site.data.keyword.cloud_notm}} service role, the user is added to a [corresponding Kubernetes RBAC cluster role](/docs/containers?topic=containers-access_reference#service). However, you might want to allow certain users to perform additional operations. 
+You can extend your users' existing permissions by aggregating, or combining, cluster roles with other cluster roles. When you assign a user an {{site.data.keyword.cloud_notm}} service role, the user is added to a [corresponding Kubernetes RBAC cluster role](/docs/containers?topic=containers-access_reference#service). However, you might want to allow certain users to perform additional operations.
 {: shortdesc}
 
 For example, a user with the namespace-scoped `admin` cluster role cannot use the `oc top pods` command to view pod metrics for all the pods in the namespace. You might aggregate a cluster role so that users in the `admin` cluster role are authorized to run the `top pods` command. For more information, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
@@ -1012,7 +1012,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
       - list
     ```
     {: codeblock}
-    
+
     <table>
     <caption>Understanding the YAML components</caption>
       <thead>
@@ -1069,7 +1069,7 @@ For example, if your account is not VRF-enabled, your IBM Cloud infrastructure a
 
 Before you begin:
 *   Make sure that you are the account owner or have **Super User** and all device access. You can't grant a user access that you don't have.
-*   Review the [required and suggested classic infrastructure permissions](/docs/containers?topic=containers-access_reference#infra). 
+*   Review the [required and suggested classic infrastructure permissions](/docs/containers?topic=containers-access_reference#infra).
 
 You can grant classic infrastructure access through the [console](#infra_console) or [CLI](#infra_cli).
 
@@ -1089,7 +1089,7 @@ You can grant classic infrastructure access through the [console](#infra_console
     * Select individual permissions for each category. To review permissions that are needed to perform common tasks in {{site.data.keyword.containerlong_notm}}, see [User access permissions](/docs/containers?topic=containers-access_reference#infra).
 5.  Click **Save**.
 6.  In the **Device** tab, select the devices to grant access to.
-    * In the **Select type** group, you can grant access to all bare metal, dedicated, and virtual servers so that users can work with all [machine types for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
+    * In the **Select type** group, you can grant access to all bare metal, dedicated, and virtual servers so that users can work with all [flavors for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
     * In the **Enable future access** group, you can grant the user access to all future bare metal, dedicated, and virtual servers.
     * In the table of devices, make sure that the appropriate devices are selected.
 7. To save your changes, click **Set**.
@@ -1113,19 +1113,19 @@ Downgrading permissions? The action can take a few minutes to complete.
     ibmcloud oc infra-permissions-get --region <region>
     ```
     {: pre}
-    
+
     Example output if classic infrastructure access is based on an API key.
     ```
     ...with infrastructure access set up by linked account API key.
     ```
     {: screen}
-    
+
     Example output if classic infrastructure access is based on manually-set credentials.
     ```
     ...with infrastructure access set up by manually-set IaaS credentials.
     ```
     {: screen}
-    
+
 2.  Get the user whose classic infrastructure credentials are used.
     *   **API key**: Check the API key that is used for the region and resource group of the cluster. Note the **Name** and **Email** of the API key owner in the output of the following command.
         ```
@@ -1137,7 +1137,7 @@ Downgrading permissions? The action can take a few minutes to complete.
         ibmcloud oc credential-get --region <region>
         ```
         {: pre}
-    
+
     Need to change the infrastructure credential owner? Check out the `ibmcloud oc api-key-reset` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_api_key_reset) or the `ibmcloud oc credential-set` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_credentials_set).
     {: tip}
 
@@ -1162,7 +1162,7 @@ Downgrading permissions? The action can take a few minutes to complete.
     ibmcloud sl user permission-edit <user_id> --permission ALL --enable (true|false)
     ```
     {: pre}
-    
+
 6.  For individual required or suggested permissions, see the [Infrastructure roles](/docs/containers?topic=containers-access_reference#infra) table.
 
 <br />

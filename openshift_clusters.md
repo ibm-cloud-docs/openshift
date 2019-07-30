@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -51,12 +51,11 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     1.  Log in to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
     2.  From the hamburger menu ![hamburger menu icon](../icons/icon_hamburger.svg "hamburger menu icon"), select **Kubernetes** and then click **Create cluster**.
     3.  Choose your cluster setup details and name. For the beta, OpenShift clusters are available only as standard clusters that are located in Washington, DC and London data centers.
-        *   For **Select a plan**, choose **Standard**.
-        *   For the **Cluster type and version**, choose **OpenShift**. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
-        *   Fill out your cluster name, resource group, and tags.
-        *   For the **Location**, set the geography to **North America** or **Europe**, select either a **Single zone** or **Multizone** availability, and then select **Washington, DC** or **London** worker zones.
-        *   For **Default worker pool**, choose an available flavor for your worker nodes, ideally with at least 4 cores and 16 GB RAM.
-        *   Set a number of worker nodes to create per zone, such as 3.
+    *   For **Select a plan**, choose **Standard**.
+    *   For the **Cluster type and version**, choose **OpenShift**. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
+    *   Fill out your cluster name, resource group, and tags.
+    *   For the **Location**, set the geography to **North America** or **Europe**, select either **Single zone** or **Multizone** availability, and then select **Washington, DC** or **London** worker zones.
+    *   For **Default worker pool**, choose an available flavor for your worker nodes, ideally with at least `4` cores and `16` GB RAM.
     4.  To finish, click **Create cluster**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.<br><br>If your cluster does not reach a **deployed** state, check out the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway device, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).</p>
 2.  From the cluster details page, click **OpenShift web console**. For more information about using the OpenShift console, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html).
 3.  To continue working in the terminal: From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Paste the copied `oc` login command into your terminal to authenticate via the CLI.
@@ -114,7 +113,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     </tr>
     <tr>
     <td><code>--machine-type <em>&lt;worker_node_flavor&gt;</em></code></td>
-    <td>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. To list available machine types, run `ibmcloud oc machine-types --zone <zone>`.</td>
+    <td>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. To list available flavors, run `ibmcloud oc flavors --zone <zone>`.</td>
     </tr>
     <tr>
     <td><code>--workers <em>&lt;number_of_worker_nodes_per_zone&gt;</em></code></td>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-30"
 
 keywords: openshift, roks, rhoks, rhos, version
 
@@ -286,10 +286,10 @@ To update worker nodes from the console:
 
 
 
-## Updating machine types
+## Updating flavors (machine types)
 {: #machine_type}
 
-You can update the machine types of your worker nodes by adding new worker nodes and removing the old ones. For example, if your cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker node flavors, create Ubuntu 18 worker nodes that use machine types with `x3c` in the names.
+You can update the flavors, or machine types, of your worker nodes by adding new worker nodes and removing the old ones. For example, if your cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker node flavors, create Ubuntu 18 worker nodes that use flavors with `x3c` in the names.
 {: shortdesc}
 
 Before you begin:
@@ -297,7 +297,7 @@ Before you begin:
 - If you store data on your worker node, the data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/containers?topic=containers-users#platform).
 
-To update machine types:
+To update flavors:
 
 1. List available worker nodes and note their private IP address.
    - **For worker nodes in a worker pool**:
@@ -332,9 +332,9 @@ To update machine types:
         ```
         {: pre}
 
-2. List available machine types in the zone.
+2. List available flavors in the zone.
    ```
-   ibmcloud oc machine-types <zone>
+   ibmcloud oc flavors --zone <zone>
    ```
    {: pre}
 
@@ -342,7 +342,7 @@ To update machine types:
    - **For worker nodes in a worker pool**:
      1. Create a worker pool with the number of worker nodes that you want to replace.
         ```
-        ibmcloud oc worker-pool-create --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <machine_type> --size-per-zone <number_of_workers_per_zone>
+        ibmcloud oc worker-pool-create --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
         ```
         {: pre}
 
@@ -360,7 +360,7 @@ To update machine types:
 
    - **Deprecated: For stand-alone worker nodes**:
        ```
-       ibmcloud oc worker-add --cluster <cluster_name> --machine-type <machine_type> --workers <number_of_worker_nodes> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+       ibmcloud oc worker-add --cluster <cluster_name> --machine-type <flavor> --workers <number_of_worker_nodes> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
        ```
        {: pre}
 
@@ -385,7 +385,7 @@ To update machine types:
         oc drain <worker_name>
         ```
         {: pre}
-6. Remove the old worker node. **Note**: If you are removing a machine type that is billed monthly (such as bare metal), you are charged for the entire the month.
+6. Remove the old worker node. **Note**: If you are removing a flavor that is billed monthly (such as bare metal), you are charged for the entire the month.
    - **For worker nodes in a worker pool**:
      1. Remove the worker pool with the old machine type. Removing a worker pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.
         ```
@@ -411,7 +411,7 @@ To update machine types:
    ```
    {: pre}
 
-8. Repeat these steps to update other worker pools or stand-alone worker nodes to different machine types.
+8. Repeat these steps to update other worker pools or stand-alone worker nodes to different flavors.
 
 ## Updating cluster components
 {: #components}
@@ -480,7 +480,7 @@ You can manage automatic updates of the Fluentd component in the following ways.
 Control when the Ingress application load balancer (ALB) component is updated.
 {: shortdesc}
 
-When the Ingress ALB component is updated, the `nginx-ingress` and `ingress-auth` containers in all ALB pods are updated to the latest build version. By default, automatic updates to ALBs are enabled. Updates are performed on a rolling basis so that your Ingress ALBs don't experience any downtime. 
+When the Ingress ALB component is updated, the `nginx-ingress` and `ingress-auth` containers in all ALB pods are updated to the latest build version. By default, automatic updates to ALBs are enabled. Updates are performed on a rolling basis so that your Ingress ALBs don't experience any downtime. When a pod restarts after the update is applied, a [readiness check](/docs/containers?topic=containers-ingress-settings#readiness-check) prevents the ALB pod from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss during ALB pod updates and can take up to 5 minutes.
 
 If you disable automatic updates, you are responsible for updating your ALBs. As updates become available, you are notified in the CLI when you run the `ibmcloud oc albs` or `alb-autoupdate-get` commands.
 
