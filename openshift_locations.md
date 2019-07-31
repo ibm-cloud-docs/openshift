@@ -30,12 +30,15 @@ subcollection: openshift
 You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you create a cluster, its resources remain in the location that you deploy the cluster to. To work with your cluster, you can access the OpenShift Service via a global API endpoint.
 {:shortdesc}
 
+![Red Hat OpenShift on IBM Cloud locations](images/locations-roks.png)
+
+_Red Hat OpenShift on IBM Cloud locations_
 
 
 ## Red Hat OpenShift on IBM Cloud locations
 {: #locations}
 
-{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. Red Hat OpenShift on IBM Cloud is available in a subset of these locations. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location.
+{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. Red Hat OpenShift on IBM Cloud is available in a subset of these locations, including all six worldwide multizone-capable regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location.
 {: shortdesc}
 
 ### Available locations
@@ -101,11 +104,39 @@ To quickly determine whether a zone is multizone-capable, your can run `ibmcloud
   </thead>
   <tbody>
     <tr>
+      <td>Asia Pacific</td>
+      <td>Australia</td>
+      <td>Sydney</td>
+      <td>syd01, syd04, syd05</td>
+      <td>AP South (`ap-south`, `au-syd`)</td>
+    </tr>
+    <tr>
+      <td>Asia Pacific</td>
+      <td>Japan</td>
+      <td>Tokyo</td>
+      <td>tok02, tok04, tok05</td>
+      <td>AP North (`ap-north`, `jp-tok`)</td>
+    </tr>
+    <tr>
+      <td>Europe</td>
+      <td>Germany</td>
+      <td>Frankfurt</td>
+      <td>fra02, fra04, fra05</td>
+      <td>EU Central (`eu-central`, `eu-de`)</td>
+    </tr>
+    <tr>
       <td>Europe</td>
       <td>United Kingdom</td>
       <td>London</td>
       <td>lon04, lon05, lon06</td>
       <td>UK South (`uk-south`, `eu-gb`)</td>
+    </tr>
+    <tr>
+      <td>North America</td>
+      <td>United States</td>
+      <td>Dallas</td>
+      <td>dal10, dal12, dal13</td>
+      <td>US South (`us-south`)</td>
     </tr>
     <tr>
       <td>North America</td>

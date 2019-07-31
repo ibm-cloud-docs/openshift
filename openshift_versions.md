@@ -86,7 +86,7 @@ Red Hat OpenShift on IBM Cloud was first generally available with OpenShift vers
 <tr>
   <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
   <td>3.11 / 1.11</td>
-  <td>**Beta**: 5 Jun 2019</td>
+  <td>1 Aug 2019 at 0:00 UTC</td>
   <td>`†`</td>
 </tr>
 </tbody>
