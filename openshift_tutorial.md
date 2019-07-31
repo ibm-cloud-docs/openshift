@@ -27,6 +27,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 
 
+
 # Tutorial: Creating a {{site.data.keyword.openshiftlong}} cluster
 {: #openshift_tutorial}
 
@@ -62,10 +63,10 @@ This tutorial is for cluster administrators who want to learn how to create a Re
 {: #openshift_prereqs}
 
 *   Ensure that you have the following {{site.data.keyword.cloud_notm}} IAM access policies.
-    *   The [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
-    *   The [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
-    *   The [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.registrylong_notm}}
-*    Make sure that the [API key](/docs/openshift?topic=openshift-users#api_key) for the {{site.data.keyword.cloud_notm}} region and resource group is set up with the correct infrastructure permissions, **Super User**, or the [minimum roles](/docs/openshift?topic=openshift-access_reference#infra) to create a cluster.
+    *   The [**Administrator** platform role](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.containerlong_notm}}
+    *   The [**Writer** or **Manager** service role](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.containerlong_notm}}
+    *   The [**Administrator** platform role](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.registrylong_notm}}
+*    Make sure that the [API key](/docs/containers?topic=containers-users#api_key) for the {{site.data.keyword.cloud_notm}} region and resource group is set up with the correct infrastructure permissions, **Super User**, or the [minimum roles](/docs/containers?topic=containers-access_reference#infra) to create a cluster.
 
 <br />
 
@@ -80,8 +81,8 @@ Any OpenShift clusters that you create during the beta remain for 30 days after 
 {: important}
 
 1.  Install the command-line tools.
-    *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-cli_install#cli_install_steps).
-    *   [Install the OpenShift Origin (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-cli_install#cli_oc).
+    *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+    *   [Install the OpenShift Origin (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/containers?topic=containers-cs_cli_install#cli_oc).
 2.  Log in to the account that you set up to create OpenShift clusters. Target the **us-east** or **eu-gb** region and the resource group. If you have a federated account, include the `--sso` flag.
     ```
     ibmcloud login -r (us-east|eu-gb) [-g default] [--sso]
