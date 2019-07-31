@@ -43,6 +43,7 @@ For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} 
 During the beta, Red Hat OpenShift on IBM Cloud clusters are not covered by IBM Support nor Red Hat Support. Any support that is provided is to help you evaluate the product in preparation for its general availability.
 {: important}
 
+
 For any questions or feedback, post in Slack.
 *   If you are an external user, post in the [#openshift ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/messages/CKCJLJCH4) channel.
 *   If you are an IBMer, use the [#iks-openshift-users ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-argonauts.slack.com/messages/CJH0UPN2D) channel.
@@ -169,33 +170,6 @@ The infrastructure credentials that are associated with the resource group that 
 
 {: tsResolve}
 [Complete the troubleshooting guide](/docs/containers?topic=containers-cs_troubleshoot_clusters#cs_credentials) to check and update the infrastructure credentials that are used for the resource group.
-
-<br />
-
-
-## Cannot access registry console
-{: #rhoks_ts_registry_console}
-
-{: tsSymptoms}
-Cannot access the local Docker registry console with the following error.
-```
-An authentication error occurred.
-```
-{: screen}
-
-{: tsCauses}
-OpenShift clusters that were created before 18 June 2019 did not set the registry console provider URL to the external cluster endpoint.
-
-{: tsResolve}
-Modify the registry console deployment so that you can access it externally.
-1.  From the OpenShift **Application Console**, open the **default** namespace and then click **Applications > Deployments > registry-console**.
-2.  In the **Environment** tab of the **registry-console** details page, find the **OPENSHIFT_OAUTH_PROVIDER_URL** field.
-3.  In the **Value** field, add `-e` after the `c1` such as in `https://c1-e.eu-gb.containers.cloud.ibm.com:20399`.
-4.  Click **Save**. Now, the registry console deployment can be accessed through the public API endpoint of the cluster master.
-5.  From the **default** project navigation pane, click **Applications > Routes**. To open the registry console, click the **Hostname** value, such as `https://registry-console-default.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.
-
-    For the beta, the registry console uses self-signed TLS certificates, so you must choose to proceed to get to the registry console. In Google Chrome, click **Advanced > Proceed to <cluster_master_URL>**. Other browsers have similar options. If you cannot proceed with this setting, try opening the URL in a private browser.
-    {: note}
 
 <br />
 
