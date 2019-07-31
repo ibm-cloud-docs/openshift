@@ -39,7 +39,7 @@ An IT Exec for a healthcare provider has business reporting and patient systems 
 Why {{site.data.keyword.cloud_notm}}: To improve patient service, the provider looked to Red Hat OpenShift on IBM Cloud and {{site.data.keyword.contdelivery_full}} to reduce IT spend and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently.  Yet, the provider's developers were overwhelmed with administering the hardware, network, and even the Kubernetes stack on their own. The provider also wanted to counteract increasing labor costs and a decreasing budget.
 
 Key technologies:
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Horizontal scaling](/docs/containers?topic=containers-app#highly_available_apps)
 * [Container security and isolation](/docs/containers?topic=containers-security#security) 
 * [{{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/products/cloud-pak-for-data)
@@ -124,7 +124,7 @@ A Development Exec for a disease research nonprofit has academic and industry re
 Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud delivers secure compute that can host sensitive and performant data processing on an open platform. That global platform is hosted in near-by regions. So it's tied to local regulations that inspire patients’ and researchers’ confidence that their data is both protected locally and makes a difference in better health outcomes.
 
 Key technologies:
-* [Intelligent scheduling places workloads where needed](/docs/containers?topic=containers-regions-and-zones#regions-and-zones)
+* [Intelligent scheduling places workloads where needed](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 * [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/services/Cloudant?topic=cloudant-getting-started#getting-started)
 * [Vulnerability scanning  and isolation for workloads](/docs/services/Registry?topic=va-va_index#va_index)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
