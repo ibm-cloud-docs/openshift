@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-07-31"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-# Creating an OpenShift cluster
+# Creating OpenShift clusters
 {: #openshift-create-cluster}
 
 Create a {{site.data.keyword.openshiftlong}} cluster in {{site.data.keyword.containerlong_notm}}.

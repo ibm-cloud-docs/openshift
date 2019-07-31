@@ -83,6 +83,7 @@ Next, start [Creating a Red Hat OpenShift on IBM Cloud cluster (preview)](/docs/
 For more information about the OpenShift Origin CLI, see the [`oc` commands docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html).
 {: note}
 
+
 <br />
 
 
@@ -125,4 +126,6 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
     ```
     curl -u 'apikey:<API_key>' -H "X-CSRF-Token: a" 'https://<master_URL>:<port>/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
     ```
-    {: codeblock}
+    {: pre}
+
+
