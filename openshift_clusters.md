@@ -49,7 +49,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
 
 1.  Create a cluster.
     1.  Log in to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
-    2.  From the hamburger menu ![hamburger menu icon](../icons/icon_hamburger.svg "hamburger menu icon"), select **Kubernetes** and then click **Create cluster**.
+    2.  From the hamburger menu ![hamburger menu icon](../icons/icon_hamburger.svg "hamburger menu icon"), select **OpenShift** and then click **Create cluster**.
     3.  Choose your cluster setup details and name.
     *   Fill out your cluster name, resource group, and tags.
     *   For the **Location**, set the **Geography**, and then select any of the six worldwide multizone **Metro** [locations](/docs/openshift?topic=openshift-regions-and-zones) to use for your **Worker zones**.
