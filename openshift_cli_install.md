@@ -125,4 +125,4 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
     ```
     curl -u 'apikey:<API_key>' -H "X-CSRF-Token: a" 'https://<master_URL>:<port>/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
     ```
-    {: codeblock}
+    {: pre}

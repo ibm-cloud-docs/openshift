@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-07-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -33,15 +33,15 @@ take advantage of high availability, high-performance compute, easy spin-up of c
 ## Mortgage company trims costs and accelerates regulatory compliance
 {: #uc_mortgage}
 
-A Risk Management VP for a residential mortgage company processes 70 million records a day, but the on-premises system was slow and also inaccurate. IT expenses soared because hardware quickly went out of date and wasn't utilized fully. While they waited for hardware provisioning, their regulatory compliance slowed.
+A Risk Management VP for a residential mortgage company processes 70 million records a day, but the on-premises system was slow and also inaccurate. IT expenses soared because hardware quickly went out of date and wasn't utilized fully. While they waited for hardware provisioning, their regulatory compliance slowed. 
 {: shortdesc}
 
 Why {{site.data.keyword.cloud_notm}}: To improve risk analysis, the company looked to Red Hat OpenShift on IBM Cloud and IBM Cloud Analytic services to reduce costs, increase worldwide availability, and ultimately accelerate regulatory compliance. With Red Hat OpenShift on IBM Cloud in multiple regions, their analysis apps can be containerized and deployed across the globe, improving availability and addressing local regulations. Those deployments are accelerated with familiar open source tools, already part of Red Hat OpenShift on IBM Cloud.
 
 Red Hat OpenShift on IBM Cloud and key technologies:
 * [Horizontal scaling](/docs/containers?topic=containers-app#highly_available_apps)
-* [Multiple regions for high availability](/docs/containers?topic=containers-regions-and-zones#regions-and-zones)
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
+* [Multiple regions for high availability](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Container security and isolation](/docs/containers?topic=containers-security#security)
 * [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/services/Cloudant?topic=cloudant-getting-started#getting-started)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime#nodejs_runtime)
@@ -110,7 +110,7 @@ Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud provides sp
 Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their  application development tools get a new face when they add on AI cloud services to apps with a click.
 
 Key technologies:
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [IBM Cloud Pak for Applications](https://www.ibm.com/cloud/cloud-pak-for-applications)
 * [Fraud prevention with {{site.data.keyword.watson}} AI](https://www.ibm.com/cloud/watson-studio)

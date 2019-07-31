@@ -33,7 +33,7 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} b
 ## Healthcare provider migrates workloads from inefficient VMs to Ops-friendly containers for reporting and patient systems
 {: #uc_migrate}
 
-An IT Exec for a healthcare provider has business reporting and patient systems on-premises. Those systems go through slow enhancement cycles, which leads to stagnant patient service levels.
+An IT Exec for a healthcare provider has business reporting and patient systems on-premises. Those systems go through slow enhancement cycles, which leads to stagnant patient service levels. 
 {: shortdesc}
 
 Why {{site.data.keyword.cloud_notm}}: To improve patient service, the provider looked to Red Hat OpenShift on IBM Cloud and {{site.data.keyword.contdelivery_full}} to reduce IT spend and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently.  Yet, the provider's developers were overwhelmed with administering the hardware, network, and even the Kubernetes stack on their own. The provider also wanted to counteract increasing labor costs and a decreasing budget.
