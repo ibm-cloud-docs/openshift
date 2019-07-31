@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-31"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -22,6 +22,8 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
+
+
 
 # Storing data on IBM Cloud Object Storage
 {: #object_storage}

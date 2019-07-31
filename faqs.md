@@ -20,6 +20,8 @@ subcollection: openshift
 {:note: .note}
 {:download: .download}
 {:preview: .preview}
+
+
 {:faq: data-hd-content-type='faq'}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-07-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -20,6 +20,8 @@ subcollection: openshift
 {:note: .note}
 {:download: .download}
 {:preview: .preview}
+
+
 
 # Enhancing cluster capabilities with integrations
 {: #openshift_integrations}

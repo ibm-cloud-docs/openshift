@@ -24,6 +24,8 @@ subcollection: openshift
 {:preview: .preview}
 
 
+
+
 # Your responsibilities by using Red Hat OpenShift on IBM Cloud
 {: #responsibilities_openshift}
 

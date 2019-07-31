@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-07-31"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -22,6 +22,8 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
+
+
 
 # Planning your worker node setup
 {: #planning_worker_nodes}

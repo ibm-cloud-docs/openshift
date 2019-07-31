@@ -23,6 +23,8 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
+
 # Transportation use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_transport}
 
@@ -40,7 +42,7 @@ An IT Exec has worldwide shipping routing and scheduling systems that partners i
 Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud scales containerized apps with five 9s of availability to meet growing demands. App deployments occur 40 times daily when Developers experiment easily, pushing changes to Development and Test systems quickly. The IoT Platform makes access to IoT data easy.
 
 Key technologies:    
-* [Multi-regions for business partner ecosystem ](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
+* [Multi-regions for business partner ecosystem ](/docs/containers?topic=containers-regions-and-zones#regions-and-zones)
 * [Horizontal scaling](/docs/containers?topic=containers-app#highly_available_apps)
 * [Open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [Cloud services for innovation](https://www.ibm.com/cloud/products/#analytics)
@@ -129,7 +131,7 @@ An HR Exec (CHRO) needs a new HR benefits site with an innovative chatbot, but c
 Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud provides easy spin-up of compute. Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their traditional software development tools get a boost when they add on IBM Watson Assistant. The new benefits site was created in less than 3 weeks.
 
 Key technologies:    
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
 * [Chatbot service powered by Watson](https://developer.ibm.com/code/patterns/create-cognitive-banking-chatbot/)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime#nodejs_runtime)

@@ -21,6 +21,8 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
+
 # Creating OpenShift clusters
 {: #openshift-create-cluster}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-07-31"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -22,6 +22,8 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
+
+
 {:gif: data-image-type='gif'}
 
 # Adding worker nodes and zones to clusters

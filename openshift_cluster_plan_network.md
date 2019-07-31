@@ -24,6 +24,8 @@ subcollection: openshift
 {:preview: .preview}
 
 
+
+
 # Planning your cluster network setup
 {: #plan_clusters}
 
