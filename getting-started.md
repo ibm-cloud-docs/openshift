@@ -22,8 +22,6 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
-
-
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -48,8 +46,8 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 1.  Log in to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
 2.  From the **Catalog**, click [**Red Hat OpenShift Cluster** ![External link icon](../icons/launch-glyph.svg "External link icon")]](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster), and then click **Create**.
 3.  Choose your cluster setup details and name.
-    *   Enter a name for your cluster, and select the resource group that you want to assign to your cluster. 
-    *   Enter tags that you want to add to your cluster. Tags can help you organize and find your clusters more easily in your  {{site.data.keyword.cloud_notm}} account. 
+    *   Enter a name for your cluster, and select the resource group that you want to assign to your cluster.
+    *   Enter tags that you want to add to your cluster. Tags can help you organize and find your clusters more easily in your  {{site.data.keyword.cloud_notm}} account.
     *   For the **Location**, set the **Geography**, and then select any of the six worldwide multizone **Metro** [locations](/docs/openshift?topic=openshift-regions-and-zones) to use for your **Worker zones**.
     *   For **Default worker pool**, choose an available flavor for your worker nodes. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
     *   Set a number of worker nodes to create per zone, such as `3`.
@@ -66,13 +64,13 @@ From the OpenShift console, you can deploy one of the built-in catalog apps.
 {: shortdesc}
 
 1.  From the cluster details page, click **OpenShift web console**.
-2.  In the **Getting Started** pane, click **Create Project**. Enter a name for your project name, and click **Create**. If you already have existing projects, your pane name changes to **My Projects**. 
+2.  In the **Getting Started** pane, click **Create Project**. Enter a name for your project name, and click **Create**. If you already have existing projects, your pane name changes to **My Projects**.
 3.  Click your project name, then click **Browse Catalog**.
 4.  Click an app to deploy. For example, from the **Language** tab, select **JavaScript**, and then click **Node.js**. The Node.js wizard opens.
     1.  In the *Information* tab, click **Next**.
     2.  In the *Configuration* tab, click **Try Sample Repository**.
     3.  In the *Results* tab, the `nodejs-ex` app is created. Click **Close**.
-5.  Wait a few minutes for the pods to deploy. To check the status of the pods, click **Applications > Pods**. You must see one `nodejs-ex-build` pod in a **Completed** state, and one `nodejs-ex` pod in a **Running** state. 
+5.  Wait a few minutes for the pods to deploy. To check the status of the pods, click **Applications > Pods**. You must see one `nodejs-ex-build` pod in a **Completed** state, and one `nodejs-ex` pod in a **Running** state.
 6.  When both pods are available, click **Applications > Routes**.
 7.  Click the **Hostname** of your `nodejs-ex` app. A new tab in your browser opens with a message similar to the following.
     ```

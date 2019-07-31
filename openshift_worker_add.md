@@ -22,8 +22,6 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
-
-
 {:gif: data-image-type='gif'}
 
 # Adding worker nodes and zones to clusters
@@ -321,5 +319,6 @@ Critical components, such as `containerd`, `kubelet`, `kube-proxy`, and `calico`
 {:shortdesc}
 
 You can [configure health checks for your worker node and enable Autorecovery](/docs/containers?topic=containers-health#autorecovery). If Autorecovery detects an unhealthy worker node based on the configured checks, Autorecovery triggers a corrective action like an OS reload on the worker node. For more information about how Autorecovery works, see the [Autorecovery blog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/12/autorecovery-utilizes-consistent-hashing-high-availability/).
+
 
 

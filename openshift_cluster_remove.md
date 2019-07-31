@@ -22,8 +22,6 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
-
-
 {:gif: data-image-type='gif'}
 
 # Removing clusters
@@ -78,5 +76,6 @@ Next steps:
 - After it is no longer listed in the available clusters list when you run the `ibmcloud oc clusters` command, you can reuse the name of a removed cluster.
 - If you kept the subnets, you can [reuse them in a new cluster](/docs/containers?topic=containers-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
 - If you kept the persistent storage, you can [delete your storage](/docs/containers?topic=containers-cleanup#cleanup) later through the IBM Cloud infrastructure dashboard in the {{site.data.keyword.cloud_notm}} console.
+
 
 
