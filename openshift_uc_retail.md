@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Retail use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_retail}
 

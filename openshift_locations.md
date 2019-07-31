@@ -24,8 +24,6 @@ subcollection: openshift
 {:preview: .preview}
 
 
-
-
 # Locations
 {: #regions-and-zones}
 

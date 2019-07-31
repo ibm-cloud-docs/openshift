@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Overview of use cases
 {: #cs_uc_intro}
 

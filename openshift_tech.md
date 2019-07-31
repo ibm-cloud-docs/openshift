@@ -21,8 +21,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Service architecture
 {: #openshift-service-arch}
 

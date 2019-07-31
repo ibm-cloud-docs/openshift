@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Controlling traffic with network policies
 {: #network_policies}
 

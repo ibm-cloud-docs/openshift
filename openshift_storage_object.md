@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Storing data on IBM Cloud Object Storage
 {: #object_storage}
 

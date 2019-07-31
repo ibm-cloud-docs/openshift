@@ -25,8 +25,6 @@ subcollection: openshift
 
 
 
-
-
 # High availability for OpenShift clusters
 {: #ha}
 

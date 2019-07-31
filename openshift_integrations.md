@@ -21,8 +21,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Enhancing cluster capabilities with integrations
 {: #openshift_integrations}
 

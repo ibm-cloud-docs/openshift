@@ -23,8 +23,6 @@ subcollection: openshift
 
 
 
-
-
 # Installing the Red Hat OpenShift Container Platform CLI
 {: #openshift-cli}
 

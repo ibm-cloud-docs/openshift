@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Understanding Kubernetes storage basics
 {: #kube_concepts}
 

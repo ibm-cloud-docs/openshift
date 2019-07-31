@@ -21,8 +21,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Why Red Hat OpenShift on IBM Cloud
 {: #why_openshift}
 

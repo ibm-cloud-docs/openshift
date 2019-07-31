@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Planning your worker node setup
 {: #planning_worker_nodes}
 

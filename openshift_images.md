@@ -21,8 +21,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Building images for your apps 
 {: #openshift-images}
 

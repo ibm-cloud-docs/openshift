@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Red Hat OpenShift on IBM Cloud CLI
 {: #kubernetes-service-cli}
 

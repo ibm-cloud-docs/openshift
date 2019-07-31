@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Transportation use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_transport}
 

@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Planning highly available persistent storage
 {: #storage_planning}
 

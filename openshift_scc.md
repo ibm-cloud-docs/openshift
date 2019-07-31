@@ -24,8 +24,6 @@ subcollection: openshift
 {:preview: .preview}
 
 
-
-
 # Configuring security context constraints
 {: #openshift_scc}
 

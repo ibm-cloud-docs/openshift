@@ -23,8 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Planning your cluster for high availability
 {: #ha_clusters}
 

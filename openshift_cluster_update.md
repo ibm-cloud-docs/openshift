@@ -25,8 +25,6 @@ subcollection: openshift
 
 
 
-
-
 # Updating clusters, worker nodes, and cluster components
 {: #update}
 

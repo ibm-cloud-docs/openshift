@@ -21,8 +21,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Deploying apps in OpenShift clusters
 {: #openshift_apps}
 
