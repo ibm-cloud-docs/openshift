@@ -30,7 +30,7 @@ You can use the {{site.data.keyword.containerlong}} CLI plug-in's alias for Open
 ## Installing the IBM Cloud CLI and plug-ins
 {: #cli_ibmcloud_oc}
 
-See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps) to install the following CLIs.
+See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/openshift?topic=openshift-cli_install#cli_install_steps) to install the following CLIs.
 {: shortdesc}
 
 * {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`)
@@ -74,11 +74,11 @@ Using both community Kubernetes and OpenShift clusters? The `oc` CLI comes with 
         rm /usr/local/bin/kubectl
         ```
         {: pre}
-    2.  [Download separate `kubectl` binary files](/docs/containers?topic=containers-cs_cli_install#kubectl) that match the versions of your OpenShift and community Kubernetes clusters.
+    2.  [Download separate `kubectl` binary files](/docs/openshift?topic=openshift-cli_install#kubectl) that match the versions of your OpenShift and community Kubernetes clusters.
     3.  **Optional**: Set up an alias in your local terminal profile to point to separate binaries that match the version of `kubectl` your cluster needs.
 4.  **Optional**: [Enable autocompletion for `kubectl` commands ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion). The steps vary depending on the shell that you use. You can repeat the steps to enable autocompletion for `oc` commands. For example in bash on Linux, instead of `kubectl completion bash >/etc/bash_completion.d/kubectl`, you can run `oc completion bash >/etc/bash_completion.d/oc_completion`.
 
-Next, start [Creating a Red Hat OpenShift on IBM Cloud cluster (preview)](/docs/containers?topic=containers-openshift_tutorial).
+Next, start [Creating a Red Hat OpenShift on IBM Cloud cluster (preview)](/docs/openshift?topic=openshift-openshift_tutorial).
 
 For more information about the OpenShift Origin CLI, see the [`oc` commands docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html).
 {: note}
