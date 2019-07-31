@@ -27,7 +27,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 
 
-# Tutorial: Creating an IBM Cloud Red Hat OpenShift Container Platform cluster (beta)
+# Tutorial: Creating a {{site.data.keyword.openshiftlong}} cluster
 {: #openshift_tutorial}
 
 The {{site.data.keyword.openshiftlong}} **beta** is available as an extension of {{site.data.keyword.containerlong_notm}} to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong_notm}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
@@ -70,7 +70,7 @@ This tutorial is for cluster administrators who want to learn how to create a Re
 <br />
 
 
-## Lesson 1: Creating a Red Hat OpenShift on IBM Cloud cluster
+## Lesson 1: Creating a {{site.data.keyword.openshiftlong}} cluster
 {: #openshift_create_cluster}
 
 Create a Red Hat OpenShift on IBM Cloud cluster in {{site.data.keyword.containerlong_notm}}. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-openshift-service-arch). OpenShift is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
