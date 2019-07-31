@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-07-31"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -145,7 +145,7 @@ Any OpenShift clusters that you create during the beta remain for 30 days after 
 Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to help operate your cluster, such as the OpenShift console.
 {:shortdesc}
 
-1.  From the [{{site.data.keyword.containerlong_notm}} clusters ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters) console, select your OpenShift cluster, then click **OpenShift web console**.
+1.  From the [{{site.data.keyword.containerlong_notm}} clusters ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) console, select your OpenShift cluster, then click **OpenShift web console**.
 2.  Explore the different areas of the OpenShift console by clicking the dropdown menu in the **OpenShift Container Platform** menu bar.
     * **Service Catalog**: Browse the catalog of built-in services that you can deploy on OpenShift. For example, if you already have an `node.js` app that is hosted in GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console.
     * **Application Console**: For each project namespace that you have access to, you can manage and view logs for your OpenShift resources such as pods, services, routes, builds, images, or persistent volume claims. You can also add services from the catalog to the project.
