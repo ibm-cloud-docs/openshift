@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-31"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel
 
@@ -77,14 +77,14 @@ Red Hat OpenShift on IBM Cloud was first generally available with OpenShift vers
 <th>Supported?</th>
 <th>OpenShift / Kubernetes version</th>
 <th>Red Hat OpenShift on IBM Cloud<br>release date</th>
-<th>Red Hat OpenShift on IBM Cloud}<br>unsupported date</th>
+<th>Red Hat OpenShift on IBM Cloud<br>unsupported date</th>
 </tr>
 </thead>
 <tbody>
 <tr>
   <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
   <td>3.11 / 1.11</td>
-  <td>**Beta**: 5 Jun 2019</td>
+  <td>1 Aug 2019 at 0:00 UTC</td>
   <td>`†`</td>
 </tr>
 </tbody>

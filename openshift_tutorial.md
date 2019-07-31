@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-07-31"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -26,12 +26,8 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 
-
-# Tutorial: Creating an IBM Cloud Red Hat OpenShift Container Platform cluster (beta)
+# Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster
 {: #openshift_tutorial}
-
-The {{site.data.keyword.openshiftlong}} **beta** is available as an extension of {{site.data.keyword.containerlong_notm}} to test out OpenShift clusters. Not all the features of {{site.data.keyword.containerlong_notm}} are available during the beta. Also, any OpenShift beta clusters that you create remain for only 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
-{: preview}
 
 With Red Hat OpenShift on IBM Cloud, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of managed {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-responsibilities_iks) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) that runs on Red Hat Enterprise Linux for your app deployments.
 {: shortdesc}
@@ -75,9 +71,6 @@ This tutorial is for cluster administrators who want to learn how to create a Re
 
 Create a Red Hat OpenShift on IBM Cloud cluster in {{site.data.keyword.containerlong_notm}}. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-openshift-service-arch). OpenShift is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
 {:shortdesc}
-
-Any OpenShift clusters that you create during the beta remain for 30 days after the beta ends and Red Hat OpenShift on IBM Cloud becomes generally available.
-{: important}
 
 1.  Install the command-line tools.
     *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
@@ -145,7 +138,7 @@ Any OpenShift clusters that you create during the beta remain for 30 days after 
 Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to help operate your cluster, such as the OpenShift console.
 {:shortdesc}
 
-1.  From the [{{site.data.keyword.containerlong_notm}} clusters ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters) console, select your OpenShift cluster, then click **OpenShift web console**.
+1.  From the [{{site.data.keyword.containerlong_notm}} clusters ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) console, select your OpenShift cluster, then click **OpenShift web console**.
 2.  Explore the different areas of the OpenShift console by clicking the dropdown menu in the **OpenShift Container Platform** menu bar.
     * **Service Catalog**: Browse the catalog of built-in services that you can deploy on OpenShift. For example, if you already have an `node.js` app that is hosted in GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console.
     * **Application Console**: For each project namespace that you have access to, you can manage and view logs for your OpenShift resources such as pods, services, routes, builds, images, or persistent volume claims. You can also add services from the catalog to the project.

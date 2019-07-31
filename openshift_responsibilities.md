@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -27,7 +27,7 @@ subcollection: openshift
 # Your responsibilities by using Red Hat OpenShift on IBM Cloud
 {: #responsibilities_openshift}
 
-Learn about responsibilities, terms, and conditions that you have when you use {{site.data.keyword.containerlong}} to provision Red Hat OpenShift on IBM Cloud clusters.
+Learn about responsibilities, terms, and conditions that you have when you use {{site.data.keyword.containerlong}} to provision Red Hat OpenShift on IBM Cloud clusters. 
 {:shortdesc}
 
 ## Cluster management responsibilities
@@ -60,9 +60,9 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
      <td align="center"><img src="images/icon_tools.svg" alt="Icon of a wrench"/><br>Managed cluster</td>
      <td>
      **IBM responsibilities**:
-     <ul><li>Provide a suite of tools to automate cluster management, such as the {{site.data.keyword.containerlong_notm}} [API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/), [CLI plug-in](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli), and [console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters).</li>
+     <ul><li>Provide a suite of tools to automate cluster management, such as the Red Hat OpenShift on IBM Cloud [API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/), [CLI plug-in](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli), and [console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters).</li>
      <li>Automatically apply Kubernetes master patch OS, version, and security updates. Make major and minor updates available for you to apply.</li>
-     <li>Update and recover operational {{site.data.keyword.containerlong_notm}} and Kubernetes components within the cluster, such as the Ingress application load balancer and file storage plug-in.</li>
+     <li>Update and recover operational Red Hat OpenShift on IBM Cloud and Kubernetes components within the cluster, such as the Ingress application load balancer and file storage plug-in.</li>
      <li>Back up and recover data in etcd, such as your Kubernetes workload configuration files</li>
      <li>Set up an OpenVPN connection between the master and worker nodes when the cluster is created.</li>
      <li>Monitor and report the health of the master and worker nodes in the various interfaces.</li>
@@ -131,17 +131,17 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
 <br />
 
 
-## Abuse of {{site.data.keyword.containerlong_notm}}
+## Abuse of Red Hat OpenShift on IBM Cloud
 {: #terms}
 
-Clients cannot misuse {{site.data.keyword.containerlong_notm}}.
+Clients cannot misuse Red Hat OpenShift on IBM Cloud.
 {:shortdesc}
 
 Misuse includes:
 
 *   Any illegal activity
 *   Distribution or execution of malware
-*   Harming {{site.data.keyword.containerlong_notm}} or interfering with anyone's use of {{site.data.keyword.containerlong_notm}}
+*   Harming Red Hat OpenShift on IBM Cloud or interfering with anyone's use of Red Hat OpenShift on IBM Cloud
 *   Harming or interfering with anyone's use of any other service or system
 *   Unauthorized access to any service or system
 *   Unauthorized modification of any service or system

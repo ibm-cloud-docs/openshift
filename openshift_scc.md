@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-07-31"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
