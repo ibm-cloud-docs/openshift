@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-01"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -4189,7 +4189,7 @@ Before you remove your worker node, make sure that pods are rescheduled on other
    This process can take a few minutes.
 5. Remove the worker node. Use the worker ID that is returned from the `ibmcloud oc workers --cluster <cluster_name_or_ID>` command.
    ```
-   ibmcloud oc worker-rm --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
+   ibmcloud oc worker-rm --cluster <cluster_name_or_ID> --workers <worker_name_or_ID>
    ```
    {: pre}
 6. Verify that the worker node is removed.

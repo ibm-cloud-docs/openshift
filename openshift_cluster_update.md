@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-01"
 
 keywords: openshift, roks, rhoks, rhos, version
 
@@ -401,7 +401,7 @@ To update flavors:
 
    - **Deprecated: For stand-alone worker nodes**:
       ```
-      ibmcloud oc worker-rm --cluster <cluster_name> --worker <worker_node>
+      ibmcloud oc worker-rm --cluster <cluster_name> --workers <worker_node>
       ```
       {: pre}
 
