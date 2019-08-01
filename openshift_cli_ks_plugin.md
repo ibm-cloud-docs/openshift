@@ -742,8 +742,6 @@ diskEncryption: <em>false</em>
 <dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.</dd>
 </dl>
 
-
-
 **<code>-s</code>**</br>
 Do not show the message of the day or update reminders. This value is optional.
 
