@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-01"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -64,7 +64,7 @@ From the OpenShift console, you can deploy one of the built-in catalog apps.
 {: shortdesc}
 
 1.  From the cluster details page, click **OpenShift web console**.
-2.  In the **Getting Started** pane, click **Create Project**. Enter a name for your project name, and click **Create**. If you already have existing projects, your pane name changes to **My Projects**.
+2.  In the **My Projects** pane, click **Create Project**. Enter a name for your project name, and click **Create**. If you already have existing projects, your pane name changes to **My Projects**.
 3.  Click your project name, then click **Browse Catalog**.
 4.  Click an app to deploy. For example, from the **Language** tab, select **JavaScript**, and then click **Node.js**. The Node.js wizard opens.
     1.  In the *Information* tab, click **Next**.
