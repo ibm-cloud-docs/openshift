@@ -34,7 +34,7 @@ When you create a cluster, the worker nodes are provisioned in a worker pool. Af
 If you have a multizone cluster, keep its worker node resources balanced. Make sure that all the worker pools are spread across the same zones, and add or remove workers by resizing the pools instead of adding individual nodes.
 {: tip}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/containers?topic=containers-users#platform). Then, choose one of the following sections:
+Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform). Then, choose one of the following sections:
   * [Add worker nodes by resizing an existing worker pool in your cluster](#resize_pool)
   * [Add worker nodes by adding a worker pool to your cluster](#add_pool)
   * [Add a zone to your cluster and replicate the worker nodes in your worker pools across multiple zones](#add_zone)
@@ -111,7 +111,7 @@ You can add worker nodes to your cluster by creating a new worker pool.
    ```
    {: pre}
 
-3.  For each zone, review the [available flavors for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
+3.  For each zone, review the [available flavors for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 
     ```
     ibmcloud oc flavors --zone <zone>
@@ -270,7 +270,7 @@ If you have a cluster that was created after worker pools were introduced, you c
 ## Adding labels to existing worker pools
 {: #worker_pool_labels}
 
-You can assign a worker pool a label when you [create the worker pool](#add_pool), or later by following these steps. After a worker pool is labeled, all existing and subsequent worker nodes get this label. You might use labels to deploy specific workloads only to worker nodes in the worker pool, such as [edge nodes for load balancer network traffic](/docs/containers?topic=containers-edge).
+You can assign a worker pool a label when you [create the worker pool](#add_pool), or later by following these steps. After a worker pool is labeled, all existing and subsequent worker nodes get this label. You might use labels to deploy specific workloads only to worker nodes in the worker pool, such as [edge nodes for load balancer network traffic](/docs/openshift?topic=openshift-edge).
 {: shortdesc}
 
 Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
