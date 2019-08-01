@@ -35,7 +35,6 @@ High availability is a core discipline in an IT infrastructure to keep your apps
 
 You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the money that you want to spend.
 
-
 ## Overview of potential points of failure in Red Hat OpenShift on IBM Cloud
 {: #fault_domains}
 
@@ -68,5 +67,6 @@ Red Hat OpenShift on IBM Cloud provides several approaches to add more availabil
   <dd><p>In a stateful app, data plays an important role to keep your app up and running. Make sure that your data is highly available so that you can recover from a potential failure. In Red Hat OpenShift on IBM Cloud, you can choose from several options to persist your data. For example, you can provision NFS storage by using Kubernetes native persistent volumes, or store your data by using an {{site.data.keyword.cloud_notm}} database service.</p>
   <p>See [Planning highly available data](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).</p></dd>
 </dl>
+
 
 
