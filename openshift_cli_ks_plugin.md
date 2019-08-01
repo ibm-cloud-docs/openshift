@@ -37,6 +37,7 @@ In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-in
 Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registryshort_notm}} CLI reference](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli). Looking for `kubectl` commands? See the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/).
 {:tip}
 
+
 ## Using the beta {{site.data.keyword.containerlong_notm}} plug-in
 {: #cs_beta}
 
@@ -4189,7 +4190,7 @@ Before you remove your worker node, make sure that pods are rescheduled on other
    This process can take a few minutes.
 5. Remove the worker node. Use the worker ID that is returned from the `ibmcloud oc workers --cluster <cluster_name_or_ID>` command.
    ```
-   ibmcloud oc worker-rm --cluster <cluster_name_or_ID> --workers <worker_name_or_ID>
+   ibmcloud oc worker-rm --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
    ```
    {: pre}
 6. Verify that the worker node is removed.
