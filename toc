@@ -90,8 +90,11 @@ Red Hat OpenShift on IBM Cloud
     CLI plug-in reference
         openshift_cli_ks_plugin.md
         /containers/containers-cs_cli_changelog
-    
-    openshift_versions.md
+
+    {: .topicgroup}
+    Version history
+        openshift_versions.md
+        openshift_versions_changelog.md
         
     openshift_locations.md
     openshift_users_access_ref.md
