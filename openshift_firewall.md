@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -96,7 +96,7 @@ To allow access for a specific cluster:
    ```
    {: pre}
 
-2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc clusters`. **Note**: You must have at least the [**Viewer** role](/docs/containers?topic=containers-users#platform) for the resource group.
+2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc clusters`. **Note**: You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#platform) for the resource group.
    ```
    ibmcloud target -g <resource_group_name>
    ```
@@ -219,7 +219,7 @@ Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`
 Let your cluster access infrastructure resources and services from behind a public firewall, such as for Red Hat OpenShift on IBM Cloud regions, {{site.data.keyword.registrylong_notm}}, {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), {{site.data.keyword.monitoringlong_notm}}, {{site.data.keyword.loganalysislong_notm}}, IBM Cloud infrastructure private IPs, and egress for persistent volume claims.
 {:shortdesc}
 
-Want to use Calico policies to act as your cluster firewall instead of a gateway device firewall? See [Isolating clusters on the public network](/docs/containers?topic=containers-network_policies#isolate_workers_public).
+Want to use Calico policies to act as your cluster firewall instead of a gateway device firewall? See [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
 {: tip}
 
 Depending on your cluster setup, you access the services by using the public, private, or both IP addresses. If you have a cluster with worker nodes on both public and private VLANs behind a firewall for both public and private networks, you must open the connection for both public and private IP addresses. If your cluster has worker nodes on only the private VLAN behind a firewall, you can open the connection to only the private IP addresses.
@@ -373,7 +373,6 @@ Depending on your cluster setup, you access the services by using the public, pr
                   <td><code>metrics.ng.bluemix.net</code></td>
                   <td><code>169.47.204.128/29</code></td>
                  </tr>
-                 
                 </tbody>
               </table></p>
     *   **{{site.data.keyword.mon_full_notm}}**:
@@ -455,7 +454,7 @@ Depending on your cluster setup, you access the services by using the public, pr
 If you have a firewall on the private network, allow communication between worker nodes and let your cluster access infrastructure resources over the private network.
 {:shortdesc}
 
-Want to use Calico policies to act as your cluster firewall instead of a gateway device firewall? See [Isolating clusters on the private network](/docs/containers?topic=containers-network_policies#isolate_workers).
+Want to use Calico policies to act as your cluster firewall instead of a gateway device firewall? See [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
 {: tip}
 
 1. Allow all traffic between worker nodes.
@@ -481,12 +480,12 @@ Want to use Calico policies to act as your cluster firewall instead of a gateway
 ## Allowing the cluster to access resources through Calico egress policies
 {: #firewall_calico_egress}
 
-If you use [Calico network policies](/docs/containers?topic=containers-network_policies) to act as a firewall to restrict all public worker node egress, you must allow your worker nodes to access the subnets that are required for the cluster to function.
+If you use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a firewall to restrict all public worker node egress, you must allow your worker nodes to access the subnets that are required for the cluster to function.
 {: shortdesc}
 
-To use Calico policies to act as your cluster firewall on the public network, you must apply the policies in [Isolating clusters on the public network](/docs/containers?topic=containers-network_policies#isolate_workers_public).
+To use Calico policies to act as your cluster firewall on the public network, you must apply the policies in [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
 
-To use Calico policies to act as your cluster firewall on the private network, you must apply the policies in [Isolating clusters on the private network](/docs/containers?topic=containers-network_policies#isolate_workers).
+To use Calico policies to act as your cluster firewall on the private network, you must apply the policies in [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
 
 <br />
 
@@ -558,5 +557,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     {: pre}
 4.  Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
 5.  Repeat these steps for each cluster that you want to whitelist.
+
+
 
 

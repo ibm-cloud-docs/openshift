@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -36,11 +36,11 @@ The following image shows the storage components in a cluster.
 
 <img src="images/cs_storage_pvc_pv.png" alt="Storage components in a cluster" width="275" style="width: 275px; border-style: none"/>
 
-- **Cluster**</br> By default, every cluster is set up with a plug-in to [provision file storage](/docs/containers?topic=containers-file_storage#add_file). You can choose to install other add-ons, such as the one for [block storage](/docs/containers?topic=containers-block_storage). To use storage in a cluster, you must create a persistent volume claim, a persistent volume and a physical storage instance. When you delete the cluster, you have the option to delete related storage instances.
+- **Cluster**</br> By default, every cluster is set up with a plug-in to [provision file storage](/docs/openshift?topic=openshift-file_storage#add_file). You can choose to install other add-ons, such as the one for [block storage](/docs/openshift?topic=openshift-block_storage). To use storage in a cluster, you must create a persistent volume claim, a persistent volume and a physical storage instance. When you delete the cluster, you have the option to delete related storage instances.
 - **App**</br> To read from and write to your storage instance, you must mount the persistent volume claim (PVC) to your app. Different storage types have different read-write rules. For example, you can mount multiple pods to the same PVC for file storage. Block storage comes with a RWO (ReadWriteOnce) access mode so that you can mount the storage to one pod only.
 - **Persistent volume claim (PVC)** </br> A PVC is the request to provision persistent storage with a specific type and configuration. To specify the persistent storage flavor that you want, you use [Kubernetes storage classes](#storageclasses). The cluster admin can define storage classes, or you can choose from one of the predefined storage classes in {{site.data.keyword.containerlong_notm}}. When you create a PVC, the request is sent to the {{site.data.keyword.Bluemix}} storage provider. Depending on the configuration that is defined in the storage class, the physical storage device is ordered and provisioned into your IBM Cloud infrastructure account. If the requested configuration does not exist, the storage is not created.
 - **Persistent volume (PV)** </br> A PV is a virtual storage instance that is added as a volume to the cluster. The PV points to a physical storage device in your IBM Cloud infrastructure account and abstracts the API that is used to communicate with the storage device. To mount a PV to an app, you must have a matching PVC. Mounted PVs appear as a folder inside the container's file system.
-- **Physical storage** </br> A physical storage instance that you can use to persist your data. Examples of physical storage in {{site.data.keyword.cloud_notm}} include [File Storage](/docs/containers?topic=containers-file_storage#file_storage), [Block Storage](/docs/containers?topic=containers-block_storage#block_storage), [Object Storage](/docs/containers?topic=containers-object_storage#object_storage), and local worker node storage that you can use as SDS storage with [Portworx](/docs/containers?topic=containers-portworx#portworx). {{site.data.keyword.cloud_notm}} provides high availability for physical storage instances. However, data that is stored on a physical storage instance is not backed up automatically. Depending on the type of storage that you use, different methods exist to set up backup and restore solutions.
+- **Physical storage** </br> A physical storage instance that you can use to persist your data. Examples of physical storage in {{site.data.keyword.cloud_notm}} include [File Storage](/docs/openshift?topic=openshift-file_storage#file_storage), [Block Storage](/docs/openshift?topic=openshift-block_storage#block_storage), [Object Storage](/docs/openshift?topic=openshift-object_storage#object_storage), and local worker node storage that you can use as SDS storage with [Portworx](/docs/containers?topic=containers-portworx#portworx). {{site.data.keyword.cloud_notm}} provides high availability for physical storage instances. However, data that is stored on a physical storage instance is not backed up automatically. Depending on the type of storage that you use, different methods exist to set up backup and restore solutions.
 
 For more information about how to create and use PVCs, PVs, and the physical storage device, see:
 - [Dynamic provisioning](#dynamic_provisioning)
@@ -77,8 +77,8 @@ Review the following common use cases for dynamic provisioning:
 3. **Create and delete storage often:** You have an app or set up a continuous delivery pipeline that creates and removes persistent storage regularly. Persistent storage that is dynamically provisioned with a non-retaining storage class can be removed by deleting the PVC.
 
 For more information about how to dynamically provision persistent storage, see:
-- [File storage](/docs/containers?topic=containers-file_storage#add_file)
-- [Block storage](/docs/containers?topic=containers-block_storage#add_block)
+- [File storage](/docs/openshift?topic=openshift-file_storage#add_file)
+- [Block storage](/docs/openshift?topic=openshift-block_storage#add_block)
 
 ## Static provisioning
 {: #static_provisioning}
@@ -112,8 +112,8 @@ Review the following common use cases for static provisioning of persistent stor
 4. **Share persistent storage across namespaces in the same cluster:** You provisioned persistent storage in a namespace of your cluster. You want to use the same storage instance for an app pod that is deployed to a different namespace in your cluster.
 
 For more information about how to statically provision storage, see:
-- [File storage](/docs/containers?topic=containers-file_storage#file_predefined_storageclass)
-- [Block storage](/docs/containers?topic=containers-block_storage#block_predefined_storageclass)
+- [File storage](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
+- [Block storage](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
 
 ## Storage classes
 {: #storageclasses}
@@ -124,8 +124,8 @@ To dynamically provision persistent storage, you must define the type and config
 A [Kubernetes storage class ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/storage-classes/) is used to abstract the underlying storage platform that is supported in {{site.data.keyword.cloud_notm}} so that you do not have to know all the details about supported sizes, IOPS, or retention policies to successfully provision persistent storage in a cluster. {{site.data.keyword.containerlong_notm}} provides pre-defined storage classes for every type of storage that is supported. Each storage class is designed to abstract the supported storage tier while giving you the choice to decide on the size, IOPS, and retention policy that you want.
 
 For the pre-defined storage class specifications, see:
-- [File storage](/docs/containers?topic=containers-file_storage#file_storageclass_reference)
-- [Block storage](/docs/containers?topic=containers-block_storage#block_storageclass_reference)
+- [File storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
+- [Block storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
 
 Not finding what you are looking for? You can also create your own customized storage class to provision the type of storage that you want.
 {: tip}
@@ -138,11 +138,11 @@ If you cannot use one of the provided storage classes, you can create your own c
 
 1. Create a customized storage class. You can start by using one of the pre-defined storage classes, or check out our sample customized storage classes.
    - Pre-defined storage classes:
-     - [File storage](/docs/containers?topic=containers-file_storage#file_storageclass_reference)
-     - [Block storage](/docs/containers?topic=containers-block_storage#block_storageclass_reference)
+     - [File storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
+     - [Block storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
    - Sample customized storage classes:
-     - [File storage](/docs/containers?topic=containers-file_storage#file_custom_storageclass)
-     - [Block storage](/docs/containers?topic=containers-block_storage#block_custom_storageclass)
+     - [File storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
+     - [Block storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
 
 2. Create the customized storage class.
    ```
@@ -157,8 +157,8 @@ If you cannot use one of the provided storage classes, you can create your own c
     {: pre}
 
 4. Create a persistent volume claim (PVC) to dynamically provision storage with your customized storage class.
-   - [File storage](/docs/containers?topic=containers-file_storage#add_file)
-   - [Block storage](/docs/containers?topic=containers-block_storage#add_block)
+   - [File storage](/docs/openshift?topic=openshift-file_storage#add_file)
+   - [Block storage](/docs/openshift?topic=openshift-block_storage#add_block)
 
 5. Verify that your PVC is created and bound to a persistent volume (PV). This process might take a few minutes to complete.
    ```
@@ -181,11 +181,11 @@ When you dynamically provision persistent storage by using a storage class, you 
 <tbody>
 <tr>
 <td>File storage</td>
-<td>You can increase your storage size and assigned IOPS by [modifying your existing volume](/docs/containers?topic=containers-file_storage#file_change_storage_configuration). </td>
+<td>You can increase your storage size and assigned IOPS by [modifying your existing volume](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). </td>
 </tr>
 <tr>
 <td>Block storage</td>
-<td>You can increase your storage size and assigned IOPS by [modifying your existing volume](/docs/containers?topic=containers-block_storage#block_change_storage_configuration). </td>
+<td>You can increase your storage size and assigned IOPS by [modifying your existing volume](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration). </td>
 </tr>
 <tr>
 <td>Object storage</td>
@@ -280,7 +280,9 @@ To update existing PVs:
 **What's next?**
 
 Now that you labeled your existing PVs, you can mount the PV to your multizone cluster. See the following links for more information.
-- Use [existing NFS file storage](/docs/containers?topic=containers-file_storage#existing_file)
-- Use [existing block storage](/docs/containers?topic=containers-block_storage#existing_block)
+- Use [existing NFS file storage](/docs/openshift?topic=openshift-file_storage#existing_file)
+- Use [existing block storage](/docs/openshift?topic=openshift-block_storage#existing_block)
+
+
 
 

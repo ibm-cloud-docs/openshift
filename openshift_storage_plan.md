@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -375,6 +375,8 @@ nodes. Every node stores only a part of the data. </td>
 </tr>
 </tbody>
 </table>
+
+
 
 
 
