@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -156,7 +156,7 @@ The OpenVPN server could not be configured because the router IP address that is
 Could not create a domain name service for the network load balancer (`ibmcloud oc nlb-dns-create`) with the following error message:<ul>
 <li><code>This action requires the Editor role for the cluster in IBM Cloud Container Service. Contact the IBM Cloud account administrator and request the required Identity and Access user role. (A0008)</code></li>
 <li><code>The specified cluster could not be found. (A0006)</code></li>
-<li><code>The input parameters in the request body are either incomplete or in the wrong format. Be sure to include all required parameters in your request in JSON format. (E0011)</code></li><ul>
+<li><code>The input parameters in the request body are either incomplete or in the wrong format. Be sure to include all required parameters in your request in JSON format. (E0011)</code></li></ul>
 
 {: tsCauses}
 The OpenVPN server could not be configured because a domain name service (DNS) was not created for the network load balancer (NLB).
