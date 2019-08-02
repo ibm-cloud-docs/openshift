@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-02"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1528,7 +1528,7 @@ ibmcloud oc cluster-subnet-detach --cluster CLUSTER --subent-id SUBNET_ID [-s]
 <dd>The name or ID of the cluster. This value is required. To list your clusters, use the `ibmcloud oc clusters` [command](#cs_clusters).</dd>
 
 <dt><code>--vlan <em>VLAN_ID</em></code></dt>
-<dd>The ID of the public or private subnet that you want to detach. To find the subnet ID, first run <code>ibmcloud oc cluster-get --cluster &lt;cluster&gt; --showResources</code> and look for the subnet CIDR in the <strong>Subnet VLANs</strong> section of the output. Then, using the subnet CIDR, run <code>ibmcloud oc subnets</code> and look for the subnet's <strong>ID</staong>.</dd>
+<dd>The ID of the public or private subnet that you want to detach. To find the subnet ID, first run <code>ibmcloud oc cluster-get --cluster &lt;cluster&gt; --showResources</code> and look for the subnet CIDR in the <strong>Subnet VLANs</strong> section of the output. Then, using the subnet CIDR, run <code>ibmcloud oc subnets</code> and look for the subnet's <strong>ID</strong>.</dd>
 </dl>
 
 **Example**:
