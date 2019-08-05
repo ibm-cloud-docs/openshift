@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-05"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -69,24 +69,24 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
 {: shortdesc}
 
 1.  Set up the project and privileged service account for LogDNA.
-    1.  As a cluster administrator, create a `logdna` project.
+    1.  As a cluster administrator, create a `logdna-agent` project.
         ```
-        oc adm new-project logdna
-        ```
-        {: pre}
-    2.  Target the project so that the subsequent resources that you create are in the `logdna` project namespace.
-        ```
-        oc project logdna
+        oc adm new-project logdna-agent
         ```
         {: pre}
-    3.  Create a service account for the `logdna` project.
+    2.  Target the project so that the subsequent resources that you create are in the `logdna-agent` project namespace.
         ```
-        oc create serviceaccount logdna
+        oc project logdna-agent
         ```
         {: pre}
-    4.  Add a privileged security context constraint to the service account for the `logdna` project.<p class="note">If you want to check what authorization the `privileged` SCC policy gives the service account, run `oc describe scc privileged`. For more information about SCCs, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).</p>
+    3.  Create a service account for the `logdna-agent` project.
         ```
-        oc adm policy add-scc-to-user privileged -n logdna -z logdna
+        oc create serviceaccount logdna-agent
+        ```
+        {: pre}
+    4.  Add a privileged security context constraint to the service account for the `logdna-agent` project.<p class="note">If you want to check what authorization the `privileged` SCC policy gives the service account, run `oc describe scc privileged`. For more information about SCCs, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).</p>
+        ```
+        oc adm policy add-scc-to-user privileged -n logdna-agent -z logdna-agent
         ```
         {: pre}
 2.  Create your {{site.data.keyword.la_full_notm}} instance in the same resource group as your cluster. Select a pricing plan that determines the retention period for your logs, such as `lite` which retains logs for 0 days. The region does not have to match the region of your cluster. For more information, see [Provisioning an instance](/docs/services/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-provision) and [Pricing plans](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#overview_pricing_plans).
