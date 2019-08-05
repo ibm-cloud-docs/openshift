@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -88,6 +88,29 @@ Do not remove policies that are applied to a host endpoint unless you fully unde
     <td><code>allow-vrrp</code></td>
     <td>Allows VRRP packets, which are used to monitor and move virtual IP addresses between worker nodes.</td>
    </tr>
+   <tr>
+    <td>**In 1.15 clusters only**: <code>allow-all-private-default</code></td>
+    <td>Allows all ingress and egress network traffic on any workload or host endpoint that has the `iks.worker.interface == 'private'` label.</br></br>**Note**: This policy currently has no effect on cluster network traffic, but will be used in the future as further Calico HostEndpoint support is added. However, if you created Calico HostEndpoint objects that use this `iks.worker.interface == 'private'` label, the <code>allow-all-private-default</code> policy might disrupt your network traffic. Before you update your cluster to Kubernetes 1.15, you must create a Calico policy to override the default policy:
+    <ol><li>In a text editor, create a Calico network policy named `deny-all-outbound.yaml`.
+    <pre class="codeblock"><code>apiVersion: projectcalico.org/v3
+kind: GlobalNetworkPolicy
+metadata:
+  name: deny-all-outbound
+spec:
+  egress:
+  - action: Deny
+    destination: {}
+    source: {}
+  order: 2000
+  selector: iks.worker.interface == 'private'
+  types:
+  - Egress</code></pre>
+    </li>
+    <li>Apply the policy to your cluster.
+    <pre class="pre"><code>calicoctl apply -f deny-all-outbound.yaml --config=&lt;filepath&gt;/calicoctl.cfg</code></pre>
+    </li></ol>
+    </td>
+   </tr>
   </tbody>
 </table>
 
@@ -115,7 +138,7 @@ A default Kubernetes policy that limits access to the Kubernetes Dashboard is al
 To view, manage, and add Calico policies, install and configure the Calico CLI.
 {:shortdesc}
 
-1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+1. {[target]} Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin --network
@@ -202,7 +225,7 @@ View the details for default and any added network policies that are applied to 
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. {[target]} Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin --network
@@ -263,7 +286,7 @@ To create Kubernetes network policies, see the [Kubernetes network policy docume
 To create Calico policies, use the following steps.
 
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. {[target]} Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin --network
@@ -310,7 +333,7 @@ To see how to whitelist or blacklist source IP addresses, try the [Using Calico 
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. {[target]} Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin --network
@@ -441,7 +464,7 @@ When you apply the egress pod policies that are included in this policy set, onl
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. {[target]} Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -501,7 +524,7 @@ When you apply the egress pod policies that are included in this policy set, onl
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. {[target]} Include the `--admin` and `--network` options with the `ibmcloud oc cluster-config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin --network

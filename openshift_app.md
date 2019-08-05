@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-02"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -27,24 +27,29 @@ subcollection: openshift
 With {{site.data.keyword.openshiftlong}} clusters, you can deploy apps from a remote file or repository such as GitHub with a single command. Also, your clusters come with various built-in services that you can use to help operate your cluster.
 {: shortdesc}
 
-To create a new app, use the `oc new-app` command. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/getting_started/developers_cli.html).
+## Moving your apps to OpenShift
+{: #openshift_move_apps}
+
+To create a new app in your Red Hat OpenShift on IBM Cloud cluster, use the `oc new-app` [command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html#new-app). For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/getting_started/developers_cli.html).
+{: shortdesc}
 
 ```
 oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-dir=<subdirectory>]
 ```
 {: pre}
 
-## Moving your apps to OpenShift
-{: #openshift_move_apps}
+**What does the `new-app` command do?**<br>
+The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/application_lifecycle/new_app.html#dev-guide-new-app).
 
+
+**Why does my app work on community Kubernetes clusters but not on OpenShift clusters?**<br>
 OpenShift sets up stricter security settings by default than community Kubernetes. If you have apps that previously ran on community Kubernetes, you might need to modify your apps so that you can deploy them on OpenShift.
-{: shortdesc}
 
 For example, apps that are configured to run as root might fail, with the pods in a `CrashLoopBackOff` status. To resolve this issue, you can either modify the default security context constraints or use an image that does not run as root.
 
-For more information, see the OpenShift docs for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).
+For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).
 
-To migrate OpenShift apps from a previous version, such as 2.x to 3.x, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html).
+To migrate OpenShift apps from a previous version, such as 2.x to 3.x, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html).
 
 <br />
 
@@ -57,7 +62,7 @@ You can use the OpenShift console to manage your apps, deploy apps from the cata
 
 For a quick walk-through of the console, see the [tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console).
 
-For more information about the console, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html).
+For more information about the console, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html).
 
 <br />
 

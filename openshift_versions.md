@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-05"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel
 
@@ -20,6 +20,8 @@ subcollection: openshift
 {:note: .note}
 {:download: .download}
 {:preview: .preview}
+
+
 
 # Version information and update actions
 {: #openshift_versions}
