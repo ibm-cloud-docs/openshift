@@ -236,7 +236,8 @@ Depending on your cluster setup, you access the services by using the public, pr
 
     You must allow outgoing traffic to port 443 for all of the zones within the region to balance the load during the bootstrapping process. For example, if your cluster is in US South, you must allow traffic from the public IPs of each of your worker nodes to port 443 of the IP address for all the zones.
     {: important}
-    **Private IP addresses:**: With DNS-based private service endpoints, the IP addresses can change. Whitelist the following private IP address range.
+
+    **Private IP addresses**: With DNS-based private service endpoints, the IP addresses can change. Whitelist the following private IP address range.
 
     ```
     166.8.0.0/14 
