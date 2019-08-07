@@ -35,35 +35,25 @@ Your users are less likely to experience downtime when you distribute your apps 
 
 1. A [single zone cluster](#single_zone) with multiple worker nodes in a worker pool.
 2. A [multizone cluster](#multizone) that spreads worker nodes across zones within one region.
-3. **Clusters that are connected to public and private VLANs only**: [Multiple clusters](#multiple_clusters) that are set up across zones or regions and that are connected via a global load balancer.
+3. **Clusters with public network connectivity**: [Multiple clusters](#multiple_clusters) that are set up across zones or regions and that are connected via a global load balancer.
 
 ## Single zone cluster
 {: #single_zone}
 
-To improve availability for your app and to allow failover for the case that one worker node is not available in your cluster, add additional worker nodes to your single zone cluster.
+Single zone clusters can be created in one of the supported [single zone cities or multizone metro locations](/docs/containers?topic=containers-regions-and-zones#zones). To improve availability for your app and to allow failover for the case that one worker node is not available in your cluster, add additional worker nodes to your single zone cluster.
 {: shortdesc}
+
+
 
 <img src="images/cs_cluster_singlezone.png" alt="High availability for clusters in a single zone" width="230" style="width:230px; border-style: none"/>
 
-You can add more worker nodes to your cluster by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) or by [adding a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool).
+You can add more worker nodes to your cluster by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) or by [adding a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool). When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. OpenShift automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#inter-pod-affinity-and-anti-affinity-beta-feature).
 
-When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. OpenShift automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#inter-pod-affinity-and-anti-affinity-beta-feature).
+**Is my master highly available in a single zone cluster?**</br>
+If your cluster is created in a single zone city, the Kubernetes master of your classic cluster is highly available and includes replicas on separate physical hosts for your master API server, etcd, scheduler, and controller manager to protect against an outage such as during a master update. If your cluster resides in one of the multizone metro locations, the master is automatically deployed with three replicas and spread across the zones of the metro. 
 
-**Can I convert my single zone cluster to a multizone cluster?**</br>
-To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [multizone metro locations](/docs/containers?topic=containers-regions-and-zones#zones).  Classic clusters that are set up in a single zone data center cannot be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes by adding a zone to a worker pool](/docs/containers?topic=containers-add_workers#add_zone).
-
-
-**Do I have to use multizone clusters?**</br>
-No. You can create as many single zone clusters as you like. Indeed, you might prefer single zone clusters for simplified management, or if your cluster must reside in a specific [single zone city](/docs/containers?topic=containers-regions-and-zones#zones). 
-
-
-
-**Can I have a highly available master in a single zone city?**</br>
-Yes. In a single zone city, the Kubernetes master of your classic cluster is highly available and includes replicas on separate physical hosts for your master API server, etcd, scheduler, and controller manager to protect against an outage such as during a master update. 
-
-To protect your classic single zone cluster against a zonal failure, you can:
-* [Create a cluster in a multizone-capable zone](#multizone), where the master is spread across zones.
-* [Create multiple clusters with public network connectivity](#multiple_clusters) and connect them with a global load balancer.
+**How can I protect my workloads against a single zone failure?** </br>
+If your single zone cluster is created in one of the [multizone metro location](/docs/containers?topic=containers-regions-and-zones#zones), you can change your single zone cluster to a [multizone cluster](#multizone). In a multizone cluster, your workloads are distributed across worker nodes in different zones. If one zone is not available, your workloads continue to run in the remaining zones. If you prefer single zone clusters for simplified managed, or if your cluster must reside in a specific [single zone city](/docs/containers?topic=containers-regions-and-zones#zones) that does not support multizone capabilities, you can create [multiple clusters](#multiple_clusters) and connect them with a global load balancer. 
 
 ## Multizone cluster
 {: #multizone}
@@ -73,7 +63,10 @@ Create a multizone cluster to distribute your workloads across multiple worker n
 
 <img src="images/cs_cluster_multizone-ha.png" alt="High availability for multizone clusters" width="500" style="width:500px; border-style: none"/>
 
-You can add additional zones to your cluster to replicate the worker nodes in your worker pools across multiple zones within one region. Multizone clusters are designed to evenly schedule pods across worker nodes and zones to assure availability and failure recovery. If worker nodes are not spread evenly across the zones or capacity is insufficient in one of the zones, the Kubernetes scheduler or OpenShift controller might fail to schedule all requested pods. As a result, pods might go into a **Pending** state until enough capacity is available. If you want to change the default behavior to make Kubernetes scheduler or OpenShift controller distribute pods across zones in a best effort distribution, use the `preferredDuringSchedulingIgnoredDuringExecution` [pod affinity policy](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#inter-pod-affinity-and-anti-affinity-beta-feature).
+In a multizone cluster, the worker nodes in your worker pools are replicated across multiple zones within one region. Multizone clusters are designed to evenly schedule pods across worker nodes and zones to assure availability and failure recovery. If worker nodes are not spread evenly across the zones or capacity is insufficient in one of the zones, the Kubernetes scheduler or OpenShift controller might fail to schedule all requested pods. As a result, pods might go into a **Pending** state until enough capacity is available. If you want to change the default behavior to make Kubernetes scheduler or OpenShift controller distribute pods across zones in a best effort distribution, use the `preferredDuringSchedulingIgnoredDuringExecution` [pod affinity policy](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#inter-pod-affinity-and-anti-affinity-beta-feature).
+
+You can create multizone cluster in one of the supported [multizone metro location](/docs/containers?topic=containers-regions-and-zones#zones) only. 
+{: note}
 
 **Why do I need worker nodes in three zones?** </br>
 Distributing your work load across three zones ensures high availability for your app in case one or two zones are not available, but it also makes your cluster setup more cost-efficient. Why is that, you ask? Here is an example.
@@ -86,27 +79,8 @@ Let's say you need a worker node with six cores to handle the workload for your 
 **How is my OpenShift master set up?** </br>
 When you create a cluster in a [multizone metro location](/docs/containers?topic=containers-regions-and-zones#zones), a highly available master is automatically deployed and three replicas are spread across the zones of the metro. For example, if the cluster is in `dal10`, `dal12`, or `dal13` zones, the replicas of the master are spread across each zone in the Dallas multizone metro.
 
-**What happens if the OpenShift master becomes unavailable?** </br>
-The [Kubernetes master](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#architecture) is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The Kubernetes API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources.<br><br>If a master failure occurs, your workloads continue to run on the worker nodes, but you cannot use `oc` commands to work with your cluster resources or view the cluster health until the Kubernetes API server in the master is back up. If a pod goes down during the master outage, the pod cannot be rescheduled until the worker node can reach the Kubernetes API server again.<br><br>During a master outage, you can still run `ibmcloud oc` commands against the {{site.data.keyword.containerlong_notm}} API to work with your infrastructure resources, such as worker nodes or VLANs. If you change the current cluster configuration by adding or removing worker nodes to the cluster, your changes do not happen until the master is back up.
-
-Do not restart or reboot a worker node during a master outage. This action removes the pods from your worker node. Because the Kubernetes API server is unavailable, the pods cannot be rescheduled onto other worker nodes in the cluster.
-{: important}
-
-To protect your cluster against a master failure or in regions where multizone clusters are not available, you can [set up multiple clusters with public network connectivity and connect them with a global load balancer](#multiple_clusters).
-
 **Do I have to do anything so that the master can communicate with the workers across zones?**</br>
-Yes. If you have multiple VLANs for a cluster, multiple subnets on the same VLAN, or a multizone cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan-spanning-get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get).
-
-**How do I expose an app to the public?** </br>
-See [Planning your classic cluster network setup](/docs/openshift?topic=openshift-plan_clusters) for more information. 
-
-**Can I set up persistent storage for my multizone cluster?**</br>
-You can use any of the supported single zone and multizone storage options in your multizone cluster. See [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview) for more information. 
-
-
-
-**I created my multizone cluster. Why is there still only one zone? How do I add zones to my cluster?**</br>
-If you [create your multizone cluster with the CLI](/docs/containers?topic=containers-clusters#clusters_ui), the cluster is created, but you must add zones to the worker pool to complete the process. To span across multiple zones, your cluster must be in a [multizone metro location](/docs/containers?topic=containers-regions-and-zones#zones). To add a zone to your cluster and spread worker nodes across zones, see [Adding a zone to your cluster](/docs/openshift?topic=openshift-add_workers#add_zone).
+. If you have multiple VLANs for a cluster, multiple subnets on the same VLAN, or a multizone cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan-spanning-get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get).
 
 **Can I convert my single zone cluster to a multizone cluster?**</br>
 To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [multizone metro locations](/docs/containers?topic=containers-regions-and-zones#zones).  Classic clusters that are set up in a single zone data center cannot be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes by adding a zone to a worker pool](/docs/containers?topic=containers-add_workers#add_zone).
@@ -115,7 +89,7 @@ To convert a single zone cluster to a multizone cluster, your cluster must be se
 ## Multiple public clusters connected with a global load balancer
 {: #multiple_clusters}
 
-To protect your app from a master failure and for regions where you cannot create classic multizone clusters, you can create multiple clusters in different zones within a region and connect them with a global load balancer.
+To protect your app from a master failure or for classic clusters that must reside in one of the supported [single zone cities](/docs/containers?topic=containers-regions-and-zones#zones), you can create multiple clusters in different zones within a region and connect them with a global load balancer.
 {: shortdesc}
 
 To connect multiple clusters with a global load balancer, the clusters must be set up with public network connectivity.
@@ -131,8 +105,8 @@ Similar to using [3 zones in multizone clusters](#multizone), you can provide mo
 **What if I want to set up multiple clusters across regions?** </br>
 You can set up multiple clusters in different regions of one geolocation (such as US South and US East) or across geolocations (such as US South and EU Central). Both setups offer the same level of availability for your app, but also add complexity when it comes to data sharing and data replication. For most cases, staying within the same geolocation is sufficient. But if you have users across the world, it might be better to set up a cluster where your users are so that your users do not experience long waiting times when they send a request to your app.
 
-**What options do I have to load balance workloads across clusters?** </br>
-To load balance workloads across multiple clusters, you must make your apps available on the public by using [Application Load Balancers (ALBs)](/docs/containers?topic=containers-ingress-about) or [Network Load Balancers (NLBs)](/docs/containers?topic=containers-loadbalancer-about). The ALBs and NLBs are assigned a public IP address that you can use to access your apps. 
+**What options do I have to load balance workloads across multiple clusters?** </br>
+To load balance workloads across multiple clusters, you must make your apps available on the public network by using [Application Load Balancers (ALBs)](/docs/containers?topic=containers-ingress-about) or [Network Load Balancers (NLBs)](/docs/containers?topic=containers-loadbalancer-about). The ALBs and NLBs are assigned a public IP address that you can use to access your apps. 
 
 To load balance workloads across your apps, add the public IP addresses of your ALBs and NLBs to a CIS global load balancer or your own global load balancer. 
 
