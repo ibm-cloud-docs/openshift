@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-08-07"
 
 keywords: openshift, roks, rhos, rhoks, multi az, multi-az, szr, mzr
 
@@ -24,7 +24,7 @@ subcollection: openshift
 {:preview: .preview}
 
 # Planning your cluster for high availability
-{: #ha_clusters}
+{: #ha_clusters} 
 
 Design your standard cluster for maximum availability and capacity for your app with {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
