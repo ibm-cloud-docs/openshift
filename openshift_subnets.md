@@ -57,6 +57,7 @@ IBM Cloud infrastructure manages the VLANs that are automatically provisioned wh
 **Can I change my VLAN decision later?**</br>
 You can change your VLAN setup by modifying the worker pools in your cluster. For more information, see [Changing your worker node VLAN connections](/docs/containers?topic=containers-cs_network_cluster#change-vlans).
 
+
 ### Subnets and IP addresses
 {: #basics_subnets}
 
