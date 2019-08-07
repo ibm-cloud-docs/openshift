@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-08-07"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -81,51 +81,9 @@ Virtual machines use local disk instead of storage area networking (SAN) for rel
 If your cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker node flavors, you can [update your cluster to have Ubuntu 18 `x3c` worker nodes](/docs/openshift?topic=openshift-update#machine_type).
 
 **What virtual machine flavors are available?**</br>
-Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone><staging vpc> [--provider]</staging vpc>`. You can also review available [bare metal](#bm) or [SDS](#sds) flavors.
+Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [bare metal](#bm) or [SDS](#sds) flavors.
 
-<staging vpc>
 
-| Name and use case | Cores/ Memory | Primary/ Secondary disk | Network speed |
-|:-----------------|:-----------------|:------------------|:-------------|
-| **Virtual, u3c.2x4**: Use this smallest size VM for quick testing, proofs of concept, and other light workloads.<p class="note">Available for only Kubernetes clusters. Not available for OpenShift clusters. </p> | 2 / 4 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, b3c.4x16**: Select this balanced VM for testing and development, and other light workloads. | 4 / 16 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, b3c.16x64**: Select this balanced VM for mid-sized workloads. | 16 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, b3c.32x128**: Select this balanced VM for mid to large workloads, such as a database and a dynamic website with many concurrent users. | 32 / 128 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, c3c.16x16**: Use this flavor when you want an even balance of compute resources from the worker node for light workloads. | 16 / 16 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, c3c.16x32**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 16 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, c3c.32x32**: Use this flavor when you want an even balance of compute resources from the worker node for mid-sized workloads. | 32 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, c3c.32x64**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid-sized workloads. | 32 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.8x64**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for light to mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 8 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 16 / 128 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.30x240**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid to large-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 30 / 240 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, z1.2x4**: se this flavor when you want a worker node to be created on Hyper Protect Containers on IBM Z Systems. | 2 / 4 GB | 25 GB / 100 GB | 1000 Mbps |
-{: class="simple-tab-table"}
-{: caption="Available worker node flavors for classic clusters" caption-side="top"}
-{: #classic-worker-vm-flavors}
-{: tab-title="Classic clusters"}
-{: tab-group="vm-worker-flavors"}
-
-<container>
-
-| Name and use case | Cores/ Memory | Primary/ Secondary disk | Network speed |
-|:-----------------|:-----------------|:------------------|:-------------|
-| **Virtual, b2.4x16**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for testing, development, and other light workloads. | 4 / 16 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, b2.8x32**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for light to mid-sized production workloads. | 8 / 32 GB | 25 GB / 100 GB | 1000 Mbps
-| **Virtual, b2.16x64**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for mid-sized workloads.  | 16 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, b2.32x128**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for large-sized workloads.| 32 / 128 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, c2.2x4**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for light-sized workloads. <p class="note">This flavor is available for only Kubernetes clusters and not supported for OpenShift clusters. </p> | 2 / 4 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, c2.16x32**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid-sized workloads. | 16 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, c2.32x64**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid to large-sized workloads. | 32 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m2.8x64**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for light to small-sized workloads that require more memory. | 8 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m2.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for mid to large-sized workloads that require more memory. | 16 / 128 GB | 25 GB / 100 GB | 1000 Mbps |
-{: class="simple-tab-table"}
-{: caption="Available worker node flavors for VPC on Classic clusters" caption-side="top"}
-{: #vpc-classic-worker-vm-flavors}
-{: tab-title="VPC on Classic clusters"}
-{: tab-group="vm-worker-flavors"}
-
-</container>
-</staging vpc>
 
 
 
@@ -232,7 +190,7 @@ Bare metal servers are billed monthly. If you cancel a bare metal server before 
 {: important}
 
 **What bare metal flavors can I order?**</br>
-Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone><staging vpc> [--provider]</staging vpc>`. You can also review available [VM](#vm) or [SDS](#sds) flavors.
+Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [VM](#vm) or [SDS](#sds) flavors.
 
 Bare metal machines are optimized for different use cases such as RAM-intensive, data-intensive, or GPU-intensive workloads.
 
@@ -316,7 +274,7 @@ You typically use SDS machines in the following cases:
 For more storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
 **What SDS flavors can I order?**</br>
-Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone><staging vpc> [--provider]</staging vpc>`. You can also review available [bare metal](#bm) or [VM](#vm) flavors.
+Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [bare metal](#bm) or [VM](#vm) flavors.
 
 Choose a flavor with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
 
