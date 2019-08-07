@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-08-07"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -35,7 +35,6 @@ Your containerized apps are hosted on compute hosts that are called worker nodes
 First time creating a cluster? First, try out the [creating OpenShift clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
 {: tip}
 
-To plan your cluster network setup, first [understand cluster network basics](#plan_basics). Then, you can review three potential cluster network setups that are suited to environment-based scenarios, including [running internet-facing app workloads](#internet-facing), [extending an on-premises data center with limited public access](#limited-public), and [extending an on-premises data center on the private network only](#private_clusters).
 
 ## Understanding cluster network basics
 {: #plan_basics}
@@ -259,6 +258,7 @@ Your worker nodes can automatically, securely communicate with other {{site.data
 To provide private access to an app in your cluster, you can create a private network load balancer (NLB) or Ingress application load balancer (ALB). These Kubernetes network services expose your app to the private network only so that any on-premises system with a connection to the subnet that the NLB IP is on can access the app.
 
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-ha_clusters) and [worker node](/docs/openshift?topic=openshift-planning_worker_nodes) setups, see [Creating clusters](/docs/containers?topic=containers-clusters#cluster_prepare).
+
 
 
 
