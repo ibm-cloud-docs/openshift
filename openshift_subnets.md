@@ -584,6 +584,7 @@ To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan-spanning
 <br />
 
 
+
 ## Removing subnets from a cluster
 {: #remove-subnets}
 
