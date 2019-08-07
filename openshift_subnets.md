@@ -82,6 +82,7 @@ In {{site.data.keyword.containerlong_notm}}, VLANs have a limit of 40 subnets. I
 **Do the IP address for my worker nodes change?**</br>
 Your worker node is assigned an IP address on the public or private VLANs that your cluster uses. After the worker node is provisioned, the IP addresses do not change. For example, the worker node IP addresses persist across `reload`, `reboot`, and `update` operations. Additionally, the private IP address of the worker node is used for the worker node identity in most `oc` commands. If you change the VLANs that the worker pool uses, new worker nodes that are provisioned in that pool use the new VLANs for their IP addresses. Existing worker node IP addresses do not change, but you can choose to remove the worker nodes that use the old VLANs.
 
+
 ### Network segmentation
 {: #basics_segmentation}
 
@@ -222,12 +223,12 @@ Before you begin:
 <br />
 
 
-
 ## Managing existing portable IP addresses
 {: #managing_ips}
 
 By default, 4 portable public and 4 portable private IP addresses can be used to expose single apps to the public or private network by [creating a network load balancer (NLB) service](/docs/containers?topic=containers-loadbalancer)<staging create-alb> or by [creating additional Ingress application load balancers (ALBs)](/docs/containers?topic=containers-ingress-settings#scale_albs)</staging create-alb>. To create an NLB<staging create-alb> or ALB</staging create-alb> service, you must have at least 1 portable IP address of the correct type available. You can view portable IP addresses that are available or free up a used portable IP address.
 {: shortdesc}
+
 
 ### Viewing available portable public IP addresses
 {: #review_ip}
