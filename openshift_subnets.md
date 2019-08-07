@@ -82,7 +82,6 @@ In {{site.data.keyword.containerlong_notm}}, VLANs have a limit of 40 subnets. I
 **Do the IP address for my worker nodes change?**</br>
 Your worker node is assigned an IP address on the public or private VLANs that your cluster uses. After the worker node is provisioned, the IP addresses do not change. For example, the worker node IP addresses persist across `reload`, `reboot`, and `update` operations. Additionally, the private IP address of the worker node is used for the worker node identity in most `oc` commands. If you change the VLANs that the worker pool uses, new worker nodes that are provisioned in that pool use the new VLANs for their IP addresses. Existing worker node IP addresses do not change, but you can choose to remove the worker nodes that use the old VLANs.
 
-
 ### Network segmentation
 {: #basics_segmentation}
 
@@ -221,6 +220,7 @@ Before you begin:
 7. **Important**: To enable communication between workers that are on different subnets on the same VLAN, you must [enable routing between subnets on the same VLAN](#subnet-routing).
 
 <br />
+
 
 
 ## Managing existing portable IP addresses
