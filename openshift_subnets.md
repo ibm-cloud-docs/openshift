@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -28,6 +28,7 @@ subcollection: openshift
 
 Change the pool of available portable public or private IP addresses for network load balancer (NLB) services by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
 {:shortdesc}
+
 
 
 ## Overview of networking in Red Hat OpenShift on IBM Cloud
