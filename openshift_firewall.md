@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-08-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -29,22 +29,24 @@ subcollection: openshift
 Review these situations in which you might need to open specific ports and IP addresses in your firewalls for your {{site.data.keyword.openshiftlong}} clusters.
 {:shortdesc}
 
-* [To run `ibmcloud` and `ibmcloud oc` commands](#firewall_bx) from your local system when corporate network policies prevent access to public internet endpoints via proxies or firewalls.
-* [To run `oc` commands](#firewall_kubectl) from your local system when corporate network policies prevent access to public internet endpoints via proxies or firewalls.
-* [To run `calicoctl` commands](#firewall_calicoctl) from your local system when corporate network policies prevent access to public internet endpoints via proxies or firewalls.
-* [To allow communication between the master and the worker nodes](#firewall_outbound) when either a firewall is set up for the worker nodes or the firewall settings are customized in your IBM Cloud infrastructure account.
-* [To allow the cluster to access resources over a firewall on the private network](#firewall_private).
-* [To allow the cluster to access resources when Calico network policies block public or private worker node egress](#firewall_calico_egress).
-* [To access the NodePort service, load balancer service, or Ingress from outside of the cluster](#firewall_inbound).
-* [To allow the cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or on-premises and that are protected by a firewall](#whitelist_workers).
+* [Corporate firewalls](#corporate): If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run `ibmcloud`, `ibmcloud oc`, `ibmcloud cr`, `oc`, and `calicoctl` commands from your local system.
+* [Gateway device firewalls](#vyatta_firewall): If you have firewalls set up on the public or private network in your IBM Cloud infrastructure account, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services. You can also open ports to allow incoming traffic to services exposing apps in your cluster.
+* [Calico network policies](#firewall_calico_egress): If you use Calico network policies to act as a firewall to restrict all worker node egress, you must allow your worker nodes to access the resources that are required for the cluster to function.
+* [Other services' or networks' firewalls](#whitelist_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by a firewall, you must add the IP addresses of your worker nodes in that firewall.
 
 <br />
 
 
-## Running `ibmcloud` and `ibmcloud oc` commands from behind a firewall
+## Opening ports in a corporate firewall
+{: #corporate}
+
+If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run [`ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands](#firewall_bx), [`oc` commands](#firewall_kubectl), and [`calicoctl` commands](#firewall_calicoctl) from your local system.
+{: shortdesc}
+
+### Running `ibmcloud`, `ibmcloud oc`, and ibmcloud cr commands from behind a firewall
 {: #firewall_bx}
 
-If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `ibmcloud` and `ibmcloud oc` commands, you must allow TCP access for {{site.data.keyword.cloud_notm}} and Red Hat OpenShift on IBM Cloud.
+If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `ibmcloud`, `ibmcloud oc` and ibmcloud cr commands, you must allow TCP access for {{site.data.keyword.cloud_notm}}, Red Hat OpenShift on IBM Cloud, and {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 1. Allow access to `cloud.ibm.com` on port 443 in your firewall.
@@ -73,11 +75,23 @@ If corporate network policies prevent access from your local system to public en
 
    ```
    {: screen}
+5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registryshort_notm}} regional service endpoints by reviewing [this table](#firewall_registry).
+  * Global registry: `icr.io`
+  * AP North: `jp.icr.io`
+  * AP South: `au.icr.io`
+  * EU Central: `de.icr.io`
+  * UK South: `uk.icr.io`
+  * US East, US South: `us.icr.io`
 
-<br />
+6. Verify your connection. The following is an example for the US East and US South regional registry. If access is configured correctly, a message of the day is returned in the output.
+   ```
+   curl https://us.icr.io/api/v1/messages
+   ```
+   {: pre}
 
+</br>
 
-## Running `oc` commands from behind a firewall
+### Running `oc` commands from behind a firewall
 {: #firewall_kubectl}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `oc` commands, you must allow TCP access for the cluster.
@@ -188,10 +202,9 @@ To allow access for a specific cluster:
 
 8. Optional: Repeat these steps for each cluster that you need to expose.
 
-<br />
+</br>
 
-
-## Running `calicoctl` commands from behind a firewall
+### Running `calicoctl` commands from behind a firewall
 {: #firewall_calicoctl}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `calicoctl` commands, you must allow TCP access for the Calico commands.
@@ -213,38 +226,28 @@ Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`
 <br />
 
 
-## Allowing the cluster to access infrastructure resources and other services over a public firewall
+## Opening ports in gateway device firewalls
+{: #vyatta_firewall}
+
+If you have firewalls set up on the [public network](#firewall_outbound) or [private network](#firewall_private) in your IBM Cloud infrastructure account, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
+{: shortdesc}
+
+### Opening required ports in a public firewall
 {: #firewall_outbound}
 
-Let your cluster access infrastructure resources and services from behind a public firewall, such as for Red Hat OpenShift on IBM Cloud regions, {{site.data.keyword.registrylong_notm}}, {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), {{site.data.keyword.monitoringlong_notm}}, {{site.data.keyword.loganalysislong_notm}}, IBM Cloud infrastructure private IPs, and egress for persistent volume claims.
+If you have a firewall on the public network in your IBM Cloud infrastructure account, you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {:shortdesc}
 
-Want to use Calico policies to act as your cluster firewall instead of a gateway device firewall? See [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
-{: tip}
-
-Depending on your cluster setup, you access the services by using the public, private, or both IP addresses. If you have a cluster with worker nodes on both public and private VLANs behind a firewall for both public and private networks, you must open the connection for both public and private IP addresses. If your cluster has worker nodes on only the private VLAN behind a firewall, you can open the connection to only the private IP addresses.
-{: note}
-
-1.  Note the public IP address for all of your worker nodes in the cluster.
-
+1.  Note the public IP address for each worker node in the cluster.
     ```
     ibmcloud oc workers --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-2.  Allow outgoing network traffic from the source <em>&lt;each_worker_node_publicIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups. These IP addresses permit worker nodes to communicate with the cluster master. If you have a corporate firewall that prevents your local machine from accessing public internet endpoints, do this step for your local machine too so that you can access the cluster master.
+2. To allow worker nodes to communicate with the cluster master over the public service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_publicIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
 
     You must allow outgoing traffic to port 443 for all of the zones within the region to balance the load during the bootstrapping process. For example, if your cluster is in US South, you must allow traffic from the public IPs of each of your worker nodes to port 443 of the IP address for all the zones.
     {: important}
-
-    **Private IP addresses**: With DNS-based private service endpoints, the IP addresses can change. Whitelist the following private IP address range.
-
-    ```
-    166.8.0.0/14 
-    ```
-    {: codeblock}
-
-    **Public IP addresses**: Whitelist the IP addresses in the following table.
 
     {: #master_ips}
     <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
@@ -296,7 +299,6 @@ Depending on your cluster setup, you access the services by using the public, pr
       <th>Red Hat OpenShift on IBM Cloud region</th>
       <th>Registry address</th>
       <th>Registry public subnets</th>
-      <th>Registry private IP addresses</th>
     </thead>
     <tbody>
       <tr>
@@ -304,42 +306,36 @@ Depending on your cluster setup, you access the services by using the public, pr
         <td><code>icr.io</code><br><br>
         Deprecated: <code>registry.bluemix.net</code></td>
         <td><code>169.60.72.144/28</code></br><code>169.61.76.176/28</code></br><code>169.62.37.240/29</code></br><code>169.60.98.80/29</code></br><code>169.63.104.232/29</code></td>
-        <td><code>166.9.20.4</code></br><code>166.9.22.3</code></br><code>166.9.24.2</code></td>
       </tr>
       <tr>
         <td>AP North</td>
         <td><code>jp.icr.io</code><br><br>
         Deprecated: <code>registry.au-syd.bluemix.net</code></td>
         <td><code>161.202.146.86/29</code></br><code>128.168.71.70/29</code></br><code>165.192.71.222/29</code></td>
-        <td><code>166.9.40.3</code></br><code>166.9.42.3</code></br><code>166.9.44.3</code></td>
       </tr>
       <tr>
         <td>AP South</td>
         <td><code>au.icr.io</code><br><br>
         Deprecated: <code>registry.au-syd.bluemix.net</code></td>
         <td><code>168.1.45.160/27</code></br><code>168.1.139.32/27</code></br><code>168.1.1.240/29</code></br><code>130.198.88.128/29</code></br><code>135.90.66.48/29</code></td>
-        <td><code>166.9.52.2</code></br><code>166.9.54.2</code></br><code>166.9.56.3</code></td>
       </tr>
       <tr>
         <td>EU Central</td>
         <td><code>de.icr.io</code><br><br>
         Deprecated: <code>registry.eu-de.bluemix.net</code></td>
         <td><code>169.50.56.144/28</code></br><code>159.8.73.80/28</code></br><code>169.50.58.104/29</code></br><code>161.156.93.16/29</code></br><code>149.81.79.152/29</code></td>
-        <td><code>166.9.28.12</code></br><code>166.9.30.9</code></br><code>166.9.32.5</code></td>
        </tr>
        <tr>
         <td>UK South</td>
         <td><code>uk.icr.io</code><br><br>
         Deprecated: <code>registry.eu-gb.bluemix.net</code></td>
         <td><code>159.8.188.160/27</code></br><code>169.50.153.64/27</code></br><code>158.175.97.184/29</code></br><code>158.176.105.64/29</code></br><code>141.125.71.136/29</code></td>
-        <td><code>166.9.36.9</code></br><code>166.9.38.5</code></br><code>166.9.34.4</code></td>
        </tr>
        <tr>
         <td>US East, US South</td>
         <td><code>us.icr.io</code><br><br>
         Deprecated: <code>registry.ng.bluemix.net</code></td>
         <td><code>169.55.39.112/28</code></br><code>169.46.9.0/27</code></br><code>169.55.211.0/27</code></br><code>169.61.234.224/29</code></br><code>169.61.135.160/29</code></br><code>169.61.46.80/29</code></td>
-        <td><code>166.9.12.114</code></br><code>166.9.15.50</code></br><code>166.9.16.173</code></td>
        </tr>
       </tbody>
     </table>
@@ -419,7 +415,89 @@ Depending on your cluster setup, you access the services by using the public, pr
 
 6. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
-7. {: #pvc}To create persistent volume claims in a private cluster, make sure that your cluster is set up with the following Kubernetes version or {{site.data.keyword.cloud_notm}} storage plug-in versions. These versions enable private network communication from your cluster to your persistent storage instances.
+</br>
+
+### Opening required ports in a private firewall
+{: #firewall_private}
+
+If you have a firewall on the private network in your IBM Cloud infrastructure account, you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with each other, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
+{:shortdesc}
+
+1. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
+  1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#backend-private-network).
+  2. Allow the IBM Cloud infrastructure private IP ranges for all of the [zones](/docs/containers?topic=containers-regions-and-zones#zones) that you are using. **Note**: You must add IPs for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#service-network-on-backend-private-network-).
+
+2. Note the private IP address for each worker node in the cluster.
+    ```
+    ibmcloud oc workers --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
+
+3.  To allow worker nodes to communicate with the cluster master over the private service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_privateIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443. With DNS-based private service endpoints, the IP addresses can change. Whitelist the following private IP address range.
+    ```
+    166.8.0.0/14
+    ```
+    {: codeblock}
+
+4. Open the following ports that are necessary for worker nodes to function properly.
+  - Allow outbound TCP and UDP connections from the workers to ports 80 and 443 to allow worker node updates and reloads.
+  - Allow outbound TCP and UDP to port 2049 to allow mounting file storage as volumes.
+  - Allow outbound TCP and UDP to port 3260 for communication to block storage.
+  - Allow inbound TCP and UDP connections to port 10250 for the OpenShift dashboard and commands such as `oc logs` and `oc exec`.
+  - Allow inbound and outbound connections to TCP and UDP port 53 for DNS access.
+
+5. Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEncap traffic between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for private load balancers and the IPEncap protocol to permit pod to pod traffic across subnets.
+
+6.  To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions):
+  - `TCP port 443, port 4443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
+  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent). <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
+  <caption>IP addresses to open for Registry traffic</caption>
+    <thead>
+      <th>Red Hat OpenShift on IBM Cloud region</th>
+      <th>Registry address</th>
+      <th>Registry private IP addresses</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Global registry across <br>Red Hat OpenShift on IBM Cloud regions</td>
+        <td><code>icr.io</code><br><br>
+        Deprecated: <code>registry.bluemix.net</code></td>
+        <td><code>166.9.20.4</code></br><code>166.9.22.3</code></br><code>166.9.24.2</code></td>
+      </tr>
+      <tr>
+        <td>AP North</td>
+        <td><code>jp.icr.io</code><br><br>
+        Deprecated: <code>registry.au-syd.bluemix.net</code></td>
+        <td><code>166.9.40.3</code></br><code>166.9.42.3</code></br><code>166.9.44.3</code></td>
+      </tr>
+      <tr>
+        <td>AP South</td>
+        <td><code>au.icr.io</code><br><br>
+        Deprecated: <code>registry.au-syd.bluemix.net</code></td>
+        <td><code>166.9.52.2</code></br><code>166.9.54.2</code></br><code>166.9.56.3</code></td>
+      </tr>
+      <tr>
+        <td>EU Central</td>
+        <td><code>de.icr.io</code><br><br>
+        Deprecated: <code>registry.eu-de.bluemix.net</code></td>
+        <td><code>166.9.28.12</code></br><code>166.9.30.9</code></br><code>166.9.32.5</code></td>
+       </tr>
+       <tr>
+        <td>UK South</td>
+        <td><code>uk.icr.io</code><br><br>
+        Deprecated: <code>registry.eu-gb.bluemix.net</code></td>
+        <td><code>166.9.36.9</code></br><code>166.9.38.5</code></br><code>166.9.34.4</code></td>
+       </tr>
+       <tr>
+        <td>US East, US South</td>
+        <td><code>us.icr.io</code><br><br>
+        Deprecated: <code>registry.ng.bluemix.net</code></td>
+        <td><code>166.9.12.114</code></br><code>166.9.15.50</code></br><code>166.9.16.173</code></td>
+       </tr>
+      </tbody>
+    </table>
+
+7. {: #pvc}To create persistent volume claims in a cluster where worker nodes are connected to private VLANs only, make sure that your cluster is set up with the following Kubernetes version or {{site.data.keyword.cloud_notm}} storage plug-in versions. These versions enable private network communication from your cluster to your persistent storage instances.
     <table>
     <caption>Overview of required Kubernetes or {{site.data.keyword.cloud_notm}} storage plug-in versions for private clusters</caption>
     <thead>
@@ -446,53 +524,9 @@ Depending on your cluster setup, you access the services by using the public, pr
    - Allow all egress network traffic on TCP port 443.
    - Allow access to the IBM Cloud infrastructure IP range for the zone that your cluster is in for both the [**Front-end (public) network**](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#frontend-public-network) and [**Back-end (private) Network**](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#backend-private-network). To find the zone of your cluster, run `ibmcloud oc clusters`.
 
+</br>
 
-<br />
-
-
-## Allowing the cluster to access resources over a private firewall
-{: #firewall_private}
-
-If you have a firewall on the private network, allow communication between worker nodes and let your cluster access infrastructure resources over the private network.
-{:shortdesc}
-
-Want to use Calico policies to act as your cluster firewall instead of a gateway device firewall? See [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
-{: tip}
-
-1. Allow all traffic between worker nodes.
-    1. Allow all TCP, UDP, VRRP, and IPEncap traffic between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for private load balancers and the IPEncap protocol to permit pod to pod traffic across subnets.
-    2. If you use Calico policies, or if you have firewalls in each zone of a multizone cluster, a firewall might block communication between worker nodes. You must open all worker nodes in the cluster to each other by using the workers' ports, workers' private IP addresses, or the Calico worker node label.
-
-2. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
-    1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#backend-private-network).
-    2. Allow the IBM Cloud infrastructure private IP ranges for all of the [zones](/docs/containers?topic=containers-regions-and-zones#zones) that you are using. **Note**: You must add IPs for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#service-network-on-backend-private-network-).
-
-3. Open the following ports:
-    - Allow outbound TCP and UDP connections from the workers to ports 80 and 443 to allow worker node updates and reloads.
-    - Allow outbound TCP and UDP to port 2049 to allow mounting file storage as volumes.
-    - Allow outbound TCP and UDP to port 3260 for communication to block storage.
-    - Allow inbound TCP and UDP connections to port 10250 for the OpenShift dashboard and commands such as `oc logs` and `oc exec`.
-    - Allow inbound and outbound connections to TCP and UDP port 53 for DNS access.
-
-4. If you also have a firewall on the public network, or if you have a private-VLAN only cluster and are using a gateway device as a firewall, you must also allow the IPs and ports that are specified in [Allowing the cluster to access infrastructure resources and other services](#firewall_outbound).
-
-<br />
-
-
-## Allowing the cluster to access resources through Calico egress policies
-{: #firewall_calico_egress}
-
-If you use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a firewall to restrict all public worker node egress, you must allow your worker nodes to access the subnets that are required for the cluster to function.
-{: shortdesc}
-
-To use Calico policies to act as your cluster firewall on the public network, you must apply the policies in [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
-
-To use Calico policies to act as your cluster firewall on the private network, you must apply the policies in [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
-
-<br />
-
-
-## Accessing NodePort, load balancer, and Ingress services from outside the cluster
+### Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services
 {: #firewall_inbound}
 
 You can allow incoming access to NodePort, load balancer, and Ingress services.
@@ -500,12 +534,25 @@ You can allow incoming access to NodePort, load balancer, and Ingress services.
 
 <dl>
   <dt>NodePort service</dt>
-  <dd>Open the port that you configured when you deployed the service to the public IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.<dd>
+  <dd>Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.<dd>
   <dt>Load balancer service</dt>
-  <dd>Open the port that you configured when you deployed the service to the load balancer service's public IP address.</dd>
+  <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
   <dt>Ingress</dt>
-  <dd>Open port 80 for HTTP or port 443 for HTTPS to the IP address for the Ingress application load balancer.</dd>
+  <dd>Open port 80 for HTTP or port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.</dd>
 </dl>
+
+<br />
+
+
+## Allowing the cluster to access resources through Calico network policies
+{: #firewall_calico_egress}
+
+If you use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a firewall to restrict all worker node egress, you must allow your worker nodes to access the resources that are required for the cluster to function.
+{: shortdesc}
+
+To use Calico policies to act as your cluster firewall on the public network, you must apply the policies in [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
+
+To use Calico policies to act as your cluster firewall on the private network, you must apply the policies in [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
 
 <br />
 
