@@ -78,7 +78,7 @@ Red Hat OpenShift on IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [Red Hat OpenShift Container Platform documentation](https://docs.openshift.com/)
+    [OpenShift Container Platform documentation](https://docs.openshift.com/)
     
     {: .topicgroup}
     API reference
