@@ -29,19 +29,17 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong}} provides different worker node flavors and isolation levels so that you can choose the flavor and isolation that best meet the requirements of the workloads that you want to run in the cloud. 
 {:shortdesc}
 
-Your {[product_name]} cluster consists of worker nodes that are grouped in worker node pools and that provide the CPU, memory and disk capacity that your apps require to run successfully. Your worker nodes are monitored and managed by the Kubernetes master. 
-
-<br />
-
+A worker node flavor describes the compute resources, such as CPU, memory, and disk capacity that you get when you provision your worker node. Worker nodes of the same flavor are grouped in worker node pools. The total number of worker nodes in a cluster determine the compute capacity that is available to your apps in the cluster.
 
 ## Available hardware for worker nodes
 {: #shared_dedicated_node}
-The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, and the {[product_name]} location where you want to create your cluster. 
+The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, and the {{site.data.keyword.containerlong_notm}} location where you want to create your cluster. 
 {: shortdesc}
 
 <img src="images/cs_clusters_hardware.png" width="700" alt="Hardware options for worker nodes in a standard cluster" style="width:700px; border-style: none"/>
 
-Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes. Bare metal machines are always set up as dedicated nodes. Free classic clusters are automatically provisioned as a virtual, shared worker node in your {{site.data.keyword.cloud_notm}} account. 
+**What flavors are available to me?** </br>
+Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes. If you create a free classic cluster, your cluster is provisioned with the smallest virtual worker node flavor on shared infrastructure. 
 
 
 
@@ -67,10 +65,8 @@ Want to be sure that you always have enough worker nodes to cover your workload?
 ## Virtual machines
 {: #vm}
 
-With VMs, you get greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price. You can use VMs for most general-purpose use cases such as testing and development environments, staging, and prod environments, microservices, and business apps. However, there is a trade-off in performance. If you need high-performance computing for RAM-, data-, or GPU-intensive workloads, use [bare metal](#bm).
+With VMs, you get greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price. You can use VMs for most general-purpose use cases such as testing and development environments, staging, and prod environments, microservices, and business apps. However, there is a trade-off in performance. If you need high-performance computing for RAM-, data-, or GPU-intensive workloads, consider creating classic clusters with [bare metal](#bm) worker nodes.
 {: shortdesc}
-
-
 
 **Do I want to use shared or dedicated hardware?**</br>
 When you create a standard classic cluster, you must choose whether you want the underlying hardware to be shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or to be dedicated to you only (single tenancy). 
@@ -84,10 +80,13 @@ Some classic worker node flavors are available for only one type of tenancy setu
 {: note}
 
 **What are the general features of VMs?**</br>
-Virtual machines use local disk instead of storage area networking (SAN) for reliability. Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. Every VM comes with 1000 Mbps networking speed, 25 GB primary local disk storage for the OS file system, and 100 GB secondary local disk storage for data such as the container runtime and the `kubelet`. Local storage on the worker node is for short-term processing only, and the primary and secondary disks are wiped when you update or reload the worker node. For persistent storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
+Virtual machines use local disks instead of storage area networking (SAN) for reliability. Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. Every VM comes with 1000 Mbps networking speed, 25 GB primary local disk storage for the OS file system, and 100 GB secondary local disk storage for data such as the container runtime and the `kubelet`. Local storage on the worker node is for short-term processing only, and the primary and secondary disks are wiped when you update or reload the worker node. For persistent storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
 **What virtual machine flavors are available?**</br>
-Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker node flavors, you can [update your cluster to have Ubuntu 18 `x3c` worker nodes](/docs/openshift?topic=openshift-update#machine_type).
+The following table shows available worker node flavors for classic and VPC on Classic clusters. Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. 
+
+If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker node flavors, you can [update your cluster to have Ubuntu 18 `x3c` worker nodes](/docs/openshift?topic=openshift-update#machine_type).
+{: tip}
 
 
 
@@ -273,7 +272,7 @@ Software-defined storage (SDS) flavors are physical machines that are provisione
 
 **When do I use SDS flavors?**</br>
 You typically use SDS machines in the following cases:
-*  If you use an SDS add-on such as [Portworx](/docs/containers?topic=containers-portworx#portworx) to the cluster, use an SDS machine.
+*  If you use an SDS add-on such as [Portworx](/docs/containers?topic=containers-portworx#portworx), use an SDS machine.
 *  If your app is a [StatefulSet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that requires local storage, you can use SDS machines and provision [Kubernetes local persistent volumes (beta) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/blog/2018/04/13/local-persistent-volumes-beta/).
 *  If you have custom apps that require additional raw local storage.
 
