@@ -43,10 +43,10 @@ Review these situations in which you might need to open specific ports and IP ad
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run [`ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands](#firewall_bx), [`oc` commands](#firewall_kubectl), and [`calicoctl` commands](#firewall_calicoctl) from your local system.
 {: shortdesc}
 
-### Running `ibmcloud`, `ibmcloud oc`, and ibmcloud cr commands from behind a firewall
+### Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall
 {: #firewall_bx}
 
-If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `ibmcloud`, `ibmcloud oc` and ibmcloud cr commands, you must allow TCP access for {{site.data.keyword.cloud_notm}}, Red Hat OpenShift on IBM Cloud, and {{site.data.keyword.registrylong_notm}}.
+If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `ibmcloud`, `ibmcloud oc` and `ibmcloud cr` commands, you must allow TCP access for {{site.data.keyword.cloud_notm}}, Red Hat OpenShift on IBM Cloud, and {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 1. Allow access to `cloud.ibm.com` on port 443 in your firewall.
