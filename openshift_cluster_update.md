@@ -105,7 +105,7 @@ When the config map is not defined, the default is used. By default, a maximum o
 ### Prerequisites
 {: #worker-up-prereqs}
 
-Before you update your classic infrastructure worker nodes, review the prerequisite steps.
+Before you update your worker nodes, review the prerequisite steps.
 {: shortdesc}
 
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
@@ -118,10 +118,10 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 - Consider [adding more worker nodes](/docs/openshift?topic=openshift-add_workers) so that your cluster has enough capacity to rescheduling your workloads during the update.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
-### Updating classic worker nodes in the CLI with a configmap
+### Updating worker nodes in the CLI with a configmap
 {: #worker-up-configmap}
 
-Set up a configmap to perform a rolling update of your classic worker nodes.
+Set up a configmap to perform a rolling update of your worker nodes.
 {: shortdesc}
 
 1.  Complete the [prerequisite steps](#worker-up-prereqs).
@@ -271,7 +271,7 @@ Next steps:
 -   Inform developers who work in the cluster to update their `oc` CLI to the version of the Kubernetes master.
 -   If the Kubernetes dashboard does not display utilization graphs, [delete the `kube-dashboard` pod](/docs/containers?topic=containers-cs_troubleshoot_health#cs_dashboard_graphs).
 
-### Updating classic worker nodes in the console
+### Updating worker nodes in the console
 {: #worker_up_console}
 
 After you set up the config map for the first time, you can then update worker nodes by using the {{site.data.keyword.cloud_notm}} console.

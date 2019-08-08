@@ -37,7 +37,6 @@ Change the pool of available portable public or private IP addresses for network
 Understand the basic concepts of networking in Red Hat OpenShift on IBM Cloud clusters. Red Hat OpenShift on IBM Cloud uses VLANs, subnets, and IP addresses to give cluster components network connectivity.
 {: shortdesc}
 
-
 ### VLANs
 {: #basics_vlans}
 
