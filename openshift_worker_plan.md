@@ -83,7 +83,7 @@ Some classic worker node flavors are available for only one type of tenancy setu
 Virtual machines use local disks instead of storage area networking (SAN) for reliability. Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. Every VM comes with 1000 Mbps networking speed, 25 GB primary local disk storage for the OS file system, and 100 GB secondary local disk storage for data such as the container runtime and the `kubelet`. Local storage on the worker node is for short-term processing only, and the primary and secondary disks are wiped when you update or reload the worker node. For persistent storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
 **What virtual machine flavors are available?**</br>
-The following table shows available worker node flavors for classic and VPC on Classic clusters. Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. 
+The following table shows available worker node flavors for classic and VPC on Classic clusters. Worker node flavors vary by cluster type, the zone where you want to create the cluster, and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. 
 
 If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker node flavors, you can [update your cluster to have Ubuntu 18 `x3c` worker nodes](/docs/openshift?topic=openshift-update#machine_type).
 {: tip}
@@ -195,7 +195,7 @@ Bare metal servers are billed monthly. If you cancel a bare metal server before 
 {: important}
 
 **What bare metal flavors can I order?**</br>
-Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [VM](#vm) or [SDS](#sds) flavors.
+Worker node flavors vary by cluster type, the zone where you want to create the cluster, and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [VM](#vm) or [SDS](#sds) flavors.
 
 Bare metal machines are optimized for different use cases such as RAM-intensive, data-intensive, or GPU-intensive workloads.
 
@@ -279,7 +279,7 @@ You typically use SDS machines in the following cases:
 For more storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
 **What SDS flavors can I order?**</br>
-Worker node flavors vary by zone and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [bare metal](#bm) or [VM](#vm) flavors.
+Worker node flavors vary by cluster type, the zone where you want to create the cluster, and container platform. The following table includes the most recent version of a flavor, such as `x3c` Ubuntu 18 worker nodes flavors, as opposed to the older `x2c` Ubuntu 16 worker node flavors. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [bare metal](#bm) or [VM](#vm) flavors.
 
 Choose a flavor with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
 
