@@ -11,7 +11,7 @@ Red Hat OpenShift on IBM Cloud
     About
         openshift_why.md
         openshift_tech.md
-        
+
     {: .topicgroup}
     Use cases
         openshift_uc_intro.md
@@ -35,7 +35,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .navgroup id="howto"}
     openshift_cli_install.md
-    
+
     {: .topicgroup}
     Setting up clusters
         openshift_cluster_plan_network.md
@@ -43,7 +43,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_worker_plan.md
         openshift_clusters.md
         openshift_worker_add.md
-    
+
     {: .topicgroup}
     Administering clusters
         openshift_cluster_update.md
@@ -51,14 +51,14 @@ Red Hat OpenShift on IBM Cloud
         openshift_scc.md
         openshift_health.md
         openshift_cluster_remove.md
-        
+
     {: .topicgroup}
     Managing cluster network traffic
         openshift_firewall.md
         openshift_network_policy.md
         openshift_edge.md
         openshift_subnets.md
-        
+
      {: .topicgroup}
     Deploying apps
         openshift_images.md
@@ -78,7 +78,7 @@ Red Hat OpenShift on IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [Red Hat OpenShift Container Platform documentation](https://docs.openshift.com/)
+    [OpenShift Container Platform documentation](https://docs.openshift.com/)
     
     {: .topicgroup}
     API reference
@@ -95,7 +95,7 @@ Red Hat OpenShift on IBM Cloud
     Version history
         openshift_versions.md
         openshift_versions_changelog.md
-        
+
     openshift_locations.md
     openshift_users_access_ref.md
     /containers/containers-at_events
@@ -106,7 +106,7 @@ Red Hat OpenShift on IBM Cloud
     /containers/containers-iks-release
     openshift_limitations.md
     openshift_ts.md
-    {: .navgroup-end}     
+    {: .navgroup-end}
 
     openshift_uc_finance.md
     openshift_uc_retail.md

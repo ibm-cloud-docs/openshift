@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-09"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -35,12 +35,11 @@ Your containerized apps are hosted on compute hosts that are called worker nodes
 First time creating a cluster? First, try out the [creating OpenShift clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
 {: tip}
 
-To plan your cluster network setup, first [understand cluster network basics](#plan_basics). Then, you can review three potential cluster network setups that are suited to environment-based scenarios, including [running internet-facing app workloads](#internet-facing), [extending an on-premises data center with limited public access](#limited-public), and [extending an on-premises data center on the private network only](#private_clusters).
 
-## Understanding cluster network basics
+## Understanding network basics of clusters
 {: #plan_basics}
 
-When you create your cluster, you must choose a networking setup so that certain cluster components can communicate with each other and with networks or services outside of the cluster.
+When you create a cluster, you must choose a networking setup so that certain cluster components can communicate with each other and with networks or services outside of the cluster.
 {: shortdesc}
 
 * [Worker-to-worker communication](#worker-worker): All worker nodes must be able to communicate with each other on the private network. In many cases, communication must be permitted across multiple private VLANs to allow workers on different VLANs and in different zones to connect with each other.
@@ -48,7 +47,7 @@ When you create your cluster, you must choose a networking setup so that certain
 * [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](#worker-services-onprem): Allow your worker nodes to securely communicate with other {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, and to an on-premises network.
 * [External communication to apps that run on worker nodes](#external-workers): Allow public or private requests into the cluster as well as requests out of the cluster to a public endpoint.
 
-### Worker-to-worker communication
+### Worker-to-worker communication: VLANs and subnets
 {: #worker-worker}
 
 When you create a cluster, the cluster's worker nodes are connected automatically to a private VLAN and optionally connected to a public VLAN. A VLAN configures a group of worker nodes and pods as if they were attached to the same physical wire and provides a channel for connectivity among the workers.
@@ -70,7 +69,7 @@ When VRF is enabled, any system that is connected to any of the private VLANs in
 
 </br>
 
-### Worker-to-master and user-to-master communication
+### Worker-to-master and user-to-master communication: Service endpoints
 {: #workeruser-master}
 
 A communication channel must be set up so that worker nodes can establish a connection to the Kubernetes master. You can allow your worker nodes and Kubernetes master to communicate by enabling the public service endpoint only, public and private service endpoints, or the private service endpoint only.
@@ -98,11 +97,11 @@ To make your master only privately accessible, you can enable the private servic
 ### Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks
 {: #worker-services-onprem}
 
-Allow your worker nodes to securely communicate with other {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, and to an on-premises network.
+Allow your worker nodes to securely communicate with other {{site.data.keyword.cloud_notm}} services and to an on-premises network.
 {: shortdesc}
 
 **Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network**</br>
-Your worker nodes can automatically and securely communicate with other {{site.data.keyword.cloud_notm}} services that support private service endpoints, such as {{site.data.keyword.registrylong}}, over your IBM Cloud infrastructure private network. If an {{site.data.keyword.cloud_notm}} service does not support private service endpoints, your worker nodes must be connected to a public VLAN so that they can securely communicate with the services over the public network.
+Your worker nodes can automatically and securely communicate with other [{{site.data.keyword.cloud_notm}} services that support private service endpoints](/docs/resources?topic=resources-private-network-endpoints), such as {{site.data.keyword.registrylong}}, over your IBM Cloud infrastructure private network. If an {{site.data.keyword.cloud_notm}} service does not support private service endpoints, your worker nodes must be connected to a public VLAN so that they can securely communicate with the services over the public network.
 
 If you use Calico policies or a gateway device to control the public or private networks of your worker nodes, you must allow access to the public IP addresses of the services that support public service endpoints, and optionally to the private IP addresses of the services that support private service endpoints.
 * [Allow access to services' public IP addresses in Calico policies](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
@@ -152,27 +151,35 @@ In this scenario, you want to run workloads in a cluster that are accessible to 
 </figure>
 </p>
 
+**Worker-to-worker communication**
+
 To achieve this setup, you create a cluster by connecting worker nodes to public and private VLANs.
 
 If you create the cluster with both public and private VLANs, you cannot later remove all public VLANs from that cluster. Removing all public VLANs from a cluster causes several cluster components to stop working. Instead, create a new worker pool that is connected to a private VLAN only.
 {: note}
 
+**Worker-to-master and user-to-master communication**
+
 You can choose to allow worker-to-master and user-to-master communication over the public and private networks, or over the public network only.
 * Public and private service endpoints: Your account must be enabled with VRF and enabled to use service endpoints. Communication between worker nodes and master is established over both the private network through the private service endpoint and the public network through the public service endpoint. The master is publicly accessible to authorized cluster users through the public service endpoint.
 * Public service endpoint: If you don’t want to or cannot enable VRF for your account, your worker nodes and authorized cluster users can automatically connect to the Kubernetes master over the public network through the public service endpoint.
 
+**Worker communication to other services or networks**
+
 Your worker nodes can automatically, securely communicate with other {{site.data.keyword.cloud_notm}} services that support private service endpoints over your IBM Cloud infrastructure private network. If an {{site.data.keyword.cloud_notm}} service does not support private service endpoints, workers can securely communicate with the services over the public network. You can lock down the public or private interfaces of worker nodes by using Calico network policies for public network or private network isolation. You might need to allow access to the public and private IP addresses of the services that you want to use in these Calico isolation policies.
 
-To expose an app in your cluster to the internet, you can create a public network load balancer (NLB) or Ingress application load balancer (ALB) service. You can improve the security of your cluster by creating a pool of worker nodes that are labeled as edge nodes. The pods for public network services are deployed to the edge nodes so that external traffic workloads are isolated to only a few workers in your cluster. You can further control public traffic to the network services that expose your apps by creating Calico pre-DNAT policies, such as whitelist and blacklist policies.
-
 If your worker nodes need to access services in private networks outside of your {{site.data.keyword.cloud_notm}} account, you can configure and deploy the strongSwan IPSec VPN service in your cluster or leverage {{site.data.keyword.cloud_notm}} {{site.data.keyword.cloud_notm}} Direct Link services to connect to these networks.
+
+**External communication to apps that run on worker nodes**
+
+To expose an app in your cluster to the internet, you can create a public network load balancer (NLB) or Ingress application load balancer (ALB) service. You can improve the security of your cluster by creating a pool of worker nodes that are labeled as edge nodes. The pods for public network services are deployed to the edge nodes so that external traffic workloads are isolated to only a few workers in your cluster. You can further control public traffic to the network services that expose your apps by creating Calico pre-DNAT policies, such as whitelist and blacklist policies.
 
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-ha_clusters) and [worker node](/docs/openshift?topic=openshift-planning_worker_nodes) setups, see [Creating clusters](/docs/containers?topic=containers-clusters#cluster_prepare).
 
 <br />
 
 
-## Scenario: Extend your on-premises data center to a cluster on the private network and add limited public access
+## Scenario: Extend your on-premises data center to a cluster and add limited public access
 {: #limited-public}
 
 In this scenario, you want to run workloads in a cluster that are accessible to services, databases, or other resources in your on-premises data center. However, you might need to provide limited public access to your cluster, and want to ensure that any public access is controlled and isolated in your cluster. For example, you might need your workers to access an {{site.data.keyword.cloud_notm}} service that does not support private service endpoints, and must be accessed over the public network. Or, you might need to provide limited public access to an app that runs in your cluster.
@@ -193,17 +200,25 @@ Allow limited public connectivity to your cluster by using edge nodes as a publi
 </figure>
 </p>
 
+**Worker-to-worker communication**
+
 With this setup, you create a cluster by connecting worker nodes to a private VLAN only. Your account must be enabled with VRF and enabled to use private service endpoints.
+
+**Worker-to-master and user-to-master communication**
 
 The OpenShift master is accessible through the private service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network through a [VPN connection](/docs/infrastructure/iaas-vpn?topic=VPN-getting-started) or [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link). However, communication with the Kubernetes master over the private service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection or through {{site.data.keyword.cloud_notm}} Direct Link. You can expose the private service endpoint of the master for your cluster users by using a private network load balancer (NLB). The private NLB exposes the private service endpoint of the master as an internal <code>10.X.X.X</code> IP address range that users can access with the VPN or {{site.data.keyword.cloud_notm}} Direct Link connection. If you enable only the private service endpoint, you can use the Kubernetes dashboard or temporarily enable the public service endpoint to create the private NLB.
 
 Next, you can create a pool of worker nodes that are connected to public and private VLANs and labeled as edge nodes. Edge nodes can improve the security of your cluster by allowing only a few worker nodes to be accessed externally and by isolating the networking workload to these workers.
 
+**Worker communication to other services or networks**
+
 Your worker nodes can automatically, securely communicate with other {{site.data.keyword.cloud_notm}} services that support private service endpoints over your IBM Cloud infrastructure private network. If an {{site.data.keyword.cloud_notm}} service does not support private service endpoints, your edge nodes that are connected to a public VLAN can securely communicate with the services over the public network. You can lock down the public or private interfaces of worker nodes by using Calico network policies for public network or private network isolation. You might need to allow access to the public and private IP addresses of the services that you want to use in these Calico isolation policies.
 
-To provide private access to an app in your cluster, you can create a private network load balancer (NLB) or Ingress application load balancer (ALB) to expose your app to the private network only. You can block all public traffic to these network services that expose your apps by creating Calico pre-DNAT policies, such as policies to block public NodePorts on worker nodes. If you need to provide limited public access to an app in your cluster, you can create a public NLB or ALB to expose your app. You must then deploy your apps to these edge nodes so that the NLBs or ALBs can direct public traffic to your app pods. You can further control public traffic to the network services that expose your apps by creating Calico pre-DNAT policies, such as whitelist and blacklist policies. The pods for both private and public network services are deployed to the edge nodes so that external traffic workloads are restricted to only a few workers in your cluster.  
-
 To securely access services outside of {{site.data.keyword.cloud_notm}} and other on-premises networks, you can configure and deploy the strongSwan IPSec VPN service in your cluster. The strongSwan load balancer pod deploys to a worker in the edge pool, where the pod establishes a secure connection to the on-premises network through an encrypted VPN tunnel over the public network. Alternatively, you can use {{site.data.keyword.cloud_notm}} Direct Link services to connect your cluster to your on-premises data center over the private network only.
+
+**External communication to apps that run on worker nodes**
+
+To provide private access to an app in your cluster, you can create a private network load balancer (NLB) or Ingress application load balancer (ALB) to expose your app to the private network only. You can block all public traffic to these network services that expose your apps by creating Calico pre-DNAT policies, such as policies to block public NodePorts on worker nodes. If you need to provide limited public access to an app in your cluster, you can create a public NLB or ALB to expose your app. You must then deploy your apps to these edge nodes so that the NLBs or ALBs can direct public traffic to your app pods. You can further control public traffic to the network services that expose your apps by creating Calico pre-DNAT policies, such as whitelist and blacklist policies. The pods for both private and public network services are deployed to the edge nodes so that external traffic workloads are restricted to only a few workers in your cluster.
 
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-ha_clusters) and [worker node](/docs/openshift?topic=openshift-planning_worker_nodes) setups, see [Creating clusters](/docs/containers?topic=containers-clusters#cluster_prepare).
 
@@ -222,13 +237,19 @@ Allow limited public connectivity to your cluster by configuring a gateway devic
 </figure>
 </p>
 
+**Worker-to-worker communication, worker-to-master and user-to-master communication**
+
 If you set up your worker nodes on a private VLAN only and you don’t want to or cannot enable VRF for your account, you must configure a gateway device to provide network connectivity between your worker nodes and the master over the public network. For example, you might choose to set up a [Virtual Router Appliance](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) or a [Fortigate Security Appliance](/docs/services/vmwaresolutions/services?topic=vmware-solutions-fsa_considerations).
 
 You can set up your gateway device with custom network policies to provide dedicated network security for your cluster and to detect and remediate network intrusion. When you set up a firewall on the public network, you must open up the required ports and private IP addresses for each region so that the master and the worker nodes can communicate. If you also configure this firewall for the private network, you must also open up the required ports and private IP addresses to allow communication between worker nodes and let your cluster access infrastructure resources over the private network. You must also enable VLAN spanning for your account so that subnets can route on the same VLAN and across VLANs.
 
+**Worker communication to other services or networks**
+
 To securely connect your worker nodes and apps to an on-premises network or services outside of {{site.data.keyword.cloud_notm}}, set up an IPSec VPN endpoint on your gateway device and the strongSwan IPSec VPN service in your cluster to use the gateway VPN endpoint. If you do not want to use strongSwan, you can set up VPN connectivity directly with VRA.
 
-Your worker nodes can securely communicate with other {{site.data.keyword.cloud_notm}} services and public services outside of {{site.data.keyword.cloud_notm}} through your gateway device. You can configure your firewall allow access to the public and private IP addresses of only the services that you want to use.
+Your worker nodes can securely communicate with other {{site.data.keyword.cloud_notm}} services and public services outside of {{site.data.keyword.cloud_notm}} through your gateway device. You can configure your firewall allow access to the public and private IP addresses of only the services that you want to use
+
+**External communication to apps that run on worker nodes**
 
 To provide private access to an app in your cluster, you can create a private network load balancer (NLB) or Ingress application load balancer (ALB) to expose your app to the private network only. If you need to provide limited public access to an app in your cluster, you can create a public NLB or ALB to expose your app. Because all traffic goes through your gateway device firewall, you can control public and public traffic to the network services that expose your apps by opening up the service's ports and IP addresses in your firewall to permit inbound traffic to these services.
 
@@ -237,10 +258,10 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 <br />
 
 
-## Scenario: Extend your on-premises data center to a cluster on the private network
+## Scenario: Extend your on-premises data center to a cluster
 {: #private_clusters}
 
-In this scenario, you want to run workloads in an {{site.data.keyword.containerlong_notm}} cluster. However, you want these workloads to be accessible only to services, databases, or other resources in your on-premises data center, such as {{site.data.keyword.icpfull_notm}}. Your cluster workloads might need to access a few other {{site.data.keyword.cloud_notm}} services that support communication over the private network, such as {{site.data.keyword.cos_full_notm}}.
+In this scenario, you want to run workloads in a cluster. However, you want these workloads to be accessible only to services, databases, or other resources in your on-premises data center, such as {{site.data.keyword.icpfull_notm}}. Your cluster workloads might need to access a few other {{site.data.keyword.cloud_notm}} services that support communication over the private network, such as {{site.data.keyword.cos_full_notm}}.
 {: shortdesc}
 
 <p>
@@ -250,11 +271,19 @@ In this scenario, you want to run workloads in an {{site.data.keyword.containerl
 </figure>
 </p>
 
+**Worker-to-worker communication**
+
 To achieve this setup, you create a cluster by connecting worker nodes to a private VLAN only. To provide connectivity between the cluster master and worker nodes over the private network through the private service endpoint only, your account must be enabled with VRF and enabled to use service endpoints. Because your cluster is visible to any resource on the private network when VRF is enabled, you can isolate your cluster from other systems on the private network by applying Calico private network policies.
+
+**Worker-to-master and user-to-master communication**
 
 The OpenShift master is accessible through the private service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network through a [VPN connection](/docs/infrastructure/iaas-vpn?topic=VPN-getting-started) or [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link). However, communication with the Kubernetes master over the private service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection or through {{site.data.keyword.cloud_notm}} Direct Link. You can expose the private service endpoint of the master for your cluster users by using a private network load balancer (NLB). The private NLB exposes the private service endpoint of the master as an internal <code>10.X.X.X</code> IP address range that users can access with the VPN or {{site.data.keyword.cloud_notm}} Direct Link connection. If you enable only the private service endpoint, you can use the Kubernetes dashboard or temporarily enable the public service endpoint to create the private NLB.
 
+**Worker communication to other services or networks**
+
 Your worker nodes can automatically, securely communicate with other {{site.data.keyword.cloud_notm}} services that support private service endpoints, such as {{site.data.keyword.registrylong}}, over your IBM Cloud infrastructure private network. For example, dedicated hardware environments for all standard plan instances of {{site.data.keyword.cloudant_short_notm}} support private service endpoints. If an {{site.data.keyword.cloud_notm}} service does not support private service endpoints, your cluster cannot access that service.
+
+**External communication to apps that run on worker nodes**
 
 To provide private access to an app in your cluster, you can create a private network load balancer (NLB) or Ingress application load balancer (ALB). These Kubernetes network services expose your app to the private network only so that any on-premises system with a connection to the subnet that the NLB IP is on can access the app.
 

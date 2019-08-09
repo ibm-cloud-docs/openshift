@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-08"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -21,7 +21,9 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-# Installing the Red Hat OpenShift Container Platform CLI
+
+
+# Installing the OpenShift CLI
 {: #openshift-cli}
 
 You can use the {{site.data.keyword.containerlong}} CLI plug-in's alias for OpenShift (`ibmcloud oc`) to create and manage your OpenShift cluster infrastructure, such as creating clusters and worker nodes. Then, you can use the OpenShift Origin CLI (`oc`) to manage the resources within your OpenShift cluster, such as projects, pods, and deployments. 

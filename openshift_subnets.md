@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -29,12 +29,13 @@ subcollection: openshift
 Change the pool of available portable public or private IP addresses for network load balancer (NLB) services by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
 {:shortdesc}
 
+
+
 ## Overview of networking in Red Hat OpenShift on IBM Cloud
 {: #basics}
 
 Understand the basic concepts of networking in Red Hat OpenShift on IBM Cloud clusters. Red Hat OpenShift on IBM Cloud uses VLANs, subnets, and IP addresses to give cluster components network connectivity.
 {: shortdesc}
-
 
 ### VLANs
 {: #basics_vlans}
@@ -55,6 +56,7 @@ IBM Cloud infrastructure manages the VLANs that are automatically provisioned wh
 
 **Can I change my VLAN decision later?**</br>
 You can change your VLAN setup by modifying the worker pools in your cluster. For more information, see [Changing your worker node VLAN connections](/docs/containers?topic=containers-cs_network_cluster#change-vlans).
+
 
 ### Subnets and IP addresses
 {: #basics_subnets}
@@ -220,10 +222,11 @@ Before you begin:
 <br />
 
 
+
 ## Managing existing portable IP addresses
 {: #managing_ips}
 
-By default, 4 portable public and 4 portable private IP addresses can be used to expose single apps to the public or private network by [creating a network load balancer (NLB) service](/docs/containers?topic=containers-loadbalancer). To create an NLB<staging create-alb> or ALB</staging create-alb> service, you must have at least 1 portable IP address of the correct type available. You can view portable IP addresses that are available or free up a used portable IP address.
+By default, 4 portable public and 4 portable private IP addresses can be used to expose single apps to the public or private network by [creating a network load balancer (NLB) service](/docs/containers?topic=containers-loadbalancer). To create an NLB service, you must have at least 1 portable IP address of the correct type available. You can view portable IP addresses that are available or free up a used portable IP address.
 {: shortdesc}
 
 ### Viewing available portable public IP addresses
@@ -547,7 +550,7 @@ To add a subnet from an on-premises network:
 ## Managing subnet routing
 {: #subnet-routing}
 
-If you have multiple VLANs for a cluster, multiple subnets on the same VLAN, or a multizone cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan-spanning-get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get).
+In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan-spanning-get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get).
 
 Review the following scenarios in which VLAN spanning is also required.
 
@@ -579,6 +582,7 @@ To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan-spanning
 {: tip}
 
 <br />
+
 
 
 ## Removing subnets from a cluster

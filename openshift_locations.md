@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-09"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -38,16 +38,19 @@ _Red Hat OpenShift on IBM Cloud locations_
 ## Red Hat OpenShift on IBM Cloud locations
 {: #locations}
 
-{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. Red Hat OpenShift on IBM Cloud is available in a subset of these locations, including all six worldwide multizone-capable regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location.
+{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. Red Hat OpenShift on IBM Cloud is available in a subset of these locations, including all six worldwide multizone-capable regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location. To list available Red Hat OpenShift on IBM Cloud locations, use the following command.
 {: shortdesc}
 
-### Available locations
-{: #available-locations}
+```
+ibmcloud oc supported-locations
+```
+{: pre}
 
-To list available Red Hat OpenShift on IBM Cloud locations, use the `ibmcloud oc supported-locations` command.
-{: shortdesc}
+### How locations are organized
+{: #example_locations_org}
 
 The following image is used as an example to explain how Red Hat OpenShift on IBM Cloud locations are organized.
+{: shortdesc}
 
 ![Organization of Red Hat OpenShift on IBM Cloud locations](images/cs_regions_hierarchy.png)
 
