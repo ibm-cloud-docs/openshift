@@ -63,7 +63,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
 {: #accessreftabtablenone}
-{: tab-title="Actions requiring no permissions"}
+{: tab-title="No permissions"}
 {: tab-group="access-ref-iam-platform"}
 
 | Action | CLI command | API call |
