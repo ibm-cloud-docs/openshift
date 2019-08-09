@@ -37,14 +37,16 @@ Red Hat OpenShift on IBM Cloud is configured to use {{site.data.keyword.cloud_no
 
 <p class="tip">Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.</p>
 
-In each of the following sections, the tables show cluster management, logging, and Ingress permissions granted by each {{site.data.keyword.cloud_notm}} IAM platform role. The tables are organized alphabetically by CLI command name.
+The following table shows the permissions granted by each {{site.data.keyword.cloud_notm}} IAM platform role. Each tab is organized alphabetically by CLI command name.
 
 * **Actions requiring no permissions**: Any user in your account who runs the CLI command or makes the API call for the action in the following table sees the result, even if the user has no assigned permissions.
-* **Viewer actions**: The Viewer platform role includes the [actions that require no permissions](#none-actions), plus the permissions that are shown in the following table. With the Viewer role, users such as auditors or billing can see cluster details but not modify the infrastructure.
+* **Viewer actions**: The Viewer platform role includes the actions that require no permissions, plus the permissions that are shown in the following table. With the Viewer role, users such as auditors or billing can see cluster details but not modify the infrastructure.
 * **Editor actions**: The Editor platform role includes the permissions that are granted by Viewer, plus the following. With the Editor role, users such as developers can bind services, work with Ingress resources, and set up log forwarding for their apps but cannot modify the infrastructure. Tip: Use this role for app developers, and assign the <a href="#cloud-foundry">Cloud Foundry</a> Developer role.
 * **Operator actions**: The Operator platform role includes the permissions that are granted by Viewer, plus the permissions that are shown in the following table. With the Operator role, users such as site reliability engineers, DevOps engineers, or cluster administrators can add worker nodes and troubleshoot infrastructure such as by reloading a worker node, but cannot create or delete the cluster, change the credentials, or set up cluster-wide features like service endpoints or managed add-ons.
 * **Administrator actions**: The Administrator platform role includes all permissions that are granted by the Viewer, Editor, and Operator roles, plus the following. With the Administrator role, users such as cluster or account administrators can create and delete clusters or set up cluster-wide features like service endpoints or managed add-ons. To create order such infrastructure resources such as worker node machines, VLANs, and subnets, Administrator users need the Super user <a href="#infra">infrastructure role</a> or the API key for the region must be set with the appropriate permissions.
 
+| Action | CLI command | API call |
+|----|----|----|
 | View a list of supported versions for managed add-ons in Red Hat OpenShift on IBM Cloud. | `[ibmcloud oc addon-versions](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_addon_versions)` | `[GET /v1/addon](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetAddons)` |
 | Target or view the API endpoint for Red Hat OpenShift on IBM Cloud. | `[ibmcloud oc api](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cli_api)` | - |
 | View a list of supported commands and parameters. | `[ibmcloud oc help](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_help)` | - |
@@ -64,6 +66,8 @@ In each of the following sections, the tables show cluster management, logging, 
 {: tab-title="Actions requiring no permissions"}
 {: tab-group="access-ref-iam-platform"}
 
+| Action | CLI command | API call |
+|----|----|----|
 | View information for an Ingress ALB. | `[ibmcloud oc alb-get](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_alb_get)` | `[GET /albs/{albId}](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb/GetClusterALB)` |
 | View ALB types that are supported in the region. | `[ibmcloud oc alb-types](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_alb_types)` | `[GET /albtypes](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetAvailableALBTypes)` |
 | List all Ingress ALBs in a cluster. | `[ibmcloud oc albs](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_albs)` | `[GET /clusters/{idOrName}](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb/GetClusterALBs)` |
@@ -96,6 +100,8 @@ In each of the following sections, the tables show cluster management, logging, 
 {: tab-title="Viewer actions"}
 {: tab-group="access-ref-iam-platform"}
 
+| Action | CLI command | API call |
+|----|----|----|
 | Disable automatic updates for the Ingress ALB add-on. | `[ibmcloud oc alb-autoupdate-disable](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_alb_autoupdate_disable)` | `[PUT /clusters/{idOrName}/updatepolicy](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb/ChangeUpdatePolicy)` |
 | Enable automatic updates for the Ingress ALB add-on. | `[ibmcloud oc alb-autoupdate-enable](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_alb_autoupdate_enable)` | `[PUT /clusters/{idOrName}/updatepolicy](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb/ChangeUpdatePolicy)` |
 | Check whether automatic updates for the Ingress ALB add-on are enabled. | `[ibmcloud oc alb-autoupdate-get](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_alb_autoupdate_get)` | `[GET /clusters/{idOrName}/updatepolicy](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb/GetUpdatePolicy)` |
@@ -132,6 +138,8 @@ In each of the following sections, the tables show cluster management, logging, 
 {: tab-title="Editor actions"}
 {: tab-group="access-ref-iam-platform"}
 
+| Action | CLI command | API call |
+|----|----|----|
 | Refresh the Kubernetes master. | `[ibmcloud oc apiserver-refresh](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_apiserver_refresh) (cluster-refresh)` | `[PUT /v1/clusters/{idOrName}/masters](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/HandleMasterAPIServer)` |
 | Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create a policy for the service ID that assigns the **Reader** service access role in {{site.data.keyword.registrylong_notm}}, and then create an API key for the service ID. | `[ibmcloud oc cluster-pull-secret-apply](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_pull_secret_apply)` | - |
 | Add a subnet to a cluster. | `[ibmcloud oc cluster-subnet-add](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_subnet_add)` | `[PUT /v1/clusters/{idOrName}/subnets/{subnetId}](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/AddClusterSubnet)` |
@@ -158,6 +166,8 @@ In each of the following sections, the tables show cluster management, logging, 
 {: tab-title="Operator actions"}
 {: tab-group="access-ref-iam-platform"}
 
+| Action | CLI command | API call |
+|----|----|----|
 | Beta: Deploy or update a certificate from your {{site.data.keyword.cloudcerts_long_notm}} instance to an ALB. | `[ibmcloud oc alb-cert-deploy](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_alb_cert_deploy)` | `[POST /albsecrets](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb-beta/CreateALBSecret) or [PUT /albsecrets](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb-beta/UpdateALBSecret)` |
 | Beta: View details for an ALB secret in a cluster. | `[ibmcloud oc alb-cert-get](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_alb_cert_get)` | `[GET /clusters/{idOrName}/albsecrets](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb-beta/ViewClusterALBSecrets)` |
 | Beta: Remove an ALB secret from a cluster. | `[ibmcloud oc alb-cert-rm](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_alb_cert_rm)` | `[DELETE /clusters/{idOrName}/albsecrets](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb-beta/DeleteClusterALBSecrets)` |
