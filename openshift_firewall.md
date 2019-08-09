@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-08"
+lastupdated: "2019-08-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -245,10 +245,8 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
     {: pre}
 
 2. To allow worker nodes to communicate with the cluster master over the public service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_publicIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
-
-    You must allow outgoing traffic to port 443 for all of the zones within the region to balance the load during the bootstrapping process. For example, if your cluster is in US South, you must allow traffic from the public IPs of each of your worker nodes to port 443 of the IP address for all the zones.
-    {: important}
-
+   - `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
+   -  Replace <em>&lt;public_IPs&gt;</em> with the public IP addresses of the zones in the region that your cluster is located.<p class="important">You must allow outgoing traffic to port 443 for **all of the zones within the region** to balance the load during the bootstrapping process.</p>
     {: #master_ips}
     <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
       <caption>IP addresses to open for outgoing traffic</caption>
@@ -375,7 +373,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
               </table></p>
     *   **{{site.data.keyword.mon_full_notm}}**:
         <pre class="screen">TCP port 443, port 6443 FROM &lt;each_worker_node_public_IP&gt; TO &lt;sysdig_public_IP&gt;</pre>
-        Replace `<sysdig_public_IP>` with the [Sysdig IP addresses](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-network#network).
+        Replace <em>&lt;sysdig_public_IP&gt;</em> with the [Sysdig IP addresses](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-network#network).
     *   **{{site.data.keyword.loganalysislong_notm}}**:
         <pre class="screen">TCP port 443, port 9091 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logging_public_IP&gt;</pre>
         Replace <em>&lt;logging_public_IP&gt;</em> with all of the addresses for the logging regions to which you want to allow traffic:
@@ -411,7 +409,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
                </table></p>
     *   **{{site.data.keyword.la_full_notm}}**:
         <pre class="screen">TCP port 443, port 80 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logDNA_public_IP&gt;</pre>
-        Replace `<logDNA_public_IP>` with the [LogDNA IP addresses](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-network#network).
+        Replace &gt;</em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-network#network).
 
 6. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
@@ -547,12 +545,11 @@ You can allow incoming access to NodePort, load balancer, and Ingress services.
 ## Allowing the cluster to access resources through Calico network policies
 {: #firewall_calico_egress}
 
-If you use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a firewall to restrict all worker node egress, you must allow your worker nodes to access the resources that are required for the cluster to function.
+Instead of setting up a [gateway firewall device](/docs/openshift?topic=openshift-firewall#vyatta_firewall), you can choose to use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a cluster firewall on the public or private network. For more information, see the following topics.
 {: shortdesc}
 
-To use Calico policies to act as your cluster firewall on the public network, you must apply the policies in [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
-
-To use Calico policies to act as your cluster firewall on the private network, you must apply the policies in [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
+* [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
+* [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
 
 <br />
 
