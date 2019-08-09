@@ -1532,7 +1532,7 @@ ibmcloud oc cluster-subnet-create --cluster my_cluster --size 8 --vlan 1764905
 Detach a public or private portable subnet in an IBM Cloud infrastructure account from a cluster. The subnet remains available in your IBM Cloud infrastructure account. **Note**: Any services that were deployed to an IP address from the subnet remain active after the subnet is removed.
 {: shortdesc}
 
-<p class="note"><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic-only command.</p>
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic-only command.</p>
 
 ```
 ibmcloud oc cluster-subnet-detach --cluster CLUSTER --subent-id SUBNET_ID [-s]
