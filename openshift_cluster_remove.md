@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-12"
 
 keywords: openshift, roks, rhos, rhoks, clusters, worker nodes, worker pools, delete
 
@@ -27,7 +27,7 @@ subcollection: openshift
 # Removing clusters
 {: #remove}
 
-Free and standard clusters that are created with a billable account must be removed manually when they are not needed anymore so that those clusters are no longer consuming resources.
+Clusters that are created with a billable account must be removed manually when they are not needed anymore so that those clusters are no longer consuming resources.
 {:shortdesc}
 
 <p class="important">
