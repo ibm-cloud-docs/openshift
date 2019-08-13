@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-12"
+lastupdated: "2019-08-13"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -988,7 +988,7 @@ ibmcloud oc cluster-pull-secret-apply --cluster CLUSTER
 
 **Minimum required permissions**:
 *  **Operator or Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-*  **Administrator** platform role in {{site.data.keyword.registrylong_notm}}
+*  **Administrator** platform role in {{site.data.keyword.registrylong_notm}} across all regions and resource groups. The policy cannot be scoped to a particular region or resource group.
 
 **Command options**:
 
