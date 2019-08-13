@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,5 +40,5 @@ To use network or Ingress application load balancers (NLBs or ALBs), see the fol
 {: shortdesc}
 
 * [Choosing what type of external networking to use](/docs/containers?topic=containers-cs_network_planning).
-* [About network load balancers (NLBs)](/docs/containers?topic=containers-loadbalancer-about).
+* [About network load balancers (NLBs)](/docs/containers?topic=containers-loadbalancer-about). **Note**: The NLB 2.0 is not supported for use in Red Hat OpenShift on IBM Cloud.
 * [About Ingress application load balancers (ALBs)](/docs/containers?topic=containers-ingress-about).
