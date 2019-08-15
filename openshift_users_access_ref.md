@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-09"
+lastupdated: "2019-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -37,11 +37,11 @@ Red Hat OpenShift on IBM Cloud is configured to use {{site.data.keyword.cloud_no
 
 <p class="tip">Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.</p>
 
-* **Actions requiring no permissions**: Any user in your account who runs the CLI command or makes the API call for the action in the following table sees the result, even if the user has no assigned permissions.
-* **Viewer actions**: The Viewer platform role includes the actions that require no permissions, plus the permissions that are shown in the following table. With the Viewer role, users such as auditors or billing can see cluster details but not modify the infrastructure.
+* **Actions requiring no permissions**: Any user in your account who runs the CLI command or makes the API call for the action sees the result, even if the user has no assigned permissions.
+* **Viewer actions**: The Viewer platform role includes the actions that require no permissions, plus the permissions that are shown in the Viewer tab of following table. With the Viewer role, users such as auditors or billing can see cluster details but not modify the infrastructure.
 * **Editor actions**: The Editor platform role includes the permissions that are granted by Viewer, plus the following. With the Editor role, users such as developers can bind services, work with Ingress resources, and set up log forwarding for their apps but cannot modify the infrastructure. Tip: Use this role for app developers, and assign the <a href="#cloud-foundry">Cloud Foundry</a> Developer role.
-* **Operator actions**: The Operator platform role includes the permissions that are granted by Viewer, plus the permissions that are shown in the following table. With the Operator role, users such as site reliability engineers, DevOps engineers, or cluster administrators can add worker nodes and troubleshoot infrastructure such as by reloading a worker node, but cannot create or delete the cluster, change the credentials, or set up cluster-wide features like service endpoints or managed add-ons.
-* **Administrator actions**: The Administrator platform role includes all permissions that are granted by the Viewer, Editor, and Operator roles, plus the following. With the Administrator role, users such as cluster or account administrators can create and delete clusters or set up cluster-wide features like service endpoints or managed add-ons. To create order such infrastructure resources such as worker node machines, VLANs, and subnets, Administrator users need the Super user <a href="#infra">infrastructure role</a> or the API key for the region must be set with the appropriate permissions.
+* **Operator actions**: The Operator platform role includes the permissions that are granted by Viewer, plus the permissions that are shown in the Operator tab of the following table. With the Operator role, users such as site reliability engineers, DevOps engineers, or cluster administrators can add worker nodes and troubleshoot infrastructure such as by reloading a worker node, but cannot create or delete the cluster, change the credentials, or set up cluster-wide features like service endpoints or managed add-ons.
+* **Administrator actions**: The Administrator platform role includes all permissions that are granted by the Viewer, Editor, and Operator roles, plus the permissions that are show in the Administrator tab of the following table. With the Administrator role, users such as cluster or account administrators can create and delete clusters or set up cluster-wide features like service endpoints or managed add-ons. To create order such infrastructure resources such as worker node machines, VLANs, and subnets, Administrator users need the Super user <a href="#infra">infrastructure role</a> or the API key for the region must be set with the appropriate permissions.
 
 The following table shows the permissions granted by each {{site.data.keyword.cloud_notm}} IAM platform role. Each tab is organized alphabetically by CLI command name.
 
@@ -63,7 +63,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
 {: #accessreftabtablenone}
-{: tab-title="No permissions"}
+{: tab-title="None"}
 {: tab-group="access-ref-iam-platform"}
 
 | Action | CLI command | API call |
@@ -97,7 +97,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
 {: #accessreftabtableview}
-{: tab-title="Viewer actions"}
+{: tab-title="Viewer"}
 {: tab-group="access-ref-iam-platform"}
 
 | Action | CLI command | API call |
@@ -135,7 +135,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
 {: #accessreftabtableedit}
-{: tab-title="Editor actions"}
+{: tab-title="Editor"}
 {: tab-group="access-ref-iam-platform"}
 
 | Action | CLI command | API call |
@@ -163,7 +163,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
 {: #accessreftabtableoper}
-{: tab-title="Operator actions"}
+{: tab-title="Operator"}
 {: tab-group="access-ref-iam-platform"}
 
 | Action | CLI command | API call |
@@ -192,7 +192,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
 {: #accessreftabtableadmin}
-{: tab-title="Administrator actions"}
+{: tab-title="Administrator"}
 {: tab-group="access-ref-iam-platform"}
 
 <br />
