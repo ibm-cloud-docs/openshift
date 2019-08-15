@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-15"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -35,7 +35,7 @@ When you create a cluster, the worker nodes are provisioned in a worker pool. Af
 If you have a multizone cluster, keep its worker node resources balanced. Make sure that all the worker pools are spread across the same zones, and add or remove workers by resizing the pools instead of adding individual nodes.
 {: tip}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform). Then, choose one of the following sections:
+Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform). Then, add worker nodes by choosing one of the following methods:
   * [Add worker nodes by resizing an existing worker pool in your cluster](#resize_pool)
   * [Add worker nodes by adding a worker pool to your cluster](#add_pool)
   * [Add a zone to your cluster and replicate the worker nodes in your worker pools across multiple zones](#add_zone)
@@ -43,6 +43,9 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 After you set up your worker pool, you can [set up the cluster autoscaler](/docs/containers?topic=containers-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
 {:tip}
+
+<br />
+
 
 ## Adding worker nodes by resizing an existing worker pool
 {: #resize_pool}
@@ -87,10 +90,15 @@ To resize the worker pool, change the number of worker nodes that the worker poo
     ```
     {: screen}
 
+<br />
+
+
+
+
 ## Adding worker nodes by creating a new worker pool
 {: #add_pool}
 
-You can add worker nodes to your cluster by creating a new worker pool.
+You can add worker nodes to your classic cluster by creating a new worker pool.
 {:shortdesc}
 
 1. Retrieve the **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. If you have a single zone cluster, you must use the zone that you see in the **Worker Zones** field. For multizone clusters, you can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone metro locations](/docs/containers?topic=containers-regions-and-zones#zones) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zones`.
@@ -151,10 +159,15 @@ You can add worker nodes to your cluster by creating a new worker pool.
    ```
    {: screen}
 
+<br />
+
+
+
+
 ## Adding worker nodes by adding a zone to a worker pool
 {: #add_zone}
 
-You can span your cluster across multiple zones within one region by adding a zone to your existing worker pool.
+You can span your classic cluster across multiple zones within one region by adding a zone to your existing worker pool.
 {:shortdesc}
 
 When you add a zone to a worker pool, the worker nodes that are defined in your worker pool are provisioned in the new zone and considered for future workload scheduling. {{site.data.keyword.containerlong_notm}} automatically adds the `failure-domain.beta.kubernetes.io/region` label for the region and the `failure-domain.beta.kubernetes.io/zone` label for the zone to each worker node. The Kubernetes scheduler uses these labels to spread pods across zones within the same region.
@@ -225,6 +238,9 @@ To add a zone with worker nodes to your worker pool:
   Resource Group Name:            Default
   ```
   {: screen}
+
+<br />
+
 
 ## Deprecated: Adding stand-alone worker nodes
 {: #standalone}
