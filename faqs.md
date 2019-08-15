@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -50,7 +50,7 @@ For more information, see [Comparison between OpenShift and community Kubernetes
 {: #openshift_free}
 {: faq}
 
-You can create only standard OpenShift clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-clusters#clusters_free) and [deploy some apps](/docs/containers?topic=containers-app). Then, re-deploy the apps that you try out in the Kubernetes cluster to your [OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app).
+You can create only standard OpenShift clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-getting-started#clusters_gs) and [deploy some apps](/docs/containers?topic=containers-app). Then, re-deploy the apps that you try out in the Kubernetes cluster to your [OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app).
 
 ## Can I convert my beta OpenShift cluster to a GA cluster?
 {: #openshift_beta_convert}
