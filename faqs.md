@@ -64,7 +64,7 @@ You can create a GA cluster and then re-deploy any apps that you use in the beta
 
 The supported OpenShift version is 3.11, which includes Kubernetes 1.11.
 
-## What am I charged for when I use an OpenShift?
+## What am I charged for when I use an OpenShift cluster?
 {: #openshift_charges}
 {: faq}
 
