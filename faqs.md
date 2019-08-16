@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-08-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -70,4 +70,6 @@ The supported OpenShift version is 3.11, which includes Kubernetes 1.11.
 
 For Red Hat OpenShift on IBM Cloud clusters, you are charged for the same components as in {{site.data.keyword.containerlong_notm}} clusters. For more information, see [What am I charged for when I use {{site.data.keyword.containerlong_notm}}?](/docs/containers?topic=containers-faqs#charges)
 
-Additionally, your worker nodes are installed with the Red Hat Enterprise Linux operating system, which increases the price of the worker node machines. You must also have an OpenShift license, which incurs monthly costs in addition to the hourly VM costs or monthly bare metal costs. The OpenShift license is for every two cores of the worker node flavor. If you delete your worker node before the end of the month, your monthly license is available for other worker nodes in the worker pool to use.
+Additionally, your worker nodes are installed with the Red Hat Enterprise Linux operating system, which increases the price of the worker node machines. You must also have an OpenShift license, which incurs monthly costs in addition to the hourly VM costs or monthly bare metal costs. The OpenShift license is for every two cores of the worker node flavor. The monthly license is not prorated, but charged in 30-day increments.
+* If you delete your worker node before the end of the 30 days, your monthly license is available for other worker nodes in the worker pool to use. 
+* If you delete the cluster before the end of the 30 days, you are still charged for the entire monthly license. For example, if you create the cluster on 15 August and delete the cluster on 27 August, you are still charged for the OCP licenses for the 15 August - 15 September time period.
