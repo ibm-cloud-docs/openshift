@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-16"
+lastupdated: "2019-08-17"
 
-keywords: openshift, roks, rhoks, rhos, version
+keywords: openshift, roks, rhoks, rhos, version, upgrade
 
 subcollection: openshift
 
