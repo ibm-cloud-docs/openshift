@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-08-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,6 +39,17 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
+
+### Changelog for master fix pack 3.11.135_1521_openshift, released 17 August 2019
+{: #311135_1521_master}
+
+The following table shows the changes that are included in the master fix pack `3.11.135_1521_openshift`.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| Key Management Service provider | 167 | 207 | Fixed an issue that causes the Kubernetes key management service (KMS) provider to fail to manage Kubernetes secrets. |
+{: caption="Changes since version 3.11.135_1520" caption-side="top"}
 
 ### Changelog for master fix pack 3.11.135_1520_openshift, released 15 August 2019
 {: #311135_1520_master}

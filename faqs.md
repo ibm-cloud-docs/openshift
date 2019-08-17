@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-08-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -64,7 +64,7 @@ You can create a GA cluster and then re-deploy any apps that you use in the beta
 
 The supported OpenShift version is 3.11, which includes Kubernetes 1.11.
 
-## What am I charged for when I use an OpenShift?
+## What am I charged for when I use an OpenShift cluster?
 {: #openshift_charges}
 {: faq}
 

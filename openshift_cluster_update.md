@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-08"
+lastupdated: "2019-08-17"
 
-keywords: openshift, roks, rhoks, rhos, version
+keywords: openshift, roks, rhoks, rhos, version, upgrade
 
 subcollection: openshift
 
@@ -418,7 +418,7 @@ To update flavors:
 ## Updating cluster components
 {: #components}
 
-Your {{site.data.keyword.containerlong_notm}} cluster comes with components, such as Fluentd for logging, that are installed automatically when you provision the cluster. By default, these components are updated automatically by IBM. However, you can disable automatic updates for some components and manually update them separately from the master and worker nodes.
+Your {{site.data.keyword.containerlong_notm}} cluster comes with components, such as Ingress, that are installed automatically when you provision the cluster. By default, these components are updated automatically by IBM. However, you can disable automatic updates for some components and manually update them separately from the master and worker nodes.
 {: shortdesc}
 
 **What default components can I update separately from the cluster?**</br>
