@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-08-19"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -37,8 +37,8 @@ If you have a multizone cluster, keep its worker node resources balanced. Make s
 
 Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform). Then, add worker nodes by choosing one of the following methods:
   * [Add worker nodes by resizing an existing worker pool in your cluster](#resize_pool)
-  * [Add worker nodes by adding a worker pool to your cluster](#add_pool)
-  * [Add a zone to your cluster and replicate the worker nodes in your worker pools across multiple zones](#add_zone)
+  * Add worker nodes by adding a worker pool to your [classic](#add_pool) cluster
+  * Add a zone to your [classic](#add_zone) cluster and replicate the worker nodes in your worker pools across multiple zones
   * [Deprecated: Add a stand-alone worker node to a cluster](#standalone)
 
 After you set up your worker pool, you can [set up the cluster autoscaler](/docs/containers?topic=containers-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.

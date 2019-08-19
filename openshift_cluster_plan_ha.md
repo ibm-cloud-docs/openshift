@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-09"
+lastupdated: "2019-08-19"
 
 keywords: openshift, roks, rhos, rhoks, multi az, multi-az, szr, mzr
 

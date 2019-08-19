@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -30,7 +30,6 @@ subcollection: openshift
 {: #choose_storage_solution}
 
 Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
-{: shortdesc}
 
 1. Decide whether your data must be permanently stored, or if your data can be removed at any time.
    - **Persistent storage:** Your data must still be available, even if the container, the worker node, or the cluster is removed. Use persistent storage in the following scenarios:
@@ -186,8 +185,8 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <table>
 <thead>
 <th style="text-align:left">Characteristics</th>
-<th style="text-align:left">File</th>
-<th style="text-align:left">Block</th>
+<th style="text-align:left">Classic File Storage</th>
+<th style="text-align:left">Classic Block Storage</th>
 </thead>
 <tbody>
 <tr>
@@ -283,7 +282,7 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <table>
 <thead>
 <th style="text-align:left">Characteristics</th>
-<th style="text-align:left">Object</th>
+<th style="text-align:left">Object Storage</th>
 <th style="text-align:left">SDS (Portworx)</th>
 <th style="text-align:left">{{site.data.keyword.cloud_notm}} Databases</th>
 </thead>
@@ -375,7 +374,6 @@ nodes. Every node stores only a part of the data. </td>
 </tr>
 </tbody>
 </table>
-
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-16"
+lastupdated: "2019-08-19"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -770,7 +770,7 @@ Do not show the message of the day or update reminders. This value is optional.
 **Create a free cluster**: Specify the cluster name only; everything else is set to a default value. A free cluster is automatically deleted after 30 days. You can have one free cluster at a time. To take advantage of the full capabilities of Kubernetes, create a standard cluster.
 
 ```
-ibmcloud oc cluster-create --name my_cluster
+ibmcloud oc cluster-create-classic --name my_cluster
 ```
 {: pre}
 
@@ -778,14 +778,14 @@ ibmcloud oc cluster-create --name my_cluster
 {: #example_cluster_create}
 
 ```
-ibmcloud oc cluster-create --zone dal10 --private-vlan my_private_VLAN_ID --machine-type b3c.4x16 --name my_cluster --hardware shared --workers 2
+ibmcloud oc cluster-create-classic --zone dal10 --private-vlan my_private_VLAN_ID --machine-type b3c.4x16 --name my_cluster --hardware shared --workers 2
 ```
 {: pre}
 
 **Create subsequent standard clusters**: If you already created a standard cluster in this zone or created a public VLAN in IBM Cloud infrastructure before, specify that public VLAN with the `--public-vlan` flag. To find out whether you already have a public VLAN for a specific zone or to find the name of an existing public VLAN, run `ibmcloud oc vlans --zone <zone>`.
 
 ```
-ibmcloud oc cluster-create --zone dal10 --public-vlan my_public_VLAN_ID --private-vlan my_private_VLAN_ID --machine-type b3c.4x16 --name my_cluster --hardware shared --workers 2
+ibmcloud oc cluster-create-classic --zone dal10 --public-vlan my_public_VLAN_ID --private-vlan my_private_VLAN_ID --machine-type b3c.4x16 --name my_cluster --hardware shared --workers 2
 ```
 {: pre}
 
@@ -1933,7 +1933,7 @@ You can use this command to:
 * Disable the IBM-provided ALB deployment so that you can deploy your own Ingress controller and leverage the DNS registration for the IBM-provided Ingress subdomain or the load balancer service that is used to expose the Ingress controller.
 
 ```
-ibmcloud oc alb-configure --albID ALB_ID --disable|--enable [--user-ip USER_IP]|--disable-deployment [-s]
+ibmcloud oc alb-configure-classic --albID ALB_ID --disable|--enable [--user-ip USER_IP]|--disable-deployment [-s]
 ```
 {: pre}
 
@@ -1964,19 +1964,19 @@ ibmcloud oc alb-configure --albID ALB_ID --disable|--enable [--user-ip USER_IP]|
 
 Example for enabling an ALB:
 ```
-ibmcloud oc alb-configure --albID private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --enable
+ibmcloud oc alb-configure-classic --albID private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --enable
 ```
 {: pre}
 
 Example for enabling an ALB with a user-provided IP address:
 ```
-ibmcloud oc alb-configure --albID private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --enable --user-ip user_ip
+ibmcloud oc alb-configure-classic --albID private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --enable --user-ip user_ip
 ```
 {: pre}
 
 Example for disabling an ALB:
 ```
-ibmcloud oc alb-configure --albID public-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --disable
+ibmcloud oc alb-configure-classic --albID public-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --disable
 ```
 {: pre}
 
@@ -2348,13 +2348,6 @@ ibmcloud oc flavors --zone ZONE [--json] [-s]
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
-
-**Example**:
-```
-ibmcloud oc flavors --zone dal10
-```
-{: pre}
-
 
 </br>
 
@@ -3842,7 +3835,7 @@ ibmcloud oc zones --locations ap
 Add stand-alone worker nodes to a cluster.
 {: shortdesc}
 
-This command is deprecated. Create a worker pool by running [`ibmcloud oc worker-pool-create`](#cs_worker_pool_create) or , or add workers to an existing worker pool by running [`ibmcloud oc worker-pool-resize`](#cs_worker_pool_resize).
+This command is deprecated. Create a worker pool by running [`ibmcloud oc worker-pool-create-classic`](#cs_worker_pool_create) or , or add workers to an existing worker pool by running [`ibmcloud oc worker-pool-resize`](#cs_worker_pool_resize).
 {: deprecated}
 
 ```
@@ -4348,7 +4341,7 @@ You can create a worker pool in your cluster. When you add a worker pool, it is 
 
 
 ```
-ibmcloud oc worker-pool-create --name POOL_NAME --cluster CLUSTER --machine-type MACHINE_TYPE --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--labels LABELS] [--disable-disk-encrypt] [-s] [--json]
+ibmcloud oc worker-pool-create-classic --name POOL_NAME --cluster CLUSTER --machine-type MACHINE_TYPE --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--labels LABELS] [--disable-disk-encrypt] [-s] [--json]
 ```
 {: pre}
 
@@ -4386,7 +4379,7 @@ ibmcloud oc worker-pool-create --name POOL_NAME --cluster CLUSTER --machine-type
 
 **Example**:
 ```
-ibmcloud oc worker-pool-create --name my_pool --cluster my_cluster --machine-type b3c.4x16 --size-per-zone 6
+ibmcloud oc worker-pool-create-classic --name my_pool --cluster my_cluster --machine-type b3c.4x16 --size-per-zone 6
 ```
 {: pre}
 
@@ -4594,7 +4587,7 @@ After you create a cluster or worker pool, you can add a zone. When you add a zo
 
 
 ```
-ibmcloud oc zone-add --zone ZONE --cluster CLUSTER --worker-pools WORKER_POOL1[,WORKER_POOL2] --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--private-only] [--json] [-s]
+ibmcloud oc zone-add-classic --zone ZONE --cluster CLUSTER --worker-pools WORKER_POOL1[,WORKER_POOL2] --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--private-only] [--json] [-s]
 ```
 {: pre}
 
@@ -4634,7 +4627,7 @@ ibmcloud oc zone-add --zone ZONE --cluster CLUSTER --worker-pools WORKER_POOL1[,
 
 **Example**:
 ```
-ibmcloud oc zone-add --zone dal10 --cluster my_cluster --worker-pools pool1,pool2,pool3 --private-vlan 2294021
+ibmcloud oc zone-add-classic --zone dal10 --cluster my_cluster --worker-pools pool1,pool2,pool3 --private-vlan 2294021
 ```
 {: pre}
 
