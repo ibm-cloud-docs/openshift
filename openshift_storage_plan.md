@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -29,8 +29,7 @@ subcollection: openshift
 ## Choosing a storage solution
 {: #choose_storage_solution}
 
-Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
-{: shortdesc}
+Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand the {{site.data.keyword.cloud_notm}} infrastructure provider, your app requirements, the type of data that you want to store, and how often you want to access this data. 
 
 1. Decide whether your data must be permanently stored, or if your data can be removed at any time.
    - **Persistent storage:** Your data must still be available, even if the container, the worker node, or the cluster is removed. Use persistent storage in the following scenarios:
@@ -105,6 +104,11 @@ The following image shows available non-persistent data storage options in {{sit
 <td style="text-align:left">Multizone capable</td>
 <td style="text-align:left">No</td>
 <td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Supported in VPC on Classic clusters</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
 <td style="text-align:left">Data types</td>
@@ -186,8 +190,8 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <table>
 <thead>
 <th style="text-align:left">Characteristics</th>
-<th style="text-align:left">File</th>
-<th style="text-align:left">Block</th>
+<th style="text-align:left">Classic File Storage</th>
+<th style="text-align:left">Classi Block Storage / VPC Block Storage</th>
 </thead>
 <tbody>
 <tr>
@@ -195,6 +199,11 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <td style="text-align:left">No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication.</td>
 <td style="text-align:left">No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication.</td>
 </tr>
+<tr>
+<td style="text-align:left">Supported in VPC on Classic clusters</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr> 
 <tr>
 <td style="text-align:left">Ideal data types</td>
 <td style="text-align:left">All</td>
@@ -283,7 +292,7 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <table>
 <thead>
 <th style="text-align:left">Characteristics</th>
-<th style="text-align:left">Object</th>
+<th style="text-align:left">Object Storage</th>
 <th style="text-align:left">SDS (Portworx)</th>
 <th style="text-align:left">{{site.data.keyword.cloud_notm}} Databases</th>
 </thead>
@@ -294,6 +303,12 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <td style="text-align:left">Yes</td>
 <td style="text-align:left">Yes</td>
 </tr>
+<tr>
+<td style="text-align:left">Supported in VPC on Classic clusters</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+</tr> 
 <tr>
 <td style="text-align:left">Ideal data types</td>
 <td style="text-align:left">Semi-structured and unstructured data</td>
