@@ -95,7 +95,7 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 
 
 
-## Classic: Adding worker nodes by creating a new worker pool
+## Adding worker nodes by creating a new worker pool
 {: #add_pool}
 
 You can add worker nodes to your classic cluster by creating a new worker pool.
@@ -164,7 +164,7 @@ You can add worker nodes to your classic cluster by creating a new worker pool.
 
 
 
-## Classic: Adding worker nodes by adding a zone to a worker pool
+## Adding worker nodes by adding a zone to a worker pool
 {: #add_zone}
 
 You can span your classic cluster across multiple zones within one region by adding a zone to your existing worker pool.
