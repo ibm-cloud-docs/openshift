@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-09"
+lastupdated: "2019-08-20"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -138,7 +138,13 @@ If your worker nodes are connected to a private VLAN only and you use a gateway 
 <br />
 
 
-## Scenario: Run internet-facing app workloads in a cluster
+## Example scenarios for cluster network setups
+{: #classic-scenarios}
+
+Now that you understand the basics of cluster networking, check out some example scenarios in which various cluster network setups can meet your workload needs.
+{: shortdesc}
+
+### Scenario: Run internet-facing app workloads in a cluster
 {: #internet-facing}
 
 In this scenario, you want to run workloads in a cluster that are accessible to requests from the Internet so that end users can access your apps. You want the option of isolating public access in your cluster and of controlling what public requests are permitted to your cluster. Additionally, your workers have automatic access to any {{site.data.keyword.cloud_notm}} services that you want to connect with your cluster.
@@ -179,7 +185,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 <br />
 
 
-## Scenario: Extend your on-premises data center to a cluster and add limited public access
+### Scenario: Extend your on-premises data center to a cluster and add limited public access
 {: #limited-public}
 
 In this scenario, you want to run workloads in a cluster that are accessible to services, databases, or other resources in your on-premises data center. However, you might need to provide limited public access to your cluster, and want to ensure that any public access is controlled and isolated in your cluster. For example, you might need your workers to access an {{site.data.keyword.cloud_notm}} service that does not support private service endpoints, and must be accessed over the public network. Or, you might need to provide limited public access to an app that runs in your cluster.
@@ -187,7 +193,7 @@ In this scenario, you want to run workloads in a cluster that are accessible to 
 
 To achieve this cluster setup, you can create a firewall by [using edge nodes and Calico network policies](#calico-pc) or [using a gateway device](#vyatta-gateway).
 
-### Using edge nodes and Calico network policies
+#### Using edge nodes and Calico network policies
 {: #calico-pc}
 
 Allow limited public connectivity to your cluster by using edge nodes as a public gateway and Calico network policies as a public firewall.
@@ -224,7 +230,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 
 </br>
 
-### Using a gateway device
+#### Using a gateway device
 {: #vyatta-gateway}
 
 Allow limited public connectivity to your cluster by configuring a gateway device, such as a Virtual Router Appliance (Vyatta), as a public gateway and firewall.
@@ -258,7 +264,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 <br />
 
 
-## Scenario: Extend your on-premises data center to a cluster
+### Scenario: Extend your on-premises data center to a cluster
 {: #private_clusters}
 
 In this scenario, you want to run workloads in a cluster. However, you want these workloads to be accessible only to services, databases, or other resources in your on-premises data center, such as {{site.data.keyword.icpfull_notm}}. Your cluster workloads might need to access a few other {{site.data.keyword.cloud_notm}} services that support communication over the private network, such as {{site.data.keyword.cos_full_notm}}.
