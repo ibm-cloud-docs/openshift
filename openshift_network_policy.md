@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-13"
+lastupdated: "2019-08-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -558,13 +558,13 @@ To isolate your cluster on the private network by using Calico policies:
 
 4. Apply the policies.
   ```
-  calicoctl apply -f generic-privatehostendpoint.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f allow-all-workers-private.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f allow-egress-pods-private.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f allow-ibm-ports-private.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f allow-icmp-private.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f allow-private-service-endpoint.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f allow-sys-mgmt-private.yaml --config=<filepath>/calicoctl.cfg
+  calicoctl apply -f generic-privatehostendpoint.yaml --config=<filepath>/calicoctl.cfg
   ```
   {: pre}
 

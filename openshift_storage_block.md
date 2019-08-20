@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-19"
+lastupdated: "2019-08-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -51,7 +51,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
       ```
       OK
       ID                                                  Public IP        Private IP     Machine Type           State    Status   Zone    Version
-      kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.13.9_1523*
+      kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.14.5_1523*
       ```
       {: screen}
 
@@ -1277,19 +1277,7 @@ For questions about billing and to find the steps for how to use the {{site.data
 
 6. If your PVC is not mounted by a pod, [create a pod or deployment and mount the PVC](/docs/openshift?topic=openshift-block_storage#add_block). If your PVC is mounted by a pod, continue with the next step.
 
-7. Monitor the volume expansion status. The volume expansion is complete when you see the `"message":"Success"` message in your CLI output.
-   ```
-   oc get pv <pv_name> -o go-template=$'{{index .metadata.annotations "ibm.io/volume-expansion-status"}}\n'
-   ```
-   {: pre}
-
-   Example output:
-   ```
-   {"size":50,"iops":500,"orderid":38832711,"start":"2019-04-30T17:00:37Z","end":"2019-04-30T17:05:27Z","status":"complete","message":"Success"}
-   ```
-   {: screen}
-
-8. Verify that the size and IOPS are changed in the **Labels** section of your CLI output.
+7. Verify that the size and IOPS are changed in the **Labels** section of your CLI output. This process might take a few minutes to complete.
    ```
    oc describe pv <pv_name>
    ```
@@ -1340,182 +1328,68 @@ To make your data even more highly available and protect your app from a zone fa
 ## Storage class reference
 {: #block_storageclass_reference}
 
-### Bronze
+| Characteristics | Setting|
+|:-----------------|:-----------------|
+| Name | <code>ibmc-block-bronze</code></br><code>ibmc-block-retain-bronze</code> |
+| Type | [Endurance storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provendurance) |
+| File system | `ext4` |
+| IOPS per gigabyte | 2 |
+| Size range in gigabytes | 20-12000 Gi |
+| Hard disk | SSD |
+| Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
+| Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
+{: class="simple-tab-table"}
+{: caption="Block storage class: bronze" caption-side="top"}
 {: #block_bronze}
+{: tab-title="Bronze"}
+{: tab-group="Block storage class"}
 
-<table>
-<caption>Block storage class: bronze</caption>
-<thead>
-<th>Characteristics</th>
-<th>Setting</th>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td><code>ibmc-block-bronze</code></br><code>ibmc-block-retain-bronze</code></td>
-</tr>
-<tr>
-<td>Type</td>
-<td>[Endurance storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provendurance)</td>
-</tr>
-<tr>
-<td>File system</td>
-<td>ext4</td>
-</tr>
-<tr>
-<td>IOPS per gigabyte</td>
-<td>2</td>
-</tr>
-<tr>
-<td>Size range in gigabytes</td>
-<td>20-12000 Gi</td>
-</tr>
-<tr>
-<td>Hard disk</td>
-<td>SSD</td>
-</tr>
-<tr>
-<td>Billing</td>
-<td>The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul></td>
-</tr>
-<tr>
-<td>Pricing</td>
-<td>[Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing)</td>
-</tr>
-</tbody>
-</table>
-
-
-### Silver
+| Characteristics | Setting|
+|:-----------------|:-----------------|
+| Name | <code>ibmc-block-silver</code></br><code>ibmc-block-retain-silver</code> |
+| Type | [Endurance storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provendurance) |
+| File system | `ext4` |
+| IOPS per gigabyte | 4 |
+| Size range in gigabytes | 20-12000 Gi |
+| Hard disk | SSD |
+| Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
+| Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
+{: class="simple-tab-table"}
+{: caption="Block storage class: silver" caption-side="top"}
 {: #block_silver}
+{: tab-title="Silver"}
+{: tab-group="Block storage class"}
 
-<table>
-<caption>Block storage class: silver</caption>
-<thead>
-<th>Characteristics</th>
-<th>Setting</th>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td><code>ibmc-block-silver</code></br><code>ibmc-block-retain-silver</code></td>
-</tr>
-<tr>
-<td>Type</td>
-<td>[Endurance storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provendurance)</td>
-</tr>
-<tr>
-<td>File system</td>
-<td>ext4</td>
-</tr>
-<tr>
-<td>IOPS per gigabyte</td>
-<td>4</td>
-</tr>
-<tr>
-<td>Size range in gigabytes</td>
-<td>20-12000 Gi</td>
-</tr>
-<tr>
-<td>Hard disk</td>
-<td>SSD</td>
-</tr>
-<tr>
-<td>Billing</td>
-<td>The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul></td>
-</tr>
-<tr>
-<td>Pricing</td>
-<td>[Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing)</td>
-</tr>
-</tbody>
-</table>
-
-### Gold
+| Characteristics | Setting|
+|:-----------------|:-----------------|
+| Name | <code>ibmc-block-gold</code></br><code>ibmc-block-retain-gold</code> |
+| Type | [Endurance storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provendurance) |
+| File system | `ext4` |
+| IOPS per gigabyte | 10 |
+| Size range in gigabytes | 20-4000 Gi |
+| Hard disk | SSD |
+| Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
+| Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
+{: class="simple-tab-table"}
+{: caption="Block storage class: gold" caption-side="top"}
 {: #block_gold}
+{: tab-title="Gold"}
+{: tab-group="Block storage class"}
 
-<table>
-<caption>Block storage class: gold</caption>
-<thead>
-<th>Characteristics</th>
-<th>Setting</th>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td><code>ibmc-block-gold</code></br><code>ibmc-block-retain-gold</code></td>
-</tr>
-<tr>
-<td>Type</td>
-<td>[Endurance storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provendurance)</td>
-</tr>
-<tr>
-<td>File system</td>
-<td>ext4</td>
-</tr>
-<tr>
-<td>IOPS per gigabyte</td>
-<td>10</td>
-</tr>
-<tr>
-<td>Size range in gigabytes</td>
-<td>20-4000 Gi</td>
-</tr>
-<tr>
-<td>Hard disk</td>
-<td>SSD</td>
-</tr>
-<tr>
-<td>Billing</td>
-<td>The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul></td>
-</tr>
-<tr>
-<td>Pricing</td>
-<td>[Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing)</td>
-</tr>
-</tbody>
-</table>
-
-### Custom
+| Characteristics | Setting|
+|:-----------------|:-----------------|
+| Name | <code>ibmc-block-custom</code></br><code>ibmc-block-retain-custom</code> |
+| Type | [Performance](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provperformance) |
+| File system | `ext4` |
+| IOPS and size | <strong>Size range in gigabytes / IOPS range in multiples of 100</strong><ul><li>20-39 Gi / 100-1000 IOPS</li><li>40-79 Gi / 100-2000 IOPS</li><li>80-99 Gi / 100-4000 IOPS</li><li>100-499 Gi / 100-6000 IOPS</li><li>500-999 Gi / 100-10000 IOPS</li><li>1000-1999 Gi / 100-20000 IOPS</li><li>2000-2999 Gi / 200-40000 IOPS</li><li>3000-3999 Gi / 200-48000 IOPS</li><li>4000-7999 Gi / 300-48000 IOPS</li><li>8000-9999 Gi / 500-48000 IOPS</li><li>10000-12000 Gi / 1000-48000 IOPS</li></ul> |
+| Hard disk | Size range in gigabytes | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage. </br></br>Example: </br>You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi). </br></br><strong>Overview of hard disk types per ratio:</strong><ul><li>Less than or equal to 0.3: SATA</li><li>Greater than 0.3: SSD</li></ul> |
+| Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
+| Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
+{: class="simple-tab-table"}
+{: caption="Block storage class: custom" caption-side="top"}
 {: #block_custom}
-
-<table>
-<caption>Block storage class: custom</caption>
-<thead>
-<th>Characteristics</th>
-<th>Setting</th>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td><code>ibmc-block-custom</code></br><code>ibmc-block-retain-custom</code></td>
-</tr>
-<tr>
-<td>Type</td>
-<td>[Performance](/docs/infrastructure/BlockStorage?topic=BlockStorage-About#provperformance)</td>
-</tr>
-<tr>
-<td>File system</td>
-<td>ext4</td>
-</tr>
-<tr>
-<td>IOPS and size</td>
-<td><strong>Size range in gigabytes / IOPS range in multiples of 100</strong><ul><li>20-39 Gi / 100-1000 IOPS</li><li>40-79 Gi / 100-2000 IOPS</li><li>80-99 Gi / 100-4000 IOPS</li><li>100-499 Gi / 100-6000 IOPS</li><li>500-999 Gi / 100-10000 IOPS</li><li>1000-1999 Gi / 100-20000 IOPS</li><li>2000-2999 Gi / 200-40000 IOPS</li><li>3000-3999 Gi / 200-48000 IOPS</li><li>4000-7999 Gi / 300-48000 IOPS</li><li>8000-9999 Gi / 500-48000 IOPS</li><li>10000-12000 Gi / 1000-48000 IOPS</li></ul></td>
-</tr>
-<tr>
-<td>Hard disk</td>
-<td>The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage. </br></br>Example: </br>You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi). </br></br><strong>Overview of hard disk types per ratio:</strong><ul><li>Less than or equal to 0.3: SATA</li><li>Greater than 0.3: SSD</li></ul></td>
-</tr>
-<tr>
-<td>Billing</td>
-<td>The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul></td>
-</tr>
-<tr>
-<td>Pricing</td>
-<td>[Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing)</td>
-</tr>
-</tbody>
-</table>
+{: tab-title="Custom"}
+{: tab-group="Block storage class"}
 
 <br />
 

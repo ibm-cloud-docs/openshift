@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-19"
+lastupdated: "2019-08-20"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -435,6 +435,7 @@ ibmcloud oc cluster-addon-disable kube-terminal --cluster CLUSTER
 </dl>
 
 </br>
+
 
 ### `ibmcloud oc cluster-addon-enable`
 {: #cs_cluster_addon_enable}
@@ -4433,7 +4434,7 @@ ibmcloud oc worker-pool-get --worker-pool pool1 --cluster my_cluster
   Workers per zone:   3
   Machine type:       b3c.4x16.encrypted
   Labels:             -
-  Version:            1.13.9_1512
+  Version:            1.14.5_1512
   ```
   {: screen}
 
