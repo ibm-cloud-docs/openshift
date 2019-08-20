@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-19"
+lastupdated: "2019-08-20"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -435,6 +435,7 @@ ibmcloud oc cluster-addon-disable kube-terminal --cluster CLUSTER
 </dl>
 
 </br>
+
 
 ### `ibmcloud oc cluster-addon-enable`
 {: #cs_cluster_addon_enable}
