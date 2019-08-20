@@ -4434,7 +4434,7 @@ ibmcloud oc worker-pool-get --worker-pool pool1 --cluster my_cluster
   Workers per zone:   3
   Machine type:       b3c.4x16.encrypted
   Labels:             -
-  Version:            1.13.9_1512
+  Version:            1.14.5_1512
   ```
   {: screen}
 
