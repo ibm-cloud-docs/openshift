@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-20"
+lastupdated: "2019-08-21"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -54,11 +54,14 @@ When you create a cluster, the cluster's worker nodes are connected automaticall
 {: shortdesc}
 
 **VLAN connections for worker nodes**</br>
-All worker nodes must be connected to a private VLAN so that each worker node can send and receive information to other worker nodes. When you create a cluster with worker nodes that are also connected to a public VLAN, your worker nodes can communicate with the Kubernetes master automatically over the public VLAN and over the private VLAN if you enable private service endpoint. The public VLAN also provides public network connectivity so that you can expose apps in your cluster to the internet. However, if you need to secure your apps from the public interface, several options are available to secure your cluster such as using Calico network policies or isolating external network workload to edge worker nodes.
+All worker nodes must be connected to a private VLAN so that each worker node can send information to and receive information from other worker nodes. The private VLAN provides private subnets that are used to assign private IP addresses to your worker nodes and private app services. You can create a cluster with worker nodes that are also connected to a public VLAN. The private VLAN provides public subnets that are used to assign public IP addresses to your worker nodes and public app services. However, if you need to secure your apps from the public network interface, several options are available to secure your cluster such as using [Calico network policies](/docs/openshift?topic=openshift-network_policies) or isolating external network workloads to [edge worker nodes](/docs/openshift?topic=openshift-edge).
 * Free clusters: In free clusters, the cluster's worker nodes are connected to an IBM-owned public VLAN and private VLAN by default. Because IBM controls the VLANs, subnets, and IP addresses, you cannot create multizone clusters or add subnets to your cluster, and can use only NodePort services to expose your app.</dd>
 * Standard clusters: In standard clusters, the first time that you create a cluster in a zone, a public VLAN, and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. If you specify that worker nodes must be connected to a private VLAN only, then a private VLAN only in that zone is automatically provisioned. For every subsequent cluster that you create in that zone, you can specify the VLAN pair that you want to use. You can reuse the same public and private VLANs that were created for you because multiple clusters can share VLANs.
 
 For more information about VLANs, subnets, and IP addresses, see [Overview of networking in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-subnets#basics).
+
+Need to create your cluster by using custom subnets? Check out [Using existing subnets to create a cluster](/docs/openshift?topic=openshift-subnets#subnets_custom).
+{: tip}
 
 **Worker node communication across subnets and VLANs**</br>
 In several situations, components in your cluster must be permitted to communicate across multiple private VLANs. For example, if you want to create a multizone cluster, if you have multiple VLANs for a cluster, or if you have multiple subnets on the same VLAN, the worker nodes on different subnets in the same VLAN or in different VLANs cannot automatically communicate with each other. You must enable either Virtual Routing and Forwarding (VRF) or VLAN spanning for your IBM Cloud infrastructure account.
@@ -115,6 +118,9 @@ To connect your cluster with your on-premises data center, such as with {{site.d
 * Worker nodes that are connected to public and private VLANs: Set up a [strongSwan IPSec VPN service ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.strongswan.org/about.html) directly in your cluster. The strongSwan IPSec VPN service provides a secure end-to-end communication channel over the internet that is based on the industry-standard Internet Protocol Security (IPSec) protocol suite. To set up a secure connection between your cluster and an on-premises network, [configure and deploy the strongSwan IPSec VPN service](/docs/containers?topic=containers-vpn#vpn-setup) directly in a pod in your cluster.
 * Worker nodes connected to a private VLAN only: Set up an IPSec VPN endpoint on a gateway device, such as a Virtual Router Appliance (Vyatta). Then, [configure the strongSwan IPSec VPN service](/docs/containers?topic=containers-vpn#vpn-setup) in your cluster to use the VPN endpoint on your gateway. If you do not want to use strongSwan, you can [set up VPN connectivity directly with VRA](/docs/containers?topic=containers-vpn#vyatta).
 
+Standard clusters that run Kubernetes 1.15 or later: If you plan to connect your cluster to on-premises networks, you might have subnet conflicts with the IBM-provided default 172.30.0.0/16 range for pods and 172.21.0.0/16 range for services. You can avoid subnet conflicts when you [create a cluster in the CLI](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cli_cluster-create-vpc-classic) by specifying a custom subnet CIDR for pods in the `--pod-subnet` flag and a custom subnet CIDR for services in the `--service-subnet` flag.
+{: tip}
+
 </br>
 
 ### External communication to apps that run on worker nodes
@@ -153,7 +159,7 @@ In this scenario, you want to run workloads in a cluster that are accessible to 
 <p>
 <figure>
  <img src="images/cs_clusters_planning_internet.png" alt="Architecture image for a cluster that runs internet-facing workloads"/>
- <figcaption>Architecture for a cluster that runs internet-facing workloads</figcaption>
+ <figcaption>Network setup for a cluster that runs internet-facing workloads</figcaption>
 </figure>
 </p>
 
@@ -202,7 +208,7 @@ Allow limited public connectivity to your cluster by using edge nodes as a publi
 <p>
 <figure>
  <img src="images/cs_clusters_planning_calico.png" alt="Architecture image for a cluster that uses edge nodes and Calico network policies for secure public access"/>
- <figcaption>Architecture for a cluster that uses edge nodes and Calico network policies for secure public access</figcaption>
+ <figcaption>Network setup for a cluster that uses edge nodes and Calico network policies for secure public access</figcaption>
 </figure>
 </p>
 
@@ -239,7 +245,7 @@ Allow limited public connectivity to your cluster by configuring a gateway devic
 <p>
 <figure>
  <img src="images/cs_clusters_planning_gateway.png" alt="Architecture image for a cluster that uses a gateway device for secure public access"/>
- <figcaption>Architecture for a cluster that uses a gateway device for secure public access</figcaption>
+ <figcaption>Network setup for a cluster that uses a gateway device for secure public access</figcaption>
 </figure>
 </p>
 
@@ -273,13 +279,15 @@ In this scenario, you want to run workloads in a cluster. However, you want thes
 <p>
 <figure>
  <img src="images/cs_clusters_planning_extend.png" alt="Architecture image for a cluster that connects to an on-premises data center on the private network"/>
- <figcaption>Architecture for a cluster that connects to an on-premises data center on the private network</figcaption>
+ <figcaption>Network setup for a cluster that connects to an on-premises data center on the private network</figcaption>
 </figure>
 </p>
 
 **Worker-to-worker communication**
 
 To achieve this setup, you create a cluster by connecting worker nodes to a private VLAN only. To provide connectivity between the cluster master and worker nodes over the private network through the private service endpoint only, your account must be enabled with VRF and enabled to use service endpoints. Because your cluster is visible to any resource on the private network when VRF is enabled, you can isolate your cluster from other systems on the private network by applying Calico private network policies.
+
+Note that you might have subnet conflicts between the default ranges for workers nodes, pods, and services, and the subnets in your on-premises networks. You create your cluster without IBM-provided subnets by including the `--no-subnet` flag. After the cluster is created, you can [add custom subnets](/docs/openshift?topic=openshift-subnets#subnets_custom) to your cluster. Additionally, you can specify a custom subnet CIDR for pods and services by using the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` command when you create your cluster.
 
 **Worker-to-master and user-to-master communication**
 
