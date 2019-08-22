@@ -1,0 +1,111 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="openshift" category="containers" audience="compute" href="/docs/openshift?topic=openshift-getting-started" path="openshift"}
+Red Hat OpenShift on IBM Cloud
+
+    {: .navgroup id="learn"}
+    getting-started.md
+
+    {: .topicgroup}
+    Informazioni su
+        openshift_why.md
+        openshift_tech.md
+        
+    {: .topicgroup}
+    Casi d'uso
+        openshift_uc_intro.md
+        openshift_uc_finance.md
+        openshift_uc_health.md
+        openshift_uc_retail.md
+        openshift_uc_transport.md
+        openshift_uc_gov.md
+
+    {: .topicgroup}
+    La tua strategia cluster
+        openshift_responsibilities.md
+        openshift_ha.md
+
+    {: .topicgroup}
+    Esercitazioni
+        openshift_tutorial.md
+        [Portale di apprendimento interattivo di OpenShift](https://learn.openshift.com/)
+        [Esercitazioni OpenShift interattive Katacoda](https://www.katacoda.com/openshift)
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    openshift_cli_install.md
+    
+    {: .topicgroup}
+    Configurazione dei cluster
+        openshift_cluster_plan_network.md
+        openshift_cluster_plan_ha.md
+        openshift_worker_plan.md
+        openshift_clusters.md
+        openshift_worker_add.md
+    
+    {: .topicgroup}
+    Amministrazione dei cluster
+        openshift_cluster_update.md
+        openshift_users.md
+        openshift_scc.md
+        openshift_health.md
+        openshift_cluster_remove.md
+        
+    {: .topicgroup}
+    Gestione del traffico di rete del cluster
+        openshift_firewall.md
+        openshift_network_policy.md
+        openshift_edge.md
+        openshift_subnets.md
+        
+     {: .topicgroup}
+    Distribuzione delle applicazioni
+        openshift_images.md
+        openshift_app.md
+        openshift_routes.md
+
+    {: .topicgroup}
+    Archiviazione dei dati sull'archiviazione persistente
+        openshift_storage_plan.md
+        openshift_storage_basics.md
+        openshift_storage_file.md
+        openshift_storage_block.md
+        openshift_storage_object.md
+        openshift_storage_remove.md
+
+    openshift_integrations.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [Documentazione di Red Hat OpenShift Container Platform](https://docs.openshift.com/)
+    
+    {: .topicgroup}
+    Guida di riferimento API
+        [IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/)
+        [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json)
+
+    {: .topicgroup}
+    Guida di riferimento plugin CLI
+        openshift_cli_ks_plugin.md
+        /containers/containers-cs_cli_changelog
+    
+    openshift_versions.md
+        
+    openshift_locations.md
+    openshift_users_access_ref.md
+    /containers/containers-at_events
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faqs.md
+    /containers/containers-iks-release
+    openshift_limitations.md
+    openshift_ts.md
+    {: .navgroup-end}     
+
+    openshift_uc_finance.md
+    openshift_uc_retail.md
+    openshift_uc_transport.md
+    openshift_uc_gov.md
+    openshift_uc_health.md
