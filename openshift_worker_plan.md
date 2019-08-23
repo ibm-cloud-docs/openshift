@@ -88,7 +88,7 @@ The following table shows available worker node flavors for classic clusters. Wo
 If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker node flavors, you can [update your cluster to have Ubuntu 18 `x3c` worker nodes](/docs/openshift?topic=openshift-update#machine_type).
 {: tip}
 
-
+{: #vm-table}
 
 | Name and use case | Cores/ Memory | Primary/ Secondary disk | Network speed |
 |:-----------------|:-----------------|:------------------|:-------------|
