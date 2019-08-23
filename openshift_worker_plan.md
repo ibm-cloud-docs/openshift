@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-22"
+lastupdated: "2019-08-23"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -55,7 +55,7 @@ Worker nodes in classic clusters are provisioned into your {{site.data.keyword.c
 
 
 **What limitations do I need to be aware of?** </br>
-Kubernetes limits the maximum number of worker nodes that you can have in a cluster. Review [worker node and pod quotas ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/cluster-large/) for more information.
+Kubernetes limits the maximum number of worker nodes that you can have in a cluster. Review [worker node and pod quotas ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/best-practices/cluster-large/) for more information.
 
 {{site.data.keyword.containerlong_notm}} also sets compute resource reserves that limit available compute resources on each worker node. For more information, see [worker node resource reserves](#resource_limit_node).
 
