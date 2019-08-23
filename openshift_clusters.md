@@ -103,7 +103,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     </tr>
     <tr>
     <td><code>--location <em>&lt;zone&gt;</em></code></td>
-    <td>Specify the zone where you want to create your cluster. For a list of supported zones, see [Multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones).</p></td>
+    <td>Specify the zone where you want to create your cluster. For a list of supported zones, see [Single and multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones).</p></td>
     </tr>
     <tr>
       <td><code>--kube-version <em>&lt;openshift_version&gt;</em></code></td>

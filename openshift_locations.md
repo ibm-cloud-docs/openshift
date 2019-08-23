@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-09"
+lastupdated: "2019-08-23"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -38,7 +38,7 @@ _Red Hat OpenShift on IBM Cloud locations_
 ## Red Hat OpenShift on IBM Cloud locations
 {: #locations}
 
-{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. Red Hat OpenShift on IBM Cloud is available in a subset of these locations, including all six worldwide multizone-capable regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location. To list available Red Hat OpenShift on IBM Cloud locations, use the following command.
+{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. Red Hat OpenShift on IBM Cloud is available in a subset of these locations, including all six worldwide multizone-capable regions and select single zone regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location. To list available Red Hat OpenShift on IBM Cloud locations, use the following command.
 {: shortdesc}
 
 ```
@@ -85,71 +85,58 @@ The following image is used as an example to explain how Red Hat OpenShift on IB
   </tbody>
   </table>
 
-### Multizone locations in Red Hat OpenShift on IBM Cloud
+### Single and multizone locations in Red Hat OpenShift on IBM Cloud
 {: #zones}
 
-The following tables list the available multizone locations in Red Hat OpenShift on IBM Cloud. You can choose to create clusters with worker nodes in one zone of the multizone metro, or spread the workers across all three zones within each metro to protect your apps from a zone failure. Whether you create the workers in a single zone or across zones, the replicas of your highly available master are automatically spread across zones.
+The following tables list the available single and multizone locations in Red Hat OpenShift on IBM Cloud.
 {: shortdesc}
+
+* **Multizone**: If you create a cluster in a multizone metro location, the replicas of your highly available Kubernetes master are automatically spread across zones. You have the option to spread your worker nodes across zones to protect your apps from a zone failure.
+* **Single zone**: If you create a cluster in a single zone (data center) location, you can create multiple worker nodes but you cannot spread them across zones. The highly available master includes three replicas on separate hosts, but is not spread across zones.<p class="note">To create clusters in a single zone, [use the CLI](/docs/openshift?topic=openshift-openshift-create-cluster#openshift_create_cluster_cli).</p>
 
 To quickly determine whether a zone is multizone-capable, your can run `ibmcloud oc supported-locations` and look for the value in the `Multizone Metro` column.
 {: tip}
 
-**Multizone metro locations**
+| Geography |  Country  | Metro | Data center |  Deprecated region  |
+|-----|-----|-----|-----|-----|
+| Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
+| Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
+| Europe | Germany | Frankfurt | fra02, fra04, fra05 | EU Central (`eu-central`, `eu-de`) |
+| Europe | United Kingdom | London | lon04, lon05, lon06 | UK South (`uk-south`, `eu-gb`) |
+| North America | United States | Dallas | dal10, dal12, dal13 | US South (`us-south`) |
+| North America | United States | Washington, D.C. | wdc04, wdc06, wdc07 | US East (`us-east`) |
+{: class="simple-tab-table"}
+{: caption="Available multizone metro locations for Red Hat OpenShift on IBM Cloud." caption-side="top"}
+{: #locationtabtablemulti}
+{: tab-title="Multizone metros"}
+{: tab-group="location-multi-single"}
 
-<table summary="The table shows the available multizone metro locations in Red Hat OpenShift on IBM Cloud. Rows are to be read from the left to right.  Column one is the geography that the location is in, column two is the country of the location, column three is the metro of the location, column four is the data center, and column five is the deprecated region that the location used to be organized into.">
-<caption>Available multizone metro locations in Red Hat OpenShift on IBM Cloud.</caption>
-  <thead>
-  <th>Geography</th>
-  <th>Country</th>
-  <th>Metro</th>
-  <th>Data center</th>
-  <th>Deprecated region</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Asia Pacific</td>
-      <td>Australia</td>
-      <td>Sydney</td>
-      <td>syd01, syd04, syd05</td>
-      <td>AP South (`ap-south`, `au-syd`)</td>
-    </tr>
-    <tr>
-      <td>Asia Pacific</td>
-      <td>Japan</td>
-      <td>Tokyo</td>
-      <td>tok02, tok04, tok05</td>
-      <td>AP North (`ap-north`, `jp-tok`)</td>
-    </tr>
-    <tr>
-      <td>Europe</td>
-      <td>Germany</td>
-      <td>Frankfurt</td>
-      <td>fra02, fra04, fra05</td>
-      <td>EU Central (`eu-central`, `eu-de`)</td>
-    </tr>
-    <tr>
-      <td>Europe</td>
-      <td>United Kingdom</td>
-      <td>London</td>
-      <td>lon04, lon05, lon06</td>
-      <td>UK South (`uk-south`, `eu-gb`)</td>
-    </tr>
-    <tr>
-      <td>North America</td>
-      <td>United States</td>
-      <td>Dallas</td>
-      <td>dal10, dal12, dal13</td>
-      <td>US South (`us-south`)</td>
-    </tr>
-    <tr>
-      <td>North America</td>
-      <td>United States</td>
-      <td>Washington, D.C.</td>
-      <td>wdc04, wdc06, wdc07</td>
-      <td>US East (`us-east`)</td>
-    </tr>
-  </tbody>
-  </table>
+| Geography |  Country  | Metro | Data center |  Deprecated region  |
+|-----|-----|-----|-----|-----|
+| Asia Pacific | Singapore | Singapore | sng01 | AP North (`ap-north`, `jp-tok`) |
+| North America | Canada | Toronto | tor01 | US East (`us-east`) |
+{: class="simple-tab-table"}
+{: caption="Available single zone data center locations for Red Hat OpenShift on IBM Cloud." caption-side="top"}
+{: #locationtabtablesingle}
+{: tab-title="Single zones"}
+{: tab-group="location-multi-single"}
+
+
+### Single zone clusters
+{: #regions_single_zone}
+
+In a single zone cluster, your cluster's resources remain in the zone in which the cluster is deployed. The following image highlights the relationship of single zone cluster components with an example of the Toronto, Canada `tor01` location.
+{: shortdesc}
+
+<img src="/images/location-cluster-resources.png" width="650" alt="Understanding where your cluster resources reside" style="width:650px; border-style: none"/>
+
+_Understanding where your single zone cluster resources are._
+
+1.  Your cluster's resources, including the master and worker nodes, are in the same data center that you deployed the cluster to. When you initiate local container orchestration actions, such as `oc` commands, the information is exchanged between your master and worker nodes within the same zone.
+
+2.  If you set up other cluster resources, such as storage, networking, compute, or apps running in pods, the resources and their data remain in the zone that you deployed your cluster to.
+
+3.  When you initiate cluster management actions, such as using `ibmcloud oc` commands, basic information about the cluster (such as name, ID, user, the command) is routed through a regional endpoint via the global endpoint. Regional endpoints are located in the nearest multizone metro region. In this example, the metro region is Washington, D.C.
 
 ### Multizone clusters
 {: #regions_multizone}
