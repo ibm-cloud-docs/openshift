@@ -38,13 +38,8 @@ _Red Hat OpenShift on IBM Cloud locations_
 ## Red Hat OpenShift on IBM Cloud locations
 {: #locations}
 
-{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. Red Hat OpenShift on IBM Cloud is available in a subset of these locations, including all six worldwide multizone-capable regions and select single zone regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location. To list available Red Hat OpenShift on IBM Cloud locations, use the following command.
+{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. Red Hat OpenShift on IBM Cloud is available in a subset of these locations, including all six worldwide multizone-capable regions and select single zone regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location.
 {: shortdesc}
-
-```
-ibmcloud oc supported-locations
-```
-{: pre}
 
 ### How locations are organized
 {: #example_locations_org}
