@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-20"
+lastupdated: "2019-08-23"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -26,7 +26,7 @@ subcollection: openshift
 # Storing data on IBM Cloud Object Storage
 {: #object_storage}
 
-[{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage) is persistent, highly available storage that you can mount to your apps. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud {{site.data.keyword.cos_short}} buckets to pods in your cluster. Information that is stored with {{site.data.keyword.cos_full_notm}} is encrypted in transit and at rest, dispersed across multiple geographic locations, and accessed over HTTP by using a REST API.
+[{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started) is persistent, highly available storage that you can mount to your apps. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud {{site.data.keyword.cos_short}} buckets to pods in your cluster. Information that is stored with {{site.data.keyword.cos_full_notm}} is encrypted in transit and at rest, dispersed across multiple geographic locations, and accessed over HTTP by using a REST API.
 {: shortdesc}
 
 To connect to {{site.data.keyword.cos_full_notm}}, your cluster requires public network access to authenticate with {{site.data.keyword.cloud_notm}} Identity and Access Management. If you have a private-only cluster, you can communicate with the {{site.data.keyword.cos_full_notm}} private service endpoint if you install the plug-in version `1.0.3` or later, and set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
@@ -51,7 +51,7 @@ Follow these steps to create an {{site.data.keyword.cos_full_notm}} service inst
 1. Deploy an {{site.data.keyword.cos_full_notm}} service instance.
    1.  Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/catalog/services/cloud-object-storage).
    2.  Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`.   
-   3.  Review the [plan options ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/pricing-object-storage#s3api) for pricing information and select a plan.
+   3.  Review the [plan options ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api) for pricing information and select a plan.
    4.  Click **Create**. The service details page opens.
 2. {: #service_credentials}Retrieve the {{site.data.keyword.cos_full_notm}} service credentials.
    1.  In the navigation on the service details page, click **Service Credentials**.
@@ -619,11 +619,11 @@ To remove the plug-in:
    ```
    {: screen}
 
-2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/pricing-object-storage#s3api) for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
+2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api) for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
    - **Standard**: This option is used for hot data that is accessed frequently. Common use cases are web or mobile apps.
    - **Vault**: This option is used for workloads or cool data that are accessed infrequently, such as once a month or less. Common use cases are archives, short-term data retention, digital asset preservation, tape replacement, and disaster recovery.
    - **Cold**: This option is used for cold data that is rarely accessed (every 90 days or less), or inactive data. Common use cases are archives, long-term backups, historical data that you keep for compliance, or workloads and apps that are rarely accessed.
-   - **Flex**: This option is used for workloads and data that do not follow a specific usage pattern, or that are too huge to determine or predict a usage pattern. **Tip:** Check out this [blog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/03/interconnect-2017-changing-rules-storage/) to learn how the Flex storage class works compared to traditional storage tiers.   
+   - **Flex**: This option is used for workloads and data that do not follow a specific usage pattern, or that are too huge to determine or predict a usage pattern. **Tip:** Check out this [blog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2017/03/interconnect-2017-changing-rules-storage/) to learn how the Flex storage class works compared to traditional storage tiers.   
 
 3. Decide on the level of resiliency for the data that is stored in your bucket.
    - **Cross-region**: With this option, your data is stored across three regions within a geolocation for highest availability. If you have workloads that are distributed across regions, requests are routed to the nearest regional endpoint. The API endpoint for the geolocation is automatically set by the `ibmc` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes are configured to use the `US GEO` API endpoint for your buckets. For more information, see [Regions and endpoints](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).  
@@ -702,7 +702,7 @@ To remove the plug-in:
    </tr>
    <tr>
    <td><code>ibm.io/tls-cipher-suite</code></td>
-   <td>The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.openssl.org/docs/man1.0.2/apps/ciphers.html). If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the <strong><code>AESGCM</code></strong> cipher suite by default. For worker nodes that run a Red Hat operating system, the <strong><code>ecdhe_rsa_aes_128_gcm_sha_256</code></strong> cipher suite is used by default.    </td>
+   <td>The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html). If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the <strong><code>AESGCM</code></strong> cipher suite by default. For worker nodes that run a Red Hat operating system, the <strong><code>ecdhe_rsa_aes_128_gcm_sha_256</code></strong> cipher suite is used by default.    </td>
    </tr>
    </tbody>
    </table>
@@ -799,7 +799,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
   </tr>
    <tr>
    <td><code>resources.requests.storage</code></td>
-   <td>A fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/pricing-object-storage#s3api). </td>
+   <td>A fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api). </td>
    </tr>
    <tr>
    <td><code>spec.storageClassName</code></td>
@@ -1158,7 +1158,7 @@ To deploy a stateful set that uses object storage:
     </tr>
     <tr>
     <td style="text-align:left"><code>spec.volumeClaimTemplates.spec.</code></br><code>resource.requests.storage</code></td>
-    <td>Enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/pricing-object-storage#s3api).</td>
+    <td>Enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api).</td>
     </tr>
     </tbody></table>
 
@@ -1207,7 +1207,7 @@ To deploy a stateful set that uses object storage:
 </tr>
 <tr>
 <td>Pricing</td>
-<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/pricing-object-storage#s3api)</td>
+<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</td>
 </tr>
 </tbody>
 </table>
@@ -1244,7 +1244,7 @@ To deploy a stateful set that uses object storage:
 </tr>
 <tr>
 <td>Pricing</td>
-<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/pricing-object-storage#s3api)</td>
+<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</td>
 </tr>
 </tbody>
 </table>
@@ -1281,7 +1281,7 @@ To deploy a stateful set that uses object storage:
 </tr>
 <tr>
 <td>Pricing</td>
-<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/pricing-object-storage#s3api)</td>
+<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</td>
 </tr>
 </tbody>
 </table>
@@ -1318,7 +1318,7 @@ To deploy a stateful set that uses object storage:
 </tr>
 <tr>
 <td>Pricing</td>
-<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/pricing-object-storage#s3api)</td>
+<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</td>
 </tr>
 </tbody>
 </table>
