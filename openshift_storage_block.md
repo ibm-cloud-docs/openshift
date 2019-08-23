@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-20"
+lastupdated: "2019-08-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -800,7 +800,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     ```
     {: pre}
 
-5. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be empty. If any of these fields do not match the PV, then a new PV is created automatically instead.
+5. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields do not match the PV, then a new PV is created automatically instead.
 
      ```
      kind: PersistentVolumeClaim
@@ -813,7 +813,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
       resources:
         requests:
           storage: "<storage_size>"
-      storageClassName:
+      storageClassName: ""
      ```
      {: codeblock}
 
