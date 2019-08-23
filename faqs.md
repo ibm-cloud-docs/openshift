@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-17"
+lastupdated: "2019-08-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -56,7 +56,7 @@ You can create only standard OpenShift clusters. If you want to test out the cap
 {: #openshift_beta_convert}
 {: faq}
 
-You can create a GA cluster and then re-deploy any apps that you use in the beta clusters before the beta clusters are removed. Beta clusters are removed by 31 August 2019 at 0:00 UTC (30 days after Red Hat OpenShift on IBM Cloud was generally available). For an example of getting all the configuration files from a project, see the [OpenShift docs](https://docs.openshift.com/dedicated/admin_guide/assembly_backing-up-restoring-project-application.html).
+You can create a GA cluster and then re-deploy any apps that you use in the beta clusters before the beta clusters are removed. Beta clusters are removed by 31 August 2019 at 0:00 UTC (30 days after Red Hat OpenShift on IBM Cloud was generally available). For an example of getting all the configuration files from a project, see the [OpenShift docs](https://docs.openshift.com/container-platform/3.6/admin_guide/backup_restore.html).
 
 ## Which Kubernetes versions does the OpenShift service support?
 {: #supported_kube_versions}

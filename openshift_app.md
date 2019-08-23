@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-02"
+lastupdated: "2019-08-22"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -50,6 +50,15 @@ For example, apps that are configured to run as root might fail, with the pods i
 For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).
 
 To migrate OpenShift apps from a previous version, such as 2.x to 3.x, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html).
+
+<br />
+
+
+## Deploying Cloud Paks, licensed software, and other integrations
+{: #openshift_app_cloud_paks}
+
+You can deploy IBM Cloud Paks&trade;, licensed software, and other 3rd party integrations to Red Hat OpenShift on IBM Cloud clusters. You have various tools to deploy integrations, such as {{site.data.keyword.cloud_notm}} service binding, managed add-ons, Helm charts, and more. After you install an integration, follow that product's documentation for configuration settings and other instructions to integrate with your apps. For more information, see [Enhancing cluster capabilities with integrations](/docs/openshift?topic=openshift-openshift_integrations).
+{: shortdesc}
 
 <br />
 

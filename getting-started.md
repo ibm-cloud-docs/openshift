@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-23"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -26,7 +26,6 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 
-
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}
 
@@ -34,7 +33,6 @@ With Red Hat OpenShift on IBM Cloud, you can create {{site.data.keyword.containe
 {: shortdesc}
 
 To complete the getting started tutorial, use a Pay-As-You-Go {{site.data.keyword.cloud_notm}} account where you are the owner or have full Administrator privileges. This getting started tutorial focuses on setting up a cluster and sample app quickly by using the {{site.data.keyword.cloud_notm}} console. For more information on how to use the CLI to create your OpenShift cluster and deploy an app, check out this [tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
-
 
 ## Creating an OpenShift cluster
 {: #openshift_gs_cluster}

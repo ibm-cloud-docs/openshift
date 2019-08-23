@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -202,7 +202,7 @@ Before you begin:
 
 2. Verify that your edge nodes are tainted.
   ```
-  oc describe nodes -l dedicated=edge | grep "Taint|Hostname"
+  oc describe nodes -l dedicated=edge | egrep "Taints|Hostname"
   ```
   {: pre}
 

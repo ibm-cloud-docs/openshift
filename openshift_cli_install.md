@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-20"
+lastupdated: "2019-08-21"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -111,6 +111,10 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
     ```
     {: pre}
 2.  Get the **Master URL** of the cluster that you want to access. 
+  
+    Make sure that your {{site.data.keyword.containershort_notm}} plug-in is updated to the latest version so that you can use the `ibmcloud oc` alias to work with your OpenShift clusters. 
+    {: note}
+    
     ```
     ibmcloud oc cluster-get --cluster <cluster_name_or_ID>
     ```

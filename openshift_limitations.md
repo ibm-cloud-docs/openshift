@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -33,7 +33,7 @@ Review the following limitations for {{site.data.keyword.openshiftlong}}. For ge
 {: #oc_limits_cluster}
 
 *   You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then re-deploy the apps that you try out in the Kubernetes cluster to your OpenShift cluster.
-*   [Locations](/docs/openshift?topic=openshift-regions-and-zones) are available in all six worldwide multizone metro areas: Dallas, Frankfurt, London, Sydney, Tokyo, and Washington DC.
+*   [Locations](/docs/openshift?topic=openshift-regions-and-zones) are available in all six worldwide multizone metro and select single zone regions.
 *   You cannot create a cluster with worker nodes that run multiple operating systems, such as OpenShift on Red Hat Enterprise Linux and community Kubernetes on Ubuntu.
 
 ## Storage
