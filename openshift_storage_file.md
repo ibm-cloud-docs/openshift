@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-22"
+lastupdated: "2019-08-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -558,7 +558,7 @@ If you want to use existing storage that you provisioned earlier, but never used
     ```
     {: pre}
 
-5.  Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be empty. If any of these fields do not match the PV, then a new PV, and a new physical storage instance is [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
+5.  Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields do not match the PV, then a new PV, and a new physical storage instance is [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
 
     ```
     kind: PersistentVolumeClaim
@@ -571,7 +571,7 @@ If you want to use existing storage that you provisioned earlier, but never used
      resources:
        requests:
          storage: "<size>"
-     storageClassName:
+     storageClassName: ""
     ```
     {: codeblock}
 
