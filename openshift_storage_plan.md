@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-19"
+lastupdated: "2019-08-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -250,6 +250,12 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <td style="text-align:left">At rest</td>
 </tr>
 <tr>
+<td style="text-align:left">Backup and recovery</td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([kubectl cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
+   <td style="text-align:left"><b>Classic Block Storage</b>: <ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([kubectl cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul>
+      <b>VPC Block Storage</b>: Kubernetes [`kubectl cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command</td>
+</tr>
+<tr>
 <td style="text-align:left">Common use cases</td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Mass or single file storage</li><li style="margin:0px; padding:0px">File sharing across a single zone cluster</li></ul></td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Stateful sets</li><li style="margin:0px; padding:0px">Backing storage when you run your own database</li><li style="margin:0px; padding:0px">High-performance access for single pods</li></ul></td>
@@ -359,6 +365,12 @@ nodes. Every node stores only a part of the data. </td>
 <td style="text-align:left">In transit and at rest</td>
 <td style="text-align:left">Bring your own key to protect your data in transit and at rest with {{site.data.keyword.keymanagementservicelong_notm}}. </td>
 <td style="text-align:left">At rest</td>
+</tr>
+<tr>
+<td style="text-align:left">Backup and recovery</td>
+<td style="text-align:left">Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03).  You can also use the  Kubernetes [`kubectl cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
+<td style="text-align:left">Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/). You can also use the  Kubernetes [`kubectl cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
+<td style="text-align:left">Depends on the DBaaS</td>
 </tr>
 <tr>
 <td style="text-align:left">Common use cases</td>
