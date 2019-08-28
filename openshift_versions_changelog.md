@@ -22,7 +22,7 @@ subcollection: openshift
 {:preview: .preview}
 {:external: target="_blank" .external}
 
-# Version changelog
+# Version changelog 
 {: #openshift_changelog}
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters. Changes include updates to OpenShift, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
