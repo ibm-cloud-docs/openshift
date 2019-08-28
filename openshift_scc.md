@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-28"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
@@ -95,4 +95,5 @@ Do not edit existing OpenShift or IBM SCCs settings, except for `priority`, `use
 | `ibm-anyuid-hostpath-scc`| Allows pods to run with any UID and GID and any volume, including the host path.<p class="important">Grant this SCC for only pods that require access to `hostPath` volumes.</p>|
 | `ibm-anyuid-scc` | Allows pods to run with any UID and GID, but prevents access to the host.|
 | `ibm-privileged-scc`| Grants access to all privileged host features, and allows a pod to run with any UID and GID and any volume.<p class="important">Grant this SCC for only cluster administration that requires the most access possible.</p> |
+| `ibm-restricted-scc` | Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This SCC is the most restrictive IBM SCC.|
 {: caption="Default IBM security context constraints" caption-side="top"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-08-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -51,7 +51,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
       ```
       OK
       ID                                                  Public IP        Private IP     Machine Type           State    Status   Zone    Version
-      kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.14.5_1523*
+      kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.14.6_1523*
       ```
       {: screen}
 
@@ -761,7 +761,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     </tr>
     <tr>
     <td><code>metadata.labels</code></td>
-    <td>Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster. If a PV for your storage already exists, [add the zone and region label](/docs/openshift?topic=openshift-kube_concepts#storage_multizone) to your PV.
+    <td>Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster. If a PV for your storage already exists, [add the zone and region label](/docs/openshift?topic=openshift-kube_concepts) to your PV.
     </tr>
     <tr>
     <td><code>spec.flexVolume.fsType</code></td>

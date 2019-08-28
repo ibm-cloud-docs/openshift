@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -194,94 +194,6 @@ When you dynamically provision persistent storage by using a storage class, you 
 </tbody>
 </table>
 
-
-## Preparing existing storage for multizone usage with Kubernetes labels
-{: #storage_multizone}
-
-If you updated your cluster from a single-zone to a multizone cluster and had existing persistent volumes (PVs), add the Kubernetes zone and region labels to your PVs. The labels assure that pods that mount this storage are deployed to the zone where the persistent storage exists.
-{:shortdesc}
-
-These steps are required only if you had existing PVs that were created before multizone capabilities were available. PVs that were created after multizone was available already include the Kubernetes region and the zone label.
-{: note}
-
-Use a script to find all the PVs in your cluster and apply the Kubernetes `failure-domain.beta.kubernetes.io/region` and `failure-domain.beta.kubernetes.io/zone` labels. If the PV already has the labels, the script does not overwrite the existing values.
-
-Before you begin:
-- [Target the Kubernetes CLI to the cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
-- In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan-spanning-get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get).
-
-To update existing PVs:
-
-1.  Apply the multizone labels to your PVs by running the script.  Replace <mycluster> with the name of your cluster. When prompted, confirm the update of your PVs.
-
-    ```
-    bash <(curl -Ls https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/file-pv-labels/apply_pv_labels.sh) <mycluster>
-    ```
-    {: pre}
-
-    **Example output**:
-
-    ```
-    Retrieving cluster storage...
-    OK
-
-    Name:			mycluster
-    ID:			  myclusterID1234
-    State:			normal
-    ...
-    Addons
-    Name                   Enabled
-    storage-watcher-pod    true
-    basic-ingress-v2       true
-    customer-storage-pod   true
-    us-south
-    kube-config-dal10-storage.yml
-    storage.yml
-    dal10\n
-    The persistent volumes which do not have region and zone labels will be updated with REGION=
-    us-south and ZONE=dal10. Are you sure to continue (y/n)?y
-    persistentvolume "pvc-ID-123456" labeled
-    persistentvolume "pvc-ID-789101" labeled
-    ['failure-domain.beta.kubernetes.io/region' already has a value (us-south), and --overwrite is false, 'failure-domain.beta.kubernetes.io/zone' already has a value (dal10), and --overwrite is false]
-    ['failure-domain.beta.kubernetes.io/region' already has a value (us-south), and --overwrite is false, 'failure-domain.beta.kubernetes.io/zone' already has a value (dal10), and --overwrite is false]
-    \nSuccessfully applied labels to persistent volumes which did not have region and zone labels.
-    ```
-    {: screen}
-
-2.  Verify that the labels were applied to your PVs.
-
-    1.  Look in the output of the previous command for the IDs of PVs that were labeled.
-
-        ```
-        persistentvolume "pvc-ID-123456" labeled
-        persistentvolume "pvc-ID-789101" labeled
-        ```
-        {: screen}
-
-    2.  Review the region and zone labels for your PVs.
-
-        ```
-        oc describe pv pvc-ID-123456
-        ```
-        {: pre}
-
-        **Example output**:
-        ```
-        Name:		pvc-ID-123456
-        Labels:		CapacityGb=4
-        		Datacenter=dal10
-            ...
-        		failure-domain.beta.kubernetes.io/region=us-south
-        		failure-domain.beta.kubernetes.io/zone=dal10
-            ...
-        ```
-        {: screen}
-
-**What's next?**
-
-Now that you labeled your existing PVs, you can mount the PV to your multizone cluster. See the following links for more information.
-- Use [existing NFS file storage](/docs/openshift?topic=openshift-file_storage#existing_file)
-- Use [existing block storage](/docs/openshift?topic=openshift-block_storage#existing_block)
 
 
 

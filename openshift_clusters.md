@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-08-28"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -52,7 +52,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     2.  From the hamburger menu ![hamburger menu icon](../icons/icon_hamburger.svg "hamburger menu icon"), select **OpenShift** and then click **Create cluster**.
     3.  Choose your cluster setup details and name.
     *   Fill out your cluster name, resource group, and tags.
-    *   For the **Location**, set the **Geography**, and then select any of the six worldwide multizone **Metro** [locations](/docs/openshift?topic=openshift-regions-and-zones) to use for your **Worker zones**.
+    *   For the **Location**, set the **Geography**, and then select any of the six worldwide multizone **Metro** or single zone [locations](/docs/openshift?topic=openshift-regions-and-zones) to use for your **Worker zones**.
     *   For **Default worker pool**, choose an available flavor for your worker ndoes. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
     1.  To finish, click **Create cluster**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.<br><br>If your cluster does not reach a **deployed** state, check out the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway device, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).</p>
 2.  From the cluster details page, click **OpenShift web console**. For more information about using the OpenShift console, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html).
