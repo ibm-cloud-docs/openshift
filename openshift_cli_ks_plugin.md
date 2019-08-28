@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-20"
+lastupdated: "2019-08-28"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -41,7 +41,7 @@ Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registryshort_n
 ## Using the beta {{site.data.keyword.containerlong_notm}} plug-in
 {: #cs_beta}
 
-A redesigned version of the {{site.data.keyword.containerlong_notm}} plug-in is available as a beta. The redesigned {{site.data.keyword.containerlong_notm}} plug-in groups commands into categories and changes commands from a hyphenated structure to a spaced structure. Additionally, beginning with beta version `0.3` (default), new [global endpoint functionality](/docs/containers?topic=containers-regions-and-zones#endpoint) is available.
+A redesigned version of the {{site.data.keyword.containerlong_notm}} plug-in is available as a beta. The redesigned {{site.data.keyword.containerlong_notm}} plug-in groups commands into categories and changes commands from the hyphenated structure to a spaced structure. Additionally, beginning with beta version `0.3` (default), new [global endpoint functionality](/docs/containers?topic=containers-regions-and-zones#endpoint) is available.
 {: shortdesc}
 
 The following beta versions of the redesigned {{site.data.keyword.containerlong_notm}} plug-in are available.
@@ -3263,15 +3263,15 @@ Use this group of commands to create and manage host names for network load bala
 ### `ibmcloud oc nlb-dns-add`
 {: #cs_nlb-dns-add}
 
-Add a network load balancer (NLB) IP to an existing host name that you created with the [`ibmcloud oc nlb-dns-create` command](#cs_nlb-dns-create).
+Add one or more network load balancer (NLB) IP addresses to an existing host name that you created with the [`ibmcloud oc nlb-dns-create` command](#cs_nlb-dns-create).
 {: shortdesc}
 
 
 
-For example, in a multizone cluster, you might create an NLB in each zone to expose an app. You register an NLB IP in one zone with a host name by running `ibmcloud oc nlb-dns-create`, so now you can add the NLB IPs from the other zones to this existing host name. When a user accesses your app host name, the client accesses one of these IPs at random, and the request is sent to that NLB. Note that you must run the following command for each IP address that you want to add.
+For example, in a multizone cluster, you might create an NLB in each zone to expose an app. You register the NLB IPs with a host name by running `ibmcloud oc nlb-dns-create`. Later, you add another zone to your cluster and another NLB for that zone. You can use this command to add the new NLB IP to this existing host name. When a user accesses your app host name, the client accesses one of these IPs at random, and the request is sent to that NLB.
 
 ```
-ibmcloud oc nlb-dns-add --cluster CLUSTER --ip NLB_IP --nlb-host HOST_NAME [--json] [-s]
+ibmcloud oc nlb-dns-add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_IP ...] --nlb-host HOST_NAME [--json] [-s]
 ```
 {: pre}
 
@@ -3283,7 +3283,7 @@ ibmcloud oc nlb-dns-add --cluster CLUSTER --ip NLB_IP --nlb-host HOST_NAME [--js
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>--ip <em>NLB_IP</em></code></dt>
-<dd>The NLB IP address that you want to add to the host name. To see your NLB IPs, run <code>oc get svc</code>.</dd>
+<dd>The NLB IP address(es) that you want to add to the host name. To see your NLB IPs, run <code>oc get svc</code>. To specify multiple IP addresses, use multiple `--ip` flags.</dd>
 
 <dt><code>--nlb-host <em>HOST_NAME</em></code></dt>
 <dd>The host name that you want to add IPs to. To see existing host names, run <code>ibmcloud oc nlb-dnss</code>.</dd>
@@ -3311,7 +3311,7 @@ Publicly expose your app by creating a DNS host name to register a network load 
 
 
 ```
-ibmcloud oc nlb-dns-create --cluster CLUSTER --ip NLB_IP [--json] [-s]
+ibmcloud oc nlb-dns-create --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--json] [-s]
 ```
 {: pre}
 
@@ -3323,7 +3323,7 @@ ibmcloud oc nlb-dns-create --cluster CLUSTER --ip NLB_IP [--json] [-s]
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>--ip <em>IP</em></code></dt>
-<dd>The network load balancer IP address that you want to register. To see your NLB IP addresses, run <code>oc get svc</code>. You can initially create the host name with only one IP address. If you have NLBs in each zone of a multizone cluster that expose one app, you can add the IPs of the other NLBs to the host name by running the [`ibmcloud oc nlb-dns-add` command](#cs_nlb-dns-add).</dd>
+<dd>The network load balancer IP address that you want to register. To see your NLB IP addresses, run <code>oc get svc</code>. To specify multiple IP addresses, use multiple `--ip` flags.</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
