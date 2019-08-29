@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-08-29"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
@@ -52,6 +52,9 @@ The default OpenShift SCCs are stricter than the default PSPs in community Kuber
 
 To create, edit, list, delete, and otherwise manage security context constraints, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html). You can also add users or groups to the default security context constraints.
 {: shortdesc}
+
+Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 CLI has a bug that yields an error when you run commands against OpenShift-specific resources, such as `kubectl get scc`.
+{: important}
 
 <br />
 
