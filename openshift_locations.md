@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-26"
+lastupdated: "2019-08-30"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -110,6 +110,7 @@ To quickly determine whether a zone is multizone-capable, your can run `ibmcloud
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Korea | Seoul | seo01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng01 | AP North (`ap-north`, `jp-tok`) |
+| Europe | France | Paris | par01 | EU Central (`eu-central`, `eu-de`) |
 | North America | Canada | Toronto | tor01 | US East (`us-east`) |
 {: class="simple-tab-table"}
 {: caption="Available single zone data center locations for Red Hat OpenShift on IBM Cloud." caption-side="top"}

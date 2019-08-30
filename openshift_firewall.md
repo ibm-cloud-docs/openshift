@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-20"
+lastupdated: "2019-08-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -448,55 +448,6 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 5. Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEncap traffic between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for private load balancers and the IPEncap protocol to permit pod to pod traffic across subnets.
 
-6.  To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions):
-  - `TCP port 443, port 4443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
-  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent). <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
-  <caption>IP addresses to open for Registry traffic</caption>
-    <thead>
-      <th>Red Hat OpenShift on IBM Cloud region</th>
-      <th>Registry address</th>
-      <th>Registry private IP addresses</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Global registry across <br>Red Hat OpenShift on IBM Cloud regions</td>
-        <td><code>icr.io</code><br><br>
-        Deprecated: <code>registry.bluemix.net</code></td>
-        <td><code>166.9.20.4</code></br><code>166.9.22.3</code></br><code>166.9.24.2</code></td>
-      </tr>
-      <tr>
-        <td>AP North</td>
-        <td><code>jp.icr.io</code><br><br>
-        Deprecated: <code>registry.au-syd.bluemix.net</code></td>
-        <td><code>166.9.40.3</code></br><code>166.9.42.3</code></br><code>166.9.44.3</code></td>
-      </tr>
-      <tr>
-        <td>AP South</td>
-        <td><code>au.icr.io</code><br><br>
-        Deprecated: <code>registry.au-syd.bluemix.net</code></td>
-        <td><code>166.9.52.2</code></br><code>166.9.54.2</code></br><code>166.9.56.3</code></td>
-      </tr>
-      <tr>
-        <td>EU Central</td>
-        <td><code>de.icr.io</code><br><br>
-        Deprecated: <code>registry.eu-de.bluemix.net</code></td>
-        <td><code>166.9.28.12</code></br><code>166.9.30.9</code></br><code>166.9.32.5</code></td>
-       </tr>
-       <tr>
-        <td>UK South</td>
-        <td><code>uk.icr.io</code><br><br>
-        Deprecated: <code>registry.eu-gb.bluemix.net</code></td>
-        <td><code>166.9.36.9</code></br><code>166.9.38.5</code></br><code>166.9.34.4</code></td>
-       </tr>
-       <tr>
-        <td>US East, US South</td>
-        <td><code>us.icr.io</code><br><br>
-        Deprecated: <code>registry.ng.bluemix.net</code></td>
-        <td><code>166.9.12.114</code></br><code>166.9.15.50</code></br><code>166.9.16.173</code></td>
-       </tr>
-      </tbody>
-    </table>
-
 7. {: #pvc}To create persistent volume claims in a cluster where worker nodes are connected to private VLANs only, make sure that your cluster is set up with the following Kubernetes version or {{site.data.keyword.cloud_notm}} storage plug-in versions. These versions enable private network communication from your cluster to your persistent storage instances.
     <table>
     <caption>Overview of required Kubernetes or {{site.data.keyword.cloud_notm}} storage plug-in versions for private clusters</caption>
@@ -565,7 +516,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 2. Get the worker node subnets or the worker node IP addresses.
-  * **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/containers?topic=containers-ca#ca), you might not want to update your firewall for each new worker node. Instead, you can whitelist the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
+  * **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca), you might not want to update your firewall for each new worker node. Instead, you can whitelist the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
     <p class="note">The **primary public subnets** that Red Hat OpenShift on IBM Cloud provisions for your cluster come with 14 available IP addresses, and can be shared by other clusters on the same VLAN. When you have more than 14 worker nodes, another subnet is ordered, so the subnets that you need to whitelist can change. To reduce the frequency of change, create worker pools with worker node flavors of higher CPU and memory resources so that you don't need to add worker nodes as often.</p>
     1. List the worker nodes in your cluster.
       ```
@@ -576,10 +527,10 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. If you want to whitelist a private-only cluster, note the **Private IP** instead. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
         ```
         ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.14.5   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.14.5  
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.14.5   
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.14.5  
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.14.6   
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.14.6  
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.14.6   
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.14.6  
         ```
         {: screen}
     3.  List the VLAN subnets for each unique network ID.
