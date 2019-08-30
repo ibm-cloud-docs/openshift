@@ -557,6 +557,9 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 4.  Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
 5.  Repeat these steps for each cluster that you want to whitelist.
 
+<br />
+
+
 
 
 
