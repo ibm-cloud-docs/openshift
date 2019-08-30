@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-08-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -524,7 +524,7 @@ If you want to use existing storage that you provisioned earlier, but never used
     </tr>
     <tr>
     <td><code>metadata.labels</code></td>
-    <td>Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster. If a PV for your storage already exists, [add the zone and region label](/docs/openshift?topic=openshift-kube_concepts#storage_multizone) to your PV.
+    <td>Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster.
     </tr>
     <tr>
     <td><code>spec.capacity.storage</code></td>

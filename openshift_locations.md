@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-26"
+lastupdated: "2019-08-30"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -110,6 +110,7 @@ To quickly determine whether a zone is multizone-capable, your can run `ibmcloud
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Korea | Seoul | seo01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng01 | AP North (`ap-north`, `jp-tok`) |
+| Europe | France | Paris | par01 | EU Central (`eu-central`, `eu-de`) |
 | North America | Canada | Toronto | tor01 | US East (`us-east`) |
 {: class="simple-tab-table"}
 {: caption="Available single zone data center locations for Red Hat OpenShift on IBM Cloud." caption-side="top"}
@@ -211,7 +212,7 @@ When you use the new global functionality in the Red Hat OpenShift on IBM Cloud 
 
 </br></br>
 **Red Hat OpenShift on IBM Cloud API**:
-* [Get started with the API](/docs/containers?topic=containers-cs_cli_install#cs_api).
+* [Get started with the API](/docs/containers?topic=containers-cs_api_install).
 * [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/).
 * Generate a client of the API to use in automation by using the [`swagger.json` API](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json).
 
