@@ -212,7 +212,7 @@ When you use the new global functionality in the Red Hat OpenShift on IBM Cloud 
 
 </br></br>
 **Red Hat OpenShift on IBM Cloud API**:
-* [Get started with the API](/docs/containers?topic=containers-cs_cli_install#cs_api).
+* [Get started with the API](/docs/containers?topic=containers-cs_api_install).
 * [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/).
 * Generate a client of the API to use in automation by using the [`swagger.json` API](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json).
 
