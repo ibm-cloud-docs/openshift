@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-29"
+lastupdated: "2019-09-03"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -55,7 +55,7 @@ Using both community Kubernetes and OpenShift clusters? The `oc` CLI comes with 
 2.  If you use Mac OS or Linux, complete the following steps to add the binaries to your `PATH` system variable. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
     1.  Move the `oc` and `kubectl` executable files to the `/usr/local/bin` directory.
         ```
-        mv /<filepath>/oc /usr/local/bin/oc && mv /<filepath>/kubectl /usr/local/bin/kubectl
+        mv /<filepath>/oc /usr/local/bin/oc
         ```
         {: pre}
 
