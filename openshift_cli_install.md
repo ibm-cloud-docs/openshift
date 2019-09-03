@@ -97,7 +97,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
 **Before you begin**:
 * [Install the `oc` CLI](#cli_oc).
 * [Create an OpenShift cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
-* Check that your cluster is in a healthy state by running `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway device, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).
+* Check that your cluster is in a healthy state by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway device, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).
 
 **To log in to your cluster as a user through the terminal**:
 1.  In the [{{site.data.keyword.containerlong_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster that you want to access.
@@ -116,7 +116,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
     {: note}
     
     ```
-    ibmcloud oc cluster-get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 3.  Use the API key and cluster URL to log in to your OpenShift cluster. The user name (`-u`) is `apikey`, the password (`-p`) is your API key value, and the `--server` is the cluster master URL.
