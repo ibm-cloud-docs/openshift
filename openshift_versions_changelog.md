@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-09-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,6 +39,17 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 3.11.135_1523_openshift, released 3 September 2019
+{: #311135_1523_worker}
+
+The following table shows the changes that are included in the worker node fix pack `3.11.135_1523_openshift`.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 packages | N/A | N/A | Updated worker node images with package updates.|
+{: caption="Changes since version 3.11.135_1521" caption-side="top"}
 
 ### Changelog for master fix pack 3.11.135_1522_openshift, released 28 August 2019
 {: #311135_1522}
