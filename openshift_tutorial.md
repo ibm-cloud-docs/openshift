@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-09-03"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -80,19 +80,19 @@ Create a Red Hat OpenShift on IBM Cloud cluster in {{site.data.keyword.container
     ibmcloud login -r (us-east|eu-gb) [-g default] [--sso]
     ```
     {: pre}
-3.  Create a cluster. The following command creates a cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlans --zone <zone>`.
+3.  Create a cluster. The following command creates a cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`.
     ```
-    ibmcloud oc cluster-create --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster create classic --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 4.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.</p>
     ```
-    ibmcloud oc cluster-get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 5.  Download the configuration files to connect to your cluster.
     ```
-    ibmcloud oc cluster-config --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster config --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -105,7 +105,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster in {{site.data.keyword.container
     ```
     {: screen}
 6.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
-7.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Paste the copied `oc` login command into your terminal to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the OpenShift console later. In future sessions, you can skip the `cluster-config` step and copy the login command from the console instead.</p>
+7.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Paste the copied `oc` login command into your terminal to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the OpenShift console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
 8.  Verify that the `oc` commands run properly with your cluster by checking the version.
 
     ```
@@ -126,7 +126,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster in {{site.data.keyword.container
     ```
     {: screen}
 
-    If you cannot perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster-config --cluster <cluster_name_or_ID> --admin` command.
+    If you cannot perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` command.
     {: tip}
 
 <br />

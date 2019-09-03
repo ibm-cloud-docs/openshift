@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-29"
+lastupdated: "2019-09-03"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -55,7 +55,7 @@ Using both community Kubernetes and OpenShift clusters? The `oc` CLI comes with 
 2.  If you use Mac OS or Linux, complete the following steps to add the binaries to your `PATH` system variable. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
     1.  Move the `oc` and `kubectl` executable files to the `/usr/local/bin` directory.
         ```
-        mv /<filepath>/oc /usr/local/bin/oc && mv /<filepath>/kubectl /usr/local/bin/kubectl
+        mv /<filepath>/oc /usr/local/bin/oc
         ```
         {: pre}
 
@@ -97,7 +97,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
 **Before you begin**:
 * [Install the `oc` CLI](#cli_oc).
 * [Create an OpenShift cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
-* Check that your cluster is in a healthy state by running `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway device, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).
+* Check that your cluster is in a healthy state by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway device, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).
 
 **To log in to your cluster as a user through the terminal**:
 1.  In the [{{site.data.keyword.containerlong_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster that you want to access.
@@ -110,22 +110,31 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
     ibmcloud iam api-key-create <name>
     ```
     {: pre}
-2.  Get the **Master URL** of the cluster that you want to access. 
-  
-    Make sure that your {{site.data.keyword.containershort_notm}} plug-in is updated to the latest version so that you can use the `ibmcloud oc` alias to work with your OpenShift clusters. 
-    {: note}
-    
+2.  Configure your cluster to add the API key user to your cluster RBAC policies and to set your session context to your cluster server.
+    1.  Log in to {{site.data.keyword.cloud_notm}} with the API key credentials.
+        ```
+        ibmcloud login --apikey <API_key>
+        ```
+        {: pre}
+    2.  Download the cluster configuration files.
+        ```
+        ibmcloud oc cluster-config --cluster <cluster_name_or_ID>
+        ```
+        {: pre}
+        
+        After downloading the configuration files, a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable, such as the following example.
+        ```
+        export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
+        ```
+        {: screen}
+    3.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
+3.  Use the API key to log in to your OpenShift cluster. The user name (`-u`) is `apikey` and the password (`-p`) is your API key value.
     ```
-    ibmcloud oc cluster-get --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-3.  Use the API key and cluster URL to log in to your OpenShift cluster. The user name (`-u`) is `apikey`, the password (`-p`) is your API key value, and the `--server` is the cluster master URL.
-    ```
-    oc login -u apikey -p <API_key> --server=<master_URL>
+    oc login -u apikey -p <API_key>
     ```
     {: pre}
 
-    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens).
+    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an{site.data.keyword.openshiftshort}} token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs[External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platfor3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens).
 
     Example curl request:
     ```
