@@ -76,14 +76,14 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     {: pre}
 2.  Create a cluster.
     ```
-    ibmcloud oc cluster create --name <name> --location <zone> --kube-version <openshift_version> --machine-type <worker_node_flavor> --workers <number_of_worker_nodes_per_zone> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster create classic --name <name> --location <zone> --kube-version <openshift_version> --machine-type <worker_node_flavor> --workers <number_of_worker_nodes_per_zone> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
     Example command to create a cluster with three workers nodes that have four cores and 16 GB memory in Washington, DC:
 
     ```
-    ibmcloud oc cluster create --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster create classic --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
