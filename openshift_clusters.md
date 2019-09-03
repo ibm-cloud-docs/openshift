@@ -76,14 +76,14 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
     {: pre}
 2.  Create a cluster.
     ```
-    ibmcloud oc cluster create --name <name> --location <zone> --kube-version <openshift_version> --flavor <worker_node_flavor> --workers <number_of_worker_nodes_per_zone> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster create --name <name> --location <zone> --kube-version <openshift_version> --machine-type <worker_node_flavor> --workers <number_of_worker_nodes_per_zone> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
     Example command to create a cluster with three workers nodes that have four cores and 16 GB memory in Washington, DC:
 
     ```
-    ibmcloud oc cluster create --name my_openshift --location wdc04 --kube-version 3.11_openshift --flavor b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster create --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
@@ -110,7 +110,7 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
       <td>You must choose a supported OpenShift version. OpenShift versions include a Kubernetes version that differs from the Kubernetes versions that are available on community Kubernetes Ubuntu clusters. To list available OpenShift versions, run `ibmcloud oc versions`. To create a cluster with the latest the patch version, you can specify just the major and minor version, such as ` 3.11_openshift`.<br><br>Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.</td>
     </tr>
     <tr>
-    <td><code>--flavor <em>&lt;worker_node_flavor&gt;</em></code></td>
+    <td><code>--machine-type <em>&lt;worker_node_flavor&gt;</em></code></td>
     <td>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. To list available flavors, run `ibmcloud oc flavors --zone <zone>`.</td>
     </tr>
     <tr>
