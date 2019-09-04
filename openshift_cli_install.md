@@ -134,7 +134,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
     ```
     {: pre}
 
-    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an{site.data.keyword.openshiftshort}} token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs[External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platfor3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens).
+    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs[External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platfor3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens).
 
     Example curl request:
     ```
