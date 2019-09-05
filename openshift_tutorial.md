@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-03"
+lastupdated: "2019-09-05"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -193,13 +193,13 @@ If you took a break from the last lesson and started a new terminal, make sure t
         hello-world-build   0/1       Completed          0          31m
         ```
         {: screen}
-4.  Set up a route so that you can publicly access the hello world service. By default, the host name is in the format of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. If you want to customize the host name, include the `--hostname=<hostname>` flag.
+4.  Set up a route so that you can publicly access the hello world service. By default, the hostname is in the format of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. If you want to customize the hostname, include the `--hostname=<hostname>` flag.
     1.  Create a route for the **hello-world** service.
         ```
         oc create route edge --service=hello-world -n hello-world
         ```
         {: pre}
-    2.  Get the route host name address from the **Host/Port** output.
+    2.  Get the route hostname address from the **Host/Port** output.
         ```
         oc get route -n hello-world
         ```
@@ -210,7 +210,7 @@ If you took a break from the last lesson and started a new terminal, make sure t
         hello-world   hello-world-hello.world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud    hello-world   8080-tcp   edge/Allow    None
         ```
         {: screen}
-5.  Access your app. Be sure to append `https://` to your route host name.
+5.  Access your app. Be sure to append `https://` to your route hostname.
     ```
     curl https://hello-world-hello-world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud
     ```

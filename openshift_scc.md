@@ -89,7 +89,7 @@ Do not edit existing OpenShift or IBM SCCs settings, except for `priority`, `use
 |SCC name | Description |
 |---------|-------------|
 | `anyuid`| Denies access similar to the `restricted` SCC, but allows users to run with any UID and any GID.|
-| `hostaccess`| Allows access to all host namespaces, but still requires that pods are run with a UID and SELinux context that are allocated to the namespace.<p class="important">Grant this SCC for only trusted pods that require host access to namespaces, file systems, and process IDs.</p>|
+| `hostaccess`| Allows access to all hostnamespaces, but still requires that pods are run with a UID and SELinux context that are allocated to the namespace.<p class="important">Grant this SCC for only trusted pods that require host access to namespaces, file systems, and process IDs.</p>|
 | `hostmount-anyuid` | Denies access similar to the `restricted` SCC, but allows host mounts and any UID by a pod. This SCC is primarily used by the persistent volume recycler.<p class="important">Grant this SCC for only pods that require host file system access as any UID, including UID 0.</p>|
 | `hostnetwork`| Allows the usage of host networking and host ports, but still requires that pods are run with a UID and SELinux context that are allocated to the namespace.<p class="important">Grant this SCC for only pods that require host network access.</p>|
 | `node-exporter`| Gives the appropriate access for the built-in Prometheus node exporter. |
