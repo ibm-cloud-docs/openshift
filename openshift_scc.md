@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-29"
+lastupdated: "2019-09-05"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
@@ -38,6 +38,24 @@ Trying to control which users have access to your cluster? See [Assigning cluste
 
 **Are any SCCs set by default?**</br>
 By default, Red Hat OpenShift on IBM Cloud clusters include a standard set of [OpenShift SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the [Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-psp#ibm_psp). These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
+
+**What SCCs are applied to my resources by default?**<br>
+If you do not specify a security context, the OpenShift `restricted` security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.
+
+```
+oc describe pod <pod_name>
+```
+{: pre}
+
+```
+Name:               <pod_name>
+Namespace:          <project_name>
+...
+Annotations:        openshift.io/...
+                    openshift.io/scc=restricted
+...
+```
+{: screen}
 
 **Can I use Kubernetes pod security policies instead?**</br>
 No. [Kubernetes pod security policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) (PSPs) are originally based on OpenShift SCCs. However, OpenShift 3.11 supports only SCCs, not PSPs.
