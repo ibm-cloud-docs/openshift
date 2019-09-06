@@ -23,6 +23,7 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
 # Opening required ports and IP addresses in your firewall
 {: #firewall}
 
@@ -648,7 +649,6 @@ By default, all IP addresses can be used to log in to the {{site.data.keyword.cl
     </tbody>
   </table>
 7. Click **Apply**.
-
 
 
 
