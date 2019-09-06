@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Opening required ports and IP addresses in your firewall
 {: #firewall}
 
