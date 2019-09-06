@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-09-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -22,6 +22,7 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
+
 
 # Planning highly available persistent storage
 {: #storage_planning}
@@ -386,7 +387,6 @@ nodes. Every node stores only a part of the data. </td>
 </tr>
 </tbody>
 </table>
-
 
 
 

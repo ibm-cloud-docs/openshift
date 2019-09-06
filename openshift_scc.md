@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-05"
+lastupdated: "2019-09-06"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
@@ -22,7 +22,6 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
-
 
 # Configuring security context constraints
 {: #openshift_scc}

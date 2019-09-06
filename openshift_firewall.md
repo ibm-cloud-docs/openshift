@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-05"
+lastupdated: "2019-09-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -22,6 +22,7 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
+
 
 # Opening required ports and IP addresses in your firewall
 {: #firewall}
@@ -648,7 +649,6 @@ By default, all IP addresses can be used to log in to the {{site.data.keyword.cl
     </tbody>
   </table>
 7. Click **Apply**.
-
 
 
 

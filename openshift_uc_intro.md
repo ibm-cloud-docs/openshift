@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-09-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -23,10 +23,11 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
 # Overview of use cases
 {: #cs_uc_intro}
 
-Various use cases show the strengths of {{site.data.keyword.openshiftlong}} and  {{site.data.keyword.cloud_notm}} services when used together. These stories highlight several industries as well as types of workloads. Even though each use case is presented through the lens of a particular industry, these workloads are typical across various industries. You see workload themes, such as: 
+Various use cases show the strengths of {{site.data.keyword.openshiftlong}} and  {{site.data.keyword.cloud_notm}} services when used together. These stories highlight several industries as well as types of workloads. Even though each use case is presented through the lens of a particular industry, these workloads are typical across various industries. You see workload themes, such as:
 * AI and machine learning
 * Data and storage
 * DevOps

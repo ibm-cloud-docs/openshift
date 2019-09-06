@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-09-06"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -25,6 +25,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
+
 
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}

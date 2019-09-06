@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-09-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -23,6 +23,7 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
 # Financial services use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_finance}
 
@@ -41,7 +42,7 @@ Why {{site.data.keyword.cloud_notm}}: To improve risk analysis, the company look
 Red Hat OpenShift on IBM Cloud and key technologies:
 * [Horizontal scaling](/docs/containers?topic=containers-app#highly_available_apps)
 * [Multiple regions for high availability](/docs/containers?topic=containers-regions-and-zones#regions-and-zones)
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
 * [Container security and isolation](/docs/containers?topic=containers-security#security)
 * [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/services/Cloudant?topic=cloudant-getting-started#getting-started)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime#nodejs_runtime)
@@ -110,7 +111,7 @@ Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud provides sp
 Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their  application development tools get a new face when they add on AI cloud services to apps with a click.
 
 Key technologies:
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [IBM Cloud Pak for Applications](https://www.ibm.com/cloud/cloud-pak-for-applications)
 * [Fraud prevention with {{site.data.keyword.watson}} AI](https://www.ibm.com/cloud/watson-studio)
@@ -183,7 +184,6 @@ Security first: With bare metal for Red Hat OpenShift on IBM Cloud, the sensitiv
 * In parallel, the provider implemented simple time-boxed iterations to get a handle on the existing technical debt.
 * With the number of transactions they process, they can scale their operations exponentially.
 * At the same time, new fraud analysis with {{site.data.keyword.watson}} increased the speed of detection and prevention, reducing fraud 4 times more than the region’s average.
-
 
 
 

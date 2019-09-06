@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-09-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,7 +21,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 {:faq: data-hd-content-type='faq'}
-
 
 # FAQs
 {: #faqs}

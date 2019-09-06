@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-05"
+lastupdated: "2019-09-06"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -20,6 +20,7 @@ subcollection: openshift
 {:note: .note}
 {:download: .download}
 {:preview: .preview}
+
 
 # Deploying apps in OpenShift clusters
 {: #openshift_apps}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-09-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -22,7 +22,8 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
- 
+
+
 # Removing persistent storage from a cluster
 {: #cleanup}
 
@@ -38,7 +39,7 @@ Understanding your delete options:
 It depends. When you delete a cluster, the PVC and PV are deleted. However, you choose whether to remove the associated storage instance in IBM Cloud infrastructure. If you chose not to remove it, then the storage instance still exists. Also, if you deleted your cluster in an unhealthy state, the storage might still exist even if you chose to remove it. Follow the instructions, particularly the step to [delete your storage instance](#sl_delete_storage) in IBM Cloud infrastructure.
 
 **Can I delete the PVC to remove all my storage?**</br>
-Sometimes. If you [create the persistent storage dynamically](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) and select a storage class without `retain` in its name, then when you delete the PVC, the PV and the IBM Cloud infrastructure storage instance are also deleted.
+Sometimes. If you [create the persistent storage dynamically](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning) and select a storage class without `retain` in its name, then when you delete the PVC, the PV and the IBM Cloud infrastructure storage instance are also deleted.
 
 In all other cases, follow the instructions to check the status of your PVC, PV, and the physical storage device and delete them separately if necessary.
 
@@ -51,7 +52,7 @@ When you manually cancel the persistent storage instance from the IBM Cloud infr
 
 If you remove persistent storage with a `Delete` reclaim policy that you dynamically provisioned by deleting the PVC, the storage is removed immediately independent if you chose an hourly or monthly billing type. After your storage is removed, you might still see your storage instance in the console or the CLI for up to 72 hours. Persistent storage that uses a `Retain` reclaim policy is not removed and you are still charged for using it. 
 
-<p class="important">When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/openshift?topic=openshift-file_storage#file_backup_restore) or [block storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore).  </p>
+<p class="important">When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/containers?topic=containers-file_storage#file_backup_restore) or [block storage](/docs/containers?topic=containers-block_storage#block_backup_restore).  </p>
 
 **I deleted my storage. Why can I still see my instances?** </br>
 After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your IBM Cloud infrastructure console or CLI. 
@@ -201,7 +202,6 @@ To clean up persistent data:
    ibmcloud sl block volume-list
    ```
    {: pre}
-
 
 
 
