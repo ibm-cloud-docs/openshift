@@ -33,6 +33,10 @@ subcollection: openshift
 OpenShift clusters are set up by default with an internal registry. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster. For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/registry/index.html#install-config-registry-overview).
 {: shortdesc}
 
+
+<br />
+
+
 ## Using {{site.data.keyword.registrylong_notm}}
 {: #openshift_iccr}
 
