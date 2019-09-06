@@ -14,7 +14,7 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-{:table: .aria-labeledby="caption"}
+{:table: .aria-labeledby="caption"} 
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:note: .note}
@@ -22,7 +22,6 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
-
 
 # Understanding Kubernetes storage basics
 {: #kube_concepts}
@@ -217,6 +216,7 @@ When you dynamically provision persistent storage by using a storage class, you 
 </tr>
 </tbody>
 </table>
+
 
 
 

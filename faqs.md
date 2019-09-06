@@ -22,6 +22,7 @@ subcollection: openshift
 {:preview: .preview}
 {:faq: data-hd-content-type='faq'}
 
+
 # FAQs
 {: #faqs}
 

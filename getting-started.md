@@ -26,7 +26,6 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 
-
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}
 

@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Assigning cluster access
 {: #users}
 
@@ -1327,6 +1326,7 @@ You can remove IBM Cloud infrastructure permissions for a user by using the {{si
 3. Click the **Classic infrastructure** tab, then click the **Permissions, Devices, or VPN subnets** tabs.
 4. In each tab, deselect specific permissions.
 5. To save your changes, click **Set** and **Save**. Permissions are downgraded after a few minutes.
+
 
 
 

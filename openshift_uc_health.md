@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Healthcare use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_health}
 
@@ -218,6 +217,7 @@ Technical solution:
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.
 * Researchers have access to clinical data and can share clinical data, while they comply with local regulations.
 * Patients who participate in disease research feel confident that their data is secure and making a difference, when it is shared with large research teams.
+
 
 
 

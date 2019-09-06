@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Storing data on IBM Cloud Object Storage
 {: #object_storage}
 
@@ -1323,6 +1322,7 @@ To deploy a stateful set that uses object storage:
 </tr>
 </tbody>
 </table>
+
 
 
 

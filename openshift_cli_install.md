@@ -21,6 +21,8 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
+
 # Installing the OpenShift CLI
 {: #openshift-cli}
 
@@ -119,7 +121,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
         ibmcloud oc cluster-config --cluster <cluster_name_or_ID>
         ```
         {: pre}
-
+        
         After downloading the configuration files, a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable, such as the following example.
         ```
         export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml

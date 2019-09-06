@@ -23,6 +23,7 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
 # Configuring security context constraints
 {: #openshift_scc}
 

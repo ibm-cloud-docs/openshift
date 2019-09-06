@@ -22,7 +22,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Enhancing cluster capabilities with integrations
 {: #openshift_integrations}
 
@@ -45,7 +44,7 @@ You can add services to your Red Hat OpenShift on IBM Cloud cluster in various w
    * Some Cloud Paks, such as {{site.data.keyword.icp4dfull_notm}}, push the image to the registry for you as part of their installation process. To see if the image is pushed during installation, review the Cloud Pak installation information.
 3. Follow the instructions that are particular to each Cloud Pak installation, such as configuring the Helm chart values to work within OpenShift security context constraints.
 
-Now you can run your Cloud Pak on your OpenShift cluster!
+Now you can run your Cloud Pak on your OpenShift cluster! 
 
 When you set up your Cloud Pak, you might need to work with OpenShift-specific resources, such as security context constraints. Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 has a bug that yields an error when you run commands against OpenShift-specific resources, such as `kubectl get scc`.
 {: important}

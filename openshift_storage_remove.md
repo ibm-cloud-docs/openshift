@@ -22,8 +22,7 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
-
-
+ 
 # Removing persistent storage from a cluster
 {: #cleanup}
 
@@ -202,6 +201,7 @@ To clean up persistent data:
    ibmcloud sl block volume-list
    ```
    {: pre}
+
 
 
 

@@ -24,6 +24,7 @@ subcollection: openshift
 {:preview: .preview}
 
 
+
 # Updating clusters, worker nodes, and cluster components
 {: #update}
 
@@ -579,6 +580,7 @@ You can manage automatic updates of the Ingress ALB component in the following w
 {: #addons}
 
 Managed {{site.data.keyword.containerlong_notm}} add-ons are an easy way to enhance your cluster with open-source capabilities, such as Istio or Knative. The version of the open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.containerlong_notm}}. To update managed add-ons that you enabled in your cluster to the latest versions, see [Updating managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
+
 
 
 

@@ -26,7 +26,6 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 
-
 # Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster
 {: #openshift_tutorial}
 

@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Controlling traffic with network policies
 {: #network_policies}
 
@@ -831,6 +830,8 @@ To log denied traffic:
   {: screen}
 
 6. Optional: [Forward the logs](/docs/containers?topic=containers-health#configuring) from `/var/log/syslog` to an external syslog server.
+
+
 
 
 

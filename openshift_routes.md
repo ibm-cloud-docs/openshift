@@ -21,7 +21,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Exposing apps with routes
 {: #openshift_routes}
 

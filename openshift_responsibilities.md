@@ -23,10 +23,11 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
 # Your responsibilities by using Red Hat OpenShift on IBM Cloud
 {: #responsibilities_openshift}
 
-Learn about responsibilities, terms, and conditions that you have when you use {{site.data.keyword.containerlong}} to provision Red Hat OpenShift on IBM Cloud clusters.
+Learn about responsibilities, terms, and conditions that you have when you use {{site.data.keyword.containerlong}} to provision Red Hat OpenShift on IBM Cloud clusters. 
 {:shortdesc}
 
 ## Cluster management responsibilities
@@ -150,3 +151,5 @@ See [Cloud Services terms](/docs/overview/terms-of-use?topic=overview-terms#term
 
 
 
+ 
+ 

@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Restricting network traffic to edge worker nodes
 {: #edge}
 
@@ -223,6 +222,7 @@ Before you begin:
     oc taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-
     ```
     {: pre}
+
 
 
 

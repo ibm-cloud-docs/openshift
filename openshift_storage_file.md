@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Storing data on classic IBM Cloud File Storage
 {: #file_storage}
 
@@ -1485,6 +1484,8 @@ The following customized storage class lets you define the NFS version that you 
    mountOptions: nfsvers=<nfs_version>
   ```
   {: codeblock}
+
+
 
 
 

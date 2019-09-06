@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Planning your cluster for high availability
 {: #ha_clusters}
 
@@ -122,6 +121,7 @@ To load balance workloads across your apps, add the public IP addresses of your 
 
 **What if I want to load balance workloads on the private network?** </br>
 {{site.data.keyword.cloud_notm}} does not offer a load balancer service on the private network. However, you can connect your cluster to a private load balancer that you host in your on-prem network by using one of the [supported VPN options](/docs/containers?topic=containers-vpn). Make sure to expose your apps on the private network by using [Application Load Balancers (ALBs)](/docs/containers?topic=containers-ingress-about) or [Network Load Balancers (NLBs)](/docs/containers?topic=containers-loadbalancer-about), and use the private IP address in your VPN settings to connect your app to your on-prem network.
+
 
 
 

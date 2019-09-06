@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Transportation use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_transport}
 
@@ -192,6 +191,7 @@ Red Hat OpenShift on IBM Cloud provides scalable compute resources and the assoc
 * Authenticity with personalization in the site addressed the changing expectations of the airline’s workforce today.
 * Last-minute updates to the HR site, including ones that driven by the employees chatbot conversations, went live quickly because Developers were pushing changes at least 10 times daily.
 * With infrastructure management taken care of by IBM, the Development team was freed up to deliver the site in only 3 weeks.
+
 
 
 

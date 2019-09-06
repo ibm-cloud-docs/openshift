@@ -26,7 +26,6 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 
-
 # Troubleshooting OpenShift clusters
 {: #openshift_troubleshoot}
 

@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # User access permissions
 {: #access_reference}
 
@@ -619,6 +618,8 @@ The following table shows the classic infrastructure permissions that the creden
 {: #classic-permissions-suggested}
 {: tab-title="Other common use cases"}
 {: tab-group="Classic infrastructure permissions"}
+
+
 
 
 

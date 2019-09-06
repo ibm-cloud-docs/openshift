@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Planning your worker node setup
 {: #planning_worker_nodes}
 
@@ -313,6 +312,8 @@ To review how much compute resources are currently used on your worker node, run
 {: #worker-cpu-reserves}
 {: tab-title="Worker node CPU reserves by tier"}
 {: tab-group="Worker Node"}
+
+
 
 
 

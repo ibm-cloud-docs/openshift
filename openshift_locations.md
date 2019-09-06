@@ -23,6 +23,7 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
 # Locations
 {: #regions-and-zones}
 

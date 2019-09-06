@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Configuring subnets and IP addresses for clusters
 {: #subnets}
 
@@ -694,6 +693,7 @@ Remove a private subnet that is in an on-premises network from a cluster. After 
   2234945   169.xx.xxx.xxx/29    true     false
   ```
   {: screen}
+
 
 
 

@@ -21,8 +21,7 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-# Building images for your apps
+# Building images for your apps 
 {: #openshift-images}
 
 {{site.data.keyword.openshiftlong}} clusters include an internal registry to build, deploy, and manage container images locally. For a private registry to manage and control access to images across your enterprise, you can also set up your cluster to use {{site.data.keyword.registrylong}}.

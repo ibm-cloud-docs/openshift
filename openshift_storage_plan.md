@@ -23,7 +23,6 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
 # Planning highly available persistent storage
 {: #storage_planning}
 
@@ -387,6 +386,7 @@ nodes. Every node stores only a part of the data. </td>
 </tr>
 </tbody>
 </table>
+
 
 
 
