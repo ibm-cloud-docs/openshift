@@ -52,12 +52,6 @@ For more information, see [Comparison between OpenShift and community Kubernetes
 
 You can create only standard OpenShift clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-getting-started#clusters_gs) and [deploy some apps](/docs/containers?topic=containers-app). Then, re-deploy the apps that you try out in the Kubernetes cluster to your [OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app).
 
-## Can I convert my beta OpenShift cluster to a GA cluster?
-{: #openshift_beta_convert}
-{: faq}
-
-You can create a GA cluster and then re-deploy any apps that you use in the beta clusters before the beta clusters are removed. Beta clusters are removed by 31 August 2019 at 0:00 UTC (30 days after Red Hat OpenShift on IBM Cloud was generally available). For an example of getting all the configuration files from a project, see the [OpenShift docs](https://docs.openshift.com/container-platform/3.6/admin_guide/backup_restore.html).
-
 ## Which Kubernetes versions does the OpenShift service support?
 {: #supported_kube_versions}
 {: faq}
