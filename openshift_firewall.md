@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -478,10 +478,10 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 </br>
 
-### Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services
+### Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and OpenShift routes
 {: #firewall_inbound}
 
-You can allow incoming access to NodePort, load balancer, and Ingress services.
+You can allow incoming access to NodePort, load balancer, and Ingress services, and OpenShift routes.
 {:shortdesc}
 
 <dl>
@@ -491,6 +491,8 @@ You can allow incoming access to NodePort, load balancer, and Ingress services.
   <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
   <dt>Ingress</dt>
   <dd>Open port 80 for HTTP or port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.</dd>
+  <dt>Route</dt>
+  <dd>Open port 80 for HTTP or port 443 for HTTPS to the router's public IP address.</dd>
 </dl>
 
 <br />
