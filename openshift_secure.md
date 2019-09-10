@@ -168,7 +168,7 @@ The image does not include components that ensure secure end-to-end communicatio
 {: note}
 
 
-<img src="images/cs_worker_setup.png" width="600" alt="Worker node setup in Red Hat OpenShift on IBM Cloud (excluding network security)" style="width:600px; border-style: none"/>
+<img src="images/oc_worker_setup.png" width="600" alt="Worker node setup in Red Hat OpenShift on IBM Cloud (excluding network security)" style="width:600px; border-style: none"/>
 
 <table>
 <caption>Worker node security setup</caption>
