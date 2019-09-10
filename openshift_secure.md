@@ -68,7 +68,8 @@ By default, Kubernetes requires every request to go through several stages befor
 **What does Red Hat OpenShift on IBM Cloud do to secure my OpenShift API server and etcd data store?** </br>
 The following image shows the default cluster security settings that address authentication, authorization, admission control, and secure connectivity between the Kubernetes master and worker nodes.
 
-<img src="images/cs_security_apiserver_access.png" width="600" alt="Security stages when accessing the Kubernetes API server" style="width:600px; border-style: none"/>
+
+<img src="images/oc_security_apiserver_access.png" width="600" alt="Security stages when accessing the Kubernetes API server" style="width:600px; border-style: none"/>
 
 <table>
 <caption>OpenShift API server and etcd security</caption>
@@ -383,7 +384,8 @@ You can use the built-in container registry to automate the container image buil
 
 **How can {{site.data.keyword.registryshort_notm}} help me to protect my images and deployment process?**  
 
-![Deploying containers with trusted content](images/cs_image_security.png)
+
+![Deploying containers with trusted content](images/oc_image_security.png)
 
 <table>
 <caption>Security for images and deployments</caption>
@@ -446,7 +448,7 @@ Multi-tenant clusters use OpenShift projects to isolate tenants and are usually 
 - **Access:** When you set up multiple projects, you must configure proper RBAC policies for each project to ensure resource isolation. RBAC policies are complex and require in-depth Kubernetes knowledge. 
 - **Privileged pods:** If one tenant in a multi-tenant cluster requires to run privileged pods, this pod can access other projects in the cluster or damage the shared compute host. Controlling privileged pods is a complex task that requires effort and deep technical expertise. Use [OpenShift SCCs](/docs/openshift?topic=openshift-openshift_scc#oc_sccs) to control what resources your tenants can deploy in the cluster.
 - **Network policies:** Because your worker nodes are connected to the same private network, you must make sure that you have strict firewall policies in place to prevent pods from accessing pods in other namespaces.
-- **Compute resource limitation:** To ensure that every team has the necessary resources to deploy services and run apps in the cluster, you must set up [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for every namespace. Resource quotas determine the deployment constraints for a namespace, such as the number of Kubernetes resources that you can deploy, and the amount of CPU and memory that can be consumed by those resources. After you set a quota, users must include resource requests and limits in their deployments.
+- **Compute resource limitation:** project, such as the number of Kubernetes resources that you can deploy, and the amount of CPU and memory that can be consumed by those resources. After you set a quota, users must include resource requests and limits in their deployments.
 - **Shared cluster resources:** If you run multiple tenants in one cluster, some cluster resources, such as the  OpenShift router, Ingress application load balancer (ALB) or available portable IP addresses are shared across tenants. Smaller services might have a hard time using shared resources if they must compete against large services in the cluster.
 - **Updates:** You can run one OpenShift API version at a time only. All apps that run in a cluster must comply with the current OpenShift API version independent of the team that owns the app. When you want to update a cluster, you must ensure that all teams are ready to switch to a new OpenShift API version and that apps are updated accordingly. This also means that individual teams have less control over the OpenShift API version they want to run.
 - **Changes in cluster setup:** If you want to change the cluster setup or reschedule workloads onto new worker nodes, you must roll out this change across tenants. This roll out requires more reconciliation and testing than in a single-tenant cluster.
