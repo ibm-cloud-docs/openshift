@@ -123,7 +123,7 @@ subcollection: openshift
                 </br><p>Create an Red Hat OpenShift on IBM Cloud cluster with worker nodes that come installed with the OpenShift container orchestration platform software. </p></br>
                 </div>
                 <div class="architectureDiagramContainer">
-                    <img class="architectureDiagram" src="images/roks_tutorial2.png" alt="OpenShift tutorial diagram flow" /></br>
+                    <img class="architectureDiagram" src="images/roks_tutorial.png" alt="OpenShift tutorial diagram flow" /></br>
               </div>
           </div>
       </div>
