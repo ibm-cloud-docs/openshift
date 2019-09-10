@@ -205,7 +205,7 @@ subcollection: openshift
                   </br> <p>Learn how to use OpenShift to build, run, and scale your apps in the cloud so that you can focus on writing code.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
-                    <img class="architectureDiagram" src="https://developer.ibm.com/developer/patterns/app-modernization-php-s2i-openshift/card.jpg" alt="Clipboard with a checklist" />
+                    <img class="architectureDiagram" src="https://katacoda.com/scenario-examples/scenarios/displaying-images/assets/logo-text-with-head.png" alt="Katacoda logo for learning platform" />
                 </div>
             </div>
         </div>
