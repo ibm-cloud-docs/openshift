@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -79,7 +79,6 @@ Review the following common use cases for dynamic provisioning:
 For more information about how to dynamically provision persistent storage, see:
 - [Classic File Storage](/docs/containers?topic=containers-file_storage#add_file)
 - [Classic Block Storage](/docs/containers?topic=containers-block_storage#add_block)
-- [VPC Block Storage](/docs/containers?topic=containers-vpc-block#vpc-block-add)
 - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#add_cos)
 - [Portworx](/docs/containers?topic=containers-portworx#add_portworx_storage)
 
@@ -117,7 +116,6 @@ Review the following common use cases for static provisioning of persistent stor
 For more information about how to statically provision storage, see:
 - [Classic File Storage](/docs/containers?topic=containers-file_storage#existing_file)
 - [Classic Block Storage](/docs/containers?topic=containers-block_storage#existing_block)
-- [VPC Block Storage](/docs/containers?topic=containers-vpc-block#vpc-block-static)
 - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#add_cos)
 - [Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume)
 
@@ -132,7 +130,6 @@ A [Kubernetes storage class ![External link icon](../icons/launch-glyph.svg "Ext
 For the pre-defined storage class specifications, see:
 - [Classic File Storage](/docs/containers?topic=containers-file_storage#file_storageclass_reference)
 - [Classic Block Storage](/docs/containers?topic=containers-block_storage#block_storageclass_reference)
-- [VPC Block Storage](/docs/containers?topic=containers-vpc-block#vpc-block-reference)
 - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#cos_storageclass_reference)
 
 Not finding what you are looking for? You can also create your own customized storage class to provision the type of storage that you want.
@@ -148,13 +145,10 @@ If you cannot use one of the provided storage classes, you can create your own c
    - Pre-defined storage classes:
      - [Classic File Storage](/docs/containers?topic=containers-file_storage#file_storageclass_reference)
      - [Classic Block Storage](/docs/containers?topic=containers-block_storage#block_storageclass_reference)
-     - [VPC Block Storage](/docs/containers?topic=containers-vpc-block#vpc-block-reference)
      - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#cos_storageclass_reference)
    - Sample customized storage classes:
      - [Classic File Storage](/docs/containers?topic=containers-file_storage#file_custom_storageclass)
      - [Classic Block Storage](/docs/containers?topic=containers-block_storage#block_custom_storageclass)
-     - [VPC Block Storage with an `xfs` file system](/docs/containers?topic=containers-vpc-block#vpc-block-xfs)
-     - [VPC Block Storage with encyrption](/docs/containers?topic=containers-vpc-block#vpc-block-encryption)
 
 2. Create the customized storage class.
    ```
@@ -171,7 +165,6 @@ If you cannot use one of the provided storage classes, you can create your own c
 4. Create a persistent volume claim (PVC) to dynamically provision storage with your customized storage class.
    - [Classic File Storage](/docs/containers?topic=containers-file_storage#add_file)
    - [Classic Block Storage](/docs/containers?topic=containers-block_storage#add_block)
-   - [VPC Block Storage](/docs/containers?topic=containers-vpc-block#vpc-block-add)
    - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#add_cos)
    - [Portworx](/docs/containers?topic=containers-portworx#add_portworx_storage)
 
@@ -203,10 +196,6 @@ When you dynamically provision persistent storage by using a storage class, you 
 <td>You can increase your storage size and assigned IOPS by [modifying your existing volume](/docs/containers?topic=containers-block_storage#block_change_storage_configuration). </td>
 </tr>
 <tr>
-<td>VPC Block Storage</td>
-<td>You cannot change the storage size or assigned IOPS. </td>
-</tr>
-<tr>
 <td>{{site.data.keyword.cos_full_notm}}</td>
 <td>Your volume automatically scales in size and you are charged based on your actual consumption. However, you cannot change the performance attributes of your volume as they are defined in the storage class that you used to create your bucket in {{site.data.keyword.cos_full_notm}}. To change to a different storage class, you must provision a new bucket by using the storage class that you want. Then, copy your data from the old bucket to the new one. </td>
 </tr>
@@ -216,7 +205,6 @@ When you dynamically provision persistent storage by using a storage class, you 
 </tr>
 </tbody>
 </table>
-
 
 
 
