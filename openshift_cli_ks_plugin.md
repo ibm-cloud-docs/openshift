@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-10"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -3368,8 +3368,8 @@ ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-c
 <dt><code>--type <em>LOG_TYPE</em></code></dt>
 <dd>The type of logs that you want to apply the filter to. Currently <code>all</code>, <code>container</code>, and <code>host</code> are supported.</dd>
 
-<dt><code>--logging-config <em>CONFIG</em></code></dt>
-<dd>The logging configuration ID. If not provided, the filter is applied to all of the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the <code>--show-matching-configs</code> flag with the command. To specify multiple IDs, use multiple flags, such as `--logging-config id1 --logging-config id2`. This value is optional.</dd>
+<dt><code>-lc, --logging-config <em>CONFIG</em></code></dt>
+<dd>The logging configuration ID. If not provided, the filter is applied to all of the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the <code>--show-matching-configs</code> flag with the command. To specify multiple IDs, use multiple flags, such as `-lc id1 -lc id2`. This value is optional.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
 <dd>The Kubernetes namespace from which you want to filter logs. This value is optional.</dd>
@@ -3523,8 +3523,8 @@ ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TY
 <dt><code>--type <em>LOG_TYPE</em></code></dt>
 <dd>The type of logs that you want to apply the filter to. Currently <code>all</code>, <code>container</code>, and <code>host</code> are supported.</dd>
 
-<dt><code>--logging-configs <em>CONFIGS</em></code></dt>
-<dd>The logging configuration ID. If not provided, the filter is applied to all of the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the <code>--show-matching-configs</code> flag with the command. To specify multiple IDs, use multiple flags, such as `--logging-config id1 --logging-config id2`. This value is optional.</dd>
+<dt><code>-lc, --logging-config <em>CONFIG</em></code></dt>
+<dd>The logging configuration ID. If not provided, the filter is applied to all of the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the <code>--show-matching-configs</code> flag with the command. To specify multiple IDs, use multiple flags, such as `-lc id1 -lc id2`. This value is optional.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
 <dd>The Kubernetes namespace from which you want to filter logs. This value is optional.</dd>
