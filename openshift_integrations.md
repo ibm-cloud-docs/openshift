@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-10"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d
 
@@ -21,6 +21,88 @@ subcollection: openshift
 {:important: .important}
 {:download: .download}
 {:preview: .preview}
+
+<style>
+<!--
+    #tutorials { /* hide the page header */
+        display: none !important
+    }
+    .allCategories {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+    .solutionBoxContainer {}
+    .solutionBoxContainer a {
+        text-decoration: none !important;
+        border: none !important;
+    }
+    .solutionBox {
+        display: inline-block !important;
+        width: 600px !important;
+        margin: 0 10px 20px 0 !important;
+        padding: 10px !important;
+        border: 1px #dfe6eb solid !important;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+    }
+    @media screen and (min-width: 960px) {
+        .solutionBox {
+        width: 27% !important;
+        }
+        .solutionBoxContent {
+        height: 320px !important;
+        }
+    }
+    @media screen and (min-width: 1298px) {
+        .solutionBox {
+        width: calc(33% - 2%) !important;
+        }
+        .solutionBoxContent {
+        min-height: 320px !important;
+        }
+    }
+    .solutionBox:hover {
+        border-color: rgb(136, 151, 162) !important;
+    }
+    .solutionBoxContent {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .solutionBoxDescription {
+        flex-grow: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .descriptionContainer {
+    }
+    .descriptionContainer p {
+        margin: 2px !important;
+        overflow: hidden !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 4 !important;
+        -webkit-box-orient: vertical !important;
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        letter-spacing: 0 !important;
+        max-height: 70px !important;
+    }
+    .architectureDiagramContainer {
+        flex-grow: 1 !important;
+        min-width: 200px !important;
+        padding: 0 10px !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    .architectureDiagram {
+        max-height: 170px !important;
+        padding: 5px !important;
+        margin: 0 auto !important;
+    }
+-->
+</style>
 
 # Enhancing cluster capabilities with integrations
 {: #openshift_integrations}
@@ -72,8 +154,26 @@ To access {{site.data.keyword.cloud_notm}} services in your account, you can cre
 ## Using Operators
 {: #oc_operators}
 
-Instead of Helm, you might use [Operators ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html) to package, deploy, and update your apps. Operators are available for only OpenShift 4.1 versions. In the meantime, you can try out the [experimental {{site.data.keyword.cloud_notm}} Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/seed/olm/blob/master/pocs/openshift-ibmcloud/README.md).
+Instead of Helm, you might use [Operators ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html) to package, deploy, and update your apps. Operators are available for only OpenShift 4.1 versions. In the meantime, you can try out the [experimental {{site.data.keyword.cloud_notm}} Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/seed/olm/blob/master/pocs/openshift-ibmcloud/README.md) and the following tutorial.
 {: shortdesc}
+
+<div class = "solutionBoxContainer">
+    <a href = "https://developer.ibm.com/tutorials/simplify-lifecycle-management-kubernetes-OpenShift-ibm-cloud-operator/">
+    <div class = "solutionBox">
+        <div class = "solutionBoxContent">
+                App lifecycle management with {{site.data.keyword.cloud_notm}} Operator
+          <div class="solutionBoxDescription">
+                <div class="descriptionContainer">
+                  </br> <p>Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}} Operator to simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.openshifshort}} cluster.</p></br>
+                </div>
+                <div class="architectureDiagramContainer">
+                    <img class="architectureDiagram" src="images/dev_guides_operators.png" alt="IBM Cloud operator flowchart" />
+                </div>
+            </div>
+        </div>
+    </div>
+    </a>
+</div>
 
 <br />
 

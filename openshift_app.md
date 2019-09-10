@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-10"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -41,15 +41,115 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 **What does the `new-app` command do?**<br>
 The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/application_lifecycle/new_app.html#dev-guide-new-app).
 
+<br />
 
-**Why does my app work on community Kubernetes clusters but not on OpenShift clusters?**<br>
-OpenShift sets up stricter security settings by default than community Kubernetes. If you have apps that previously ran on community Kubernetes, you might need to modify your apps so that you can deploy them on OpenShift.
 
-For example, apps that are configured to run as root might fail, with the pods in a `CrashLoopBackOff` status. To resolve this issue, you can either modify the default security context constraints or use an image that does not run as root.
+## Common app modification scenarios
+{: openshift_move_apps_scenarios}
 
-For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).
+OpenShift has different default settings than community Kubernetes, such as stricter security context constraints. Review the following common scenarios where you might need to modify your apps so that you can deploy them on OpenShift clusters.
+{: shortdesc}
 
-To migrate OpenShift apps from a previous version, such as 2.x to 3.x, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html).
+<table summary="The first column describes an app scenario. The second column explains the steps that you can take to address the app scenario.">
+<caption>Common scenarios that require app modifications</caption>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Steps you can take</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status</td>
+<td>The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).</td>
+</tr>
+<tr>
+<td>Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories.</td>
+<td>In OpenShift, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html).</td>
+</tr>
+<tr>
+<td>You deploy your app by using Helm. You might see an error similar to `User "system:serviceaccount:tiller:tiller" cannot create <resource>.rbac.authorization.k8s.io: RBAC: <resource>.rbac.authorization.k8s.io "<resource>.rbac.authorization.k8s.io" not found`</td>
+<td>Make sure that you [set up Tiller](/docs/containers?topic=containers-helm#public_helm_install) with a privileged security account.</td>
+</tr>
+<tr>
+<td>Your app uses persistent file storage with a non-root user ID that cannot write to the mounted storage device.</td>
+<td>[Adjust the security context](/docs/containers?topic=containers-cs_troubleshoot_storage#cs_storage_nonroot) for the app deployment so that `runAsUser` is set to `0`.</td>
+</tr>
+<tr>
+<td>Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error.</td>
+<td>Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions:<ul>
+<li>Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port.</li>
+<li>Add your container deployment to a privileged service account, such as in the [example for giving a deployment priviliged access](#openshift_move_apps_example_scc).</li>
+<li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/port_forwarding.html).</li></ul></td>
+</tr>
+<tr>
+<td>Other use cases and scenarios</td>
+<td>Review the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html) for migrating databases, web framework apps, CI/CD, and other examples.</td>
+</tr>
+</table>
+
+### Example steps for giving a deployment privileged access
+{: #openshift_move_apps_example_scc}
+
+If you have an app that runs with root permisisons, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your OpenShift cluster. For example, you might set up your project with a service account to control privilaged access, and then modify your deployment to use this service account.
+{: shortdesc}
+
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+
+1.  As a cluster administrator, create a project.
+    ```
+    oc adm new-project <project_name>
+    ```
+    {: pre}
+2.  Target the project so that the subsequent resources that you create are in the project namespace.
+    ```
+    oc project <project_name>
+    ```
+    {: pre}
+3.  Create a service account for the project.
+    ```
+    oc create serviceaccount <sa_name>
+    ```
+    {: pre}
+4.  Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are included in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).</p>
+    ```
+    oc adm policy add-scc-to-user privileged -n <project_name> -z <sa_name>
+    ```
+    {: pre}
+5.  In your deployment configuration file, refer to the privileged service account and set the security context to privileged.
+    *   In `spec.template.spec`, add `serviceAccount: <sa_name>`.
+    *   In `spec.template.spec.containers`, add `securityContext: privileged: true`.
+
+    Example:
+    ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: myapp_deployment
+      labels:
+        app: myapp
+    spec:
+      ...
+      template:
+        ...
+        spec:
+          serviceAccount: <sa_name>
+          containers:
+          - securityContext:
+              privileged: true
+          ...
+    ```
+    {: screen}
+6.  Deploy your app configuration file.
+    ```
+    oc apply -f <filepath/deployment.yaml>
+    ```
+    {: pre}
+7.  Verify that the pod is in a **Running** status. If your pod shows an error status or is stuck in one status for a long time, describe the pod and review the **Events** section to start troubleshooting your deployment.
+    ```
+    oc get pods
+    ```
+    {: pre}
 
 <br />
 

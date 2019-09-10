@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-10"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -83,63 +83,3 @@ Next, start [Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?
 
 For more information about the OpenShift Origin CLI, see the [`oc` commands docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html).
 {: note}
-
-
-<br />
-
-
-## Accessing an OpenShift cluster from the terminal or automation tools
-{: #openshift_cluster_login}
-
-Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). With IAM, you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the OpenShift console, your IAM identity is used to generate an OpenShift login token that you can use to log in to the terminal. You can automate logging in to your cluster by creating an IAM API key to use for the `oc login` command.
-{:shortdesc}
-
-**Before you begin**:
-* [Install the `oc` CLI](#cli_oc).
-* [Create an OpenShift cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
-* Check that your cluster is in a healthy state by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway device, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).
-
-**To log in to your cluster as a user through the terminal**:
-1.  In the [{{site.data.keyword.containerlong_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster that you want to access.
-2.  Click the **Access** tab and follow the instructions.
-
-<br>
-**To automate access to your cluster with an API key**:
-1.  Create an {{site.data.keyword.cloud_notm}} API key.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
-    ```
-    ibmcloud iam api-key-create <name>
-    ```
-    {: pre}
-2.  Configure your cluster to add the API key user to your cluster RBAC policies and to set your session context to your cluster server.
-    1.  Log in to {{site.data.keyword.cloud_notm}} with the API key credentials.
-        ```
-        ibmcloud login --apikey <API_key>
-        ```
-        {: pre}
-    2.  Download the cluster configuration files.
-        ```
-        ibmcloud oc cluster-config --cluster <cluster_name_or_ID>
-        ```
-        {: pre}
-        
-        After downloading the configuration files, a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable, such as the following example.
-        ```
-        export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
-        ```
-        {: screen}
-    3.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
-3.  Use the API key to log in to your OpenShift cluster. The user name (`-u`) is `apikey` and the password (`-p`) is your API key value.
-    ```
-    oc login -u apikey -p <API_key>
-    ```
-    {: pre}
-
-    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs[External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platfor3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens).
-
-    Example curl request:
-    ```
-    curl -u 'apikey:<API_key>' -H "X-CSRF-Token: a" 'https://<master_URL>:<port>/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
-    ```
-    {: pre}
-
-

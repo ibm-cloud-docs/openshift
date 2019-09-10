@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-09"
+lastupdated: "2019-09-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -68,7 +68,7 @@ Events:        <none>
 ```
 {: screen}
 
-If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). Note when you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `docker-registry` pod that uses the `registry-backing` PVC to verify that the volume is resized.
+If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `docker-registry` pod that uses the `registry-backing` PVC to verify that the volume is resized.
 {: note}
 
 
