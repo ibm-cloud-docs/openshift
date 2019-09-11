@@ -289,7 +289,6 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <thead>
 <th style="text-align:left">Characteristics</th>
 <th style="text-align:left">Object Storage</th>
-   
 <th style="text-align:left">{{site.data.keyword.cloud_notm}} Databases</th>
 </thead>
 <tbody>
