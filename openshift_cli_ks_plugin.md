@@ -151,8 +151,6 @@ Disable a managed add-on in an existing cluster. This command must be combined w
 
 
 
-
-
 #### `ibmcloud oc cluster addon disable istio`
 {: #cs_cluster_addon_disable_istio}
 
@@ -284,7 +282,7 @@ ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f]
 
 </br>
 
-### `ibmcloud oc cluster-addon-enable`
+### `ibmcloud oc cluster addon enable`
 {: #cs_cluster_addon_enable}
 
 Enable a managed add-on in an existing cluster. This command must be combined with one of the following subcommands for the managed add-on that you want to enable.
@@ -292,16 +290,14 @@ Enable a managed add-on in an existing cluster. This command must be combined wi
 
 
 
-
-
-#### `ibmcloud oc cluster-addon-enable istio`
+#### `ibmcloud oc cluster addon enable istio`
 {: #cs_cluster_addon_enable_istio}
 
 Enable the managed [Istio add-on](/docs/containers?topic=containers-istio). Installs the core components of Istio, including Prometheus.
 {: shortdesc}
 
 ```
-ibmcloud oc cluster-addon-enable istio --cluster CLUSTER [--version VERSION]
+ibmcloud oc cluster addon enable istio --cluster CLUSTER [--version VERSION]
 ```
 {: pre}
 
@@ -316,14 +312,14 @@ ibmcloud oc cluster-addon-enable istio --cluster CLUSTER [--version VERSION]
 <dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
 </dl>
 
-#### `ibmcloud oc cluster-addon-enable istio-extras`
+#### `ibmcloud oc cluster addon enable istio-extras`
 {: #cs_cluster_addon_enable_istio_extras}
 
 Enable the managed Istio extras add-on. Installs Grafana, Jeager, and Kiali to provide extra monitoring, tracing, and visualization for Istio.
 {: shortdesc}
 
 ```
-ibmcloud oc cluster-addon-enable istio-extras --cluster CLUSTER [--version VERSION] [-y]
+ibmcloud oc cluster addon enable istio-extras --cluster CLUSTER [--version VERSION] [-y]
 ```
 {: pre}
 
@@ -341,14 +337,14 @@ ibmcloud oc cluster-addon-enable istio-extras --cluster CLUSTER [--version VERSI
 <dd>Optional: Enable the <code>istio</code> add-on dependency.</dd>
 </dl>
 
-#### `ibmcloud oc cluster-addon-enable istio-sample-bookinfo`
+#### `ibmcloud oc cluster addon enable istio-sample-bookinfo`
 {: #cs_cluster_addon_enable_istio_sample_bookinfo}
 
 Enable the managed Istio BookInfo add-on. Deploys the [BookInfo sample application for Istio ![External link icon](../icons/launch-glyph.svg "External link icon")](https://istio.io/docs/examples/bookinfo/) into the <code>default</code> namespace.
 {: shortdesc}
 
 ```
-ibmcloud oc cluster-addon-enable istio-sample-bookinfo --cluster CLUSTER [--version VERSION] [-y]
+ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER [--version VERSION] [-y]
 ```
 {: pre}
 
@@ -366,14 +362,14 @@ ibmcloud oc cluster-addon-enable istio-sample-bookinfo --cluster CLUSTER [--vers
 <dd>Optional: Enable the <code>istio</code> and <code>istio-extras</code> add-on dependencies.</dd>
 </dl>
 
-#### `ibmcloud oc cluster-addon-enable knative`
+#### `ibmcloud oc cluster addon enable knative`
 {: #cs_cluster_addon_enable_knative}
 
 Enable the managed [Knative add-on](/docs/containers?topic=containers-serverless-apps-knative) to install the Knative serverless framework.
 {: shortdesc}
 
 ```
-ibmcloud oc cluster-addon-enable knative --cluster CLUSTER [--version VERSION] [-y]
+ibmcloud oc cluster addon enable knative --cluster CLUSTER [--version VERSION] [-y]
 ```
 {: pre}
 
@@ -391,14 +387,14 @@ ibmcloud oc cluster-addon-enable knative --cluster CLUSTER [--version VERSION] [
 <dd>Optional: Enable the <code>istio</code> add-on dependency.</dd>
 </dl>
 
-#### `ibmcloud oc cluster-addon-enable kube-terminal`
+#### `ibmcloud oc cluster addon enable kube-terminal`
 {: #cs_cluster_addon_enable_kube-terminal}
 
 Enable the [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on to use the Kubernetes Terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
 {: shortdesc}
 
 ```
-ibmcloud oc cluster-addon-enable kube-terminal --cluster CLUSTER [--version VERSION]
+ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERSION]
 ```
 {: pre}
 
@@ -443,8 +439,6 @@ ibmcloud oc cluster addon enable vpc-block-csi-driver --cluster CLUSTER [--versi
 List managed add-ons that are enabled in a cluster.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc cluster addons --cluster CLUSTER
 ```
@@ -470,8 +464,6 @@ ibmcloud oc cluster addons --cluster CLUSTER
 
 After logging in, download Kubernetes configuration data and certificates to connect to your cluster and run `oc` commands. The files are downloaded to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc cluster config --cluster CLUSTER [--admin] [--export] [--network] [--powershell] [--skip-rbac] [-s] [--yaml]
@@ -522,8 +514,6 @@ ibmcloud oc cluster config --cluster my_cluster
 
 Create a cluster with worker nodes on classic infrastructure. For free clusters, you specify the cluster name; everything else is set to a default value. A free cluster is automatically deleted after 30 days. You can have one free cluster at a time. To take advantage of the full capabilities of Kubernetes, create a standard cluster.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --machine-type FLAVOR --name NAME [--kube-version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN] [--private-only] [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [-s]
@@ -673,8 +663,6 @@ ibmcloud oc cluster create classic --zone dal10 --public-vlan my_public_VLAN_ID 
 Disable the public service endpoint for a cluster.
 {: shortdesc}
 
-
-
 **Important**: Before you disable the public endpoint, you first must complete the following steps to enable the private service endpoint:
 1. Enable the private service endpoint by running `ibmcloud oc cluster feature enable private-service-endpoint --cluster <cluster_name>`.
 2. Follow the prompt in the CLI to refresh the Kubernetes master API server.
@@ -794,8 +782,6 @@ ibmcloud oc cluster feature enable public-service-endpoint --cluster my_cluster
 View the details of a cluster.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc cluster get --cluster CLUSTER [--show-resources] [--json] [-s]
 ```
@@ -832,8 +818,6 @@ ibmcloud oc cluster get --cluster my_cluster --show-resources
 List all clusters in your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-
-
 Clusters in all locations are returned. To filter clusters by a specific location, include the `--location` flag. For example, if you filter clusters for the `dal` metro, multizone clusters in that metro and single-zone clusters in data centers (zones) within that metro are returned. If you filter clusters for the `dal10` data center (zone), multizone clusters that have a worker node in that zone and single-zone clusters in that zone are returned. You can pass one location or a comma-separated list of locations.
 
 ```
@@ -869,8 +853,6 @@ ibmcloud oc cluster ls -l ams03 -l wdc -l ap
 
 Modify the webhook back end that forwards API server audit logs to a remote server.
 {: shprtdesc}
-
-
 
 The `apiserver-config-get|set|unset audit-webhook` aliases for these commands are deprecated.
 {: deprecated}
@@ -975,8 +957,6 @@ ibmcloud oc cluster master audit-webhook unset --cluster CLUSTER [-s]
 Apply configuration changes for the Kubernetes master that are requested with the `ibmcloud oc cluster master audit-webhook set`, `cluster master audit-webhook unset`, `cluster feature enable`, or `cluster feature disable` commands. The highly available Kubernetes master components are restarted in a rolling restart. Your worker nodes, apps, and resources are not modified and continue to run.
 {: shortdesc}
 
-
-
 The `apiserver-refresh` and `cluster-refresh` aliases for this command are deprecated.
 {: deprecated}
 
@@ -1005,8 +985,6 @@ Update the Kubernetes master to the default API version. During the update, you 
 {: shortdesc}
 
 You might need to change your YAML files for future deployments. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
-
-
 
 The `cluster-update` alias for this command is deprecated.
 {: deprecated}
@@ -1054,8 +1032,6 @@ This API key method replaces the previous method of authorizing a cluster to acc
 
 For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-images#cluster_registry_auth).
 
-
-
 <p class="important">When you run this command, the creation of IAM credentials and image pull secrets is initiated and can take some time to complete. You cannot deploy containers that pull an image from the {{site.data.keyword.registrylong_notm}} `icr.io` domains until the image pull secrets are created. To check the image pull secrets, run `oc get secrets | grep icr`.</br></br>If you added IAM policies to an existing service ID, such as to restrict access to a regional registry, the service ID, IAM policies, and API key for the image pull secret are reset by this command.</p>
 
 ```
@@ -1081,8 +1057,6 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER
 
 Delete a cluster. All worker nodes, apps, and containers are permanently deleted. This action cannot be undone.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [-f] [-s]
@@ -1121,8 +1095,6 @@ Add an IBM Cloud service to a cluster by binding the service instance to a Kuber
 {: shortdesc}
 
 To view available {{site.data.keyword.cloud_notm}} services from the {{site.data.keyword.cloud_notm}} catalog, run `ibmcloud service offerings`. **Note**: You can add only {{site.data.keyword.cloud_notm}} services that support service keys. For more information about service binding and what services you can add to your cluster, see [Adding services by using IBM Cloud service binding](/docs/containers?topic=containers-service-binding).
-
-
 
 ```
 ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE [--key SERVICE_INSTANCE_KEY] [--role IAM_SERVICE_ROLE] --service SERVICE_INSTANCE [-s]
@@ -1167,8 +1139,6 @@ ibmcloud oc cluster service bind --cluster my_cluster --namespace my_namespace -
 List the services that are bound to one or all of the Kubernetes namespace in a cluster. If no options are specified, the services for the default namespace are displayed.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPACE] [--all-namespaces] [--json] [-s]
 ```
@@ -1208,8 +1178,6 @@ ibmcloud oc cluster service ls --cluster my_cluster --namespace my_namespace
 Remove an {{site.data.keyword.cloud_notm}} service from a cluster by unbinding it from a Kubernetes namespace.
 {: shortdesc}
 
-
-
 When you remove an {{site.data.keyword.cloud_notm}} service, the service credentials are removed from the cluster. If a pod is still using the service, it fails because the service credentials cannot be found.
 {: tip}
 
@@ -1246,10 +1214,8 @@ ibmcloud oc cluster service unbind --cluster my_cluster --namespace my_namespace
 ### `ibmcloud oc cluster subnet add`
 {: #cs_cluster_subnet_add}
 
-Make an existing portable public or private subnet in your IBM Cloud infrastructure account available to a cluster or reuse subnets from a deleted cluster instead of using the automatically provisioned subnets.
+Make an existing portable public or private classic subnet in your IBM Cloud infrastructure account available to a cluster or reuse subnets from a deleted cluster instead of using the automatically provisioned subnets.
 {: shortdesc}
-
-
 
 <p class="important">Portable public IP addresses are charged monthly. If you remove portable public IP addresses after your cluster is provisioned, you still must pay the monthly charge, even if you used them only for a short amount of time.</br>
 </br>When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
@@ -1285,10 +1251,8 @@ ibmcloud oc cluster subnet add --cluster my_cluster --subnet-id 1643389
 ### `ibmcloud oc cluster subnet create`
 {: #cs_cluster_subnet_create}
 
-Create a portable subnet in an IBM Cloud infrastructure account on your public or private VLAN and make it available to a cluster.
+Create a portable classic subnet in an IBM Cloud infrastructure account on your public or private VLAN and make it available to a cluster.
 {: shortdesc}
-
-
 
 <p class="important">When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
 </br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get).</p>
@@ -1329,8 +1293,6 @@ ibmcloud oc cluster subnet create --cluster my_cluster --size 8 --vlan 1764905
 Detach a public or private portable subnet in an IBM Cloud infrastructure account from a cluster. The subnet remains available in your IBM Cloud infrastructure account. **Note**: Any services that were deployed to an IP address from the subnet remain active after the subnet is removed.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc cluster subnet detach --cluster CLUSTER --subent-id SUBNET_ID [-f] [-s]
 ```
@@ -1366,8 +1328,6 @@ ibmcloud oc cluster subnet detach --cluster my_cluster --subnet-id 1602829
 
 Bring your own private subnet to your {{site.data.keyword.containerlong_notm}} clusters.
 {: shortdesc}
-
-
 
 This private subnet is not one provided by IBM Cloud infrastructure. As such, you must configure any inbound and outbound network traffic routing for the subnet. To add an IBM Cloud infrastructure subnet, use the `ibmcloud oc cluster subnet add` [command](#cs_cluster_subnet_add).
 
@@ -1407,12 +1367,11 @@ ibmcloud oc cluster user-subnet add --cluster my_cluster --subnet-cidr 169.xx.xx
 Remove your own private subnet from a specified cluster. Any service that was deployed with an IP address from your own private subnet remains active after the subnet is removed.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc cluster user-subnet rm --cluster CLUSTER --subnet-cidr SUBNET_CIDR --private-vlan PRIVATE_VLAN
 ```
 {: pre}
+
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 **Command options**:
@@ -1514,8 +1473,6 @@ ibmcloud oc worker add --cluster my_cluster --workers 3 --public-vlan my_public_
 View the details of a worker node.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID [--json] [-s]
 ```
@@ -1551,8 +1508,6 @@ ibmcloud oc worker get --cluster my_cluster --worker kube-dal10-cr18a61a63a6a94b
 
 List all worker nodes in a cluster.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc worker ls --cluster CLUSTER [--worker-pool POOL] [--show-pools] [--show-deleted] [--json] [-s]
@@ -1595,8 +1550,6 @@ ibmcloud oc worker ls --cluster my_cluster
 
 Reboot a worker node in a cluster.
 {: shortdesc}
-
-
 
 During the reboot, the state of your worker node does not change. For example, you might use a reboot if the worker node status in IBM Cloud infrastructure is `Powered Off` and you need to turn on the worker node. A reboot clears temporary directories, but does not clear the entire file system or reformat the disks. The worker node IP address remains the same after the reboot operation.
 
@@ -1687,8 +1640,6 @@ ibmcloud oc worker reboot --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658
 Reload the configurations for a worker node.
 {: shortdesc}
 
-
-
 A reload can be useful if your worker node experiences problems, such as slow performance or if your worker node is stuck in an unhealthy state. During the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage_planning#persistent_storage_overview). The worker node public and private IP address remain the same after the reload operation.
 
 Reloading a worker node applies patch version updates to your worker node, but not major or minor updates. To see the changes from one patch version to the next, review the [Version changelog](/docs/containers?topic=containers-changelog#changelog) documentation.
@@ -1764,14 +1715,96 @@ ibmcloud oc worker reload --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658
 
 </br>
 
+### `ibmcloud oc worker replace`
+{: #cli_worker_replace}
+
+Delete a worker node and replace it with a new worker node in the same worker pool.
+{: shortdesc}
+
+The replacement worker node is created in the same zone and has the same flavor as the old worker node, but is assigned new public or private IP addresses. You might replace a worker node if you cannot reload or update the worker node, such as if it enters a troubled state.
+
+You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` flag. If you do not include the `--update` flag, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/containers?topic=containers-changelog#changelog) documentation.
+
+Any custom labels that you applied at the individual worker node level are not applied to the replacement worker node. However, any labels that you applied at the worker pool level are applied to the replacement worker node.
+{: note}
+
+Before you replace your worker node, make sure that pods are rescheduled on other worker nodes to help avoid downtime for your app.
+{: tip}
+
+1. List all worker nodes in your cluster and note the **name** of the worker node that you want to replace.
+   ```
+   oc get nodes
+   ```
+   {: pre}
+   The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
+2. Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **name** of the worker node that you retrieved in the previous step.
+   ```
+   oc cordon <worker_name>
+   ```
+   {: pre}
+
+3. Verify that pod scheduling is disabled for your worker node.
+   ```
+   oc get nodes
+   ```
+   {: pre}
+   Your worker node is disabled for pod scheduling if the status displays **SchedulingDisabled**.
+4. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster.
+   ```
+   oc drain <worker_name>
+   ```
+   {: pre}
+   This process can take a few minutes.
+5. Replace the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
+   ```
+   ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+   ```
+   {: pre}
+6. Verify that the worker node is replaced.
+   ```
+   ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+   ```
+   {: pre}
+
+</br>
+```
+ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--update] [-f] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>--worker <em>WORKER</em></code></dt>
+<dd>The name or ID of a worker node. This value is required.</dd>
+
+<dt><code>--update</code></dt>
+<dd>Include this flag to update the worker node to the same major and minor version of the master and the latest patch.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Force the command to run with no user prompts. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc worker replace --cluster my_cluster --worker kube-dal10-cr18a61a63a6a94b658596aa93d087aaa9-w1
+```
+{: pre}
+
+</br>
 
 ### `ibmcloud oc worker rm`
 {: #cs_worker_rm}
 
 Remove one or more worker nodes from a cluster. If you remove a worker node, your cluster becomes unbalanced. You can automatically rebalance your worker pool by running the `ibmcloud oc worker-pool rebalance` [command](#cs_rebalance).
 {: shortdesc}
-
-
 
 Before you remove your worker node, make sure that pods are rescheduled on other worker nodes to help avoid a downtime for your app or data corruption on your worker node.
 {: tip}
@@ -1848,8 +1881,6 @@ ibmcloud oc worker rm --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658596a
 Update worker nodes to apply the latest security updates and patches to the operating system, and to update the Kubernetes version to match the version of the Kubernetes master. You can update the master Kubernetes version with the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update). The worker node IP address remains the same after the update operation.
 {: shortdesc}
 
-
-
 Running `ibmcloud oc worker update` can cause downtime for your apps and services. During the update, all pods are rescheduled onto other worker nodes, the worker node is reimaged, and data is deleted if not stored outside the pod. To avoid downtime, [ensure that you have enough worker nodes to handle your workload while the selected worker nodes are updating](/docs/containers?topic=containers-update#worker_node).
 {: important}
 
@@ -1898,8 +1929,6 @@ View and modify worker pools for a cluster.
 You can create a worker pool in your cluster. When you add a worker pool, it is not assigned a zone by default. You specify the number of workers that you want in each zone and the flavors for the workers. The worker pool is given the default Kubernetes versions. To finish creating the workers, [add a zone or zones](#cs_zone_add) to your pool.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --machine-type FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [-s] [--json]
 ```
@@ -1945,14 +1974,11 @@ ibmcloud oc worker-pool create classic --name my_pool --cluster my_cluster --mac
 
 </br>
 
-
 ### `ibmcloud oc worker-pool get`
 {: #cs_worker_pool_get}
 
 View the details of a worker pool.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--json] [-s]
@@ -1990,8 +2016,6 @@ ibmcloud oc worker-pool get --worker-pool pool1 --cluster my_cluster
 List all worker pools in a cluster.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc worker-pool ls --cluster CLUSTER [--json] [-s]
 ```
@@ -2025,8 +2049,6 @@ ibmcloud oc worker-pool ls --cluster my_cluster
 Rebalance a worker pool in a cluster after you delete a worker node. When you run this command, a new worker or workers are added to your worker pool so that the worker pool has the same number of nodes per zone that you specified.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool WORKER_POOL [-s]
 ```
@@ -2058,8 +2080,6 @@ ibmcloud oc worker-pool rebalance --cluster my_cluster --worker-pool my_pool
 
 Resize your worker pool to increase or decrease the number of worker nodes that are in each zone of your cluster. Your worker pool must have at least one worker node.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --size-per-zone WORKERS_PER_ZONE [-s]
@@ -2098,8 +2118,6 @@ ibmcloud oc worker-pool resize --cluster my_cluster --worker-pool my_pool --size
 Remove a worker pool from your cluster. All worker nodes in the pool are deleted. Your pods are rescheduled when you delete. To avoid downtime, be sure that you have enough workers to run your workload.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-s] [-f]
 ```
@@ -2135,8 +2153,6 @@ ibmcloud oc worker-pool rm --cluster my_cluster --worker-pool pool1
 
 View the zones attached to a worker pool.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-s] [-f]
@@ -2177,8 +2193,6 @@ ibmcloud oc worker-pool zones --cluster my_cluster --worker-pool pool1
 
 After you create a cluster or worker pool, you can add a zone. When you add a zone, worker nodes are added to the new zone to match the number of workers per zone that you specified for the worker pool. You can add more than one zone only if your cluster is in a multizone metro.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--private-only] [--json] [-s]
@@ -2226,7 +2240,6 @@ ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -w pool1 -w pool2
 {: pre}
 
 </br>
-
 
 ### `ibmcloud oc zone ls`
 {: #cs_datacenters}
@@ -2277,8 +2290,6 @@ ibmcloud oc zone ls -l ap
 
 **Multizone classic clusters only**: Set the network metadata for a worker pool to use a different public or private VLAN for the zone than it previously used. Worker nodes that were already created in the pool continue to use the previous public or private VLAN, but new worker nodes in the pool use the new network data.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--private-only] [-f] [-s]
@@ -2340,8 +2351,6 @@ ibmcloud oc zone network-set --zone dal10 --cluster my_cluster --worker-pools po
 **Multizone clusters only**: Remove a zone from all the worker pools in your cluster. All worker nodes in the worker pool for this zone are deleted.
 {: shortdesc}
 
-
-
 Before you remove a zone, make sure that you have enough worker nodes in other zones in the cluster so that your pods can reschedule. Rescheduling your pods can avoid a downtime for your app or data corruption on your worker node.
 {: tip}
 
@@ -2388,8 +2397,6 @@ View and configure an Ingress application load balancer (ALB).
 Disable automatic updates of all Ingress ALB pods in a cluster.
 {: shortdesc}
 
-
-
 By default, automatic updates to the Ingress application load balancer (ALB) add-on are enabled. ALB pods are automatically updated when a new build version is available. To instead update the add-on manually, use this command to disable automatic updates. You can then update ALB pods by running the [`ibmcloud oc alb update` command](#cs_alb_update).
 
 When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the build version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
@@ -2426,8 +2433,6 @@ Enable automatic updates of all Ingress ALB pods in a cluster.
 
 If automatic updates for the Ingress ALB add-on are disabled, you can re-enable automatic updates. Whenever the next build version becomes available, the ALBs are automatically updated to the latest build.
 
-
-
 ```
 ibmcloud oc alb autoupdate enable --cluster CLUSTER [-s]
 ```
@@ -2444,8 +2449,6 @@ ibmcloud oc alb autoupdate enable --cluster CLUSTER [-s]
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
 </br>
 
 ### `ibmcloud oc alb autoupdate get`
@@ -2453,8 +2456,6 @@ ibmcloud oc alb autoupdate enable --cluster CLUSTER [-s]
 
 Check whether automatic updates for the Ingress ALB add-on are enabled and whether your ALBs are updated to the latest build version.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc alb autoupdate get --cluster CLUSTER [--json] [-s]
@@ -2475,8 +2476,6 @@ ibmcloud oc alb autoupdate get --cluster CLUSTER [--json] [-s]
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
 </br>
 
 ### Beta: `ibmcloud oc alb cert deploy`
@@ -2484,8 +2483,6 @@ ibmcloud oc alb autoupdate get --cluster CLUSTER [--json] [-s]
 
 Deploy or update a certificate from your {{site.data.keyword.cloudcerts_long_notm}} instance to the ALB in a cluster.
 {: shortdesc}
-
-
 
 When you import a certificate with this command, the certificate secret is created in a namespace called `ibm-cert-store`. A reference to this secret is then created in the `default` namespace, which any Ingress resource in any namespace can access. When the ALB is processing requests, it follows this reference to pick up and use the certificate secret from the `ibm-cert-store` namespace.
 
@@ -2542,8 +2539,6 @@ ibmcloud oc alb cert deploy --update --secret-name my_alb_secret --cluster my_cl
 If you imported a certificate from {{site.data.keyword.cloudcerts_short}} to the ALB in a cluster, view information about the TLS certificate, such as the secrets that are associated with it.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc alb cert get --cluster CLUSTER [--secret-name SECRET_NAME] [--cert-crn CERTIFICATE_CRN] [--json] [-s]
 ```
@@ -2592,8 +2587,6 @@ ibmcloud oc alb cert get --cluster my_cluster --cert-crn  crn:v1:staging:public:
 List the certificates that you imported from your {{site.data.keyword.cloudcerts_long_notm}} instance to ALBs in a cluster.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc alb cert ls --cluster CLUSTER [--json] [-s]
 ```
@@ -2627,8 +2620,6 @@ ibmcloud oc alb cert ls --cluster my_cluster
 
 If you imported a certificate from {{site.data.keyword.cloudcerts_short}} to the ALB in a cluster, remove the secret from the cluster.
 {: shortdesc}
-
-
 
 To stay within the [rate limits](https://cloud.ibm.com/apidocs/certificate-manager#rate-limiting) set by {{site.data.keyword.cloudcerts_short}}, wait at least 45 seconds in between successive `alb cert rm` commands.
 {: note}
@@ -2741,8 +2732,6 @@ ibmcloud oc alb configure classic --alb-id public-cr18a61a63a6a94b658596aa93a087
 View the details of an Ingress ALB in a cluster.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc alb get --alb-id ALB_ID [--json] [-s]
 ```
@@ -2775,8 +2764,6 @@ ibmcloud oc alb get --alb-id public-cr18a61a63a6a94b658596aa93a087aaa9-alb1
 
 List all Ingress ALB IDs in a cluster and view whether an update for the ALB pods is available.
 {: shortdesc}
-
-
 
 If no ALB IDs are returned, then the cluster does not have a portable subnet. You can [create](#cs_cluster_subnet_create) or [add](#cs_cluster_subnet_add) subnets to a cluster.
 {: tip}
@@ -2816,8 +2803,6 @@ If your ALB pods were recently updated, but a custom configuration for your ALBs
 
 After you roll back an update, automatic updates for ALB pods are disabled. To re-enable automatic updates, use the [`alb autoupdate enable` command](#cs_alb_autoupdate_enable).
 
-
-
 ```
 ibmcloud oc alb rollback --cluster CLUSTER [--json] [-s]
 ```
@@ -2845,8 +2830,6 @@ ibmcloud oc alb rollback --cluster CLUSTER [--json] [-s]
 List Ingress ALB types that are supported.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc alb types [--json] [-s]
 ```
@@ -2870,8 +2853,6 @@ ibmcloud oc alb types [--json] [-s]
 
 Force an update of the Ingress ALB pods in the cluster to the latest version.
 {: shortdesc}
-
-
 
 If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. When you choose to manually update the add-on, all ALB pods in the cluster are updated to the latest build. You cannot update an individual ALB or choose which build to update the add-on to. Automatic updates remain disabled.
 
@@ -2907,8 +2888,6 @@ Encrypt your Kubernetes secrets by using [{{site.data.keyword.keymanagementservi
 
 Do not delete root keys in your {{site.data.keyword.keymanagementserviceshort}} instance. Do not delete keys even if you rotate to use a new key. You cannot access or remove the data in etcd or the data from the secrets in your cluster if you delete a root key.
 {: important}
-
-
 
 ```
 ibmcloud oc key-protect-enable --cluster CLUSTER_NAME_OR_ID --key-protect-url ENDPOINT --key-protect-instance INSTANCE_GUID --crk ROOT_KEY_ID [-s]
@@ -3033,8 +3012,6 @@ ibmcloud oc logging autoupdate get --cluster CLUSTER [--json] [-s]
 Make a request for a snapshot of your logs at a specific point in time and then store the logs in an {{site.data.keyword.cos_full_notm}} bucket.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc logging collect --cluster CLUSTER --cos-bucket BUCKET_NAME --cos-endpoint ENDPOINT --hmac-key-id HMAC_KEY_ID --hmac-key HMAC_KEY --type LOG_TYPE [-s]
 ```
@@ -3080,8 +3057,6 @@ ibmcloud oc logging collect --cluster mycluster --cos-bucket mybucket --cos-endp
 Check the status of the log collection snapshot request for your cluster.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc logging collect-status --cluster CLUSTER [--json]
 ```
@@ -3111,9 +3086,6 @@ ibmcloud oc logging collect-status --cluster mycluster
 
 Create a logging configuration. You can use this command to forward logs for containers, applications, worker nodes, Kubernetes clusters, and Ingress application load balancers to {{site.data.keyword.loganalysisshort_notm}} or to an external syslog server.
 {: shortdesc}
-
-
-
 ```
 ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --type LOG_TYPE [--namespace KUBERNETES_NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-containers CONTAINERS] [--app-paths PATHS_TO_LOGS] [--syslog-protocol PROTOCOL] [--skip-validation] [--force-update] [--json] [-s]
 ```
@@ -3191,8 +3163,6 @@ ibmcloud oc logging config create --cluster my_cluster --logsource container --h
 View all log forwarding configurations for a cluster, or filter logging configurations based on log source.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc logging config get --cluster CLUSTER [--logsource LOG_SOURCE] [--json] [-s]
 ```
@@ -3230,8 +3200,6 @@ ibmcloud oc logging config get --cluster my_cluster --logsource worker
 
 Delete one log forwarding configuration or all logging configurations for a cluster. Deleting the log configuration stops log forwarding to a remote syslog server or to {{site.data.keyword.loganalysisshort_notm}}.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc logging config rm --cluster CLUSTER (--namespace NAMESPACE --id LOG_CONFIG_ID] [--all] [--force-update] [-s]
@@ -3274,8 +3242,6 @@ ibmcloud oc logging config rm --cluster my_cluster --id f4bc77c0-ee7d-422d-aabf-
 
 Update the details of a log forwarding configuration.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LOG_TYPE  [--namespace NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-paths PATH] [--app-containers PATH] [--json] [--skipValidation] [--force-update] [-s]
@@ -3351,8 +3317,6 @@ ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LO
 Filter out logs that are forwarded by your logging configuration.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-config CONFIG] [--namespace KUBERNETES_NAMESPACE] [--container CONTAINER_NAME] [--level LOGGING_LEVEL] [--message MESSAGE] [--regex-message MESSAGE] [--force-update] [--json] [-s]
 ```
@@ -3418,8 +3382,6 @@ ibmcloud oc logging filter create --cluster example-cluster --type all --level i
 View a logging filter configuration.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc logging filter get --cluster CLUSTER [--id FILTER_ID] [--show-matching-configs] [--show-covering-filters] [--json] [-s]
 ```
@@ -3462,8 +3424,6 @@ ibmcloud oc logging filter get --cluster mycluster --id 885732 --show-matching-c
 Delete a logging filter.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc logging filter rm --cluster CLUSTER [--id FILTER_ID] [--all] [--force-update] [-s]
 ```
@@ -3502,8 +3462,6 @@ ibmcloud oc logging filter rm --cluster mycluster --id 885732
 
 Update a logging filter.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TYPE [--logging-config CONFIG] [--namespace KUBERNETES_NAMESPACE] [--container CONTAINER_NAME] [--level LOGGING_LEVEL] [--message MESSAGE] [--regex-message MESSAGE] [--force-update] [--json] [-s]
@@ -3573,8 +3531,6 @@ ibmcloud oc logging filter update --cluster example-cluster --id 274885 --type a
 Refresh the logging configuration for the cluster. This action refreshes the logging token for any logging configuration that is forwarding to the space level in your cluster.
 {: shortdesc}
 
-
-
 The `logging config refresh` alias for this command is deprecated.
 {: deprecated}
 
@@ -3617,8 +3573,6 @@ Create and manage subdomains for network load balancer (NLB) IP addresses and he
 Add one or more network load balancer (NLB) IP addresses to an existing subdomain that you created with the [`ibmcloud oc nlb-dns create classic` command](#cs_nlb-dns-create).
 {: shortdesc}
 
-
-
 For example, in a multizone cluster, you might create an NLB in each zone to expose an app. You register the NLB IPs with a subdomain by running `ibmcloud oc nlb-dns create classic`. Later, you add another zone to your cluster and another NLB for that zone. You can use this command to add the new NLB IP to this existing subdomain. When a user accesses your app subdomain, the client accesses one of these IPs at random, and the request is sent to that NLB.
 
 ```
@@ -3659,8 +3613,6 @@ ibmcloud oc nlb-dns add --cluster mycluster --ip 1.1.1.1 --nlb-host mycluster-a1
 Publicly expose your app by creating a DNS subdomain to register a network load balancer (NLB) IP.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--json] [-s]
 ```
@@ -3694,7 +3646,7 @@ ibmcloud oc nlb-dns create classic --cluster mycluster --ip 1.1.1.1
 ### `ibmcloud oc nlb-dns ls`
 {: #cs_nlb-dns-ls}
 
-List the network load balancer subdomains and IP addresses that are registered in a classic cluster.
+In a classic cluster, list the network load balancer (NLB) IP addresses that are registered to DNS subdomains. In a VPC cluster, list the VPC load balancer hostnames that are registered to DNS subdomains.
 {: shortdesc}
 
 ```
@@ -3727,10 +3679,8 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 ### `ibmcloud oc nlb-dns rm classic`
 {: #cs_nlb-dns-rm}
 
-Remove a network load balancer IP address from a subdomain. If you remove all IPs from a subdomain, the subdomain still exists but no IPs are associated with it. <strong>Note</strong>: You must run this command for each IP address that you want to remove.
+Remove a network load balancer (NLB) IP address from a subdomain. If you remove all IPs from a subdomain, the subdomain still exists but no IPs are associated with it. <strong>Note</strong>: You must run this command for each IP address that you want to remove.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [-s]
@@ -3772,8 +3722,6 @@ Configure and optionally enable a health check monitor for an existing NLB subdo
 {: shortdesc}
 
 You can use this command to create and enable a new health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` flag and the flags for all settings that you want to configure. To update an existing monitor, include only the flags for the settings that you want to change.
-
-
 
 ```
 ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--enable] [--desc DESCRIPTION] [--type TYPE] [--method METHOD] [--path PATH] [--timeout TIMEOUT] [--retries RETRIES] [--interval INTERVAL] [--port PORT] [--header HEADER] [--expected-body BODY STRING] [--expected-codes HTTP CODES] [--follows-redirects TRUE] [--allows-insecure TRUE] [--json] [-s]
@@ -3852,8 +3800,6 @@ ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a
 Disable an existing health check monitor for a subdomain in a cluster.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN [--json] [-s]
 ```
@@ -3891,8 +3837,6 @@ Enable a health check monitor that you configured.
 
 The first time that you create a health check monitor, you must configure and enable it with the `ibmcloud oc nlb-dns monitor configure` command. Use the `ibmcloud oc nlb-dns monitor enable` command only to enable a monitor that you configured but did not yet enable, or to re-enable a monitor that you previously disabled.
 
-
-
 ```
 ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host SUBDOMAIN [--json] [-s]
 ```
@@ -3929,8 +3873,6 @@ ibmcloud oc nlb-dns monitor enable --cluster mycluster --nlb-host mycluster-a1b2
 View the settings for an existing health check monitor.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host SUBDOMAIN [--json] [-s]
 ```
@@ -3966,8 +3908,6 @@ ibmcloud oc nlb-dns monitor get --cluster mycluster --nlb-host mycluster-a1b2cde
 List the health check monitor settings for each NLB subdomain in a cluster.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--json] [-s]
 ```
@@ -4000,8 +3940,6 @@ ibmcloud oc nlb-dns monitor ls --cluster mycluster
 
 List the health check status for the IPs behind NLB subdomains in a cluster.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc nlb-dns monitor status --cluster CLUSTER [--nlb-host SUBDOMAIN] [--json] [-s]
@@ -4041,8 +3979,6 @@ ibmcloud oc nlb-dns monitor status --cluster mycluster
 
 After you [install the container scanner](/docs/services/va?topic=va-va_index#va_install_container_scanner), view a detailed vulnerability assessment report for a container in your cluster.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc va --container CONTAINER_ID [--extended] [--vulnerabilities] [--configuration-issues] [--json]
@@ -4085,8 +4021,6 @@ ibmcloud oc va --container 1a11a1aa2b2b22223333c44444ccc555667d7dd777888e8ef99f1
 
 Register a webhook.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc webhook-create --cluster CLUSTER --level LEVEL --type slack --url URL  [-s]
@@ -4134,8 +4068,6 @@ View information about the API key for a cluster or reset it to a new key.
 View the name and email address for the owner of the {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) API key in an {{site.data.keyword.containerlong_notm}} resource group.
 {: shortdesc}
 
-
-
 The {{site.data.keyword.cloud_notm}} API key is automatically set for a resource group and region when the first action that requires the {{site.data.keyword.containerlong_notm}} admin access policy is performed. For example, one of your admin users creates the first cluster in the `default` resource group in the `us-south` region. By doing that, the {{site.data.keyword.cloud_notm}} IAM API key for this user is stored in the account for this resource group and region. The API key is used to order resources in IBM Cloud infrastructure, such as new worker nodes or VLANs. A different API key can be set for each region within a resource group.
 
 When a different user performs an action in this resource group and region that requires interaction with the IBM Cloud infrastructure portfolio, such as creating a new cluster or reloading a worker node, the stored API key is used to determine whether sufficient permissions exist to perform that action. To make sure that infrastructure-related actions in your cluster can be successfully performed, assign your {{site.data.keyword.containerlong_notm}} admin users the **Super user** infrastructure access policy. For more information, see [Managing user access](/docs/containers?topic=containers-users#infra_access).
@@ -4177,8 +4109,6 @@ ibmcloud oc api-key info --cluster my_cluster
 
 Replace the current {{site.data.keyword.cloud_notm}} IAM API key in an {{site.data.keyword.cloud_notm}} resource group and {{site.data.keyword.containershort_notm}} region.
 {: shortdesc}
-
-
 
 This command requires the {{site.data.keyword.containerlong_notm}} admin access policy and stores the API key of the user that executes this command in the account. The {{site.data.keyword.cloud_notm}} IAM API key is required to order infrastructure from the IBM Cloud infrastructure portfolio. Once stored, the API key is used for every action in a region that requires infrastructure permissions independent of the user that executes this command. For more information about how {{site.data.keyword.cloud_notm}} IAM API keys work, see the [`ibmcloud oc api-key info` command](#cs_api_key_info).
 
@@ -4224,8 +4154,6 @@ Set and unset credentials that allow you to access the IBM Cloud infrastructure 
 If you set up your {{site.data.keyword.cloud_notm}} account to use different credentials to access the IBM Cloud infrastructure portfolio, get the infrastructure user name for the region and resource group that you are currently targeted to.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc credential get --region REGION [-s] [--json]
 ```
@@ -4258,8 +4186,6 @@ ibmcloud oc credential get --region us-south
 
 Set credentials for a resource group and region so that you can access the IBM Cloud infrastructure portfolio through your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
-
-
 
 If you have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account, you have access to the IBM Cloud infrastructure portfolio by default. However, you might want to use a different IBM Cloud infrastructure account that you already have to order infrastructure. You can link this infrastructure account to your {{site.data.keyword.cloud_notm}} account by using this command.
 
@@ -4308,8 +4234,6 @@ Remove the credentials for a resource group and region to remove access to the I
 
 After you remove the credentials, the [{{site.data.keyword.cloud_notm}} IAM API key](#cs_api_key_info) is used to order resources in IBM Cloud infrastructure.
 
-
-
 ```
 ibmcloud oc credential unset --region REGION [-s]
 ```
@@ -4343,8 +4267,6 @@ ibmcloud oc credential unset --region us-south
 
 Check whether the credentials that allow [access to the IBM Cloud infrastructure portfolio](/docs/containers?topic=containers-users#api_key) for the targeted resource group and region are missing suggested or required infrastructure permissions.
 {: shortdesc}
-
-
 
 **What do `required` and `suggested` infrastructure permissions mean?**<br>
 If the infrastructure credentials for the region and resource group are missing any permissions, the output of this command returns a list of `required` and `suggested` permissions.
@@ -4418,10 +4340,8 @@ Manage Storage    required
 ## `subnets` command
 {: #cs_subnets}
 
-List available portable subnets in your IBM Cloud infrastructure account.
+List available subnets in your IBM Cloud infrastructure account.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc subnets [--location LOCATION] [--json] [-s]
@@ -4465,8 +4385,6 @@ List public and private VLANs for a zone and view the VLAN spanning status.
 List the public and private VLANs that are available for a zone in your classic IBM Cloud infrastructure account. To list available VLANs, you must have a paid account.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc vlan ls --zone ZONE [--all] [--json] [-s]
 ```
@@ -4505,7 +4423,8 @@ ibmcloud oc vlan ls --zone dal10
 View the VLAN spanning status for an IBM Cloud infrastructure account. VLAN spanning enables all devices on an account to communicate with each other through the private network, regardless of its assigned VLAN.
 {: shortdesc}
 
-<p class="note">The VLAN spanning option is disabled for clusters that are created in a VRF-enabled account. When VRF is enabled, all VLANs in the account can automatically communicate with each other over the private network. To check whether a VRF is enabled, use the `ibmcloud account show` command. For more information, see [Planning your cluster network setup: Worker-to-worker communication](/docs/containers?topic=containers-plan_clusters#worker-worker).</p>
+The VLAN spanning option is disabled for clusters that are created in a VRF-enabled account. When VRF is enabled, all VLANs in the account can automatically communicate with each other over the private network. To check whether a VRF is enabled, use the `ibmcloud account show` command. For more information, see [Planning your cluster network setup: Worker-to-worker communication](/docs/containers?topic=containers-plan_clusters#worker-worker).
+{: note}
 
 ```
 ibmcloud oc vlan spanning get --region REGION [--json] [-s]
@@ -4543,8 +4462,6 @@ ibmcloud oc vlan spanning get --region us-south
 View a list of supported versions for managed add-ons in {{site.data.keyword.containerlong_notm}}.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--json] [-s]
 ```
@@ -4579,8 +4496,6 @@ ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--json] [-s]
 
 View a list of available worker node flavors. Flavors vary by zone.
 {:shortdesc}
-
-
 
 The `machine-types` alias for this command is deprecated.
 {: deprecated}
@@ -4624,15 +4539,16 @@ ibmcloud oc messages
 
 **Minimum required permissions**: None
 
+**Command options**: None
+
 <br />
+
 
 ## supported-locations command
 {: #cs_supported-locations}
 
 List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/containers?topic=containers-regions-and-zones#locations).
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc supported-locations [--json]
@@ -4655,8 +4571,6 @@ ibmcloud oc supported-locations [--json]
 
 List all the container platform versions that are available for {{site.data.keyword.containerlong_notm}} clusters. Update your [cluster master](#cs_cluster_update) and [worker nodes](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_update) to the default version for the latest, stable capabilities.
 {: shortdesc}
-
-
 
 The `kube-versions` alias for this command is deprecated.
 {: deprecated}
@@ -4912,7 +4826,23 @@ ibmcloud oc region set --region eu-central
 Rewrite scripts that call kubernetes-service commands. Legacy-structured commands are replaced with beta-structured commands. For a list of all changes between the legacy and beta formats, see the comparison table in [Using the beta {{site.data.keyword.containerlong_notm}} plug-in](#cs_beta).
 {: shortdesc}
 
-<p class="note">Most command behavior and syntax changes in version 1.0. These changes are not backwards compatible. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run. Do not change the `IKS_BETA_VERSION` environment variable to a different version.</p>
+<p class="important">Most command behavior and syntax changes in version 1.0. These changes are not backwards compatible. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run. Do not change the `IKS_BETA_VERSION` environment variable to a different version.</p>
+
+```
+ibmcloud oc script update [--in-place] FILE [FILE ...]
+```
+{: pre}
+
+**Minimum required permissions**: None
+
+**Command options**:
+<dl>
+<dt><code>--in-place</code></dt>
+<dd>Optional: Rewrite the source file with the updated command structure. If this flag is not specified, you can see a summary of the changes to the script file in STDOUT.</dd>
+
+<dt><code><em>FILE [FILE ...]</em></code></dt>
+<dd>The file that contains the scripts that you want to update.</dd>
+</dl>
 
 To use this command to prepare your automation scripts for the release of version 1.0 of the kubernetes-service:
 1. Run the command on a test script without the `--in-place` flag.
@@ -4951,28 +4881,6 @@ To use this command to prepare your automation scripts for the release of versio
   {: pre}
 6. Test your automation with the updated script. Note that you might incur charges if your automation includes creating clusters.
 7. Update all of your scripts.
-
-```
-ibmcloud oc script update [--in-place] FILE [FILE ...]
-```
-{: pre}
-
-**Minimum required permissions**: None
-
-**Command options**:
-<dl>
-<dt><code>--in-place</code></dt>
-<dd>Optional: Rewrite the source file with the updated command structure. If this flag is not specified, you can see a summary of the changes to the script file in STDOUT.</dd>
-
-<dt><code><em>FILE [FILE ...]</em></code></dt>
-<dd>The file that contains the scripts that you want to update.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc script update ./myscript.sh
-```
-{: pre}
 
 <br />
 
