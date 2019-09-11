@@ -51,8 +51,8 @@ The following beta versions of the redesigned {{site.data.keyword.containerlong_
     ```
     {: pre}
 
-Have scripts that you want to update to use the beta formatting? Check out the [`ibmcloud oc script update` command](#script_update).
-{: tip}
+When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 14 March 2020 to update CLI command syntax. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update). After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run. Do not change the `IKS_BETA_VERSION` environment variable to a different version.
+{: important}
 
 Check out the following changes between each version of the CLI plug-in:
 
@@ -4909,8 +4909,48 @@ ibmcloud oc region set --region eu-central
 ### `ibmcloud oc script update`
 {: #script_update}
 
-Rewrite scripts that call kubernetes-service commands. For example, legacy-structured commands are replaced with beta-structured commands. For a list of all changes between the legacy and beta formats, see the comparison table in [Using the beta {{site.data.keyword.containerlong_notm}} plug-in](#cs_beta).
+Rewrite scripts that call kubernetes-service commands. Legacy-structured commands are replaced with beta-structured commands. For a list of all changes between the legacy and beta formats, see the comparison table in [Using the beta {{site.data.keyword.containerlong_notm}} plug-in](#cs_beta).
 {: shortdesc}
+
+<p class="note">Most command behavior and syntax changes in version 1.0. These changes are not backwards compatible. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run. Do not change the `IKS_BETA_VERSION` environment variable to a different version.</p>
+
+To use this command to prepare your automation scripts for the release of version 1.0 of the kubernetes-service:
+1. Run the command on a test script without the `--in-place` flag.
+  ```
+  ibmcloud oc script update ./mytestscript.sh
+  ```
+  {: pre}
+2.  Review the proposed changes to the script in the difference that is shown in the terminal STDOUT.
+    Example output:
+    ```
+    --- a/script-test-2
+    +++ b/script-test-2
+    @@ -1,5 +1,5 @@
+    -ibmcloud ks logging-config-get --cluster mycluster
+    -ibmcloud ks logging-config-update --cluster mycluster --id fakeee --logsource application --type ibm --app-containers app1,app2,app3 --app-paths /var/log/path/
+    -ibmcloud ks logging-config-update --cluster mycluster --id fakeee --logsource application --type ibm --app-paths=/var/log/path/,/var/log/other/path/
+    -ibmcloud ks clusters -s --locations dal09,dal12 --json
+    -ibmcloud ks subnets --locations sao01
+    +ibmcloud ks logging config get --cluster mycluster
+    +ibmcloud ks logging config update --cluster mycluster --id fakeee --logsource application --type ibm -C app1 -C app2 -C app3 -p /var/log/path/
+    +ibmcloud ks logging config update --cluster mycluster --id fakeee --logsource application --type ibm -p /var/log/path/ -p /var/log/other/path/
+    +ibmcloud ks clusters -s -l dal09 -l dal12 --json
+    +ibmcloud ks subnets -l sao01
+    ```
+    {: screen}
+3. To rewrite the script with the proposed updates, run the command again with the `--in-place` flag.
+  ```
+  ibmcloud oc script update ./mytestscript.sh --in-place
+  ```
+  {: pre}
+4. Search for and address any commands that are flagged in the script with `# WARNING` messages. For example, some commands are deprecated and do not have a replacement command.
+5. Within the script or the environment where the script is run, set the `IKS_BETA_VERSION` environment variable to `1.0`.
+  ```
+  export IKS_BETA_VERSION=1.0
+  ```
+  {: pre}
+6. Test your automation with the updated script. Note that you might incur charges if your automation includes creating clusters.
+7. Update all of your scripts.
 
 ```
 ibmcloud oc script update [--in-place] FILE [FILE ...]
@@ -4922,7 +4962,7 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 **Command options**:
 <dl>
 <dt><code>--in-place</code></dt>
-<dd>Optional: Rewrite the source file with the updated command structure. If this flag is not specified, a new file is created with the updated command structure.</dd>
+<dd>Optional: Rewrite the source file with the updated command structure. If this flag is not specified, you can see a summary of the changes to the script file in STDOUT.</dd>
 
 <dt><code><em>FILE [FILE ...]</em></code></dt>
 <dd>The file that contains the scripts that you want to update.</dd>
@@ -4930,7 +4970,7 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 
 **Example**:
 ```
-ibmcloud oc script update my_file
+ibmcloud oc script update ./myscript.sh
 ```
 {: pre}
 
