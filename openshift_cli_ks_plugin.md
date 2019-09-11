@@ -4851,8 +4851,9 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 <dt><code><em>FILE [FILE ...]</em></code></dt>
 <dd>The file that contains the scripts that you want to update.</dd>
 </dl>
+</br>
 
-To use this command to prepare your automation scripts for the release of version 1.0 of the kubernetes-service:
+To use this command to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.containerlong_notm}} plug-in:
 1. Run the command on a test script without the `--in-place` flag.
   ```
   ibmcloud oc script update ./mytestscript.sh
@@ -4865,13 +4866,13 @@ To use this command to prepare your automation scripts for the release of versio
     +++ b/script-test-2
     @@ -1,5 +1,5 @@
     -ibmcloud ks logging-config-get --cluster mycluster
-    -ibmcloud ks logging-config-update --cluster mycluster --id fakeee --logsource application --type ibm --app-containers app1,app2,app3 --app-paths /var/log/path/
-    -ibmcloud ks logging-config-update --cluster mycluster --id fakeee --logsource application --type ibm --app-paths=/var/log/path/,/var/log/other/path/
+    -ibmcloud ks logging-config-update --cluster mycluster --id myconfig --logsource application --type ibm --app-containers app1,app2,app3 --app-paths /var/log/path/
+    -ibmcloud ks logging-config-update --cluster mycluster --id myconfig --logsource application --type ibm --app-paths=/var/log/path/,/var/log/other/path/
     -ibmcloud ks clusters -s --locations dal09,dal12 --json
     -ibmcloud ks subnets --locations sao01
     +ibmcloud ks logging config get --cluster mycluster
-    +ibmcloud ks logging config update --cluster mycluster --id fakeee --logsource application --type ibm -C app1 -C app2 -C app3 -p /var/log/path/
-    +ibmcloud ks logging config update --cluster mycluster --id fakeee --logsource application --type ibm -p /var/log/path/ -p /var/log/other/path/
+    +ibmcloud ks logging config update --cluster mycluster --id myconfig --logsource application --type ibm -C app1 -C app2 -C app3 -p /var/log/path/
+    +ibmcloud ks logging config update --cluster mycluster --id myconfig --logsource application --type ibm -p /var/log/path/ -p /var/log/other/path/
     +ibmcloud ks clusters -s -l dal09 -l dal12 --json
     +ibmcloud ks subnets -l sao01
     ```
