@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-11"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -309,7 +309,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
-2.  To label the worker pool with a `key=value` label, use the [PATCH worker pool API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool). Format the body of the request as in the following JSON example.
+2.  To label the worker pool with a `key=value` label, use the [PATCH worker pool API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool). Format the body of the request as in the following JSON example. <p class="important">You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added.</p>
     ```
     {
       "labels": {"key":"value"},
@@ -317,7 +317,15 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     }
     ```
     {: codeblock}
-3.  Verify that the worker pool and worker node have the `key=value` label that you assigned.
+3.  **Optional**: To remove a label from a worker pool, run the [PATCH worker pool API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool) again with the label's key field included but the value field empty.<p class="important">Do not remove the worker pool labels that are provided by default because these labels are required for worker pools to function properly. Remove only custom labels that you previously added.</p>
+    ```
+    {
+      "labels": {"key":""},
+      "state": "labels"
+    }
+    ```
+    {: codeblock}
+4.  Verify that the worker pool and worker node have the `key=value` label that you assigned.
     *   To check worker pools:
         ```
         ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
@@ -334,6 +342,21 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
             oc describe node <worker_node_private_IP>
             ```
             {: pre}
+            
+            Example output for an added label:
+            ```
+            Labels:   app=test
+                      arch=amd64
+                      ...
+            ```
+            {: screen}
+
+            Example output for a removed label (the `app=test` label is gone):
+            ```
+            Labels:   arch=amd64
+                      ...
+            ```
+            {: screen}
 
 After you label your worker pool, you can use the [label in your app deployments](/docs/containers?topic=containers-app#label) so that your workloads run on only these worker nodes, or [taints ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) to prevent deployments from running on these worker nodes.
 
