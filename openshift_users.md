@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -28,6 +28,7 @@ subcollection: openshift
 
 As a cluster administrator, you can define access policies for your {{site.data.keyword.openshiftlong}} clusters to create different levels of access for different users. For example, you can authorize certain users to work with cluster infrastructure resources and others to deploy only containers.
 {: shortdesc}
+
 
 ## Understanding access policies and roles
 {: #access_policies}
