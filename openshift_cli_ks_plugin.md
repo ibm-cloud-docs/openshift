@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-11"
+lastupdated: "2019-09-12"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -3978,48 +3978,6 @@ ibmcloud oc nlb-dns monitor status --cluster mycluster
 {: pre}
 
 </br>
-
-<br />
-
-
-## `va` command
-{: #cs_va}
-
-After you [install the container scanner](/docs/services/va?topic=va-va_index#va_install_container_scanner), view a detailed vulnerability assessment report for a container in your cluster.
-{: shortdesc}
-
-```
-ibmcloud oc va --container CONTAINER_ID [--extended] [--vulnerabilities] [--configuration-issues] [--json]
-```
-{: pre}
-
-**Minimum required permissions**: **Reader** service access role for {{site.data.keyword.registrylong_notm}}. **Note**: Do not assign policies for {{site.data.keyword.registryshort_notm}} at the resource group level.
-
-**Command options**:
-<dl>
-<dt><code>--container CONTAINER_ID</code></dt>
-<dd><p>The ID of the container. This value is required.</p>
-<p>To find the ID of your container:<ol><li>[Target the Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).</li><li>List your pods by running `oc get pods`.</li><li>Find the **Container ID** field in the output of the `oc describe pod <pod_name>` command. For example, `Container ID: containerd://1a11a1aa2b2b22223333c44444ccc555667d7dd777888e8ef99f1011121314g15`.</li><li>Remove the `containerd://` prefix from the ID before you use the container ID for the `ibmcloud oc va` command. For example, `1a11a1aa2b2b22223333c44444ccc555667d7dd777888e8ef99f1011121314g15`.</li></ol></p></dd>
-
-<dt><code>--extended</code></dt>
-<dd><p>Extend the command output to show more fix information for vulnerable packages. This value is optional.</p>
-<p>By default, the scan results show the ID, policy status, affected packages, and how to resolve. With the `--extended` flag, it adds information such as the summary, vendor security notice, and official notice link.</p></dd>
-
-<dt><code>--vulnerabilities</code></dt>
-<dd>Restrict the command output to show package vulnerabilities only. This value is optional. You cannot use this flag if you use the `--configuration-issues` flag.</dd>
-
-<dt><code>--configuration-issues</code></dt>
-<dd>Restrict the command output to show configuration issues only. This value is optional. You cannot use this flag if you use the `--vulnerabilities` flag.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc va --container 1a11a1aa2b2b22223333c44444ccc555667d7dd777888e8ef99f1011121314g15 --extended --vulnerabilities --json
-```
-{: pre}
 
 <br />
 
