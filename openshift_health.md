@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-10"
+lastupdated: "2019-09-12"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -37,7 +37,7 @@ For cluster metrics and app logging and monitoring, {{site.data.keyword.openshif
 ## Using the built-in OpenShift logging and monitoring stack
 {: #openshift_logmet}
 
-By default, Red Hat OpenShift on IBM Cloud clusters are deployed with built-in logging and monitoring tools that are based on open source projects such as Prometheus, Elasticsearch, Fluentd, and Kibana. For more information, see the following OpenShift docs.
+By default, Red Hat OpenShift on IBM Cloud clusters are deployed with built-in components and a catalog that you can use to set up logging and monitoring tools that are based on open source projects such as Prometheus, Elasticsearch, Fluentd, and Kibana. For more information, see the following OpenShift docs.
 {: shortdesc}
 
 * [Prometheus cluster monitoring ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html).
