@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-13"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d
 
@@ -122,7 +122,7 @@ You can add services to your Red Hat OpenShift on IBM Cloud cluster in various w
 1. In the project that you want to deploy the Cloud Pak to, make sure that you [set up the image pull secret to access images that are stored in {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-openshift-images#openshift_iccr).
 2. Import the Cloud Pak from Passport Advantage to your registry. Methods vary depending on the Cloud Pak.
    * For public cloud, you can use the [`ibmcloud cr ppa-archive-load` CLI tool](/docs/services/Registry?topic=registry-ts_index#ts_ppa_import).
-   * If you have ICP Common Services installed in your cluster, then you can use the [`cloudctl catalog load-archive` CLI tool](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/app_center/add_package_offline.html). 
+   * If you have ICP Common Services installed in your cluster, then you can use the [`cloudctl catalog load-archive` CLI tool](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/app_center/add_package_offline.html). To push and pull these licensed images from ICP Common Services `load-archive` tool to your cluster's internal registry, you can [set up a secure external route for the internal registry](/docs/openshift?topic=openshift-openshift-images#route_internal_registry).
    * Some Cloud Paks, such as {{site.data.keyword.icp4dfull_notm}}, push the image to the registry for you as part of their installation process. To see if the image is pushed during installation, review the Cloud Pak installation information.
 3. Follow the instructions that are particular to each Cloud Pak installation, such as configuring the Helm chart values to work within OpenShift security context constraints.
 
