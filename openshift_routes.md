@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,7 +35,7 @@ To securely expose your apps to external traffic, you can use routes, NodePorts,
 
 <dl>
 <dt>[OpenShift route ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html)</dt>
-<dd>A route exposes a service as a hostname. You can create either unsecured or secured routes, and can use a service selector to direct traffic through one route to multiple services. A router is deployed by default to your cluster, which enable routes to be used by external clients. The router uses the service selector to find the service and the endpoints that back the service.</dd>
+<dd>A route exposes a service as a hostname in the format `<service_name>-<namespace>.<cluster_name>-<random_hash><region>.containers.appdomain.cloud`. A router is deployed by default to your cluster, which enable routes to be used by external clients. The router uses the service selector to find the service and the endpoints that back the service. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname.</dd>
 
 <dt>[NodePort](/docs/containers?topic=containers-nodeport)</dt>
 <dd>When you expose apps with a NodePort service, a NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to the service. To access the service from outside the cluster, you use the public or private IP address of any worker node and the NodePort in the format <code>&lt;IP_address&gt;:&lt;nodeport&gt;</code>. However, the public and private IP addresses of the worker node are not permanent. When a worker node is removed or re-created, a new public and a new private IP address are assigned to the worker node. NodePorts are ideal for testing public or private access or providing access for only a short amount of time.</dd>
