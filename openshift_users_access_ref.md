@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -395,6 +395,12 @@ The following table shows the permissions that are granted by each RBAC role to 
   <td><code>get</code>, <code>list</code>, <code>watch</code></td>
   <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
   <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
+</tr><tr>
+  <td><code>node</code></td>
+  <td>None</td>
+  <td>None</td>
+  <td>`admin` scoped to a namespace: None<br><br>
+  `cluster-admin` for all namespaces: All verbs</td>
 </tr><tr>
   <td><code>persistentvolumeclaims</code></td>
   <td><code>get</code>, <code>list</code>, <code>watch</code></td>
