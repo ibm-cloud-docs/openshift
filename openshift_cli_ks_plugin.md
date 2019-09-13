@@ -4023,7 +4023,7 @@ ibmcloud oc webhook-create --cluster my_cluster --level Normal --type slack --ur
 
 
 ## `api-key` commands
-{: #api_key}
+{: #api_key-commands}
 
 View information about the API key for a cluster or reset it to a new key.
 {: shortdesc}
@@ -4226,7 +4226,7 @@ ibmcloud oc credential unset --region us-south
 
 
 ## `infra-permissions` commands
-{: #infra}
+{: #infra-commands}
 
 ### `ibmcloud oc infra-permissions get`
 {: #infra_permissions_get}
