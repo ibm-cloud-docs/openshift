@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-13"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -55,7 +55,7 @@ These components include:
 ##OpenShift API server and etcd
 {: #apiserver}
 
-The OpenShift API server and etcd data store are the most vulnerable components that run in your OpenShift master. If an unauthorized user or system gets access to your OpenShift API server, the user or system can change settings, manipulate, or take control of your cluster, which puts your cluster at risk for malicious attacks.
+The OpenShift API server and etcd data store are the most sensitive components that run in your OpenShift master. If an unauthorized user or system gets access to your OpenShift API server, the user or system can change settings, manipulate, or take control of your cluster, which puts your cluster at risk for malicious attacks.
 {: shortdesc}
 
 To protect your OpenShift API server and etcd data store, you must secure and limit the access to your OpenShift API server for both human users and Kubernetes service accounts.
@@ -86,7 +86,7 @@ The following image shows the default cluster security settings that address aut
           
           <li><strong>openshift-controller:</strong> Watches for newly created pods and decides where to deploy them based on capacity, performance needs, policy constraints, anti-affinity specifications, and workload requirements. If no worker node can be found that matches the requirements, the pod is not deployed in the cluster. The controller also watches the state of cluster resources, such as replica sets. When the state of a resource changes, for example if a pod in a replica set goes down, the controller manager initiates correcting actions to achieve the required state. </li>
             <li><strong>cloud-controller-manager:</strong> The cloud controller manager manages cloud provider-specific components such as the {{site.data.keyword.cloud_notm}} load balancer. </li>
-          <li><strong>OpenVPN:</strong> Red Hat OpenShift on IBM Cloud-specific component to provide secured network connectivity for all OpenShift master to worker node communication. The OpenVPN server works with the OpenVPN client to securely connect the master to the worker node. This connection supports <code>apiserver proxy</code> requests to your pods and services, and <code>oc</code> <code>exec</code>, <code>attach</code>, and <code>logs</code> requests to the kubelet.  </li></ul></td>
+          <li><strong>OpenVPN:</strong> Red Hat OpenShift on IBM Cloud-specific component to provide secured network connectivity for all OpenShift master to worker node communication. The OpenVPN server works with the OpenVPN client to securely connect the master to the worker node. This connection supports <code>apiserver proxy</code> requests to your pods and services, and <code>oc</code> <code>exec</code>, <code>attach</code>, and <code>logs</code> requests to the kubelet. The connection from the worker nodes to the master is automatically secured with TLS certificates.  </li></ul></td>
     </tr>
     <tr>
     <td>Continuous monitoring by IBM Site Reliability Engineers (SREs)</td>
@@ -140,7 +140,7 @@ The following image shows the default cluster security settings that address aut
 </table>
 
 **What else can I do to secure my OpenShift API server?**</br>
-You can decide how you want your master and worker nodes to communicate and how your cluster users can access the OpenShift API server by enabling the public service endpoint only, public and private service endpoints, or the private service endpoint only. 
+You can decide how you want your master and worker nodes to communicate and how your cluster users can access the OpenShift API server by enabling the private service endpoint only, the public service endpoint only, or the public and private service endpoints. 
 
 For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/openshift?topic=openshift-plan_clusters#workeruser-master).
 
@@ -156,7 +156,9 @@ Worker nodes carry the deployments and services that make up your app. When you 
 **Who owns the worker node and am I responsible to secure it?** </br>
 
 
-Your worker nodes are provisioned in to your {{site.data.keyword.cloud_notm}} account. The worker nodes are dedicated to you and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and Red Hat OpenShift on IBM Cloud components apply the latest security updates and patches.
+Your worker nodes are provisioned in to your {{site.data.keyword.cloud_notm}} account. The worker nodes are dedicated to you and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and Red Hat OpenShift on IBM Cloud components apply the latest security updates and patches. 
+
+For more information, see [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks).
 
 Use the `ibmcloud oc worker update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_update) regularly (such as monthly) to deploy updates and security patches to the operating system and to update the OpenShift version that your worker nodes run. When updates are available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the `ibmcloud oc clusters ls` or `ibmcloud oc workers ls --cluster <cluster_name>` commands. Worker node updates are provided by IBM as a full worker node image that includes the latest security patches. To apply the updates, the worker node must be reimaged and reloaded with the new image. Keys for the root user are automatically rotated when the worker node is reloaded.
 {: important}
@@ -219,7 +221,10 @@ The classic approach to protect a company's network is to set up a firewall and 
 To protect your network and limit the range of damage that a user can do when access to a network is granted, you must make sure that your workloads are as isolated as possible and that you limit the number of apps and worker nodes that are publicly exposed.
 
 **What network traffic is allowed for my cluster by default?**</br>
-All containers are protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked, except a few ports that are opened so that network traffic can be monitored by IBM and for IBM to automatically install security updates for the OpenShift master. Access from the OpenShift master to the worker node's kubelet is secured by an OpenVPN tunnel. For more information, see the [{{site.data.keyword.containerlong_notm}} architecture](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology).
+All containers are protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked with the following exceptions: 
+- **NodePort**: The [Kubernetes NodePort range ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport) is opened by default so that you can expose apps with [NodePort services](/docs/containers?topic=containers-nodeport). To block inbound network traffic on NodePorts in your cluster, see [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress). 
+- **IBM monitoring ports**: By default, IBM opens a few ports on your cluster so that network traffic can be monitored by IBM and for IBM to automatically install security updates for the OpenShift master.
+Access from the OpenShift master to the worker node's kubelet is secured by an OpenVPN tunnel. For more information, see the [{{site.data.keyword.containerlong_notm}} architecture](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology).
 
 **What is network segmentation and how can I set it up for a cluster?** </br>
 Network segmentation describes the approach to divide a network into multiple subnetworks. You can group apps and related data to be accessed by a specific group in your organization. Apps that run in one subnetwork cannot see or access apps in another subnetwork. Network segmentation also limits the access that is provided to an insider or third-party software and can limit the range of malicious activities.   
@@ -243,7 +248,7 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 |Security feature|Description|
 |-------|----------------------------------|
 |Limit the number of exposed apps|By default, your apps and services that run within the cluster are not reachable over the public internet. You can choose if you want to expose your apps to the public, or if you want your apps and services be reachable on the private network only. When you keep your apps and services private, you can leverage the built-in security features to assure secured communication between worker nodes and pods. To expose services and apps to the public internet, you can use OpenShift routes, or leverage the [NLB and Ingress ALB support](/docs/containers?topic=containers-cs_network_planning#external) to securely make your services publicly available. Ensure that only necessary services are exposed, and revisit the list of exposed apps regularly to ensure that they are still valid. |
-|Keep worker nodes private|When you create a cluster, every cluster is automatically connected to a private VLAN. The private VLAN determines the private IP address that is assigned to a worker node. You can choose to keep your worker nodes private by connecting them to a private VLAN only. </br></br><strong>Attention:</strong> Keep in mind that in order to communicate with the OpenShift master and for Red Hat OpenShift on IBM Cloud to properly function, you must configure public connectivity to [specific URLs and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound). To set up this public connectivity, you can configure a firewall, such as a [Virtual Router Appliance](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra), in front of your worker nodes and enable network traffic to these URLs and IP addresses.|
+|Keep worker nodes private|When you create a cluster, every cluster is automatically connected to a private VLAN. The private VLAN determines the private IP address that is assigned to a worker node. You can choose to keep your worker nodes private by connecting them to a private VLAN only. </br></br><strong>Attention:</strong> Keep in mind that in order to communicate with the OpenShift master from your local machine and for Red Hat OpenShift on IBM Cloud to connect to {{site.data.keyword.cloud_notm}} services that do not support a private service endpoint, you must configure public connectivity to [specific URLs and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound). If the {{site.data.keyword.cloud_notm}} services that you want to connect to have a private service endpoint and your account is enabled for VRF, network traffic to and from these services is automatically routed over the private network and no public network connection is required. To set up public connectivity for cluster that is connected to a private VLAN only, you can configure a firewall, such as a [Virtual Router Appliance](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra), in front of your worker nodes and enable network traffic to these URLs and IP addresses.|
 |Limit public internet connectivity with edge nodes|By default, every worker node is configured to accept app pods and associated load balancer or ingress pods. You can label worker nodes as [edge nodes](/docs/openshift?topic=openshift-edge#edge) to force load balancer and ingress pods to be deployed to these worker nodes only. In addition, you can [taint your worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads) so that app pods cannot schedule onto the edge nodes. With edge nodes, you can isolate the networking workload on fewer worker nodes in your cluster and keep other worker nodes in the cluster private.|
 {: caption="Private services and worker node options" caption-side="top"}
 
@@ -257,7 +262,10 @@ To connect your worker nodes and apps to an on-prem data center, you can configu
 If you want to allow incoming network traffic from the internet, you can expose your apps by using [routes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html).  
 {: shortdesc}
 
-The router that assigns the routes and that is automatically set up in your OpenShift cluster uses the default domain name and TLS certificate that the [Ingress service](#network_lb_ingress) uses. When you create a route for your app, you can decide to create a secured (HTTPS) or unsecured (HTTP) route. For secured routes, you can decide where you want to implement the TLS termination, such as at the router or at the pod. For more information, see [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes). 
+Every OpenShift cluster is automatically set up with an OpenShift router that is assigned a unique domain name and secured with a TLS certificate. When you expose your app by using a route, your app is assigned a URL from the OpenShift router. 
+
+**How can I create secured routes and control TLS termination?** </br>
+When you create a route for your app, you can decide to create a secured (HTTPS) or unsecured (HTTP) route. For secured routes, you can decide where you want to implement the TLS termination, such as at the router or at the pod. For more information, see [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes). 
 
 
 
@@ -270,12 +278,9 @@ You can use network load balancer (NLB) and Ingress application load balancer (A
 **Can I use security groups to manage my cluster's network traffic?** </br>
 To use NLB and Ingress ALB services, use [Calico and Kubernetes policies](/docs/openshift?topic=openshift-network_policies) to manage network traffic into and out of your cluster. Do not use IBM Cloud infrastructure [security groups](/docs/infrastructure/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups). IBM Cloud infrastructure security groups are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. However, security groups do not support the VRRP protocol, which Red Hat OpenShift on IBM Cloud uses to manage the NLB IP address. If the VRRP protocol is not present to manage the NLB IP, NLB and Ingress ALB services do not work properly. If you are not using NLB and Ingress ALB services and want to completely isolate your worker node from the public, you can use security groups.
 
-**How can I secure the source IP within the cluster?** </br>
-Red Hat OpenShift on IBM Cloud clusters support NLB version 1.0 and Ingress ALBs only. NLB version 1.0 and Ingress ALBs do not preserve the source IP address of the client request. When a client request to your app is sent to your cluster, the request is routed to a pod for the NLB 1.0 or ALB. If no app pod exists on the same worker node as the load balancer service pod, the NLB or ALB forwards the request to an app pod on a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the app pod is running.
 
 
-
-**How can I encrypt traffic with TLS?** </br>
+**How can I do TLS termination with LoadBalancer and Ingress services?** </br>
 The Ingress service offers TLS termination at two points in the traffic flow:
 * [Decrypt package upon arrival](/docs/containers?topic=containers-ingress#public_inside_2): By default, the Ingress ALB load balances HTTP network traffic to the apps in your cluster. To also load balance incoming HTTPS connections, you can configure the ALB to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster. If you use the IBM-provided Ingress subdomain, you can use the IBM-provided TLS certificate. If you use a custom domain, you can use your own TLS certificate to manage TLS termination.
 * [Re-encrypt package before you forward it to upstream apps](/docs/containers?topic=containers-ingress_annotation#ssl-services): The ALB decrypts HTTPS requests before forwarding traffic to your apps. If you have apps that require HTTPS and need traffic to be encrypted before it is forwarded to those upstream apps, you can use the `ssl-services` annotation. If your upstream apps can handle TLS, you can optionally provide a certificate that is contained in a one-way or mutual-authentication TLS secret.
