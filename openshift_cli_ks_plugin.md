@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-13"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2386,7 +2386,7 @@ ibmcloud oc zone rm --zone dal10 --cluster my_cluster
 
 
 ## `alb` commands
-{: #alb}
+{: #alb-commands}
 
 View and configure an Ingress application load balancer (ALB).
 {: shortdesc}
