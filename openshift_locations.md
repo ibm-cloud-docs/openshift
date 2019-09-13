@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-04"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -109,6 +109,7 @@ To quickly determine whether a zone is multizone-capable, your can run `ibmcloud
 | Geography |  Country  | Metro | Data center |  Deprecated region  |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
+| Asia Pacific | India | Chennai | che01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Korea | Seoul | seo01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng01 | AP North (`ap-north`, `jp-tok`) |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -117,7 +117,7 @@ Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud allows gove
 
 Key technologies:    
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [Container security and isolation](/docs/containers?topic=containers-security#security)
+* [Container security and isolation](/docs/openshift?topic=openshift-security#security)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime#nodejs_runtime)
 

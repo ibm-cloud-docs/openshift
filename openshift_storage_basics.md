@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -77,8 +77,10 @@ Review the following common use cases for dynamic provisioning:
 3. **Create and delete storage often:** You have an app or set up a continuous delivery pipeline that creates and removes persistent storage regularly. Persistent storage that is dynamically provisioned with a non-retaining storage class can be removed by deleting the PVC.
 
 For more information about how to dynamically provision persistent storage, see:
-- [File storage](/docs/openshift?topic=openshift-file_storage#add_file)
-- [Block storage](/docs/openshift?topic=openshift-block_storage#add_block)
+- [Classic File Storage](/docs/openshift?topic=openshift-file_storage#add_file)
+- [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#add_block)
+- [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
+- [Portworx](/docs/containers?topic=containers-portworx#add_portworx_storage)
 
 ## Static provisioning
 {: #static_provisioning}
@@ -112,8 +114,10 @@ Review the following common use cases for static provisioning of persistent stor
 4. **Share persistent storage across namespaces in the same cluster:** You provisioned persistent storage in a namespace of your cluster. You want to use the same storage instance for an app pod that is deployed to a different namespace in your cluster.
 
 For more information about how to statically provision storage, see:
-- [File storage](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
-- [Block storage](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
+- [Classic File Storage](/docs/openshift?topic=openshift-file_storage#existing_file)
+- [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#existing_block)
+- [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
+- [Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume)
 
 ## Storage classes
 {: #storageclasses}
@@ -124,8 +128,9 @@ To dynamically provision persistent storage, you must define the type and config
 A [Kubernetes storage class ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/storage-classes/) is used to abstract the underlying storage platform that is supported in {{site.data.keyword.cloud_notm}} so that you do not have to know all the details about supported sizes, IOPS, or retention policies to successfully provision persistent storage in a cluster. {{site.data.keyword.containerlong_notm}} provides pre-defined storage classes for every type of storage that is supported. Each storage class is designed to abstract the supported storage tier while giving you the choice to decide on the size, IOPS, and retention policy that you want.
 
 For the pre-defined storage class specifications, see:
-- [File storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
-- [Block storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
+- [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
+- [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
+- [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
 
 Not finding what you are looking for? You can also create your own customized storage class to provision the type of storage that you want.
 {: tip}
@@ -138,11 +143,12 @@ If you cannot use one of the provided storage classes, you can create your own c
 
 1. Create a customized storage class. You can start by using one of the pre-defined storage classes, or check out our sample customized storage classes.
    - Pre-defined storage classes:
-     - [File storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
-     - [Block storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
+     - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
+     - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
+     - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
    - Sample customized storage classes:
-     - [File storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
-     - [Block storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
+     - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
+     - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
 
 2. Create the customized storage class.
    ```
@@ -157,8 +163,10 @@ If you cannot use one of the provided storage classes, you can create your own c
     {: pre}
 
 4. Create a persistent volume claim (PVC) to dynamically provision storage with your customized storage class.
-   - [File storage](/docs/openshift?topic=openshift-file_storage#add_file)
-   - [Block storage](/docs/openshift?topic=openshift-block_storage#add_block)
+   - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#add_file)
+   - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#add_block)
+   - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
+   - [Portworx](/docs/containers?topic=containers-portworx#add_portworx_storage)
 
 5. Verify that your PVC is created and bound to a persistent volume (PV). This process might take a few minutes to complete.
    ```
@@ -180,20 +188,23 @@ When you dynamically provision persistent storage by using a storage class, you 
 </thead>
 <tbody>
 <tr>
-<td>File storage</td>
+<td>Classic File Storage</td>
 <td>You can increase your storage size and assigned IOPS by [modifying your existing volume](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). </td>
 </tr>
 <tr>
-<td>Block storage</td>
+<td>Classic Block Storage</td>
 <td>You can increase your storage size and assigned IOPS by [modifying your existing volume](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration). </td>
 </tr>
 <tr>
-<td>Object storage</td>
+<td>{{site.data.keyword.cos_full_notm}}</td>
 <td>Your volume automatically scales in size and you are charged based on your actual consumption. However, you cannot change the performance attributes of your volume as they are defined in the storage class that you used to create your bucket in {{site.data.keyword.cos_full_notm}}. To change to a different storage class, you must provision a new bucket by using the storage class that you want. Then, copy your data from the old bucket to the new one. </td>
+</tr>
+<tr>
+<td>Portworx</td>
+<td>You can increase your storage size by [changing your PVC specifications ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/resize-pvc/). </td>
 </tr>
 </tbody>
 </table>
-
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-03"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,18 +40,38 @@ For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} 
 * [Debugging Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress)
 * [Cluster networking](/docs/containers?topic=containers-cs_troubleshoot_network)
 
-## Feedback and questions
+## Feedback, questions, and support
 {: #openshift_support}
 
-Generally available Red Hat OpenShift on IBM Cloud clusters are supported by IBM Support. If you have remaining beta clusters, [create standard OpenShift clusters](/docs/openshift?topic=openshift-openshift-create-cluster) before the beta clusters expire.
+Review different ways to get help and support for your Red Hat OpenShift on IBM Cloud clusters. For any questions or feedback, post in Slack.
 {: shortdesc}
 
-For any questions or feedback, post in Slack.
-*   If you are an external user, post in the [#openshift ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/messages/CKCJLJCH4) channel.
-*   If you are an IBMer, use the [#iks-openshift-users ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-argonauts.slack.com/messages/CJH0UPN2D) channel.
+**General ways to resolve issues**<br>
+1. Keep your cluster environment up to date.
+   * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/containers?topic=containers-cs_versions).
+2. Make sure that your command line tools are up to date.
+   * {[plugin-note]}
+   * Make sure that [your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
 
-If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.
-{: tip}
+**Reviewing issues and status**<br>
+1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status). 
+2. Filter for the **Kubernetes Cluster** component.
+
+**Feedback and questions**<br>
+1. Post in the {{site.data.keyword.containerlong_notm}} Slack.
+   *   If you are an external user, post in the [#openshift ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/messages/CKCJLJCH4) channel.
+   *   If you are an IBMer, use the [#iks-openshift-users ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-argonauts.slack.com/messages/CJH0UPN2D) channel.<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.</p>
+2. Review forums such as OpenShift help, Stack Overflow, and IBM Developer to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
+   * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.containerlong_notm}}, post your question on [Stack Overflow ![External link icon](../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/questions/tagged/ibm-cloud+containers) and tag your question with `ibm-cloud`, `containers`, and `openshift`.
+   * For questions about the service and getting started instructions, use the [IBM Developer Answers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/containers/?smartspace=bluemix) forum. Include the `ibm-cloud`, `containers`, and `openshift` tags.
+   * See [Getting help](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
+
+**Getting help**<br>
+1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+2.  In your support case, for **Category**, select **Containers**.
+3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
+
 
 ## Missing permissions to create clusters
 {: #rhoks_ts_cluster_permissions}
@@ -83,7 +103,7 @@ No resources found.
 Your OpenShift token is expired. OpenShift token that are generated by using your {{site.data.keyword.cloud_notm}} IAM credentials expire in 24 hours.
 
 {: tsResolve}
-[Re-authenticate with the OpenShift token](/docs/openshift?topic=openshift-openshift-cli#openshift_cluster_login) by copying the `oc login` command from the web console or creating an API key.
+Re-authenticate with the OpenShift token by [copying the `oc login` command from the web console](/docs/openshift?topic=openshift-openshift_access_cluster#access_public_se) or [creating an API key](/docs/openshift?topic=openshift-openshift_access_cluster#access_api_key).
 
 <br />
 
@@ -238,12 +258,7 @@ Make sure that you followed the docs in the [Moving your apps to OpenShift topic
 You cannot push or pull Docker images from your local machine to the cluster's built-in Docker registry.
 
 {: tsCauses}
-By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or DockerHub by using the `oc new-app` command. Or, you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine.
+By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or DockerHub by using the `oc new-app` command. Or, you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine. 
 
 {: tsResolve}
-Create a route for the `docker-registry` service in the `default` project. Include the `--hostname` flag so that you can give the registry a shorter domain name.
-
-```
-oc create route edge --service=docker-registry -n default --hostname <registry_domain_name>
-```
-{: pre}
+Create a route for the `docker-registry` service in the `default` project. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-openshift-images#route_internal_registry).

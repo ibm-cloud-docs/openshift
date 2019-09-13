@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-30"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -22,6 +22,7 @@ subcollection: openshift
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
+
 
 # Opening required ports and IP addresses in your firewall
 {: #firewall}
@@ -112,7 +113,7 @@ To allow access for a specific cluster:
    ```
    {: pre}
 
-2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc clusters`. **Note**: You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#platform) for the resource group.
+2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#platform) for the resource group.
    ```
    ibmcloud target -g <resource_group_name>
    ```
@@ -121,7 +122,7 @@ To allow access for a specific cluster:
 4. Get the name of your cluster.
 
    ```
-   ibmcloud oc clusters
+   ibmcloud oc cluster ls
    ```
    {: pre}
 
@@ -131,7 +132,7 @@ To allow access for a specific cluster:
  * If both the **Public Service Endpoint URL** and **Private Service Endpoint URL** are populated, get both URLs. Your authorized cluster users can access the master through the public endpoint on the public network or the private endpoint on the private network.
 
   ```
-  ibmcloud oc cluster-get --cluster <cluster_name_or_ID>
+  ibmcloud oc cluster get --cluster <cluster_name_or_ID>
   ```
   {: pre}
 
@@ -242,7 +243,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 1.  Note the public IP address for each worker node in the cluster.
     ```
-    ibmcloud oc workers --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -411,7 +412,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
                </table></p>
     *   **{{site.data.keyword.la_full_notm}}**:
         <pre class="screen">TCP port 443, port 80 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logDNA_public_IP&gt;</pre>
-        Replace &gt;</em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-network#network).
+        Replace &gt;<em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-network#network).
 
 6. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
@@ -429,7 +430,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 2. Note the private IP address for each worker node in the cluster.
     ```
-    ibmcloud oc workers --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -473,14 +474,14 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
    If you must use a Kubernetes version or {{site.data.keyword.cloud_notm}} storage plug-in version that does not support network communication over the private network, or if you want to use {{site.data.keyword.cos_full_notm}} without HMAC authentication, allow egress access through your firewall to IBM Cloud infrastructure and {{site.data.keyword.cloud_notm}} Identity and Access Management:
    - Allow all egress network traffic on TCP port 443.
-   - Allow access to the IBM Cloud infrastructure IP range for the zone that your cluster is in for both the [**Front-end (public) network**](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#frontend-public-network) and [**Back-end (private) Network**](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#backend-private-network). To find the zone of your cluster, run `ibmcloud oc clusters`.
+   - Allow access to the IBM Cloud infrastructure IP range for the zone that your cluster is in for both the [**Front-end (public) network**](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#frontend-public-network) and [**Back-end (private) Network**](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#backend-private-network). To find the zone of your cluster, run `ibmcloud oc cluster ls`.
 
 </br>
 
-### Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services
+### Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and OpenShift routes
 {: #firewall_inbound}
 
-You can allow incoming access to NodePort, load balancer, and Ingress services.
+You can allow incoming access to NodePort, load balancer, and Ingress services, and OpenShift routes.
 {:shortdesc}
 
 <dl>
@@ -490,6 +491,8 @@ You can allow incoming access to NodePort, load balancer, and Ingress services.
   <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
   <dt>Ingress</dt>
   <dd>Open port 80 for HTTP or port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.</dd>
+  <dt>Route</dt>
+  <dd>Open port 80 for HTTP or port 443 for HTTPS to the router's public IP address.</dd>
 </dl>
 
 <br />
@@ -520,7 +523,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     <p class="note">The **primary public subnets** that Red Hat OpenShift on IBM Cloud provisions for your cluster come with 14 available IP addresses, and can be shared by other clusters on the same VLAN. When you have more than 14 worker nodes, another subnet is ordered, so the subnets that you need to whitelist can change. To reduce the frequency of change, create worker pools with worker node flavors of higher CPU and memory resources so that you don't need to add worker nodes as often.</p>
     1. List the worker nodes in your cluster.
       ```
-      ibmcloud oc workers --cluster <cluster_name_or_ID>
+      ibmcloud oc worker ls --cluster <cluster_name_or_ID>
       ```
       {: pre}
 
@@ -551,7 +554,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
         *   `169.xx.178.xxx/28`
   * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to whitelist only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private service endpoint, note the **Private IP** addresses instead. Only these worker nodes are whitelisted. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
     ```
-    ibmcloud oc workers --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 4.  Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
@@ -560,6 +563,94 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 <br />
 
 
+## Updating IAM whitelists for {{site.data.keyword.containershort}} IP addresses
+{: #iam_whitelist}
+
+By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can [create a whitelist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted. If you use an IAM whitelist, you must whitelist the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane for the zones in the region where your cluster is located. You must whitelist these CIDRs so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
+{: shortdesc}
+
+**Before you begin**: The following steps require you to change the IAM whitelist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM whitelist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform role for the [User Management service](/docs/iam?topic=iam-account-services), you can update the restricted IP addresses for the credentials owner.
+
+1. Identify what user credentials are used for the cluster's region and resource group infrastructure permissions.
+    1.  Check the API key for a region and resource group of the cluster.
+        ```
+        ibmcloud oc api-key info --cluster <cluster_name_or_ID>
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        Getting information about the API key owner for cluster <cluster_name>...
+        OK
+        Name                Email   
+        <user_name>         <name@email.com>
+        ```
+        {: screen}
+    2.  Check if the infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
+        ```
+        ibmcloud oc credential get --region <us-south>
+        ```
+        {: pre}
+
+        **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
+        ```
+        OK
+        Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
+        ```
+        {: screen}
+
+        **Example output if credentials are not set to use a different account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
+        ```
+        FAILED
+        No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
+        ```
+        {: screen}
+2. Log in to the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
+3. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
+4. Select the user that you found in step 1 from the list.
+5. From the **User details** page, go to the **IP address restrictions** section.
+6. For **Classic infrastructure**, enter the CIDRs of the zones in the region where your cluster is located.<p class="note">You must whitelist all of the zones within the region that your cluster is in.</p>
+  <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one, the zone in column two, and IP addresses to match in column three.">
+  <caption>CIDRs to whitelist in IAM</caption>
+    <thead>
+    <th>Region</th>
+    <th>Zone</th>
+    <th>Private IP address</th>
+    </thead>
+  <tbody>
+    <tr>
+      <td>AP North</td>
+      <td>che01<br>hkg02<br>seo01<br>sng01<br><br>tok02, tok04, tok05</td>
+      <td><code>169.38.111.192/26, 169.38.113.64/27, 169.38.97.192/28</code><br><code>169.56.143.0/26</code><br><code>169.56.110.64/26</code><br><code>119.81.192.0/26</code><br><br><code>161.202.136.0/26, 169.56.40.128/25, 128.168.68.128/26, 165.192.70.64/26</code></td>
+     </tr>
+    <tr>
+       <td>AP South</td>
+       <td>mel01<br><br>syd01, syd04, syd05</td>
+       <td><code>168.1.122.192/26</code><br><br><code>168.1.199.0/26, 168.1.209.192/26, 168.1.212.128/25, 130.198.67.0/26, 130.198.74.128/26, 130.198.78.128/25, 130.198.92.192/26, 130.198.96.128/25, 130.198.98.0/24, 135.90.68.64/28, 135.90.69.16/28, 135.90.69.160/27, 135.90.73.0/26, 135.90.75.0/27, 135.90.78.128/26</code></td>
+    </tr>
+    <tr>
+       <td>EU Central</td>
+       <td>ams03<br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
+       <td><code>169.50.177.128/25, 169.50.185.32/27, 169.51.161.128/25, 169.51.39.64/26, 169.51.41.64/26</code><br><code>159.122.157.192/26, 159.122.168.128/25, 159.122.169.64/26, 169.51.193.0/24</code><br><code>169.51.84.64/26</code><br><code>159.8.74.64/27, 169.51.22.64/26, 169.51.28.128/25, 169.51.3.64/26</code><br><br><code>158.177.160.0/25, 158.177.84.64/26, 169.50.48.160/28, 169.50.58.160/27, 161.156.102.0/26, 161.156.125.80/28, 161.156.66.224/27, 149.81.105.192/26, 149.81.124.16/28, 149.81.72.192/27</code></td>
+      </tr>
+    <tr>
+      <td>UK South</td>
+      <td>lon02, lon04, lon06</td>
+      <td><code>159.8.171.0/26, 169.50.199.64/26, 169.50.220.32/27, 169.50.221.0/25, 158.175.101.64/26, 158.175.136.0/25, 158.175.136.128/25, 158.175.139.0/25, 158.175.141.0/24, 158.175.68.192/26, 158.175.77.64/26, 158.175.78.192/26, 158.175.81.128/25, 158.176.111.128/26, 158.176.112.0/26, 158.176.66.208/28, 158.176.75.240/28, 158.176.92.32/27, 158.176.95.64/27</code></td>
+    </tr>
+    <tr>
+      <td>US East</td>
+       <td>mon01<br>tor01<br><br>wdc04, wdc06, wdc07</td>
+       <td><code>169.54.109.192/26</code><br><code>169.53.178.192/26, 169.55.148.128/25</code><br><br><code>169.47.160.0/26, 169.47.160.128/26, 169.60.104.64/26, 169.60.76.192/26, 169.63.137.0/25, 169.61.85.64/26, 169.62.0.64/26</code></td>
+    </tr>
+    <tr>
+      <td>US South</td>
+      <td>hou02<br>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
+      <td><code>173.193.93.0/24, 184.172.208.0/25, 184.173.6.0/26</code><br><code>169.57.18.48/28, 169.57.91.0/27</code><br><code>169.57.190.64/26, 169.57.192.128/25</code><br><code>169.44.207.0/26</code><br><code>169.62.73.192/26</code><br><br><code>169.46.30.128/26, 169.48.138.64/26, 169.48.180.128/25, 169.61.206.128/26, 169.63.199.128/25, 169.63.205.0/25, 169.47.126.192/27, 169.47.79.192/26, 169.48.201.64/26, 169.48.212.64/26, 169.48.238.128/25, 169.61.137.64/26, 169.61.176.64/26, 169.61.188.128/25, 169.61.189.128/25, 169.63.18.128/25, 169.63.20.0/25, 169.63.24.0/24, 169.60.131.192/26, 169.62.130.0/26, 169.62.130.64/26, 169.62.216.0/25, 169.62.222.0/25, 169.62.253.0/25</code></td>
+    </tr>
+    </tbody>
+  </table>
+7. Click **Apply**.
 
 
 

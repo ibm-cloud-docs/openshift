@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -56,6 +56,7 @@ Both OpenShift and community Kubernetes clusters are production-ready container 
 |Ability to create free clusters|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Software-defined storage Portworx solution available for multizone data use cases|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Latest community Kubernetes distribution|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
+|Integrated IBM Cloud Paks and middleware| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Built-in container image streams, builds, and tooling| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Integrated CI/CD with Jenkins| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Stricter app security context set up by default| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|

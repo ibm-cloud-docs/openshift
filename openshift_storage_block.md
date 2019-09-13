@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-30"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -43,7 +43,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 1. Make sure that your worker node applies the latest patch for your minor version.
    1. List the current patch version of your worker nodes.
       ```
-      ibmcloud oc workers --cluster <cluster_name_or_ID>
+      ibmcloud oc worker ls --cluster <cluster_name_or_ID>
       ```
       {: pre}
 
@@ -59,7 +59,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
    2. Review the [version changelog](/docs/containers?topic=containers-changelog#changelog) to find the changes that are included in the latest patch version.
 
-   3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker-reload command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
+   3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
 
 1.  [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine, and install the Helm server (Tiller) with a service account in your cluster.
 
@@ -697,7 +697,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     ```
     {: screen}
 
-7.  Note the `id`, `ip_addr`, `capacity_gb`, the `datacenter`, and `lunId` of the block storage device that you want to mount to your cluster. **Note:** To mount existing storage to a cluster, you must have a worker node in the same zone as your storage. To verify the zone of your worker node, run `ibmcloud oc workers --cluster <cluster_name_or_ID>`.
+7.  Note the `id`, `ip_addr`, `capacity_gb`, the `datacenter`, and `lunId` of the block storage device that you want to mount to your cluster. **Note:** To mount existing storage to a cluster, you must have a worker node in the same zone as your storage. To verify the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
 
 ### Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)
 {: #existing-block-2}
@@ -1477,7 +1477,7 @@ Use the customized storage class if you use the {{site.data.keyword.cloud_notm}}
 
 The following `.yaml` file customizes a storage class that is based on the `ibm-block-silver` non-retaining storage class: the `type` is `"Endurance"`, the `iopsPerGB` is `4`, the `sizeRange` is `"[20-12000]Gi"`, and the `reclaimPolicy` is set to `"Delete"`. The zone is specified as `dal12`. To use a different storage class as your base, see the [storage class reference](#block_storageclass_reference).
 
-Create the storage class in the same region and zone as your cluster and worker nodes. To get the region of your cluster, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`. To get the zone of your worker node, run `ibmcloud oc workers --cluster <cluster_name_or_ID>`.
+Create the storage class in the same region and zone as your cluster and worker nodes. To get the region of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`. To get the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
 
 - **Example for Endurance block storage:**
   ```

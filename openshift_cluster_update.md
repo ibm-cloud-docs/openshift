@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -46,7 +46,7 @@ Your worker nodes cannot run a later `major.minor` Kubernetes version than the m
 Worker nodes can run later patch versions than the master, such as patch versions that are specific to worker nodes for security updates.
 
 **How are patch updates applied?**</br>
-By default, patch updates for the master are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can [check the versions changelog](/docs/containers?topic=containers-changelog) for any potential impact and choose to safely use the `ibmcloud oc cluster-update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply.
+By default, patch updates for the master are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can [check the versions changelog](/docs/containers?topic=containers-changelog) for any potential impact and choose to safely use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply.
 
 Unlike the master, you must update your workers for each patch version.
 
@@ -72,9 +72,9 @@ To update the Kubernetes master _major_ or _minor_ version:
 
 1.  Review the [Kubernetes changes](/docs/containers?topic=containers-cs_versions) and make any updates marked _Update before master_.
 
-2.  Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster-update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update).
+2.  Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update).
 
-3.  Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc clusters`.
+3.  Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
 
 4.  Install the version of the [`oc cli`](/docs/containers?topic=containers-cs_cli_install#kubectl) that matches the API server version that runs in the master. [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/release/version-skew-policy/) `oc` client versions that are two or more versions apart from the server version (n +/- 2).
 
@@ -128,7 +128,7 @@ Set up a configmap to perform a rolling update of your worker nodes.
 2.  List available worker nodes and note their private IP address.
 
     ```
-    ibmcloud oc workers --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -248,7 +248,7 @@ Set up a configmap to perform a rolling update of your worker nodes.
 7.  Update the worker nodes.
 
     ```
-    ibmcloud oc worker-update --cluster <cluster_name_or_ID> --workers <worker_node1_ID> <worker_node2_ID>
+    ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker_node1_ID> --worker <worker_node2_ID>
     ```
     {: pre}
 
@@ -305,32 +305,32 @@ To update flavors:
    - **For worker nodes in a worker pool**:
      1. List available worker pools in your cluster.
         ```
-        ibmcloud oc worker-pools --cluster <cluster_name_or_ID>
+        ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
      2. List the worker nodes in the worker pool. Note the **ID** and **Private IP**.
         ```
-        ibmcloud oc workers --cluster <cluster_name_or_ID> --worker-pool <pool_name>
+        ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
         ```
         {: pre}
 
      3. Get the details for a worker node and note the zone, the private and the public VLAN ID.
         ```
-        ibmcloud oc worker-get --cluster <cluster_name_or_ID> --worker <worker_ID>
+        ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_ID>
         ```
         {: pre}
 
    - **Deprecated: For stand-alone worker nodes**:
      1. List available worker nodes. Note the **ID** and **Private IP**.
         ```
-        ibmcloud oc workers --cluster <cluster_name_or_ID>
+        ibmcloud oc worker ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
      2. Get the details for a worker node and note the zone, the private VLAN ID, and the public VLAN ID.
         ```
-        ibmcloud oc worker-get --cluster <cluster_name_or_ID> --worker <worker_ID>
+        ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_ID>
         ```
         {: pre}
 
@@ -343,32 +343,44 @@ To update flavors:
 3. Create a worker node with the new machine type.
    - **For worker nodes in a worker pool**:
      1. Create a worker pool with the number of worker nodes that you want to replace.
-        ```
-        ibmcloud oc worker-pool-create --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
-        ```
-        {: pre}
+        * Classic clusters:
+          ```
+          ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
+          ```
+          {: pre}
+        * VPC clusters:
+          ```
+          ibmcloud oc worker-pool create vpc-classic <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --vpc-id <VPC_ID>
+          ```
+          {: pre}
 
      2. Verify that the worker pool is created.
         ```
-        ibmcloud oc worker-pools --cluster <cluster_name_or_ID>
+        ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
      3. Add the zone to your worker pool that you retrieved earlier. When you add a zone, the worker nodes that are defined in your worker pool are provisioned in the zone and considered for future workload scheduling. If you want to spread your worker nodes across multiple zones, choose a [multizone-capable zone](/docs/containers?topic=containers-regions-and-zones#zones).
-        ```
-        ibmcloud oc zone-add --zone <zone> --cluster <cluster_name_or_ID> --worker-pools <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
-        ```
-        {: pre}
+       * Classic clusters:
+         ```
+         ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pools <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+         ```
+         {: pre}
+       * VPC clusters:
+         ```
+         ibmcloud oc zone add vpc-classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <vpc_subnet_id>
+         ```
+         {: pre}
 
    - **Deprecated: For stand-alone worker nodes**:
        ```
-       ibmcloud oc worker-add --cluster <cluster_name> --machine-type <flavor> --workers <number_of_worker_nodes> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+       ibmcloud oc worker add --cluster <cluster_name> --machine-type <flavor> --workers <number_of_worker_nodes> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
        ```
        {: pre}
 
 4. Wait for the worker nodes to be deployed. When the worker node state changes to **Normal**, the deployment is finished.
    ```
-   ibmcloud oc workers --cluster <cluster_name_or_ID>
+   ibmcloud oc worker ls --cluster <cluster_name_or_ID>
    ```
    {: pre}
 5.  To prevent downtime, reschedule the apps from the old worker nodes before you delete the old worker nodes.
@@ -389,27 +401,27 @@ To update flavors:
         {: pre}
 6. Remove the old worker node. **Note**: If you are removing a flavor that is billed monthly (such as bare metal), you are charged for the entire the month.
    - **For worker nodes in a worker pool**:
-     1. Remove the worker pool with the old machine type. Removing a worker pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.
+     1. Remove the worker pool with the old machine type. Removing a worker-pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.
         ```
-        ibmcloud oc worker-pool-rm --worker-pool <pool_name> --cluster <cluster_name_or_ID>
+        ibmcloud oc worker-pool rm --worker-pool <pool_name> --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
      2. Verify that the worker pool is removed.
         ```
-        ibmcloud oc worker-pools --cluster <cluster_name_or_ID>
+        ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
    - **Deprecated: For stand-alone worker nodes**:
       ```
-      ibmcloud oc worker-rm --cluster <cluster_name> --workers <worker_node>
+      ibmcloud oc worker rm --cluster <cluster_name> --worker <worker_node>
       ```
       {: pre}
 
 7. Verify that the worker nodes are removed from your cluster.
    ```
-   ibmcloud oc workers --cluster <cluster_name_or_ID>
+   ibmcloud oc worker ls --cluster <cluster_name_or_ID>
    ```
    {: pre}
 
@@ -460,19 +472,19 @@ In order to change your logging or filter configurations, the Fluentd component 
 
 You can manage automatic updates of the Fluentd component in the following ways. **Note**: To run the following commands, you must have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
 
-* Check whether automatic updates are enabled by running the `ibmcloud oc logging-autoupdate-get --cluster <cluster_name_or_ID>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_get).
-* Disable automatic updates by running the `ibmcloud oc logging-autoupdate-disable` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_disable).
+* Check whether automatic updates are enabled by running the `ibmcloud oc logging autoupdate get --cluster <cluster_name_or_ID>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_get).
+* Disable automatic updates by running the `ibmcloud oc logging autoupdate disable` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_disable).
 * If automatic updates are disabled, but you need to change your configuration, you have two options:
     * Turn on automatic updates for your Fluentd pods.
         ```
-        ibmcloud oc logging-autoupdate-enable --cluster <cluster_name_or_ID>
+        ibmcloud oc logging autoupdate enable --cluster <cluster_name_or_ID>
         ```
         {: pre}
     * Force a one-time update when you use a logging command that includes the `--force-update` option. **Note**: Your pods update to the latest version of the Fluentd component, but Fluentd does not update automatically going forward.
         Example command:
 
         ```
-        ibmcloud oc logging-config-update --cluster <cluster_name_or_ID> --id <log_config_ID> --type <log_type> --force-update
+        ibmcloud oc logging config update --cluster <cluster_name_or_ID> --id <log_config_ID> --type <log_type> --force-update
         ```
         {: pre}
 
@@ -484,7 +496,7 @@ Control when the Ingress application load balancer (ALB) component is updated.
 
 When the Ingress ALB component is updated, the `nginx-ingress` and `ingress-auth` containers in all ALB pods are updated to the latest build version. By default, automatic updates to ALBs are enabled. Updates are performed on a rolling basis so that your Ingress ALBs don't experience any downtime. When a pod restarts after the update is applied, a [readiness check](/docs/containers?topic=containers-ingress-settings#readiness-check) prevents the ALB pod from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss during ALB pod updates and can take up to 5 minutes.
 
-If you disable automatic updates, you are responsible for updating your ALBs. As updates become available, you are notified in the CLI when you run the `ibmcloud oc albs` or `alb-autoupdate-get` commands.
+If you disable automatic updates, you are responsible for updating your ALBs. As updates become available, you are notified in the CLI when you run the `ibmcloud oc alb ls` or `alb autoupdate get` commands.
 
 When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the build version of your Ingress ALBs. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALBs' images.
 {: note}
@@ -493,13 +505,13 @@ Before you begin:
 
 1. Verify that your ALBs are running.
     ```
-    ibmcloud oc albs
+    ibmcloud oc alb ls
     ```
     {: pre}
 
 2. Check the status of automatic updates for the Ingress ALB component.
     ```
-    ibmcloud oc alb-autoupdate-get --cluster <cluster_name_or_ID>
+    ibmcloud oc alb autoupdate get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -517,13 +529,13 @@ Before you begin:
     Retrieving automatic update status of application load balancer (ALB) pods in cluster mycluster...
     OK
     Automatic updates of the ALB pods are disabled in cluster mycluster
-    ALBs are not at the latest version in cluster mycluster. To view the current version, run 'ibmcloud oc albs'.
+    ALBs are not at the latest version in cluster mycluster. To view the current version, run 'ibmcloud oc alb ls'.
     ```
     {: screen}
 
 3. Verify the current **Build** version of your ALB pods.
     ```
-    ibmcloud oc albs --cluster <cluster_name_or_ID>
+    ibmcloud oc alb ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -540,24 +552,24 @@ Before you begin:
 You can manage automatic updates of the Ingress ALB component in the following ways. **Note**: To run the following commands, you must have the [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
 * Disable automatic updates.
     ```
-    ibmcloud oc alb-autoupdate-disable --cluster <cluster_name_or_ID>
+    ibmcloud oc alb autoupdate disable --cluster <cluster_name_or_ID>
     ```
     {: pre}
 * Manually update your Ingress ALBs.
     1. If an update is available and you want to update your ALBs, first check the [changelog for the latest version of the Ingress ALB component](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) to verify any potentially disruptive changes.
     2. Force a one-time update of your ALB pods. All ALB pods in the cluster are updated to the latest build version. You cannot update an individual ALB or choose which build to update ALBs to. Automatic updates remain disabled.
         ```
-        ibmcloud oc alb-update --cluster <cluster_name_or_ID>
+        ibmcloud oc alb update --cluster <cluster_name_or_ID>
         ```
         {: pre}
 * If your ALB pods were recently updated, but a custom configuration for your ALBs is affected by the latest build, you can roll back the update to the build that your ALB pods were previously running. **Note**: After you roll back an update, automatic updates for ALB pods are disabled.
     ```
-    ibmcloud oc alb-rollback --cluster <cluster_name_or_ID>
+    ibmcloud oc alb rollback --cluster <cluster_name_or_ID>
     ```
     {: pre}
 * Re-enable automatic updates. Whenever the next build becomes available, the ALB pods are automatically updated to the latest build.
     ```
-    ibmcloud oc alb-autoupdate-enable --cluster <cluster_name_or_ID>
+    ibmcloud oc alb autoupdate enable --cluster <cluster_name_or_ID>
     ```
     {: pre}
 

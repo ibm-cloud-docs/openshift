@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -41,7 +41,7 @@ Why {{site.data.keyword.cloud_notm}}: To improve patient service, the provider l
 Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Horizontal scaling](/docs/containers?topic=containers-app#highly_available_apps)
-* [Container security and isolation](/docs/containers?topic=containers-security#security) 
+* [Container security and isolation](/docs/openshift?topic=openshift-security#security) 
 * [{{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/products/cloud-pak-for-data)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime#nodejs_runtime)
@@ -54,7 +54,6 @@ Accelerated development is a key win for the IT Exec. With the move to public cl
 Security first: With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive patient workloads now have familiar isolation but within the flexibility of public cloud. From that core, Vulnerability Advisor provides scanning:
 * Image vulnerability scanning
 * Policy scanning based on ISO 27k
-* Live container scanning
 * Package scanning for known malware
 
 Secure patient data leads to happier patients.
@@ -169,7 +168,6 @@ Developers started by deploying their research-sharing SaaS apps in containers w
 Security first: The Development Exec chose bare metal to host the research clusters. With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive research workloads now have familiar isolation but within the flexibility of public cloud. Because this nonprofit also has a partnership with pharmaceutical companies, app security is crucial. Competition is fierce, and corporate espionage is possible. From that secure core, Vulnerability Advisor provides scanning:
 * Image vulnerability scanning
 * Policy scanning based on ISO 27k
-* Live container scanning
 * Package scanning for known malware
 
 Secured research apps lead to increased clinical trial participation.

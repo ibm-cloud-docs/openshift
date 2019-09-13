@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-09-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -52,12 +52,6 @@ For more information, see [Comparison between OpenShift and community Kubernetes
 
 You can create only standard OpenShift clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-getting-started#clusters_gs) and [deploy some apps](/docs/containers?topic=containers-app). Then, re-deploy the apps that you try out in the Kubernetes cluster to your [OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app).
 
-## Can I convert my beta OpenShift cluster to a GA cluster?
-{: #openshift_beta_convert}
-{: faq}
-
-You can create a GA cluster and then re-deploy any apps that you use in the beta clusters before the beta clusters are removed. Beta clusters are removed by 31 August 2019 at 0:00 UTC (30 days after Red Hat OpenShift on IBM Cloud was generally available). For an example of getting all the configuration files from a project, see the [OpenShift docs](https://docs.openshift.com/container-platform/3.6/admin_guide/backup_restore.html).
-
 ## Which Kubernetes versions does the OpenShift service support?
 {: #supported_kube_versions}
 {: faq}
@@ -68,6 +62,13 @@ The supported OpenShift version is 3.11, which includes Kubernetes 1.11.
 {: #openshift_charges}
 {: faq}
 
-For Red Hat OpenShift on IBM Cloud clusters, you are charged for the same components as in {{site.data.keyword.containerlong_notm}} clusters. For more information, see [What am I charged for when I use {{site.data.keyword.containerlong_notm}}?](/docs/containers?topic=containers-faqs#charges)
+For Red Hat OpenShift on IBM Cloud clusters, you are charged for the same components as in {{site.data.keyword.containerlong_notm}} clusters. For more information, see [What am I charged for when I use {{site.data.keyword.containerlong_notm}}?](/docs/containers?topic=containers-faqs#charges) Additionally, your OpenShift clusters include charges for extra compute and storage resources.
 
-Additionally, your worker nodes are installed with the Red Hat Enterprise Linux operating system, which increases the price of the worker node machines. You must also have an OpenShift license, which incurs monthly costs in addition to the hourly VM costs or monthly bare metal costs. The OpenShift license is for every two cores of the worker node flavor. If you delete your worker node before the end of the month, your monthly license is available for other worker nodes in the worker pool to use.
+**Compute**: Your worker nodes are installed with the Red Hat Enterprise Linux operating system, which includes a license for each worker node. The cost of this license is added to the cost of your worker nodes. To use Red Hat OpenShift Container Platform, an OpenShift license is also included, which incurs monthly costs in addition to the costs of your worker nodes. 
+
+The OpenShift license is for every two cores of the worker node flavor. The monthly license is not prorated, but charged in 30-day increments. You are charged for the entire monthly license even if you delete resources before the 30-day period.  For example, if you create the cluster on 15 August and delete the cluster on 27 August, you are still charged for the OCP licenses for the 15 August - 15 September time period.
+
+* If you delete your worker node before the end of the 30-day period, your monthly license is available for other worker nodes in the same worker pool to use. 
+* If you delete the cluster before the end of the 30-day period, you are still charged the entire monthly price for the OpenShift license.
+
+**Storage**: To store images in the internal registry, a classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with 20 GB capacity at 2 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-openshift-images#storage_internal_registry), which modifies the cost. For more information on the cost, see [Billing](/docs/infrastructure/FileStorage?topic=FileStorage-about).

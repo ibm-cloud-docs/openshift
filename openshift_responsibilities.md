@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -68,7 +68,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
      <li>Monitor and report the health of the master and worker nodes in the various interfaces.</li>
      <li>Provide worker node major, minor, and patch OS, version, and security updates.</li>
      <li>Fulfill automation requests to update and recover worker nodes. Provide the optional [worker node Autorecovery](/docs/containers?topic=containers-health#autorecovery).</li>
-     <li>Provide tools, such as the [cluster autoscaler](/docs/containers?topic=containers-ca#ca), to extend your cluster infrastructure.</li>
+     <li>Provide tools, such as the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca), to extend your cluster infrastructure.</li>
      </ul>
      <br><br>
      **Your responsibilities**:
@@ -100,7 +100,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
       **Your responsibilities**:
       <ul>
       <li>Use the API, CLI, or console tools to apply the provided [security patch updates](/docs/containers?topic=containers-changelog#changelog) to your worker nodes.</li>
-      <li>Choose how to set up your [cluster network](/docs/openshift?topic=openshift-plan_clusters) and configure further [security settings](/docs/containers?topic=containers-security#security) to meet your workload's security and compliance needs. If applicable, configure your [firewall](/docs/openshift?topic=openshift-firewall#firewall).</li></ul>
+      <li>Choose how to set up your [cluster network](/docs/openshift?topic=openshift-plan_clusters) and configure further [security settings](/docs/openshift?topic=openshift-security#security) to meet your workload's security and compliance needs. If applicable, configure your [firewall](/docs/openshift?topic=openshift-firewall#firewall).</li></ul>
       <br><br></td>
       </tr>
 

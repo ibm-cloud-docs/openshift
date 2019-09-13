@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-09-12"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -37,7 +37,7 @@ For cluster metrics and app logging and monitoring, {{site.data.keyword.openshif
 ## Using the built-in OpenShift logging and monitoring stack
 {: #openshift_logmet}
 
-By default, Red Hat OpenShift on IBM Cloud clusters are deployed with built-in logging and monitoring tools that are based on open source projects such as Prometheus, Elasticsearch, Fluentd, and Kibana. For more information, see the following OpenShift docs.
+By default, Red Hat OpenShift on IBM Cloud clusters are deployed with built-in components and a catalog that you can use to set up logging and monitoring tools that are based on open source projects such as Prometheus and Grafana. For more information, see the following OpenShift docs.
 {: shortdesc}
 
 * [Prometheus cluster monitoring ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html).
@@ -91,7 +91,7 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
         {: pre}
 2.  Create your {{site.data.keyword.la_full_notm}} instance in the same resource group as your cluster. Select a pricing plan that determines the retention period for your logs, such as `lite` which retains logs for 0 days. The region does not have to match the region of your cluster. For more information, see [Provisioning an instance](/docs/services/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-provision) and [Pricing plans](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#overview_pricing_plans).
     ```
-    ibmcloud resource service-instance-create <service_instance_name> logdna (lite|7-days|14-days|30-days) <region> [-g <resource_group>]
+    ibmcloud resource service-instance-create <service_instance_name> logdna (lite|7-day|14-day|30-day) <region> [-g <resource_group>]
     ```
     {: pre}
 
@@ -149,11 +149,48 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
     oc create -f https://raw.githubusercontent.com/logdna/logdna-agent/master/logdna-agent-ds-os.yml
     ```
     {: pre}
-6.  Verify that the `logdna-agent` pod on each node is in a **Running** status.
-    ```
-    oc get pods
-    ```
-    {: pre}
+6.  Edit the LogDNA agent daemon set configuration to include the API and logging endpoints for the region that your {{site.data.keyword.la_short}} instance is in.
+    1.  Download a local copy of the configuration file to edit.
+        ```
+        oc get ds logdna-agent -n logdna-agent -o yaml > logdna-ds.yaml
+        ```
+        {: pre}
+    2.  In the configuration file, add the following specifications, update the `spec.template.spec.containers.env` environment variable values for the `LDAPIHOST` and `LDLOGHOST` with the `<region>`.
+        ```
+        apiVersion: extensions/v1beta1
+        kind: DaemonSet
+        ...
+        spec:
+          ...
+            spec:
+              containers:
+              - env:
+                - name: LOGDNA_AGENT_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      key: logdna-agent-key
+                      name: logdna-agent-key
+                - name: LDAPIHOST
+                  value: api.<region>.logging.cloud.ibm.com
+                - name: LDLOGHOST
+                  value: logs.<region>.logging.cloud.ibm.com
+        ```
+        {: screen}
+    3.  Save the configuration file and apply your changes.
+        ```
+        oc apply -f logdna-ds.yaml
+        ```
+        {: pre}
+    4.  Verify that the new `logdna-agent` pods on each node are in a **Running** status.
+        ```
+        oc get pods
+        ```
+        {: pre}
+    5.  Optional: If no logs are sent to your {{site.data.keyword.la_short}} instance, delete any `logdna-agent` pods so that they pick up the configuration change.
+        ```
+        oc delete pod <logdna-agent-123456>
+        ```
+        {: pre}
 7.  From the [{{site.data.keyword.cloud_notm}} **Observability > Logging** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens. After a few minutes, your cluster's logs are displayed, and you can analyze your logs.
 
 For more information about how to use {{site.data.keyword.la_short}}, see the [Next steps docs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube#kube_next_steps).

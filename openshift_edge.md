@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-20"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -52,7 +52,7 @@ Before you begin:
 
 </br>To label worker nodes as edge nodes:
 
-1. [Create a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone. In the `ibmcloud oc worker-pool-create` command, include the `--labels dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes. After the worker pool is marked with `dedicated=edge`, all existing and subsequent worker nodes get this label, and Ingress and load balancers are deployed to an edge worker node.
+1. [Create a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes. After the worker pool is marked with `dedicated=edge`, all existing and subsequent worker nodes get this label, and Ingress and load balancers are deployed to an edge worker node.
   <p class="tip">If you want to use an existing worker pool, the pool must span all zones in your cluster and have at least two workers per zone. You can label the worker pool with `dedicated=edge` by using the [PATCH worker pool API](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool). In the body of the request, pass in the following JSON.
       <pre class="screen">
       {
@@ -63,7 +63,7 @@ Before you begin:
 2. Verify that the worker pool and worker nodes have the `dedicated=edge` label.
   * To check the worker pool:
     ```
-    ibmcloud oc worker-pool-get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+    ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
     ```
     {: pre}
 
@@ -222,7 +222,6 @@ Before you begin:
     oc taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-
     ```
     {: pre}
-
 
 
 

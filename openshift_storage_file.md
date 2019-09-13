@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-30"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -29,7 +29,7 @@ subcollection: openshift
 {{site.data.keyword.cloud_notm}} File Storage is persistent, fast, and flexible network-attached, NFS-based file storage that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} File Storage is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Billing](/docs/infrastructure/FileStorage?topic=FileStorage-about#billing).
 {: shortdesc}
 
-To use file storage, your cluster must be set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, you can provision file storage if your cluster runs Kubernetes version 1.13.4_1513, 1.12.6_1544, 1.11.8_1550, or later. NFS file storage instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
+ NFS file storage instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
 ## Deciding on the file storage configuration
@@ -252,12 +252,12 @@ To add file storage:
        <tr>
        <td><code>metadata.labels.region</code></td>
        <td>Optional: Specify the region where you want to provision your file storage. To connect to your storage, create the storage in the same region that your cluster is in. If you specify the region, you must also specify a zone. If you do not specify a region, or the specified region is not found, the storage is created in the same region as your cluster.
-       </br></br>To get the region for your cluster, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`.
+       </br></br>To get the region for your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`.
        </br></br><strong>Tip: </strong>Instead of specifying the region and zone in the PVC, you can also specify these values in a [customized storage class](#file_multizone_yaml). Then, use your storage class in the <code>metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence. </td>
        </tr>
        <tr>
        <td><code>metadata.labels.zone</code></td>
-       <td>Optional: Specify the zone where you want to provision your file storage. To use your storage in an app, create the storage in the same zone that your worker node is in. To view the zone of your worker node, run <code>ibmcloud oc workers --cluster &lt;cluster_name_or_ID&gt;</code> and review the <strong>Zone</strong> column of your CLI output. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. </br></br><strong>Tip: </strong>Instead of specifying the region and zone in the PVC, you can also specify these values in a [customized storage class](#file_multizone_yaml). Then, use your storage class in the <code>metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence.
+       <td>Optional: Specify the zone where you want to provision your file storage. To use your storage in an app, create the storage in the same zone that your worker node is in. To view the zone of your worker node, run <code>ibmcloud oc worker ls --cluster &lt;cluster_name_or_ID&gt;</code> and review the <strong>Zone</strong> column of your CLI output. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. </br></br><strong>Tip: </strong>Instead of specifying the region and zone in the PVC, you can also specify these values in a [customized storage class](#file_multizone_yaml). Then, use your storage class in the <code>metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence.
 </td>
        </tr>
        <tr>
@@ -483,7 +483,7 @@ If you want to use existing storage that you provisioned earlier, but never used
 1.  {: #external_storage}From the [IBM Cloud infrastructure portal ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/classic), click **Storage**.
 2.  Click **File Storage** and from the **Actions** menu, select **Authorize Host**.
 3.  Select **Subnets**.
-4.  From the drop-down list, select the private VLAN subnet that your worker node is connected to. To find the subnet of your worker node, run `ibmcloud oc workers --cluster <cluster_name>` and compare the `Private IP` of your worker node with the subnet that you found in the drop-down list.
+4.  From the drop-down list, select the private VLAN subnet that your worker node is connected to. To find the subnet of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name>` and compare the `Private IP` of your worker node with the subnet that you found in the drop-down list.
 5.  Click **Submit**.
 6.  Click the name of the file storage.
 7.  Note the `Mount Point`, the `size`, and the `Location` field. The `Mount Point` field is displayed as `<nfs_server>:<file_storage_path>`.
@@ -1376,7 +1376,7 @@ If you want to create your file storage in a specific zone, you can specify the 
 Use the customized storage class if you want to [statically provision file storage](#existing_file) in a specific zone. In all other cases, [specify the zone directly in your PVC](#add_file).
 {: note}
 
-When you create the customized storage class, specify the same region and zone that your cluster and worker nodes are in. To get the region of your cluster, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`. To get the zone of your worker node, run `ibmcloud oc workers --cluster <cluster_name_or_ID>`.
+When you create the customized storage class, specify the same region and zone that your cluster and worker nodes are in. To get the region of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`. To get the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
 
 - **Example for Endurance file storage:**
   ```

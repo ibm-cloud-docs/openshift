@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-09-12"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -59,14 +59,14 @@ Kubernetes limits the maximum number of worker nodes that you can have in a clus
 
 {{site.data.keyword.containerlong_notm}} also sets compute resource reserves that limit available compute resources on each worker node. For more information, see [worker node resource reserves](#resource_limit_node).
 
-Want to be sure that you always have enough worker nodes to cover your workload? Try out [the cluster autoscaler](/docs/containers?topic=containers-ca#ca).
+Want to be sure that you always have enough worker nodes to cover your workload? Try out [the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca).
 {: tip}
 
 ## Virtual machines
 {: #vm}
 
 With VMs, you get greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price. You can use VMs for most general-purpose use cases such as testing and development environments, staging, and prod environments, microservices, and business apps. However, there is a trade-off in performance. If you need high-performance computing for RAM-, data-, or GPU-intensive workloads, consider creating classic clusters with [bare metal](#bm) worker nodes.
-{: shortdesc} 
+{: shortdesc}
 
 **Do I want to use shared or dedicated hardware?**</br>
 When you create a standard classic cluster, you must choose whether you want the underlying hardware to be shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or to be dedicated to you only (single tenancy). 
@@ -139,12 +139,13 @@ Worker node flavors vary by cluster type, the zone where you want to create the 
 
 Bare metal machines are optimized for different use cases such as RAM-intensive, data-intensive, or GPU-intensive workloads.
 
-Choose a flavor with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
+Choose a flavor, or machine type, with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
 
 * **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
 * **SSD**: A solid-state drive storage device for high-performance data.
 * **Raw**: The storage device is unformatted and the full capacity is available for use.
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
+
 
 {: #bm-table}
 <table>
@@ -221,12 +222,13 @@ For more storage solutions, see [Planning highly available persistent storage](/
 **What SDS flavors can I order?**</br>
 Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [bare metal](#bm) or [VM](#vm) flavors.
 
-Choose a flavor with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
+Choose a flavor, or machine type, with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
 
 * **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
 * **SSD**: A solid-state drive storage device for high-performance data.
 * **Raw**: The storage device is unformatted and the full capacity is available for use.
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
+
 
 {: #sds-table}
 <table>
