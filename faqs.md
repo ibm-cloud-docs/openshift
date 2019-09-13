@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -71,4 +71,4 @@ The OpenShift license is for every two cores of the worker node flavor. The mont
 * If you delete your worker node before the end of the 30-day period, your monthly license is available for other worker nodes in the same worker pool to use. 
 * If you delete the cluster before the end of the 30-day period, you are still charged the entire monthly price for the OpenShift license.
 
-**Storage**: To store images in the internal registry, a classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with 20 GB capacity at 2 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-openshift-images#storage_internal_registry), which modifies the cost. For more information on the cost, see [Billing](https://cloud.ibm.com/docs/infrastructure/FileStorage?topic=FileStorage-about).
+**Storage**: To store images in the internal registry, a classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with 20 GB capacity at 2 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-openshift-images#storage_internal_registry), which modifies the cost. For more information on the cost, see [Billing](/docs/infrastructure/FileStorage?topic=FileStorage-about).
