@@ -904,7 +904,7 @@ ibmcloud oc cluster master audit-webhook set --cluster CLUSTER [--remoteServer S
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>--remoteServer <em>SERVER_URL</em></code></dt>
-<dd>The URL or IP address for the remote logging service you want to send audit logs to. If you provide an insecure server URL, any certificates are ignored. This value is optional.</dd>
+<dd>The URL or IP address for the remote logging service you want to send audit logs to. If you provide an insecure server URL, any certificates are ignored. If you provide an IP address, prepend `http://` to the IP. This value is optional.</dd>
 
 <dt><code>--caCert <em>CA_CERT_PATH</em></code></dt>
 <dd>The file path for the CA certificate that is used to verify the remote logging service. This value is optional.</dd>
