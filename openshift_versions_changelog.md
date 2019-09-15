@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,6 +39,18 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
+
+### Changelog for 3.11.141_1524_openshift, released 16 September 2019
+{: #311141_1524}
+
+The following table shows the changes that are included in the patch `3.11.141_1524_openshift`.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| Key Management Service provider | 212 | 216 | Improved Kubernetes [key management service provider](/docs/containers?topic=containers-encryption#keyprotect) caching of {{site.data.keyword.cloud_notm}} IAM tokens. In addition, fixed a problem with Kubernetes secret decryption when the cluster's root key is rotated.|
+| OpenShift | 3.11.135 | 3.11.141 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-141){: external}. |
+{: caption="Changes since version 3.11.135_1523" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.135_1523_openshift, released 3 September 2019
 {: #311135_1523_worker}
