@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-16"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -193,7 +193,7 @@ If you took a break from the last lesson and started a new terminal, make sure t
         hello-world-build   0/1       Completed          0          31m
         ```
         {: screen}
-4.  Set up a route so that you can publicly access the hello world service. By default, the hostname is in the format of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. If you want to customize the hostname, include the `--hostname=<hostname>` flag.
+4.  Set up a route so that you can publicly access the hello world service. By default, the hostname is in the format of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. If you want to customize the hostname, include the `--hostname=<hostname>` flag. **Note**: The hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster. Your route does not use the Ingress subdomain.
     1.  Create a route for the **hello-world** service.
         ```
         oc create route edge --service=hello-world -n hello-world
