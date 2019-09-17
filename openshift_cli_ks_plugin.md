@@ -2689,7 +2689,7 @@ ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip
 <dd>The ID for an ALB. To view the IDs for the ALBs in a cluster, run <code>ibmcloud oc alb ls --cluster <em>CLUSTER</em></code>. This value is required.</dd>
 
 <dt><code>--disable</code></dt>
-<dd>Include this flag to disable an ALB in a cluster. <p class="note">If you disable an ALB, the IP address that the ALB used goes back into the pool of available portable IPs so that another service can use the IP. If you later try to re-enable the ALB, the ALB might report an error if the IP address it previously used is now in use by another service. You can either stop running the other service or specify another IP address to use when you re-enable the ALB.</p></dd>
+<dd>Include this flag to disable an ALB in a cluster. <p class="note">If you disable an ALB, the IP address that the ALB used goes back into the pool of available portable IPs so that another service can use the IP. If you later try to re-enable the ALB, the ALB might report an error if the IP address it previously used is now in use by another service. You can either stop running the other service or specify another IP address to use when you re-enable the ALB.</br></br>Before you disable an ALB in a cluster that is connected to a public VLAN, first verify that your Ingress subdomain is fully created by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If you disable your ALBs before the Ingress subdomain is created, your cluster's DNS subdomain generation process is interrupted, and you cannot later use `nlb-dns` commands to create subdomains for load balancers.</p></dd>
 
 <dt><code>--enable</code></dt>
 <dd>Include this flag to enable an ALB in a cluster.</dd>
