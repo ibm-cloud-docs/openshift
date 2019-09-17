@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-17"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -108,6 +108,7 @@ To quickly determine whether a zone is multizone-capable, your can run `ibmcloud
 
 | Geography |  Country  | Metro | Data center |  Deprecated region  |
 |-----|-----|-----|-----|-----|
+| Asia Pacific | Australia | Melbourne | mel01 | AP South (`ap-south`, `au-syd`) |
 | Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
 | Asia Pacific | India | Chennai | che01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
@@ -116,7 +117,7 @@ To quickly determine whether a zone is multizone-capable, your can run `ibmcloud
 | Europe | France | Paris | par01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Germany | Frankfurt | fra02, fra04, fra05 | EU Central (`eu-central`, `eu-de`) |
 | Europe | United Kingdom | London | lon04, lon05, lon06 | UK South (`uk-south`, `eu-gb`) |
-| North America | Canada | Montreal | mon01 | US East (`us-east`) |
+| North America | Canada | Montreal | mon01 | US East (`us-east`) | 
 | North America | Canada | Toronto | tor01 | US East (`us-east`) |
 | North America | United States | Dallas | dal10, dal12, dal13 | US South (`us-south`) |
 | North America | United States | Washington, D.C. | wdc04, wdc06, wdc07 | US East (`us-east`) |
