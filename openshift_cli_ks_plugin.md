@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-13"
+lastupdated: "2019-09-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -91,13 +91,13 @@ Check out the following changes between each version of the CLI plug-in:
   <td>Legacy and beta</td>
   <td>Beta</td>
   </tr>
-  <tr><td>Positional arguments<ul><li>Legacy: Arguments specified by position (`ibmcloud oc cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`ibmcloud oc cluster get --cluster mycluster`)</li></ul></td>
+  <tr><td>Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul></td>
   <td>Legacy and beta</td>
   <td>Legacy and beta</td>
   <td>Legacy and beta</td>
   <td>Beta</td>
   </tr>
-  <tr><td>Repeated arguments<ul><li>Legacy: Comma-delineated values (`ibmcloud oc zone-add-classic --worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`ibmcloud oc zone add classic -p pool1 -p pool2 ...`)</li></ul></td>
+  <tr><td>Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul></td>
   <td>Legacy</td>
   <td>Legacy</td>
   <td>Legacy and beta</td>
@@ -109,7 +109,7 @@ Check out the following changes between each version of the CLI plug-in:
   <td>Legacy and beta</td>
   <td>Beta</td>
   </tr>
-  <tr><td>Cluster context<ul><li>Legacy: `ibmcloud oc cluster-config` provides a command that you must copy and paste to set the new `kubeconfig` file as your current KUBECONFIG environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: `ibmcloud oc cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` in `~/.kube/config` or the first file in the KUBECONFIG environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul></td>
+  <tr><td>Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current KUBECONFIG environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` in `~/.kube/config` or the first file in the KUBECONFIG environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul></td>
   <td>Legacy</td>
   <td>Legacy</td>
   <td>Legacy</td>
@@ -2677,7 +2677,7 @@ You can use this command to:
 * Disable the IBM-provided ALB deployment so that you can deploy your own Ingress controller and leverage the DNS registration for the IBM-provided Ingress subdomain or the load balancer service that is used to expose the Ingress controller.
 
 ```
-ibmcloud oc alb configure classic --alb-id ALB_ID --disable|--enable [--user-ip USER_IP]|--disable-deployment [-s]
+ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip USER_IP]|--disable-deployment) [-s]
 ```
 {: pre}
 
