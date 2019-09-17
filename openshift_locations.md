@@ -117,7 +117,7 @@ To quickly determine whether a zone is multizone-capable, your can run `ibmcloud
 | Europe | France | Paris | par01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Germany | Frankfurt | fra02, fra04, fra05 | EU Central (`eu-central`, `eu-de`) |
 | Europe | United Kingdom | London | lon04, lon05, lon06 | UK South (`uk-south`, `eu-gb`) |
-| North America | Canada | Montreal | mon01 | US East (`us-east`) | 
+| North America | Canada | Montreal | mon01 | US East (`us-east`) |
 | North America | Canada | Toronto | tor01 | US East (`us-east`) |
 | North America | United States | Dallas | dal10, dal12, dal13 | US South (`us-south`) |
 | North America | United States | Washington, D.C. | wdc04, wdc06, wdc07 | US East (`us-east`) |
