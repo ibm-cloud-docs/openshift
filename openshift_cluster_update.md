@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-17"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -440,8 +440,9 @@ You can optionally disable automatic updates for the following components:
 
 **Are there components that I can't update separately from the cluster?**</br>
 
-Yes. Your cluster is deployed with the following managed components and associated resources that cannot be changed, except to scale pods or edit configmaps for certain performance benefits. If you try to change one of these deployment components, their original settings are restored on a regular interval.
+Yes. Your cluster is deployed with the following managed components and associated resources that cannot be changed, except to scale pods or edit configmaps for certain performance benefits. If you try to change one of these deployment components, their original settings are restored on a regular interval when they are updated with the cluster master.
 
+* `calico`
 * `coredns`
 * `coredns-autoscaler`
 * `heapster`
@@ -453,13 +454,6 @@ Yes. Your cluster is deployed with the following managed components and associat
 * `kubernetes-dashboard`
 * `metrics-server`
 * `vpn`
-
-You can view these resources by using the `addonmanager.kubernetes.io/mode: Reconcile` label. For example:
-
-```
-oc get deployments --all-namespaces -l addonmanager.kubernetes.io/mode=Reconcile
-```
-{: pre}
 
 **Can I install other plug-ins or add-ons than the default components?**</br>
 Yes. {{site.data.keyword.containerlong_notm}} provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/containers?topic=containers-helm#public_helm_install) to install the [block storage plug-in](/docs/openshift?topic=openshift-block_storage#install_block) or [strongSwan VPN](/docs/containers?topic=containers-vpn#vpn-setup). Or, you might want to enable IBM-managed add-ons in your cluster, such as [Istio](/docs/containers?topic=containers-istio) or [Knative](/docs/containers?topic=containers-serverless-apps-knative). You must update these Helm charts and add-ons separately by following the instructions in the Helm chart readmes or by following the steps to [update managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
