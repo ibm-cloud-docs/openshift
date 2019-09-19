@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,6 +35,12 @@ Review the following limitations for {{site.data.keyword.openshiftlong}}. For ge
 *   You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then re-deploy the apps that you try out in the Kubernetes cluster to your OpenShift cluster.
 *   [Locations](/docs/openshift?topic=openshift-regions-and-zones) are available in all six worldwide multizone metro and select single zone regions.
 *   You cannot create a cluster with worker nodes that run multiple operating systems, such as OpenShift on Red Hat Enterprise Linux and community Kubernetes on Ubuntu.
+
+
+## Networking
+{: #oc_limits_networking}
+
+Private network load balancers (NLBs) cannot be registered with the domain name server (DNS), so the cluster cannot be created with only a private network interface. At least some of the cluster's worker nodes must have both public and private VLANs. You can still create a private service to expose your apps on only the private network.
 
 ## Storage
 {: #oc_limits_storage}
