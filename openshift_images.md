@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-13"
+lastupdated: "2019-09-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -231,7 +231,7 @@ To use the internal registry, set up a public route to access the registry. Then
 ## Using {{site.data.keyword.registrylong_notm}}
 {: #openshift_iccr}
 
-If you want to use images that are stored in your remote private {{site.data.keyword.registrylong_notm}} `icr.io` domain names, you must create image pull secrets for each global and regional registry. Then, add the image pull secrets to each project, and to a service account for each project or to each deployment.
+By default, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images from the remote, private {{site.data.keyword.registrylong_notm}} `icr.io` domains in the `default` project. If you want to use images that are stored in {{site.data.keyword.registrylong_notm}} for other projects, you must create image pull secrets for each global and regional registry. Then, add the image pull secrets to each project, and to a service account for each project or to each deployment.
 {: shortdesc}
 
 For more information, see the following topics in the {{site.data.keyword.containershort_notm}} docs.
