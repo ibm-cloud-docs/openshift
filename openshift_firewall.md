@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -475,6 +475,9 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
    If you must use a Kubernetes version or {{site.data.keyword.cloud_notm}} storage plug-in version that does not support network communication over the private network, or if you want to use {{site.data.keyword.cos_full_notm}} without HMAC authentication, allow egress access through your firewall to IBM Cloud infrastructure and {{site.data.keyword.cloud_notm}} Identity and Access Management:
    - Allow all egress network traffic on TCP port 443.
    - Allow access to the IBM Cloud infrastructure IP range for the zone that your cluster is in for both the [**Front-end (public) network**](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#frontend-public-network) and [**Back-end (private) Network**](/docs/infrastructure/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#backend-private-network). To find the zone of your cluster, run `ibmcloud oc cluster ls`.
+8. Optional: To send logging and metric data, set up firewall rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
+   *  [{{site.data.keyword.la_short}} private endpoints](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-network#ips_api)
+   *  [{{site.data.keyword.mon_short}} private endpoints](docs/services/Monitoring-with-Sysdig?topic=Sysdig-network#network_send_private)
 
 </br>
 
