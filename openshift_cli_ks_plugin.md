@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-13"
+lastupdated: "2019-09-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -51,7 +51,7 @@ The following beta versions of the redesigned {{site.data.keyword.containerlong_
     ```
     {: pre}
 
-When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 14 March 2020 to update CLI command syntax. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update). After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run. Do not change the `IKS_BETA_VERSION` environment variable to a different version.
+When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 14 March 2020 to update CLI command syntax.</br></br>To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run.
 {: important}
 
 Check out the following changes between each version of the CLI plug-in:
@@ -91,13 +91,13 @@ Check out the following changes between each version of the CLI plug-in:
   <td>Legacy and beta</td>
   <td>Beta</td>
   </tr>
-  <tr><td>Positional arguments<ul><li>Legacy: Arguments specified by position (`ibmcloud oc cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`ibmcloud oc cluster get --cluster mycluster`)</li></ul></td>
+  <tr><td>Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul></td>
   <td>Legacy and beta</td>
   <td>Legacy and beta</td>
   <td>Legacy and beta</td>
   <td>Beta</td>
   </tr>
-  <tr><td>Repeated arguments<ul><li>Legacy: Comma-delineated values (`ibmcloud oc zone-add-classic --worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`ibmcloud oc zone add classic -p pool1 -p pool2 ...`)</li></ul></td>
+  <tr><td>Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul></td>
   <td>Legacy</td>
   <td>Legacy</td>
   <td>Legacy and beta</td>
@@ -109,7 +109,7 @@ Check out the following changes between each version of the CLI plug-in:
   <td>Legacy and beta</td>
   <td>Beta</td>
   </tr>
-  <tr><td>Cluster context<ul><li>Legacy: `ibmcloud oc cluster-config` provides a command that you must copy and paste to set the new `kubeconfig` file as your current KUBECONFIG environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: `ibmcloud oc cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` in `~/.kube/config` or the first file in the KUBECONFIG environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul></td>
+  <tr><td>Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current KUBECONFIG environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` in `~/.kube/config` or the first file in the KUBECONFIG environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul></td>
   <td>Legacy</td>
   <td>Legacy</td>
   <td>Legacy</td>
@@ -2677,7 +2677,7 @@ You can use this command to:
 * Disable the IBM-provided ALB deployment so that you can deploy your own Ingress controller and leverage the DNS registration for the IBM-provided Ingress subdomain or the load balancer service that is used to expose the Ingress controller.
 
 ```
-ibmcloud oc alb configure classic --alb-id ALB_ID --disable|--enable [--user-ip USER_IP]|--disable-deployment [-s]
+ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip USER_IP]|--disable-deployment) [-s]
 ```
 {: pre}
 
@@ -2689,7 +2689,7 @@ ibmcloud oc alb configure classic --alb-id ALB_ID --disable|--enable [--user-ip 
 <dd>The ID for an ALB. To view the IDs for the ALBs in a cluster, run <code>ibmcloud oc alb ls --cluster <em>CLUSTER</em></code>. This value is required.</dd>
 
 <dt><code>--disable</code></dt>
-<dd>Include this flag to disable an ALB in a cluster. <p class="note">If you disable an ALB, the IP address that the ALB used goes back into the pool of available portable IPs so that another service can use the IP. If you later try to re-enable the ALB, the ALB might report an error if the IP address it previously used is now in use by another service. You can either stop running the other service or specify another IP address to use when you re-enable the ALB.</p></dd>
+<dd>Include this flag to disable an ALB in a cluster. <p class="note">If you disable an ALB, the IP address that the ALB used goes back into the pool of available portable IPs so that another service can use the IP. If you later try to re-enable the ALB, the ALB might report an error if the IP address it previously used is now in use by another service. You can either stop running the other service or specify another IP address to use when you re-enable the ALB.</br></br>Before you disable an ALB in a cluster that is connected to a public VLAN, first verify that your Ingress subdomain is fully created by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If you disable your ALBs before the Ingress subdomain is created, your cluster's DNS subdomain generation process is interrupted, and you cannot later use `nlb-dns` commands to create subdomains for load balancers.</p></dd>
 
 <dt><code>--enable</code></dt>
 <dd>Include this flag to enable an ALB in a cluster.</dd>
