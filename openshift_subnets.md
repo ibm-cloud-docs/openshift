@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -191,22 +191,9 @@ Before you begin:
       ```
       {: pre}
 
-      Example command:
-      ```
-      ibmcloud oc cluster subnet add --cluster mycluster --subnet-id 807861
-      ```
-      {: screen}
-
   * To add a user-managed private subnet from an on-premises network:
       ```
       ibmcloud oc cluster user-subnet add --cluster <cluster_name> --subnet-cidr <subnet_CIDR> --private-vlan <private_VLAN>
-      ```
-      {: pre}
-
-      Example command:
-
-      ```
-      ibmcloud oc cluster user-subnet add --cluster mycluster --subnet-cidr 10.xxx.xx.xxx/24 --private-vlan 2234947
       ```
       {: pre}
 
