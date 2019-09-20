@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-19"
+lastupdated: "2019-09-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -26,6 +26,8 @@ subcollection: openshift
 
 {{site.data.keyword.openshiftlong}} clusters include an internal registry to build, deploy, and manage container images locally. For a private registry to manage and control access to images across your enterprise, you can also set up your cluster to use {{site.data.keyword.registrylong}}.
 {: shortdesc}
+
+
 
 ## Using the internal registry
 {: #openshift_internal_registry}
