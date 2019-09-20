@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-20"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -86,6 +86,7 @@ OpenShift has different default settings than community Kubernetes, such as stri
 <td>Other use cases and scenarios</td>
 <td>Review the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html) for migrating databases, web framework apps, CI/CD, and other examples.</td>
 </tr>
+</tbody>
 </table>
 
 ### Example steps for giving a deployment privileged access
