@@ -62,7 +62,7 @@ To securely expose your apps to external traffic, you can use routes, NodePorts,
 |Custom routing rules|| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| 
 |Multiple apps per route or service| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |{{site.data.keyword.cloud_notm}} extensions like {{site.data.keyword.appid_short}}| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
-|Consistent hybrid multicloud deployment| | | ||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Consistent hybrid multicloud deployment| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 {: caption="Comparison of OpenShift external networking for apps" caption-side="top"}
 
 <br />
