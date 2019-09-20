@@ -52,6 +52,7 @@ To securely expose your apps to external traffic, you can use routes, NodePorts,
 </dl>
 
 
+
 |Characteristics|NodePort|NLB|Ingress ALB|Route|
 |---------------|------|--------|---|-----------|
 |Stable external IP| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
