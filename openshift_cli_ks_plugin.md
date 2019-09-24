@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-17"
+lastupdated: "2019-09-24"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1217,8 +1217,7 @@ ibmcloud oc cluster service unbind --cluster my_cluster --namespace my_namespace
 Make an existing portable public or private classic subnet in your IBM Cloud infrastructure account available to a cluster or reuse subnets from a deleted cluster instead of using the automatically provisioned subnets.
 {: shortdesc}
 
-<p class="important">Portable public IP addresses are charged monthly. If you remove portable public IP addresses after your cluster is provisioned, you still must pay the monthly charge, even if you used them only for a short amount of time.</br>
-</br>When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
+<p class="important">When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
 </br>To enable communication between workers that are on different subnets on the same VLAN in non-VRF accounts, you must [enable routing between subnets on the same VLAN](/docs/openshift?topic=openshift-subnets#subnet-routing).</p>
 
 ```
@@ -1254,7 +1253,8 @@ ibmcloud oc cluster subnet add --cluster my_cluster --subnet-id 1643389
 Create a portable classic subnet in an IBM Cloud infrastructure account on your public or private VLAN and make it available to a cluster.
 {: shortdesc}
 
-<p class="important">When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
+<p class="important">Portable public IP addresses are charged monthly. If you remove portable public IP addresses after your cluster is provisioned, you still must pay the monthly charge, even if you used them only for a short amount of time.</br>
+</br>When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
 </br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get).</p>
 
 ```
@@ -3608,16 +3608,14 @@ ibmcloud oc nlb-dns add --cluster mycluster --ip 1.1.1.1 --nlb-host mycluster-a1
 
 </br>
 
-### `ibmcloud oc nlb-dns create`
+### `ibmcloud oc nlb-dns create classic`
 {: #cs_nlb-dns-create}
 
 Publicly expose your app by creating a DNS subdomain to register a network load balancer (NLB) IP.
 {: shortdesc}
 
-
-
 ```
-ibmcloud oc nlb-dns create --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--json] [-s]
+ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--json] [-s]
 ```
 {: pre}
 
@@ -3640,18 +3638,17 @@ ibmcloud oc nlb-dns create --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3
 
 **Example**:
 ```
-ibmcloud oc nlb-dns create --cluster mycluster --ip 1.1.1.1
+ibmcloud oc nlb-dns create classic --cluster mycluster --ip 1.1.1.1
 ```
 {: pre}
 
 </br>
+
 ### `ibmcloud oc nlb-dns ls`
 {: #cs_nlb-dns-ls}
 
-List the network load balancer subdomains and IP addresses that are registered in a cluster.
+In a classic cluster, list the network load balancer (NLB) IP addresses that are registered to DNS subdomains. In a VPC cluster, list the VPC load balancer hostnames that are registered to DNS subdomains.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc nlb-dns ls --cluster CLUSTER [--json] [-s]
@@ -3680,16 +3677,14 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 
 </br>
 
-### `ibmcloud oc nlb-dns rm`
+### `ibmcloud oc nlb-dns rm classic`
 {: #cs_nlb-dns-rm}
 
-Remove a network load balancer IP address from a subdomain. If you remove all IPs from a subdomain, the subdomain still exists but no IPs are associated with it. <strong>Note</strong>: You must run this command for each IP address that you want to remove.
+Remove a network load balancer (NLB) IP address from a subdomain. If you remove all IPs from a subdomain, the subdomain still exists but no IPs are associated with it. <strong>Note</strong>: You must run this command for each IP address that you want to remove.
 {: shortdesc}
 
-
-
 ```
-ibmcloud oc nlb-dns rm --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [-s]
 ```
 {: pre}
 
@@ -3715,13 +3710,11 @@ ibmcloud oc nlb-dns rm --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [
 
 **Example**:
 ```
-ibmcloud oc nlb-dns rm --cluster mycluster --ip 1.1.1.1 --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
+ibmcloud oc nlb-dns rm classic --cluster mycluster --ip 1.1.1.1 --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
 ```
 {: pre}
 
 </br>
-
-
 
 ### `ibmcloud oc nlb-dns monitor configure`
 {: #cs_nlb-dns-monitor-configure}
