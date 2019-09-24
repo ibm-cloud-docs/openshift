@@ -3608,16 +3608,14 @@ ibmcloud oc nlb-dns add --cluster mycluster --ip 1.1.1.1 --nlb-host mycluster-a1
 
 </br>
 
-### `ibmcloud oc nlb-dns create`
+### `ibmcloud oc nlb-dns create classic`
 {: #cs_nlb-dns-create}
 
 Publicly expose your app by creating a DNS subdomain to register a network load balancer (NLB) IP.
 {: shortdesc}
 
-
-
 ```
-ibmcloud oc nlb-dns create --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--json] [-s]
+ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--json] [-s]
 ```
 {: pre}
 
@@ -3640,18 +3638,17 @@ ibmcloud oc nlb-dns create --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3
 
 **Example**:
 ```
-ibmcloud oc nlb-dns create --cluster mycluster --ip 1.1.1.1
+ibmcloud oc nlb-dns create classic --cluster mycluster --ip 1.1.1.1
 ```
 {: pre}
 
 </br>
+
 ### `ibmcloud oc nlb-dns ls`
 {: #cs_nlb-dns-ls}
 
-List the network load balancer subdomains and IP addresses that are registered in a cluster.
+In a classic cluster, list the network load balancer (NLB) IP addresses that are registered to DNS subdomains. In a VPC cluster, list the VPC load balancer hostnames that are registered to DNS subdomains.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc nlb-dns ls --cluster CLUSTER [--json] [-s]
@@ -3680,16 +3677,14 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 
 </br>
 
-### `ibmcloud oc nlb-dns rm`
+### `ibmcloud oc nlb-dns rm classic`
 {: #cs_nlb-dns-rm}
 
-Remove a network load balancer IP address from a subdomain. If you remove all IPs from a subdomain, the subdomain still exists but no IPs are associated with it. <strong>Note</strong>: You must run this command for each IP address that you want to remove.
+Remove a network load balancer (NLB) IP address from a subdomain. If you remove all IPs from a subdomain, the subdomain still exists but no IPs are associated with it. <strong>Note</strong>: You must run this command for each IP address that you want to remove.
 {: shortdesc}
 
-
-
 ```
-ibmcloud oc nlb-dns rm --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [-s]
 ```
 {: pre}
 
@@ -3715,13 +3710,11 @@ ibmcloud oc nlb-dns rm --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [
 
 **Example**:
 ```
-ibmcloud oc nlb-dns rm --cluster mycluster --ip 1.1.1.1 --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
+ibmcloud oc nlb-dns rm classic --cluster mycluster --ip 1.1.1.1 --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
 ```
 {: pre}
 
 </br>
-
-
 
 ### `ibmcloud oc nlb-dns monitor configure`
 {: #cs_nlb-dns-monitor-configure}
