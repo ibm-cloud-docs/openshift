@@ -414,6 +414,9 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ibmc-s3fs-vault-regional               ibm.io/ibmc-s3fs   8m
     ```
     {: screen}
+    
+    If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `kubectl patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
+    {: tip}
 
 12. Repeat the steps for all clusters where you want to access {{site.data.keyword.cos_full_notm}} buckets.
 
