@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-25"
 
 keywords: openshift, roks, rhos, rhoks, multi az, multi-az, szr, mzr
 
@@ -60,6 +60,8 @@ If your single zone cluster is created in one of the [multizone metro location](
 
 Create a multizone cluster to distribute your workloads across multiple worker nodes and zones, and protect against zone failures with hosts, networks, or apps. If resources in one zone go down, your cluster workloads continue to run in the other zones.
 {: shortdesc}
+
+
 
 <img src="images/cs_cluster_multizone-ha.png" alt="High availability for multizone clusters" width="500" style="width:500px; border-style: none"/>
 
