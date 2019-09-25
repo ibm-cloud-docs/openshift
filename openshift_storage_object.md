@@ -141,6 +141,10 @@ Looking for instructions for how to update or remove the {{site.data.keyword.cos
 
 Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
+
+
+To install the plug-in: 
+
 1. Make sure that your worker node applies the latest patch for your minor version.
    1. List the current patch version of your worker nodes.
       ```
@@ -417,8 +421,8 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     
     If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `kubectl patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
     {: tip}
+13. Follow the instructions to [add object storage to your apps](#add_cos).        
 
-12. Repeat the steps for all clusters where you want to access {{site.data.keyword.cos_full_notm}} buckets.
 
 ### Updating the IBM Cloud Object Storage plug-in
 {: #update_cos_plugin}
