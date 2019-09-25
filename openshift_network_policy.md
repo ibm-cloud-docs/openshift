@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-09-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -60,10 +60,10 @@ When a cluster with a public VLAN is created, a `HostEndpoint` resource with the
 
 These default Calico host policies allow all outbound network traffic and allow inbound traffic to specific cluster components, such as Kubernetes NodePort, LoadBalancer, and Ingress services. Any other inbound network traffic from the internet to your worker nodes that isn't specified in the default policies is blocked. The default policies don't affect pod to pod traffic.
 
-Review the following default Calico host policies that are automatically applied to your cluster.
-
 Do not remove policies that are applied to a host endpoint unless you fully understand the policy. Be sure that you do not need the traffic that is being allowed by the policy.
 {: important}
+
+Review the following default Calico host policies that are automatically applied to your cluster.
 
  <table summary="The first row in the table spans both columns. Read the rest of the rows from left to right, with the server zone in column one and IP addresses to match in column two.">
  <caption>Default Calico host policies for each cluster</caption>
@@ -95,33 +95,10 @@ Do not remove policies that are applied to a host endpoint unless you fully unde
     <td><code>allow-vrrp</code></td>
     <td>Allows VRRP packets, which are used to monitor and move virtual IP addresses between worker nodes.</td>
    </tr>
-   <tr>
-    <td>**In 1.15 clusters only**: <code>allow-all-private-default</code></td>
-    <td>Allows all ingress and egress network traffic on any workload or host endpoint that has the `iks.worker.interface == 'private'` label.</br></br>**Note**: This policy currently has no effect on cluster network traffic, but will be used in the future as further Calico HostEndpoint support is added. However, if you created Calico HostEndpoint objects that use this `iks.worker.interface == 'private'` label, the <code>allow-all-private-default</code> policy might disrupt your network traffic. Before you update your cluster to Kubernetes 1.15, you must create a Calico policy to override the default policy:
-    <ol><li>In a text editor, create a Calico network policy named `deny-all-outbound.yaml`.
-    <pre class="codeblock"><code>apiVersion: projectcalico.org/v3
-kind: GlobalNetworkPolicy
-metadata:
-  name: deny-all-outbound
-spec:
-  egress:
-  - action: Deny
-    destination: {}
-    source: {}
-  order: 2000
-  selector: iks.worker.interface == 'private'
-  types:
-  - Egress</code></pre>
-    </li>
-    <li>Apply the policy to your cluster.
-    <pre class="pre"><code>calicoctl apply -f deny-all-outbound.yaml --config=&lt;filepath&gt;/calicoctl.cfg</code></pre>
-    </li></ol>
-    </td>
-   </tr>
   </tbody>
 </table>
 
-A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to clusters that are connected only to a private VLAN and clusters that are connected to a public and private VLAN.
+A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to all  clusters.
 
 <table>
 <caption>Default Kubernetes policies for each cluster</caption>

@@ -40,6 +40,8 @@ If you have a multizone cluster and want to restrict network traffic to edge wor
 Add the `dedicated=edge` label to two or more worker nodes on each public or private VLAN in your cluster to ensure that network load balancers (NLBs) and Ingress application load balancers (ALBs) are deployed to those worker nodes only.
 {:shortdesc}
 
+
+
 Before you begin:
 
 * Ensure that you have the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
@@ -123,7 +125,7 @@ Before you begin:
       * If NLB pods are returned, continue to the next step.
 
   * ALB pods:
-    1. Confirm that all ALB pods are deployed to edge nodes. Each public and private ALB has two pods.
+    1. Confirm that all ALB pods are deployed to edge nodes. Each public and private ALB that is enabled in your cluster has two pods.
       ```
       oc describe nodes -l dedicated=edge | grep alb
       ```
@@ -180,6 +182,8 @@ A benefit of edge worker nodes is that they can be specified to run networking s
 {:shortdesc}
 
 Using the `dedicated=edge` toleration means that all network load balancer (NLB) and Ingress application load balancer (ALB) services are deployed to the labeled worker nodes only. However, to prevent other workloads from running on edge worker nodes and consuming worker node resources, you must use [Kubernetes taints ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/).
+
+
 
 Before you begin:
 - Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role for all namespaces](/docs/openshift?topic=openshift-users#platform).
