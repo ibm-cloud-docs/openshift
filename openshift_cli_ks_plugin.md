@@ -2166,7 +2166,7 @@ ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-s] [
 **Command options**:
 <dl>
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster where the worker pool exsits. This value is required.</dd>
+<dd>The name or ID of the cluster where the worker pool exists. This value is required.</dd>
 
 <dt><code>--worker-pool <em>WORKER_POOL</em></code></dt>
 <dd>The name of the worker node pool that you want to see zones for. This value is required.</dd>
