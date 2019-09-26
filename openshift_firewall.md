@@ -489,7 +489,7 @@ You can allow incoming access to NodePort, load balancer, and Ingress services, 
 
 <dl>
   <dt>NodePort service</dt>
-  <dd>Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.<dd>
+  <dd>Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.</dd>
   <dt>Load balancer service</dt>
   <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
   <dt>Ingress</dt>
