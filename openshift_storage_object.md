@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-26"
+lastupdated: "2019-09-27"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -145,7 +145,10 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 To install the plug-in: 
 
-1. Make sure that your worker node applies the latest patch for your minor version.
+1. Make sure that your worker node applies the latest patch for your minor version to run your worker node with the latest security settings. The patch version also ensures that the root password on the worker node is renewed. 
+   
+   If you did not apply updates or reload your worker node within the last 90 days, your root password on the worker node expires and the installation of the storage plug-in might fail. 
+   {: note}
    1. List the current patch version of your worker nodes.
       ```
       ibmcloud oc worker ls --cluster <cluster_name_or_ID>
