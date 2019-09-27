@@ -188,7 +188,7 @@ To clean up persistent data:
 
 9. Remove the physical storage instance.
 
-   **Classi File Storage:**
+   **Classic File Storage:**
    ```
    ibmcloud sl file volume-cancel <classic_file_id>
    ```
