@@ -60,7 +60,6 @@ If you delete the PVC, PV, and the storage instance, the billing cycle stops dep
 
 **What do I need to be aware of before I delete persistent storage?** </br>
 When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/openshift?topic=openshift-file_storage#file_backup_restore) or [block storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore).
-{: important}
 
 **I deleted my storage instance. Why can I still see my instance?** </br>
 After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
