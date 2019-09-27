@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-09-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -33,7 +33,7 @@ Review these situations in which you might need to open specific ports and IP ad
 {:shortdesc}
 
 * [Corporate firewalls](#corporate): If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run `ibmcloud`, `ibmcloud oc`, `ibmcloud cr`, `oc`, and `calicoctl` commands from your local system.
-* [Gateway device firewalls](#vyatta_firewall): If you have firewalls set up on the public or private network in your IBM Cloud infrastructure account, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services. You can also open ports to allow incoming traffic to services exposing apps in your cluster.
+* [Gateway appliance firewalls](#vyatta_firewall): If you have firewalls set up on the public or private network in your IBM Cloud infrastructure account, such as a VRA, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services. You can also open ports to allow incoming traffic to services exposing apps in your cluster.
 * [Calico network policies](#firewall_calico_egress): If you use Calico network policies to act as a firewall to restrict all worker node egress, you must allow your worker nodes to access the resources that are required for the cluster to function.
 * [Other services or network firewalls](#whitelist_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by a firewall, you must add the IP addresses of your worker nodes in that firewall.
 
@@ -229,16 +229,16 @@ Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`
 <br />
 
 
-## Opening ports in gateway device firewalls
+## Opening ports in gateway appliance firewalls
 {: #vyatta_firewall}
 
-If you have firewalls set up on the [public network](#firewall_outbound) or [private network](#firewall_private) in your IBM Cloud infrastructure account, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
+If you have firewalls set up on the [public network](#firewall_outbound) or [private network](#firewall_private) in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
 ### Opening required ports in a public firewall
 {: #firewall_outbound}
 
-If you have a firewall on the public network in your IBM Cloud infrastructure account, you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
+If you have a firewall on the public network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {:shortdesc}
 
 1.  Note the public IP address for each worker node in the cluster.
@@ -421,7 +421,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 ### Opening required ports in a private firewall
 {: #firewall_private}
 
-If you have a firewall on the private network in your IBM Cloud infrastructure account, you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with each other, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
+If you have a firewall on the private network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with each other, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {:shortdesc}
 
 1. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
@@ -489,7 +489,7 @@ You can allow incoming access to NodePort, load balancer, and Ingress services, 
 
 <dl>
   <dt>NodePort service</dt>
-  <dd>Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.<dd>
+  <dd>Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.</dd>
   <dt>Load balancer service</dt>
   <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
   <dt>Ingress</dt>

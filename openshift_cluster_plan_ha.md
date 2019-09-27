@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-25"
 
 keywords: openshift, roks, rhos, rhoks, multi az, multi-az, szr, mzr
 
@@ -65,8 +65,7 @@ Create a multizone cluster to distribute your workloads across multiple worker n
 
 In a multizone cluster, the worker nodes in your worker pools are replicated across multiple zones within one region. Multizone clusters are designed to evenly schedule pods across worker nodes and zones to assure availability and failure recovery. If worker nodes are not spread evenly across the zones or capacity is insufficient in one of the zones, the Kubernetes scheduler or OpenShift controller might fail to schedule all requested pods. As a result, pods might go into a **Pending** state until enough capacity is available. If you want to change the default behavior to make Kubernetes scheduler or OpenShift controller distribute pods across zones in a best effort distribution, use the `preferredDuringSchedulingIgnoredDuringExecution` [pod affinity policy](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#inter-pod-affinity-and-anti-affinity-beta-feature).
 
-You can create multizone cluster in one of the supported [multizone metro location](/docs/containers?topic=containers-regions-and-zones#zones) only.
-{: note}
+<p class="note">You can create a multizone cluster in one of the supported [multizone metro locations](/docs/containers?topic=containers-regions-and-zones#zones) only.</p>
 
 **Why do I need worker nodes in three zones?** </br>
 Distributing your work load across three zones ensures high availability for your app in case one or two zones are not available, but it also makes your cluster setup more cost-efficient. Why is that, you ask? Here is an example.

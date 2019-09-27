@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-09-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -27,7 +27,55 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong}} clusters include an internal registry to build, deploy, and manage container images locally. For a private registry to manage and control access to images across your enterprise, you can also set up your cluster to use {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
+## Choosing an image registry solution
+{: #openshift_registry_options}
 
+Your app's images must be stored in a container registry that your cluster can access to deploy apps into your cluster. You can choose to use the built-in registry of your OpenShift cluster, a private registry with access restricted to select users, or a public registry. Review the following table to decide which option is suited for your use case.
+{: shortdesc}
+
+<table summary="The rows are read left to right, with the type of registry in column one and the description of the registry in column two.">
+    <caption>Choosing an image registry solution</caption>
+    <thead>
+      <th>Registry</th>
+      <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Internal OpenShift Container Registry (OCR)</td>
+        <td>Your cluster is set up with the internal OpenShift Container Registry so that OpenShift can automatically build, deploy, and manage your application lifecycle from within the cluster. Images are stored in a backing {{site.data.keyword.cloud_notm}} classic block storage device that is provisioned at cluster creation time. If you need more storage, you can resize the device.
+        <br><br>Use cases:<ul>
+        <li>OpenShift-native image stream, build, and app deployment process on a per cluster basis.</li>
+        <li>Images can be shared across all projects in the cluster, with access that is controlled through RBAC roles.</li>
+        <li>Integrating the registry with other Red Hat products like CloudForms for extended features such as vulnerability scanning.</li>
+        <li>Option to expose the registry with a route for public network access.</li></ul>
+        <br>For more information, see [Using the internal registry](#openshift_internal_registry).</td>
+    </tr>
+    <tr>
+        <td>Private registry</td>
+        <td>Private registries are a good choice to protect your images from being used and changed by unauthorized users. Private registries must be set up by the cluster administrator to make sure that access, storage quotas, image trust and other features work as intended.<br><br>
+        By default, your [OpenShift clusters are integrated with the private {{site.data.keyword.registrylong_notm}}](#openshift_iccr) through image pull secrets that are set up in the `default` project. {{site.data.keyword.registrylong_notm}} is a highly available, multi-tenant private registry to store your own images. You can also pull IBM-provided images from the global `icr.io` registry, and licensed software from the entitled registry. With {{site.data.keyword.registrylong_notm}}, you can manage images for multiple clusters with seamless integration with {{site.data.keyword.cloud_notm}} IAM and billing.<br><br>
+        Advantages of {{site.data.keyword.registrylong_notm}} over the internal registry:<ul>
+        <li>Sharing images across multiple clusters without needing to push images to multiple registries.</li>
+        <li>[Automatically scanning](/docs/services/Registry?topic=va-va_index) the vulnerability of images.</li>
+        <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/services/Registry?topic=registry-user) and [separate regional registries](/docs/services/Registry?topic=registry-registry_overview#registry_regions).</li>
+        <li>[Retaining images](/docs/services/Registry?topic=registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
+        <li>Using the private service endpoint so that clusters on only the private network can still access the registry.</li>
+        <li>[Setting storage and image pull traffic quotas](/docs/services/Registry?topic=registry-registry_quota) to better control image storage, usage, and billing.</li>
+        <li>Pulling licensed IBM content from the [entitled registry](/docs/containers?topic=containers-images#secret_entitled_software).</li></ul>
+        <br>To get started, see the following topics:<ul>
+        <li>[Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started).</li>
+        <li>[Using {{site.data.keyword.registrylong_notm}}](#openshift_iccr).</li></ul></td>
+    </tr>
+    <tr>
+        <td>Public registry</td>
+        <td>Public registries such as Docker Hub are an easy way to share images across teams, companies, clusters, or cloud providers. Some public registries might also offer a private registry component.<br><br>Use cases:<ul>
+        <li>Pushing and pulling images on the public network.</li>
+        <li>Quick testing of a container across multiple cloud providers.</li>
+        <li>Do not need enterprise-grade features such as vulnerability scanning or access management.</li></ul>
+        <br>For more information, see the public registry's documentation, such as [Quay ![External link icon](../icons/launch-glyph.svg "External link icon")](https://quay.io/) or [Docker Hub ![External link icon](../icons/launch-glyph.svg "External link icon")](https://hub.docker.com/).</td>
+    </tr>
+    </tbody>
+</table>
 
 ## Using the internal registry
 {: #openshift_internal_registry}

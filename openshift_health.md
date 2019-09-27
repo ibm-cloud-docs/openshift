@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-09-27"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -29,27 +29,9 @@ subcollection: openshift
 # Logging and monitoring
 {: #openshift_health}
 
-
-
 For cluster metrics and app logging and monitoring, {{site.data.keyword.openshiftlong}} clusters include built-in tools to help you manage the health of your single cluster instance. You can also set up {{site.data.keyword.cloud_notm}} tools for multi-cluster analysis or other use cases, such as {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
- 
 
-
-
-## Using the built-in OpenShift logging and monitoring stack
-{: #openshift_logmet}
-
-By default, Red Hat OpenShift on IBM Cloud clusters are deployed with built-in components and a catalog that you can use to set up logging and monitoring tools that are based on open source projects such as Prometheus and Grafana. For more information, see the following OpenShift docs.
-{: shortdesc}
-
-* [Prometheus cluster monitoring ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html).
-* [Aggregating container logs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html).
-* [Aggregate logging sizing guidelines ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging_sizing.html).
-* [Enabling cluster metrics ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/cluster_metrics.html).
-
-
-<br />
 
 
 ## Setting up LogDNA and Sysdig add-ons to monitor cluster health

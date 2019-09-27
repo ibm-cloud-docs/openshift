@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-27"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -29,7 +29,7 @@ subcollection: openshift
 [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started) is persistent, highly available storage that you can mount to your apps. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud {{site.data.keyword.cos_short}} buckets to pods in your cluster. Information that is stored with {{site.data.keyword.cos_full_notm}} is encrypted in transit and at rest, dispersed across multiple geographic locations, and accessed over HTTP by using a REST API.
 {: shortdesc}
 
-To connect to {{site.data.keyword.cos_full_notm}}, your cluster requires public network access to authenticate with {{site.data.keyword.cloud_notm}} Identity and Access Management. If you have a private-only cluster, you can communicate with the {{site.data.keyword.cos_full_notm}} private service endpoint if you install the plug-in version `1.0.3` or later, and set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
+If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
 
 With version 1.0.5, the {{site.data.keyword.cos_full_notm}} plug-in is renamed from `ibmcloud-object-storage-plugin` to `ibm-object-storage-plugin`. To install the new version of the plug-in, you must [uninstall the old Helm chart installation](#remove_cos_plugin) and [reinstall the Helm chart with the new {{site.data.keyword.cos_full_notm}} plug-in version](#install_cos).
@@ -72,7 +72,8 @@ To access your {{site.data.keyword.cos_full_notm}} service instance to read and 
 
 Follow these steps to create a Kubernetes secret for the credentials of an {{site.data.keyword.cos_full_notm}} service instance. If you plan to use a local Cloud Object Storage server or a different s3 API endpoint, create a Kubernetes secret with the appropriate credentials.
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+
+Before you begin, [access your cluster](/docs/openshift?topic=openshift-openshift_access_cluster#access_public_se). 
 
 1. Retrieve the **apikey**, or the **access_key_id** and the **secret_access_key** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials).
 
@@ -140,7 +141,14 @@ Looking for instructions for how to update or remove the {{site.data.keyword.cos
 
 Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
-1. Make sure that your worker node applies the latest patch for your minor version.
+
+
+To install the plug-in: 
+
+1. Make sure that your worker node applies the latest patch for your minor version to run your worker node with the latest security settings. The patch version also ensures that the root password on the worker node is renewed. 
+   
+   If you did not apply updates or reload your worker node within the last 90 days, your root password on the worker node expires and the installation of the storage plug-in might fail. 
+   {: note}
    1. List the current patch version of your worker nodes.
       ```
       ibmcloud oc worker ls --cluster <cluster_name_or_ID>
@@ -413,8 +421,11 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ibmc-s3fs-vault-regional               ibm.io/ibmc-s3fs   8m
     ```
     {: screen}
+    
+    If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `kubectl patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
+    {: tip}
+13. Follow the instructions to [add object storage to your apps](#add_cos).        
 
-12. Repeat the steps for all clusters where you want to access {{site.data.keyword.cos_full_notm}} buckets.
 
 ### Updating the IBM Cloud Object Storage plug-in
 {: #update_cos_plugin}

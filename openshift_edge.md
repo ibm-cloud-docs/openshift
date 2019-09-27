@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -34,14 +34,13 @@ When these worker nodes are marked for networking only, other workloads cannot c
 If you have a multizone cluster and want to restrict network traffic to edge worker nodes, at least two edge worker nodes must be enabled in each zone for high availability of load balancer or Ingress pods. Create an edge node worker pool that spans all the zones in your cluster, with at least two worker nodes per zone.
 {: tip}
 
-## Labeling worker nodes as edge nodes
+## Isolating networking workloads to edge nodes
 {: #edge_nodes}
 
 Add the `dedicated=edge` label to two or more worker nodes on each public or private VLAN in your cluster to ensure that network load balancers (NLBs) and Ingress application load balancers (ALBs) are deployed to those worker nodes only.
 {:shortdesc}
 
-**Community Kubernetes clusters**: In Kubernetes 1.14 and later, both public and private NLBs and ALBs can deploy to edge worker nodes. In Kubernetes 1.13 and earlier, public and private ALBs and public NLBs can deploy to edge nodes, but private NLBs must deploy to non-edge worker nodes in your cluster only.
-{: note}
+
 
 Before you begin:
 
@@ -50,9 +49,9 @@ Before you begin:
   * **Writer** or **Manager** service role for all namespaces
 * [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
-</br>To label worker nodes as edge nodes:
+</br>To create an edge node worker pool:
 
-1. [Create a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes. After the worker pool is marked with `dedicated=edge`, all existing and subsequent worker nodes get this label, and Ingress and load balancers are deployed to an edge worker node.
+1. [Create a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
   <p class="tip">If you want to use an existing worker pool, the pool must span all zones in your cluster and have at least two workers per zone. You can label the worker pool with `dedicated=edge` by using the [PATCH worker pool API](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool). In the body of the request, pass in the following JSON.
       <pre class="screen">
       {
@@ -91,9 +90,6 @@ Before you begin:
 
 4. Using the output from the previous step, run the following command for each NLB and ALB. This command redeploys the NLB or ALB to an edge worker node.
 
-  **Community Kubernetes clusters**: If your cluster runs Kubernetes 1.14 or later, you can deploy both public and private NLBs and ALBs to the edge worker nodes. In Kubernetes 1.13 and earlier, only public and private ALBs and public NLBs can deploy to edge nodes, so do not redeploy private NLB services.
-  {: note}
-
   ```
   oc get service -n <namespace> <service_name> -o yaml | oc apply -f -
   ```
@@ -129,7 +125,7 @@ Before you begin:
       * If NLB pods are returned, continue to the next step.
 
   * ALB pods:
-    1. Confirm that all ALB pods are deployed to edge nodes. Search for the keyword `alb`. Each public and private ALB has two pods. Example:
+    1. Confirm that all ALB pods are deployed to edge nodes. Each public and private ALB that is enabled in your cluster has two pods.
       ```
       oc describe nodes -l dedicated=edge | grep alb
       ```
@@ -146,7 +142,7 @@ Before you begin:
       ```
       {: screen}
 
-    2. Confirm that no ALB pods are deployed to non-edge nodes. Example:
+    2. Confirm that no ALB pods are deployed to non-edge nodes.
       ```
       oc describe nodes -l dedicated!=edge | grep alb
       ```
@@ -186,6 +182,8 @@ A benefit of edge worker nodes is that they can be specified to run networking s
 {:shortdesc}
 
 Using the `dedicated=edge` toleration means that all network load balancer (NLB) and Ingress application load balancer (ALB) services are deployed to the labeled worker nodes only. However, to prevent other workloads from running on edge worker nodes and consuming worker node resources, you must use [Kubernetes taints ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/).
+
+
 
 Before you begin:
 - Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role for all namespaces](/docs/openshift?topic=openshift-users#platform).

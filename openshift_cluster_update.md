@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-17"
+lastupdated: "2019-09-26"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -51,7 +51,7 @@ By default, patch updates for the master are applied automatically over the cour
 Unlike the master, you must update your workers for each patch version.
 
 **What happens during the master update?**</br>
-In clusters that run Kubernetes version 1.11 or later, your master is highly available with three replica master pods. The master pods have a rolling update, during which only one pod is unavailable at a time. Two instances are up and running so that you can access and change the cluster during the update. Your worker nodes, apps, and resources continue to run.
+Your master is highly available with three replica master pods. The master pods have a rolling update, during which only one pod is unavailable at a time. Two instances are up and running so that you can access and change the cluster during the update. Your worker nodes, apps, and resources continue to run.
 
 For clusters that run previous versions of Kubernetes, when you update the Kubernetes API server, the API server is down for about 5 - 10 minutes. During the update, you cannot access or change the cluster. However, worker nodes, apps, and resources that cluster users deployed are not modified and continue to run.
 
@@ -81,6 +81,7 @@ To update the Kubernetes master _major_ or _minor_ version:
 When the master update is complete, you can update your worker nodes
 
 <br />
+
 
 
 ## Updating worker nodes
@@ -363,7 +364,7 @@ To update flavors:
      3. Add the zone to your worker pool that you retrieved earlier. When you add a zone, the worker nodes that are defined in your worker pool are provisioned in the zone and considered for future workload scheduling. If you want to spread your worker nodes across multiple zones, choose a [multizone-capable zone](/docs/containers?topic=containers-regions-and-zones#zones).
        * Classic clusters:
          ```
-         ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pools <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+         ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
          ```
          {: pre}
        * VPC clusters:
@@ -401,7 +402,7 @@ To update flavors:
         {: pre}
 6. Remove the old worker node. **Note**: If you are removing a flavor that is billed monthly (such as bare metal), you are charged for the entire the month.
    - **For worker nodes in a worker pool**:
-     1. Remove the worker pool with the old machine type. Removing a worker-pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.
+     1. Remove the worker pool with the old machine type. Removing a worker pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.
         ```
         ibmcloud oc worker-pool rm --worker-pool <pool_name> --cluster <cluster_name_or_ID>
         ```
@@ -535,9 +536,9 @@ Before you begin:
 
     Example output:
     ```
-    ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                           ALB VLAN ID
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   10.xxx.xx.xxx   dal10   ingress:411/ingress-auth:315*   2234947
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.xx.xxx.xxx  dal10   ingress:411/ingress-auth:315*   2234945
+    ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                           ALB VLAN ID   NLB Version
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   10.xxx.xx.xxx   dal10   ingress:411/ingress-auth:315*   2294021       -
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.xx.xxx.xxx  dal10   ingress:411/ingress-auth:315*   2234945       -
 
     * An update is available for the ALB pods. Review any potentially disruptive changes for the latest version before you update: https://cloud.ibm.com/docs/containers?topic=containers-update#alb
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-19"
+lastupdated: "2019-09-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,7 +94,7 @@ However, in several situations, components in your cluster must be permitted to 
 
 <dl>
 <dt>[Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)</dt>
-<dd>A VRF enables all the VLANs and subnets in your infrastructure account to communicate with each other. Additionally, a VRF is required to allow your workers and master to communicate over the private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. Note that VRF eliminates the VLAN spanning option for your account, because all VLANs are able to communicate unless you configure a gateway device to manage traffic.</dd>
+<dd>A VRF enables all the VLANs and subnets in your infrastructure account to communicate with each other. Additionally, a VRF is required to allow your workers and master to communicate over the private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. Note that VRF eliminates the VLAN spanning option for your account, because all VLANs are able to communicate unless you configure a gateway appliance to manage traffic.</dd>
 <dt>[VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning)</dt>
 <dd>If you cannot or do not want to enable VRF, enable VLAN spanning. To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get). Note that you cannot enable the private service endpoint if you choose to enable VLAN spanning instead of a VRF.</dd>
 </dl>
@@ -557,7 +557,7 @@ To ensure that workers in these primary subnets on the same VLAN can communicate
 To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_vlan_spanning_get).
 {: tip}
 
-### Managing subnet routing for gateway devices
+### Managing subnet routing for gateway appliances
 {: #vra-routing}
 
 When you create a cluster, a portable public and a portable private subnet are ordered on the VLANs that the cluster is connected to. These subnets provide IP addresses for Ingress application load balancer (ALB) and network load balancer (NLB) services.

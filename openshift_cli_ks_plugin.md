@@ -596,10 +596,10 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dd>Use this option to prevent a public VLAN from being created. Required only when you specify the `--private-vlan` flag and do not include the `--public-vlan` flag.<p class="note">If worker nodes are set up with a private VLAN only, you must enable the private service endpoint or configure a gateway device. For more information, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#workeruser-master).</p></dd>
 
 <dt><code>--private-service-endpoint</code></dt>
-<dd>**Standard clusters that run Kubernetes version 1.11 or later in [VRF-enabled accounts](/docs/resources?topic=resources-private-network-endpoints#getting-started)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. In addition, you can choose to enable the public service endpoint by using the `--public-service-endpoint` flag to access your cluster over the internet. If you enable the private service endpoint only, you must be connected to the private VLAN to communicate with your Kubernetes master. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd>**Standard clusters in [VRF-enabled accounts](/docs/resources?topic=resources-private-network-endpoints#getting-started)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. In addition, you can choose to enable the public service endpoint by using the `--public-service-endpoint` flag to access your cluster over the internet. If you enable the private service endpoint only, you must be connected to the private VLAN to communicate with your Kubernetes master. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--public-service-endpoint</code></dt>
-<dd>**Standard clusters that run Kubernetes version 1.11 or later**: Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. If you have a [VRF-enabled account](/docs/resources?topic=resources-private-network-endpoints#getting-started) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network. You can later disable the public service endpoint if you want a private-only cluster.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd>Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. If you have a [VRF-enabled account](/docs/resources?topic=resources-private-network-endpoints#getting-started) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network. You can later disable the public service endpoint if you want a private-only cluster.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--workers WORKER</code></dt>
 <dd>The number of worker nodes that you want to deploy in your cluster. If you do not specify this option, a cluster with one worker node is created. This value is optional for standard clusters and is not available for free clusters.
@@ -626,6 +626,8 @@ Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/
 <ul><li><code>10.0.&#42;.&#42;</code></li>
 <li><code>172.20.&#42;.&#42;</code></li>
 <li><code>192.168.255.&#42;</code></li></ul></p>
+
+
 
 <code><strong>-s</strong></code></br>
 Do not show the message of the day or update reminders. This value is optional.
@@ -892,7 +894,7 @@ Set the webhook back end for the API server configuration. The webhook back end 
 {: shortdesc}
 
 ```
-ibmcloud oc cluster master audit-webhook set --cluster CLUSTER [--remoteServer SERVER_URL_OR_IP] [--caCert CA_CERT_PATH] [--clientCert CLIENT_CERT_PATH] [--clientKey CLIENT_KEY_PATH] [-s]
+ibmcloud oc cluster master audit-webhook set --cluster CLUSTER [--remote-server SERVER_URL_OR_IP] [--ca-cert CA_CERT_PATH] [--client-cert CLIENT_CERT_PATH] [--client-key CLIENT_KEY_PATH] [-s]
 ```
 {: pre}
 
@@ -903,16 +905,16 @@ ibmcloud oc cluster master audit-webhook set --cluster CLUSTER [--remoteServer S
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>--remoteServer <em>SERVER_URL</em></code></dt>
+<dt><code>--remote-server <em>SERVER_URL</em></code></dt>
 <dd>The URL or IP address for the remote logging service you want to send audit logs to. If you provide an insecure server URL, any certificates are ignored. If you provide an IP address, prepend `http://` to the IP. This value is optional.</dd>
 
-<dt><code>--caCert <em>CA_CERT_PATH</em></code></dt>
+<dt><code>--ca-cert <em>CA_CERT_PATH</em></code></dt>
 <dd>The file path for the CA certificate that is used to verify the remote logging service. This value is optional.</dd>
 
-<dt><code>--clientCert <em>CLIENT_CERT_PATH</em></code></dt>
+<dt><code>--client-cert <em>CLIENT_CERT_PATH</em></code></dt>
 <dd>The file path for the client certificate that is used to authenticate against the remote logging service. This value is optional.</dd>
 
-<dt><code>--clientKey <em> CLIENT_KEY_PATH</em></code></dt>
+<dt><code>--client-key <em> CLIENT_KEY_PATH</em></code></dt>
 <dd>The file path for the corresponding client key that is used to connect to the remote logging service. This value is optional.</dd>
 
 <dt><code>-s</code></dt>
@@ -921,7 +923,7 @@ ibmcloud oc cluster master audit-webhook set --cluster CLUSTER [--remoteServer S
 
 **Example**:
 ```
-ibmcloud oc cluster master audit-webhook set --cluster my_cluster --remoteServer https://audit.example.com/audit --caCert /mnt/etc/kubernetes/apiserver audit/ca.pem --clientCert /mnt/etc/kubernetes/apiserver audit/cert.pem --clientKey /mnt/etc/kubernetes/apiserver audit/key.pem
+ibmcloud oc cluster master audit-webhook set --cluster my_cluster --remote-server https://audit.example.com/audit --ca-cert /mnt/etc/kubernetes/apiserver audit/ca.pem --client-cert /mnt/etc/kubernetes/apiserver audit/cert.pem --client-key /mnt/etc/kubernetes/apiserver audit/key.pem
 ```
 {: pre}
 
@@ -2164,7 +2166,7 @@ ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-s] [
 **Command options**:
 <dl>
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster where the worker pool exsits. This value is required.</dd>
+<dd>The name or ID of the cluster where the worker pool exists. This value is required.</dd>
 
 <dt><code>--worker-pool <em>WORKER_POOL</em></code></dt>
 <dd>The name of the worker node pool that you want to see zones for. This value is required.</dd>
@@ -2339,7 +2341,7 @@ VLAN ID   Subnet CIDR         Public   User-managed
 
 **Example**:
 ```
-ibmcloud oc zone network-set --zone dal10 --cluster my_cluster --worker-pools pool1,pool2,pool3 --private-vlan 2294021
+ibmcloud oc zone network-set --zone dal10 --cluster my_cluster --worker-pool pool1,pool2,pool3 --private-vlan 2294021
 ```
 {: pre}
 
