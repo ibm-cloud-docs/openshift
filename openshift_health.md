@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-09-27"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -29,25 +29,61 @@ subcollection: openshift
 # Logging and monitoring
 {: #openshift_health}
 
-
-
 For cluster metrics and app logging and monitoring, {{site.data.keyword.openshiftlong}} clusters include built-in tools to help you manage the health of your single cluster instance. You can also set up {{site.data.keyword.cloud_notm}} tools for multi-cluster analysis or other use cases, such as {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
- 
 
+## Understanding options for logging and monitoring
+{: #oc_logmet_options}
 
+To help understand when to use the built-in OpenShift tools or {{site.data.keyword.cloud_notm}} integrations, review the following table.
 
-## Using the built-in OpenShift logging and monitoring stack
-{: #openshift_logmet}
-
-By default, Red Hat OpenShift on IBM Cloud clusters are deployed with built-in components and a catalog that you can use to set up logging and monitoring tools that are based on open source projects such as Prometheus and Grafana. For more information, see the following OpenShift docs.
-{: shortdesc}
-
-* [Prometheus cluster monitoring ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html).
-* [Aggregating container logs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html).
-* [Aggregate logging sizing guidelines ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging_sizing.html).
-* [Enabling cluster metrics ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/cluster_metrics.html).
-
+<table summary="The rows are read left to right, with the type of solution in column one, the description of the built-in OpenShift tooling in column two, and the description of the {{site.data.keyword.cloud_notm}} integration in column three.">
+    <caption>Comparing OpenShift and {{site.data.keyword.cloud_notm}} logging and monitoring solutions</caption>
+    <thead>
+      <th>Type</th>
+      <th>OpenShift tools</th>
+      <th>{{site.data.keyword.cloud_notm}} integrations</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>**Logging**</td>
+        <td>**Built-in OpenShift logging tools**:<ul>
+          <li>Built-in view of pod logs in the OpenShift web console.</li>
+          <li>Option to install an Elasticsearch, Fluentd, and Kibana (ELK) stack.</li>
+          <li>Need to run, manage, and scale the ELK stack yourself.</li>
+          <li>Logging is on a per-cluster basis.</li>
+          <li>The ELK stack is set up in a single zone only and is not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available.</li></ul>
+          <br>For more information, see [the OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html).</td>
+        <td>**{{site.data.keyword.la_full_notm}}**:<ul>
+          <li>Customizable user interface for live streaming of log tailing, real-time troubleshooting, issue alerts, and log archiving.</li>
+          <li>Quick integration with the cluster via a script.</li>
+          <li>Aggregated logs across clusters and cloud providers.</li>
+          <li>Historical access to logs that is based on the plan you choose.</li>
+          <li>Highly available, scalable, and compliant with industry security standards.</li>
+          <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
+          <li>Flexible plans, including a free `Lite` option.</li></ul>
+          <br>To get started, see [Setting up LogDNA](#openshift_logdna).</td>
+    </tr>
+    <tr>
+        <td>**Monitoring**</td>
+        <td>**Built-in OpenShift monitoring tools**:<ul>
+          <li>Built-in Prometheus and Grafana deployments in `openshift-monitoring` project for cluster metrics.</li>
+          <li>At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the OpenShift **Cluster Console**.</li>
+          <li>Monitoring is on a per-cluster basis.</li>
+          <li>The `openshift-monitoring` project stack is set up in a single zone only. No persistent storage is available to back up or view metric history.</li></ul>
+          <br>For more information, see [the OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html).</td>
+        <td>**{{site.data.keyword.mon_full_notm}}**:<ul>
+          <li>Customizable user interface for a unified look at your cluster metrics, container security, resource usage, alerts, and custom events.</li>
+          <li>Quick integration with the cluster via a script.</li>
+          <li>Aggregated metrics and container monitoring across clusters and cloud providers for consistent operations enablement.</li>
+          <li>Historical access to metrics that is based on the timeline and plan, and ability to capture and download trace files.</li>
+          <li>Highly available, scalable, and compliant with industry security standards.</li>
+          <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
+          <li>Free trial to try out the capabilities.</li></ul>
+          <br>To get started, see [Setting up Sysdig](#openshift_sysdig).</td>
+    </tr>
+    </tbody>
+</table>
 
 <br />
 
