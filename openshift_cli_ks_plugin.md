@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-09-30"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1925,7 +1925,7 @@ ibmcloud oc worker update --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658
 View and modify worker pools for a cluster.
 {: shortdesc}
 
-### `ibmcloud oc worker-pool create classic
+### `ibmcloud oc worker-pool create classic`
 {: #cs_worker_pool_create}
 
 You can create a worker pool in your cluster. When you add a worker pool, it is not assigned a zone by default. You specify the number of workers that you want in each zone and the flavors for the workers. The worker pool is given the default Kubernetes versions. To finish creating the workers, [add a zone or zones](#cs_zone_add) to your pool.
