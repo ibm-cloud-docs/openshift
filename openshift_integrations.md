@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-13"
+lastupdated: "2019-10-01"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d
 
@@ -113,6 +113,7 @@ With {{site.data.keyword.openshiftlong}}, you have many ways to enhance your clu
 You can add services to your Red Hat OpenShift on IBM Cloud cluster in various ways, including service binding, Helm charts, and operators. If you want to install open source software apps, make sure that these apps are compatible with your OpenShift cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.
 {: shortdesc}
 
+
 ## Adding IBM Cloud Paks
 {: #oc_cloud_paks}
 
@@ -126,12 +127,13 @@ You can add services to your Red Hat OpenShift on IBM Cloud cluster in various w
    * Some Cloud Paks, such as {{site.data.keyword.icp4dfull_notm}}, push the image to the registry for you as part of their installation process. To see if the image is pushed during installation, review the Cloud Pak installation information.
 3. Follow the instructions that are particular to each Cloud Pak installation, such as configuring the Helm chart values to work within OpenShift security context constraints.
 
-Now you can run your Cloud Pak on your OpenShift cluster! 
+Now you can run your Cloud Pak on your OpenShift cluster!
 
 When you set up your Cloud Pak, you might need to work with OpenShift-specific resources, such as security context constraints. Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 has a bug that yields an error when you run commands against OpenShift-specific resources, such as `kubectl get scc`.
 {: important}
 
 <br />
+
 
 
 ## Binding {{site.data.keyword.cloud_notm}} services to your cluster
@@ -215,7 +217,7 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>Add log management capabilities to your cluster by deploying LogDNA as a third-party service to your worker nodes to manage logs from your pod containers. For more information, see the following docs.<ul>
     <li>[About the LogDNA partnership](/docs/containers?topic=containers-service-partners#logdna-partner).</li>
     <li>[Setting up LogDNA in an OpenShift cluster](/docs/openshift?topic=openshift-openshift_health#openshift_logdna).</li>
-    <li>[Tutorial: Managing Kubernetes cluster logs with {{site.data.keyword.loganalysisfull_notm}} with LogDNA](/docs/services/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-kube#kube).</li></ul></dd>
+    <li>[Tutorial: Managing Kubernetes cluster logs with {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-kube#kube).</li></ul></dd>
 
   <dt>Razee</dt>
   <dd>[Razee ![External link icon](../icons/launch-glyph.svg "External link icon")](https://razee.io/) is an open-source project that automates and manages the deployment of Kubernetes resources across clusters, environments, and cloud providers, and helps you to visualize deployment information for your resources so that you can monitor the rollout process and find deployment issues more quickly. For more information about Razee and how to set up Razee in your cluster to automate your deployment process, see the [Razee documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/razee-io/Razee).</dd>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -51,7 +51,18 @@ To securely expose your apps to external traffic, you can use routes, NodePorts,
 
 </dl>
 
+## Choosing among load balancing solution
+{: #routes-vs-ingress}
 
+Now that you understand what [options](#external) you have to expose apps in your OpenShift cluster, choose the best solution for your workload.
+{: shortdesc}
+
+**Do I use OpenShift routes or Ingress ALBs?**<br>
+Because routes and Ingress offer similar capabilities, both load balancing solutions might be suitable to your workload. To help decide between routes and Ingress, consider the following broader concerns.
+* **Portability across clouds**: If you anticipate running the same app in OpenShift clusters in a hybrid scenario across multiple cloud providers, use the OpenShift router. Routes are configured and work the same way across cloud providers, whereas Ingress might vary with each provider.
+* **Annotations to extend routing capabilities**: With the Ingress ALB, you can customize Ingress routing rules with annotations. Some of these annotations help to integrate other {{site.data.keyword.cloud_notm}} services to your routes, such as {{site.data.keyword.appid_short}} to provide authentication for the Ingress URL that is assigned to your app. These annotations are not available for the OpenShift router.
+
+The following table compares the features of each app exposure method.
 
 |Characteristics|NodePort|NLB|Ingress ALB|Route|
 |---------------|------|--------|---|-----------|

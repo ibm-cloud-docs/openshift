@@ -24,8 +24,8 @@ Red Hat OpenShift on IBM Cloud
     {: .topicgroup}
     Your cluster strategy
         openshift_responsibilities.md
-        openshift_ha.md
         openshift_secure.md
+        openshift_ha.md
 
     {: .topicgroup}
     Tutorials
