@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-26"
+lastupdated: "2019-10-01"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -107,7 +107,7 @@ The OpenShift master is accessible through the private service endpoint if autho
   ```
   {: codeblock}
 
-4. Log in to your [OpenShift cluster](#access_public_se). 
+4. Log in to your [OpenShift cluster](#access_public_se).
 5. Create the NLB and endpoint.
    1. Apply the configuration file that you previously created.
       ```
@@ -127,8 +127,6 @@ The OpenShift master is accessible through the private service endpoint if autho
       ...
       ```
       {: screen}
-
-  <p class="note">If you want to connect to the master by using the [strongSwan VPN service](/docs/containers?topic=containers-vpn#vpn-setup), note the `172.21.x.x` **Cluster IP** to use in the next step instead. Because the strongSwan VPN pod runs inside your cluster, it can access the NLB by using the IP address of the internal cluster IP service. In your `config.yaml` file for the strongSwan Helm chart, ensure that the Kubernetes service subnet CIDR, `172.21.0.0/16`, is listed in the `local.subnet` setting.</p>
 
 6. On the client machines where you or your users run `oc` commands, add the NLB IP address and the private service endpoint URL to the `/etc/hosts` file. Do not include any ports in the IP address and URL and do not include `https://` in the URL.
   * For OSX and Linux users:
@@ -190,7 +188,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
 {:shortdesc}
 
 ### Using an API key to log in to OpenShift clusters
-{: #access_api_key} 
+{: #access_api_key}
 
 You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an OpenShift cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/iam?topic=iam-manapikey).
 {: shortdesc}
@@ -211,7 +209,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ibmcloud oc cluster-config --cluster <cluster_name_or_ID>
         ```
         {: pre}
-        
+
         After downloading the configuration files, a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable, such as the following example.
         ```
         export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
@@ -252,7 +250,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     Bound To      crn:v1:bluemix:public:::a/1aa111aa1a11111aaa1a1111aa1aa111:::   
     Version       1-c3c333333333ccccc33333c33cc3cc33   
     Locked        false   
-    UUID          ServiceId-bbb2b2b2-2bb2-2222-b222-b2b2b2222b22 
+    UUID          ServiceId-bbb2b2b2-2bb2-2222-b222-b2b2b2222b22
     ```
     {: screen}
 2.  Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to Red Hat OpenShift on IBM Cloud.
@@ -294,7 +292,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     Please preserve the API key! It cannot be retrieved after it's created.
 
     Name          <cluster_name>-key   
-    Description   API key for service ID <service_ID> in OpenShift cluster <cluster_name> 
+    Description   API key for service ID <service_ID> in OpenShift cluster <cluster_name>
     Bound To      crn:v1:bluemix:public:iam-identity::a/1bb222bb2b33333ddd3d3333ee4ee444::serviceid:ServiceId-ff55555f-5fff-6666-g6g6-777777h7h7hh   
     Created At    2019-02-01T19:06+0000   
     API Key       i-8i88ii8jjjj9jjj99kkkkkkkkk_k9-llllll11mmm1   
@@ -313,7 +311,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
         ibmcloud oc cluster-config --cluster <cluster_name_or_ID>
         ```
         {: pre}
-        
+
         After downloading the configuration files, a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable, such as the following example.
         ```
         export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
@@ -326,7 +324,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     ```
     {: pre}
 6.  Verify that the service ID can perform the actions that you authorized.
-    
+
     Example: If you assigned a `Reader` service role, the service ID can list pods in your OpenShift project.
     ```
     oc get pods
