@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-30"
+lastupdated: "2019-10-01"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -82,6 +82,7 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 
 
 
+
 ## Adding worker nodes by creating a new worker pool
 {: #add_pool}
 
@@ -147,7 +148,6 @@ You can add worker nodes to your classic cluster by creating a new worker pool.
    {: screen}
 
 <br />
-
 
 
 ## Adding worker nodes by adding a zone to a worker pool
