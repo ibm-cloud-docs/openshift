@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-10-01"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -339,7 +339,7 @@ By default, Red Hat OpenShift on IBM Cloud automatically colllects logs for the 
 - **Routers**: Logs inbound network traffic on routes. 
 - **Kubernetes system components**: Logs from the `kubelet`, the `kube-proxy`, and other components that run in the `kube-system` namespace.
 
-To access the logs of your cluster components, you can choose to set up your own Elasticsearch-Logstash-Kibana (ELK) stack in your cluster that you are responsible to manage and update, or to use [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-openshift_health#openshift_logdna) instead. {{site.data.keyword.la_full_notm}} provides access to all your logs and you can aggregate logs and build your own customized views across multiple clusters. 
+To access the logs of your cluster components, set up [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-openshift_health#openshift_logdna). {{site.data.keyword.la_full_notm}} provides access to all your logs and you can aggregate logs and build your own customized views across multiple clusters. 
 
 **How can I monitor the health and performance of my cluster?**</br>
 You can verify the health, capacity, and performance of your apps, services, and worker nodes by monitoring your cluster components and compute resources from the Red Hat OpenShift on IBM Cloud console or CLI, such as the CPU and memory usage. To view more in-depth metrics for your cluster, you can use the built-in monitoring capabilities that are based on open source technologies, such as [Prometheus ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html) and [Grafana ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.1/service_mesh/service_mesh_install/ossm-tutorial-grafana.html). Prometheus is automatically installed when you create the cluster and you can use the tool to access real-time cluster and app metrics. Prometheus metrics are not stored persistently. To access historic metrics and to compare metrics across mutliple clusters, use [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-openshift_health#openshift_sysdig) instead. 
