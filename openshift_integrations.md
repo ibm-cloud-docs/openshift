@@ -113,6 +113,7 @@ With {{site.data.keyword.openshiftlong}}, you have many ways to enhance your clu
 You can add services to your Red Hat OpenShift on IBM Cloud cluster in various ways, including service binding, Helm charts, and operators. If you want to install open source software apps, make sure that these apps are compatible with your OpenShift cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.
 {: shortdesc}
 
+
 ## Adding IBM Cloud Paks
 {: #oc_cloud_paks}
 
@@ -132,6 +133,7 @@ When you set up your Cloud Pak, you might need to work with OpenShift-specific r
 {: important}
 
 <br />
+
 
 
 ## Binding {{site.data.keyword.cloud_notm}} services to your cluster
