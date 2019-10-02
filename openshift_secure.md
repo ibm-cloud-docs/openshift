@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-02"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -227,6 +227,7 @@ The classic approach to protect a company's network is to set up a firewall and 
 {: #network_segmentation}
 
 To protect your network and limit the range of damage that a user can do when access to a network is granted, you must make sure that your workloads are as isolated as possible and that you limit the number of apps and worker nodes that are publicly exposed.
+{: shortdesc}
 
 **What network traffic is allowed for my cluster by default?**</br>
 All containers are protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked with the following exceptions:
@@ -255,14 +256,14 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 
 |Security feature|Description|
 |-------|----------------------------------|
-|Limit the number of exposed apps|By default, your apps and services that run within the cluster are not reachable over the public internet. You can choose if you want to expose your apps to the public, or if you want your apps and services be reachable on the private network only. When you keep your apps and services private, you can leverage the built-in security features to assure secured communication between worker nodes and pods. To expose services and apps to the public internet, you can use OpenShift routes, or leverage the [NLB and Ingress ALB support](/docs/containers?topic=containers-cs_network_planning#external) to securely make your services publicly available. Ensure that only necessary services are exposed, and revisit the list of exposed apps regularly to ensure that they are still valid. |
+|Limit the number of exposed apps|By default, your apps and services that run within the cluster are not reachable over the public internet. You can choose if you want to expose your apps to the public, or if you want your apps and services be reachable on the private network only. When you keep your apps and services private, you can leverage the built-in security features to assure secured communication between worker nodes and pods. To expose services and apps to the public internet, you can use OpenShift routes, or leverage the [NLB and Ingress ALB support](/docs/containers?topic=containers-cs_network_planning#public_access) to securely make your services publicly available. Ensure that only necessary services are exposed, and revisit the list of exposed apps regularly to ensure that they are still valid. |
 |Keep worker nodes private|When you create a cluster, every cluster is automatically connected to a private VLAN. The private VLAN determines the private IP address that is assigned to a worker node. You can choose to keep your worker nodes private by connecting them to a private VLAN only. </br></br><strong>Attention:</strong> Keep in mind that in order to communicate with the OpenShift master from your local machine and for Red Hat OpenShift on IBM Cloud to connect to {{site.data.keyword.cloud_notm}} services that do not support a private service endpoint, you must configure public connectivity to [specific URLs and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound). If the {{site.data.keyword.cloud_notm}} services that you want to connect to have a private service endpoint and your account is enabled for VRF, network traffic to and from these services is automatically routed over the private network and no public network connection is required. To set up public connectivity for cluster that is connected to a private VLAN only, you can configure a firewall, such as a [Virtual Router Appliance](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra), in front of your worker nodes and enable network traffic to these URLs and IP addresses.|
-|Limit public internet connectivity with edge nodes|By default, every worker node is configured to accept app pods and associated load balancer or ingress pods. You can label worker nodes as [edge nodes](/docs/openshift?topic=openshift-edge#edge) to force load balancer and ingress pods to be deployed to these worker nodes only. In addition, you can [taint your worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads) so that app pods cannot schedule onto the edge nodes. With edge nodes, you can isolate the networking workload on fewer worker nodes in your cluster and keep other worker nodes in the cluster private.|
+|Limit public internet connectivity with gateway nodes|Gateway worker nodes help you achieve network connectivity separation between the internet or an on-premises data center and the compute workload that runs in your cluster. When you [create a cluster with a gateway](/docs/containers?topic=containers-clusters#gateway_cluster_cli), the cluster is created with a `default` worker pool of compute worker nodes that are connected to a private VLAN only, and a `gateway` worker pool of gateway worker nodes that are connected to public and private VLANs. The gateway worker pool provides an edge firewall in the form of Calico policies for ingress and egress traffic, load balancers for ingress traffic to the cluster, and a gateway for egress traffic from the cluster. All NLB pods deploy to the gateway worker nodes, which are also tainted so that no compute workloads can be scheduled onto them.</br></br>Then, if you want to provide another level of network separation between the public network and your worker pools of compute worker nodes, you can optionally [create an edge worker pool](/docs/openshift?topic=openshift-edge#edge_gateway). When you create an edge node worker pool in a gateway-enabled cluster, ALB pods are deployed to edge worker nodes only. By deploying only ALBs to edge nodes, all layer 7 proxy management is kept separate from the gateway worker nodes so that TLS termination and HTTP request routing is completed by the ALBs on the private network only.|
+|Limit public internet connectivity with edge nodes|If you do not create a cluster with a gateway enabled, every worker node is configured to accept app pods and associated load balancer or ingress pods. You can label worker nodes as [edge nodes](/docs/openshift?topic=openshift-edge#edge) to force load balancer and ingress pods to be deployed to these worker nodes only. In addition, you can [taint your worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads) so that app pods cannot schedule onto the edge nodes. With edge nodes, you can isolate the networking workload on fewer worker nodes in your cluster and keep other worker nodes in the cluster private.|
 {: caption="Private services and worker node options" caption-side="top"}
 
 **What if I want to connect my cluster to an on-prem data center?**</br>
 To connect your worker nodes and apps to an on-prem data center, you can configure a [VPN IPSec endpoint with a strongSwan service, a Virtual Router Appliance, or with a Fortigate Security Appliance](/docs/containers?topic=containers-vpn#vpn).
-
 
 ### Expose apps with routes
 {: #expose-apps-with-routes}
@@ -274,8 +275,6 @@ Every OpenShift cluster is automatically set up with an OpenShift router that is
 
 **How can I create secured routes and control TLS termination?** </br>
 When you create a route for your app, you can decide to create a secured (HTTPS) or unsecured (HTTP) route. For secured routes, you can decide where you want to implement the TLS termination, such as at the router or at the pod. For more information, see [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes).
-
-
 
 ### Expose apps with LoadBalancer and Ingress services
 {: #network_lb_ingress}
