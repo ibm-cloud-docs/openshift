@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-10-03"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -29,7 +29,7 @@ subcollection: openshift
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}
 
-With Red Hat OpenShift on IBM Cloud, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of managed {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-responsibilities_iks) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) that runs on Red Hat Enterprise Linux for your app deployments.
+With {{site.data.keyword.openshiftlong}}, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of managed {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-responsibilities_iks) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) that runs on Red Hat Enterprise Linux for your app deployments.
 {: shortdesc}
 
 To complete the getting started tutorial, use a Pay-As-You-Go {{site.data.keyword.cloud_notm}} account where you are the owner or have full Administrator privileges. This getting started tutorial focuses on setting up a cluster and sample app quickly by using the {{site.data.keyword.cloud_notm}} console. For more information on how to use the CLI to create your OpenShift cluster and deploy an app, check out this [tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
