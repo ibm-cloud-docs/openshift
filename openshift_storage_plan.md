@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -29,7 +29,7 @@ subcollection: openshift
 ## Choosing a storage solution
 {: #choose_storage_solution}
 
-Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
+Before you can decide what type of storage is the right solution for your {[product_name_tm]} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
 
 1. Decide whether your data must be permanently stored, or if your data can be removed at any time.
    - **Persistent storage:** Your data must still be available, even if the container, the worker node, or the cluster is removed. Use persistent storage in the following scenarios:
@@ -251,8 +251,8 @@ The following image shows the options that you have in {{site.data.keyword.conta
 </tr>
 <tr>
 <td style="text-align:left">Backup and recovery</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([oc cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
-   <td style="text-align:left"><strong>Classic Block Storage</strong>: <ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([oc cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([{[kubectl]} cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
+   <td style="text-align:left"><strong>Classic Block Storage</strong>: <ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([{[kubectl]} cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
 </tr>
 <tr>
 <td style="text-align:left">Common use cases</td>
@@ -289,6 +289,7 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <thead>
 <th style="text-align:left">Characteristics</th>
 <th style="text-align:left">Object Storage</th>
+<th style="text-align:left">SDS (Portworx)</th>
 <th style="text-align:left">{{site.data.keyword.cloud_notm}} Databases</th>
 </thead>
 <tbody>
@@ -296,20 +297,24 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <td style="text-align:left">Multizone-capable</td>
 <td style="text-align:left">Yes</td>
 <td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
 <td style="text-align:left">Ideal data types</td>
 <td style="text-align:left">Semi-structured and unstructured data</td>
+<td style="text-align:left">All</td>
 <td style="text-align:left">Depends on the DBaaS</td>
 </tr>
 <tr>
 <td style="text-align:left">Data usage pattern</td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Read-intensive workloads</li><li style="margin:0px; padding:0px">Few or no write operations</li></ul></td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Write-intensive workloads</li><li style="margin:0px; padding:0px">Random read and write operation</li><li style="margin:0px; padding:0px">Sequential read and write operations</li></ul></td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Read-write-intensive workloads</li></ul></td>
 </tr>
 <tr>
 <td style="text-align:left">Access</td>
 <td style="text-align:left">Via file system on mounted volume (plug-in) or via REST API from your app</td>
+<td style="text-align:left">Via file system on mounted volume or NFS client access to the volume</td>
 <td style="text-align:left">Via REST API from your app</td>
 </tr>
 <tr>
@@ -320,52 +325,62 @@ The following image shows the options that you have in {{site.data.keyword.conta
 <tr>
 <td style="text-align:left">Performance</td>
 <td style="text-align:left">High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines.</td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Close to bare metal performance for sequential read and write operations when you use SDS machines. </li><li style="margin:0px; padding:0px">Provides [profiles ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning) to run high-performance databases</li><li style="margin:0px; padding:0px">Possibility to create a storage layer with different performance profiles that your app can choose from.</li></ul> </td>
 <td style="text-align:left">High if deployed to the same data center as your app.</td>
 </tr>
 <tr>
 <td style="text-align:left">Consistency</td>
 <td style="text-align:left">Eventual</td>
+   <td style="text-align:left">Strong</td>
 <td style="text-align:left">Depends on the DBaaS</td>
 </tr>
 <tr>
 <td style="text-align:left">Durability</td>
 <td style="text-align:left">Very high as data slices are dispersed across a cluster of storage
 nodes. Every node stores only a part of the data. </td>
+<td style="text-align:left">Very high as three copies of your data are maintained at all times.</td>
 <td style="text-align:left">High</td>
 </tr>
 <tr>
 <td style="text-align:left">Resiliency</td>
 <td style="text-align:left">High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone only.</td>
+<td style="text-align:left">High when set up with replication across three zones. Medium, when you store data in a single zone only.</td>
 <td style="text-align:left">Depends on the DBaaS and your setup. </td>
 </tr>
 <tr>
 <td style="text-align:left">Availability</td>
 <td style="text-align:left">High due to the distribution across zones or regions. </td>
+<td style="text-align:left">High when you replicate data across three worker nodes in different zones.</td>
 <td style="text-align:left">High if you set up multiple instances. </td>
 </tr>
 <tr>
 <td style="text-align:left">Scalability</td>
 <td style="text-align:left">Scales automatically</td>
+<td style="text-align:left">Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. </td>
 <td style="text-align:left">Scales automatically</td>
 </tr>
 <tr>
 <td style="text-align:left">Encryption</td>
 <td style="text-align:left">In transit and at rest</td>
+<td style="text-align:left">Bring your own key to protect your data in transit and at rest with {{site.data.keyword.keymanagementservicelong_notm}}. </td>
 <td style="text-align:left">At rest</td>
 </tr>
 <tr>
 <td style="text-align:left">Backup and recovery</td>
-<td style="text-align:left">Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03).  You can also use the  Kubernetes [`oc cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
+<td style="text-align:left">Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03).  You can also use the  Kubernetes [`{[kubectl]} cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
+<td style="text-align:left">Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/). You can also use the  Kubernetes [`kubectl cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
 <td style="text-align:left">Depends on the DBaaS</td>
 </tr>
 <tr>
 <td style="text-align:left">Common use cases</td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Multizone clusters</li><li style="margin:0px; padding:0px">Geographically distributed data</li><li style="margin:0px; padding:0px">Static big data</li><li style="margin:0px; padding:0px">Static multimedia content</li><li style="margin:0px; padding:0px">Web apps</li><li style="margin:0px; padding:0px">Backups</li><li style="margin:0px; padding:0px">Archives</li></ul></td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Stateful sets</li><li style="margin:0px; padding:0px">Geographically distributed data</li><li style="margin:0px; padding:0px">Common storage solution when you run apps across multiple cloud providers</li><li style="margin:0px; padding:0px">Backing storage when you run your own database</li><li style="margin:0px; padding:0px">High-performance access for single pods</li><li style="margin:0px; padding:0px">Shared storage access across multiple pods and worker nodes</li></ul></td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Multizone clusters</li><li style="margin:0px; padding:0px">Relational and non-relational databases</li><li style="margin:0px; padding:0px">Geographically distributed data</li></ul></td>
 </tr>
 <tr>
 <td style="text-align:left">Non-ideal use cases</td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Write-intensive workloads</li><li style="margin:0px; padding:0px">Random write operations</li><li style="margin:0px; padding:0px">Incremental data updates</li><li style="margin:0px; padding:0px">Transaction databases</li></ul></td>
+   <td style="text-align:left">N/A</td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">App that is designed to write to a file system</li></ul></td>
 </tr>
 </tbody>
