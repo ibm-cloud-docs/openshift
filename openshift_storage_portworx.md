@@ -31,6 +31,7 @@ subcollection: openshift
 
 
 
+
 ## About Portworx
 
 Review frequently asked questions to learn more about Portworx and how Portworx provides highly available persistent storage management for your containerized apps. 
@@ -44,8 +45,8 @@ Portworx aggregates available storage that is attached to your worker nodes and 
 
 Portworx also comes with additional features that you can use for your stateful apps, such as volume snapshots, volume encryption, isolation, and an integrated Storage Orchestrator for Kubernetes (Stork) to ensure optimal placement of volumes in the cluster. For more information, see the [Portworx documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/).
 
-**What worker node flavor in {[product_name_notm]} is the right one for Portworx?** </br>
-{[product_name_notm]} provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/containers?topic=containers-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. Portworx offers best performance when you use SDS Ubuntu 18 worker node machines that come with 10 Gbps network speed.
+**What worker node flavor in Red Hat OpenShift on IBM Cloud is the right one for Portworx?** </br>
+Red Hat OpenShift on IBM Cloud provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/containers?topic=containers-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. Portworx offers best performance when you use SDS Ubuntu 18 worker node machines that come with 10 Gbps network speed.
 
 **What if I want to run Portworx on non-SDS worker nodes?** </br>
 You can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Non-SDS worker nodes can be virtual or bare metal. If you want to use virtual machines, use a worker node flavor of `b3c.16x64` or better. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` do not provide the required resources for Portworx to work properly. Keep in mind that virtual machines come with 1000 Mbps that is not sufficient for ideal performance of Portworx. Bare metal machines come with sufficient compute resources and network speed for Portworx, but you must [add raw, unformatted, and unmounted block storage](#create_block_storage) before you can use these machines.
@@ -62,7 +63,7 @@ One of the biggest challenges when you run stateful apps in a cluster is to make
 You can also choose to use only a subset of worker nodes for your Portworx storage layer. For example, you might have a worker pool with SDS worker nodes that come with local raw block storage, and another worker pool with virtual worker nodes that do not come with local storage. When you install Portworx, a Portworx pod is scheduled onto every worker node in your cluster as part of a daemon set. Because your SDS worker nodes have local storage, these worker nodes are included into the Portworx storage layer only. Your virtual worker nodes are not included as a storage node because of the missing local storage. However, when you deploy an app pod to your virtual worker node, this pod can still access data that is physically stored on an SDS worker node by using the Portworx daemon set pod. This setup is referred to as `storage-heavy` and offers slightly slower performance than the `hyper-converged` setup because the virtual worker node must talk to the SDS worker node over the private network to access the data.
 
 **What do I need to provision Portworx?** </br>
-{[product_name_notm]} provides worker node flavors that are optimized for SDS usage and that come with one or more raw, unformatted, and unmounted local disks that you can use to store your data. Portworx offers best performance when you use [SDS worker node machines](/docs/containers?topic=containers-planning_worker_nodes#sds) that come with 10 Gbps network speed. However, you can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Make sure to review the [minimum hardware requirements ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/) to install Portworx. 
+Red Hat OpenShift on IBM Cloud provides worker node flavors that are optimized for SDS usage and that come with one or more raw, unformatted, and unmounted local disks that you can use to store your data. Portworx offers best performance when you use [SDS worker node machines](/docs/containers?topic=containers-planning_worker_nodes#sds) that come with 10 Gbps network speed. However, you can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Make sure to review the [minimum hardware requirements ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/) to install Portworx. 
 
 **What limitations must I plan for?** </br>
 Portworx is available for standard clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint that is  enabled, you cannot use Portworx in your cluster, unless you open up all egress network traffic on TCP port 443, or enable the public service endpoint.
@@ -77,7 +78,7 @@ All set? Let's start with [creating a cluster with an SDS worker pool of at leas
 Portworx runs best when you use worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/containers?topic=containers-planning_worker_nodes#sds). However, if you can't or don't want to use SDS worker nodes, you can choose to install Portworx on non-SDS worker node flavors. Keep in mind that non-SDS worker nodes are not optimized for Portworx and might not offer the performance benefits that your app requires.
 {: shortdesc}
 
-To include non-SDS worker nodes into your Portworx cluster, you must add raw, unformatted, and unmounted block storage devices to your worker nodes by using the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. Raw block storage cannot be provisioned by using Kubernetes persistent volume claims (PVCs) as the block storage device is automatically formatted by {[product_name_notm]}. Portworx supports block storage only. Non-SDS worker nodes that mount file or object storage cannot be used for the Portworx data layer.
+To include non-SDS worker nodes into your Portworx cluster, you must add raw, unformatted, and unmounted block storage devices to your worker nodes by using the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. Raw block storage cannot be provisioned by using Kubernetes persistent volume claims (PVCs) as the block storage device is automatically formatted by Red Hat OpenShift on IBM Cloud. Portworx supports block storage only. Non-SDS worker nodes that mount file or object storage cannot be used for the Portworx data layer.
 
 If you have SDS worker node flavors in your cluster and want to use these worker nodes only to create your Portworx storage layer, then you can skip this step entirely and continue with [Setting up your Portworx database](#portworx_database).
 {: note}
@@ -248,7 +249,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
 
 4. Retrieve the **GUID** of your service instance.
    ```
-   {[ic]} resource service-instance <service_instance_name_or_ID>
+   ibmcloud resource service-instance <service_instance_name_or_ID>
    ```
    {: pre}
 
@@ -440,20 +441,20 @@ Check out how to [encrypt the secrets in your cluster](/docs/containers?topic=co
 ## Installing Portworx in your cluster
 {: #install_portworx}
 
-Install Portworx with a Helm chart. The Helm chart deploys a trial version of the Portworx enterprise edition `px-enterprise` that you can use for 30 days. In addition, [Stork ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/) is also installed on your {[product_name_notm]} cluster. Stork is the Portworx storage scheduler. With Stork, you can co-locate pods with their data and create and restore snapshots of Portworx volumes.
+Install Portworx with a Helm chart. The Helm chart deploys a trial version of the Portworx enterprise edition `px-enterprise` that you can use for 30 days. In addition, [Stork ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/) is also installed on your Red Hat OpenShift on IBM Cloud cluster. Stork is the Portworx storage scheduler. With Stork, you can co-locate pods with their data and create and restore snapshots of Portworx volumes.
 {: shortdesc}
 
 Looking for instructions about how to update or remove Portworx? See [Updating Portworx](#update_portworx) and [Removing Portworx](#remove_portworx).
 {: tip}
 
 Before you begin:
-- Make sure that you have the right [permissions](/docs/containers?topic=containers-clusters#cluster_prepare) to create a an {[product_name_notm]} cluster. 
+- Make sure that you have the right [permissions](/docs/containers?topic=containers-clusters#cluster_prepare) to create a an Red Hat OpenShift on IBM Cloud cluster. 
 - [Create or use an existing cluster](/docs/containers?topic=containers-clusters#clusters_ui).
 - If you want to use non-SDS worker nodes for your Portworx storage layer, [add an unformatted block storage device to your non-SDS worker node](#create_block_storage).
 - Create a [Databases for etcd service instance](#portworx_database) to store the Portworx configuration and metadata.
 - Decide whether you want to encrypt your Portworx volumes with {{site.data.keyword.keymanagementservicelong_notm}}. To encrypt your volumes, you must [set up an {{site.data.keyword.keymanagementservicelong_notm}} service instance and store your service information in a Kubernetes secret](#encrypt_volumes).
 - Make sure that you [copied the image pull secrets from the `default` to the `kube-system` namespace](/docs/containers?topic=containers-images#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/containers?topic=containers-images#store_imagePullSecret) of the `kube-system` namespace. 
-- {[target]}
+- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 To install Portworx:
 
@@ -462,7 +463,7 @@ To install Portworx:
 2.  Verify that tiller is installed with a service account.
 
     ```
-    {[kubectl]} get serviceaccount -n kube-system tiller
+    oc get serviceaccount -n kube-system tiller
     ```
     {: pre}
 
@@ -771,7 +772,7 @@ If you do not want to use Portworx in your cluster, you can uninstall the Helm c
 
 3. Verify that the Portworx pods are removed.
    ```
-   {[kubectl]} get pod -n kube-system | grep 'portworx\|stork'
+   oc get pod -n kube-system | grep 'portworx\|stork'
    ```
    {: pre}
 
@@ -785,7 +786,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
 
 1. List available storage classes in your cluster and check whether you can use an existing Portworx storage class that was set up during the Portworx installation. The pre-defined storage classes are optimized for database usage and to share data across pods.
    ```
-   {[kubectl]} get storageclasses | grep portworx
+   oc get storageclasses | grep portworx
    ```
    {: pre}
 
@@ -839,13 +840,13 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
 
    2. Create the storage class.
       ```
-      {[kubectl]} apply -f storageclass.yaml
+      oc apply -f storageclass.yaml
       ```
       {: pre}
 
    3. Verify that the storage class is created.
       ```
-      {[kubectl]} get storageclasses
+      oc get storageclasses
       ```
       {: pre}
 
@@ -893,13 +894,13 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
 
    2. Create your PVC.
       ```
-      {[kubectl]} apply -f pvc.yaml
+      oc apply -f pvc.yaml
       ```
       {: pre}
 
    3. Verify that your PVC is created and bound to a persistent volume (PV). This process might take a few minutes.
       ```
-      {[kubectl]} get pvc
+      oc get pvc
       ```
       {: pre}
       
@@ -970,7 +971,7 @@ To access the storage from your app, you must mount the PVC to your app.
     </tr>
     <tr>
     <td><code>spec.containers.image</code></td>
-    <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registryshort_notm}} account, run <code>{[iccr]} image-list</code>.</td>
+    <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registryshort_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
     </tr>
     <tr>
     <td><code>spec.containers.name</code></td>
@@ -1000,13 +1001,13 @@ To access the storage from your app, you must mount the PVC to your app.
 
 2. Create your deployment.
    ```
-   {[kubectl]} apply -f deployment.yaml
+   oc apply -f deployment.yaml
    ```
    {: pre}
 
 3. Verify that the PV is successfully mounted to your app.
    ```
-   {[kubectl]} describe deployment <deployment_name>
+   oc describe deployment <deployment_name>
    ```
    {: pre}
 
@@ -1027,7 +1028,7 @@ To access the storage from your app, you must mount the PVC to your app.
 4. Verify that you can write data to your Portworx cluster.
    1. Log in to the pod that mounts your PV.
       ```
-      {[kubectl]} exec <pod_name> -it bash
+      oc exec <pod_name> -it bash
       ```
       {: pre}
 
@@ -1074,7 +1075,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
 
 1. List the PVCs in your cluster and note the **NAME** of the PVC, and the name of the PV that is bound to the PVC and shown as **VOLUME**.
     ```
-    {[kubectl]} get pvc
+    oc get pvc
     ```
     {: pre}
 
@@ -1087,7 +1088,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
 
 2. Review the **`ReclaimPolicy`** for the storage class.
    ```
-   {[kubectl]} describe storageclass <storageclass_name>
+   oc describe storageclass <storageclass_name>
    ```
    {: pre}
 
@@ -1096,7 +1097,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
 3. Remove any pods that mount the PVC.
    1. List the pods that mount the PVC.
       ```
-      {[kubectl]} get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+      oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
       ```
       {: pre}
 
@@ -1114,25 +1115,25 @@ When you added storage from your Portworx cluster to your app, you have three ma
       {: tip}
 
       ```
-      {[kubectl]} delete pod <pod_name>
+      oc delete pod <pod_name>
       ```
       {: pre}
 
    3. Verify that the pod is removed.
       ```
-      {[kubectl]} get pods
+      oc get pods
       ```
       {: pre}
 
 4. Remove the PVC.
    ```
-   {[kubectl]} delete pvc <pvc_name>
+   oc delete pvc <pvc_name>
    ```
    {: pre}
 
 5. Review the status of your PV. Use the name of the PV that you retrieved earlier as **VOLUME**.
    ```
-   {[kubectl]} get pv <pv_name>
+   oc get pv <pv_name>
    ```
    {: pre}
 
@@ -1140,25 +1141,25 @@ When you added storage from your Portworx cluster to your app, you have three ma
 
 6. If your PV is not deleted, manually remove the PV.
    ```
-   {[kubectl]} delete pv <pv_name>
+   oc delete pv <pv_name>
    ```
    {: pre}
 
 7. Verify that the PV is removed.
    ```
-   {[kubectl]} get pv
+   oc get pv
    ```
    {: pre}
 
 8. Verify that your Portworx volume is removed. Log in to one of your Portworx pods in your cluster to list your volumes. To find available Portworx pods, run `kubectl get pods -n kube-system | grep portworx`.
    ```
-   {[kubectl]} exec <portworx-pod>  -it -n kube-system -- /opt/pwx/bin/pxctl volume list
+   oc exec <portworx-pod>  -it -n kube-system -- /opt/pwx/bin/pxctl volume list
    ```
    {: pre}
 
 9. If your Portworx volume is not removed, manually remove the volume.
    ```
-   {[kubectl]} exec <portworx-pod>  -it -n kube-system -- /opt/pwx/bin/pxctl volume delete <volume_ID>
+   oc exec <portworx-pod>  -it -n kube-system -- /opt/pwx/bin/pxctl volume delete <volume_ID>
    ```
    {: pre}
 
@@ -1177,7 +1178,7 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 ## Getting help and support
 {: #portworx_help}
 
-If you run into an issue with using Portworx or you want to chat about Portworx configurations for your specific use case, post a question in the `portworx-on-iks` channel in the [{[product_name_notm]} Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/). Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
+If you run into an issue with using Portworx or you want to chat about Portworx configurations for your specific use case, post a question in the `portworx-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/). Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
 
 
 
