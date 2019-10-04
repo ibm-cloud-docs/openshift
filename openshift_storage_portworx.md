@@ -646,7 +646,7 @@ To install Portworx:
 8. Verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer. 
    1. List the Portworx pods in the `kube-system` namespace. The installation is successful when you see one or more `portworx`, `stork`, and `stork-scheduler` pods. The number of pods equals the number of worker nodes that are included in your Portworx cluster. All pods must be in a `Running` state.
       ```
-      {{kubectl]} get pods -n kube-system | grep 'portworx\|stork'
+      oc get pods -n kube-system | grep 'portworx\|stork'
       ```
       {: pre}
    
