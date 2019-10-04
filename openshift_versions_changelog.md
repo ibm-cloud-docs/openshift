@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-03"
+lastupdated: "2019-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,6 +39,17 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
+
+### Changelog for master fix pack 3.11.146_1526_openshift, released 4 October 2019
+{: #311146_1526}
+
+The following table shows the changes that are included in the master fix pack `3.11.146_1526_openshift`.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| Default IBM security context constraints | N/A | N/A | To support [IBM Cloud Paks](https://www.ibm.com/cloud/paks/){: external}, the `seLinuxContext` setting is changed from `MustRunAs` to `RunAsAny` for the following [default IBM security context constraints](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs): `ibm-anyuid-hostaccess-scc`, `ibm-anyuid-hostpath-scc`, and `ibm-anyuid-scc`. |
+{: caption="Changes since version 3.11.146_1525" caption-side="top"}
 
 ### Changelog for 3.11.146_1525_openshift, released 3 October 2019 
 {: #311146_1525}
