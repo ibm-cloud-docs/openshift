@@ -112,7 +112,11 @@ Databases for etcd is a managed etcd service that securely stores and replicates
    2. Enter a name for your service instance, such as `px-etcd`.
    3. Select the region where you want to deploy your service instance. For optimal performance, choose the region that your cluster is in.
    4. Select the same resource group that your cluster is in.
-   5. Use the default settings for the initial memory and disk allocation.
+   5. Use the following settings for the initial memory and disk allocation: 
+      * **Initial memory allocation:** 8GB/member (24GB total)
+      * **Initial disk allocation:** 128GB/member (384GB total)
+      * **Initial CPU allocation:** 3 dedicated cores/member (9 cores total)
+      * **Database version:** 3.3
    6. Choose if you want to use the default {{site.data.keyword.keymanagementserviceshort}} service instance or your own.
    5. Review the pricing plan.
    6. Click **Create** to start setting up your service instance. The setup might take a few minutes to complete.
