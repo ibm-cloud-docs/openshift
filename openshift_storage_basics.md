@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-03"
+lastupdated: "2019-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,7 +40,7 @@ The following image shows the storage components in a cluster.
 - **App**</br> To read from and write to your storage instance, you must mount the persistent volume claim (PVC) to your app. Different storage types have different read-write rules. For example, you can mount multiple pods to the same PVC for file storage. Block storage comes with a RWO (ReadWriteOnce) access mode so that you can mount the storage to one pod only.
 - **Persistent volume claim (PVC)** </br> A PVC is the request to provision persistent storage with a specific type and configuration. To specify the persistent storage flavor that you want, you use [Kubernetes storage classes](#storageclasses). The cluster admin can define storage classes, or you can choose from one of the predefined storage classes in {{site.data.keyword.containerlong_notm}}. When you create a PVC, the request is sent to the {{site.data.keyword.Bluemix}} storage provider. Depending on the configuration that is defined in the storage class, the physical storage device is ordered and provisioned into your {[softlayer]} account. If the requested configuration does not exist, the storage is not created.
 - **Persistent volume (PV)** </br> A PV is a virtual storage instance that is added as a volume to the cluster. The PV points to a physical storage device in your {[softlayer]} account and abstracts the API that is used to communicate with the storage device. To mount a PV to an app, you must have a matching PVC. Mounted PVs appear as a folder inside the container's file system.
-- **Physical storage** </br> A physical storage instance that you can use to persist your data. Examples of physical storage in {{site.data.keyword.cloud_notm}} include [File Storage](/docs/containers?topic=containers-file_storage#file_storage), [Block Storage](/docs/containers?topic=containers-block_storage#block_storage),and [Object Storage](/docs/containers?topic=containers-object_storage#object_storage). {{site.data.keyword.cloud_notm}} provides high availability for physical storage instances. However, data that is stored on a physical storage instance is not backed up automatically. Depending on the type of storage that you use, different methods exist to set up backup and restore solutions.
+- **Physical storage** </br> A physical storage instance that you can use to persist your data. Examples of physical storage in {{site.data.keyword.cloud_notm}} include [File Storage](/docs/containers?topic=containers-file_storage#file_storage), [Block Storage](/docs/containers?topic=containers-block_storage#block_storage), [Object Storage](/docs/containers?topic=containers-object_storage#object_storage), and local worker node storage that you can use as SDS storage with [Portworx](/docs/containers?topic=containers-portworx#portworx). {{site.data.keyword.cloud_notm}} provides high availability for physical storage instances. However, data that is stored on a physical storage instance is not backed up automatically. Depending on the type of storage that you use, different methods exist to set up backup and restore solutions.
 
 For more information about how to create and use PVCs, PVs, and the physical storage device, see:
 - [Dynamic provisioning](#dynamic_provisioning)
@@ -80,6 +80,7 @@ For more information about how to dynamically provision persistent storage, see:
 - [Classic File Storage](/docs/containers?topic=containers-file_storage#add_file)
 - [Classic Block Storage](/docs/containers?topic=containers-block_storage#add_block)
 - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#add_cos)
+- [Portworx](/docs/containers?topic=containers-portworx#add_portworx_storage)
 
 ## Static provisioning
 {: #static_provisioning}
@@ -116,6 +117,7 @@ For more information about how to statically provision storage, see:
 - [Classic File Storage](/docs/containers?topic=containers-file_storage#existing_file)
 - [Classic Block Storage](/docs/containers?topic=containers-block_storage#existing_block)
 - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#add_cos)
+- [Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume)
 
 ## Storage classes
 {: #storageclasses}
@@ -164,6 +166,7 @@ If you cannot use one of the provided storage classes, you can create your own c
    - [Classic File Storage](/docs/containers?topic=containers-file_storage#add_file)
    - [Classic Block Storage](/docs/containers?topic=containers-block_storage#add_block)
    - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#add_cos)
+   - [Portworx](/docs/containers?topic=containers-portworx#add_portworx_storage)
 
 5. Verify that your PVC is created and bound to a persistent volume (PV). This process might take a few minutes to complete.
    ```
@@ -196,6 +199,10 @@ When you dynamically provision persistent storage by using a storage class, you 
 <td>{{site.data.keyword.cos_full_notm}}</td>
 <td>Your volume automatically scales in size and you are charged based on your actual consumption. However, you cannot change the performance attributes of your volume as they are defined in the storage class that you used to create your bucket in {{site.data.keyword.cos_full_notm}}. To change to a different storage class, you must provision a new bucket by using the storage class that you want. Then, copy your data from the old bucket to the new one. </td>
 </tr>
+<tr>
+<td>Portworx</td>
+<td>You can increase your storage size by [changing your PVC specifications ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/resize-pvc/). </td>
+   </tr>
 </tbody>
 </table>
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-04"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -183,7 +183,7 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
     {: pre}
 5.  Create a Kubernetes daemon set to deploy the LogDNA agent on every worker node of your OpenShift cluster. The LogDNA agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod. By default, logs are collected from all namespaces, including `kube-system`, and automatically forwarded to the {{site.data.keyword.la_short}} service.
     ```
-    oc create -f https://raw.githubusercontent.com/logdna/logdna-agent/master/logdna-agent-ds-os.yml
+    oc create -f https://raw.githubusercontent.com/logdna/logdna-agent/master/logdna-agent-ds-os.yaml
     ```
     {: pre}
 6.  Edit the LogDNA agent daemon set configuration to include the API and logging endpoints for the region that your {{site.data.keyword.la_short}} instance is in.
@@ -355,7 +355,7 @@ Remove the {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} in
 
 1.  Clean up the {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} instances in your cluster by removing the projects that you created for them. When you delete a project, its resources such as service accounts and daemon sets are also removed.
     ```
-    oc delete project logdna
+    oc delete project logdna-agent
     ```
     {: pre}
     ```
