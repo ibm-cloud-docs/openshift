@@ -30,7 +30,7 @@ subcollection: openshift
 ## Choosing a storage solution
 {: #choose_storage_solution}
 
-Before you can decide what type of storage is the right solution for your {[product_name_tm]} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
+Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
 
 1. Decide whether your data must be permanently stored, or if your data can be removed at any time.
    - **Persistent storage:** Your data must still be available, even if the container, the worker node, or the cluster is removed. Use persistent storage in the following scenarios:
@@ -83,6 +83,7 @@ Before you can decide what type of storage is the right solution for your {[prod
    - **Encryption:** The masking of data to prevent visibility when data is accessed by an unauthorized user.
 
 8. [Review available persistent storage solutions](#persistent_storage_overview) and pick the solution that best fits your app and data requirements.
+
 
 ## Comparison of non-persistent storage options
 {: #non_persistent_overview}
@@ -252,8 +253,8 @@ The following image shows the options that you have in {{site.data.keyword.conta
 </tr>
 <tr>
 <td style="text-align:left">Backup and recovery</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([{[kubectl]} cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
-   <td style="text-align:left"><strong>Classic Block Storage</strong>: <ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([{[kubectl]} cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([oc cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
+   <td style="text-align:left"><strong>Classic Block Storage</strong>: <ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([oc cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
 </tr>
 <tr>
 <td style="text-align:left">Common use cases</td>
@@ -367,7 +368,7 @@ nodes. Every node stores only a part of the data. </td>
 </tr>
 <tr>
 <td style="text-align:left">Backup and recovery</td>
-<td style="text-align:left">Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03).  You can also use the  Kubernetes [`{[kubectl]} cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
+<td style="text-align:left">Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03).  You can also use the  Kubernetes [`oc cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
 <td style="text-align:left">Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/). You can also use the  Kubernetes [`kubectl cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
 <td style="text-align:left">Depends on the DBaaS</td>
 </tr>
