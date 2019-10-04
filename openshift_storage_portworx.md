@@ -72,7 +72,7 @@ Portworx is available for standard clusters that are set up with public network 
 All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/containers?topic=containers-clusters#clusters_ui). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install the Portworx Helm chart](#install_portworx) in your cluster and create your first hyper-converged storage cluster.  
 
 ## Creating raw, unformatted, and unmounted block storage for non-SDS worker nodes
-{: #create_block_storage}
+{: #create_block_storage} 
 
 Portworx runs best when you use worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/containers?topic=containers-planning_worker_nodes#sds). However, if you can't or don't want to use SDS worker nodes, you can choose to install Portworx on non-SDS worker node flavors. Keep in mind that non-SDS worker nodes are not optimized for Portworx and might not offer the performance benefits that your app requires.
 {: shortdesc}
