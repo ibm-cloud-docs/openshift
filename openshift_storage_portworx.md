@@ -707,7 +707,7 @@ To install Portworx:
 
    5. Review the Portworx I/O classification that was assigned to the disks that are part of the Portworx cluster. During the setup of your Portworx cluster, every disk is inspected to determine the performance profile of the device. The profile classification depends on how fast the network is that your worker node is connected to and the type of storage device that you have. Disks of SDS worker nodes are classified as `high`. If you manually attach disks to a virtual worker node, then these disks are classified as `low` due to the lower network speed that comes with virtual worker nodes.
       ```
-      {{kubectl]} exec -it <portworx_pod> -n kube-system -- /opt/pwx/bin/pxctl cluster provision-status
+      oc exec -it <portworx_pod> -n kube-system -- /opt/pwx/bin/pxctl cluster provision-status
       ```
       {: pre}
 
