@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-04"
+lastupdated: "2019-10-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -27,7 +27,7 @@ subcollection: openshift
 {: #storage_planning}
 
 
-## Choosing a storage solution
+## Choosing a storage solution 
 {: #choose_storage_solution}
 
 Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
