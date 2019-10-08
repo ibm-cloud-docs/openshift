@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-04"
+lastupdated: "2019-10-08"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
 subcollection: openshift
 
