@@ -111,7 +111,11 @@ Red Hat OpenShift on IBM Cloud
     faqs.md
     /containers/containers-iks-release
     openshift_limitations.md
-    openshift_ts.md
+    
+    {: .topicgroup}
+    Troubleshooting clusters
+        openshift_ts.md
+        openshift_troubleshoot_storage.md
     {: .navgroup-end}
 
     openshift_uc_finance.md
