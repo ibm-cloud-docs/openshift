@@ -65,7 +65,6 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
      <li>Monitor and report the health of the master and worker nodes in the various interfaces.</li>
      <li>Provide worker node major, minor, and patch OS, version, and security updates.</li>
      <li>Fulfill automation requests to update and recover worker nodes. Provide the optional [worker node Autorecovery](/docs/containers?topic=containers-health#autorecovery).</li>
-     <li>Provide tools, such as the [cluster autoscaler](/docs/containers?topic=containers-ca#ca), to extend your cluster infrastructure.</li>
      </ul>
      <br><br>
      **Your responsibilities**:
@@ -124,6 +123,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
         </tr>
   </tbody>
   </table>
+
 
 
 
