@@ -1315,6 +1315,9 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 ### Step 2: Verifying the cluster setup
 {: #px-verify-cluster}
 
+If you entered the correct information on the {{site.data.keyword.cloud_notm}} catalog page, verify that your cluster is correctly set up for Portworx. 
+{: shortdesc}
+
 
 2. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/).
 3. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/containers?topic=containers-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer. 
