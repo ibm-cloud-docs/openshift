@@ -145,7 +145,7 @@ Review the options to debug persistent storage and find the root causes for fail
       ```
       {: pre}
 
-   3. Analyze the **Events** section of the CLI output of the `kubectl describe pod` command and the latest logs to find the root cause for the error.
+   3. Analyze the **Events** section of the CLI output of the `oc describe pod` command and the latest logs to find the root cause for the error.
 
 6. Check whether your PVC is successfully provisioned.
    1. Check the state of your PVC. A PVC is successfully provisioned if the PVC shows a status of **Bound**.
@@ -384,7 +384,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ```
     {:screen}
 
-2.  Add persistent storage to your app by creating a persistent volume claim (PVC). This example uses the `ibmc-file-bronze` storage class. To review available storage classes, run `kubectl get storageclasses`.
+2.  Add persistent storage to your app by creating a persistent volume claim (PVC). This example uses the `ibmc-file-bronze` storage class. To review available storage classes, run `oc get storageclasses`.
 
     ```
     apiVersion: v1
@@ -574,7 +574,7 @@ When you mount a PVC to your pod, you might experience errors when accessing or 
    {: pre}
 
    ```
-   kubectl logs <pod_name>
+   oc logs <pod_name>
    ```
    {: pre}
 
@@ -844,7 +844,7 @@ During the PVC creation and binding, many different tasks are executed by the {{
         <tr>
           <td>`Put https://s3-api.dal-us-geo.objectstorage.service.networklayer.com/<bucket_name>: net/http: invalid header field value "AWS4-HMAC-SHA256 Credential=1234a12a123a123a1a123aa1a123a123\n\n/20190412/us-standard/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=12aa1abc123456aabb12aas12aa123456sb123456abc" for key Authorization`</td>
           <td>The values in your Kubernetes secret are not correctly encoded to base64.  </td>
-          <td>Review the values in your Kubernetes secret and encode every value to base64. You can also use the [`kubectl create secret`](/docs/containers?topic=containers-object_storage#create_cos_secret) command to create a new secret and let Kubernetes automatically encode your values to base64. </td>
+          <td>Review the values in your Kubernetes secret and encode every value to base64. You can also use the [`oc create secret`](/docs/containers?topic=containers-object_storage#create_cos_secret) command to create a new secret and let Kubernetes automatically encode your values to base64. </td>
         </tr>
         <tr>
           <td>`cannot access bucket <bucket_name>: Forbidden: Forbidden`</td>
@@ -967,7 +967,7 @@ The {{site.data.keyword.cos_full_notm}} service credentials that you use to acce
 {: #cos_api_endpoint_failure}
 
 {: tsSymptoms}
-When you create the PVC, the PVC remains in a pending state. After you run the `kubectl describe pvc <pvc_name>` command, you see one of the following error messages:
+When you create the PVC, the PVC remains in a pending state. After you run the `oc describe pvc <pvc_name>` command, you see one of the following error messages:
 
 ```
 Bad value for ibm.io/object-store-endpoint XXXX: scheme is missing. Must be of the form http://<hostname> or https://<hostname>
@@ -985,7 +985,7 @@ The s3fs API endpoint for the bucket that you want to use might have the wrong f
 {: tsResolve}
 1. Check the s3fs API endpoint that was automatically assigned by the `ibmc` Helm plug-in to your storage classes during the {{site.data.keyword.cos_full_notm}} plug-in installation. The endpoint is based on the location that your cluster is deployed to.  
    ```
-   kubectl get sc ibmc-s3fs-standard-regional -o yaml | grep object-store-endpoint
+   oc get sc ibmc-s3fs-standard-regional -o yaml | grep object-store-endpoint
    ```
    {: pre}
 
@@ -1087,13 +1087,13 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
 
    2. Create the `test-permission` pod.
       ```
-      kubectl apply -f test-permission.yaml
+      oc apply -f test-permission.yaml
       ```
       {: pre}
 
    3. Log in to your pod.
       ```
-      kubectl exec test-permission -it bash
+      oc exec test-permission -it bash
       ```
       {: pre}
 
