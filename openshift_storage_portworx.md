@@ -87,14 +87,6 @@ If you have SDS worker node flavors in your cluster and want to use these worker
 2. If you want to add block storage with the same configuration to all your worker nodes, [automatically add block storage](/docs/containers?topic=containers-utilities#automatic_block) with the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. To add block storage with a different configuration, add block storage to a subset of worker nodes only, or to have more control over the provisioning process, [manually add block storage](/docs/containers?topic=containers-utilities#manual_block).
 3. [Attach the block storage](/docs/containers?topic=containers-utilities#attach_block) to your worker nodes.
 
-## Getting a Portworx license
-{: #portworx_license}
-
-When you [install Portworx](#install_portworx) from the {{site.data.keyword.cloud_notm}} catalog, you get the Portworx `px-enterprise` edition as a Trial version. The Trial version provides you with the full Portworx functionality that you can test out for 30 days. After the Trial version expires, you must purchase a Portworx license to continue using your Portworx cluster.
-{: shortdesc}
-
-For more information about available license types and how to upgrade your Trial license, see [Portworx Licensing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/reference/knowledge-base/px-licensing/). IBM employees must order a Portworx license by following [this process](https://github.ibm.com/alchemy-containers/armada-storage/blob/master/portworx/px-license.md).
-
 ## Setting up a Databases for etcd service instance for Portworx metadata
 {: #portworx_database}
 
@@ -295,13 +287,13 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
    ```
    {: pre}
 
-10. Create a namespace in your cluster that is called `portworx`. 
+10. Create a project in your cluster that is called `portworx`. 
     ```
     kubectl create ns portworx
     ```
     {: pre}
 
-11. Create a Kubernetes secret that is named `px-ibm` in the `portworx` namespace of your cluster to store your {{site.data.keyword.keymanagementservicelong_notm}} information.
+11. Create a Kubernetes secret that is named `px-ibm` in the `portworx` project of your cluster to store your {{site.data.keyword.keymanagementservicelong_notm}} information.
     1. Create a configuration file for your Kubernetes secret with the following content.
        ```
        apiVersion: v1
@@ -347,7 +339,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
        </tbody>
        </table>
 
-    2. Create the secret in the `portworx` namespace of your cluster.
+    2. Create the secret in the `portworx` project of your cluster.
        ```
        oc apply -f secret.yaml
        ```
@@ -384,7 +376,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
 
        After you edit the daemon set, the Portworx pods are restarted and automatically update the `config.json` file on the worker node to reflect that change.
 
-    2. List the Portworx pods in your `kube-system` namespace.
+    2. List the Portworx pods in your `kube-system` project.
        ```
        oc get pods -n kube-system | grep portworx
        ```
@@ -448,7 +440,7 @@ Check out how to [encrypt the secrets in your cluster](/docs/containers?topic=co
 ## Installing Portworx in your cluster
 {: #install_portworx}
 
-Provision a Portworx service instance Portworx from the {{site.data.keyword.cloud_notm}} catalog. After you create the service instance, the latest Portworx Helm chart is installed on your cluster. In addition, [Stork ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/) is also installed on your Red Hat OpenShift on IBM Cloud cluster. Stork is the Portworx storage scheduler. With Stork, you can co-locate pods with their data and create and restore snapshots of Portworx volumes.
+Provision a Portworx service instance from the {{site.data.keyword.cloud_notm}} catalog. After you create the service instance, the latest Portworx enterprise edition (`px-enterprise`) is installed on your cluster by using Helm. In addition, [Stork ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/) is also installed on your Red Hat OpenShift on IBM Cloud cluster. Stork is the Portworx storage scheduler. With Stork, you can co-locate pods with their data and create and restore snapshots of Portworx volumes.
 {: shortdesc}
 
 Looking for instructions about how to update or remove Portworx? See [Updating Portworx](#update_portworx) and [Removing Portworx](#remove_portworx).
@@ -496,11 +488,10 @@ To install Portworx:
    10. From the **Kubernetes or OpenShift cluster name** drop down list, select the cluster where you want to install Portworx. If your cluster is not listed, make sure that you selected the correct {{site.data.keyword.cloud_notm}} region. If the region is correct, verify that you have the correct [permissions](/docs/containers?topic=containers-clusters#cluster_prepare) to view and work with your cluster. 
    11. Optional: From the **Portworx secret store type** drop down list, choose the secret store type that you want to use to store the volume encryption key. 
        - **Kubernetes Secret**: Choose this option if you want to store your own custom key to encrypt your volumes in a Kubernetes Secret in your cluster. The secret must not be present before you install Portworx. You can create the secret after you install Portworx. For more information, see the [Portworx documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/key-management/kubernetes-secrets/#configuring-kubernetes-secrets-with-portworx). 
-       - **{{site.data.keyword.keymanagementservicelong_notm}}**: Choose this option if you want to use root keys in {{site.data.keyword.keymanagementservicelong_notm}} to encrypt your volumes. Make sure that you follow the [instructions](#setup_encryption) to create your {{site.data.keyword.keymanagementservicelong_notm}} service instance, and to store the credentials for how to access your service instance in a Kubernetes secret in the `portworx` project before you install Portworx. 
-       
+       - **{{site.data.keyword.keymanagementservicelong_notm}}**: Choose this option if you want to use root keys in {{site.data.keyword.keymanagementservicelong_notm}} to encrypt your volumes. Make sure that you follow the [instructions](#setup_encryption) to create your {{site.data.keyword.keymanagementservicelong_notm}} service instance, and to store the credentials for how to access your service instance in a Kubernetes secret in the `portworx` project before you install Portworx.        
 5. Click **Create** to start the Portworx installation in your cluster. This process might take a few minutes to complete. The service details page opens with instructions for how to verify your Portworx installation, create a persistent volume claim (PVC), and mount the PVC to an app. 
 6. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created. 
-7. Review the **Status** column to see if the installation succeeds or fails. The installation might take a few minutes to complete or fail. 
+7. Review the **Status** column to see if the installation succeeds or fails. The status might take a few minutes to update. 
 8. If the **Status** changes to `Provision failure`, follow the [instructions]() to start troubleshooting why your installation failed. 
 9. If the **Status** changes to `Provisioned`, verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer. 
    1. List the Portworx pods in the `kube-system` project. The installation is successful when you see one or more `portworx`, `stork`, and `stork-scheduler` pods. The number of pods equals the number of worker nodes that are included in your Portworx cluster. All pods must be in a `Running` state.
