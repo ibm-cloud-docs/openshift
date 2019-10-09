@@ -628,7 +628,7 @@ If you do not want to use Portworx in your cluster, you can uninstall the Helm c
    
 4. Remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
    1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created. 
-   2. From the actions menu, click **Delete.
+   2. From the actions menu, click **Delete**.
    3. Confirm the deletion of the service instance by clicking **Delete**. 
 
 ## Creating a Portworx volume
