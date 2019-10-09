@@ -1298,6 +1298,12 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 3. Verify that you entered the `etcd` API endpoint for your Databases for etcd service instance in the correct format.  
    1. [Retrieve the Databases for etcd endpoint](/docs/containers?topic=containers-portworx#databases_credentials). 
    2. Add the etcd endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (;).
+      
+      Example endpoint: 
+      ```
+      etcd:https://1ab234c5-12a1-1234-a123.databases.appdomain.cloud:32059
+      ```
+      {: screen}
 4. Verify that you stored the credentials to access your Databases for etcd service instance in a Kubernetes secret in your cluster. For more information, see [Setting up a Databases for etcd service instance for Portworx metadata](/docs/containers?topic=containers-portworx#portworx_database). 
    1. Review step 4-6 and verify that you retrieved the correct user name, password, and certificate. 
    2. List the secrets in your cluster and look for the secret that holds the credentials of your Databases for etcd service instance. 
