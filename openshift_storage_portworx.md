@@ -289,7 +289,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
 
 10. Create a project in your cluster that is called `portworx`. 
     ```
-    oc project <project_name>
+    oc project portworx
     ```
     {: pre}
 
