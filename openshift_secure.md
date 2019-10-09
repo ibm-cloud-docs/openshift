@@ -162,7 +162,8 @@ Worker nodes carry the deployments and services that make up your app. When you 
 
 Your worker nodes are provisioned in to your {{site.data.keyword.cloud_notm}} account. The worker nodes are dedicated to you and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and Red Hat OpenShift on IBM Cloud components apply the latest security updates and patches. 
 
-For more information, see [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/containers?topic=containers-responsibilities_iks).
+
+For more information, see [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_openshift).
 
 Use the `ibmcloud oc worker update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_update) regularly (such as monthly) to deploy updates and security patches to the operating system and to update the OpenShift version that your worker nodes run. When updates are available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the `ibmcloud oc clusters ls` or `ibmcloud oc workers ls --cluster <cluster_name>` commands. Worker node updates are provided by IBM as a full worker node image that includes the latest security patches. To apply the updates, the worker node must be reimaged and reloaded with the new image. Keys for the root user are automatically rotated when the worker node is reloaded.
 {: important}

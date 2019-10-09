@@ -1281,7 +1281,7 @@ When you create a Portworx service instance from the {{site.data.keyword.cloud_n
 Before Portworx is installed in your cluster, a number of checks are performed to verify the information that you provided on the Portworx service page of the {{site.data.keyword.cloud_notm}} catalog. If one of these checks fails, the status of the Portworx service is changed to **Provision failure**. You cannot see the details of what check failed or what information is missing to complete the installation. 
 
 {: tsResolve}
-Follow this guide to start troubleshooting your Portworx installation and to verify the information that you entered in the {{site.data.keyword.cloud_notm}} catalog. 
+Follow this guide to start troubleshooting your Portworx installation and to verify the information that you entered in the {{site.data.keyword.cloud_notm}} catalog. If you find information that you entered incorrectly or you must change the setup of your cluster, correct the information or the cluster setup. Then, create a new Portworx service instance to restart the installation. 
 
 ### Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information
 {: #px-verify-catalog}
@@ -1294,7 +1294,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
    ```
    {: pre}
-2. Verify that the {{site.data.keyword.cloud_notm}} API key that you entered has sufficient permissions to work with your cluster. You must be assigned the **Editor** platform role and the **Manager** service access role. For more information, see [User access permissions](/docs/containers?topic=containers-access_reference). 
+2. Verify that the {{site.data.keyword.cloud_notm}} API key that you entered has sufficient permissions to work with your cluster. You must be assigned the **Editor** platform role and the **Manager** service access role for Red Hat OpenShift on IBM Cloud. For more information, see [User access permissions](/docs/containers?topic=containers-access_reference). 
 3. Verify that you entered the `etcd` API endpoint for your Databases for etcd service instance in the correct format.  
    1. [Retrieve the Databases for etcd endpoint](/docs/containers?topic=containers-portworx#databases_credentials). 
    2. Add the etcd endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (;).
@@ -1305,7 +1305,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
       ```
       {: screen}
 4. Verify that you stored the credentials to access your Databases for etcd service instance in a Kubernetes secret in your cluster. For more information, see [Setting up a Databases for etcd service instance for Portworx metadata](/docs/containers?topic=containers-portworx#portworx_database). 
-   1. Review step 4-6 and verify that you retrieved the correct user name, password, and certificate. 
+   1. Review steps 4-6 and verify that you retrieved the correct user name, password, and certificate. 
    2. List the secrets in your cluster and look for the secret that holds the credentials of your Databases for etcd service instance. 
       ```
       oc get secrets
@@ -1338,7 +1338,7 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 If you went through the troubleshooting guide and you still cannot find an issue for why the installation failed, reach out to the Portworx and IBM team. 
 {: shortdesc}
 
-Post a question in the `portworx-on-iks` channel in the [IBM Cloud Kubernetes Service Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/). Make sure to include the cluster ID and the steps that you took to verify your installation. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
+Post a question in the `portworx-on-iks` channel in the [{{site.data.keyword.containerlong_notm}} Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/). Make sure to include the cluster ID and the steps that you took to verify your installation. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
 
 
 ## Getting help and support
