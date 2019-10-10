@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-09"
+lastupdated: "2019-10-10"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
 subcollection: openshift
 
