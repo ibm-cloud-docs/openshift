@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-10-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -274,6 +274,8 @@ To use the internal registry, set up a public route to access the registry. Then
         ```
         {: pre}
     6.  Repeat these steps for each project that you want to pull images from the internal registry.
+
+Now that you set up the internal registry with an accessible route, you can log in, push, and pull images to the registry. For more information, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](/container-platform/3.11/install_config/registry/accessing_registry.html#access-logging-in-to-the-registry).
 
 <br />
 
