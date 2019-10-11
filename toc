@@ -51,6 +51,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     Administering clusters
+        openshift_cluster_scaling.md
         openshift_cluster_update.md
         openshift_users.md
         openshift_scc.md
