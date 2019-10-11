@@ -82,6 +82,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_remove.md
 
     openshift_integrations.md
+    openshift_cloud_paks.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
