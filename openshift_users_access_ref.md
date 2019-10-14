@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-07"
+lastupdated: "2019-10-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -122,9 +122,9 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Delete all logging filter configurations for the Kubernetes cluster. | - | [`DELETE /v1/logging/{idOrName}/filterconfigs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/filter/DeleteFilterConfigs) |
 | Update a log filtering configuration. | [`ibmcloud oc logging filter update`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_log_filter_update) | [`PUT /v1/logging/{idOrName}/filterconfigs/{id}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/filter/UpdateFilterConfig) |
 | Add one NLB IP address to an existing NLB subdomain. | [`ibmcloud oc nlb-dns add`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_nlb-dns-add) | [`PUT /clusters/{idOrName}/add`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/UpdateDNSWithIP) |
-| Create a DNS subdomain to register an NLB IP address. | [`ibmcloud oc nlb-dns create`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_nlb-dns-create) | [`POST /clusters/{idOrName}/register`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/RegisterDNSWithIP) |
+| Create a DNS subdomain to register an NLB IP address. | [`ibmcloud oc nlb-dns create classic`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_nlb-dns-create) | [`POST /clusters/{idOrName}/register`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/RegisterDNSWithIP) |
 | List NLB subdomains and either the NLB IP addresses (classic clusters) or the load balancer hostnames (VPC clusters) that are registered with the DNS provider for each NLB subdomain. | [`ibmcloud oc nlb-dns ls`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_nlb-dns-ls) | [`GET /clusters/{idOrName}/list`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/ListNLBIPsForSubdomain) |
-| Remove an NLB IP address from a subdomain. | [`ibmcloud oc nlb-dns rm`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_nlb-dns-rm) | [`DELETE /clusters/{idOrName}/host/{nlbHost}/ip/{nlbIP}/remove`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/UnregisterDNSWithIP) |
+| Remove an NLB IP address from a subdomain. | [`ibmcloud oc nlb-dns rm classic`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_nlb-dns-rm) | [`DELETE /clusters/{idOrName}/host/{nlbHost}/ip/{nlbIP}/remove`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/UnregisterDNSWithIP) |
 | Configure and optionally enable a health check monitor for an existing NLB subdomain in a cluster. | [`ibmcloud oc nlb-dns monitor configure`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_nlb-dns-monitor-configure) | [`POST /health/clusters/{idOrName}/config`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-health-monitor/AddNlbDNSHealthMonitor) |
 | View the settings for an existing health check monitor. | [`ibmcloud oc nlb-dns monitor get`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_nlb-dns-monitor-get) | [`GET /health/clusters/{idOrName}/host/{nlbHost}/config`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-health-monitor/GetNlbDNSHealthMonitor) |
 | Disable an existing health check monitor for a subdomain in a cluster. | [`ibmcloud oc nlb-dns monitor disable`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_nlb-dns-monitor-disable) | [`PUT /clusters/{idOrName}/health`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-health-monitor/UpdateNlbDNSHealthMonitor) |
