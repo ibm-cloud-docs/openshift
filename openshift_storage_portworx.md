@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-04"
+lastupdated: "2019-10-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -70,7 +70,7 @@ Portworx is available for standard clusters that are set up with public network 
 
 
 
-All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/containers?topic=containers-clusters#clusters_ui). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install the Portworx Helm chart](#install_portworx) in your cluster and create your first hyper-converged storage cluster.  
+All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/containers?topic=containers-clusters#clusters_ui). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.  
 
 ## Creating raw, unformatted, and unmounted block storage for non-SDS worker nodes
 {: #create_block_storage} 
@@ -86,14 +86,6 @@ If you have SDS worker node flavors in your cluster and want to use these worker
 1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/containers?topic=containers-utilities#block_storage_attacher).
 2. If you want to add block storage with the same configuration to all your worker nodes, [automatically add block storage](/docs/containers?topic=containers-utilities#automatic_block) with the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. To add block storage with a different configuration, add block storage to a subset of worker nodes only, or to have more control over the provisioning process, [manually add block storage](/docs/containers?topic=containers-utilities#manual_block).
 3. [Attach the block storage](/docs/containers?topic=containers-utilities#attach_block) to your worker nodes.
-
-## Getting a Portworx license
-{: #portworx_license}
-
-When you [install Portworx with a Helm chart](#install_portworx), you get the Portworx `px-enterprise` edition as a Trial version. The Trial version provides you with the full Portworx functionality that you can test out for 30 days. After the Trial version expires, you must purchase a Portworx license to continue using your Portworx cluster.
-{: shortdesc}
-
-For more information about available license types and how to upgrade your Trial license, see [Portworx Licensing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/reference/knowledge-base/px-licensing/). IBM employees must order a Portworx license by following [this process](https://github.ibm.com/alchemy-containers/armada-storage/blob/master/portworx/px-license.md).
 
 ## Setting up a Databases for etcd service instance for Portworx metadata
 {: #portworx_database}
@@ -185,7 +177,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
       ```
       {: pre}
 
-6. Choose if you want to [set up encryption for your volumes with {{site.data.keyword.keymanagementservicelong_notm}}](#encrypt_volumes). If you don't want to set up encryption for your volumes, continue with [installing Portworx in your cluster](#install_portworx).
+6. Choose if you want to [set up encryption for your volumes with {{site.data.keyword.keymanagementservicelong_notm}}](#encrypt_volumes). If you don't want to set up {{site.data.keyword.keymanagementservicelong_notm}} encryption for your volumes, continue with [installing Portworx in your cluster](#install_portworx). 
 
 ## Setting up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}
 {: #encrypt_volumes}
@@ -194,6 +186,9 @@ To protect your data in a Portworx volume, you can encrypt your cluster's volume
 {: shortdesc}
 
 {{site.data.keyword.keymanagementservicelong_notm}} helps you to provision encrypted keys that are secured by FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs). You can use these keys to securely protect your data from unauthorized users. You can choose between using one encryption key to encrypt all your volumes in a cluster or using one encryption key for each volume. Portworx uses this key to encrypt data at rest and during transit when data is sent to a different worker node. For more information, see [Volume encryption ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/create-encrypted-pvcs/#volume-encryption). For higher security, set up per-volume encryption.
+
+If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} root keys to encrypt your volumes, you can select **Kubernetes Secret** as your Portworx secret store type during the Portworx installation. This setting gives you the option to store your own custom encryption key in a Kubernetes secret after you install Portworx. For more information, see the [Portworx documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/key-management/kubernetes-secrets/#configuring-kubernetes-secrets-with-portworx). 
+{: tip}
 
 Review the following information:
 - Overview of the [Portworx volume encryption workflow](#px_encryption) with {{site.data.keyword.keymanagementservicelong_notm}} for per-volume encryption
@@ -286,157 +281,157 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
 
 8. [Retrieve the {{site.data.keyword.keymanagementservicelong_notm}} API endpoint](/docs/services/key-protect?topic=key-protect-regions#regions) for the region where you created your service instance. Make sure that you note your API endpoint in the format `https://<api_endpoint>`.
 
-9. Encode the {{site.data.keyword.keymanagementservicelong_notm}} GUID, API key, root key, and {{site.data.keyword.keymanagementservicelong_notm}} API endpoint to base64 and note all the base64 encoded values. Repeat this command for each parameter to retrieve the base 64 encoded value.
+9. Encode the {{site.data.keyword.keymanagementservicelong_notm}} GUID, API key, root key, and {{site.data.keyword.keymanagementservicelong_notm}} API endpoint to base64 and note all the base64 encoded values. Repeat this command for each parameter to retrieve the base64 encoded value.
    ```
    echo -n "<value>" | base64
    ```
    {: pre}
 
-10. Create a namespace in your cluster that is called `portworx`. 
+10. Create a project in your cluster that is called `portworx`. 
     ```
-    kubectl create ns portworx
+    oc project portworx
     ```
     {: pre}
 
-11. Create a Kubernetes secret that is named `px-ibm` in the `portworx` namespace of your cluster to store your {{site.data.keyword.keymanagementservicelong_notm}} information.
-   1. Create a configuration file for your Kubernetes secret with the following content.
-      ```
-      apiVersion: v1
-      kind: Secret
-      metadata:
-        name: px-ibm
-        namespace: portworx
-      type: Opaque
-      data:
-        IBM_SERVICE_API_KEY: <base64_apikey>
-        IBM_INSTANCE_ID: <base64_guid>
-        IBM_CUSTOMER_ROOT_KEY: <base64_rootkey>
-	    IBM_BASE_URL: <base64_kp_api_endpoint>
-      ```
-      {: codeblock}
+11. Create a Kubernetes secret that is named `px-ibm` in the `portworx` project of your cluster to store your {{site.data.keyword.keymanagementservicelong_notm}} information.
+    1. Create a configuration file for your Kubernetes secret with the following content.
+       ```
+       apiVersion: v1
+       kind: Secret
+       metadata:
+         name: px-ibm
+         namespace: portworx
+       type: Opaque
+       data:
+         IBM_SERVICE_API_KEY: <base64_apikey>
+         IBM_INSTANCE_ID: <base64_guid>
+         IBM_CUSTOMER_ROOT_KEY: <base64_rootkey>
+	     IBM_BASE_URL: <base64_kp_api_endpoint>
+       ```
+       {: codeblock}
+ 
+       <table>
+       <caption>Understanding the YAML file components</caption>
+        <thead>
+       <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+       </thead>
+       <tbody>
+       <tr>
+       <td><code>metadata.name</code></td>
+       <td>Enter <code>px-ibm</code> as the name for your Kubernetes secret. If you use a different name, Portworx does not recognize the secret during installation. </td>
+       </tr>
+       <tr>
+       <td><code>data.IBM_SERVICE_API_KEY</code></td>
+       <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} API key that you retrieved earlier.  </td>
+       </tr>
+       <tr>
+       <td><code>data.IBM_INSTANCE_ID</code></td>
+       <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} GUID that you retrieved earlier. </td>
+       </tr>
+       <tr>
+       <td><code>data.IBM_CUSTOMER_ROOT_KEY</code></td>
+       <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} root key that you retrieved earlier. </td>
+       </tr>
+       <tr>
+       <td><code>data.IBM_BASE_URL</code></td>
+       <td>Enter the base64 encoded API endpoint of your {{site.data.keyword.keymanagementservicelong_notm}} service instance. </td>
+       </tr>
+       </tbody>
+       </table>
 
-      <table>
-      <caption>Understanding the YAML file components</caption>
-      <thead>
-      <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
-      </thead>
-      <tbody>
-      <tr>
-      <td><code>metadata.name</code></td>
-      <td>Enter <code>px-ibm</code> as the name for your Kubernetes secret. If you use a different name, Portworx does not recognize the secret during installation. </td>
-      </tr>
-      <tr>
-      <td><code>data.IBM_SERVICE_API_KEY</code></td>
-      <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} API key that you retrieved earlier. </td>
-      </tr>
-      <tr>
-      <td><code>data.IBM_INSTANCE_ID</code></td>
-      <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} GUID that you retrieved earlier. </td>
-      </tr>
-      <tr>
-      <td><code>data.IBM_CUSTOMER_ROOT_KEY</code></td>
-      <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} root key that you retrieved earlier. </td>
-      </tr>
-      <tr>
-      <td><code>data.IBM_BASE_URL</code></td>
-      <td>Enter the base64 encoded API endpoint of your {{site.data.keyword.keymanagementservicelong_notm}} service instance. </td>
-      </tr>
-      </tbody>
-      </table>
+    2. Create the secret in the `portworx` project of your cluster.
+       ```
+       oc apply -f secret.yaml
+       ```
+       {: pre}
 
-   2. Create the secret in the `portworx` namespace of your cluster.
-      ```
-      kubectl apply -f secret.yaml
-      ```
-      {: pre}
-
-   3. Verify that the secret is created successfully.
-      ```
-      kubectl get secrets -n portworx
-      ```
-      {: pre}
+    3. Verify that the secret is created successfully.
+       ```
+       oc get secrets -n portworx
+       ```
+       {: pre}
 
 12. If you set up encryption before your installed Portworx, you can now [install Portworx in your cluster](#add_portworx_storage). To add encryption to your cluster after you installed Portworx, update the Portworx daemon set to add `"-secret_type"` and `"ibm-kp"` as additional arguments to the Portworx container definition.
-   1. Update the Portworx daemon set.
-      ```
-      kubectl edit daemonset portworx -n kube-system
-      ```
-      {: pre}
+    1. Update the Portworx daemon set.
+       ```
+       oc edit daemonset portworx -n kube-system
+       ```
+       {: pre}
 
-      Example updated daemon set:
-      ```
-      containers:
-       - args:
-       - -c
-       - testclusterid
-       - -s
-       - /dev/sdb
-       - -x
-       - kubernetes
-       - -secret_type
-       - ibm-kp
-       name: portworx
-      ```
-      {: codeblock}
+       Example updated daemon set:
+       ```
+       containers:
+        - args:
+        - -c
+        - testclusterid
+        - -s
+        - /dev/sdb
+        - -x
+        - kubernetes
+        - -secret_type
+        - ibm-kp
+        name: portworx
+       ```
+       {: codeblock}
 
-      After you edit the daemon set, the Portworx pods are restarted and automatically update the `config.json` file on the worker node to reflect that change.
+       After you edit the daemon set, the Portworx pods are restarted and automatically update the `config.json` file on the worker node to reflect that change.
 
-   2. List the Portworx pods in your `kube-system` namespace.
-      ```
-      kubectl get pods -n kube-system | grep portworx
-      ```
-      {: pre}
+    2. List the Portworx pods in your `kube-system` project.
+       ```
+       oc get pods -n kube-system | grep portworx
+       ```
+       {: pre}
 
-   3. Log in to one of your Portworx pods.
-      ```
-      kubectl exec -it <pod_name> -it -n kube-system
-      ```
-      {: pre}
+    3. Log in to one of your Portworx pods.
+       ```
+       oc exec -it <pod_name> -it -n kube-system
+       ```
+       {: pre}
 
-   4. Navigate in to the `pwx` directory.
-      ```
-      cd etc/pwx
-      ```
-      {: pre}
+    4. Navigate in to the `pwx` directory.
+       ```
+       cd etc/pwx
+       ```
+       {: pre}
 
-   5. Review the `config.json` file to verify that `"secret_type": "ibm-kp"` is added to the **secret** section of your CLI output.
-      ```
-      cat config.json
-      ```
-      {: pre}
+    5. Review the `config.json` file to verify that `"secret_type": "ibm-kp"` is added to the **secret** section of your CLI output.
+       ```
+       cat config.json
+       ```
+       {: pre}
 
-      Example output:
-      ```
-      {
-      "alertingurl": "",
-      "clusterid": "px-kp-test",
-      "dataiface": "",
-      "kvdb": [
+       Example output:
+       ```
+       {
+       "alertingurl": "",
+       "clusterid": "px-kp-test",
+       "dataiface": "",
+       "kvdb": [
           "etcd:https://portal-ssl748-34.bmix-dal-yp-12a2312v5-123a-44ac-b8f7-5d8ce1d123456.123456789.composedb.com:56963",
           "etcd:https://portal-ssl735-35.bmix-dal-yp-12a2312v5-123a-44ac-b8f7-5d8ce1d123456.12345678.composedb.com:56963"
-      ],
-      "mgtiface": "",
-      "password": "ABCDEFGHIJK",
-      "scheduler": "kubernetes",
-      "secret": {
+       ],
+       "mgtiface": "",
+       "password": "ABCDEFGHIJK",
+       "scheduler": "kubernetes",
+       "secret": {
          "cluster_secret_key": "",
          "secret_type": "ibm-kp"
-      },
-      "storage": {
-        "devices": [
-         "/dev/sdc1"
-        ],
-        "journal_dev": "",
-        "max_storage_nodes_per_zone": 0,
-        "system_metadata_dev": ""
-      },
-      "username": "root",
-      "version": "1.0"
-      }
-      ```
-      {: screen}
+       },
+       "storage": {
+         "devices": [
+          "/dev/sdc1"
+         ],
+         "journal_dev": "",
+         "max_storage_nodes_per_zone": 0,
+         "system_metadata_dev": ""
+       },
+       "username": "root",
+       "version": "1.0"
+       }
+       ```
+       {: screen}
 
-   6. Exit the pod.
+    6. Exit the pod.
 
 Check out how to [encrypt the secrets in your cluster](/docs/containers?topic=containers-encryption#keyprotect), including the secret where you stored your {{site.data.keyword.keymanagementserviceshort}} CRK for your Portworx storage cluster.
 {: tip}
@@ -445,8 +440,9 @@ Check out how to [encrypt the secrets in your cluster](/docs/containers?topic=co
 ## Installing Portworx in your cluster
 {: #install_portworx}
 
-Install Portworx with a Helm chart. The Helm chart deploys a trial version of the Portworx enterprise edition `px-enterprise` that you can use for 30 days. In addition, [Stork ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/) is also installed on your Red Hat OpenShift on IBM Cloud cluster. Stork is the Portworx storage scheduler. With Stork, you can co-locate pods with their data and create and restore snapshots of Portworx volumes.
-{: shortdesc}
+
+Install Portworx with a Helm chart. The Helm chart deploys a trial version of the Portworx enterprise edition `px-enterprise` that you can use for 30 days. In addition, [Stork ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/) is also installed on your {{site.data.keyword.containerlong_notm}} cluster. Stork is the Portworx storage scheduler. With Stork, you can co-locate pods with their data and create and restore snapshots of Portworx volumes.
+{: shortdesc} 
 
 Looking for instructions about how to update or remove Portworx? See [Updating Portworx](#update_portworx) and [Removing Portworx](#remove_portworx).
 {: tip}
@@ -457,12 +453,12 @@ Before you begin:
 - If you want to use non-SDS worker nodes for your Portworx storage layer, [add an unformatted block storage device to your non-SDS worker node](#create_block_storage).
 - Create a [Databases for etcd service instance](#portworx_database) to store the Portworx configuration and metadata.
 - Decide whether you want to encrypt your Portworx volumes with {{site.data.keyword.keymanagementservicelong_notm}}. To encrypt your volumes, you must [set up an {{site.data.keyword.keymanagementservicelong_notm}} service instance and store your service information in a Kubernetes secret](#encrypt_volumes).
-- Make sure that you [copied the image pull secrets from the `default` to the `kube-system` namespace](/docs/containers?topic=containers-images#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/containers?topic=containers-images#store_imagePullSecret) of the `kube-system` namespace. 
+- Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/containers?topic=containers-images#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/containers?topic=containers-images#store_imagePullSecret) of the `kube-system` project. 
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 To install Portworx:
 
-1.  [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine, and install the Helm server (tiller) with a service account in your cluster.
+1.  [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client version 2.14.3 or higher on your local machine, and install the Helm server (tiller) with a service account in your cluster.
 
 2.  Verify that tiller is installed with a service account.
 
@@ -479,8 +475,7 @@ To install Portworx:
     ```
     {: screen}
 
-3. [Retrieve the etcd endpoint, user name, and password of the Databases for etcd service instance that you set up earlier](#databases_credentials).
-
+3. [Retrieve the etcd endpoint, and the name of the Kubernetes secret](#databases_credentials) that you created for your Databases for etcd service instance.
 4. Download the Portworx Helm chart.
    ```
    git clone https://github.com/IBM/charts.git
@@ -650,7 +645,7 @@ To install Portworx:
 8. Verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer. 
    1. List the Portworx pods in the `kube-system` namespace. The installation is successful when you see one or more `portworx`, `stork`, and `stork-scheduler` pods. The number of pods equals the number of worker nodes that are included in your Portworx cluster. All pods must be in a `Running` state.
       ```
-      oc get pods -n kube-system | grep 'portworx\|stork'
+      kubectl get pods -n kube-system | grep 'portworx\|stork'
       ```
       {: pre}
    
@@ -711,7 +706,7 @@ To install Portworx:
 
    5. Review the Portworx I/O classification that was assigned to the disks that are part of the Portworx cluster. During the setup of your Portworx cluster, every disk is inspected to determine the performance profile of the device. The profile classification depends on how fast the network is that your worker node is connected to and the type of storage device that you have. Disks of SDS worker nodes are classified as `high`. If you manually attach disks to a virtual worker node, then these disks are classified as `low` due to the lower network speed that comes with virtual worker nodes.
       ```
-      oc exec -it <portworx_pod> -n kube-system -- /opt/pwx/bin/pxctl cluster provision-status
+      kubectl exec -it <portworx_pod> -n kube-system -- /opt/pwx/bin/pxctl cluster provision-status
       ```
       {: pre}
 
@@ -722,7 +717,7 @@ To install Portworx:
       10.176.48.67	Up		0	Online		LOW		20 GiB	17 GiB		3.0 GiB	0 B		0		dal10	us-south	default
       10.176.48.83	Up		0	Online		HIGH		3.5 TiB	3.5 TiB		10 GiB	0 B		0		dal10	us-south	default
       ```
-      {: screen}
+      {: screen} 
 
 ### Updating Portworx in your cluster
 {: #update_portworx}
@@ -730,9 +725,7 @@ To install Portworx:
 You can upgrade Portworx to the latest version.
 {: shortdesc}
 
-1. Follow steps 2-5 in [Installing Portworx on your cluster](#install_portworx).
-
-2. Find the installation name of your Portworx Helm chart.
+1. Find the installation name of your Portworx Helm chart.
    ```
    helm list | grep portworx
    ```
@@ -744,7 +737,7 @@ You can upgrade Portworx to the latest version.
    ```
    {: screen}
 
-3. Update your Portworx Helm chart.
+2. Update your Portworx Helm chart.
    ```
    helm upgrade <helm_chart_name> ./charts/community/portworx/
    ```
@@ -780,7 +773,7 @@ If you do not want to use Portworx in your cluster, you can uninstall the Helm c
    ```
    {: pre}
 
-   The removal of the pods is successful if no pods are displayed in your CLI output.
+   The removal of the pods is successful if no pods are displayed in your CLI output. 
 
 ## Creating a Portworx volume
 {: #add_portworx_storage}

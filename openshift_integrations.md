@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-11"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d
 
@@ -117,24 +117,26 @@ You can add services to your Red Hat OpenShift on IBM Cloud cluster in various w
 ## Adding IBM Cloud Paks
 {: #oc_cloud_paks}
 
-[IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized IBM middleware and open source software components that you are licensed to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/) as part of your hybrid cloud solution. IBM Cloud Paks run exclusively on OpenShift clusters, not community Kubernetes clusters. To use IBM Cloud Paks, you must set up your cluster environment as follows.
+You can add [IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) to your OpenShift clusters.
 {: shortdesc}
 
-1. In the project that you want to deploy the Cloud Pak to, make sure that you [set up the image pull secret to access images that are stored in {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-openshift-images#openshift_iccr).
-2. Import the Cloud Pak from Passport Advantage to your registry. Methods vary depending on the Cloud Pak.
-   * For public cloud, you can use the [`ibmcloud cr ppa-archive-load` CLI tool](/docs/services/Registry?topic=registry-ts_index#ts_ppa_import).
-   * If you have ICP Common Services installed in your cluster, then you can use the [`cloudctl catalog load-archive` CLI tool](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/app_center/add_package_offline.html). To push and pull these licensed images from ICP Common Services `load-archive` tool to your cluster's internal registry, you can [set up a secure external route for the internal registry](/docs/openshift?topic=openshift-openshift-images#route_internal_registry).
-   * Some Cloud Paks, such as {{site.data.keyword.icp4dfull_notm}}, push the image to the registry for you as part of their installation process. To see if the image is pushed during installation, review the Cloud Pak installation information.
-3. Follow the instructions that are particular to each Cloud Pak installation, such as configuring the Helm chart values to work within OpenShift security context constraints.
-
-Now you can run your Cloud Pak on your OpenShift cluster!
-
-When you set up your Cloud Pak, you might need to work with OpenShift-specific resources, such as security context constraints. Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 has a bug that yields an error when you run commands against OpenShift-specific resources, such as `kubectl get scc`.
-{: important}
-
-<br />
-
-
+<div class = "solutionBoxContainer">
+    <a href = "/docs/openshift?topic=openshift-openshift_cloud_paks">
+    <div class = "solutionBox">
+        <div class = "solutionBoxContent">
+                Adding Cloud Paks
+          <div class="solutionBoxDescription">
+                <div class="descriptionContainer">
+                  </br> <p>Learn more about the different IBM Cloud Paks and how to install them in your to OpenShift clusters.</p></br>
+                </div>
+                <div class="architectureDiagramContainer">
+                    <img class="architectureDiagram" src="/images/oc-cloud-paks.png" alt="IBM Cloud Paks icons" />
+                </div>
+            </div>
+        </div>
+    </div>
+    </a>
+</div>
 
 ## Binding {{site.data.keyword.cloud_notm}} services to your cluster
 {: #oc_service_binding}
@@ -202,7 +204,7 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>Supported persistent storage solutions, such as {{site.data.keyword.cloud_notm}} File Storage, {{site.data.keyword.cloud_notm}} Block Storage, or {{site.data.keyword.cos_full_notm}} are integrated as Kubernetes flex drivers and can be set up by using [Helm charts](#oc_helm). The storage documentation for each solution includes instructions to install and manage storage. For more information about choosing a persistent storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=containers-storage_planning).</dd>
 
   <dt>Cluster autoscaler</dt>
-  <dd>With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing requests of your scheduled workloads. For more information, see [Scaling clusters](/docs/containers?topic=containers-ca) in the {{site.data.keyword.containerlong_notm}} docs.</dd>
+  <dd>With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing requests of your scheduled workloads. For more information, see [Scaling clusters](/docs/openshift?topic=openshift-ca).</dd>
 
   <dt>Istio for service mesh</dt>
   <dd>Unlike for community Kubernetes clusters, <a href="https://www.ibm.com/cloud/istio" target="_blank">Istio <img src="../icons/launch-glyph.svg" alt="External link icon"></a> is not available as a managed add-on for OpenShift clusters. Instead, use the Red Hat OpenShift Service Mesh project. For more information, see [the OpenShift installation docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/servicemesh-install/servicemesh-install.html).</dd>
@@ -223,7 +225,7 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>[Razee ![External link icon](../icons/launch-glyph.svg "External link icon")](https://razee.io/) is an open-source project that automates and manages the deployment of Kubernetes resources across clusters, environments, and cloud providers, and helps you to visualize deployment information for your resources so that you can monitor the rollout process and find deployment issues more quickly. For more information about Razee and how to set up Razee in your cluster to automate your deployment process, see the [Razee documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/razee-io/Razee).</dd>
 
   <dt>{{site.data.keyword.mon_full_notm}}</dt>
-  <dd>Gain operational visibility into the performance and health of your apps by deploying Sysdig as a third-party service to your worker nodes to forward metrics to {{site.data.keyword.monitoringlong}}. For more information, see the following docs.<ul>
+  <dd>Gain operational visibility into the performance and health of your apps by deploying Sysdig as a third-party service to your worker nodes to forward metrics to {{site.data.keyword.mon_full}}. For more information, see the following docs.<ul>
     <li>[About the Sysdig partnership](/docs/containers?topic=containers-service-partners#sydig-partner).</li>
     <li>[Setting up Sysdig in an OpenShift cluster](/docs/openshift?topic=openshift-openshift_health#openshift_sysdig).</li>
     <li>[Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/services/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster).</li></ul></dd>

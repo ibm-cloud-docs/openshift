@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-10-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,7 +35,7 @@ Review some known issues or common error messages that you might encounter when 
 For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs:
 * [Debugging your cluster](/docs/containers?topic=containers-cs_troubleshoot)
 * [Clusters and worker nodes](/docs/containers?topic=containers-cs_troubleshoot_clusters)
-* [Storage](/docs/containers?topic=containers-cs_troubleshoot_storage)
+* [Storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)
 * [Logging and monitoring](/docs/containers?topic=containers-cs_troubleshoot_health)
 * [Debugging Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress)
 * [Cluster networking](/docs/containers?topic=containers-cs_troubleshoot_network)

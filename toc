@@ -51,6 +51,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     Administering clusters
+        openshift_cluster_scaling.md
         openshift_cluster_update.md
         openshift_users.md
         openshift_scc.md
@@ -81,6 +82,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_remove.md
 
     openshift_integrations.md
+    openshift_cloud_paks.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -111,7 +113,11 @@ Red Hat OpenShift on IBM Cloud
     faqs.md
     /containers/containers-iks-release
     openshift_limitations.md
-    openshift_ts.md
+    
+    {: .topicgroup}
+    Troubleshooting clusters
+        openshift_ts.md
+        openshift_troubleshoot_storage.md
     {: .navgroup-end}
 
     openshift_uc_finance.md
