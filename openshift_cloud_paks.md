@@ -26,7 +26,7 @@ subcollection: openshift
 # Adding Cloud Paks
 {: #openshift_cloud_paks}
 
-[IBM Cloud Paks&trade;![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are certified containers of licensed software that you can use to modernize, move, and build cloud-native business applications in hybrid and multicloud deployments. By running exclusively on OpenShift and Red Hat Enterprise Linux, Cloud Paks are built atop a secure stack and maintain consistency in deployment and behavior across cloud providers. You have greater flexibility to run and manage your workloads securely where you need them: on-premises, off-premises, in a backup provider, and in {{site.data.keyword.cloud_notm}}.
+[IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized, licensed IBM middleware and open source software components that you can use to modernize, move, and build cloud-native business applications in hybrid and multicloud deployments. By running exclusively on OpenShift and Red Hat Enterprise Linux, Cloud Paks are built atop a secure stack and maintain consistency in deployment and behavior across cloud providers. You have greater flexibility to run and manage your workloads securely where you need them: on-premises, off-premises, in a backup provider, and in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 ## Overview of Cloud Pak offerings
@@ -101,7 +101,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 ## Adding IBM Cloud Paks
 {: #oc_cloud_paks_add}
 
-[IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized IBM middleware and open source software components as part of your hybrid cloud solution. IBM Cloud Paks run exclusively on OpenShift clusters, not community Kubernetes clusters.
+[IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized, licensed IBM middleware and open source software components as part of your hybrid cloud solution. IBM Cloud Paks run exclusively on OpenShift clusters, not community Kubernetes clusters.
 {: shortdesc}
 
 
