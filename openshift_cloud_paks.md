@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-11"
+lastupdated: "2019-10-14"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -113,7 +113,8 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 Now you can run your Cloud Pak on your OpenShift cluster! 
 
-{[white-space]}
+<br />
+
 
 ## FAQs for Cloud Pak on Red Hat OpenShift on IBM Cloud
 {: #faq_cloud_paks}
