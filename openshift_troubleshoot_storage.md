@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-11"
+lastupdated: "2019-10-15"
 
 keywords: kubernetes, iks, help, debug
 
@@ -33,7 +33,7 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for tr
 {: shortdesc}
 
 If you have a more general issue, try out [Troubleshooting OpenShift clusters](/docs/openshift?topic=openshift-openshift_troubleshoot). 
-
+<br>
 
 ## Debugging persistent storage failures
 {: #debug_storage}
