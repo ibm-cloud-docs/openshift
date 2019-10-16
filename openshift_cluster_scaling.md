@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-14"
+lastupdated: "2019-10-15"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -578,7 +578,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
     <ul><li>`Always`: Pulls the image every time that the pod is started.</li>
     <li>`IfNotPresent`: Pulls the image only if the image is not already present locally.</li>
     <li>`Never`: Assumes that the image exists locally and never pulls the image.</li></ul></td>
-    <td>Always</td>
+    <td>`IfNotPreset`</td>
     </tr>
     <tr>
     <td>`maxNodeProvisionTime` parameter</td>

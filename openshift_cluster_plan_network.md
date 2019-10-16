@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-07"
+lastupdated: "2019-10-15"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -24,7 +24,7 @@ subcollection: openshift
 {:preview: .preview}
 
 
-# Planning your cluster network setup
+# Planning your cluster network setup 
 {: #plan_clusters}
 
 Design a network setup for your {{site.data.keyword.openshiftlong}} clusters that meets the needs of your workloads and environment.
