@@ -410,29 +410,7 @@ ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERS
 <dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
 </dl>
 
-#### `ibmcloud oc cluster addon enable vpc-block-csi-driver`
-{: #cs_cluster_addon_enable_vpc-block-csi-driver}
 
-Disable the [{{site.data.keyword.cloud_notm}} VPC Block Storage CSI Driver](/docs/openshift?topic=openshift-vpc-block#vpc-block-addon) add-on.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon enable vpc-block-csi-driver --cluster CLUSTER [--version VERSION]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt>`--cluster <em>CLUSTER</em>`</dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--version <em>VERSION</em></code></dt>
-<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
-</dl>
-
-</br>
 
 ### `ibmcloud oc cluster addons`
 {: #cs_cluster_addons}
