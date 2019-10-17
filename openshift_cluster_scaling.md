@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-15"
+lastupdated: "2019-10-17"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -34,7 +34,7 @@ With the {{site.data.keyword.containerlong_notm}} `ibm-iks-cluster-autoscaler` p
 Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-app#app_scaling).
 {: tip}
 
-The cluster autoscaler is available for standard, classic clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, you cannot use the cluster autoscaler in your cluster.
+The cluster autoscaler is available for standard, classic clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, see [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 {: important}
 
 ## Understanding scale-up and scale-down
@@ -232,7 +232,8 @@ Install the {{site.data.keyword.containerlong_notm}} cluster autoscaler plug-in 
         ```
         {: screen}
     2.  If your worker pool does not have the required label, [add a new worker pool](/docs/containers?topic=containers-add_workers#add_pool) and use this worker pool with the cluster autoscaler.
-
+    
+6. **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 
 <br>
 **To install the `ibm-iks-cluster-autoscaler` plug-in in your cluster**:
@@ -501,6 +502,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 **Before you begin**:
 *  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 *  [Install the `ibm-iks-cluster-autoscaler` plug-in](#ca_helm).
+*  **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 
 **To update the cluster autoscaler values**:
 
@@ -682,7 +684,6 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
     ```
     {: pre}
 
-
 ## Limiting apps to run on only certain autoscaled worker pools
 {: #ca_limit_pool}
 
@@ -772,8 +773,11 @@ You can update the existing cluster autoscaler Helm chart to the latest version.
 Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these instructions](#ca_helm_up_102).
 {: note}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+**Before you begin**:
+* [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+* **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 
+**To update the cluster autoscaler Helm chart**: 
 1.  Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
     ```
     helm repo update
@@ -895,6 +899,93 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 		Normal  ConfigUpdated  3m    ibm-iks-cluster-autoscaler-857c4d9d54-gwvc6  {"1:3:default":"SUCCESS:"}
     ```
     {: screen}
+
+<br />
+
+
+## Using the cluster autoscaler for a private network-only cluster
+{: #ca_private_cluster}
+
+The cluster autoscaler is available for standard, classic clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, you must temporarily open the required ports or temporarily enable the public service endpoint to install, update, or customize the cluster autoscaler. After the cluster autoscaler is installed, you can close the ports or disable the public service endpoint.
+{: shortdesc}
+
+If your account is not enabled for VRF and service endpoints, you can [open the required ports](https://cloud.ibm.com/docs/containers?topic=containers-firewall#vyatta_firewall) to allow public network connectivity in your cluster. 
+{: tip}
+
+Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+
+1.  Set up Helm for your private network-only cluster. You can choose between the following options.
+    * [Pushing the Helm Tiller image to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-helm#private_local_tiller).
+    * [Installing a Helm chart without Tiller](/docs/containers?topic=containers-helm#private_install_without_tiller).
+2.  Temporarily enable public connectivity to your cluster to install, update, or customize the cluster autoscaler.
+    * If your cluster is protected from the public network by a firewall, [open the required ports in your firewall](/docs/containers?topic=containers-firewall).
+    * If your cluster has only the private service endpoint enabled, [enable the public service endpoint](/docs/containers?topic=containers-cs_network_cluster#set-up-public-se).
+3.  [Install](#ca_helm), [update](#ca_helm_up), or [configure](#ca_chart_values) the cluster autoscaler Helm chart.
+4.  After you configure the cluster autoscaler, you can close the ports or [disable the public service endpoint](/docs/containers?topic=containers-cs_network_cluster#set-up-public-se).
+5.  Make sure that the `storage-secret-store` secret in the `kube-system` namespace uses the private service endpoint. If you initially created the cluster with a private service endpoint, the endpoint is already added to the secret.
+    1.  Download the secret to get the encoded secret information from the `data` field of the secret file.
+        ```
+        oc get secret storage-secret-store -n kube-system -o yaml > storage-secret-store.yaml
+        ```
+        {: pre}
+        Example output:
+        ```
+        apiVersion: v1
+        data:
+          slclient.toml: W0J...
+        ```
+        {: screen}
+    2.  Decode the value of the `data` field.
+        ```
+        echo "<W0J...>" | base64 -D
+        ```
+        {: pre}
+        Example output:
+        ```
+        [Bluemix]
+          iam_url = "https://iam.bluemix.net"
+          iam_client_id = "bx"
+          iam_client_secret = "bx"
+          iam_api_key = "<key>"
+          refresh_token = ""
+          pay_tier = "paid"
+          containers_api_route = "https://us-south.containers.cloud.ibm.com"
+          encryption = true
+          containers_api_route_private = "https://private.us-south.containers.cloud.ibm.com"
+
+        [Softlayer]
+          encryption = true
+          softlayer_username = ""
+          softlayer_api_key = ""
+          softlayer_endpoint_url = "https://api.service.softlayer.com/rest/v3"
+          softlayer_iam_endpoint_url = "https://api.service.softlayer.com/mobile/v3"
+          softlayer_datacenter = "dal10"
+          softlayer_token_exchange_endpoint_url = "https://iam.bluemix.net"
+
+        [VPC]
+          gc_token_exchange_endpoint_url = "https://iam.bluemix.net"
+          gc_riaas_endpoint_url = "https://us-south.iaas.cloud.ibm.com:443"
+          gc_api_key = "<key>"
+        ```
+        {: screen}
+    3.  Verify that the `containers_api_route_private` field includes the `private` service endpoint address. 
+    4.  If the ``containers_api_route_private` field is not in the secret, add it to the string by appending `private.` to the `containers_api_route` address. For example:
+        ```
+        containers_api_route = "https://us-south.containers.cloud.ibm.com"
+        containers_api_route_private = "https://private.us-south.containers.cloud.ibm.com"
+        ```
+        {: screen}
+    5.  Encode the full string.
+        ```
+        echo -n '[Bluemix]iam_url....' | openssl base64
+        ```
+        {: pre}
+    6.  Open the `storage-secret-store.yaml` file and replace the `data.slclient.toml` and `metadata.annotations` strings with the new encoded string with the private service endpoint.
+    7.  Apply the secret changes to your cluster.
+        ```
+        oc apply -f storage-secret-store.yaml
+        ```
+        {: pre}
 
 <br />
 
