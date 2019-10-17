@@ -767,7 +767,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 ## Updating the cluster autoscaler Helm chart
 {: #ca_helm_up}
 
-You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm ls | grep cluster-autoscaler`. For a changelog of chart versions, see the [Release notes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/alchemy-containers/armada-iks-cluster-autoscaler/blob/develop/deployment/public-helm-charts/ibm-iks-cluster-autoscaler/RELEASENOTES.md).
+You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm ls | grep cluster-autoscaler`.
 {: shortdesc}
 
 Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these instructions](#ca_helm_up_102).
@@ -776,6 +776,7 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 **Before you begin**:
 * [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 * **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
+* For a changelog of chart versions, [download the source code tar file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
 
 **To update the cluster autoscaler Helm chart**: 
 1.  Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
