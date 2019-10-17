@@ -33,7 +33,7 @@ Learn about cluster management responsibilities that you have when you use {{sit
 IBM provides you with an enterprise cloud platform for you to deploy apps alongside {{site.data.keyword.cloud_notm}} DevOps, AI, data, and security services. You choose how you set up, integrate, and operate your apps and services in the cloud.
 {:shortdesc}
 
-<table summary="The table shows the responsibilities of IBM and you. Rows are to be read from the left to right, with icons representing each responsibility in column one the description in column two.">
+<table summary="The table shows the responsibilities of IBM and you. Rows are to be read from the left to right, with icons representing each responsibility in column one the description in column two."> 
 <caption>Responsibilities of IBM and you</caption>
   <thead>
   <th colspan=2>Responsibilities by type</th> 
