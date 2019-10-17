@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-16"
+lastupdated: "2019-10-17"
 
 keywords: kubernetes, iks, help, debug
 
@@ -35,7 +35,7 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for tr
 If you have a more general issue, try out [Troubleshooting OpenShift clusters](/docs/openshift?topic=openshift-openshift_troubleshoot). 
 <br>
 
-## Debugging persistent storage failures
+## Debugging persistent storage failures 
 {: #debug_storage}
 
 Review the options to debug persistent storage and find the root causes for failures.
@@ -67,7 +67,7 @@ Review the options to debug persistent storage and find the root causes for fail
       {: screen}
 
       The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
-   2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/containers?topic=containers-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
+   2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
 
 3. For block storage, object storage, and Portworx only: Make sure that you [installed the Helm server Tiller with a Kubernetes services account](/docs/containers?topic=containers-helm#public_helm_install).
 
@@ -113,7 +113,7 @@ Review the options to debug persistent storage and find the root causes for fail
       ```
       {: pre}
 
-   4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/containers?topic=containers-block_storage#updating-the-ibm-cloud-block-storage-plug-in) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-object_storage#update_cos_plugin).
+   4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/openshift?topic=openshift-block_storage) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 
    **Portworx**:
 
@@ -125,7 +125,7 @@ Review the options to debug persistent storage and find the root causes for fail
       ```
       {: pre}
 
-   3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/containers?topic=containers-portworx#update_portworx).
+   3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
 
 5. Verify that the storage driver and plug-in pods show a status of **Running**.
    1. List the pods in the `kube-system` project.
@@ -228,7 +228,7 @@ During the PVC creation and binding, many different tasks are executed by the fi
     <tr>
       <td><code>Unable to find the exact ItemPriceIds(type|size|iops) for the specified storage</code> </br></br><code>Failed to place storage order with the storage provider</code></td>
       <td>The storage size and IOPS that you specified in your PVC are not supported by the storage type that you chose and cannot be used with the specified storage class. </td>
-      <td>Review [Deciding on the file storage configuration](/docs/containers?topic=containers-file_storage#file_predefined_storageclass) and [Deciding on the block storage configuration](/docs/containers?topic=containers-block_storage#block_predefined_storageclass) to find supported storage sizes and IOPS for the storage class that you want to use. Correct the size and IOPS, and re-create the PVC. </td>
+      <td>Review [Deciding on the file storage configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass) and [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass) to find supported storage sizes and IOPS for the storage class that you want to use. Correct the size and IOPS, and re-create the PVC. </td>
     </tr>
     <tr>
   <td><code>Failed to find the datacenter name in configuration file</code></td>
@@ -238,17 +238,17 @@ During the PVC creation and binding, many different tasks are executed by the fi
     <tr>
   <td><code>Failed to place storage order with the storage provider</code></br></br><code>Storage with the order ID 12345 could not be created after retrying for xx seconds. </code></br></br><code>Failed to do subnet authorizations for the storage 12345.</code><code>Storage 12345 has ongoing active transactions and could not be completed after retrying for xx seconds.</code></td>
   <td>The storage size, IOPS, and storage type might be incompatible with the storage class that you chose, or the {{site.data.keyword.cloud_notm}} infrastructure API endpoint is currently unavailable. </td>
-  <td>Review [Deciding on the file storage configuration](/docs/containers?topic=containers-file_storage#file_predefined_storageclass) and [Deciding on the block storage configuration](/docs/containers?topic=containers-block_storage#block_predefined_storageclass) to find supported storage sizes and IOPS for the storage class and storage type that you want to use. Then, delete the PVC and re-create the PVC. </td>
+  <td>Review [Deciding on the file storage configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass) and [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass) to find supported storage sizes and IOPS for the storage class and storage type that you want to use. Then, delete the PVC and re-create the PVC. </td>
   </tr>
   <tr>
   <td><code>Failed to find the storage with storage id 12345. </code></td>
   <td>You want to create a PVC for an existing storage instance by using Kubernetes static provisioning, but the storage instance that you specified could not be found. </td>
-  <td>Follow the instructions to provision existing [file storage](/docs/containers?topic=containers-file_storage#existing_file) or [block storage](/docs/containers?topic=containers-block_storage#existing_block) in your cluster and make sure to retrieve the correct information for your existing storage instance. Then, delete the PVC and re-create the PVC.  </td>
+  <td>Follow the instructions to provision existing [file storage](/docs/openshift?topic=openshift-file_storage#existing_file) or [block storage](/docs/openshift?topic=openshift-block_storage#existing_block) in your cluster and make sure to retrieve the correct information for your existing storage instance. Then, delete the PVC and re-create the PVC.  </td>
   </tr>
   <tr>
   <td><code>Storage type not provided, expected storage type is `Endurance` or `Performance`. </code></td>
   <td>You created a custom storage class and specified a storage type that is not supported.</td>
-  <td>Update your custom storage class to specify `Endurance` or `Performance` as your storage type. To find examples for custom storage classes, see the sample custom storage classes for [file storage](/docs/containers?topic=containers-file_storage#file_custom_storageclass) and [block storage](/docs/containers?topic=containers-block_storage#block_custom_storageclass). </td>
+  <td>Update your custom storage class to specify `Endurance` or `Performance` as your storage type. To find examples for custom storage classes, see the sample custom storage classes for [file storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass) and [block storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass). </td>
   </tr>
   </tbody>
   </table>
@@ -319,7 +319,7 @@ The file system on the worker node is read-only.
 2.  For a short-term fix to the existing worker node, reload the worker node.
     <pre class="pre"><code>ibmcloud oc worker reload --cluster &lt;cluster_name&gt; --worker &lt;worker_ID&gt;</code></pre>
 
-For a long-term fix, [update the flavor of your worker pool](/docs/containers?topic=containers-update#machine_type).
+For a long-term fix, [update the flavor of your worker pool](/docs/openshift?topic=openshift-update#machine_type).
 
 <br />
 
@@ -329,7 +329,7 @@ For a long-term fix, [update the flavor of your worker pool](/docs/containers?to
 {: #nonroot}
 
 {: tsSymptoms}
-After you [add NFS storage](/docs/containers?topic=containers-file_storage#file_app_volume_mount) to your deployment, the deployment of your container fails. When you retrieve the logs for your container, you might see errors such as the following. The pod fails and is stuck in a reload cycle.
+After you [add NFS storage](/docs/openshift?topic=openshift-file_storage#file_app_volume_mount) to your deployment, the deployment of your container fails. When you retrieve the logs for your container, you might see errors such as the following. The pod fails and is stuck in a reload cycle.
 
 ```
 write-permission
@@ -617,7 +617,7 @@ If a network error occurs while a pod writes to a volume, IBM Cloud infrastructu
    ```
    {: pre}
 
-2. Verify that you use the [latest version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibmcloud-block-storage-plugin). If not, [update your plug-in](/docs/containers?topic=containers-block_storage#updating-the-ibm-cloud-block-storage-plug-in).
+2. Verify that you use the [latest version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibmcloud-block-storage-plugin). If not, [update your plug-in](/docs/openshift?topic=openshift-block_storage).
 3. If you used a Kubernetes deployment for your pod, restart the pod that is failing by removing the pod and letting Kubernetes re-create it. If you did not use a deployment, retrieve the YAML file that was used to create your pod by running `oc get pod <pod_name> -o yaml >pod.yaml`. Then, delete and manually re-create the pod.
     ```
     oc delete pod <pod_name>
@@ -661,7 +661,7 @@ failed to mount the volume as "ext4", it already contains xfs. Mount error: moun
 {: screen}
 
 {: tsCauses}
-You have an existing block storage device that is set up with an `XFS` file system. To mount this device to your pod, you [created a PV](/docs/containers?topic=containers-block_storage#existing_block) that specified `ext4` as your file system or no file system in the `spec/flexVolume/fsType` section. If no file system is defined, the PV defaults to `ext4`.
+You have an existing block storage device that is set up with an `XFS` file system. To mount this device to your pod, you [created a PV](/docs/openshift?topic=openshift-block_storage#existing_block) that specified `ext4` as your file system or no file system in the `spec/flexVolume/fsType` section. If no file system is defined, the PV defaults to `ext4`.
 The PV was created successfully and was linked to your existing block storage instance. However, when you try to mount the PV to your cluster by using a matching PVC, the volume fails to mount. You cannot mount your `XFS` block storage instance with an `ext4` file system to the pod.
 
 {: tsResolve}
@@ -738,7 +738,7 @@ If you see a `permission denied` error, you do not have the required `read`, `wr
    ```
    {: pre}
 
-2. Follow the [documentation](/docs/containers?topic=containers-object_storage#install_cos) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
+2. Follow the [documentation](/docs/openshift?topic=openshift-object_storage#install_cos) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
 
 **For permission errors**:
 
@@ -754,7 +754,7 @@ If you see a `permission denied` error, you do not have the required `read`, `wr
    ```
    {: pre}
 
-3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-object_storage#install_cos).
+3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos).
 
 
 <br />
@@ -824,7 +824,7 @@ During the PVC creation and binding, many different tasks are executed by the {{
     <tr>
     <td>`cannot create bucket using API key without service-instance-id`</td>
     <td>If you want to use IAM API keys to access your {{site.data.keyword.cos_full_notm}} service instance, you must store the API key and the ID of the {{site.data.keyword.cos_full_notm}} service instance in a Kubernetes secret.  </td>
-    <td>See [Creating a secret for the object storage service credentials](/docs/containers?topic=containers-object_storage#create_cos_secret). </td>
+    <td>See [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret). </td>
     </tr>
     <tr>
       <td>`object-path “<subdirectory_name>” not found inside bucket <bucket_name>`</td>
@@ -844,7 +844,7 @@ During the PVC creation and binding, many different tasks are executed by the {{
         <tr>
           <td>`Put https://s3-api.dal-us-geo.objectstorage.service.networklayer.com/<bucket_name>: net/http: invalid header field value "AWS4-HMAC-SHA256 Credential=1234a12a123a123a1a123aa1a123a123\n\n/20190412/us-standard/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=12aa1abc123456aabb12aas12aa123456sb123456abc" for key Authorization`</td>
           <td>The values in your Kubernetes secret are not correctly encoded to base64.  </td>
-          <td>Review the values in your Kubernetes secret and encode every value to base64. You can also use the [`oc create secret`](/docs/containers?topic=containers-object_storage#create_cos_secret) command to create a new secret and let Kubernetes automatically encode your values to base64. </td>
+          <td>Review the values in your Kubernetes secret and encode every value to base64. You can also use the [`oc create secret`](/docs/openshift?topic=openshift-object_storage#create_cos_secret) command to create a new secret and let Kubernetes automatically encode your values to base64. </td>
         </tr>
         <tr>
           <td>`cannot access bucket <bucket_name>: Forbidden: Forbidden`</td>
@@ -902,7 +902,7 @@ When you create your PVC or deploy a pod that mounts the PVC, the creation or de
 The Kubernetes secret where you store your {{site.data.keyword.cos_full_notm}} service credentials, the PVC, and the pod are not all in the same OpenShift project. When the secret is deployed to a different project than your PVC or pod, the secret cannot be accessed.
 
 {: tsResolve}
-This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/containers?topic=containers-users#platform) for all projects.
+This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for all projects.
 
 1. List the secrets in your cluster and review the OpenShift project where the Kubernetes secret for your {{site.data.keyword.cos_full_notm}} service instance is created. The secret must show `ibm/ibmc-s3fs` as the **Type**.
    ```
@@ -910,7 +910,7 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
    ```
    {: pre}
 
-2. Check your YAML configuration file for your PVC and pod to verify that you used the same project. If you want to deploy a pod in a different project than the one where your secret exists, [create another secret](/docs/containers?topic=containers-object_storage#create_cos_secret) in that project.
+2. Check your YAML configuration file for your PVC and pod to verify that you used the same project. If you want to deploy a pod in a different project than the one where your secret exists, [create another secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret) in that project.
 
 3. Create the PVC or deploy the pod in the appropriate project.
 
@@ -957,7 +957,7 @@ The {{site.data.keyword.cos_full_notm}} service credentials that you use to acce
 2. Find your credentials, then click **View credentials**.
 3. In the **iam_role_crn** section, verify that you have the `Writer` or `Manager` role. If you do not have the correct role, you must create new {{site.data.keyword.cos_full_notm}} service credentials with the correct permission.
 4. If the role is correct, verify that you use the correct **access_key_id** and **secret_access_key** in your Kubernetes secret.
-5. [Create a new secret with the updated **access_key_id** and **secret_access_key**](/docs/containers?topic=containers-object_storage#create_cos_secret).
+5. [Create a new secret with the updated **access_key_id** and **secret_access_key**](/docs/openshift?topic=openshift-object_storage#create_cos_secret).
 
 
 <br />
@@ -1018,7 +1018,7 @@ You might have used the wrong storage class to access your existing bucket, or y
 1. From the [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/), select your {{site.data.keyword.cos_full_notm}} service instance.
 2. Select **Buckets**.
 3. Review the **Class** and **Location** information for your existing bucket.
-4. Choose the appropriate [storage class](/docs/containers?topic=containers-object_storage#cos_storageclass_reference).
+4. Choose the appropriate [storage class](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference).
 5. Make sure that you set `ibm.io/auto-create-bucket: false` and that you provide the correct name of your existing bucket.
 
 <br />
@@ -1294,9 +1294,9 @@ Start by verifying that the information that you entered in the {{site.data.keyw
    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
    ```
    {: pre}
-2. Verify that the {{site.data.keyword.cloud_notm}} API key that you entered has sufficient permissions to work with your cluster. You must be assigned the **Editor** platform role and the **Manager** service access role for Red Hat OpenShift on IBM Cloud. For more information, see [User access permissions](/docs/containers?topic=containers-access_reference). 
+2. Verify that the {{site.data.keyword.cloud_notm}} API key that you entered has sufficient permissions to work with your cluster. You must be assigned the **Editor** platform role and the **Manager** service access role for Red Hat OpenShift on IBM Cloud. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference). 
 3. Verify that you entered the `etcd` API endpoint for your Databases for etcd service instance in the correct format.  
-   1. [Retrieve the Databases for etcd endpoint](/docs/containers?topic=containers-portworx#databases_credentials). 
+   1. [Retrieve the Databases for etcd endpoint](/docs/openshift?topic=openshift-portworx#databases_credentials). 
    2. Add the etcd endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (;).
       
       Example endpoint: 
@@ -1304,7 +1304,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
       etcd:https://1ab234c5-12a1-1234-a123.databases.appdomain.cloud:32059
       ```
       {: screen}
-4. Verify that you stored the credentials to access your Databases for etcd service instance in a Kubernetes secret in your cluster. For more information, see [Setting up a Databases for etcd service instance for Portworx metadata](/docs/containers?topic=containers-portworx#portworx_database). 
+4. Verify that you stored the credentials to access your Databases for etcd service instance in a Kubernetes secret in your cluster. For more information, see [Setting up a Databases for etcd service instance for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database). 
    1. Review steps 4-6 and verify that you retrieved the correct user name, password, and certificate. 
    2. List the secrets in your cluster and look for the secret that holds the credentials of your Databases for etcd service instance. 
       ```
@@ -1313,7 +1313,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
       {: pre}
    3. Make sure that the user name, password, and certificate are stored as a base64 encoded value in your Kubernetes secret.
    4. Verify that you entered the correct name of the secret in the {{site.data.keyword.cloud_notm}} catalog. 
-5. If you chose to set up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}, make sure that you created an instance of {{site.data.keyword.keymanagementservicelong_notm}} in your {{site.data.keyword.cloud_notm}} account and that you stored the credentials to access your instance in a Kubernetes secret in the `portworx` project of your cluster. For more information, see [Enabling per-volume encryption for your Portworx volumes](/docs/containers?topic=containers-portworx#setup_encryption). 
+5. If you chose to set up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}, make sure that you created an instance of {{site.data.keyword.keymanagementservicelong_notm}} in your {{site.data.keyword.cloud_notm}} account and that you stored the credentials to access your instance in a Kubernetes secret in the `portworx` project of your cluster. For more information, see [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-portworx#setup_encryption). 
    1. Make sure that the API key of your service ID, and the {{site.data.keyword.keymanagementservicelong_notm}} instance ID, root key, and API endpoint are stored as base64 values in the Kubernetes secret of your cluster. 
    2. Make sure that you named your secret `px-ibm`. 
    3. Make sure that you created the secret in the `portworx` project of your cluster. 
@@ -1326,8 +1326,8 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 
 
 2. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/).
-3. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/containers?topic=containers-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer. 
-4. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/containers?topic=containers-plan_clusters#plan_basics).
+3. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer. 
+4. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics).
 5. Verify that Helm version 2.14.3 or higher is correctly installed in your cluster. For more information, see [Setting up Helm in a cluster with public access](/docs/containers?topic=containers-helm#public_helm_install). 
 
 
