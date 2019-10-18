@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-10-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -811,7 +811,7 @@ To log denied traffic:
   ```
   {: screen}
 
-6. Optional: [Forward the logs](/docs/containers?topic=containers-health#configuring) from `/var/log/syslog` to an external syslog server.
+6. Optional: Forward the logs from `/var/log/syslog` to [{{site.data.keyword.la_full}}](/docs/containers?topic=containers-health#app_logdna) or to [an external syslog server](/docs/containers?topic=containers-health#configuring).
 
 
 
