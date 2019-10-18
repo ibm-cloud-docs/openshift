@@ -569,7 +569,7 @@ service-subnet: <em>&lt;subnet&gt;</em>
 </dl>
 
 <code><strong>--disable-disk-encrypt</strong></code></br>
-Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/openshift?topic=openshift-security). To disable encryption, include this option.
+Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.
 {: #pod-subnet}
 
 <code><strong>--pod-subnet <em>SUBNET</em></strong></code></br>
@@ -1416,7 +1416,7 @@ diskEncryption: <em>false</em></code></pre></dd>
 <dd>The public VLAN that was specified when the cluster was created. This value is optional. If you want your worker nodes to exist on a private VLAN only, do not provide a public VLAN ID. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.<p class="note">If worker nodes are set up with a private VLAN only, you must allow worker nodes and the cluster master to communicate by [enabling the private service endpoint](/docs/containers?topic=containers-cs_network_cluster#set-up-private-se) or [configuring a gateway appliance](/docs/openshift?topic=openshift-plan_clusters#workeruser-master).</p></dd>
 
 <dt><code>--disable-disk-encrypt</code></dt>
-<dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/openshift?topic=openshift-security). To disable encryption, include this option.</dd>
+<dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -3159,6 +3159,7 @@ ibmcloud oc logging config get --cluster my_cluster --logsource worker
 {: pre}
 
 </br>
+
 ### `ibmcloud oc logging config rm`
 {: #cs_logging_rm}
 
@@ -4429,7 +4430,7 @@ View a list of available worker node flavors. Flavors vary by zone.
 The `machine-types` alias for this command is deprecated.
 {: deprecated}
 
-Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/openshift?topic=openshift-security).
+Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/containers?topic=containers-security#encrypted_disk).
 
 You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal. [Learn more about your flavor options](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 
