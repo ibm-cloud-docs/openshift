@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-03"
+lastupdated: "2019-10-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -53,8 +53,8 @@ Both OpenShift and community Kubernetes clusters are production-ready container 
 |Worldwide availability in single and multizones|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Consistent container orchestration across hybrid cloud providers|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Access to {{site.data.keyword.cloud_notm}} services such as AI|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Software-defined storage Portworx solution available for multizone data use cases|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Ability to create free clusters|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
-|Software-defined storage Portworx solution available for multizone data use cases|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Create a cluster in an IBM Virtual Private Cloud (VPC)|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Latest community Kubernetes distribution|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Cluster on only the private network|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
