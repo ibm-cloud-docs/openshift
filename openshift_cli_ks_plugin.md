@@ -2309,6 +2309,7 @@ ibmcloud oc zone network-set --zone dal10 -c my_cluster -p pool1 -p pool2 --priv
 
 </br>
 
+
 ### `ibmcloud oc zone rm`
 {: #cs_zone_rm}
 
