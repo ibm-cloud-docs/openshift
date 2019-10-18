@@ -2204,6 +2204,7 @@ ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -w pool1 -w pool2
 
 </br>
 
+
 ### `ibmcloud oc zone ls`
 {: #cs_datacenters}
 
