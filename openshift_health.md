@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-04"
+lastupdated: "2019-10-18"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -126,7 +126,7 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
         oc adm policy add-scc-to-user privileged -n logdna-agent -z logdna-agent
         ```
         {: pre}
-2.  Create your {{site.data.keyword.la_full_notm}} instance in the same resource group as your cluster. Select a pricing plan that determines the retention period for your logs, such as `lite` which retains logs for 0 days. The region does not have to match the region of your cluster. For more information, see [Provisioning an instance](/docs/services/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-provision) and [Pricing plans](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#overview_pricing_plans).
+2.  Create your {{site.data.keyword.la_full_notm}} instance in the same resource group as your cluster. Select a pricing plan that determines the retention period for your logs, such as `lite` which retains logs for 0 days. The region does not have to match the region of your cluster. For more information, see [Provisioning an instance](/docs/services/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-provision) and [Service plans](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-service_plans).
     ```
     ibmcloud resource service-instance-create <service_instance_name> logdna (lite|7-day|14-day|30-day) <region> [-g <resource_group>]
     ```

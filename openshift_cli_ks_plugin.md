@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-17"
+lastupdated: "2019-10-18"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -259,27 +259,6 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 <dd>Force the command to run with no user prompts. This value is optional.</dd>
 </dl>
 
-#### `ibmcloud oc cluster addon disable vpc-block-csi-driver`
-{: #cs_cluster_addon_disable_vpc-block-csi-driver}
-
-Disable the [{{site.data.keyword.cloud_notm}} VPC Block Storage CSI Driver](/docs/openshift?topic=openshift-vpc-block) add-on.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt>`--cluster <em>CLUSTER</em>`</dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>-f</code>
-<dd>Force the command to run with no user prompts. This value is optional.</dd>
-</dl>
 
 </br>
 
