@@ -40,7 +40,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
 
-### Changelog for master fix pack 3.11.146_1528_openshift, released 21 October 2019
+### Changelog for master fix pack 3.11.146_1528_openshift, released 22 October 2019
 {: #311146_1528}
 
 The following table shows the changes that are included in the master fix pack `3.11.146_1528_openshift`.
