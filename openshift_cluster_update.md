@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-26"
+lastupdated: "2019-10-21"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -34,7 +34,7 @@ You can install updates to keep your {{site.data.keyword.openshiftlong}} cluster
 ## Updating the master
 {: #master}
 
-Periodically, OpenShift releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
+Periodically, {{site.data.keyword.openshiftshort}} releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
 {:shortdesc}
 
 **How do I know when to update the master?**</br>

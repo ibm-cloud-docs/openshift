@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-21"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -146,29 +146,6 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 To install the plug-in: 
 
-1. Make sure that your worker node applies the latest patch for your minor version to run your worker node with the latest security settings. The patch version also ensures that the root password on the worker node is renewed. 
-   
-   If you did not apply updates or reload your worker node within the last 90 days, your root password on the worker node expires and the installation of the storage plug-in might fail. 
-   {: note}
-   1. List the current patch version of your worker nodes.
-      ```
-      ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-      ```
-      {: pre}
-
-      Example output:
-      ```
-      OK
-      ID                                                  Public IP        Private IP     Machine Type           State    Status   Zone    Version
-      kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.14.7_1523*
-      ```
-      {: screen}
-
-      If your worker node does not apply the latest patch version, you see an asterisk (`*`) in the **Version** column of your CLI output.
-
-   2. Review the [version changelog](/docs/containers?topic=containers-changelog#changelog) to find the changes that are included in the latest patch version.
-
-   3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
 
 2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. Then, [follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine and optionally Tiller with a service account in your cluster. **Note**: If you use Windows, you must install Tiller.
 
@@ -840,7 +817,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
    ```
    {: screen}
 
-4. Optional: If you plan to access your data with a non-root user, or added files to an existing {{site.data.keyword.cos_full_notm}} bucket by using the console or the API directly, make sure that the [files have the correct permission](/docs/containers?topic=containers-cs_troubleshoot_storage#cos_nonroot_access) assigned so that your app can successfully read and update the files as needed.
+4. Optional: If you plan to access your data with a non-root user, or added files to an existing {{site.data.keyword.cos_full_notm}} bucket by using the console or the API directly, make sure that the [files have the correct permission](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_nonroot_access) assigned so that your app can successfully read and update the files as needed.
 
 4.  {: #cos_app_volume_mount}To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
 
