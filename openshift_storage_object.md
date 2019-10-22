@@ -29,7 +29,7 @@ subcollection: openshift
 [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started) is persistent, highly available storage that you can mount to your apps. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud {{site.data.keyword.cos_short}} buckets to pods in your cluster. Information that is stored with {{site.data.keyword.cos_full_notm}} is encrypted in transit and at rest, dispersed across multiple geographic locations, and accessed over HTTP by using a REST API.
 {: shortdesc}
 
-If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster. 
+If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
 
 
@@ -144,7 +144,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 
 
-To install the plug-in: 
+To install the plug-in:
 
 
 2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. Then, [follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine and optionally Tiller with a service account in your cluster. **Note**: If you use Windows, you must install Tiller.
@@ -291,10 +291,10 @@ To install the plug-in:
    - **For Windows:**
      1. Retrieve the **datacenter** where your cluster is deployed.  
         ```
-        oc get cm cluster-info -n kube-system
+        oc get cm cluster-info -n kube-system -o yaml
         ```
         {: pre}
-     2. Store the data center in an environment variable. 
+     2. Store the data center in an environment variable.
         ```
         SET DC_NAME=<datacenter>
         ```
@@ -398,10 +398,10 @@ To install the plug-in:
     ibmc-s3fs-vault-regional               ibm.io/ibmc-s3fs   8m
     ```
     {: screen}
-    
+
     If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `kubectl patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
     {: tip}
-   
+
 13. Follow the instructions to [add object storage to your apps](#add_cos).        
 
 
