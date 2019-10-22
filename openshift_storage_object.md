@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-21"
+lastupdated: "2019-10-22"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -289,15 +289,14 @@ To install the plug-in:
        {: pre}
 
    - **For Windows:**
-     1. Retrieve the zone where your cluster is deployed and store the zone in an environment variable.
+     1. Retrieve the **datacenter** where your cluster is deployed.  
         ```
-        export DC_NAME=$(oc get cm cluster-info -n kube-system -o jsonpath='{.data.cluster config\.json}' | grep datacenter | awk -F ': ' '{print $2}' | sed 's/\"//g' |sed 's/,//g')
+        oc get cm cluster-info -n kube-system
         ```
         {: pre}
-
-     2. Verify that the environment variable is set.
+     2. Store the data center in an environment variable. 
         ```
-        printenv
+        SET DC_NAME=<datacenter>
         ```
         {: pre}
 
