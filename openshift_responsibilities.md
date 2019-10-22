@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-17"
+lastupdated: "2019-10-21"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -24,7 +24,7 @@ subcollection: openshift
 {:preview: .preview}
 
 
-# Your responsibilities with using Red Hat OpenShift on IBM Cloud
+# Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}
 {: #responsibilities_openshift}
 
 Learn about cluster management responsibilities that you have when you use {{site.data.keyword.openshiftlong}}. For overall terms of use, see [Cloud Services terms](/docs/overview/terms-of-use?topic=overview-terms#terms).

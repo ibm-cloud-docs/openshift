@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-21"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -125,7 +125,7 @@ To quickly determine whether a zone is multizone-capable, your can run `ibmcloud
 | North America | Canada | Toronto | tor01 | US East (`us-east`) |
 | North America | Mexico | Mexico City | mex01 | US South (`us-south`) |
 | North America | United States | Dallas | dal10, dal12, dal13 | US South (`us-south`) |
-| North America | United States | San Jose | sjc03 | US South (`us-south`) |
+| North America | United States | San Jose | sjc03, sjc04 | US South (`us-south`) |
 | North America | United States | Washington, D.C. | wdc04, wdc06, wdc07 | US East (`us-east`) |
 {: class="simple-tab-table"}
 {: caption="Available single zone data center locations for Red Hat OpenShift on IBM Cloud." caption-side="top"}
