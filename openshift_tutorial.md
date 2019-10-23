@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-16"
+lastupdated: "2019-10-22"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -80,7 +80,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster in {{site.data.keyword.container
     ibmcloud login -r (us-east|eu-gb) [-g default] [--sso]
     ```
     {: pre}
-3.  Create a cluster. The following command creates a cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`.
+3.  Create a cluster with a unique name. The following command creates a cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`.
     ```
     ibmcloud oc cluster create classic --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
@@ -138,7 +138,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster in {{site.data.keyword.container
 Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to help operate your cluster, such as the OpenShift console.
 {:shortdesc}
 
-1.  From the [{{site.data.keyword.containerlong_notm}} clusters ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) console, select your OpenShift cluster, then click **OpenShift web console**.
+1.  From the [Red Hat OpenShift on IBM Cloud console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), select your OpenShift cluster, then click **OpenShift web console**.
 2.  Explore the different areas of the OpenShift console by clicking the dropdown menu in the **OpenShift Container Platform** menu bar.
     * **Service Catalog**: Browse the catalog of built-in services that you can deploy on OpenShift. For example, if you already have an `node.js` app that is hosted in GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console.
     * **Application Console**: For each project namespace that you have access to, you can manage and view logs for your OpenShift resources such as pods, services, routes, builds, images, or persistent volume claims. You can also add services from the catalog to the project.
