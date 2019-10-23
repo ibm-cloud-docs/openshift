@@ -284,7 +284,7 @@ You can use network load balancer (NLB) and Ingress application load balancer (A
 {: shortdesc}
 
 **Can I use security groups to manage my cluster's network traffic?** </br>
-Use [Calico and Kubernetes policies](/docs/openshift?topic=openshift-network_policies) to manage network traffic into and out of your cluster. Do not use IBM Cloud infrastructure [security groups](/docs/infrastructure/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups). IBM Cloud infrastructure security groups are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. However, security groups do not support the VRRP protocol, which Red Hat OpenShift on IBM Cloud uses to manage the NLB IP address. If the VRRP protocol is not present to manage the NLB IP, NLB and Ingress ALB services do not work properly. If you are not using NLB and Ingress ALB services and want to completely isolate your worker node from the public, you can use security groups.
+{{site.data.keyword.cloud_notm}} [security groups](/docs/infrastructure/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups) are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. If you want to manage traffic for each worker node, you can use security groups. When you create a security group, you must allow the VRRP protocol, which Red Hat OpenShift on IBM Cloud uses to manage NLB IP addresses. To uniformly manage traffic for your cluster across all of your worker nodes, use [Calico and Kubernetes policies](/docs/containers?topic=containers-network_policies).
 
 
 
