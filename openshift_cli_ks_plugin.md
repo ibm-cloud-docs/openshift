@@ -1605,7 +1605,7 @@ Reload the configurations for a worker node.
 
 A reload can be useful if your worker node experiences problems, such as slow performance or if your worker node is stuck in an unhealthy state. During the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). The worker node public and private IP address remain the same after the reload operation.
 
-Reloading a worker node applies patch version updates to your worker node, but not major or minor updates. To see the changes from one patch version to the next, review the [Version changelog](/docs/containers?topic=containers-changelog#changelog) documentation.
+Reloading a worker node applies patch version updates to your worker node, but not major or minor updates. To see the changes from one patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 {: tip}
 
 Before you reload your worker node, make sure that pods are rescheduled on other worker nodes to help avoid a downtime for your app or data corruption on your worker node.
@@ -1686,7 +1686,7 @@ Delete a worker node and replace it with a new worker node in the same worker po
 
 The replacement worker node is created in the same zone and has the same flavor as the old worker node, but is assigned new public or private IP addresses. You might replace a worker node if you cannot reload or update the worker node, such as if it enters a troubled state.
 
-You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` flag. If you do not include the `--update` flag, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/containers?topic=containers-changelog#changelog) documentation.
+You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` flag. If you do not include the `--update` flag, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 
 Any custom labels that you applied at the individual worker node level are not applied to the replacement worker node. However, any labels that you applied at the worker pool level are applied to the replacement worker node.
 {: note}
