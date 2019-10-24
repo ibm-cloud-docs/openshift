@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -67,14 +67,17 @@ The following table compares the features of each app exposure method.
 |Characteristics|NodePort|NLB|Ingress ALB|Route|
 |---------------|------|--------|---|-----------|
 |Stable external IP| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|External hostname||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| 
-|SSL termination||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| 
+|External hostname||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|SSL termination||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />`*`|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |HTTP(S) load balancing| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Custom routing rules|| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| 
+|Custom routing rules|| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Multiple apps per route or service| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |{{site.data.keyword.cloud_notm}} extensions like {{site.data.keyword.appid_short}}| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Consistent hybrid multicloud deployment| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 {: caption="Comparison of OpenShift external networking for apps" caption-side="top"}
+
+`*` SSL termination is provided by `ibmcloud oc nlb-dns` commands. In classic clusters, these commands are supported for public NLBs only.
+{: note}
 
 <br />
 
@@ -180,5 +183,6 @@ Check out the following methods for private app networking:
 {: caption="Characteristics of network deployment patterns for a public and a private VLAN setup" caption-side="top"}
 
 <br />
+
 
 

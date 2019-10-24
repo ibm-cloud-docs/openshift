@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-24"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -391,14 +391,14 @@ ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERS
 
 
 
-### `ibmcloud oc cluster addons`
+### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}
 
 List managed add-ons that are enabled in a cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc cluster addons --cluster CLUSTER
+ibmcloud oc cluster addon ls --cluster CLUSTER
 ```
 {: pre}
 

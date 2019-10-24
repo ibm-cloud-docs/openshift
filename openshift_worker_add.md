@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-21"
+lastupdated: "2019-10-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -119,7 +119,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     ```
     {: pre}
 
-4. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. If you provision a bare metal worker pool, specify `--hardware dedicated`.
+4. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. If you provision a bare metal or dedicated VM worker pool, specify `--hardware dedicated`.
    ```
    ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
    ```

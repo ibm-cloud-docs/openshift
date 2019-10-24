@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-10-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -318,7 +318,7 @@ To add file storage:
 
 4.  {: #file_app_volume_mount}To mount the storage to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
 
-    If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS file storage](/docs/containers?topic=containers-cs_troubleshoot_storage#nonroot) or [Enabling root permission for NFS file storage](/docs/containers?topic=containers-cs_troubleshoot_storage#nonroot).
+    If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS file storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#nonroot) or [Enabling root permission for NFS file storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#nonroot).
     {: tip}
 
     ```
@@ -1193,6 +1193,8 @@ To apply the latest security updates and for a better performance, use the defau
    {: screen}
 
 <br />
+
+
 
 
 ## Backing up and restoring data
