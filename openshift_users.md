@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-25"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -92,6 +92,7 @@ When you set {{site.data.keyword.cloud_notm}} IAM policies, you can assign roles
 {: tip}
 
 You must also specify whether users have access to one cluster in a resource group, all clusters in a resource group, or all clusters in all resource groups in your account.
+
 
 ### Scope user access to cluster instances, namespaces, or resource groups
 {: #resource_groups}
