@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-25"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -46,7 +46,7 @@ Your worker nodes cannot run a later `major.minor` Kubernetes version than the m
 Worker nodes can run later patch versions than the master, such as patch versions that are specific to worker nodes for security updates.
 
 **How are patch updates applied?**</br>
-By default, patch updates for the master are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can [check the versions changelog](/docs/containers?topic=containers-changelog) for any potential impact and choose to safely use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply.
+By default, patch updates for the master are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can [check the versions changelog](/docs/openshift?topic=openshift-openshift_changelog) for any potential impact and choose to safely use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply.
 
 Unlike the master, you must update your workers for each patch version.
 
@@ -72,7 +72,7 @@ To update the Kubernetes master _major_ or _minor_ version:
 
 1.  Review the [Kubernetes changes](/docs/containers?topic=containers-cs_versions) and make any updates marked _Update before master_.
 
-2.  Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update).
+2.  Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).
 
 3.  Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
 
@@ -96,7 +96,7 @@ You received a notification to update your worker nodes. What does that mean? As
 If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
 
 **How can I control how many worker nodes go down at a time during the update?**</br>
-If you need all your worker nodes to be up and running, consider [resizing your worker pool](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_pool_resize) or [adding stand-alone worker nodes](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_add) to add more worker nodes. You can remove the additional worker nodes after the update is completed.
+If you need all your worker nodes to be up and running, consider [resizing your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [adding stand-alone worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) to add more worker nodes. You can remove the additional worker nodes after the update is completed.
 
 In addition, you can create a Kubernetes config map that specifies the maximum number of worker nodes that can be unavailable at a time during the update. Worker nodes are identified by the worker node labels. You can use IBM-provided labels or custom labels that you added to the worker node.
 
@@ -115,8 +115,8 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 - [Update the master](#master). The worker node version cannot be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [Kubernetes clusters](/docs/containers?topic=containers-cs_versions) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift_versions) version preparation guides.
-- If you want to apply a patch update, review the [Kubernetes clusters](/docs/openshift?topic=openshift-openshift_changelog) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift_versions) version changelog.
-- Consider [adding more worker nodes](/docs/openshift?topic=openshift-add_workers) so that your cluster has enough capacity to rescheduling your workloads during the update.
+- If you want to apply a patch update, review the [Kubernetes clusters](/docs/containers?topic=containers-changelog) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift_versions) version changelog.
+- Consider [adding more worker nodes](/docs/containers?topic=containers-add_workers) so that your cluster has enough capacity to rescheduling your workloads during the update.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
 ### Updating worker nodes in the CLI with a configmap
@@ -467,8 +467,8 @@ In order to change your logging or filter configurations, the Fluentd component 
 
 You can manage automatic updates of the Fluentd component in the following ways. **Note**: To run the following commands, you must have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
 
-* Check whether automatic updates are enabled by running the `ibmcloud oc logging autoupdate get --cluster <cluster_name_or_ID>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_get).
-* Disable automatic updates by running the `ibmcloud oc logging autoupdate disable` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_disable).
+* Check whether automatic updates are enabled by running the `ibmcloud oc logging autoupdate get --cluster <cluster_name_or_ID>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_get).
+* Disable automatic updates by running the `ibmcloud oc logging autoupdate disable` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_disable).
 * If automatic updates are disabled, but you need to change your configuration, you have two options:
     * Turn on automatic updates for your Fluentd pods.
         ```
