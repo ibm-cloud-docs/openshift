@@ -95,7 +95,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
       <br><br>
       **Your responsibilities**:
       <ul>
-      <li>Use the API, CLI, or console tools to apply the provided [security patch updates](/docs/containers?topic=containers-changelog) to your worker nodes.</li>
+      <li>Use the API, CLI, or console tools to apply the provided [security patch updates](/docs/openshift?topic=openshift-openshift_changelog) to your worker nodes.</li>
       <li>Choose how to set up your [cluster network](/docs/openshift?topic=openshift-plan_clusters) and configure further [security settings](/docs/openshift?topic=openshift-security#security) to meet your workload's security and compliance needs. If applicable, configure your [firewall](/docs/openshift?topic=openshift-firewall#firewall).</li></ul>
       <br><br></td>
       </tr>
