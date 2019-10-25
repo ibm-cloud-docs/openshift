@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-23"
+lastupdated: "2019-10-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -31,6 +31,7 @@ subcollection: openshift
 
  NFS file storage instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
+
 
 ## Deciding on the file storage configuration
 {: #file_predefined_storageclass}
