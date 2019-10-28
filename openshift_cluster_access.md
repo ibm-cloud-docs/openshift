@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -222,7 +222,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
     ```
     {: pre}
 
-    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs[External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platfor3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens).
+    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs[External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens).
 
     Example curl request:
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-08"
+lastupdated: "2019-10-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -51,7 +51,7 @@ Review different ways to get help and support for your Red Hat OpenShift on IBM 
    * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
    * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/containers?topic=containers-cs_versions).
 2. Make sure that your command line tools are up to date.
-   * {[plugin-note]}
+   * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
    * Make sure that [your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
 
 **Reviewing issues and status**<br>
