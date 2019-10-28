@@ -41,7 +41,7 @@ Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch upda
 {: shortdesc}
 
 ### Changelog for worker node fix pack 3.11.153_1529_openshift, released 28 October 2019 
-{: #311146_1529}
+{: #311153_1529}
 
 The following table shows the changes that are included in the worker node fix pack `3.11.153_1529_openshift`.
 {: shortdesc}
