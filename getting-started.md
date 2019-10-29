@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-22"
+lastupdated: "2019-10-29"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -52,7 +52,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
     *   For **Default worker pool**, choose an available flavor for your worker nodes. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
     *   Set a number of worker nodes to create per zone, such as `3`.
 4.  To finish, click **Create cluster**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing component take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. </p>
-5.  Verify that your cluster setup is finished before you continue to the next step by checking that the **Ingress subdomain** on the cluster details page follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.
+5.  Verify that your cluster setup is finished before you continue to the next step by checking that the worker nodes on the **Worker Nodes** tab have a **Status** of normal.
 
 <br />
 
