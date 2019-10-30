@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-29"
+lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -30,7 +30,7 @@ As a cluster administrator, you can define access policies for your {{site.data.
 {: shortdesc}
 
 
-## Understanding access policies and roles 
+## Understanding access policies and roles
 {: #access_policies}
 
 Access policies determine the level of access that users in your {{site.data.keyword.cloud_notm}} account have to resources across the {{site.data.keyword.cloud_notm}} platform. A policy assigns a user one or more roles that define the scope of access to a single service or to a set of services and resources that are organized together in a resource group. Each service in {{site.data.keyword.cloud_notm}} might require its own set of access policies.
@@ -54,7 +54,7 @@ The following image shows the different types of permissions and roles, which ro
 
 <img src="images/user_access.png" alt="In {{site.data.keyword.containerlong_notm}}, you can assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles." style="border-style: none"/>
 
-To see the specific {{site.data.keyword.containerlong_notm}} permissions by each role, check out the [User access permissions](/docs/containers?topic=containers-access_reference) reference topic.
+To see the specific {{site.data.keyword.containerlong_notm}} permissions by each role, check out the [User access permissions](/docs/openshift?topic=openshift-access_reference) reference topic.
 {: tip}
 
 <dl>

@@ -26,7 +26,7 @@ subcollection: openshift
 # User access permissions
 {: #access_reference}
 
-When you [assign cluster permissions](/docs/containers?topic=containers-users), it can be hard to judge which role you need to assign to a user. Use the tables in the following sections to determine the minimum level of permissions that are required to perform common tasks in {{site.data.keyword.openshiftlong}}.
+When you [assign cluster permissions](/docs/openshift?topic=openshift-users), it can be hard to judge which role you need to assign to a user. Use the tables in the following sections to determine the minimum level of permissions that are required to perform common tasks in {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
 ## {{site.data.keyword.cloud_notm}} IAM platform roles
