@@ -23,7 +23,7 @@ subcollection: containers
 {:download: .download}
 {:preview: .preview}
 
-# Classic: Registering a DNS subdomain for an NLB
+# Registering a DNS subdomain for an NLB
 {: #loadbalancer_hostname}
 
 

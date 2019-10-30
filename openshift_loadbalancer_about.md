@@ -23,7 +23,7 @@ subcollection: containers
 {:download: .download}
 {:preview: .preview}
 
-# Classic: About network load balancers (NLBs)
+# About network load balancers (NLBs)
 {: #loadbalancer-about}
 
 

@@ -23,7 +23,7 @@ subcollection: containers
 {:download: .download}
 {:preview: .preview}
 
-# Classic: Setting up DSR load balancing with an NLB 2.0 (beta)
+# Setting up DSR load balancing with an NLB 2.0 (beta)
 {: #loadbalancer-v2}
 
 
@@ -94,7 +94,7 @@ Next, you can follow the steps in [Setting up an NLB 2.0 in a multizone cluster]
 * To create public NLBs in multiple zones, at least one public VLAN must have portable subnets available in each zone. To create private NLBs in multiple zones, at least one private VLAN must have portable subnets available in each zone. You can add subnets by following the steps in [Configuring subnets for clusters](/docs/containers?topic=containers-subnets).
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
 * Ensure you have the required number of worker nodes:
-  * Classic clusters: If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge#edge) are enabled in each zone so that NLBs deploy uniformly.
+  * If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge#edge) are enabled in each zone so that NLBs deploy uniformly.
 
 To set up an NLB 2.0 in a multizone cluster:
 1.  [Deploy your app to the cluster](/docs/containers?topic=containers-app#app_cli). Ensure that you add a label to your deployment in the metadata section of your configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
