@@ -34,7 +34,7 @@ subcollection: openshift
 
 ## About Portworx
 
-Review frequently asked questions to learn more about Portworx and how Portworx provides highly available persistent storage management for your containerized apps. 
+Review frequently asked questions to learn more about Portworx and how Portworx provides highly available persistent storage management for your containerized apps.
 {: shortdesc}
 
 **What is software-defined storage (SDS)?** </br>
@@ -63,7 +63,7 @@ One of the biggest challenges when you run stateful apps in a cluster is to make
 You can also choose to use only a subset of worker nodes for your Portworx storage layer. For example, you might have a worker pool with SDS worker nodes that come with local raw block storage, and another worker pool with virtual worker nodes that do not come with local storage. When you install Portworx, a Portworx pod is scheduled onto every worker node in your cluster as part of a daemon set. Because your SDS worker nodes have local storage, these worker nodes are included into the Portworx storage layer only. Your virtual worker nodes are not included as a storage node because of the missing local storage. However, when you deploy an app pod to your virtual worker node, this pod can still access data that is physically stored on an SDS worker node by using the Portworx daemon set pod. This setup is referred to as `storage-heavy` and offers slightly slower performance than the `hyper-converged` setup because the virtual worker node must talk to the SDS worker node over the private network to access the data.
 
 **What do I need to provision Portworx?** </br>
-Red Hat OpenShift on IBM Cloud provides worker node flavors that are optimized for SDS usage and that come with one or more raw, unformatted, and unmounted local disks that you can use to store your data. Portworx offers best performance when you use [SDS worker node machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds) that come with 10 Gbps network speed. However, you can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Make sure to review the [minimum hardware requirements ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/) to install Portworx. 
+Red Hat OpenShift on IBM Cloud provides worker node flavors that are optimized for SDS usage and that come with one or more raw, unformatted, and unmounted local disks that you can use to store your data. Portworx offers best performance when you use [SDS worker node machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds) that come with 10 Gbps network speed. However, you can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Make sure to review the [minimum hardware requirements ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/) to install Portworx.
 
 **What limitations must I plan for?** </br>
 Portworx is available for standard clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint that is  enabled, you cannot use Portworx in your cluster, unless you open up all egress network traffic on TCP port 443, or enable the public service endpoint.
@@ -73,7 +73,7 @@ Portworx is available for standard clusters that are set up with public network 
 All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/containers?topic=containers-clusters#clusters_ui). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.  
 
 ## Creating raw, unformatted, and unmounted block storage for non-SDS worker nodes
-{: #create_block_storage} 
+{: #create_block_storage}
 
 Portworx runs best when you use worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/openshift?topic=openshift-planning_worker_nodes#sds). However, if you can't or don't want to use SDS worker nodes, you can choose to install Portworx on non-SDS worker node flavors. Keep in mind that non-SDS worker nodes are not optimized for Portworx and might not offer the performance benefits that your app requires.
 {: shortdesc}
@@ -104,7 +104,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
    2. Enter a name for your service instance, such as `px-etcd`.
    3. Select the region where you want to deploy your service instance. For optimal performance, choose the region that your cluster is in.
    4. Select the same resource group that your cluster is in.
-   5. Use the following settings for the initial memory and disk allocation: 
+   5. Use the following settings for the initial memory and disk allocation:
       * **Initial memory allocation:** 8GB/member (24GB total)
       * **Initial disk allocation:** 128GB/member (384GB total)
       * **Initial CPU allocation:** 3 dedicated cores/member (9 cores total)
@@ -118,9 +118,9 @@ Databases for etcd is a managed etcd service that securely stores and replicates
    3. Enter a name for your service credentials and click **Add**.
 
 4. {: #databases_credentials}Retrieve your service credentials and certificate.
-   1. From the navigation on the service details page, select **Service credentials**. 
+   1. From the navigation on the service details page, select **Service credentials**.
    2. Find the credentials that you want to use, and from the **Actions** column in the service credentials table, click **View credentials**.
-   3. Find the `grp.authentication` section of your service credentials and note the **`username`** and **`password`**. 
+   3. Find the `grp.authentication` section of your service credentials and note the **`username`** and **`password`**.
 
       Example output for user name and password:
       ```
@@ -132,7 +132,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
       }
       ```
       {: screen}
-   3. Find the `composed` section of your service credentials and note the etcd **`--endpoints`**. You need this information when you install Portworx. 
+   3. Find the `composed` section of your service credentials and note the etcd **`--endpoints`**. You need this information when you install Portworx.
 
       Example output for `--endpoints`:
       ```
@@ -148,8 +148,8 @@ Databases for etcd is a managed etcd service that securely stores and replicates
         "certificate_base64": "AB0cAB1CDEaABcCEFABCDEF1ACB3ABCD1ab2AB0cAB1CDEaABcCEFABCDEF1ACB3ABCD1ab2AB0cAB1CDEaABcCEFABCDEF1ACB3ABCD1ab2..."
       ```
       {: screen}
-      
-5. Encode your user name and password to base64. 
+
+5. Encode your user name and password to base64.
    ```
    echo -n "<username_or_password>" | base64
    ```
@@ -177,7 +177,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
       ```
       {: pre}
 
-6. Choose if you want to [set up encryption for your volumes with {{site.data.keyword.keymanagementservicelong_notm}}](#encrypt_volumes). If you don't want to set up {{site.data.keyword.keymanagementservicelong_notm}} encryption for your volumes, continue with [installing Portworx in your cluster](#install_portworx). 
+6. Choose if you want to [set up encryption for your volumes with {{site.data.keyword.keymanagementservicelong_notm}}](#encrypt_volumes). If you don't want to set up {{site.data.keyword.keymanagementservicelong_notm}} encryption for your volumes, continue with [installing Portworx in your cluster](#install_portworx).
 
 ## Setting up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}
 {: #encrypt_volumes}
@@ -187,7 +187,7 @@ To protect your data in a Portworx volume, you can encrypt your cluster's volume
 
 {{site.data.keyword.keymanagementservicelong_notm}} helps you to provision encrypted keys that are secured by FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs). You can use these keys to securely protect your data from unauthorized users. You can choose between using one encryption key to encrypt all your volumes in a cluster or using one encryption key for each volume. Portworx uses this key to encrypt data at rest and during transit when data is sent to a different worker node. For more information, see [Volume encryption ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/create-encrypted-pvcs/#volume-encryption). For higher security, set up per-volume encryption.
 
-If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} root keys to encrypt your volumes, you can select **Kubernetes Secret** as your Portworx secret store type during the Portworx installation. This setting gives you the option to store your own custom encryption key in a Kubernetes secret after you install Portworx. For more information, see the [Portworx documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/key-management/kubernetes-secrets/#configuring-kubernetes-secrets-with-portworx). 
+If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} root keys to encrypt your volumes, you can select **Kubernetes Secret** as your Portworx secret store type during the Portworx installation. This setting gives you the option to store your own custom encryption key in a Kubernetes secret after you install Portworx. For more information, see the [Portworx documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/key-management/kubernetes-secrets/#configuring-kubernetes-secrets-with-portworx).
 {: tip}
 
 Review the following information:
@@ -309,7 +309,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
 	     IBM_BASE_URL: <base64_kp_api_endpoint>
        ```
        {: codeblock}
- 
+
        <table>
        <caption>Understanding the YAML file components</caption>
         <thead>
@@ -447,12 +447,12 @@ Looking for instructions about how to update or remove Portworx? See [Updating P
 {: tip}
 
 Before you begin:
-- Make sure that you have the right [permissions](/docs/containers?topic=containers-clusters#cluster_prepare) to create a an Red Hat OpenShift on IBM Cloud cluster. 
+- Make sure that you have the right [permissions](/docs/containers?topic=containers-clusters#cluster_prepare) to create a an Red Hat OpenShift on IBM Cloud cluster.
 - [Create or use an existing cluster](/docs/containers?topic=containers-clusters#clusters_ui).
 - If you want to use non-SDS worker nodes for your Portworx storage layer, [add an unformatted block storage device to your non-SDS worker node](#create_block_storage).
 - Create a [Databases for etcd service instance](#portworx_database) to store the Portworx configuration and metadata.
 - Decide whether you want to encrypt your Portworx volumes with {{site.data.keyword.keymanagementservicelong_notm}}. To encrypt your volumes, you must [set up an {{site.data.keyword.keymanagementservicelong_notm}} service instance and store your service information in a Kubernetes secret](#encrypt_volumes).
-- Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/containers?topic=containers-images#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/containers?topic=containers-images#store_imagePullSecret) of the `kube-system` project. 
+- Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/containers?topic=containers-images#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/containers?topic=containers-images#store_imagePullSecret) of the `kube-system` project.
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 To install Portworx:
@@ -475,31 +475,31 @@ To install Portworx:
     {: screen}
 
 3. [Retrieve the etcd endpoint, and the name of the Kubernetes secret](#databases_credentials) that you created for your Databases for etcd service instance.
-4. Open the Portworx service from the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/portworx-enterprise) and complete the fields as follows: 
-   1. Select the region where your Red Hat OpenShift on IBM Cloud cluster is located. 
-   2. Review the Portworx pricing information. 
-   3. Enter a name for your Portworx service instance. 
-   4. Select the resource group that your cluster is in. 
-   5. In the **Tag** field, enter the name of the cluster where you want to install Portworx. After you create the Portworx service instance, you cannot see the cluster that you installed Portworx into. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags. 
-   6. Enter an {{site.data.keyword.cloud_notm}} API key to retrieve the list of clusters that you have access to. If you don't have an API key, see [Managing user API keys](/docs/iam?topic=iam-userapikey). After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears at the bottom of the page. 
-   7. Enter a unique name for the Portworx cluster that is created within your Red Hat OpenShift on IBM Cloud cluster. 
+4. Open the Portworx service from the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/portworx-enterprise) and complete the fields as follows:
+   1. Select the region where your Red Hat OpenShift on IBM Cloud cluster is located.
+   2. Review the Portworx pricing information.
+   3. Enter a name for your Portworx service instance.
+   4. Select the resource group that your cluster is in.
+   5. In the **Tag** field, enter the name of the cluster where you want to install Portworx. After you create the Portworx service instance, you cannot see the cluster that you installed Portworx into. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags.
+   6. Enter an {{site.data.keyword.cloud_notm}} API key to retrieve the list of clusters that you have access to. If you don't have an API key, see [Managing user API keys](/docs/iam?topic=iam-userapikey). After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears at the bottom of the page.
+   7. Enter a unique name for the Portworx cluster that is created within your Red Hat OpenShift on IBM Cloud cluster.
    8. In the **Etcd API endpoints** field, enter the API endpoint of your Databases for etcd service instance that you retrieved earlier. Make sure to enter the endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (`;`).
-   9. In the **Etcd secret name** field, enter the name of the Kubernetes secret that you created in your cluster to store the Databases for etcd service credentials. 
-   10. From the **Kubernetes or OpenShift cluster name** drop down list, select the cluster where you want to install Portworx. If your cluster is not listed, make sure that you select the correct {{site.data.keyword.cloud_notm}} region. If the region is correct, verify that you have the correct [permissions](/docs/containers?topic=containers-clusters#cluster_prepare) to view and work with your cluster. Make sure that you select a cluster that meets the [minimum hardware requirements for Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/). 
-   11. Optional: From the **Portworx secret store type** drop down list, choose the secret store type that you want to use to store the volume encryption key. 
-       - **Kubernetes Secret**: Choose this option if you want to store your own custom key to encrypt your volumes in a Kubernetes Secret in your cluster. The secret must not be present before you install Portworx. You can create the secret after you install Portworx. For more information, see the [Portworx documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/key-management/kubernetes-secrets/#configuring-kubernetes-secrets-with-portworx). 
+   9. In the **Etcd secret name** field, enter the name of the Kubernetes secret that you created in your cluster to store the Databases for etcd service credentials.
+   10. From the **Kubernetes or OpenShift cluster name** drop down list, select the cluster where you want to install Portworx. If your cluster is not listed, make sure that you select the correct {{site.data.keyword.cloud_notm}} region. If the region is correct, verify that you have the correct [permissions](/docs/containers?topic=containers-clusters#cluster_prepare) to view and work with your cluster. Make sure that you select a cluster that meets the [minimum hardware requirements for Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/).
+   11. Optional: From the **Portworx secret store type** drop down list, choose the secret store type that you want to use to store the volume encryption key.
+       - **Kubernetes Secret**: Choose this option if you want to store your own custom key to encrypt your volumes in a Kubernetes Secret in your cluster. The secret must not be present before you install Portworx. You can create the secret after you install Portworx. For more information, see the [Portworx documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/key-management/kubernetes-secrets/#configuring-kubernetes-secrets-with-portworx).
        - **{{site.data.keyword.keymanagementservicelong_notm}}**: Choose this option if you want to use root keys in {{site.data.keyword.keymanagementservicelong_notm}} to encrypt your volumes. Make sure that you follow the [instructions](#setup_encryption) to create your {{site.data.keyword.keymanagementservicelong_notm}} service instance, and to store the credentials for how to access your service instance in a Kubernetes secret in the `portworx` project before you install Portworx.        
-5. Click **Create** to start the Portworx installation in your cluster. This process might take a few minutes to complete. The service details page opens with instructions for how to verify your Portworx installation, create a persistent volume claim (PVC), and mount the PVC to an app. 
-6. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created. 
-7. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update. 
-8. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug-portworx) to start troubleshooting why your installation failed. 
-9. If the **Status** changes to `Provisioned`, verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer. 
+5. Click **Create** to start the Portworx installation in your cluster. This process might take a few minutes to complete. The service details page opens with instructions for how to verify your Portworx installation, create a persistent volume claim (PVC), and mount the PVC to an app.
+6. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
+7. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
+8. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug-portworx) to start troubleshooting why your installation failed.
+9. If the **Status** changes to `Provisioned`, verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer.
    1. List the Portworx pods in the `kube-system` project. The installation is successful when you see one or more `portworx`, `stork`, and `stork-scheduler` pods. The number of pods equals the number of worker nodes that are included in your Portworx cluster. All pods must be in a `Running` state.
       ```
       oc get pods -n kube-system | grep 'portworx\|stork'
       ```
       {: pre}
-   
+
       Example output:
       ```
       portworx-594rw                          1/1       Running     0          20h
@@ -513,13 +513,13 @@ To install Portworx:
       stork-scheduler-7dd8799cc-knjwt         1/1       Running     0          20h
       ```
       {: screen}
-   
+
    2. Log in to one of your `portworx` pods and list the status of your Portworx cluster.
       ```
       oc exec <portworx_pod> -it -n kube-system -- /opt/pwx/bin/pxctl status
       ```
       {: pre}
-   
+
       Example output:
       ```
       Status: PX is operational
@@ -624,15 +624,15 @@ If you do not want to use Portworx in your cluster, you can uninstall the Helm c
    ```
    {: pre}
 
-   The removal of the pods is successful if no pods are displayed in your CLI output. 
-   
+   The removal of the pods is successful if no pods are displayed in your CLI output.
+
 4. Remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
-   1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created. 
+   1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
    2. From the actions menu, click **Delete**.
-   3. Confirm the deletion of the service instance by clicking **Delete**. 
-   
-To stop billing for Portworx, you must remove the Portworx Helm installation from your cluster and remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account. 
-{: important} 
+   3. Confirm the deletion of the service instance by clicking **Delete**.
+
+To stop billing for Portworx, you must remove the Portworx Helm installation from your cluster and remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
+{: important}
 
 ## Creating a Portworx volume
 {: #add_portworx_storage}
@@ -649,8 +649,8 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
    To view the details of a storage class, run `oc describe storageclass <storageclass_name>`.
    {: tip}
 
-2. If you don't want to use an existing storage class, create a customized storage class. For a full list of supported options that you can specify in your storage class, see [Using Dynamic Provisioning ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning). 
-   1. Create a configuration file for your storage class. 
+2. If you don't want to use an existing storage class, create a customized storage class. For a full list of supported options that you can specify in your storage class, see [Using Dynamic Provisioning ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning).
+   1. Create a configuration file for your storage class.
       ```
       kind: StorageClass
       apiVersion: storage.k8s.io/v1
@@ -706,7 +706,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
       ```
       {: pre}
 
-2. Create a persistent volume claim (PVC). 
+2. Create a persistent volume claim (PVC).
    1. Create a configuration file for your PVC.
       ```
       kind: PersistentVolumeClaim
@@ -759,7 +759,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
       oc get pvc
       ```
       {: pre}
-      
+
 ## Mounting the volume to your app
 {: #mount_pvc}
 

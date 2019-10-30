@@ -6,7 +6,7 @@ lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
-subcollection: containers
+subcollection: openshift
 
 ---
 

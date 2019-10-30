@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -446,7 +446,7 @@ You can allow incoming access to NodePort, load balancer, and Ingress services, 
 ## Allowing the cluster to access resources through Calico network policies
 {: #firewall_calico_egress}
 
-Instead of setting up a gateway firewall device, you can choose to use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a cluster firewall on the public or private network. For more information, see the following topics.
+Instead of setting up a gateway firewall device, you can choose to use [Calico network policies](/docs/containers?topic=containers-network_policies) to act as a cluster firewall on the public or private network. For more information, see the following topics.
 {: shortdesc}
 
 * [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
@@ -511,7 +511,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 ## Updating IAM whitelists for {{site.data.keyword.containershort}} IP addresses
 {: #iam_whitelist}
 
-By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can [create a whitelist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted. If you use an IAM whitelist, you must whitelist the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane for the zones in the region where your cluster is located. You must whitelist these CIDRs so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
+By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can [create a whitelist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted. If you use an IAM whitelist, you must whitelist the CIDRs of the Red Hat OpenShift on IBM Cloud control plane for the zones in the region where your cluster is located. You must whitelist these CIDRs so that Red Hat OpenShift on IBM Cloud can create Ingress ALBs and `LoadBalancers` in your cluster.
 {: shortdesc}
 
 **Before you begin**: The following steps require you to change the IAM whitelist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM whitelist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform role for the [User Management service](/docs/iam?topic=iam-account-services), you can update the restricted IP addresses for the credentials owner.

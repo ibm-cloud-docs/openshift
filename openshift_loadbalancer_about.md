@@ -6,7 +6,7 @@ lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
@@ -104,16 +104,13 @@ Network load balancer (NLB) 2.0 capabilities are in beta. To use an NLB 2.0, you
 
 The NLB 2.0 is a Layer 4 load balancer that uses the Linux kernel's IP Virtual Server (IPVS). The NLB 2.0 supports TCP and UDP, runs in front of multiple worker nodes, and uses IP over IP (IPIP) tunneling to distribute traffic that arrives to a single NLB IP address across those worker nodes.
 
-Want more details about the load-balancing deployment patterns that are available in {{site.data.keyword.containerlong_notm}}? Check out this [blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/new-builders/ibm-cloud-kubernetes-service-deployment-patterns-for-maximizing-throughput-and-availability).
-{: tip}
-
 ### Traffic flow in a single-zone cluster
 {: #ipvs_single}
 
 The following diagram shows how an NLB 2.0 directs communication from the internet to an app in a single zone cluster.
 {: shortdesc}
 
-<img src="images/cs_loadbalancer_ipvs_planning.png" alt="Expose an app in {{site.data.keyword.containerlong_notm}} by using a version 2.0 NLB" width="700" style="width:700px; border-style: none"/>
+<img src="images/cs_loadbalancer_ipvs_planning.png" alt="Expose an app in Red Hat OpenShift on IBM Cloud by using a version 2.0 NLB" width="700" style="width:700px; border-style: none"/>
 
 1. A client request to your app uses the public IP address of your NLB and the assigned port on the worker node. In this example, the NLB has a virtual IP address of 169.61.23.130 and runs on the worker node that has the 10.73.13.25 private IP address. Note that if you [create a DNS subdomain](/docs/containers?topic=containers-loadbalancer_hostname) for your NLB, users can access your app through the NLB's subdomain instead. A DNS system service resolves the subdomain to the portable public IP address of the NLB.
 
@@ -131,7 +128,7 @@ The following diagram shows how an NLB 2.0 directs communication from the intern
 The following diagram shows how version 2.0 NLBs in each zone direct traffic from the internet to an app in a multizone cluster.
 {: shortdesc}
 
-<img src="images/cs_loadbalancer_ipvs_multizone.png" alt="Expose an app in {{site.data.keyword.containerlong_notm}} by using an NLB 2.0" width="600" style="width:600px; border-style: none"/>
+<img src="images/cs_loadbalancer_ipvs_multizone.png" alt="Expose an app in Red Hat OpenShift on IBM Cloud by using an NLB 2.0" width="600" style="width:600px; border-style: none"/>
 
 1. A request to your app uses the [DNS subdomain](/docs/containers?topic=containers-loadbalancer_hostname) for your NLBs. You can also access the NLB in each zone by using its public IP address and port on the worker node. Note that by default, each NLB 2.0 is set up in one zone only. To achieve high availability, you must deploy an NLB 2.0 in every zone where you have app instances.
 

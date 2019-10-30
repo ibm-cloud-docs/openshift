@@ -96,7 +96,7 @@ The following image shows the default cluster security settings that address aut
     </tr>
     <tr>
       <td>CIS Kubernetes master benchmark</td>
-      <td>To configure {{site.data.keyword.containerlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes master benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
+      <td>To configure Red Hat OpenShift on IBM Cloud, IBM engineers follow relevant cybersecurity practices from the Kubernetes master benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
     </tr>
     <tr>
       <td>Secure communication via TLS</td>
@@ -194,7 +194,7 @@ The image does not include components that ensure secure end-to-end communicatio
     </tr>
     <tr>
       <td>CIS Kubernetes worker node benchmark</td>
-      <td>To configure {{site.data.keyword.containerlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes worker node benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
+      <td>To configure Red Hat OpenShift on IBM Cloud, IBM engineers follow relevant cybersecurity practices from the Kubernetes worker node benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
     </tr>
     <tr>
   <td>Compute isolation</td>
@@ -237,7 +237,7 @@ To protect your network and limit the range of damage that a user can do when ac
 All containers are protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked with the following exceptions:
 - **NodePort**: The [Kubernetes NodePort range ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport) is opened by default so that you can expose apps with [NodePort services](/docs/containers?topic=containers-nodeport). To block inbound network traffic on NodePorts in your cluster, see [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
 - **IBM monitoring ports**: By default, IBM opens a few ports on your cluster so that network traffic can be monitored by IBM and for IBM to automatically install security updates for the OpenShift master.
-Access from the OpenShift master to the worker node's kubelet is secured by an OpenVPN tunnel. For more information, see the [{{site.data.keyword.containerlong_notm}} architecture](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology).
+Access from the OpenShift master to the worker node's kubelet is secured by an OpenVPN tunnel. For more information, see the [Red Hat OpenShift on IBM Cloud architecture](/docs/openshift?topic=openshift-openshift-service-arch).
 
 **What is network segmentation and how can I set it up for a cluster?** </br>
 Network segmentation describes the approach to divide a network into multiple subnetworks. You can group apps and related data to be accessed by a specific group in your organization. Apps that run in one subnetwork cannot see or access apps in another subnetwork. Network segmentation also limits the access that is provided to an insider or third-party software and can limit the range of malicious activities.   

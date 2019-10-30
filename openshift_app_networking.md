@@ -6,7 +6,7 @@ lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
-subcollection: containers
+subcollection: openshift
 
 ---
 

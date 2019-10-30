@@ -6,7 +6,7 @@ lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
@@ -389,7 +389,7 @@ Next, you can [register an NLB subdomain](/docs/containers?topic=containers-load
 ## Scheduling algorithms
 {: #scheduling}
 
-Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its Keepalived short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in {{site.data.keyword.containerlong_notm}}. If you do not specify a scheduling algorithm, the Round Robin algorithm is used by default. For more information, see the [Keepalived documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.keepalived.org/doc/scheduling_algorithms.html).
+Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its Keepalived short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in Red Hat OpenShift on IBM Cloud. If you do not specify a scheduling algorithm, the Round Robin algorithm is used by default. For more information, see the [Keepalived documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.keepalived.org/doc/scheduling_algorithms.html).
 {: shortdesc}
 
 ### Supported scheduling algorithms
@@ -424,7 +424,7 @@ You can find the complete example in [this IBM Cloud deployment pattern blog ![E
 
 <dl>
 <dt>Destination Hashing (<code>dh</code>)</dt>
-<dd>The destination of the packet, which is the NLB IP address and port, is used to determine which worker node handles the incoming request. However, the IP address and port for NLBs in {{site.data.keyword.containerlong_notm}} don't change. The NLB is forced to keep the request within the same worker node that it is on, so only app pods on one worker handle all incoming requests.</dd>
+<dd>The destination of the packet, which is the NLB IP address and port, is used to determine which worker node handles the incoming request. However, the IP address and port for NLBs in Red Hat OpenShift on IBM Cloud don't change. The NLB is forced to keep the request within the same worker node that it is on, so only app pods on one worker handle all incoming requests.</dd>
 <dt>Dynamic connection counting algorithms</dt>
 <dd>The following algorithms depend on dynamic counting of connections between clients and NLBs. However, because direct service return (DSR) prevents NLB 2.0 pods from being in the return packet path, NLBs don't track established connections.<ul>
 <li>Least Connection (<code>lc</code>)</li>
@@ -433,7 +433,7 @@ You can find the complete example in [this IBM Cloud deployment pattern blog ![E
 <li>Never Queue (<code>nq</code>)</li>
 <li>Shortest Expected Delay (<code>seq</code>)</li></ul></dd>
 <dt>Weighted pod algorithms</dt>
-<dd>The following algorithms depend on weighted app pods. However, in {{site.data.keyword.containerlong_notm}}, all app pods are assigned equal weight for load balancing.<ul>
+<dd>The following algorithms depend on weighted app pods. However, in Red Hat OpenShift on IBM Cloud, all app pods are assigned equal weight for load balancing.<ul>
 <li>Weighted Least Connection (<code>wlc</code>)</li>
 <li>Weighted Round Robin (<code>wrr</code>)</li></ul></dd></dl>
 

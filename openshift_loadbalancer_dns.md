@@ -6,7 +6,7 @@ lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
@@ -151,7 +151,7 @@ The first and second characters, <code>00</code>, indicate a public subdomain. T
 </tr>
 <tr>
 <td><code>containers.appdomain.cloud</code></td>
-<td>The subdomain for {{site.data.keyword.containerlong_notm}} subdomains.</td>
+<td>The subdomain for Red Hat OpenShift on IBM Cloud subdomains.</td>
 </tr>
 </tbody>
 </table>

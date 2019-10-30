@@ -6,7 +6,7 @@ lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
@@ -35,9 +35,7 @@ To connect your worker nodes and apps to an on-premises data center, you can con
 
 - **strongSwan IPSec VPN Service**: You can set up a [strongSwan IPSec VPN service ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.strongswan.org/about.html) that securely connects your OpenShift cluster with an on-premises network. The strongSwan IPSec VPN service provides a secure end-to-end communication channel over the internet that is based on the industry-standard Internet Protocol Security (IPSec) protocol suite. To set up a secure connection between your cluster and an on-premises network, [configure and deploy the strongSwan IPSec VPN service](#vpn-setup) directly in a pod in your cluster.
 
-- **{{site.data.keyword.BluDirectLink}}**: [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-about-ibm-cloud-direct-link) allows you to create a direct, private connection between your remote network environments and {{site.data.keyword.containerlong_notm}} without routing over the public internet. The {{site.data.keyword.cloud_notm}} Direct Link offerings are useful when you must implement hybrid workloads, cross-provider workloads, large or frequent data transfers, or private workloads. To choose an {{site.data.keyword.cloud_notm}} Direct Link offering and set up an {{site.data.keyword.cloud_notm}} Direct Link connection, see [Get Started with IBM Cloud {{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link#how-do-i-know-which-type-of-ibm-cloud-direct-link-i-need-) in the {{site.data.keyword.cloud_notm}} Direct Link documentation.
-
-- **Virtual Router Appliance (VRA) or Fortigate Security Appliance (FSA)**: You might choose to set up a [VRA (Vyatta)](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) or [FSA](/docs/services/vmwaresolutions/services?topic=vmware-solutions-fsa_considerations) to configure an IPSec VPN endpoint. This option is useful when you have a larger cluster, want to access multiple clusters over a single VPN, or need a route-based VPN. To configure a VRA, see [Setting up VPN connectivity with VRA](#vyatta).
+- **{{site.data.keyword.BluDirectLink}}**: [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-about-ibm-cloud-direct-link) allows you to create a direct, private connection between your remote network environments and Red Hat OpenShift on IBM Cloud without routing over the public internet. The {{site.data.keyword.cloud_notm}} Direct Link offerings are useful when you must implement hybrid workloads, cross-provider workloads, large or frequent data transfers, or private workloads. To choose an {{site.data.keyword.cloud_notm}} Direct Link offering and set up an {{site.data.keyword.cloud_notm}} Direct Link connection, see [Get Started with IBM Cloud {{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link#how-do-i-know-which-type-of-ibm-cloud-direct-link-i-need-) in the {{site.data.keyword.cloud_notm}} Direct Link documentation.
 
 ## Using the strongSwan IPSec VPN service Helm chart
 {: #vpn-setup}
@@ -45,7 +43,7 @@ To connect your worker nodes and apps to an on-premises data center, you can con
 Use a Helm chart to configure and deploy the strongSwan IPSec VPN service inside of a Kubernetes pod.
 {:shortdesc}
 
-Because strongSwan is integrated within your cluster, you don't need an external gateway appliance. When VPN connectivity is established, routes are automatically configured on all of the worker nodes in the cluster. These routes allow two-way connectivity through the VPN tunnel between pods on any worker node and the remote system. For example, the following diagram shows how an app in {{site.data.keyword.containerlong_notm}} can communicate with an on-premises server via a strongSwan VPN connection:
+Because strongSwan is integrated within your cluster, you don't need an external gateway appliance. When VPN connectivity is established, routes are automatically configured on all of the worker nodes in the cluster. These routes allow two-way connectivity through the VPN tunnel between pods on any worker node and the remote system. For example, the following diagram shows how an app in Red Hat OpenShift on IBM Cloud can communicate with an on-premises server via a strongSwan VPN connection:
 
 <img src="images/cs_vpn_strongswan.png" width="700" alt="Flow of traffic between your cluster and an on-premises data center through the strongSwan VPN service" style="width:700px; border-style: none"/>
 
@@ -615,7 +613,7 @@ Before you use this solution, review the following considerations and limitation
 * By default, Kubernetes places app pods onto any untainted worker nodes that are available. To make sure that this solution works correctly, each tenant must first ensure that they deploy their app pods only to workers that are tainted for the correct tenant. Additionally, each tainted worker node must also have a toleration to allow the app pods to be placed on the node. For more information about taints and tolerations, see the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/).
 * Cluster resources might not be optimally utilized because neither tenant can place app pods on the shared non-tainted nodes.
 
-The following steps for limiting strongSwan VPN traffic by worker node use this example scenario: Say that you have a multi-tenant {{site.data.keyword.containerlong_notm}} cluster with six worker nodes. The cluster supports tenant A and tenant B. You taint the worker nodes in the following ways:
+The following steps for limiting strongSwan VPN traffic by worker node use this example scenario: Say that you have a multi-tenant Red Hat OpenShift on IBM Cloud cluster with six worker nodes. The cluster supports tenant A and tenant B. You taint the worker nodes in the following ways:
 * Two worker nodes are tainted so that only tenant A pods are scheduled on the workers.
 * Two worker nodes are tainted so that only tenant B pods are scheduled on the workers.
 * Two worker nodes are not tainted because at least 2 worker nodes are required for the strongSwan VPN pods and the load balancer IP to run on.
@@ -669,35 +667,4 @@ You can disable the VPN connection by deleting the Helm chart.
 
 <br />
 
-
-## Using a Virtual Router Appliance
-{: #vyatta}
-
-The [Virtual Router Appliance (VRA)](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) provides the latest Vyatta 5600 operating system for x86 bare metal servers. You can use a VRA as VPN gateway to securely connect to an on-premises network.
-{:shortdesc}
-
-All public and private network traffic that enters or exits the cluster VLANs is routed through a VRA. You can use the VRA as a VPN endpoint to create an encrypted IPSec tunnel between servers in IBM Cloud infrastructure and on-premises resources. For example, the following diagram shows how an app on a private-only worker node in {{site.data.keyword.containerlong_notm}} can communicate with an on-premises server via a VRA VPN connection:
-
-<img src="images/cs_vpn_vyatta.png" width="725" alt="Expose an app in {{site.data.keyword.containerlong_notm}} by using a load balancer" style="width:725px; border-style: none"/>
-
-1. An app in your cluster, `myapp2`, receives a request from an Ingress or LoadBalancer service and needs to securely connect to data in your on-premises network.
-
-2. Because `myapp2` is on a worker node that is on a private VLAN only, the VRA acts as a secure connection between the worker nodes and the on-premises network. The VRA uses the destination IP address to determine which network packets to send to the on-premises network.
-
-3. The request is encrypted and sent over the VPN tunnel to the on-premises data center.
-
-4. The incoming request passes through the on-premises firewall and is delivered to the VPN tunnel endpoint (router) where it is decrypted.
-
-5. The VPN tunnel endpoint (router) forwards the request to the on-premises server or mainframe, depending on the destination IP address that was specified in step 2. The necessary data is sent back over the VPN connection to `myapp2` through the same process.
-
-To set up a Virtual Router Appliance:
-
-1. [Order a VRA](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started).
-
-2. [Configure the private VLAN on the VRA](/docs/infrastructure/virtual-router-appliance?topic=gateway-appliance-managing-vlans-and-gateway-appliances).
-
-3. To enable a VPN connection by using the VRA, [configure VRRP on the VRA](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#high-availability-vpn-with-vrrp).
-
-If you have an existing router appliance and then add a cluster, the new portable subnets that are ordered for the cluster are not configured on the router appliance. In order to use networking services, you must enable routing between the subnets on the same VLAN by [enabling VLAN spanning](/docs/openshift?topic=openshift-subnets#subnet-routing). To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
-{: important}
 

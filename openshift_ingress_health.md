@@ -6,7 +6,7 @@ lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
-subcollection: containers
+subcollection: openshift
 
 ---
 

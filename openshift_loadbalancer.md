@@ -6,7 +6,7 @@ lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
-subcollection: containers
+subcollection: openshift
 
 ---
 

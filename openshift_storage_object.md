@@ -582,10 +582,10 @@ To remove the plug-in:
 ## Deciding on the object storage configuration
 {: #configure_cos}
 
-{{site.data.keyword.containerlong_notm}} provides pre-defined storage classes that you can use to create buckets with a specific configuration.
+Red Hat OpenShift on IBM Cloud provides pre-defined storage classes that you can use to create buckets with a specific configuration.
 {: shortdesc}
 
-1. List available storage classes in {{site.data.keyword.containerlong_notm}}. 
+1. List available storage classes in Red Hat OpenShift on IBM Cloud. 
    ```
    oc get storageclasses | grep s3
    ```
