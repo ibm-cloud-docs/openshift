@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-17"
+lastupdated: "2019-10-30"
 
 keywords: kubernetes, iks, help, debug
 
@@ -55,7 +55,7 @@ Review the options to debug persistent storage and find the root causes for fail
 2. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2). 
    1. Show the `kubectl` CLI version that is installed in your cluster and your local machine.
       ```
-      kubectl version
+      oc version
       ```
       {: pre}
 
@@ -67,7 +67,7 @@ Review the options to debug persistent storage and find the root causes for fail
       {: screen}
 
       The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
-   2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
+   2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/containers?topic=containers-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
 
 3. For block storage, object storage, and Portworx only: Make sure that you [installed the Helm server Tiller with a Kubernetes services account](/docs/containers?topic=containers-helm#public_helm_install).
 
@@ -113,7 +113,7 @@ Review the options to debug persistent storage and find the root causes for fail
       ```
       {: pre}
 
-   4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/openshift?topic=openshift-block_storage) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
+   4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/containers?topic=containers-block_storage#updating-the-ibm-cloud-block-storage-plug-in) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 
    **Portworx**:
 
@@ -617,7 +617,7 @@ If a network error occurs while a pod writes to a volume, IBM Cloud infrastructu
    ```
    {: pre}
 
-2. Verify that you use the [latest version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibmcloud-block-storage-plugin). If not, [update your plug-in](/docs/openshift?topic=openshift-block_storage).
+2. Verify that you use the [latest version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibmcloud-block-storage-plugin). If not, [update your plug-in](/docs/containers?topic=containers-block_storage#updating-the-ibm-cloud-block-storage-plug-in).
 3. If you used a Kubernetes deployment for your pod, restart the pod that is failing by removing the pod and letting Kubernetes re-create it. If you did not use a deployment, retrieve the YAML file that was used to create your pod by running `oc get pod <pod_name> -o yaml >pod.yaml`. Then, delete and manually re-create the pod.
     ```
     oc delete pod <pod_name>
@@ -644,7 +644,7 @@ If a network error occurs while a pod writes to a volume, IBM Cloud infrastructu
       ```
       {: pre}
 
-   3. Gracefully [reload the worker node](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_reload).
+   3. Gracefully [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
 
 <br />
@@ -1244,7 +1244,7 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
    The IAM API key is listed in the `Bluemix.iam_api_key` section of your CLI output. If the `Softlayer.softlayer_api_key` is empty at the same time, then the IAM API key is used to determine your infrastructure permissions. The IAM API key is automatically set by the user who runs the first action that requires the IAM **Administrator** platform role in a resource group and region. If a different API key is set in `Softlayer.softlayer_api_key`, then this key takes precedence over the IAM API key. The `Softlayer.softlayer_api_key` is set when a cluster admin runs the `ibmcloud oc credentials-set` command.
 
 2. If you want to change the credentials, update the API key that is used.
-    1.  To update the IAM API key, use the `ibmcloud oc api-key reset` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_api_key_reset). To update the IBM Cloud infrastructure key, use the `ibmcloud oc credential set` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_credentials_set).
+    1.  To update the IAM API key, use the `ibmcloud oc api-key reset` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset). To update the IBM Cloud infrastructure key, use the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set).
     2. Wait about 10 - 15 minutes for the `storage-secret-store` Kubernetes secret to update, then verify that the key is updated.
        ```
        oc get secret storage-secret-store -n kube-system -o yaml | grep slclient.toml: | awk '{print $2}' | base64 --decode
@@ -1294,7 +1294,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
    ```
    {: pre}
-2. Verify that the {{site.data.keyword.cloud_notm}} API key that you entered has sufficient permissions to work with your cluster. You must be assigned the **Editor** platform role and the **Manager** service access role for Red Hat OpenShift on IBM Cloud. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference). 
+2. Verify that the {{site.data.keyword.cloud_notm}} API key that you entered has sufficient permissions to work with your cluster. You must be assigned the **Editor** platform role and the **Manager** service access role for Red Hat OpenShift on IBM Cloud. For more information, see [User access permissions](/docs/containers?topic=containers-access_reference). 
 3. Verify that you entered the `etcd` API endpoint for your Databases for etcd service instance in the correct format.  
    1. [Retrieve the Databases for etcd endpoint](/docs/openshift?topic=openshift-portworx#databases_credentials). 
    2. Add the etcd endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (;).

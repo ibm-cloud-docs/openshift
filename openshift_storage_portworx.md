@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-16"
+lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -46,16 +46,16 @@ Portworx aggregates available storage that is attached to your worker nodes and 
 Portworx also comes with additional features that you can use for your stateful apps, such as volume snapshots, volume encryption, isolation, and an integrated Storage Orchestrator for Kubernetes (Stork) to ensure optimal placement of volumes in the cluster. For more information, see the [Portworx documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/).
 
 **What worker node flavor in Red Hat OpenShift on IBM Cloud is the right one for Portworx?** </br>
-Red Hat OpenShift on IBM Cloud provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/containers?topic=containers-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. Portworx offers best performance when you use SDS Ubuntu 18 worker node machines that come with 10 Gbps network speed.
+Red Hat OpenShift on IBM Cloud provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/openshift?topic=openshift-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. Portworx offers best performance when you use SDS Ubuntu 18 worker node machines that come with 10 Gbps network speed.
 
 **What if I want to run Portworx on non-SDS worker nodes?** </br>
 You can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Non-SDS worker nodes can be virtual or bare metal. If you want to use virtual machines, use a worker node flavor of `b3c.16x64` or better. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` do not provide the required resources for Portworx to work properly. Keep in mind that virtual machines come with 1000 Mbps that is not sufficient for ideal performance of Portworx. Bare metal machines come with sufficient compute resources and network speed for Portworx, but you must [add raw, unformatted, and unmounted block storage](#create_block_storage) before you can use these machines.
 
-If your classic cluster has deprecated x1c or older Ubuntu 16 x2c worker node flavors, update your cluster to have [Ubuntu 18 x3c worker nodes](/docs/containers?topic=containers-update#machine_type).
+If your classic cluster has deprecated x1c or older Ubuntu 16 x2c worker node flavors, update your cluster to have [Ubuntu 18 x3c worker nodes](/docs/openshift?topic=openshift-update#machine_type).
 {: tip}
 
 **How can I make sure that my data is stored highly available?** </br>
-You need at least three worker nodes in your Portworx cluster so that Portworx can replicate your data across nodes. By replicating your data across worker nodes, Portworx can ensure that your stateful app can be rescheduled to a different worker node in case of a failure without losing data. For even higher availability, use a [multizone cluster](/docs/containers?topic=containers-ha_clusters#multizone) and replicate your volumes across SDS worker nodes in 3 or more zones.
+You need at least three worker nodes in your Portworx cluster so that Portworx can replicate your data across nodes. By replicating your data across worker nodes, Portworx can ensure that your stateful app can be rescheduled to a different worker node in case of a failure without losing data. For even higher availability, use a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) and replicate your volumes across SDS worker nodes in 3 or more zones.
 
 **What volume topology offers the best performance for my pods?** </br>
 One of the biggest challenges when you run stateful apps in a cluster is to make sure that your container can be rescheduled onto another host if the container or the entire host fails. In Docker, when a container must be rescheduled onto a different host, the volume does not move to the new host. Portworx can be configured to run `hyper-converged` to ensure that your compute resources and the storage are always placed onto the same worker node. When your app must be rescheduled, Portworx moves your app to a worker node where one of your volume replicas resides to ensure local-disk access speed and best performance for your stateful app. Running `hyper-converged` offers the best performance for your pods, but requires storage to be available on all worker nodes in your cluster.
@@ -63,7 +63,7 @@ One of the biggest challenges when you run stateful apps in a cluster is to make
 You can also choose to use only a subset of worker nodes for your Portworx storage layer. For example, you might have a worker pool with SDS worker nodes that come with local raw block storage, and another worker pool with virtual worker nodes that do not come with local storage. When you install Portworx, a Portworx pod is scheduled onto every worker node in your cluster as part of a daemon set. Because your SDS worker nodes have local storage, these worker nodes are included into the Portworx storage layer only. Your virtual worker nodes are not included as a storage node because of the missing local storage. However, when you deploy an app pod to your virtual worker node, this pod can still access data that is physically stored on an SDS worker node by using the Portworx daemon set pod. This setup is referred to as `storage-heavy` and offers slightly slower performance than the `hyper-converged` setup because the virtual worker node must talk to the SDS worker node over the private network to access the data.
 
 **What do I need to provision Portworx?** </br>
-Red Hat OpenShift on IBM Cloud provides worker node flavors that are optimized for SDS usage and that come with one or more raw, unformatted, and unmounted local disks that you can use to store your data. Portworx offers best performance when you use [SDS worker node machines](/docs/containers?topic=containers-planning_worker_nodes#sds) that come with 10 Gbps network speed. However, you can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Make sure to review the [minimum hardware requirements ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/) to install Portworx. 
+Red Hat OpenShift on IBM Cloud provides worker node flavors that are optimized for SDS usage and that come with one or more raw, unformatted, and unmounted local disks that you can use to store your data. Portworx offers best performance when you use [SDS worker node machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds) that come with 10 Gbps network speed. However, you can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Make sure to review the [minimum hardware requirements ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/) to install Portworx. 
 
 **What limitations must I plan for?** </br>
 Portworx is available for standard clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint that is  enabled, you cannot use Portworx in your cluster, unless you open up all egress network traffic on TCP port 443, or enable the public service endpoint.
@@ -75,7 +75,7 @@ All set? Let's start with [creating a cluster with an SDS worker pool of at leas
 ## Creating raw, unformatted, and unmounted block storage for non-SDS worker nodes
 {: #create_block_storage} 
 
-Portworx runs best when you use worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/containers?topic=containers-planning_worker_nodes#sds). However, if you can't or don't want to use SDS worker nodes, you can choose to install Portworx on non-SDS worker node flavors. Keep in mind that non-SDS worker nodes are not optimized for Portworx and might not offer the performance benefits that your app requires.
+Portworx runs best when you use worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/openshift?topic=openshift-planning_worker_nodes#sds). However, if you can't or don't want to use SDS worker nodes, you can choose to install Portworx on non-SDS worker node flavors. Keep in mind that non-SDS worker nodes are not optimized for Portworx and might not offer the performance benefits that your app requires.
 {: shortdesc}
 
 To include non-SDS worker nodes into your Portworx cluster, you must add raw, unformatted, and unmounted block storage devices to your worker nodes by using the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. Raw block storage cannot be provisioned by using Kubernetes persistent volume claims (PVCs) as the block storage device is automatically formatted by Red Hat OpenShift on IBM Cloud. Portworx supports block storage only. Non-SDS worker nodes that mount file or object storage cannot be used for the Portworx data layer.
@@ -173,7 +173,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
 
    2. Create the secret in your cluster.
       ```
-      kubectl apply -f secret.yaml
+      oc apply -f secret.yaml
       ```
       {: pre}
 
@@ -433,7 +433,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
 
     6. Exit the pod.
 
-Check out how to [encrypt the secrets in your cluster](/docs/containers?topic=containers-encryption#keyprotect), including the secret where you stored your {{site.data.keyword.keymanagementserviceshort}} CRK for your Portworx storage cluster.
+Check out how to [encrypt the secrets in your cluster](/docs/openshift?topic=openshift-encryption#keyprotect), including the secret where you stored your {{site.data.keyword.keymanagementserviceshort}} CRK for your Portworx storage cluster.
 {: tip}
 
 
@@ -492,7 +492,7 @@ To install Portworx:
 5. Click **Create** to start the Portworx installation in your cluster. This process might take a few minutes to complete. The service details page opens with instructions for how to verify your Portworx installation, create a persistent volume claim (PVC), and mount the PVC to an app. 
 6. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created. 
 7. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update. 
-8. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/containers?topic=containers-cs_troubleshoot_storage#debug-portworx) to start troubleshooting why your installation failed. 
+8. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug-portworx) to start troubleshooting why your installation failed. 
 9. If the **Status** changes to `Provisioned`, verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer. 
    1. List the Portworx pods in the `kube-system` project. The installation is successful when you see one or more `portworx`, `stork`, and `stork-scheduler` pods. The number of pods equals the number of worker nodes that are included in your Portworx cluster. All pods must be in a `Running` state.
       ```
@@ -516,7 +516,7 @@ To install Portworx:
    
    2. Log in to one of your `portworx` pods and list the status of your Portworx cluster.
       ```
-      kubectl exec <portworx_pod> -it -n kube-system -- /opt/pwx/bin/pxctl status
+      oc exec <portworx_pod> -it -n kube-system -- /opt/pwx/bin/pxctl status
       ```
       {: pre}
    
@@ -637,7 +637,7 @@ To stop billing for Portworx, you must remove the Portworx Helm installation fro
 ## Creating a Portworx volume
 {: #add_portworx_storage}
 
-Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning).
+Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
 {: shortdesc}
 
 1. List available storage classes in your cluster and check whether you can use an existing Portworx storage class that was set up during the Portworx installation. The pre-defined storage classes are optimized for database usage and to share data across pods.
@@ -646,7 +646,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
    ```
    {: pre}
 
-   To view the details of a storage class, run `kubectl describe storageclass <storageclass_name>`.
+   To view the details of a storage class, run `oc describe storageclass <storageclass_name>`.
    {: tip}
 
 2. If you don't want to use an existing storage class, create a customized storage class. For a full list of supported options that you can specify in your storage class, see [Using Dynamic Provisioning ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning). 
@@ -1007,7 +1007,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
    ```
    {: pre}
 
-8. Verify that your Portworx volume is removed. Log in to one of your Portworx pods in your cluster to list your volumes. To find available Portworx pods, run `kubectl get pods -n kube-system | grep portworx`.
+8. Verify that your Portworx volume is removed. Log in to one of your Portworx pods in your cluster to list your volumes. To find available Portworx pods, run `oc get pods -n kube-system | grep portworx`.
    ```
    oc exec <portworx-pod>  -it -n kube-system -- /opt/pwx/bin/pxctl volume list
    ```
@@ -1029,7 +1029,7 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 {: important}
 
 - **Remove a worker node from the Portworx cluster:** If you want to remove a worker node that runs Portworx and stores data in your Portworx cluster,  you must migrate existing pods to remaining worker nodes and then uninstall Portworx from the node. For more information, see [Decommission a Portworx node in Kubernetes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/decommission-a-node/)
-- **Remove the entire Portworx cluster:** You can remove a Portworx cluster by using the [`kubectl exec <portworx-pod>  -it -n kube-system -- /opt/pwx/bin/pxctl cluster-delete` command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/reference/cli/#pxctl-cluster-delete) or by [uninstalling the Portworx Helm chart](#remove_portworx).
+- **Remove the entire Portworx cluster:** You can remove a Portworx cluster by using the [`oc exec <portworx-pod>  -it -n kube-system -- /opt/pwx/bin/pxctl cluster-delete` command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/reference/cli/#pxctl-cluster-delete) or by [uninstalling the Portworx Helm chart](#remove_portworx).
 
 ## Getting help and support
 {: #portworx_help}
