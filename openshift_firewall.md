@@ -446,7 +446,7 @@ You can allow incoming access to NodePort, load balancer, and Ingress services, 
 ## Allowing the cluster to access resources through Calico network policies
 {: #firewall_calico_egress}
 
-Instead of setting up a gateway firewall device, you can choose to use [Calico network policies](/docs/containers?topic=containers-network_policies) to act as a cluster firewall on the public or private network. For more information, see the following topics.
+Instead of setting up a gateway firewall device, you can choose to use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a cluster firewall on the public or private network. For more information, see the following topics.
 {: shortdesc}
 
 * [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
