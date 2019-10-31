@@ -139,7 +139,6 @@ Before you begin, [access your cluster](/docs/openshift?topic=openshift-openshif
     ```
     {: screen}
 
-
 5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos), or if you already installed the plug-in, [decide on the configuration]( #configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
 
 ## Installing the IBM Cloud Object Storage plug-in
