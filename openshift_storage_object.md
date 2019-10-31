@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-10-31"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -124,20 +124,20 @@ Before you begin, [access your cluster](/docs/openshift?topic=openshift-openshif
    </table>
 
 4. Verify that the secret is created in your namespace.
-   ```
-   oc get secret
-   ```
-   {: pre}
+    ```
+    oc get secret
+    ```
+    {: pre}
 
-  Example output:
-   ```
-   NAME                  TYPE                                  DATA   AGE
-   cos-write-access      ibm/ibmc-s3fs                         2      7d19h
-   default-au-icr-io     kubernetes.io/dockerconfigjson        1      55d
-   default-de-icr-io     kubernetes.io/dockerconfigjson        1      55d
-   ...
-   ```
-   {: screen}
+    Example output:
+    ```
+    NAME                  TYPE                                  DATA   AGE
+    cos-write-access      ibm/ibmc-s3fs                         2      7d19h
+    default-au-icr-io     kubernetes.io/dockerconfigjson        1      55d
+    default-de-icr-io     kubernetes.io/dockerconfigjson        1      55d
+    ...
+    ```
+    {: screen}
 
 
 5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos), or if you already installed the plug-in, [decide on the configuration]( #configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
