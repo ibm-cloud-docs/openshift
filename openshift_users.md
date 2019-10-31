@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -30,7 +30,7 @@ As a cluster administrator, you can define access policies for your {{site.data.
 {: shortdesc}
 
 
-## Understanding access policies and roles 
+## Understanding access policies and roles
 {: #access_policies}
 
 Access policies determine the level of access that users in your {{site.data.keyword.cloud_notm}} account have to resources across the {{site.data.keyword.cloud_notm}} platform. A policy assigns a user one or more roles that define the scope of access to a single service or to a set of services and resources that are organized together in a resource group. Each service in {{site.data.keyword.cloud_notm}} might require its own set of access policies.
@@ -60,8 +60,8 @@ To see the specific {{site.data.keyword.containerlong_notm}} permissions by each
 <dl>
 <dt><a href="#platform">{{site.data.keyword.cloud_notm}} IAM platform and service roles</a></dt>
 <dd>{{site.data.keyword.containerlong_notm}} uses {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) platform and service roles to grant users access to the cluster.
-<ul><li>**Platform**: Platform roles determine the actions that users can perform on cluster infrastructure by using the {{site.data.keyword.containerlong_notm}} API, console, and CLI (`ibmcloud oc`). Platform roles do not grant access to the Kubernetes API. Although platform roles authorize you to perform infrastructure actions on the cluster, they do not grant access to the IBM Cloud infrastructure resources. Access to the IBM Cloud infrastructure resources is determined by the [API key that is set for the region](#api_key). Example actions that are permitted by platform roles are creating or removing clusters, binding services to a cluster, managing networking and storage resources, or adding extra worker nodes.<br><br>You can set the policies for these roles by resource group, region, or cluster instance. You cannot scope a platform role by namespace within a cluster.<br><br>If you assign only platform roles to users, they cannot interact with Kubernetes resources within the cluster. They can, however, still perform the `ibmcloud oc cluster config` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config). Then, you can authorize the users to perform select Kubernetes actions by using [custom RBAC policies](/docs/openshift?topic=openshift-users#role-binding). You might do this if your organization currently uses custom RBAC policies to control Kubernetes access and plans to continue using custom RBAC instead of service roles.</li>
-<li>**Service**: Service roles grant corresponding Kubernetes RBAC policies that a user is given within a cluster. As such, service roles grant access to the Kubernetes API, dashboard, and CLI (`oc`).  Example actions that are permitted by service roles are creating app deployments, adding namespaces, or setting up configmaps.<br><br> You can scope the policy for service roles by resource group, region, or cluster instance. Further, you can also scope service roles to Kubernetes namespaces that are in all, individual, or region-wide clusters. When you scope a service role to a namespace, you cannot apply the policy to a resource group or assign a platform role at the same time.<br><br>If you assign only service roles to users, they cannot view or interact with any {{site.data.keyword.containerlong_notm}} resources. For the users to access the cluster and use the cluster's Kubernetes resources, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster config` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli). If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, give the users the platform **Viewer** role.</li></ul></dd>
+<ul><li>**Platform**: Platform roles determine the actions that users can perform on cluster infrastructure by using the {{site.data.keyword.containerlong_notm}} API, console, and CLI (`ibmcloud oc`). Platform roles do not grant access to the Kubernetes API. Although platform roles authorize you to perform infrastructure actions on the cluster, they do not grant access to the IBM Cloud infrastructure resources. Access to the IBM Cloud infrastructure resources is determined by the [API key that is set for the region](#api_key). Example actions that are permitted by platform roles are creating or removing clusters, binding services to a cluster, managing networking and storage resources, or adding extra worker nodes.<br><br>You can set the policies for these roles by resource group, region, or cluster instance. You cannot scope a platform role by namespace within a cluster.<br><br>If you assign only platform roles to users, they cannot interact with Kubernetes resources within the cluster. They can, however, still perform the `ibmcloud oc cluster config` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config). Then, you can authorize the users to perform select Kubernetes actions by using [custom RBAC policies](/docs/openshift?topic=openshift-users#role-binding). You might do this if your organization currently uses custom RBAC policies to control Kubernetes access and plans to continue using custom RBAC instead of service roles.</li>
+<li>**Service**: Service roles grant corresponding Kubernetes RBAC policies that a user is given within a cluster. As such, service roles grant access to the Kubernetes API, dashboard, and CLI (`oc`).  Example actions that are permitted by service roles are creating app deployments, adding namespaces, or setting up configmaps.<br><br> You can scope the policy for service roles by resource group, region, or cluster instance. Further, you can also scope service roles to Kubernetes namespaces that are in all, individual, or region-wide clusters. When you scope a service role to a namespace, you cannot apply the policy to a resource group or assign a platform role at the same time.<br><br>If you assign only service roles to users, they cannot view or interact with any {{site.data.keyword.containerlong_notm}} resources. For the users to access the cluster and use the cluster's Kubernetes resources, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster config` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli). If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, give the users the platform **Viewer** role.</li></ul></dd>
 <dt><a href="#role-binding">RBAC</a></dt>
 <dd>In Kubernetes, role-based access control (RBAC) is a way of securing the resources inside your cluster. RBAC roles determine the Kubernetes actions that users can perform on those resources. Every user who is assigned a service role is automatically assigned a corresponding RBAC cluster role. This RBAC cluster role is applied either in a specific namespace or in all namespaces, depending on whether you scope the policy to a namespace.</br></br>
 Example actions that are permitted by RBAC roles are creating objects such as pods or reading pod logs.</dd>
@@ -290,7 +290,7 @@ To ensure that all infrastructure-related actions can be successfully completed 
 If you have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account, you have access to a linked IBM Cloud infrastructure portfolio by default. The API key is used to order infrastructure resources from this IBM Cloud infrastructure portfolio, such as new worker nodes or VLANs.
 {: shortdec}
 
-You can find the current API key owner by running [`ibmcloud oc api-key info --cluster <cluster>`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_api_key_info). If you find that you need to update the API key that is stored for a region, you can do so by running the [`ibmcloud oc api-key reset --region <region>`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_api_key_reset) command. This command requires the {{site.data.keyword.containerlong_notm}} admin access policy and stores the API key of the user that executes this command in the account.
+You can find the current API key owner by running [`ibmcloud oc api-key info --cluster <cluster>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_info). If you find that you need to update the API key that is stored for a region, you can do so by running the [`ibmcloud oc api-key reset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command. This command requires the {{site.data.keyword.containerlong_notm}} admin access policy and stores the API key of the user that executes this command in the account.
 
 Be sure that you want to reset the key and understand the impact to your app. The key is used in several different places and can cause breaking changes if it's unnecessarily changed.
 {: note}
@@ -324,12 +324,12 @@ To set the API key to access the IBM Cloud infrastructure portfolio:
 ### Accessing a different classic infrastructure account
 {: #credentials}
 
-Instead of using the default linked IBM Cloud infrastructure account to order infrastructure for clusters within a region, you might want to use a different IBM Cloud infrastructure account that you already have. You can link this infrastructure account to your {{site.data.keyword.cloud_notm}} account by using the [`ibmcloud oc credential set`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_credentials_set) command. The IBM Cloud infrastructure credentials are used instead of the default Pay-As-You-Go account's credentials that are stored for the region.
+Instead of using the default linked IBM Cloud infrastructure account to order infrastructure for clusters within a region, you might want to use a different IBM Cloud infrastructure account that you already have. You can link this infrastructure account to your {{site.data.keyword.cloud_notm}} account by using the [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) command. The IBM Cloud infrastructure credentials are used instead of the default Pay-As-You-Go account's credentials that are stored for the region.
 {: shortdesc}
 
 
 
-The IBM Cloud infrastructure credentials set by the `ibmcloud oc credential set` command persist after your session ends. If you remove IBM Cloud infrastructure credentials that were manually set with the [`ibmcloud oc credential unset --region <region>`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_credentials_unset) command, the default Pay-As-You-Go account credentials are used. However, this change in infrastructure account credentials might cause [orphaned clusters](/docs/containers?topic=containers-cs_troubleshoot_clusters#orphaned).
+The IBM Cloud infrastructure credentials set by the `ibmcloud oc credential set` command persist after your session ends. If you remove IBM Cloud infrastructure credentials that were manually set with the [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) command, the default Pay-As-You-Go account credentials are used. However, this change in infrastructure account credentials might cause [orphaned clusters](/docs/containers?topic=containers-cs_troubleshoot_clusters#orphaned).
 {: important}
 
 **Before you begin**:
@@ -398,7 +398,7 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
 2. Select users individually or create an access group of users.
     * **To assign roles to an individual user**:
       1. In the left navigation, click the **Users** page, and then click the name of the user that you want to set permissions for. If the user isn't shown, click **Invite users** to add them to the account.
-      2. Click the **Access policies** tab, and then click **Assign access**.
+      2. Click the **Access policies** tab, and then click **Assign access**. Now, the breadcrumbs on the page are **Users / Manage User**.
     * **To assign roles to multiple users in an access group**:
       1. In the left navigation, click the **Access groups** page.
       2. Click **Create** and give your group a **Name** and **Description**. Click **Create**.
@@ -406,11 +406,11 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
       4. Check the box next to the users that you want to add to the group. A dialog box displays.
       5. Click **Add to group**.
       6. Click the **Access policies** tab.
-      7. Click **Assign access**.
+      7. Click **Assign access**. Now, the breadcrumbs on the page are **Groups / Manage Group**.
 
 3. Assign a policy, either for resource groups or for resource instances. If you want to scope the policy to a namespace, you must assign the policy to resource instances (not resource groups).
   * **For resource groups**:
-    1. Click **Assign access within a resource group**.
+    1. From the **Manager User** or **Manage Group** page, click **Assign access within a resource group**.
     2. Select the resource group name.
     3. In the **Assign access to a resource group** drop-down list, choose what level of permission to give the user to the resource group itself (not the resources within the group). For example, to let users see clusters that they have access to in multiple resource groups, give them the **Viewer** role for each resource group.
     4. From the **Services** list, select **Kubernetes Cluster**.
@@ -419,9 +419,9 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
        * **Platform access role**: Grants access to {{site.data.keyword.containerlong_notm}} so that users can manage infrastructure resources such as clusters, worker nodes, worker pools, Ingress application load balancers, and storage. To find a list of supported actions per role, see [platform roles reference page](/docs/openshift?topic=openshift-access_reference#iam_platform).
        * **Service access role**: Grants access to Kubernetes as access from within a cluster so that users can manage Kubernetes resources such as pods, deployments, services, and namespaces. To find a list of supported actions per role, see [service roles reference page](/docs/openshift?topic=openshift-access_reference#service).<p class="note">You cannot scope a service access role to a namespace if you assign the role at the resource group level. Assign access to a resource instance instead. Also, do not assign a platform role at the same time as you assign a service role.</p>
     7. Click **Assign**.
-    8. **Optional**: If you assigned only a service role to users, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster config` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli) or otherwise interact with the Kubernetes API. If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, repeat these steps to give the users the platform **Viewer** role.
+    8. **Optional**: If you assigned only a service role to users, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster config` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli) or otherwise interact with the Kubernetes API. If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, repeat these steps to give the users the platform **Viewer** role.
   * **For resource instances within or across resource groups**:
-    1. Click **Assign access to resources**.
+    1. From the **Manager User** or **Manage Group** page, click **Assign access to resources**.
     2. From the **Services** list, select **Kubernetes Cluster**.
     3. From the **Region** list, select one or all regions.
     4. From the **Cluster** list, select one or all cluster instances.
@@ -432,7 +432,7 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
           * If you scoped the policy to a namespace, you cannot also assign platform role at the same time. If you also want the user to have a platform role, repeat these steps but leave the namespace field blank and assign only a platform role (do not assign a service access role again).
        * **Service access role**: Grants access to Kubernetes as accessed from within a cluster so that users can manage Kubernetes resources such as pods, deployments, services, and namespaces. To find a list of supported actions per role, see [service roles reference page](/docs/openshift?topic=openshift-access_reference#service).
     7. Click **Assign**.
-    8. **Optional**: If you assigned only service roles to users, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster config` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli) or otherwise interact with the Kubernetes API. If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, repeat these steps to give the users the platform **Viewer** role.
+    8. **Optional**: If you assigned only service roles to users, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster config` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli) or otherwise interact with the Kubernetes API. If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, repeat these steps to give the users the platform **Viewer** role.
 
 4.  Optional: If you want users to be able to work with clusters in a resource group other than the default, these users need additional access to the resource groups that clusters are in. You can assign these users at least the **Viewer** platform role for resource groups, if you previously did not.
     1.  Click **Assign access within a resource group**.
@@ -655,7 +655,7 @@ Grant users access to your clusters by assigning {{site.data.keyword.cloud_notm}
         ```
         {: pre}
 
-4.  If you assigned only service roles to users, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster config` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli) or otherwise interact with the Kubernetes API. If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, [give the users the platform **Viewer** role](#add_users_cli_platform).
+4.  If you assigned only service roles to users, you must give users the cluster name and ID so that they can perform the `ibmcloud oc cluster config` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config), and then [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli) or otherwise interact with the Kubernetes API. If you want these users to still be able to access the {{site.data.keyword.containerlong_notm}} clusters console and list clusters and other infrastructure resources from the CLI, [give the users the platform **Viewer** role](#add_users_cli_platform).
 
 5.  For the changes to take effect, the user that is granted access must refresh the cluster configuration. Users are not added to the role bindings until they individually refresh the cluster configuration, even if you added multiple users at the same time. Users are also not added to a role binding if they have a higher permission. For example, if users have a cluster role and are in a cluster role binding, they are not added to each individual namespace role binding as well.
     ```
@@ -1139,7 +1139,7 @@ Downgrading permissions? The action can take a few minutes to complete.
         ```
         {: pre}
 
-    Need to change the infrastructure credential owner? Check out the `ibmcloud oc api-key reset` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_api_key_reset) or the `ibmcloud oc credential set` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_credentials_set).
+    Need to change the infrastructure credential owner? Check out the `ibmcloud oc api-key reset` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set).
     {: tip}
 
 3.  List the users in your classic infrastructure account and note the **id** of the user whose credentials are set manually or by the API key.

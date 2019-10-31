@@ -38,7 +38,10 @@ Red Hat OpenShift on IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    openshift_cli_install.md
+    {: .topicgroup}
+    Installing the CLI and API
+        openshift_cli_install.md
+        openshift_api_install.md
 
     {: .topicgroup}
     Setting up clusters
@@ -63,13 +66,33 @@ Red Hat OpenShift on IBM Cloud
         openshift_firewall.md
         openshift_network_policy.md
         openshift_edge.md
+        openshift_vpn.md
         openshift_subnets.md
+        openshift_network_cluster.md
 
      {: .topicgroup}
     Deploying apps
         openshift_images.md
         openshift_app.md
-        openshift_routes.md
+        openshift_app_networking.md
+
+    openshift_routes.md
+
+    {: .topicgroup}
+    Exposing apps with load balancers
+        openshift_loadbalancer_about.md
+        openshift_loadbalancer.md
+        openshift_loadbalancer_v2.md
+        openshift_loadbalancer_dns.md
+
+    {: .topicgroup}
+    HTTPS load balancing with Ingress application load balancers (ALB)
+        openshift_ingress_about.md
+        openshift_ingress.md
+        openshift_annotations.md
+        openshift_ingress_settings.md
+        openshift_ingress_health.md
+        openshift_ingress_user_managed.md
 
     {: .topicgroup}
     Storing data on persistent storage
@@ -87,7 +110,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .navgroup id="reference"}
     [OpenShift Container Platform documentation](https://docs.openshift.com/)
-    
+
     {: .topicgroup}
     API reference
         [IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/)
@@ -113,7 +136,7 @@ Red Hat OpenShift on IBM Cloud
     faqs.md
     /containers/containers-iks-release
     openshift_limitations.md
-    
+
     {: .topicgroup}
     Troubleshooting clusters
         openshift_ts.md

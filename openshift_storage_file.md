@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1305,7 +1305,7 @@ Review the following backup and restore options for your file storage:
 You can create a customized storage class and use the storage class in your PVC.
 {: shortdesc}
 
-{{site.data.keyword.containerlong_notm}} provides [pre-defined storage classes](#file_storageclass_reference) to provision file storage with a particular tier and configuration. In some cases, you might want to provision storage with a different configuration that is not covered in the pre-defined storage classes. You can use the examples in this topic to find sample customized storage classes.
+Red Hat OpenShift on IBM Cloud provides [pre-defined storage classes](#file_storageclass_reference) to provision file storage with a particular tier and configuration. In some cases, you might want to provision storage with a different configuration that is not covered in the pre-defined storage classes. You can use the examples in this topic to find sample customized storage classes.
 
 To create your customized storage class, see [Customizing a storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass). Then, [use your customized storage class in your PVC](#add_file).
 

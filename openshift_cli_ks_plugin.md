@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-28"
+lastupdated: "2019-10-30"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -809,109 +809,6 @@ ibmcloud oc cluster ls -l ams03 -l wdc -l ap
 
 </br>
 
-### `ibmcloud oc cluster master audit-webhook`
-{: #cluster_master_audit_webhook}
-
-Modify the webhook back end that forwards API server audit logs to a remote server.
-{: shprtdesc}
-
-The `apiserver-config-get|set|unset audit-webhook` aliases for these commands are deprecated.
-{: deprecated}
-
-#### `ibmcloud oc cluster master audit-webhook get`
-{: #cs_apiserver_config_get}
-
-View the URL for the remote logging service that you are sending API server audit logs to. The URL was specified when you created the webhook back end for the API server configuration.
-{: shortdesc}
-
-```
-ibmcloud oc cluster master audit-webhook get --cluster CLUSTER [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-
-</dl>
-
-</br>
-
-#### `ibmcloud oc cluster master audit-webhook set`
-{: #cs_apiserver_config_set}
-
-Set the webhook back end for the API server configuration. The webhook back end forwards API server audit logs to a remote server. After you set the webhook, you must run the `ibmcloud oc cluster master refresh` command to apply the changes to the Kubernetes master.
-{: shortdesc}
-
-```
-ibmcloud oc cluster master audit-webhook set --cluster CLUSTER [--remote-server SERVER_URL_OR_IP] [--ca-cert CA_CERT_PATH] [--client-cert CLIENT_CERT_PATH] [--client-key CLIENT_KEY_PATH] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--remote-server <em>SERVER_URL</em></code></dt>
-<dd>The URL or IP address for the remote logging service you want to send audit logs to. If you provide an insecure server URL, any certificates are ignored. If you provide an IP address, prepend `http://` to the IP. This value is optional.</dd>
-
-<dt><code>--ca-cert <em>CA_CERT_PATH</em></code></dt>
-<dd>The file path for the CA certificate that is used to verify the remote logging service. This value is optional.</dd>
-
-<dt><code>--client-cert <em>CLIENT_CERT_PATH</em></code></dt>
-<dd>The file path for the client certificate that is used to authenticate against the remote logging service. This value is optional.</dd>
-
-<dt><code>--client-key <em> CLIENT_KEY_PATH</em></code></dt>
-<dd>The file path for the corresponding client key that is used to connect to the remote logging service. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc cluster master audit-webhook set --cluster my_cluster --remote-server https://audit.example.com/audit --ca-cert /mnt/etc/kubernetes/apiserver audit/ca.pem --client-cert /mnt/etc/kubernetes/apiserver audit/cert.pem --client-key /mnt/etc/kubernetes/apiserver audit/key.pem
-```
-{: pre}
-
-</br>
-
-#### `ibmcloud oc cluster master audit-webhook unset`
-{: #cs_apiserver_config_unset}
-
-Disable the webhook back-end configuration for the cluster's API server. Disabling the webhook back end stops forwarding API server audit logs to a remote server.
-{: shortdesc}
-
-```
-ibmcloud oc cluster master audit-webhook unset --cluster CLUSTER [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-</br>
-
 ### `ibmcloud oc cluster master refresh`
 {: #cs_apiserver_refresh}
 
@@ -1411,7 +1308,7 @@ diskEncryption: <em>false</em></code></pre></dd>
 <dd>The private VLAN that was specified when the cluster was created. This value is required. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.</dd>
 
 <dt><code>--public-vlan <em>PUBLIC_VLAN</em></code></dt>
-<dd>The public VLAN that was specified when the cluster was created. This value is optional. If you want your worker nodes to exist on a private VLAN only, do not provide a public VLAN ID. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.<p class="note">If worker nodes are set up with a private VLAN only, you must allow worker nodes and the cluster master to communicate by [enabling the private service endpoint](/docs/containers?topic=containers-cs_network_cluster#set-up-private-se) or [configuring a gateway appliance](/docs/openshift?topic=openshift-plan_clusters#workeruser-master).</p></dd>
+<dd>The public VLAN that was specified when the cluster was created. This value is optional. If you want your worker nodes to exist on a private VLAN only, do not provide a public VLAN ID. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.<p class="note">If worker nodes are set up with a private VLAN only, you must allow worker nodes and the cluster master to communicate by [enabling the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se) or [configuring a gateway appliance](/docs/openshift?topic=openshift-plan_clusters#workeruser-master).</p></dd>
 
 <dt><code>--disable-disk-encrypt</code></dt>
 <dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.</dd>
@@ -3047,7 +2944,7 @@ ibmcloud oc logging collect-status --cluster mycluster
 ### `ibmcloud oc logging config create`
 {: #cs_logging_create}
 
-Create a logging configuration. You can use this command to forward logs for containers, applications, worker nodes, Kubernetes clusters, and Ingress application load balancers to an external syslog server.
+Create a logging configuration. You can use this command to forward logs for containers, applications, worker nodes, OpenShift clusters, and Ingress application load balancers to an external syslog server.
 {: shortdesc}
 ```
 ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --type syslog [--namespace KUBERNETES_NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-containers CONTAINERS] [--app-paths PATHS_TO_LOGS] [--syslog-protocol PROTOCOL] [--skip-validation] [--force-update] [--json] [-s]
@@ -4601,7 +4498,7 @@ Region:                us-south
 ## `init` command
 {: #cs_init}
 
-Initialize the {{site.data.keyword.containerlong_notm}} plug-in or specify the region where you want to create or access Kubernetes clusters.
+Initialize the {{site.data.keyword.containerlong_notm}} plug-in or specify the region where you want to create or access OpenShift clusters.
 {: shortdesc}
 
 Region-specific endpoints are deprecated. Use the [global endpoint](/docs/containers?topic=containers-regions-and-zones#endpoint) instead.

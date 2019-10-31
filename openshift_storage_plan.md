@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-07"
+lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -27,7 +27,7 @@ subcollection: openshift
 {: #storage_planning}
 
 
-## Choosing a storage solution 
+## Choosing a storage solution
 {: #choose_storage_solution}
 
 Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
@@ -91,7 +91,7 @@ Before you can decide what type of storage is the right solution for your {{site
 You can use non-persistent storage options if your data is not required to be persistently stored or if you want to unit-test your app components.
 {: shortdesc}
 
-The following image shows available non-persistent data storage options in {{site.data.keyword.containerlong_notm}}. These options are available for free and standard clusters.
+The following image shows available non-persistent data storage options in Red Hat OpenShift on IBM Cloud. These options are available for free and standard clusters.
 <p>
 <img src="images/cs_storage_nonpersistent.png" alt="Non-persistent data storage options" width="550" style="width: 550px; border-style: none"/></p>
 
@@ -174,13 +174,13 @@ The following image shows available non-persistent data storage options in {{sit
 ## Comparison of persistent storage options for single zone clusters
 {: #single_zone_persistent_storage}
 
-If you have a single zone cluster, you can choose between the following options in {{site.data.keyword.containerlong_notm}} that provide fast access to your data. For higher availability, use a storage option that is designed for [geographically distributed data](#persistent_storage_overview) and, if possible for your requirements, create a multizone cluster.
+If you have a single zone cluster, you can choose between the following options in Red Hat OpenShift on IBM Cloud that provide fast access to your data. For higher availability, use a storage option that is designed for [geographically distributed data](#persistent_storage_overview) and, if possible for your requirements, create a multizone cluster.
 {: shortdesc}
 
 Persistent data storage options are available for standard clusters only.
 {: note}
 
-The following image shows the options that you have in {{site.data.keyword.containerlong_notm}} to permanently store your data in a single cluster.
+The following image shows the options that you have in Red Hat OpenShift on IBM Cloud to permanently store your data in a single cluster.
 
 <img src="images/cs_storage_single_zone.png" alt="Persistent storage options for single zone cluster"  width="300" style="width: 300px; border-style: none"/>
 
@@ -279,10 +279,10 @@ If you have a multizone cluster, choose between the following persistent storage
 
 Persistent data storage options are available for standard clusters only.
 
-Looking to connect your cluster to an on-prem database instead? See [Setting up VPN connectivity to your cluster](/docs/containers?topic=containers-vpn#vpn).
+Looking to connect your cluster to an on-prem database instead? See [Setting up VPN connectivity to your cluster](/docs/openshift?topic=openshift-vpn#vpn).
 {: tip}
 
-The following image shows the options that you have in {{site.data.keyword.containerlong_notm}} to permanently store your data in a multizone cluster and make your data highly available. You can use these options in a single zone cluster, but you might not get the high availability benefits that your app requires.
+The following image shows the options that you have in Red Hat OpenShift on IBM Cloud to permanently store your data in a multizone cluster and make your data highly available. You can use these options in a single zone cluster, but you might not get the high availability benefits that your app requires.
 
 <img src="images/cs_storage_options_multizone.png" alt="High availability options for persistent storage in a multizone cluster"/>
 
@@ -369,7 +369,7 @@ nodes. Every node stores only a part of the data. </td>
 <tr>
 <td style="text-align:left">Backup and recovery</td>
 <td style="text-align:left">Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03).  You can also use the  Kubernetes [`oc cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
-<td style="text-align:left">Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/). You can also use the  Kubernetes [`kubectl cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
+<td style="text-align:left">Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/). You can also use the  Kubernetes [`oc cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
 <td style="text-align:left">Depends on the DBaaS</td>
 </tr>
 <tr>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -431,7 +431,7 @@ To update flavors:
 ## Updating cluster components
 {: #components}
 
-Your {{site.data.keyword.containerlong_notm}} cluster comes with components, such as Ingress, that are installed automatically when you provision the cluster. By default, these components are updated automatically by IBM. However, you can disable automatic updates for some components and manually update them separately from the master and worker nodes.
+Your Red Hat OpenShift on IBM Cloud cluster comes with components, such as Ingress, that are installed automatically when you provision the cluster. By default, these components are updated automatically by IBM. However, you can disable automatic updates for some components and manually update them separately from the master and worker nodes.
 {: shortdesc}
 
 **What default components can I update separately from the cluster?**</br>
@@ -457,7 +457,7 @@ Yes. Your cluster is deployed with the following managed components and associat
 * `vpn`
 
 **Can I install other plug-ins or add-ons than the default components?**</br>
-Yes. {{site.data.keyword.containerlong_notm}} provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/containers?topic=containers-helm#public_helm_install) to install the [block storage plug-in](/docs/openshift?topic=openshift-block_storage#install_block) or [strongSwan VPN](/docs/containers?topic=containers-vpn#vpn-setup). Or, you might want to enable IBM-managed add-ons in your cluster, such as [Istio](/docs/containers?topic=containers-istio) or [Knative](/docs/containers?topic=containers-serverless-apps-knative). You must update these Helm charts and add-ons separately by following the instructions in the Helm chart readmes or by following the steps to [update managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
+Yes. Red Hat OpenShift on IBM Cloud provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/containers?topic=containers-helm#public_helm_install) to install the [block storage plug-in](/docs/openshift?topic=openshift-block_storage#install_block) or [strongSwan VPN](/docs/openshift?topic=openshift-vpn#vpn-setup). You must update these Helm charts separately by following the instructions in the Helm chart readmes.
 
 ### Managing automatic updates for Fluentd
 {: #logging-up}
@@ -489,7 +489,7 @@ You can manage automatic updates of the Fluentd component in the following ways.
 Control when the Ingress application load balancer (ALB) component is updated.
 {: shortdesc}
 
-When the Ingress ALB component is updated, the `nginx-ingress` and `ingress-auth` containers in all ALB pods are updated to the latest build version. By default, automatic updates to ALBs are enabled. Updates are performed on a rolling basis so that your Ingress ALBs don't experience any downtime. When a pod restarts after the update is applied, a [readiness check](/docs/containers?topic=containers-ingress-settings#readiness-check) prevents the ALB pod from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss during ALB pod updates and can take up to 5 minutes.
+When the Ingress ALB component is updated, the `nginx-ingress` and `ingress-auth` containers in all ALB pods are updated to the latest build version. By default, automatic updates to ALBs are enabled. Updates are performed on a rolling basis so that your Ingress ALBs don't experience any downtime. When a pod restarts after the update is applied, a [readiness check](/docs/openshift?topic=openshift-ingress-settings#readiness-check) prevents the ALB pod from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss during ALB pod updates and can take up to 5 minutes.
 
 If you disable automatic updates, you are responsible for updating your ALBs. As updates become available, you are notified in the CLI when you run the `ibmcloud oc alb ls` or `alb autoupdate get` commands.
 
@@ -570,11 +570,6 @@ You can manage automatic updates of the Ingress ALB component in the following w
 
 <br />
 
-
-## Updating managed add-ons
-{: #addons}
-
-Managed {{site.data.keyword.containerlong_notm}} add-ons are an easy way to enhance your cluster with open-source capabilities, such as Istio or Knative. The version of the open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.containerlong_notm}}. To update managed add-ons that you enabled in your cluster to the latest versions, see [Updating managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
 
 
 

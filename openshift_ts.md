@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-28"
+lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,7 @@ Review different ways to get help and support for your Red Hat OpenShift on IBM 
    * Make sure that [your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
 
 **Reviewing issues and status**<br>
-1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status). 
+1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status).
 2. Filter for the **Kubernetes Cluster** component.
 
 **Feedback and questions**<br>
@@ -223,6 +223,8 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
 <br />
 
 
+
+
 ## VPN server error due to infrastructure credentials
 {: #rhoks_ts_openvpn_login}
 
@@ -284,7 +286,7 @@ Make sure that you followed the docs in the [Moving your apps to OpenShift topic
 You cannot push or pull Docker images from your local machine to the cluster's built-in Docker registry.
 
 {: tsCauses}
-By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or DockerHub by using the `oc new-app` command. Or, you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine. 
+By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or DockerHub by using the `oc new-app` command. Or, you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine.
 
 {: tsResolve}
 Create a route for the `docker-registry` service in the `default` project. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-openshift-images#route_internal_registry).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-22"
+lastupdated: "2019-10-31"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -50,19 +50,19 @@ The {{site.data.keyword.cos_full_notm}} plug-in is configured to work with any s
 Follow these steps to create an {{site.data.keyword.cos_full_notm}} service instance. If you plan to use a local Cloud Object Storage server or a different s3 API endpoint, refer to the provider documentation to set up your Cloud Object Storage instance.
 
 1. Deploy an {{site.data.keyword.cos_full_notm}} service instance.
-   1.  Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/catalog/services/cloud-object-storage).
-   2.  Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
-   3.  Review the [plan options ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api) for pricing information and select a plan.
-   4.  Click **Create**. The service details page opens.
+  1.  Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/catalog/services/cloud-object-storage).
+  2.  Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
+  3.  Review the [plan options ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api) for pricing information and select a plan.
+  4.  Click **Create**. The service details page opens.
 2. {: #service_credentials}Retrieve the {{site.data.keyword.cos_full_notm}} service credentials.
-   1.  In the navigation on the service details page, click **Service Credentials**.
-   2.  Click **New credential**. A dialog box displays.
-   3.  Enter a name for your credentials.
-   4.  From the **Role** drop-down, select `Writer` or `Manager`. When you select `Reader`, then you cannot use the credentials to create buckets in {{site.data.keyword.cos_full_notm}} and write data to it.
-   5.  Optional: In **Add Inline Configuration Parameters (Optional)**, enter `{"HMAC":true}` to create additional HMAC credentials for the {{site.data.keyword.cos_full_notm}} service. HMAC authentication adds an extra layer of security to the OAuth2 authentication by preventing the misuse of expired or randomly created OAuth2 tokens. **Important**: If you have a private-only cluster with no public access, you must use HMAC authentication so that you can access the {{site.data.keyword.cos_full_notm}} service over the private network.
-   6.  Click **Add**. Your new credentials are listed in the **Service Credentials** table.
-   7.  Click **View credentials**.
-   8.  Make note of the **apikey** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **cos_hmac_keys** section, note the **access_key_id** and the **secret_access_key**.
+  1.  In the navigation on the service details page, click **Service Credentials**.
+  2.  Click **New credential**. A dialog box displays.
+  3.  Enter a name for your credentials.
+  4.  From the **Role** drop-down, select `Writer` or `Manager`. When you select `Reader`, then you cannot use the credentials to create buckets in {{site.data.keyword.cos_full_notm}} and write data to it.
+  5.  Optional: In **Add Inline Configuration Parameters (Optional)**, enter `{"HMAC":true}` to create additional HMAC credentials for the {{site.data.keyword.cos_full_notm}} service. HMAC authentication adds an extra layer of security to the OAuth2 authentication by preventing the misuse of expired or randomly created OAuth2 tokens. **Important**: If you have a private-only cluster with no public access, you must use HMAC authentication so that you can access the {{site.data.keyword.cos_full_notm}} service over the private network.
+  6.  Click **Add**. Your new credentials are listed in the **Service Credentials** table.
+  7.  Click **View credentials**.
+  8.  Make note of the **apikey** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **cos_hmac_keys** section, note the **access_key_id** and the **secret_access_key**.
 3. [Store your service credentials in a Kubernetes secret inside the cluster](#create_cos_secret) to enable access to your {{site.data.keyword.cos_full_notm}} service instance.
 
 ## Creating a secret for the object storage service credentials
@@ -84,7 +84,7 @@ Before you begin, [access your cluster](/docs/openshift?topic=openshift-openshif
    ```
    {: pre}
 
-3. Create a Kubernetes secret to store your service credentials. When you create your secret, all values are automatically encoded to base64.
+3. Create a Kubernetes secret to store your service credentials. When you create your secret, all values are automatically encoded to base64. In the following example the secret name is `cos-write-access`. 
 
    **Example for using the API key:**
    ```
@@ -124,10 +124,20 @@ Before you begin, [access your cluster](/docs/openshift?topic=openshift-openshif
    </table>
 
 4. Verify that the secret is created in your namespace.
-   ```
-   oc get secret
-   ```
-   {: pre}
+    ```
+    oc get secret
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    NAME                  TYPE                                  DATA   AGE
+    cos-write-access      ibm/ibmc-s3fs                         2      7d19h
+    default-au-icr-io     kubernetes.io/dockerconfigjson        1      55d
+    default-de-icr-io     kubernetes.io/dockerconfigjson        1      55d
+    ...
+    ```
+    {: screen}
 
 5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos), or if you already installed the plug-in, [decide on the configuration]( #configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
 
@@ -147,9 +157,12 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 To install the plug-in:
 
 
-2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. Then, [follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine and optionally Tiller with a service account in your cluster. **Note**: If you use Windows, you must install Tiller.
 
-3. If you want to install the plug-in with Tiller, verify that Tiller is installed with a service account.
+2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. **Note** Tiller requires public network connectivity. Learn more about [Helm and Tiller](/docs/containers?topic=containers-helm). Then, [follow the instructions](/docs/containers?topic=containers-helm#public_helm_install){ :new_window} to install the Helm client on your local machine and optionally Tiller with a service account in your cluster. 
+
+  **Note**: If you use Windows, you must install Tiller.
+
+3. If you want to install the plug-in with Tiller, verify that Tiller is installed with a service account. If you do not want to use Tiller, continue with step 4.
    ```
    oc get serviceaccount -n kube-system tiller
    ```
@@ -168,69 +181,69 @@ To install the plug-in:
    ```
    {: pre}
 
-4. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
+5. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
    ```
    helm repo update
    ```
    {: pre}
 
-5. Download the Helm charts and unpack the charts in your current directory.
+6. Download the Helm charts and unpack the charts in your current directory.
    ```
    helm fetch --untar ibm-charts/ibm-object-storage-plugin
    ```
    {: pre}
 
 7. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
-   1. Install the Helm plug-in.
-      ```
-      helm plugin install ./ibm-object-storage-plugin/helm-ibmc
-      ```
-      {: pre}
+  1. Install the Helm plug-in.
+    ```
+    helm plugin install ./ibm-object-storage-plugin/helm-ibmc
+    ```
+    {: pre}
 
-      Example output:
-      ```
-      Installed plugin: ibmc
-      ```
-      {: screen}
+    Example output:
+    ```
+    Installed plugin: ibmc
+    ```
+    {: screen}
 
-      If you see the error `Error: plugin already exists`, remove the `ibmc` Helm plug-in by running `rm -rf ~/.helm/plugins/helm-ibmc`.
-      {: tip}
+    If you see the error `Error: plugin already exists`, remove the `ibmc` Helm plug-in by running `rm -rf ~/.helm/plugins/helm-ibmc`.
+    {: tip}
 
-   2. Verify that the `ibmc` plug-in is installed successfully.
-      ```
-      helm ibmc --help
-      ```
-      {: pre}
+  2. Verify that the `ibmc` plug-in is installed successfully.
+    ```
+    helm ibmc --help
+    ```
+    {: pre}
 
-      If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run `chmod 755 ~/.helm/plugins/helm-ibmc/ibmc.sh`. Then, rerun `helm ibmc --help`.
-      {: tip}
+    If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run `chmod 755 ~/.helm/plugins/helm-ibmc/ibmc.sh`. Then, rerun `helm ibmc --help`.
+    {: tip}
 
-      Example output:
-      ```
-      Install or upgrade Helm charts in IBM K8S Service(IKS) and IBM Cloud Private(ICP)
+    Example output:
+    ```
+    Install or upgrade Helm charts in IBM K8S Service(IKS) and IBM Cloud Private(ICP)
 
-      Available Commands:
-         helm ibmc install [CHART] [flags]                      Install a Helm chart
-         helm ibmc upgrade [RELEASE] [CHART] [flags]            Upgrade the release to a new version of the Helm chart
-         helm ibmc template [CHART] [flags] [--apply|--delete]  Install/uninstall a Helm chart without tiller
+    Available Commands:
+        helm ibmc install [CHART] [flags]                      Install a Helm chart
+        helm ibmc upgrade [RELEASE] [CHART] [flags]            Upgrade the release to a new version of the Helm chart
+        helm ibmc template [CHART] [flags] [--apply|--delete]  Install/uninstall a Helm chart without tiller
 
-      Available Flags:
-         -h, --help                    (Optional) This text.
-         -u, --update                  (Optional) Update this plugin to the latest version
+    Available Flags:
+        -h, --help                    (Optional) This text.
+        -u, --update                  (Optional) Update this plugin to the latest version
 
-      Example Usage:
-         With Tiller:
-             Install:   helm ibmc install ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
-         Without Tiller:
-             Install:   helm ibmc template ibm-charts/ibm-object-storage-plugin --apply
-             Dry-run:   helm ibmc template ibm-charts/ibm-object-storage-plugin
-             Uninstall: helm ibmc template ibm-charts/ibm-object-storage-plugin --delete
+    Example Usage:
+        With Tiller:
+            Install:   helm ibmc install ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
+        Without Tiller:
+            Install:   helm ibmc template ibm-charts/ibm-object-storage-plugin --apply
+            Dry-run:   helm ibmc template ibm-charts/ibm-object-storage-plugin
+            Uninstall: helm ibmc template ibm-charts/ibm-object-storage-plugin --delete
 
-      Note:
-         1. It is always recommended to install latest version of ibm-object-storage-plugin chart.
-         2. It is always recommended to have 'oc' client up-to-date.
-      ```
-      {: screen}
+    Note:
+        1. It is always recommended to install latest version of ibm-object-storage-plugin chart.
+        2. It is always recommended to have 'oc' client up-to-date.
+    ```
+    {: screen}
 
 8. Optional: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in is authorized to access all Kubernetes secrets in your cluster.
    1. [Create your {{site.data.keyword.cos_full_notm}} service instance](#create_cos_service).
@@ -242,7 +255,7 @@ To install the plug-in:
       {: pre}
 
    4. Open the `provisioner-sa.yaml` file and look for the `ibmcloud-object-storage-secret-reader` `ClusterRole` definition.
-   6. Add the name of the secret that you created earlier to the list of secrets that the plug-in is authorized to access in the `resourceNames` section.
+   5. Add the name of the secret that you created earlier to the list of secrets that the plug-in is authorized to access in the `resourceNames` section.
       ```
       kind: ClusterRole
       apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -255,64 +268,64 @@ To install the plug-in:
         verbs: ["get"]
       ```
       {: codeblock}
-   7. Save your changes.
+   6. Save your changes.
 
 9. Install the {{site.data.keyword.cos_full_notm}} plug-in. When you install the plug-in, pre-defined storage classes are added to your cluster.
 
-   - **For OS X and Linux:**
-     - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
-       **Without Tiller**:
-       ```
-       helm ibmc template ibm-charts/ibm-object-storage-plugin --apply
-       ```
-       {: pre}
+  - **For OS X and Linux:**
+    - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
+      **Without Tiller**:
+      ```
+      helm ibmc template ibm-charts/ibm-object-storage-plugin --apply
+      ```
+      {: pre}
 
-       **With Tiller**:
-       ```
-       helm ibmc install ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
-       ```
-       {: pre}
+      **With Tiller**:
+      ```
+      helm ibmc install ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
+      ```
+      {: pre}
 
-     - If you completed the previous step, install with a limitation to specific Kubernetes secrets.</br>
-       **Without Tiller**:
-       ```
-       cd ../..
-       helm ibmc template ./ibm-object-storage-plugin --apply
-       ```
-       {: pre}
+    - If you completed the previous step, install with a limitation to specific Kubernetes secrets.</br>
+      **Without Tiller**:
+      ```
+      cd ../..
+      helm ibmc template ./ibm-object-storage-plugin --apply
+      ```
+      {: pre}
 
-       **With Tiller**:
-       ```
-       cd ../..
-       helm ibmc install ./ibm-object-storage-plugin --name ibm-object-storage-plugin
-       ```
-       {: pre}
+      **With Tiller**:
+      ```
+      cd ../..
+      helm ibmc install ./ibm-object-storage-plugin --name ibm-object-storage-plugin
+      ```
+      {: pre}
 
-   - **For Windows:**
-     1. Retrieve the **datacenter** where your cluster is deployed.  
+  - **For Windows:**
+    1. Retrieve the **datacenter** where your cluster is deployed.  
+      ```
+      oc get cm cluster-info -n kube-system -o yaml
+      ```
+      {: pre}
+    2. Store the data center in an environment variable.
+      ```
+      SET DC_NAME=<datacenter>
+      ```
+      {: pre}
+
+    3. Install the Helm chart.
+      - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
         ```
-        oc get cm cluster-info -n kube-system -o yaml
+        helm install ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
         ```
         {: pre}
-     2. Store the data center in an environment variable.
+
+      - If you completed the previous step, install with a limitation to specific Kubernetes secrets.</br>
         ```
-        SET DC_NAME=<datacenter>
+        cd ../..
+        helm install ./ibm-object-storage-plugin --name ibm-object-storage-plugin
         ```
         {: pre}
-
-     3. Install the Helm chart.
-        - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
-          ```
-          helm install ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
-          ```
-          {: pre}
-
-        - If you completed the previous step, install with a limitation to specific Kubernetes secrets.</br>
-          ```
-          cd ../..
-          helm install ./ibm-object-storage-plugin --name ibm-object-storage-plugin
-          ```
-          {: pre}
 
    Example output for installing without Tiller:
    ```
@@ -363,7 +376,7 @@ To install the plug-in:
 
 10. Verify that the plug-in is installed correctly.
     ```
-    oc get pod -n default -o wide | grep object
+    oc get pod --all-namespaces -o wide | grep object
     ```
     {: pre}
 
@@ -399,7 +412,7 @@ To install the plug-in:
     ```
     {: screen}
 
-    If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `kubectl patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
+    If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `oc patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
     {: tip}
 
 13. Follow the instructions to [add object storage to your apps](#add_cos).        
@@ -412,25 +425,25 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 {: shortdesc}
 
 1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
-   1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
-      ```
-      helm ls | grep ibmcloud-object-storage-plugin
-      ```
-      {: pre}
+  1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
+    ```
+    helm ls | grep ibmcloud-object-storage-plugin
+    ```
+    {: pre}
 
-      Example output:
-      ```
-      ibmcloud-object-storage-plugin	1       	Mon Sep 18 15:31:40 2017	DEPLOYED	ibmcloud-object-storage-plugin-1.0.4	default
-      ```
-      {: screen}
+    Example output:
+    ```
+    ibmcloud-object-storage-plugin	1       	Mon Sep 18 15:31:40 2017	DEPLOYED	ibmcloud-object-storage-plugin-1.0.4	default
+    ```
+    {: screen}
 
-   2. If you have version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove the Helm chart from your cluster. If you have version 1.0.5 or later of the Helm chart that is named `ibm-object-storage-plugin`, continue with Step 2.
-      ```
-      helm delete --purge ibmcloud-object-storage-plugin
-      ```
-      {: pre}
+  2. If you have version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove the Helm chart from your cluster. If you have version 1.0.5 or later of the Helm chart that is named `ibm-object-storage-plugin`, continue with Step 2.
+    ```
+    helm delete --purge ibmcloud-object-storage-plugin
+    ```
+    {: pre}
 
-   3. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
+  3. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
 
 2. Update the {{site.data.keyword.cloud_notm}} Helm repo to retrieve the latest version of all Helm charts in this repo.
    ```
@@ -451,30 +464,30 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
    {: pre}
 
 5. Upgrade the plug-in. </br>
-   **Without Tiller**:
-   ```
-   helm ibmc template ibm-charts/ibm-object-storage-plugin --update
-   ```
-   {: pre}
+  **Without Tiller**:
+  ```
+  helm ibmc template ibm-charts/ibm-object-storage-plugin --update
+  ```
+  {: pre}
 
-   **With Tiller**:
-   1. Find the installation name of your Helm chart.
-      ```
-      helm ls | grep ibm-object-storage-plugin
-      ```
-      {: pre}
+  **With Tiller**:
+  1. Find the installation name of your Helm chart.
+    ```
+    helm ls | grep ibm-object-storage-plugin
+    ```
+    {: pre}
 
-      Example output:
-      ```
-      <helm_chart_name> 	1       	Mon Sep 18 15:31:40 2017	DEPLOYED	ibm-object-storage-plugin-1.0.5	default
-      ```
-      {: screen}
+    Example output:
+    ```
+    <helm_chart_name> 	1       	Mon Sep 18 15:31:40 2017	DEPLOYED	ibm-object-storage-plugin-1.0.5	default
+    ```
+    {: screen}
 
-   2. Upgrade the {{site.data.keyword.cos_full_notm}} Helm chart to the latest version.
-      ```   
-      helm ibmc upgrade <helm_chart_name> ibm-charts/ibm-object-storage-plugin --force --recreate-pods -f
-      ```
-      {: pre}
+  2. Upgrade the {{site.data.keyword.cos_full_notm}} Helm chart to the latest version.
+    ```   
+    helm ibmc upgrade <helm_chart_name> ibm-charts/ibm-object-storage-plugin --force --recreate-pods -f
+    ```
+    {: pre}
 
 6. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded.  
    ```
@@ -516,30 +529,30 @@ Before you begin:
 To remove the plug-in:
 
 1. Remove the plug-in from your cluster. </br>
-   **With Tiller**:
-   1. Find the installation name of your Helm chart.
-      ```
-      helm ls | grep object-storage-plugin
-      ```
-      {: pre}
+  **With Tiller**:
+  1. Find the installation name of your Helm chart.
+    ```
+    helm ls | grep object-storage-plugin
+    ```
+    {: pre}
 
-      Example output:
-      ```
-      <helm_chart_name> 	1       	Mon Sep 18 15:31:40 2017	DEPLOYED	ibmcloud-object-storage-plugin-1.0.0	default
-      ```
-      {: screen}
+    Example output:
+    ```
+    <helm_chart_name> 	1       	Mon Sep 18 15:31:40 2017	DEPLOYED	ibmcloud-object-storage-plugin-1.0.0	default
+    ```
+    {: screen}
 
-   2. Delete the {{site.data.keyword.cos_full_notm}} plug-in by removing the Helm chart.
-      ```
-      helm delete --purge <helm_chart_name>
-      ```
-      {: pre}
+  2. Delete the {{site.data.keyword.cos_full_notm}} plug-in by removing the Helm chart.
+    ```
+    helm delete --purge <helm_chart_name>
+    ```
+    {: pre}
 
-   **Without Tiller**:
-   ```
-   helm ibmc template ibm-charts/ibm-object-storage-plugin --delete
-   ```
-   {: pre}
+  **Without Tiller**:
+  ```
+  helm ibmc template ibm-charts/ibm-object-storage-plugin --delete
+  ```
+  {: pre}
 
 2. Verify that the {{site.data.keyword.cos_full_notm}} pods are removed.
    ```
@@ -558,34 +571,34 @@ To remove the plug-in:
    The removal of the storage classes is successful if no storage classes are displayed in your CLI output.
 
 4. If you use OS X or a Linux distribution, remove the `ibmc` Helm plug-in. If you use Windows, this step is not required.
-   1. Remove the `ibmc` plug-in.
-      ```
-      rm -rf ~/.helm/plugins/helm-ibmc
-      ```
-      {: pre}
+  1. Remove the `ibmc` plug-in.
+    ```
+    rm -rf ~/.helm/plugins/helm-ibmc
+    ```
+    {: pre}
 
-   2. Verify that the `ibmc` plug-in is removed.
-      ```
-      helm plugin list
-      ```
-      {: pre}
+  2. Verify that the `ibmc` plug-in is removed.
+    ```
+    helm plugin list
+    ```
+    {: pre}
 
-      Example output:
-     ```
-     NAME	VERSION	DESCRIPTION
-     ```
-     {: screen}
+    Example output:
+    ```
+    NAME	VERSION	DESCRIPTION
+    ```
+    {: screen}
 
-     The `ibmc` plug-in is removed successfully if the `ibmc` plug-in is not listed in your CLI output.
+    The `ibmc` plug-in is removed successfully if the `ibmc` plug-in is not listed in your CLI output.
 
 
 ## Deciding on the object storage configuration
 {: #configure_cos}
 
-{{site.data.keyword.containerlong_notm}} provides pre-defined storage classes that you can use to create buckets with a specific configuration.
+Red Hat OpenShift on IBM Cloud provides pre-defined storage classes that you can use to create buckets with a specific configuration.
 {: shortdesc}
 
-1. List available storage classes in {{site.data.keyword.containerlong_notm}}. 
+1. List available storage classes in Red Hat OpenShift on IBM Cloud. 
    ```
    oc get storageclasses | grep s3
    ```
@@ -901,32 +914,32 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     </tbody></table>
 
 5.  Create the deployment.
-     ```
-     oc apply -f <local_yaml_path>
-     ```
-     {: pre}
+    ```
+    oc apply -f <local_yaml_path>
+    ```
+    {: pre}
 
 6.  Verify that the PV is successfully mounted.
 
-     ```
-     oc describe deployment <deployment_name>
-     ```
-     {: pre}
+    ```
+    oc describe deployment <deployment_name>
+    ```
+    {: pre}
 
-     The mount point is in the **Volume Mounts** field and the volume is in the **Volumes** field.
+    The mount point is in the **Volume Mounts** field and the volume is in the **Volumes** field.
 
-     ```
-      Volume Mounts:
-           /var/run/secrets/kubernetes.io/serviceaccount from default-token-tqp61 (ro)
-           /volumemount from myvol (rw)
-     ...
-     Volumes:
-       myvol:
-         Type:	PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-         ClaimName:	mypvc
-         ReadOnly:	false
-     ```
-     {: screen}
+    ```
+    Volume Mounts:
+          /var/run/secrets/kubernetes.io/serviceaccount from default-token-tqp61 (ro)
+          /volumemount from myvol (rw)
+    ...
+    Volumes:
+      myvol:
+        Type:	PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+        ClaimName:	mypvc
+        ReadOnly:	false
+    ```
+    {: screen}
 
 7. Verify that you can write data to your {{site.data.keyword.cos_full_notm}} service instance.
    1. Log in to the pod that mounts your PV.

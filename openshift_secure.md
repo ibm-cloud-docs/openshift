@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-10-30"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -83,7 +83,7 @@ The following image shows the default cluster security settings that address aut
     <tr>
       <td>Fully managed and dedicated OpenShift master</td>
       <td>Every cluster in Red Hat OpenShift on IBM Cloud is controlled by a dedicated OpenShift master that is managed by IBM in an IBM-owned {{site.data.keyword.cloud_notm}} account. The OpenShift master is set up with the following dedicated components that are not shared with other IBM customers.
-        <ul><li><strong>etcd data store:</strong> Stores all Kubernetes resources of a cluster, such as `Services`, `Deployments`, and `Pods`. Kubernetes `ConfigMaps` and `Secrets` are app data that is stored as key value pairs so that they can be used by an app that runs in a pod. Data in etcd is stored on the local disk of the OpenShift master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your OpenShift master by [enabling {{site.data.keyword.keymanagementservicelong_notm}} encryption](/docs/containers?topic=containers-encryption#keyprotect) for your cluster. When etcd data is sent to a pod, data is encrypted via TLS to ensure data protection and integrity.</li>
+        <ul><li><strong>etcd data store:</strong> Stores all Kubernetes resources of a cluster, such as `Services`, `Deployments`, and `Pods`. Kubernetes `ConfigMaps` and `Secrets` are app data that is stored as key value pairs so that they can be used by an app that runs in a pod. Data in etcd is stored on the local disk of the OpenShift master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your OpenShift master by [enabling {{site.data.keyword.keymanagementservicelong_notm}} encryption](/docs/openshift?topic=openshift-encryption#keyprotect) for your cluster. When etcd data is sent to a pod, data is encrypted via TLS to ensure data protection and integrity.</li>
           <li><strong>openshift-api:</strong> Serves as the main entry point for all cluster management requests from the worker node to the OpenShift master. The API server validates and processes requests that change the state of cluster resources, such as pods or services, and stores this state in the etcd data store.</li>
           
           <li><strong>openshift-controller:</strong> Watches for newly created pods and decides where to deploy them based on capacity, performance needs, policy constraints, anti-affinity specifications, and workload requirements. If no worker node can be found that matches the requirements, the pod is not deployed in the cluster. The controller also watches the state of cluster resources, such as replica sets. When the state of a resource changes, for example if a pod in a replica set goes down, the controller manager initiates correcting actions to achieve the required state. </li>
@@ -96,7 +96,7 @@ The following image shows the default cluster security settings that address aut
     </tr>
     <tr>
       <td>CIS Kubernetes master benchmark</td>
-      <td>To configure {{site.data.keyword.containerlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes master benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
+      <td>To configure Red Hat OpenShift on IBM Cloud, IBM engineers follow relevant cybersecurity practices from the Kubernetes master benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
     </tr>
     <tr>
       <td>Secure communication via TLS</td>
@@ -194,7 +194,7 @@ The image does not include components that ensure secure end-to-end communicatio
     </tr>
     <tr>
       <td>CIS Kubernetes worker node benchmark</td>
-      <td>To configure {{site.data.keyword.containerlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes worker node benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
+      <td>To configure Red Hat OpenShift on IBM Cloud, IBM engineers follow relevant cybersecurity practices from the Kubernetes worker node benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
     </tr>
     <tr>
   <td>Compute isolation</td>
@@ -237,7 +237,7 @@ To protect your network and limit the range of damage that a user can do when ac
 All containers are protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked with the following exceptions:
 - **NodePort**: The [Kubernetes NodePort range ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport) is opened by default so that you can expose apps with [NodePort services](/docs/containers?topic=containers-nodeport). To block inbound network traffic on NodePorts in your cluster, see [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
 - **IBM monitoring ports**: By default, IBM opens a few ports on your cluster so that network traffic can be monitored by IBM and for IBM to automatically install security updates for the OpenShift master.
-Access from the OpenShift master to the worker node's kubelet is secured by an OpenVPN tunnel. For more information, see the [{{site.data.keyword.containerlong_notm}} architecture](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology).
+Access from the OpenShift master to the worker node's kubelet is secured by an OpenVPN tunnel. For more information, see the [Red Hat OpenShift on IBM Cloud architecture](/docs/openshift?topic=openshift-openshift-service-arch).
 
 **What is network segmentation and how can I set it up for a cluster?** </br>
 Network segmentation describes the approach to divide a network into multiple subnetworks. You can group apps and related data to be accessed by a specific group in your organization. Apps that run in one subnetwork cannot see or access apps in another subnetwork. Network segmentation also limits the access that is provided to an insider or third-party software and can limit the range of malicious activities.   
@@ -266,7 +266,7 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 {: caption="Private services and worker node options" caption-side="top"}
 
 **What if I want to connect my cluster to an on-prem data center?**</br>
-To connect your worker nodes and apps to an on-prem data center, you can configure a [VPN IPSec endpoint with a strongSwan service, a Virtual Router Appliance, or with a Fortigate Security Appliance](/docs/containers?topic=containers-vpn#vpn).
+To connect your worker nodes and apps to an on-prem data center, you can configure a [VPN IPSec endpoint with a strongSwan service, a Virtual Router Appliance, or with a Fortigate Security Appliance](/docs/openshift?topic=openshift-vpn#vpn).
 
 ### Expose apps with routes
 {: #expose-apps-with-routes}
@@ -292,8 +292,8 @@ You can use network load balancer (NLB) and Ingress application load balancer (A
 
 **How can I do TLS termination with LoadBalancer and Ingress services?** </br>
 The Ingress service offers TLS termination at two points in the traffic flow:
-* [Decrypt package upon arrival](/docs/containers?topic=containers-ingress#public_inside_2): By default, the Ingress ALB load balances HTTP network traffic to the apps in your cluster. To also load balance incoming HTTPS connections, you can configure the ALB to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster. If you use the IBM-provided Ingress subdomain, you can use the IBM-provided TLS certificate. If you use a custom domain, you can use your own TLS certificate to manage TLS termination.
-* [Re-encrypt package before you forward it to upstream apps](/docs/containers?topic=containers-ingress_annotation#ssl-services): The ALB decrypts HTTPS requests before forwarding traffic to your apps. If you have apps that require HTTPS and need traffic to be encrypted before it is forwarded to those upstream apps, you can use the `ssl-services` annotation. If your upstream apps can handle TLS, you can optionally provide a certificate that is contained in a one-way or mutual-authentication TLS secret.
+* [Decrypt package upon arrival](/docs/openshift?topic=openshift-ingress#public_inside_2): By default, the Ingress ALB load balances HTTP network traffic to the apps in your cluster. To also load balance incoming HTTPS connections, you can configure the ALB to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster. If you use the IBM-provided Ingress subdomain, you can use the IBM-provided TLS certificate. If you use a custom domain, you can use your own TLS certificate to manage TLS termination.
+* [Re-encrypt package before you forward it to upstream apps](/docs/openshift?topic=openshift-ingress_annotation#ssl-services): The ALB decrypts HTTPS requests before forwarding traffic to your apps. If you have apps that require HTTPS and need traffic to be encrypted before it is forwarded to those upstream apps, you can use the `ssl-services` annotation. If your upstream apps can handle TLS, you can optionally provide a certificate that is contained in a one-way or mutual-authentication TLS secret.
 
 To secure the service-to-service communication, you can use [Istio's mutual TLS authentication ![External link icon](../icons/launch-glyph.svg "External link icon")](https://istio.io/docs/concepts/security/#mutual-tls-authentication). Istio is an open source service that gives developers a way to connect, secure, manage, and monitor a network of microservices, also known a service mesh, on cloud orchestration platforms like Kubernetes.
 
@@ -364,7 +364,7 @@ By default, Red Hat OpenShift on IBM Cloud provides many features for your clust
 
 4.  **Network insights with Security Advisor (beta)**: With {{site.data.keyword.Bluemix_notm}} Security Advisor, you can centralize security insights from {{site.data.keyword.Bluemix_notm}} services such as Vulnerability Advisor and {{site.data.keyword.cloudcerts_short}}. When you enable Security Advisor in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [Network Analytics](/docs/services/security-advisor?topic=security-advisor-setup-network#setup-network). To install, see [Setting up monitoring of suspicious clients and server IP addresses for a Kubernetes cluster](/docs/services/security-advisor?topic=security-advisor-setup-network#setup-network).
 
-5.  **{{site.data.keyword.cloudcerts_long_notm}}**: If you want to [expose your app by using a custom domain with TLS](/docs/containers?topic=containers-ingress#ingress_expose_public), you can store your TLS certificate in {{site.data.keyword.cloudcerts_short}}. Expired or about-to-expire certificates can also be reported in your {{site.data.keyword.security-advisor_short}} dashboard. For more information, see [Getting started with {{site.data.keyword.cloudcerts_short}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started#getting-started).
+5.  **{{site.data.keyword.cloudcerts_long_notm}}**: If you want to [expose your app by using a custom domain with TLS](/docs/openshift?topic=openshift-ingress#ingress_expose_public), you can store your TLS certificate in {{site.data.keyword.cloudcerts_short}}. Expired or about-to-expire certificates can also be reported in your {{site.data.keyword.security-advisor_short}} dashboard. For more information, see [Getting started with {{site.data.keyword.cloudcerts_short}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started#getting-started).
 
 <br />
 
