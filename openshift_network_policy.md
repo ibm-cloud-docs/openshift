@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-23"
+lastupdated: "2019-11-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -70,8 +70,12 @@ Review the following default Calico host policies that are automatically applied
   <tbody>
     <tr>
       <td><code>allow-all-outbound</code></td>
-      <td>Allows all outbound traffic.</td>
+      <td>Allows all outbound traffic on the public network.</td>
     </tr>
+      <tr>
+        <td><code>allow-all-private-default</code></td>
+        <td>In version 1.16 and later clusters only: Allows all inbound and outbound traffic on the private network. **Note**: Before you update your cluster to Kubernetes version 1.16, see [this topic](/docs/containers?topic=containers-cs_versions#116_networkpolicies) for information about updating Calico private host endpoints and network policies.</td>
+      </tr>
     <tr>
       <td><code>allow-bigfix-port</code></td>
       <td>Allows incoming traffic on port 52311 to the BigFix app to allow necessary worker node updates.</td>
@@ -325,7 +329,7 @@ To create a pre-DNAT policy:
 
 1. Define a Calico pre-DNAT network policy for ingress (inbound traffic) access to Kubernetes services.
     * Use [Calico v3 policy syntax ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy).
-    * If you manage traffic to an [NLB 2.0](/docs/containers?topic=containers-loadbalancer-about#planning_ipvs), you must include the `applyOnForward: true` and `doNotTrack: true` fields to the `spec` section of the policy.
+    * If you manage traffic to an [NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs), you must include the `applyOnForward: true` and `doNotTrack: true` fields to the `spec` section of the policy.
 
         Example resource that blocks all node ports:
 
@@ -543,6 +547,7 @@ To isolate your cluster on the private network by using Calico policies:
   calicoctl apply -f allow-icmp-private.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f allow-private-service-endpoint.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f allow-sys-mgmt-private.yaml --config=<filepath>/calicoctl.cfg
+  calicoctl apply -f deny-all-private-default.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f generic-privatehostendpoint.yaml --config=<filepath>/calicoctl.cfg
   ```
   {: pre}

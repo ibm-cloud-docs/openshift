@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-01"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -35,7 +35,7 @@ A router is deployed by default to your cluster and functions as the ingress poi
 The route hostname for a service is formatted like `<service_name>-<namespace>.<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. Note that this hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster. Your route does not use the Ingress subdomain, but instead uses the router subdomain. You can find the router subdomain for your cluster by running `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`.
 {: note}
 
-Not sure whether to use OpenShift routes or Ingress ALBs? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-openshift_routes#routes-vs-ingress).
+Not sure whether to use OpenShift routes or Ingress ALBs? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-network_planning#routes-vs-ingress).
 {: tip}
 
 ## Setting up routes for your apps
