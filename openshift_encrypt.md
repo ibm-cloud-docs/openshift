@@ -36,6 +36,7 @@ You can create sensitive data on different levels in your cluster that each requ
 
 For more information about securing your cluster and personal information, see [Security for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-security#security) and [Storing personal information](/docs/openshift?topic=openshift-security#pi).
 
+
 ## Overview of cluster encryption
 {: #encrypt_ov}
 
