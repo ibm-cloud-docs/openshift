@@ -68,8 +68,7 @@ Use the release notes to learn about the latest changes to the {{product_name_tm
 </tr>
 <tr>
 <td>28 October 2019</td>
-<td><ul>
-<li><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-changelog#11312_15409), [1.12.10_1570](/docs/containers?topic=containers-changelog#11210_1570), and OpenShift [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1528).</li></td>
+<td><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-changelog#11312_15409), [1.12.10_1570](/docs/containers?topic=containers-changelog#11210_1570), and OpenShift [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1528).</td>
 </tr><tr>
 <td>24 October 2019</td>
   <td><ul>
@@ -90,7 +89,7 @@ Use the release notes to learn about the latest changes to the {{product_name_tm
 </tr>
 <tr>
   <td>17 October 2019</td>
-  <td><ul><li><strong>New! Cluster autoscaler</strong>: The cluster autoscaler is available for [private network-only clusters](/docs/openshift?topic=openshift-ca#ca_private_cluster). To get started, [update to the latest Helm chart version](/docs/openshift?topic=openshift-ca#ca_helm_up).</li></ul></td>
+  <td><strong>New! Cluster autoscaler</strong>: The cluster autoscaler is available for [private network-only clusters](/docs/openshift?topic=openshift-ca#ca_private_cluster). To get started, [update to the latest Helm chart version](/docs/openshift?topic=openshift-ca#ca_helm_up).</td>
 </tr>
 <tr>
   <td>14 October 2019</td>
@@ -252,14 +251,13 @@ Use the release notes to learn about the latest changes to the {{product_name_tm
   <td>26 August 2019</td>
   <td><ul>
   <li><strong>Cluster autoscaler</strong>: With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/openshift?topic=openshift-ca#ca_helm) instead of modifying the config map after installation.</li>
-    <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 524 and `ingress-auth` image to build 337](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-    <li><strong>New! Seoul, Korea `seo01` single zone location for OpenShift clusters</strong>: For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li></ul></td>
+  <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 524 and `ingress-auth` image to build 337](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
+  <li><strong>New! Seoul, Korea `seo01` single zone location for OpenShift clusters</strong>: For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li></ul></td>
 </tr>
 <tr>
   <td>23 August 2019</td>
-  <td><ul>
-  <li><strong>New! Single zone locations for OpenShift clusters</strong>: You can create OpenShift clusters in Toronto, Canada `tor01` and Singapore `sng01` single zone locations. For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li>
-  </ul></td>
+  <td>
+  <strong>New! Single zone locations for OpenShift clusters</strong>: You can create OpenShift clusters in Toronto, Canada `tor01` and Singapore `sng01` single zone locations. For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</td>
 </tr>
 <tr>
   <td>20 August 2019</td>
@@ -343,11 +341,10 @@ Use the release notes to learn about the latest changes to the {{product_name_tm
 </tr>
 <tr>
   <td>08 July 2019</td>
-  <td><ul>
-  <li><strong>App networking</strong>: You can now find information about app networking with NLBs and Ingress ALBs in the following pages:
+  <td><strong>App networking</strong>: You can now find information about app networking with NLBs and Ingress ALBs in the following pages:
     <ul><li>[Basic and DSR load balancing with network load balancers (NLB)](/docs/containers?topic=containers-cs_sitemap#sitemap-nlb)</li>
     <li>[HTTPS load balancing with Ingress application load balancers (ALB)](/docs/containers?topic=containers-cs_sitemap#sitemap-ingress)</li></ul>
-  </li></ul>
+  
   </td>
 </tr>
 <tr>
@@ -387,8 +384,8 @@ Use the release notes to learn about the latest changes to the {{product_name_tm
   <td>21 June 2019</td>
   <td><ul>
   <li><strong>Accessing OpenShift clusters</strong>: Added steps for [automating access to an OpenShift cluster by using an OpenShift login token](/docs/openshift?topic=openshift-openshift-cli#openshift_cluster_login).</li>
-  <li><strong>Troubleshooting OpenShift clusters</strong>: Added a [troubleshooting section](/docs/openshift?topic=openshift-openshift_troubleshoot) to the Creating a Red Hat OpenShift on IBM Cloud cluster tutorial.</li>
-  </ul></td>
+  <li><strong>Troubleshooting OpenShift clusters</strong>: Added a [troubleshooting section](/docs/openshift?topic=openshift-openshift_troubleshoot) to the Creating a Red Hat OpenShift on IBM Cloud cluster tutorial.</li></ul>
+  </td>
 </tr>
 <tr>
   <td>18 June 2019</td>
