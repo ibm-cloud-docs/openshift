@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-04"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -223,7 +223,7 @@ To add a zone with worker nodes to your worker pool:
   Ingress Secret:                 mycluster
   Workers:                        6
   Worker Zones:                   dal10, dal12
-  Version:                        1.11.3_1524
+  Version:                        1.14.8_1524
   Owner:                          owner@email.com
   Resource Group ID:              a8a12accd63b437bbd6d58fb6a462ca7
   Resource Group Name:            Default

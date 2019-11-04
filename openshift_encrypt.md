@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2019-11-04"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -104,8 +104,7 @@ Before you enable a key management service (KMS) provider in your cluster, creat
 
     Need to set an expiration date to comply with internal security policies? [Create the root key by using the API](/docs/services/key-protect?topic=key-protect-create-root-keys#create-root-key-api) and include the `expirationDate` parameter. **Important**: Before your root key expires, you must repeat these steps to update your cluster to use a new root key. Otherwise, you cannot decrypt your secrets.
     {: tip}
-3.  Make sure that your cluster environment is set up to use KMS encryption.
-    * Check that your cluster runs Kubernetes version 1.11.3_1521 or later by running `ibmcloud oc cluster get -c <cluster_name_or_ID>` and checking the **Version** field.
+3.  Make sure that you have the correct permissions to enable KMS in your cluster.
     * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
     * Make sure that the API key that is set for the region that your cluster is in is authorized to use the KMS provider. For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service roles for [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-manage-access). To check the API key owner whose credentials are stored for the region, run `ibmcloud oc api-key info -c <cluster_name_or_ID>`.
 4.  Enable KMS encryption through the [CLI](#kms_cli) or [console](#kms_ui).
