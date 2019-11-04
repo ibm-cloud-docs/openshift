@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2019-11-04"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -29,7 +29,7 @@ subcollection: openshift
 Use the release notes to learn about the latest changes to the {{product_name_tm}} documentation that are grouped by month.
 {:shortdesc}
 
-## November 2019
+## November 2019 
 {: #nov19}
 
 <table summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three.">
