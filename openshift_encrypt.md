@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2019-11-04"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -28,13 +28,14 @@ subcollection: openshift
 {: #encryption}
 
 Protect sensitive cluster information to ensure data integrity and to prevent your data from being exposed to unauthorized users.
-{: shortdesc}
+{: shortdesc} 
 
 You can create sensitive data on different levels in your cluster that each require appropriate protection.
 - **Cluster-level:** Cluster configuration data is stored in the etcd component of your OpenShift master. Data in etcd is stored on the local disk of the OpenShift master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your OpenShift master by [enabling a key management service provider](#keyprotect) for your cluster.
 - **App-level:** When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/secret/), such as an `imagePullSecret` for registry credentials. You can also [encrypt data in Kubernetes secrets](#keyprotect) to prevent unauthorized users from accessing sensitive app information.
 
 For more information about securing your cluster and personal information, see [Security for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-security#security) and [Storing personal information](/docs/openshift?topic=openshift-security#pi).
+
 
 ## Overview of cluster encryption
 {: #encrypt_ov}
@@ -103,8 +104,7 @@ Before you enable a key management service (KMS) provider in your cluster, creat
 
     Need to set an expiration date to comply with internal security policies? [Create the root key by using the API](/docs/services/key-protect?topic=key-protect-create-root-keys#create-root-key-api) and include the `expirationDate` parameter. **Important**: Before your root key expires, you must repeat these steps to update your cluster to use a new root key. Otherwise, you cannot decrypt your secrets.
     {: tip}
-3.  Make sure that your cluster environment is set up to use KMS encryption.
-    * Check that your cluster runs Kubernetes version 1.11.3_1521 or later by running `ibmcloud oc cluster get -c <cluster_name_or_ID>` and checking the **Version** field.
+3.  Make sure that you have the correct permissions to enable KMS in your cluster.
     * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
     * Make sure that the API key that is set for the region that your cluster is in is authorized to use the KMS provider. For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service roles for [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-manage-access). To check the API key owner whose credentials are stored for the region, run `ibmcloud oc api-key info -c <cluster_name_or_ID>`.
 4.  Enable KMS encryption through the [CLI](#kms_cli) or [console](#kms_ui).
