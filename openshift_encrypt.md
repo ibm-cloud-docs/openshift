@@ -28,7 +28,7 @@ subcollection: openshift
 {: #encryption}
 
 Protect sensitive cluster information to ensure data integrity and to prevent your data from being exposed to unauthorized users.
-{: shortdesc}
+{: shortdesc} 
 
 You can create sensitive data on different levels in your cluster that each require appropriate protection.
 - **Cluster-level:** Cluster configuration data is stored in the etcd component of your OpenShift master. Data in etcd is stored on the local disk of the OpenShift master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your OpenShift master by [enabling a key management service provider](#keyprotect) for your cluster.
