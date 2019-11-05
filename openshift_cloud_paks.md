@@ -38,7 +38,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | Area | Description |
 | ---- | ------------ |
 | Use cases | <ul><li>Run existing apps in traditional environments such as {{site.data.keyword.appserver_short}}.</li><li>Modernize existing apps to newer runtimes at your own pace.</li><li>Build new, cloud-native apps by using portable, open source software.</li></ul>  |
-| [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-data#about){: external} | For included components, require cluster size, and installation. |
+| [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-applications#about){: external} | For included components, require cluster size, and installation. |
 | [Documentation](/docs/cloud-pak-applications?topic=cloud-pak-applications-getting-started){: external} | For more information such as post-installation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
@@ -50,7 +50,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | Area | Description |
 | ---- | ------------ |
 | Use cases | <ul><li>Set up an end-to-end platform to collect, organize, and analyze your data.</li><li>Create interactive data visualizations and analyze information for insights across data sets, without needing to code.</li><li>Operationalize your data with AI and a suite of governance tools to make sure that your data is curated, useful, trusted, and ready for analysis.</li></ul> |
-| [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-applications#about){: external} | For included components, require cluster size, and installation. |
+| [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-data#about){: external} | For included components, require cluster size, and installation. |
 | [Documentation](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ){: external} | For more information such as post-installation tasks and pricing. | |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
