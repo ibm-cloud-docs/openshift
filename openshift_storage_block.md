@@ -1564,13 +1564,13 @@ The following examples create a storage class that provisions block storage with
 
 
 
-# Removing persistent storage from a cluster
+## Removing persistent storage from a cluster
 {: #cleanup}
 
 When you set up persistent storage in your cluster, you have three main components: the Kubernetes persistent volume claim (PVC) that requests storage, the Kubernetes persistent volume (PV) that is mounted to a pod and described in the PVC, and the IBM Cloud infrastructure instance, such as classic file or block storage. Depending on how you created your storage, you might need to delete all three components separately.
 {:shortdesc}
 
-## Understanding your storage removal options
+### Understanding your storage removal options
 {: #storage_delete_options}
 
 Removing persistent storage from your {{site.data.keyword.cloud_notm}} account varies depending on how you provisioned the storage and what components you already removed.
@@ -1606,7 +1606,7 @@ When you clean up persistent storage, you delete all the data that is stored in 
 After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
 
 
-## Cleaning up persistent storage
+### Cleaning up persistent storage
 {: #storage_remove}
 
 Remove the PVC, PV, and the storage instance from your {{site.data.keyword.cloud_notm}} account to avoid further charges for your persistent storage.
