@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -25,6 +25,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
+{:external: target="_blank" .external}
 
 # Troubleshooting OpenShift clusters
 {: #openshift_troubleshoot}
@@ -132,6 +133,8 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     {: pre}
 
 <br />
+
+
 
 
 ## OpenVPN server error due to ingress IP address for NLB
@@ -290,3 +293,5 @@ By default, the Docker registry is available internally within the cluster. You 
 
 {: tsResolve}
 Create a route for the `docker-registry` service in the `default` project. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-openshift-images#route_internal_registry).
+
+
