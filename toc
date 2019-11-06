@@ -76,6 +76,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_images.md
         openshift_app.md
         openshift_app_networking.md
+        openshift_nodeport.md
 
     openshift_routes.md
 
