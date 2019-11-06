@@ -57,7 +57,7 @@ Review different ways to get help and support for your Red Hat OpenShift on IBM 
 
 **Reviewing issues and status**<br>
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status).
-2. Filter for the **Kubernetes Cluster** component.
+2. Filter for the **Kubernetes Service** component.
 
 **Feedback and questions**<br>
 1. Post in the {{site.data.keyword.containerlong_notm}} Slack.

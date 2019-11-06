@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -252,7 +252,7 @@ The following table shows the Kubernetes resource permissions that are granted b
   </tr>
     <tr>
     <td>Any service role</td>
-    <td>**OpenShift clusters only**: All users of an OpenShift cluster are given the `basic-users` and `self-provisioners` cluster roles as applied by the `basic-users` and `self-provisioners` cluster role bindings.</td>
+    <td>All users of an OpenShift cluster are given the `basic-users` and `self-provisioners` cluster roles as applied by the `basic-users` and `self-provisioners` cluster role bindings.</td>
     <td><ul>
       <li>Get basic information about projects that the user has access to.</li>
       <li>Create authorized resources in the projects that the user has access to.</li>

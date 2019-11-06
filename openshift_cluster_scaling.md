@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-31"
+lastupdated: "2019-11-06"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -28,7 +28,7 @@ subcollection: openshift
 # Scaling clusters
 {: #ca}
 
-With the {{site.data.keyword.containerlong_notm}} `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
+With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
 {: shortdesc}
 
 Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-app#app_scaling).
@@ -201,14 +201,14 @@ Further, if you do not disable the worker pools before you uninstall the `ibm-ik
 ## Deploying the cluster autoscaler Helm chart to your cluster
 {: #ca_helm}
 
-Install the {{site.data.keyword.containerlong_notm}} cluster autoscaler plug-in with a Helm chart to autoscale worker pools in your cluster.
+Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a Helm chart to autoscale worker pools in your cluster.
 {: shortdesc}
 
 **Before you begin**:
 
 1.  [Install the required CLI and plug-ins](/docs/cli?topic=cloud-cli-getting-started):
     *  {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`)
-    *  {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`)
+    *  {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc` alias for OpenShift clusters)
     *  {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
     *  Kubernetes (`kubectl`)
     *  Helm (`helm`)
@@ -558,7 +558,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
     <tbody>
     <tr>
     <td>`api_route` parameter</td>
-    <td>Set the [{{site.data.keyword.containerlong_notm}} API endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api) for the region that your cluster is in.</td>
+    <td>Set the [Red Hat OpenShift on IBM Cloud API endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api) for the region that your cluster is in.</td>
     <td>No default; uses the targeted region that your cluster is in.</td>
     </tr>
     <tr>
@@ -919,7 +919,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     * [Pushing the Helm Tiller image to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-helm#private_local_tiller).
     * [Installing a Helm chart without Tiller](/docs/containers?topic=containers-helm#private_install_without_tiller).
 2.  Temporarily enable public connectivity to your cluster to install, update, or customize the cluster autoscaler.
-    * If your cluster is protected from the public network by a firewall, [open the required ports in your firewall](/docs/containers?topic=containers-firewall).
+    * If your cluster is protected from the public network by a firewall, [open the required ports in your firewall](/docs/openshift?topic=openshift-firewall).
     * If your cluster has only the private service endpoint enabled, [enable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
 3.  [Install](#ca_helm), [update](#ca_helm_up), or [configure](#ca_chart_values) the cluster autoscaler Helm chart.
 4.  After you configure the cluster autoscaler, you can close the ports or [disable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
