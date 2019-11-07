@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-07"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -31,12 +31,12 @@ subcollection: openshift
 When you create a standard cluster, {{site.data.keyword.openshiftlong}} automatically provisions a portable public subnet and a portable private subnet.
 {: shortdesc}
 
-* The portable public subnet provides 5 usable IP addresses. 1 portable public IP address is used by the default [public Ingress ALB](/docs/containers?topic=containers-ingress). The remaining 4 portable public IP addresses can be used to expose single apps to the internet by creating public network load balancer services, or NLBs.
+* The portable public subnet provides 5 usable IP addresses. 1 portable public IP address is used by the default [public Ingress ALB](/docs/openshift?topic=openshift-ingress). The remaining 4 portable public IP addresses can be used to expose single apps to the internet by creating public network load balancer services, or NLBs.
 * The portable private subnet provides 5 usable IP addresses. 1 portable private IP address is used by the default [private Ingress ALB](/docs/openshift?topic=openshift-ingress#private_ingress). The remaining 4 portable private IP addresses can be used to expose single apps to a private network by creating private load balancer services, or NLBs.
 
 To make an app accessible through both a portable public and a portable private IP address, you must create both a public NLB and a private NLB. Portable public and private IP addresses are static floating IPs and do not change when a worker node is removed. If the worker node that the NLB IP address is on is removed, a Keepalived daemon that constantly monitors the IP automatically moves the IP to another worker node. You can assign any port to your NLB. The NLB serves as the external entry point for incoming requests for the app. To access the NLB from the internet, you can use the public IP address of your NLB and the assigned port in the format `<IP_address>:<port>`. You can also create DNS entries for NLBs by registering the NLB IP addresses with subdomains.
 
-When you expose an app with an NLB service, your app is automatically made available over the service's NodePorts too. [NodePorts](/docs/containers?topic=containers-nodeport) are accessible on every public and private IP address of every worker node within the cluster. To block traffic to NodePorts while you are using an NLB, see [Controlling inbound traffic to network load balancer (NLB) or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
+When you expose an app with an NLB service, your app is automatically made available over the service's NodePorts too. [NodePorts](/docs/openshift?topic=openshift-nodeport) are accessible on every public and private IP address of every worker node within the cluster. To block traffic to NodePorts while you are using an NLB, see [Controlling inbound traffic to network load balancer (NLB) or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
 
 <br />
 
@@ -74,9 +74,9 @@ The following diagram shows how an NLB 1.0 directs communication from the intern
 
 <img src="images/cs_loadbalancer_planning.png" alt="Expose an app in a single-zone cluster by using an NLB 1.0" width="550" style="width:550px; border-style: none"/>
 
-1. A request to your app uses the public IP address of your NLB and the assigned port on the worker node. Note that if you [create a DNS subdomain](/docs/containers?topic=containers-loadbalancer_hostname) for your NLB, users can access your app through the NLB's subdomain instead. A DNS system service resolves the subdomain to the portable public IP address of the NLB.
+1. A request to your app uses the public IP address of your NLB and the assigned port on the worker node. Note that if you [create a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname) for your NLB, users can access your app through the NLB's subdomain instead. A DNS system service resolves the subdomain to the portable public IP address of the NLB.
 
-2. The NLB receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the NLB routes the requests between the app pods.
+2. The NLB receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the NLB pod runs. If multiple app instances are deployed in the cluster, the NLB routes the requests between the app pods.
 
 3. When the app returns a response packet, it uses the IP address of the worker node where the NLB that forwarded the client request exists. The NLB then sends the response packet to the client.
 
@@ -88,18 +88,18 @@ The following diagram shows how a network load balancer (NLB) 1.0 directs commun
 
 <img src="images/cs_loadbalancer_planning_multizone.png" alt="Use an NLB 1.0 to load balance apps in a multizone cluster" width="600" style="width:600px; border-style: none"/>
 
-1. A request to your app uses the [DNS subdomain](/docs/containers?topic=containers-loadbalancer_hostname) for your NLBs. You can also access the NLB in each zone by using its public IP address and port on the worker node. Note that by default, each NLB 1.0 is set up in one zone only. To achieve high availability, you must deploy an NLB 1.0 in every zone where you have app instances.
+1. A request to your app uses the [DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname) for your NLBs. You can also access the NLB in each zone by using its public IP address and port on the worker node. Note that by default, each NLB 1.0 is set up in one zone only. To achieve high availability, you must deploy an NLB 1.0 in every zone where you have app instances.
 
 2. A DNS system service resolves the subdomain to the portable public IP address of one of the NLBs and its assigned port on the worker node. Requests are handled by the NLBs in various zones in a round-robin cycle.
 
-3. The NLB receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the app pod runs. Each NLB routes requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the NLB routes the requests between the app pods in the zone.
+3. The NLB receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the NLB pod runs. Each NLB routes requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the NLB routes the requests between the app pods in the zone.
 
 4. When the app returns a response packet, it uses the IP address of the worker node where the NLB that forwarded the client request exists. The NLB then sends the response packet to the client.
 
 ## Components and architecture of an NLB 2.0 (beta)
 {: #planning_ipvs}
 
-Network load balancer (NLB) 2.0 capabilities are in beta. To use an NLB 2.0, you must [update your cluster's master and worker nodes](/docs/containers?topic=containers-update) to Kubernetes version 1.12 or later.
+Network load balancer (NLB) 2.0 capabilities are in beta. To use an NLB 2.0, you must [update your cluster's master and worker nodes](/docs/openshift?topic=openshift-update) to Kubernetes version 1.12 or later.
 {: note}
 
 The NLB 2.0 is a Layer 4 load balancer that uses the Linux kernel's IP Virtual Server (IPVS). The NLB 2.0 supports TCP and UDP, runs in front of multiple worker nodes, and uses IP over IP (IPIP) tunneling to distribute traffic that arrives to a single NLB IP address across those worker nodes.
@@ -112,7 +112,7 @@ The following diagram shows how an NLB 2.0 directs communication from the intern
 
 <img src="images/cs_loadbalancer_ipvs_planning.png" alt="Expose an app in Red Hat OpenShift on IBM Cloud by using a version 2.0 NLB" width="700" style="width:700px; border-style: none"/>
 
-1. A client request to your app uses the public IP address of your NLB and the assigned port on the worker node. In this example, the NLB has a virtual IP address of 169.61.23.130 and runs on the worker node that has the 10.73.13.25 private IP address. Note that if you [create a DNS subdomain](/docs/containers?topic=containers-loadbalancer_hostname) for your NLB, users can access your app through the NLB's subdomain instead. A DNS system service resolves the subdomain to the portable public IP address of the NLB.
+1. A client request to your app uses the public IP address of your NLB and the assigned port on the worker node. In this example, the NLB has a virtual IP address of 169.61.23.130 and runs on the worker node that has the 10.73.13.25 private IP address. Note that if you [create a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname) for your NLB, users can access your app through the NLB's subdomain instead. A DNS system service resolves the subdomain to the portable public IP address of the NLB.
 
 2. The NLB encapsulates the client request packet (labeled as "CR" in the image) inside an IPIP packet (labeled as "IPIP"). The client request packet retains the client IP as its source IP address. The IPIP encapsulating packet uses the worker node 10.73.14.25 IP as its source IP address.
 
@@ -130,7 +130,7 @@ The following diagram shows how version 2.0 NLBs in each zone direct traffic fro
 
 <img src="images/cs_loadbalancer_ipvs_multizone.png" alt="Expose an app in Red Hat OpenShift on IBM Cloud by using an NLB 2.0" width="600" style="width:600px; border-style: none"/>
 
-1. A request to your app uses the [DNS subdomain](/docs/containers?topic=containers-loadbalancer_hostname) for your NLBs. You can also access the NLB in each zone by using its public IP address and port on the worker node. Note that by default, each NLB 2.0 is set up in one zone only. To achieve high availability, you must deploy an NLB 2.0 in every zone where you have app instances.
+1. A request to your app uses the [DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname) for your NLBs. You can also access the NLB in each zone by using its public IP address and port on the worker node. Note that by default, each NLB 2.0 is set up in one zone only. To achieve high availability, you must deploy an NLB 2.0 in every zone where you have app instances.
 
 2. A DNS system service resolves the subdomain to the portable public IP address of one of the NLBs and its assigned port on the worker node. In this example, the NLB has a virtual IP address of 169.61.23.130 and runs on the worker node that has the 10.73.13.25 private IP address. Requests are handled by the NLBs in various zones in a round-robin cycle.
 
