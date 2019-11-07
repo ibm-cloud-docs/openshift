@@ -59,6 +59,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_users.md
         openshift_encrypt.md
         openshift_scc.md
+        openshift_pod_priority.md
         openshift_health.md
         openshift_cluster_remove.md
 
