@@ -41,7 +41,8 @@ Use the release notes to learn about the latest changes to the {{product_name_tm
 <tbody>
 <tr>
 <td>07 November 2019</td>
-<td><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.51](/docs/containers?topic=containers-cs_cli_changelog).</td>
+<td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.51](/docs/containers?topic=containers-cs_cli_changelog).</td><li>
+<li><strong>Ingress ALB changelog</strong>: Updated the [ALB `ingress-auth` image to build 345](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul></td>
 </tr>
 <tr>
 <td>01 November 2019</td>
