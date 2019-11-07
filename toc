@@ -9,6 +9,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     About
+        openshift_overview.md
         openshift_why.md
         openshift_tech.md
 
