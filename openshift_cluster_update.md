@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-04"
+lastupdated: "2019-11-07"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -344,16 +344,10 @@ To update flavors:
 3. Create a worker node with the new machine type.
    - **For worker nodes in a worker pool**:
      1. Create a worker pool with the number of worker nodes that you want to replace.
-        * Classic clusters:
-          ```
-          ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
-          ```
-          {: pre}
-        * VPC clusters:
-          ```
-          ibmcloud oc worker-pool create vpc-classic <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --vpc-id <VPC_ID>
-          ```
-          {: pre}
+        ```
+        ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
+        ```
+        {: pre}
 
      2. Verify that the worker pool is created.
         ```
@@ -362,16 +356,10 @@ To update flavors:
         {: pre}
 
      3. Add the zone to your worker pool that you retrieved earlier. When you add a zone, the worker nodes that are defined in your worker pool are provisioned in the zone and considered for future workload scheduling. If you want to spread your worker nodes across multiple zones, choose a [multizone-capable zone](/docs/containers?topic=containers-regions-and-zones#zones).
-       * Classic clusters:
-         ```
-         ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
-         ```
-         {: pre}
-       * VPC clusters:
-         ```
-         ibmcloud oc zone add vpc-classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <vpc_subnet_id>
-         ```
-         {: pre}
+       ```
+       ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+       ```
+       {: pre}
 
    - **Deprecated: For stand-alone worker nodes**:
        ```
