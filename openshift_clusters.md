@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-26"
+lastupdated: "2019-11-06"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -24,7 +24,7 @@ subcollection: openshift
 # Creating OpenShift clusters
 {: #openshift-create-cluster}
 
-Create a {{site.data.keyword.openshiftlong}} cluster in {{site.data.keyword.containerlong_notm}}.
+Create a {{site.data.keyword.openshiftlong}} cluster.
 {: shortdesc}
 
 ## Prerequisites
@@ -42,7 +42,7 @@ To create OpenShift clusters, complete the following prerequisite steps.
 ## Creating a cluster with the console
 {: #openshift_create_cluster_console}
 
-Create a standard OpenShift cluster in the {{site.data.keyword.containerlong_notm}} console.
+Create a standard OpenShift cluster in the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
 Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).

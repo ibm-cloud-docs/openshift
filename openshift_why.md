@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-11-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -24,7 +24,7 @@ subcollection: openshift
 # Why Red Hat OpenShift on IBM Cloud
 {: #why_openshift}
 
-{{site.data.keyword.openshiftlong}} is an extension of {{site.data.keyword.containerlong_notm}}, where IBM manages OpenShift Container Platform for you. You manage both your community Kubernetes and OpenShift clusters with the same {{site.data.keyword.containerlong_notm}} API, CLI, and console for a consistent user experience.
+{{site.data.keyword.openshiftlong}} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.
 {: shortdesc}
 
 Check out the following [videos and product tours ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/demos/collection/Red-Hat-OpenShift-on-IBM-Cloud/?lc=null) to learn more about Red Hat OpenShift on IBM Cloud. 

@@ -76,6 +76,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_images.md
         openshift_app.md
         openshift_app_networking.md
+        openshift_nodeport.md
 
     openshift_routes.md
 
@@ -129,7 +130,7 @@ Red Hat OpenShift on IBM Cloud
 
     openshift_locations.md
     openshift_users_access_ref.md
-    /containers/containers-at_events
+    openshift_at_events.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
@@ -142,9 +143,3 @@ Red Hat OpenShift on IBM Cloud
         openshift_ts.md
         openshift_troubleshoot_storage.md
     {: .navgroup-end}
-
-    openshift_uc_finance.md
-    openshift_uc_retail.md
-    openshift_uc_transport.md
-    openshift_uc_gov.md
-    openshift_uc_health.md

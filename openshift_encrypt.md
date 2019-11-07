@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-04"
+lastupdated: "2019-11-06"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -27,7 +27,7 @@ subcollection: openshift
 # Protecting sensitive information in your cluster
 {: #encryption}
 
-Protect sensitive cluster information to ensure data integrity and to prevent your data from being exposed to unauthorized users.
+Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluster to ensure data integrity and to prevent your data from being exposed to unauthorized users.
 {: shortdesc} 
 
 You can create sensitive data on different levels in your cluster that each require appropriate protection.

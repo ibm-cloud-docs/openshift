@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -25,6 +25,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
+{:external: target="_blank" .external}
 
 # Troubleshooting OpenShift clusters
 {: #openshift_troubleshoot}
@@ -56,7 +57,7 @@ Review different ways to get help and support for your Red Hat OpenShift on IBM 
 
 **Reviewing issues and status**<br>
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status).
-2. Filter for the **Kubernetes Cluster** component.
+2. Filter for the **Kubernetes Service** component.
 
 **Feedback and questions**<br>
 1. Post in the {{site.data.keyword.containerlong_notm}} Slack.
@@ -130,6 +131,46 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     oc delete pod -n kube-system -l app=vpn
     ```
     {: pre}
+
+<br />
+
+
+## Missing the public `containers.appdomain.cloud` subdomain
+{: #roks_ts_subdomain}
+
+{: tsSymptoms}
+When you expose an app through a router subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
+
+{: tsCauses}
+After the cluster is created and enters a **normal** state, the router subdomain networking and load balancing components still take some time to deploy. If you expose your app before the networking components fully provision, or if the components experience an error, your apps can only be exposed internally with the default router's `svc.cluster.local` domain.
+
+When the components fully provision, a public router subdomain is available for your apps, in the format `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
+
+{: tsResolve}
+
+1.  After you create a cluster, wait some time before you expose your apps, even after the cluster enters a **normal** state.
+2.  Check the **Master Status**. If the **Master Status** is not **Ready**, [review its status](/docs/containers?topic=containers-cs_troubleshoot#debug_master) and follow any troubleshooting information to resolve the issue.   
+    ```
+    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ```
+    {: pre}
+3.  Check that your cluster has public connectivity so that the networking components can talk to the master as they deploy.
+    *  In the output of Step 2, check that your cluster has a **Public Service Endpoint URL**. If your cluster does not have a **Public Service Endpoint URL**, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
+    *   Check that at least some of the worker nodes in your cluster have a **Public IP** address. If no worker node does, you must [set up public VLANs for at least one worker pool](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
+        ```
+        ibmcloud oc workers -c <cluster_name_or_ID>
+        ```
+        {: pre}
+4.  In the output of Step 2, check that the **Ingress Subdomain** is available. The Ingress components in your cluster must provision before the router components can be created. If the **Ingress Subdomain** and **Ingress Secret** are not available, see [No Ingress subdomain exists after cluster creation](/docs/containers?topic=containers-cs_troubleshoot_network#ingress_subdomain).
+5.  Check that the **Hostname** of the router subdomain is in the format: `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
+    ```
+    ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
+
+    *  If after two hours of creating the cluster, the router subdomain is not updated, review the **Master Status** of the cluster again, and follow any troubleshooting steps to resolve the issue.
+
+If the troubleshooting steps do not resolve the issue, see [Getting help](#openshift_support).
 
 <br />
 
@@ -290,3 +331,22 @@ By default, the Docker registry is available internally within the cluster. You 
 
 {: tsResolve}
 Create a route for the `docker-registry` service in the `default` project. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-openshift-images#route_internal_registry).
+
+## Time out when pushing to the internal registry
+{: #roks_timeout_docker}
+
+{: tsSymptoms}
+You try to push an image to the [internal registry](/docs/openshift?topic=openshift-openshift-images#openshift_internal_registry), but sporadically you see an error message similar to the following.
+```
+received unexpected HTTP status: 504 Gateway Time-out
+```
+{: screen}
+
+{: tsCauses}
+The default file storage device that provides the storage for the internal registry's images is initially set up with 2 IOPS and 20 GB of storage. When you push larger images, the device might time out because its IOPS is too low to support the image.
+
+{: tsResolve}
+[Change the size and IOPS of the existing file storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration).
+
+When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `docker-registry` pod that uses the `registry-backing` PVC to verify that the volume is resized.
+{: note}

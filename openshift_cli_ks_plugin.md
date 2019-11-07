@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2019-11-07"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -26,7 +26,7 @@ subcollection: openshift
 # Red Hat OpenShift on IBM Cloud CLI
 {: #kubernetes-service-cli}
 
-Refer to these commands to create and manage **both community Kubernetes or OpenShift clusters** in {{site.data.keyword.containerlong}}.
+Refer to these commands to create and manage **both community Kubernetes or OpenShift clusters** in {{site.data.keyword.openshiftlong}}.
 {:shortdesc}
 
 * **Community Kubernetes**: [Install the CLI plug-in](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps), which uses the `ibmcloud ks` alias.
@@ -37,8 +37,7 @@ In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-in
 Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registryshort_notm}} CLI reference](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli). Looking for `kubectl` commands? See the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/).
 {:tip}
 
-
-## Using the beta {{site.data.keyword.containerlong_notm}} plug-in
+## Using the beta plug-in
 {: #cs_beta}
 
 A redesigned version of the {{site.data.keyword.containerlong_notm}} plug-in is available as a beta. The redesigned {{site.data.keyword.containerlong_notm}} plug-in groups commands into categories and changes commands from a hyphenated structure to a spaced structure.
@@ -136,6 +135,9 @@ Check out the following changes between each version of the CLI plug-in:
 
 ## `ibmcloud oc` commands
 {: #map}
+
+The following image depicts the structure and grouping of the `ibmcloud oc` commands.
+{: shortdesc}
 
 ![Image of the structure and groupings of commands in {{site.data.keyword.containerlong_notm}} plug-in](images/cs_cli_ref_imagemap.png)
 
@@ -478,7 +480,7 @@ Create a cluster with worker nodes on classic infrastructure. For free clusters,
 {: shortdesc}
 
 ```
-ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --machine-type FLAVOR --name NAME [--kube-version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt]  [-s]
+ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --machine-type FLAVOR --name NAME [--kube-version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt]  [--skip-advance-permissions-check] [-s]
 ```
 {: pre}
 
@@ -564,28 +566,19 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dd>The number of worker nodes that you want to deploy in your cluster. If you do not specify this option, a cluster with one worker node is created. This value is optional for standard clusters and is not available for free clusters.
 <p class="important">If you create a cluster with only one worker node per zone, you might experience issues with Ingress. For high availability, create a cluster with at least two workers per zone.</br>
 </br>Every worker node is assigned a unique worker node ID and domain name that must not be manually changed after the cluster is created. Changing the ID or domain name prevents the Kubernetes master from managing your cluster.</p></dd>
+
+<dt><code><strong>--disable-disk-encrypt</strong></code></br></dt>
+<dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.</dd>
+
+
+
+<dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
+<dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+
 </dl>
-
-<code><strong>--disable-disk-encrypt</strong></code></br>
-Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.
-{: #pod-subnet}
-
-<code><strong>--pod-subnet <em>SUBNET</em></strong></code></br>
-**Standard clusters that run Kubernetes 1.15 or later**: All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR to provide the private IP addresses for pods.
-<p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pods for eight workers, use <code>/21</code> to have enough pods for 16 workers, and so on.</p>
-<p>The subnet cannot be in the following reserved ranges:
-<ul><li><code>10.0.&#42;.&#42;</code></li>
-<li><code>172.20.&#42;.&#42;</code></li>
-<li><code>192.168.255.&#42;</code></li></ul></p>
-{: #service-subnet}
-
-<code><strong>--service-subnet <em>SUBNET</em></strong></code></br>
-**Standard clusters that run Kubernetes 1.15 or later**: All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.cloud_notm}} Direct Link or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR to provide the private IP addresses for services.
-<p>The subnet must be at least <code>/24</code>, which allows a maximum of 255 services in the cluster, or larger. The subnet cannot be in the following reserved ranges:
-<ul><li><code>10.0.&#42;.&#42;</code></li>
-<li><code>172.20.&#42;.&#42;</code></li>
-<li><code>192.168.255.&#42;</code></li></ul></p>
-
 
 
 <code><strong>-s</strong></code></br>
@@ -917,7 +910,7 @@ Delete a cluster. All worker nodes, apps, and containers are permanently deleted
 {: shortdesc}
 
 ```
-ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [-f] [-s]
+ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [--skip-advance-permissions-check] [-f] [-s]
 ```
 {: pre}
 
@@ -930,6 +923,9 @@ ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [-f] [-s]
 
 <dt><code>--force-delete-storage</code></dt>
 <dd>Deletes the cluster and any persistent storage that the cluster uses. **Attention**: If you include this flag, the data that is stored in the cluster or its associated storage instances cannot be recovered. This value is optional.</dd>
+
+<dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
+<dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before deleting the cluster. Note that if you do not have the correct infrastructure permissions, the cluster deletion might only partially succeed, such as the IBM-managed master being removed but the worker nodes unable to be removed from your infrastructure account. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
 
 <dt><code>-f</code></dt>
 <dd>Use this option to force the removal of a cluster without user prompts. This value is optional.</dd>
@@ -3490,7 +3486,7 @@ ibmcloud oc logging refresh --cluster my_cluster
 ## `nlb-dns` commands
 {: #nlb-dns}
 
-Create and manage subdomains for network load balancer (NLB) IP addresses and health check monitors for subdomains. For more information, see [Registering a load balancer subdomain](/docs/containers?topic=containers-loadbalancer_hostname).
+Create and manage subdomains for network load balancer (NLB) IP addresses and health check monitors for subdomains. For more information, see [Registering a load balancer subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname).
 {: shortdesc}
 
 ### `ibmcloud oc nlb-dns add`

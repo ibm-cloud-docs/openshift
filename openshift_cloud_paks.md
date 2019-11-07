@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-14"
+lastupdated: "2019-11-06"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -26,7 +26,7 @@ subcollection: openshift
 # Adding Cloud Paks
 {: #openshift_cloud_paks}
 
-[IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized, licensed IBM middleware and open source software components that you can use to modernize, move, and build cloud-native business applications in hybrid and multicloud deployments. By running exclusively on OpenShift and Red Hat Enterprise Linux, Cloud Paks are built atop a secure stack and maintain consistency in deployment and behavior across cloud providers. You have greater flexibility to run and manage your workloads securely where you need them: on-premises, off-premises, in a backup provider, and in {{site.data.keyword.cloud_notm}}.
+[IBM Cloud Paks&trade; ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized, licensed IBM middleware and open source software components that you can use to modernize, move, and build cloud-native business applications in hybrid and multicloud deployments. By running exclusively on OpenShift and Red Hat Enterprise Linux, Cloud Paks are built atop a secure stack and maintain consistency in deployment and behavior across cloud providers. You have greater flexibility to run and manage your workloads securely where you need them: on-premises, off-premises, in a backup provider, and in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 ## Overview of Cloud Pak offerings
