@@ -26,7 +26,7 @@ subcollection: openshift
 # Release notes
 {: #iks-release}
 
-Use the release notes to learn about the latest changes to the {{product_name_tm}} documentation that are grouped by month.
+Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
 
 ## November 2019
