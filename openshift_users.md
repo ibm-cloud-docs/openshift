@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-06"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -297,7 +297,7 @@ Be sure that you want to reset the key and understand the impact to your app. Th
 
 **Before you begin**:
 - If the account owner is not setting the API key, [ensure that the user who sets the API key has the correct permissions](#owner_permissions).
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 To set the API key to access the IBM Cloud infrastructure portfolio:
 
@@ -334,7 +334,7 @@ The IBM Cloud infrastructure credentials set by the `ibmcloud oc credential set`
 
 **Before you begin**:
 - If you are not using the account owner's credentials, [ensure that the user whose credentials you want to set for the API key has the correct permissions](#owner_permissions).
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 To set infrastructure account credentials to access the IBM Cloud infrastructure portfolio:
 
@@ -452,7 +452,7 @@ Grant users access to your clusters by assigning {{site.data.keyword.cloud_notm}
 
 - Verify that you're assigned the `cluster-admin` {{site.data.keyword.cloud_notm}} IAM platform role for the {{site.data.keyword.cloud_notm}} account in which you're working.
 - Verify that the user is added to the account. If the user is not, invite the user to your account by running `ibmcloud account user-invite <user@email.com>`.
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 - Decide whether to assign [platform or service access](/docs/openshift?topic=openshift-users#access_policies) roles. The CLI steps vary depending on which access role you want to assign:
   * [Assign platform roles from the CLI](#add_users_cli_platform)
   * [Assign service roles from the CLI](#add_users_cli_service)
@@ -994,7 +994,7 @@ Error from server (Forbidden): pods.metrics.k8s.io is forbidden: User "IAM#mynam
 
 **To aggregate cluster roles**:
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 1.  Create a cluster role YAML file. In the `labels` section, specify the existing cluster role that you want to aggregate permissions to. The following example extends the predefined `admin` cluster role to allow users to run `oc top pods`. For more examples, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
     ```

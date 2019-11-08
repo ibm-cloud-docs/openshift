@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -119,7 +119,7 @@ All subnets that were automatically ordered during cluster creation are immediat
 {: note}
 
 Before you begin:
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 - To reuse user-managed private subnets from a cluster that you no longer need, delete the unneeded cluster.
    ```
    ibmcloud oc cluster rm --cluster <cluster_name_or_ID>
@@ -213,7 +213,7 @@ Before you begin:
 ## Managing existing portable IP addresses
 {: #managing_ips}
 
-By default, 4 portable public and 4 portable private IP addresses can be used to expose single apps to the public or private network by [creating a network load balancer (NLB) service](/docs/containers?topic=containers-loadbalancer). To create an NLB service, you must have at least 1 portable IP address of the correct type available. You can view portable IP addresses that are available or free up a used portable IP address.
+By default, 4 portable public and 4 portable private IP addresses can be used to expose single apps to the public or private network by [creating a network load balancer (NLB) service](/docs/openshift?topic=openshift-loadbalancer). To create an NLB service, you must have at least 1 portable IP address of the correct type available. You can view portable IP addresses that are available or free up a used portable IP address.
 {: shortdesc}
 
 ### Viewing available portable public IP addresses
@@ -231,7 +231,7 @@ To list only portable public IP addresses that are available to create public NL
 
 Before you begin:
 -  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 To list available portable public IP addresses:
 
@@ -292,7 +292,7 @@ You can free up a used portable IP address by deleting the network load balancer
 
 Before you begin:
 -  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 To delete an NLB or disable an ALB:
 
@@ -320,7 +320,7 @@ To delete an NLB or disable an ALB:
 ## Adding portable IP addresses
 {: #adding_ips}
 
-By default, 4 portable public and 4 portable private IP addresses can be used to expose single apps to the public or private network by [creating a network load balancer (NLB) service](/docs/containers?topic=containers-loadbalancer). To create more than 4 public or 4 private NLBs, you can get more portable IP addresses by adding network subnets to the cluster.
+By default, 4 portable public and 4 portable private IP addresses can be used to expose single apps to the public or private network by [creating a network load balancer (NLB) service](/docs/openshift?topic=openshift-loadbalancer). To create more than 4 public or 4 private NLBs, you can get more portable IP addresses by adding network subnets to the cluster.
 {: shortdesc}
 
 When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure to use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of Red Hat OpenShift on IBM Cloud at the same time.
@@ -337,7 +337,7 @@ Portable public IP addresses are charged monthly. If you remove portable public 
 
 Before you begin:
 -  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 To order a subnet:
 
@@ -395,7 +395,7 @@ You can get more portable IPs for NLB services by making an existing subnet in a
 
 Before you begin:
 -  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.Bluemix_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 To make a subnet available to your cluster:
 
@@ -474,9 +474,9 @@ Requirements:
 
 Before you begin:
 - Configure the routing of network traffic into and out of the external subnet.
-- Confirm that you have VPN connectivity between the on-premises data center network gateway and either the private network Virtual Router Appliance or the strongSwan VPN service that runs in your cluster. Alternatively, ensure that you have a DirectLink connection set up between your cluster and the on-premises data center network. For more information, see [Setting up VPN connectivity](/docs/containers?topic=containers-vpn).
+- Confirm that you have VPN connectivity between the on-premises data center network gateway and either the private network Virtual Router Appliance or the strongSwan VPN service that runs in your cluster. Alternatively, ensure that you have a DirectLink connection set up between your cluster and the on-premises data center network. For more information, see [Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn).
 -  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 
 To add a subnet from an on-premises network:
@@ -529,7 +529,7 @@ To add a subnet from an on-premises network:
 
 4. [Enable routing between subnets on the same VLAN](#subnet-routing).
 
-5. Add a [private network load balancer (NLB) service](/docs/containers?topic=containers-loadbalancer) or enable a [private Ingress ALB](/docs/openshift?topic=openshift-ingress#private_ingress) to access your app over the private network. To use a private IP address from the subnet that you added, you must specify an IP address from the subnet CIDR. Otherwise, an IP address is chosen at random from the IBM Cloud infrastructure subnets or user-provided subnets on the private VLAN.
+5. Add a [private network load balancer (NLB) service](/docs/openshift?topic=openshift-loadbalancer) or enable a [private Ingress ALB](/docs/openshift?topic=openshift-ingress#private_ingress) to access your app over the private network. To use a private IP address from the subnet that you added, you must specify an IP address from the subnet CIDR. Otherwise, an IP address is chosen at random from the IBM Cloud infrastructure subnets or user-provided subnets on the private VLAN.
 
 <br />
 

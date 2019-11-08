@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-17"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d
 
@@ -110,14 +110,14 @@ subcollection: openshift
 With {{site.data.keyword.openshiftlong}}, you have many ways to enhance your cluster and app's capabilities with IBM and third-party content such as IBM Cloud Paks&trade;, AI, security, databases, logging, monitoring, and more. Learn about what integrations are available and how to integrate these services with your cluster.
 {: shortdesc}
 
-You can add services to your Red Hat OpenShift on IBM Cloud cluster in various ways, including service binding, Helm charts, and operators. If you want to install open source software apps, make sure that these apps are compatible with your OpenShift cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.
+You can add services to your {{site.data.keyword.openshiftlong_notm}} cluster in various ways, including service binding, Helm charts, and operators. If you want to install open source software apps, make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.
 {: shortdesc}
 
 
 ## Adding IBM Cloud Paks
 {: #oc_cloud_paks}
 
-You can add [IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) to your OpenShift clusters.
+You can add [IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) to your {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
 <div class = "solutionBoxContainer">
@@ -127,7 +127,7 @@ You can add [IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "Ext
                 Adding Cloud Paks
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
-                  </br> <p>Learn more about the different IBM Cloud Paks and how to install them in your to OpenShift clusters.</p></br>
+                  </br> <p>Learn more about the different IBM Cloud Paks and how to install them in your to {{site.data.keyword.openshiftshort}} clusters.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="/images/oc-cloud-paks.png" alt="IBM Cloud Paks icons" />
@@ -149,7 +149,7 @@ To access {{site.data.keyword.cloud_notm}} services in your account, you can cre
 ## Deploying apps with Helm charts
 {: #oc_helm}
 
-[Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. Because OpenShift sets stricter security context constraints the community Kubernetes, you might need to modify your Helm deployment before you install the chart. To install Helm, see the [{{site.data.keyword.containershort_notm}} docs](/docs/containers?topic=containers-helm).
+[Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. Because {{site.data.keyword.openshiftshort}} sets stricter security context constraints the community Kubernetes, you might need to modify your Helm deployment before you install the chart. To install Helm, see the [{{site.data.keyword.containershort_notm}} docs](/docs/containers?topic=containers-helm).
 {: shortdesc}
 
 <br />
@@ -158,7 +158,7 @@ To access {{site.data.keyword.cloud_notm}} services in your account, you can cre
 ## Using Operators
 {: #oc_operators}
 
-Instead of Helm, you might use [Operators ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html) to package, deploy, and update your apps. Operators are available for only OpenShift 4.x versions. In the meantime, you can try out the [experimental {{site.data.keyword.cloud_notm}} Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/seed/olm/blob/master/pocs/openshift-ibmcloud/README.md) and the following tutorial.
+Instead of Helm, you might use [Operators ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html) to package, deploy, and update your apps. Operators are available for only {{site.data.keyword.openshiftshort}} 4.x versions. In the meantime, you can try out the [experimental {{site.data.keyword.cloud_notm}} Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/seed/olm/blob/master/pocs/openshift-ibmcloud/README.md) and the following tutorial.
 {: shortdesc}
 
 <div class = "solutionBoxContainer">
@@ -185,19 +185,19 @@ Instead of Helm, you might use [Operators ![External link icon](../icons/launch-
 ## Available integrations
 {: #openshift_available_integrations}
 
-Learn more about the following {{site.data.keyword.cloud_notm}} and third-party integrations for OpenShift clusters.
+Learn more about the following {{site.data.keyword.cloud_notm}} and third-party integrations for {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
 <dl>
   <dt>{{site.data.keyword.cloud_notm}} platform services</dt>
-  <dd>{{site.data.keyword.cloud_notm}} platform services that support service keys can be integrated by using [service binding](#oc_service_binding). To find an overview of popular {{site.data.keyword.cloud_notm}} services, see [Popular integrations](/docs/containers?topic=containers-supported_integrations#popular_services).</dd>
+  <dd>{{site.data.keyword.cloud_notm}} platform services that support service keys can be integrated by using [service binding](#oc_service_binding).</dd>
 
   <dt>{{site.data.keyword.cloud_notm}} classic infrastructure services</dt>
-  <dd>Your OpenShift cluster is based on fully-integrated {{site.data.keyword.cloud_notm}} classic infrastructure services such as Virtual Servers, Bare Metal Servers, or VLANs. You create and work with these services instances by using the {{site.data.keyword.containerlong_notm}} API, CLI, or console.<br><br>
+  <dd>Your {{site.data.keyword.openshiftshort}} cluster is based on fully-integrated {{site.data.keyword.cloud_notm}} classic infrastructure services such as Virtual Servers, Bare Metal Servers, or VLANs. You create and work with these services instances by using the {{site.data.keyword.containerlong_notm}} API, CLI, or console.<br><br>
   To secure your cluster network or connect to an on-prem data center, you can configure one of the following options:
-    <ul><li>[strongSwan IPSec VPN Service](/docs/containers?topic=containers-vpn#vpn-setup)</li>
+    <ul><li>[strongSwan IPSec VPN Service](/docs/openshift?topic=openshift-vpn#vpn-setup)</li>
     <li>[{{site.data.keyword.BluDirectLink}}](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link)</li>
-    <li>[Virtual Router Appliance (VRA)](/docs/containers?topic=containers-vpn#vyatta)</li>
+    <li>[Virtual Router Appliance (VRA)](/docs/openshift?topic=openshift-vpn#vyatta)</li>
     <li>[Fortigate Security Appliance (FSA)](/docs/services/vmwaresolutions/services?topic=vmware-solutions-fsa_considerations)</li></ul></dd>
 
   <dt>{{site.data.keyword.cloud_notm}} storage</dt>
@@ -207,18 +207,18 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing requests of your scheduled workloads. For more information, see [Scaling clusters](/docs/openshift?topic=openshift-ca).</dd>
 
   <dt>Istio for service mesh</dt>
-  <dd>Unlike for community Kubernetes clusters, <a href="https://www.ibm.com/cloud/istio" target="_blank">Istio <img src="../icons/launch-glyph.svg" alt="External link icon"></a> is not available as a managed add-on for OpenShift clusters. Instead, use the Red Hat OpenShift Service Mesh project. For more information, see [the OpenShift installation docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/servicemesh-install/servicemesh-install.html).</dd>
+  <dd>Unlike for community Kubernetes clusters, <a href="https://www.ibm.com/cloud/istio" target="_blank">Istio <img src="../icons/launch-glyph.svg" alt="External link icon"></a> is not available as a managed add-on for {{site.data.keyword.openshiftshort}} clusters. Instead, use the Red Hat {{site.data.keyword.openshiftshort}} Service Mesh project. For more information, see [the {{site.data.keyword.openshiftshort}} installation docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/servicemesh-install/servicemesh-install.html).</dd>
 
   <dt>Knative for serverless apps</dt>
-  <dd>Unlike for community Kubernetes clusters, <a href="https://github.com/knative/docs" target="_blank">Knative <img src="../icons/launch-glyph.svg" alt="External link icon"></a> is not available as a managed add-on for OpenShift clusters. Instead, try out the Knative on OpenShift developer preview. For more information, see [the OpenShift installation docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/openshift-knative/docs).</dd>
+  <dd>Unlike for community Kubernetes clusters, <a href="https://github.com/knative/docs" target="_blank">Knative <img src="../icons/launch-glyph.svg" alt="External link icon"></a> is not available as a managed add-on for {{site.data.keyword.openshiftshort}} clusters. Instead, try out the Knative on {{site.data.keyword.openshiftshort}} developer preview. For more information, see [the {{site.data.keyword.openshiftshort}} installation docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/openshift-knative/docs).</dd>
 
   <dt>Kubernetes Terminal</dt>
-  <dd>The [Kubernetes Terminal add-on](/docs/containers?topic=containers-cs_cli_install#cli_web) is available for only community Kubernetes cluster, not OpenShift clusters.</dd>
+  <dd>The [Kubernetes Terminal add-on](/docs/openshift?topic=openshift-openshift-cli#cli_web) is available for only community Kubernetes cluster, not {{site.data.keyword.openshiftshort}} clusters.</dd>
 
   <dt>{{site.data.keyword.la_full_notm}}</dt>
   <dd>Add log management capabilities to your cluster by deploying LogDNA as a third-party service to your worker nodes to manage logs from your pod containers. For more information, see the following docs.<ul>
     <li>[About the LogDNA partnership](/docs/containers?topic=containers-service-partners#logdna-partner).</li>
-    <li>[Setting up LogDNA in an OpenShift cluster](/docs/openshift?topic=openshift-openshift_health#openshift_logdna).</li>
+    <li>[Setting up LogDNA in an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_health#openshift_logdna).</li>
     <li>[Tutorial: Managing Kubernetes cluster logs with {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-kube#kube).</li></ul></dd>
 
   <dt>Portworx</dt>
@@ -230,10 +230,10 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dt>{{site.data.keyword.mon_full_notm}}</dt>
   <dd>Gain operational visibility into the performance and health of your apps by deploying Sysdig as a third-party service to your worker nodes to forward metrics to {{site.data.keyword.mon_full}}. For more information, see the following docs.<ul>
     <li>[About the Sysdig partnership](/docs/containers?topic=containers-service-partners#sydig-partner).</li>
-    <li>[Setting up Sysdig in an OpenShift cluster](/docs/openshift?topic=openshift-openshift_health#openshift_sysdig).</li>
+    <li>[Setting up Sysdig in an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_health#openshift_sysdig).</li>
     <li>[Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/services/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster).</li></ul></dd>
 
   <dt>Other third-party integrations</dt>
-  <dd>You can install many other integrations into your OpenShift cluster, such as through the OpenShift catalog, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your OpenShift cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.</dd>
+  <dd>You can install many other integrations into your {{site.data.keyword.openshiftshort}} cluster, such as through the {{site.data.keyword.openshiftshort}} catalog, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.</dd>
 
 </dl>

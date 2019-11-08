@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -36,7 +36,7 @@ If you want to troubleshoot your Ingress or monitor Ingress activity, you can re
 {: shortdesc}
 
 Logs are automatically collected for your Ingress ALBs. To view the ALB logs, choose between two options.
-* [Create a logging configuration for the Ingress service](/docs/containers?topic=containers-health) in your cluster.
+* [Create a logging configuration for the Ingress service](/docs/openshift?topic=openshift-openshift_health) in your cluster.
 * Check the logs from the CLI. **Note**: You must have at least the [**Reader** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `kube-system` namespace.
     1. Get the ID of a pod for an ALB.
         ```
@@ -228,7 +228,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
    {: pre}
 
 4. To view the Ingress ALB logs, choose between two options.
-    * [Create a logging configuration for the Ingress service](/docs/containers?topic=containers-health#logging) in your cluster.
+    * [Create a logging configuration for the Ingress service](/docs/openshift?topic=openshift-openshift_health#oc_logmet_options) in your cluster.
     * Check the logs from the CLI.
         1. Get the ID of a pod for an ALB.
             ```
