@@ -31,7 +31,7 @@ You can use the {{site.data.keyword.openshiftlong}} command line interface (CLI)
 ## Installing the IBM Cloud CLI and plug-ins
 {: #cli_ibmcloud_oc}
 
-See the topic in the [{{site.data.keyword.containerlong_notm}} docs](#cs_cli_install_steps) to install the following CLIs.
+See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps) to install the following CLIs.
 {: shortdesc}
 
 * {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`)
@@ -75,7 +75,7 @@ Using both community Kubernetes and OpenShift clusters? The `oc` CLI comes with 
         rm /usr/local/bin/kubectl
         ```
         {: pre}
-    2.  [Download separate `kubectl` binary files](#kubectl) for your OpenShift and community Kubernetes clusters.<p class="important">The `kubectl` version 1.11 CLI has a bug that yields errors when you use `kubectl` commands to interact with OpenShift-specific resources, such as security context constraints (`kubectl get scc`). If you plan to use `kubectl` instead of `oc` commands, download the `kubectl` version 1.12 CLI instead of the 1.11 CLI. The 1.12 CLI is still within the `+/- 1` skew policy for your 3.11 OpenShift clusters. Note that `oc` does not have this bug, so you can run `oc get scc` without error.</p>
+    2.  [Download separate `kubectl` binary files](/docs/containers?topic=containers-cs_cli_install#kubectl) for your OpenShift and community Kubernetes clusters.<p class="important">The `kubectl` version 1.11 CLI has a bug that yields errors when you use `kubectl` commands to interact with OpenShift-specific resources, such as security context constraints (`kubectl get scc`). If you plan to use `kubectl` instead of `oc` commands, download the `kubectl` version 1.12 CLI instead of the 1.11 CLI. The 1.12 CLI is still within the `+/- 1` skew policy for your 3.11 OpenShift clusters. Note that `oc` does not have this bug, so you can run `oc get scc` without error.</p>
     3.  **Optional**: Set up an alias in your local terminal profile to point to separate binaries that match the version of `kubectl` your cluster needs.
 4.  **Optional**: [Enable autocompletion for `kubectl` commands ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion). The steps vary depending on the shell that you use. You can repeat the steps to enable autocompletion for `oc` commands. For example in bash on Linux, instead of `kubectl completion bash >/etc/bash_completion.d/kubectl`, you can run `oc completion bash >/etc/bash_completion.d/oc_completion`.
 

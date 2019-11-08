@@ -26,7 +26,7 @@ subcollection: openshift
 # Changing service endpoints or VLAN connections for clusters
 {: #cs_network_cluster}
 
-After you initially set up your network when you [create a cluster](/docs/containers?topic=containers-clusters), you can change the service endpoints that your Kubernetes master is accessible through or change the VLAN connections for your worker nodes.
+After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster), you can change the service endpoints that your Kubernetes master is accessible through or change the VLAN connections for your worker nodes.
 {: shortdesc}
 
 
@@ -70,7 +70,7 @@ Did you create a cluster with only a private service endpoint before you enabled
 
 9.  Optional: To use the private service endpoint only:
     1.  [Disable the public service endpoint](#disable-public-se).
-    2.  [Set up access to the master on the private service endpoint](/docs/containers?topic=containers-clusters#access_on_prem).
+    2.  [Set up access to the master on the private service endpoint](/docs/openshift?topic=openshift-openshift_access_cluster#access_private_se).
 
 
 <br />
@@ -165,7 +165,7 @@ Note that you cannot disable the private service endpoint after you enable it.
         ibmcloud oc cluster feature disable public-service-endpoint --cluster <cluster_name_or_ID>
         ```
         {: pre}
-    2.  [Set up access to the master on the private service endpoint](/docs/containers?topic=containers-clusters#access_on_prem).
+    2.  [Set up access to the master on the private service endpoint](/docs/openshift?topic=openshift-openshift_access_cluster#access_private_se).
 
 <br />
 

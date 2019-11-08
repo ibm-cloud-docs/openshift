@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-07"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -80,5 +80,6 @@ Both OpenShift and community Kubernetes clusters are production-ready container 
 |Supported operating system| Ubuntu 16.64, 18.64 |Red Hat Enterprise Linux 7|
 |Preferred external traffic networking| Ingress | Router |
 {: caption="Characteristics of community Kubernetes and OpenShift clusters" caption-side="top"}
+
 
 

@@ -70,7 +70,7 @@ Portworx is available for standard clusters that are set up with public network 
 
 
 
-All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/containers?topic=containers-clusters#clusters_ui). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.  
+All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-openshift-create-cluster). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.  
 
 ## Creating raw, unformatted, and unmounted block storage for non-SDS worker nodes
 {: #create_block_storage}
@@ -448,7 +448,7 @@ Looking for instructions about how to update or remove Portworx? See [Updating P
 
 Before you begin:
 - Make sure that you have the right [permissions](/docs/containers?topic=containers-clusters#cluster_prepare) to create a an Red Hat OpenShift on IBM Cloud cluster.
-- [Create or use an existing cluster](/docs/containers?topic=containers-clusters#clusters_ui).
+- [Create or use an existing cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
 - If you want to use non-SDS worker nodes for your Portworx storage layer, [add an unformatted block storage device to your non-SDS worker node](#create_block_storage).
 - Create a [Databases for etcd service instance](#portworx_database) to store the Portworx configuration and metadata.
 - Decide whether you want to encrypt your Portworx volumes with {{site.data.keyword.keymanagementservicelong_notm}}. To encrypt your volumes, you must [set up an {{site.data.keyword.keymanagementservicelong_notm}} service instance and store your service information in a Kubernetes secret](#encrypt_volumes).

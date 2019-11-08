@@ -35,7 +35,7 @@ If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud l
 ## Service limitations
 {: #tech_limits}
 
-Red Hat OpenShift on IBM Cloud comes with the following service limitations. 
+Red Hat OpenShift on IBM Cloud comes with the following service limitations.
 {: shortdesc}
 
 In addition to the service limitations, make sure to also review the limitations for [classic](#classic_limits).
@@ -92,7 +92,7 @@ Private network load balancers (NLBs) cannot be registered with the domain name 
 
 Because of the way that {{site.data.keyword.cloud_notm}} NFS file storage configures Linux user permissions, you might encounter errors when you use file storage. If so, you might need to configure [OpenShift Security Context Constraints ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html) or use a different storage type.
 
-### Logging and Metrics 
+### Logging and Metrics
 {: #oc_limits_metrics}
 
 **Logging**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html) because you cannot modify the default configuration of the Red Hat OpenShift on IBM Cloud cluster.
@@ -143,10 +143,6 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
     </tr>
   </tbody>
   </table>
-
-
-
-
 
 
 

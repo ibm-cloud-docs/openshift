@@ -50,7 +50,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
     <li>Integrate ordered infrastructure resources to work automatically with your cluster architecture and become available to your deployed apps and workloads.</li></ul>
     <br><br>
     **Your responsibilities**:
-    <ul><li>Use the provided API, CLI, or console tools to adjust [compute](/docs/containers?topic=containers-clusters#clusters) and [storage](/docs/openshift?topic=openshift-storage_planning#storage_planning) capacity, and to adjust [networking configuration](/docs/openshift?topic=openshift-cs_network_cluster#cs_network_cluster) to meet the needs of your workload.</li></ul><br><br>
+    <ul><li>Use the provided API, CLI, or console tools to adjust [compute](/docs/openshift?topic=openshift-add_workers) and [storage](/docs/openshift?topic=openshift-storage_planning#storage_planning) capacity, and to adjust [networking configuration](/docs/openshift?topic=openshift-cs_network_cluster#cs_network_cluster) to meet the needs of your workload.</li></ul><br><br>
     </td>
      </tr>
      <tr>
