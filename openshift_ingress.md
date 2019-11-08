@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -122,7 +122,7 @@ Before you get started with Ingress, review the following prerequisites.
     - **Manager** service role in all namespaces
 - Ingress is available for standard clusters only and requires at least two worker nodes per zone to ensure high availability and that periodic updates are applied. If you have only one worker in a zone, the ALB cannot receive automatic updates. When automatic updates are rolled out to ALB pods, the pod is reloaded. However, ALB pods have anti-affinity rules to ensure that only one pod is scheduled to each worker node for high availability. Because there is only one ALB pod on one worker, the pod is not restarted so that traffic is not interrupted. The ALB pod is updated to the latest version only when you delete the old pod manually so that the new, updated pod can be scheduled.
 - If a zone fails, you might see intermittent failures in requests to the Ingress ALB in that zone.
-- If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/containers?topic=containers-edge) are enabled in each zone so that ALBs deploy uniformly.
+- If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge) are enabled in each zone so that ALBs deploy uniformly.
 * Enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
 
 <br />
@@ -513,13 +513,23 @@ Having trouble connecting to your app through Ingress? Try [debugging Ingress](/
 Expose apps that are outside your cluster to the public by including them in public Ingress ALB load balancing. Incoming public requests on the IBM-provided or your custom domain are forwarded automatically to the external app.
 {: shortdesc}
 
+You have two options for setting up routing to an external app:
+* To forward requests directly to the IP address of your external service, [set up a Kubernetes endpoint](#external_ip) that defines the external IP address and port of the app.
+* To route requests through the Ingress ALB to your external service, [use the `proxy-external-service` annotation](#proxy-external) in your Ingress resource file.
+
+### Exposing external apps through a Kubernetes endpoint
+{: #external_ip}
+
+Forward requests directly to the IP address of your external service by setting up a Kubernetes endpoint that defines the external IP address and port of the app.
+{: shortdesc}
+
 Before you begin:
 
 * Review the Ingress [prerequisites](#config_prereqs).
 * Ensure that the external app that you want to include into the cluster load balancing can be accessed by using a public IP address.
 * [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
-To expose apps that are outside your cluster to the public:
+To expose apps that are outside of your cluster to the public:
 
 1.  Create a Kubernetes service for your cluster that will forward incoming requests to an external endpoint that you will create.
     1.  Open your preferred editor and create a service configuration file that is named, for example, `myexternalservice.yaml`.
@@ -561,7 +571,7 @@ To expose apps that are outside your cluster to the public:
         {: pre}
 2.  Configure a Kubernetes endpoint that defines the external location of the app that you want to include into the cluster load balancing.
     1.  Open your preferred editor and create an endpoint configuration file that is named, for example, `myexternalendpoint.yaml`.
-    2.  Define your external endpoint. Include all public IP addresses and ports that you can use to access your external app.
+    2.  Define your external endpoint. Include all public IP addresses and ports that you can use to access your external app. Note that the name of the endpoint must be the same as the name of the service that you defined in the previous step, `myexternalservice`.
 
         ```
         kind: Endpoints
@@ -603,6 +613,78 @@ To expose apps that are outside your cluster to the public:
         {: pre}
 
 3. Continue with the steps in "Exposing apps that are inside your cluster to the public", [Step 2: Select an app domain](#public_inside_2).
+
+### Exposing external apps through the `proxy-external-service` Ingress annotation
+{: #proxy-external}
+
+Route requests through the Ingress ALB to your external service by using the `proxy-external-service` annotation in your Ingress resource file.
+{: shortdesc}
+
+Before you begin:
+
+* Review the Ingress [prerequisites](#config_prereqs).
+* [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+
+To expose apps that are outside of your cluster to the public:
+
+1. [Choose the app domain](#public_inside_2) that you want the external service to be accessible from.
+
+2. Create an Ingress resource file that is named, for example, `myingressresource.yaml`.
+  ```
+  apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    name: myingress
+    annotations:
+      ingress.bluemix.net/proxy-external-service: "path=<mypath> external-svc=https:<external_service> host=<ingress_subdomain>"
+  spec:
+    rules:
+    - host: <ingress_subdomain>
+  ```
+  {: codeblock}
+
+  <table>
+  <caption>Understanding the YAML file components</caption>
+  <thead>
+  <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the annotation components</th>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>path</code></td>
+  <td>Replace <code>&lt;<em>mypath</em>&gt;</code> with the path that the external service listens on.</td>
+  </tr>
+  <tr>
+  <td><code>external-svc</code></td>
+  <td>Replace <code>&lt;<em>external_service</em>&gt;</code> with the external service to be called. For example, <code>https://&lt;myservice&gt;.&lt;region&gt;.appdomain.com</code>.</td>
+  </tr>
+  <tr>
+  <td><code>host</code></td>
+  <td>Replace <code>&lt;<em>ingress_subdomain</em>&gt;</code> with the Ingress subdomain for your cluster or the custom domain that you set up.</td>
+  </tr>
+  </tbody></table>
+
+  <p class="tip">If you also want to define other services that are _inside_ your cluster, you can follow the steps in [Exposing apps that are inside your cluster to the public](#ingress_expose_public) to add them to this Ingress resource file.</p>
+
+3.  Create the Ingress resource for your cluster.
+
+    ```
+    oc apply -f myingressresource.yaml
+    ```
+    {: pre}
+4.   Verify that the Ingress resource was created successfully.
+
+      ```
+      oc describe ingress myingressresource
+      ```
+      {: pre}
+
+      1. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
+
+5. In a web browser, enter the URL of the app service to access.
+  ```
+  https://<domain>/<app_path>
+  ```
+  {: codeblock}
 
 <br />
 
