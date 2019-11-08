@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-07"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -348,5 +348,6 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     IAM#first.last@email.com       55555ee5-e555-55e5-e5e5-555555ee55ee               IAM:IBMid-666666FFF6
     ```
     {: screen}
+
 
 
