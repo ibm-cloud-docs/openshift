@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-07"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -387,7 +387,7 @@ Set up your own image pull secret in your cluster to deploy containers to OpenSh
 
 After you create the image pull secret, your containers must use the secret to be authorized to pull an image from the registry. You can add the image pull secret to the service account for the project, or refer to the secret in each deployment. For instructions, see [Using the image pull secret to deploy containers](/docs/openshift?topic=openshift-images#use_imagePullSecret).
 
-Image pull secrets are valid only for the OpenShift projects that they were created for. Repeat these steps for every namespace where you want to deploy containers. Images from [DockerHub](#dockerhub) do not require image pull secrets.
+Image pull secrets are valid only for the OpenShift projects that they were created for. Repeat these steps for every namespace where you want to deploy containers.
 {: tip}
 
 Before you begin:
@@ -873,5 +873,6 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 {: tip}
 
 <br />
+
 
 

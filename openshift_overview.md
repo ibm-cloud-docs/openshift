@@ -32,7 +32,7 @@ Learn more about {{site.data.keyword.openshiftlong}}, its capabilities and the o
 ## Understanding Red Hat OpenShift on IBM Cloud
 {: #service-concepts}
 
-Review frequently asked questions and key technologies that Red Hat OpenShift on IBM Cloud uses. 
+Review frequently asked questions and key technologies that Red Hat OpenShift on IBM Cloud uses.
 {: shortdesc}
 
 **What is Red Hat OpenShift on IBM Cloud and how does it work?** </br>
@@ -45,7 +45,7 @@ Kubernetes is an open source platform for managing containerized workloads and s
 Containers provide a standard way to package your application's code, configurations, and dependencies into a single unit that can run as a resource-isolated process on a compute server. To run your app in Kubernetes on Red Hat OpenShift on IBM Cloud, you must first containerize your app by creating a container image that you store in a container registry. For an overview of key Docker concepts and benefits, see [Docker containers](#docker_containers). To dive deeper into Docker, see the [Docker documentation](https://docs.docker.com/).
 
 **What is OpenShift?**<br>
-OpenShift is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With OpenShift, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and OpenShift cluster offerings, see the [comparison table](#TODO).
+OpenShift is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With OpenShift, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and OpenShift cluster offerings, see the [comparison table](/docs/openshift?topic=openshift-why_openshift#openshift_kubernetes).
 
 **What compute host infrastructure does the service offer?** </br>
 With Red Hat OpenShift on IBM Cloud, you can create your cluster of compute hosts on classic {{site.data.keyword.cloud_notm}} infrastructure.
@@ -75,9 +75,9 @@ Built on existing Linux container technology (LXC), the open source project that
 {:shortdesc}
 
 ### Key concepts
-{: #docker-concepts} 
+{: #docker-concepts}
 
-Learn more about the key concepts of Docker. 
+Learn more about the key concepts of Docker.
 {: shortdesc}
 
 <dl>
@@ -93,7 +93,7 @@ Learn more about the key concepts of Docker.
 ### Benefits
 {: #docker-benefits}
 
-Review the key benefits of using containers to run your workloads in the cloud. 
+Review the key benefits of using containers to run your workloads in the cloud.
 {: shortdesc}
 
 <dl>
@@ -128,7 +128,7 @@ Review the key benefits of using containers to run your workloads in the cloud.
 ### Key concepts
 {: #kubernetes-concepts}
 
-Learn more about the key concepts of Kubernetes as illustrated in the following image. 
+Learn more about the key concepts of Kubernetes as illustrated in the following image.
 {: shortdesc}
 
 ![Deployment setup](images/cs_app_tutorial_mz-components1.png)
@@ -158,10 +158,10 @@ Define update strategies for your app, including the number of pods that you wan
 ### Related resources
 {: #kubernetes-resources}
 
-Review how you can learn about Kubernetes concepts and the terminology. 
+Review how you can learn about Kubernetes concepts and the terminology.
 {: shortdesc}
 
 * Familiarize yourself with the product by completing the [Creating clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial)
-* Learn how Kubernetes and Red Hat OpenShift on IBM Cloud work together by completing this [course](https://cognitiveclass.ai/courses/kubernetes-course). 
+* Learn how Kubernetes and Red Hat OpenShift on IBM Cloud work together by completing this [course](https://cognitiveclass.ai/courses/kubernetes-course).
 
 
