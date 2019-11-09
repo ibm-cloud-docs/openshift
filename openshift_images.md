@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -362,7 +362,7 @@ Yes, you can [edit the existing IAM policy of the service ID](/docs/iam?topic=ia
   Want to make your registry credentials even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt Kubernetes secrets in your cluster, such as the `imagePullSecret` that stores your registry credentials.
   {: tip}
 
-**Can I pull images in OpenShift project other than `default`?**<br>
+**Can I pull images in a OpenShift project other than `default`?**<br>
 Not by default. By using the default cluster setup, you can deploy containers from any image that is stored in your {{site.data.keyword.registrylong_notm}} namespace into the `default` OpenShift project of your cluster. To use these images in other OpenShift projects or other {{site.data.keyword.cloud_notm}} accounts, [you have the option to copy or create your own image pull secret](#other).
 
 **Can I pull images from a different {{site.data.keyword.cloud_notm}} account?**<br>
