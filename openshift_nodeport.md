@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -114,7 +114,7 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
      </tr>
      <tr>
      <td><code>ports.nodePort</code></td>
-     <td>Optional: Replace <code><em>&lt;31514&gt;</em></code> with a NodePort in the 30000 - 32767 range. Do not specify a NodePort that is already in use by another service. If no NodePort is assigned, a random one is assigned for you.<br><br>To specify a NodePort and see which NodePorts are already in use, run the following command: <pre class="pre"><code>kubectl get svc</code></pre><p>Any NodePorts in use appear under the **Ports** field.</p></td>
+     <td>Optional: Replace <code><em>&lt;31514&gt;</em></code> with a NodePort in the 30000 - 32767 range. Do not specify a NodePort that is already in use by another service. If no NodePort is assigned, a random one is assigned for you.<br><br>To specify a NodePort and see which NodePorts are already in use, run the following command: <pre class="pre"><code>oc get svc</code></pre><p>Any NodePorts in use appear under the **Ports** field.</p></td>
      </tr>
      </tbody></table>
 
@@ -145,7 +145,7 @@ When the app is deployed, you can use the public IP address of any worker node a
 2.  If a random NodePort was assigned, find out which one was assigned.
 
     ```
-    kubectl describe service <service_name>
+    oc describe service <service_name>
     ```
     {: pre}
 

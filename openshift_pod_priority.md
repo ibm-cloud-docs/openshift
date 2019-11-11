@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-07"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -131,7 +131,7 @@ To use a priority class:
     <tr>
     <td><code>globalDefault</code></td>
     <td>Optional: Set the field to `true` to make this priority class the global default that is applied to every pod that is scheduled without a `priorityClassName` value. Only one priority class in your cluster can be set as the global default. If there is no global default, pods with no `priorityClassName` specified have a priority of zero (`0`).</br></br>
-    The [default priority classes](#default_priority_class) do not set a `globalDefault`. If you created other priority classes in your cluster, you can check to make sure that they do not set a `globalDefault` by running `kubectl describe priorityclass <name>`.</td>
+    The [default priority classes](#default_priority_class) do not set a `globalDefault`. If you created other priority classes in your cluster, you can check to make sure that they do not set a `globalDefault` by running `oc describe priorityclass <name>`.</td>
     </tr>
     <tr>
     <td><code>description</code></td>
@@ -141,14 +141,14 @@ To use a priority class:
 3.  Create the priority class in your cluster.
 
     ```
-    kubectl apply -f filepath/priorityclass.yaml
+    oc apply -f filepath/priorityclass.yaml
     ```
     {: pre}
 
 4.  Verify that the priority class is created.
 
     ```
-    kubectl get priorityclasses
+    oc get priorityclasses
     ```
     {: pre}
 

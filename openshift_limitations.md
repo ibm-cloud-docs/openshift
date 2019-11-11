@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -60,7 +60,7 @@ In addition to the service limitations, make sure to also review the limitations
   </tr>
   <tr>
     <td>Kubernetes pod logs</td>
-    <td>To check the logs for individual app pods, you can use the terminal to run `kubectl logs <pod name>`. Do not use the Kubernetes dashboard to stream logs for your pods, which might cause a disruption in your access to the Kubernetes dashboard.</td>
+    <td>To check the logs for individual app pods, you can use the terminal to run `oc logs <pod name>`. Do not use the Kubernetes dashboard to stream logs for your pods, which might cause a disruption in your access to the Kubernetes dashboard.</td>
   </tr>
 </tbody>
 </table>
