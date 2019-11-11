@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -29,7 +29,7 @@ subcollection: openshift
 To add capabilities to your Ingress application load balancer (ALB), you can specify annotations as metadata in an Ingress resource.
 {: shortdesc}
 
-Before you use annotations, make sure that you have properly set up your Ingress service configuration by following the steps in [HTTPS load balancing with Ingress application load balancers (ALB)](/docs/containers?topic=containers-ingress). Once you have set up the Ingress ALB with a basic configuration, you can then expand its capabilities by adding annotations to the Ingress resource file.
+Before you use annotations, make sure that you have properly set up your Ingress service configuration by following the steps in [HTTPS load balancing with Ingress application load balancers (ALB)](/docs/openshift?topic=openshift-ingress). Once you have set up the Ingress ALB with a basic configuration, you can then expand its capabilities by adding annotations to the Ingress resource file.
 {: note}
 
 <table>
@@ -1686,10 +1686,13 @@ Add path definitions to external services, such as services hosted in {{site.dat
 {:shortdesc}
 
 **Description**</br>
-Add path definitions to external services. Use this annotation only when your app operates on an external service instead of a back-end service. When you use this annotation to create an external service route, only `client-max-body-size`, `proxy-read-timeout`, `proxy-connect-timeout`, and `proxy-buffering` annotations are supported in conjunction. Any other annotations are not supported in conjunction with `proxy-external-service`.
+Add path definitions to external services. Use this annotation only when your app operates on an external service instead of a back-end service, and you want to route requests to that external service through the Ingress subdomain or custom subdomain that you specify. When you use this annotation to create an external service route, only `client-max-body-size`, `proxy-read-timeout`, `proxy-connect-timeout`, and `proxy-buffering` annotations are supported in conjunction. Any other annotations are not supported in conjunction with `proxy-external-service`.
 
 You cannot specify multiple hosts for a single service and path.
 {: note}
+
+Looking to forward requests to the IP address of your external service instead of routing requests through the Ingress ALB? You can set up a [Kubernetes endpoint that defines the external IP address and port of the app](/docs/openshift?topic=openshift-ingress#external_ip).
+{: tip}
 
 **Sample Ingress resource YAML**</br>
 ```
@@ -1698,20 +1701,10 @@ kind: Ingress
 metadata:
   name: myingress
   annotations:
-    ingress.bluemix.net/proxy-external-service: "path=<mypath> external-svc=https:<external_service> host=<mydomain>"
+    ingress.bluemix.net/proxy-external-service: "path=<mypath> external-svc=https:<external_service> host=<ingress_subdomain>"
 spec:
-  tls:
-  - hosts:
-    - mydomain
-    secretName: mysecret
   rules:
-  - host: mydomain
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: myservice
-          servicePort: 80
+  - host: <ingress_subdomain>
 ```
 {: codeblock}
 
@@ -1727,11 +1720,11 @@ spec:
 </tr>
 <tr>
 <td><code>external-svc</code></td>
-<td>Replace <code>&lt;<em>external_service</em>&gt;</code> with the external service to be called. For example, <code>https://&lt;myservice&gt;.&lt;region&gt;.mybluemix.net</code>.</td>
+<td>Replace <code>&lt;<em>external_service</em>&gt;</code> with the external service to be called. For example, <code>https://&lt;myservice&gt;.&lt;region&gt;.appdomain.com</code>.</td>
 </tr>
 <tr>
 <td><code>host</code></td>
-<td>Replace <code>&lt;<em>mydomain</em>&gt;</code> with the host domain for the external service.</td>
+<td>Replace <code>&lt;<em>ingress_subdomain</em>&gt;</code> with the Ingress subdomain for your cluster or the custom domain that you set up.</td>
 </tr>
 </tbody></table>
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -123,7 +123,7 @@ A Development Exec for a disease research nonprofit has academic and industry re
 Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud delivers secure compute that can host sensitive and performant data processing on an open platform. That global platform is hosted in near-by regions. So it's tied to local regulations that inspire patients’ and researchers’ confidence that their data is both protected locally and makes a difference in better health outcomes.
 
 Key technologies:
-* [Intelligent scheduling places workloads where needed](/docs/containers?topic=containers-regions-and-zones#regions-and-zones)
+* [Intelligent scheduling places workloads where needed](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 * [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/services/Cloudant?topic=cloudant-getting-started#getting-started)
 * [Vulnerability scanning  and isolation for workloads](/docs/services/Registry?topic=va-va_index#va_index)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)

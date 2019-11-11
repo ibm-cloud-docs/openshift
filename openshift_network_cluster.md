@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -26,9 +26,8 @@ subcollection: openshift
 # Changing service endpoints or VLAN connections for clusters
 {: #cs_network_cluster}
 
-After you initially set up your network when you [create a cluster](/docs/containers?topic=containers-clusters), you can change the service endpoints that your Kubernetes master is accessible through or change the VLAN connections for your worker nodes.
+After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster), you can change the service endpoints that your Kubernetes master is accessible through or change the VLAN connections for your worker nodes.
 {: shortdesc}
-
 
 
 
@@ -59,7 +58,7 @@ Did you create a cluster with only a private service endpoint before you enabled
 5. [Create a configmap](/docs/openshift?topic=openshift-update#worker-up-configmap) to control the maximum number of worker nodes that can be unavailable at a time in your cluster. When you update your worker nodes, the configmap helps prevent downtime for your apps as the apps are rescheduled orderly onto available worker nodes.
 6. Update all the worker nodes in your cluster to pick up the private service endpoint configuration.
 
-   <p class="important">By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.</p>
+   <p class="important">By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/openshift?topic=openshift-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.</p>
    ```
    ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker1,worker2>
    ```
@@ -71,7 +70,7 @@ Did you create a cluster with only a private service endpoint before you enabled
 
 9.  Optional: To use the private service endpoint only:
     1.  [Disable the public service endpoint](#disable-public-se).
-    2.  [Set up access to the master on the private service endpoint](/docs/containers?topic=containers-clusters#access_on_prem).
+    2.  [Set up access to the master on the private service endpoint](/docs/openshift?topic=openshift-openshift_access_cluster#access_private_se).
 
 
 <br />
@@ -154,7 +153,7 @@ Note that you cannot disable the private service endpoint after you enable it.
 
 6.  Update all the worker nodes in your cluster to pick up the private service endpoint configuration.
 
-    <p class="important">By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.</p>
+    <p class="important">By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/openshift?topic=openshift-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.</p>
     ```
     ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker1,worker2>
     ```
@@ -166,7 +165,7 @@ Note that you cannot disable the private service endpoint after you enable it.
         ibmcloud oc cluster feature disable public-service-endpoint --cluster <cluster_name_or_ID>
         ```
         {: pre}
-    2.  [Set up access to the master on the private service endpoint](/docs/containers?topic=containers-clusters#access_on_prem).
+    2.  [Set up access to the master on the private service endpoint](/docs/openshift?topic=openshift-openshift_access_cluster#access_private_se).
 
 <br />
 
@@ -185,7 +184,7 @@ Trying to change the service endpoint for master-worker communication instead? C
 {: tip}
 
 Before you begin:
-* [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 * If your worker nodes are stand-alone (not part of a worker pool), [update them to worker pools](/docs/openshift?topic=openshift-update#standalone_to_workerpool).
 
 To change the VLANs that a worker pool uses to provision worker nodes:

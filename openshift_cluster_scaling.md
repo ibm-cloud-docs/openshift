@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-06"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -30,9 +30,6 @@ subcollection: openshift
 
 With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
 {: shortdesc}
-
-Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-app#app_scaling).
-{: tip}
 
 The cluster autoscaler is available for standard, classic clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, see [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 {: important}
@@ -65,8 +62,8 @@ For more information, see the Kubernetes Cluster Autoscaler FAQs for [How does s
 
 **Can I change how scale-up and scale-down work?**<br>
 You can customize settings or use other Kubernetes resources to affect how scaling up and down work.
-*   **Scale-up**: [Customize the cluster autoscaler Helm chart values](#ca_chart_values) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
-*   **Scale-down**: [Customize the cluster autoscaler Helm chart values](#ca_chart_values) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
+* **Scale-up**: [Customize the cluster autoscaler Helm chart values](#ca_chart_values) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
+* **Scale-down**: [Customize the cluster autoscaler Helm chart values](#ca_chart_values) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
 
 <br>
 **Can I set the minimum size per zone to immediately scale up my cluster to that size?**<br>
@@ -212,8 +209,8 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     *  {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
     *  Kubernetes (`kubectl`)
     *  Helm (`helm`)
-2.  [Create a standard cluster](/docs/containers?topic=containers-clusters#clusters_ui).
-3.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+2.  [Create a standard cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
+3.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 4.  Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions).
     ```
     oc get secrets -n kube-system | grep storage-secret-store
@@ -232,7 +229,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         ```
         {: screen}
     2.  If your worker pool does not have the required label, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) and use this worker pool with the cluster autoscaler.
-    
+
 6. **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 
 <br>
@@ -404,7 +401,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
 
 **Before you begin**:
 *  [Install the `ibm-iks-cluster-autoscaler` plug-in](#ca_helm).
-*  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 **To update the cluster autoscaler configmap and values**:
 
@@ -500,7 +497,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 {: shortdesc}
 
 **Before you begin**:
-*  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 *  [Install the `ibm-iks-cluster-autoscaler` plug-in](#ca_helm).
 *  **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 
@@ -692,7 +689,7 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 
 **Before you begin**:
 *  [Install the `ibm-iks-cluster-autoscaler` plug-in](#ca_helm).
-*  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 **To limit pods to run on certain autoscaled worker pools**:
 
@@ -755,7 +752,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 
 <dl>
   <dt><strong>Pause pods</strong></dt>
-  <dd>You can create a deployment that deploys [pause containers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/questions/48651269/what-are-the-pause-containers) in pods with specific resource requests, and assign the deployment a low pod priority. When these resources are needed by higher priority workloads, the pause pod is preempted and becomes a pending pod. This event triggers the cluster autoscaler to scale up.<br><br>For more information about setting up a pause pod deployment, see the [Kubernetes FAQ ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-configure-overprovisioning-with-cluster-autoscaler). You can use [this example overprovisioning configuration file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/blob/master/ibm-ks-cluster-autoscaler/overprovisioning-autoscaler.yaml) to create the priority class, service account, and deployments.<p class="note">If you use this method, make sure that you understand how [pod priority](/docs/containers?topic=containers-pod_priority#pod_priority) works and how to set pod priority for your deployments. For example, if the pause pod does not have enough resources for a higher priority pod, the pod is not preempted. The higher priority workload remains in pending, so the cluster autoscaler is triggered to scale up. However, in this case, the scale-up action is not early because the workload that you want to run cannot be scheduled because of insufficient resources.</p></dd>
+  <dd>You can create a deployment that deploys [pause containers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/questions/48651269/what-are-the-pause-containers) in pods with specific resource requests, and assign the deployment a low pod priority. When these resources are needed by higher priority workloads, the pause pod is preempted and becomes a pending pod. This event triggers the cluster autoscaler to scale up.<br><br>For more information about setting up a pause pod deployment, see the [Kubernetes FAQ ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-configure-overprovisioning-with-cluster-autoscaler). You can use [this example overprovisioning configuration file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/blob/master/ibm-ks-cluster-autoscaler/overprovisioning-autoscaler.yaml) to create the priority class, service account, and deployments.<p class="note">If you use this method, make sure that you understand how [pod priority](/docs/openshift?topic=openshift-pod_priority) works and how to set pod priority for your deployments. For example, if the pause pod does not have enough resources for a higher priority pod, the pod is not preempted. The higher priority workload remains in pending, so the cluster autoscaler is triggered to scale up. However, in this case, the scale-up action is not early because the workload that you want to run cannot be scheduled because of insufficient resources.</p></dd>
 
   <dt><strong>Horizontal pod autoscaling (HPA)</strong></dt>
   <dd>Because horizontal pod autoscaling is based on the average CPU usage of the pods, the CPU usage limit that you set is reached before the worker pool runs out of resources. More pods are requested, which then triggers the cluster autoscaler to scale up the worker pool.<br><br>For more information about setting up HPA, see the [Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/).</dd>
@@ -774,11 +771,11 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 {: note}
 
 **Before you begin**:
-* [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 * **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 * For a changelog of chart versions, [download the source code tar file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
 
-**To update the cluster autoscaler Helm chart**: 
+**To update the cluster autoscaler Helm chart**:
 1.  Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
     ```
     helm repo update
@@ -840,7 +837,7 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 The latest Helm chart version of the cluster autoscaler requires a full removal of previously installed cluster autoscaler Helm chart versions. If you installed the Helm chart version 1.0.2 or earlier, uninstall that version first before you install the latest Helm chart of the cluster autoscaler.
 {: shortdesc}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 1.  Get your cluster autoscaler configmap.
     ```
@@ -910,10 +907,10 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 The cluster autoscaler is available for standard, classic clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, you must temporarily open the required ports or temporarily enable the public service endpoint to install, update, or customize the cluster autoscaler. After the cluster autoscaler is installed, you can close the ports or disable the public service endpoint.
 {: shortdesc}
 
-If your account is not enabled for VRF and service endpoints, you can [open the required ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) to allow public network connectivity in your cluster. 
+If your account is not enabled for VRF and service endpoints, you can [open the required ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) to allow public network connectivity in your cluster.
 {: tip}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 1.  Set up Helm for your private network-only cluster. You can choose between the following options.
     * [Pushing the Helm Tiller image to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-helm#private_local_tiller).
@@ -969,7 +966,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
           gc_api_key = "<key>"
         ```
         {: screen}
-    3.  Verify that the `containers_api_route_private` field includes the `private` service endpoint address. 
+    3.  Verify that the `containers_api_route_private` field includes the `private` service endpoint address.
     4.  If the `containers_api_route_private` field is not in the secret, add it to the string by appending `private.` to the `containers_api_route` address. For example:
         ```
         containers_api_route = "https://us-south.containers.cloud.ibm.com"
@@ -997,7 +994,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 If you do not want to automatically scale your worker pools, you can uninstall the cluster autoscaler Helm chart. After the removal, you must [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools manually.
 {: shortdesc}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 1.  In the [cluster autoscaler configmap](#ca_cm), remove the worker pool by setting the `"enabled"` value to `false`.
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-06"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -30,9 +30,6 @@ You can view, manage, and audit user-initiated activities in your {{site.data.ke
 {: shortdesc}
 
 Red Hat OpenShift on IBM Cloud automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
-
-You can also collect Kubernetes API audit logs from your cluster and forward them to {{site.data.keyword.la_full_notm}}. To access Kubernetes audit logs, you must [create an audit webhook in your cluster](/docs/containers?topic=containers-health#webhook_logdna).
-{: tip}
 
 ## Tracking cluster management events
 {: #cluster-events}
@@ -135,5 +132,6 @@ To [view events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view
 | Singapore | sng01 | Tokyo |
 | Tokyo | tok02, tok04, tok05 | Tokyo |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and Red Hat OpenShift on IBM Cloud cluster locations." caption-side="top"}
+
 
 

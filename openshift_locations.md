@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-21"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -160,9 +160,8 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
 
 2.  Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your multizone cluster. For more information, review these topics:
     *   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
-    *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/containers?topic=containers-loadbalancer#multi_zone_config).
-    *   [Managing network traffic by using Ingress](/docs/containers?topic=containers-ingress-about).
-    *   [Increasing the availability of your app](/docs/containers?topic=containers-app#increase_availability).
+    *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
+    *   [Managing network traffic by using Ingress](/docs/openshift?topic=openshift-ingress-about).
 
 3.  When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
 
@@ -213,7 +212,7 @@ When you use the new global functionality in the Red Hat OpenShift on IBM Cloud 
   * If you have clusters with the same name in different regions, you can either use the cluster ID when you run commands or set a region with the `ibmcloud oc region set` command and use the cluster name when you run commands.
 
 * Legacy functionality:
-  * If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_init) to target a regional endpoint instead of the global endpoint.
+  * If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init) to target a regional endpoint instead of the global endpoint.
     Example to target the US South regional endpoint:
     ```
     ibmcloud oc init --host https://us-south.containers.cloud.ibm.com
@@ -227,7 +226,7 @@ When you use the new global functionality in the Red Hat OpenShift on IBM Cloud 
 
 </br></br>
 **Red Hat OpenShift on IBM Cloud API**:
-* [Get started with the API](/docs/containers?topic=containers-cs_api_install).
+* [Get started with the API](/docs/openshift?topic=openshift-api_install).
 * [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/).
 * Generate a client of the API to use in automation by using the [`swagger.json` API](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json).
 

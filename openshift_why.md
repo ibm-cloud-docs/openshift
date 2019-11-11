@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-06"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,26 +21,38 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-# Why Red Hat OpenShift on IBM Cloud
+# Benefits and service offerings
 {: #why_openshift}
+
 
 {{site.data.keyword.openshiftlong}} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.
 {: shortdesc}
 
-Check out the following [videos and product tours ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/demos/collection/Red-Hat-OpenShift-on-IBM-Cloud/?lc=null) to learn more about Red Hat OpenShift on IBM Cloud. 
+Check out the following [videos and product tours ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/demos/collection/Red-Hat-OpenShift-on-IBM-Cloud/?lc=null) to learn more about Red Hat OpenShift on IBM Cloud.
 
 ## Benefits of using the service
-{: #openshift_benefits}
+{: #benefits}
 
 With Red Hat OpenShift on IBM Cloud, your developers have a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. OpenShift clusters build on Kubernetes container orchestration that offers consistency and flexibility for your development lifecycle operations.
 
-Your OpenShift  workloads can scale across IBM’s global footprint of data centers and multizone regions. At the same time, you’re able to uniformly monitor, log, and secure apps. Because IBM manages the service, you can focus on innovating with high-value {{site.data.keyword.cloud_notm}} services and middleware, such as AI and analytics. You also have access to Red Hat packaged open-source tools, including your favorite app runtimes, frameworks, databases, and more.
+Your OpenShift workloads can scale across IBM’s global footprint of data centers and multizone regions. At the same time, you’re able to uniformly monitor, log, and secure apps. Because IBM manages the service, you can focus on innovating with high-value {{site.data.keyword.cloud_notm}} services and middleware, such as AI and analytics. You also have access to Red Hat packaged open-source tools, including your favorite app runtimes, frameworks, databases, and more.
 
-For more information, see:
-* [{{site.data.keyword.containerlong_notm}} benefits](/docs/containers?topic=containers-cs_ov#benefits)
-* [OpenShift feature explanations ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/oce_about.html#feature-explanations)
+Ready to get started? Try out the [creating a Red Hat OpenShift on IBM Cloud cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
+
+|Benefit|Description|
+|-------|-----------|
+|Choice of container platform provider | <ul><li>Deploy clusters with **OpenShift** or community **Kubernetes** installed as the container platform orchestrator.</li><li>Choose the developer experience that fits your company, or run workloads across both OpenShift or community Kubernetes clusters.</li><li>Built-in integrations from the {{site.data.keyword.cloud_notm}} console to the Kubernetes dashboard or OpenShift web console.</li><li>Single view and management experience of all your OpenShift or community Kubernetes clusters from {{site.data.keyword.cloud_notm}}.</li><li>For more information, see [Comparison between OpenShift and community Kubernetes clusters](#openshift_kubernetes).</li></ul>|
+|Single-tenant Kubernetes clusters with compute, network, and storage infrastructure isolation|<ul><li>Create your own customized infrastructure that meets the requirements of your organization.</li><li>Provision a dedicated and secured OpenShift master, worker nodes, virtual networks, and storage by using the resources provided by IBM Cloud infrastructure.</li><li>Fully managed Kubernetes master that is continuously monitored and updated by {{site.data.keyword.IBM_notm}} to keep your cluster available.</li><li>Option to provision worker nodes as bare metal servers for compute-intensive workloads such as GPU.</li><li>Store persistent data, share data between Kubernetes pods, and restore data when needed with the integrated and secure volume service.</li><li>Benefit from full support for all native Kubernetes APIs.</li></ul>|
+| Multizone clusters to increase high availability | <ul><li>Easily manage worker nodes of the same flavor (CPU, memory, virtual or physical) with worker pools.</li><li>Guard against zone failure by spreading nodes evenly across select multizones and by using anti-affinity pod deployments for your apps.</li><li>Decrease your costs by using multizone clusters instead of duplicating the resources in a separate cluster.</li><li>Benefit from automatic load balancing across apps with the multizone load balancer (MZLB) that is set up automatically for you in each zone of the cluster.</li></ul>|
+| Highly available masters | <ul><li>Reduce cluster downtime such as during master updates with highly available masters that are provisioned automatically when you create a cluster.</li><li>Spread your masters across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) to protect your cluster from zonal failures.</li></ul> |
+|Image security compliance with Vulnerability Advisor|<ul><li>Set up your own repo in our secured Docker private image registry where images are stored and shared by all users in the organization.</li><li>Benefit from automatic scanning of images in your private {{site.data.keyword.cloud_notm}} registry.</li><li>Review recommendations specific to the operating system used in the image to fix potential vulnerabilities.</li></ul>|
+|Continuous monitoring of the cluster health|<ul><li>Use the cluster dashboard to quickly see and manage the health of your cluster, worker nodes, and container deployments.</li><li>Find detailed consumption metrics by using {{site.data.keyword.mon_full}} and quickly expand your cluster to meet work loads.</li><li>Review logging information by using {{site.data.keyword.la_full}} to see detailed cluster activities.</li></ul>|
+|Secure exposure of apps to the public|<ul><li>Choose between a public IP address, an {{site.data.keyword.IBM_notm}} provided route, or your own custom domain to access services in your cluster from the internet.</li></ul>|
+|{{site.data.keyword.cloud_notm}} service integration|<ul><li>Add extra capabilities to your app through the integration of {{site.data.keyword.cloud_notm}} services, such as Watson APIs, Blockchain, data services, or Internet of Things.</li></ul>|
+{: caption="Benefits of the {{site.data.keyword.containerlong_notm}}" caption-side="top"}
 
 <br />
+
 
 
 ## Comparison between OpenShift and community Kubernetes clusters
@@ -68,3 +80,6 @@ Both OpenShift and community Kubernetes clusters are production-ready container 
 |Supported operating system| Ubuntu 16.64, 18.64 |Red Hat Enterprise Linux 7|
 |Preferred external traffic networking| Ingress | Router |
 {: caption="Characteristics of community Kubernetes and OpenShift clusters" caption-side="top"}
+
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -49,7 +49,7 @@ The following diagram shows how communication is directed from the internet to a
 
 4. The request is forwarded to the private IP address of the pod where the app is deployed. If multiple app instances are deployed in the cluster, the NodePort service routes the requests between the app pods.
 
-The public IP address of the worker node is not permanent. When a worker node is removed or re-created, a new public IP address is assigned to the worker node. You can use the NodePort service for testing the public access for your app or when public access is needed for a short amount of time only. When you require a stable public IP address and more availability for your service, expose your app by using a [network load balancer (NLB) service](/docs/containers?topic=containers-loadbalancer) or [Ingress](/docs/containers?topic=containers-ingress).
+The public IP address of the worker node is not permanent. When a worker node is removed or re-created, a new public IP address is assigned to the worker node. You can use the NodePort service for testing the public access for your app or when public access is needed for a short amount of time only. When you require a stable public IP address and more availability for your service, expose your app by using a [network load balancer (NLB) service](/docs/openshift?topic=openshift-loadbalancer) or [Ingress](/docs/openshift?topic=openshift-ingress).
 {: note}
 
 <br />
@@ -61,8 +61,7 @@ The public IP address of the worker node is not permanent. When a worker node is
 You can expose your app as a Kubernetes NodePort service for free or standard clusters.
 {:shortdesc}
 
-In VPC clusters, you can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection. To access an app from the internet, you must use a [VPC load balancer](/docs/containers?topic=containers-vpc-lbaas) or [Ingress](/docs/containers?topic=containers-ingress-about) service instead.
-{: note}
+
 
 If you do not already have an app ready, you can use a Kubernetes example app called [Guestbook ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml).
 
@@ -115,7 +114,7 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
      </tr>
      <tr>
      <td><code>ports.nodePort</code></td>
-     <td>Optional: Replace <code><em>&lt;31514&gt;</em></code> with a NodePort in the 30000 - 32767 range. Do not specify a NodePort that is already in use by another service. If no NodePort is assigned, a random one is assigned for you.<br><br>To specify a NodePort and see which NodePorts are already in use, run the following command: <pre class="pre"><code>kubectl get svc</code></pre><p>Any NodePorts in use appear under the **Ports** field.</p></td>
+     <td>Optional: Replace <code><em>&lt;31514&gt;</em></code> with a NodePort in the 30000 - 32767 range. Do not specify a NodePort that is already in use by another service. If no NodePort is assigned, a random one is assigned for you.<br><br>To specify a NodePort and see which NodePorts are already in use, run the following command: <pre class="pre"><code>oc get svc</code></pre><p>Any NodePorts in use appear under the **Ports** field.</p></td>
      </tr>
      </tbody></table>
 
@@ -146,7 +145,7 @@ When the app is deployed, you can use the public IP address of any worker node a
 2.  If a random NodePort was assigned, find out which one was assigned.
 
     ```
-    kubectl describe service <service_name>
+    oc describe service <service_name>
     ```
     {: pre}
 

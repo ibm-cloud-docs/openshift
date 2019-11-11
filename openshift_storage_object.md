@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-05"
+lastupdated: "2019-11-11"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -84,7 +84,7 @@ Before you begin, [access your cluster](/docs/openshift?topic=openshift-openshif
    ```
    {: pre}
 
-3. Create a Kubernetes secret to store your service credentials. When you create your secret, all values are automatically encoded to base64. In the following example the secret name is `cos-write-access`. 
+3. Create a Kubernetes secret to store your service credentials. When you create your secret, all values are automatically encoded to base64. In the following example the secret name is `cos-write-access`.
 
    **Example for using the API key:**
    ```
@@ -150,7 +150,7 @@ Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set
 Looking for instructions for how to update or remove the {{site.data.keyword.cos_full_notm}} plug-in? See [Updating the plug-in](#update_cos_plugin) and [Removing the plug-in](#remove_cos_plugin).
 {: tip}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 
 
@@ -158,7 +158,7 @@ To install the plug-in:
 
 
 
-2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. **Note** Tiller requires public network connectivity. Learn more about [Helm and Tiller](/docs/containers?topic=containers-helm). Then, [follow the instructions](/docs/containers?topic=containers-helm#public_helm_install){: new_window} to install the Helm client on your local machine and optionally Tiller with a service account in your cluster. 
+2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. **Note** Tiller requires public network connectivity. Learn more about [Helm and Tiller](/docs/containers?topic=containers-helm). Then, [follow the instructions](/docs/containers?topic=containers-helm#public_helm_install){: new_window} to install the Helm client on your local machine and optionally Tiller with a service account in your cluster.
 
   **Note**: If you use Windows, you must install Tiller.
 
@@ -523,7 +523,7 @@ Removing the plug-in does not remove existing PVCs, PVs, or data. When you remov
 
 Before you begin:
 
-- [Target your CLI to the cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 - Make sure that you do not have any PVCs or PVs in your cluster that use {{site.data.keyword.cos_full_notm}}. To list all pods that mount a specific PVC, run `oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"`.
 
 To remove the plug-in:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-11-08"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -73,7 +73,7 @@ OpenShift has different default settings than community Kubernetes, such as stri
 </tr>
 <tr>
 <td>Your app uses persistent file storage with a non-root user ID that cannot write to the mounted storage device.</td>
-<td>[Adjust the security context](/docs/containers?topic=containers-cs_troubleshoot_storage#cs_storage_nonroot) for the app deployment so that `runAsUser` is set to `0`.</td>
+<td>[Adjust the security context](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot) for the app deployment so that `runAsUser` is set to `0`.</td>
 </tr>
 <tr>
 <td>Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error.</td>

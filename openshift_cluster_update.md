@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-07"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -112,10 +112,10 @@ Before you update your worker nodes, review the prerequisite steps.
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 - [Update the master](#master). The worker node version cannot be higher than the API server version that runs in your Kubernetes master.
-- Make any changes that are marked with _Update after master_ in the [Kubernetes clusters](/docs/containers?topic=containers-cs_versions) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift_versions) version preparation guides.
-- If you want to apply a patch update, review the [Kubernetes clusters](/docs/containers?topic=containers-changelog) or [OpenShift clusters](/docs/openshift?topic=openshift-openshift_versions) version changelog.
+- Make any changes that are marked with _Update after master_ in the [OpenShift version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
+- If you want to apply a patch update, review the [OpenShift version changelog](/docs/openshift?topic=openshift-openshift_changelog).
 - Consider [adding more worker nodes](/docs/openshift?topic=openshift-add_workers) so that your cluster has enough capacity to rescheduling your workloads during the update.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
@@ -296,7 +296,7 @@ You can update the flavors, or machine types, of your worker nodes by adding new
 {: shortdesc}
 
 Before you begin:
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 - If you store data on your worker node, the data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
@@ -355,7 +355,7 @@ To update flavors:
         ```
         {: pre}
 
-     3. Add the zone to your worker pool that you retrieved earlier. When you add a zone, the worker nodes that are defined in your worker pool are provisioned in the zone and considered for future workload scheduling. If you want to spread your worker nodes across multiple zones, choose a [multizone-capable zone](/docs/containers?topic=containers-regions-and-zones#zones).
+     3. Add the zone to your worker pool that you retrieved earlier. When you add a zone, the worker nodes that are defined in your worker pool are provisioned in the zone and considered for future workload scheduling. If you want to spread your worker nodes across multiple zones, choose a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones).
        ```
        ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
        ```
@@ -557,7 +557,7 @@ You can manage automatic updates of the Ingress ALB component in the following w
     {: pre}
 
 <br />
-
+ 
 
 
 

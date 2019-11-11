@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-06"
+lastupdated: "2019-11-08"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -21,8 +21,9 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
+
 # Accessing OpenShift clusters
-{: #openshift_access_cluster}
+{: #access_cluster}
 
 After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
@@ -31,15 +32,16 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 {: #prereqs}
 
 1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for OpenShift (`ibmcloud oc`), and OpenShift Origin CLI (`oc`).
-2. [Create an OpenShift cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
+2. [Create your OpenShift cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
 3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall) to the {{site.data.keyword.cloud_notm}} and Red Hat OpenShift on IBM Cloud API endpoints and ports. For private service endpoint-only clusters, you cannot test the connection to your cluster until you expose the private service endpoint of the master to the cluster by using a [private NLB](#access_private_se).
-4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=containers-firewall).
+4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 
 <br />
 
 
 ## Accessing OpenShift clusters through the public service endpoint
 {: #access_public_se}
+
 
 For OpenShift clusters with a public service endpoint, you can get the `oc login` token by following the instructions in the console.
 {: shortdesc}
@@ -56,7 +58,7 @@ For OpenShift clusters with a public service endpoint, you can get the `oc login
 The OpenShift master is accessible through the private service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network through a [VPN connection](/docs/infrastructure/iaas-vpn?topic=VPN-getting-started) or [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link). However, communication with the Kubernetes master over the private service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection or through {{site.data.keyword.cloud_notm}} Direct Link. You can expose the private service endpoint of the master for your cluster users by using a private network load balancer (NLB). The private NLB exposes the private service endpoint of the master as an internal <code>10.X.X.X</code> IP address range that users can access with the VPN or {{site.data.keyword.cloud_notm}} Direct Link connection. If you enable only the private service endpoint, you can use the Kubernetes dashboard or temporarily enable the public service endpoint to create the private NLB.
 {: shortdesc}
 
-1. If you created the cluster with only the private service endpoint, [enable the public service endpoint](/docs/containers?topic=containers-cs_network_cluster#set-up-public-se) temporarily to create the `LoadBalancer` service for the private service endpoint.
+1. If you created the cluster with only the private service endpoint, [enable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se) temporarily to create the `LoadBalancer` service for the private service endpoint.
 
 2. Get the private service endpoint URL and port for your cluster.
   ```
@@ -178,7 +180,9 @@ The OpenShift master is accessible through the private service endpoint if autho
     ```
     {: screen}
 
+
 <br />
+
 
 
 ## Accessing OpenShift clusters from automation tools by using an API key
@@ -344,3 +348,6 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     IAM#first.last@email.com       55555ee5-e555-55e5-e5e5-555555ee55ee               IAM:IBMid-666666FFF6
     ```
     {: screen}
+
+
+
