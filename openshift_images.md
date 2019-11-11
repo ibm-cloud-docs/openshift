@@ -627,7 +627,7 @@ If you already have a private registry, you must store the registry credentials 
 Before you begin:
 
 1.  [Create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
-2.  [Target your CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+2.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 To create an image pull secret:
 
@@ -694,7 +694,7 @@ Choose between the following options:
 
 Before you begin:
 * [Create an image pull secret](#other) to access images in other registries or OpenShift projects other than `default`.
-* [Target your CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+* [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
 
 ### Referring to the image pull secret in your pod deployment
 {: #pod_imagePullSecret}

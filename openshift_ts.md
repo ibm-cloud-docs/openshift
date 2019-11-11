@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -249,7 +249,7 @@ Could not create a domain name service for the network load balancer (`ibmcloud 
 The OpenVPN server could not be configured because a domain name service (DNS) was not created for the network load balancer (NLB).
 
 {: tsResolve}
-1.  Check that you have the correct permissions in {{site.data.keyword.cloud_notm}} IAM. If not, contact your account administrator to [assign you the appropriate IAM platform or service access role](/docs/containers?topic=containers-users#platform).
+1.  Check that you have the correct permissions in {{site.data.keyword.cloud_notm}} IAM. If not, contact your account administrator to [assign you the appropriate IAM platform or service access role](/docs/containers?topic=openshift-users#platform).
     ```
     ibmcloud iam user-policies <my_user_name@example.com>
     ```

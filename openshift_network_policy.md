@@ -694,7 +694,7 @@ This section shows you how to log traffic that is denied by a Kubernetes network
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Target the Kubernetes CLI to the cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure). Include the `--admin` option with the `ibmcloud oc cluster config` command, which is used to download the certificates and permission files. This download also includes the keys to access your infrastructure portfolio and run Calico commands on your worker nodes.
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` option with the `ibmcloud oc cluster config` command, which is used to download the certificates and permission files. This download also includes the keys to access your infrastructure portfolio and run Calico commands on your worker nodes.
     ```
     ibmcloud oc cluster config --cluster <cluster_name> --admin
     ```
