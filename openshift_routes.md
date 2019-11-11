@@ -38,7 +38,7 @@ The route hostname for a service is formatted like `<service_name>-<namespace>.<
 Not sure whether to use OpenShift routes or Ingress ALBs? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-network_planning#routes-vs-ingress).
 {: tip}
 
-The following diagram shows how a router directs communication from the internet to an app 
+The following diagram shows how a router directs communication from the internet to an app.
 
 <img src="images/roks-router.png" alt="Expose an app in a single-zone OpenShift cluster by using a router" width="550" style="width:550px; border-style: none"/>
 
