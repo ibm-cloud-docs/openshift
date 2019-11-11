@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-06"
+lastupdated: "2019-11-11"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -28,7 +28,7 @@ subcollection: openshift
 {: #encryption}
 
 Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluster to ensure data integrity and to prevent your data from being exposed to unauthorized users.
-{: shortdesc} 
+{: shortdesc}
 
 You can create sensitive data on different levels in your cluster that each require appropriate protection.
 - **Cluster-level:** Cluster configuration data is stored in the etcd component of your OpenShift master. Data in etcd is stored on the local disk of the OpenShift master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your OpenShift master by [enabling a key management service provider](#keyprotect) for your cluster.
@@ -69,7 +69,7 @@ KMS provider integration is a beta feature.
 {: note}
 
 **What KMS providers are available by default? Can I add other providers?**<br>
-Red Hat OpenShift on IBM Cloud supports the following KMS providers: 
+Red Hat OpenShift on IBM Cloud supports the following KMS providers:
 * {{site.data.keyword.keymanagementservicefull}} for [public cloud](/docs/services/key-protect?topic=key-protect-getting-started-tutorial) or [on-prem ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/apis/kms_apis.html#gen_key) environments.
 * [Hyper Protect Crypto Services](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external} for keep your own key (KYOK) crypto unit support.
 
