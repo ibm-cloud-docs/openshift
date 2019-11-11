@@ -45,10 +45,10 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <li><strong>OpenShift overview</strong>: Added an [OpenShift overview page](/docs/openshift?topic=openshift-overview).</li>
 <li><strong>Setting pod priority</strong>: Added a [pod priority page](/docs/openshift?topic=openshift-pod_priority).</li>
 <li><strong>Using {{site.data.keyword.registrylong_notm}}</strong>: Added the following topics about using {{site.data.keyword.registrylong_notm}}:
-<ul><li>[Understanding how to authorize your cluster to pull images from a registry](#cluster_registry_auth).</li>
-<li>[Copying the `default-<region>-icr-io` secrets](#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.</li>
-<li>[Creating your own image pull secret](#other_registry_accounts).</li>
-<li>[Adding the image pull secret](#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
+<ul><li>[Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-openshift-images#cluster_registry_auth).</li>
+<li>[Copying the `default-<region>-icr-io` secrets](/docs/openshift?topic=openshift-openshift-images#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.</li>
+<li>[Creating your own image pull secret](/docs/openshift?topic=openshift-openshift-images#other_registry_accounts).</li>
+<li>[Adding the image pull secret](/docs/openshift?topic=openshift-openshift-images#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
 </li>
 <li><strong>Exposing apps that are external to your cluster by using Ingress</strong>: Added information for how to use the [`proxy-external-service` Ingress annotation](/docs/openshift?topic=openshift-ingress#proxy-external) to include an app that is external to your cluster in Ingress application load balancing.</li>
 </ul></td>
