@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,7 +40,7 @@ An IT Exec has worldwide shipping routing and scheduling systems that partners i
 Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud scales containerized apps with five 9s of availability to meet growing demands. App deployments occur 40 times daily when Developers experiment easily, pushing changes to Development and Test systems quickly. The IoT Platform makes access to IoT data easy.
 
 Key technologies:    
-* [Multi-regions for business partner ecosystem ](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
+* [Multi-regions for business partner ecosystem ](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 * [Horizontal scaling](/docs/containers?topic=containers-app#highly_available_apps)
 * [Open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
 * [Cloud services for innovation](https://www.ibm.com/cloud/products#analytics)

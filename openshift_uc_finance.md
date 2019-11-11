@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,7 +40,7 @@ Why {{site.data.keyword.cloud_notm}}: To improve risk analysis, the company look
 
 Red Hat OpenShift on IBM Cloud and key technologies:
 * [Horizontal scaling](/docs/containers?topic=containers-app#highly_available_apps)
-* [Multiple regions for high availability](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
+* [Multiple regions for high availability](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Container security and isolation](/docs/openshift?topic=openshift-security#security)
 * [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/services/Cloudant?topic=cloudant-getting-started#getting-started)

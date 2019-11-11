@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-11"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -115,7 +115,7 @@ Check out the following changes between each version of the CLI plug-in:
   <td>Legacy</td>
   <td>Beta</td>
   </tr>
-  <tr><td>API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul></td>
+  <tr><td>API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul></td>
   <td>Legacy</td>
   <td>Beta</td>
   <td>Beta</td>
@@ -519,7 +519,7 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>The zone where you want to create the cluster. This value is required for standard clusters. Free clusters can be created in the region that you target with the <code>ibmcloud oc region set</code> command, but you cannot specify the zone.
 
-<p>Review [available zones](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#zones). To span your cluster across zones, you must create the cluster in a [multizone-capable zone](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#zones).</p>
+<p>Review [available zones](/docs/openshift?topic=openshift-regions-and-zones#zones). To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones).</p>
 
 <p class="note">When you select a zone that is located outside your country, keep in mind that you might require legal authorization before data can be physically stored in a foreign country.</p>
 </dd>
@@ -2058,7 +2058,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 **Command options**:
 <dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>The zone that you want to add. It must be a [multizone-capable zone](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#zones) within the cluster's region. This value is required.</dd>
+<dd>The zone that you want to add. It must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones) within the cluster's region. This value is required.</dd>
 
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
@@ -2156,7 +2156,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 **Command options**:
 <dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>The zone that you want to add. It must be a [multizone-capable zone](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#zones) within the cluster's region. This value is required.</dd>
+<dd>The zone that you want to add. It must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones) within the cluster's region. This value is required.</dd>
 
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
@@ -4434,7 +4434,7 @@ ibmcloud oc messages
 ## supported-locations command
 {: #cs_supported-locations}
 
-List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#locations).
+List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations).
 {: shortdesc}
 
 In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the `locations` command. When version 1.0 releases on 14 March 2020, the permanent syntax change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the CLI plug-in within the script or the environment where the script is run.
@@ -4499,7 +4499,7 @@ ibmcloud oc versions
 Target the API endpoint for {{site.data.keyword.containerlong_notm}}. If you do not specify an endpoint, you can view information about the current endpoint that is targeted.
 {: shortdesc}
 
-Region-specific endpoints are deprecated. Use the [global endpoint](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
+Region-specific endpoints are deprecated. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
 {: deprecated}
 
 If you need to list and work with resources from one region only, you can use the `ibmcloud oc api` command to target a regional endpoint instead of the global endpoint.
@@ -4562,7 +4562,7 @@ Region:                us-south
 Initialize the {{site.data.keyword.containerlong_notm}} plug-in or specify the region where you want to create or access OpenShift clusters.
 {: shortdesc}
 
-Region-specific endpoints are deprecated. Use the [global endpoint](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
+Region-specific endpoints are deprecated. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
 {: deprecated}
 
 If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` command to target a regional endpoint instead of the global endpoint.
@@ -4648,7 +4648,7 @@ ibmcloud oc region get
 List the available regions. The `Region Name` is the {{site.data.keyword.containerlong_notm}} name, and the `Region Alias` is the general {{site.data.keyword.cloud_notm}} name for the region.
 {: shortdesc}
 
-Region-specific endpoints are deprecated. Use the [global endpoint](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
+Region-specific endpoints are deprecated. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
 {: deprecated}
 
 **Minimum required permissions**: None
@@ -4696,7 +4696,7 @@ ibmcloud oc region set --region REGION
 <dt><code>--region <em>REGION</em></code></dt>
 <dd>Enter the region that you want to target. This value is optional. If you do not provide the region, you can select it from the list in the output.
 
-For a list of available regions, review [Locations](https://cloud.ibm.com/docs/openshift?topic=openshift-regions-and-zones) or use the `ibmcloud oc region ls` [command](#cs_regions).</dd></dl>
+For a list of available regions, review [Locations](/docs/openshift?topic=openshift-regions-and-zones) or use the `ibmcloud oc region ls` [command](#cs_regions).</dd></dl>
 
 **Example**:
 ```
