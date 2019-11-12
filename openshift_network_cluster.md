@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-12"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -70,7 +70,7 @@ Did you create a cluster with only a private service endpoint before you enabled
 
 9.  Optional: To use the private service endpoint only:
     1.  [Disable the public service endpoint](#disable-public-se).
-    2.  [Set up access to the master on the private service endpoint](/docs/openshift?topic=openshift-openshift_access_cluster#access_private_se).
+    2.  [Set up access to the master on the private service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se).
 
 
 <br />
@@ -165,7 +165,7 @@ Note that you cannot disable the private service endpoint after you enable it.
         ibmcloud oc cluster feature disable public-service-endpoint --cluster <cluster_name_or_ID>
         ```
         {: pre}
-    2.  [Set up access to the master on the private service endpoint](/docs/openshift?topic=openshift-openshift_access_cluster#access_private_se).
+    2.  [Set up access to the master on the private service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se).
 
 <br />
 
@@ -184,7 +184,7 @@ Trying to change the service endpoint for master-worker communication instead? C
 {: tip}
 
 Before you begin:
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * If your worker nodes are stand-alone (not part of a worker pool), [update them to worker pools](/docs/openshift?topic=openshift-update#standalone_to_workerpool).
 
 To change the VLANs that a worker pool uses to provision worker nodes:

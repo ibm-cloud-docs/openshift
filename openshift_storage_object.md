@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-12"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -74,7 +74,7 @@ To access your {{site.data.keyword.cos_full_notm}} service instance to read and 
 Follow these steps to create a Kubernetes secret for the credentials of an {{site.data.keyword.cos_full_notm}} service instance. If you plan to use a local Cloud Object Storage server or a different s3 API endpoint, create a Kubernetes secret with the appropriate credentials.
 
 
-Before you begin, [access your cluster](/docs/openshift?topic=openshift-openshift_access_cluster#access_public_se). 
+Before you begin, [access your cluster](/docs/openshift?topic=openshift-access_cluster#access_public_se). 
 
 1. Retrieve the **apikey**, or the **access_key_id** and the **secret_access_key** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials).
 
@@ -150,7 +150,7 @@ Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set
 Looking for instructions for how to update or remove the {{site.data.keyword.cos_full_notm}} plug-in? See [Updating the plug-in](#update_cos_plugin) and [Removing the plug-in](#remove_cos_plugin).
 {: tip}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 
 
@@ -523,7 +523,7 @@ Removing the plug-in does not remove existing PVCs, PVs, or data. When you remov
 
 Before you begin:
 
-- [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 - Make sure that you do not have any PVCs or PVs in your cluster that use {{site.data.keyword.cos_full_notm}}. To list all pods that mount a specific PVC, run `oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"`.
 
 To remove the plug-in:
