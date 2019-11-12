@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -38,7 +38,7 @@ If your cluster cannot access the public network, such as a private cluster behi
 Install the {{site.data.keyword.cloud_notm}} Block Storage plug-in with a Helm chart to set up pre-defined storage classes for block storage. You can use these storage classes to create a PVC to provision block storage for your apps.
 {: shortdesc}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 
 
@@ -167,7 +167,7 @@ You can now continue to [create a PVC](#add_block) to provision block storage fo
 You can upgrade the existing {{site.data.keyword.cloud_notm}} Block Storage plug-in to the latest version.
 {: shortdesc}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Update the Helm repo to retrieve the latest version of all helm charts in this repo.
    ```
@@ -214,7 +214,7 @@ Removing the plug-in does not remove existing PVCs, PVs, or data. When you remov
 {: important}
 
 Before you begin:
-- [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 - Make sure that you do not have any PVCs or PVs in your cluster that use block storage.
 
 To remove the plug-in:
@@ -863,7 +863,7 @@ If you want to automatically create your PVC when you create the stateful set, u
 Use this option if you want to automatically create the PVC when you create the stateful set.
 {: shortdesc}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you cannot start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results.
    1. List existing stateful sets in your cluster.
@@ -1145,7 +1145,7 @@ You can pre-provision your PVCs before creating your stateful set or use existin
 
 When you [dynamically provision your PVCs when creating the stateful set](#block_dynamic_statefulset), the name of the PVC is assigned based on the values that you used in the stateful set YAML file. In order for the stateful set to use existing PVCs, the name of your PVCs must match the name that would automatically be created when using dynamic provisioning.
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. If you want to pre-provision the PVC for your stateful set before you create the stateful set, follow steps 1-3 in [Adding block storage to apps](#add_block) to create a PVC for each stateful set replica. Make sure that you create your PVC with a name that follows the following format: `<volume_name>-<statefulset_name>-<replica_number>`.
    - **`<volume_name>`**: Use the name that you want to specify in the `spec.volumeClaimTemplates.metadata.name` section of your stateful set, such as `nginxvol`.
@@ -1284,7 +1284,7 @@ Review the following backup and restore options for your block storage:
 
 <dl>
   <dt>Set up periodic snapshots</dt>
-  <dd><p>You can [set up periodic snapshots for your block storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-snapshots#snapshots), which is a read-only image that captures the state of the instance at a point in time. To store the snapshot, you must request snapshot space on your block storage. Snapshots are stored on the existing storage instance within the same zone. You can restore data from a snapshot if a user accidentally removes important data from the volume.</br></br> <strong>To create a snapshot for your volume: </strong><ol><li>[Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).</li><li>Log in to the `ibmcloud sl` CLI. <pre class="pre"><code>ibmcloud sl init</code></pre></li><li>List existing PVs in your cluster. <pre class="pre"><code>oc get pv</code></pre></li><li>Get the details for the PV for which you want to create snapshot space and note the volume ID, the size, and the IOPS. <pre class="pre"><code>oc describe pv &lt;pv_name&gt;</code></pre> The size and IOPS are shown in the <strong>Labels</strong> section of your CLI output. To find the volume ID, review the <code>ibm.io/network-storage-id</code> annotation of your CLI output. </li><li>Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step. <pre class="pre"><code>ibmcloud sl block snapshot-order &lt;volume_ID&gt; --size &lt;size&gt; --tier &lt;iops&gt;</code></pre></li><li>Wait for the snapshot size to create. <pre class="pre"><code>ibmcloud sl block volume-detail &lt;volume_ID&gt;</code></pre>The snapshot size is successfully provisioned when the <strong>Snapshot Size (GB)</strong> in your CLI output changes from 0 to the size that you ordered. </li><li>Create the snapshot for your volume and note the ID of the snapshot that is created for you. <pre class="pre"><code>ibmcloud sl block snapshot-create &lt;volume_ID&gt;</code></pre></li><li>Verify that the snapshot is created successfully. <pre class="pre"><code>ibmcloud sl block snapshot-list &lt;volume_ID&gt;</code></pre></li></ol></br><strong>To restore data from a snapshot to an existing volume: </strong><pre class="pre"><code>ibmcloud sl block snapshot-restore &lt;volume_ID&gt; &lt;snapshot_ID&gt;</code></pre></p></dd>
+  <dd><p>You can [set up periodic snapshots for your block storage](/docs/infrastructure/BlockStorage?topic=BlockStorage-snapshots#snapshots), which is a read-only image that captures the state of the instance at a point in time. To store the snapshot, you must request snapshot space on your block storage. Snapshots are stored on the existing storage instance within the same zone. You can restore data from a snapshot if a user accidentally removes important data from the volume.</br></br> <strong>To create a snapshot for your volume: </strong><ol><li>[Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).</li><li>Log in to the `ibmcloud sl` CLI. <pre class="pre"><code>ibmcloud sl init</code></pre></li><li>List existing PVs in your cluster. <pre class="pre"><code>oc get pv</code></pre></li><li>Get the details for the PV for which you want to create snapshot space and note the volume ID, the size, and the IOPS. <pre class="pre"><code>oc describe pv &lt;pv_name&gt;</code></pre> The size and IOPS are shown in the <strong>Labels</strong> section of your CLI output. To find the volume ID, review the <code>ibm.io/network-storage-id</code> annotation of your CLI output. </li><li>Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step. <pre class="pre"><code>ibmcloud sl block snapshot-order &lt;volume_ID&gt; --size &lt;size&gt; --tier &lt;iops&gt;</code></pre></li><li>Wait for the snapshot size to create. <pre class="pre"><code>ibmcloud sl block volume-detail &lt;volume_ID&gt;</code></pre>The snapshot size is successfully provisioned when the <strong>Snapshot Size (GB)</strong> in your CLI output changes from 0 to the size that you ordered. </li><li>Create the snapshot for your volume and note the ID of the snapshot that is created for you. <pre class="pre"><code>ibmcloud sl block snapshot-create &lt;volume_ID&gt;</code></pre></li><li>Verify that the snapshot is created successfully. <pre class="pre"><code>ibmcloud sl block snapshot-list &lt;volume_ID&gt;</code></pre></li></ol></br><strong>To restore data from a snapshot to an existing volume: </strong><pre class="pre"><code>ibmcloud sl block snapshot-restore &lt;volume_ID&gt; &lt;snapshot_ID&gt;</code></pre></p></dd>
   <dt>Replicate snapshots to another zone</dt>
  <dd><p>To protect your data from a zone failure, you can [replicate snapshots](/docs/infrastructure/BlockStorage?topic=BlockStorage-replication#replication) to a block storage instance that is set up in another zone. Data can be replicated from the primary storage to the backup storage only. You cannot mount a replicated block storage instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.</p></dd>
  <dt>Duplicate storage</dt>
@@ -1294,7 +1294,7 @@ Review the following backup and restore options for your block storage:
 To make your data even more highly available and protect your app from a zone failure, set up a second {{site.data.keyword.cos_short}} instance and replicate data across zones. If you need to restore data from your {{site.data.keyword.cos_short}} instance, use the restore script that is provided with the image.</dd>
 <dt>Copy data to and from pods and containers</dt>
 <dd><p>You can use the `oc cp` [command![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) to copy files and directories to and from pods or specific containers in your cluster.</p>
-<p>Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster). If you do not specify a container with <code>-c</code>, the command uses to the first available container in the pod.</p>
+<p>Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster). If you do not specify a container with <code>-c</code>, the command uses to the first available container in the pod.</p>
 <p>You can use the command in various ways:</p>
 <ul>
 <li>Copy data from your local machine to a pod in your cluster: <pre class="pre"><code>oc cp <var>&lt;local_filepath&gt;/&lt;filename&gt;</var> <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;</var></code></pre></li>
@@ -1614,7 +1614,7 @@ Remove the PVC, PV, and the storage instance from your {{site.data.keyword.cloud
 
 Before you begin:
 - Make sure that you backed up any data that you want to keep.
-- [Access your cluster](/docs/openshift?topic=openshift-openshift_access_cluster#access_public_se)
+- [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_public_se)
 
 To clean up persistent data:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-06"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -37,6 +37,16 @@ The route hostname for a service is formatted like `<service_name>-<namespace>.<
 
 Not sure whether to use OpenShift routes or Ingress ALBs? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-network_planning#routes-vs-ingress).
 {: tip}
+
+The following diagram shows how a router directs communication from the internet to an app.
+
+<img src="images/roks-router.png" alt="Expose an app in a single-zone OpenShift cluster by using a router" width="550" style="width:550px; border-style: none"/>
+
+1. A request to your app uses the route hostname that you set up for your app. A DNS system service resolves the subdomain to the floating public IP address of the load balancer service that exposes the router.
+
+2. The router receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. If multiple app instances are deployed in the cluster, the router sends the requests between the app pods.
+
+3. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the load balancer service to the client.
 
 ## Setting up routes for your apps
 {: #routes-setup}

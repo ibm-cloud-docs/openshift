@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -131,7 +131,7 @@ Before you begin:
 *  Confirm that you have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-access_reference#service) for the cluster.
 *  Make sure that your cluster has public network connectivity to expose the internal registry with a public route.
 *  Install Docker on your local machine.
-*  [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+*  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To use the internal registry, set up a public route to access the registry. Then, create an image pull secret that includes the credentials to access the registry so that deployments in other projects can pull images from this registry.
 
@@ -303,7 +303,7 @@ You can deploy containers to your cluster from an IBM-provided public image or a
 Before you begin:
 1. [Set up a namespace in {{site.data.keyword.registryshort_notm}} and push images to this namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 2. [Create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
-4. [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+4. [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To deploy a container into the **default** project of your cluster:
 
@@ -394,7 +394,7 @@ Before you begin:
 
 1.  [Set up a namespace in {{site.data.keyword.registryshort_notm}} and push images to this namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 2.  [Create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
-4.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+4.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 <br/>
 To use your own image pull secret, choose among the following options:
@@ -627,7 +627,7 @@ If you already have a private registry, you must store the registry credentials 
 Before you begin:
 
 1.  [Create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
-2.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+2.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To create an image pull secret:
 
@@ -694,7 +694,7 @@ Choose between the following options:
 
 Before you begin:
 * [Create an image pull secret](#other) to access images in other registries or OpenShift projects other than `default`.
-* [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+* [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Referring to the image pull secret in your pod deployment
 {: #pod_imagePullSecret}
@@ -843,7 +843,7 @@ You can set up your Red Hat OpenShift on IBM Cloud cluster to pull entitled soft
 Do you have older entitled software from Passport Advantage? Use the [PPA importer tool](/docs/containers?topic=containers-hybrid_iks_icp#hybrid_ppa_importer) instead to deploy this software in your cluster.
 {: tip}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Get the entitlement key for your entitled software library.
     1.  Log in to [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) and scroll to the **Container software library** section. Click **View library**.

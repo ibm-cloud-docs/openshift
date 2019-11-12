@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -161,7 +161,7 @@ Define update strategies for your app, including the number of pods that you wan
 Review how you can learn about Kubernetes concepts and the terminology.
 {: shortdesc}
 
-* Familiarize yourself with the product by completing the [Creating clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial)
+* Familiarize yourself with the product by completing the [Creating clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
 * Learn how Kubernetes and Red Hat OpenShift on IBM Cloud work together by completing this [course](https://cognitiveclass.ai/courses/kubernetes-course).
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-12"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -51,6 +51,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <li>[Adding the image pull secret](/docs/openshift?topic=openshift-openshift-images#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
 </li>
 <li><strong>Exposing apps that are external to your cluster by using Ingress</strong>: Added information for how to use the [`proxy-external-service` Ingress annotation](/docs/openshift?topic=openshift-ingress#proxy-external) to include an app that is external to your cluster in Ingress application load balancing.</li>
+<li><strong>Version changelog</strong>: Worker node patch updates are available forOpenShift [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1530).</li>
 </ul></td>
 </tr>
 <tr>
@@ -79,7 +80,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <td>31 October 2019</td>
 <td><strong>Refreshed Red Hat OpenShift on IBM Cloud docs</strong>: Includes the following new content:<ul>
   <li>[Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn)</li>
-  <li>[Changing service endpoints or VLAN connections for OpenShift clusters](/docs/openshift?topic=openshift-openshift_access_cluster)</li>
+  <li>[Changing service endpoints or VLAN connections for OpenShift clusters](/docs/openshift?topic=openshift-access_cluster)</li>
   <li>[Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes)</li>
   <li>[Exposing apps with network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)</li>
   <li>[Exposing apps with Ingress application load balancers (ALBs)](/docs/openshift?topic=openshift-ingress-about)</li></ul>
@@ -201,7 +202,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul>
   <li><strong>Refreshed Red Hat OpenShift on IBM Cloud docs</strong>: Includes the following new content:<ul>
     <li>[Security information for OpenShift clusters](/docs/openshift?topic=openshift-security).
-    <li>[Accessing clusters](/docs/openshift?topic=openshift-openshift_access_cluster).</li>
+    <li>[Accessing clusters](/docs/openshift?topic=openshift-access_cluster).</li>
     <li>[App networking options](/docs/openshift?topic=openshift-network_planning) with comparisons of routes, NodePort, load balancers, and Ingress.</li>
     <li>[Common app modification scenarios](/docs/openshift?topic=openshift-openshift_apps#common-app-modification-scenarios) for moving apps from community Kubernetes to OpenShift.</li>
     <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#openshift_charges) to explain the monthly license in more detail.</li>
@@ -311,7 +312,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>01 August 2019</td>
-  <td><strong>Red Hat OpenShift on IBM Cloud</strong>: Red Hat OpenShift on IBM Cloud is generally available as of 1 August 2019 at 0:00 UTC. Any beta clusters expire within 30 days. You can [create a GA cluster](/docs/openshift?topic=openshift-openshift_tutorial) and then re-deploy any apps that you use in the beta clusters before the beta clusters are removed.<br><br>Because the {{site.data.keyword.containerlong_notm}} logic and underlying cloud infrastructure is the same, many topics are reused across the documentation for [community Kubernetes](/docs/containers?topic=containers-getting-started) and [OpenShift](/docs/openshift?topic=openshift-getting-started) clusters, such as this release notes topic.</td>
+  <td><strong>Red Hat OpenShift on IBM Cloud</strong>: Red Hat OpenShift on IBM Cloud is generally available as of 1 August 2019 at 0:00 UTC. You can [create a GA cluster](/docs/openshift?topic=openshift-openshift_tutorial) and then re-deploy any apps that you used in any expired beta clusters.</td>
 </tr>
 </tbody></table>
 
@@ -431,7 +432,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>07 June 2019</td>
   <td><ul>
-  <li><strong>Access to the Kubernetes master through the private service endpoint</strong>: Added [steps](/docs/openshift?topic=openshift-openshift_access_cluster#access_private_se) to expose the private service endpoint through a private load balancer. After you complete these steps, your authorized cluster users can access the Kubernetes master from a VPN or {{site.data.keyword.cloud_notm}} Direct Link connection.</li>
+  <li><strong>Access to the Kubernetes master through the private service endpoint</strong>: Added [steps](/docs/openshift?topic=openshift-access_cluster#access_private_se) to expose the private service endpoint through a private load balancer. After you complete these steps, your authorized cluster users can access the Kubernetes master from a VPN or {{site.data.keyword.cloud_notm}} Direct Link connection.</li>
   <li><strong>{{site.data.keyword.BluDirectLink}}</strong>: Added {{site.data.keyword.cloud_notm}} Direct Link to the [VPN connectivity](/docs/openshift?topic=openshift-vpn) and [hybrid cloud](/docs/containers?topic=containers-hybrid_iks_icp) pages as a way to create a direct, private connection between your remote network environments and {{site.data.keyword.containerlong_notm}} without routing over the public internet.</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `ingress-auth` image to build 330](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
   <li><strong>OpenShift beta</strong>: [Added a lesson](/docs/openshift?topic=openshift-openshift_tutorial#openshift_logdna_sysdig) about how to modify app deployments for privileged security context constraints for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} add-ons.</li>

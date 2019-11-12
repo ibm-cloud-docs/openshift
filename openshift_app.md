@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-12"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -95,7 +95,7 @@ OpenShift has different default settings than community Kubernetes, such as stri
 If you have an app that runs with root permisisons, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your OpenShift cluster. For example, you might set up your project with a service account to control privilaged access, and then modify your deployment to use this service account.
 {: shortdesc}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  As a cluster administrator, create a project.
     ```
