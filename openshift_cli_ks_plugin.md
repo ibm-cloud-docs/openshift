@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-12"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -579,10 +579,6 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
-
-
-<code><strong>-s</strong></code></br>
-Do not show the message of the day or update reminders. This value is optional.
 
 **Examples**:
 
