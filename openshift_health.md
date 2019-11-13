@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-11-13"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -192,8 +192,8 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
         oc get ds logdna-agent -n logdna-agent -o yaml > logdna-ds.yaml
         ```
         {: pre}
-    2.  In the configuration file, add the following specifications, update the `spec.template.spec.containers.env` environment variable values for the `LDAPIHOST` and `LDLOGHOST` with the `<region>`.
-        ```
+    2.  In the configuration file, update the `spec.template.spec.containers.env` environment variable values for the `LDAPIHOST` and `LDLOGHOST` with the `<region>`.
+        ```yaml
         apiVersion: extensions/v1beta1
         kind: DaemonSet
         ...
@@ -213,17 +213,37 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
                   value: logs.<region>.logging.cloud.ibm.com
         ```
         {: screen}
-    3.  Save the configuration file and apply your changes.
+
+    3. Change the `volumeMounts.mountPath` to `/var/data/kubeletlogs`.
+        ```yaml
+        volumeMounts:
+        - mountPath: /var/data/kubeletlogs
+          name: vardatakubeletlogs
+        ```
+        {: screen}
+
+    4. Change the `volumes.hostPath` to include `/var/data/kubeletlogs`.
+        ```yaml
+        volumes:
+        - hostPath:
+            path: /var/data/kubeletlogs
+          name: vardatakubeletlogs
+        ```
+        {: screen}
+
+    5.  Save the configuration file and apply your changes.
         ```
         oc apply -f logdna-ds.yaml
         ```
         {: pre}
-    4.  Verify that the new `logdna-agent` pods on each node are in a **Running** status.
+
+    6.  Verify that the new `logdna-agent` pods on each node are in a **Running** status.
         ```
         oc get pods
         ```
         {: pre}
-    5.  Optional: If no logs are sent to your {{site.data.keyword.la_short}} instance, delete any `logdna-agent` pods so that they pick up the configuration change.
+
+    7.  Optional: If no logs are sent to your {{site.data.keyword.la_short}} instance, delete any `logdna-agent` pods so that they pick up the configuration change.
         ```
         oc delete pod <logdna-agent-123456>
         ```
