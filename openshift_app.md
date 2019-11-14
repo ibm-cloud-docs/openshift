@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-12"
+lastupdated: "2019-11-14"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -79,7 +79,7 @@ OpenShift has different default settings than community Kubernetes, such as stri
 <td>Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error.</td>
 <td>Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions:<ul>
 <li>Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port.</li>
-<li>Add your container deployment to a privileged service account, such as in the [example for giving a deployment priviliged access](#openshift_move_apps_example_scc).</li>
+<li>Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc).</li>
 <li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/port_forwarding.html).</li></ul></td>
 </tr>
 <tr>
@@ -92,7 +92,7 @@ OpenShift has different default settings than community Kubernetes, such as stri
 ### Example steps for giving a deployment privileged access
 {: #openshift_move_apps_example_scc}
 
-If you have an app that runs with root permisisons, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your OpenShift cluster. For example, you might set up your project with a service account to control privilaged access, and then modify your deployment to use this service account.
+If you have an app that runs with root permissions, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your OpenShift cluster. For example, you might set up your project with a service account to control privileged access, and then modify your deployment to use this service account.
 {: shortdesc}
 
 Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).

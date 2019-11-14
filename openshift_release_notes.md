@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-12"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -51,7 +51,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <li>[Adding the image pull secret](/docs/openshift?topic=openshift-openshift-images#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
 </li>
 <li><strong>Exposing apps that are external to your cluster by using Ingress</strong>: Added information for how to use the [`proxy-external-service` Ingress annotation](/docs/openshift?topic=openshift-ingress#proxy-external) to include an app that is external to your cluster in Ingress application load balancing.</li>
-<li><strong>Version changelog</strong>: Worker node patch updates are available forOpenShift [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1530).</li>
+<li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1530).</li>
 </ul></td>
 </tr>
 <tr>
@@ -312,7 +312,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>01 August 2019</td>
-  <td><strong>Red Hat OpenShift on IBM Cloud</strong>: Red Hat OpenShift on IBM Cloud is generally available as of 1 August 2019 at 0:00 UTC. You can [create a GA cluster](/docs/openshift?topic=openshift-openshift_tutorial) and then re-deploy any apps that you used in any expired beta clusters.</td>
+  <td><strong>Red Hat OpenShift on IBM Cloud</strong>: Red Hat OpenShift on IBM Cloud is generally available as of 1 August 2019 at 0:00 UTC. You can [create a GA cluster](/docs/openshift?topic=openshift-openshift_tutorial) and then redeploy any apps that you used in any expired beta clusters.</td>
 </tr>
 </tbody></table>
 

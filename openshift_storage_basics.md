@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -36,7 +36,7 @@ The following image shows the storage components in a cluster.
 
 <img src="images/cs_storage_pvc_pv.png" alt="Storage components in a cluster" width="275" style="width: 275px; border-style: none"/>
 
-- **Cluster**</br> By default, every cluster is set up with a plug-in to [provision file storage](/docs/openshift?topic=openshift-file_storage#add_file). You can choose to install other add-ons, such as the one for [block storage](/docs/containers?topic=containers-block_storage). To use storage in a cluster, you must create a persistent volume claim, a persistent volume and a physical storage instance. When you delete the cluster, you have the option to delete related storage instances.
+- **Cluster**</br> By default, every cluster is set up with a plug-in to [provision file storage](/docs/openshift?topic=openshift-file_storage#add_file). You can choose to install other add-ons, such as the one for [block storage](/docs/openshift?topic=openshift-block_storage). To use storage in a cluster, you must create a persistent volume claim, a persistent volume and a physical storage instance. When you delete the cluster, you have the option to delete related storage instances.
 - **App**</br> To read from and write to your storage instance, you must mount the persistent volume claim (PVC) to your app. Different storage types have different read-write rules. For example, you can mount multiple pods to the same PVC for file storage. Block storage comes with a RWO (ReadWriteOnce) access mode so that you can mount the storage to one pod only.
 - **Persistent volume claim (PVC)** </br> A PVC is the request to provision persistent storage with a specific type and configuration. To specify the persistent storage flavor that you want, you use [Kubernetes storage classes](#storageclasses). The cluster admin can define storage classes, or you can choose from one of the predefined storage classes in Red Hat OpenShift on IBM Cloud. When you create a PVC, the request is sent to the {{site.data.keyword.Bluemix}} storage provider. Depending on the configuration that is defined in the storage class, the physical storage device is ordered and provisioned into your IBM Cloud infrastructure account. If the requested configuration does not exist, the storage is not created.
 - **Persistent volume (PV)** </br> A PV is a virtual storage instance that is added as a volume to the cluster. The PV points to a physical storage device in your IBM Cloud infrastructure account and abstracts the API that is used to communicate with the storage device. To mount a PV to an app, you must have a matching PVC. Mounted PVs appear as a folder inside the container's file system.

@@ -37,6 +37,8 @@ To connect your worker nodes and apps to an on-premises data center, you can con
 
 - **{{site.data.keyword.BluDirectLink}}**: [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-about-ibm-cloud-direct-link) allows you to create a direct, private connection between your remote network environments and Red Hat OpenShift on IBM Cloud without routing over the public internet. The {{site.data.keyword.cloud_notm}} Direct Link offerings are useful when you must implement hybrid workloads, cross-provider workloads, large or frequent data transfers, or private workloads. To choose an {{site.data.keyword.cloud_notm}} Direct Link offering and set up an {{site.data.keyword.cloud_notm}} Direct Link connection, see [Get Started with IBM Cloud {{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link#how-do-i-know-which-type-of-ibm-cloud-direct-link-i-need-) in the {{site.data.keyword.cloud_notm}} Direct Link documentation.
 
+- **Virtual Router Appliance (VRA) or Fortigate Security Appliance (FSA)**: You might choose to set up a [VRA (Vyatta)](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) or [FSA](/docs/services/vmwaresolutions/services?topic=vmware-solutions-fsa_considerations) to configure an IPSec VPN endpoint. This option is useful when you have a larger cluster, want to access multiple clusters over a single VPN, or need a route-based VPN. To configure a VRA, see [Setting up VPN connectivity with VRA](#vyatta).
+
 ## Using the strongSwan IPSec VPN service Helm chart
 {: #vpn-setup}
 
@@ -667,4 +669,35 @@ You can disable the VPN connection by deleting the Helm chart.
 
 <br />
 
+
+## Using a Virtual Router Appliance
+{: #vyatta}
+
+The [Virtual Router Appliance (VRA)](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) provides the latest Vyatta 5600 operating system for x86 bare metal servers. You can use a VRA as VPN gateway to securely connect to an on-premises network.
+{:shortdesc}
+
+All public and private network traffic that enters or exits the cluster VLANs is routed through a VRA. You can use the VRA as a VPN endpoint to create an encrypted IPSec tunnel between servers in IBM Cloud infrastructure and on-premises resources. For example, the following diagram shows how an app on a private-only worker node in Red Hat OpenShift on IBM Cloud can communicate with an on-premises server via a VRA VPN connection:
+
+<img src="images/cs_vpn_vyatta.png" width="725" alt="Expose an app in Red Hat OpenShift on IBM Cloud by using a load balancer" style="width:725px; border-style: none"/>
+
+1. An app in your cluster, `myapp2`, receives a request from an Ingress or LoadBalancer service and needs to securely connect to data in your on-premises network.
+
+2. Because `myapp2` is on a worker node that is on a private VLAN only, the VRA acts as a secure connection between the worker nodes and the on-premises network. The VRA uses the destination IP address to determine which network packets to send to the on-premises network.
+
+3. The request is encrypted and sent over the VPN tunnel to the on-premises data center.
+
+4. The incoming request passes through the on-premises firewall and is delivered to the VPN tunnel endpoint (router) where it is decrypted.
+
+5. The VPN tunnel endpoint (router) forwards the request to the on-premises server or mainframe, depending on the destination IP address that was specified in step 2. The necessary data is sent back over the VPN connection to `myapp2` through the same process.
+
+To set up a Virtual Router Appliance:
+
+1. [Order a VRA](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-getting-started).
+
+2. [Configure the private VLAN on the VRA](/docs/infrastructure/virtual-router-appliance?topic=gateway-appliance-managing-vlans-and-gateway-appliances).
+
+3. To enable a VPN connection by using the VRA, [configure VRRP on the VRA](/docs/infrastructure/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#high-availability-vpn-with-vrrp).
+
+If you have an existing router appliance and then add a cluster, the new portable subnets that are ordered for the cluster are not configured on the router appliance. In order to use networking services, you must enable routing between the subnets on the same VLAN by [enabling VLAN spanning or VRF](/docs/openshift?topic=openshift-plan_clusters#worker-worker).
+{: important}
 

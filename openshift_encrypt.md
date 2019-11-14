@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -78,7 +78,7 @@ Because adding a different KMS provider requires updating the managed master def
 **With a KMS provider, do I control the encryption in my cluster?**<br>
 Yes. When you enable a KMS provider in your cluster, your own KMS root key is used to encrypt data in etcd, including the LUKS secrets. Using your own encryption root key adds a layer of security to your etcd data and Kubernetes secrets and gives you more granular control of who can access sensitive cluster information. For more information, see the [overview](#encrypt_ov) and your KMS provider's documentation, such as [{{site.data.keyword.keymanagementserviceshort}} envelope encryption](/docs/services/key-protect?topic=key-protect-envelope-encryption).
 
-You cannot disable KMS provider encryption. Do not delete root keys in your KMS instance, even if you rotate to use a new key. You cannot access or remove the data in etcd or the data from the secrets in your cluster if you delete a root key.
+You cannot disable KMS provider encryption. Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
 {: important}
 
 <br />
@@ -158,7 +158,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     After the KMS provider is enabled in the cluster, data in `etcd`, existing secrets, and new secrets that are created in the cluster are automatically encrypted by using your root key.
 6.  Optional: [Verify that your secrets are encrypted](#verify_kms).
 
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. You cannot access or remove the data in etcd or the data from the secrets in your cluster if you delete a root key.
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
 {: important}
 
 ### Enabling or rotating KMS encryption through the console
@@ -186,7 +186,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     {: screen}
 7.  Optional: [Verify that your secrets are encrypted](#verify_kms).
 
-After the KMS provider is enabled in the cluster, data in `etcd`, existing secrets, and new secrets that are created in the cluster are automatically encrypted by using your root key. Do not delete root keys in your KMS instance, even if you rotate to use a new key. You cannot access or remove the data in etcd or the data from the secrets in your cluster if you delete a root key.
+After the KMS provider is enabled in the cluster, data in `etcd`, existing secrets, and new secrets that are created in the cluster are automatically encrypted by using your root key. Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
 {: important}
 
 ## Verifying secret encryption
@@ -195,11 +195,11 @@ After the KMS provider is enabled in the cluster, data in `etcd`, existing secre
 After you enable a KMS provider in your cluster, you can verify that your cluster secrets are encrypted by querying information that is in `etcd` in the master. If the returned information is encrypted, you know that the KMS provider works in your cluster.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Install the etcd CLI (`etcdctl`) version 3 or higher.
     1.  Download the release package for your operating system from the [etcd project ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/etcd-io/etcd/releases).
-    2.  Unzip and move the `etcdctl` binary file to the location of your binary files, such as the following example.
+    2.  Extract and move the `etcdctl` binary file to the location of your binary files, such as the following example.
         ```
         mv Downloads/etcd-v3.3.13-darwin-amd64/etcdctl /usr/local/bin/etcdctl
         ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-12"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -39,7 +39,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | ---- | ------------ |
 | Use cases | <ul><li>Run existing apps in traditional environments such as {{site.data.keyword.appserver_short}}.</li><li>Modernize existing apps to newer runtimes at your own pace.</li><li>Build new, cloud-native apps by using portable, open source software.</li></ul>  |
 | [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-applications#about){: external} | For included components, require cluster size, and installation. |
-| [Documentation](/docs/cloud-pak-applications?topic=cloud-pak-applications-getting-started){: external} | For more information such as post-installation tasks and pricing. |
+| [Documentation](/docs/cloud-pak-applications?topic=cloud-pak-applications-getting-started){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
 {: caption="Cloud Pak for Applications" caption-side="top"}
@@ -51,11 +51,11 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | ---- | ------------ |
 | Use cases | <ul><li>Set up an end-to-end platform to collect, organize, and analyze your data.</li><li>Create interactive data visualizations and analyze information for insights across data sets, without needing to code.</li><li>Operationalize your data with AI and a suite of governance tools to make sure that your data is curated, useful, trusted, and ready for analysis.</li></ul> |
 | [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-data#about){: external} | For included components, require cluster size, and installation. |
-| [Documentation](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ){: external} | For more information such as post-installation tasks and pricing. | |
+| [Documentation](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ){: external} | For more information such as postinstallation tasks and pricing. | |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
 {: caption="Cloud Pak for Data" caption-side="top"}
-{: #cloudpak1}
+{: #cloudpak2}
 {: tab-title="Data"}
 {: tab-group="cloudpak"}
 
@@ -63,11 +63,11 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | ---- | ------------ |
 | Use cases | <ul><li>Integrate workflows, APIs, logging, and events across multiple cloud environments, all from a unified platform.</li><li>Rapidly and securely transfer data across hybrid cloud environments.</li><li>Set up a multichannel gateway to expand and control access to the full range of your mobile, web app, API, SOA, B2B, and other cloud workloads.</li></ul>  |
 | [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-integration#about){: external} | For included components, require cluster size, and installation. |
-| [Documentation](https://www.ibm.com/support/knowledgecenter/en/SSGT7J){: external} | For more information such as post-installation tasks and pricing. |
+| [Documentation](https://www.ibm.com/support/knowledgecenter/en/SSGT7J){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
 {: caption="Cloud Pak for Integration" caption-side="top"}
-{: #cloudpak1}
+{: #cloudpak3}
 {: tab-title="Integration"}
 {: tab-group="cloudpak"}
 
@@ -75,11 +75,11 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | ---- | ------------ |
 | Use cases | <ul><li>Digitize business operations and extend your workforce with digital labor.</li><li>Control and synchronize enterprise content servers and management systems across multiple channels, devices, and mobile environments.</li><li>Automate and visualize thousands of policies, decisions, and other business rules.</li></ul>  |
 | [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-automation#about){: external} | For included components, require cluster size, and installation. |
-| [Documentation](https://www.ibm.com/support/knowledgecenter/en/SSYHZ8_19.0.x/welcome/kc_welcome_dba_distrib.html){: external} | For more information such as post-installation tasks and pricing. |
+| [Documentation](https://www.ibm.com/support/knowledgecenter/en/SSYHZ8_19.0.x/welcome/kc_welcome_dba_distrib.html){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
 {: caption="Cloud Pak for Automation" caption-side="top"}
-{: #cloudpak1}
+{: #cloudpak4}
 {: tab-title="Automation"}
 {: tab-group="cloudpak"}
 
@@ -87,11 +87,11 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | ---- | ------------ |
 | Use cases | <ul><li>Consistently and securely manage your apps that are deployed in Kubernetes and OpenShift clusters across multiple cloud providers.</li><li>Consolidate event monitoring information across clusters in off-prem and on-prem clouds.</li><li>Optimize workflows with automatic provisioning of virtual machines and other infrastructure resources across clouds providers.</li></ul> |
 | [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-management#about){: external} | For included components, require cluster size, and installation. |
-| [Documentation](https://www.ibm.com/support/knowledgecenter/SSFC4F/product_welcome_cloud_pak.html){: external} | For more information such as post-installation tasks and pricing. |
+| [Documentation](https://www.ibm.com/support/knowledgecenter/SSFC4F/product_welcome_cloud_pak.html){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
 {: caption="Cloud Pak for Management" caption-side="top"}
-{: #cloudpak1}
+{: #cloudpak5}
 {: tab-title="Management"}
 {: tab-group="cloudpak"}
 
@@ -125,19 +125,19 @@ Review frequently asked questions for [IBM Cloud Paks ![External link icon](../i
 ### How do I install a Cloud Pak in my Red Hat OpenShift on IBM Cloud cluster? How do I access it later?
 {: #cloud_pak_manage}
 
-Cloud Paks are integrated with the {{site.data.keyword.cloud_notm}} catalog so that you can quickly configure and install the all the Cloud Pak components into an existing or new OpenShift cluster. When you install the Cloud Pak, the Cloud Pak is provisioned with [{{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-about-schematics) and a {{site.data.keyword.bpshort}} workspace is created for you. You can use the workspace later to access information about your Cloud Pak installation. You access your Cloud Pak services from the Cloud Pak URL. Consult each [Cloud Pak's documentation](#oc_cloud_pak_ov) for more information about using the Cloud Pak.
+Cloud Paks are integrated with the {{site.data.keyword.cloud_notm}} catalog so that you can quickly configure and install the all the Cloud Pak components into an existing or new OpenShift cluster. When you install the Cloud Pak, the Cloud Pak is provisioned with [{{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-about-schematics) and a {{site.data.keyword.bpshort}} workspace is created for you. You can use the workspace later to access information about your Cloud Pak installation. You access your Cloud Pak services from the Cloud Pak URL. For more information, consult each [Cloud Pak's documentation](#oc_cloud_pak_ov).
 
 
 
 ### What is included in a Cloud Pak?
 {: #cloud_pak_included}
 
-Cloud Paks are bundled, licensed, containerized software that are optimized to work together for enterprise use cases, including consistent deployment, access control, and billing. You can flexibly use parts of the Cloud Paks when you need them by choosing the right mix of virtual processor cores of the software to suit your workloads. You can also change the mix of virtual processor cores as your workloads evolve.
+Cloud Paks are bundled, licensed, containerized software that is optimized to work together for enterprise use cases, including consistent deployment, access control, and billing. You can flexibly use parts of the Cloud Paks when you need them by choosing the right mix of virtual processor cores of the software to suit your workloads. You can also change the mix of virtual processor cores as your workloads evolve.
 {: shortdesc}
 
 Depending on the Cloud Pak, you get licensed IBM and open source software bundled together in a unified management experience with logging, monitoring, security, and access capabilities.
 * **IBM products**: Cloud Paks extend licensed IBM software and middleware from [IBM Marketplace](https://www.ibm.com/products){: external}, and integrate these products with your cluster to modernize, optimize, and run hybrid cloud workloads.
-* **Open source software**: Cloud Paks might also include open source components for cloud-native and portable hybrid cloud solutions. Unlike unmanaged open source deployment where you are responsible to keep your components up to date and secure, Cloud Paks help you consistently manage the entire lifecycle of the Cloud Pak components and the workloads that you run with them. Because the open source software is bundled together with the Cloud Pak, you get the benefits of IBM support and integration with select {{site.data.keyword.cloud_notm}} features such as billing. 
+* **Open-source software**: Cloud Paks might also include open source components for cloud-native and portable hybrid cloud solutions. Typically, open source software is unmanaged and you are responsible to keep your components up-to-date and secure. However, Cloud Paks help you consistently manage the entire lifecycle of the Cloud Pak components and the workloads that you run with them. Because the open source software is bundled together with the Cloud Pak, you get the benefits of IBM support and integration with select {{site.data.keyword.cloud_notm}} features such as billing. 
 
 To see the components of each Cloud Pak, consult the [Cloud Pak's documentation](#oc_cloud_pak_ov).
 

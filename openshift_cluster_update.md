@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -112,7 +112,7 @@ Before you update your worker nodes, review the prerequisite steps.
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version cannot be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [OpenShift version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
 - If you want to apply a patch update, review the [OpenShift version changelog](/docs/openshift?topic=openshift-openshift_changelog).
@@ -296,7 +296,7 @@ You can update the flavors, or machine types, of your worker nodes by adding new
 {: shortdesc}
 
 Before you begin:
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - If you store data on your worker node, the data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
@@ -445,7 +445,7 @@ Yes. Your cluster is deployed with the following managed components and associat
 * `vpn`
 
 **Can I install other plug-ins or add-ons than the default components?**</br>
-Yes. Red Hat OpenShift on IBM Cloud provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/containers?topic=containers-helm#public_helm_install) to install the [block storage plug-in](/docs/openshift?topic=openshift-block_storage#install_block) or [strongSwan VPN](/docs/openshift?topic=openshift-vpn#vpn-setup). You must update these Helm charts separately by following the instructions in the Helm chart readmes.
+Yes. Red Hat OpenShift on IBM Cloud provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/containers?topic=containers-helm#public_helm_install) to install the [block storage plug-in](/docs/openshift?topic=openshift-block_storage#install_block) or [strongSwan VPN](/docs/openshift?topic=openshift-vpn#vpn-setup). You must update these Helm charts separately by following the instructions in the Helm chart readme files.
 
 ### Managing automatic updates for Fluentd
 {: #logging-up}

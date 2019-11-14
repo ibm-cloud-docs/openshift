@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -123,7 +123,7 @@ Before you get started with Ingress, review the following prerequisites.
 - Ingress is available for standard clusters only and requires at least two worker nodes per zone to ensure high availability and that periodic updates are applied. If you have only one worker in a zone, the ALB cannot receive automatic updates. When automatic updates are rolled out to ALB pods, the pod is reloaded. However, ALB pods have anti-affinity rules to ensure that only one pod is scheduled to each worker node for high availability. Because there is only one ALB pod on one worker, the pod is not restarted so that traffic is not interrupted. The ALB pod is updated to the latest version only when you delete the old pod manually so that the new, updated pod can be scheduled.
 - If a zone fails, you might see intermittent failures in requests to the Ingress ALB in that zone.
 - If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge) are enabled in each zone so that ALBs deploy uniformly.
-* Enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
+* Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
 
 <br />
 
@@ -191,7 +191,7 @@ Expose apps that are inside your cluster to the public by using the public Ingre
 Before you begin:
 
 * Review the Ingress [prerequisites](#config_prereqs).
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Step 1: Deploy apps and create app services
 {: #public_inside_1}
@@ -527,7 +527,7 @@ Before you begin:
 
 * Review the Ingress [prerequisites](#config_prereqs).
 * Ensure that the external app that you want to include into the cluster load balancing can be accessed by using a public IP address.
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To expose apps that are outside of your cluster to the public:
 
@@ -623,7 +623,7 @@ Route requests through the Ingress ALB to your external service by using the `pr
 Before you begin:
 
 * Review the Ingress [prerequisites](#config_prereqs).
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To expose apps that are outside of your cluster to the public:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -167,7 +167,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     <tbody>
     <tr>
     <td><code>log-format</code></td>
-    <td>Replace <code>&lt;key&gt;</code> with the name for the log component and <code>&lt;log_variable&gt;</code> with a variable for the log component that you want to collect in log entries. You can include text and punctuation that you want the log entry to contain, such as quotation marks around string values and commas to separate log components. For example, formatting a component like <code>request: "$request"</code> generates the following in a log entry: <code>request: "GET / HTTP/1.1"</code> . For a list of all the variables you can use, see the <a href="http://nginx.org/en/docs/varindex.html">NGINX variable index</a>.<br><br>To log an additional header such as <em>x-custom-ID</em>, add the following key-value pair to the custom log content: <br><pre class="codeblock"><code>customID: $http_x_custom_id</code></pre> <br>Hyphens (<code>-</code>) are converted to underscores (<code>_</code>) and <code>$http_</code> must be prepended to the custom header name.</td>
+    <td>Replace <code>&lt;key&gt;</code> with the name for the log component and <code>&lt;log_variable&gt;</code> with a variable for the log component that you want to collect in log entries. You can include text and punctuation that you want the log entry to contain, such as quotation marks around string values and commas to separate log components. For example, formatting a component like <code>request: "$request"</code> generates the following in a log entry: <code>request: "GET / HTTP/1.1"</code> . For a list of all the variables you can use, see the <a href="http://nginx.org/en/docs/varindex.html">NGINX variable index</a>.<br><br>To log an additional header such as <em>x-custom-ID</em>, add the following key-value pair to the custom log content: <br><pre class="codeblock"><code>customID: $http_x_custom_id</code></pre> <br>Hyphens (<code>-</code>) are converted to underscores (<code>_</code>) and <code>$http_</code> must be added as a prefix to the custom header name.</td>
     </tr>
     <tr>
     <td><code>log-format-escape-json</code></td>
@@ -301,7 +301,7 @@ The ALB metrics exporter pods must deploy to the same worker nodes that your ALB
 After you install the [metrics exporter](#metrics-exporter), you can install the Prometheus agent Helm chart to pick up the metrics that are produced by the exporter and make the metrics visible on a Prometheus dashboard.
 {: shortdesc}
 
-1. Download the TAR file for the metrics exporter Helm chart from https://icr.io/helm/iks-charts/charts/ibmcloud-alb-metrics-exporter-1.0.7.tgz
+1. Download the `tar` file for the metrics exporter Helm chart from https://icr.io/helm/iks-charts/charts/ibmcloud-alb-metrics-exporter-1.0.7.tgz
 
 2. Navigate to the Prometheus subfolder.
   ```

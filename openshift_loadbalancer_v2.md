@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -51,7 +51,7 @@ Before you create an NLB 2.0, you must complete the following prerequisite steps
     4. Add the following information to the description: "Please set up the network to allow capacity aggregation on the public and private VLANs associated with my account. The reference ticket for this request is: https://control.softlayer.com/support/tickets/63859145". Note that if you want to allow capacity aggregation on specific VLANs, such as the public VLANs for one cluster only, you can specify those VLAN IDs in the description.
     5. Click **Submit**.
 
-3. Enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
+3. Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
 
 4. If you use [Calico pre-DNAT network policies](/docs/openshift?topic=openshift-network_policies#block_ingress) to manage traffic to an NLB 2.0, you must add the `applyOnForward: true` and `doNotTrack: true` fields to and remove the `preDNAT: true` from the `spec` section in the policies. `applyOnForward: true` ensures that the Calico policy is applied to the traffic as it is encapsulated and forwarded. `doNotTrack: true` ensures that the worker nodes can use DSR to return a response packet directly to the client without needing the connection to be tracked. For example, if you use a Calico policy to whitelist traffic from only specific IP addresses to your NLB IP address, the policy looks similar to the following:
     ```

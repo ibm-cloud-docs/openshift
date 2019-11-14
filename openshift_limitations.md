@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -77,7 +77,7 @@ Review the following limitations that are specific to Red Hat OpenShift on IBM C
 ### Cluster
 {: #oc_limits_cluster}
 
-*   You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then re-deploy the apps that you try out in the Kubernetes cluster to your OpenShift cluster.
+*   You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then redeploy the apps that you try out in the Kubernetes cluster to your OpenShift cluster.
 *   [Locations](/docs/openshift?topic=openshift-regions-and-zones) are available in all six worldwide multizone metro and select single zone regions.
 *   You cannot create a cluster with worker nodes that run multiple operating systems, such as OpenShift on Red Hat Enterprise Linux and community Kubernetes on Ubuntu.
 

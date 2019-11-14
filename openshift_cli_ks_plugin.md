@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -153,7 +153,27 @@ Create, view, and modify clusters and cluster settings, such as add-on, subnet, 
 Disable a managed add-on in an existing cluster. This command must be combined with one of the following subcommands for the managed add-on that you want to disable.
 {: shortdesc}
 
+#### `ibmcloud oc cluster addon disable debug-tool`
+{: #cs_cluster_addon_disable_debug}
 
+Disable the add-on for the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool.
+{: shortdesc}
+
+```
+ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
+```
+{: pre}
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>-f</code>
+<dd>Force the command to run with no user prompts. This value is optional.</dd>
+</dl>
 
 #### `ibmcloud oc cluster addon disable istio`
 {: #cs_cluster_addon_disable_istio}
@@ -271,7 +291,33 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 Enable a managed add-on in an existing cluster. This command must be combined with one of the following subcommands for the managed add-on that you want to enable.
 {: shortdesc}
 
+#### `ibmcloud oc cluster addon enable debug-tool`
+{: #cs_cluster_addon_enable_debug}
 
+Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) in a cluster.
+{: shortdesc}
+
+```
+ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION]
+```
+{: pre}
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
+</dl>
+
+**Example**:
+  ```
+  ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
+  ```
+  {: pre}
 
 #### `ibmcloud oc cluster addon enable istio`
 {: #cs_cluster_addon_enable_istio}
@@ -557,10 +603,10 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <p>To find out whether you already have a public VLAN for a specific zone or to find the name of an existing public VLAN, run <code>ibmcloud oc vlan ls --zone <em>&lt;zone&gt;</em></code>.</p></dd>
 
 <dt><code>--private-service-endpoint</code></dt>
-<dd>**Standard clusters in [VRF-enabled accounts](/docs/resources?topic=resources-private-network-endpoints#getting-started)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. In addition, you can choose to enable the public service endpoint by using the `--public-service-endpoint` flag to access your cluster over the internet. If you enable the private service endpoint only, you must be connected to the private VLAN to communicate with your Kubernetes master. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd>**Standard clusters in [accounts that are enabled with VRF and service endpoints](/docs/resources?topic=resources-private-network-endpoints)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. In addition, you can choose to enable the public service endpoint by using the `--public-service-endpoint` flag to access your cluster over the internet. If you enable the private service endpoint only, you must be connected to the private VLAN to communicate with your Kubernetes master. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--public-service-endpoint</code></dt>
-<dd>Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. If you have a [VRF-enabled account](/docs/resources?topic=resources-private-network-endpoints#getting-started) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network. You can later disable the public service endpoint if you want a private-only cluster.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd>Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. If you have an [account that is enabled with VRF and service endpoints](/docs/resources?topic=resources-private-network-endpoints) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network. You can later disable the public service endpoint if you want a private-only cluster.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--workers WORKER</code></dt>
 <dd>The number of worker nodes that you want to deploy in your cluster. If you do not specify this option, a cluster with one worker node is created. This value is optional for standard clusters and is not available for free clusters.
@@ -579,10 +625,6 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
-
-
-<code><strong>-s</strong></code></br>
-Do not show the message of the day or update reminders. This value is optional.
 
 **Examples**:
 
@@ -664,8 +706,8 @@ Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clust
 {: shortdesc}
 
 To run this command:
-1. Enable [VRF](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) in your IBM Cloud infrastructure account. To check whether a VRF is already enabled, use the `ibmcloud account show` command.
-2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/resources?topic=resources-private-network-endpoints#getting-started).
+1. Enable [VRF](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) in your IBM Cloud infrastructure account. To check whether a VRF is already enabled, use the `ibmcloud account show` command.
+2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 3. Run `ibmcloud oc cluster feature enable private-service-endpoint --cluster <cluster_name>`.
 4. Follow the prompt in the CLI to refresh the Kubernetes master API server.
 5. [Reload all the worker nodes](#cs_worker_reload) in your cluster to pick up the private endpoint configuration.
@@ -1109,7 +1151,7 @@ Create a portable classic subnet in an IBM Cloud infrastructure account on your 
 
 <p class="important">Portable public IP addresses are charged monthly. If you remove portable public IP addresses after your cluster is provisioned, you still must pay the monthly charge, even if you used them only for a short amount of time.</br>
 </br>When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
-</br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
+</br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
 
 ```
 ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN_ID [-s]
@@ -1186,7 +1228,7 @@ Bring your own private subnet to your {{site.data.keyword.containerlong_notm}} c
 This private subnet is not one provided by IBM Cloud infrastructure. As such, you must configure any inbound and outbound network traffic routing for the subnet. To add an IBM Cloud infrastructure subnet, use the `ibmcloud oc cluster subnet add` [command](#cs_cluster_subnet_add).
 
 <p class="important">When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
-</br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
+</br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
 
 ```
 ibmcloud oc cluster user-subnet add --cluster CLUSTER --subnet-cidr SUBNET_CIDR --private-vlan PRIVATE_VLAN
@@ -2070,12 +2112,12 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 <dd><p>The ID of the private VLAN. This value is conditional.</p>
     <p>If you have a private VLAN in the zone, this value must match the private VLAN ID of one or more of the worker nodes in the cluster. To see the VLANs that you have available, run <code>ibmcloud oc cluster get --cluster &lt;cluster&gt; --show-resources</code>. New worker nodes are added to the VLAN that you specify, but the VLANs for any existing worker nodes are not changed.</p>
     <p>If you do not have a private or public VLAN in that zone, do not specify this option. A private and a public VLAN are automatically created for you when you initially add a zone to your worker pool.</p>
-    <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd>
+    <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd>
 
 <dt><code>--public-vlan <em>PUBLIC_VLAN</em></code></dt>
 <dd><p>The ID of the public VLAN. This value is required if you want to expose workloads on the nodes to the public after you create the cluster. It must match the public VLAN ID of one or more of the worker nodes in the cluster for the zone. To see the VLANs that you have available, run <code>ibmcloud oc cluster get --cluster &lt;cluster&gt; --show-resources</code>. New worker nodes are added to the VLAN that you specify, but the VLANs for any existing worker nodes are not changed.</p>
     <p>If you do not have a private or public VLAN in that zone, do not specify this option. A private and a public VLAN are automatically created for you when you initially add a zone to your worker pool.</p>
-    <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd>
+    <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd>
 
 <dt><code>--private-only</code></dt>
 <dd>Use this option to prevent a public VLAN from being created. Required only when you specify the `--private-vlan` flag and do not include the `--public-vlan` flag.<p class="note">If worker nodes are set up with a private VLAN only, you must enable the private service endpoint or configure a gateway appliance. For OpenShift clusters, note the [limitation](/docs/openshift?topic=openshift-openshift_limitations#oc_limits_networking) that the cluster must have some public VLAN worker nodes. For more information, see [Planning your private cluster and worker node setup](/docs/openshift?topic=openshift-plan_clusters#private_clusters).</p></dd>
@@ -2745,10 +2787,10 @@ Enable a [key management service (KMS) provider](/docs/openshift?topic=openshift
 ### `ibmcloud oc kms crk ls`
 {: #ks_kms_crk_ls}
 
-List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data enryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms).
+List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data encryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms).
 {: shortdesc}
 
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. You cannot access or remove the data in etcd or the data from the secrets in your cluster if you delete a root key.
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
 {: important}
 
 ```
@@ -2782,7 +2824,7 @@ ibmcloud oc kms crk ls --instance-id 1aa1a111-1111-1111-a111-a1aaaa1a1a1a
 Encrypt your Kubernetes secrets by [enabling a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster. To rotate a key in a cluster with existing key encryption, rerun this command with a new root key ID.
 {: shortdesc}
 
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. You cannot access or remove the data in etcd or the data from the secrets in your cluster if you delete a root key.
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
 {: important}
 
 ```

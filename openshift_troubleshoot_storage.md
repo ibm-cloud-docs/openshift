@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-14"
 
 keywords: kubernetes, iks, help, debug
 
@@ -358,7 +358,7 @@ If you use a Helm chart to deploy the image, edit the Helm deployment to use an 
 When you include an [init container![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/) in your deployment, you can give a non-root user that is specified in your Dockerfile write permissions for the volume mount path inside the container. The init container starts before your app container starts. The init container creates the volume mount path inside the container, changes the mount path to be owned by the correct (non-root) user, and closes. Then, your app container starts with the non-root user that must write to the mount path. Because the path is already owned by the non-root user, writing to the mount path is successful. If you do not want to use an init container, you can modify the Dockerfile to add non-root user access to NFS file storage.
 
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Open the Dockerfile for your app and get the user ID (UID) and group ID (GID) from the user that you want to give writer permission on the volume mount path. In the example from a Jenkins Dockerfile, the information is:
     - UID: `1000`
@@ -1257,7 +1257,7 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
    3. Select **Users** and find the user whose API key you want to use.
    4. From the actions menu, select **Manage user details**.
    5. Go to the **Classic infrastructure** tab.
-   6. Expand the **Account** category and verify that the **Add/ Upgrade Storage (StorageLayer)** permission is assigned.
+   6. Expand the **Account** category and verify that the **Add/ Upgrade Storage (Storage Layer)** permission is assigned.
    7. Expand the **Services** category and verify that the **Storage Manage** permission is assigned.
 4. Remove the PVC that failed.
    ```

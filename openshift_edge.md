@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -31,13 +31,13 @@ Edge worker nodes can improve the security of your {{site.data.keyword.openshift
 
 When these worker nodes are marked for networking only, other workloads cannot consume the CPU or memory of the worker node and interfere with networking.
 
-If you have a multizone cluster and want to restrict network traffic to edge worker nodes, at least two edge worker nodes must be enabled in each zone for high availability of load balancer or Ingress pods. Create an edge node worker pool that spans all the zones in your cluster, with at least two worker nodes per zone.
+If you want to restrict network traffic to edge worker nodes in a multizone cluster, at least two edge worker nodes must be enabled per zone for high availability of load balancer or Ingress pods. Create an edge node worker pool that spans all the zones in your cluster, with at least two worker nodes per zone.
 {: tip}
 
 ## Isolating networking workloads to edge nodes
 {: #edge_nodes}
 
-Add the `dedicated=edge` label to two or more worker nodes on each public or private VLAN in your cluster to ensure that network load balancers (NLBs) and Ingress application load balancers (ALBs) are deployed to those worker nodes only.
+Add the `dedicated=edge` label to two or more worker nodes on each public or private VLAN in your cluster. The labels ensure that network load balancers (NLBs) and Ingress application load balancers (ALBs) are deployed to those worker nodes only.
 {:shortdesc}
 
 Before you begin:
@@ -45,11 +45,11 @@ Before you begin:
 * Ensure that you have the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
   * Any platform role for the cluster
   * **Writer** or **Manager** service role for all namespaces
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 </br>To create an edge node worker pool:
 
-1. [Create a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
+1. [Create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
   <p class="tip">If you want to use an existing worker pool, the pool must span all zones in your cluster and have at least two workers per zone. You can label the worker pool with `dedicated=edge` by using the [PATCH worker pool API](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool). In the body of the request, pass in the following JSON.
       <pre class="screen">
       {
@@ -76,7 +76,7 @@ Before you begin:
   ```
   {: pre}
 
-  In the output, note the **Namespace** and **Name** of each load balancer service. For example, in the following output, there are four load balancer services: one public NLB in the `default` namespace, and one private and two public ALBs in the `kube-system` namespace.
+  In the output, note the **Namespace** and **Name** of each load balancer service. For example, the following output shows four load balancer services: one public NLB in the `default` namespace, and one private and two public ALBs in the `kube-system` namespace.
   ```
   NAMESPACE     NAME                                             TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                                     AGE
   default       webserver-lb                                     LoadBalancer   172.21.190.18    169.46.17.2     80:30597/TCP                                11m
@@ -185,11 +185,11 @@ Using the `dedicated=edge` toleration means that all network load balancer (NLB)
 
 Before you begin:
 - Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role for all namespaces](/docs/openshift?topic=openshift-users#platform).
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 </br>To prevent other workloads from running on edge worker nodes:
 
-1. Apply a taint to all worker nodes with the `dedicated=edge` label that prevents pods from running on the worker node and that removes pods that do not have the `dedicated=edge` label from the worker node. The pods that are removed are redeployed to other worker nodes with capacity.
+1. Apply a taint to all worker nodes with the `dedicated=edge` label. The taint prevents pods from running on the worker node and removes pods that do not have the `dedicated=edge` label from the worker node. The pods that are removed are redeployed to other worker nodes with capacity.
   ```
   oc taint node -l dedicated=edge dedicated=edge:NoSchedule dedicated=edge:NoExecute
   ```
