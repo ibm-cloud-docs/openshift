@@ -78,7 +78,7 @@ Because adding a different KMS provider requires updating the managed master def
 **With a KMS provider, do I control the encryption in my cluster?**<br>
 Yes. When you enable a KMS provider in your cluster, your own KMS root key is used to encrypt data in etcd, including the LUKS secrets. Using your own encryption root key adds a layer of security to your etcd data and Kubernetes secrets and gives you more granular control of who can access sensitive cluster information. For more information, see the [overview](#encrypt_ov) and your KMS provider's documentation, such as [{{site.data.keyword.keymanagementserviceshort}} envelope encryption](/docs/services/key-protect?topic=key-protect-envelope-encryption).
 
-You cannot disable KMS provider encryption. Do not delete root keys in your KMS instance, even if you rotate to use a new key. You cannot access or remove the data in etcd or the data from the secrets in your cluster if you delete a root key.
+You cannot disable KMS provider encryption. Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
 {: important}
 
 <br />
@@ -158,7 +158,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     After the KMS provider is enabled in the cluster, data in `etcd`, existing secrets, and new secrets that are created in the cluster are automatically encrypted by using your root key.
 6.  Optional: [Verify that your secrets are encrypted](#verify_kms).
 
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. You cannot access or remove the data in etcd or the data from the secrets in your cluster if you delete a root key.
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
 {: important}
 
 ### Enabling or rotating KMS encryption through the console
@@ -186,7 +186,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     {: screen}
 7.  Optional: [Verify that your secrets are encrypted](#verify_kms).
 
-After the KMS provider is enabled in the cluster, data in `etcd`, existing secrets, and new secrets that are created in the cluster are automatically encrypted by using your root key. Do not delete root keys in your KMS instance, even if you rotate to use a new key. You cannot access or remove the data in etcd or the data from the secrets in your cluster if you delete a root key.
+After the KMS provider is enabled in the cluster, data in `etcd`, existing secrets, and new secrets that are created in the cluster are automatically encrypted by using your root key. Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
 {: important}
 
 ## Verifying secret encryption
