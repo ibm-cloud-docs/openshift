@@ -312,7 +312,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>01 August 2019</td>
-  <td><strong>Red Hat OpenShift on IBM Cloud</strong>: Red Hat OpenShift on IBM Cloud is generally available as of 1 August 2019 at 0:00 UTC. You can [create a GA cluster](/docs/openshift?topic=openshift-openshift_tutorial) and then re-deploy any apps that you used in any expired beta clusters.</td>
+  <td><strong>Red Hat OpenShift on IBM Cloud</strong>: Red Hat OpenShift on IBM Cloud is generally available as of 1 August 2019 at 0:00 UTC. You can [create a GA cluster](/docs/openshift?topic=openshift-openshift_tutorial) and then redeploy any apps that you used in any expired beta clusters.</td>
 </tr>
 </tbody></table>
 

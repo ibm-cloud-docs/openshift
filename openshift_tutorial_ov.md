@@ -117,10 +117,10 @@ subcollection: openshift
   <a href = "/docs/openshift?topic=openshift-openshift_tutorial">
   <div class = "solutionBox">
       <div class = "solutionBoxContent">
-        OpenShift cluster
+        {{site.data.keyword.openshiftshort}} cluster
         <div class="solutionBoxDescription">
               <div class="descriptionContainer">
-                </br><p>Create an Red Hat OpenShift on IBM Cloud cluster with worker nodes that come installed with the OpenShift container orchestration platform software. </p></br>
+                </br><p>Create an {{site.data.keyword.openshiftlong_notm}} cluster with worker nodes that come installed with the {{site.data.keyword.openshiftshort}} container orchestration platform software. </p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/roks_tutorial.png" alt="OpenShift tutorial diagram flow" /></br>
@@ -132,13 +132,13 @@ subcollection: openshift
   <a href = "/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift">
     <div class = "solutionBox">
         <div class = "solutionBoxContent">
-          Scalable web app on OpenShift
+          Scalable web app on {{site.data.keyword.openshiftshort}}
             <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
                   </br> <p>Scaffold a web app, deploy it to a cluster, and learn how to scale your app and monitor its health. </p></br>
                 </div>
                 <div class="architectureDiagramContainer">
-                    <img class="architectureDiagram" src="https://raw.githubusercontent.com/ibm-cloud-docs/tutorials/master/images/solution50-scalable-webapp-openshift/Architecture.png" alt="Architecture diagram for deploying web apps with Red Hat OpenShift on IBM Cloud" />
+                    <img class="architectureDiagram" src="https://raw.githubusercontent.com/ibm-cloud-docs/tutorials/master/images/solution50-scalable-webapp-openshift/Architecture.png" alt="Architecture diagram for deploying web apps with {{site.data.keyword.openshiftlong_notm}}" />
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@ subcollection: openshift
 </div>
 
 
-## Dive deeper into OpenShift technology
+## Dive deeper into {{site.data.keyword.openshiftshort}} technology
 {: #tutorials-deep-dive}
 
 <div class = "solutionBoxContainer">
@@ -172,7 +172,7 @@ subcollection: openshift
                 App lifecycle management with {{site.data.keyword.cloud_notm}} Operator
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
-                  </br> <p>Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}} Operator to simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.openshifshort}} cluster.</p></br>
+                  </br> <p>Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}} Operator to simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.openshiftshort}} cluster.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/dev_guides_operators.png" alt="IBM Cloud operator flowchart" />
