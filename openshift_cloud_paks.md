@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-12"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -55,7 +55,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
 {: caption="Cloud Pak for Data" caption-side="top"}
-{: #cloudpak1}
+{: #cloudpak2}
 {: tab-title="Data"}
 {: tab-group="cloudpak"}
 
@@ -67,7 +67,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
 {: caption="Cloud Pak for Integration" caption-side="top"}
-{: #cloudpak1}
+{: #cloudpak3}
 {: tab-title="Integration"}
 {: tab-group="cloudpak"}
 
@@ -79,7 +79,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
 {: caption="Cloud Pak for Automation" caption-side="top"}
-{: #cloudpak1}
+{: #cloudpak4}
 {: tab-title="Automation"}
 {: tab-group="cloudpak"}
 
@@ -91,7 +91,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
 {: caption="Cloud Pak for Management" caption-side="top"}
-{: #cloudpak1}
+{: #cloudpak5}
 {: tab-title="Management"}
 {: tab-group="cloudpak"}
 

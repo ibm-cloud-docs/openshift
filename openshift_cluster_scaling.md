@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -210,7 +210,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     *  Kubernetes (`kubectl`)
     *  Helm (`helm`)
 2.  [Create a standard cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
-3.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+3.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 4.  Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions).
     ```
     oc get secrets -n kube-system | grep storage-secret-store
@@ -401,7 +401,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
 
 **Before you begin**:
 *  [Install the `ibm-iks-cluster-autoscaler` plug-in](#ca_helm).
-*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **To update the cluster autoscaler configmap and values**:
 
@@ -497,7 +497,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 {: shortdesc}
 
 **Before you begin**:
-*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *  [Install the `ibm-iks-cluster-autoscaler` plug-in](#ca_helm).
 *  **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 
@@ -664,7 +664,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
     </tr>
     </tbody>
     </table>
-2.  To change any of the cluster autoscaler configuration values, update the Helm chart with the new values. Include the `--recreate-pods` flag so that any existing cluster autoscaler pods are recreated to pick up the custom setting changes. The following example command changes the scan interval to `2m` and enables autoscaling for the `default` worker pool, with a maximum of `5` and minimum of `3` worker nodes per zone.
+2.  To change any of the cluster autoscaler configuration values, update the Helm chart with the new values. Include the `--recreate-pods` flag so that any existing cluster autoscaler pods are re-created to pick up the custom setting changes. The following example command changes the scan interval to `2m` and enables autoscaling for the `default` worker pool, with a maximum of `5` and minimum of `3` worker nodes per zone.
     ```
     helm upgrade --set scanInterval=2m --set workerpools[0].default.max=5,workerpools[0].default.min=3,workerpools[0].default.enabled=true ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler -i --recreate-pods --namespace kube-system
     ```
@@ -689,7 +689,7 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 
 **Before you begin**:
 *  [Install the `ibm-iks-cluster-autoscaler` plug-in](#ca_helm).
-*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **To limit pods to run on certain autoscaled worker pools**:
 
@@ -771,9 +771,9 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 {: note}
 
 **Before you begin**:
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
-* For a changelog of chart versions, [download the source code tar file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
+* For a changelog of chart versions, [download the source code `tar` file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
 
 **To update the cluster autoscaler Helm chart**:
 1.  Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
@@ -837,7 +837,7 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 The latest Helm chart version of the cluster autoscaler requires a full removal of previously installed cluster autoscaler Helm chart versions. If you installed the Helm chart version 1.0.2 or earlier, uninstall that version first before you install the latest Helm chart of the cluster autoscaler.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Get your cluster autoscaler configmap.
     ```
@@ -910,7 +910,7 @@ The cluster autoscaler is available for standard, classic clusters that are set 
 If your account is not enabled for VRF and service endpoints, you can [open the required ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) to allow public network connectivity in your cluster.
 {: tip}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Set up Helm for your private network-only cluster. You can choose between the following options.
     * [Pushing the Helm Tiller image to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-helm#private_local_tiller).
@@ -994,7 +994,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 If you do not want to automatically scale your worker pools, you can uninstall the cluster autoscaler Helm chart. After the removal, you must [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools manually.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  In the [cluster autoscaler configmap](#ca_cm), remove the worker pool by setting the `"enabled"` value to `false`.
     ```

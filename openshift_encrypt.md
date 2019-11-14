@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-14"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -195,11 +195,11 @@ After the KMS provider is enabled in the cluster, data in `etcd`, existing secre
 After you enable a KMS provider in your cluster, you can verify that your cluster secrets are encrypted by querying information that is in `etcd` in the master. If the returned information is encrypted, you know that the KMS provider works in your cluster.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Install the etcd CLI (`etcdctl`) version 3 or higher.
     1.  Download the release package for your operating system from the [etcd project ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/etcd-io/etcd/releases).
-    2.  Unzip and move the `etcdctl` binary file to the location of your binary files, such as the following example.
+    2.  Extract and move the `etcdctl` binary file to the location of your binary files, such as the following example.
         ```
         mv Downloads/etcd-v3.3.13-darwin-amd64/etcdctl /usr/local/bin/etcdctl
         ```
