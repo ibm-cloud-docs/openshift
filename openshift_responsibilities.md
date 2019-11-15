@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-15"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -90,7 +90,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
       <li>Provision worker nodes with two local SSD, AES 256-bit encrypted data partitions.</li>
       <li>Provide options for cluster network connectivity, such as public and private service endpoints.</li>
       <li>Provide options for compute isolation, such as dedicated virtual machines or bare metal.</li>
-      <li>Integrate Kubernetes role-based access control (RBAC) with {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM).</li>
+      <li>Integrate Kubernetes role-based access control (RBAC) with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).</li>
       </ul>
       <br><br>
       **Your responsibilities**:
