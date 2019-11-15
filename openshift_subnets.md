@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -394,7 +394,7 @@ You can get more portable IPs for NLB services by making an existing subnet in a
 {:shortdesc}
 
 Before you begin:
--  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.Bluemix_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
+-  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To make a subnet available to your cluster:

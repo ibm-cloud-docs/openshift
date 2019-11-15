@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-15"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -362,7 +362,7 @@ By default, Red Hat OpenShift on IBM Cloud provides many features for your clust
 
 3.  **Image Vulnerability Scanner**: By default, Vulnerability Advisor scans images that are stored in {{site.data.keyword.registryshort_notm}} to find potential security vulnerabilities. For more information, see [Managing image security with Vulnerability Advisor](/docs/services/Registry?topic=va-va_index).
 
-4.  **Network insights with Security Advisor (beta)**: With {{site.data.keyword.Bluemix_notm}} Security Advisor, you can centralize security insights from {{site.data.keyword.Bluemix_notm}} services such as Vulnerability Advisor and {{site.data.keyword.cloudcerts_short}}. When you enable Security Advisor in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [Network Analytics](/docs/services/security-advisor?topic=security-advisor-setup-network#setup-network). To install, see [Setting up monitoring of suspicious clients and server IP addresses for a Kubernetes cluster](/docs/services/security-advisor?topic=security-advisor-setup-network#setup-network).
+4.  **Network insights with Security Advisor (beta)**: With {{site.data.keyword.cloud_notm}} Security Advisor, you can centralize security insights from {{site.data.keyword.cloud_notm}} services such as Vulnerability Advisor and {{site.data.keyword.cloudcerts_short}}. When you enable Security Advisor in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [Network Analytics](/docs/services/security-advisor?topic=security-advisor-setup-network#setup-network). To install, see [Setting up monitoring of suspicious clients and server IP addresses for a Kubernetes cluster](/docs/services/security-advisor?topic=security-advisor-setup-network#setup-network).
 
 5.  **{{site.data.keyword.cloudcerts_long_notm}}**: If you want to [expose your app by using a custom domain with TLS](/docs/openshift?topic=openshift-ingress#ingress_expose_public), you can store your TLS certificate in {{site.data.keyword.cloudcerts_short}}. Expired or about-to-expire certificates can also be reported in your {{site.data.keyword.security-advisor_short}} dashboard. For more information, see [Getting started with {{site.data.keyword.cloudcerts_short}}](/docs/services/certificate-manager?topic=certificate-manager-getting-started#getting-started).
 

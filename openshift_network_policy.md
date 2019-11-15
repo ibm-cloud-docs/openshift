@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -119,7 +119,7 @@ A default Kubernetes policy that limits access to the Kubernetes Dashboard is al
 To view, manage, and add Calico policies, install and configure the Calico CLI.
 {:shortdesc}
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
@@ -206,7 +206,7 @@ View the details for default and any added network policies that are applied to 
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
@@ -267,7 +267,7 @@ To create Kubernetes network policies, see the [Kubernetes network policy docume
 To create Calico policies, use the following steps.
 
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
@@ -314,7 +314,7 @@ To see how to whitelist or blacklist source IP addresses, try the [Using Calico 
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
@@ -445,7 +445,7 @@ When you apply the egress pod policies that are included in this policy set, onl
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -474,7 +474,7 @@ To protect your cluster on the public network by using Calico policies:
   ```
   {: pre}
 
-4. Optional: To allow your worker nodes to access other {{site.data.keyword.Bluemix_notm}} services over the public network, apply the `allow-public-services.yaml` and `allow-public-services-pods.yaml` policies. The policy allows access to the IP addresses for {{site.data.keyword.registryshort_notm}}, and if the services are available in the region, {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. To access other IBM Cloud services, you must manually add the subnets for those services to this policy.
+4. Optional: To allow your worker nodes to access other {{site.data.keyword.cloud_notm}} services over the public network, apply the `allow-public-services.yaml` and `allow-public-services-pods.yaml` policies. The policy allows access to the IP addresses for {{site.data.keyword.registryshort_notm}}, and if the services are available in the region, {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. To access other IBM Cloud services, you must manually add the subnets for those services to this policy.
   ```
   calicoctl apply -f allow-public-services.yaml --config=<filepath>/calicoctl.cfg
   calicoctl apply -f allow-public-services-pods.yaml --config=<filepath>/calicoctl.cfg
@@ -496,7 +496,7 @@ To protect your cluster on the public network by using Calico policies:
 You can isolate your cluster from other systems on the private network by applying [Calico private network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/calico-v3).
 {: shortdesc}
 
-This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.Bluemix_notm}} account can communicate with your worker nodes.
+This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with your worker nodes.
 
 To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico public network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/private-network-isolation/README.md).
 
@@ -505,7 +505,7 @@ When you apply the egress pod policies that are included in this policy set, onl
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
@@ -694,7 +694,7 @@ This section shows you how to log traffic that is denied by a Kubernetes network
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` option with the `ibmcloud oc cluster config` command, which is used to download the certificates and permission files. This download also includes the keys to access your infrastructure portfolio and run Calico commands on your worker nodes.
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` option with the `ibmcloud oc cluster config` command, which is used to download the certificates and permission files. This download also includes the keys to access your infrastructure portfolio and run Calico commands on your worker nodes.
     ```
     ibmcloud oc cluster config --cluster <cluster_name> --admin
     ```
