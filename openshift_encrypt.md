@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-18"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -247,7 +247,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: screen}
 5.  Confirm that the Kubernetes secrets for the cluster are encrypted. Replace the `cluster_name`, `etcdEndpoints`, `etcdCACertFile`, `etcdKeyFile`, and `etcdCertFile` fields with the values that you previously retrieved. The output is unreadable and scrambled, indicating that the secrets are encrypted.
     ```
-    etcdctl get /registry/secrets/default/<cluster_name> --endpoints <etcdEndpoints> --cacert="<etcdCACertFile>" --key="<etcdKeyFile>" --cert="<etcdCertFile>"
+    etcdctl get /kubernetes.io/secrets/default/<cluster_name> --endpoints <etcdEndpoints> --cacert="<etcdCACertFile>" --key="<etcdKeyFile>" --cert="<etcdCertFile>"
     ```
     {: pre}
 
