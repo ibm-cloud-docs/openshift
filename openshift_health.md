@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-11-18"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -213,8 +213,18 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
                   value: logs.<region>.logging.cloud.ibm.com
         ```
         {: screen}
+        
+    3. Change the value of the `USEJOURNALD` environment variable to `stream`. 
+       ```yaml
+       ...
+       spec:
+         containers:
+         - env:
+           - name: USEJOURNALD
+             value: stream
+       ```
 
-    3. Change the `volumeMounts.mountPath` to `/var/data/kubeletlogs`.
+    4. Change the `volumeMounts.mountPath` to `/var/data/kubeletlogs`.
         ```yaml
         volumeMounts:
         - mountPath: /var/data/kubeletlogs
@@ -222,7 +232,7 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
         ```
         {: screen}
 
-    4. Change the `volumes.hostPath` to include `/var/data/kubeletlogs`.
+    5. Change the `volumes.hostPath` to include `/var/data/kubeletlogs`.
         ```yaml
         volumes:
         - hostPath:
@@ -231,19 +241,19 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
         ```
         {: screen}
 
-    5.  Save the configuration file and apply your changes.
+    6.  Save the configuration file and apply your changes.
         ```
         oc apply -f logdna-ds.yaml
         ```
         {: pre}
 
-    6.  Verify that the new `logdna-agent` pods on each node are in a **Running** status.
+    7.  Verify that the new `logdna-agent` pods on each node are in a **Running** status.
         ```
         oc get pods
         ```
         {: pre}
 
-    7.  Optional: If no logs are sent to your {{site.data.keyword.la_short}} instance, delete any `logdna-agent` pods so that they pick up the configuration change.
+    8.  Optional: If no logs are sent to your {{site.data.keyword.la_short}} instance, delete any `logdna-agent` pods so that they pick up the configuration change.
         ```
         oc delete pod <logdna-agent-123456>
         ```
