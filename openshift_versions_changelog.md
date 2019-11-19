@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-18"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -40,20 +40,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
 
-### Changelog for master fix pack 3.11.153_1531_openshift, released 18 November 2019
-{: #311153_1531}
 
-The following table shows the changes that are included in the worker node fix pack `3.11.153_1531_openshift`.
-{: shortdesc}
-
-| Component | Previous | Current | Description |
-| --------- | -------- | ------- | ----------- |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.15.2 | 1.15.4 | Updated to use `Go` version 1.13.4. |
-| {{site.data.keyword.cloud_notm}} File Storage plug-in and monitor | 350 | 352 | Updated to use the `distroless/static` base image and to use `Go` version 1.13.4. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.5-119 | v1.15.6-180 | Updated to support the Kubernetes 1.15.6 release. Updated to use `Go` version 1.12.12. |
-| Key Management Service provider | 237 | 251 | Updated to use `Go` version 1.12.11. |
-| OpenShift | 3.11.146 | 3.11.153 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-153){: external}. |
-{: caption="Changes since version 3.11.153_1530" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.153_1530_openshift, released 11 November 2019
 {: #311153_1530}
