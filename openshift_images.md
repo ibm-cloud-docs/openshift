@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-12"
+lastupdated: "2019-11-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -76,6 +76,8 @@ Your app's images must be stored in a container registry that your cluster can a
     </tr>
     </tbody>
 </table>
+
+
 
 ## Using the internal registry
 {: #openshift_internal_registry}
@@ -278,6 +280,8 @@ To use the internal registry, set up a public route to access the registry. Then
 Now that you set up the internal registry with an accessible route, you can log in, push, and pull images to the registry. For more information, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/registry/accessing_registry.html#access-logging-in-to-the-registry).
 
 <br />
+
+
 
 
 ## Using {{site.data.keyword.registrylong_notm}}

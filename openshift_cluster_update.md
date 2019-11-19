@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -450,8 +450,11 @@ Yes. Red Hat OpenShift on IBM Cloud provides other plugin-ins and add-ons that y
 ### Managing automatic updates for Fluentd
 {: #logging-up}
 
-In order to change your logging or filter configurations, the Fluentd component must be at the latest version. By default, automatic updates to the component are enabled.
+When you create a logging configuration for a source in your cluster to forward to an external server, a Fluentd component is created in your cluster. In order to change your logging or filter configurations, the Fluentd component must be at the latest version. By default, automatic updates to the component are enabled.
 {: shortdesc}
+
+As of 14 November 2019, a Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/containers?topic=containers-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you do not forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, automatic updates to Fluentd must be enabled.
+{: important}
 
 You can manage automatic updates of the Fluentd component in the following ways. **Note**: To run the following commands, you must have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
 

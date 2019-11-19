@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -29,13 +29,16 @@ subcollection: openshift
 Bring your own Ingress controller to run on {{site.data.keyword.cloud_notm}} and leverage an IBM-provided hostname and TLS certificate.
 {: shortdesc}
 
-The IBM-provided Ingress application load balancers (ALBs) are based on NGINX controllers that you can configure by using [custom {{site.data.keyword.cloud_notm}} annotations](/docs/openshift?topic=openshift-ingress_annotation). Depending on what your app requires, you might want to configure your own custom Ingress controller. When you bring your own Ingress controller instead of using the IBM-provided Ingress ALB, you are responsible for supplying the controller image, maintaining the controller, updating the controller, and any security-related updates to keep your Ingress controller free from vulnerabilities. **Note**: Bringing your own Ingress controller is supported only for providing public external access to your apps and is not supported for providing private external access.
+The IBM-provided Ingress application load balancers (ALBs) are based on NGINX controllers that you can configure by using [custom {{site.data.keyword.cloud_notm}} annotations](/docs/openshift?topic=openshift-ingress_annotation). Depending on what your app requires, you might want to configure your own custom Ingress controller. When you bring your own Ingress controller instead of using the IBM-provided Ingress ALB, you are responsible for supplying the controller image, maintaining the controller, updating the controller, and any security-related updates to keep your Ingress controller free from vulnerabilities.
 
-## Expose your Ingress controller by creating an NLB and a hostname
+## Exposing your Ingress controller by creating an NLB and a hostname
 {: #user_managed_nlb}
 
 Create a network load balancer (NLB) to expose your custom Ingress controller deployment, and then create a hostname for the NLB IP address.
 {: shortdesc}
+
+In classic clusters, bringing your own Ingress controller is supported only for providing public external access to your apps and is not supported for providing private external access.
+{: note}
 
 1. Get the configuration file for your Ingress controller ready. For example, you can use the [cloud-generic NGINX community Ingress controller ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/cloud-generic). If you use the community controller, edit the `kustomization.yaml` file by following these steps.
   1. Replace the `namespace: ingress-nginx` with `namespace: kube-system`.
@@ -111,7 +114,7 @@ Create a network load balancer (NLB) to expose your custom Ingress controller de
 
 11. Access your app by using the load balancer hostname that you found in step 7 and the path that your app listens on that you specified in the Ingress resource file.
   ```
-  https://<load_blanacer_host_name>/<app_path>
+  https://<load_balancer_host_name>/<app_path>
   ```
   {: codeblock}
 
