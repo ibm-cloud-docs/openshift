@@ -208,7 +208,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li>[Security information for OpenShift clusters](/docs/openshift?topic=openshift-security).
     <li>[Accessing clusters](/docs/openshift?topic=openshift-access_cluster).</li>
     <li>[App networking options](/docs/openshift?topic=openshift-cs_network_planning) with comparisons of routes, NodePort, load balancers, and Ingress.</li>
-    <li>[Common app modification scenarios](/docs/openshift?topic=openshift-app#common-app-modification-scenarios) for moving apps from community Kubernetes to OpenShift.</li>
+    <li>[Common app modification scenarios](/docs/openshift?topic=openshift-openshift_apps#common-app-modification-scenarios) for moving apps from community Kubernetes to OpenShift.</li>
     <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#openshift_charges) to explain the monthly license in more detail.</li>
     <li>[Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-openshift-images#openshift_internal_registry).</li>
     <li>[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov) with links to tutorials.</li>
