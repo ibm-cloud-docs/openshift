@@ -55,7 +55,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <li>[Adding the image pull secret](/docs/openshift?topic=openshift-openshift-images#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
 </li>
 <li><strong>Exposing apps that are external to your cluster by using Ingress</strong>: Added information for how to use the [`proxy-external-service` Ingress annotation](/docs/openshift?topic=openshift-ingress#proxy-external) to include an app that is external to your cluster in Ingress application load balancing.</li>
-<li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.146_1530_openshift](/docs/openshift?topic=openshift-changelog#311153_1530).</li>
+<li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1530).</li>
 </ul></td>
 </tr>
 <tr>
@@ -92,7 +92,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
 <td>28 October 2019</td>
-<td><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-changelog#11312_15409), [1.12.10_1570](/docs/containers?topic=containers-changelog#11210_1570), and OpenShift [3.11.153_1529_openshift](/docs/openshift?topic=openshift-changelog#311153_1528).</td>
+<td><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-changelog#11312_15409), [1.12.10_1570](/docs/containers?topic=containers-changelog#11210_1570), and OpenShift [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1528).</td>
 </tr><tr>
 <td>24 October 2019</td>
   <td><ul>
@@ -109,7 +109,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>22 October 2019</td>
-  <td><strong>Version changelogs</strong>: Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-changelog#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-changelog#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-changelog#11312_1539), and OpenShift [3.11.146_1528_openshift](/docs/openshift?topic=openshift-changelog#311146_1528).</td>
+  <td><strong>Version changelogs</strong>: Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-changelog#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-changelog#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-changelog#11312_1539), and OpenShift [3.11.146_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1528).</td>
 </tr>
 <tr>
   <td>17 October 2019</td>
@@ -124,13 +124,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <li><strong>Cloud Paks</strong>: By using the {{site.data.keyword.cloud_notm}} catalog, you can [add Cloud Paks to your OpenShift clusters](/docs/openshift?topic=openshift-openshift_cloud_paks).</li>
   <li><strong>Cluster autoscaler</strong>: You can [install the cluster autoscaler](/docs/openshift?topic=openshift-ca) Helm chart on OpenShift clusters with Helm Tiller version 2.12 or later.</li>
   <li><strong>Let's Encrypt rate limits for Ingress</strong>: Added [troubleshooting steps] for when no subdomain or secret is generated for the Ingress ALB when you create or delete clusters of the same name.</li>
-  <li><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.4_1519](/docs/containers?topic=containers-changelog#1154_1519_worker), [1.14.7_1535](/docs/containers?topic=containers-changelog#1147_1535_worker), [1.13.11_1538](/docs/containers?topic=containers-changelog#11311_1538_worker), [1.12.10_1569](/docs/containers?topic=containers-changelog#11210_1569_worker), and OpenShift [3.11.146_1527_openshift](/docs/openshift?topic=openshift-changelog#311146_1527).</li>
+  <li><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.4_1519](/docs/containers?topic=containers-changelog#1154_1519_worker), [1.14.7_1535](/docs/containers?topic=containers-changelog#1147_1535_worker), [1.13.11_1538](/docs/containers?topic=containers-changelog#11311_1538_worker), [1.12.10_1569](/docs/containers?topic=containers-changelog#11210_1569_worker), and OpenShift [3.11.146_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1527).</li>
   </ul></td>
 </tr>
 <tr>
   <td>04 October 2019</td>
   <td><ul>
-  <li><strong>Version changelog</strong>: Master fix pack updates are available for OpenShift [3.11.146_1526_openshift](/docs/openshift?topic=openshift-changelog#311146_1526).</li>
+  <li><strong>Version changelog</strong>: Master fix pack updates are available for OpenShift [3.11.146_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1526).</li>
   <li><strong>Software-defined storage with Portworx</strong>: You can now install Portworx on your OpenShift cluster as a highly available data management platform for your containerized apps. For more information, see [Storing data software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).</li></ul>
   </td>
 </tr>
@@ -139,7 +139,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 579 and `ingress-auth` image build to 341](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
   <li><strong>DevOps toolchain</strong>: You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/containers?topic=containers-app#continuous-delivery-pipeline).</li>
-  <li><strong>Version changelog</strong>: Patch updates are available for OpenShift [3.11.146_1525_openshift](/docs/openshift?topic=openshift-changelog#311146_1525).</li>
+  <li><strong>Version changelog</strong>: Patch updates are available for OpenShift [3.11.146_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1525).</li>
   </ul>
   </td>
 </tr>
@@ -198,7 +198,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.23](/docs/containers?topic=containers-cs_cli_changelog).</li>
   <li><strong>{{site.data.keyword.at_full_notm}} events</strong>: Added information about [which {{site.data.keyword.at_short}} location your events are sent to](/docs/openshift?topic=openshift-at_events#at-ui) based on the {{site.data.keyword.containerlong_notm}} location where the cluster is located.</li>
   <li><strong>New! Melbourne, Australia `mel01` single zone location for OpenShift clusters</strong>: For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li>
-  <li><strong><strong>Version changelog</strong>: Master fix pack updates are available for OpenShift [3.11.141_1524_openshift](/docs/openshift?topic=openshift-changelog#311141_1524).</li></ul>
+  <li><strong><strong>Version changelog</strong>: Master fix pack updates are available for OpenShift [3.11.141_1524_openshift](/docs/openshift?topic=openshift-openshift_changelog#311141_1524).</li></ul>
   </td>
 </tr>
 <tr>
@@ -239,7 +239,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>03 September 2019</td>
   <td><ul><li><strong>New! {{site.data.keyword.containerlong_notm}} plug-in version `0.4`</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for multiple changes in the [release of version 0.4.1](/docs/containers?topic=containers-cs_cli_changelog).</li>
-  <li><strong>Version changelog</strong>: Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-changelog#11210_1566_worker), and OpenShift [3.11.135_1523](/docs/openshift?topic=openshift-changelog#311135_1523_worker).</li></ul></td>
+  <li><strong>Version changelog</strong>: Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-changelog#11210_1566_worker), and OpenShift [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog#311135_1523_worker).</li></ul></td>
 </tr>
 </tbody></table>
 
@@ -268,7 +268,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>28 August 2019</td>
   <td><ul>
   <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.112](/docs/containers?topic=containers-cs_cli_changelog).</li>
-  <li><strong>Version changelog</strong>: Changelog added for master fix pack [3.11.135_1522_openshift](/docs/openshift?topic=openshift-changelog#311135_1522).</li>
+  <li><strong>Version changelog</strong>: Changelog added for master fix pack [3.11.135_1522_openshift](/docs/openshift?topic=openshift-openshift_changelog#311135_1522).</li>
   </ul></td>
 </tr>
 <tr>
@@ -291,12 +291,12 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>17 August 2019</td>
   <td><ul>
   <li><strong>{{site.data.keyword.at_full}}</strong>: The [{{site.data.keyword.at_full_notm}} service](/docs/openshift?topic=openshift-at_events) is now supported for you to view, manage, and audit user-initiated activities in your clusters.</li>
-  <li><strong>Version changelog</strong>: Changelog added for master fix pack [3.11.135_1521_openshift](/docs/openshift?topic=openshift-changelog#311135_1521_master).</li></ul></td>
+  <li><strong>Version changelog</strong>: Changelog added for master fix pack [3.11.135_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog#311135_1521_master).</li></ul></td>
 </tr>
 <tr>
   <td>15 August 2019</td>
   <td>
-  <strong>Version changelog</strong>: Changelogs added for master fix pack [3.11.135_1520_openshift](/docs/openshift?topic=openshift-changelog#311135_1520_master).</td>
+  <strong>Version changelog</strong>: Changelogs added for master fix pack [3.11.135_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog#311135_1520_master).</td>
 </tr>
 <tr>
   <td>12 August 2019</td>
@@ -308,11 +308,11 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>05 August 2019</td>
   <td><ul>
   <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.99](/docs/containers?topic=containers-cs_cli_changelog).</li>
-  <li><strong>Version changelog</strong>: Changelogs added for worker node patch [3.11.129_1518_openshift](/docs/openshift?topic=openshift-changelog#311129_1518_worker).</li></ul></td>
+  <li><strong>Version changelog</strong>: Changelogs added for worker node patch [3.11.129_1518_openshift](/docs/openshift?topic=openshift-openshift_changelog#311129_1518_worker).</li></ul></td>
 </tr>
 <tr>
   <td>02 August 2019</td>
-  <td><strong>Version changelog</strong>: Changelogs added for [3.11.129_1517_openshift](/docs/openshift?topic=openshift-changelog#311129_1517).</td>
+  <td><strong>Version changelog</strong>: Changelogs added for [3.11.129_1517_openshift](/docs/openshift?topic=openshift-openshift_changelog#311129_1517).</td>
 </tr>
 <tr>
   <td>01 August 2019</td>
