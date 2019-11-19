@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-18"
+lastupdated: "2019-11-19"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -27,7 +27,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 
 # Logging and monitoring
-{: #openshift_health}
+{: #health}
 
 For cluster metrics and app logging and monitoring, {{site.data.keyword.openshiftlong}} clusters include built-in tools to help you manage the health of your single cluster instance. You can also set up {{site.data.keyword.cloud_notm}} tools for multi-cluster analysis or other use cases, such as {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
@@ -213,8 +213,8 @@ Set up a project and privileged service account for {{site.data.keyword.la_full_
                   value: logs.<region>.logging.cloud.ibm.com
         ```
         {: screen}
-        
-    3. Change the value of the `USEJOURNALD` environment variable to `stream`. 
+
+    3. Change the value of the `USEJOURNALD` environment variable to `stream`.
        ```yaml
        ...
        spec:

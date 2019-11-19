@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -809,7 +809,7 @@ To log denied traffic:
   ```
   {: screen}
 
-6. Optional: Forward the logs from `/var/log/syslog` to [{{site.data.keyword.la_full}}](/docs/openshift?topic=openshift-openshift_health#openshift_logdna).
+6. Optional: Forward the logs from `/var/log/syslog` to [{{site.data.keyword.la_full}}](/docs/openshift?topic=openshift-health#openshift_logdna).
 
 
 

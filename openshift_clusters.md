@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -22,7 +22,7 @@ subcollection: openshift
 {:preview: .preview}
 
 # Creating OpenShift clusters
-{: #openshift-create-cluster}
+{: #clusters}
 
 Create a {{site.data.keyword.openshiftlong}} cluster.
 {: shortdesc}
@@ -177,5 +177,5 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
 
 When the cluster is up and running, you can check out the following tasks:
 - If you created the cluster in a multizone capable zone, [spread worker nodes by adding a zone to your cluster](/docs/openshift?topic=openshift-add_workers).
-- [Deploy an app in your cluster](/docs/openshift?topic=openshift-openshift_apps).
+- [Deploy an app in your cluster](/docs/containers?topic=containers-app).
 - [Expose your apps with routes](/docs/openshift?topic=openshift-openshift_routes).

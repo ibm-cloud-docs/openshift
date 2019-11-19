@@ -137,11 +137,12 @@ Red Hat OpenShift on IBM Cloud
 
     {: .navgroup id="help"}
     faqs.md
-    openshift_release_notes.md
-    openshift_limitations.md
 
     {: .topicgroup}
     Troubleshooting clusters
         openshift_ts.md
         openshift_troubleshoot_storage.md
+
+    openshift_release_notes.md
+    openshift_limitations.md
     {: .navgroup-end}

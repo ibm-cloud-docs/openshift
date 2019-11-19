@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-18"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -45,7 +45,7 @@ Kubernetes is an open source platform for managing containerized workloads and s
 Containers provide a standard way to package your application's code, configurations, and dependencies into a single unit that can run as a resource-isolated process on a compute server. To run your app in Kubernetes on Red Hat OpenShift on IBM Cloud, you must first containerize your app by creating a container image that you store in a container registry. For an overview of key Docker concepts and benefits, see [Docker containers](#docker_containers). To dive deeper into Docker, see the [Docker documentation](https://docs.docker.com/).
 
 **What is OpenShift?**<br>
-OpenShift is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With OpenShift, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and OpenShift cluster offerings, see the [comparison table](/docs/openshift?topic=openshift-why_openshift#openshift_kubernetes).
+OpenShift is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With OpenShift, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and OpenShift cluster offerings, see the [comparison table](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
 **What compute host infrastructure does the service offer?** </br>
 With Red Hat OpenShift on IBM Cloud, you can create your cluster of compute hosts on classic {{site.data.keyword.cloud_notm}} infrastructure.
@@ -57,7 +57,7 @@ Review the following links to find out more about the benefits and responsibilit
 
 - [Benefits of using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-cs_ov)
 - [Comparison of free and standard clusters](/docs/openshift?topic=openshift-cs_ov#cluster_types)
-- [Red Hat OpenShift on IBM Cloud service architecture](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#architecture)
+- [Red Hat OpenShift on IBM Cloud service architecture](/docs/containers?topic=containers-service-arch#architecture)
 - [Use cases](/docs/containers?topic=containers-cs_uc_intro)
 - [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks)
 - [Defining your Kubernetes strategy](/docs/containers?topic=containers-strategy)

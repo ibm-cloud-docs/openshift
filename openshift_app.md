@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-19"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -22,7 +22,7 @@ subcollection: openshift
 {:preview: .preview}
 
 # Deploying apps in OpenShift clusters
-{: #openshift_apps}
+{: #app}
 
 With {{site.data.keyword.openshiftlong}} clusters, you can deploy apps from a remote file or repository such as GitHub with a single command. Also, your clusters come with various built-in services that you can use to help operate your cluster.
 {: shortdesc}

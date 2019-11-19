@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -21,10 +21,8 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-
 # Version information and update actions
-{: #openshift_versions}
+{: #cs_versions}
 
 {{site.data.keyword.openshiftlong}} clusters run at OpenShift version 3.11, which includes the Kubernetes project version 1.11. The worker node operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}

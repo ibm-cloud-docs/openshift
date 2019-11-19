@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -139,7 +139,7 @@ After you [understand how roles, users, and resources in your account](#access_p
 3. To allow users to bind services to the cluster or to view logs that are forwarded from cluster logging configurations, [grant users Cloud Foundry roles](/docs/iam?topic=iam-mngcf) for the org and space that the services are deployed to or where logs are collected.
 4. If you use Kubernetes namespaces to isolate resources within the cluster, grant access to namespaces by [assigning users {{site.data.keyword.cloud_notm}} IAM service roles for the namespaces](#platform).
 5. For any automation tooling such as in your CI/CD pipeline, set up service accounts and [assign the service accounts Kubernetes RBAC permissions](#rbac).
-6. For other advanced configurations to control access to your cluster resources at the pod level, see [Configuring pod security](/docs/containers?topic=containers-psp).
+6. For other advanced configurations to control access to your cluster resources at the pod level, see [Configuring {security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs).
 
 </br>
 
@@ -319,7 +319,7 @@ To set the API key to access the IBM Cloud infrastructure portfolio:
         ```
         {: pre}
 
-2. [Create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster). To create the cluster, the API key credentials that you set for the region and resource group are used.
+2. [Create a cluster](/docs/containers?topic=containers-clusters). To create the cluster, the API key credentials that you set for the region and resource group are used.
 
 ### Accessing a different classic infrastructure account
 {: #credentials}
@@ -364,7 +364,7 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
         ```
         {: screen}
 
-3. [Create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster). To create the cluster, the infrastructure credentials that you set for the region and resource group are used.
+3. [Create a cluster](/docs/containers?topic=containers-clusters). To create the cluster, the infrastructure credentials that you set for the region and resource group are used.
 
 4. Verify that your cluster uses the infrastructure account credentials that you set.
   1. Open the [{{site.data.keyword.cloud_notm}} clusters console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters) and select your cluster. 
@@ -745,7 +745,7 @@ Making your own custom RBAC policies? Be sure not to edit the existing IBM role 
 {: tip}
 
 **When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**
-You might want to authorize who can create and update pods in your cluster. With [pod security policies](/docs/containers?topic=containers-psp#psp), you can use existing cluster role bindings that come with your cluster, or create your own.
+You might want to authorize who can create and update pods in your cluster. With [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs), you can use existing cluster role bindings that come with your cluster, or create your own.
 
 You might also want to integrate add-ons to your cluster. For example, when you [set up Helm in your cluster](/docs/containers?topic=containers-helm#public_helm_install), you must create a service account for Tiller in the `kube-system` namespace and a Kubernetes RBAC cluster role binding for the `tiller-deploy` pod.
 

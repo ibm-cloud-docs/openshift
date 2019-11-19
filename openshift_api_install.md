@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -25,7 +25,7 @@ subcollection: openshift
 {:external: target="_blank" .external}
 
 # Setting up the API
-{: #api_install}
+{: #cs_api_install}
 
 {{site.data.keyword.openshiftlong}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}}, so that you can use the same methods to consistently create and manage your community Kubernetes or {{site.data.keyword.openshiftshort}} clusters. To use the CLI, see [Setting up the CLI](/docs/openshift?topic=openshift-openshift-cli).
 {:shortdesc}

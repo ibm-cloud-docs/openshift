@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,11 +35,11 @@ Review frequently asked questions for using {{site.data.keyword.openshiftlong}}.
 
 With {{site.data.keyword.cloud_notm}}, you have a choice between two different container management platforms: the IBM version of community Kubernetes and Red Hat OpenShift on IBM Cloud. The container platform that you select is installed on your cluster master and worker nodes. Later, you can [update the version](/docs/openshift?topic=openshift-update) but cannot roll back to a previous version or switch to a different container platform. If you want to use multiple container platforms, create a separate cluster for each.
 
-For more information, see [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-why_openshift#openshift_kubernetes).
+For more information, see [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
 <dl>
   <dt>Kubernetes</dt>
-    <dd>[Kubernetes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/) is a open source project that you can use to automate, scale, and manage your containerized apps. With the [{{site.data.keyword.containerlong_notm}} version](/docs/openshift?topic=openshift-openshift_versions), you get access to community Kubernetes API features that are considered **beta** or higher by the community. Kubernetes **alpha** features, which are subject to change, are generally not enabled by default. You can run your apps on an Ubuntu worker node in {{site.data.keyword.cloud_notm}}. With Kubernetes, you can combine various resources such as secrets, deployments, and services to securely create and manage highly available, containerized apps.<br><br>
+    <dd>[Kubernetes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/) is a open source project that you can use to automate, scale, and manage your containerized apps. With the [{{site.data.keyword.containerlong_notm}} version](/docs/openshift?topic=openshift-cs_versions), you get access to community Kubernetes API features that are considered **beta** or higher by the community. Kubernetes **alpha** features, which are subject to change, are generally not enabled by default. You can run your apps on an Ubuntu worker node in {{site.data.keyword.cloud_notm}}. With Kubernetes, you can combine various resources such as secrets, deployments, and services to securely create and manage highly available, containerized apps.<br><br>
     To get started, [create a Kubernetes cluster](/docs/containers?topic=containers-cs_cluster_tutorial).</dd>
   <dt>OpenShift</dt>
     <dd>Red Hat OpenShift on IBM Cloud is a Kubernetes-based platform that is designed especially to accelerate your containerized app delivery processes that run on a Red Hat Enterprise Linux 7 operating system. You can orchestrate and scale your existing OpenShift workloads across on-prem and off-prem clouds for a portable, hybrid solution that works the same in multicloud scenarios. <br><br>
@@ -73,4 +73,4 @@ The OpenShift license is for every two cores of the worker node flavor. The mont
 * If you delete the cluster before the end of the 30-day period, you are still charged the entire monthly price for the OpenShift license.
 
 **Storage**<br>
-To store images in the internal registry, a classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with 20 GB capacity at 2 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-openshift-images#storage_internal_registry), which modifies the cost. For more information, see [Billing](/docs/infrastructure/FileStorage?topic=FileStorage-about).
+To store images in the internal registry, a classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with 20 GB capacity at 2 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-images#storage_internal_registry), which modifies the cost. For more information, see [Billing](/docs/infrastructure/FileStorage?topic=FileStorage-about).

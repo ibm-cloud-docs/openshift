@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -23,15 +23,13 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-# Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}
-{: #responsibilities_openshift}
+# Your responsibilities with using Red Hat OpenShift on IBM Cloud
+{: #responsibilities_iks}
 
 Learn about cluster management responsibilities that you have when you use {{site.data.keyword.openshiftlong}}. For overall terms of use, see [Cloud Services terms](/docs/overview/terms-of-use?topic=overview-terms#terms).
-{:shortdesc}
+{: shortdesc}
 
 IBM provides you with an enterprise cloud platform for you to deploy apps alongside {{site.data.keyword.cloud_notm}} DevOps, AI, data, and security services. You choose how you set up, integrate, and operate your apps and services in the cloud.
-{:shortdesc}
 
 <table summary="The table shows the responsibilities of IBM and you. Rows are to be read from the left to right, with icons representing each responsibility in column one the description in column two.">
 <caption>Responsibilities of IBM and you</caption>
@@ -95,7 +93,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
       <br><br>
       **Your responsibilities**:
       <ul>
-      <li>Use the API, CLI, or console tools to apply the provided [security patch updates](/docs/openshift?topic=openshift-openshift_changelog) to your worker nodes.</li>
+      <li>Use the API, CLI, or console tools to apply the provided [security patch updates](/docs/containers?topic=containers-changelog) to your worker nodes.</li>
       <li>Choose how to set up your [cluster network](/docs/openshift?topic=openshift-plan_clusters) and configure further [security settings](/docs/openshift?topic=openshift-security#security) to meet your workload's security and compliance needs. If applicable, configure your [firewall](/docs/openshift?topic=openshift-firewall#firewall).</li></ul>
       <br><br></td>
       </tr>
@@ -116,7 +114,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
         <br><br>
         **Your responsibilities**:
         <ul>
-        <li>Use the provided tools and features to [configure and deploy](/docs/openshift?topic=openshift-openshift_apps); [set up permissions](/docs/openshift?topic=openshift-users#users); [integrate with other services](/docs/openshift?topic=openshift-openshift_integrations); [externally serve](/docs/containers?topic=containers-cs_network_planning); [monitor the health](/docs/openshift?topic=openshift-openshift_health); [save, back up, and restore data](/docs/openshift?topic=openshift-storage_planning#storage_planning); and otherwise manage your [highly available](/docs/openshift?topic=openshift-ha#ha) and resilient workloads.</li>
+        <li>Use the provided tools and features to [configure and deploy](/docs/containers?topic=containers-app); [set up permissions](/docs/openshift?topic=openshift-users#users); [integrate with other services](/docs/openshift?topic=openshift-openshift_integrations); [externally serve](/docs/containers?topic=containers-cs_network_planning); [monitor the health](/docs/containers?topic=containers-health); [save, back up, and restore data](/docs/openshift?topic=openshift-storage_planning#storage_planning); and otherwise manage your [highly available](/docs/openshift?topic=openshift-ha#ha) and resilient workloads.</li>
         </ul>
         </td>
         </tr>
@@ -126,5 +124,3 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
 
 
 
- 
- 
