@@ -22,7 +22,7 @@ subcollection: openshift
 {:preview: .preview}
 
 # Version information and update actions
-{: #cs_versions}
+{: #openshift_versions}
 
 {{site.data.keyword.openshiftlong}} clusters run at OpenShift version 3.11, which includes the Kubernetes project version 1.11. The worker node operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}

@@ -177,5 +177,5 @@ Before you begin, [complete the prerequisites](#openshift_cluster_prereqs).
 
 When the cluster is up and running, you can check out the following tasks:
 - If you created the cluster in a multizone capable zone, [spread worker nodes by adding a zone to your cluster](/docs/openshift?topic=openshift-add_workers).
-- [Deploy an app in your cluster](/docs/containers?topic=containers-app).
+- [Deploy an app in your cluster](/docs/openshift?topic=openshift-openshift_apps).
 - [Expose your apps with routes](/docs/openshift?topic=openshift-openshift_routes).

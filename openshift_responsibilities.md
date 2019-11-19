@@ -62,7 +62,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
      <li>Set up an OpenVPN connection between the master and worker nodes when the cluster is created.</li>
      <li>Monitor and report the health of the master and worker nodes in the various interfaces.</li>
      <li>Provide worker node major, minor, and patch OS, version, and security updates.</li>
-     <li>Fulfill automation requests to update and recover worker nodes. Provide the optional [worker node Autorecovery](/docs/containers?topic=containers-health#autorecovery).</li>
+     <li>Fulfill automation requests to update and recover worker nodes. Provide the optional [worker node Autorecovery](/docs/openshift?topic=openshift-health#autorecovery).</li>
      </ul>
      <br><br>
      **Your responsibilities**:
@@ -93,7 +93,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
       <br><br>
       **Your responsibilities**:
       <ul>
-      <li>Use the API, CLI, or console tools to apply the provided [security patch updates](/docs/containers?topic=containers-changelog) to your worker nodes.</li>
+      <li>Use the API, CLI, or console tools to apply the provided [security patch updates](/docs/openshift?topic=openshift-openshift_changelog) to your worker nodes.</li>
       <li>Choose how to set up your [cluster network](/docs/openshift?topic=openshift-plan_clusters) and configure further [security settings](/docs/openshift?topic=openshift-security#security) to meet your workload's security and compliance needs. If applicable, configure your [firewall](/docs/openshift?topic=openshift-firewall#firewall).</li></ul>
       <br><br></td>
       </tr>
@@ -114,7 +114,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
         <br><br>
         **Your responsibilities**:
         <ul>
-        <li>Use the provided tools and features to [configure and deploy](/docs/containers?topic=containers-app); [set up permissions](/docs/openshift?topic=openshift-users#users); [integrate with other services](/docs/openshift?topic=openshift-openshift_integrations); [externally serve](/docs/containers?topic=containers-cs_network_planning); [monitor the health](/docs/containers?topic=containers-health); [save, back up, and restore data](/docs/openshift?topic=openshift-storage_planning#storage_planning); and otherwise manage your [highly available](/docs/openshift?topic=openshift-ha#ha) and resilient workloads.</li>
+        <li>Use the provided tools and features to [configure and deploy](/docs/openshift?topic=openshift-openshift_apps); [set up permissions](/docs/openshift?topic=openshift-users#users); [integrate with other services](/docs/openshift?topic=openshift-openshift_integrations); [externally serve](/docs/containers?topic=containers-cs_network_planning); [monitor the health](/docs/openshift?topic=openshift-health); [save, back up, and restore data](/docs/openshift?topic=openshift-storage_planning#storage_planning); and otherwise manage your [highly available](/docs/openshift?topic=openshift-ha#ha) and resilient workloads.</li>
         </ul>
         </td>
         </tr>

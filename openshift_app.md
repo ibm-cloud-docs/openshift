@@ -22,7 +22,7 @@ subcollection: openshift
 {:preview: .preview}
 
 # Deploying apps in OpenShift clusters
-{: #app}
+{: #openshift_apps}
 
 With {{site.data.keyword.openshiftlong}} clusters, you can deploy apps from a remote file or repository such as GitHub with a single command. Also, your clusters come with various built-in services that you can use to help operate your cluster.
 {: shortdesc}

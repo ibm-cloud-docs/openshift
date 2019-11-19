@@ -306,7 +306,7 @@ You can deploy containers to your cluster from an IBM-provided public image or a
 
 Before you begin:
 1. [Set up a namespace in {{site.data.keyword.registryshort_notm}} and push images to this namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
-2. [Create a cluster](/docs/containers?topic=containers-clusters).
+2. [Create a cluster](/docs/openshift?topic=openshift-clusters).
 4. [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To deploy a container into the **default** project of your cluster:
@@ -397,7 +397,7 @@ Image pull secrets are valid only for the OpenShift projects that they were crea
 Before you begin:
 
 1.  [Set up a namespace in {{site.data.keyword.registryshort_notm}} and push images to this namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
-2.  [Create a cluster](/docs/containers?topic=containers-clusters).
+2.  [Create a cluster](/docs/openshift?topic=openshift-clusters).
 4.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 <br/>
@@ -630,7 +630,7 @@ If you already have a private registry, you must store the registry credentials 
 
 Before you begin:
 
-1.  [Create a cluster](/docs/containers?topic=containers-clusters).
+1.  [Create a cluster](/docs/openshift?topic=openshift-clusters).
 2.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To create an image pull secret:

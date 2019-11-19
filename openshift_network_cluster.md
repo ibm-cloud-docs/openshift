@@ -26,7 +26,7 @@ subcollection: openshift
 # Changing service endpoints or VLAN connections for clusters
 {: #cs_network_cluster}
 
-After you initially set up your network when you [create a cluster](/docs/containers?topic=containers-clusters), you can change the service endpoints that your Kubernetes master is accessible through or change the VLAN connections for your worker nodes.
+After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-clusters), you can change the service endpoints that your Kubernetes master is accessible through or change the VLAN connections for your worker nodes.
 {: shortdesc}
 
 

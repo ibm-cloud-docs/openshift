@@ -209,7 +209,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     *  {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
     *  Kubernetes (`kubectl`)
     *  Helm (`helm`)
-2.  [Create a standard cluster](/docs/containers?topic=containers-clusters).
+2.  [Create a standard cluster](/docs/openshift?topic=openshift-clusters).
 3.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 4.  Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions).
     ```

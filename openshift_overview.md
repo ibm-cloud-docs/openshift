@@ -57,7 +57,7 @@ Review the following links to find out more about the benefits and responsibilit
 
 - [Benefits of using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-cs_ov)
 - [Comparison of free and standard clusters](/docs/openshift?topic=openshift-cs_ov#cluster_types)
-- [Red Hat OpenShift on IBM Cloud service architecture](/docs/containers?topic=containers-service-arch#architecture)
+- [Red Hat OpenShift on IBM Cloud service architecture](/docs/openshift?topic=openshift-service-arch#architecture)
 - [Use cases](/docs/containers?topic=containers-cs_uc_intro)
 - [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks)
 - [Defining your Kubernetes strategy](/docs/containers?topic=containers-strategy)

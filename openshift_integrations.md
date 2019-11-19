@@ -110,7 +110,7 @@ subcollection: openshift
 With {{site.data.keyword.openshiftlong}}, you have many ways to enhance your cluster and app's capabilities with IBM and third-party content such as IBM Cloud Paks&trade;, AI, security, databases, logging, monitoring, and more. Learn about what integrations are available and how to integrate these services with your cluster.
 {: shortdesc}
 
-You can add services to your {{site.data.keyword.openshiftlong_notm}} cluster in various ways, including service binding, Helm charts, and operators. If you want to install open source software apps, make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-app) for the installation to succeed.
+You can add services to your {{site.data.keyword.openshiftlong_notm}} cluster in various ways, including service binding, Helm charts, and operators. If you want to install open source software apps, make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.
 {: shortdesc}
 
 
@@ -234,6 +234,6 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
     <li>[Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/services/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster).</li></ul></dd>
 
   <dt>Other third-party integrations</dt>
-  <dd>You can install many other integrations into your {{site.data.keyword.openshiftshort}} cluster, such as through the {{site.data.keyword.openshiftshort}} catalog, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-app) for the installation to succeed.</dd>
+  <dd>You can install many other integrations into your {{site.data.keyword.openshiftshort}} cluster, such as through the {{site.data.keyword.openshiftshort}} catalog, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.</dd>
 
 </dl>
