@@ -119,7 +119,7 @@ In classic clusters, bringing your own Ingress controller is supported only for 
   {: codeblock}
 
 ## VPC clusters: Exposing your Ingress controller by creating a VPC load balancer and subdomain
-{: #user_managed_nlb}
+{: #user_managed_vpc}
 
 Expose your custom Ingress controller deployment to the public or to the private network by setting up a Kubernetes `LoadBalancer` service in your cluster. A VPC load balancer which routes requests to your app is automatically created for you in your VPC outside of your cluster.
 {: shortdesc}
