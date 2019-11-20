@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -22,7 +22,7 @@ As a cluster administrator, you want to control which pods are more critical to 
 
 By setting pod priority, you can help prevent lower priority workloads from impacting critical workloads in your cluster, especially in cases where the cluster starts to reach its resource capacity.
 
-Make sure that you have [set up proper user access](/docs/openshift?topic=openshift-users#users) to your cluster, and if applicable, [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs). Access and SCCs can help prevent untrusted users from deploying high priority pods that prevent other pods from scheduling.
+Make sure that you have [set up proper user access](/docs/openshift?topic=openshift-users#users) to your cluster, and if applicable, [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs). Access policies and SCCs can help prevent untrusted users from deploying high priority pods that prevent other pods from scheduling.
 {: tip}
 
 {: #priority_scheduling}
