@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-20"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -43,7 +43,7 @@ oc expose deploy my-app --port=80 --target-port=8080 --type=LoadBalancer --name 
 **Before you begin**:
 * To create public network load balancers (NLBs) in multiple zones, at least one public VLAN must have portable subnets available in each zone. To create private NLBs in multiple zones, at least one private VLAN must have portable subnets available in each zone. You can add subnets by following the steps in [Configuring subnets for clusters](/docs/openshift?topic=openshift-subnets).
 * Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
-* Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
+* Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
 * Ensure you have the required number of worker nodes:
   * If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge#edge) are enabled in each zone so that NLBs deploy uniformly.
 
@@ -144,7 +144,7 @@ To set up an NLB 1.0 service in a multizone cluster:
     ```
     {: pre}
 
-    Example CLI output:
+    In the output, the **LoadBalancer Ingress** IP address is the portable IP address that was assigned to your NLB service:
 
     ```
     Name:                   myloadbalancer
@@ -166,8 +166,6 @@ To set up an NLB 1.0 service in a multizone cluster:
       10s		    10s		    1	    {service-controller }		Normal CreatedLoadBalancer	Created load balancer
     ```
     {: screen}
-
-    The **LoadBalancer Ingress** IP address is the portable IP address that was assigned to your NLB service.
 
 4.  If you created a public NLB, access your app from the internet.
     1.  Open your preferred web browser.
@@ -219,7 +217,6 @@ To create an NLB 1.0 service in a single-zone cluster:
            - protocol: TCP
              port: 8080
           loadBalancerIP: <IP_address>
-          externalTrafficPolicy: Local
         ```
         {: codeblock}
 
