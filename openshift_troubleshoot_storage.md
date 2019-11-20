@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-20"
 
 keywords: kubernetes, iks, help, debug
 
@@ -222,7 +222,7 @@ During the PVC creation and binding, many different tasks are executed by the fi
     </tr>
     <tr>
       <td><code>Your order will exceed the maximum number of storage volumes allowed. Please contact Sales</code></td>
-      <td>Every {{site.data.keyword.cloud_notm}} account is set up with a maximum number of storage instances that can be created. By creating the PVC, you exceed the maximum number of storage instances. </td>
+      <td>Every {{site.data.keyword.cloud_notm}} account is set up with a maximum number of file and block storage instances that can be created. By creating the PVC, you exceed the maximum number of storage instances. For more information about the maximum number of volumes that you can create and how to retrieve the number of volumes in your account, see the documentation for [file](/docs/infrastructure/FileStorage?topic=FileStorage-managinglimits) and [block](/docs/infrastructure/BlockStorage?topic=BlockStorage-managingstoragelimits) storage.</td>
       <td>To create a PVC, choose from the following options. <ul><li>Remove any unused PVCs.</li><li>Ask the {{site.data.keyword.cloud_notm}} account owner to increase your storage quota by [opening a support case](/docs/get-support?topic=get-support-getting-customer-support).</li></ul> </td>
     </tr>
     <tr>
