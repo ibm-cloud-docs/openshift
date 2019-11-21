@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-21"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -39,6 +39,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <th>Description</th>
 </thead>
 <tbody>
+<tr>
+<td>21 November 2019</td>
+<td><ul>
+<li><strong>Ingress ALB changelog</strong>: Updated the [ALB `nginx-ingress` image to 597 and the `ingress-auth` image to build 353](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
+<li><strong></strong>: </li>
+</ul></td>
+</tr>
 <tr>
 <td>15 November 2019</td>
 <td><strong>New! Single zone location for OpenShift clusters</strong>:  You can create single zone Red Hat OpenShift on IBM Cloud clusters in São Paulo, Brazil (`sao01`).</td>
