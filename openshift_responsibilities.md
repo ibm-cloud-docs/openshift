@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -23,15 +23,13 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-
-# Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}
-{: #responsibilities_openshift}
+# Your responsibilities with using Red Hat OpenShift on IBM Cloud
+{: #responsibilities_iks}
 
 Learn about cluster management responsibilities that you have when you use {{site.data.keyword.openshiftlong}}. For overall terms of use, see [Cloud Services terms](/docs/overview/terms-of-use?topic=overview-terms#terms).
-{:shortdesc}
+{: shortdesc}
 
 IBM provides you with an enterprise cloud platform for you to deploy apps alongside {{site.data.keyword.cloud_notm}} DevOps, AI, data, and security services. You choose how you set up, integrate, and operate your apps and services in the cloud.
-{:shortdesc}
 
 <table summary="The table shows the responsibilities of IBM and you. Rows are to be read from the left to right, with icons representing each responsibility in column one the description in column two.">
 <caption>Responsibilities of IBM and you</caption>
@@ -64,7 +62,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
      <li>Set up an OpenVPN connection between the master and worker nodes when the cluster is created.</li>
      <li>Monitor and report the health of the master and worker nodes in the various interfaces.</li>
      <li>Provide worker node major, minor, and patch OS, version, and security updates.</li>
-     <li>Fulfill automation requests to update and recover worker nodes. Provide the optional [worker node Autorecovery](/docs/containers?topic=containers-health#autorecovery).</li>
+     <li>Fulfill automation requests to update and recover worker nodes. Provide the optional [worker node Autorecovery](/docs/openshift?topic=openshift-health#autorecovery).</li>
      </ul>
      <br><br>
      **Your responsibilities**:
@@ -116,7 +114,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
         <br><br>
         **Your responsibilities**:
         <ul>
-        <li>Use the provided tools and features to [configure and deploy](/docs/openshift?topic=openshift-openshift_apps); [set up permissions](/docs/openshift?topic=openshift-users#users); [integrate with other services](/docs/openshift?topic=openshift-openshift_integrations); [externally serve](/docs/containers?topic=containers-cs_network_planning); [monitor the health](/docs/openshift?topic=openshift-openshift_health); [save, back up, and restore data](/docs/openshift?topic=openshift-storage_planning#storage_planning); and otherwise manage your [highly available](/docs/openshift?topic=openshift-ha#ha) and resilient workloads.</li>
+        <li>Use the provided tools and features to [configure and deploy](/docs/openshift?topic=openshift-openshift_apps); [set up permissions](/docs/openshift?topic=openshift-users#users); [integrate with other services](/docs/openshift?topic=openshift-openshift_integrations); [externally serve](/docs/containers?topic=openshift-cs_network_planning); [monitor the health](/docs/openshift?topic=openshift-health); [save, back up, and restore data](/docs/openshift?topic=openshift-storage_planning#storage_planning); and otherwise manage your [highly available](/docs/openshift?topic=openshift-ha#ha) and resilient workloads.</li>
         </ul>
         </td>
         </tr>
@@ -126,5 +124,3 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
 
 
 
- 
- 

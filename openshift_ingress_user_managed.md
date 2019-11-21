@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-20"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -63,7 +63,7 @@ In classic clusters, bringing your own Ingress controller is supported only for 
       ports:
        - protocol: TCP
          port: 8080
-      externalTrafficPolicy: Local
+      externalTrafficPolicy: Cluster
     ```
     {: codeblock}
 

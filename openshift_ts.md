@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -50,7 +50,7 @@ Review different ways to get help and support for your Red Hat OpenShift on IBM 
 **General ways to resolve issues**<br>
 1. Keep your cluster environment up to date.
    * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
-   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/containers?topic=containers-cs_versions).
+   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/openshift?topic=openshift-openshift_versions).
 2. Make sure that your command line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
    * Make sure that [your `kubectl` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
@@ -330,13 +330,13 @@ You cannot push or pull Docker images from your local machine to the cluster's b
 By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or DockerHub by using the `oc new-app` command. Or, you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine.
 
 {: tsResolve}
-Create a route for the `docker-registry` service in the `default` project. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-openshift-images#route_internal_registry).
+Create a route for the `docker-registry` service in the `default` project. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-images#route_internal_registry).
 
 ## Time out when pushing to the internal registry
 {: #roks_timeout_docker}
 
 {: tsSymptoms}
-You try to push an image to the [internal registry](/docs/openshift?topic=openshift-openshift-images#openshift_internal_registry), but sporadically you see an error message similar to the following.
+You try to push an image to the [internal registry](/docs/openshift?topic=openshift-images#openshift_internal_registry), but sporadically you see an error message similar to the following.
 ```
 received unexpected HTTP status: 504 Gateway Time-out
 ```

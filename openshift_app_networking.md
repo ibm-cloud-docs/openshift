@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-09"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -24,7 +24,7 @@ subcollection: openshift
 {:preview: .preview}
 
 # Planning external networking for apps
-{: #network_planning}
+{: #cs_network_planning}
 
 Securely expose your apps to external traffic by using OpenShift routes or {{site.data.keyword.containerlong}} NodePort, network load balancer, or Ingress application load balancer services.
 {: shortdesc}
@@ -99,7 +99,7 @@ The public network interface for worker nodes is protected by [predefined Calico
 ### Choosing an app exposure method
 {: #pattern_public}
 
-To make an app publicly available to the internet in a classic cluster, choose an app exposure method that uses routes, NodePorts, NLBs, or ALBs. The following table describes each possible method, why you might use it, and how to set it up. For basic information about the networking services that the NodePort, NLB, and ALB methods use, see [Understanding Kubernetes service types](/docs/openshift?topic=openshift-network_planning#openshift_routers).
+To make an app publicly available to the internet in a classic cluster, choose an app exposure method that uses routes, NodePorts, NLBs, or ALBs. The following table describes each possible method, why you might use it, and how to set it up. For basic information about the networking services that the NodePort, NLB, and ALB methods use, see [Understanding Kubernetes service types](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers).
 
 You cannot use multiple app exposure methods for one app.
 {: note}

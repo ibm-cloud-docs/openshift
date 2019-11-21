@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-18"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,8 +21,8 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-# Building images for your apps 
-{: #openshift-images}
+# Building images for your apps
+{: #images}
 
 {{site.data.keyword.openshiftlong}} clusters include an internal registry to build, deploy, and manage container images locally. For a private registry to manage and control access to images across your enterprise, you can also set up your cluster to use {{site.data.keyword.registrylong}}.
 {: shortdesc}
@@ -91,7 +91,7 @@ OpenShift clusters are set up by default with an internal registry. When you del
 By default, your OpenShift cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}
 
-To view volume details including the storage class and size, you can describe the persistent volume claim. 
+To view volume details including the storage class and size, you can describe the persistent volume claim.
 
 ```
 oc describe pvc registry-backing -n default
@@ -129,7 +129,7 @@ If your registry needs additional gigabytes of storage for your images, you can 
 By default, your OpenShift cluster has an internal registry that is available through a service with an internal IP address. If you want to make the internal registry available on the public network, you can set up a secure re-encrypt route. For example, you might set up your cluster's internal registry to act as a public registry for deployments in other projects or clusters.
 {: shortdesc}
 
-Before you begin: 
+Before you begin:
 *  Confirm that you have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-access_reference#service) for the cluster.
 *  Make sure that your cluster has public network connectivity to expose the internal registry with a public route.
 *  Install Docker on your local machine.
@@ -265,7 +265,7 @@ To use the internal registry, set up a public route to access the registry. Then
         * **--docker-username**: Copy the `"username"` from the previous image pull secret, such as `serviceaccount`.
         * **--docker-password**: Copy the `"password"` from the previous image pull secret.
         * **--docker-email**: If you have one, enter your Docker email address. If you do not, enter a fictional email address, such as `a@b.c`. This email is required to create a Kubernetes secret, but is not used after creation.
-        
+
         ```
         oc create secret docker-registry internal-registry --namespace default --docker-server docker-registry-default.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud:5000 --docker-username serviceaccount --docker-password <eyJ...> --docker-email a@b.c
         ```
@@ -306,7 +306,7 @@ You can deploy containers to your cluster from an IBM-provided public image or a
 
 Before you begin:
 1. [Set up a namespace in {{site.data.keyword.registryshort_notm}} and push images to this namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
-2. [Create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
+2. [Create a cluster](/docs/openshift?topic=openshift-clusters).
 4. [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To deploy a container into the **default** project of your cluster:
@@ -397,7 +397,7 @@ Image pull secrets are valid only for the OpenShift projects that they were crea
 Before you begin:
 
 1.  [Set up a namespace in {{site.data.keyword.registryshort_notm}} and push images to this namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
-2.  [Create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
+2.  [Create a cluster](/docs/openshift?topic=openshift-clusters).
 4.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 <br/>
@@ -630,7 +630,7 @@ If you already have a private registry, you must store the registry credentials 
 
 Before you begin:
 
-1.  [Create a cluster](/docs/openshift?topic=openshift-openshift-create-cluster).
+1.  [Create a cluster](/docs/openshift?topic=openshift-clusters).
 2.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To create an image pull secret:
@@ -877,6 +877,5 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 {: tip}
 
 <br />
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-11-21"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -39,6 +39,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <th>Description</th>
 </thead>
 <tbody>
+<tr>
+<td>21 November 2019</td>
+<td><ul>
+<li><strong>Ingress ALB changelog</strong>: Updated the [ALB `nginx-ingress` image to 597 and the `ingress-auth` image to build 353](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
+<li><strong>Version changelog</strong>: Master patch updates are available for OpenShift [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533).</li>
+</ul></td>
+</tr>
 <tr>
 <td>15 November 2019</td>
 <td><strong>New! Single zone location for OpenShift clusters</strong>:  You can create single zone Red Hat OpenShift on IBM Cloud clusters in São Paulo, Brazil (`sao01`).</td>
@@ -149,8 +156,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li><strong>End of service of {{site.data.keyword.loganalysislong_notm}} and {{site.data.keyword.monitoringlong_notm}}</strong>: Removed steps for using {{site.data.keyword.loganalysislong_notm}} and {{site.data.keyword.monitoringlong_notm}} to work with cluster logs and metrics. You can collect logs and metrics for your cluster by setting up [{{site.data.keyword.la_full_notm}}](/docs/containers?topic=containers-health#logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/services/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster) instead.</li>
     <li><strong>OpenShift options</strong>: To help you decide whether to use built-in OpenShift capabilities or integration with {{site.data.keyword.cloud_notm}} services, the following topics are added:<ul>
       <li>[Choosing an image registry solution](/docs/openshift?topic=openshift-openshift-images#openshift_registry_options)</li>
-      <li>[Choosing among load balancing solutions](/docs/openshift?topic=openshift-network_planning#routes-vs-ingress) like router or Ingress</li>
-      <li>[Understanding options for logging and monitoring](/docs/openshift?topic=openshift-openshift_health#oc_logmet_options)</li></ul></li>
+      <li>[Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress) like router or Ingress</li>
+      <li>[Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)</li></ul></li>
     <li><strong>New! Single zone location for OpenShift clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).<ul>
       <li>Oslo, Norway</li>
       <li>San Jose, California, US</li></ul></li>
@@ -207,14 +214,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <li><strong>Refreshed Red Hat OpenShift on IBM Cloud docs</strong>: Includes the following new content:<ul>
     <li>[Security information for OpenShift clusters](/docs/openshift?topic=openshift-security).
     <li>[Accessing clusters](/docs/openshift?topic=openshift-access_cluster).</li>
-    <li>[App networking options](/docs/openshift?topic=openshift-network_planning) with comparisons of routes, NodePort, load balancers, and Ingress.</li>
+    <li>[App networking options](/docs/openshift?topic=openshift-cs_network_planning) with comparisons of routes, NodePort, load balancers, and Ingress.</li>
     <li>[Common app modification scenarios](/docs/openshift?topic=openshift-openshift_apps#common-app-modification-scenarios) for moving apps from community Kubernetes to OpenShift.</li>
     <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#openshift_charges) to explain the monthly license in more detail.</li>
     <li>[Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-openshift-images#openshift_internal_registry).</li>
     <li>[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov) with links to tutorials.</li>
     <li>[Using the internal registry in OpenShift](/docs/openshift?topic=openshift-openshift-images#openshift_internal_registry)</ul>
   </li>
-    <li><strong>Entitled software</strong>: If you have licensed products from your [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) container software library, you can [set up your cluster to pull images from the entitled registry](/docs/openshift?topic=openshift-openshift-images#secret_entitled_software).</li>
+    <li><strong>Entitled software</strong>: If you have licensed products from your [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) container software library, you can [set up your cluster to pull images from the entitled registry](/docs/openshift?topic=openshift-images#secret_entitled_software).</li>
   <li><strong>`script update` command</strong>: Added [steps for using the `script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.containerlong_notm}} plug-in.</li>
   </ul></td>
 </tr>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -22,7 +22,7 @@ subcollection: openshift
 {:preview: .preview}
 
 # Benefits and service offerings
-{: #why_openshift}
+{: #cs_ov}
 
 
 {{site.data.keyword.openshiftlong}} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.

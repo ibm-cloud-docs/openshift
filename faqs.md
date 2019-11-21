@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,7 +35,7 @@ Review frequently asked questions for using {{site.data.keyword.openshiftlong}}.
 
 With {{site.data.keyword.cloud_notm}}, you have a choice between two different container management platforms: the IBM version of community Kubernetes and Red Hat OpenShift on IBM Cloud. The container platform that you select is installed on your cluster master and worker nodes. Later, you can [update the version](/docs/openshift?topic=openshift-update) but cannot roll back to a previous version or switch to a different container platform. If you want to use multiple container platforms, create a separate cluster for each.
 
-For more information, see [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-why_openshift#openshift_kubernetes).
+For more information, see [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
 <dl>
   <dt>Kubernetes</dt>
@@ -73,4 +73,4 @@ The OpenShift license is for every two cores of the worker node flavor. The mont
 * If you delete the cluster before the end of the 30-day period, you are still charged the entire monthly price for the OpenShift license.
 
 **Storage**<br>
-To store images in the internal registry, a classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with 20 GB capacity at 2 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-openshift-images#storage_internal_registry), which modifies the cost. For more information, see [Billing](/docs/infrastructure/FileStorage?topic=FileStorage-about).
+To store images in the internal registry, a classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with 20 GB capacity at 2 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-images#storage_internal_registry), which modifies the cost. For more information, see [Billing](/docs/infrastructure/FileStorage?topic=FileStorage-about).
