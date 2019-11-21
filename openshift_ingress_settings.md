@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-21"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -201,8 +201,8 @@ To edit the configmap to enable SSL protocols and ciphers:
    ```
    apiVersion: v1
    data:
-     ssl-protocols: "TLSv1 TLSv1.1 TLSv1.2"
-     ssl-ciphers: "HIGH:!aNULL:!MD5"
+     ssl-protocols: "TLSv1 TLSv1.1 TLSv1.2 TLSv1.3"
+     ssl-ciphers: "HIGH:!aNULL:!MD5:!CAMELLIA:!AESCCM:!ECDH+CHACHA20"
    kind: ConfigMap
    metadata:
      name: ibm-cloud-provider-ingress-cm
