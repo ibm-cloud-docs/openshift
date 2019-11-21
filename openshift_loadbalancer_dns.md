@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-10-30"
+lastupdated: "2019-11-21"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -55,8 +55,8 @@ Expose your app to the public internet by creating a subdomain for the network l
 {: shortdesc}
 
 Before you begin:
-* Review the following considerations and limitations.
-  * You currently cannot create subdomains for private NLBs.
+* Review the following limitations.
+  * You cannot create subdomains for private NLBs.
   * You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-getting-customer-support).
 * [Create an NLB for your app in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config) or [create NLBs in each zone of a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
 
@@ -95,19 +95,9 @@ To create a subdomain for one or more NLB IP addresses:
   ```
   {: screen}
 
-4. Optional: Verify that the IPs are registered with your subdomain by running a `host` or `ns lookup`.
-  Example command:
-  ```
-  host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
-  ```
-  {: pre}
-
-  Example output:
-  ```
-  mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud has address 88.2.4.5
-  mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud has address 168.2.4.5
-  ```
-  {: screen}
+4. Optional: Set up a custom domain to point to the IBM-provided subdomain that you created in the previous step.
+  1. Register a custom domain by working with your Domain Name Service (DNS) provider or by using [{{site.data.keyword.cloud_notm}} DNS](/docs/infrastructure/dns?topic=dns-getting-started).
+  2. Define an alias for your custom domain by specifying the IBM-provided subdomain as a Canonical Name record (CNAME).
 
 5. In a web browser, enter the URL to access your app through the subdomain that you created.
 
