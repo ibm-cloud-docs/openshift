@@ -43,7 +43,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <td>21 November 2019</td>
 <td><ul>
 <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `nginx-ingress` image to 597 and the `ingress-auth` image to build 353](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-<li><strong></strong>: </li>
+<li><strong>Version changelog</strong>: Master patch updates are available for OpenShift [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533).</li>
 </ul></td>
 </tr>
 <tr>
