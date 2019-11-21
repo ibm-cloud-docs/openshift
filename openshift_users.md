@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-21"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -139,7 +139,7 @@ After you [understand how roles, users, and resources in your account](#access_p
 3. To allow users to bind services to the cluster or to view logs that are forwarded from cluster logging configurations, [grant users Cloud Foundry roles](/docs/iam?topic=iam-mngcf) for the org and space that the services are deployed to or where logs are collected.
 4. If you use Kubernetes namespaces to isolate resources within the cluster, grant access to namespaces by [assigning users {{site.data.keyword.cloud_notm}} IAM service roles for the namespaces](#platform).
 5. For any automation tooling such as in your CI/CD pipeline, set up service accounts and [assign the service accounts Kubernetes RBAC permissions](#rbac).
-6. For other advanced configurations to control access to your cluster resources at the pod level, see [Configuring {security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs).
+6. For other advanced configurations to control access to your cluster resources at the pod level, see [Configuring security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs).
 
 </br>
 
