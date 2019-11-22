@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-12"
+lastupdated: "2019-11-22"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -302,28 +302,81 @@ To install the plug-in:
       {: pre}
 
   - **For Windows:**
-    1. Retrieve the **datacenter** where your cluster is deployed.  
-      ```
-      oc get cm cluster-info -n kube-system -o yaml
-      ```
-      {: pre}
-    2. Store the data center in an environment variable.
-      ```
-      SET DC_NAME=<datacenter>
-      ```
-      {: pre}
+    1. Retrieve the `datacenter` where your cluster is deployed and store it in an environment variable.
 
-    3. Install the Helm chart.
-      - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
+      a. Retrieve the `datacenter`.
         ```
-        helm install ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
+        oc get cm cluster-info -n kube-system -o jsonpath="{.data.cluster-config\.json}{'\n'}"
         ```
         {: pre}
 
-      - If you completed the previous step, install with a limitation to specific Kubernetes secrets.</br>
+      b. Store the `datacenter` in an environment variable.
         ```
-        cd ../..
-        helm install ./ibm-object-storage-plugin --name ibm-object-storage-plugin
+        SET DC_NAME=<datacenter>
+        ```
+        {: pre}
+
+        Example:
+        ```
+        SET DC_NAME=dal13
+        ```
+        {: pre}
+    
+    3. Retrieve the infrastructure provider that your cluster uses and store it in an environment variable.
+      
+      a. Retrieve the infrastructure provider.
+        ```
+        oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"
+        ```
+        {: pre}
+
+      b. Store the infrastructure provider in an environment variable.
+
+        * If the output contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"CLASSIC"`.
+        ```
+        SET CLUSTER_PROVIDER="CLASSIC"
+        ```
+        {: pre}
+
+        * If the output contains `gc`, then set the `CLUSTER_PROVIDER` to `"VPC-CLASSIC"`.
+        ```
+        SET CLUSTER_PROVIDER="VPC-CLASSIC"
+        ```
+        {: pre}
+
+    4. Retrieve the operating system of the worker nodes and store it in an environment variable.
+
+      a. Retrieve the operating system of the worker nodes.
+      ```
+      oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"
+      ```
+      {: pre}
+
+      b. Store the operating system of the worker nodes in an environment variable.
+
+        * If the output contains `REDHAT`, then set the `WORKER_OS` to `"redhat"`.
+        ```
+        SET WORKER_OS="redhat"
+        ```
+        {: pre}
+
+        * If the output contains `UBUNTU`, then set the `WORKER_OS` to `"debian"`.
+        ```
+        SET WORKER_OS="debian"
+        ```
+        {: pre}
+
+    5. Install the plug-in by using Helm.       
+      - Install without a limitation to specific Kubernetes secrets.</br>
+        ```
+        helm install --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
+        ```
+        {: pre}
+
+      - Install the plug-in with a limitation to specific Kubernetes secrets.</br>
+        ```
+        cd ../.. 
+        helm install --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" ./ibm-object-storage-plugin --name ibm-object-storage-plugin
         ```
         {: pre}
 
