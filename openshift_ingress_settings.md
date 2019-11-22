@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-21"
+lastupdated: "2019-11-22"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -283,7 +283,7 @@ When you create a classic cluster, a Let's Encrypt certificate is generated for 
      ...
      tls:
      - hosts:
-       - invalid.mycluster.us-south.containers.appdomain.cloud
+       - invalid.mycluster-<hash>-0001.us-south.containers.appdomain.cloud
        secretName: <custom_secret_name>
    ```
    {: codeblock}
