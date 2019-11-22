@@ -64,10 +64,10 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <li><strong>OpenShift overview</strong>: Added an [OpenShift overview page](/docs/openshift?topic=openshift-overview).</li>
 <li><strong>Setting pod priority</strong>: Added a [pod priority page](/docs/openshift?topic=openshift-pod_priority).</li>
 <li><strong>Using {{site.data.keyword.registrylong_notm}}</strong>: Added the following topics about using {{site.data.keyword.registrylong_notm}}:
-<ul><li>[Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-openshift-images#cluster_registry_auth).</li>
-<li>[Copying the `default-<region>-icr-io` secrets](/docs/openshift?topic=openshift-openshift-images#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.</li>
-<li>[Creating your own image pull secret](/docs/openshift?topic=openshift-openshift-images#other_registry_accounts).</li>
-<li>[Adding the image pull secret](/docs/openshift?topic=openshift-openshift-images#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
+<ul><li>[Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-images#cluster_registry_auth).</li>
+<li>[Copying the `default-<region>-icr-io` secrets](/docs/openshift?topic=openshift-images#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.</li>
+<li>[Creating your own image pull secret](/docs/openshift?topic=openshift-images#other_registry_accounts).</li>
+<li>[Adding the image pull secret](/docs/openshift?topic=openshift-images#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
 </li>
 <li><strong>Exposing apps that are external to your cluster by using Ingress</strong>: Added information for how to use the [`proxy-external-service` Ingress annotation](/docs/openshift?topic=openshift-ingress#proxy-external) to include an app that is external to your cluster in Ingress application load balancing.</li>
 <li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1530).</li>
@@ -163,7 +163,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul>
     <li><strong>End of service of {{site.data.keyword.loganalysislong_notm}} and {{site.data.keyword.monitoringlong_notm}}</strong>: Removed steps for using {{site.data.keyword.loganalysislong_notm}} and {{site.data.keyword.monitoringlong_notm}} to work with cluster logs and metrics. You can collect logs and metrics for your cluster by setting up [{{site.data.keyword.la_full_notm}}](/docs/containers?topic=containers-health#logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/services/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster) instead.</li>
     <li><strong>OpenShift options</strong>: To help you decide whether to use built-in OpenShift capabilities or integration with {{site.data.keyword.cloud_notm}} services, the following topics are added:<ul>
-      <li>[Choosing an image registry solution](/docs/openshift?topic=openshift-openshift-images#openshift_registry_options)</li>
+      <li>[Choosing an image registry solution](/docs/openshift?topic=openshift-images#openshift_registry_options)</li>
       <li>[Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress) like router or Ingress</li>
       <li>[Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)</li></ul></li>
     <li><strong>New! Single zone location for OpenShift clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).<ul>
@@ -225,9 +225,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li>[App networking options](/docs/openshift?topic=openshift-cs_network_planning) with comparisons of routes, NodePort, load balancers, and Ingress.</li>
     <li>[Common app modification scenarios](/docs/openshift?topic=openshift-openshift_apps#common-app-modification-scenarios) for moving apps from community Kubernetes to OpenShift.</li>
     <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#openshift_charges) to explain the monthly license in more detail.</li>
-    <li>[Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-openshift-images#openshift_internal_registry).</li>
+    <li>[Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-images#openshift_internal_registry).</li>
     <li>[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov) with links to tutorials.</li>
-    <li>[Using the internal registry in OpenShift](/docs/openshift?topic=openshift-openshift-images#openshift_internal_registry)</ul>
+    <li>[Using the internal registry in OpenShift](/docs/openshift?topic=openshift-images#openshift_internal_registry)</ul>
   </li>
     <li><strong>Entitled software</strong>: If you have licensed products from your [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) container software library, you can [set up your cluster to pull images from the entitled registry](/docs/openshift?topic=openshift-images#secret_entitled_software).</li>
   <li><strong>`script update` command</strong>: Added [steps for using the `script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.containerlong_notm}} plug-in.</li>
