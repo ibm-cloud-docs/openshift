@@ -347,24 +347,24 @@ To install the plug-in:
     4. Retrieve the operating system of the worker nodes and store it in an environment variable.
 
       a. Retrieve the operating system of the worker nodes.
-      ```
-      oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"
-      ```
-      {: pre}
+        ```
+        oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"
+        ```
+        {: pre}
 
       b. Store the operating system of the worker nodes in an environment variable.
 
         * If the output contains `REDHAT`, then set the `WORKER_OS` to `"redhat"`.
-        ```
-        SET WORKER_OS="redhat"
-        ```
-        {: pre}
+          ```
+          SET WORKER_OS="redhat"
+          ```
+          {: pre}
 
         * If the output contains `UBUNTU`, then set the `WORKER_OS` to `"debian"`.
-        ```
-        SET WORKER_OS="debian"
-        ```
-        {: pre}
+          ```
+          SET WORKER_OS="debian"
+          ```
+          {: pre}
 
     5. Install the plug-in by using Helm.       
       - Install without a limitation to specific Kubernetes secrets.</br>
