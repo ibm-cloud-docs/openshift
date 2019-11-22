@@ -355,16 +355,18 @@ To install the plug-in:
       b. Store the operating system of the worker nodes in an environment variable.
 
         * If the output contains `REDHAT`, then set the `WORKER_OS` to `"redhat"`.
-          ```
-          SET WORKER_OS="redhat"
-          ```
-          {: pre}
+
+            ```
+            SET WORKER_OS="redhat"
+            ```
+            {: pre}
 
         * If the output contains `UBUNTU`, then set the `WORKER_OS` to `"debian"`.
-          ```
-          SET WORKER_OS="debian"
-          ```
-          {: pre}
+
+            ```
+            SET WORKER_OS="debian"
+            ```
+            {: pre}
 
     5. Install the plug-in by using Helm.       
       - Install without a limitation to specific Kubernetes secrets.</br>
