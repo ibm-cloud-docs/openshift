@@ -35,6 +35,7 @@ When you create a cluster, the worker nodes are provisioned in a worker pool. Af
 <p class="tip">If you have a multizone cluster, keep its worker node resources balanced. Make sure that all the worker pools are spread across the same zones, and add or remove workers by resizing the pools instead of adding individual nodes.</br></br>
 After you set up your worker pool, you can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.</p>
 
+
 ## Adding worker nodes by resizing an existing worker pool
 {: #resize_pool}
 

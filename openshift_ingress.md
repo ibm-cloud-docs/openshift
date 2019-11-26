@@ -43,7 +43,6 @@ Have you already completed the following?
 - Select domain name and TLS secret
 
 You can use the following deployment YAML to create an Ingress resource:
-
 ```
 apiVersion: extensions/v1beta1
 kind: Ingress

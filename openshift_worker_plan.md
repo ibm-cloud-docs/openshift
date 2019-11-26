@@ -36,6 +36,7 @@ A worker node flavor describes the compute resources, such as CPU, memory, and d
 The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type,<roks311-vpc> the infrastructure provider that you want to use,</roks311-vpc> and the {{site.data.keyword.containerlong_notm}} location where you want to create your cluster.
 {: shortdesc}
 
+
 <img src="images/cs_clusters_hardware.png" width="700" alt="Hardware options for worker nodes in a standard cluster" style="width:700px; border-style: none"/>
 
 **What flavors are available to me?** </br>

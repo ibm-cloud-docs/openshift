@@ -31,6 +31,7 @@ subcollection: openshift
 With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
 {: shortdesc}
 
+
 Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-app#app_scaling).
 {: tip}
 

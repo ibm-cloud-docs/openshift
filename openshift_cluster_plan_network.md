@@ -30,6 +30,7 @@ subcollection: openshift
 Design a network setup for your {[product_name]} cluster that meets the needs of your workloads and environment.
 {: shortdesc}<roks311-vpc>
 
+
 Get started by planning your setup for a VPC or a classic cluster.
 * With [{[product_name]} clusters in VPC](#vpc_basics), you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in [Virtual Private Cloud](/docs/infrastructure/vpc?topic=vpc-about-vpc) for Generation 1 compute resources. VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
 * With [{[product_name]} classic clusters](#plan_basics), you can create your cluster on classic infrastructure. Classic clusters include all of the {[product_name]} mature and robust features for compute, networking, and storage.</roks311-vpc>

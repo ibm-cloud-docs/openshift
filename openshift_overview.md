@@ -38,6 +38,7 @@ Review frequently asked questions and key technologies that Red Hat OpenShift on
 **What is Red Hat OpenShift on IBM Cloud and how does it work?** </br>
 Red Hat OpenShift on IBM Cloud is a managed offering to create your own OpenShift cluster of compute hosts to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. Red Hat OpenShift on IBM Cloud provides intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management for your apps. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
 
+
 **What is Kubernetes?** </br>
 Kubernetes is an open source platform for managing containerized workloads and services across multiple hosts, and offers management tools for deploying, automating, monitoring, and scaling containerized apps with minimal to no manual intervention. For an overview of key Kubernetes concepts, see [Kubernetes clusters](#kubernetes_basics). To dive deeper into Kubernetes, see the [Kubernetes documentation](https://kubernetes.io/docs/home/?path=users&persona=app-developer&level=foundational).
 

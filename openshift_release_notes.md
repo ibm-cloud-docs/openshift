@@ -40,8 +40,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </thead>
 <tbody>
 <tr>
-  <td>25 November 2019</td>
-  <td><ul><roks311-vpc><li><strong>Cluster autoscaling for VPC clusters</strong>: You can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).</li></roks311-vpc>
+  <td>26 November 2019</td>
+  <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.61](/docs/containers?topic=containers-cs_cli_changelog).</li><roks311-vpc>
+  <li><strong>Cluster autoscaling for VPC clusters</strong>: You can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).</li></roks311-vpc>
   <li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533_worker).</li></td>
 </tr>
 <tr>

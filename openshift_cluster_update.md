@@ -550,7 +550,7 @@ Yes. Your cluster is deployed with the following managed components and associat
 * `vpn`
 
 **Can I install other plug-ins or add-ons than the default components?**</br>
-Yes. Red Hat OpenShift on IBM Cloud provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/containers?topic=containers-helm#public_helm_install) to install the [block storage plug-in](/docs/openshift?topic=openshift-block_storage#install_block) or [strongSwan VPN](/docs/openshift?topic=openshift-vpn#vpn-setup). You must update these Helm charts separately by following the instructions in the Helm chart readme files.
+Yes. Red Hat OpenShift on IBM Cloud provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/containers?topic=containers-helm#public_helm_install) to install the [block storage plug-in](/docs/openshift?topic=openshift-block_storage#install_block) or [strongSwan VPN](/docs/openshift?topic=openshift-vpn#vpn-setup). Or, you might want to enable IBM-managed add-ons in your cluster, such as the Kubernetes web terminal or the Diagnostics and Debug Tool. You must update these Helm charts and add-ons separately by following the instructions in the Helm chart readme files or by following the steps to [update managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
 
 ### Managing automatic updates for Fluentd
 {: #logging-up}
@@ -665,7 +665,12 @@ You can manage automatic updates of the Ingress ALB component in the following w
     {: pre}
 
 <br />
- 
+
+
+## Updating managed add-ons
+{: #addons}
+
+Managed {{site.data.keyword.containerlong_notm}} add-ons are an easy way to enhance your cluster with open-source capabilities, such as Istio or Knative. The version of the open-source tool that you add to your cluster is tested by IBM and approved for use in {{site.data.keyword.containerlong_notm}}. To update managed add-ons that you enabled in your cluster to the latest versions, see [Updating managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
 
 
 

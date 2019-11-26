@@ -43,7 +43,6 @@ As you develop your plan to manage user access, consider the following general s
 
 After you understand how roles, users, and resources in your account can be managed, check out [Setting up access to your cluster](#access-checklist) for a checklist of how to configure access.
 
-
 ### Pick the right access policy and role for your users
 {: #access_roles}
 

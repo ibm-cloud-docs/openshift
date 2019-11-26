@@ -36,10 +36,10 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
 {: shortdesc}
 
 1. Edit the configuration file for the `ibm-cloud-provider-ingress-cm` configmap resource.
-    ```
-    oc edit cm ibm-cloud-provider-ingress-cm -n kube-system
-    ```
-    {: pre}
+  ```
+  oc edit cm ibm-cloud-provider-ingress-cm -n kube-system
+  ```
+  {: pre}
 
 2. Add a <code>data</code> section and specify public ports `80`, `443`, and any other ports you want to expose separated by a semi-colon (;).
 

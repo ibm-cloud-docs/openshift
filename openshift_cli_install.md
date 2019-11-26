@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-21"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -83,3 +83,29 @@ Next, start [Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?
 
 For more information about the OpenShift Origin CLI, see the [`oc` commands docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html).
 {: note}
+
+<br />
+
+
+## Using the Kubernetes web terminal in your web browser
+{: #cli_web}
+
+The Kubernetes web terminal allows you to use the {{site.data.keyword.cloud_notm}} CLI to manage your cluster directly from your web browser.
+{: shortdesc}
+
+You can use the Kubernetes web terminal for quick access and testing of your cluster. Do not use it for production workloads.
+{: important}
+
+If you use the cluster dashboard in the {{site.data.keyword.cloud_notm}} console to manage your clusters but want to quickly make more advanced configuration changes, you can now run CLI commands directly from your web browser in the Kubernetes web terminal. The Kubernetes Terminal is enabled with the base [{{site.data.keyword.cloud_notm}} CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/cli?topic=cloud-cli-getting-started), the {{site.data.keyword.containerlong_notm}} plug-in, and the {{site.data.keyword.registryshort_notm}} plug-in. Additionally, the terminal context is already set to the cluster that you are working with so that you can run Kubernetes `kubectl` commands to work with your cluster.
+
+Any files that you download and edit locally, such as YAML files, are stored temporarily in Kubernetes Terminal and do not persist across sessions.
+{: note}
+
+To install and launch the Kubernetes web terminal:
+
+1. In your [cluster dashboard ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters), click the name of the cluster where you want to install the web terminal.
+2.  From the upper right of the cluster detail page, click the **Web terminal** button.
+3.  Click **Install**. It might take a few minutes for the terminal add-on to install.
+4.  Click the **Web terminal** button again. The terminal opens in your browser.
+
+Next time, you can launch the Kubernetes Terminal simply by clicking the **Web terminal** button.

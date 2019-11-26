@@ -30,6 +30,7 @@ subcollection: openshift
 
 Check out the following [videos and product tours ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/demos/collection/Red-Hat-OpenShift-on-IBM-Cloud/?lc=null) to learn more about Red Hat OpenShift on IBM Cloud.
 
+
 ## Benefits of using the service
 {: #benefits}
 

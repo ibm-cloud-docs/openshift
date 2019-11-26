@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d
 
@@ -206,6 +206,9 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dt>Cluster autoscaler</dt>
   <dd>With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing requests of your scheduled workloads. For more information, see [Scaling clusters](/docs/openshift?topic=openshift-ca).</dd>
 
+  <dt>Diagnostics and debug tool</dt>
+  <dd>While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool add-on](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) to run tests and gather pertinent information from your cluster.</dd>
+
   <dt>Istio for service mesh</dt>
   <dd>Unlike for community Kubernetes clusters, <a href="https://www.ibm.com/cloud/istio" target="_blank">Istio <img src="../icons/launch-glyph.svg" alt="External link icon"></a> is not available as a managed add-on for {{site.data.keyword.openshiftshort}} clusters. Instead, use the Red Hat {{site.data.keyword.openshiftshort}} Service Mesh project. For more information, see [the {{site.data.keyword.openshiftshort}} installation docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/servicemesh-install/servicemesh-install.html).</dd>
 
@@ -213,7 +216,7 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>Unlike for community Kubernetes clusters, <a href="https://github.com/knative/docs" target="_blank">Knative <img src="../icons/launch-glyph.svg" alt="External link icon"></a> is not available as a managed add-on for {{site.data.keyword.openshiftshort}} clusters. Instead, try out the Knative on {{site.data.keyword.openshiftshort}} developer preview. For more information, see [the {{site.data.keyword.openshiftshort}} installation docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/openshift-knative/docs).</dd>
 
   <dt>Kubernetes Terminal</dt>
-  <dd>The [Kubernetes Terminal add-on](/docs/openshift?topic=openshift-openshift-cli#cli_web) is available for only community Kubernetes cluster, not {{site.data.keyword.openshiftshort}} clusters.</dd>
+  <dd>Use the [Kubernetes Terminal add-on](/docs/openshift?topic=openshift-openshift-cli#cli_web) to use the {{site.data.keyword.cloud_notm}} CLI to manage your cluster directly from your web browser.</dd>
 
   <dt>{{site.data.keyword.la_full_notm}}</dt>
   <dd>Add log management capabilities to your cluster by deploying LogDNA as a third-party service to your worker nodes to manage logs from your pod containers. For more information, see the following docs.<ul>

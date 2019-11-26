@@ -227,6 +227,158 @@ The following image depicts the structure and grouping of the `ibmcloud oc` comm
 Create, view, and modify clusters and cluster settings, such as add-on, subnet, and master settings.
 {: shortdesc}
 
+### `ibmcloud oc cluster addon disable`
+{: #cs_cluster_addon_disable}
+
+Disable a managed add-on in an existing cluster. This command must be combined with one of the following subcommands for the managed add-on that you want to disable.
+{: shortdesc}
+
+#### `ibmcloud oc cluster addon disable debug-tool`
+{: #cs_cluster_addon_disable_debug}
+
+Disable the add-on for the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool.
+{: shortdesc}
+
+```
+ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
+```
+{: pre}<roks311-vpc>
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>-f</code>
+<dd>Force the command to run with no user prompts. This value is optional.</dd>
+</dl>
+
+#### `ibmcloud oc cluster addon disable kube-terminal`
+{: #cs_cluster_addon_disable_kube-terminal}
+
+Disable the [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on. To use the Kubernetes Terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
+{: shortdesc}
+
+```
+ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
+```
+{: pre}<roks311-vpc>
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>-f</code>
+<dd>Force the command to run with no user prompts. This value is optional.</dd>
+</dl>
+
+</br>
+
+### `ibmcloud oc cluster addon enable`
+{: #cs_cluster_addon_enable}
+
+Enable a managed add-on in an existing cluster. This command must be combined with one of the following subcommands for the managed add-on that you want to enable.
+{: shortdesc}
+
+#### `ibmcloud oc cluster addon enable debug-tool`
+{: #cs_cluster_addon_enable_debug}
+
+Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) in a cluster.
+{: shortdesc}
+
+```
+ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION]
+```
+{: pre}<roks311-vpc>
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
+</dl>
+
+**Example**:
+  ```
+  ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
+  ```
+  {: pre}
+
+#### `ibmcloud oc cluster addon enable kube-terminal`
+{: #cs_cluster_addon_enable_kube-terminal}
+
+Enable the [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on to use the Kubernetes Terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
+{: shortdesc}
+
+```
+ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERSION]
+```
+{: pre}<roks311-vpc>
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
+</dl>
+
+### `ibmcloud oc cluster addon ls`
+{: #cs_cluster_addons}
+
+List managed add-ons that are enabled in a cluster.
+{: shortdesc}
+
+```
+ibmcloud oc cluster addon ls --cluster CLUSTER
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute
+
+**Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+</dl>
+
+</br>
+
 
 
 ### `ibmcloud oc cluster config`
@@ -260,7 +412,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--export] [--network] [-
 <dd>Download the TLS certificates and permission files for the Super User role. You can use the certs to automate tasks in a cluster without having to reauthenticate. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`. This value is optional.</dd>
 
 <dt><code>--network</code></dt>
-<dd>Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. This value is optional. **Note**: To get the export command for the downloaded Kubernetes configuration data and certificates, you must run this command without this flag.</dd>
+<dd>Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. This value is optional. **Note**: This option cannot be used in conjunction with the <code>--yaml</code> option.</dd>
 
 <dt><code>--export</code></dt>
 <dd>Download Kubernetes configuration data and certificates without any messages other than the export command. Because no messages are displayed, you can use this flag when you create automated scripts. This value is optional.</dd>
@@ -3240,7 +3392,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --typ
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
 
-**Minimum required permissions**: **Editor** platform role for the cluster for all log sources except `kube-audit` and **Administrator** platform role for the cluster for the `kube-audit` log source
+**Minimum required permissions**: **Editor** platform role for the cluster
 
 **Command options**:
 <dl>
@@ -3248,7 +3400,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --typ
 <dd>The name or ID of the cluster.</dd>
 
 <dt><code>--logsource <em>LOG_SOURCE</em></code></dt>
-<dd>The log source to enable log forwarding for. This argument supports a comma-separated list of log sources to apply for the configuration. Accepted values are <code>container</code>, <code>application</code>, <code>worker</code>, <code>kubernetes</code>, <code>storage</code>, and <code>ingress</code>, and <code>kube-audit</code>. If you do not provide a log source, configurations are created for <code>container</code> and <code>ingress</code>.</dd>
+<dd>The log source to enable log forwarding for. This argument supports a comma-separated list of log sources to apply for the configuration. Accepted values are <code>container</code>, <code>application</code>, <code>worker</code>, <code>kubernetes</code>, <code>storage</code>, and <code>ingress</code>. If you do not provide a log source, configurations are created for <code>container</code> and <code>ingress</code>.</dd>
 
 <dt><code>--type <em>syslog</em></code></dt>
 <dd>Enter <code>syslog</code> to forward logs to an external server.</dd>
@@ -3329,7 +3481,7 @@ ibmcloud oc logging config get --cluster CLUSTER [--logsource LOG_SOURCE] [--jso
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>--logsource <em>LOG_SOURCE</em></code></dt>
-<dd>The kind of log source for which you want to filter. Logging configurations of only this log source in the cluster are returned. Accepted values are <code>container</code>, <code>storage</code>, <code>application</code>, <code>worker</code>, <code>kubernetes</code>, <code>ingress</code>, and <code>kube-audit</code>. This value is optional.</dd>
+<dd>The kind of log source for which you want to filter. Logging configurations of only this log source in the cluster are returned. Accepted values are <code>container</code>, <code>storage</code>, <code>application</code>, <code>worker</code>, <code>kubernetes</code>, and <code>ingress</code>. This value is optional.</dd>
 
 <dt><code>--show-covering-filters</code></dt>
 <dd>Shows the logging filters that render previous filters obsolete.</dd>
@@ -3364,7 +3516,7 @@ ibmcloud oc logging config rm --cluster CLUSTER (--namespace NAMESPACE --id LOG_
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
 
-**Minimum required permissions**: **Editor** platform role for the cluster for all log sources except `kube-audit` and **Administrator** platform role for the cluster for the `kube-audit` log source
+**Minimum required permissions**: **Editor** platform role for the cluster
 
 **Command options**:
 <dl>

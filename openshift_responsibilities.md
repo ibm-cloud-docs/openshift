@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -104,6 +104,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
         **IBM responsibilities**:
         <ul>
         <li>Provision clusters with Kubernetes components installed so that you can access the Kubernetes API.</li>
+        <li>Provide a number of managed add-ons to extend your app's capabilities, such as the Kubernetes web terminal or the Diagnostics and Debug Tool. Maintenance is simplified for you because IBM provides the installation and updates for the managed add-ons.</li>
         <li>Provide cluster integration with select third-party partnership technologies, such as {{site.data.keyword.la_short}}, {{site.data.keyword.mon_short}}, and Portworx.</li>
         <li>Provide automation to enable service binding to other {{site.data.keyword.cloud_notm}} services.</li>
         <li>Create clusters with image pull secrets so that your deployments in the `default` Kubernetes namespace can pull images from {{site.data.keyword.registrylong_notm}}.</li>

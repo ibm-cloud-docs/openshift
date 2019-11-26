@@ -68,10 +68,10 @@ In classic clusters, bringing your own Ingress controller is supported only for 
     {: codeblock}
 
 4. Create the service in your cluster.
-    ```
-    oc apply -f my-lb-svc.yaml
-    ```
-    {: pre}
+  ```
+  oc apply -f my-lb-svc.yaml
+  ```
+  {: pre}
 
 5. Get the **EXTERNAL-IP** address for the load balancer.
     ```
