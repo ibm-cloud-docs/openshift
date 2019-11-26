@@ -500,7 +500,6 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 **Before you begin**:
 *  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *  [Install the `ibm-iks-cluster-autoscaler` plug-in](#ca_helm).
-*  **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 
 **To update the cluster autoscaler values**:
 
@@ -780,7 +779,6 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 
 **Before you begin**:
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 * For a changelog of chart versions, [download the source code `tar` file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
 
 **To update the cluster autoscaler Helm chart**:
