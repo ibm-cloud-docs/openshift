@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -1453,7 +1453,7 @@ kind: Ingress
 metadata:
   name: <myingressname>
   annotations:
-    ingress.bluemix.net/ssl-services: ssl-service=<myservice1> ssl-secret=<service1-ssl-secret> proxy-ssl-verify-depth=<verification_depth>;ssl-service=<myservice2> ssl-secret=<service2-ssl-secret> proxy-ssl-verify-depth=<verification_depth> proxy-ssl-name=<service_CN>
+    ingress.bluemix.net/ssl-services: ssl-service=<myservice1> ssl-secret=<service1-ssl-secret> proxy-ssl-verify-depth=<verification_depth> proxy-ssl-name=<service_CN>;ssl-service=<myservice2> ssl-secret=<service2-ssl-secret> proxy-ssl-verify-depth=<verification_depth> proxy-ssl-name=<service_CN>
 spec:
   tls:
   - hosts:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -25,9 +25,10 @@ subcollection: openshift
 
 
 # Controlling traffic with network policies
-{: #network_policies}
+{: #network_policies}<roks311-vpc>
 
-
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This network policy information is specific to classic clusters. For network policy information for VPC clusters, see [Controlling traffic with VPC access control lists](/docs/openshift?topic=openshift-vpc-network-policy).
+{: note}</roks311-vpc>
 
 Every {{site.data.keyword.openshiftlong}} cluster is set up with a network plug-in called Calico. Default network policies are set up to secure the public network interface of every worker node in the cluster.
 {: shortdesc}
@@ -95,7 +96,7 @@ Review the following default Calico host policies that are automatically applied
   </tbody>
 </table>
 
-A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to all clusters.
+A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to all<roks311-vpc> classic</roks311-vpc> clusters.
 
 <table>
 <caption>Default Kubernetes policies for each cluster</caption>
@@ -325,7 +326,6 @@ To create a pre-DNAT policy:
 
 1. Define a Calico pre-DNAT network policy for ingress (inbound traffic) access to Kubernetes services.
     * Use [Calico v3 policy syntax ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy).
-    * If you manage traffic to an [NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs), you must include the `applyOnForward: true` and `doNotTrack: true` fields to the `spec` section of the policy.
 
         Example resource that blocks all node ports:
 
@@ -352,34 +352,6 @@ To create a pre-DNAT policy:
             source: {}
           selector: ibm.role=='worker_public'
           order: 1100
-          types:
-          - Ingress
-        ```
-        {: codeblock}
-
-        Example resource that whitelists traffic from only a specified source CIDR to an NLB 2.0:
-
-        ```
-        apiVersion: projectcalico.org/v3
-        kind: GlobalNetworkPolicy
-        metadata:
-          name: whitelist
-        spec:
-          applyOnForward: true
-          doNotTrack: true
-          ingress:
-          - action: Allow
-            destination:
-              nets:
-              - <loadbalancer_IP>/32
-              ports:
-              - 80
-            protocol: TCP
-            source:
-              nets:
-              - <client_address>/32
-          selector: ibm.role=='worker_public'
-          order: 500
           types:
           - Ingress
         ```
@@ -413,8 +385,7 @@ To create a pre-DNAT policy:
         ```
         {: codeblock}
 
-2. Apply the Calico preDNAT network policy. It takes about 1 minute for the
-policy changes to be applied throughout the cluster.
+2. Apply the Calico preDNAT network policy. It takes about 1 minute for the policy changes to be applied throughout the cluster.
 
   - Linux and OS X:
 

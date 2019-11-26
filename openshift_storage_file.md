@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1538,7 +1538,7 @@ Remove the PVC, PV, and the storage instance from your {{site.data.keyword.cloud
 
 Before you begin:
 - Make sure that you backed up any data that you want to keep.
-- [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_public_se)
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To clean up persistent data:
 

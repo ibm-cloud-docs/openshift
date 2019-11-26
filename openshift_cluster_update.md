@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -78,19 +78,21 @@ To update the Kubernetes master _major_ or _minor_ version:
 
 4.  Install the version of the [`oc cli`](/docs/containers?topic=containers-cs_cli_install#kubectl) that matches the API server version that runs in the master. [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/release/version-skew-policy/) `oc` client versions that are two or more versions apart from the server version (n +/- 2).
 
-When the master update is complete, you can update your worker nodes
+When the master update is complete, you can update your worker nodes<roks311-vpc>, depending on the type of cluster infrastructure provider that you have.
+*  [Updating classic worker nodes](#worker_node).
+*  [Updating VPC worker nodes](#vpc_worker_node)</roks311-vpc>.
 
 <br />
 
 
-
-## Updating worker nodes
+## Updating<roks311-vpc> classic</roks311-vpc> worker nodes
 {: #worker_node}
 
-You received a notification to update your worker nodes. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync.
-{: shortdesc}
+You received a notification to update your worker nodes<roks311-vpc> in a [classic infrastructure](/docs/openshift?topic=openshift-infrastructure_providers) cluster</roks311-vpc>. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync.
+{: shortdesc}<roks311-vpc>
 
-
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Applies to only classic clusters. Have a VPC cluster? See [Updating VPC worker nodes](#vpc_worker_node) instead.
+{: note}</roks311-vpc>
 
 **What happens to my apps during an update?**</br>
 If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
@@ -106,7 +108,7 @@ When the config map is not defined, the default is used. By default, a maximum o
 ### Prerequisites
 {: #worker-up-prereqs}
 
-Before you update your worker nodes, review the prerequisite steps.
+Before you update your<roks311-vpc> classic infrastructure</roks311-vpc> worker nodes, review the prerequisite steps.
 {: shortdesc}
 
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
@@ -119,10 +121,10 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 - Consider [adding more worker nodes](/docs/openshift?topic=openshift-add_workers) so that your cluster has enough capacity to rescheduling your workloads during the update.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
-### Updating worker nodes in the CLI with a configmap
+### Updating<roks311-vpc> classic</roks311-vpc> worker nodes in the CLI with a configmap
 {: #worker-up-configmap}
 
-Set up a configmap to perform a rolling update of your worker nodes.
+Set up a configmap to perform a rolling update of your<roks311-vpc> classic</roks311-vpc> worker nodes.
 {: shortdesc}
 
 1.  Complete the [prerequisite steps](#worker-up-prereqs).
@@ -272,7 +274,7 @@ Next steps:
 -   Inform developers who work in the cluster to update their `oc` CLI to the version of the Kubernetes master.
 -   If the Kubernetes dashboard does not display utilization graphs, [delete the `kube-dashboard` pod](/docs/containers?topic=containers-cs_troubleshoot_health#cs_dashboard_graphs).
 
-### Updating worker nodes in the console
+### Updating<roks311-vpc> classic</roks311-vpc> worker nodes in the console
 {: #worker_up_console}
 
 After you set up the config map for the first time, you can then update worker nodes by using the {{site.data.keyword.cloud_notm}} console.
@@ -286,8 +288,99 @@ To update worker nodes from the console:
 5.  From the action bar, click **Update**.
 
 <br />
+<roks311-vpc>
 
+## Updating VPC worker nodes
+{: #vpc_worker_node}
 
+You received a notification to update your worker nodes in a [VPC infrastructure cluster](/docs/openshift?topic=openshift-infrastructure_providers). What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
+{: shortdesc}
+
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/>  Applies to only VPC clusters. Have a classic cluster? See [Updating classic worker nodes](#worker_node) instead.
+{: note}
+
+* **Patch**: A worker node patch update includes security fixes. You can update the VPC worker node to the latest patch by using the `ibmcloud oc worker replace` command.
+* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` flag.
+
+For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
+
+**What happens to my apps during an update?**</br>
+If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload, such as by [resizing your worker pools](/docs/openshift?topic=openshift-add_workers#resize_pool).
+
+**What happens to my worker node during an update?**<br>
+You VPC worker node is replaced by removing the old worker node and provisioning a new worker node that runs at the updated patch or `major.minor` version. The replacement worker node is created in the same zone, same worker pool, and with the same flavor as the deleted worker node. However, the replacement worker node is assigned a new private IP address, and loses any custom labels that you applied to the old worker node (worker pool labels are still applied to the replacement worker node).
+
+### Prerequisites
+{: #vpc_worker_prereqs}
+
+Before you update your VPC infrastructure worker nodes, review the prerequisite steps.
+{: shortdesc}
+
+Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is removed, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
+{: important}
+
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Update the master](#master). The worker node version cannot be higher than the API server version that runs in your Kubernetes master.
+- Make any changes that are marked with _Update after master_ in the [OpenShift version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
+- If you want to apply a patch update, review the [Kubernetes clusters](/docs/openshift?topic=openshift-openshift_changelog) version changelog.
+- Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
+
+### Updating VPC worker nodes in the CLI
+{: #vpc_worker_cli}
+
+Before you update your VPC worker nodes, review the prerequisite steps.
+{: shortdesc}
+
+1.  Complete the [prerequisite steps](#vpc_worker_prereqs).
+2.  Optional: Add capacity to your cluster by [resizing the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool). The pods on the worker node can be rescheduled and continue running on the added worker nodes during the update.
+3.  List the worker nodes in your cluster and note the **ID** and **Primary IP** of the worker node that you want to update.
+    ```
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
+4.  Drain the worker node to reschedule the pods onto remaining worker nodes in the cluster and to make it unavailable for future pod scheduling.
+    ```
+    oc drain <worker_node_primary_IP>
+    ```
+    {: pre}
+    Example output:
+    ```
+    node/10.xxx.xx.xxx cordoned
+    evicting pod "<pod_name>"
+    ...
+    pod/<pod_name> evicted
+    ...
+    node/10.xxx.xx.xxx evicted
+    ```
+    {: screen}
+5.  Replace the worker node to update either the patch version or the `major.minor` version that matches the master version.
+    *  To update the worker node to the same `major.minor` version as the master, such as from 1.14.9 to 1.16.3, include the `--update` flag.
+       ```
+       ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID> --update
+       ```
+       {: pre}
+    *  To update the worker node to the latest patch version at the same `major.minor` version, such as from 1.14.8_1530 to 1.14.9_1533, do not include the `--update` flag.
+       ```
+       ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+       ```
+       {: pre}
+6.  Repeat these steps for each worker node that you must update.
+7.  Optional: After the replaced worker nodes are in a **Ready** status, [resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to meet the cluster capacity that you want.
+
+### Updating VPC worker nodes in the console
+{: #vpc_worker_ui}
+
+You can update your VPC worker nodes in the console. Before you begin, consider [adding more worker nodes](/docs/openshift?topic=openshift-add_workers) to the cluster and [draining ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/) the worker node before you replace, to help avoid downtime for your apps.
+{: shortdesc}
+
+1.  Complete the [prerequisite steps](#vpc_worker_prereqs).
+2.  From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **OpenShift**.
+3.  From the **Clusters** page, click your cluster.
+4.  From the **Worker Nodes** tab, select the check box for each worker node that you want to update. An action bar is displayed over the table header row.
+5.  From the action bar, click **Update**.
+
+<br />
+</roks311-vpc>
 
 ## Updating flavors (machine types)
 {: #machine_type}
@@ -343,11 +436,17 @@ To update flavors:
 
 3. Create a worker node with the new machine type.
    - **For worker nodes in a worker pool**:
-     1. Create a worker pool with the number of worker nodes that you want to replace.
-        ```
-        ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
-        ```
-        {: pre}
+     1. Create a worker pool with the number of worker nodes that you want to replace.<roks311-vpc>
+        * Classic clusters:</roks311-vpc>
+          ```
+          ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
+          ```
+          {: pre}<roks311-vpc>
+        * VPC clusters:
+          ```
+          ibmcloud oc worker-pool create vpc-classic <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone>
+          ```
+          {: pre}</roks311-vpc>
 
      2. Verify that the worker pool is created.
         ```
@@ -355,11 +454,17 @@ To update flavors:
         ```
         {: pre}
 
-     3. Add the zone to your worker pool that you retrieved earlier. When you add a zone, the worker nodes that are defined in your worker pool are provisioned in the zone and considered for future workload scheduling. If you want to spread your worker nodes across multiple zones, choose a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones).
-       ```
-       ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
-       ```
-       {: pre}
+     3. Add the zone to your worker pool that you retrieved earlier. When you add a zone, the worker nodes that are defined in your worker pool are provisioned in the zone and considered for future workload scheduling. If you want to spread your worker nodes across multiple zones, choose a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones).<roks311-vpc>
+       * Classic clusters:</roks311-vpc>
+         ```
+         ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+         ```
+         {: pre}<roks311-vpc>
+       * VPC clusters:
+         ```
+         ibmcloud oc zone add vpc-classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <vpc_subnet_id>
+         ```
+         {: pre}</roks311-vpc>
 
    - **Deprecated: For stand-alone worker nodes**:
        ```

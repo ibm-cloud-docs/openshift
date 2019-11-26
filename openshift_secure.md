@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -108,8 +108,8 @@ The following image shows the default cluster security settings that address aut
     </tr>
     <tr>
       <td>Fine-grained access control</td>
-      <td>As the account administrator you can [grant access to other users for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, Red Hat OpenShift on IBM Cloud, and all the resources in your account. Setting up proper user roles and permissions is key to limit who can access your resources and to limit the damage that a user can do when legitimate permissions are misused. </br></br>You can select from the following pre-defined user roles that determine the set of actions that the user can perform: <ul><li><strong>Platform roles:</strong> Determine the cluster and worker node management-related actions that a user can perform in Red Hat OpenShift on IBM Cloud. Platform roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create an OpenShift project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles do not grant access to other OpenShift projects. To view and access other OpenShift projects, you must be assigned the appropriate service access role in IAM.  </li><li><strong>Service access roles:</strong> Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) that is assigned to the user and the actions that a user can run against the OpenShift API server. While the <code>basic-users</code> and <code>self-provisioners</code> RBAC role that is assigned with a platform role lets you create and manage your own OpenShift projects, you cannot view, access, or work with other OpenShift projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service). </li><li><strong>Classic infrastructure:</strong> Enables access to your classic {{site.data.keyword.cloud_notm}} infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.</li>
-  </ul> </br> For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-users).</td>
+      <td>As the account administrator you can [grant access to other users for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, Red Hat OpenShift on IBM Cloud, and all the resources in your account. Setting up proper user roles and permissions is key to limit who can access your resources and to limit the damage that a user can do when legitimate permissions are misused. </br></br>You can select from the following pre-defined user roles that determine the set of actions that the user can perform: <ul><li><strong>Platform roles:</strong> Determine the cluster and worker node management-related actions that a user can perform in Red Hat OpenShift on IBM Cloud. Platform roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create an OpenShift project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles do not grant access to other OpenShift projects. To view and access other OpenShift projects, you must be assigned the appropriate service access role in IAM.  </li><li><strong>Service access roles:</strong> Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) that is assigned to the user and the actions that a user can run against the OpenShift API server. While the <code>basic-users</code> and <code>self-provisioners</code> RBAC role that is assigned with a platform role lets you create and manage your own OpenShift projects, you cannot view, access, or work with other OpenShift projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service). </li><li><strong>Classic infrastructure:</strong> Enables access to your classic {{site.data.keyword.cloud_notm}} infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.</li><roks311-vpc>
+  <li><strong>VPC infrastructure:</strong> Enables access to VPC infrastructure resources. Example actions that are permitted by VPC infrastructure roles are creating a VPC, adding subnets, changing floating IP addresses, and creating VPC Block Storage instances. </li></roks311-vpc></ul> </br> For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-users).</td>
     </tr>
     <tr>
       <td>Admission controllers</td>  
@@ -148,7 +148,7 @@ The following image shows the default cluster security settings that address aut
 **What else can I do to secure my OpenShift API server?**</br>
 You can decide how you want your master and worker nodes to communicate and how your cluster users can access the OpenShift API server by enabling the private service endpoint only, the public service endpoint only, or the public and private service endpoints.
 
-For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/openshift?topic=openshift-plan_clusters#workeruser-master).
+For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/openshift?topic=openshift-plan_clusters#workeruser-master)<roks311-vpc> and [VPC clusters](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master).</roks311-vpc>
 
 <br />
 
@@ -161,9 +161,13 @@ Worker nodes carry the deployments and services that make up your app. When you 
 {: shortdesc}
 
 **Who owns the worker node and am I responsible to secure it?** </br>
+<roks311-vpc>The ownership of a worker node depends on the type of cluster that you create and the infrastructure provider that you choose.</roks311-vpc>
 
+<roks311-vpc>
+- **Standard classic clusters**: Worker nodes are provisioned in to your {{site.data.keyword.cloud_notm}} account. The worker nodes are dedicated to you and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and {{site.data.keyword.containerlong_notm}} components apply the latest security updates and patches.
+- **Standard VPC clusters**: Worker nodes are provisioned in to an {{site.data.keyword.cloud_notm}} account that is owned by IBM to enable monitoring of malicious activities and apply security updates. You cannot access your worker nodes by using the VPC dashboard. However, you can manage your worker nodes by using the {{site.data.keyword.containerlong_notm}} console, CLI, or API. The virtual machines that make up your worker nodes are dedicated to you and you are responsible to request timely updates so that your worker node OS and {{site.data.keyword.containerlong_notm}} components apply the latest security updates and patches.</roks311-vpc>
 
-Your worker nodes are provisioned in to your {{site.data.keyword.cloud_notm}} account. The worker nodes are dedicated to you and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and Red Hat OpenShift on IBM Cloud components apply the latest security updates and patches. 
+Your worker nodes are provisioned in to your {{site.data.keyword.cloud_notm}} account. The worker nodes are dedicated to you and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and Red Hat OpenShift on IBM Cloud components apply the latest security updates and patches.
 
 For more information, see [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks).
 
@@ -197,11 +201,11 @@ The image does not include components that ensure secure end-to-end communicatio
     </tr>
     <tr>
   <td>Compute isolation</td>
-  <td>Worker nodes are dedicated to a cluster and do not host workloads of other clusters. When you create a cluster, you can choose to provision your worker nodes as [physical machines (bare metal) or as virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that run on shared or dedicated physical hardware.  </td>
+  <td>Worker nodes are dedicated to a cluster and do not host workloads of other clusters. When you create a <roks311-vpc>classic </roks311-vpc>cluster, you can choose to provision your worker nodes as [physical machines (bare metal) or as virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that run on shared or dedicated physical hardware. <roks311-vpc>Worker nodes in in a standard VPC Gen 1 compute cluster can be provisioned as virtual machines on shared infrastructure only.</roks311-vpc></td>
 </tr>
 <tr>
-  <td>Option to deploy bare metal </td>
-  <td>You can choose to provision your worker nodes on bare metal physical servers (instead of virtual server instances). With bare metal machines, you have additional control over the compute host, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all of a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Bare metal servers are dedicated to you, with all its resources available for cluster usage. </td>
+  <td>Option to deploy bare metal <roks311-vpc>on classic</roks311-vpc></td>
+  <td><roks311-vpc>If you create a standard classic cluster, you</roks311-vpc>You can choose to provision your worker nodes on bare metal physical servers (instead of virtual server instances). With bare metal machines, you have additional control over the compute host, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all of a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Bare metal servers are dedicated to you, with all its resources available for cluster usage.<roks311-vpc></br></br><p class="note">Bare metal machines are not supported in VPC Gen 1 compute clusters.</p></roks311-vpc></td>
 </tr>
 <tr>
   <td id="encrypted_disk">Encrypted disks</td>
@@ -265,7 +269,41 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 {: caption="Private services and worker node options" caption-side="top"}
 
 **What if I want to connect my cluster to an on-prem data center?**</br>
-To connect your worker nodes and apps to an on-prem data center, you can configure a [VPN IPSec endpoint with a strongSwan service, a Virtual Router Appliance, or with a Fortigate Security Appliance](/docs/openshift?topic=openshift-vpn#vpn).
+To connect your worker nodes and apps to an on-prem data center, you can configure a [VPN IPSec endpoint with a strongSwan service, a Virtual Router Appliance, or with a Fortigate Security Appliance](/docs/openshift?topic=openshift-vpn#vpn).<roks311-vpc>
+
+### Network segmentation and privacy for VPC clusters
+{: #network_segmentation_vpc}
+
+To protect your network and limit the range of damage that a user can do when access to a network is granted, you must make sure that your workloads are as isolated as possible and that you limit the number of apps and worker nodes that are publicly exposed.
+{: shortdesc}
+
+**What network traffic is allowed for my cluster by default?**</br>
+By default, worker nodes are connected to [Virtual Private Cloud (VPC) subnets](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets#ibm-cloud-vpc-and-subnets) on the private network only and do not have a public network interface. All public ingress to and egress from your worker nodes is blocked.
+
+If your worker nodes must access a public endpoint outside of the cluster, you can attach a [public gateway](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-about-networking-for-vpc#use-a-public-gateway) to the VPC subnet that the worker nodes are deployed to. For example, your VPC cluster can automatically connect to other [{{site.data.keyword.cloud_notm}} services that support private service endpoints](/docs/resources?topic=resources-private-network-endpoints), such as {{site.data.keyword.registrylong_notm}}. However, if you need to access {{site.data.keyword.cloud_notm}} services that support only public service endpoints, you can attach a public gateway to the subnet so that your pods can send requests over the public network. All egress is permitted for worker nodes on a subnet with an attached public gateway, but all ingress is still blocked.
+
+If you deploy apps in your cluster that must receive traffic requests from the internet, you can [create a VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas) to expose your apps. To allow ingress network traffic to your apps, you must configure your VPC load balancer for the ingress network traffic that you want to receive.
+
+**What is network segmentation and how can I set it up for a cluster?** </br>
+Network segmentation describes the approach to divide a network into multiple subnetworks. You can group apps and related data to be accessed by a specific group in your organization. Apps that run in one subnetwork cannot see or access apps in another subnetwork. Network segmentation also limits the access that is provided to an insider or third-party software and can limit the range of malicious activities.  
+
+Red Hat OpenShift on IBM Cloud provides {{site.data.keyword.cloud_notm}} VPC subnets that ensure quality network performance and network isolation for worker nodes. A VPC subnet consists of a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they were attached to the same physical wire. VPC subnets are dedicated to your {{site.data.keyword.cloud_notm}} account and not shared across IBM customers.
+
+VPC subnets provide a channel for connectivity among the worker nodes within the cluster. Any system that is connected to any of the private subnets in the same VPC can communicate with workers. For example, all subnets in one VPC can communicate through private layer 3 routing with a built-in VPC router. If your clusters do not need to communicate, you can achieve the best network segmentation by creating the clusters in separate VPCs. If you have multiple clusters that must communicate with each other, you can create the clusters in the same VPC. Although subnets within one VPC can be shared by multiple clusters in that VPC, you can achieve better network segmentation by using different subnets for clusters within one VPC.
+
+To achieve further private network segmentation between VPC subnets for your account, you can set up custom network policies with VPC access control lists (ACLs). When you create a VPC, a default ACL is created in the format `allow-all-network-acl-<VPC_ID>` for the VPC. Any subnet that you create in the VPC is attached to this ACL by default. The ACL includes an inbound rule and an outbound rule that allow all traffic between your worker nodes on a subnet and any system on the subnets in the same VPC. If you want to specify which private network traffic is permitted to the worker nodes on your VPC subnets, you can create a custom ACL for each subnet in the VPC. For example, you can [create a set of ACL rules](/docs/openshift?topic=openshift-vpc-network-policy#acls) to block most inbound and outbound private network traffic of a cluster, while allowing communication that is necessary for the cluster to function.
+
+**What else can I do to reduce the surface for external attacks?**</br>
+The more apps or worker nodes that you expose publicly, the more steps you must take to prevent external malicious attacks. Review the following table to find options for how to keep apps and worker nodes private.
+
+|Security feature|Description|
+|-------|----------------------------------|
+|Limit the number of exposed apps|By default, your apps and services that run within the cluster are not reachable over the public internet. You can choose if you want to expose your apps to the public, or if you want your apps and services be reachable on the private network only. When you keep your apps and services private, you can leverage the built-in security features to assure secured communication between worker nodes and pods. To expose services and apps to the public internet, you can leverage the [VPC load balancer and Ingress ALB support](/docs/containers?topic=containers-cs_network_planning#pattern_public_vpc) to securely make your services publicly available. Ensure that only necessary services are exposed, and revisit the list of exposed apps regularly to ensure that they are still valid. |
+|Limit public network egress to one subnet with a public gateway|If pods on your worker nodes need to connect to a public external endpoint, you can attach a public gateway to the subnet that those worker nodes are on. You can isolate this network traffic in your cluster by attaching a public gateway to only one subnet in your cluster. Then, you can [use app affinity](/docs/containers?topic=containers-vpc-network-policy#gateway) to deploy app pods that require access to external endpoints to only the subnet with an attached public gateway.|
+{: caption="VPC network security options" caption-side="top"}
+
+**What if I want to connect my cluster to other networks, like other VPCs, an on-prem data center, or IBM Cloud classic resources?**</br>
+Depending on the network that you want to connect your worker nodes to, you can [choose a VPN solution](/docs/openshift?topic=openshift-vpc-vpnaas#options).</roks311-vpc>
 
 ### Expose apps with routes
 {: #expose-apps-with-routes}
@@ -285,7 +323,9 @@ You can use network load balancer (NLB) and Ingress application load balancer (A
 {: shortdesc}
 
 **Can I use security groups to manage my cluster's network traffic?** </br>
-{{site.data.keyword.cloud_notm}} [security groups](/docs/infrastructure/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups) are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. If you want to manage traffic for each worker node, you can use security groups. When you create a security group, you must allow the VRRP protocol, which Red Hat OpenShift on IBM Cloud uses to manage NLB IP addresses. To uniformly manage traffic for your cluster across all of your worker nodes, use [Calico and Kubernetes policies](/docs/openshift?topic=openshift-network_policies).
+<roks311-vpc>Classic clusters: </roks311-vpc>{{site.data.keyword.cloud_notm}} [security groups](/docs/infrastructure/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups) are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. If you want to manage traffic for each worker node, you can use security groups. When you create a security group, you must allow the VRRP protocol, which Red Hat OpenShift on IBM Cloud uses to manage NLB IP addresses. To uniformly manage traffic for your cluster across all of your worker nodes, use [Calico and Kubernetes policies](/docs/openshift?topic=openshift-network_policies).<roks311-vpc>
+
+VPC clusters: Use [access control lists (ACLs) and Kubernetes network policies](/docs/openshift?topic=openshift-vpc-network-policy) to manage network traffic into and out of your cluster. You cannot use [VPC security groups](/docs/infrastructure/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups) to control traffic for your cluster. VPC security groups are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. However, the worker nodes of your VPC cluster exist in a service account and are not listed in the VPC infrastructure dashboard. You cannot attach a security group to your worker nodes instances.</roks311-vpc>
 
 
 

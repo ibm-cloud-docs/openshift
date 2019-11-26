@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -25,14 +25,16 @@ subcollection: openshift
 {:gif: data-image-type='gif'}
 
 
-# Scaling clusters
+# Autoscaling clusters
 {: #ca}
 
 With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
 {: shortdesc}
 
-The cluster autoscaler is available for standard, classic clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, see [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
-{: important}
+Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-app#app_scaling).
+{: tip}
+
+
 
 ## Understanding scale-up and scale-down
 {: #ca_about}
@@ -229,8 +231,6 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         ```
         {: screen}
     2.  If your worker pool does not have the required label, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) and use this worker pool with the cluster autoscaler.
-
-6. **Private clusters only**: See [Using the cluster autoscaler for a private network-only cluster](#ca_private_cluster).
 
 <br>
 **To install the `ibm-iks-cluster-autoscaler` plug-in in your cluster**:
@@ -693,11 +693,18 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 
 **To limit pods to run on certain autoscaled worker pools**:
 
-1.  Create the worker pool with the label that you want to use. For example, your label might be `app: nginx`.
+1.  Create the worker pool with the label that you want to use. For example, your label might be `app: nginx`.<roks311-vpc>
+    **For classic clusters**:</roks311-vpc>
     ```
     ibmcloud oc worker-pool create classic --name <name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_worker_nodes> --label <key>=<value>
     ```
+    {: pre}<roks311-vpc>
+    **For VPC clusters**:
+    ```
+    ibmcloud oc worker-pool create vpc-classic --name <name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_worker_nodes> --label <key>=<value>
+    ```
     {: pre}
+    </roks311-vpc>
 2.  [Add the worker pool to the cluster autoscaler configuration](#ca_cm).
 3.  In your pod spec template, match the `nodeSelector` or `nodeAffinity` to the label that you used in your worker pool.
 
@@ -897,93 +904,6 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 		Normal  ConfigUpdated  3m    ibm-iks-cluster-autoscaler-857c4d9d54-gwvc6  {"1:3:default":"SUCCESS:"}
     ```
     {: screen}
-
-<br />
-
-
-## Using the cluster autoscaler for a private network-only cluster
-{: #ca_private_cluster}
-
-The cluster autoscaler is available for standard, classic clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, you must temporarily open the required ports or temporarily enable the public service endpoint to install, update, or customize the cluster autoscaler. After the cluster autoscaler is installed, you can close the ports or disable the public service endpoint.
-{: shortdesc}
-
-If your account is not enabled for VRF and service endpoints, you can [open the required ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) to allow public network connectivity in your cluster.
-{: tip}
-
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-1.  Set up Helm for your private network-only cluster. You can choose between the following options.
-    * [Pushing the Helm Tiller image to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-helm#private_local_tiller).
-    * [Installing a Helm chart without Tiller](/docs/containers?topic=containers-helm#private_install_without_tiller).
-2.  Temporarily enable public connectivity to your cluster to install, update, or customize the cluster autoscaler.
-    * If your cluster is protected from the public network by a firewall, [open the required ports in your firewall](/docs/openshift?topic=openshift-firewall).
-    * If your cluster has only the private service endpoint enabled, [enable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
-3.  [Install](#ca_helm), [update](#ca_helm_up), or [configure](#ca_chart_values) the cluster autoscaler Helm chart.
-4.  After you configure the cluster autoscaler, you can close the ports or [disable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
-5.  Make sure that the `storage-secret-store` secret in the `kube-system` namespace uses the private service endpoint. If you initially created the cluster with a private service endpoint, the endpoint is already added to the secret.
-    1.  Download the secret to get the encoded secret information from the `data` field of the secret file.
-        ```
-        oc get secret storage-secret-store -n kube-system -o yaml > storage-secret-store.yaml
-        ```
-        {: pre}
-        Example output:
-        ```
-        apiVersion: v1
-        data:
-          slclient.toml: W0J...
-        ```
-        {: screen}
-    2.  Decode the value of the `data` field.
-        ```
-        echo "<W0J...>" | base64 -D
-        ```
-        {: pre}
-        Example output:
-        ```
-        [Bluemix]
-          iam_url = "https://iam.bluemix.net"
-          iam_client_id = "bx"
-          iam_client_secret = "bx"
-          iam_api_key = "<key>"
-          refresh_token = ""
-          pay_tier = "paid"
-          containers_api_route = "https://us-south.containers.cloud.ibm.com"
-          encryption = true
-          containers_api_route_private = "https://private.us-south.containers.cloud.ibm.com"
-
-        [Softlayer]
-          encryption = true
-          softlayer_username = ""
-          softlayer_api_key = ""
-          softlayer_endpoint_url = "https://api.service.softlayer.com/rest/v3"
-          softlayer_iam_endpoint_url = "https://api.service.softlayer.com/mobile/v3"
-          softlayer_datacenter = "dal10"
-          softlayer_token_exchange_endpoint_url = "https://iam.bluemix.net"
-
-        [VPC]
-          gc_token_exchange_endpoint_url = "https://iam.bluemix.net"
-          gc_riaas_endpoint_url = "https://us-south.iaas.cloud.ibm.com:443"
-          gc_api_key = "<key>"
-        ```
-        {: screen}
-    3.  Verify that the `containers_api_route_private` field includes the `private` service endpoint address.
-    4.  If the `containers_api_route_private` field is not in the secret, add it to the string by appending `private.` to the `containers_api_route` address. For example:
-        ```
-        containers_api_route = "https://us-south.containers.cloud.ibm.com"
-        containers_api_route_private = "https://private.us-south.containers.cloud.ibm.com"
-        ```
-        {: screen}
-    5.  Encode the full string.
-        ```
-        echo -n '[Bluemix]iam_url....' | openssl base64
-        ```
-        {: pre}
-    6.  Open the `storage-secret-store.yaml` file and replace the `data.slclient.toml` and `metadata.annotations` strings with the new encoded string with the private service endpoint.
-    7.  Apply the secret changes to your cluster.
-        ```
-        oc apply -f storage-secret-store.yaml
-        ```
-        {: pre}
 
 <br />
 
