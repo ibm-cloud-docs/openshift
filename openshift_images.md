@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -19,7 +19,7 @@ subcollection: openshift
 {:tip: .tip}
 {:note: .note}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Building images for your apps
 {: #images}
@@ -42,7 +42,7 @@ Your app's images must be stored in a container registry that your cluster can a
     <tbody>
     <tr>
         <td>Internal OpenShift Container Registry (OCR)</td>
-        <td>Your cluster is set up with the internal OpenShift Container Registry so that OpenShift can automatically build, deploy, and manage your application lifecycle from within the cluster. Images are stored in a backing {{site.data.keyword.cloud_notm}} classic block storage device that is provisioned at cluster creation time. If you need more storage, you can resize the device.
+        <td>Your cluster is set up with the internal OpenShift Container Registry so that OpenShift can automatically build, deploy, and manage your application lifecycle from within the cluster. Images are stored in a backing {{site.data.keyword.cloud_notm}} classic file storage device that is provisioned at cluster creation time. If you need more storage, you can resize the device.
         <br><br>Use cases:<ul>
         <li>OpenShift-native image stream, build, and app deployment process on a per cluster basis.</li>
         <li>Images can be shared across all projects in the cluster, with access that is controlled through RBAC roles.</li>
@@ -77,15 +77,7 @@ Your app's images must be stored in a container registry that your cluster can a
     </tbody>
 </table>
 
-
-
-## Using the internal registry
-{: #openshift_internal_registry}
-
-OpenShift clusters are set up by default with an internal registry. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster. For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/registry/index.html#install-config-registry-overview).
-{: shortdesc}
-
-### Storing images in the internal registry
+## Verifying the default setup of the internal registry
 {: #storage_internal_registry}
 
 By default, your OpenShift cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
@@ -123,7 +115,7 @@ Events:        <none>
 If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `docker-registry` pod that uses the `registry-backing` PVC to verify that the volume is resized.
 {: note}
 
-### Setting up a secure external route for the internal registry
+## Setting up a secure external route for the internal registry
 {: #route_internal_registry}
 
 By default, your OpenShift cluster has an internal registry that is available through a service with an internal IP address. If you want to make the internal registry available on the public network, you can set up a secure re-encrypt route. For example, you might set up your cluster's internal registry to act as a public registry for deployments in other projects or clusters.
@@ -282,8 +274,6 @@ Now that you set up the internal registry with an accessible route, you can log 
 <br />
 
 
-
-
 ## Using {{site.data.keyword.registrylong_notm}}
 {: #openshift_iccr}
 
@@ -301,7 +291,7 @@ For more information, see the following topics.
 ## Deploying containers from an {{site.data.keyword.registryshort_notm}} image to the `default` OpenShift project
 {: #namespace}
 
-You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registryshort_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](#cluster_registry_auth).
+You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registryshort_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](#cluster_registry_auth). 
 {:shortdesc}
 
 Before you begin:

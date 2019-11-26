@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-21"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,15 +21,13 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
-# Configuring subnets and IP addresses for clusters
+# Configuring subnets and IP addresses
 {: #subnets}
 
-Change the pool of available portable public or private IP addresses for network load balancer (NLB) services by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
+Change the pool of available portable public or private IP addresses for network load balancer (NLB) services by adding subnets to your {{site.data.keyword.openshiftlong}} cluster. 
 {:shortdesc}
-
-
 
 ## Overview of networking in Red Hat OpenShift on IBM Cloud
 {: #basics}
@@ -42,6 +40,7 @@ Understand the basic concepts of networking in Red Hat OpenShift on IBM Cloud cl
 
 When you create a cluster, the cluster's worker nodes are connected automatically to a VLAN. A VLAN configures a group of worker nodes and pods as if they were attached to the same physical wire and provides a channel for connectivity among the workers and pods.
 {: shortdesc}
+
 
 <dl>
 <dt>VLANs for free clusters</dt>

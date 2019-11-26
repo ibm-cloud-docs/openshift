@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-22"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Modifying default Ingress behavior
 {: #ingress-settings}
@@ -35,11 +35,11 @@ After you expose your apps by creating an Ingress resource, you can further conf
 By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose other ports, you can edit the `ibm-cloud-provider-ingress-cm` configmap resource.
 {: shortdesc}
 
-1. Edit the configuration file for the `ibm-cloud-provider-ingress-cm` configmap resource.
-    ```
-    oc edit cm ibm-cloud-provider-ingress-cm -n kube-system
-    ```
-    {: pre}
+1. Edit the configuration file for the `ibm-cloud-provider-ingress-cm` configmap resource. 
+  ```
+  oc edit cm ibm-cloud-provider-ingress-cm -n kube-system
+  ```
+  {: pre}
 
 2. Add a <code>data</code> section and specify public ports `80`, `443`, and any other ports you want to expose separated by a semi-colon (;).
 

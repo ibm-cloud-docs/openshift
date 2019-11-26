@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Red Hat OpenShift on IBM Cloud CLI
 {: #kubernetes-service-cli}
@@ -127,12 +127,6 @@ Check out the following changes between each version of the CLI plug-in:
 <br />
 
 
-
-
-
-<br />
-
-
 ## `ibmcloud oc` commands
 {: #map}
 
@@ -175,91 +169,6 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
 <dd>Force the command to run with no user prompts. This value is optional.</dd>
 </dl>
 
-#### `ibmcloud oc cluster addon disable istio`
-{: #cs_cluster_addon_disable_istio}
-
-Disable the managed Istio add-on. Removes all Istio core components from the cluster, including Prometheus.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon disable istio --cluster CLUSTER [-f]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>-f</code></dt>
-<dd>Optional: This Istio add-on is a dependency for the <code>istio-extras</code>, <code>istio-sample-bookinfo</code>, and <code>knative</code> managed add-ons. Include this flag to also disable those add-ons.</dd>
-</dl>
-
-#### `ibmcloud oc cluster addon disable istio-extras`
-{: #cs_cluster_addon_disable_istio_extras}
-
-Disable the managed Istio extras add-on. Removes Grafana, Jeager, and Kiali from the cluster.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon disable istio-extras --cluster CLUSTER [-f]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>-f</code></dt>
-<dd>Optional: This Istio add-on is a dependency for the <code>istio-sample-bookinfo</code> managed add-on. Include this flag to also disable that add-on.</dd>
-</dl>
-
-#### `ibmcloud oc cluster addon disable istio-sample-bookinfo`
-{: #cs_cluster_addon_disable_istio_sample_bookinfo}
-
-Disable the managed Istio BookInfo add-on. Removes all deployments, pods, and other BookInfo app resources from the cluster.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon disable istio-sample-bookinfo --cluster CLUSTER
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-</dl>
-
-#### `ibmcloud oc cluster addon disable knative`
-{: #cs_cluster_addon_disable_knative}
-
-Disable the managed Knative add-on to remove the Knative serverless framework from the cluster.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon disable knative --cluster CLUSTER [-f]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>-f</code>
-<dd>Force the command to run with no user prompts. This value is optional.</dd>
-</dl>
-
 #### `ibmcloud oc cluster addon disable kube-terminal`
 {: #cs_cluster_addon_disable_kube-terminal}
 
@@ -281,7 +190,6 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 <dt><code>-f</code>
 <dd>Force the command to run with no user prompts. This value is optional.</dd>
 </dl>
-
 
 </br>
 
@@ -319,103 +227,6 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION
   ```
   {: pre}
 
-#### `ibmcloud oc cluster addon enable istio`
-{: #cs_cluster_addon_enable_istio}
-
-Enable the managed [Istio add-on](/docs/containers?topic=containers-istio). Installs the core components of Istio, including Prometheus.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon enable istio --cluster CLUSTER [--version VERSION]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--version <em>VERSION</em></code></dt>
-<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
-</dl>
-
-#### `ibmcloud oc cluster addon enable istio-extras`
-{: #cs_cluster_addon_enable_istio_extras}
-
-Enable the managed Istio extras add-on. Installs Grafana, Jeager, and Kiali to provide extra monitoring, tracing, and visualization for Istio.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon enable istio-extras --cluster CLUSTER [--version VERSION] [-y]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--version <em>VERSION</em></code></dt>
-<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
-
-<dt><code>-y</code></dt>
-<dd>Optional: Enable the <code>istio</code> add-on dependency.</dd>
-</dl>
-
-#### `ibmcloud oc cluster addon enable istio-sample-bookinfo`
-{: #cs_cluster_addon_enable_istio_sample_bookinfo}
-
-Enable the managed Istio BookInfo add-on. Deploys the [BookInfo sample application for Istio ![External link icon](../icons/launch-glyph.svg "External link icon")](https://istio.io/docs/examples/bookinfo/) into the <code>default</code> namespace.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER [--version VERSION] [-y]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--version <em>VERSION</em></code></dt>
-<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
-
-<dt><code>-y</code></dt>
-<dd>Optional: Enable the <code>istio</code> and <code>istio-extras</code> add-on dependencies.</dd>
-</dl>
-
-#### `ibmcloud oc cluster addon enable knative`
-{: #cs_cluster_addon_enable_knative}
-
-Enable the managed [Knative add-on](/docs/containers?topic=containers-serverless-apps-knative) to install the Knative serverless framework.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon enable knative --cluster CLUSTER [--version VERSION] [-y]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--version <em>VERSION</em></code></dt>
-<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
-
-<dt><code>-y</code></dt>
-<dd>Optional: Enable the <code>istio</code> add-on dependency.</dd>
-</dl>
-
 #### `ibmcloud oc cluster addon enable kube-terminal`
 {: #cs_cluster_addon_enable_kube-terminal}
 
@@ -438,8 +249,6 @@ ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERS
 <dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
 </dl>
 
-
-
 ### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}
 
@@ -450,6 +259,10 @@ List managed add-ons that are enabled in a cluster.
 ibmcloud oc cluster addon ls --cluster CLUSTER
 ```
 {: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -493,7 +306,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--export] [--network] [-
 <dd>Download the TLS certificates and permission files for the Super User role. You can use the certs to automate tasks in a cluster without having to reauthenticate. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`. This value is optional.</dd>
 
 <dt><code>--network</code></dt>
-<dd>Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. This value is optional. **Note**: To get the export command for the downloaded Kubernetes configuration data and certificates, you must run this command without this flag.</dd>
+<dd>Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. This value is optional. **Note**: This option cannot be used in conjunction with the <code>--yaml</code> option.</dd>
 
 <dt><code>--export</code></dt>
 <dd>Download Kubernetes configuration data and certificates without any messages other than the export command. Because no messages are displayed, you can use this flag when you create automated scripts. This value is optional.</dd>
@@ -697,8 +510,6 @@ ibmcloud oc cluster feature disable public-service-endpoint --cluster my_cluster
 Enable a feature on an existing cluster. This command must be combined with one of the following subcommands for the feature that you want to enable.
 {: shortdesc}
 
-
-
 #### `ibmcloud oc cluster feature enable private-service-endpoint`
 {: #cs_cluster_feature_enable_private_service_endpoint}
 
@@ -830,7 +641,7 @@ ibmcloud oc cluster ls [--location LOCATION] [--json] [-s]
 <dd>Filter output by a specific location. To see supported locations, run <code>ibmcloud oc supported-locations</code>. To specify multiple locations, use one flag for each location, such as `-l dal -l seo`.</dd>
 
 <dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional..</dd>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -1303,7 +1114,7 @@ View and modify worker nodes for a cluster.
 Add stand-alone worker nodes to a cluster.
 {: shortdesc}
 
-This command is deprecated. Create a worker pool by running [`ibmcloud oc worker-pool create classic`](#cs_worker_pool_create) or , or add workers to an existing worker pool by running [`ibmcloud oc worker-pool resize`](#cs_worker_pool_resize).
+This command is deprecated. Create a worker pool by running [`ibmcloud oc worker-pool create classic`](#cs_worker_pool_create), or add workers to an existing worker pool by running [`ibmcloud oc worker-pool resize`](#cs_worker_pool_resize).
 {: deprecated}
 
 ```
@@ -1334,7 +1145,7 @@ workerNum: <em>&lt;number_workers&gt;</em>
 diskEncryption: <em>false</em></code></pre></dd>
 
 <dt><code>--hardware <em>HARDWARE</em></code></dt>
-<dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional. For bare metal flavors, specify `dedicated`.</dd>
+<dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional. For bare metal flavors, specify `dedicated`.</dd> 
 
 <dt><code>--machine-type <em>FLAVOR</em></code></dt>
 <dd>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
@@ -2137,14 +1948,11 @@ ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -w pool1 -w pool2
 
 </br>
 
-
 ### `ibmcloud oc zone ls`
 {: #cs_datacenters}
 
 View a list of available zones that you can create a cluster in.
 {: shortdesc}
-
-
 
 The `locations` alias for this command is deprecated.
 {: deprecated}
@@ -2624,6 +2432,48 @@ ibmcloud oc alb configure classic --alb-id public-cr18a61a63a6a94b658596aa93a087
 
 </br>
 
+### `ibmcloud oc alb create classic`
+{: #cs_alb_create}
+
+Create a public or private ALB in a zone. The ALB that you create is enabled by default.
+{: shortdesc}
+
+```
+ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZONE --vlan VLAN_ID [--user-ip IP] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster.</dd>
+
+<dt><code>--type<em> PUBLIC|PRIVATE</em></code></dt>
+<dd>The type of ALB: <code>public</code> or <code>private</code>.</dd>
+
+<dt><code>--zone <em>ZONE</em></code></dt>
+<dd>The zone to create the ALB in.</dd>
+
+<dt><code>--vlan <em>VLAN_ID</em></code></dt>
+<dd>The ID of the VLAN to create the ALB on. This VLAN must match the ALB <code>type</code> and must be in the same <code>zone</code> as the ALB that you want to create.</dd>
+
+<dt><code>--user-ip <em>IP</em></code></dt>
+<dd>Optional: An IP address to assign to the ALB. This IP must be on the <code>vlan</code> that you specified and must be in the same <code>zone</code> as the ALB that you want to create. This IP address must not be in use by another load balancer or ALB in the cluster.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc alb create classic --cluster mycluster --type public --zone dal10 --vlan 2234945 --user-ip 1.1.1.1
+```
+{: pre}
+
+</br>
+
 ### `ibmcloud oc alb get`
 {: #cs_alb_get}
 
@@ -2898,8 +2748,6 @@ Forward logs from your cluster to an external server.
 Disable automatic updates of all Fluentd pods in a cluster.
 {: shortdesc}
 
-
-
 Disable automatic updates of your Fluentd pods in a specific cluster. When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Fluentd configmap, but does not change the build version of your Fluentd for logging add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your add-on images.
 
 ```
@@ -2924,8 +2772,6 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER [-s]
 Enable automatic updates for your Fluentd pods in a specific cluster. Fluentd pods are automatically updated when a new build version is available.
 {: shortdesc}
 
-
-
 ```
 ibmcloud oc logging autoupdate enable --cluster CLUSTER [-s]
 ```
@@ -2947,8 +2793,6 @@ ibmcloud oc logging autoupdate enable --cluster CLUSTER [-s]
 
 View whether your Fluentd pods are set to automatically update in a cluster.
 {: shortdesc}
-
-
 
 ```
 ibmcloud oc logging autoupdate get --cluster CLUSTER [--json] [-s]
@@ -3054,7 +2898,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --typ
 ```
 {: pre}
 
-**Minimum required permissions**: **Editor** platform role for the cluster for all log sources except `kube-audit` and **Administrator** platform role for the cluster for the `kube-audit` log source
+**Minimum required permissions**: **Editor** platform role for the cluster
 
 **Command options**:
 <dl>
@@ -3062,7 +2906,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --typ
 <dd>The name or ID of the cluster.</dd>
 
 <dt><code>--logsource <em>LOG_SOURCE</em></code></dt>
-<dd>The log source to enable log forwarding for. This argument supports a comma-separated list of log sources to apply for the configuration. Accepted values are <code>container</code>, <code>application</code>, <code>worker</code>, <code>kubernetes</code>, <code>storage</code>, and <code>ingress</code>, and <code>kube-audit</code>. If you do not provide a log source, configurations are created for <code>container</code> and <code>ingress</code>.</dd>
+<dd>The log source to enable log forwarding for. This argument supports a comma-separated list of log sources to apply for the configuration. Accepted values are <code>container</code>, <code>application</code>, <code>worker</code>, <code>kubernetes</code>, <code>storage</code>, and <code>ingress</code>. If you do not provide a log source, configurations are created for <code>container</code> and <code>ingress</code>.</dd>
 
 <dt><code>--type <em>syslog</em></code></dt>
 <dd>Enter <code>syslog</code> to forward logs to an external server.</dd>
@@ -3139,7 +2983,7 @@ ibmcloud oc logging config get --cluster CLUSTER [--logsource LOG_SOURCE] [--jso
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>--logsource <em>LOG_SOURCE</em></code></dt>
-<dd>The kind of log source for which you want to filter. Logging configurations of only this log source in the cluster are returned. Accepted values are <code>container</code>, <code>storage</code>, <code>application</code>, <code>worker</code>, <code>kubernetes</code>, <code>ingress</code>, and <code>kube-audit</code>. This value is optional.</dd>
+<dd>The kind of log source for which you want to filter. Logging configurations of only this log source in the cluster are returned. Accepted values are <code>container</code>, <code>storage</code>, <code>application</code>, <code>worker</code>, <code>kubernetes</code>, and <code>ingress</code>. This value is optional.</dd>
 
 <dt><code>--show-covering-filters</code></dt>
 <dd>Shows the logging filters that render previous filters obsolete.</dd>
@@ -3170,7 +3014,7 @@ ibmcloud oc logging config rm --cluster CLUSTER (--namespace NAMESPACE --id LOG_
 ```
 {: pre}
 
-**Minimum required permissions**: **Editor** platform role for the cluster for all log sources except `kube-audit` and **Administrator** platform role for the cluster for the `kube-audit` log source
+**Minimum required permissions**: **Editor** platform role for the cluster
 
 **Command options**:
 <dl>
@@ -4075,8 +3919,6 @@ ibmcloud oc api-key reset --region us-south
 Set and unset credentials that allow you to access the IBM Cloud infrastructure portfolio through your IBM Cloud account.
 {: shortdesc}
 
-
-
 ### `ibmcloud oc credential get`
 {: #cs_credential_get}
 
@@ -4306,8 +4148,6 @@ ibmcloud oc subnets -l ams03 -l wdc -l ap
 List public and private VLANs for a zone and view the VLAN spanning status.
 {: shortdesc}
 
-
-
 ### `ibmcloud oc vlan ls`
 {: #cs_vlans}
 
@@ -4381,9 +4221,6 @@ ibmcloud oc vlan spanning get --region us-south
 {: pre}
 
 <br />
-
-
-
 
 ## `addon-versions` command
 {: #cs_addon_versions}

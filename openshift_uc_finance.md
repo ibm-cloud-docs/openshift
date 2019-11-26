@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Financial services use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_finance}
@@ -33,7 +33,7 @@ take advantage of high availability, high-performance compute, easy spin-up of c
 ## Mortgage company trims costs and accelerates regulatory compliance
 {: #uc_mortgage}
 
-A Risk Management VP for a residential mortgage company processes 70 million records a day, but the on-premises system was slow and also inaccurate. IT expenses soared because hardware quickly went out of date and wasn't utilized fully. While they waited for hardware provisioning, their regulatory compliance slowed. 
+A Risk Management VP for a residential mortgage company processes 70 million records a day, but the on-premises system was slow and also inaccurate. IT expenses soared because hardware quickly went out of date and wasn't utilized fully. While they waited for hardware provisioning, their regulatory compliance slowed.  
 {: shortdesc}
 
 Why {{site.data.keyword.cloud_notm}}: To improve risk analysis, the company looked to Red Hat OpenShift on IBM Cloud and IBM Cloud Analytic services to reduce costs, increase worldwide availability, and ultimately accelerate regulatory compliance. With Red Hat OpenShift on IBM Cloud in multiple regions, their analysis apps can be containerized and deployed across the globe, improving availability and addressing local regulations. Those deployments are accelerated with familiar open source tools, already part of Red Hat OpenShift on IBM Cloud.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhos, rhoks, clusters, worker nodes, worker pools, delete
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 {:gif: data-image-type='gif'}
 
 # Removing clusters
@@ -36,7 +36,7 @@ No backups are created of your cluster or your data in your persistent storage. 
 
 Before you begin:
 * Note your cluster ID. You might need the cluster ID to investigate and remove related IBM Cloud infrastructure resources that are not automatically deleted with your cluster.
-* If you want to delete the data in your persistent storage, [understand the delete options](/docs/openshift?topic=openshift-cleanup#cleanup).
+* If you want to delete the data in your persistent storage, [understand the delete options](/docs/containers?topic=containers-cleanup#cleanup). 
 * Make sure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
 To remove a cluster:
@@ -71,12 +71,12 @@ To remove a cluster:
       
           For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance. 
       
-          To manually remove the storage and find frequently asked questions about storage removal, see [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-cleanup). 
+          To manually remove the storage and find frequently asked questions about storage removal, see [Removing persistent storage from a cluster](/docs/containers?topic=containers-cleanup). 
 
 Next steps:
 - After it is no longer listed in the available clusters list when you run the `ibmcloud oc cluster ls` command, you can reuse the name of a removed cluster.
 - If you kept the subnets, you can [reuse them in a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
-- If you kept the persistent storage, you can [delete your storage](/docs/openshift?topic=openshift-cleanup#cleanup) later through the IBM Cloud infrastructure dashboard in the {{site.data.keyword.cloud_notm}} console.
+- If you kept the persistent storage, you can [delete your storage](/docs/containers?topic=containers-cleanup#cleanup) later through the IBM Cloud infrastructure dashboard in the {{site.data.keyword.cloud_notm}} console.
 
 
 

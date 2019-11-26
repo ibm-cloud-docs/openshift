@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-22"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Logging and monitoring Ingress
 {: #ingress_health}
@@ -175,7 +175,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     </tr>
     </tbody></table>
 
-    For example, your log format might contain the following variables:
+    For example, your log format might contain the following variables: 
     ```
     apiVersion: v1
     data:

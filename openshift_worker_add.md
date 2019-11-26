@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-22"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -21,19 +21,20 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 {:gif: data-image-type='gif'}
 
 # Adding worker nodes and zones to clusters
 {: #add_workers}
 
-To increase the availability of your apps, you can add worker nodes to an existing zone or multiple existing zones in your cluster. To help protect your apps from zone failures, you can add zones to your cluster.
+To increase the availability of your apps, you can add worker nodes to an existing zone or multiple existing zones in your cluster. To help protect your apps from zone failures, you can add zones to your cluster. 
 {:shortdesc}
 
 When you create a cluster, the worker nodes are provisioned in a worker pool. After cluster creation, you can add more worker nodes to a pool by resizing it or by adding more worker pools. By default, the worker pool exists in one zone. Clusters that have a worker pool in only one zone are called single zone clusters. When you add more zones to the cluster, the worker pool exists across the zones. Clusters that have a worker pool that is spread across more than one zone are called multizone clusters.
 
 <p class="tip">If you have a multizone cluster, keep its worker node resources balanced. Make sure that all the worker pools are spread across the same zones, and add or remove workers by resizing the pools instead of adding individual nodes.</br></br>
 After you set up your worker pool, you can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.</p>
+
 
 ## Adding worker nodes by resizing an existing worker pool
 {: #resize_pool}
@@ -82,8 +83,8 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 
 <br />
 
-
-
+## Creating a new worker pool
+{: #add_pool}
 
 ## Adding worker nodes by creating a new worker pool
 {: #add_pool}
@@ -153,8 +154,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 <br />
 
-
-## Adding worker nodes by adding a zone to a worker pool
+## Adding a zone to a worker pool
 {: #add_zone}
 
 You can span your cluster across multiple zones within one region by adding a zone to your existing worker pool.

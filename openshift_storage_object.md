@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-22"
+lastupdated: "2019-11-26"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Storing data on IBM Cloud Object Storage
 {: #object_storage}
@@ -31,6 +31,7 @@ subcollection: openshift
 
 If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
+
 
 
 With version 1.0.5, the {{site.data.keyword.cos_full_notm}} plug-in is renamed from `ibmcloud-object-storage-plugin` to `ibm-object-storage-plugin`. To install the new version of the plug-in, you must [uninstall the old Helm chart installation](#remove_cos_plugin) and [reinstall the Helm chart with the new {{site.data.keyword.cos_full_notm}} plug-in version](#install_cos).
@@ -73,8 +74,7 @@ To access your {{site.data.keyword.cos_full_notm}} service instance to read and 
 
 Follow these steps to create a Kubernetes secret for the credentials of an {{site.data.keyword.cos_full_notm}} service instance. If you plan to use a local Cloud Object Storage server or a different s3 API endpoint, create a Kubernetes secret with the appropriate credentials.
 
-
-Before you begin, [access your cluster](/docs/openshift?topic=openshift-access_cluster#access_public_se). 
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Retrieve the **apikey**, or the **access_key_id** and the **secret_access_key** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials).
 
@@ -150,9 +150,8 @@ Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set
 Looking for instructions for how to update or remove the {{site.data.keyword.cos_full_notm}} plug-in? See [Updating the plug-in](#update_cos_plugin) and [Removing the plug-in](#remove_cos_plugin).
 {: tip}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
-
-
+Before you begin:
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To install the plug-in:
 
@@ -321,9 +320,9 @@ To install the plug-in:
         SET DC_NAME=dal13
         ```
         {: pre}
-    
+
     3. Retrieve the infrastructure provider that your cluster uses and store it in an environment variable.
-      
+
       a. Retrieve the infrastructure provider.
         ```
         oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"
@@ -340,7 +339,7 @@ To install the plug-in:
             {: pre}
 
         * If the output contains `gc`, then set the `CLUSTER_PROVIDER` to `"VPC-CLASSIC"`.
-        
+
             ```
             SET CLUSTER_PROVIDER="VPC-CLASSIC"
             ```
@@ -379,7 +378,7 @@ To install the plug-in:
 
       - Install the plug-in with a limitation to specific Kubernetes secrets.</br>
         ```
-        cd ../.. 
+        cd ../..
         helm install --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" ./ibm-object-storage-plugin --name ibm-object-storage-plugin
         ```
         {: pre}
@@ -481,7 +480,7 @@ To install the plug-in:
 You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the latest version.
 {: shortdesc}
 
-1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
+1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart. 
   1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
     ```
     helm ls | grep ibmcloud-object-storage-plugin

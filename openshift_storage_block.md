@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Storing data on classic IBM Cloud Block Storage
 {: #block_storage}
@@ -1346,7 +1346,7 @@ The following examples create a storage class that provisions block storage with
 ## Removing persistent storage from a cluster
 {: #cleanup}
 
-When you set up persistent storage in your cluster, you have three main components: the Kubernetes persistent volume claim (PVC) that requests storage, the Kubernetes persistent volume (PV) that is mounted to a pod and described in the PVC, and the IBM Cloud infrastructure instance, such as classic file or block storage. Depending on how you created your storage, you might need to delete all three components separately.
+When you set up persistent storage in your cluster, you have three main components: the Kubernetes persistent volume claim (PVC) that requests storage, the Kubernetes persistent volume (PV) that is mounted to a pod and described in the PVC, and the IBM Cloud infrastructure instance, such as classic file or block storage. Depending on how you created your storage, you might need to delete all three components separately. 
 {:shortdesc}
 
 ### Understanding your storage removal options
@@ -1393,7 +1393,7 @@ Remove the PVC, PV, and the storage instance from your {{site.data.keyword.cloud
 
 Before you begin:
 - Make sure that you backed up any data that you want to keep.
-- [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_public_se)
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To clean up persistent data:
 

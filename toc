@@ -73,7 +73,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_subnets.md
         openshift_network_cluster.md
 
-     {: .topicgroup}
+    {: .topicgroup}
     Deploying apps
         openshift_images.md
         openshift_app.md
@@ -86,7 +86,6 @@ Red Hat OpenShift on IBM Cloud
     Exposing apps with load balancers
         openshift_loadbalancer_about.md
         openshift_loadbalancer.md
-        openshift_loadbalancer_v2.md
         openshift_loadbalancer_dns.md
 
     {: .topicgroup}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,18 +21,17 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 
 # Controlling traffic with network policies
 {: #network_policies}
 
-
-
 Every {{site.data.keyword.openshiftlong}} cluster is set up with a network plug-in called Calico. Default network policies are set up to secure the public network interface of every worker node in the cluster.
 {: shortdesc}
 
 If you have unique security requirements or you have a multizone cluster with VLAN spanning enabled, you can use Calico and Kubernetes to create network policies for a cluster. With Kubernetes network policies, you can specify the network traffic that you want to allow or block to and from a pod within a cluster. To set more advanced network policies such as blocking inbound (ingress) traffic to network load balancer (NLB) services, use Calico network policies.
+
 
 <dl>
 <dt>[Kubernetes network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/network-policies/)</dt>
@@ -325,7 +324,6 @@ To create a pre-DNAT policy:
 
 1. Define a Calico pre-DNAT network policy for ingress (inbound traffic) access to Kubernetes services.
     * Use [Calico v3 policy syntax ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy).
-    * If you manage traffic to an [NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs), you must include the `applyOnForward: true` and `doNotTrack: true` fields to the `spec` section of the policy.
 
         Example resource that blocks all node ports:
 
@@ -352,34 +350,6 @@ To create a pre-DNAT policy:
             source: {}
           selector: ibm.role=='worker_public'
           order: 1100
-          types:
-          - Ingress
-        ```
-        {: codeblock}
-
-        Example resource that whitelists traffic from only a specified source CIDR to an NLB 2.0:
-
-        ```
-        apiVersion: projectcalico.org/v3
-        kind: GlobalNetworkPolicy
-        metadata:
-          name: whitelist
-        spec:
-          applyOnForward: true
-          doNotTrack: true
-          ingress:
-          - action: Allow
-            destination:
-              nets:
-              - <loadbalancer_IP>/32
-              ports:
-              - 80
-            protocol: TCP
-            source:
-              nets:
-              - <client_address>/32
-          selector: ibm.role=='worker_public'
-          order: 500
           types:
           - Ingress
         ```
@@ -413,8 +383,7 @@ To create a pre-DNAT policy:
         ```
         {: codeblock}
 
-2. Apply the Calico preDNAT network policy. It takes about 1 minute for the
-policy changes to be applied throughout the cluster.
+2. Apply the Calico preDNAT network policy. It takes about 1 minute for the policy changes to be applied throughout the cluster.
 
   - Linux and OS X:
 
@@ -496,7 +465,7 @@ To protect your cluster on the public network by using Calico policies:
 You can isolate your cluster from other systems on the private network by applying [Calico private network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/calico-v3).
 {: shortdesc}
 
-This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with your worker nodes.
+This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with your worker nodes. 
 
 To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico public network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/private-network-isolation/README.md).
 

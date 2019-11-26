@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -13,7 +13,7 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:pre: .pre} 
+{:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
@@ -21,22 +21,17 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 
 # Planning your cluster network setup   
 {: #plan_clusters}
 
-Design a network setup for your {{site.data.keyword.openshiftlong}} clusters that meets the needs of your workloads and environment.
+Design a network setup for your {{site.data.keyword.openshiftlong}} cluster that meets the needs of your workloads and environment.
 {: shortdesc}
 
-Your containerized apps are hosted on compute hosts that are called worker nodes. Worker nodes are managed by the master. The communication setup between worker nodes and the master, other services, the Internet, or other private networks depends on how you set up your IBM Cloud infrastructure network.
-
-First time creating a cluster? First, try out the [creating OpenShift clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
+First time creating a cluster? First, try out the [tutorial for creating OpenShift clusters](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
 {: tip}
-
-
-
 
 ## Understanding network basics of clusters
 {: #plan_basics}
@@ -190,7 +185,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 In this scenario, you want to run workloads in a cluster that are accessible to services, databases, or other resources in your on-premises data center. However, you might need to provide limited public access to your cluster, and want to ensure that any public access is controlled and isolated in your cluster. For example, you might need your workers to access an {{site.data.keyword.cloud_notm}} service that does not support private service endpoints, and must be accessed over the public network. Or, you might need to provide limited public access to an app that runs in your cluster.
 {: shortdesc}
 
-To achieve this cluster setup, you can allow limited public connectivity to your classic cluster by [using edge nodes to isolate networking workloads and Calico network policies to act as a public firewall](#calico_edge) or [using a gateway appliance](#vyatta-gateway).
+To achieve this cluster setup, you can allow limited public connectivity to your cluster by [using edge nodes to isolate networking workloads and Calico network policies to act as a public firewall](#calico_edge) or [using a gateway appliance](#vyatta-gateway).
 
 #### Using edge nodes and Calico policies
 {: #calico_edge}
@@ -229,7 +224,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 #### Using a gateway appliance
 {: #vyatta-gateway}
 
-Allow limited public connectivity to your classic cluster by configuring a gateway appliance, such as a Virtual Router Appliance (Vyatta), as a public gateway and firewall.
+Allow limited public connectivity to your cluster by configuring a gateway appliance, such as a Virtual Router Appliance (Vyatta), as a public gateway and firewall.
 {: shortdesc}
 
 <p>
@@ -258,7 +253,6 @@ To provide private access to an app in your cluster, you can create a private ne
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-ha_clusters) and [worker node](/docs/openshift?topic=openshift-planning_worker_nodes) setups, see [Creating clusters](/docs/openshift?topic=openshift-clusters).
 
 <br />
-
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-20"
+lastupdated: "2019-11-26"
 
 keywords: kubernetes, iks, help, debug
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -33,7 +33,6 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for tr
 {: shortdesc}
 
 If you have a more general issue, try out [Troubleshooting OpenShift clusters](/docs/openshift?topic=openshift-openshift_troubleshoot). 
-<br>
 
 ## Debugging persistent storage failures
 {: #debug_storage}
@@ -358,7 +357,11 @@ If you use a Helm chart to deploy the image, edit the Helm deployment to use an 
 When you include an [init container![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/) in your deployment, you can give a non-root user that is specified in your Dockerfile write permissions for the volume mount path inside the container. The init container starts before your app container starts. The init container creates the volume mount path inside the container, changes the mount path to be owned by the correct (non-root) user, and closes. Then, your app container starts with the non-root user that must write to the mount path. Because the path is already owned by the non-root user, writing to the mount path is successful. If you do not want to use an init container, you can modify the Dockerfile to add non-root user access to NFS file storage.
 
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+**Before you begin**: 
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* Pick a [security context constraint (SCC)](/docs/openshift?topic=openshift-openshift_scc) that lets your deployment perform `chown` operations.
+
+**To use an init container to give a non-root user write permissions to the volume mount path**:
 
 1.  Open the Dockerfile for your app and get the user ID (UID) and group ID (GID) from the user that you want to give writer permission on the volume mount path. In the example from a Jenkins Dockerfile, the information is:
     - UID: `1000`
@@ -470,7 +473,10 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: pre}
 
-6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path.
+    Is the init container failing? Because OpenShift sets restricted security context constraints, you might see an error such as `chown: /opt/ibm-ucd/server/ext_lib: Operation not permitted`. For your deployment, [use a SCC](/docs/openshift?topic=openshift-openshift_scc) that allows `chown` operations and try again.
+    {: note}
+
+6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path. 
    ```
    oc describe pod <my_pod>
    ```
@@ -1323,7 +1329,6 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 
 If you entered the correct information on the {{site.data.keyword.cloud_notm}} catalog page, verify that your cluster is correctly set up for Portworx.
 {: shortdesc}
-
 
 2. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/).
 3. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.

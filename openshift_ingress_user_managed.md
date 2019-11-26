@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-20"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Bringing your own Ingress controller
 {: #ingress-user_managed}
@@ -34,7 +34,7 @@ The IBM-provided Ingress application load balancers (ALBs) are based on NGINX co
 ## Exposing your Ingress controller by creating an NLB and a hostname
 {: #user_managed_nlb}
 
-Create a network load balancer (NLB) to expose your custom Ingress controller deployment, and then create a hostname for the NLB IP address.
+Create a network load balancer (NLB) to expose your custom Ingress controller deployment, and then create a hostname for the NLB IP address. 
 {: shortdesc}
 
 In classic clusters, bringing your own Ingress controller is supported only for providing public external access to your apps and is not supported for providing private external access.
@@ -68,10 +68,10 @@ In classic clusters, bringing your own Ingress controller is supported only for 
     {: codeblock}
 
 4. Create the service in your cluster.
-    ```
-    oc apply -f my-lb-svc.yaml
-    ```
-    {: pre}
+  ```
+  oc apply -f my-lb-svc.yaml
+  ```
+  {: pre}
 
 5. Get the **EXTERNAL-IP** address for the load balancer.
     ```
@@ -117,8 +117,3 @@ In classic clusters, bringing your own Ingress controller is supported only for 
   https://<load_balancer_host_name>/<app_path>
   ```
   {: codeblock}
-
-
-
-
-

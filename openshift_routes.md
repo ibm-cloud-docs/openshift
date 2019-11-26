@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -19,7 +19,7 @@ subcollection: openshift
 {:tip: .tip}
 {:note: .note}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Exposing apps with routes
 {: #openshift_routes}

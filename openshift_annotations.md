@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Customizing Ingress routing with annotations
 {: #ingress_annotation}
@@ -411,7 +411,7 @@ metadata:
 ### Location snippets (`location-snippets`)
 {: #location-snippets}
 
-Add a custom location block configuration for a service.
+Add a custom location block configuration for a service. 
 {:shortdesc}
 
 **Description**</br>
@@ -1453,7 +1453,7 @@ kind: Ingress
 metadata:
   name: <myingressname>
   annotations:
-    ingress.bluemix.net/ssl-services: ssl-service=<myservice1> ssl-secret=<service1-ssl-secret> proxy-ssl-verify-depth=<verification_depth>;ssl-service=<myservice2> ssl-secret=<service2-ssl-secret> proxy-ssl-verify-depth=<verification_depth> proxy-ssl-name=<service_CN>
+    ingress.bluemix.net/ssl-services: ssl-service=<myservice1> ssl-secret=<service1-ssl-secret> proxy-ssl-verify-depth=<verification_depth> proxy-ssl-name=<service_CN>;ssl-service=<myservice2> ssl-secret=<service2-ssl-secret> proxy-ssl-verify-depth=<verification_depth> proxy-ssl-name=<service_CN>
 spec:
   tls:
   - hosts:

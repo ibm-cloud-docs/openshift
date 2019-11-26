@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Understanding Kubernetes storage basics
 {: #kube_concepts}
@@ -141,7 +141,7 @@ Not finding what you are looking for? You can also create your own customized st
 If you cannot use one of the provided storage classes, you can create your own customized storage class. You might want to customize a storage class to specify configurations such as the zone, file system type, server type, or [volume binding mode ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode) options (block storage only).
 {: shortdesc}
 
-1. Create a customized storage class. You can start by using one of the pre-defined storage classes, or check out our sample customized storage classes.
+1. Create a customized storage class. You can start by using one of the pre-defined storage classes, or check out our sample customized storage classes. 
    - Pre-defined storage classes:
      - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
      - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)

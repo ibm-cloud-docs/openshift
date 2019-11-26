@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated} 
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Security for Red Hat OpenShift on IBM Cloud
 {: #security}
@@ -33,7 +33,7 @@ You can use built-in security features in {{site.data.keyword.openshiftlong}} fo
 ## Overview of security threats for your cluster
 {: #threats}
 
-To protect your cluster from being compromised, you must understand potential security threats for your cluster and what you can do to reduce the exposure to vulnerabilities.
+To protect your cluster from being compromised, you must understand potential security threats for your cluster and what you can do to reduce the exposure to vulnerabilities. 
 {: shortdesc}
 
 <img src="images/cs_security_threats.png" width="400" alt="Security threats for your cluster" style="width:400px; border-style: none"/>
@@ -51,6 +51,7 @@ These components include:
 - [Personal information](#pi)
 
 <br />
+
 
 
 ##OpenShift API server and etcd
@@ -108,8 +109,7 @@ The following image shows the default cluster security settings that address aut
     </tr>
     <tr>
       <td>Fine-grained access control</td>
-      <td>As the account administrator you can [grant access to other users for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, Red Hat OpenShift on IBM Cloud, and all the resources in your account. Setting up proper user roles and permissions is key to limit who can access your resources and to limit the damage that a user can do when legitimate permissions are misused. </br></br>You can select from the following pre-defined user roles that determine the set of actions that the user can perform: <ul><li><strong>Platform roles:</strong> Determine the cluster and worker node management-related actions that a user can perform in Red Hat OpenShift on IBM Cloud. Platform roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create an OpenShift project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles do not grant access to other OpenShift projects. To view and access other OpenShift projects, you must be assigned the appropriate service access role in IAM.  </li><li><strong>Service access roles:</strong> Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) that is assigned to the user and the actions that a user can run against the OpenShift API server. While the <code>basic-users</code> and <code>self-provisioners</code> RBAC role that is assigned with a platform role lets you create and manage your own OpenShift projects, you cannot view, access, or work with other OpenShift projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service). </li><li><strong>Classic infrastructure:</strong> Enables access to your classic {{site.data.keyword.cloud_notm}} infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.</li>
-  </ul> </br> For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-users).</td>
+      <td>As the account administrator you can [grant access to other users for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, Red Hat OpenShift on IBM Cloud, and all the resources in your account. Setting up proper user roles and permissions is key to limit who can access your resources and to limit the damage that a user can do when legitimate permissions are misused. </br></br>You can select from the following pre-defined user roles that determine the set of actions that the user can perform: <ul><li><strong>Platform roles:</strong> Determine the cluster and worker node management-related actions that a user can perform in Red Hat OpenShift on IBM Cloud. Platform roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create an OpenShift project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles do not grant access to other OpenShift projects. To view and access other OpenShift projects, you must be assigned the appropriate service access role in IAM.  </li><li><strong>Service access roles:</strong> Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) that is assigned to the user and the actions that a user can run against the OpenShift API server. While the <code>basic-users</code> and <code>self-provisioners</code> RBAC role that is assigned with a platform role lets you create and manage your own OpenShift projects, you cannot view, access, or work with other OpenShift projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service). </li><li><strong>Classic infrastructure:</strong> Enables access to your classic {{site.data.keyword.cloud_notm}} infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.</li></ul> </br> For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-users).</td>
     </tr>
     <tr>
       <td>Admission controllers</td>  
@@ -161,10 +161,6 @@ Worker nodes carry the deployments and services that make up your app. When you 
 {: shortdesc}
 
 **Who owns the worker node and am I responsible to secure it?** </br>
-
-
-Your worker nodes are provisioned in to your {{site.data.keyword.cloud_notm}} account. The worker nodes are dedicated to you and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and Red Hat OpenShift on IBM Cloud components apply the latest security updates and patches. 
-
 For more information, see [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks).
 
 Use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) regularly (such as monthly) to deploy updates and security patches to the operating system and to update the OpenShift version that your worker nodes run. When updates are available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the `ibmcloud oc clusters ls` or `ibmcloud oc workers ls --cluster <cluster_name>` commands. Worker node updates are provided by IBM as a full worker node image that includes the latest security patches. To apply the updates, the worker node must be reimaged and reloaded with the new image. Keys for the root user are automatically rotated when the worker node is reloaded.
@@ -197,11 +193,11 @@ The image does not include components that ensure secure end-to-end communicatio
     </tr>
     <tr>
   <td>Compute isolation</td>
-  <td>Worker nodes are dedicated to a cluster and do not host workloads of other clusters. When you create a cluster, you can choose to provision your worker nodes as [physical machines (bare metal) or as virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that run on shared or dedicated physical hardware.  </td>
+  <td>Worker nodes are dedicated to a cluster and do not host workloads of other clusters. When you create a cluster, you can choose to provision your worker nodes as [physical machines (bare metal) or as virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that run on shared or dedicated physical hardware.</td>
 </tr>
 <tr>
   <td>Option to deploy bare metal </td>
-  <td>You can choose to provision your worker nodes on bare metal physical servers (instead of virtual server instances). With bare metal machines, you have additional control over the compute host, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all of a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Bare metal servers are dedicated to you, with all its resources available for cluster usage. </td>
+  <td>You can choose to provision your worker nodes on bare metal physical servers (instead of virtual server instances). With bare metal machines, you have additional control over the compute host, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all of a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Bare metal servers are dedicated to you, with all its resources available for cluster usage.</td>
 </tr>
 <tr>
   <td id="encrypted_disk">Encrypted disks</td>
@@ -286,8 +282,6 @@ You can use network load balancer (NLB) and Ingress application load balancer (A
 
 **Can I use security groups to manage my cluster's network traffic?** </br>
 {{site.data.keyword.cloud_notm}} [security groups](/docs/infrastructure/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups) are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. If you want to manage traffic for each worker node, you can use security groups. When you create a security group, you must allow the VRRP protocol, which Red Hat OpenShift on IBM Cloud uses to manage NLB IP addresses. To uniformly manage traffic for your cluster across all of your worker nodes, use [Calico and Kubernetes policies](/docs/openshift?topic=openshift-network_policies).
-
-
 
 **How can I do TLS termination with LoadBalancer and Ingress services?** </br>
 The Ingress service offers TLS termination at two points in the traffic flow:

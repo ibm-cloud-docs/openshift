@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,24 +21,26 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Service limitations
 {: #openshift_limitations}
 
 {{site.data.keyword.openshiftlong}} and the OpenShift open source project come with default service settings and limitations to ensure security, convenience, and basic functionality. Some of the limitations you might be able to change where noted.
 {: shortdesc}
+<br>
 
 If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud limitations, contact the IBM team in the [internal ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-argonauts.slack.com/messages/C4S4NUCB1) or [external Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com).
 {: tip}
 
 ## Service limitations
 {: #tech_limits}
+<br>
 
-Red Hat OpenShift on IBM Cloud comes with the following service limitations.
+Red Hat OpenShift on IBM Cloud comes with the following service limitations. 
 {: shortdesc}
 
-In addition to the service limitations, make sure to also review the limitations for [classic](#classic_limits).
+In addition to the service limitations, make sure to also review the limitations for [classic](#classic_limits) clusters.
 {: note}
 
 <table summary="This table contains information on the Red Hat OpenShift on IBM Cloud limitations. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation.">
@@ -143,6 +145,3 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
     </tr>
   </tbody>
   </table>
-
-
-

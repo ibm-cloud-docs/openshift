@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-19"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Planning external networking for apps
 {: #cs_network_planning}
@@ -42,14 +42,11 @@ To securely expose your apps to external traffic, you can use routes, NodePorts,
 <dt>[NodePort](/docs/openshift?topic=openshift-nodeport)</dt>
 <dd>When you expose apps with a NodePort service, a NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to the service. To access the service from outside the cluster, you use the public or private IP address of any worker node and the NodePort in the format <code>&lt;IP_address&gt;:&lt;nodeport&gt;</code>. However, the public and private IP addresses of the worker node are not permanent. When a worker node is removed or re-created, a new public and a new private IP address are assigned to the worker node. NodePorts are ideal for testing public or private access or providing access for only a short amount of time.</dd>
 
-<dt>[Network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer)</dt>
-<dd>Every standard cluster is provisioned with four portable public and four portable private IP addresses that you can use to create a layer 4 TCP/UDP network load balancer (NLB) for your app. You can customize your NLB by exposing any port that your app requires. The portable public and private IP addresses that are assigned to the NLB are permanent and do not change when a worker node is re-created in the cluster. If you create public NLBs, you can create a subdomain for your app that registers the public NLB IP addresses with a DNS entry. You can also enable health check monitors on the NLB IPs for each subdomain. **Note**: The NLB 2.0 is not supported for use in Red Hat OpenShift on IBM Cloud.</dd>
-
 <dt>[Ingress application load balancer (ALB)](/docs/openshift?topic=openshift-ingress)</dt>
 <dd>Expose multiple apps in a cluster by creating one layer 7 HTTP, HTTPS, or TCP Ingress application load balancer (ALB). The ALB uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
   <li>The Ingress resource defines the rules for how to route and load balance incoming requests for an app.</li>
   <li>The ALB listens for incoming HTTP, HTTPS, or TCP service requests. It forwards requests across the apps' pods based on the rules that you defined in the Ingress resource, including custom routing rules defined by annotations.</li>
-  <li>The multizone load balancer (MZLB) handles all incoming requests to your apps and load balances the requests among the ALBs in the various zones. It also enables health checks for the public ALB IP addresses.</li></ul>Note that the Ingress system does not use the router that is deployed by default to your cluster, and that any routes you create do not use the Ingress subdomain.</dd>
+  <li>The multizone load balancer (MZLB) handles all incoming requests to your apps and load balances the requests among the ALBs in the various zones. It also enables health checks for the public Ingress IP addresses.</li></ul>Note that the Ingress system does not use the router that is deployed by default to your cluster, and that any routes you create do not use the Ingress subdomain.</dd>
 
 </dl>
 
@@ -81,6 +78,7 @@ The following table compares the features of each app exposure method.
 `*` SSL termination is provided by `ibmcloud oc nlb-dns` commands.
 {: note}
 
+
 <br />
 
 
@@ -90,7 +88,7 @@ The following table compares the features of each app exposure method.
 Publicly expose an app in your cluster to the internet.
 {: shortdesc}
 
-When your worker nodes are connected to a public VLAN, the public VLAN determines the public IP address that is assigned to each worker node, which provides each worker node with a public network interface. Public networking services connect to this public network interface by providing your app with a public entry point.
+You can connect worker nodes to a public VLAN. The public VLAN determines the public IP address that is assigned to each worker node, which provides each worker node with a public network interface. Public networking services connect to this public network interface by providing your app with a public IP address and, optionally, a public URL.
 
 When an app is publicly exposed, anyone that has the public service IP address or the URL that you set up for your app can send a request to your app. For this reason, expose as few apps as possible. Expose an app to the public only when your app is ready to accept traffic from external web clients or users.
 
@@ -99,7 +97,8 @@ The public network interface for worker nodes is protected by [predefined Calico
 ### Choosing an app exposure method
 {: #pattern_public}
 
-To make an app publicly available to the internet in a classic cluster, choose an app exposure method that uses routes, NodePorts, NLBs, or ALBs. The following table describes each possible method, why you might use it, and how to set it up. For basic information about the networking services that the NodePort, NLB, and ALB methods use, see [Understanding Kubernetes service types](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers).
+To make an app publicly available to the internet in a classic cluster, choose an app exposure method that uses routes, NodePorts, NLBs, or ALBs. The following table describes each possible method, why you might use it, and how to set it up. For basic information about the networking services that are listed, see [Understanding Kubernetes service types](#external).
+{: shortdesc}
 
 You cannot use multiple app exposure methods for one app.
 {: note}
@@ -159,9 +158,10 @@ As an example, say that you create a private load balancer for your app. This pr
 * Any pod in any cluster in the same {{site.data.keyword.cloud_notm}} account.
 * If you're not in the {{site.data.keyword.cloud_notm}} account but still behind the company firewall, any system through a VPN connection to the subnet that the load balancer IP is on.
 * If you're in a different {{site.data.keyword.cloud_notm}} account, any system through a VPN connection to the subnet that the load balancer IP is on.
-* In classic clusters, if you have [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation) enabled, any system that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account.
+* If you have [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation) enabled, any system that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account.
 
-### Choosing an app exposure method in a public and private VLAN setup
+
+### Choosing an app exposure method
 {: #private_both_vlans}
 
 When your worker nodes are connected to both a public and a private VLAN, you can make your app accessible from a private network only by creating private routes, NodePorts, NLBs, or ALBs. Then, you can create Calico policies to block public traffic to the services.
@@ -182,6 +182,3 @@ Check out the following methods for private app networking:
 {: caption="Characteristics of network deployment patterns for a public and a private VLAN setup" caption-side="top"}
 
 <br />
-
-
-

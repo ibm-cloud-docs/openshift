@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-21"
+lastupdated: "2019-11-26"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -102,13 +102,13 @@ Before you begin, log in to your cluster as an administrator.
 ### Setting up LogDNA
 {: #openshift_logdna}
 
-Set up logging in your OpenShift cluster with {{site.data.keyword.la_full_notm}}. 
+Set up logging in your OpenShift cluster with {{site.data.keyword.la_full_notm}}.
 {: shortdesc}
 
-1.  Follow the [{{site.data.keyword.la_full_notm}} documentation](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-config_agent_os_cluster) to set up the OpenShift project, the service account, and the LogDNA agent in your cluster. 
-2.  Access your logs from the LogDNA dashboard. 
-    1. From the [{{site.data.keyword.cloud_notm}} **Observability > Logging** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens. 
-    2. Wait a few minutes for your logs to display. 
+1.  Follow the [{{site.data.keyword.la_full_notm}} documentation](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-config_agent_os_cluster) to set up the OpenShift project, the service account, and the LogDNA agent in your cluster.
+2.  Access your logs from the LogDNA dashboard.
+    1. From the [{{site.data.keyword.cloud_notm}} **Observability > Logging** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens.
+    2. Wait a few minutes for your logs to display.
 
 For more information about how to use {{site.data.keyword.la_short}}, see the [Next steps docs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-kube#kube_next_steps).
 
