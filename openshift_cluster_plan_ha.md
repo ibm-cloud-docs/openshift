@@ -37,6 +37,7 @@ Your users are less likely to experience downtime when you distribute your apps 
 2. A [multizone cluster](#multizone) that spreads worker nodes across zones within one region.
 3. **Clusters with public network connectivity**: [Multiple clusters](#multiple_clusters) that are set up across zones or regions and that are connected via a global load balancer.
 
+
 ## Single zone cluster
 {: #single_zone}
 
