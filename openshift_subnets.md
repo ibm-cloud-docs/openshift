@@ -21,12 +21,12 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Configuring subnets and IP addresses<roks311-vpc> for classic clusters</roks311-vpc>
 {: #subnets}
 
-Change the pool of available portable public or private IP addresses for network load balancer (NLB) services by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
+Change the pool of available portable public or private IP addresses for network load balancer (NLB) services by adding subnets to your {{site.data.keyword.openshiftlong}} cluster. 
 {:shortdesc}<roks311-vpc>
 
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to classic clusters. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_clusters#vpc_basics).

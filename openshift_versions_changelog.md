@@ -19,7 +19,7 @@ subcollection: openshift
 {:tip: .tip}
 {:note: .note}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 {:external: target="_blank" .external}
 
 # Version changelog

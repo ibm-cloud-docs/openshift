@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Assigning cluster access
 {: #users}
@@ -1094,7 +1094,7 @@ Before you begin:
 *   Make sure that you are the account owner or have **Super User** and all device access. You can't grant a user access that you don't have.
 *   Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
 
-You can grant classic infrastructure access through the [console](#infra_console) or [CLI](#infra_cli).
+You can grant classic infrastructure access through the [console](#infra_console) or [CLI](#infra_cli). 
 
 ### Assigning infrastructure access through the console
 {: #infra_console}<roks311-vpc>

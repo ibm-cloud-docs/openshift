@@ -20,7 +20,7 @@ subcollection: openshift
 {:note: .note}
 {:important: .important}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 <style>
 <!--

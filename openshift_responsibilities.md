@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Your responsibilities with using Red Hat OpenShift on IBM Cloud
 {: #responsibilities_iks}

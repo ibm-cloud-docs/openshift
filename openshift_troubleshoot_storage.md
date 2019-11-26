@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -476,7 +476,7 @@ When you include an [init container![External link icon](../icons/launch-glyph.s
     Is the init container failing? Because OpenShift sets restricted security context constraints, you might see an error such as `chown: /opt/ibm-ucd/server/ext_lib: Operation not permitted`. For your deployment, [use a SCC](/docs/openshift?topic=openshift-openshift_scc) that allows `chown` operations and try again.
     {: note}
 
-6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path.
+6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path. 
    ```
    oc describe pod <my_pod>
    ```

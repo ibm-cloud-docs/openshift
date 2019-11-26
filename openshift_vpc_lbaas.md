@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # VPC: Exposing apps with VPC load balancers
 {: #vpc-lbaas}
@@ -34,7 +34,7 @@ Set up a Load Balancer for VPC to expose your app on the public or private netwo
 ## About VPC load balancing in Red Hat OpenShift on IBM Cloud
 {: #lbaas_about}
 
-When you create a Kubernetes `LoadBalancer` service for an app in your cluster, a layer 7 [Load Balancer for VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc) is automatically created in your VPC outside of your cluster. The load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes.
+When you create a Kubernetes `LoadBalancer` service for an app in your cluster, a layer 7 [Load Balancer for VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc) is automatically created in your VPC outside of your cluster. The load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. 
 {: shortdesc}
 
 The VPC load balancer serves as the external entry point for incoming requests for the app.

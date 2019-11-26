@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Government use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_gov}
@@ -32,7 +32,7 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} b
 ## Regional government improves collaboration and velocity with community Developers who combine public-private data
 {: #uc_data_mashup}
 
-An Open-Government Data Program Executive needs to share public data with the community and private sector, but the data is locked in an on-premises monolithic system. 
+An Open-Government Data Program Executive needs to share public data with the community and private sector, but the data is locked in an on-premises monolithic system.  
 {: shortdesc}
 
 Why {{site.data.keyword.cloud_notm}}: With Red Hat OpenShift on IBM Cloud, the Exec delivers the transformative value of combined public-private data. Likewise, the service provides the public cloud platform to refactor and expose microservices from monolithic on-premises apps. Also, the public cloud allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools.

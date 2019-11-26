@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Bringing your own Ingress controller
 {: #ingress-user_managed}
@@ -34,7 +34,7 @@ The IBM-provided Ingress application load balancers (ALBs) are based on NGINX co
 ## <roks311-vpc>Classic clusters: </roks311-vpc>Exposing your Ingress controller by creating an NLB and a hostname
 {: #user_managed_nlb}
 
-Create a network load balancer (NLB) to expose your custom Ingress controller deployment, and then create a hostname for the NLB IP address.
+Create a network load balancer (NLB) to expose your custom Ingress controller deployment, and then create a hostname for the NLB IP address. 
 {: shortdesc}
 
 In classic clusters, bringing your own Ingress controller is supported only for providing public external access to your apps and is not supported for providing private external access.

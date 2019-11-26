@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Testing access to apps with NodePorts
 {: #nodeport}
@@ -32,7 +32,7 @@ Make your containerized app available to internet access by using the public IP 
 ## Managing network traffic by using NodePorts
 {: #nodeport_planning}
 
-Expose a public port on your worker node and use the public IP address of the worker node to access your service in the cluster publicly from the internet.
+Expose a public port on your worker node and use the public IP address of the worker node to access your service in the cluster publicly from the internet. 
 {:shortdesc}
 
 

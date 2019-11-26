@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Customizing Ingress routing with annotations
 {: #ingress_annotation}
@@ -411,7 +411,7 @@ metadata:
 ### Location snippets (`location-snippets`)
 {: #location-snippets}
 
-Add a custom location block configuration for a service.
+Add a custom location block configuration for a service. 
 {:shortdesc}
 
 **Description**</br>

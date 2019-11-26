@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-20"
+lastupdated: "2019-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -18,7 +18,7 @@ With pod priority and preemption, you can configure priority classes to indicate
 {: shortdesc}
 
 **Why do I set pod priority?**</br>
-As a cluster administrator, you want to control which pods are more critical to your cluster workload. Priority classes can help you control the OpenShift controller decisions to favor higher priority pods over lower priority pods. The OpenShift controller can even preempt (remove) lower priority pods that are running so that pending higher priority pods can be scheduled.
+As a cluster administrator, you want to control which pods are more critical to your cluster workload. Priority classes can help you control the OpenShift controller decisions to favor higher priority pods over lower priority pods. The OpenShift controller can even preempt (remove) lower priority pods that are running so that pending higher priority pods can be scheduled. 
 
 By setting pod priority, you can help prevent lower priority workloads from impacting critical workloads in your cluster, especially in cases where the cluster starts to reach its resource capacity.
 

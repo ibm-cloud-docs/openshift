@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Modifying default Ingress behavior
 {: #ingress-settings}
@@ -35,7 +35,7 @@ After you expose your apps by creating an Ingress resource, you can further conf
 By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose other ports, you can edit the `ibm-cloud-provider-ingress-cm` configmap resource.
 {: shortdesc}
 
-1. Edit the configuration file for the `ibm-cloud-provider-ingress-cm` configmap resource.
+1. Edit the configuration file for the `ibm-cloud-provider-ingress-cm` configmap resource. 
   ```
   oc edit cm ibm-cloud-provider-ingress-cm -n kube-system
   ```

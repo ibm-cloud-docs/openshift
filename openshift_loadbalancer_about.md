@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # <roks311-vpc>Classic: </roks311-vpc>About network load balancers (NLBs)
 {: #loadbalancer-about}<roks311-vpc>

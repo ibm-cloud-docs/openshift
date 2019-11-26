@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Changing service endpoints or VLAN connections<roks311-vpc> for classic clusters</roks311-vpc>
 {: #cs_network_cluster}
@@ -35,7 +35,7 @@ After you initially set up your network when you [create a cluster](/docs/opensh
 ## Setting up the private service endpoint
 {: #set-up-private-se}
 
-Enable or disable the private service endpoint for your cluster.
+Enable or disable the private service endpoint for your cluster. 
 {: shortdesc}
 
 

@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated} 
 {:download: .download}
-{:preview: .preview}
+{:preview: .preview} 
 
 # Overview
 {: #overview}
@@ -55,7 +55,7 @@ With Red Hat OpenShift on IBM Cloud, you can create your cluster of compute host
 
 [VPC clusters](/docs/containers?topic=containers-getting-started#vpc-classic-gs) are created in your own Virtual Private Cloud that gives you the security of a private cloud environment with the dynamic scalability of a public cloud. You use network access control lists to protect the subnets that your worker nodes are connected to. VPC clusters can be provisioned on shared virtual infrastructure only.</roks311-vpc>
 
-For more information, see [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers).
+For more information, see [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers). 
 
 **Where can I learn more about the service?** </br>
 Review the following links to find out more about the benefits and responsibilities when you use Red Hat OpenShift on IBM Cloud.
