@@ -127,92 +127,6 @@ Check out the following changes between each version of the CLI plug-in:
 <br />
 
 
-
-<roks311-vpc>
-
-## Comparison of Classic and VPC commands
-{: #cli_classic_vpc_about}
-
-With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API](/docs/openshift?topic=openshift-cs_api_install#api_about), the {{site.data.keyword.cloud_notm}} CLI `kubernetes-service` plug-in supports both classic and VPC infrastructure providers. Some `ibmcloud oc` commands support only one type of infrastructure, whereas other commands include additional names or options as described in the following table.
-{: shortdesc}
-
-<table summary="The rows are read from left to right, with the area of comparison in column one, classic clusters CLI in column two, and VPC clusters CLI in column three.">
-<caption>{{site.data.keyword.containerlong_notm}} CLI differences between classic and VPC</caption>
-<col width="40%">
-<col width="30%">
-<col width="30%">
- <thead>
- <th>Area</th>
- <th>Classic CLI commands</th>
- <th>VPC CLI commands</th>
- </thead>
- <tbody>
- <tr>
-  <td>**Doc icons**: CLI commands in this document include icons to help you scan which commands apply to which infrastructure provider. If the command supports both providers, both icons are included.</td>
-  <td><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="25" style="width:25px; border-style: none"/></td>
-  <td><img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="25" style="width:25px; border-style: none"/></td>
- </tr>
- <tr>
-   <td>**Provider-specific**: You can perform similar operations in both infrastructure providers, but you must specify the infrastructure provider in the command name.<br><br>If you do not specify the provider, the default is classic. For example, `zone add classic` is an alias for the previous `zone-add` classic command.</td>
-   <td>Uses the v1 API.<ul>
-   <li>[`alb configure classic`](#cs_alb_configure)</li>
-   <li>[`cluster create classic`](#cs_cluster_create)</li>
-   <li>[`nlb-dns create classic`](#cs_nlb-dns-create)</li>
-   <li>[`nlb-dns rm  classic`](#cs_nlb-dns-rm)</li>
-   <li>[`worker-pool create classic`](#cs_worker_pool_create)</li>
-   <li>[`zone add classic`](#cs_zone_add)</li></ul>
-   </td>
-   <td>Uses the v2 API.<ul>
-   <li>[`alb configure vpc-classic`](#cli_alb_configure_vpc_classic)</li>
-   <li>[`cluster create vpc-classic`](#cli_cluster-create-vpc-classic)</li>
-   <li>[`nlb-dns create vpc-classic`](#cs_nlb-dns-create-vpc)</li>
-   <li>[`nlb-dns rm vpc-classic`](#cs_nlb-dns-rm-vpc)</li>
-   <li>[`worker-pool create vpc-classic`](#cli_worker_pool_create_vpc_classic)</li>
-   <li>[`zone add vpc-classic`](#cli_zone-add-vpc-classic)</li></ul></ul></td>
- </tr>
- <tr>
-   <td>**Provider-exclusive**: You can use these commands only in the particular infrastructure provider.</td>
-   <td>Uses the v1 API.<ul>
-   <li>[`cluster subnet add`](#cs_cluster_subnet_add)</li>
-   <li>[`cluster subnet create`](#cs_cluster_subnet_create)</li>
-   <li>[`cluster subnet detach`](#cs_cluster_subnet_detach)</li>
-   <li>[`cluster user-subnet add`](#cs_cluster_user_subnet_add)</li>
-   <li>[`cluster user-subnet rm`](#cs_cluster_user_subnet_rm)</li>
-   <li>[`credential set`](#cs_credentials_set)</li>
-   <li>[`credential unset`](#cs_credentials_unset)</li>
-   <li>[`vlan ls`](#cs_vlans)</li>
-   <li>[`vlan spanning get`](#cs_vlan_spanning_get)</li>
-   <li>[`worker reload`](#cs_worker_reload)</li>
-   <li>[`worker update`](#cs_worker_update)</li>
-   <li>[`zone network-set`](#cs_zone_network_set)</li>
-   <li>[All `nlb-dns monitor` commands](#cs_nlb-dns-monitor-configure)</li></ul>
-   </td>
-   <td>Uses the v2 API.<ul>
-   <li>[`vpcs`](#cs_vpcs)</li>
-   <li>[`nlb-dns replace`](#cs_nlb-dns-replace)</li></ul></td>
- </tr>
- <tr>
-   <td>**VPC provider flags**: You can specify a `--provider` flag for these commands to return results that are specific to the infrastructure provider.</td>
-   <td>Optional. Uses the v1 API.<ul>
-   <li>[`cluster ls`](#cs_clusters)</li>
-   <li>[`subnets`](#cs_subnets)</li>
-   <li>[`zone ls`](#cs_datacenters)</li></ul></td>
-   <td>Required. Uses the v2 API.<ul>
-   <li>[`subnets`](#cs_subnets)</li>
-   <li>[`zone ls`](#cs_datacenters)</li></ul></td>
- </tr>
- <tr>
-   <td>**Agnostic**: **You do not need to specify an infrastructure provider for the remaining commands.** </td>
-   <td>The commands use and return the v1 API responses.</td>
-   <td>The commands use and return the v1 API responses.</td>
- </tr>
-</tbody>
-</table>
-</roks311-vpc>
-
-<br />
-
-
 ## `ibmcloud oc` commands
 {: #map}
 
@@ -242,11 +156,7 @@ Disable the add-on for the {{site.data.keyword.containerlong_notm}} Diagnostics 
 ```
 ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -268,11 +178,7 @@ Disable the [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_insta
 ```
 ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -302,11 +208,7 @@ Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics 
 ```
 ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -334,11 +236,7 @@ Enable the [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_instal
 ```
 ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERSION]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -393,11 +291,7 @@ In [CLI plug-in version 1.0](#cs_beta), `cluster config` appends the new `kubeco
 ```
 ibmcloud oc cluster config --cluster CLUSTER [--admin] [--export] [--network] [--powershell] [--skip-rbac] [-s] [--yaml]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform role or only a service role, additional constraints apply.
 * **Platform**: If you have only a platform role, you can perform this command, but you need a [service role](/docs/openshift?topic=openshift-users#platform) or a [custom RBAC policy](/docs/openshift?topic=openshift-users#role-binding) to perform Kubernetes actions in the cluster.
@@ -447,9 +341,7 @@ Create a cluster with worker nodes on classic infrastructure. For free clusters,
 ```
 ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --machine-type FLAVOR --name NAME [--kube-version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt]  [--skip-advance-permissions-check] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To create a VPC Gen 1 compute cluster, use the [`ibmcloud oc cluster create vpc-classic` command](#cli_cluster-create-vpc-classic) instead.</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**:
 * **Administrator** platform role for {{site.data.keyword.containerlong_notm}} at the account level
@@ -572,77 +464,7 @@ ibmcloud oc cluster create classic --zone dal10 --public-vlan my_public_VLAN_ID 
 ```
 {: pre}
 
-</br><roks311-vpc>
-
-### `ibmcloud oc cluster create vpc-classic`
-{: #cli_cluster-create-vpc-classic}
-
-Create a classic cluster in your Virtual Private Cloud (VPC). When you log in to your {{site.data.keyword.cloud_notm}} account, target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group.
-{: shortdesc}
-
-Free clusters are not available in VPC.
-{: note}
-
-```
-ibmcloud oc cluster create vpc-classic --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--kube-version MAJOR.MINOR.PATCH --workers NUMBER_WORKERS_PER_ZONE] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [-s]
-```
-{: pre}
-
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute. To create a classic cluster, use the [`ibmcloud oc cluster create classic` command](#cs_cluster_create) instead.
-
-**Minimum required permissions**:
-* [**Administrator** platform role for VPC Infrastructure](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
-* [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}} at the account level.
-* [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}.
-* [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for Container Registry at the account level.
-
-**Command options**
-
-<dl>
-<dt><code>--name <em>NAME</em></code></dt>
-<dd>The name for the cluster. This value is required. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
-</dd>
-
-<dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Select a zone to deploy the initial cluster worker pool in. If you create the cluster in a multizone metro, you can add a zone to the worker pool later. This value is required. To list available VPC zones, run `ibmcloud oc zone ls --provider vpc-classic`.</p>
-
-<p class="note">When you select a zone that is located outside your country, keep in mind that you might require legal authorization before data can be physically stored in a foreign country.</p>
-</dd>
-
-<dt><code>--vpc-id <em>VPC_ID</em></code></dt>
-<dd>The ID of the VPC in which to create the cluster and worker nodes. This value is required. To list available IDs, run `ibmcloud is vpcs`.</dd>
-
-<dt><code>--subnet-id <em>VPC_SUBNET_ID</em></code></dt>
-<dd>The VPC subnet to assign the cluster. This value is required. To list available VPC subnets, run `ibmcloud oc subnets --provider vpc-classic`.</dd>
-
-<dt><code>--kube-version <em>MAJOR.MINOR.PATCH</em></code></dt>
-<dd>The OpenShift version for the cluster master node. This value is required. When the version is not specified, the cluster is created with the default supported Kubernetes version. If you do not specify a supported OpenShift version, your cluster is created as a community Kubernetes cluster. To see available versions, run <code>ibmcloud oc versions</code>.
-</dd>
-
-<dt><code>--flavor <em>FLAVOR</em></code></dt>
-<dd>Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a zone, run `ibmcloud oc flavors --zone <vpc_zone>`.</dd>
-
-<dt><code>--workers <em>NUMBER_WORKERS_PER_ZONE</em></code></dt>
-<dd>The number of worker nodes that you want to deploy in your cluster. If you do not specify this option, a cluster with one worker node is created. This value is optional.
-<p class="important">Every worker node is assigned a unique worker node ID and domain name that must not be manually changed after the cluster is created. Changing the ID or domain name prevents the Kubernetes master from managing your cluster.</p></dd>
-
-
-<dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
-<dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-
-</dl>
-
-**Example**:
-```
-ibmcloud oc cluster create vpc-classic --name mycluster --kube-version 3.11_openshift --zone us-east-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor b2.4x16 --workers 3
-```
-{: pre}
-
 </br>
-</roks311-vpc>
 
 ### `ibmcloud oc cluster feature disable public-service-endpoint`
 {: #cs_cluster_feature_disable}
@@ -658,11 +480,7 @@ Disable the public service endpoint for a cluster.
 ```
 ibmcloud oc cluster feature disable public-service-endpoint --cluster CLUSTER [-s] [-f]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -692,8 +510,6 @@ ibmcloud oc cluster feature disable public-service-endpoint --cluster my_cluster
 Enable a feature on an existing cluster. This command must be combined with one of the following subcommands for the feature that you want to enable.
 {: shortdesc}
 
-<roks311-vpc><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> These commands work for both classic and VPC clusters.</roks311-vpc>
-
 #### `ibmcloud oc cluster feature enable private-service-endpoint`
 {: #cs_cluster_feature_enable_private_service_endpoint}
 
@@ -710,9 +526,7 @@ To run this command:
 ```
 ibmcloud oc cluster feature enable private-service-endpoint --cluster CLUSTER [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. The private service endpoint is permanently enabled by default for VPC clusters.</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -745,11 +559,7 @@ After you run this command, you must refresh the API server to use the service e
 ```
 ibmcloud oc cluster feature enable public-service-endpoint --cluster CLUSTER [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -782,11 +592,7 @@ View the details of a cluster.
 ```
 ibmcloud oc cluster get --cluster CLUSTER [--show-resources] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -822,26 +628,20 @@ List all clusters in your {{site.data.keyword.cloud_notm}} account.
 Clusters in all locations are returned. To filter clusters by a specific location, include the `--location` flag. For example, if you filter clusters for the `dal` metro, multizone clusters in that metro and single-zone clusters in data centers (zones) within that metro are returned. If you filter clusters for the `dal10` data center (zone), multizone clusters that have a worker node in that zone and single-zone clusters in that zone are returned. You can pass one location or a comma-separated list of locations.
 
 ```
-ibmcloud oc cluster ls <roks311-vpc>[--provider classic|vpc-classic] </roks311-vpc>[--location LOCATION] [--json] [-s]
+ibmcloud oc cluster ls [--location LOCATION] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 **Command options**:
-<dl><roks311-vpc>
-<dt><code>--provider <em>classic|vpc-classic</em></code></dt>
-<dd>Optional: Filter output based on provider type.</dd></roks311-vpc>
+<dl>
 
 <dt><code>-l, --location <em>LOCATION</em></code></dt>
 <dd>Filter output by a specific location. To see supported locations, run <code>ibmcloud oc supported-locations</code>. To specify multiple locations, use one flag for each location, such as `-l dal -l seo`.</dd>
 
 <dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional..<roks311-vpc> **Note**: To use this flag, you must also specify the provider type in the `--provider` flag.</roks311-vpc></dd>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -867,11 +667,7 @@ The `apiserver-refresh` and `cluster-refresh` aliases for this command are depre
 ```
 ibmcloud oc cluster master refresh --cluster CLUSTER [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -900,11 +696,7 @@ The `cluster-update` alias for this command is deprecated.
 ```
 ibmcloud oc cluster master update --cluster CLUSTER [--kube-version MAJOR.MINOR.PATCH] [--force-update] [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -949,11 +741,7 @@ For more information, see [Understanding how your cluster is authorized to pull 
 ```
 ibmcloud oc cluster pull-secret apply --cluster CLUSTER
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**:
 *  **Operator or Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
@@ -977,11 +765,7 @@ Delete a cluster. All worker nodes, apps, and containers are permanently deleted
 ```
 ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [--skip-advance-permissions-check] [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1022,11 +806,7 @@ To view available {{site.data.keyword.cloud_notm}} services from the {{site.data
 ```
 ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE [--key SERVICE_INSTANCE_KEY] [--role IAM_SERVICE_ROLE] --service SERVICE_INSTANCE [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}} and **Developer** Cloud Foundry role
 
@@ -1069,11 +849,7 @@ List the services that are bound to one or all of the Kubernetes namespace in a 
 ```
 ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPACE] [--all-namespaces] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1115,11 +891,7 @@ When you remove an {{site.data.keyword.cloud_notm}} service, the service credent
 ```
 ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE --service SERVICE_INSTANCE [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}} and **Developer** Cloud Foundry role
 
@@ -1158,9 +930,7 @@ Make an existing portable public or private classic subnet in your IBM Cloud inf
 ```
 ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id SUBNET [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1197,9 +967,7 @@ Create a portable classic subnet in an IBM Cloud infrastructure account on your 
 ```
 ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN_ID [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1235,9 +1003,7 @@ Detach a public or private portable subnet in an IBM Cloud infrastructure accoun
 ```
 ibmcloud oc cluster subnet detach --cluster CLUSTER --subent-id SUBNET_ID [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1278,9 +1044,7 @@ This private subnet is not one provided by IBM Cloud infrastructure. As such, yo
 ```
 ibmcloud oc cluster user-subnet add --cluster CLUSTER --subnet-cidr SUBNET_CIDR --private-vlan PRIVATE_VLAN
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1313,9 +1077,7 @@ Remove your own private subnet from a specified cluster. Any service that was de
 ```
 ibmcloud oc cluster user-subnet rm --cluster CLUSTER --subnet-cidr SUBNET_CIDR --private-vlan PRIVATE_VLAN
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1352,17 +1114,13 @@ View and modify worker nodes for a cluster.
 Add stand-alone worker nodes to a cluster.
 {: shortdesc}
 
-This command is deprecated. Create a worker pool by running [`ibmcloud oc worker-pool create classic`](#cs_worker_pool_create)<roks311-vpc> or [`ibmcloud oc worker-pool create vpc-classic](#cli_worker_pool_create_vpc_classic)</roks311-vpc>, or add workers to an existing worker pool by running [`ibmcloud oc worker-pool resize`](#cs_worker_pool_resize).
+This command is deprecated. Create a worker pool by running [`ibmcloud oc worker-pool create classic`](#cs_worker_pool_create), or add workers to an existing worker pool by running [`ibmcloud oc worker-pool resize`](#cs_worker_pool_resize).
 {: deprecated}
 
 ```
 ibmcloud oc worker add --cluster CLUSTER [--file FILE_LOCATION] [--hardware HARDWARE] --machine-type FLAVOR --workers NUMBER --private-vlan PRIVATE_VLAN --public-vlan PUBLIC_VLAN [--disable-disk-encrypt] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1425,11 +1183,7 @@ View the details of a worker node.
 ```
 ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1465,11 +1219,7 @@ List all worker nodes in a cluster.
 ```
 ibmcloud oc worker ls --cluster CLUSTER [--worker-pool POOL] [--show-pools] [--show-deleted] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1558,11 +1308,7 @@ Before you reboot your worker node, make sure that pods are rescheduled on other
 ```
 ibmcloud oc worker reboot [--hard] --cluster CLUSTER --worker WORKER_ID [--skip-master-healthcheck] [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1646,9 +1392,7 @@ Before you reload your worker node, make sure that pods are rescheduled on other
 ```
 ibmcloud oc worker reload --cluster CLUSTER --worker WORKER_ID [--skip-master-healthcheck] [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To reload a worker node in a VPC Gen 1 compute cluster, use the [`ibmcloud oc worker replace` command](#cli_worker_replace) instead.</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1733,11 +1477,7 @@ Before you replace your worker node, make sure that pods are rescheduled on othe
 ```
 ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--update] [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
@@ -1815,11 +1555,7 @@ Before you remove your worker node, make sure that pods are rescheduled on other
 ```
 ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1860,9 +1596,7 @@ You might need to change your YAML files for deployments before you update. Revi
 ```
 ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To update a worker node in a VPC Gen 1 compute cluster, use the [`ibmcloud oc worker replace` command](#cli_worker_replace) instead.</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1905,9 +1639,7 @@ You can create a worker pool in your cluster. When you add a worker pool, it is 
 ```
 ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --machine-type FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [-s] [--json]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To create a worker pool in a VPC Gen 1 compute cluster, use the [`ibmcloud oc worker-pool create vpc-classic` command](#cli_worker_pool_create_vpc_classic) instead.</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1947,60 +1679,7 @@ ibmcloud oc worker-pool create classic --name my_pool --cluster my_cluster --mac
 ```
 {: pre}
 
-</br><roks311-vpc>
-
-### `ibmcloud oc worker-pool create vpc-classic`
-{: #cli_worker_pool_create_vpc_classic}
-
-Add a worker pool to a VPC Gen 1 compute cluster. No worker nodes are created until you [add zones](#cli_zone-add-vpc-classic) to the worker pool.
-{: shortdesc}
-
-```
-ibmcloud oc worker-pool create vpc-classic --name <worker pool name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [-s] [--json]
-```
-{: pre}
-
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute. To create a worker pool in a classic cluster, use the [`ibmcloud oc worker-pool create classic` command](#cs_worker_pool_create) instead.
-
-**Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}.
-
-**Command options**
-
-<dl>
-<dt><code>--name <em>NAME</em></code></dt>
-<dd>Set the name for the worker pool. This value is required.</dd>
-
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>Specify the name or ID of the cluster. To list VPC clusters, run `ibmcloud oc cluster ls --provider vpc-classic`. This value is required.</dd>
-
-<dt><code>--size-per-zone <em>NUMBER_WORKERS_PER_ZONE</em></code></dt>
-<dd>Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-classic) to the worker pool. This value is required, and must be 1 or greater.</dd>
-
-<dt><code>--flavor <em>FLAVOR</em></code></dt>
-<dd>Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a VPC zone, run `ibmcloud oc flavors --zone <vpc_zone>`.</dd>
-
-<dt><code>--vpc-id <em>VPC_ID</em></code></dt>
-<dd>Specify the ID of the VPC in which to create the worker pool's worker nodes. The value must match the VPC ID that the cluster is is. To list the cluster's VPC ID, run `ibmcloud oc cluster get -c <cluster_name_or_ID>`. This value is optional. If this flag is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.</dd>
-
-<dt><code>-l, --label <em>KEY1=VALUE1</em></code></dt>
-<dd>Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`. This value is optional.</ul></dd>
-
-<dt><code>-s</code>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-
-<dt><code>--json</code>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-</dl>
-
-**Example**:
-```
-ibmcloud oc worker-pool create vpc-classic --name my_pool --cluster my_cluster --flavor b2.4x16 --size-per-zone 3
-```
-{: pre}
-
 </br>
-</roks311-vpc>
 
 ### `ibmcloud oc worker-pool get`
 {: #cs_worker_pool_get}
@@ -2011,11 +1690,7 @@ View the details of a worker pool.
 ```
 ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2051,11 +1726,7 @@ List all worker pools in a cluster.
 ```
 ibmcloud oc worker-pool ls --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2088,11 +1759,7 @@ Rebalance a worker pool in a cluster after you delete a worker node. When you ru
 ```
 ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool WORKER_POOL [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2124,11 +1791,7 @@ Resize your worker pool to increase or decrease the number of worker nodes that 
 ```
 ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --size-per-zone WORKERS_PER_ZONE [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2165,11 +1828,7 @@ Remove a worker pool from your cluster. All worker nodes in the pool are deleted
 ```
 ibmcloud oc worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-s] [-f]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2205,11 +1864,7 @@ View the zones attached to a worker pool.
 ```
 ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-s] [-f]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2249,9 +1904,7 @@ After you create a cluster or worker pool, you can add a zone. When you add a zo
 ```
 ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--private-only] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To add a zone to worker pools in a VPC Gen 1 compute cluster, use the [`ibmcloud oc zone add vpc-classic` command](#cli_zone-add-vpc-classic) instead.</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2293,61 +1946,13 @@ ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -w pool1 -w pool2
 ```
 {: pre}
 
-</br><roks311-vpc>
-
-### `ibmcloud oc zone add vpc-classic`
-{: #cli_zone-add-vpc-classic}
-
-After you create a cluster or worker pool, you can add a zone. When you add a zone, worker nodes are added to the new zone to match the number of workers per zone that you specified for the worker pool. You can add more than one zone only if your cluster is in a multizone metro.
-{: shortdesc}
-
-```
-ibmcloud oc zone add vpc-classic --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CLUSTER --worker-pool WORKER_POOL [--json] [-s]
-```
-{: pre}
-
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute. To add a zone to worker pools in a classic cluster, use the [`ibmcloud oc zone add classic` command](#cs_zone_add) instead.
-
-**Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>--zone <em>ZONE</em></code></dt>
-<dd>The zone that you want to add. It must be a VPC zone within the cluster's region. To see available VPC zones, run `ibmcloud oc zone ls --provider vpc-classic`. This value is required.</dd>
-
-<dt><code>--subnet-id <em>SUBNET_ID</em></code></dt>
-<dd>The ID of the subnet that you want to add. The VPC subnet must be within the `zone` that you specify. To see available VPC subnets, run `ibmcloud oc subnets --provider vpc-classic --vpc-id <vpc> --zone <vpc_zone>`. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so use a VPC subnet with enough IP addresses, such as 256. This value is required.</dd>
-
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. To list VPC clusters, run `ibmcloud oc cluster ls --provider vpc-classic`. This value is required.</dd>
-
-<dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
-<dd>The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc zone add vpc-classic --zone us-south-3 --cluster my_cluster -w pool1 -w pool2
-```
-{: pre}
-
 </br>
-</roks311-vpc>
-
 
 ### `ibmcloud oc zone ls`
 {: #cs_datacenters}
 
 View a list of available zones that you can create a cluster in.
 {: shortdesc}
-
-<roks311-vpc><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This command works for both classic and VPC clusters.</roks311-vpc>
 
 The `locations` alias for this command is deprecated.
 {: deprecated}
@@ -2394,9 +1999,7 @@ ibmcloud oc zone ls -l ap
 ```
 ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--private-only] [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2460,11 +2063,7 @@ Before you remove a zone, make sure that you have enough worker nodes in other z
 ```
 ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [-f] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2511,11 +2110,7 @@ When you update the major or minor Kubernetes version of your cluster, IBM autom
 ```
 ibmcloud oc alb autoupdate disable --cluster CLUSTER [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2547,11 +2142,7 @@ If automatic updates for the Ingress ALB add-on are disabled, you can re-enable 
 ```
 ibmcloud oc alb autoupdate enable --cluster CLUSTER [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2575,11 +2166,7 @@ Check whether automatic updates for the Ingress ALB add-on are enabled and wheth
 ```
 ibmcloud oc alb autoupdate get --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2613,11 +2200,7 @@ To stay within the [rate limits](https://cloud.ibm.com/apidocs/certificate-manag
 ```
 ibmcloud oc alb cert deploy [--update] --cluster CLUSTER --secret-name SECRET_NAME --cert-crn CERTIFICATE_CRN [--update] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2665,11 +2248,7 @@ If you imported a certificate from {{site.data.keyword.cloudcerts_short}} to the
 ```
 ibmcloud oc alb cert get --cluster CLUSTER [--secret-name SECRET_NAME] [--cert-crn CERTIFICATE_CRN] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2717,11 +2296,7 @@ List the certificates that you imported from your {{site.data.keyword.cloudcerts
 ```
 ibmcloud oc alb cert ls --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2758,11 +2333,7 @@ To stay within the [rate limits](https://cloud.ibm.com/apidocs/certificate-manag
 ```
 ibmcloud oc alb cert rm --cluster CLUSTER [--secret-name SECRET_NAME] [--cert-crn CERTIFICATE_CRN] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2814,9 +2385,7 @@ You can use this command to:
 ```
 ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip USER_IP]|--disable-deployment) [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. For VPC Gen 1 compute clusters, use the [`ibmcloud oc alb configure vpc-classic` command](#cli_alb_configure_vpc_classic) instead.</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2861,62 +2430,49 @@ ibmcloud oc alb configure classic --alb-id public-cr18a61a63a6a94b658596aa93a087
 ```
 {: pre}
 
-</br><roks311-vpc>
+</br>
 
-### ibmcloud oc alb configure vpc-classic
-{: #cli_alb_configure_vpc_classic}
+### `ibmcloud oc alb create classic`
+{: #cs_alb_create}
 
-Enable or disable an ALB in a VPC Gen 1 compute cluster.
+Create a public or private ALB in a zone. The ALB that you create is enabled by default.
 {: shortdesc}
 
-You can use this command to:
-* Enable a default private ALB. When you create a cluster, a default private ALB is created for you in each zone where you have worker nodes, but the default private ALBs are not enabled. However, all default public ALBs are automatically enabled.
-* Enable an ALB that you previously disabled.
-* Disable an ALB.
-* Disable the IBM-provided ALB deployment so that you can deploy your own Ingress controller and leverage the IBM-provided Ingress subdomain for your cluster.
-
 ```
-ibmcloud oc alb configure vpc-classic --alb-id ALB_ID --enable|--disable|--disable-deployment [-s]
+ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZONE --vlan VLAN_ID [--user-ip IP] [-s]
 ```
 {: pre}
-
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute. For classic clusters, use the [`ibmcloud oc alb configure classic` command](#cs_alb_configure) instead.
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 **Command options**:
 <dl>
-<dt><code>--alb-id <em>ALB_ID</em></code></dt>
-<dd>The ID for an ALB. To view the IDs for the ALBs in a cluster, run <code>ibmcloud oc alb ls --cluster <em>CLUSTER</em></code>. This value is required.</dd>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster.</dd>
 
-<dt><code>--enable</code></dt>
-<dd>Include this flag to enable an ALB in a cluster.</dd>
+<dt><code>--type<em> PUBLIC|PRIVATE</em></code></dt>
+<dd>The type of ALB: <code>public</code> or <code>private</code>.</dd>
 
-<dt><code>--disable</code></dt>
-<dd>Include this flag to disable an ALB in a cluster.<p class="note">Before you disable an ALB in a cluster that is connected to a public VLAN, first verify that your Ingress subdomain is fully created by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If you disable your ALBs before the Ingress subdomain is created, your cluster's DNS subdomain generation process is interrupted, and you cannot later use `nlb-dns` commands to create subdomains for load balancers.</p></dd>
+<dt><code>--zone <em>ZONE</em></code></dt>
+<dd>The zone to create the ALB in.</dd>
 
-<dt><code>--disable-deployment</code></dt>
-<dd>Include this flag to disable the IBM-provided ALB deployment. This flag doesn't remove the DNS registration for the IBM-provided Ingress subdomain or the load balancer service that is used to expose the Ingress controller.</dd>
+<dt><code>--vlan <em>VLAN_ID</em></code></dt>
+<dd>The ID of the VLAN to create the ALB on. This VLAN must match the ALB <code>type</code> and must be in the same <code>zone</code> as the ALB that you want to create.</dd>
+
+<dt><code>--user-ip <em>IP</em></code></dt>
+<dd>Optional: An IP address to assign to the ALB. This IP must be on the <code>vlan</code> that you specified and must be in the same <code>zone</code> as the ALB that you want to create. This IP address must not be in use by another load balancer or ALB in the cluster.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
-**Examples**:
-
-Example for enabling an ALB:
+**Example**:
 ```
-ibmcloud oc alb configure vpc-classic --alb-id private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --enable
+ibmcloud oc alb create classic --cluster mycluster --type public --zone dal10 --vlan 2234945 --user-ip 1.1.1.1
 ```
 {: pre}
 
-Example for disabling an ALB:
-```
-ibmcloud oc alb configure vpc-classic --alb-id public-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --disable
-```
-{: pre}
-
-</br></roks311-vpc>
+</br>
 
 ### `ibmcloud oc alb get`
 {: #cs_alb_get}
@@ -2927,11 +2483,7 @@ View the details of an Ingress ALB in a cluster.
 ```
 ibmcloud oc alb get --alb-id ALB_ID [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2967,11 +2519,7 @@ If no ALB IDs are returned, then the cluster does not have a portable subnet. Yo
 ```
 ibmcloud oc alb ls --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3006,11 +2554,7 @@ After you roll back an update, automatic updates for ALB pods are disabled. To r
 ```
 ibmcloud oc alb rollback --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3037,11 +2581,7 @@ List Ingress ALB types that are supported.
 ```
 ibmcloud oc alb types [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3069,11 +2609,7 @@ When you update the major or minor Kubernetes version of your cluster, IBM autom
 ```
 ibmcloud oc alb update --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3110,11 +2646,7 @@ Do not delete root keys in your KMS instance, even if you rotate to use a new ke
 ```
 ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
 
@@ -3148,11 +2680,7 @@ Do not delete root keys in your KMS instance, even if you rotate to use a new ke
 ```
 ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3186,11 +2714,7 @@ List available [key management service (KMS) instances](/docs/openshift?topic=op
 ```
 ibmcloud oc kms instance ls [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
 
@@ -3224,8 +2748,6 @@ Forward logs from your cluster to an external server.
 Disable automatic updates of all Fluentd pods in a cluster.
 {: shortdesc}
 
-<roks311-vpc><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This command works for both classic and VPC clusters.</roks311-vpc>
-
 Disable automatic updates of your Fluentd pods in a specific cluster. When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Fluentd configmap, but does not change the build version of your Fluentd for logging add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your add-on images.
 
 ```
@@ -3250,8 +2772,6 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER [-s]
 Enable automatic updates for your Fluentd pods in a specific cluster. Fluentd pods are automatically updated when a new build version is available.
 {: shortdesc}
 
-<roks311-vpc><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This command works for both classic and VPC clusters.</roks311-vpc>
-
 ```
 ibmcloud oc logging autoupdate enable --cluster CLUSTER [-s]
 ```
@@ -3273,8 +2793,6 @@ ibmcloud oc logging autoupdate enable --cluster CLUSTER [-s]
 
 View whether your Fluentd pods are set to automatically update in a cluster.
 {: shortdesc}
-
-<roks311-vpc><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This command works for both classic and VPC clusters.</roks311-vpc>
 
 ```
 ibmcloud oc logging autoupdate get --cluster CLUSTER [--json] [-s]
@@ -3304,11 +2822,7 @@ Make a request for a snapshot of your logs at a specific point in time and then 
 ```
 ibmcloud oc logging collect --cluster CLUSTER --cos-bucket BUCKET_NAME --cos-endpoint ENDPOINT --hmac-key-id HMAC_KEY_ID --hmac-key HMAC_KEY --type LOG_TYPE [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3353,11 +2867,7 @@ Check the status of the log collection snapshot request for your cluster.
 ```
 ibmcloud oc logging collect-status --cluster CLUSTER [--json]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3386,11 +2896,7 @@ Create a logging configuration. You can use this command to forward logs for con
 ```
 ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --type syslog [--namespace KUBERNETES_NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-containers CONTAINERS] [--app-paths PATHS_TO_LOGS] [--syslog-protocol PROTOCOL] [--skip-validation] [--force-update] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster
 
@@ -3467,11 +2973,7 @@ View all log forwarding configurations for a cluster, or filter logging configur
 ```
 ibmcloud oc logging config get --cluster CLUSTER [--logsource LOG_SOURCE] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3510,11 +3012,7 @@ Delete one log forwarding configuration or all logging configurations for a clus
 ```
 ibmcloud oc logging config rm --cluster CLUSTER (--namespace NAMESPACE --id LOG_CONFIG_ID] [--all] [--force-update] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster
 
@@ -3556,11 +3054,7 @@ Update the details of a log forwarding configuration.
 ```
 ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LOG_TYPE  [--namespace NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-paths PATH] [--app-containers PATH] [--json] [--skipValidation] [--force-update] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3634,11 +3128,7 @@ Filter out logs that are forwarded by your logging configuration.
 ```
 ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-config CONFIG] [--namespace KUBERNETES_NAMESPACE] [--container CONTAINER_NAME] [--level LOGGING_LEVEL] [--message MESSAGE] [--regex-message MESSAGE] [--force-update] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3703,11 +3193,7 @@ View a logging filter configuration.
 ```
 ibmcloud oc logging filter get --cluster CLUSTER [--id FILTER_ID] [--show-matching-configs] [--show-covering-filters] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3749,11 +3235,7 @@ Delete a logging filter.
 ```
 ibmcloud oc logging filter rm --cluster CLUSTER [--id FILTER_ID] [--all] [--force-update] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3792,11 +3274,7 @@ Update a logging filter.
 ```
 ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TYPE [--logging-config CONFIG] [--namespace KUBERNETES_NAMESPACE] [--container CONTAINER_NAME] [--level LOGGING_LEVEL] [--message MESSAGE] [--regex-message MESSAGE] [--force-update] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3866,11 +3344,7 @@ The `logging config refresh` alias for this command is deprecated.
 
 ```
 ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-s]
-```<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+```
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3912,9 +3386,7 @@ For example, in a multizone cluster, you might create an NLB in each zone to exp
 ```
 ibmcloud oc nlb-dns add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_IP ...] --nlb-host SUBDOMAIN [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3953,9 +3425,7 @@ Publicly expose your app by creating a DNS subdomain to register a network load 
 ```
 ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] [--type public] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. For VPC clusters, see [`ibmcloud oc nlb-dns create vpc-classic`](#cs_nlb-dns-create-vpc).</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3986,57 +3456,7 @@ ibmcloud oc nlb-dns create classic --cluster mycluster --ip 1.1.1.1
 ```
 {: pre}
 
-</br><roks311-vpc>
-
-### `ibmcloud oc nlb-dns create vpc-classic`
-{: #cs_nlb-dns-create-vpc}
-
-Create a DNS entry for a VPC load balancer hostname.
-{: shortdesc}
-
-When you create a VPC load balancer, the load balancer is assigned a hostname instead of an external IP address. Additionally, a default public VPC load balancer provides a hostname for all public ALBs in your cluster, and a default private VPC load balancer provides a hostname for all private ALBs in your cluster. If you created a VPC load balancer, you can use this hostname to access you app directly. If you use Ingress, you can specify this hostname in your Ingress resource files to register your app with Ingress.
-
-However, this VPC load balancer hostname does not support TLS termination. If you want an SSL certificate for your app domain, you can use the `ibmcloud oc nlb-dns create vpc-classic` command to create a DNS subdomain for the VPC load balancer hostname. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you. Note that in VPC clusters, you can create subdomains for both public and private VPC load balancers.
-
-You can also use this command to create a DNS entry for the hostname for your private ALBs, which is a required step for setting up a private Ingress service in a VPC cluster. For more information, see the [private Ingress setup documentation](/docs/openshift?topic=openshift-ingress#vpc_private_3).</br>
-
-```
-ibmcloud oc nlb-dns create vpc-classic --cluster CLUSTER --lb-host VPC_LB_HOSTNAME [--secret-namespace NAMESPACE] [--type (public|private)] [--json] [-s]
-```
-{: pre}
-
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute. For classic clusters, see [`ibmcloud oc nlb-dns create classic`](#cs_nlb-dns-create).
-
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--lb-host <em>VPC_LB_HOSTNAME</em></code></dt>
-<dd>The VPC load balancer hostname. To see VPC load balancer hostnames, run `oc get svc -o wide`.</dd>
-
-<dt><code>--secret-namespace <em>NAMESPACE</em></code></dt>
-<dd>The Kubernetes namespace where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a namespace, the secret is automatically created in the <code>default</code> namespace.</dd>
-
-<dt><code>--type <em>(public|private)</em></code></dt>
-<dd>The subdomain type. </dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc nlb-dns create vpc-classic --cluster mycluster --lb-host 1234abcd-us-south.lb.appdomain.cloud
-```
-{: pre}
-
-</br></roks311-vpc>
+</br>
 
 ### `ibmcloud oc nlb-dns ls`
 {: #cs_nlb-dns-ls}
@@ -4047,11 +3467,7 @@ In a classic cluster, list the network load balancer (NLB) IP addresses that are
 ```
 ibmcloud oc nlb-dns ls --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4073,48 +3489,7 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 ```
 {: pre}
 
-</br><roks311-vpc>
-
-### `ibmcloud oc nlb-dns replace`
-{: #cs_nlb-dns-replace}
-
-Replace the load balancer hostname that is registered with a DNS subdomain. For example, if you create a new VPC load balancer for your app, but you do not want to create a new DNS subdomain through which users can access your app, you can simply replace the hostname of the old load balancer with the hostname of the new load balancer.
-{: shortdesc}
-
-```
-ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host NEW_LB_HOSTNAME --nlb-subdomain SUBDOMAIN [--json] [-s]
-```
-{: pre}
-
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute
-
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--lb-host <em>NEW_LB_HOSTNAME</em></code></dt>
-<dd>The hostname of the new VPC load balancer to update the subdomain with. To see VPC load balancer hostnames, run `oc get svc -o wide`.</dd>
-
-<dt><code>nlb-subdomain <em>SUBDOMAIN</em></code></dt>
-<dd>The DNS subdomain that you want to replace the load balancer hostname for. To see existing subdomains, run `ibmcloud oc nlb-dns ls --cluster <cluster>`.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc nlb-dns replace --cluster mycluster --lb-host 1234abcd-us-south.lb.appdomain.cloud nlb-subdomain mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
-```
-{: pre}
-
-</br></roks311-vpc>
+</br>
 
 ### `ibmcloud oc nlb-dns rm classic`
 {: #cs_nlb-dns-rm}
@@ -4125,9 +3500,7 @@ Remove a network load balancer (NLB) IP address from a subdomain. If you remove 
 ```
 ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. For VPC clusters, see [`ibmcloud oc nlb-dns rm vpc-classic`](#cs_nlb-dns-rm-vpc).</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4155,45 +3528,7 @@ ibmcloud oc nlb-dns rm classic --cluster mycluster --ip 1.1.1.1 --nlb-host myclu
 ```
 {: pre}
 
-</br><roks311-vpc>
-
-### `ibmcloud oc nlb-dns rm vpc-classic`
-{: #cs_nlb-dns-rm-vpc}
-
-Remove the VPC load balancer hostname that is registered with a DNS subdomain. After you remove the hostname, the DNS subdomain still exists, but no VPC load balancer is registered with it.
-{: shortdesc}
-
-```
-ibmcloud oc nlb-dns rm vpc-classic --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--json] [-s]
-```
-{: pre}
-
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute. For classic clusters, see [`ibmcloud oc nlb-dns rm classic`](#cs_nlb-dns-rm).
-
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--nlb-subdomain <em>SUBDOMAIN</em></code></dt>
-<dd>The subdomain that you want to remove the VPC load balancer hostname from. To see existing subdomains, run `ibmcloud oc nlb-dns ls --cluster <cluster>`.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc nlb-dns rm vpc-classic --cluster mycluster --nlb-subdomain mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
-```
-{: pre}
-
-</br></roks311-vpc>
+</br>
 
 ### `ibmcloud oc nlb-dns monitor configure`
 {: #cs_nlb-dns-monitor-configure}
@@ -4206,9 +3541,7 @@ You can use this command to create and enable a new health check monitor, or to 
 ```
 ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--enable] [--desc DESCRIPTION] [--type TYPE] [--method METHOD] [--path PATH] [--timeout TIMEOUT] [--retries RETRIES] [--interval INTERVAL] [--port PORT] [--header HEADER] [--expected-body BODY STRING] [--expected-codes HTTP CODES] [--follows-redirects TRUE] [--allows-insecure TRUE] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4285,9 +3618,7 @@ Disable an existing health check monitor for a subdomain in a cluster.
 ```
 ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4324,9 +3655,7 @@ The first time that you create a health check monitor, you must configure and en
 ```
 ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host SUBDOMAIN [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4362,9 +3691,7 @@ View the settings for an existing health check monitor.
 ```
 ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host SUBDOMAIN [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4399,9 +3726,7 @@ List the health check monitor settings for each NLB subdomain in a cluster.
 ```
 ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4434,9 +3759,7 @@ List the health check status for the IPs behind NLB subdomains in a cluster.
 ```
 ibmcloud oc nlb-dns monitor status --cluster CLUSTER [--nlb-host SUBDOMAIN] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4475,11 +3798,7 @@ Register a webhook.
 ```
 ibmcloud oc webhook-create --cluster CLUSTER --level LEVEL --type slack --url URL  [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4533,11 +3852,7 @@ If you find that you need to update the API key that is stored for a resource gr
 ```
 ibmcloud oc api-key info --cluster CLUSTER [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4576,11 +3891,7 @@ Before you use this command, make sure that the user who executes this command h
 ```
 ibmcloud oc api-key reset --region REGION [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4608,8 +3919,6 @@ ibmcloud oc api-key reset --region us-south
 Set and unset credentials that allow you to access the IBM Cloud infrastructure portfolio through your IBM Cloud account.
 {: shortdesc}
 
-<roks311-vpc><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You can manually set infrastructure credentials to a different account only for classic clusters, not for VPC Gen 1 compute clusters.</roks311-vpc>
-
 ### `ibmcloud oc credential get`
 {: #cs_credential_get}
 
@@ -4619,9 +3928,7 @@ If you set up your {{site.data.keyword.cloud_notm}} account to use different cre
 ```
 ibmcloud oc credential get --region REGION [-s] [--json]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4663,9 +3970,7 @@ Before you use this command, make sure that the user whose credentials are used 
 ```
 ibmcloud oc credential set --infrastructure-api-key API_KEY --infrastructure-username USERNAME --region REGION [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4703,9 +4008,7 @@ After you remove the credentials, the [{{site.data.keyword.cloud_notm}} IAM API 
 ```
 ibmcloud oc credential unset --region REGION [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4757,9 +4060,7 @@ After infrastructure credentials are set up, you can control what actions your u
 ```
 ibmcloud oc infra-permissions get --region REGION [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4814,26 +4115,14 @@ List available subnets in your IBM Cloud infrastructure account.
 {: shortdesc}
 
 ```
-ibmcloud oc subnets <roks311-vpc>[--provider (CLASSIC|VPC-CLASSIC)] [--vpc-id <VPC_ID> --zone <VPC_ZONE>] </roks311-vpc>[--location LOCATION] [--json] [-s]
+ibmcloud oc subnets [--location LOCATION] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 **Command options**:
-<dl><roks311-vpc>
-<dt><code>--provider <em>CLASSIC|VPC-CLASSIC</em></code></dt>
-<dd>The provider type to list subnets for. Supported values are `classic` (default) or `vpc-classic`. This flag is required to list VPC subnets.</dd>
-
-<dt><code>--vpc-id <em>VPC_ID</em></code></dt>
-<dd>The ID of the VPC to list subnets for. This flag is required when you specify the `vpc-classic` provider type. To list VPC IDs, run `ibmcloud oc vpcs`.</dd>
-
-<dt><code>--zone <em>VPC_ZONE</em></code></dt>
-<dd>The zone to list VPC subnets for. This flag is required when you specify the `vpc-classic` provider type. To list available VPC zones, run `ibmcloud oc zone ls --provider vpc-classic`.</dd></roks311-vpc>
+<dl>
 
 <dt><code>-l, --location <em>LOCATION</em></code></dt>
 <dd>Filter output by a specific location. To see supported locations, run <code>ibmcloud oc supported-locations</code>. To specify multiple locations, use one flag for each location, such as `-l dal -l seo`.</dd>
@@ -4859,8 +4148,6 @@ ibmcloud oc subnets -l ams03 -l wdc -l ap
 List public and private VLANs for a zone and view the VLAN spanning status.
 {: shortdesc}
 
-<roks311-vpc><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This group of commands is for classic clusters only.</roks311-vpc>
-
 ### `ibmcloud oc vlan ls`
 {: #cs_vlans}
 
@@ -4870,9 +4157,7 @@ List the public and private VLANs that are available for a zone in your classic 
 ```
 ibmcloud oc vlan ls --zone ZONE [--all] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**:
 * To view the VLANs that the cluster is connected to in a zone: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
@@ -4913,9 +4198,7 @@ The VLAN spanning option is disabled for clusters that are created in a VRF-enab
 ```
 ibmcloud oc vlan spanning get --region REGION [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4939,46 +4222,6 @@ ibmcloud oc vlan spanning get --region us-south
 
 <br />
 
-
-<roks311-vpc>
-## `vpcs` command
-{: #cs_vpcs}
-
-List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.
-{: shortdesc}
-
-```
-ibmcloud oc vpcs [--provider vpc-classic] [--json] [-s]
-```
-{: pre}
-
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute
-
-**Minimum required permissions**:
-* **Viewer** platform role for {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>--provider <em>vpc-classic</em></code></dt>
-<dd>The infrastructure provider type ID for the VPC worker node machine. Currently, `vpc-classic` for VPC Gen 1 compute is supported.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc vpcs
-```
-{: pre}
-
-<br />
-
-</roks311-vpc>
-
 ## `addon-versions` command
 {: #cs_addon_versions}
 
@@ -4988,11 +4231,7 @@ View a list of supported versions for managed add-ons in {{site.data.keyword.con
 ```
 ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 
@@ -5034,38 +4273,21 @@ You can provision your worker node as a virtual machine on shared or dedicated h
 ```
 ibmcloud oc flavors --zone ZONE [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 
 **Command options**:
 <dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Enter the zone where you want to list available flavors. This value is required. To see available zones for classic clusters, run `ibmcloud oc zone ls`.<roks311-vpc> To see available zones for VPC Gen 1 compute clusters, run `ibmcloud oc zone ls --provider vpc-classic`.</roks311-vpc></dd>
+<dd>Enter the zone where you want to list available flavors. This value is required. To see available zones for classic clusters, run `ibmcloud oc zone ls`.</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl><roks311-vpc>
-
-**Example for classic clusters**:
-```
-ibmcloud oc flavors --zone dal10
-```
-{: pre}
-
-**Example for VPC Gen 1 compute clusters**:
-```
-ibmcloud oc flavors --zone us-south-1
-```
-{: pre}
-</roks311-vpc>
+</dl>
 
 <br />
 
@@ -5079,11 +4301,7 @@ View current messages from the {{site.data.keyword.containerlong_notm}} CLI plug
 ```
 ibmcloud oc messages
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 
@@ -5104,11 +4322,7 @@ In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the
 ```
 ibmcloud oc supported-locations [--json]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 
@@ -5133,11 +4347,7 @@ The `kube-versions` alias for this command is deprecated.
 ```
 ibmcloud oc versions [--show-version (KUBERNETES|OPENSHIFT)] [--json] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 
@@ -5184,11 +4394,7 @@ To use the global functionality, you can use the `ibmcloud oc api` command again
 ```
 ibmcloud oc api --endpoint ENDPOINT [--insecure] [--skip-ssl-validation] [--api-version VALUE] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 
@@ -5252,11 +4458,7 @@ To use the global functionality, you can use the `ibmcloud oc init` command agai
 ```
 ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-s]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 
@@ -5313,11 +4515,7 @@ You can work with resources that you have access to in any location, even if you
 ```
 ibmcloud oc region get
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 
@@ -5330,11 +4528,7 @@ List the available regions. The `Region Name` is the {{site.data.keyword.contain
 {: shortdesc}
 
 Region-specific endpoints are deprecated. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
-{: deprecated}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: deprecated}
 
 **Minimum required permissions**: None
 
@@ -5372,11 +4566,7 @@ If you use the `0.2` beta version (deprecated) of the {{site.data.keyword.contai
 ```
 ibmcloud oc region set --region REGION
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 
@@ -5410,11 +4600,7 @@ Rewrite scripts that call kubernetes-service commands. Legacy-structured command
 ```
 ibmcloud oc script update [--in-place] FILE [FILE ...]
 ```
-{: pre}<roks311-vpc>
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute</roks311-vpc>
+{: pre}
 
 **Minimum required permissions**: None
 

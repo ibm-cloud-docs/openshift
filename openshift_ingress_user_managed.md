@@ -31,7 +31,7 @@ Bring your own Ingress controller to run on {{site.data.keyword.cloud_notm}} and
 
 The IBM-provided Ingress application load balancers (ALBs) are based on NGINX controllers that you can configure by using [custom {{site.data.keyword.cloud_notm}} annotations](/docs/openshift?topic=openshift-ingress_annotation). Depending on what your app requires, you might want to configure your own custom Ingress controller. When you bring your own Ingress controller instead of using the IBM-provided Ingress ALB, you are responsible for supplying the controller image, maintaining the controller, updating the controller, and any security-related updates to keep your Ingress controller free from vulnerabilities.
 
-## <roks311-vpc>Classic clusters: </roks311-vpc>Exposing your Ingress controller by creating an NLB and a hostname
+## Exposing your Ingress controller by creating an NLB and a hostname
 {: #user_managed_nlb}
 
 Create a network load balancer (NLB) to expose your custom Ingress controller deployment, and then create a hostname for the NLB IP address. 
@@ -116,114 +116,4 @@ In classic clusters, bringing your own Ingress controller is supported only for 
   ```
   https://<load_balancer_host_name>/<app_path>
   ```
-  {: codeblock}<roks311-vpc>
-
-## VPC clusters: Exposing your Ingress controller by creating a VPC load balancer and subdomain
-{: #user_managed_vpc}
-
-Expose your custom Ingress controller deployment to the public or to the private network by setting up a Kubernetes `LoadBalancer` service in your cluster. A VPC load balancer which routes requests to your app is automatically created for you in your VPC outside of your cluster.
-{: shortdesc}
-
-1. Get the configuration file for your Ingress controller ready. For example, you can use the [cloud-generic NGINX community Ingress controller ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/cloud-generic). If you use the community controller, edit the `kustomization.yaml` file by following these steps.
-  1. Replace the `namespace: ingress-nginx` with `namespace: kube-system`.
-  2. In the `commonLabels` section, replace the `app.kubernetes.io/name: ingress-nginx` and `app.kubernetes.io/part-of: ingress-nginx` labels with one `app: ingress-nginx` label.
-
-2. Deploy your own Ingress controller. For example, to use the cloud-generic NGINX community Ingress controller, run the following command.
-    ```
-    oc apply --kustomize . -n kube-system
-    ```
-    {: pre}
-
-3. Define a Kubernetes `LoadBalancer` service to expose your custom Ingress deployment.
-    ```
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: my-lb-svc
-      annotations:
-        service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: <public_or_private>
-    spec:
-      type: LoadBalancer
-      selector:
-        app: ingress-nginx
-      ports:
-       - protocol: TCP
-         port: 8080
-    ```
-    {: codeblock}
-
-4. Create the Kubernetes `LoadBalancer` service in your cluster.
-    ```
-    oc apply -f my-lb-svc.yaml
-    ```
-    {: pre}
-
-5. Verify that the Kubernetes `LoadBalancer` service is created successfully in your cluster. When the service is created, copy the hostname that is assigned by the VPC load balancer in the **LoadBalancer Ingress** field.
-
-  **The VPC load balancer takes a few minutes to provision in your VPC.** You cannot access the hostname of your Kubernetes `LoadBalancer` service until the VPC load balancer is fully provisioned.
-  {: note}
-  ```
-  oc describe svc myloadbalancer
-  ```
-  {: pre}
-
-  In the following example output, the **LoadBalancer Ingress** hostname is `1234abcd-us-south.lb.appdomain.cloud`:
-  ```
-  Name:                     myloadbalancer
-  Namespace:                default
-  Labels:                   <none>
-  Annotations:              kubectl.kubernetes.io/last-applied-configuration:
-                              {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type":"public"},...
-                            service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
-  Selector:                 run=webserver
-  Type:                     LoadBalancer
-  IP:                       172.21.106.166
-  LoadBalancer Ingress:     1234abcd-us-south.lb.appdomain.cloud
-  Port:                     <unset>  8080/TCP
-  TargetPort:               8080/TCP
-  NodePort:                 <unset>  30532/TCP
-  Endpoints:
-  Session Affinity:         None
-  External Traffic Policy:  Cluster
-  Events:
-    Type    Reason                Age   From                Message
-    ----    ------                ----  ----                -------
-    Normal  EnsuringLoadBalancer  52s   service-controller  Ensuring load balancer
-    Normal  EnsuredLoadBalancer   35s   service-controller  Ensured load balancer
-  ```
-  {: screen}
-
-6. Create a DNS entry for the VPC load balancer hostname by creating a subdomain with an SSL certificate.
-  ```
-  ibmcloud oc nlb-dns create vpc-classic --cluster <cluster_name_or_id> --lb-host <vpc_lb_hostname> --type (public|private)
-  ```
-  {: pre}
-
-7. Verify that the subdomain is created.
-  ```
-  ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
-  ```
-  {: pre}
-
-  Example output:
-  ```
-  Subdomain                                                                               Load Balancer Hostname                        Health Monitor   SSL Cert Status           SSL Cert Secret Name
-  mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     ["1234abcd-us-south.lb.appdomain.cloud"]      None             created                   <certificate>
-  ```
-  {: screen}
-
-8. Deploy any other resources that are required by your custom Ingress controller, such as the configmap.
-
-9. Create Ingress resources for your apps. You can use the Kubernetes documentation to create [an Ingress resource file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/ingress/) and use [annotations ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/).
-  <p class="tip">If you continue to use IBM-provided ALBs concurrently with your custom Ingress controller in one cluster, you can create separate Ingress resources for your IBM ALBs and custom controller. In the [Ingress resource that you create to apply to the IBM ALBs only](/docs/openshift?topic=openshift-ingress#ingress_expose_public), add the annotation <code>kubernetes.io/ingress.class: "iks-nginx"</code>.</p>
-
-10. Access your app by using the subdomain that you created in step 7 and the path that your app listens on that you specified in the Ingress resource file. If you created a subdomain for a private VPC load balancer, you must be [connected to your private VPC network](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-vpn-with-your-vpc) to test access to your subdomain.
-  ```
-  https://<load_balancer_subdomain>/<app_path>
-  ```
-  {: codeblock}</roks311-vpc>
-
-
-
-
-
+  {: codeblock}

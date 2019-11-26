@@ -60,10 +60,7 @@ The public IP address of the worker node is not permanent. When a worker node is
 {: #nodeport_config}
 
 You can expose your app as a Kubernetes NodePort service for free or standard clusters.
-{:shortdesc}<roks311-vpc>
-
-In VPC clusters, you can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection. To access an app from the internet, you must use a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas) or [Ingress](/docs/openshift?topic=openshift-ingress-about) service instead.
-{: note}</roks311-vpc>
+{:shortdesc}
 
 If you do not already have an app ready, you can use a Kubernetes example app called [Guestbook ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml).
 
