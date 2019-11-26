@@ -273,7 +273,7 @@ Red Hat OpenShift on IBM Cloud sets compute resource reserves that limit availab
 
 If less CPU or memory is available than the worker node reserves, Kubernetes starts to evict pods to restore sufficient compute resources . The pods reschedule onto another worker node if a worker node is available. If your pods are evicted frequently, add more worker nodes to your cluster or set [resource limits ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#resource-requests-and-limits-of-pod-and-container) on your pods.
 
-The resources that are reserved on your worker node depend on the amount of CPU and memory that your worker node comes with. Red Hat OpenShift on IBM Cloud defines  CPU and memory tiers as shown in the following tables. If your worker node comes with compute resources in multiple tiers, a percentage of your CPU and memory resources is reserved for each tier.
+The resources that are reserved on your worker node depend on the amount of CPU and memory that your worker node comes with. Red Hat OpenShift on IBM Cloud defines CPU and memory tiers as shown in the following tables. If your worker node comes with compute resources in multiple tiers, a percentage of your CPU and memory resources is reserved for each tier.
 
 To review how much compute resources are currently used on your worker node, run [`oc top node` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#top).
 {: tip}

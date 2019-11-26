@@ -27,7 +27,7 @@ subcollection: openshift
 # Planning your cluster network setup   
 {: #plan_clusters}
 
-Design a network setup for your {[product_name]} cluster that meets the needs of your workloads and environment.
+Design a network setup for your {{site.data.keyword.openshiftlong}} cluster that meets the needs of your workloads and environment.
 {: shortdesc}
 
 First time creating a cluster? First, try out the [tutorial for creating OpenShift clusters](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.

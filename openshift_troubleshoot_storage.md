@@ -184,7 +184,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
    4. Review common errors that can occur when you mount a PVC to your app.
       - [File storage: App cannot access or write to PVC](#file_app_failures)
-      - [Classic Block storage: App cannot access or write to PVC](#block_app_failures)
+      - [Block storage: App cannot access or write to PVC](#block_app_failures)
       - [Object storage: Accessing files with a non-root user fails](#cos_nonroot_access)
 
 

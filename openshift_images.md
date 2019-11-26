@@ -80,7 +80,7 @@ Your app's images must be stored in a container registry that your cluster can a
 ## Verifying the default setup of the internal registry
 {: #storage_internal_registry}
 
-By default, your classic OpenShift cluster's internal registry uses a [Classic {{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
+By default, your OpenShift cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}
 
 To view volume details including the storage class and size, you can describe the persistent volume claim.
@@ -90,7 +90,7 @@ oc describe pvc registry-backing -n default
 ```
 {: pre}
 
-Example output for classic clusters:
+Example output:
 ```
 Name:          registry-backing
 Namespace:     default
