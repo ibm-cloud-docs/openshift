@@ -35,14 +35,14 @@ Get started by planning your setup for a VPC or a classic cluster.
 * With [Red Hat OpenShift on IBM Cloud classic clusters](#plan_basics), you can create your cluster on classic infrastructure. Classic clusters include all of the Red Hat OpenShift on IBM Cloud mature and robust features for compute, networking, and storage.</roks311-vpc>
 
 First time creating a cluster? First, try out the [tutorial for creating OpenShift clusters](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
-{: tip}<roks311-vpc>
+{: tip}
+<roks311-vpc>
 
 ## Understanding network basics of VPC clusters
 {: #vpc_basics}
 
 When you create your cluster, you must choose a networking setup so that certain cluster components can communicate with each other and with networks or services outside of the cluster.
 {: shortdesc}
-
 
 * [Worker-to-worker communication](#vpc-worker-worker): All worker nodes must be able to communicate with each other on the private network through VPC subnets.
 * [Worker-to-master and user-to-master communication](#vpc-workeruser-master): Your worker nodes and your authorized cluster users can communicate with the Kubernetes master securely over the private network through a private service endpoint, or the public network with TLS through a public service endpoint.

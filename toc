@@ -90,7 +90,8 @@ Red Hat OpenShift on IBM Cloud
     openshift_routes.md
 
     {: .topicgroup}
-    Exposing apps with load balancers<roks311-vpc>
+    Exposing apps with load balancers
+        openshift_loadbalancer_qs.md<roks311-vpc>
         openshift_vpc_lbaas.md</roks311-vpc>
         openshift_loadbalancer_about.md
         openshift_loadbalancer.md
@@ -98,6 +99,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     HTTPS load balancing with Ingress application load balancers (ALBs)
+        openshift_ingress_qs.md
         openshift_ingress_about.md
         openshift_ingress.md
         openshift_annotations.md
