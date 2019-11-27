@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-11-27"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -32,7 +32,7 @@ Design a network setup for your {{site.data.keyword.openshiftlong}} cluster that
 
 Get started by planning your setup for a VPC or a classic cluster.
 * With [Red Hat OpenShift on IBM Cloud clusters in VPC](#vpc_basics), you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in [Virtual Private Cloud](/docs/infrastructure/vpc?topic=vpc-about-vpc) for Generation 1 compute resources. VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
-* With [Red Hat OpenShift on IBM Cloud classic clusters](#plan_basics), you can create your cluster on classic infrastructure. Classic clusters include all of the {[product_name]} mature and robust features for compute, networking, and storage.</roks311-vpc>
+* With [Red Hat OpenShift on IBM Cloud classic clusters](#plan_basics), you can create your cluster on classic infrastructure. Classic clusters include all of the Red Hat OpenShift on IBM Cloud mature and robust features for compute, networking, and storage.</roks311-vpc>
 
 First time creating a cluster? First, try out the [tutorial for creating OpenShift clusters](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
 {: tip}<roks311-vpc>
@@ -42,6 +42,7 @@ First time creating a cluster? First, try out the [tutorial for creating OpenShi
 
 When you create your cluster, you must choose a networking setup so that certain cluster components can communicate with each other and with networks or services outside of the cluster.
 {: shortdesc}
+
 
 * [Worker-to-worker communication](#vpc-worker-worker): All worker nodes must be able to communicate with each other on the private network through VPC subnets.
 * [Worker-to-master and user-to-master communication](#vpc-workeruser-master): Your worker nodes and your authorized cluster users can communicate with the Kubernetes master securely over the private network through a private service endpoint, or the public network with TLS through a public service endpoint.

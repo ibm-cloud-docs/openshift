@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-11-27"
 
 keywords: openshift, roks, rhos, rhoks, multi az, multi-az, szr, mzr
 
@@ -35,13 +35,17 @@ Your users are less likely to experience downtime when you distribute your apps 
 
 1. A [single zone cluster](#single_zone) with multiple worker nodes in a worker pool.
 2. A [multizone cluster](#multizone) that spreads worker nodes across zones within one region.
-3. **Clusters with public network connectivity**: [Multiple clusters](#multiple_clusters) that are set up across zones or regions and that are connected via a global load balancer. 
+3. **Clusters with public network connectivity**: [Multiple clusters](#multiple_clusters) that are set up across zones or regions and that are connected via a global load balancer.
 
 ## Single zone cluster
 {: #single_zone}
 
 Single zone clusters can be created in one of the supported [single zone cities or multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones). To improve availability for your app and to allow failover for the case that one worker node is not available in your cluster, add additional worker nodes to your single zone cluster.
-{: shortdesc}
+{: shortdesc}<roks311-vpc>
+
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters are supported only in [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones). If your cluster must reside in one of the single zone cities, create a classic cluster instead.
+{: note}</roks311-vpc>
+
 
 <img src="images/cs_cluster_singlezone.png" alt="High availability for clusters in a single zone" width="230" style="width:230px; border-style: none"/>
 
@@ -77,10 +81,10 @@ Let's say you need a worker node with six cores to handle the workload for your 
 When you create a cluster in a [multizone metro location](/docs/openshift?topic=openshift-regions-and-zones#zones), a highly available master is automatically deployed and three replicas are spread across the zones of the metro. For example, if the cluster is in `dal10`, `dal12`, or `dal13` zones, the replicas of the master are spread across each zone in the Dallas multizone metro.
 
 **Do I have to do anything so that the master can communicate with the workers across zones?**</br>
-In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
+<roks311-vpc>If you created a VPC multizone cluster, the subnets in each zone are automatically set up with Access Control Lists (ACLs) that allow communication between the master and the worker nodes across zones. </roks311-vpc>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
 
 **Can I convert my single zone cluster to a multizone cluster?**</br>
-To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones). Clusters that are set up in a single zone data center cannot be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes by adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#add_zone).
+To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones). <roks311-vpc>VPC clusters can be set up only in multizone metro locations, and as such can always be converted from a single zone cluster to a multizone cluster. </roks311-vpc>C<roks311-vpc>lassic c</roks311-vpc>lusters that are set up in a single zone data center cannot be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes by adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#add_zone).
 
 
 
@@ -112,7 +116,7 @@ To load balance workloads across your apps, add the public IP addresses of your 
 **To use a CIS global load balancer**:
 1.  Set up the service by following steps 1 - 5 in [Getting Started with {{site.data.keyword.cloud_notm}} Internet Services (CIS)](/docs/infrastructure/cis?topic=cis-getting-started#getting-started). These steps walk you through provisioning the service instance, adding your app domain, and configuring your name servers, and creating DNS records. Create a DNS record for each ALB or NLB IP address that you collected. These DNS records map your app domain to all of your cluster ALBs or NLBs, and ensure that requests to your app domain are forwarded to your clusters in a round-robin cycle.
 2. [Add health checks](/docs/infrastructure/cis?topic=cis-set-up-and-configure-your-load-balancers#add-a-health-check) for the ALBs or NLBs. You can use the same health check for the ALBs or NLBs in all of your clusters, or create specific health checks to use for specific clusters.
-3. [Add an origin pool](/docs/infrastructure/cis?topic=cis-set-up-and-configure-your-load-balancers#add-a-pool) for each cluster by adding the cluster's ALB or NLB IPs. For example, if you have 3 clusters that each have two ALBs, create three origin pools that each have twp ALB IP addresses. Add a health check to each origin pool that you create.
+3. [Add an origin pool](/docs/infrastructure/cis?topic=cis-set-up-and-configure-your-load-balancers#add-a-pool) for each cluster by adding the cluster's ALB or NLB IPs. For example, if you have 3 clusters that each have two ALBs, create three origin pools that each have two ALB IP addresses. Add a health check to each origin pool that you create.
 4. [Add a global load balancer](/docs/infrastructure/cis?topic=cis-set-up-and-configure-your-load-balancers#set-up-and-configure-your-load-balancers).
 
 **To use your own global load balancer**:
