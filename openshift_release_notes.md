@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-02"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -28,6 +28,15 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
+
+## December 2019
+{: #dec19}
+
+| Date | Description |
+| ---- | ----------- |
+| 01 December 2019 | **OpenShift charges**: Now when you create OpenShift clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use OpenShift clusters?](/docs/openshift?topic=openshift-faqs#openshift_charges).|
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in December 2019"}
 
 ## November 2019
 {: #nov19}
