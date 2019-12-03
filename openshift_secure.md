@@ -149,7 +149,7 @@ The following image shows the default cluster security settings that address aut
 **What else can I do to secure my OpenShift API server?**</br>
 You can decide how you want your master and worker nodes to communicate and how your cluster users can access the OpenShift API server by enabling the private service endpoint only, the public service endpoint only, or the public and private service endpoints.
 
-For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/openshift?topic=openshift-plan_clusters#workeruser-master)
+For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/openshift?topic=openshift-plan_clusters#workeruser-master).
 
 <br />
 
