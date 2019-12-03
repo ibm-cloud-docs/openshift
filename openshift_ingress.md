@@ -251,7 +251,7 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 When you configure the public ALB, you choose the domain that your apps will be accessible through.
 {: shortdesc}
 
-You can use the IBM-provided domain, such as `mycluster-<hash>-0001.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain or set up an A record with your DNS provider that uses the ALB's public IP address.
+You can use the IBM-provided domain, such as `mycluster-<hash>-0001.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain.
 
 **To use the IBM-provided Ingress domain:**
 
