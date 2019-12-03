@@ -23,14 +23,11 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview} 
 
-# Changing service endpoints or VLAN connections<ff-roks311-vpc> for classic clusters</ff-roks311-vpc>
+# Changing service endpoints or VLAN connections
 {: #cs_network_cluster}
 
 After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-clusters), you can change the service endpoints that your Kubernetes master is accessible through or change the VLAN connections for your worker nodes.
-{: shortdesc}<ff-roks311-vpc>
-
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to classic clusters. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_clusters#vpc_basics).
-{: note}</ff-roks311-vpc>
+{: shortdesc}
 
 ## Setting up the private service endpoint
 {: #set-up-private-se}
@@ -38,9 +35,7 @@ After you initially set up your network when you [create a cluster](/docs/opensh
 Enable or disable the private service endpoint for your cluster. 
 {: shortdesc}
 
-
 The private service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private service endpoint, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#workeruser-master). Note that you cannot disable the private service endpoint after you enable it.
-
 
 Did you create a cluster with only a private service endpoint before you enabled your account for [VRF](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint)? Try [setting up the public service endpoint](#set-up-public-se) so that you can use your cluster until your support cases are processed to update your account.
 {: tip}

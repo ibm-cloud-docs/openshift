@@ -48,13 +48,12 @@ Containers provide a standard way to package your application's code, configurat
 OpenShift is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With OpenShift, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and OpenShift cluster offerings, see the [comparison table](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
 **What compute host infrastructure does the service offer?** </br>
-With Red Hat OpenShift on IBM Cloud, you can create your cluster of compute hosts on classic {{site.data.keyword.cloud_notm}} infrastructure<ff-roks311-vpc>, or VPC Gen 1 compute infrastructure</ff-roks311-vpc>.
+With Red Hat OpenShift on IBM Cloud, you can create your cluster of compute hosts on classic {{site.data.keyword.cloud_notm}} infrastructure.
 
-[Classic clusters](/docs/containers?topic=containers-getting-started) are created on your choice of virtual or bare metal worker nodes that are connected to VLANs. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for software-defined storage solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.<ff-roks311-vpc>
-
-[VPC clusters](/docs/containers?topic=containers-getting-started#vpc-classic-gs) are created in your own Virtual Private Cloud that gives you the security of a private cloud environment with the dynamic scalability of a public cloud. You use network access control lists to protect the subnets that your worker nodes are connected to. VPC clusters can be provisioned on shared virtual infrastructure only.</ff-roks311-vpc>
+[Classic clusters](/docs/containers?topic=containers-getting-started) are created on your choice of virtual or bare metal worker nodes that are connected to VLANs. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for software-defined storage solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
 
 For more information, see [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers). 
+
 
 **Where can I learn more about the service?** </br>
 Review the following links to find out more about the benefits and responsibilities when you use Red Hat OpenShift on IBM Cloud.

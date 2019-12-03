@@ -37,12 +37,11 @@ If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud l
 {: #tech_limits}
 <br>
 
-Red Hat OpenShift on IBM Cloud comes with the following service limitations<ff-roks311-vpc> that apply to all clusters, independent of what infrastructure provider you plan to use</ff-roks311-vpc>. 
+Red Hat OpenShift on IBM Cloud comes with the following service limitations. 
 {: shortdesc}
 
-In addition to the service limitations, make sure to also review the limitations for [classic](#classic_limits)<ff-roks311-vpc> or [VPC](#vpc_ks_limits)</ff-roks311-vpc> clusters.
+In addition to the service limitations, make sure to also review the limitations for [classic](#classic_limits) clusters.
 {: note}
-
 
 <table summary="This table contains information on the Red Hat OpenShift on IBM Cloud limitations. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation.">
 <caption>Red Hat OpenShift on IBM Cloud limitations</caption>
@@ -145,64 +144,7 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
       <td>You can have a total of 250 IBM Cloud infrastructure file and block storage volumes per account. If you mount more than this amount, you might see an "out of capacity" message when you provision persistent volumes and need to contact your IBM Cloud infrastructure representative. For more FAQs, see the [file](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs#how-many-volumes-can-i-provision-) and [block](/docs/infrastructure/BlockStorage?topic=BlockStorage-block-storage-faqs#how-many-instances-can-share-the-use-of-a-block-storage-volume-) storage docs.</td>
     </tr>
   </tbody>
-  </table><ff-roks311-vpc>
-
-## VPC cluster limitations
-{: #vpc_ks_limits}
-
-VPC Generation 1 compute clusters in Red Hat OpenShift on IBM Cloud are released with the following limitations.
-{: shortdesc}
-
-
-<table>
-  <thead>
-    <th>Category</th>
-    <th>Description</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Compute</td>
-      <td><ul><li>You can have up to 100 worker nodes across all VPC clusters per account.</li><li>Only certain flavors are available for worker node virtual machines.</li><li>Bare metal machines are not supported.</li><li>You cannot update or reload worker nodes. Instead, you can delete the worker node and rebalance the worker pool with the <code>ibmcloud oc worker replace</code> command.</li></ul>
-        </td>
-    </tr>
-    <tr>
-      <td>Container platforms</td>
-      <td>VPC clusters are available for only community Kubernetes clusters, not OpenShift clusters.</td>
-    </tr>
-    <tr>
-      <td>Load balancing for apps</td>
-      <td>See [Exposing apps with VPC load balancers: Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations). </td>
-    </tr>
-    <tr>
-      <td>Location</td>
-      <td>VPC clusters are available in the following [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones): Dallas, Frankfurt, London, Sydney, and Tokyo.</td>
-    </tr>
-    <tr>
-      <td>Security groups</td>
-      <td>You cannot use [VPC security groups](/docs/infrastructure/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups) to control traffic for your cluster. VPC security groups are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. However, the worker nodes of your VPC cluster exist in a service account and are not listed in the VPC infrastructure dashboard. You cannot attach a security group to your worker nodes instances.</td>
-    </tr>
-    <tr>
-      <td>Storage</td>
-      <td><ul><li>You can set up VPC Block Storage and {{site.data.keyword.cos_full_notm}} only.</li><li>VPC Block Storage is available as a cluster add-on. For more information, see [Storing data on VPC Block Storage](/docs/openshift?topic=openshift-vpc-block). Make sure to [attach a public gateway to all the VPC subnets](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-ibm-cloud-cli#step-5-attach-a-public-gateway) that the cluster uses so that you can provision VPC Block Storage.</li><li>{{site.data.keyword.cos_full_notm}} is available as a Helm chart. For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage).</li><li>File storage and Portworx software-defined storage (SDS) are not available.</li></ul></td>
-    </tr>
-    <tr>
-      <td>strongSwan VPN service</td>
-      <td>Only [outbound VPN connections from the cluster](/docs/openshift?topic=openshift-vpn#strongswan_3) can be established. Additionally, because VPC clusters do not support UDP load balancers, the following <code>config.yaml</code> options are not supported for use in strongSwan Helm charts in VPC clusters: <ul><li><code>enableServiceSourceIP</code></li><li><code>loadBalancerIP</code></li><li><code>zoneLoadBalancer</code></li><li><code>connectUsingLoadBalancerIP</code></li></ul></td>
-    </tr>
-    <tr>
-      <td>Versions</td>
-      <td>VPC clusters must run Kubernetes version 1.15 or later.</td>
-    </tr>
-    <tr>
-      <td>Virtual Private Cloud</td>
-      <td>See [Known limitations](/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations).</td>
-    </tr>
-    <tr>
-      <td>v2 API</td>
-      <td>VPC clusters use the [Red Hat OpenShift on IBM Cloud v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about). The v2 API is currently under development, with only a limited number of API operations currently available. You can run certain v1 API operations against the VPC cluster, such as `GET /v1/clusters` or `ibmcloud oc cluster ls`, but not all the information that a Classic cluster has is returned or you might experience unexpected results. For supported VPC v2 operations, see the [CLI reference topic for VPC commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about).</td>
-    </tr>
-  </tbody>
-  </table></ff-roks311-vpc>
+  </table>
 
 
 

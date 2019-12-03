@@ -685,6 +685,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 ## Limiting apps to run on only certain autoscaled worker pools
 {: #ca_limit_pool}
 
+
 To limit a pod deployment to a specific worker pool that is managed by the cluster autoscaler, use labels and `nodeSelector` or `nodeAffinity`. With `nodeAffinity`, you have more control over how the scheduling behavior works to match pods to worker nodes. For more information about assigning pods to worker nodes, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/).
 {: shortdesc}
 
@@ -694,18 +695,11 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 
 **To limit pods to run on certain autoscaled worker pools**:
 
-1.  Create the worker pool with the label that you want to use. For example, your label might be `app: nginx`.<ff-roks311-vpc>
-    **For classic clusters**:</ff-roks311-vpc>
+1.  Create the worker pool with the label that you want to use. For example, your label might be `app: nginx`.
     ```
     ibmcloud oc worker-pool create classic --name <name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_worker_nodes> --label <key>=<value>
     ```
-    {: pre}<ff-roks311-vpc>
-    **For VPC clusters**:
-    ```
-    ibmcloud oc worker-pool create vpc-classic --name <name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_worker_nodes> --label <key>=<value>
-    ```
     {: pre}
-    </ff-roks311-vpc>
 2.  [Add the worker pool to the cluster autoscaler configuration](#ca_cm).
 3.  In your pod spec template, match the `nodeSelector` or `nodeAffinity` to the label that you used in your worker pool.
 

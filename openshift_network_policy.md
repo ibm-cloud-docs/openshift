@@ -25,10 +25,7 @@ subcollection: openshift
 
 
 # Controlling traffic with network policies
-{: #network_policies}<ff-roks311-vpc>
-
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This network policy information is specific to classic clusters. For network policy information for VPC clusters, see [Controlling traffic with VPC access control lists](/docs/openshift?topic=openshift-vpc-network-policy).
-{: note}</ff-roks311-vpc>
+{: #network_policies}
 
 Every {{site.data.keyword.openshiftlong}} cluster is set up with a network plug-in called Calico. Default network policies are set up to secure the public network interface of every worker node in the cluster.
 {: shortdesc}
@@ -49,6 +46,7 @@ If you have unique security requirements or you have a multizone cluster with VL
 Calico enforces these policies, including any Kubernetes network policies that are automatically converted to Calico policies, by setting up Linux Iptables rules on the Kubernetes worker nodes. Iptables rules serve as a firewall for the worker node to define the characteristics that the network traffic must meet to be forwarded to the targeted resource.
 
 <br />
+
 
 
 ## Default Calico and Kubernetes network policies
@@ -97,7 +95,7 @@ Review the following default Calico host policies that are automatically applied
   </tbody>
 </table>
 
-A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to all<ff-roks311-vpc> classic</ff-roks311-vpc> clusters.
+A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to all clusters.
 
 <table>
 <caption>Default Kubernetes policies for each cluster</caption>

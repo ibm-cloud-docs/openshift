@@ -69,11 +69,12 @@ Quickly expose your app to the Internet by creating a layer 4 load balancer.
   NLB hostname was created as mycluster-35366fb2d3d90fd50548180f69e7d12a-0001.us-south.containers.appdomain.cloud
   ```
   {: screen}
+  
 
 For more information, see:
-* [<ff-roks311-vpc>Classic: </ff-roks311-vpc>About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
-* [<ff-roks311-vpc>Classic: </ff-roks311-vpc>Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
-* [<ff-roks311-vpc>Classic: </ff-roks311-vpc>Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname)
+* [About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
+* [Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
+* [Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname)
 
 ## Exposing an app by using a VPC load balancer in a VPC cluster
 {: #lb_qs_vpc}
