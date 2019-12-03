@@ -37,7 +37,6 @@ After [getting started](/docs/containers?topic=containers-getting-started), you 
 <br />
 
 
-
 ## Sample commands
 {: #cluster_create_samples}
 
@@ -413,7 +412,6 @@ To create OpenShift clusters, complete the following prerequisite steps.
 
 ## Creating a cluster with the console
 {: #openshift_create_cluster_console}
-
 
 Create a standard OpenShift cluster in the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}

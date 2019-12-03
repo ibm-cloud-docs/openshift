@@ -39,6 +39,8 @@ When you expose an app with an NLB service, your app is automatically made avail
 <br />
 
 
+
+
 ## Components and architecture of an NLB 1.0
 {: #v1_planning}
 

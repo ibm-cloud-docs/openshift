@@ -41,6 +41,7 @@ Your users are less likely to experience downtime when you distribute your apps 
 {: #single_zone}
 
 
+
 Single zone clusters can be created in one of the supported [single zone cities or multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones). To improve availability for your app and to allow failover for the case that one worker node is not available in your cluster, add additional worker nodes to your single zone cluster.
 {: shortdesc}
 
@@ -84,6 +85,8 @@ In classic clusters, if you have multiple VLANs for your cluster, multiple subne
 **Can I convert my single zone cluster to a multizone cluster?**</br>
 
 To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones). Clusters that are set up in a single zone data center cannot be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes by adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#add_zone).
+
+
 
 
 

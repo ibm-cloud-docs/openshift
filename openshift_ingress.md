@@ -129,6 +129,7 @@ Before you get started with Ingress, review the following prerequisites.
 
 
 
+
 ## Planning networking for single or multiple namespaces
 {: #multiple_namespaces}
 

@@ -125,5 +125,6 @@ The following diagram shows how Ingress directs communication from the internet 
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the ALB that forwarded the client request exists. The ALB then sends the response packet to the client.
 
+<br>
 
 

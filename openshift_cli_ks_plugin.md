@@ -125,7 +125,6 @@ Check out the following changes between each version of the CLI plug-in:
  </tbody>
 </table>
 
-
 <br />
 
 <br>

@@ -73,8 +73,6 @@ Example actions that are permitted by Cloud Foundry roles are creating a new Clo
 </dl>
 </br>
 
-
-
 ### Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM
 {: #iam_individuals_groups}
 

@@ -39,7 +39,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in December 2019"}
 
-
 ## November 2019
 {: #nov19}
 

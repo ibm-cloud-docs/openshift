@@ -30,7 +30,6 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}}, so that you can use the same methods to consistently create and manage your community Kubernetes or OpenShift clusters. To use the CLI, see [Setting up the CLI](/docs/openshift?topic=openshift-openshift-cli). 
 {:shortdesc}
 
-
 ## About the API
 {: #api_about}
 

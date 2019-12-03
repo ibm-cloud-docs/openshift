@@ -35,7 +35,6 @@ If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud l
 
 ## Service limitations
 {: #tech_limits}
-<br>
 
 Red Hat OpenShift on IBM Cloud comes with the following service limitations. 
 {: shortdesc}

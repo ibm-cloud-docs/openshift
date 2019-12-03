@@ -57,7 +57,6 @@ The public IP address of the worker node is not permanent. When a worker node is
 <br />
 
 
-
 ## Enabling access to an app by using a NodePort service
 {: #nodeport_config}
 

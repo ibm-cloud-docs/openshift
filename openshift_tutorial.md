@@ -54,7 +54,6 @@ In the tutorial lessons, you create a standard Red Hat OpenShift on IBM Cloud cl
 This tutorial is for cluster administrators who want to learn how to create a Red Hat OpenShift on IBM Cloud cluster for the first time.
 {: shortdesc}
 
-
 ## Prerequisites
 {: #openshift_prereqs}
 

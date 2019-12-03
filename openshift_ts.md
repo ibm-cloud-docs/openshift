@@ -268,6 +268,7 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
 
 
 
+
 ## VPN server error due to infrastructure credentials
 {: #rhoks_ts_openvpn_login}
 

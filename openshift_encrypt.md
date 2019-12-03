@@ -273,5 +273,6 @@ If you or your company require data sensitivity due to internal policies, govern
 
 To get started, provision an SGX-enabled bare metal worker cluster with a [supported flavor for {{site.data.keyword.datashield_short}}](/docs/services/data-shield?topic=data-shield-getting-started).
 
+<br>
 
 

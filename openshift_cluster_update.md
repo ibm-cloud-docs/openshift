@@ -67,6 +67,7 @@ The following diagram shows the process that you can take to update your master.
 
 Figure 1. Updating Kubernetes master process diagram
 
+
 {: #update_master}
 
 Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
