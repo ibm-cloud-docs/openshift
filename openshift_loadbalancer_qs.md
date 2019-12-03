@@ -29,9 +29,6 @@ subcollection: containers
 Quickly expose your app to the Internet by creating a layer 4 load balancer.
 {: shortdesc}
 
-## Exposing an app by using an NLB in a classic cluster
-{: #lb_qs_classic}
-
 1. Expose you app by creating a version 1.0 network load balancer (NLB 1.0).
   ```
   oc expose deploy my-app --port=80 --target-port=8080 --type=LoadBalancer --name my-lb-svc
@@ -50,7 +47,7 @@ Quickly expose your app to the Internet by creating a layer 4 load balancer.
   my-lb-svc   LoadBalancer   172.XX.XXX.XX   169.XX.XXX.XX   80:31224/TCP   23s
   ```
   {: screen}
-  
+
 
 3. Curl your app's IP address.
   ```
@@ -74,30 +71,4 @@ For more information, see:
 * [About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
 * [Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
 * [Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname)
-
-## Exposing an app by using a VPC load balancer in a VPC cluster
-{: #lb_qs_vpc}
-
-1. Expose you app by creating a Kubernetes `LoadBalancer` service.
-  ```
-  oc expose deploy my-app --port=80 --target-port=8080 --type=LoadBalancer --name my-lb-svc
-  ```
-  {: pre}
-
-2. Get the service's hostname that is listed in the **EXTERNAL-IP** column. The VPC load balancer that assigns the hostname takes a few minutes to provision in your VPC. You cannot access your app by using the hostname of your Kubernetes `LoadBalancer` service until the VPC load balancer is fully provisioned.
-  ```
-  oc get svc my-lb-svc
-  ```
-  {: pre}
-
-  Example output:
-  ```
-  NAME        TYPE           CLUSTER-IP      EXTERNAL-IP                            PORT(S)        AGE
-  my-lb-svc   LoadBalancer   172.XX.XXX.XX   1234abcd-us-south.lb.appdomain.cloud   80:31224/TCP   23s
-  ```
-  {: screen}
-
-3. In a web browser, enter the hostname that is created.
-
-For more information, see [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas).
 
