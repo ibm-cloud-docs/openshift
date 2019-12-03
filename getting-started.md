@@ -89,7 +89,7 @@ subcollection: openshift
 With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available clusters that come installed with the [Red Hat OpenShift on IBM Cloud Container Platform![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) software installed on Red Hat Enterprise Linux.
 {: shortdesc}
 
-First, create a  Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose a sample app in your cluster. 
+First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose a sample app in your cluster. 
 <br>
 
 To complete the getting started tutorial, use a [Pay-As-You-Go IBM Cloud account](/docs/account?topic=account-upgrading-account) where you are the owner or have [full Administrator access](/docs/iam?topic=iam-iammanidaccser).
@@ -99,8 +99,8 @@ To complete the getting started tutorial, use a [Pay-As-You-Go IBM Cloud account
   <div class="solutionBox">
    <a href = "#clusters_gs">
     <div>
-         <h2><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a  cluster</h2>
-         <p class="bx--type-caption">Create an OpenShift cluster on {{site.data.keyword.cloud_notm}}  workers nodes, subnets, and VLAN networking. Choose from a variety of virtual, bare metal, GPU, or software-defined storage flavors.</p>
+         <h2><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a cluster</h2>
+         <p class="bx--type-caption">Create an OpenShift cluster on {{site.data.keyword.cloud_notm}} workers nodes, subnets, and VLAN networking. Choose from a variety of virtual, bare metal, GPU, or software-defined storage flavors.</p>
     </div>
     </a>
 </div>
