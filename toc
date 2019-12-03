@@ -73,7 +73,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_subnets.md
         openshift_network_cluster.md
 
-     {: .topicgroup}
+    {: .topicgroup}
     Deploying apps
         openshift_images.md
         openshift_app.md
@@ -147,6 +147,3 @@ Red Hat OpenShift on IBM Cloud
     openshift_release_notes.md
     openshift_limitations.md
     {: .navgroup-end}
-
-
-
