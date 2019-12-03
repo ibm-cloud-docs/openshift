@@ -26,6 +26,8 @@ subcollection: openshift
 # About network load balancers (NLBs)
 {: #loadbalancer-about}
 
+
+
 When you create a standard cluster, {{site.data.keyword.openshiftlong}} automatically provisions a portable public subnet and a portable private subnet.
 {: shortdesc}
 
@@ -37,8 +39,6 @@ To make an app accessible through both a portable public and a portable private 
 When you expose an app with an NLB service, your app is automatically made available over the service's NodePorts too. [NodePorts](/docs/openshift?topic=openshift-nodeport) are accessible on every public and private IP address of every worker node within the cluster. To block traffic to NodePorts while you are using an NLB, see [Controlling inbound traffic to network load balancer (NLB) or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
 
 <br />
-
-
 
 
 ## Components and architecture of an NLB 1.0
