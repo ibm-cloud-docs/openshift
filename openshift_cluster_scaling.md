@@ -263,6 +263,10 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         oc --namespace=kube-system set image deployments/tiller-deploy tiller=gcr.io/kubernetes-helm/tiller@sha256:cab750b402d24dd7b24756858c31eae6a007cd0ee91ea802b3891e2e940d214d
         ```
         {: pre}
+
+        If you Tiller pod errors with an `Error: ImagePullBackOff` event, make sure that your cluster can pull images on the public network, and try again.
+        {: tip}
+
 4.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
     ```
     helm repo add iks-charts https://icr.io/helm/iks-charts
@@ -927,6 +931,10 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ...
     ```
     {: screen}
+
+    If you already deleted the Helm chart and see a message such as `iks-ca-configmap not found`, [redeploy the cluster autoscaler Helm chart](#ca_helm) to your cluster and try to remove it again.
+    {: tip}
+
 2.  List your existing Helm charts and note the name of the cluster autoscaler.
     ```
     helm ls
