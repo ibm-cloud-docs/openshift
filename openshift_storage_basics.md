@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -31,6 +31,7 @@ subcollection: openshift
 
 Before you get started with provisioning storage, it is important to understand the Kubernetes concepts of a persistent volume and a persistent volume claim and how they work together in a cluster.
 {: shortdesc}
+
 
 The following image shows the storage components in a cluster.
 

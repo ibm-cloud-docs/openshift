@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-02"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -29,6 +29,7 @@ subcollection: openshift
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
 
+
 ## December 2019
 {: #dec19}
 
@@ -51,14 +52,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>26 November 2019</td>
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.61](/docs/containers?topic=containers-cs_cli_changelog).</li>
-  <li><strong>Cluster add-ons for OpenShift clusters</strong>: The [Kubernetes web terminal](/docs/openshift?topic=openshift-openshift-cli#cli_web) and the [Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) add-ons are now available for OpenShift clusters.</li><roks311-vpc>
-  <li><strong>Cluster autoscaling for VPC clusters</strong>: You can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).</li></roks311-vpc>
+  <li><strong>Cluster add-ons for OpenShift clusters</strong>: The [Kubernetes web terminal](/docs/openshift?topic=openshift-openshift-cli#cli_web) and the [Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) add-ons are now available for OpenShift clusters.</li><ff-roks311-vpc>
+  <li><strong>Cluster autoscaling for VPC clusters</strong>: You can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).</li></ff-roks311-vpc>
   <li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533_worker).</li></ul></td>
 </tr>
 <tr>
 <td>22 November 2019</td>
 <td><ul>
-<li><strong>Bring your own DNS for load balancers</strong>: Added steps for bringing your own custom domain for [NLBs](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)<roks311-vpc> in classic clusters and [VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns) in VPC clusters.</roks311-vpc></li>
+<li><strong>Bring your own DNS for load balancers</strong>: Added steps for bringing your own custom domain for [NLBs](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)<ff-roks311-vpc> in classic clusters and [VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns) in VPC clusters.</ff-roks311-vpc></li>
 <li><strong>Gateway appliance firewalls</strong>: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) that you must open in a public gateway device firewall</li>
 <li><strong>Ingress ALB subdomain format</strong>: [Changes are made to the Ingress subdomain](/docs/openshift?topic=openshift-ingress-about#ingress-resource). New clusters are assigned an Ingress subdomain in the format `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud` and an Ingress secret in the format `<cluster_name>.<globally_unique_account_HASH>-0001`. Any existing clusters that use the `<cluster_name>.<region>.containers.mybluemix.net` subdomain are assigned a CNAME record that maps to a `<cluster_name>.<region_or_zone>.containers.appdomain.cloud` subdomain.</li>
 </ul></td>
@@ -69,14 +70,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `nginx-ingress` image to 597 and the `ingress-auth` image to build 353](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
 <li><strong>Version changelog</strong>: Master patch updates are available for OpenShift [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533).</li>
 </ul></td>
-</tr><roks311-vpc>
+</tr><ff-roks311-vpc>
 <tr>
 <td>19 November 2019</td>
 <td><ul>
 <li><strong>Fluentd component changes</strong>: The Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/containers?topic=containers-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you do not forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, [automatic updates to Fluentd must be enabled](/docs/openshift?topic=openshift-update#logging-up).</li>
 <li><strong>Bringing your own Ingress controller in VPC clusters</strong>: Added [steps](/docs/openshift?topic=openshift-ingress-user_managed#user_managed_vpc) for exposing your Ingress controller by creating a VPC load balancer and subdomain.</li>
 </ul></td>
-</tr></roks311-vpc>
+</tr></ff-roks311-vpc>
 <tr>
 <td>15 November 2019</td>
 <td><strong>New! Single zone location for OpenShift clusters</strong>:  You can create single zone Red Hat OpenShift on IBM Cloud clusters in São Paulo, Brazil (`sao01`).</td>

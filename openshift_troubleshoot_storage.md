@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: kubernetes, iks, help, debug
 
@@ -50,6 +50,7 @@ Review the options to debug persistent storage and find the root causes for fail
    ibmcloud plugin repo-plugins
    ```
    {: pre}
+   
 
 2. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
    1. Show the `kubectl` CLI version that is installed in your cluster and your local machine.
@@ -70,7 +71,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
 3. For block storage, object storage, and Portworx only: Make sure that you [installed the Helm server Tiller with a Kubernetes services account](/docs/containers?topic=containers-helm#public_helm_install).
 
-4. For block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
+4. For<ff-roks311-vpc> classic</ff-roks311-vpc> block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
 
    **Block and object storage**:
 
@@ -81,7 +82,7 @@ Review the options to debug persistent storage and find the root causes for fail
       {: pre}
 
    2. List the Helm charts in the repository.
-      **For block storage**:
+      **For<ff-roks311-vpc> classic</ff-roks311-vpc> block storage**:
         ```
         helm search iks-charts | grep block-storage-plugin
         ```
@@ -160,7 +161,7 @@ Review the options to debug persistent storage and find the root causes for fail
       {: pre}
 
    3. Review common errors that can occur during the PVC creation.
-      - [File storage and block storage: PVC remains in a pending state](#file_pvc_pending)
+      - [File storage and<ff-roks311-vpc> classic</ff-roks311-vpc> block storage: PVC remains in a pending state](#file_pvc_pending)
       - [Object storage: PVC remains in a pending state](#cos_pvc_pending)
 
 7. Check whether the pod that mounts your storage instance is successfully deployed.
@@ -184,7 +185,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
    4. Review common errors that can occur when you mount a PVC to your app.
       - [File storage: App cannot access or write to PVC](#file_app_failures)
-      - [Block storage: App cannot access or write to PVC](#block_app_failures)
+      - [Classic Block storage: App cannot access or write to PVC](#block_app_failures)
       - [Object storage: Accessing files with a non-root user fails](#cos_nonroot_access)
 
 
@@ -1330,6 +1331,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 If you entered the correct information on the {{site.data.keyword.cloud_notm}} catalog page, verify that your cluster is correctly set up for Portworx.
 {: shortdesc}
 
+<ff-roks311-vpc>1. Verify that you selected a classic Red Hat OpenShift on IBM Cloud cluster. VPC on Classic clusters are not supported in Portworx.</ff-roks311-vpc>
 2. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/).
 3. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.
 4. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics).

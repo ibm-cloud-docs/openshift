@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1621,6 +1621,8 @@ To clean up persistent data:
    ```
    {: pre}
 
+   
+
 
 8. {: #sl_delete_storage}List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance.
 
@@ -1628,6 +1630,7 @@ To clean up persistent data:
     ibmcloud sl file volume-list --columns id  --columns notes | grep <pv_name>
     ```
     {: pre}
+    
 
    Example output for file storage:
     ```

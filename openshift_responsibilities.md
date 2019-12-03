@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -28,6 +28,7 @@ subcollection: openshift
 
 Learn about cluster management responsibilities that you have when you use {{site.data.keyword.openshiftlong}}. For overall terms of use, see [Cloud Services terms](/docs/overview/terms-of-use?topic=overview-terms#terms).
 {: shortdesc}
+
 
 IBM provides you with an enterprise cloud platform for you to deploy apps alongside {{site.data.keyword.cloud_notm}} DevOps, AI, data, and security services. You choose how you set up, integrate, and operate your apps and services in the cloud.
 

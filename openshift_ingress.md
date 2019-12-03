@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -34,6 +34,7 @@ Expose multiple apps in your OpenShift cluster by creating Ingress resources tha
 
 Use these sample YAML files to quickly get started with specifying your Ingress resource.
 {: shortdesc}
+
 
 **Ingress resource to publicly expose an app**</br>
 
@@ -122,7 +123,7 @@ Before you get started with Ingress, review the following prerequisites.
 - Ingress is available for standard clusters only and requires at least two worker nodes per zone to ensure high availability and that periodic updates are applied. If you have only one worker in a zone, the ALB cannot receive automatic updates. When automatic updates are rolled out to ALB pods, the pod is reloaded. However, ALB pods have anti-affinity rules to ensure that only one pod is scheduled to each worker node for high availability. Because there is only one ALB pod on one worker, the pod is not restarted so that traffic is not interrupted. The ALB pod is updated to the latest version only when you delete the old pod manually so that the new, updated pod can be scheduled.
 - If a zone fails, you might see intermittent failures in requests to the Ingress ALB in that zone.
 - If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge) are enabled in each zone so that ALBs deploy uniformly.
-* Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the ALB can route packets to various subnets in the account.
+* <ff-roks311-vpc>Classic clusters: </ff-roks311-vpc>Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the ALB can route packets to various subnets in the account.
 
 <br />
 
@@ -525,7 +526,8 @@ Forward requests directly to the IP address of your external service by setting 
 Before you begin:
 
 * Review the Ingress [prerequisites](#config_prereqs).
-* Ensure that the external app that you want to include into the cluster load balancing can be accessed by using a public IP address.
+* Ensure that the external app that you want to include into the cluster load balancing can be accessed by using a public IP address.<ff-roks311-vpc>
+* VPC clusters: In order to forward requests to the public external endpoint of your app, your VPC subnets must have a public gateway attached.</ff-roks311-vpc>
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To expose apps that are outside of your cluster to the public:
@@ -621,7 +623,8 @@ Route requests through the Ingress ALB to your external service by using the `pr
 
 Before you begin:
 
-* Review the Ingress [prerequisites](#config_prereqs).
+* Review the Ingress [prerequisites](#config_prereqs).<ff-roks311-vpc>
+* VPC clusters: In order to forward requests to the public external endpoint of your app, your VPC subnets must have a public gateway attached.</ff-roks311-vpc>
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To expose apps that are outside of your cluster to the public:
@@ -688,13 +691,13 @@ To expose apps that are outside of your cluster to the public:
 <br />
 
 
-## Exposing apps to a private network
+## <ff-roks311-vpc>Classic clusters: </ff-roks311-vpc>Exposing apps to a private network
 {: #ingress_expose_private}
 
-Expose apps to a private network by using the private Ingress ALBs.
+Expose apps to a private network by using the private Ingress ALBs<ff-roks311-vpc> in a classic cluster</ff-roks311-vpc>.
 {:shortdesc}
 
-To use a private ALB, you must first enable the private ALB. Because private VLAN-only clusters are not assigned an IBM-provided Ingress subdomain, no Ingress secret is created during cluster setup. To expose your apps to the private network, you must register your ALB with a custom domain and, optionally, import your own TLS certificate.
+To use a private ALB, you must first enable the private ALB. Because private VLAN-only<ff-roks311-vpc> classic</ff-roks311-vpc> clusters are not assigned an IBM-provided Ingress subdomain, no Ingress secret is created during cluster setup. To expose your apps to the private network, you must register your ALB with a custom domain and, optionally, import your own TLS certificate.
 
 Before you begin:
 * Review the Ingress [prerequisites](#config_prereqs).
@@ -970,3 +973,298 @@ http://<subdomain2>.<domain>/<app1_path>
 
 For a comprehensive tutorial on how to secure microservice-to-microservice communication across your clusters by using the private ALB with TLS, check out [this blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-cloud/secure-microservice-to-microservice-communication-across-kubernetes-clusters-using-a-private-ecbe2a8d4fe2).
 {: tip}
+
+<br />
+<ff-roks311-vpc>
+
+## VPC clusters: Exposing apps to a private network
+{: #ingress_expose_vpc_private}
+
+Expose apps to a private network by using the private Ingress ALBs in a VPC cluster.
+{:shortdesc}
+
+To use a private ALB, you must first enable the private ALB. Then, to expose your apps to the private network, you must create a DNS entry for your private ALB hostname.
+
+Before you begin, review the Ingress [prerequisites](#config_prereqs).
+
+### Step 1: Deploy apps and create app services
+{: #vpc_private_1}
+
+Start by deploying your apps and creating Kubernetes services to expose them.
+{: shortdesc}
+
+1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
+
+2.   Create a Kubernetes service for each app that you want to expose. Your app must be exposed by a Kubernetes service to be included by the cluster ALB in the Ingress load balancing.
+      1.  Open your preferred editor and create a service configuration file that is named, for example, `myappservice.yaml`.
+      2.  Define a service for the app that the ALB will expose.
+
+          ```
+          apiVersion: v1
+          kind: Service
+          metadata:
+            name: myappservice
+          spec:
+            selector:
+              <selector_key>: <selector_value>
+            ports:
+             - protocol: TCP
+               port: 8080
+          ```
+          {: codeblock}
+
+          <table>
+          <thead>
+          <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the ALB service YAML file components</th>
+          </thead>
+          <tbody>
+          <tr>
+          <td><code>selector</code></td>
+          <td>Enter the label key (<em>&lt;selector_key&gt;</em>) and value (<em>&lt;selector_value&gt;</em>) pair that you want to use to target the pods where your app runs. To target your pods and include them in the service load balancing, ensure that the <em>&lt;selector_key&gt;</em> and <em>&lt;selector_value&gt;</em> are the same as the key/value pair in the <code>spec.template.metadata.labels</code> section of your deployment YAML.</td>
+           </tr>
+           <tr>
+           <td><code>port</code></td>
+           <td>The port that the service listens on.</td>
+           </tr>
+           </tbody></table>
+      3.  Save your changes.
+      4.  Create the service in your cluster. If apps are deployed in multiple namespaces in your cluster, ensure that the service deploys into the same namespace as the app that you want to expose.
+
+          ```
+          oc apply -f myappservice.yaml [-n <namespace>]
+          ```
+          {: pre}
+      5.  Repeat these steps for every app that you want to expose.
+
+
+</br>
+
+### Step 2: Enable the default private ALBs
+{: #vpc_private_2}
+
+When you create a standard cluster, a private ALB is created in each zone that you have worker nodes. However, the default private ALB in each zone is not automatically enabled. You must first enable each private ALB.
+{:shortdesc}
+
+1. Get the private ALB IDs for your cluster.
+    ```
+    ibmcloud oc alb ls --cluster <cluster_name>
+    ```
+    {: pre}
+
+    The field **Status** for private ALBs is _disabled_.
+    ```
+    ALB ID                                Enabled    Status     Type      Load Balancer Hostname                 Zone         Build
+    private-crbl25g33d0if1cmfn0p8g-alb1   false      disabled   private   -                                      us-south-1   ingress:524/ingress-auth:340
+    private-crbl25g33d0if1cmfn0p8g-alb2   false      disabled   private   -                                      us-south-2   ingress:524/ingress-auth:340
+    public-crbl25g33d0if1cmfn0p8g-alb1    true       enabled    public    0bcc2ab2-us-south.lb.appdomain.cloud   us-south-1   ingress:524/ingress-auth:340
+    public-crbl25g33d0if1cmfn0p8g-alb2    true       enabled    public    0bcc2ab2-us-south.lb.appdomain.cloud   us-south-2   ingress:524/ingress-auth:340
+    ```
+    {: screen}
+
+2. Enable the private ALBs. Run this command for the ID of each private ALB that you want to enable.
+  ```
+  ibmcloud oc alb configure vpc-classic --alb-id <private_ALB_ID> --enable
+  ```
+  {: pre}
+  </br>
+
+### Step 3: Create a subdomain to register the ALBs with a DNS entry and create an SSL certificate
+{: #vpc_private_3}
+
+When you enable the private ALBs, one private VPC load balancer is automatically created outside of your cluster in your VPC. The private VPC load balancer puts the private IP addresses of your private ALBs behind one hostname. You must create a DNS entry for this hostname by creating a subdomain. When you create the subdomain, {{site.data.keyword.cloud_notm}} also generates and maintains a wildcard SSL certificate for the subdomain for you.
+{: shortdesc}
+
+1. Get the hostname that is assigned to your private ALBs by the VPC load balancer. In the output, look for the **Load Balancer Hostname** field of your private ALBs.
+  ```
+  ibmcloud oc alb ls --cluster <cluster_name_or_ID>
+  ```
+  {: pre}
+
+  Example output:
+  ```
+  ALB ID                                Enabled   Status    Type      Load Balancer Hostname                 Zone         Build
+  private-crbl25g33d0if1cmfn0p8g-alb1   true      enabled   private   1234abcd-us-south.lb.appdomain.cloud   us-south-1   ingress:524/ingress-auth:340
+  private-crbl25g33d0if1cmfn0p8g-alb2   true      enabled   private   1234abcd-us-south.lb.appdomain.cloud   us-south-2   ingress:524/ingress-auth:340
+  ```
+  {: screen}
+
+2. Create a DNS subdomain for the private ALB hostname.
+  ```
+  ibmcloud oc nlb-dns create vpc-classic --cluster <cluster_name_or_id> --lb-host <vpc_lb_hostname>
+  ```
+  {: pre}
+
+3. Verify that the subdomain is created.
+  ```
+  ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
+  ```
+  {: pre}
+
+  Example output:
+  ```
+  Subdomain                                                                               Load Balancer Hostname                        Health Monitor   SSL Cert Status           SSL Cert Secret Name
+  mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     ["1234abcd-us-south.lb.appdomain.cloud"]      None             created                   <certificate>
+  ```
+  {: screen}
+
+4. Choose whether to use TLS termination for your ALBs. The ALB load balances HTTP network traffic to the apps in your cluster. To also load balance incoming HTTPS traffic, you can configure the ALB to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster. If you want to use TLS termination, note the name of the certificate in the output of the previous step.
+</br>
+
+### Step 4: Create the Ingress resource
+{: #vpc_private_4}
+
+Ingress resources define the routing rules that the ALB uses to route traffic to your app service.
+{: shortdesc}
+
+If your cluster has multiple namespaces where apps are exposed, one Ingress resource is required for each namespace. The Ingress resource determines the host that is appended to your app and that builds the URL to access your app. The Ingress host must be unique in each Ingress resource that you create. The DNS subdomain that you created in the previous step is registered as a wildcard domain. You can use this domain to build multiple Ingress hosts for your Ingress resource. For example, if your subdomain is `mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud`, you can build multiple Ingress hosts by adding a custom value as a prefix to the subdomain, such as `example1.mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud`. 
+{: note}
+
+1. Open your preferred editor and create an Ingress configuration file that is named, for example, `myingressresource.yaml`.
+
+2.  Define an Ingress resource in your configuration file that uses your custom domain to route incoming network traffic to the services that you created earlier.
+
+    Example YAML that does not use TLS:
+    ```
+    apiVersion: extensions/v1beta1
+    kind: Ingress
+    metadata:
+      name: myingressresource
+      annotations:
+        ingress.bluemix.net/ALB-ID: "<private_ALB_ID_1>;<private_ALB_ID_2>"
+    spec:
+      rules:
+      - host: <domain>
+        http:
+          paths:
+          - path: /<app1_path>
+            backend:
+              serviceName: <app1_service>
+              servicePort: 80
+          - path: /<app2_path>
+            backend:
+              serviceName: <app2_service>
+              servicePort: 80
+    ```
+    {: codeblock}
+
+    Example YAML that uses TLS:
+    ```
+    apiVersion: extensions/v1beta1
+    kind: Ingress
+    metadata:
+      name: myingressresource
+      annotations:
+        ingress.bluemix.net/ALB-ID: "<private_ALB_ID_1>;<private_ALB_ID_2>"
+    spec:
+      tls:
+      - hosts:
+        - <domain>
+        secretName: <tls_secret_name>
+      rules:
+      - host: <domain>
+        http:
+          paths:
+          - path: /<app1_path>
+            backend:
+              serviceName: <app1_service>
+              servicePort: 80
+          - path: /<app2_path>
+            backend:
+              serviceName: <app2_service>
+              servicePort: 80
+    ```
+    {: codeblock}
+
+    <table>
+    <thead>
+    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>ingress.bluemix.net/ALB-ID</code></td>
+    <td>Replace <em>&lt;private_ALB_ID&gt;</em> with the ID for your private ALB. If you have a multizone cluster and enabled multiple private ALBs, include the ID of each ALB. Run <code>ibmcloud oc alb ls --cluster <my_cluster></code> to find the ALB IDs. For more information about this Ingress annotation, see [Private application load balancer routing](/docs/openshift?topic=openshift-ingress_annotation#alb-id).</td>
+    </tr>
+    <tr>
+    <td><code>tls.hosts</code></td>
+    <td>To use TLS, replace <em>&lt;domain&gt;</em> with your DNS subdomain.</br></br><strong>Note:</strong><ul><li>If your apps are exposed by services in different namespaces in one cluster, append a wildcard subdomain to the beginning of the domain, such as `subdomain1.mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud`. Use a unique subdomain for each resource that you create in the cluster.</li><li>Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li></ul></td>
+    </tr>
+    <tr>
+    <td><code>tls.secretName</code></td>
+    <td>Replace <em>&lt;tls_secret_name&gt;</em> with the name of the secret that you created earlier. To see the name of the certificate that was created for your DNS subdomain, run <code>ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id></code>.
+    </tr>
+    <tr>
+    <td><code>host</code></td>
+    <td>Replace <em>&lt;domain&gt;</em> with your DNS subdomain.
+    </br></br>
+    <strong>Note:</strong><ul><li>If your apps are exposed by services in different namespaces in one cluster, append a wildcard subdomain to the beginning of the domain, such as `subdomain1.mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud`. Use a unique subdomain for each resource that you create in the cluster.</li><li>Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li></ul></td>
+    </td>
+    </tr>
+    <tr>
+    <td><code>path</code></td>
+    <td>Replace <em>&lt;app_path&gt;</em> with a forward slash or the path that your app is listening on. The path is appended to your domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the ALB. The ALB looks up the associated service and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs.
+    </br></br>
+    Many apps do not listen on a specific path, but use the root path and a specific port. In this case, define the root path as <code>/</code> and do not specify an individual path for your app. Examples: <ul><li>For <code>http://domain/</code>, enter <code>/</code> as the path.</li><li>For <code>http://domain/app1_path</code>, enter <code>/app1_path</code> as the path.</li></ul>
+    <p class="tip">To configure Ingress to listen on a path that is different than the path that your app listens on, you can use the [rewrite annotation](/docs/openshift?topic=openshift-ingress_annotation#rewrite-path).</p></td>
+    </tr>
+    <tr>
+    <td><code>serviceName</code></td>
+    <td>Replace <em>&lt;app1_service&gt;</em> and <em>&lt;app2_service&gt;</em>, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different namespaces in the cluster, include only app services that are in the same namespace. You must create one Ingress resource for each namespace where you have apps that you want to expose.</td>
+    </tr>
+    <tr>
+    <td><code>servicePort</code></td>
+    <td>The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.</td>
+    </tr>
+    </tbody></table>
+
+3.  Create the Ingress resource for your cluster. Ensure that the resource deploys into the same namespace as the app services that you specified in the resource.
+
+    ```
+    oc apply -f myingressresource.yaml -n <namespace>
+    ```
+    {: pre}
+4.   Verify that the Ingress resource was created successfully.
+
+      ```
+      oc describe ingress myingressresource
+      ```
+      {: pre}
+
+      1. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
+
+
+Your Ingress resource is created in the same namespace as your app services. Your apps in this namespace are registered with the cluster's Ingress ALB.
+</br>
+
+### Step 5: Access your app from your private network
+{: #vpc_private_5}
+
+From within your private network, enter the URL of the app service in a web browser.
+
+```
+https://<domain>/<app1_path>
+```
+{: codeblock}
+
+If you exposed multiple apps, access those apps by changing the path that is appended to the URL.
+
+```
+https://<domain>/<app2_path>
+```
+{: codeblock}
+
+If you use a wildcard domain to expose apps in different namespaces, access those apps with their own subdomains.
+
+```
+http://<subdomain1>.<domain>/<app1_path>
+```
+{: codeblock}
+
+```
+http://<subdomain2>.<domain>/<app1_path>
+```
+{: codeblock}
+
+</ff-roks311-vpc>
+
+
+

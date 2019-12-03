@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -39,6 +39,7 @@ Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?t
 
 ## Understanding scale-up and scale-down
 {: #ca_about}
+
 
 The cluster autoscaler periodically scans the cluster to adjust the number of worker nodes within the worker pools that it manages in response to your workload resource requests and any custom settings that you configure, such as scanning intervals. Every minute, the cluster autoscaler checks for the following situations.
 {: shortdesc}
@@ -693,11 +694,18 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 
 **To limit pods to run on certain autoscaled worker pools**:
 
-1.  Create the worker pool with the label that you want to use. For example, your label might be `app: nginx`.
+1.  Create the worker pool with the label that you want to use. For example, your label might be `app: nginx`.<ff-roks311-vpc>
+    **For classic clusters**:</ff-roks311-vpc>
     ```
     ibmcloud oc worker-pool create classic --name <name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_worker_nodes> --label <key>=<value>
     ```
+    {: pre}<ff-roks311-vpc>
+    **For VPC clusters**:
+    ```
+    ibmcloud oc worker-pool create vpc-classic --name <name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_worker_nodes> --label <key>=<value>
+    ```
     {: pre}
+    </ff-roks311-vpc>
 2.  [Add the worker pool to the cluster autoscaler configuration](#ca_cm).
 3.  In your pod spec template, match the `nodeSelector` or `nodeAffinity` to the label that you used in your worker pool.
 

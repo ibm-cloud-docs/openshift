@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -38,6 +38,7 @@ Expose a public port on your worker node and use the public IP address of the wo
 
 When you expose your app by creating a Kubernetes service of type NodePort, a NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to the service. The NodePort service serves as the external entry point for incoming requests for your app. The assigned NodePort is publicly exposed in the `kubeproxy` settings of each worker node in the cluster. Every worker node starts listening on the assigned NodePort for incoming requests for the service. To access the service from the internet, you can use the public IP address of any worker node that was assigned during cluster creation and the NodePort in the format `<IP_address>:<nodeport>`. If you want to access the service on the private network, use the private IP address of any worker node instead of the public IP address.
 
+
 The following diagram shows how communication is directed from the internet to an app when a NodePort service is configured:
 
 <img src="images/cs_nodeport_planning.png" width="600" alt="Expose an app in {{site.data.keyword.containerlong_notm}} by using NodePort" style="width:600px; border-style: none"/>
@@ -60,7 +61,10 @@ The public IP address of the worker node is not permanent. When a worker node is
 {: #nodeport_config}
 
 You can expose your app as a Kubernetes NodePort service for free or standard clusters.
-{:shortdesc}
+{:shortdesc}<ff-roks311-vpc>
+
+In VPC clusters, you can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection. To access an app from the internet, you must use a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas) or [Ingress](/docs/openshift?topic=openshift-ingress-about) service instead.
+{: note}</ff-roks311-vpc>
 
 If you do not already have an app ready, you can use a Kubernetes example app called [Guestbook ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml).
 

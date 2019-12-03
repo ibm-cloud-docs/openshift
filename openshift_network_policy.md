@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -25,7 +25,10 @@ subcollection: openshift
 
 
 # Controlling traffic with network policies
-{: #network_policies}
+{: #network_policies}<ff-roks311-vpc>
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This network policy information is specific to classic clusters. For network policy information for VPC clusters, see [Controlling traffic with VPC access control lists](/docs/openshift?topic=openshift-vpc-network-policy).
+{: note}</ff-roks311-vpc>
 
 Every {{site.data.keyword.openshiftlong}} cluster is set up with a network plug-in called Calico. Default network policies are set up to secure the public network interface of every worker node in the cluster.
 {: shortdesc}
@@ -94,7 +97,7 @@ Review the following default Calico host policies that are automatically applied
   </tbody>
 </table>
 
-A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to all clusters.
+A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to all<ff-roks311-vpc> classic</ff-roks311-vpc> clusters.
 
 <table>
 <caption>Default Kubernetes policies for each cluster</caption>
@@ -531,6 +534,7 @@ To isolate your cluster on the private network by using Calico policies:
   {: pre}
   You can further control access to networking services by creating [Calico pre-DNAT policies](/docs/openshift?topic=openshift-network_policies#block_ingress). In the pre-DNAT policy, ensure that you use `selector: ibm.role=='worker_private'` to apply the policy to the workers' private host endpoints.
   {: tip}
+  
 
 7. Verify that the policies are applied.
   ```

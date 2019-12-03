@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -45,6 +45,7 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
 
     By default, ports 80 and 443 are open. If you want to keep 80 and 443 open, you must also include them in addition to any other ports you specify in the `public-ports` field. Any port that is not specified is closed. If you enabled a private ALB, you must also specify any ports that you want to keep open in the `private-ports` field.
     {: important}
+    
 
     ```
     apiVersion: v1
@@ -88,7 +89,10 @@ For more information about configmap resources, see the [Kubernetes documentatio
 
 
 ## Preserving the source IP address
-{: #preserve_source_ip}
+{: #preserve_source_ip}<ff-roks311-vpc>
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The source IP address for client requests can be preserved in classic clusters only, and cannot be preserved in VPC clusters.
+{: note}</ff-roks311-vpc>
 
 By default, the source IP address of the client request is not preserved. When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the app pod runs.
 {: shortdesc}

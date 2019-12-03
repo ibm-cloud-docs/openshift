@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, nlb, lbaas
 
@@ -50,6 +50,7 @@ Quickly expose your app to the Internet by creating a layer 4 load balancer.
   my-lb-svc   LoadBalancer   172.XX.XXX.XX   169.XX.XXX.XX   80:31224/TCP   23s
   ```
   {: screen}
+  
 
 3. Curl your app's IP address.
   ```
@@ -70,9 +71,9 @@ Quickly expose your app to the Internet by creating a layer 4 load balancer.
   {: screen}
 
 For more information, see:
-* [<roks311-vpc>Classic: </roks311-vpc>About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
-* [<roks311-vpc>Classic: </roks311-vpc>Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
-* [<roks311-vpc>Classic: </roks311-vpc>Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname)
+* [<ff-roks311-vpc>Classic: </ff-roks311-vpc>About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
+* [<ff-roks311-vpc>Classic: </ff-roks311-vpc>Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
+* [<ff-roks311-vpc>Classic: </ff-roks311-vpc>Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname)
 
 ## Exposing an app by using a VPC load balancer in a VPC cluster
 {: #lb_qs_vpc}

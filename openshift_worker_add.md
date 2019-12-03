@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -83,8 +83,162 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 
 <br />
 
-## Creating a new worker pool
-{: #add_pool}
+
+<ff-roks311-vpc>
+## Adding worker nodes in VPC clusters
+{: #vpc_pools}
+
+Add worker nodes to your VPC cluster.
+{: shortdesc}
+
+### Creating a new worker pool
+{: #vpc_add_pool}
+
+You can add worker nodes to your VPC cluster by creating a new worker pool.
+{:shortdesc}
+
+Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
+
+1. Retrieve the **VPC ID** and **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. You can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls --provider vpc-classic`.
+   ```
+   ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   ...
+   VPC ID:        <VPC_ID>
+   ...
+   Worker Zones: us-south-1, us-south-2, us-south-3
+   ```
+   {: screen}
+
+2. For each zone, note the ID of VPC subnet that you want to use for the worker pool. If you do not have a VPC subnet in the zone, [create a VPC subnet](/docs/infrastructure/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#subnet-create). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so create a VPC subnet with enough IP addresses, such as 256.
+   ```
+   ibmcloud oc subnets --zone <zone> --provider vpc-classic --vpc-id <VPC_ID>
+   ```
+   {: pre}
+
+3.  For each zone, review the [available flavors for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm).
+
+    ```
+    ibmcloud oc flavors --zone <zone>
+    ```
+    {: pre}
+
+4. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. Include the `--vpc-id` option if the worker pool is the first in the cluster.
+   ```
+   ibmcloud oc worker-pool create vpc-classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC_ID>] [--label <key=value>]
+   ```
+   {: pre}
+
+5. Verify that the worker pool is created.
+   ```
+   ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+   ```
+   {: pre}
+
+6. By default, adding a worker pool creates a pool with no zones. To deploy worker nodes in a zone, you must add the zones that you previously retrieved to the worker pool. If you want to spread your worker nodes across multiple zones, repeat this command for each zone.
+   ```
+   ibmcloud oc zone add vpc-classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <VPC_subnet_ID>
+   ```
+   {: pre}
+
+7. Verify that worker nodes provision in the zone that you added. Your worker nodes are ready when the **State** changes from `provisioning` to `normal`.
+   ```
+   ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   ID                                                     Primary IP     Flavor   State          Status                                        Zone       Version   
+   kube-<ID_string>-<cluster_name>-<pool_name>-00000002   10.xxx.xx.xxx   c2.2x4   provisioning   Infrastructure instance status is 'pending'   us-south-1   -   
+   kube-<ID_string>-<cluster_name>-<pool_name>-00000003   10.xxx.xx.xxx   c2.2x4   normal   Ready   us-south-1   1.15.1_1511   
+   ```
+   {: screen}
+
+### Adding a zone to a worker pool
+{: #vpc_add_zone}
+
+You can span your VPC cluster across multiple zones within one region by adding a zone to your existing worker pool.
+{:shortdesc}
+
+When you add a zone to a worker pool, the worker nodes that are defined in your worker pool are provisioned in the new zone and considered for future workload scheduling. Red Hat OpenShift on IBM Cloud automatically adds the `failure-domain.beta.kubernetes.io/region` label for the region and the `failure-domain.beta.kubernetes.io/zone` label for the zone to each worker node. The Kubernetes scheduler uses these labels to spread pods across zones within the same region.
+
+If you have multiple worker pools in your cluster, add the zone to all of them so that worker nodes are spread evenly across your cluster.
+
+Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
+
+1. Get the **Location** of your cluster, and note the existing **Worker Zones** and **VPC ID**.
+   ```
+   ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   ...
+   VPC ID:        <VPC_ID>
+   Workers:       3
+   Worker Zones:  us-south-1
+   ...
+   Location:      Dallas   
+   ```
+   {: screen}
+
+2. List available zones for your cluster's location to see what other zones you can add.
+   ```
+   ibmcloud oc zone ls --provider vpc-classic | grep <location>
+   ```
+   {: pre}
+
+3. List available VPC subnets for each zone that you want to add. If you do not have a VPC subnet in the zone, [create a VPC subnet](/docs/infrastructure/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#subnet-create). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so create a VPC subnet with enough IP addresses, such as 256. You cannot change the number of IPs that a VPC subnet has later.
+   ```
+   ibmcloud oc subnets --zone <zone> --provider vpc-classic --vpc-id <VPC_ID>
+   ```
+   {: pre}
+
+4. List the worker pools in your cluster and note their names.
+   ```
+   ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+   ```
+   {: pre}
+
+5. Add the zone to your worker pool. Repeat this step for each zone that you want to add to your worker pool. If you have multiple worker pools, add the zone to all your worker pools so that your cluster is balanced in all zones. Include the `--worker-pool` flag for each worker pool.
+
+   If you want to use different VPC subnets for different worker pools, repeat this command for each subnet and its corresponding worker pools. Any new worker nodes are added to the VPC subnets that you specify, but the VPC subnets for any existing worker nodes are not changed.
+   {: tip}
+   ```
+   ibmcloud oc zone add vpc-classic --zone <zone> --cluster <cluster_name_or_ID> -w <pool_name> [-w <pool2_name>] --subnet-id
+   ```
+   {: pre}
+
+6. Verify that the zone is added to your cluster. Look for the added zone in the **Worker Zones** field of the output. Note that the total number of workers in the **Workers** field has increased as new worker nodes are provisioned in the added zone.
+  ```
+  ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+  ```
+  {: pre}
+
+  Example output:
+  ```
+  Workers:       9
+  Worker Zones:  us-south-1, us-south-2, us-south-3
+  ```
+  {: screen}
+
+<br />
+
+
+## Adding worker nodes in classic clusters
+{: #classic_pools}
+
+Add worker nodes to your classic cluster.
+{: shortdesc}
+
+### Creating a new worker pool
+{: #add_pool}</ff-roks311-vpc>
 
 ## Adding worker nodes by creating a new worker pool
 {: #add_pool}
@@ -153,11 +307,15 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
    {: screen}
 
 <br />
+<ff-roks311-vpc>
 
-## Adding a zone to a worker pool
+### Adding a zone to a worker pool
+{: #add_zone}</ff-roks311-vpc>
+
+## Adding worker nodes by adding a zone to a worker pool
 {: #add_zone}
 
-You can span your cluster across multiple zones within one region by adding a zone to your existing worker pool.
+You can span your<ff-roks311-vpc> classic</ff-roks311-vpc> cluster across multiple zones within one region by adding a zone to your existing worker pool.
 {:shortdesc}
 
 When you add a zone to a worker pool, the worker nodes that are defined in your worker pool are provisioned in the new zone and considered for future workload scheduling. Red Hat OpenShift on IBM Cloud automatically adds the `failure-domain.beta.kubernetes.io/region` label for the region and the `failure-domain.beta.kubernetes.io/zone` label for the zone to each worker node. The Kubernetes scheduler uses these labels to spread pods across zones within the same region.

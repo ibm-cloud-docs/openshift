@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -151,7 +151,8 @@ Looking for instructions for how to update or remove the {{site.data.keyword.cos
 {: tip}
 
 Before you begin:
-- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).<ff-roks311-vpc>
+- If you plan to install the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster, you must enable VRF in your {{site.data.keyword.cloud_notm}} account by running `ibmcloud account update --service-endpoint-enable true`. This command output prompts you to open a support case to enable your account to use VRF and service endpoints. When VRF is enabled, any system that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with the cluster worker nodes. You can isolate your cluster from other systems on the private network by applying [Calico private network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers).</ff-roks311-vpc>
 
 To install the plug-in:
 
@@ -344,6 +345,7 @@ To install the plug-in:
             SET CLUSTER_PROVIDER="VPC-CLASSIC"
             ```
             {: pre}
+            
 
     4. Retrieve the operating system of the worker nodes and store it in an environment variable.
 

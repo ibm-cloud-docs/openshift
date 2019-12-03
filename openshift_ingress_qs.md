@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -47,6 +47,7 @@ Quickly expose your app to the Internet by creating a layer 7 Ingress applicatio
   Ingress Secret:         mycluster-a1b2cdef345678g9hi012j3kl4567890-0001
   ```
   {: screen}
+  
 
 3. Using the Ingress subdomain and secret, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If you app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
   ```
