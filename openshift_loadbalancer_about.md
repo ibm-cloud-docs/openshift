@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -25,6 +25,8 @@ subcollection: openshift
 
 # About network load balancers (NLBs)
 {: #loadbalancer-about}
+
+
 
 When you create a standard cluster, {{site.data.keyword.openshiftlong}} automatically provisions a portable public subnet and a portable private subnet.
 {: shortdesc}

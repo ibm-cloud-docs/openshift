@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,9 +35,8 @@ If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud l
 
 ## Service limitations
 {: #tech_limits}
-<br>
 
-Red Hat OpenShift on IBM Cloud comes with the following service limitations. 
+Red Hat OpenShift on IBM Cloud comes with the following service limitations.
 {: shortdesc}
 
 In addition to the service limitations, make sure to also review the limitations for [classic](#classic_limits) clusters.
@@ -145,3 +144,8 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
     </tr>
   </tbody>
   </table>
+
+
+
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -25,6 +25,7 @@ subcollection: openshift
 
 # Red Hat OpenShift on IBM Cloud CLI
 {: #kubernetes-service-cli}
+
 
 Refer to these commands to create and manage **both community Kubernetes or OpenShift clusters** in {{site.data.keyword.openshiftlong}}.
 {:shortdesc}
@@ -123,6 +124,12 @@ Check out the following changes between each version of the CLI plug-in:
   </tr>
  </tbody>
 </table>
+
+<br />
+
+<br>
+
+
 
 <br />
 
@@ -509,6 +516,8 @@ ibmcloud oc cluster feature disable public-service-endpoint --cluster my_cluster
 
 Enable a feature on an existing cluster. This command must be combined with one of the following subcommands for the feature that you want to enable.
 {: shortdesc}
+
+
 
 #### `ibmcloud oc cluster feature enable private-service-endpoint`
 {: #cs_cluster_feature_enable_private_service_endpoint}
@@ -1145,7 +1154,7 @@ workerNum: <em>&lt;number_workers&gt;</em>
 diskEncryption: <em>false</em></code></pre></dd>
 
 <dt><code>--hardware <em>HARDWARE</em></code></dt>
-<dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional. For bare metal flavors, specify `dedicated`.</dd> 
+<dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional. For bare metal flavors, specify `dedicated`.</dd>
 
 <dt><code>--machine-type <em>FLAVOR</em></code></dt>
 <dd>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
@@ -1948,11 +1957,14 @@ ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -w pool1 -w pool2
 
 </br>
 
+
 ### `ibmcloud oc zone ls`
 {: #cs_datacenters}
 
 View a list of available zones that you can create a cluster in.
 {: shortdesc}
+
+
 
 The `locations` alias for this command is deprecated.
 {: deprecated}
@@ -2432,48 +2444,6 @@ ibmcloud oc alb configure classic --alb-id public-cr18a61a63a6a94b658596aa93a087
 
 </br>
 
-### `ibmcloud oc alb create classic`
-{: #cs_alb_create}
-
-Create a public or private ALB in a zone. The ALB that you create is enabled by default.
-{: shortdesc}
-
-```
-ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZONE --vlan VLAN_ID [--user-ip IP] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster.</dd>
-
-<dt><code>--type<em> PUBLIC|PRIVATE</em></code></dt>
-<dd>The type of ALB: <code>public</code> or <code>private</code>.</dd>
-
-<dt><code>--zone <em>ZONE</em></code></dt>
-<dd>The zone to create the ALB in.</dd>
-
-<dt><code>--vlan <em>VLAN_ID</em></code></dt>
-<dd>The ID of the VLAN to create the ALB on. This VLAN must match the ALB <code>type</code> and must be in the same <code>zone</code> as the ALB that you want to create.</dd>
-
-<dt><code>--user-ip <em>IP</em></code></dt>
-<dd>Optional: An IP address to assign to the ALB. This IP must be on the <code>vlan</code> that you specified and must be in the same <code>zone</code> as the ALB that you want to create. This IP address must not be in use by another load balancer or ALB in the cluster.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc alb create classic --cluster mycluster --type public --zone dal10 --vlan 2234945 --user-ip 1.1.1.1
-```
-{: pre}
-
-</br>
-
 ### `ibmcloud oc alb get`
 {: #cs_alb_get}
 
@@ -2748,6 +2718,8 @@ Forward logs from your cluster to an external server.
 Disable automatic updates of all Fluentd pods in a cluster.
 {: shortdesc}
 
+
+
 Disable automatic updates of your Fluentd pods in a specific cluster. When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Fluentd configmap, but does not change the build version of your Fluentd for logging add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your add-on images.
 
 ```
@@ -2772,6 +2744,8 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER [-s]
 Enable automatic updates for your Fluentd pods in a specific cluster. Fluentd pods are automatically updated when a new build version is available.
 {: shortdesc}
 
+
+
 ```
 ibmcloud oc logging autoupdate enable --cluster CLUSTER [-s]
 ```
@@ -2793,6 +2767,8 @@ ibmcloud oc logging autoupdate enable --cluster CLUSTER [-s]
 
 View whether your Fluentd pods are set to automatically update in a cluster.
 {: shortdesc}
+
+
 
 ```
 ibmcloud oc logging autoupdate get --cluster CLUSTER [--json] [-s]
@@ -3345,6 +3321,7 @@ The `logging config refresh` alias for this command is deprecated.
 ```
 ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-s]
 ```
+{: pre}
 
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3919,6 +3896,8 @@ ibmcloud oc api-key reset --region us-south
 Set and unset credentials that allow you to access the IBM Cloud infrastructure portfolio through your IBM Cloud account.
 {: shortdesc}
 
+
+
 ### `ibmcloud oc credential get`
 {: #cs_credential_get}
 
@@ -4148,6 +4127,8 @@ ibmcloud oc subnets -l ams03 -l wdc -l ap
 List public and private VLANs for a zone and view the VLAN spanning status.
 {: shortdesc}
 
+
+
 ### `ibmcloud oc vlan ls`
 {: #cs_vlans}
 
@@ -4221,6 +4202,9 @@ ibmcloud oc vlan spanning get --region us-south
 {: pre}
 
 <br />
+
+
+
 
 ## `addon-versions` command
 {: #cs_addon_versions}

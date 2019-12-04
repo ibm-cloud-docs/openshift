@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -83,8 +83,8 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 
 <br />
 
-## Creating a new worker pool
-{: #add_pool}
+
+
 
 ## Adding worker nodes by creating a new worker pool
 {: #add_pool}
@@ -154,7 +154,8 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 <br />
 
-## Adding a zone to a worker pool
+
+## Adding worker nodes by adding a zone to a worker pool
 {: #add_zone}
 
 You can span your cluster across multiple zones within one region by adding a zone to your existing worker pool.

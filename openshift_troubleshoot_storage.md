@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: kubernetes, iks, help, debug
 
@@ -50,6 +50,7 @@ Review the options to debug persistent storage and find the root causes for fail
    ibmcloud plugin repo-plugins
    ```
    {: pre}
+   
 
 2. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
    1. Show the `kubectl` CLI version that is installed in your cluster and your local machine.
@@ -184,7 +185,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
    4. Review common errors that can occur when you mount a PVC to your app.
       - [File storage: App cannot access or write to PVC](#file_app_failures)
-      - [Block storage: App cannot access or write to PVC](#block_app_failures)
+      - [Classic Block storage: App cannot access or write to PVC](#block_app_failures)
       - [Object storage: Accessing files with a non-root user fails](#cos_nonroot_access)
 
 
@@ -1329,6 +1330,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 
 If you entered the correct information on the {{site.data.keyword.cloud_notm}} catalog page, verify that your cluster is correctly set up for Portworx.
 {: shortdesc}
+
 
 2. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/).
 3. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.

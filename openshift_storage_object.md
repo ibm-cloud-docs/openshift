@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -141,6 +141,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 
 5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos), or if you already installed the plug-in, [decide on the configuration]( #configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
 
+
 ## Installing the IBM Cloud Object Storage plug-in
 {: #install_cos}
 
@@ -154,6 +155,7 @@ Before you begin:
 - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To install the plug-in:
+
 
 
 
@@ -344,6 +346,7 @@ To install the plug-in:
             SET CLUSTER_PROVIDER="VPC-CLASSIC"
             ```
             {: pre}
+            
 
     4. Retrieve the operating system of the worker nodes and store it in an environment variable.
 

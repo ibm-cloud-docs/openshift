@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -28,6 +28,7 @@ subcollection: openshift
 
 You can use built-in security features in {{site.data.keyword.openshiftlong}} for risk analysis and security protection. These features help you to protect your cluster infrastructure and network communication, isolate your compute resources, and ensure security compliance across your infrastructure components and container deployments.
 {: shortdesc}
+
 
 
 ## Overview of security threats for your cluster
@@ -153,7 +154,6 @@ For more information about service endpoints, see worker-to-master and user-to-m
 <br />
 
 
-
 ## Worker node
 {: #workernodes}
 
@@ -161,6 +161,13 @@ Worker nodes carry the deployments and services that make up your app. When you 
 {: shortdesc}
 
 **Who owns the worker node and am I responsible to secure it?** </br>
+
+
+
+
+Your worker nodes are provisioned in to your {{site.data.keyword.cloud_notm}} account. The worker nodes are dedicated to you and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and Red Hat OpenShift on IBM Cloud components apply the latest security updates and patches.
+
+
 For more information, see [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks).
 
 Use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) regularly (such as monthly) to deploy updates and security patches to the operating system and to update the OpenShift version that your worker nodes run. When updates are available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the `ibmcloud oc clusters ls` or `ibmcloud oc workers ls --cluster <cluster_name>` commands. Worker node updates are provided by IBM as a full worker node image that includes the latest security patches. To apply the updates, the worker node must be reimaged and reloaded with the new image. Keys for the root user are automatically rotated when the worker node is reloaded.
@@ -193,7 +200,7 @@ The image does not include components that ensure secure end-to-end communicatio
     </tr>
     <tr>
   <td>Compute isolation</td>
-  <td>Worker nodes are dedicated to a cluster and do not host workloads of other clusters. When you create a cluster, you can choose to provision your worker nodes as [physical machines (bare metal) or as virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that run on shared or dedicated physical hardware.</td>
+  <td>Worker nodes are dedicated to a cluster and do not host workloads of other clusters. When you create a cluster, you can choose to provision your worker nodes as [physical machines (bare metal) or as virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that run on shared or dedicated physical hardware. </td>
 </tr>
 <tr>
   <td>Option to deploy bare metal </td>
@@ -282,6 +289,8 @@ You can use network load balancer (NLB) and Ingress application load balancer (A
 
 **Can I use security groups to manage my cluster's network traffic?** </br>
 {{site.data.keyword.cloud_notm}} [security groups](/docs/infrastructure/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups) are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. If you want to manage traffic for each worker node, you can use security groups. When you create a security group, you must allow the VRRP protocol, which Red Hat OpenShift on IBM Cloud uses to manage NLB IP addresses. To uniformly manage traffic for your cluster across all of your worker nodes, use [Calico and Kubernetes policies](/docs/openshift?topic=openshift-network_policies).
+
+
 
 **How can I do TLS termination with LoadBalancer and Ingress services?** </br>
 The Ingress service offers TLS termination at two points in the traffic flow:

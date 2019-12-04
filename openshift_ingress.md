@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -34,6 +34,7 @@ Expose multiple apps in your OpenShift cluster by creating Ingress resources tha
 
 Use these sample YAML files to quickly get started with specifying your Ingress resource.
 {: shortdesc}
+
 
 **Ingress resource to publicly expose an app**</br>
 
@@ -125,6 +126,8 @@ Before you get started with Ingress, review the following prerequisites.
 * Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/infrastructure/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the ALB can route packets to various subnets in the account.
 
 <br />
+
+
 
 
 ## Planning networking for single or multiple namespaces
@@ -248,7 +251,7 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 When you configure the public ALB, you choose the domain that your apps will be accessible through.
 {: shortdesc}
 
-You can use the IBM-provided domain, such as `mycluster-<hash>-0001.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain or set up an A record with your DNS provider that uses the ALB's public IP address.
+You can use the IBM-provided domain, such as `mycluster-<hash>-0001.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain.
 
 **To use the IBM-provided Ingress domain:**
 
@@ -970,3 +973,9 @@ http://<subdomain2>.<domain>/<app1_path>
 
 For a comprehensive tutorial on how to secure microservice-to-microservice communication across your clusters by using the private ALB with TLS, check out [this blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-cloud/secure-microservice-to-microservice-communication-across-kubernetes-clusters-using-a-private-ecbe2a8d4fe2).
 {: tip}
+
+<br />
+
+
+
+

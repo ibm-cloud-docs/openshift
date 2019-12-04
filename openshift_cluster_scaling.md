@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -39,6 +39,7 @@ Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?t
 
 ## Understanding scale-up and scale-down
 {: #ca_about}
+
 
 The cluster autoscaler periodically scans the cluster to adjust the number of worker nodes within the worker pools that it manages in response to your workload resource requests and any custom settings that you configure, such as scanning intervals. Every minute, the cluster autoscaler checks for the following situations.
 {: shortdesc}
@@ -262,6 +263,10 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         oc --namespace=kube-system set image deployments/tiller-deploy tiller=gcr.io/kubernetes-helm/tiller@sha256:cab750b402d24dd7b24756858c31eae6a007cd0ee91ea802b3891e2e940d214d
         ```
         {: pre}
+
+        If you Tiller pod errors with an `Error: ImagePullBackOff` event, make sure that your cluster can pull images on the public network, and try again.
+        {: tip}
+
 4.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
     ```
     helm repo add iks-charts https://icr.io/helm/iks-charts
@@ -926,6 +931,10 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ...
     ```
     {: screen}
+
+    If you already deleted the Helm chart and see a message such as `iks-ca-configmap not found`, [redeploy the cluster autoscaler Helm chart](#ca_helm) to your cluster and try to remove it again.
+    {: tip}
+
 2.  List your existing Helm charts and note the name of the cluster autoscaler.
     ```
     helm ls

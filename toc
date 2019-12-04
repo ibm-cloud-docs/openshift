@@ -65,7 +65,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_cluster_remove.md
 
     {: .topicgroup}
-    Managing cluster network traffic
+    Managing the cluster network
         openshift_firewall.md
         openshift_network_policy.md
         openshift_edge.md
@@ -77,19 +77,21 @@ Red Hat OpenShift on IBM Cloud
     Deploying apps
         openshift_images.md
         openshift_app.md
-        openshift_app_networking.md
-        openshift_nodeport.md
 
+    openshift_app_networking.md
+    openshift_nodeport.md
     openshift_routes.md
 
     {: .topicgroup}
     Exposing apps with load balancers
+        openshift_loadbalancer_qs.md
         openshift_loadbalancer_about.md
         openshift_loadbalancer.md
         openshift_loadbalancer_dns.md
 
     {: .topicgroup}
-    HTTPS load balancing with Ingress application load balancers (ALB)
+    HTTPS load balancing with Ingress application load balancers (ALBs)
+        openshift_ingress_qs.md
         openshift_ingress_about.md
         openshift_ingress.md
         openshift_annotations.md

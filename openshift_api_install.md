@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -30,7 +30,6 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}}, so that you can use the same methods to consistently create and manage your community Kubernetes or OpenShift clusters. To use the CLI, see [Setting up the CLI](/docs/openshift?topic=openshift-openshift-cli). 
 {:shortdesc}
 
-
 ## About the API
 {: #api_about}
 
@@ -45,6 +44,7 @@ The Red Hat OpenShift on IBM Cloud API automates the provisioning and management
 
 You can use the Red Hat OpenShift on IBM Cloud API to automate the creation, deployment, and management of your OpenShift clusters. 
 {:shortdesc}
+
 
 The Red Hat OpenShift on IBM Cloud API requires header information that you must provide in your API request and that can vary depending on the API that you want to use. To determine what header information is needed for your API, see the [Red Hat OpenShift on IBM Cloud API documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://us-south.containers.cloud.ibm.com/swagger-api).
 

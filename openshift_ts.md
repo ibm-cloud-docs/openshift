@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -178,6 +178,7 @@ If the troubleshooting steps do not resolve the issue, see [Getting help](#opens
 ## OpenVPN server error due to ingress IP address for NLB
 {: #rhoks_ts_openvpn_subnet}
 
+
 {: tsSymptoms}
 You see the following error message.
 ```
@@ -262,6 +263,11 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
     {: pre}
 
 <br />
+
+
+
+
+
 
 ## VPN server error due to infrastructure credentials
 {: #rhoks_ts_openvpn_login}

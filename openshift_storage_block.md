@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -983,6 +983,7 @@ If you want to increase storage capacity or performance, you can modify your exi
 For questions about billing and to find the steps for how to use the {{site.data.keyword.cloud_notm}} console to modify your storage, see [Expanding Block Storage capacity](/docs/infrastructure/BlockStorage?topic=BlockStorage-expandingcapacity#expandingcapacity) and [Adjusting IOPS](/docs/infrastructure/BlockStorage?topic=BlockStorage-adjustingIOPS). Updates that you make from the console are not reflected in the persistent volume (PV). To add this information to the PV, run `oc patch pv <pv_name>` and manually update the size and IOPS in the **Labels** and **Annotation** section of your PV.
 {: tip}
 
+
 1. List the PVCs in your cluster and note the name of the associated PV from the **VOLUME** column.
    ```
    oc get pvc
@@ -1475,6 +1476,8 @@ To clean up persistent data:
    oc get pv
    ```
    {: pre}
+
+   
 
 
 8. {: #sl_delete_storage}List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance.

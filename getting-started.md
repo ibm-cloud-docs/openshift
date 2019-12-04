@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -81,6 +81,8 @@ subcollection: openshift
 -->
 </style>
 
+
+
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}
 
@@ -136,6 +138,8 @@ Now that your cluster is ready, [deploy an app](#deploy-app).
 
 <br />
 
+
+
 ## Deploying an app with the OpenShift catalog
 {: #deploy-app}
 
@@ -170,3 +174,5 @@ Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=ope
 
 <br>
 For more information about deploying and routing network traffic to your apps, see the [OpenShift Developer Guide ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/index.html).
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -117,3 +117,8 @@ In classic clusters, bringing your own Ingress controller is supported only for 
   https://<load_balancer_host_name>/<app_path>
   ```
   {: codeblock}
+
+
+
+
+

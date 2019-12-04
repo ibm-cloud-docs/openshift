@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -65,7 +65,7 @@ In classic clusters, the Ingress subdomain for your cluster is linked to the pub
 ### Multizone load balancer (MZLB)
 {: #mzlb}
 
-Cloudflare multizone load balancer (MZLB) health checks your ALBs.
+A Cloudflare multizone load balancer (MZLB) health checks your ALBs.
 {: shortdesc}
 
 Whenever you create a multizone cluster or [add a zone to a single zone cluster](/docs/openshift?topic=openshift-add_workers#add_zone), a Cloudflare multizone load balancer (MZLB) is automatically created and deployed so that 1 MZLB exists for each region. The MZLB puts the IP addresses of your ALBs behind the same subdomain and enables health checks on these IP addresses to determine whether they are available or not.
@@ -124,3 +124,7 @@ The following diagram shows how Ingress directs communication from the internet 
 5. The ALB checks if a routing rule for the `myapp` path in the cluster exists. If a matching rule is found, the request is proxied according to the rules that you defined in the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the public IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the ALB load balances the requests between app pods across all zones.
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the ALB that forwarded the client request exists. The ALB then sends the response packet to the client.
+
+<br>
+
+
