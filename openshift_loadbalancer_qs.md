@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-04"
 
 keywords: openshift, roks, rhoks, rhos, nlb, lbaas
 
@@ -48,10 +48,9 @@ Quickly expose your app to the Internet by creating a layer 4 load balancer.
   ```
   {: screen}
 
-
 3. Curl your app's IP address.
   ```
-  curl 169.48.228.75
+  curl <external-ip>
   ```
   {: pre}
 
