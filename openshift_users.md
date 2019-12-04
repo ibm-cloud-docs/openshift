@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-04"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -1068,10 +1068,12 @@ Before you begin:
 *   Make sure that you are the account owner or have **Super User** and all device access. You can't grant a user access that you don't have.
 *   Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
 
-You can grant classic infrastructure access through the [console](#infra_console) or [CLI](#infra_cli). 
+You can grant classic infrastructure access through the [console](#infra_console) or [CLI](#infra_cli).
 
 ### Assigning infrastructure access through the console
 {: #infra_console}
+
+
 
 1. Log in to the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com). From the menu bar, select **Manage > Access (IAM)**.
 2. Click the **Users** page, and then click the name of the user that you want to set permissions for.
@@ -1100,6 +1102,8 @@ Downgrading permissions? The action can take a few minutes to complete.
 
 ### Assigning infrastructure access through the CLI
 {: #infra_cli}
+
+
 
 1.  Check whether the credentials for classic infrastructure access for Red Hat OpenShift on IBM Cloud in the region and resource group have any missing required or suggested permissions.
     ```
