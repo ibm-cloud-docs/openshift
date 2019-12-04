@@ -64,6 +64,7 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
 {: #classic_compute_limit}
 
 </br>
+
 | Category | Description |
 | -------- | ----------- |
 | Location | [Locations](/docs/openshift?topic=openshift-regions-and-zones) are available in all six worldwide multizone metro and select single zone regions. |
@@ -77,11 +78,12 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
 {: #classic_networking_limit}
 
 </br>
+
 | Category | Description |
 | -------- | ----------- |
 | Ingress ALBs | <ul><li>The Ingress application load balancer (ALB) can process 32,768 connections per second. </li><li>HTTP2 is not supported.</li></ul> |
-| Istio managed add-on | <ul><li>You cannot enable the managed Istio add-on in your cluster if you installed the [container image security enforcer admission controller](/docs/services/Registry?topic=registry-security_enforce#security_enforce) in your cluster.</li><li>When you enable the managed Istio add-on, you cannot use `IstioControlPlane` resources to customize the Istio control plane installation. Only the `IstioControlPlane` resources that are managed by IBM are supported.</li><li>You cannot modify the `istio` configuration map in the `istio-system` namespace. This configuration map determines the Istio control plane settings after the managed add-on is installed.</li><li>The following features are not supported in the managed Istio add-on:<ui><li>[Policy enforcement](https://istio.io/docs/tasks/policy-enforcement/enabling-policy/)</li><li>[Secret discovery service (SDS)](https://istio.io/docs/tasks/security/citadel-config/auth-sds/)</li><li>[Any features by the community that are in alpha or beta release stages](https://istio.io/about/feature-stages/)</li></ul></ul> 
-| NLB 2.0 | You cannot create version 2.0 network load balancers (NLB 2.0) to expose your apps. | 
+| Istio managed add-on | <ul><li>You cannot enable the managed Istio add-on in your cluster if you installed the [container image security enforcer admission controller](/docs/services/Registry?topic=registry-security_enforce#security_enforce) in your cluster.</li><li>When you enable the managed Istio add-on, you cannot use `IstioControlPlane` resources to customize the Istio control plane installation. Only the `IstioControlPlane` resources that are managed by IBM are supported.</li><li>You cannot modify the `istio` configuration map in the `istio-system` namespace. This configuration map determines the Istio control plane settings after the managed add-on is installed.</li><li>The following features are not supported in the managed Istio add-on:<ui><li>[Policy enforcement](https://istio.io/docs/tasks/policy-enforcement/enabling-policy/)</li><li>[Secret discovery service (SDS)](https://istio.io/docs/tasks/security/citadel-config/auth-sds/)</li><li>[Any features by the community that are in alpha or beta release stages](https://istio.io/about/feature-stages/)</li></ul></ul> |
+| Network load balancers (NLB)| <ul><li>You cannot create version 2.0 network load balancers (NLB 2.0) to expose your apps.</li><li>You cannot create subdomains for private NLBs.</li><li>You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-getting-customer-support).</li></ul> | 
 | Private VLANs only | Private network load balancers (NLBs) cannot be registered with the domain name server (DNS), so the cluster cannot be created with only a private network interface. At least some of the cluster's worker nodes must have both public and private VLANs. You can still create a private service to expose your apps on only the private network. |
 | Service IP addresses | You can have 65,000 IPs per cluster in the 172.21.0.0/16 range that you can assign to Kubernetes services within the cluster. |
 {: summary="This table contains information on networking limitations for classic clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
@@ -91,6 +93,7 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
 {: #classic_storage_limit}
 
 </br>
+
 | Category | Description |
 | -------- | ----------- |
 | Volume instances | You can have a total of 250 IBM Cloud infrastructure file and block storage volumes per account. If you mount more than this amount, you might see an "out of capacity" message when you provision persistent volumes and need to contact your IBM Cloud infrastructure representative. For more FAQs, see the [file](/docs/infrastructure/FileStorage?topic=FileStorage-file-storage-faqs#how-many-volumes-can-i-provision-) and [block](/docs/infrastructure/BlockStorage?topic=BlockStorage-block-storage-faqs#how-many-instances-can-share-the-use-of-a-block-storage-volume-) storage docs. |
