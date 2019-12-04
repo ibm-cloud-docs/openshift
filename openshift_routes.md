@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-04"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -78,6 +78,12 @@ To set up routes to publicly expose apps:
   * If you registered a wildcard subdomain, specify a unique subdomain in each route resource that you create. For example, you might specify `svc1.example.com` in this route resource, and `svc2.example.com` in another route resource.
 
 4. Customize the default routing rules with [optional configurations ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html).
+
+You can list the routes in your cluster at any time by running `oc get routes`.
+{: tip}
+
+<br />
+
 
 ## Setting up routes to privately expose your apps
 {: #private-routes-setup}
@@ -157,3 +163,6 @@ To use routes to privately expose your apps, create a new router and change the 
 6. [Set up a route ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html). Leave the **Hostname** field blank.
 
 7. Customize the default routing rules with [optional configurations ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html).
+
+You can list the routes in your cluster at any time by running `oc get routes`.
+{: tip}
