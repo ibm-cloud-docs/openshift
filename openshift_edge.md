@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -56,6 +56,7 @@ Before you begin:
         "labels": {"dedicated":"edge"},
         "state": "labels"
       }</pre></p>
+  <p class="important">If you want to ensure that ALB pods are never scheduled to non-edge worker nodes under any circumstances, you must create or use an existing worker pool that has at least three worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that do not permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two worker nodes per zone, both ALB pod replicas already exist on those worker nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three worker nodes are present in a zone, the new ALB pod can be scheduled to the third worker node. Then, the old ALB pod is removed.</p>
 
 2. Verify that the worker pool and worker nodes have the `dedicated=edge` label.
   * To check the worker pool:
@@ -173,7 +174,7 @@ Before you begin:
 <br />
 
 
-## Preventing workloads from running on edge worker nodes
+## Preventing app workloads from running on edge worker nodes
 {: #edge_workloads}
 
 A benefit of edge worker nodes is that they can be specified to run networking services only.
@@ -184,7 +185,7 @@ Using the `dedicated=edge` toleration means that all network load balancer (NLB)
 
 
 Before you begin:
-- Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role for all namespaces](/docs/openshift?topic=openshift-users#platform). 
+- Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role for all namespaces](/docs/openshift?topic=openshift-users#platform).
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 </br>To prevent other workloads from running on edge worker nodes:
