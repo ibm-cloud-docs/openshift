@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-04"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:preview: .preview}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -89,7 +89,7 @@ subcollection: openshift
 With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available clusters that come installed with the [Red Hat OpenShift on IBM Cloud Container Platform![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) software installed on Red Hat Enterprise Linux.
 {: shortdesc}
 
-First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose a sample app in your cluster. 
+First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose a sample app in your cluster.
 <br>
 
 To complete the getting started tutorial, use a [Pay-As-You-Go IBM Cloud account](/docs/account?topic=account-upgrading-account) where you are the owner or have [full Administrator access](/docs/iam?topic=iam-iammanidaccser).
