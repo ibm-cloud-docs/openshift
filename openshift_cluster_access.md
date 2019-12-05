@@ -21,10 +21,8 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview} 
 
-
 # Accessing OpenShift clusters
 {: #access_cluster}
-
 
 After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
