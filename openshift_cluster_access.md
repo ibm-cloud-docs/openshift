@@ -27,6 +27,7 @@ subcollection: openshift
 After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
 
+
 ## Prerequisites
 {: #prereqs}
 
