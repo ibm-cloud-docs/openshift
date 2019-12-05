@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-05"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -913,7 +913,6 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
             name: <container_name>
             securityContext:
               runAsUser: <non_root_user>
-              fsGroup: <non_root_user> #only applicable for clusters that run Kubernetes version 1.13 or later
             volumeMounts:
             - name: <volume_name>
               mountPath: /<file_path>
@@ -952,11 +951,11 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     </tr>
     <tr>
     <td><code>spec.containers.securityContext.runAsUser</code></td>
-    <td>Optional: To run the app with a non-root user in a cluster that runs Kubernetes version 1.12 or earlier, specify the [security context ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) for your pod by defining the non-root user without setting the `fsGroup` in your deployment YAML at the same time. Setting `fsGroup` triggers the {{site.data.keyword.cos_full_notm}} plug-in to update the group permissions for all files in a bucket when the pod is deployed. Updating the permissions is a write operation and impacts performance. Depending on how many files you have, updating the permissions might prevent your pod from coming up and getting into a <code>Running</code> state. </br></br>If you have a cluster that runs Kubernetes version 1.13 or later and the {{site.data.keyword.cloud_notm}} Object Storage plug-in version 1.0.4 or later, you can change the owner of the s3fs mount point. To change the owner, specify the security context by setting `runAsUser` and `fsGroup` to the same non-root user ID that you want to own the s3fs mount point. If these two values do not match, the mount point is automatically owned by the `root` user.  </td>
+    <td>Optional: To run the app with a non-root user in a cluster that runs Kubernetes version 1.12 or earlier, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod by defining the non-root user.</td>
     </tr>
     <tr>
     <td><code>spec.containers.volumeMounts.mountPath</code></td>
-    <td>The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps.</td>
+    <td>The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.</td>
     </tr>
     <tr>
     <td><code>spec.containers.volumeMounts.name</code></td>
