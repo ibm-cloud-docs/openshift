@@ -38,6 +38,7 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 <br />
 
 
+
 ## Accessing OpenShift clusters through the public service endpoint
 {: #access_public_se}
 
