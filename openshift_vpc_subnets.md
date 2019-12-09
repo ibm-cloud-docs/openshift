@@ -23,10 +23,10 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview}
 
-# Configuring subnets for VPC clusters
+# Configuring VPC subnets
 {: #vpc-subnets}
 
-Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
+Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} VPC cluster.
 {:shortdesc}
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to VPC clusters. For information about classic clusters, see [Configuring subnets and IP addresses for classic clusters](/docs/openshift?topic=openshift-subnets).
@@ -44,20 +44,22 @@ Understand the basic concepts of VPC networking in Red Hat OpenShift on IBM Clou
 Before you create a VPC cluster for the first time, you must [create a VPC subnet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/vpc/provision/network) in each zone where you want to deploy worker nodes. A VPC subnet is a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they are attached to the same physical wire.
 {: shortdesc}
 
-When you create a cluster, you can specify only one existing VPC subnet for each zone. Each worker node that you add in a cluster is deployed with a private IP address from the VPC subnet in that zone. For a list of IP address ranges per VPC zone, see [VPC default address prefixes](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets#default-vpc-address-prefixes). After the worker node is provisioned, the worker node IP address persists after a `reboot` operation, but the worker node IP address changes after `replace` and `update` operations.
+When you create a cluster, you can specify only one existing VPC subnet for each zone. Each worker node that you add in a cluster is deployed with a private IP address from the VPC subnet in that zone. After the worker node is provisioned, the worker node IP address persists after a `reboot` operation, but the worker node IP address changes after `replace` and `update` operations.
 
-The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. Need to create your cluster by using custom-range subnets? Check out this guidance on [custom address prefixes](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets#address-prefixes-and-the-ibm-cloud-console-ui).
+The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. For a list of IP address ranges per VPC zone, see [VPC default address prefixes](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets#default-vpc-address-prefixes).
+
+Need to create your cluster by using custom-range subnets? Check out this guidance on [custom address prefixes](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets#address-prefixes-and-the-ibm-cloud-console-ui).
 {: tip}
 
 ### Public gateways
 {: #vpc_basics_pgw}
 
-If your worker nodes must access a public endpoint outside of the cluster, you can enable a public gateway on the VPC subnet that the worker nodes are deployed to.
+If your worker nodes must access a public endpoint outside of the cluster, you can enable a public gateway on the VPC subnet that the worker nodes are deployed to. A public gateway enables a subnet and all worker nodes that are attached to the subnet to establish outbound connections to the internet.
 {: shortdesc}
 
-A public gateway enables a subnet and all worker nodes that are attached to the subnet to establish outbound connections to the internet. For example, if an {{site.data.keyword.cloud_notm}} service does not support private service endpoints, your worker nodes must be connected to a subnet that has a public gateway attached to it. The pods on those worker nodes can securely communicate with the services over the public network through the subnet's public gateway. Note that a public gateway is not required on your subnets to allow inbound network traffic from the internet to `LoadBalancer` services or ALBs.
+For example, if an {{site.data.keyword.cloud_notm}} service does not support private service endpoints, your worker nodes must be connected to a subnet that has a public gateway attached to it. The pods on those worker nodes can securely communicate with the services over the public network through the subnet's public gateway. Note that a public gateway is not required on your subnets to allow inbound network traffic from the internet to `LoadBalancer` services or ALBs.
 
-A public gateway can be attached to or detached from a subnet at any time, and you can enable a public gateway only one subnet per zone. For more information about VPC subnets, see the [Networking for Virtual Private Cloud (Gen 1 compute) documentation](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-about-networking-for-vpc#use-a-public-gateway).
+A public gateway can be attached to or detached from a subnet at any time, and you can enable a public gateway only one subnet per zone. For more information about public gateways, see the [Networking for Virtual Private Cloud (Gen 1 compute) documentation](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-about-networking-for-vpc#use-a-public-gateway).
 
 ### Network segmentation
 {: #vpc_basics_segmentation}
@@ -72,7 +74,7 @@ If you have multiple clusters that must communicate with each other, you can cre
 ### VPC networking limitations
 {: #vpc_basics_limitations}
 
-When you create VPC subnets for your clusters, keep in mind the following features and limitations. For more information about VPC subnets, see [Characteristics of subnets in the VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-about-networking-for-vpc#characteristics-of-subnets).
+When you create VPC subnets for your clusters, keep in mind the following features and limitations.
 {: shortdesc}
 
 * The default CIDR size of each VPC subnet is `/24`, which can support up to 253 worker nodes. If you plan to deploy more than 250 worker nodes per zone in one cluster, consider creating a subnet of a larger size.
@@ -102,7 +104,9 @@ Use the {{site.data.keyword.cloud_notm}} console to create a VPC subnet for your
 1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets), click **New subnet**.
 2. Enter a name for your subnet and select the name of the VPC that you created.
 3. Select the location and zone where you want to create the subnet.
-4. Specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so create a VPC subnet with enough IP addresses, such as 256. You cannot change the number of IPs that a VPC subnet has later. If you enter a specific IP range, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+4. Specify the number of IP addresses to create.
+  * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so create a VPC subnet with enough IP addresses, such as 256. You cannot change the number of IPs that a VPC subnet has later.
+  * If you enter a specific IP range, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
 5. Choose if you want to attach a public network gateway to your subnet. A public network gateway is required when you want your cluster to access public endpoints, such as a public URL of another app, or an {{site.data.keyword.cloud_notm}} service that supports public service endpoints only.
 6. Click **Create subnet**.
 7. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-clusters#clusters_vpc_ui), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).
@@ -114,7 +118,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI to create a VPC subnet for your clu
 {: shortdesc}
 
 **Before you begin:**
-1. In your terminal, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the --sso flag to log in.
+1. In your terminal, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` flag to log in.
    ```
    ibmcloud login -r <region> [--sso]
    ```
@@ -137,12 +141,13 @@ Use the {{site.data.keyword.cloud_notm}} CLI to create a VPC subnet for your clu
   {: pre}
 
 2. Create the subnet. For more information about the options in this command, see the [CLI reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#subnet-create).
-  * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so create a VPC subnet with enough IP addresses, such as 256. You cannot change the number of IPs that a VPC subnet has later.
-  * Do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
-  ```
-  ibmcloud is subnet-create <subnet_nmae> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address>
-  ```
-  {: pre}
+    * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so create a VPC subnet with enough IP addresses, such as 256. You cannot change the number of IPs that a VPC subnet has later.
+    * Do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+
+    ```
+    ibmcloud is subnet-create <subnet_nmae> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address>
+    ```
+    {: pre}
 
 3. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-clusters#cluster_vpc_cli), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).
 

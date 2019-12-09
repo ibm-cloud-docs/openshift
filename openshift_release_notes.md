@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-09"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -35,6 +35,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| XX December 2019 | <ul><roks311-vpc><li>**Configuring VPC subnets**: [Added information](/docs/openshift?topic=openshift-vpc-subnets) about configuring VPC subnets, public gateways, and network segmentation for your VPC clusters.</li></roks311-vpc></ul>|
 | 04 December 2019 | <ul><li>**Exposing apps with load balancers or Ingress ALBs**: Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/openshift?topic=openshift-ingress-qs).</li><li>**OpenShift charges**: Now when you create OpenShift clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use OpenShift clusters?](/docs/openshift?topic=openshift-faqs#openshift_charges).</li><li>**OpenShift routes**: Added steps for [bringing your own hostname](/docs/openshift?topic=openshift-openshift_routes#routes-setup) for public routes and steps for [setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup).</li><li>**Use the internal KVDB in Portworx**: Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb).</li></ul>|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in December 2019"}
