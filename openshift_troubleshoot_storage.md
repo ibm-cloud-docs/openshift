@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-09"
 
-keywords: kubernetes, iks, help, debug
+keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:preview: .preview}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -1369,4 +1369,3 @@ When you report an issue, include your cluster ID. To get your cluster ID, run `
 
 
 
- 

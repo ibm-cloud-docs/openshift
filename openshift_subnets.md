@@ -26,13 +26,13 @@ subcollection: openshift
 # Configuring subnets and IP addresses
 {: #subnets}
 
-Change the pool of available portable public or private IP addresses for network load balancer (NLB) services by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
+Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
 {:shortdesc}
 
-## Overview of networking in Red Hat OpenShift on IBM Cloud
+## Overview of classic networking in Red Hat OpenShift on IBM Cloud
 {: #basics}
 
-Understand the basic concepts of networking in Red Hat OpenShift on IBM Cloud clusters. Red Hat OpenShift on IBM Cloud uses VLANs, subnets, and IP addresses to give cluster components network connectivity.
+Understand the basic concepts of classic networking in Red Hat OpenShift on IBM Cloud clusters. Red Hat OpenShift on IBM Cloud uses VLANs, subnets, and IP addresses to give cluster components network connectivity.
 {: shortdesc}
 
 ### VLANs
