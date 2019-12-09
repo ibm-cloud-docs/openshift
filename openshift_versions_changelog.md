@@ -40,6 +40,17 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
 
+### Changelog for worker node fix pack 3.11.154_1534_openshift, released 9 December 2019
+{: #311154_1534_worker}
+
+The following table shows the changes that are included in the worker node fix pack `3.11.154_1534_openshift`. 
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 kernel and packages | 3.10.0-1062.4.3.el7 | 3.10.0-1062.9.1.el7 | Updated worker node images with kernel and package updates for [CVE-2019-14821](https://nvd.nist.gov/vuln/detail/CVE-2019-14821){: external} and [CVE-2019-15239](https://nvd.nist.gov/vuln/detail/CVE-2019-15239){: external}.|
+{: caption="Changes since version 3.11.153_1533" caption-side="top"}
+
 ### Changelog for worker node fix pack 3.11.154_1533_openshift, released 25 November 2019
 {: #311154_1533_worker}
 
