@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-09"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d
 
@@ -20,7 +20,8 @@ subcollection: openshift
 {:note: .note}
 {:important: .important}
 {:download: .download}
-{:preview: .preview} 
+{:preview: .preview}
+{:external: target="_blank" .external}
 
 <style>
 <!--
@@ -178,6 +179,19 @@ Instead of Helm, you might use [Operators ![External link icon](../icons/launch-
     </div>
     </a>
 </div>
+
+<br />
+
+
+<!--specific to ROKS 3.11-->
+## Using the service catalog
+{: #service_catalog}
+
+You can extend your app's capabilities by binding a service from the [{{site.data.keyword.openshiftshort}} service catalog](https://docs.openshift.com/container-platform/3.11/architecture/service_catalog/index.html){: external}. The service catalog is enabled in your cluster by default. For an example of how to use the service catalog, see [Deploying an app with the {{site.data.keyword.openshiftshort}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app).
+{: shortdesc}
+
+The catalog services and related [templates](https://docs.openshift.com/container-platform/3.11/dev_guide/templates.html#dev-guide-templates){: external} are extensions that you choose to add to your cluster and are not maintained, updated, or supported by IBM. To review the images or maintenance guidelines, follow the `readme` files or other documentation of each service.
+{: note}
 
 <br />
 

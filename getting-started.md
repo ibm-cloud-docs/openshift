@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-04"
+lastupdated: "2019-12-09"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -140,10 +140,10 @@ Now that your cluster is ready, [deploy an app](#deploy-app).
 
 
 
-## Deploying an app with the OpenShift catalog
+## Deploying an app with the OpenShift service catalog
 {: #deploy-app}
 
-From the OpenShift console, you can deploy one of the built-in catalog apps.
+From the OpenShift console, you can deploy one of the built-in service catalog apps.
 {: shortdesc}
 
 1.  From the cluster details page, click **OpenShift web console**.
