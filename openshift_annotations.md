@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -2217,7 +2217,7 @@ Add extra header information to a client request before sending the request to t
 {:shortdesc}
 
 **Description**</br>
-The Ingress ALB acts as a proxy between the client app and your back-end app. Client requests that are sent to the ALB are processed (proxied) and put into a new request that is then sent to your back-end app. Similarly, back-end app responses that are sent to the ALB are processed (proxied) and put into a new response that is then sent to the client. Proxying a request or response removes HTTP header information, such as the user name, that was initially sent from the client or back-end app.
+The Ingress ALB acts as a proxy between the client app and your back-end app. Client requests that are sent to the ALB are processed (proxied) and put into a new request that is then sent to your back-end app. Similarly, back-end app responses that are sent to the ALB are processed (proxied) and put into a new response that is then sent to the client. Proxying a request or response removes HTTP header information, such as the username, that was initially sent from the client or back-end app.
 
 If your back-end app requires HTTP header information, you can use the `proxy-add-headers` annotation to add header information to the client request before the request is forwarded by the ALB to the back-end app. If the client web app requires HTTP header information, you can use the `response-add-headers` annotation to add header information to the response before the response is forwarded by the ALB to the client web app.<br>
 

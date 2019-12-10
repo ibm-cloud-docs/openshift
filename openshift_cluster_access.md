@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-05"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -220,7 +220,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```
         {: screen}
     3.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
-3.  Use the API key to log in to your OpenShift cluster. The user name (`-u`) is `apikey` and the password (`-p`) is your API key value.
+3.  Use the API key to log in to your OpenShift cluster. The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
     ```
     oc login -u apikey -p <API_key>
     ```
@@ -322,7 +322,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
         ```
         {: screen}
     3.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
-5.  [Use the service ID's API key to log in to your OpenShift cluster](#access_api_key). The user name (`-u`) is `apikey` and the password (`-p`) is your API key value.
+5.  [Use the service ID's API key to log in to your OpenShift cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
     ```
     oc login -u apikey -p <API_key>
     ```

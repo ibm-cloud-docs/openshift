@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-09"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -433,7 +433,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     2. Select **Account**, then **Users**, and then **User List**.
     3. Find your user ID.
     4. In the **API KEY** column, click **Generate** to generate an API key or **View** to view your existing API key.
-2.  Retrieve the API user name for your IBM Cloud infrastructure account.
+2.  Retrieve the API username for your IBM Cloud infrastructure account.
     1. From the **User List** menu, select your user ID.
     2. In the **API Access Information** section, find your **API Username**.
 3.  Log in to the IBM Cloud infrastructure CLI plug-in.
@@ -442,8 +442,8 @@ Before you can start to mount your existing storage to an app, you must retrieve
     ```
     {: pre}
 
-4.  Choose to authenticate by using the user name and API key for your IBM Cloud infrastructure account.
-5.  Enter the user name and API key that you retrieved in the previous steps.
+4.  Choose to authenticate by using the username and API key for your IBM Cloud infrastructure account.
+5.  Enter the username and API key that you retrieved in the previous steps.
 6.  List available block storage devices.
     ```
     ibmcloud sl block volume-list

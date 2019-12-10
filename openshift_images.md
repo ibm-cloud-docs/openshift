@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -604,7 +604,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tr>
     <tr>
     <td><code>--docker-username iamapikey</code></td>
-    <td>Required. Enter the user name to log in to your private registry. For {{site.data.keyword.registryshort_notm}}, the user name is set to the value <strong><code>iamapikey</code></strong>.</td>
+    <td>Required. Enter the username to log in to your private registry. For {{site.data.keyword.registryshort_notm}}, the username is set to the value <strong><code>iamapikey</code></strong>.</td>
     </tr>
     <tr>
     <td><code>--docker-password <em>&lt;token_value&gt;</em></code></td>
@@ -663,7 +663,7 @@ To create an image pull secret:
     </tr>
     <tr>
     <td><code>--docker-username <em>&lt;docker_username&gt;</em></code></td>
-    <td>Required. The user name to log in to your private registry.</td>
+    <td>Required. The username to log in to your private registry.</td>
     </tr>
     <tr>
     <td><code>--docker-password <em>&lt;token_value&gt;</em></code></td>
