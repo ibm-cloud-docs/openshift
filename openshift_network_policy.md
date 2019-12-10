@@ -117,79 +117,82 @@ A default Kubernetes policy that limits access to the Kubernetes Dashboard is al
 To view, manage, and add Calico policies, install and configure the Calico CLI.
 {:shortdesc}
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+
+
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
-3. For OS X and Linux users, complete the following steps.
-    1. Create the `/etc/calico` directory.
-        ```
-        sudo mkdir /etc/calico
-        ```
-        {: pre}
+2. If corporate network policies use proxies or firewalls to prevent access from your local system to public endpoints, [allow TCP access for Calico commands](/docs/openshift?topic=openshift-firewall#firewall).
 
-    2. Move the Calico configuration file that you previously downloaded to the directory.
-        ```
-        sudo mv /Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/calicoctl.cfg /etc/calico
-        ```
-        {: pre}
-
-4. [Download the Calico CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/projectcalico/calicoctl/releases).
-
-    If you are using OS X, download the `-darwin-amd64` version. If you are using Windows, install the Calico CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. Make sure to save the file as `calicoctl.exe`.
-    {: tip}
-
-5. For OS X and Linux users, complete the following steps.
-    1. Move the executable file to the _/usr/local/bin_ directory.
-        - Linux:
-
+3. Install the Calico CLI, `calicoctl`, according to your operating system.
+    * Linux and OS X:
+      1. Create the `/etc/calico` directory.
           ```
-          mv filepath/calicoctl /usr/local/bin/calicoctl
+          sudo mkdir /etc/calico
           ```
           {: pre}
 
-        - OS X:
-
+      2. Move the Calico configuration file that you previously downloaded to the directory.
           ```
-          mv filepath/calicoctl-darwin-amd64 /usr/local/bin/calicoctl
+          sudo mv /Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/calicoctl.cfg /etc/calico
           ```
           {: pre}
 
-    2. Make the file an executable file.
-        ```
-        chmod +x /usr/local/bin/calicoctl
-        ```
-        {: pre}
+      3. [Download the `-darwin-amd64` version of the Calico CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/projectcalico/calicoctl/releases). Make sure to save the file as `calicoctl.exe`.
 
-6. If corporate network policies use proxies or firewalls to prevent access from your local system to public endpoints, [allow TCP access for Calico commands](/docs/openshift?topic=openshift-firewall#firewall).
+      4. Move the executable file to the _/usr/local/bin_ directory.
+          - Linux:
+            ```
+            mv filepath/calicoctl /usr/local/bin/calicoctl
+            ```
+            {: pre}
 
-7. Verify that the Calico configuration is working correctly.
+          - OS X:
+            ```
+            mv filepath/calicoctl-darwin-amd64 /usr/local/bin/calicoctl
+            ```
+            {: pre}
 
-    - Linux and OS X:
+      5. Make the file an executable file.
+          ```
+          chmod +x /usr/local/bin/calicoctl
+          ```
+          {: pre}
 
-      ```
-      calicoctl get nodes
-      ```
-      {: pre}
+      6. Verify that the Calico configuration is working correctly.
+          ```
+          calicoctl get nodes
+          ```
+          {: pre}
 
-    - Windows: Use the `--config` flag to point to the network configuration file that you got in step 1. Include this flag each time you run a `calicoctl` command.
+          Example output:
+          ```
+          NAME
+          kube-dal10-crc21191ee3997497ca90c8173bbdaf560-w1.cloud.ibm
+          kube-dal10-crc21191ee3997497ca90c8173bbdaf560-w2.cloud.ibm
+          ```
+          {: screen}
+    * Windows:
+      1. [Download the Calico CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/projectcalico/calicoctl/releases). Save the file as `calicoctl.exe` in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
-      ```
-      calicoctl get nodes --config=<filepath>/calicoctl.cfg
-      ```
-      {: pre}
+      2. Verify that the Calico configuration is working correctly. Use the `--config` flag to point to the network configuration file that you got in step 1. Include this flag each time you run a `calicoctl` command.
+          ```
+          calicoctl get nodes --config=<filepath>/calicoctl.cfg
+          ```
+          {: pre}
 
-      Output:
-
-      ```
-      NAME
-      kube-dal10-crc21191ee3997497ca90c8173bbdaf560-w1.cloud.ibm
-      kube-dal10-crc21191ee3997497ca90c8173bbdaf560-w2.cloud.ibm
-      kube-dal10-crc21191ee3997497ca90c8173bbdaf560-w3.cloud.ibm
-      ```
-      {: screen}
+          Example output:
+          ```
+          NAME
+          kube-dal10-crc21191ee3997497ca90c8173bbdaf560-w1.cloud.ibm
+          kube-dal10-crc21191ee3997497ca90c8173bbdaf560-w2.cloud.ibm
+          ```
+          {: screen}
 
 <br />
 
@@ -202,17 +205,21 @@ View the details for default and any added network policies that are applied to 
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
+
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
+
 **To view network policies in clusters**:
 
 If you have a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
-{: important}
+{: note}
 
 1. View the Calico host endpoint.
     ```
@@ -260,7 +267,11 @@ To create Kubernetes network policies, see the [Kubernetes network policy docume
 To create Calico policies, use the following steps.
 
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+
+
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -297,12 +308,16 @@ To see how to whitelist or blacklist source IP addresses, try the [Using Calico 
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
 
+
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
+
 
 To create a pre-DNAT policy:
 
@@ -388,14 +403,19 @@ When you apply the egress pod policies that are included in this policy set, onl
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+
+
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
+
 If you have a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
-{: important}
+{: note}
 
 To protect your cluster on the public network by using Calico policies:
 
@@ -451,14 +471,19 @@ When you apply the egress pod policies that are included in this policy set, onl
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+
+
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
+
 If you have a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
-{: important}
+{: note}
 
 To isolate your cluster on the private network by using Calico policies:
 
@@ -642,11 +667,16 @@ This section shows you how to log traffic that is denied by a Kubernetes network
 
 Before you begin:
 1. [Install and configure the Calico CLI.](#cli_install)
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that you must also run the `ibmcloud oc cluster config` command. Include the `--admin` option with the `ibmcloud oc cluster config` command, which is used to download the certificates and permission files. This download also includes the keys to access your infrastructure portfolio and run Calico commands on your worker nodes.
-    ```
-    ibmcloud oc cluster config --cluster <cluster_name> --admin
-    ```
-    {: pre}
+
+
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+  ```
+  ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
+  ```
+  {: pre}
+
 
 To log denied traffic:
 
