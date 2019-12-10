@@ -1204,7 +1204,7 @@ Before you remove a user's specific access permissions or remove a user from you
         {: pre}
     * To reset the infrastructure credentials:
         ```
-        ibmcloud oc credential set --infrastructure-username <infrastructure_API_username> --infrastructure-api-key <infrastructure_API_authentication_key> --region <region>
+        ibmcloud oc credential set classic --infrastructure-username <infrastructure_API_username> --infrastructure-api-key <infrastructure_API_authentication_key> --region <region>
         ```
         {: pre}
 

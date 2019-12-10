@@ -3931,7 +3931,7 @@ ibmcloud oc credential get --region us-south
 
 </br>
 
-### `ibmcloud oc credential set`
+### `ibmcloud oc credential set classic`
 {: #cs_credentials_set}
 
 Set credentials for a resource group and region so that you can access the IBM Cloud infrastructure portfolio through your {{site.data.keyword.cloud_notm}} account.
@@ -3947,7 +3947,7 @@ Before you use this command, make sure that the user whose credentials are used 
 {: important}
 
 ```
-ibmcloud oc credential set --infrastructure-api-key API_KEY --infrastructure-username USERNAME --region REGION [-s]
+ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastructure-username USERNAME [--region REGION] [-s]
 ```
 {: pre}
 
@@ -3970,7 +3970,7 @@ ibmcloud oc credential set --infrastructure-api-key API_KEY --infrastructure-use
 
 **Example**:
 ```
-ibmcloud oc credential set --infrastructure-api-key <api_key> --infrastructure-username dbmanager --region us-south
+ibmcloud oc credential set classic --infrastructure-api-key <api_key> --infrastructure-username dbmanager --region us-south
 ```
 {: pre}
 
