@@ -540,7 +540,7 @@ By default, all IP addresses can be used to log in to the {{site.data.keyword.cl
         **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
         ```
         OK
-        Infrastructure credentials for username <1234567_name@email.com> set for resource group <resource_group_name>.
+        Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
         ```
         {: screen}
 

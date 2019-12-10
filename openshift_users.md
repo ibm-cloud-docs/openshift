@@ -357,7 +357,7 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
         ```
         Example output:
         ```
-        Infrastructure credentials for username user@email.com set for resource group default.
+        Infrastructure credentials for user name user@email.com set for resource group default.
         ```
         {: screen}
 
