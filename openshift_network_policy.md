@@ -218,7 +218,7 @@ Before you begin:
 
 **To view network policies in clusters**:
 
-If you have a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
+If you use a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
 {: note}
 
 1. View the Calico host endpoint.
@@ -279,7 +279,7 @@ To create Calico policies, use the following steps.
 
 3. Define your Calico [network policy ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy) or [global network policy ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/globalnetworkpolicy) by creating a configuration script (`.yaml`) with Calico v3 policy syntax. These configuration files include the selectors that describe what pods, namespaces, or hosts that these policies apply to. Refer to these [sample Calico policies ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.projectcalico.org/v3.3/getting-started/kubernetes/tutorials/advanced-policy) to help you create your own.
 
-4. Apply the policies to the cluster. If you have a Windows machine, include the `--config=<filepath>/calicoctl.cfg` flag.
+4. Apply the policies to the cluster. If you use a Windows machine, include the `--config=<filepath>/calicoctl.cfg` flag.
     ```
     calicoctl apply -f policy.yaml [--config=<filepath>/calicoctl.cfg]
     ```
@@ -382,7 +382,7 @@ To create a pre-DNAT policy:
         ```
         {: codeblock}
 
-2. Apply the Calico preDNAT network policy. If you have a Windows machine, include the `--config=<filepath>/calicoctl.cfg` flag. It takes about 1 minute for the policy changes to be applied throughout the cluster.
+2. Apply the Calico preDNAT network policy. If you use a Windows machine, include the `--config=<filepath>/calicoctl.cfg` flag. It takes about 1 minute for the policy changes to be applied throughout the cluster.
   ```
   calicoctl apply -f deny-nodeports.yaml [--config=<filepath>/calicoctl.cfg]
   ```
@@ -414,7 +414,7 @@ Before you begin:
   {: pre}
 
 
-If you have a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
+If you use a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
 {: note}
 
 To protect your cluster on the public network by using Calico policies:
@@ -482,7 +482,7 @@ Before you begin:
   {: pre}
 
 
-If you have a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
+If you use a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
 {: note}
 
 To isolate your cluster on the private network by using Calico policies:
