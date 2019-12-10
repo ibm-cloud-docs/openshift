@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -32,7 +32,7 @@ When you [assign cluster permissions](/docs/openshift?topic=openshift-users), it
 ## {{site.data.keyword.cloud_notm}} IAM platform roles
 {: #iam_platform}
 
-Red Hat OpenShift on IBM Cloud is configured to use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles. {{site.data.keyword.cloud_notm}} IAM platform roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform roles also automatically set basic infrastructure permissions for users. To set platform roles, see [Assigning {{site.data.keyword.cloud_notm}} IAM platform permissions](/docs/openshift?topic=openshift-users#platform). 
+Red Hat OpenShift on IBM Cloud is configured to use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles. {{site.data.keyword.cloud_notm}} IAM platform roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform roles also automatically set basic infrastructure permissions for users. To set platform roles, see [Assigning {{site.data.keyword.cloud_notm}} IAM platform permissions](/docs/openshift?topic=openshift-users#platform).
 {: shortdesc}
 
 <p class="tip">Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.</p>
@@ -174,9 +174,9 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Beta: Remove an ALB secret from a cluster. | [`ibmcloud oc alb cert rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_cert_rm) | [`DELETE /v1/clusters/{idOrName}/albsecrets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb-beta/DeleteClusterALBSecrets) |
 | List all ALB secrets in a cluster. | [`ibmcloud oc alb cert ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_certs) | - |
 | Set the API key for the {{site.data.keyword.cloud_notm}} account to access the linked IBM Cloud infrastructure portfolio. | [`ibmcloud oc api-key reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) | [`POST /v1/keys`](https://containers.cloud.ibm.com/global/swagger-global-api/#/accounts/ResetUserAPIKey) |
-| Disable a managed add-on, such Istio or Knative, in a cluster. | [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) | [`PATCH /v1/clusters/{idOrName}/addons`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/ManageClusterAddons) |
-| Enable a managed add-on, such Istio or Knative, in a cluster. | [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) | [`PATCH /v1/clusters/{idOrName}/addons`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/ManageClusterAddons) |
-| List managed add-ons, such as Istio or Knative, that are enabled in a cluster. | [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons) | [`GET /v1/clusters/{idOrName}/addons`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterAddons) |
+| Disable a managed add-on, such the Kubernetes web terminal, in a cluster. | [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) | [`PATCH /v1/clusters/{idOrName}/addons`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/ManageClusterAddons) |
+| Enable a managed add-on, such the Kubernetes web terminal, in a cluster. | [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) | [`PATCH /v1/clusters/{idOrName}/addons`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/ManageClusterAddons) |
+| List managed add-ons, such as the Kubernetes web terminal, that are enabled in a cluster. | [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons) | [`GET /v1/clusters/{idOrName}/addons`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterAddons) |
 | Create a free or standard cluster on classic infrastructure. **Note**: The Administrator platform role for {{site.data.keyword.registrylong_notm}} and the Super User infrastructure role are also required. | [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) | [`POST /v1/clusters`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/CreateCluster) |
 | Disable a specified feature for a cluster, such as the public service endpoint for the cluster master. | [`ibmcloud oc cluster feature disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_disable) | - |
 | Enable a specified feature for a cluster, such as the private service endpoint for the cluster master. | [`ibmcloud oc cluster feature enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_enable) | - |

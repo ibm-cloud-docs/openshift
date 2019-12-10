@@ -302,7 +302,7 @@ For more information, see the following topics.
 ## Deploying containers from an {{site.data.keyword.registryshort_notm}} image to the `default` OpenShift project
 {: #namespace}
 
-You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registryshort_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](#cluster_registry_auth). 
+You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registryshort_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](#cluster_registry_auth).
 {:shortdesc}
 
 Before you begin:
@@ -427,7 +427,6 @@ You can copy an image pull secret, such as the one that is automatically created
     default          Active    79d
     ibm-cert-store   Active    79d
     ibm-system       Active    79d
-    istio-system     Active    34d
     kube-public      Active    79d
     kube-system      Active    79d
     ```
@@ -507,7 +506,6 @@ The following steps create an API key that stores the credentials of an {{site.d
     default          Active    79d
     ibm-cert-store   Active    79d
     ibm-system       Active    79d
-    istio-system     Active    34d
     kube-public      Active    79d
     kube-system      Active    79d
     ```
