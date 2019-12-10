@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -183,7 +183,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 ### Scenario: Extend your on-premises data center to a cluster and add limited public access
 {: #limited-public}
 
-In this scenario, you want to run workloads in a cluster that are accessible to services, databases, or other resources in your on-premises data center. However, you might need to provide limited public access to your cluster, and want to ensure that any public access is controlled and isolated in your cluster. For example, you might need your workers to access an {{site.data.keyword.cloud_notm}} service that does not support private service endpoints, and must be accessed over the public network. Or, you might need to provide limited public access to an app that runs in your cluster.
+In this scenario, you want to run workloads in a cluster that are accessible to services, databases, or other resources in your on-premises data center. However, you might need to provide limited public access to your cluster, and want to ensure that any public access is controlled and isolated in your cluster. For example, you might need your workers to access an {{site.data.keyword.cloud_notm}} service that does not support private service endpoints, and must be accessed over the public network. Or you might need to provide limited public access to an app that runs in your cluster.
 {: shortdesc}
 
 To achieve this cluster setup, you can allow limited public connectivity to your cluster by [using edge nodes to isolate networking workloads and Calico network policies to act as a public firewall](#calico_edge) or [using a gateway appliance](#vyatta-gateway).

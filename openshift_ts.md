@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -330,7 +330,7 @@ Make sure that you followed the docs in the [Moving your apps to OpenShift topic
 You cannot push or pull Docker images from your local machine to the cluster's built-in Docker registry.
 
 {: tsCauses}
-By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or DockerHub by using the `oc new-app` command. Or, you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine.
+By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or DockerHub by using the `oc new-app` command. Or you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine.
 
 {: tsResolve}
 Create a route for the `docker-registry` service in the `default` project. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-images#route_internal_registry).
