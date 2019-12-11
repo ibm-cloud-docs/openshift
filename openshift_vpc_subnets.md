@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-09"
+lastupdated: "2019-12-11"
 
 keywords: openshift, roks, rhoks, rhos, vpc subnets, ips, vlans, networking, public gateway
 
@@ -339,5 +339,5 @@ In VPC clusters, a subnet is limited to one zone. When you attach a public gatew
         ```
         {: screen}
 
-9. Optional: If you use [access control lists (ACLs)](#acls) to control your cluster network traffic, create inbound and outbound rules in this subnet's ACL to allow ingress from and egress to the external public endpoints that your pods must access.
+9. Optional: If you use [access control lists (ACLs)](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-setting-up-network-acls) to control your cluster network traffic, create inbound and outbound rules in this subnet's ACL to allow ingress from and egress to the external public endpoints that your pods must access.
 
