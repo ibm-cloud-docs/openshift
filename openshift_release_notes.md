@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-11"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -35,6 +35,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 11 December 2019 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.64](/docs/containers?topic=containers-cs_cli_changelog).</li><li>**CLI installation**: Updated the link to download the [`oc` CLI client](/docs/openshift?topic=openshift-openshift-cli).</li><li>**Kubernetes version lifecyles**: Added information about [the release lifecycle of supported Kubernetes versions](/docs/containers?topic=containers-cs_versions#release_lifecycle).</li><li>**Managed Knative add-on**: Added information about [Istio version support](/docs/containers?topic=containers-serverless-apps-knative#kn_limitations).</li></ul>|
+| 09 December 2019 | **Version changelog**: Worker node patch updates are available for OpenShift [3.11.154_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1534_worker). |
 | 04 December 2019 | <ul><li>**Exposing apps with load balancers or Ingress ALBs**: Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/openshift?topic=openshift-ingress-qs).</li><li>**OpenShift charges**: Now when you create OpenShift clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use OpenShift clusters?](/docs/openshift?topic=openshift-faqs#openshift_charges).</li><li>**OpenShift routes**: Added steps for [bringing your own hostname](/docs/openshift?topic=openshift-openshift_routes#routes-setup) for public routes and steps for [setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup).</li><li>**Use the internal KVDB in Portworx**: Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb).</li></ul>|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in December 2019"}
@@ -411,7 +413,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul>
   <li><strong>Infrastructure permissions</strong>: Updated the [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) required for common use cases.</li>
   <li><strong>OpenShift FAQs</strong>: Expanded the [FAQs](/docs/containers?topic=containers-faqs#container_platforms) to include information about OpenShift clusters.</li>
-  <li><strong>Securing Istio-managed apps with {{site.data.keyword.appid_short_notm}}</strong>: Added information about the [App Identity and Access adapter](/docs/containers?topic=containers-istio#app-id).</li>
   <li><strong>strongSwan VPN service</strong>: If you install strongSwan in a multizone cluster and use the `enableSingleSourceIP=true` setting, you can now [set `local.subnet` to the `%zoneSubnet` variable and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster](/docs/openshift?topic=openshift-vpn#strongswan_4).</li>
   </ul></td>
 </tr>
@@ -447,7 +448,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul>
   <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of versions 0.3.47 and 0.3.49](/docs/containers?topic=containers-cs_cli_changelog).</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `nginx-ingress` image to build 473 and `ingress-auth` image to build 331](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>Managed add-on versions</strong>: Updated the version of the Istio managed add-on to 1.1.7 and the Knative managed add-on to 0.6.0.</li>
   <li><strong>Removing persistent storage</strong>: Updated the information for how you are billed when you [delete persistent storage](/docs/containers?topic=containers-cleanup).</li>
   <li><strong>Service bindings with private endpoint</strong>: [Added steps](/docs/containers?topic=containers-service-binding) for how to manually create service credentials with the private service endpoint when you bind the service to your cluster.</li>
   </ul></td>

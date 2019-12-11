@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -28,6 +28,8 @@ subcollection: openshift
 
 [Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://portworx.com/products/introduction/) is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones. 
 {: shortdesc}
+
+
 
 
 
@@ -146,7 +148,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
    2. Find the credentials that you want to use, and from the **Actions** column in the service credentials table, click **View credentials**.
    3. Find the `grp.authentication` section of your service credentials and note the **`username`** and **`password`**.
 
-      Example output for user name and password:
+      Example output for username and password:
       ```
       "grpc": {
       "authentication": {
@@ -173,7 +175,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
       ```
       {: screen}
 
-5. Encode your user name and password to base64.
+5. Encode your username and password to base64.
    ```
    echo -n "<username_or_password>" | base64
    ```

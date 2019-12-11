@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-09"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -40,6 +40,17 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
 
+### Changelog for worker node fix pack 3.11.154_1534_openshift, released 9 December 2019
+{: #311154_1534_worker}
+
+The following table shows the changes that are included in the worker node fix pack `3.11.154_1534_openshift`. 
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 kernel and packages | 3.10.0-1062.4.3.el7 | 3.10.0-1062.9.1.el7 | Updated worker node images with kernel and package updates for [CVE-2019-14821](https://nvd.nist.gov/vuln/detail/CVE-2019-14821){: external} and [CVE-2019-15239](https://nvd.nist.gov/vuln/detail/CVE-2019-15239){: external}.|
+{: caption="Changes since version 3.11.153_1533" caption-side="top"}
+
 ### Changelog for worker node fix pack 3.11.154_1533_openshift, released 25 November 2019
 {: #311154_1533_worker}
 
@@ -64,7 +75,7 @@ The following table shows the changes that are included in the master fix pack `
 | {{site.data.keyword.cloud_notm}} File Storage plug-in and monitor | 350 | 353 | Updated to use the `distroless/static` base image and to use `Go` version 1.12.11. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.5-119 | v1.15.6-182 | Updated to support the Kubernetes 1.15.6 release. Updated to use `Go` version 1.12.12 and `calicoctl` version v3.8.4. |
 | Key Management Service provider | 237 | 254 | Updated to use `Go` version 1.12.13. |
-| OpenShift | 3.11.146 | 3.11.154 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-154){: external}. |
+| OpenShift | 3.11.153 | 3.11.154 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-154){: external}. Update resolves [CVE-2019-11253](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11253){: external} (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/1126071){: external}). |
 {: caption="Changes since version 3.11.153_1530" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.153_1530_openshift, released 11 November 2019

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -34,7 +34,7 @@ You can use built-in security features in {{site.data.keyword.openshiftlong}} fo
 ## Overview of security threats for your cluster
 {: #threats}
 
-To protect your cluster from being compromised, you must understand potential security threats for your cluster and what you can do to reduce the exposure to vulnerabilities. 
+To protect your cluster from being compromised, you must understand potential security threats for your cluster and what you can do to reduce the exposure to vulnerabilities.
 {: shortdesc}
 
 <img src="images/cs_security_threats.png" width="400" alt="Security threats for your cluster" style="width:400px; border-style: none"/>
@@ -296,8 +296,6 @@ You can use network load balancer (NLB) and Ingress application load balancer (A
 The Ingress service offers TLS termination at two points in the traffic flow:
 * [Decrypt package upon arrival](/docs/openshift?topic=openshift-ingress#public_inside_2): By default, the Ingress ALB load balances HTTP network traffic to the apps in your cluster. To also load balance incoming HTTPS connections, you can configure the ALB to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster. If you use the IBM-provided Ingress subdomain, you can use the IBM-provided TLS certificate. If you use a custom domain, you can use your own TLS certificate to manage TLS termination.
 * [Re-encrypt package before you forward it to upstream apps](/docs/openshift?topic=openshift-ingress_annotation#ssl-services): The ALB decrypts HTTPS requests before forwarding traffic to your apps. If you have apps that require HTTPS and need traffic to be encrypted before it is forwarded to those upstream apps, you can use the `ssl-services` annotation. If your upstream apps can handle TLS, you can optionally provide a certificate that is contained in a one-way or mutual-authentication TLS secret.
-
-To secure the service-to-service communication, you can use [Istio's mutual TLS authentication ![External link icon](../icons/launch-glyph.svg "External link icon")](https://istio.io/docs/concepts/security/#mutual-tls-authentication). Istio is an open source service that gives developers a way to connect, secure, manage, and monitor a network of microservices, also known a service mesh, on cloud orchestration platforms like Kubernetes.
 
 <br />
 

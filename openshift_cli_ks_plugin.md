@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-11"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -41,7 +41,7 @@ Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registryshort_n
 ## Using the beta plug-in
 {: #cs_beta}
 
-A redesigned version of the {{site.data.keyword.containerlong_notm}} plug-in is available as a beta. The redesigned {{site.data.keyword.containerlong_notm}} plug-in groups commands into categories and changes commands from a hyphenated structure to a spaced structure.
+A redesigned version of the {{site.data.keyword.containerlong_notm}} plug-in is available as a beta. The redesigned {{site.data.keyword.containerlong_notm}} plug-in groups commands into categories and changes commands from a hyphenated structure to a spaced structure. 
 {: shortdesc}
 
 The following beta versions of the redesigned {{site.data.keyword.containerlong_notm}} plug-in are available.
@@ -346,7 +346,7 @@ Create a cluster with worker nodes on classic infrastructure. For free clusters,
 {: shortdesc}
 
 ```
-ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --machine-type FLAVOR --name NAME [--kube-version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt]  [--skip-advance-permissions-check] [-s]
+ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --machine-type FLAVOR --name NAME [--kube-version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt]  [--skip-advance-permissions-check] [--entitlement cloud_pak][-s]
 ```
 {: pre}
 
@@ -440,6 +440,9 @@ service-subnet: <em>&lt;subnet&gt;</em>
 
 <dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
 <dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
+
+<dt><code><strong>--entitlement cloud_pak</strong></code></dt>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. Make sure to create the cluster with the correct flavor (`machine-type`) and number of worker nodes that you are entitled to.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -1646,7 +1649,7 @@ You can create a worker pool in your cluster. When you add a worker pool, it is 
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --machine-type FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [-s] [--json]
+ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --machine-type FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [--entitlement cloud_pak] [-s] [--json]
 ```
 {: pre}
 
@@ -1674,6 +1677,9 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --mach
 
 <dt><code>-l, --label <em>KEY1=VALUE1</em></code></dt>
 <dd>Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`. This value is optional.</ul></dd>
+
+<dt><code><strong>--entitlement cloud_pak</strong></code></dt>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. Make sure to create the worker pool with the correct flavor (`machine-type`) and number of worker nodes that you are entitled to.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -3901,7 +3907,7 @@ Set and unset credentials that allow you to access the IBM Cloud infrastructure 
 ### `ibmcloud oc credential get`
 {: #cs_credential_get}
 
-If you set up your {{site.data.keyword.cloud_notm}} account to use different credentials to access the IBM Cloud infrastructure portfolio, get the infrastructure user name for the region and resource group that you are currently targeted to.
+If you set up your {{site.data.keyword.cloud_notm}} account to use different credentials to access the IBM Cloud infrastructure portfolio, get the infrastructure username for the region and resource group that you are currently targeted to.
 {: shortdesc}
 
 ```
@@ -3931,7 +3937,7 @@ ibmcloud oc credential get --region us-south
 
 </br>
 
-### `ibmcloud oc credential set`
+### `ibmcloud oc credential set classic`
 {: #cs_credentials_set}
 
 Set credentials for a resource group and region so that you can access the IBM Cloud infrastructure portfolio through your {{site.data.keyword.cloud_notm}} account.
@@ -3947,7 +3953,7 @@ Before you use this command, make sure that the user whose credentials are used 
 {: important}
 
 ```
-ibmcloud oc credential set --infrastructure-api-key API_KEY --infrastructure-username USERNAME --region REGION [-s]
+ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastructure-username USERNAME [--region REGION] [-s]
 ```
 {: pre}
 
@@ -3956,7 +3962,7 @@ ibmcloud oc credential set --infrastructure-api-key API_KEY --infrastructure-use
 **Command options**:
 <dl>
 <dt><code>--infrastructure-username <em>USERNAME</em></code></dt>
-<dd>IBM Cloud infrastructure account API username. This value is required. The infrastructure API username is not the same as the IBMid. To view the infrastructure API user name, see [Managing classic infrastructure API keys](/docs/iam?topic=iam-classic_keys).</dd>
+<dd>IBM Cloud infrastructure account API username. This value is required. The infrastructure API username is not the same as the IBMid. To view the infrastructure API username, see [Managing classic infrastructure API keys](/docs/iam?topic=iam-classic_keys).</dd>
 
 <dt><code>--infrastructure-api-key <em>API_KEY</em></code></dt>
 <dd>IBM Cloud infrastructure account API key. This value is required. To view or generate an infrastructure API key, see [Managing classic infrastructure API keys](/docs/iam?topic=iam-classic_keys).</dd>
@@ -3970,7 +3976,7 @@ ibmcloud oc credential set --infrastructure-api-key API_KEY --infrastructure-use
 
 **Example**:
 ```
-ibmcloud oc credential set --infrastructure-api-key <api_key> --infrastructure-username dbmanager --region us-south
+ibmcloud oc credential set classic --infrastructure-api-key <api_key> --infrastructure-username dbmanager --region us-south
 ```
 {: pre}
 

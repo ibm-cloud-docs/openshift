@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -62,8 +62,8 @@ You can also use the [API swagger JSON file ![External link icon](../icons/launc
 <tbody>
 <tr>
 <td>Unfederated ID</td>
-<td><ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> As an alternative to using the {{site.data.keyword.cloud_notm}} user name and password, you can <a href="/docs/iam?topic=iam-userapikey#create_user_key" target="_blank">use {{site.data.keyword.cloud_notm}} API keys</a>. {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li>
-<li><strong>{{site.data.keyword.cloud_notm}} user name and password:</strong> You can follow the steps in this topic to fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM access token.</li></ul>
+<td><ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> As an alternative to using the {{site.data.keyword.cloud_notm}} username and password, you can <a href="/docs/iam?topic=iam-userapikey#create_user_key" target="_blank">use {{site.data.keyword.cloud_notm}} API keys</a>. {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li>
+<li><strong>{{site.data.keyword.cloud_notm}} username and password:</strong> You can follow the steps in this topic to fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM access token.</li></ul>
 </tr>
 <tr>
 <td>Federated ID</td>
@@ -89,14 +89,14 @@ You can also use the [API swagger JSON file ![External link icon](../icons/launc
     <tbody>
     <tr>
     <td>Header</td>
-    <td><ul><li>Content-Type: application/x-www-form-urlencoded</li> <li>Authorization: Basic Yng6Yng=<p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the user name <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
+    <td><ul><li>Content-Type: application/x-www-form-urlencoded</li> <li>Authorization: Basic Yng6Yng=<p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
     </td>
     </tr>
     <tr>
-    <td>Body for {{site.data.keyword.cloud_notm}} user name and password</td>
+    <td>Body for {{site.data.keyword.cloud_notm}} username and password</td>
     <td><ul><li>`grant_type: password`</li>
     <li>`response_type: cloud_iam uaa`</li>
-    <li>`username`: Your {{site.data.keyword.cloud_notm}} user name.</li>
+    <li>`username`: Your {{site.data.keyword.cloud_notm}} username.</li>
     <li>`password`: Your {{site.data.keyword.cloud_notm}} password.</li>
     <li>`uaa_client_id: cf`</li>
     <li>`uaa_client_secret:`</br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li></ul></td>
@@ -202,14 +202,14 @@ You can also use the [API swagger JSON file ![External link icon](../icons/launc
     <tbody>
     <tr>
     <td>Header</td>
-    <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic Yng6Yng=`<p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the user name <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
+    <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic Yng6Yng=`<p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
     </td>
     </tr>
     <tr>
-    <td>Body for {{site.data.keyword.cloud_notm}} user name and password</td>
+    <td>Body for {{site.data.keyword.cloud_notm}} username and password</td>
     <td><ul><li>`grant_type: password`</li>
     <li>`response_type: cloud_iam uaa`</li>
-    <li>`username`: Your {{site.data.keyword.cloud_notm}} user name. </li>
+    <li>`username`: Your {{site.data.keyword.cloud_notm}} username. </li>
     <li>`password`: Your {{site.data.keyword.cloud_notm}} password. </li>
     <li>`uaa_client_ID: cf`</li>
     <li>`uaa_client_secret:` </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li>
@@ -376,7 +376,7 @@ The following instructions require public network access in your cluster to conn
    <tbody>
    <tr>
    <td>Header</td>
-   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic Yng6Yng=`</br><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the user name <strong>bx</strong> and the password <strong>bx</strong>.</li><li>`cache-control: no-cache`</li></ul>
+   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic Yng6Yng=`</br><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</li><li>`cache-control: no-cache`</li></ul>
    </td>
    </tr>
    <tr>
@@ -413,7 +413,7 @@ The following instructions require public network access in your cluster to conn
    <tbody>
    <tr>
    <td>Header</td>
-   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic a3ViZTprdWJl`</br><strong>Note</strong>: <code>a3ViZTprdWJl</code> equals the URL-encoded authorization for the user name <strong><code>kube</code></strong> and the password <strong><code>kube</code></strong>.</li><li>`cache-control: no-cache`</li></ul>
+   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic a3ViZTprdWJl`</br><strong>Note</strong>: <code>a3ViZTprdWJl</code> equals the URL-encoded authorization for the username <strong><code>kube</code></strong> and the password <strong><code>kube</code></strong>.</li><li>`cache-control: no-cache`</li></ul>
    </td>
    </tr>
    <tr>
@@ -564,7 +564,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
     <tr>
     <td>Header</td>
     <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li>
-      <li>`Authorization: Basic Yng6Yng=`</br></br><strong>Note:</strong> <code>Yng6Yng=</code> equals the URL-encoded authorization for the user name <strong>bx</strong> and the password <strong>bx</strong>.</li></ul></td>
+      <li>`Authorization: Basic Yng6Yng=`</br></br><strong>Note:</strong> <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</li></ul></td>
     </tr>
     <tr>
     <td>Body when using the refresh token</td>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -21,10 +21,8 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview} 
 
-
 # Accessing OpenShift clusters
 {: #access_cluster}
-
 
 After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
@@ -32,12 +30,13 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 ## Prerequisites
 {: #prereqs}
 
-1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for OpenShift (`ibmcloud oc`), and OpenShift Origin CLI (`oc`).
+1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for OpenShift (`ibmcloud oc`), and OpenShift CLI (`oc`).
 2. [Create your OpenShift cluster](/docs/openshift?topic=openshift-clusters).
 3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall) to the {{site.data.keyword.cloud_notm}} and Red Hat OpenShift on IBM Cloud API endpoints and ports. For private service endpoint-only clusters, you cannot test the connection to your cluster until you expose the private service endpoint of the master to the cluster by using a [private NLB](#access_private_se).
 4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 
 <br />
+
 
 
 ## Accessing OpenShift clusters through the public service endpoint
@@ -221,7 +220,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```
         {: screen}
     3.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
-3.  Use the API key to log in to your OpenShift cluster. The user name (`-u`) is `apikey` and the password (`-p`) is your API key value.
+3.  Use the API key to log in to your OpenShift cluster. The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
     ```
     oc login -u apikey -p <API_key>
     ```
@@ -323,7 +322,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
         ```
         {: screen}
     3.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
-5.  [Use the service ID's API key to log in to your OpenShift cluster](#access_api_key). The user name (`-u`) is `apikey` and the password (`-p`) is your API key value.
+5.  [Use the service ID's API key to log in to your OpenShift cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
     ```
     oc login -u apikey -p <API_key>
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-09"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -32,7 +32,7 @@ After you initially set up your network when you [create a cluster](/docs/opensh
 ## Setting up the private service endpoint
 {: #set-up-private-se}
 
-Enable or disable the private service endpoint for your cluster. 
+Enable or disable the private service endpoint for your cluster.
 {: shortdesc}
 
 

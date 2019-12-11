@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -26,8 +26,8 @@ subcollection: openshift
 # Storing data on classic IBM Cloud File Storage
 {: #file_storage}
 
-{{site.data.keyword.cloud_notm}} File Storage is persistent, fast, and flexible network-attached, NFS-based file storage that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} File Storage is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Billing](/docs/infrastructure/FileStorage?topic=FileStorage-about#billing). 
-{: shortdesc}
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based file storage that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Billing](/docs/infrastructure/FileStorage?topic=FileStorage-about#billing). 
+{: shortdesc} 
 
  NFS file storage instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
@@ -1665,6 +1665,7 @@ To clean up persistent data:
     ibmcloud sl file volume-list
     ```
     {: pre}
+
 
 
 

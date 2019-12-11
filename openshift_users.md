@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-04"
+lastupdated: "2019-12-10"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -341,7 +341,7 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
 
     1.  Get the user's infrastructure API credentials. Note that the credentials differ from the IBMid.
 
-        1.  From the [{{site.data.keyword.cloud_notm}} ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/) console, select **Manage** > **Access (IAM)** > **Users** table and click the user name.
+        1.  From the [{{site.data.keyword.cloud_notm}} ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/) console, select **Manage** > **Access (IAM)** > **Users** table and click the username.
 
         2.  In the **API Keys** section, find or create a classic infrastructure API key.   
 
@@ -1129,7 +1129,7 @@ Downgrading permissions? The action can take a few minutes to complete.
         ibmcloud oc api-key info --cluster <cluster_name_or_ID>
         ```
         {: pre}
-    *  **Manually-set credentials**: Get the user name in the output of the following command.    
+    *  **Manually-set credentials**: Get the username in the output of the following command.    
         ```
         ibmcloud oc credential get --region <region>
         ```
@@ -1192,7 +1192,7 @@ Before you remove a user's specific access permissions or remove a user from you
         ```
         {: pre}
 
-3. If the user's user name is returned, use another user's credentials to set the API key or infrastructure credentials.
+3. If the user's username is returned, use another user's credentials to set the API key or infrastructure credentials.
 
   If the account owner is not setting the API key, or if you are not setting the account owner's infrastructure credentials, [ensure that the user who sets the API key or whose credentials you are setting has the correct permissions](#owner_permissions).
   {: note}
@@ -1204,7 +1204,7 @@ Before you remove a user's specific access permissions or remove a user from you
         {: pre}
     * To reset the infrastructure credentials:
         ```
-        ibmcloud oc credential set --infrastructure-username <infrastructure_API_username> --infrastructure-api-key <infrastructure_API_authentication_key> --region <region>
+        ibmcloud oc credential set classic --infrastructure-username <infrastructure_API_username> --infrastructure-api-key <infrastructure_API_authentication_key> --region <region>
         ```
         {: pre}
 
@@ -1240,7 +1240,7 @@ Before the user leaves, the {{site.data.keyword.cloud_notm}} account owner must 
 
 3. Remove the user from the {{site.data.keyword.cloud_notm}} account.
     1. From the menu bar, select **Manage > Access (IAM)**. Then click the **Users** page.
-    2. Click the user's user name.
+    2. Click the user's username.
     3. In the table entry for the user, click the **Action menu** ![Action menu icon](../icons/action-menu-icon.svg "Action menu icon") **> Remove user**. When you remove a user, the user's assigned {{site.data.keyword.cloud_notm}} IAM platform roles, Cloud Foundry roles, and IBM Cloud infrastructure roles are automatically removed.
 
 4.  When {{site.data.keyword.cloud_notm}} IAM platform permissions are removed, the user's permissions are also automatically removed from the associated predefined RBAC roles. However, if you created custom RBAC roles or cluster roles, [remove the user from those RBAC role bindings or cluster role bindings](#remove_custom_rbac).<p class="note">The {{site.data.keyword.cloud_notm}} IAM permission removal process is asynchronous and can take some time to complete.</p>

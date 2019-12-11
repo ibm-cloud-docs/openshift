@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-04"
+lastupdated: "2019-12-09"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -62,7 +62,7 @@ To set up routes to publicly expose apps:
 
 2. Choose a domain for your app.
   * IBM-provided domain: If you do not need to use a custom domain, a subdomain is generated for you in the format `<service_name>-<namespace>.<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`.
-  * Custom domain: To specify a custom domain, work with your DNS provider.
+  * Custom domain: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
     1. Get the public IP address for the router in the **EXTERNAL-IP** column.
       ```
       oc get svc router

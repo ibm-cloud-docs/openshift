@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-04"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -28,88 +28,6 @@ subcollection: openshift
 
 Expose multiple apps in your OpenShift cluster by creating Ingress resources that are managed by the IBM-provided application load balancer in {{site.data.keyword.openshiftlong}}.
 {:shortdesc}
-
-## Sample YAMLs
-{: #sample_ingress}
-
-Use these sample YAML files to quickly get started with specifying your Ingress resource.
-{: shortdesc}
-
-
-**Ingress resource to publicly expose an app**</br>
-
-Have you already completed the following?
-- Deploy app
-- Create app service
-- Select domain name and TLS secret
-
-You can use the following deployment YAML to create an Ingress resource:
-```
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: myingressresource
-spec:
-  tls:
-  - hosts:
-    - <domain>
-    secretName: <tls_secret_name>
-  rules:
-  - host: <domain>
-    http:
-      paths:
-      - path: /<app1_path>
-        backend:
-          serviceName: <app1_service>
-          servicePort: 80
-      - path: /<app2_path>
-        backend:
-          serviceName: <app2_service>
-          servicePort: 80
-```
-{: codeblock}
-
-</br>
-
-**Ingress resource to privately expose an app**</br>
-
-Have you already completed the following?
-- Enable private ALB
-- Deploy app
-- Create app service
-- Register custom domain name and TLS secret
-
-You can use the following deployment YAML to create an Ingress resource:
-
-```
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: myingressresource
-  annotations:
-    ingress.bluemix.net/ALB-ID: "<private_ALB_ID_1>;<private_ALB_ID_2>"
-spec:
-  tls:
-  - hosts:
-    - <domain>
-    secretName: <tls_secret_name>
-  rules:
-  - host: <domain>
-    http:
-      paths:
-      - path: /<app1_path>
-        backend:
-          serviceName: <app1_service>
-          servicePort: 80
-      - path: /<app2_path>
-        backend:
-          serviceName: <app2_service>
-          servicePort: 80
-```
-{: codeblock}
-
-<br />
-
 
 ## Prerequisites
 {: #config_prereqs}

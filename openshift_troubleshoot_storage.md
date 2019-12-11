@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-10"
 
-keywords: kubernetes, iks, help, debug
+keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:preview: .preview}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -1312,13 +1312,13 @@ Start by verifying that the information that you entered in the {{site.data.keyw
       ```
       {: screen}
 4. Verify that you stored the credentials to access your Databases for etcd service instance in a Kubernetes secret in your cluster. For more information, see [Setting up a Databases for etcd service instance for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database).
-   1. Review steps 4-6 and verify that you retrieved the correct user name, password, and certificate.
+   1. Review steps 4-6 and verify that you retrieved the correct username, password, and certificate.
    2. List the secrets in your cluster and look for the secret that holds the credentials of your Databases for etcd service instance.
       ```
       oc get secrets
       ```
       {: pre}
-   3. Make sure that the user name, password, and certificate are stored as a base64 encoded value in your Kubernetes secret.
+   3. Make sure that the username, password, and certificate are stored as a base64 encoded value in your Kubernetes secret.
    4. Verify that you entered the correct name of the secret in the {{site.data.keyword.cloud_notm}} catalog.
 5. If you chose to set up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}, make sure that you created an instance of {{site.data.keyword.keymanagementservicelong_notm}} in your {{site.data.keyword.cloud_notm}} account and that you stored the credentials to access your instance in a Kubernetes secret in the `portworx` project of your cluster. For more information, see [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-portworx#setup_encryption).
    1. Make sure that the API key of your service ID, and the {{site.data.keyword.keymanagementservicelong_notm}} instance ID, root key, and API endpoint are stored as base64 values in the Kubernetes secret of your cluster.
@@ -1369,4 +1369,3 @@ When you report an issue, include your cluster ID. To get your cluster ID, run `
 
 
 
- 
