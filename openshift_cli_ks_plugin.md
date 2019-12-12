@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-11"
+lastupdated: "2019-12-12"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -383,7 +383,7 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional for VM standard clusters and is not available for free clusters. For bare metal flavors, specify `dedicated`.</dd>
 
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>The zone where you want to create the cluster. This value is required for standard clusters. Free clusters can be created in the region that you target with the <code>ibmcloud oc region set</code> command, but you cannot specify the zone.
+<dd>The zone where you want to create the cluster. This value is required for standard clusters. Free clusters can be created in the region that you target with the <code>ibmcloud oc region init</code> command, but you cannot specify the zone.
 
 <p>Review [available zones](/docs/openshift?topic=openshift-regions-and-zones#zones). To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones).</p>
 
@@ -4498,9 +4498,9 @@ View available locations, view the currently targeted region, and set the target
 Find the {{site.data.keyword.containerlong_notm}} region that you are currently targeted to.
 {: shortdesc}
 
-You can work with resources that you have access to in any location, even if you set a region by running `ibmcloud oc region set` and the resource that you want to work with is in another region. If you have clusters with the same name in different regions, you can either use the cluster ID when you run commands or set a region with the `ibmcloud oc region set` command and use the cluster name when you run commands.
+You can work with resources that you have access to in any location, even if you set a region by running `ibmcloud oc region set` and the resource that you want to work with is in another region. If you have clusters with the same name in different regions, use the cluster ID when you run commands.
 
-<p class="deprecated">Legacy behavior:</br>If you use the {{site.data.keyword.containerlong_notm}} plug-in version <code>0.3</code> or later and need to list and work with resources from one region only, you can use the <code>ibmcloud oc init</code> [command](#cs_init) to target a regional endpoint instead of the global endpoint.</br>If you use the {{site.data.keyword.containerlong_notm}} plug-in version <code>0.2</code> (deprecated), you create and manage clusters specific to the region. Use the <code>ibmcloud oc region set</code> command to change regions.</p>
+<p class="deprecated">Region-specific endpoints are deprecated, and this command might not work as expected.<br>Legacy behavior: If you use the {{site.data.keyword.containerlong_notm}} plug-in version <code>0.3</code> or later and need to list and work with resources from one region only, you can use the <code>ibmcloud oc init</code> [command](#cs_init) to target a regional endpoint instead of the global endpoint.</br>If you use the {{site.data.keyword.containerlong_notm}} plug-in version <code>0.2</code> (deprecated), you create and manage clusters specific to the region. Use the <code>ibmcloud oc region set</code> command to change regions.</p>
 
 ```
 ibmcloud oc region get
@@ -4517,7 +4517,7 @@ ibmcloud oc region get
 List the available regions. The `Region Name` is the {{site.data.keyword.containerlong_notm}} name, and the `Region Alias` is the general {{site.data.keyword.cloud_notm}} name for the region.
 {: shortdesc}
 
-Region-specific endpoints are deprecated. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
+Region-specific endpoints are deprecated, and this command might not work as expected. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
 {: deprecated}
 
 **Minimum required permissions**: None
@@ -4528,18 +4528,6 @@ ibmcloud oc region ls
 ```
 {: pre}
 
-**Output**:
-```
-Region Name   Region Alias
-ap-north      jp-tok
-ap-south      au-syd
-eu-central    eu-de
-uk-south      eu-gb
-us-east       us-east
-us-south      us-south
-```
-{: screen}
-
 </br>
 
 ### Deprecated: `ibmcloud oc region set`
@@ -4548,10 +4536,9 @@ us-south      us-south
 Set the region for {{site.data.keyword.containerlong_notm}}.
 {: shortdesc}
 
-You can work with resources that you have access to in any location, even if you set a region by running `ibmcloud oc region set` and the resource that you want to work with is in another region. If you have clusters with the same name in different regions, you can either use the cluster ID when you run commands or set a region with the `ibmcloud oc region set` command and use the cluster name when you run commands.
+You can work with resources that you have access to in any location, even if you set a region by running `ibmcloud oc region set` and the resource that you want to work with is in another region. If you have clusters with the same name in different regions, use the cluster ID when you run commands.
 
-If you use the `0.2` beta version (deprecated) of the {{site.data.keyword.containerlong_notm}} plug-in, you create and manage clusters specific to the region. For example, you can log in to {{site.data.keyword.cloud_notm}} in the US South region and create a cluster. Next, you can use `ibmcloud oc region set eu-central` to target the EU Central region and create another cluster. Finally, you can use `ibmcloud oc region set us-south` to return to US South to manage your cluster in that region.
-{: deprecated}
+<p class="deprecated">Region-specific endpoints are deprecated, and this command might not work as expected. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.<br>If you use the {{site.data.keyword.containerlong_notm}} plug-in version <code>0.3</code> or later and need to list and work with resources from one region only, you can use the <code>ibmcloud oc init</code> [command](#cs_init) to target a regional endpoint instead of the global endpoint.<br>If you use the `0.2` beta version (deprecated) of the {{site.data.keyword.containerlong_notm}} plug-in, you create and manage clusters specific to the region. For example, you can log in to {{site.data.keyword.cloud_notm}} in the US South region and create a cluster. Next, you can use `ibmcloud oc region set eu-central` to target the EU Central region and create another cluster. Finally, you can use `ibmcloud oc region set us-south` to return to US South to manage your cluster in that region.</p>
 
 ```
 ibmcloud oc region set --region REGION
