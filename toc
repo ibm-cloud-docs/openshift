@@ -90,7 +90,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_loadbalancer_dns.md
 
     {: .topicgroup}
-    HTTPS load balancing with Ingress application load balancers (ALBs)
+    Exposing apps with Ingress
         openshift_ingress_qs.md
         openshift_ingress_about.md
         openshift_ingress.md

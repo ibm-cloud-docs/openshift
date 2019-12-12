@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-12"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -23,10 +23,10 @@ subcollection: containers
 {:download: .download}
 {:preview: .preview}
 
-# Quick start for Ingress ALBs
+# Quick start for Ingress
 {: #ingress-qs}
 
-Quickly expose your app to the Internet by creating a layer 7 Ingress application load balancer (ALB).
+Quickly expose your app to the Internet by creating an Ingress resource.
 {: shortdesc}
 
 1. Create a Kubernetes service for you app so that it can be included in the Ingress application load balancing.
@@ -47,7 +47,6 @@ Quickly expose your app to the Internet by creating a layer 7 Ingress applicatio
   Ingress Secret:         mycluster-a1b2cdef345678g9hi012j3kl4567890-0001
   ```
   {: screen}
-  
 
 3. Using the Ingress subdomain and secret, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If you app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
   ```
@@ -82,9 +81,4 @@ Quickly expose your app to the Internet by creating a layer 7 Ingress applicatio
   https://<ingress_subdomain>/<app_path>
   ```
   {: codeblock}
-
-For more information, see:
-* [About Ingress ALBs](/docs/openshift?topic=openshift-ingress-about)
-* [Setting up Ingress](/docs/openshift?topic=openshift-ingress)
-* [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress_annotation)
 
