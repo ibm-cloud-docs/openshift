@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-12"
+lastupdated: "2019-12-13"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -32,7 +32,7 @@ Securely expose your apps to external traffic by using OpenShift routes or {{sit
 ## Understanding options for exposing apps
 {: #external}
 
-To securely expose your apps to external traffic, you can use routes, NodePorts, network load balancers (NLBs), or Ingress application load balancers (ALBs).
+To securely expose your apps to external traffic, you can use choose from the following services.
 {: shortdesc}
 
 <dl>
@@ -45,13 +45,11 @@ To securely expose your apps to external traffic, you can use routes, NodePorts,
 <dt>[Network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer)</dt>
 <dd>Every standard cluster is provisioned with four portable public and four portable private IP addresses that you can use to create a layer 4 TCP/UDP network load balancer (NLB) for your app. You can customize your NLB by exposing any port that your app requires. The portable public and private IP addresses that are assigned to the NLB are permanent and do not change when a worker node is re-created in the cluster. If you create public NLBs, you can create a subdomain for your app that registers the public NLB IP addresses with a DNS entry. You can also enable health check monitors on the NLB IPs for each subdomain. **Note**: The NLB 2.0 is not supported for use in Red Hat OpenShift on IBM Cloud.</dd>
 
-
 <dt>[Ingress application load balancer (ALB)](/docs/openshift?topic=openshift-ingress)</dt>
-<dd>Expose multiple apps in a cluster by creating one layer 7 HTTP, HTTPS, or TCP Ingress application load balancer (ALB). The ALB uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
+<dd>Expose multiple apps in a cluster by setting up routing with the Ingress application load balancer (ALB). The ALB uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
   <li>The Ingress resource defines the rules for how to route and load balance incoming requests for an app.</li>
   <li>The ALB listens for incoming HTTP, HTTPS, or TCP service requests. It forwards requests across the apps' pods based on the rules that you defined in the Ingress resource, including custom routing rules defined by annotations.</li>
   <li>The multizone load balancer (MZLB) handles all incoming requests to your apps and load balances the requests among the ALBs in the various zones. It also enables health checks for the public Ingress IP addresses.</li></ul>Note that the Ingress system does not use the router that is deployed by default to your cluster, and that any routes you create do not use the Ingress subdomain.</dd>
-
 </dl>
 
 ## Choosing among load balancing solutions
@@ -68,7 +66,7 @@ Because routes and Ingress offer similar capabilities, both load balancing solut
 The following table compares the features of each app exposure method.
 
 |Characteristics|NodePort|NLB|Ingress ALB|Route|
-|---------------|------|--------|---|-----------|
+|---------------|--------|---|-----------|-----|
 |Stable external IP| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |External hostname||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |SSL termination||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />`*`|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
@@ -79,7 +77,7 @@ The following table compares the features of each app exposure method.
 |Consistent hybrid multicloud deployment| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 {: caption="Comparison of OpenShift external networking for apps" caption-side="top"}
 
-`*` SSL termination is provided by `ibmcloud oc nlb-dns` commands.
+`*` SSL termination is provided by `ibmcloud oc nlb-dns` commands. In classic clusters, these commands are supported for public NLBs only.
 {: note}
 
 
@@ -101,7 +99,7 @@ The public network interface for worker nodes is protected by [predefined Calico
 ### Choosing an app exposure method
 {: #pattern_public}
 
-To make an app publicly available to the internet in a classic cluster, choose an app exposure method that uses routes, NodePorts, NLBs, or ALBs. The following table describes each possible method, why you might use it, and how to set it up. For basic information about the networking services that are listed, see [Understanding Kubernetes service types](#external).
+To make an app publicly available to the internet in a classic cluster, choose an app exposure method that uses routes, NodePorts, NLBs, or setting up Ingress. The following table describes each possible method, why you might use it, and how to set it up. For basic information about the networking services that are listed, see [Understanding Kubernetes service types](#external).
 {: shortdesc}
 
 You cannot use multiple app exposure methods for one app.
@@ -141,7 +139,7 @@ You cannot use multiple app exposure methods for one app.
 <td>Ingress ALB</td>
 <td>HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules</td>
 <td>Implement custom routing rules and SSL termination for multiple apps. Choose this method only if you have specific requirements to use Ingress instead of routes, such as migrating an app that already uses Ingress from a community Kubernetes cluster.</td>
-<td><ol><li>Create an [Ingress service](/docs/openshift?topic=openshift-ingress#ingress_expose_public) for the public ALB.</li><li>Customize ALB routing rules with [annotations](/docs/openshift?topic=openshift-ingress_annotation).</li></ol></td>
+<td><ol><li>Create an [Ingress resource](/docs/openshift?topic=openshift-ingress#ingress_expose_public) for the public ALB.</li><li>Customize ALB routing rules with [annotations](/docs/openshift?topic=openshift-ingress_annotation).</li></ol></td>
 </tr>
 </tbody>
 </table>
@@ -167,7 +165,7 @@ As an example, say that you create a private load balancer for your app. This pr
 ### Choosing an app exposure method
 {: #private_both_vlans}
 
-When your worker nodes are connected to both a public and a private VLAN, you can make your app accessible from a private network only by creating private routes, NodePorts, NLBs, or ALBs. Then, you can create Calico policies to block public traffic to the services.
+When your worker nodes are connected to both a public and a private VLAN, you can make your app accessible from a private network only by creating private routes, NodePorts, NLBs, or setting up Ingress. Then, you can create Calico policies to block public traffic to the services.
 {: shortdesc}
 
 The public network interface for worker nodes is protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked except for a few ports. These ports are opened so that IBM can monitor network traffic and automatically install security updates for the Kubernetes master, and so that connections can be established to NodePort, LoadBalancer, and Ingress services.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-13"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -49,7 +49,7 @@ Logs are automatically collected for your Ingress ALBs. To view the ALB logs, ch
         oc logs <ALB_pod_ID> nginx-ingress -n kube-system
         ```
         {: pre}
-        
+
 
 </br>The default Ingress log content is formatted in JSON and displays common fields that describe the connection session between a client and your app. An example log with the default fields looks like the following:
 
@@ -176,7 +176,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     </tr>
     </tbody></table>
 
-    For example, your log format might contain the following variables: 
+    For example, your log format might contain the following variables:
     ```
     apiVersion: v1
     data:
