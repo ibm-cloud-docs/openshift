@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-12"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -60,10 +60,10 @@ To securely expose your apps to external traffic, you can use routes, NodePorts,
 Now that you understand what [options](#external) you have to expose apps in your OpenShift cluster, choose the best solution for your workload.
 {: shortdesc}
 
-**Do I use OpenShift routes or Ingress ALBs?**<br>
+**Do I use OpenShift routes or Ingress?**<br>
 Because routes and Ingress offer similar capabilities, both load balancing solutions might be suitable to your workload. To help decide between routes and Ingress, consider the following broader concerns.
 * **Portability across clouds**: If you anticipate running the same app in OpenShift clusters in a hybrid scenario across multiple cloud providers, use the OpenShift router. Routes are configured and work the same way across cloud providers, whereas Ingress might vary with each provider.
-* **Annotations to extend routing capabilities**: With the Ingress ALB, you can customize Ingress routing rules with annotations. Some of these annotations help to integrate other {{site.data.keyword.cloud_notm}} services to your routes, such as {{site.data.keyword.appid_short}} to provide authentication for the Ingress URL that is assigned to your app. These annotations are not available for the OpenShift router.
+* **Annotations to extend routing capabilities**: With the Ingress ALB, you can customize Ingress routing rules with annotations. Some of these annotations help to integrate other {{site.data.keyword.cloud_notm}} services to your routes, such as {{site.data.keyword.appid_short}} to provide authentication for the Ingress URL that is assigned to your app. These annotations are not available for the OpenShift router, which must use [route-specific `haproxy` annotations ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations).
 
 The following table compares the features of each app exposure method.
 

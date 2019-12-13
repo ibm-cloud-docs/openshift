@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-12"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -38,7 +38,7 @@ Ingress consists of three components: Ingress resources, application load balanc
 ### Ingress resource
 {: #ingress-resource}
 
-To expose an app by using Ingress, you must create a Kubernetes service for your app and register this service with Ingress by defining an Ingress resource. The Ingress resource is a Kubernetes resource that defines the rules for how to route incoming requests for apps. 
+To expose an app by using Ingress, you must create a Kubernetes service for your app and register this service with Ingress by defining an Ingress resource. The Ingress resource is a Kubernetes resource that defines the rules for how to route incoming requests for apps.
 {: shortdesc}
 
 The Ingress resource also specifies the path to your app services. When you create a standard cluster, an Ingress subdomain is registered by default for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`. The paths to your app services are appended to the public route to form a unique app URL such as `mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud/myapp1`.
@@ -49,8 +49,7 @@ One Ingress resource is required per namespace where you have apps that you want
 
 For more information, see [Planning networking for single or multiple namespaces](/docs/openshift?topic=openshift-ingress#multiple_namespaces).
 
-
-<p class="important">As of 22 November 2019, the following changes are made to the Ingress subdomain:</br></br>All new clusters are assigned an Ingress subdomain in the format <code>&lt;cluster_name&gt;.&lt;globally_unique_account_HASH&gt;-0001.&lt;region&gt;.containers.appdomain.cloud</code> and an Ingress secret in the format <code>&lt;cluster_name&gt;.&lt;globally_unique_account_HASH&gt;-0001</code>. For more information about this format, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format). If you have pipeline dependencies on consistent app domain names, you can use your own custom domain instead of the IBM-provided Ingress subdomain.</br></br>If you have a cluster that is still assigned an Ingress subdomain in the format <code>&lt;cluster_name&gt;.&lt;region&gt;.containers.mybluemix.net</code>, that subdomain is migrated to Cloudflare. An A record that maps to a <code>&lt;cluster_name&gt;.&lt;region_or_zone&gt;.containers.appdomain.cloud</code> subdomain is assigned during migration and is replaced with a CNAME record after migration. The <code>appdomain.cloud</code> subdomain is created and assigned to your cluster for you if it did not exist in your cluster. Either subdomain can still be used.</p>
+<p class="important">As of 22 November 2019, the following changes are made to the Ingress subdomain:</br></br>All new clusters are assigned an Ingress subdomain in the format <code>&lt;cluster_name&gt;.&lt;globally_unique_account_HASH&gt;-0001.&lt;region&gt;.containers.appdomain.cloud</code> and an Ingress secret in the format <code>&lt;cluster_name&gt;.&lt;globally_unique_account_HASH&gt;-0001</code>. For more information about this format, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format). If you have pipeline dependencies on consistent app domain names, you can use your own custom domain instead of the IBM-provided Ingress subdomain.</p>
 
 ### Application load balancer (ALB)
 {: #alb-about}
@@ -58,7 +57,7 @@ For more information, see [Planning networking for single or multiple namespaces
 The application load balancer (ALB) is an external load balancer that listens for incoming HTTP, HTTPS, or TCP service requests. The ALB then forwards requests to the appropriate app pod according to the rules defined in the Ingress resource.
 {: shortdesc}
 
-When you create a standard cluster, Red Hat OpenShift on IBM Cloud automatically creates a highly available ALB in each zone where you have worker nodes and assigns a unique public route which all public ALBs share. You can find the public route for your cluster by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and looking for the **Ingress subdomain** in the format `mycluster-<hash>-0001.us-south.containers.appdomain.cloud`. One default private ALB is also automatically created in each zone of your cluster, but the private ALBs are not automatically enabled and do not use the Ingress subdomain. Note that clusters with workers that are connected to private VLANs only are not assigned an IBM-provided Ingress subdomain.
+When you create a standard cluster, Red Hat OpenShift on IBM Cloud automatically creates a highly available ALB in each zone where you have worker nodes and assigns a unique public domain which all public ALBs share. You can find the public domain for your cluster by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and looking for the **Ingress subdomain** in the format `mycluster-<hash>0001.us-south.containers.appdomain.cloud`. One default private ALB is also automatically created in each zone of your cluster, but the private ALBs are not automatically enabled and do not use the Ingress subdomain. Note that clusters with workers that are connected to private VLANs only are not assigned an IBM-provided Ingress subdomain.
 
 In classic clusters, the Ingress subdomain for your cluster is linked to the public ALB IP addresses. You can find the IP address of each public ALB by running `ibmcloud oc alb ls --cluster <cluster_name_or_ID>` and looking for the **ALB IP** field. The portable public and private ALB IP addresses are provisioned into your IBM Cloud infrastructure account during cluster creation and are static floating IPs that do not change for the life of the cluster. If the worker node is removed, a `Keepalived` daemon that constantly monitors the IP automatically reschedules the ALB pods that were on that worker to another worker node in that zone. The rescheduled ALB pods retain the same static IP address. However, if you remove a zone from a cluster, then the ALB IP address for that zone is removed.
 
@@ -70,7 +69,7 @@ A Cloudflare multizone load balancer (MZLB) health checks your ALBs.
 
 Whenever you create a multizone cluster or [add a zone to a single zone cluster](/docs/openshift?topic=openshift-add_workers#add_zone), a Cloudflare multizone load balancer (MZLB) is automatically created and deployed so that 1 MZLB exists for each region. The MZLB puts the IP addresses of your ALBs behind the same subdomain and enables health checks on these IP addresses to determine whether they are available or not.
 
-For example, if you have worker nodes in 3 zones in the US-East region, the subdomain `yourcluster.us-east.containers.appdomain.cloud` has 3 ALB IP addresses. The MZLB health checks the public ALB IP in each zone of a region and keeps the DNS lookup results updated based on these health checks. For example, if your ALBs have IP addresses `1.1.1.1`, `2.2.2.2`, and `3.3.3.3`, a normal operation DNS lookup of your Ingress subdomain returns all 3 IPs, 1 of which the client accesses at random. If the ALB with IP address `3.3.3.3` becomes unavailable for any reason, such as due to zone failure, then the health check for that zone fails, the MZLB removes the failed IP from the subdomain, and the DNS lookup returns only the healthy `1.1.1.1` and `2.2.2.2` ALB IPs. The subdomain has a 30 second time to live (TTL), so after 30 seconds, new client apps can access only one of the available, healthy ALB IPs.
+For example, if your cluster has worker nodes in 3 zones in the US-East region, the subdomain `mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-east.containers.appdomain.cloud` has 3 ALB IP addresses. The MZLB health checks the public ALB IP in each zone of a region and keeps the DNS lookup results updated based on these health checks. For example, if your ALBs have IP addresses `1.1.1.1`, `2.2.2.2`, and `3.3.3.3`, a normal operation DNS lookup of your Ingress subdomain returns all 3 IPs, 1 of which the client accesses at random. If the ALB with IP address `3.3.3.3` becomes unavailable for any reason, such as due to zone failure, then the health check for that zone fails, the MZLB removes the failed IP from the subdomain, and the DNS lookup returns only the healthy `1.1.1.1` and `2.2.2.2` ALB IPs. The subdomain has a 30 second time to live (TTL), so after 30 seconds, new client apps can access only one of the available, healthy ALB IPs.
 
 In rare cases, some DNS resolvers or client apps might continue to use the unhealthy ALB IP after the 30-second TTL. These client apps might experience a longer load time until the client app abandons the `3.3.3.3` IP and tries to connect to `1.1.1.1` or `2.2.2.2`. Depending on the client browser or client app settings, the delay can range from a few seconds to a full TCP timeout.
 
@@ -101,7 +100,7 @@ The following diagram shows how Ingress directs communication from the internet 
 
 4. The load balancer service routes the request to the ALB.
 
-5. The ALB checks if a routing rule for the `myapp` path in the cluster exists. If a matching rule is found, the request is proxied according to the rules that you defined in the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the public IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the ALB load balances the requests between the app pods.
+5. The ALB checks if a routing rule for the `myapp` path in the cluster exists. If a matching rule is found, the request is proxied according to the rules that you defined in the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the ALB load balances the requests between the app pods.
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the ALB that forwarded the client request exists. The ALB then sends the response packet to the client.
 
@@ -126,5 +125,6 @@ The following diagram shows how Ingress directs communication from the internet 
 6. When the app returns a response packet, it uses the IP address of the worker node where the ALB that forwarded the client request exists. The ALB then sends the response packet to the client.
 
 <br>
+
 
 

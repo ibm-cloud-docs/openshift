@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-10"
+lastupdated: "2019-12-12"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -488,7 +488,7 @@ Grant users access to your clusters by assigning {{site.data.keyword.cloud_notm}
         <tr>
         <td>Region</td>
         <td>`--region`</td>
-        <td>You can scope the policy to apply to clusters within a particular region. If you do not specify a region or specific cluster ID, the policy applies to all clusters for all regions. To list available regions, run `ibmcloud oc region ls` and use the value in the **Region Alias** column.</td>
+        <td>You can scope the policy to apply to clusters within a particular region. If you do not specify a region or specific cluster ID, the policy applies to all clusters for all regions. To list available regions, review the [Deprecated region](/docs/openshift?topic=openshift-regions-and-zones#zones) column in the Red Hat OpenShift on IBM Cloud locations table.</td>
         </tr>
         <tr>
         <td>Role</td>

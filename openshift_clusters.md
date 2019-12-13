@@ -27,12 +27,11 @@ subcollection: openshift
 Create a cluster in {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
-
 After [getting started](/docs/containers?topic=containers-getting-started), you might want to create a cluster that is customized to your use case and different public and private cloud environments. Consider the following steps to create the right cluster each time.
 
 1.  [Prepare your account to create clusters](/docs/openshift?topic=openshift-clusters#cluster_prepare). This step includes creating a billable account, setting up an API key with infrastructure permissions, making sure that you have Administrator access in {{site.data.keyword.cloud_notm}} IAM, planning resource groups, and setting up account networking.
 2.  [Decide on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level). This step includes planning cluster network and HA setup, estimating costs, and if applicable, allowing network traffic through a firewall.
-3.  Create your [cluster](#clusters_standard) by following the steps in the {{site.data.keyword.cloud_notm}} console or CLI.
+3.  Create your [cluster](#clusters_ui) by following the steps in the {{site.data.keyword.cloud_notm}} console or CLI.
 
 <br />
 
@@ -376,7 +375,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 {: #next_steps}
 
 When the cluster is up and running, you can check out the following cluster administration tasks:
-- If you created the cluster in a multizone capable zone, [spread worker nodes by adding a zone to your cluster](/docs/openshift?topic=openshift-add_workers). 
+- If you created the cluster in a multizone capable zone, [spread worker nodes by adding a zone to your cluster](/docs/openshift?topic=openshift-add_workers).
 - [Deploy an app in your cluster.](/docs/containers?topic=containers-app#app_cli)
 - [Set up your own private registry in {{site.data.keyword.cloud_notm}} to store and share Docker images with other users.](/docs/services/Registry?topic=registry-getting-started)
 - [Set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
