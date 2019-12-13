@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-10"
+lastupdated: "2019-12-13"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -153,7 +153,7 @@ The OpenShift master is accessible through the private service endpoint if autho
 
 7. [Create an API key](#access_api_key) with the private service endpoint so that you can log in to the cluster.
 
-8. Verify that you are connected to the private network through a VPN or {{site.data.keyword.cloud_notm}} Direct Link connection.
+8. Verify that you are connected to the private network through a [VPN](/docs/infrastructure/iaas-vpn?topic=VPN-getting-started) or [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link) connection.
 
 9.  Log in to the cluster with the API key.
     ```
@@ -237,7 +237,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 ### Using a service ID to log in to OpenShift clusters
 {: #access_service_id}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an OpenShift cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids). 
+You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an OpenShift cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids).
 {: shortdesc}
 
 1.  Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.
