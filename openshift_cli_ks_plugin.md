@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-12"
+lastupdated: "2019-12-16"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2260,7 +2260,7 @@ ibmcloud oc alb cert deploy --update --secret-name my_alb_secret --cluster my_cl
 ### Beta: `ibmcloud oc alb cert get`
 {: #cs_alb_cert_get}
 
-If you imported a certificate from {{site.data.keyword.cloudcerts_short}} to the ALB in a cluster, view information about the TLS certificate, such as the secrets that are associated with it.
+If you imported a certificate from {{site.data.keyword.cloudcerts_short}} to the ALB in a cluster, view information about the TLS certificate, such as the secrets that are associated with it and its status.
 {: shortdesc}
 
 ```
