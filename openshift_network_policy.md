@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-11"
+lastupdated: "2019-12-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -52,6 +52,8 @@ Calico enforces these policies, including any Kubernetes network policies that a
 
 When a cluster with a public VLAN is created, a `HostEndpoint` resource with the `ibm.role: worker_public` label is created automatically for each worker node and its public network interface. To protect the public network interface of a worker node, default Calico policies are applied to any host endpoint with the `ibm.role: worker_public` label.
 {:shortdesc}
+
+In clusters that run Kubernetes version 1.16 or later, a `HostEndpoint` resource with the `ibm.role: worker_private` label is also created automatically for each worker node and its private network interface. To protect the private network interface of a worker node, default Calico policies are applied to any host endpoint with the `ibm.role: worker_private` label.
 
 These default Calico host policies allow all outbound network traffic and allow inbound traffic to specific cluster components, such as Kubernetes NodePort, LoadBalancer, and Ingress services. Any other inbound network traffic from the internet to your worker nodes that isn't specified in the default policies is blocked. The default policies don't affect pod to pod traffic.
 
@@ -465,7 +467,10 @@ When you apply the egress pod policies that are included in this policy set, onl
 {: important}
 
 Before you begin:
-1. [Install and configure the Calico CLI.](#cli_install)
+1. If your cluster runs Kubernetes version 1.16:
+  1. See [this topic](/docs/containers?topic=containers-cs_versions#116_networkpolicies) for information about updating Calico private host endpoints and network policies in version 1.16.
+  2. Update your worker node patch version to [1.16.3_1520](/docs/containers?topic=containers-changelog#1163_1520_worker).
+2. [Install and configure the Calico CLI.](#cli_install)
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -493,16 +498,7 @@ To isolate your cluster on the private network by using Calico policies:
   ```
   {: pre}
 
-3. Set up private host endpoints for your worker nodes. When your worker nodes have private host endpoints, the policies that you apply in the next several steps can target the worker node private interface (eth0) and the pod network of a cluster.
-  1. Open the `generic-privatehostendpoint.yaml` policy.
-  2. Replace `<worker_name>` with the name of a worker node.
-    <p class="note">Some worker nodes must follow a different naming structure for Calico policies. You must use the name that is returned when you run `calicoctl get nodes --config=<filepath>/calicoctl.cfg`.</p>
-  3. Replace `<worker-node-private-ip>` with the private IP address for the worker node. To see your worker nodes' private IPs, run `ibmcloud oc worker ls --cluster <my_cluster>`.
-  4. For each worker node in your cluster, repeat these steps in a separate entry in the file.
-    <p class="important">Each time you add a worker node to a cluster, you must update the host endpoints file with the new entries.</p>
-  5. Save the policy.
-
-4. Apply the policies.
+3. Apply the policies.
   ```
   calicoctl apply -f allow-all-workers-private.yaml
   calicoctl apply -f allow-egress-pods-private.yaml
@@ -511,9 +507,22 @@ To isolate your cluster on the private network by using Calico policies:
   calicoctl apply -f allow-private-service-endpoint.yaml
   calicoctl apply -f allow-sys-mgmt-private.yaml
   calicoctl apply -f deny-all-private-default.yaml
-  calicoctl apply -f generic-privatehostendpoint.yaml
   ```
   {: pre}
+
+4. Version 1.15 and earlier clusters only: Set up private host endpoints for your worker nodes. When your worker nodes have private host endpoints, the policies that you apply can target the worker node private interface (eth0) and the pod network of a cluster.
+  1. Open the `generic-privatehostendpoint.yaml` policy.
+  2. Replace `<worker_name>` with the name of a worker node.
+    <p class="note">Some worker nodes must follow a different naming structure for Calico policies. You must use the name that is returned when you run `calicoctl get nodes --config=<filepath>/calicoctl.cfg`.</p>
+  3. Replace `<worker-node-private-ip>` with the private IP address for the worker node. To see your worker nodes' private IPs, run `ibmcloud oc worker ls --cluster <my_cluster>`.
+  4. For each worker node in your cluster, repeat these steps in a separate entry in the file.
+    <p class="important">Each time you add a worker node to a cluster, you must update the host endpoints file with the new entries.</p>
+  5. Save the policy.
+  6. Apply the policy.
+    ```
+    calicoctl apply -f generic-privatehostendpoint.yaml
+    ```
+    {: pre}
 
 5. Optional: To allow your workers and pods to access {{site.data.keyword.registryshort_notm}} over the private network, apply the `allow-private-services.yaml` and `allow-private-services-pods.yaml` policies. To access other IBM Cloud services that support private service endpoints, you must manually add the subnets for those services to this policy.
   ```
