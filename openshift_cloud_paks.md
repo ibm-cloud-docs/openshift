@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-16"
+lastupdated: "2019-12-17"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -113,7 +113,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
     Do not exceed your entitlement. Your OpenShift Container Platform entitlements include usage across all the cloud providers and environments that you use your entitlements for. 
     {: important}
 
-2. In the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog?search=label%3Acloud-paks), under **Offering Type**, check **Cloud Paks**.
+2. In the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog?search=label%3Acloud_pak#software), in the **Software** tab, under **Offering Type**, check **Cloud Paks**.
 3. Select the Cloud Pak that you want to deploy, and follow the installation instructions. Each Cloud Pak requires an entitlement from [IBM Passport Advantage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/), and has its own configuration settings. For more information, view the **About** tab and Cloud Pak documentation.
 
 
