@@ -397,7 +397,7 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
     * **To assign roles to an individual user**:
       1. In the left navigation, click the **Users** page, and then click the name of the user that you want to set permissions for. If the user isn't shown, click **Invite users** to add them to the account.
       2. Click the **Access policies** tab, and then click **Assign access**. Now, the breadcrumbs on the page are **Users / Manage User**.
-      3. Optional: Add the user to an access group that has permission to Red Hat OpenShift on IBM Cloud.
+      3. Optional: Add the user to an access group that has access to Red Hat OpenShift on IBM Cloud.
     * **To assign roles to multiple users in an access group**:
       1. In the left navigation, click the **Access groups** page.
       2. Click **Create** and give your group a **Name** and **Description**. Click **Create**.
