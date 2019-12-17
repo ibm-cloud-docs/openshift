@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-12"
+lastupdated: "2019-12-13"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -23,7 +23,7 @@ subcollection: openshift
 {:download: .download}
 {:preview: .preview} 
 
-# About Ingress ALBs
+# About Ingress
 {: #ingress-about}
 
 Ingress is a Kubernetes service that balances network traffic workloads in your cluster by forwarding public or private requests to your apps. You can use Ingress to expose multiple app services to the public or to a private network by using a unique public or private route.

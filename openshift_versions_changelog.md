@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-09"
+lastupdated: "2019-12-17"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,6 +39,20 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
+
+### Changelog for master fix pack 3.11.154_1536_openshift, released 17 December 2019
+{: #311154_1536}
+
+The following table shows the changes that are included in the master fix pack `3.11.154_1536_openshift`. 
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | N/A | N/A | Fixed a bug that might prevent updating the driver and plug-in components. |
+| {{site.data.keyword.cloud_notm}} File Storage plug-in and monitor | 353 | 354 | Updated to support [non-root user access to an NFS file share](/docs/containers?topic=containers-cs_troubleshoot_storage#cs_storage_nonroot) by allocating a group ID (GID) in the storage class. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.6-182 | v1.15.6-200 | Updated version 1.0 and 2.0 network load balancers (NLBs) to prefer scheduling NLB pods on worker nodes that do not currently run any NLB pods. In addition, the Virtual Private Cloud (VPC) load balancer plug-in is updated to use Go version 1.12.11. |
+| Key Management Service provider | 254 | 270 | Improves performance of secret management by minimizing the number of data encryption keys (DEKs) that are used to unwrap secrets in the cluster. In addition, the {{site.data.keyword.keymanagementservicelong_notm}} Go client is updated. |
+{: caption="Changes since version 3.11.154_1534" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.154_1534_openshift, released 9 December 2019
 {: #311154_1534_worker}

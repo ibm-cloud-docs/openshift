@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-10"
+lastupdated: "2019-12-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -552,11 +552,227 @@ When you include an [init container![External link icon](../icons/launch-glyph.s
 After you [add non-root user access to persistent storage](#nonroot) or deploy a Helm chart with a non-root user ID specified, the user cannot write to the mounted storage.
 
 {: tsCauses}
-The deployment or Helm chart configuration specifies the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) for the pod's `fsGroup` (group ID) and `runAsUser` (user ID). Currently, Red Hat OpenShift on IBM Cloud does not support the `fsGroup` specification, and supports only `runAsUser` set as `0` (root permissions).
+Your app deployment or Helm chart configuration specifies the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) for the pod's `fsGroup` (group ID) and `runAsUser` (user ID). Generally, a pod's default security context sets [`runAsNonRoot`](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#users-and-groups) so that the pod cannot run as the root user. Because the `fsGroup` setting is not designed for shared storage such as NFS file storage, the `fsGroup` setting is not supported, and the `runAsUser` setting is automatically set to `2020`. These default settings do not allow other non-root users to write to the mounted storage. 
 
 {: tsResolve}
-Remove the configuration's `securityContext` fields for `fsGroup` and `runAsUser` from the image, deployment, or Helm chart configuration file and redeploy. If you need to change the ownership of the mount path from `nobody`, [add non-root user access](#nonroot). After you add the [non-root `initContainer`](#nonroot), set `runAsUser` at the container level, not the pod level.
+To allow a non-root user read and write access to a file storage device, you must allocate a [supplemental group ID](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#users-and-groups){: external} in a storage class, refer to this storage class in the PVC, and set the pod's security context with a `runAsUser` value that is automatically added to the supplemental group ID. When you grant the supplemental group ID read and write access to the file storage, any non-root user that belongs to the group ID, including your pod, is granted access to the file storage.
 
+Allocating a supplemental group ID for a non-root user of a file storage device is supported for single zone clusters only, and cannot be used in multizone clusters. 
+{: note}
+
+1. Create a YAML file for your customized storage class that defines the supplemental group ID that you want to use to provide read and write access to the file storage for your non-root user. To decide on the configuration for your storage class, review [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass). In your storage class YAML file, include the `gidAllocate: "true"` parameter to assign the default group ID `65531` to your non-root user. If you want to assign a different group ID, you must specify the `gidFixed` parameter in addition to the `gidAllocate` parameter. 
+
+   **Example for using the default group ID `65531`**: 
+   ```
+   apiVersion: storage.k8s.io/v1beta1
+   kind: StorageClass
+   metadata:
+      name: ibmc-file-bronze-gid
+      labels:
+        kubernetes.io/cluster-service: "true"
+   provisioner: ibm.io/ibmc-file
+   parameters:
+      type: "Endurance"
+      iopsPerGB: "2"
+      sizeRange: "[1-12000]Gi"
+      mountOptions: nfsvers=4.1,hard
+      billingType: "hourly"
+      reclaimPolicy: "Delete"
+      classVersion: "2"
+      gidAllocate: "true"
+   ```
+   {: codeblock}
+  
+   **Example to specify a different group ID**: 
+   ```
+   apiVersion: storage.k8s.io/v1beta1
+   kind: StorageClass
+   metadata:
+     name: ibmc-file-bronze-gid-fixed
+     labels:
+       kubernetes.io/cluster-service: "true"
+   provisioner: ibm.io/ibmc-file
+   parameters:
+     type: "Endurance"
+     iopsPerGB: "2"
+     sizeRange: "[1-12000]Gi"
+     mountOptions: nfsvers=4.1,hard
+     billingType: "hourly"
+     reclaimPolicy: "Delete"
+     classVersion: "2"
+     gidAllocate: "true"
+     gidFixed: "65165"
+   ```
+   {: codeblock}
+   
+3. Create the storage class in your cluster. 
+   ```
+   kubectl apply -f storageclass.yaml
+   ```
+   {: pre}
+   
+4. Create a YAML file for your PVC that uses the storage class that you created. 
+
+   ```
+   kind: PersistentVolumeClaim
+   apiVersion: v1
+   metadata:
+   name: gid-pvc
+   labels:
+     billingType: "monthly"
+   spec:
+   accessModes:
+     - ReadWriteMany
+   resources:
+     requests:
+       storage: 20Gi
+   storageClassName: ibmc-file-bronze-gid
+   ```
+   {: codeblock}
+   
+5. Create the PVC in your cluster. 
+   ```
+   kubectl apply -f pvc.yaml
+   ```
+   {: pre}
+   
+6. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status. 
+   ```
+   kubectl get pvc
+   ```
+   {: pre}
+   
+   If you tried creating the PVC in a multizone cluster, the PVC remains in a `pending` state. 
+   {: note}
+   
+   Example output: 
+   ```
+   NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
+   gid-pvc   Bound    pvc-5e4acab4-9b6f-4278-b53c-22e1d3ffa123   20Gi       RWX            ibmc-file-bronze-gid   2m54s
+   ```
+   {: screen}
+   
+7. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage. 
+
+   **Example for creating an `node-hello` deployment**: 
+   ```
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: gid-deployment
+     labels:
+       app: gid
+   spec:
+     selector:
+       matchLabels:
+         app: gid
+     template:
+       metadata:
+         labels:
+           app: gid
+       spec:
+         containers:
+         - image: gcr.io/google-samples/node-hello:1.0
+           name: gid-container
+           volumeMounts:
+           - name: gid-vol
+             mountPath: /myvol
+         securityContext: 
+           runAsUser: 2020
+         volumes:
+         - name: gid-vol
+           persistentVolumeClaim:
+             claimName: gid-pvc
+   ```
+   {: codeblock}
+   
+8. Create the deployment in your cluster. 
+   ```
+   kubectl apply -f deployment.yaml
+   ```
+   {: pre}
+   
+9. Verify that your pod is in a **Running** status. 
+   ```
+   kubectl get pods
+   ```
+   {: pre}
+   
+   Example output: 
+   ```
+   NAME                              READY   STATUS    RESTARTS   AGE
+   gid-deployment-5dc86db4c4-5hbts   2/2     Running   0          69s
+   ```
+   {: screen}
+   
+10. Log in to your pod. 
+    ```
+    kubectl exec <pod_name> -it bash
+    ```
+    {: pre}
+    
+11. Verify the read and write permissions for the non-root user. 
+    1. List the user ID and group IDs for the current user inside the pod. 
+       ```
+       id
+       ```
+       {: pre}
+       
+       Example output: 
+       ```
+       uid=2020 gid=0(root) groups=0(root), 65531
+       ```
+       {: screen}
+       
+       The setup is correct if your non-root user ID is listed as `uid` and the supplemental group ID that you defined in your storage class is listed under `groups`. 
+       
+    2. List the permissions for your volume mount directory that you defined in your deployment. 
+       ```
+       ls -l /<volume_mount_path>
+       ```
+       {: pre}
+       
+       Example output: 
+       ```
+       drwxrwxr-x 2 nobody 65531 4096 Dec 11 07:40 .
+       drwxr-xr-x 1 root   root  4096 Dec 11 07:30 ..
+       ```
+       {: screen}
+       
+       The setup is correct if the supplemental group ID that you defined in your storage class is listed with read and write permissions in your volume mount directory. 
+       
+   3. Create a file in your mount directory. 
+      ```
+      echo "Able to write to file storage with my non-root user." > /myvol/gidtest.txt
+      ```
+      {: pre}
+      
+   4. List the permissions for the files in your volume mount directory. 
+      ```
+      ls -al /mnt/nfsvol/
+      ```
+      {: pre}
+      
+      Example output: 
+      ```
+      drwxrwxr-x 2 nobody      65531 4096 Dec 11 07:40 .
+      drwxr-xr-x 1 root        root  4096 Dec 11 07:30 ..
+      -rw-r--r-- 1 2020   4294967294   42 Dec 11 07:40 gidtest.txt . 
+      ```
+      {: screen}
+      
+      In your CLI output, the non-root user ID is listed with read and write access to the file that you created. 
+      
+   5. Exit your pod. 
+      ```
+      exit
+      ```
+      {: pre}
+      
+
+If you need to change the ownership of the mount path from `nobody`, see [App fails when a non-root user owns the NFS file storage mount path](#nonroot). 
+{: tip}
+   
 <br />
 
 
