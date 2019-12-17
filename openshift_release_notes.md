@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-16"
+lastupdated: "2019-12-17"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -35,7 +35,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 17 December 2019 | **Version changelog**: Master patch updates are available for OpenShift [3.11.154_1536_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).</ul>|
+| 17 December 2019 | **Version changelog**: Master patch updates are available for OpenShift [3.11.154_1536_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).<li>**Assigning access**: Updated the steps to [assign access to your clusters through the {{site.data.keyword.cloud_notm}} IAM console](/docs/openshift?topic=openshift-users#add_users).</li></ul>|
 | 11 December 2019 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.64](/docs/containers?topic=containers-cs_cli_changelog).</li><li>**CLI installation**: Updated the link to download the [`oc` CLI client](/docs/openshift?topic=openshift-openshift-cli).</li></ul>|
 | 09 December 2019 | **Version changelog**: Worker node patch updates are available for OpenShift [3.11.154_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1534_worker). |
 | 04 December 2019 | <ul><li>**Exposing apps with load balancers or Ingress ALBs**: Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/openshift?topic=openshift-ingress-qs).</li><li>**OpenShift charges**: Now when you create OpenShift clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use OpenShift clusters?](/docs/openshift?topic=openshift-faqs#openshift_charges).</li><li>**OpenShift routes**: Added steps for [bringing your own hostname](/docs/openshift?topic=openshift-openshift_routes#routes-setup) for public routes and steps for [setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup).</li><li>**Use the internal KVDB in Portworx**: Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb).</li></ul>|
