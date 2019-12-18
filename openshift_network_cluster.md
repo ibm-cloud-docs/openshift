@@ -26,7 +26,7 @@ subcollection: openshift
 # Changing service endpoints
 {: #cs_network_cluster}
 
-After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-clusters), you can change the service endpoints that your Kubernetes master is accessible through
+After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-clusters), you can change the service endpoints that your Kubernetes master is accessible through.
 {: shortdesc}
 
 ## Setting up the private service endpoint
