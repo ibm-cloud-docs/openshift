@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-03"
+lastupdated: "2019-12-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -250,7 +250,7 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <tr>
 <td style="text-align:left">Encryption</td>
 <td style="text-align:left">At rest</td>
-<td style="text-align:left">At rest</td>
+<td style="text-align:left"><strong>Classic Block Storage</strong>: Encryption at rest.</br><strong>VPC Block Storage</strong>: Encryption in transit with Key Protect.</td>
 </tr>
 <tr>
 <td style="text-align:left">Backup and recovery</td>
