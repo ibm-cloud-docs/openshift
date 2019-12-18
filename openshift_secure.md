@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-10"
+lastupdated: "2019-12-18"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -98,7 +98,7 @@ The following image shows the default cluster security settings that address aut
     </tr>
     <tr>
       <td>CIS Kubernetes master benchmark</td>
-      <td>To configure Red Hat OpenShift on IBM Cloud, IBM engineers follow relevant cybersecurity practices from the Kubernetes master benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
+      <td>To configure Red Hat OpenShift on IBM Cloud, IBM engineers follow relevant cybersecurity practices from the Kubernetes master benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/). The cluster master and all worker nodes are deployed with images that meet the benchmark.</td>
     </tr>
     <tr>
       <td>Secure communication via TLS</td>
