@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-13"
+lastupdated: "2019-12-19"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -42,8 +42,8 @@ Quickly expose your app to the Internet by creating an Ingress resource.
     {: pre}
     Example output:
     ```
-    Ingress Subdomain:      mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
-    Ingress Secret:         mycluster-a1b2cdef345678g9hi012j3kl4567890-0001
+    Ingress Subdomain:      mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud
+    Ingress Secret:         mycluster-a1b2cdef345678g9hi012j3kl4567890-0000
     ```
     {: screen}
 

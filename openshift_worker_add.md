@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-16"
+lastupdated: "2019-12-19"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -220,8 +220,8 @@ To add a zone with worker nodes to your worker pool:
   Private Service Endpoint URL:   https://c3-private.<region>.containers.cloud.ibm.com:31140
   Master Location:                Dallas
   Master Status:                  Ready (21 hours ago)
-  Ingress Subdomain:              mycluster-<hash>-0001.us-south.containers.appdomain.cloud
-  Ingress Secret:                 mycluster-<hash>-0001
+  Ingress Subdomain:              mycluster-<hash>-0000.us-south.containers.appdomain.cloud
+  Ingress Secret:                 mycluster-<hash>-0000
   Workers:                        6
   Worker Zones:                   dal10, dal12
   Version:                        1.14.9_1524
