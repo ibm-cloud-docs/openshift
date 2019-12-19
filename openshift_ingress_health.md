@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-13"
+lastupdated: "2019-12-19"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -310,7 +310,7 @@ After you install the [metrics exporter](#metrics-exporter), you can install the
   ```
   {: pre}
 
-3. Install the Prometheus Helm chart to your cluster. Replace <ingress_subdomain> with the Ingress subdomain for your cluster. The URL for the Prometheus dashboard is a combination of the default Prometheus subdomain, `prom-dash`, and your Ingress subdomain, for example `prom-dash.mycluster-<hash>-0001.us-south.containers.appdomain.cloud`. To find the Ingress subdomain for your cluster, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name&gt;</code>.
+3. Install the Prometheus Helm chart to your cluster. Replace <ingress_subdomain> with the Ingress subdomain for your cluster. The URL for the Prometheus dashboard is a combination of the default Prometheus subdomain, `prom-dash`, and your Ingress subdomain, for example `prom-dash.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. To find the Ingress subdomain for your cluster, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name&gt;</code>.
   ```
   helm install --name prometheus . --set nameSpace=kube-system --set hostName=prom-dash.<ingress_subdomain>
   ```
@@ -337,7 +337,7 @@ After you install the [metrics exporter](#metrics-exporter), you can install the
     ```
     {:screen}
 
-6. In a browser, enter the URL for the Prometheus dashboard. This hostname has the format `prom-dash.mycluster-<hash>-0001.us-south.containers.appdomain.cloud`. The Prometheus dashboard for your ALB opens.
+6. In a browser, enter the URL for the Prometheus dashboard. This hostname has the format `prom-dash.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. The Prometheus dashboard for your ALB opens.
 
 7. Review more information about the [ALB](#alb_metrics), [server](#server_metrics), and [upstream](#upstream_metrics) metrics listed in the dashboard.
 

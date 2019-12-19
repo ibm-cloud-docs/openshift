@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-16"
+lastupdated: "2019-12-19"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -54,7 +54,7 @@ The following diagram shows how a router directs communication from the internet
 To set up routes to publicly expose apps:
 {: shortdesc}
 
-1. Create a Kubernetes `ClusterIP` service for your app deployment so that the app has an internal IP address that the router can route traffic to.
+1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the router can send traffic to.
   ```
   oc expose deploy <app_deployment_name> --name my-app-svc
   ```
@@ -91,7 +91,7 @@ You can list the routes in your cluster at any time by running `oc get routes`.
 To use routes to privately expose your apps, create a new router and change the service that exposes the router to a private load balancer. The router is assigned an IP address through which private requests are forwarded to your app.
 {: shortdesc}
 
-1. Create a Kubernetes `ClusterIP` service for your app deployment so that the app has an internal IP address that the router can route traffic to.
+1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the router can send traffic to.
   ```
   oc expose deploy <app_deployment_name> --name my-app-svc -n <project>
   ```
