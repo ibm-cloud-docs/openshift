@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-16"
+  years: 2014, 2020
+lastupdated: "2020-01-02"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -269,7 +269,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 1 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 1 compute
 
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1913,7 +1913,7 @@ ibmcloud oc worker-pool zones --cluster my_cluster --worker-pool pool1
 ### `ibmcloud oc zone add classic`
 {: #cs_zone_add}
 
-After you create a cluster or worker pool, you can add a zone. When you add a zone, worker nodes are added to the new zone to match the number of workers per zone that you specified for the worker pool. You can add more than one zone only if your cluster is in a multizone metro.
+After you create a classic cluster or worker pool, you can add a zone. When you add a zone, worker nodes are added to the new zone to match the number of workers per zone that you specified for the worker pool. You can add more than one zone only if your cluster is in a multizone metro.
 {: shortdesc}
 
 ```
@@ -1963,7 +1963,6 @@ ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -w pool1 -w pool2
 
 </br>
 
-
 ### `ibmcloud oc zone ls`
 {: #cs_datacenters}
 
@@ -1976,7 +1975,7 @@ The `locations` alias for this command is deprecated.
 {: deprecated}
 
 ```
-ibmcloud oc zone ls --provider (CLASSIC|VPC-CLASSIC) [--location LOCATION] [--region-only] [--json] [-s]
+ibmcloud oc zone ls --provider (classic) [--location LOCATION] [--region-only] [--json] [-s]
 ```
 {: pre}
 
@@ -1984,8 +1983,8 @@ ibmcloud oc zone ls --provider (CLASSIC|VPC-CLASSIC) [--location LOCATION] [--re
 
 **Command options**:
 <dl>
-<dt><code>--provider <em>CLASSIC|VPC-CLASSIC</em></code></dt>
-<dd>The provider type to list zones for. Supported values are `classic` (default) or `vpc-classic`. This flag is required.</dd>
+<dt><code>--provider <em>(classic)</em></code></dt>
+<dd>The infrastructure provider type to list zones for. This flag is required.</dd>
 
 <dt><code>-l, --location <em>LOCATION</em></code></dt>
 <dd>Filter output by a specific location. To see supported locations, run <code>ibmcloud oc supported-locations</code>. To specify multiple locations, use one flag for each location, such as `-l dal -l seo`.</dd>

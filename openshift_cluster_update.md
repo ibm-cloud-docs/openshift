@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-18"
+  years: 2014, 2020
+lastupdated: "2020-01-02"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -335,7 +335,7 @@ To update flavors:
 
 2. List available flavors in the zone.
    ```
-   ibmcloud oc flavors --zone <zone>
+   ibmcloud oc flavors --zone <zone> --provider <infrastructure_provider>
    ```
    {: pre}
 

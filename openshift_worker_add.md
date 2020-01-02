@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-19"
+  years: 2014, 2020
+lastupdated: "2020-01-02"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -116,7 +116,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 3.  For each zone, review the [available flavors for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 
     ```
-    ibmcloud oc flavors --zone <zone>
+    ibmcloud oc flavors --zone <zone> --provider classic
     ```
     {: pre}
 

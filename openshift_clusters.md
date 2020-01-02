@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-12"
+  years: 2014, 2020
+lastupdated: "2020-01-02"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -236,7 +236,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    {:tip}
 
    ```
-   ibmcloud oc flavors --zone <zone>
+   ibmcloud oc flavors --zone <zone> --provider classic
    ```
    {: pre}
 
