@@ -335,7 +335,7 @@ To update flavors:
 
 2. List available flavors in the zone.
    ```
-   ibmcloud oc flavors --zone <zone> --provider <infrastructure_provider>
+   ibmcloud oc flavors --zone <zone>
    ```
    {: pre}
 
