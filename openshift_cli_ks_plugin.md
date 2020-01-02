@@ -1975,7 +1975,7 @@ The `locations` alias for this command is deprecated.
 {: deprecated}
 
 ```
-ibmcloud oc zone ls --provider (classic) [--location LOCATION] [--region-only] [--json] [-s]
+ibmcloud oc zone ls --provider classic [--location LOCATION] [--region-only] [--json] [-s]
 ```
 {: pre}
 
@@ -1983,7 +1983,7 @@ ibmcloud oc zone ls --provider (classic) [--location LOCATION] [--region-only] [
 
 **Command options**:
 <dl>
-<dt><code>--provider <em>(classic)</em></code></dt>
+<dt><code>--provider <em>classic</em></code></dt>
 <dd>The infrastructure provider type to list zones for. This flag is required.</dd>
 
 <dt><code>-l, --location <em>LOCATION</em></code></dt>
