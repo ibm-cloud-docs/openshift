@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-09"
+  years: 2014, 2020
+lastupdated: "2020-01-02"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -92,7 +92,7 @@ With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly availabl
 First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose a sample app in your cluster.
 <br>
 
-To complete the getting started tutorial, use a [Pay-As-You-Go IBM Cloud account](/docs/account?topic=account-upgrading-account) where you are the owner or have [full Administrator access](/docs/iam?topic=iam-iammanidaccser).
+To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {{site.data.keyword.containerlong}} account](/docs/account?topic=account-upgrading-account) where you are the owner or have [full Administrator access](/docs/iam?topic=iam-iammanidaccser).
 {: note}
 
   <div class=solutionBoxContainer>
