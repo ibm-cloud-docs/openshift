@@ -236,7 +236,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    {:tip}
 
    ```
-   ibmcloud oc flavors --zone <zone> --provider classic
+   ibmcloud oc flavors --zone <zone>
    ```
    {: pre}
 

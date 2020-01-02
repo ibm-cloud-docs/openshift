@@ -116,7 +116,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 3.  For each zone, review the [available flavors for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 
     ```
-    ibmcloud oc flavors --zone <zone> --provider classic
+    ibmcloud oc flavors --zone <zone>
     ```
     {: pre}
 
