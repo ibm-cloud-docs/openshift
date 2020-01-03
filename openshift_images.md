@@ -384,7 +384,7 @@ Not quite. Your containers must be authorized to pull images by using the secret
 <br />
 
 
-## Using an image pull secret to access other cluster OpenShift projects, other {{site.data.keyword.cloud_notm}} accounts, or external private registries
+## Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default OpenShift projects
 {: #other}
 
 Set up your own image pull secret in your cluster to deploy containers to OpenShift projects other than `default`, use images that are stored in other {{site.data.keyword.cloud_notm}} accounts, or use images that are stored in external private registries. Further, you might create your own image pull secret to apply IAM access policies that restrict permissions to specific registry image namespaces, or actions (such as `push` or `pull`).
