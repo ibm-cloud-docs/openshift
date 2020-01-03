@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-19"
+  years: 2014, 2020
+lastupdated: "2020-01-03"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -28,6 +28,13 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
+
+## January 2020
+{: #jan20}
+
+| Date | Description | 
+| ---- | ----------- |
+| 3 January 2020 | **Version changelog**: Worker node patch updates are available for OpenShift [3.11.157_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).|
 
 
 ## December 2019
