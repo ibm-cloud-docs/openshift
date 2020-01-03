@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-13"
+  years: 2014, 2020
+lastupdated: "2020-01-03"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -153,7 +153,7 @@ The OpenShift master is accessible through the private service endpoint if autho
 
 7. [Create an API key](#access_api_key) with the private service endpoint so that you can log in to the cluster.
 
-8. Verify that you are connected to the private network through a [VPN](/docs/infrastructure/iaas-vpn?topic=VPN-getting-started) or [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link) connection.
+8. Verify that you are connected to the private network through a [VPN](/docs/infrastructure/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link) connection.
 
 9.  Log in to the cluster with the API key.
     ```
