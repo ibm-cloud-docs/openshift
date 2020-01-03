@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-19"
+  years: 2014, 2020
+lastupdated: "2020-01-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -196,6 +196,8 @@ Make sure that you do not create the secret with the same name as the IBM-provid
 {: note}
 
 When you import a certificate with this command, the certificate secret is created in a namespace called `ibm-cert-store`. A reference to this secret is then created in the `default` namespace, which any Ingress resource in any namespace can access. When the ALB is processing requests, it follows this reference to pick up and use the certificate secret from the `ibm-cert-store` namespace.
+
+The certificate is also registered with {{site.data.keyword.cloudcerts_long_notm}}, which enables you to track usage of the certificate. The certificate's description is appended with the cluster ID and the secret name in the format k8s:cluster:<cluster-ID>:secret:<ALB-certificate-secret-name>.
 
 </br>
 
