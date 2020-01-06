@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-17"
+  years: 2014, 2020
+lastupdated: "2020-01-06"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -43,7 +43,7 @@ To securely expose your apps to external traffic, you can use choose from the fo
 <dd>When you expose apps with a NodePort service, a NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to the service. To access the service from outside the cluster, you use the public or private IP address of any worker node and the NodePort in the format <code>&lt;IP_address&gt;:&lt;nodeport&gt;</code>. However, the public and private IP addresses of the worker node are not permanent. When a worker node is removed or re-created, a new public and a new private IP address are assigned to the worker node. NodePorts are ideal for testing public or private access or providing access for only a short amount of time.</dd>
 
 <dt>[Network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer)</dt>
-<dd>Every standard cluster is provisioned with four portable public and four portable private IP addresses that you can use to create a layer 4 TCP/UDP network load balancer (NLB) for your app. You can customize your NLB by exposing any port that your app requires. The portable public and private IP addresses that are assigned to the NLB are permanent and do not change when a worker node is re-created in the cluster. If you create public NLBs, you can create a subdomain for your app that registers the public NLB IP addresses with a DNS entry. You can also enable health check monitors on the NLB IPs for each subdomain. **Note**: The NLB 2.0 is not supported for use in Red Hat OpenShift on IBM Cloud.</dd>
+<dd>Every standard cluster is provisioned with four portable public and four portable private IP addresses that you can use to create a layer 4 TCP/UDP network load balancer (NLB) for your app. You can customize your NLB by exposing any port that your app requires. The portable public and private IP addresses that are assigned to the NLB are permanent and do not change when a worker node is re-created in the cluster. If you create public NLBs, you can create a subdomain for your app that registers the public NLB IP addresses with a DNS entry. You can also enable health check monitors on the NLB IPs for each subdomain.</dd>
 
 <dt>[Ingress application load balancer (ALB)](/docs/openshift?topic=openshift-ingress)</dt>
 <dd>Expose multiple apps in a cluster by setting up routing with the Ingress application load balancer (ALB). The ALB uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
@@ -136,6 +136,12 @@ You cannot use multiple app exposure methods for one app.
 <td><ol><li>Create a public network load balancer (NLB) 1.0 in a [single-](/docs/openshift?topic=openshift-loadbalancer#lb_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config) cluster.</li><li>Optionally [register](/docs/openshift?topic=openshift-loadbalancer_hostname) a subdomain and health checks.</li></ol></td>
 </tr>
 <tr>
+<td>NLB v2.0 (+ subdomain)</td>
+<td>DSR load balancing that exposes the app with an IP address or a subdomain</td>
+<td>Expose an app that might receive high levels of traffic to the public with an IP address or a subdomain that supports SSL termination.</td>
+<td><ol><li>Complete the [prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).</li><li>Create a public NLB 2.0 in a [single-](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config) cluster.</li><li>Optionally [register](/docs/openshift?topic=openshift-loadbalancer_hostname) a subdomain and health checks.</li></ol></td>
+</tr>
+<tr>
 <td>Ingress ALB</td>
 <td>HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules</td>
 <td>Implement custom routing rules and SSL termination for multiple apps. Choose this method only if you have specific requirements to use Ingress instead of routes, such as migrating an app that already uses Ingress from a community Kubernetes cluster.</td>
@@ -179,6 +185,7 @@ Check out the following methods for private app networking:
 |Route|HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain OpenShift-native; for example, you can use the OpenShift web console to create and manage routes.|<ol><li>[Create a `ClusterIP` service ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service) to assign an internal IP address to your app.</li><li>[Create a router that is exposed by a private load balancer.](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)</li><li>[Set up an OpenShift route ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html).</li><li>Customize routing rules with [optional configurations ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html).</li></ol>|
 |NodePort|Port on a worker node that exposes the app on the worker's private IP address|Test private access to one app or provide access for only a short amount of time.|<ol><li>[Create a NodePort service](/docs/openshift?topic=openshift-nodeport).</li><li>A NodePort service opens a port on a worker node over both the private and public IP address of the worker node. You must use a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts.</li></ol>|
 |NLB 1.0|Basic load balancing that exposes the app with a private IP address|Quickly expose one app to a private network with a private IP address.|<ol><li>[Create a private NLB service](/docs/openshift?topic=openshift-loadbalancer).</li><li>An NLB with a portable private IP address still has a public node port open on every worker node. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts.</li></ol>|
+|NLB v2.0|DSR load balancing that exposes the app with a private IP address|Expose an app that might receive high levels of traffic to a private network with an IP address.|<ol><li>Complete the [prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).</li><li>Create a private NLB 2.0 in a [single-](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config) cluster.</li><li>An NLB with a portable private IP address still has a public node port open on every worker node. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts.</li></ol>|
 |Ingress ALB|HTTPS load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps. Choose this method only if you have specific requirements to use Ingress instead of routes, such as migrating an app that already uses Ingress from a community Kubernetes cluster.|<ol><li>[Disable the public ALB.](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure)</li><li>[Enable the private ALB and create an Ingress resource](/docs/openshift?topic=openshift-ingress#ingress_expose_private).</li><li>Customize ALB routing rules with [annotations](/docs/openshift?topic=openshift-ingress_annotation).</li></ol>|
 {: caption="Characteristics of network deployment patterns for a public and a private VLAN setup" caption-side="top"}
 
