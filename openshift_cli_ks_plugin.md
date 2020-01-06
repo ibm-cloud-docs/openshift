@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-02"
+lastupdated: "2020-01-06"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -21,7 +21,8 @@ subcollection: openshift
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:preview: .preview}
+{:external: target="_blank" .external}
 
 # Red Hat OpenShift on IBM Cloud CLI
 {: #kubernetes-service-cli}
@@ -4633,5 +4634,3 @@ To use this command to prepare your automation scripts for the release of versio
 
 
 
- 
- 
