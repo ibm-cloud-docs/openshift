@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-03"
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -174,7 +174,7 @@ Create your single zone or multizone classic OpenShift cluster by using the {{si
   * To create a cluster in which you can run internet-facing workloads:
     * If VRF and service endpoints are enabled in your {{site.data.keyword.cloud_notm}} account, select **Both private & public endpoints**.
     * If you cannot or do not want to enable VRF, select **Public endpoint only**.
-  * To create a cluster that extends your on-premises data center only, or a cluster that extends your on-premises data center and provides limited public access with edge worker nodes, select **Both private & public endpoints** or **Private endpoint only**. Ensure that you have enabled VRF and service endpoints in your {{site.data.keyword.cloud_notm}} account. Note that if you enable the private service endpoint only, you must [expose the master endpoint through a private network load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
+  * To create a cluster that extends your on-premises data center only, or a cluster that extends your on-premises data center and provides limited public access with edge worker nodes, select **Both private & public endpoints**. Ensure that you have enabled VRF and service endpoints in your {{site.data.keyword.cloud_notm}} account. Note that if you enable the private service endpoint only, you must [expose the master endpoint through a private network load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
   * To create a cluster that extends your on-premises data center and provides limited public access with a gateway appliance, select **Public endpoint only**.
 8. Configure your default worker pool. Worker pools are groups of worker nodes that share the same configuration. You can always add more worker pools to your cluster later.
    1. Filter the worker flavors by selecting a machine type. Virtual is billed hourly and bare metal is billed monthly.
@@ -319,7 +319,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    </tr>
    <tr>
    <td><code>--public-service-endpoint</code></td>
-   <td>Enable the public service endpoint so that your OpenShift master can be accessed over the public network, for example to run `oc` commands from your terminal, and so that your OpenShift master and the worker nodes can communicate over the public VLAN.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</td>
+   <td>Enable the public service endpoint so that your OpenShift master can be accessed over the public network, for example to run `oc` commands from your terminal, and so that your OpenShift master and the worker nodes can communicate over the public VLAN. You must enable the public service endpoint.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</td>
    </tr>
    <tr>
    <td><code>--disable-disk-encrypt</code></td>
