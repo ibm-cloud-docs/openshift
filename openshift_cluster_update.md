@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-02"
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -10,19 +10,27 @@ subcollection: openshift
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
-
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
+{:preview: .preview}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
 
 
 # Updating clusters, worker nodes, and cluster components
@@ -564,7 +572,6 @@ You can manage automatic updates of the Ingress ALB component in the following w
 {: #addons}
 
 Managed {{site.data.keyword.containerlong_notm}} add-ons are an easy way to enhance your cluster with open-source capabilities, such as Istio or Knative. The version of the open-source tool that you add to your cluster is tested by IBM and approved for use in {{site.data.keyword.containerlong_notm}}. To update managed add-ons that you enabled in your cluster to the latest versions, see [Updating managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
-
 
 
 

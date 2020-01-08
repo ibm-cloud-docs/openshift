@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-03"
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -10,16 +10,28 @@ subcollection: openshift
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
+{:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
+{:preview: .preview}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+
 
 # Accessing OpenShift clusters
 {: #access_cluster}
@@ -46,7 +58,7 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 For OpenShift clusters with a public service endpoint, you can get the `oc login` token by following the instructions in the console.
 {: shortdesc}
 
-1.  In the [Red Hat OpenShift on IBM Cloud console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster that you want to access.
+1.  In the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
 2.  Click the **Access** tab and follow the instructions.
 
 <br />
@@ -226,7 +238,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
     ```
     {: pre}
 
-    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens).
+    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens){: external}.
 
     Example curl request:
     ```
@@ -348,6 +360,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     IAM#first.last@email.com       55555ee5-e555-55e5-e5e5-555555ee55ee               IAM:IBMid-666666FFF6
     ```
     {: screen}
+
 
 
 

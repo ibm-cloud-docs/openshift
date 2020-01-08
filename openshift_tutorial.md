@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-02"
+lastupdated: "2020-01-08"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -10,21 +10,28 @@ subcollection: openshift
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
 {:preview: .preview}
-{:tsSymptoms: .tsSymptoms}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+
 
 # Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster
 {: #openshift_tutorial}

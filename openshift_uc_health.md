@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-02"
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,18 +10,28 @@ subcollection: openshift
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
+{:preview: .preview}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+
 
 # Healthcare use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_health}
@@ -215,7 +225,6 @@ Technical solution:
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.
 * Researchers have access to clinical data and can share clinical data, while they comply with local regulations.
 * Patients who participate in disease research feel confident that their data is secure and making a difference, when it is shared with large research teams.
-
 
 
 

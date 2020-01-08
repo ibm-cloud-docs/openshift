@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-03"
+  years: 2014, 2020
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhos, rhoks, multi az, multi-az, szr, mzr
 
@@ -10,18 +10,28 @@ subcollection: openshift
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
+{:preview: .preview}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+
 
 # Planning your cluster for high availability
 {: #ha_clusters}
@@ -128,7 +138,6 @@ To load balance workloads across your apps, add the public IP addresses of your 
 
 **What if I want to load balance workloads on the private network?** </br>
 {{site.data.keyword.cloud_notm}} does not offer a load balancer service on the private network. However, you can connect your cluster to a private load balancer that you host in your on-prem network by using one of the [supported VPN options](/docs/openshift?topic=openshift-vpn). Make sure to expose your apps on the private network by using [Application Load Balancers (ALBs)](/docs/openshift?topic=openshift-ingress-about) or [Network Load Balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about), and use the private IP address in your VPN settings to connect your app to your on-prem network.
-
 
 
 

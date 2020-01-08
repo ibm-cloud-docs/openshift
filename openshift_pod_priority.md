@@ -1,14 +1,37 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-12-12"
+  years: 2014, 2020
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
 ---
+
+{:codeblock: .codeblock}
+{:deprecated: .deprecated}
+{:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
+{:preview: .preview}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+
 
 
 # Setting pod priority
@@ -223,5 +246,6 @@ To assign priority to your pods:
     oc apply -f filepath/pod-deployment.yaml
     ```
     {: pre}
+
 
 

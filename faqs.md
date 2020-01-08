@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-06"
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,23 +10,33 @@ subcollection: openshift
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
+{:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
+{:preview: .preview}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
 
 
 # FAQs
 {: #faqs}
 
-Review frequently asked questions for using {{site.data.keyword.openshiftlong}}. 
+Review frequently asked questions for using {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
 ## What container platforms are available for my cluster?
