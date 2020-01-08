@@ -70,15 +70,18 @@ For OpenShift clusters with a public service endpoint, you can get the `oc login
 The OpenShift master is accessible through the private service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network through a [VPN connection](/docs/infrastructure/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link). However, communication with the Kubernetes master over the private service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection or through {{site.data.keyword.cloud_notm}} Direct Link. You can expose the private service endpoint of the master for your cluster users by using a private network load balancer (NLB). The private NLB exposes the private service endpoint of the master as an internal <code>10.X.X.X</code> IP address range that users can access with the VPN or {{site.data.keyword.cloud_notm}} Direct Link connection. If you enable only the private service endpoint, you can use the Kubernetes dashboard or temporarily enable the public service endpoint to create the private NLB.
 {: shortdesc}
 
-1. If you created the cluster with only the private service endpoint, [enable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se) temporarily to create the `LoadBalancer` service for the private service endpoint.
 
-2. Get the private service endpoint URL and port for your cluster.
+1. Log in to your [OpenShift cluster](#access_public_se).
+
+2. If you created the cluster with only the private service endpoint, [enable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se) to create the `LoadBalancer` service for the private service endpoint.
+
+3. Get the private service endpoint URL and port for your cluster.
   ```
   ibmcloud oc cluster get --cluster <cluster_name_or_ID>
   ```
   {: pre}
 
-  In this example output, the **Private Service Endpoint URL** is `https://c1.private.us-east.containers.cloud.ibm.com:25073`.
+  In this example output, the **Private Service Endpoint URL** is `https://c1.private.us-east.containers.cloud.ibm.com:31144`.
   ```
   Name:                           setest
   ID:                             b8dcc56743394fd19c9f3db7b990e5e3
@@ -93,7 +96,7 @@ The OpenShift master is accessible through the private service endpoint if autho
   ```
   {: screen}
 
-3. Create a YAML file that is named `oc-api-via-nlb.yaml`. This YAML creates a private `LoadBalancer` service and exposes the private service endpoint through that NLB. Replace `<private_service_endpoint_port>` with the port you found in the previous step.
+4. Create a YAML file that is named `oc-api-via-nlb.yaml`. This YAML creates a private `LoadBalancer` service and exposes the private service endpoint through that NLB. Replace `<private_service_endpoint_port>` with the port you found in the previous step.
   ```
   apiVersion: v1
   kind: Service
@@ -121,7 +124,6 @@ The OpenShift master is accessible through the private service endpoint if autho
   ```
   {: codeblock}
 
-4. Log in to your [OpenShift cluster](#access_public_se).
 5. Create the NLB and endpoint.
    1. Apply the configuration file that you previously created.
       ```
@@ -167,7 +169,7 @@ The OpenShift master is accessible through the private service endpoint if autho
 
 8. Verify that you are connected to the private network through a [VPN](/docs/infrastructure/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link) connection.
 
-9.  Log in to the cluster with the API key.
+9.  Log in to the cluster with the API key. Include `https://` and the port in the private service endpoint URL, such as `https://c100.private.us-east.containers.cloud.ibm.com:30113`.
     ```
     oc login -u apikey -p <API_key> --server=<private_service_endpoint>
     ```
