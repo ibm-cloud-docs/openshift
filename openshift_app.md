@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-09"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ With {{site.data.keyword.openshiftlong}} clusters, you can deploy apps from a re
 
 To create a new app in your Red Hat OpenShift on IBM Cloud cluster, use the `oc new-app` [command ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html#new-app). For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/getting_started/developers_cli.html).
 {: shortdesc}
+
 
 ```
 oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-dir=<subdirectory>]
