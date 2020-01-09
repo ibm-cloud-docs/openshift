@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-09"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -116,6 +116,7 @@ The OpenShift master is accessible through the private service endpoint if autho
   apiVersion: v1
   metadata:
     name: oc-api-via-nlb
+    namespace: default
   subsets:
     - addresses:
         - ip: 172.20.0.1
