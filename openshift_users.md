@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-10"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -159,6 +159,8 @@ For more information about setting up your account and resources, try out this t
 
 ## Setting up the API key to enable access to the infrastructure portfolio
 {: #api_key}
+{: help}
+{: support}
 
 To successfully provision and work with clusters, you must ensure that your {{site.data.keyword.cloud_notm}} account is correctly set up to access {{site.data.keyword.cloud_notm}} infrastructure in each resource group and region that your clusters are in.
 {: shortdesc}
