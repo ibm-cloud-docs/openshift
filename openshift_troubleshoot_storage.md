@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -43,6 +43,8 @@ If you have a more general issue, try out [Troubleshooting OpenShift clusters](/
 
 ## Debugging persistent storage failures
 {: #debug_storage}
+{: troubleshoot}
+{: support}
 
 Review the options to debug persistent storage and find the root causes for failures.
 {: shortdesc}
