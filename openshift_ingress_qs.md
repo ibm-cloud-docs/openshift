@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-10"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -35,6 +35,8 @@ subcollection: containers
 
 # Quick start for Ingress
 {: #ingress-qs}
+{: help}
+{: support}
 
 Quickly expose your app to the Internet by creating an Ingress resource.
 {: shortdesc}
