@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -243,6 +243,8 @@ Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`
 
 ## Opening ports in gateway appliance firewalls
 {: #vyatta_firewall}
+{: help}
+{: support}
 
 If you have firewalls set up on the [public network](#firewall_outbound) or [private network](#firewall_private) in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
