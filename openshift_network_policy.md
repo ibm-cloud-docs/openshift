@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -58,6 +58,8 @@ Calico enforces these policies, including any Kubernetes network policies that a
 
 ## Default Calico and Kubernetes network policies
 {: #default_policy}
+{: help}
+{: support}
 
 When a cluster with a public VLAN is created, a `HostEndpoint` resource with the `ibm.role: worker_public` label is created automatically for each worker node and its public network interface. To protect the public network interface of a worker node, default Calico policies are applied to any host endpoint with the `ibm.role: worker_public` label.
 {:shortdesc}
