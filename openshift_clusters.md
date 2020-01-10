@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-10"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -129,6 +129,8 @@ Prepare your {{site.data.keyword.cloud_notm}} account for {{site.data.keyword.co
 
 ## Deciding on your cluster setup
 {: #prepare_cluster_level}
+{: help}
+{: support}
 
 After you set up your account to create clusters, decide on the setup for your cluster. You must make these decisions every time that you create a cluster. You can click on the options in the following decision tree image for more information, such as comparisons of free and standard, Kubernetes and OpenShift, or VPC and classic clusters.
 {: shortdesc}
