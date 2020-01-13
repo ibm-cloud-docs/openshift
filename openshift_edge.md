@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-02"
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,18 +10,28 @@ subcollection: openshift
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
+{:preview: .preview}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+
 
 # Restricting network traffic to edge worker nodes
 {: #edge}
@@ -58,7 +68,7 @@ Before you begin:
         "state": "labels"
       }</pre></p>
 
-  <p class="important">If you want to ensure that ALB pods are never scheduled to non-edge worker nodes under any circumstances, you must create or use an existing worker pool that has at least three worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that do not permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two worker nodes per zone, both ALB pod replicas already exist on those worker nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three worker nodes are present in a zone, the new ALB pod can be scheduled to the third worker node. Then, the old ALB pod is removed.</p>
+  <p class="important">To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least three worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that do not permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two worker nodes per zone, both ALB pod replicas already exist on those worker nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three worker nodes are present in a zone, the new ALB pod can be scheduled to the third worker node. Then, the old ALB pod is removed.</p>
 
 2. Verify that the worker pool and worker nodes have the `dedicated=edge` label.
   * To check the worker pool:

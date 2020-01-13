@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-03"
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -10,17 +10,28 @@ subcollection: openshift
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
+{:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
 {:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
+{:preview: .preview}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+
 
 # Version changelog
 {: #openshift_changelog}
@@ -56,7 +67,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 3.11.154_1536_openshift, released 17 December 2019
 {: #311154_1536}
 
-The following table shows the changes that are included in the master fix pack `3.11.154_1536_openshift`. 
+The following table shows the changes that are included in the master fix pack `3.11.154_1536_openshift`.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -70,7 +81,7 @@ The following table shows the changes that are included in the master fix pack `
 ### Changelog for worker node fix pack 3.11.154_1534_openshift, released 9 December 2019
 {: #311154_1534_worker}
 
-The following table shows the changes that are included in the worker node fix pack `3.11.154_1534_openshift`. 
+The following table shows the changes that are included in the worker node fix pack `3.11.154_1534_openshift`.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -81,7 +92,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 3.11.154_1533_openshift, released 25 November 2019
 {: #311154_1533_worker}
 
-The following table shows the changes that are included in the worker node fix pack `3.11.154_1533_openshift`. 
+The following table shows the changes that are included in the worker node fix pack `3.11.154_1533_openshift`.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -93,7 +104,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 3.11.154_1533_openshift, released 21 November 2019
 {: #311154_1533}
 
-The following table shows the changes that are included in the master fix pack `3.11.154_1533_openshift`. 
+The following table shows the changes that are included in the master fix pack `3.11.154_1533_openshift`.
 {: shortdesc}
 
 | Component | Previous | Current | Description |

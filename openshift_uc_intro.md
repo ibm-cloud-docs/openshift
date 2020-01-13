@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-11-26"
+  years: 2014, 2020
+lastupdated: "2020-01-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,23 +10,33 @@ subcollection: openshift
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-{:preview: .preview} 
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:gif: data-image-type='gif'}
+{:help: data-hd-content-type='help'}
+{:important: .important}
+{:new_window: target="_blank"}
+{:note: .note}
+{:pre: .pre}
+{:preview: .preview}
+{:screen: .screen}
+{:shortdesc: .shortdesc}
+{:support: data-reuse='support'}
+{:table: .aria-labeledby="caption"}
+{:tip: .tip}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+
 
 # Overview of use cases
 {: #cs_uc_intro}
 
-Various use cases show the strengths of {{site.data.keyword.openshiftlong}} and  {{site.data.keyword.cloud_notm}} services when used together. These stories highlight several industries as well as types of workloads. Even though each use case is presented through the lens of a particular industry, these workloads are typical across various industries. You see workload themes, such as: 
+Various use cases show the strengths of {{site.data.keyword.openshiftlong}} and  {{site.data.keyword.cloud_notm}} services when used together. These stories highlight several industries as well as types of workloads. Even though each use case is presented through the lens of a particular industry, these workloads are typical across various industries. You see workload themes, such as:
 * AI and machine learning
 * Data and storage
 * DevOps
