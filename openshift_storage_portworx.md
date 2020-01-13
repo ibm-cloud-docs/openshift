@@ -99,7 +99,7 @@ Keep in mind that the networking of non-SDS worker nodes is not optimized for Po
 1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/containers?topic=containers-utilities#block_storage_attacher).
 2. If you want to add block storage with the same configuration to all your worker nodes, [automatically add block storage](/docs/containers?topic=containers-utilities#automatic_block) with the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. To add block storage with a different configuration, add block storage to a subset of worker nodes only, or to have more control over the provisioning process, [manually add block storage](/docs/containers?topic=containers-utilities#manual_block). For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage. 
 3. [Attach the block storage](/docs/containers?topic=containers-utilities#attach_block) to your worker nodes.
-4. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
+4. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).</br>
 
 
 
