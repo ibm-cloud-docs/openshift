@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-09"
+lastupdated: "2020-01-13"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -72,8 +72,6 @@ The OpenShift master is accessible through the private service endpoint if autho
 
 
 1. Log in to your [OpenShift cluster](#access_public_se).
-
-2. If you created the cluster with only the private service endpoint, [enable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se) to create the `LoadBalancer` service for the private service endpoint.
 
 3. Get the private service endpoint URL and port for your cluster.
   ```
