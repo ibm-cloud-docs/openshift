@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,7 +40,7 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong}} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.
 {: shortdesc}
 
-Check out the following [videos and product tours ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/demos/collection/Red-Hat-OpenShift-on-IBM-Cloud/?lc=null) to learn more about Red Hat OpenShift on IBM Cloud.
+Check out the following [videos and product tours](https://www.ibm.com/demos/collection/Red-Hat-OpenShift-on-IBM-Cloud/?lc=null) to learn more about Red Hat OpenShift on IBM Cloud{: external}.
 
 
 ## Benefits of using the service
@@ -71,7 +71,7 @@ Ready to get started? Try out the [creating a Red Hat OpenShift on IBM Cloud clu
 ## Comparison between OpenShift and community Kubernetes clusters
 {: #openshift_kubernetes}
 
-Both OpenShift and community Kubernetes clusters are production-ready container platforms that are tailored for enterprise workloads. The following table compares and contrasts some common characteristics that can help you choose which container platform is right for your use case. 
+Both OpenShift and community Kubernetes clusters are production-ready container platforms that are tailored for enterprise workloads. The following table compares and contrasts some common characteristics that can help you choose which container platform is right for your use case.
 {: shortdesc}
 
 |Characteristics|Community Kubernetes clusters|OpenShift clusters|

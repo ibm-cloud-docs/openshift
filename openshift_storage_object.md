@@ -68,7 +68,7 @@ Follow these steps to create an {{site.data.keyword.cos_full_notm}} service inst
 1. Deploy an {{site.data.keyword.cos_full_notm}} service instance.
   1.  Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/catalog/services/cloud-object-storage).
   2.  Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
-  3.  Review the [plan options ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api) for pricing information and select a plan.
+  3.  Review the [plan options](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external} for pricing information and select a plan.
   4.  Click **Create**. The service details page opens.
 2. {: #service_credentials}Retrieve the {{site.data.keyword.cos_full_notm}} service credentials.
   1.  In the navigation on the service details page, click **Service Credentials**.
@@ -497,7 +497,7 @@ If you have a private-only cluster, you must install the plugin without Tiller.
 You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the latest version.
 {: shortdesc}
 
-1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart. 
+1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
   1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
     ```
     helm ls | grep ibmcloud-object-storage-plugin
@@ -694,11 +694,11 @@ Red Hat OpenShift on IBM Cloud provides pre-defined storage classes that you can
    ```
    {: screen}
 
-2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api) for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
+2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external} for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
    - **Standard**: This option is used for hot data that is accessed frequently. Common use cases are web or mobile apps.
    - **Vault**: This option is used for workloads or cool data that are accessed infrequently, such as once a month or less. Common use cases are archives, short-term data retention, digital asset preservation, tape replacement, and disaster recovery.
    - **Cold**: This option is used for cold data that is rarely accessed (every 90 days or less), or inactive data. Common use cases are archives, long-term backups, historical data that you keep for compliance, or workloads and apps that are rarely accessed.
-   - **Flex**: This option is used for workloads and data that do not follow a specific usage pattern, or that are too huge to determine or predict a usage pattern. **Tip:** Check out this [blog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2017/03/interconnect-2017-changing-rules-storage/) to learn how the Flex storage class works compared to traditional storage tiers.   
+   - **Flex**: This option is used for workloads and data that do not follow a specific usage pattern, or that are too huge to determine or predict a usage pattern. **Tip:** Check out this [blog](https://www.ibm.com/blogs/cloud-archive/2017/03/interconnect-2017-changing-rules-storage/){: external} to learn how the Flex storage class works compared to traditional storage tiers.   
 
 3. Decide on the level of resiliency for the data that is stored in your bucket.
    - **Cross-region**: With this option, your data is stored across three regions within a geolocation for highest availability. If you have workloads that are distributed across regions, requests are routed to the nearest regional endpoint. The API endpoint for the geolocation is automatically set by the `ibmc` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes are configured to use the `US GEO` API endpoint for your buckets. For more information, see [Regions and endpoints](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).  
@@ -1239,7 +1239,7 @@ To deploy a stateful set that uses object storage:
 ## Backing up and restoring data
 {: #cos_backup_restore}
 
-{{site.data.keyword.cos_full_notm}} is set up to provide high durability for your data so that your data is protected from being lost. You can find the SLA in the [{{site.data.keyword.cos_full_notm}} service terms ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03).
+{{site.data.keyword.cos_full_notm}} is set up to provide high durability for your data so that your data is protected from being lost. You can find the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03){: external}.
 {: shortdesc}
 
 {{site.data.keyword.cos_full_notm}} does not provide a version history for your data. If you need to maintain and access older versions of your data, you must set up your app to manage the history of data or implement alternative backup solutions. For example, you might want to store your {{site.data.keyword.cos_full_notm}} data in your on-prem database or use tapes to archive your data.

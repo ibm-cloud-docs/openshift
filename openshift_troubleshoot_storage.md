@@ -59,7 +59,7 @@ Review the options to debug persistent storage and find the root causes for fail
    ibmcloud plugin repo-plugins
    ```
    {: pre}
-   
+
 
 2. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
    1. Show the `kubectl` CLI version that is installed in your cluster and your local machine.
@@ -126,7 +126,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
    **Portworx**:
 
-   1. Find the [latest Helm chart version ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM/charts/tree/master/community/portworx) that is available.
+   1. Find the [latest Helm chart version](https://github.com/IBM/charts/tree/master/community/portworx){: external} that is available.
 
    2. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
       ```
@@ -486,7 +486,7 @@ When you include an [init container![External link icon](../icons/launch-glyph.s
     Is the init container failing? Because OpenShift sets restricted security context constraints, you might see an error such as `chown: /opt/ibm-ucd/server/ext_lib: Operation not permitted`. For your deployment, [use a SCC](/docs/openshift?topic=openshift-openshift_scc) that allows `chown` operations and try again.
     {: note}
 
-6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path. 
+6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path.
    ```
    oc describe pod <my_pod>
    ```
@@ -561,17 +561,17 @@ When you include an [init container![External link icon](../icons/launch-glyph.s
 After you [add non-root user access to persistent storage](#nonroot) or deploy a Helm chart with a non-root user ID specified, the user cannot write to the mounted storage.
 
 {: tsCauses}
-Your app deployment or Helm chart configuration specifies the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) for the pod's `fsGroup` (group ID) and `runAsUser` (user ID). Generally, a pod's default security context sets [`runAsNonRoot`](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#users-and-groups) so that the pod cannot run as the root user. Because the `fsGroup` setting is not designed for shared storage such as NFS file storage, the `fsGroup` setting is not supported, and the `runAsUser` setting is automatically set to `2020`. These default settings do not allow other non-root users to write to the mounted storage. 
+Your app deployment or Helm chart configuration specifies the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) for the pod's `fsGroup` (group ID) and `runAsUser` (user ID). Generally, a pod's default security context sets [`runAsNonRoot`](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#users-and-groups) so that the pod cannot run as the root user. Because the `fsGroup` setting is not designed for shared storage such as NFS file storage, the `fsGroup` setting is not supported, and the `runAsUser` setting is automatically set to `2020`. These default settings do not allow other non-root users to write to the mounted storage.
 
 {: tsResolve}
 To allow a non-root user read and write access to a file storage device, you must allocate a [supplemental group ID](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#users-and-groups){: external} in a storage class, refer to this storage class in the PVC, and set the pod's security context with a `runAsUser` value that is automatically added to the supplemental group ID. When you grant the supplemental group ID read and write access to the file storage, any non-root user that belongs to the group ID, including your pod, is granted access to the file storage.
 
-Allocating a supplemental group ID for a non-root user of a file storage device is supported for single zone clusters only, and cannot be used in multizone clusters. 
+Allocating a supplemental group ID for a non-root user of a file storage device is supported for single zone clusters only, and cannot be used in multizone clusters.
 {: note}
 
-1. Create a YAML file for your customized storage class that defines the supplemental group ID that you want to use to provide read and write access to the file storage for your non-root user. To decide on the configuration for your storage class, review [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass). In your storage class YAML file, include the `gidAllocate: "true"` parameter to assign the default group ID `65531` to your non-root user. If you want to assign a different group ID, you must specify the `gidFixed` parameter in addition to the `gidAllocate` parameter. 
+1. Create a YAML file for your customized storage class that defines the supplemental group ID that you want to use to provide read and write access to the file storage for your non-root user. To decide on the configuration for your storage class, review [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass). In your storage class YAML file, include the `gidAllocate: "true"` parameter to assign the default group ID `65531` to your non-root user. If you want to assign a different group ID, you must specify the `gidFixed` parameter in addition to the `gidAllocate` parameter.
 
-   **Example for using the default group ID `65531`**: 
+   **Example for using the default group ID `65531`**:
    ```
    apiVersion: storage.k8s.io/v1beta1
    kind: StorageClass
@@ -591,8 +591,8 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
       gidAllocate: "true"
    ```
    {: codeblock}
-  
-   **Example to specify a different group ID**: 
+
+   **Example to specify a different group ID**:
    ```
    apiVersion: storage.k8s.io/v1beta1
    kind: StorageClass
@@ -613,14 +613,14 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
      gidFixed: "65165"
    ```
    {: codeblock}
-   
-3. Create the storage class in your cluster. 
+
+3. Create the storage class in your cluster.
    ```
    kubectl apply -f storageclass.yaml
    ```
    {: pre}
-   
-4. Create a YAML file for your PVC that uses the storage class that you created. 
+
+4. Create a YAML file for your PVC that uses the storage class that you created.
 
    ```
    kind: PersistentVolumeClaim
@@ -638,32 +638,32 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
    storageClassName: ibmc-file-bronze-gid
    ```
    {: codeblock}
-   
-5. Create the PVC in your cluster. 
+
+5. Create the PVC in your cluster.
    ```
    kubectl apply -f pvc.yaml
    ```
    {: pre}
-   
-6. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status. 
+
+6. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status.
    ```
    kubectl get pvc
    ```
    {: pre}
-   
-   If you tried creating the PVC in a multizone cluster, the PVC remains in a `pending` state. 
+
+   If you tried creating the PVC in a multizone cluster, the PVC remains in a `pending` state.
    {: note}
-   
-   Example output: 
+
+   Example output:
    ```
    NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
    gid-pvc   Bound    pvc-5e4acab4-9b6f-4278-b53c-22e1d3ffa123   20Gi       RWX            ibmc-file-bronze-gid   2m54s
    ```
    {: screen}
-   
-7. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage. 
 
-   **Example for creating an `node-hello` deployment**: 
+7. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage.
+
+   **Example for creating an `node-hello` deployment**:
    ```
    apiVersion: apps/v1
    kind: Deployment
@@ -686,7 +686,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
            volumeMounts:
            - name: gid-vol
              mountPath: /myvol
-         securityContext: 
+         securityContext:
            runAsUser: 2020
          volumes:
          - name: gid-vol
@@ -694,94 +694,94 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
              claimName: gid-pvc
    ```
    {: codeblock}
-   
-8. Create the deployment in your cluster. 
+
+8. Create the deployment in your cluster.
    ```
    kubectl apply -f deployment.yaml
    ```
    {: pre}
-   
-9. Verify that your pod is in a **Running** status. 
+
+9. Verify that your pod is in a **Running** status.
    ```
    kubectl get pods
    ```
    {: pre}
-   
-   Example output: 
+
+   Example output:
    ```
    NAME                              READY   STATUS    RESTARTS   AGE
    gid-deployment-5dc86db4c4-5hbts   2/2     Running   0          69s
    ```
    {: screen}
-   
-10. Log in to your pod. 
+
+10. Log in to your pod.
     ```
     kubectl exec <pod_name> -it bash
     ```
     {: pre}
-    
-11. Verify the read and write permissions for the non-root user. 
-    1. List the user ID and group IDs for the current user inside the pod. 
+
+11. Verify the read and write permissions for the non-root user.
+    1. List the user ID and group IDs for the current user inside the pod.
        ```
        id
        ```
        {: pre}
-       
-       Example output: 
+
+       Example output:
        ```
        uid=2020 gid=0(root) groups=0(root), 65531
        ```
        {: screen}
-       
-       The setup is correct if your non-root user ID is listed as `uid` and the supplemental group ID that you defined in your storage class is listed under `groups`. 
-       
-    2. List the permissions for your volume mount directory that you defined in your deployment. 
+
+       The setup is correct if your non-root user ID is listed as `uid` and the supplemental group ID that you defined in your storage class is listed under `groups`.
+
+    2. List the permissions for your volume mount directory that you defined in your deployment.
        ```
        ls -l /<volume_mount_path>
        ```
        {: pre}
-       
-       Example output: 
+
+       Example output:
        ```
        drwxrwxr-x 2 nobody 65531 4096 Dec 11 07:40 .
        drwxr-xr-x 1 root   root  4096 Dec 11 07:30 ..
        ```
        {: screen}
-       
-       The setup is correct if the supplemental group ID that you defined in your storage class is listed with read and write permissions in your volume mount directory. 
-       
-   3. Create a file in your mount directory. 
+
+       The setup is correct if the supplemental group ID that you defined in your storage class is listed with read and write permissions in your volume mount directory.
+
+   3. Create a file in your mount directory.
       ```
       echo "Able to write to file storage with my non-root user." > /myvol/gidtest.txt
       ```
       {: pre}
-      
-   4. List the permissions for the files in your volume mount directory. 
+
+   4. List the permissions for the files in your volume mount directory.
       ```
       ls -al /mnt/nfsvol/
       ```
       {: pre}
-      
-      Example output: 
+
+      Example output:
       ```
       drwxrwxr-x 2 nobody      65531 4096 Dec 11 07:40 .
       drwxr-xr-x 1 root        root  4096 Dec 11 07:30 ..
-      -rw-r--r-- 1 2020   4294967294   42 Dec 11 07:40 gidtest.txt . 
+      -rw-r--r-- 1 2020   4294967294   42 Dec 11 07:40 gidtest.txt .
       ```
       {: screen}
-      
-      In your CLI output, the non-root user ID is listed with read and write access to the file that you created. 
-      
-   5. Exit your pod. 
+
+      In your CLI output, the non-root user ID is listed with read and write access to the file that you created.
+
+   5. Exit your pod.
       ```
       exit
       ```
       {: pre}
-      
 
-If you need to change the ownership of the mount path from `nobody`, see [App fails when a non-root user owns the NFS file storage mount path](#nonroot). 
+
+If you need to change the ownership of the mount path from `nobody`, see [App fails when a non-root user owns the NFS file storage mount path](#nonroot).
 {: tip}
-   
+
 <br />
 
 
@@ -1247,7 +1247,7 @@ Failed to provision volume with StorageClass "ibmc-s3fs-standard-regional": pvc:
 You might have used the wrong storage class to access your existing bucket, or you tried to access a bucket that you did not create. You cannot access a bucket that you did not create.
 
 {: tsResolve}
-1. From the [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/), select your {{site.data.keyword.cos_full_notm}} service instance.
+1. From the [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/){: external}, select your {{site.data.keyword.cos_full_notm}} service instance.
 2. Select **Buckets**.
 3. Review the **Class** and **Location** information for your existing bucket.
 4. Choose the appropriate [storage class](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference).
@@ -1557,7 +1557,7 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 {: shortdesc}
 
 
-2. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/start-here-installation/).
+2. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}.
 3. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.
 4. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics).
 5. Verify that Helm version 2.14.3 or higher is correctly installed in your cluster. For more information, see [Setting up Helm in a cluster with public access](/docs/openshift?topic=openshift-helm#public_helm_install).
@@ -1570,7 +1570,7 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 If you went through the troubleshooting guide and you still cannot find an issue for why the installation failed, reach out to the Portworx and IBM team.
 {: shortdesc}
 
-Post a question in the `portworx-on-iks` channel in the [{{site.data.keyword.containerlong_notm}} Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/). Make sure to include the cluster ID and the steps that you took to verify your installation. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
+Post a question in the `portworx-on-iks` channel in the [{{site.data.keyword.containerlong_notm}} Slack](https://ibm-container-service.slack.com/){: external}. Make sure to include the cluster ID and the steps that you took to verify your installation. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
 
 ## Getting help and support
 {: #storage_getting_help}

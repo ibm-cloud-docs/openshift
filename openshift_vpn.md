@@ -43,7 +43,7 @@ With VPN connectivity, you can securely connect apps in a OpenShift cluster on {
 
 To connect your worker nodes and apps to an on-premises data center, you can configure one of the following options.
 
-- **strongSwan IPSec VPN Service**: You can set up a [strongSwan IPSec VPN service ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.strongswan.org/about.html) that securely connects your OpenShift cluster with an on-premises network. The strongSwan IPSec VPN service provides a secure end-to-end communication channel over the internet that is based on the industry-standard Internet Protocol Security (IPSec) protocol suite. To set up a secure connection between your cluster and an on-premises network, [configure and deploy the strongSwan IPSec VPN service](#vpn-setup) directly in a pod in your cluster.
+- **strongSwan IPSec VPN Service**: You can set up a [strongSwan IPSec VPN service](https://www.strongswan.org/about.html){: external} that securely connects your OpenShift cluster with an on-premises network. The strongSwan IPSec VPN service provides a secure end-to-end communication channel over the internet that is based on the industry-standard Internet Protocol Security (IPSec) protocol suite. To set up a secure connection between your cluster and an on-premises network, [configure and deploy the strongSwan IPSec VPN service](#vpn-setup) directly in a pod in your cluster.
 
 - **{{site.data.keyword.BluDirectLink}}**: [{{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-about-ibm-cloud-direct-link) allows you to create a direct, private connection between your remote network environments and Red Hat OpenShift on IBM Cloud without routing over the public internet. The {{site.data.keyword.cloud_notm}} Direct Link offerings are useful when you must implement hybrid workloads, cross-provider workloads, large or frequent data transfers, or private workloads. To choose an {{site.data.keyword.cloud_notm}} Direct Link offering and set up an {{site.data.keyword.cloud_notm}} Direct Link connection, see [Get Started with IBM Cloud {{site.data.keyword.cloud_notm}} Direct Link](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link#how-do-i-know-which-type-of-ibm-cloud-direct-link-i-need-) in the {{site.data.keyword.cloud_notm}} Direct Link documentation.
 
@@ -319,7 +319,7 @@ To monitor the status of the strongSwan VPN, you can set up a webhook to automat
 
 1. Sign in to your Slack workspace.
 
-2. Go to the [Incoming WebHooks app page ![External link icon](../icons/launch-glyph.svg "External link icon")](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks).
+2. Go to the [Incoming WebHooks app page](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks){: external}.
 
 3. Click **Request to Install**. If this app is not listed in your Slack setup, contact your Slack workspace owner.
 
@@ -553,7 +553,7 @@ Before you begin:
 
 To limit VPN traffic to a certain namespace:
 
-1. Create a Calico global network policy named `allow-non-vpn-outbound.yaml`. This policy allows all namespaces to continue to send outbound traffic to all destinations, except to the remote subnet that the strongSwan VPN accesses. Replace `<remote.subnet>` with the `remote.subnet` that you specified in the Helm `values.yaml` configuration file. To specify multiple remote subnets, see the [Calico documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/globalnetworkpolicy).
+1. Create a Calico global network policy named `allow-non-vpn-outbound.yaml`. This policy allows all namespaces to continue to send outbound traffic to all destinations, except to the remote subnet that the strongSwan VPN accesses. Replace `<remote.subnet>` with the `remote.subnet` that you specified in the Helm `values.yaml` configuration file. To specify multiple remote subnets, see the [Calico documentation](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/globalnetworkpolicy){: external}.
     ```yaml
     apiVersion: projectcalico.org/v3
     kind: GlobalNetworkPolicy
@@ -579,7 +579,7 @@ To limit VPN traffic to a certain namespace:
     ```
     {: pre}
 
-3. Create another Calico global network policy named `allow-vpn-from-namespace.yaml`. This policy allows only a specified namespace to send outbound traffic to the remote subnet that the strongSwan VPN accesses. Replace `<namespace>` with the namespace that can access the VPN and `<remote.subnet>` with the `remote.subnet` that you specified in the Helm `values.yaml` configuration file. To specify multiple namespaces or remote subnets, see the [Calico documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/globalnetworkpolicy).
+3. Create another Calico global network policy named `allow-vpn-from-namespace.yaml`. This policy allows only a specified namespace to send outbound traffic to the remote subnet that the strongSwan VPN accesses. Replace `<namespace>` with the namespace that can access the VPN and `<remote.subnet>` with the `remote.subnet` that you specified in the Helm `values.yaml` configuration file. To specify multiple namespaces or remote subnets, see the [Calico documentation](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/globalnetworkpolicy){: external}.
     ```yaml
     apiVersion: projectcalico.org/v3
     kind: GlobalNetworkPolicy
@@ -622,7 +622,7 @@ When you deploy a strongSwan Helm chart, a strongSwan VPN deployment is created.
 Routes are not configured on tainted nodes unless you specify the taint in the `tolerations` setting in the `value.yaml` file. By tainting worker nodes, you can prevent any VPN routes from being configured on those workers. Then, you can specify the taint in the `tolerations` setting for only the VPN deployment that you do want to permit on the tainted workers. In this way, the strongSwan VPN pods for one tenant's Helm chart deployment only use the routes on that tenant's worker nodes to forward traffic over the VPN connection to the remote subnet.
 
 Before you use this solution, review the following considerations and limitations.
-* By default, Kubernetes places app pods onto any untainted worker nodes that are available. To make sure that this solution works correctly, each tenant must first ensure that they deploy their app pods only to workers that are tainted for the correct tenant. Additionally, each tainted worker node must also have a toleration to allow the app pods to be placed on the node. For more information about taints and tolerations, see the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/).
+* By default, Kubernetes places app pods onto any untainted worker nodes that are available. To make sure that this solution works correctly, each tenant must first ensure that they deploy their app pods only to workers that are tainted for the correct tenant. Additionally, each tainted worker node must also have a toleration to allow the app pods to be placed on the node. For more information about taints and tolerations, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/){: external}.
 * Cluster resources might not be optimally utilized because neither tenant can place app pods on the shared non-tainted nodes.
 
 The following steps for limiting strongSwan VPN traffic by worker node use this example scenario: Say that you have a multi-tenant Red Hat OpenShift on IBM Cloud cluster with six worker nodes. The cluster supports tenant A and tenant B. You taint the worker nodes in the following ways:
