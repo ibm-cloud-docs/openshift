@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-09"
+lastupdated: "2020-01-14"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -335,7 +335,7 @@ To install the plug-in:
         ```
         {: pre}
 
-    3. Retrieve the infrastructure provider that your cluster uses and store it in an environment variable.
+    2. Retrieve the infrastructure provider that your cluster uses and store it in an environment variable.
 
       a. Retrieve the infrastructure provider.
         ```
@@ -347,17 +347,17 @@ To install the plug-in:
 
         * If the output contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"CLASSIC"`.
 
-            ```
-            SET CLUSTER_PROVIDER="CLASSIC"
-            ```
-            {: pre}
+          ```
+          SET CLUSTER_PROVIDER="CLASSIC"
+          ```
+          {: pre}
 
         * If the output contains `gc`, then set the `CLUSTER_PROVIDER` to `"VPC-CLASSIC"`.
 
-            ```
-            SET CLUSTER_PROVIDER="VPC-CLASSIC"
-            ```
-            {: pre}
+          ```
+          SET CLUSTER_PROVIDER="VPC-CLASSIC"
+          ```
+          {: pre}
             
 
     4. Retrieve the operating system of the worker nodes and store it in an environment variable.
@@ -399,51 +399,51 @@ To install the plug-in:
         {: pre}
 
    Example output for installing without Tiller:
-   ```
-   Rendering the Helm chart templates...
-   DC: dal10
-   Chart: ibm-charts/ibm-object-storage-plugin
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver-sa.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner-sa.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/tests/check-driver-install.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner.yaml
-   Installing the Helm chart...
-   serviceaccount/ibmcloud-object-storage-driver created
-   daemonset.apps/ibmcloud-object-storage-driver created
-   storageclass.storage.k8s.io/ibmc-s3fs-cold-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-cold-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-flex-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-flex-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-standard-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-standard-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-vault-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-vault-regional created
-   serviceaccount/ibmcloud-object-storage-plugin created
-   clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
-   clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
-   clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
-   clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
-   deployment.apps/ibmcloud-object-storage-plugin created
-   pod/ibmcloud-object-storage-driver-test created
-   ```
-   {: screen}
+    ```
+    Rendering the Helm chart templates...
+    DC: dal10
+    Chart: ibm-charts/ibm-object-storage-plugin
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver-sa.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner-sa.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/tests/check-driver-install.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner.yaml
+    Installing the Helm chart...
+    serviceaccount/ibmcloud-object-storage-driver created
+    daemonset.apps/ibmcloud-object-storage-driver created
+    storageclass.storage.k8s.io/ibmc-s3fs-cold-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-cold-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-flex-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-flex-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-standard-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-standard-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-vault-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-vault-regional created
+    serviceaccount/ibmcloud-object-storage-plugin created
+    clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
+    clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
+    clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
+    clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
+    deployment.apps/ibmcloud-object-storage-plugin created
+    pod/ibmcloud-object-storage-driver-test created
+    ```
+    {: screen}
 
 10. Verify that the plug-in is installed correctly.
     ```
