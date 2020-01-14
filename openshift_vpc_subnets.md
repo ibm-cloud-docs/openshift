@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, vpc subnets, ips, vlans, networking, public gateway
 
@@ -33,7 +33,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Configuring VPC subnets
+# VPC: Configuring subnets and IP addresses
 {: #vpc-subnets}
 
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} VPC cluster.
