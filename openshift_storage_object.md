@@ -343,24 +343,18 @@ To install the plug-in:
         ```
         {: pre}
 
-      b. Store the infrastructure provider in an environment variable.
+      b. Store the infrastructure provider in an environment variable. If the output contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"CLASSIC"`. If the output contains `gc`, then set the `CLUSTER_PROVIDER` to `"VPC-CLASSIC"`.
+        ```
+        SET CLUSTER_PROVIDER="CLASSIC"
+        ```
+        {: pre}
 
-        * If the output contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"CLASSIC"`.
+        ```
+        SET CLUSTER_PROVIDER="VPC-CLASSIC"
+        ```
+        {: pre}
 
-          ```
-          SET CLUSTER_PROVIDER="CLASSIC"
-          ```
-          {: pre}
-
-        * If the output contains `gc`, then set the `CLUSTER_PROVIDER` to `"VPC-CLASSIC"`.
-
-          ```
-          SET CLUSTER_PROVIDER="VPC-CLASSIC"
-          ```
-          {: pre}
-            
-
-    4. Retrieve the operating system of the worker nodes and store it in an environment variable.
+    3. Retrieve the operating system of the worker nodes and store it in an environment variable.
 
       a. Retrieve the operating system of the worker nodes.
         ```
