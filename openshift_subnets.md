@@ -245,7 +245,7 @@ To list available portable public IP addresses:
 
 1.  Create a Kubernetes service configuration file that is named `myservice.yaml` and define a service of type `LoadBalancer` with a dummy NLB IP address. The following example uses the IP address 1.1.1.1 as the NLB IP address. Replace `<zone>` with the zone where you want to check for available IPs.
 
-    ```
+    ```yaml
     apiVersion: v1
     kind: Service
     metadata:

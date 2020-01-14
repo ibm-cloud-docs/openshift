@@ -633,7 +633,7 @@ The following steps for limiting strongSwan VPN traffic by worker node use this 
 To limit VPN traffic to tainted nodes for each tenant:
 
 1. To limit the VPN traffic to only workers dedicated to tenant A in this example, you specify the following `toleration` in the `values.yaml` file for the tenant A strongSwan Helm chart:
-    ```
+    ```yaml
     tolerations:
      - key: dedicated
        operator: "Equal"
@@ -644,7 +644,7 @@ To limit VPN traffic to tainted nodes for each tenant:
     This toleration allows the route daemon set to run on the two worker nodes that have the `dedicated="tenantA"` taint and on the two untainted worker nodes. The strongSwan VPN pods for this deployment run on the two untainted worker nodes.
 
 2. To limit the VPN traffic to only workers dedicated to tenant B in this example, you specify the following `toleration` in the `values.yaml` file for the tenant B strongSwan Helm chart:
-    ```
+    ```yaml
     tolerations:
      - key: dedicated
        operator: "Equal"

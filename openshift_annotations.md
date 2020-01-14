@@ -353,7 +353,7 @@ You can also use the `custom-errors` annotation to redirect the client to an err
 
 **Sample Ingress resource YAML**</br>
 
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -436,7 +436,7 @@ To view server and location blocks in the NGINX configuration file, run the foll
 
 **Sample Ingress resource YAML**</br>
 
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -497,7 +497,7 @@ Route incoming requests to your apps with a private ALB.
 Choose a private ALB to route incoming requests instead of the public ALB.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -551,7 +551,7 @@ To view server and location blocks in the NGINX configuration file, run the foll
 
 **Sample Ingress resource YAML**</br>
 
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -595,7 +595,7 @@ spec:
 You can use the `server-snippets` annotation to add a header for all service responses at a server level:
 {: tip}
 
-```
+```yaml
 annotations:
   ingress.bluemix.net/server-snippets: |
     add_header <header1> <value1>;
@@ -629,7 +629,7 @@ If the availability of your app is not steady or your app is slow to respond bec
 On the other hand, you can decrease the timeout to gain performance on the ALB. Ensure that your back-end app is able to handle requests within the specified timeout, even during higher workloads.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -679,7 +679,7 @@ spec:
 Sets the maximum number of requests that can be served through one keepalive connection.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -728,7 +728,7 @@ spec:
 Sets the maximum time that a keepalive connection stays open between the client and the ALB proxy server. If you do not use this annotation, the default timeout value is `60s`.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -784,7 +784,7 @@ Timeout is always configured when you use `proxy-next-upstream-config`, so don't
 
 **Sample Ingress resource YAML**</br>
 
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -874,7 +874,7 @@ Relying on sticky sessions can add complexity and reduce your availability. For 
 When you include multiple services, use a semi-colon (;) to separate them.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -942,7 +942,7 @@ Set the amount of time during which the ALB can attempt to connect to the server
 Set the amount of time during which the ALB can attempt to connect to a server before the server is considered unavailable. For a server to be considered unavailable, the ALB must hit the maximum number of failed connection attempts set by the [`upstream-max-fails`](#upstream-max-fails) annotation within the set amount of time. This amount of time also determines how long the server is considered unavailable.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -993,7 +993,7 @@ Set the maximum number of idle keepalive connections for an upstream server.
 Set the maximum number of idle keepalive connections to the upstream server of a given service. The upstream server has 64 idle keepalive connections by default.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1042,7 +1042,7 @@ spec:
 Sets the maximum time that a keepalive connection stays open between the ALB proxy server and the upstream server for your back-end app. If you do not use this annotation, the default timeout value is `60s`.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1094,7 +1094,7 @@ Set the maximum number of unsuccessful attempts to communicate with the server.
 Set the maximum number of times the ALB can fail to connect to the server before the server is considered unavailable. For the server to be considered unavailable, the ALB must hit the maximum number within the duration of time set by the [`upstream-fail-timeout`](#upstream-fail-timeout) annotation. The duration of time that the server is considered unavailable is also set by the `upstream-fail-timeout` annotation.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1154,7 +1154,7 @@ To enable mutual authentication on a port, [configure the ALB to open the valid 
 {: note}
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1216,7 +1216,7 @@ spec:
 
 3. Add the non-default HTTP and HTTPS ports to the config map. Replace `<port>` with the HTTP or HTTPS port that you want to open.
   <p class="note">By default, ports 80 and 443 are open. If you want to keep 80 and 443 open, you must also include them in addition to any other TCP ports you specify in the `public-ports` field. If you enabled a private ALB, you must also specify any ports you want to keep open in the `private-ports` field. For more information, see [Opening ports in the Ingress ALB](/docs/openshift?topic=openshift-ingress-settings#opening_ingress_ports).</p>
-  ```
+  ```yaml
   apiVersion: v1
   kind: ConfigMap
   data:
@@ -1270,7 +1270,7 @@ You set up your Ingress ALB to secure your domain with the IBM-provided TLS cert
 Redirecting HTTP requests to HTTPS is disabled by default.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1303,7 +1303,7 @@ spec:
 HSTS instructs the browser to access a domain only by using HTTPS. Even if the user enters or follows a plain HTTP link, the browser strictly upgrades the connection to HTTPS.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1373,7 +1373,7 @@ The mutual authentication annotation validates client certificates. To forward c
 * To enable mutual authentication on a port other than 443, [configure the ALB to open the valid port](/docs/openshift?topic=openshift-ingress-settings#opening_ingress_ports) and then specify that port in this annotation. Do not use the `custom-port` annotation to specify a port for mutual authentication.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1423,7 +1423,7 @@ spec:
     {: tip}
 2. [Convert the cert into base-64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using cert.
-   ```
+   ```yaml
    apiVersion: v1
    kind: Secret
    metadata:
@@ -1457,7 +1457,7 @@ Use the `ssl-services` annotation for SSL termination between the Ingress ALB an
 {: tip}
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1517,7 +1517,7 @@ The CN must exactly match the name of the back-end HTTPS server where the certif
 1. Get the certificate authority (CA) key and certificate from your upstream server and an SSL client certificate. The IBM ALB is based on NGINX, which requires the root certificate, intermediate certificate, and back-end certificate. For more information, see the [NGINX docs](https://docs.nginx.com/nginx/admin-guide/security-controls/securing-http-traffic-upstream/){: external}.
 2. [Convert the cert into base-64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using the cert.
-   ```
+   ```yaml
    apiVersion: v1
    kind: Secret
    metadata:
@@ -1545,7 +1545,7 @@ The CN must exactly match the name of the back-end HTTPS server where the certif
     {: tip}
 2. [Convert the cert into base-64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using the cert.
-   ```
+   ```yaml
    apiVersion: v1
    kind: Secret
    metadata:
@@ -1576,7 +1576,7 @@ Use this annotation for an app that runs a TCP streams workload.
 <p class="note">The ALB operates in pass-through mode and forwards traffic to back-end apps. SSL termination is not supported in this case. The TLS connection is not terminated and passes through untouched.</p>
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1643,7 +1643,7 @@ spec:
 3. Add the TCP ports to the config map. Replace `<port>` with the TCP ports that you want to open.
   By default, ports 80 and 443 are open. If you want to keep 80 and 443 open, you must also include them in addition to any other TCP ports you specify in the `public-ports` field. If you enabled a private ALB, you must also specify any ports that you want to keep open in the `private-ports` field. For more information, see [Opening ports in the Ingress ALB](/docs/openshift?topic=openshift-ingress-settings#opening_ingress_ports).
   {: note}
-  ```
+  ```yaml
   apiVersion: v1
   kind: ConfigMap
   data:
@@ -1705,7 +1705,7 @@ Looking to forward requests to the IP address of your external service instead o
 {: tip}
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1786,7 +1786,7 @@ To handle regular expression (regex) paths, this annotation is required.
 
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1839,7 +1839,7 @@ Your Ingress ALB domain routes incoming network traffic on `mykubecluster.us-sou
 
 **Sample Ingress resource YAML**</br>
 
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1897,7 +1897,7 @@ Set the maximum number and size of buffers that read large client request header
 Buffers that read large client request headers are allocated only by demand: If a connection is transitioned into the keepalive state after the end-of-request processing, these buffers are released. By default, there are `4` buffers and buffer size is equal to `8K` bytes. If a request line exceeds the set maximum size of one buffer, the `414 Request-URI Too Large` HTTP error is returned to the client. Additionally, if a request header field exceeds the set maximum size of one buffer, the `400 Bad Request` error is returned to the client. You can adjust the maximum number and size of buffers that are used for reading large client request headers.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -1953,7 +1953,7 @@ If buffering of response data on the ALB is disabled, data is immediately sent f
 Response data buffering on the ALB is enabled by default.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2007,7 +2007,7 @@ Set the number and size of the buffers that read a response for a single connect
 
 **Sample Ingress resource YAML**</br>
 
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2067,7 +2067,7 @@ If you get the error message `upstream sent too big header while reading respons
 {: tip}
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2119,7 +2119,7 @@ Configure the size of proxy buffers that can be busy.
 Limit the size of any buffers that are sending a response to the client while the response is not yet fully read. In the meantime, the rest of the buffers can read the response and, if needed, buffer part of the response to a temporary file. The configuration is applied to all of the services in the Ingress subdomain unless a service is specified. For example, if a configuration such as `serviceName=SERVICE size=1k` is specified, 1k is applied to the service. If a configuration such as `size=1k` is specified, 1k is applied to all of the services in the Ingress subdomain.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2177,7 +2177,7 @@ Add a server port to the client request before the request is forwarded to your 
 Add the `:server_port` to the host header of a client request before forwarding the request to your back-end app.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2234,7 +2234,7 @@ If your back-end app requires HTTP header information, you can use the `proxy-ad
 
 The `response-add-headers` annotation does not support global headers for all services. To add a header for all service responses at a server level, you can use the [`server-snippets` annotation](#server-snippets):
 {: tip}
-```
+```yaml
 annotations:
   ingress.bluemix.net/server-snippets: |
     add_header <header1> <value1>;
@@ -2243,7 +2243,7 @@ annotations:
 </br>
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2319,7 +2319,7 @@ The Ingress ALB acts as a proxy between your back-end app and the client web bro
 
 **Sample Ingress resource YAML**</br>
 
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2387,7 +2387,7 @@ Some client web browsers cannot display the 413 HTTP response message properly.
 {: note}
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2444,7 +2444,7 @@ Limit the request processing rate and number of connections per a defined key fo
 For all services, limit the request processing rate and the number of connections per a defined key that are coming from a single IP address for all paths of the selected back ends.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2500,7 +2500,7 @@ Limit the request processing rate and the number of connections for specific ser
 For specific services, limit the request processing rate and the number of connections per a defined key that are coming from a single IP address for all paths of the selected back ends.
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -2573,7 +2573,7 @@ For security reasons, {{site.data.keyword.appid_short_notm}} authentication supp
 {: note}
 
 **Sample Ingress resource YAML**</br>
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:

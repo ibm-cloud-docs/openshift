@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-10"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -60,7 +60,7 @@ Quickly expose your app to the Internet by creating an Ingress resource.
     {: screen}
 
 3. Using the Ingress subdomain and secret, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If you app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
-  ```
+  ```yaml
   apiVersion: extensions/v1beta1
   kind: Ingress
   metadata:

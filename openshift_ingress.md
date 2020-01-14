@@ -227,7 +227,7 @@ If you do not have a TLS certificate ready, follow these steps:
       {: pre}
 
 3. Create a secret YAML file using the cert and key.
-     ```
+     ```yaml
      apiVersion: v1
      kind: Secret
      metadata:
@@ -262,7 +262,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
 2. Define an Ingress resource in your configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
 
     Example YAML that does not use TLS:
-    ```
+    ```yaml
     apiVersion: extensions/v1beta1
     kind: Ingress
     metadata:
@@ -284,7 +284,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     {: codeblock}
 
     Example YAML that uses TLS:
-    ```
+    ```yaml
     apiVersion: extensions/v1beta1
     kind: Ingress
     metadata:
@@ -427,7 +427,7 @@ Before you begin:
 
 To expose apps that are outside of your cluster to the public:
 1.  Define a Kubernetes service configuration file for the app that the ALB will expose. This service that forwards incoming requests to an external endpoint that you create in subsequent steps.
-    ```
+    ```yaml
     apiVersion: v1
     kind: Service
     metadata:
@@ -447,7 +447,7 @@ To expose apps that are outside of your cluster to the public:
 
 3.  Define an external endpoint configuration file. Include all public IP addresses and ports that you can use to access your external app. Note that the name of the endpoint must be the same as the name of the service that you defined in the previous step, `myexternalservice`.
 
-    ```
+    ```yaml
     kind: Endpoints
     apiVersion: v1
     metadata:
@@ -502,7 +502,7 @@ To expose apps that are outside of your cluster to the public:
 1. [Choose the app domain](#public_inside_2) that you want the external service to be accessible from.
 
 2. Create an Ingress resource file that is named, for example, `myingressresource.yaml`.
-  ```
+  ```yaml
   apiVersion: extensions/v1beta1
   kind: Ingress
   metadata:
@@ -661,7 +661,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
 2.  Define an Ingress resource in your configuration file that uses your custom domain to route incoming network traffic to the services that you created earlier.
 
     Example YAML that does not use TLS:
-    ```
+    ```yaml
     apiVersion: extensions/v1beta1
     kind: Ingress
     metadata:
@@ -685,7 +685,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     {: codeblock}
 
     Example YAML that uses TLS:
-    ```
+    ```yaml
     apiVersion: extensions/v1beta1
     kind: Ingress
     metadata:

@@ -113,7 +113,7 @@ To set up an NLB 2.0 in a multizone cluster:
   1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
   2. Define a load balancer service for the app that you want to expose. You can specify a zone, a VLAN, and an IP address.
 
-      ```
+      ```yaml
       apiVersion: v1
       kind: Service
       metadata:
@@ -182,7 +182,7 @@ To set up an NLB 2.0 in a multizone cluster:
 
       Example configuration file to create an NLB 2.0 service in `dal12` that uses the Round Robin scheduling algorithm:
 
-      ```
+      ```yaml
       apiVersion: v1
       kind: Service
       metadata:
@@ -277,7 +277,7 @@ To create an NLB 2.0 service in a single-zone cluster:
     1.  Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
 
     2.  Define a load balancer 2.0 service for the app that you want to expose.
-        ```
+        ```yaml
         apiVersion: v1
         kind: Service
         metadata:

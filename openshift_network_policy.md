@@ -335,7 +335,7 @@ To create a pre-DNAT policy:
 
         Example resource that blocks all node ports:
 
-        ```
+        ```yaml
         apiVersion: projectcalico.org/v3
         kind: GlobalNetworkPolicy
         metadata:
@@ -365,7 +365,7 @@ To create a pre-DNAT policy:
 
         Example resource that whitelists traffic from only a specified source CIDR to an NLB 1.0:
 
-        ```
+        ```yaml
         apiVersion: projectcalico.org/v3
         kind: GlobalNetworkPolicy
         metadata:
@@ -579,7 +579,7 @@ The Accounts team wants to allow traffic from the front end to the back end, and
 
 First, they create a Kubernetes network policy that allows traffic from the front end to the back end:
 
-```
+```yaml
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
@@ -602,7 +602,7 @@ The `spec.podSelector.matchLabels` section lists the labels for the Srv1 back-en
 
 Then, they create a similar Kubernetes network policy that allows traffic from the back end to the database:
 
-```
+```yaml
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
@@ -636,7 +636,7 @@ Services that are owned by different subteams need to communicate, but the servi
 
 The Finance team's Srv2 needs to call information from the Accounts team's Srv1 back end. So the Accounts team creates a Kubernetes network policy that uses labels to allow all traffic from the finance namespace to the Srv1 back end in the accounts namespace. The team also specifies the port 3111 to isolate access through that port only.
 
-```
+```yaml
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
@@ -693,7 +693,7 @@ To log denied traffic:
 
 1. Create or use an existing Kubernetes network policy that blocks or limits incoming traffic.
    1. Create a Kubernetes network policy. For example, to control traffic between pods, you might use the following example Kubernetes policy that is named `access-nginx` that limits access to an NGINX app. Incoming traffic to pods that are labeled "run=nginx" is allowed only from pods with the "run=access" label. All other incoming traffic to the "run=nginx" app pods is blocked.
-      ```
+      ```yaml
       kind: NetworkPolicy
       apiVersion: networking.k8s.io/v1
       metadata:
@@ -742,7 +742,7 @@ To log denied traffic:
       {: screen}
 
 2. To log all the traffic that is denied by the policy you created in the previous step, create a Calico NetworkPolicy named `log-denied-packets`. For example, the following log policy uses the same pod selector as the example `access-nginx` Kubernetes policy described in step 1, which adds this policy to the Calico Iptables rule chain. By using a higher-order number, such as `3000`, you can ensure that this rule is added to the end of the Iptables rule chain. Any request packet from the `run=access`-labeled pod that matches the `access-nginx` policy rule is accepted by the `run=nginx`-labeled pods. However, when packets from any other source try to match the low-order `access-nginx` policy rule, they are denied. Those packets then try to match the high-order `log-denied-packets` policy rule. `log-denied-packets` logs any packets that arrive to it, so only packets that were denied by the `run=nginx`-labeled pods are logged. After the packets' attempts are logged, the packets are dropped.
-  ```
+  ```yaml
   apiVersion: projectcalico.org/v3
   kind: NetworkPolicy
   metadata:

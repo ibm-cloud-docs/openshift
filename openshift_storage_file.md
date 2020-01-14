@@ -204,7 +204,7 @@ To add file storage:
     - **Example for bronze, silver, gold storage classes**:
        The following `.yaml` file creates a claim that is named `mypvc` of the `"ibmc-file-silver"` storage class, billed `"monthly"`, with a gigabyte size of `24Gi`.
 
-       ```
+       ```yaml
        apiVersion: v1
        kind: PersistentVolumeClaim
        metadata:
@@ -226,7 +226,7 @@ To add file storage:
     -  **Example for using the custom storage class**:
        The following `.yaml` file creates a claim that is named `mypvc` of the storage class `ibmc-file-retain-custom`, billed `"hourly"`, with a gigabyte size of `45Gi` and IOPS of `"300"`.
 
-       ```
+       ```yaml
        apiVersion: v1
        kind: PersistentVolumeClaim
        metadata:
@@ -332,7 +332,7 @@ To add file storage:
     If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS file storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#nonroot) or [Enabling root permission for NFS file storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#nonroot).
     {: tip}
 
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -504,7 +504,7 @@ If you want to use existing storage that you provisioned earlier, but never used
 
 1.  Create a storage configuration file for your PV. Include the values that you retrieved earlier.
 
-    ```
+    ```yaml
     apiVersion: v1
     kind: PersistentVolume
     metadata:
@@ -571,7 +571,7 @@ If you want to use existing storage that you provisioned earlier, but never used
 
 5.  Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields do not match the PV, then a new PV, and a new physical storage instance is [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
 
-    ```
+    ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
@@ -706,7 +706,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 
     The following example shows how to deploy NGINX as a stateful set with 3 replicas. For each replica, a 20 gigabyte file storage device is provisioned based on the specifications in the `ibmc-file-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because file storage cannot be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
 
-    ```
+    ```yaml
     apiVersion: v1
     kind: Service
     metadata:
@@ -770,7 +770,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 
     The following example shows how to deploy NGINX as a stateful set with 3 replicas. The stateful set does not specify the region and zone where the file storage is created. Instead, the stateful set uses an anti-affinity rule to ensure that the pods are spread across worker nodes and zones. Worker node anti-affinity is achieved by defining the `app: nginx` label. This label instructs the Kubernetes scheduler to not schedule a pod on a worker node if a pod with the same label already runs on this worker node. The `topologykey: failure-domain.beta.kubernetes.io/zone` label restricts this anti-affinity rule even more and prevents the pod to be scheduled on a worker node that is located in the same zone as a worker node that already runs a pod with the `app: nginx` label. For each stateful set pod, two PVCs are created as defined in the `volumeClaimTemplates` section, but the creation of the file storage instances is delayed until a stateful set pod that uses the storage is scheduled. This setup is referred to as [topology-aware volume scheduling](https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/).
 
-    ```
+    ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
@@ -1333,7 +1333,7 @@ Topology-aware volume scheduling is supported on clusters that run Kubernetes ve
 The following examples show how to create storage classes that delay the creation of the file storage instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, you must include the `volumeBindingMode: WaitForFirstConsumer` option. If you do not include this option, the `volumeBindingMode` is automatically set to `Immediate` and the file storage instance is created when you create the PVC.
 
 - **Example for Endurance file storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1351,7 +1351,7 @@ The following examples show how to create storage classes that delay the creatio
   {: codeblock}
 
 - **Example for Performance file storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1392,7 +1392,7 @@ Use the customized storage class if you want to [statically provision file stora
 When you create the customized storage class, specify the same region and zone that your cluster and worker nodes are in. To get the region of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`. To get the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
 
 - **Example for Endurance file storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1414,7 +1414,7 @@ When you create the customized storage class, specify the same region and zone t
   {: codeblock}
 
 - **Example for Performance file storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1452,7 +1452,7 @@ The following customized storage class lets you define the NFS version that you 
 {: shortdesc}
 
 - **Example for Endurance file storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1471,7 +1471,7 @@ The following customized storage class lets you define the NFS version that you 
   {: codeblock}
 
 - **Example for Performance file storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:

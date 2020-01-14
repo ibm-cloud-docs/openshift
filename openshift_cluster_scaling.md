@@ -715,7 +715,7 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 3.  In your pod spec template, match the `nodeSelector` or `nodeAffinity` to the label that you used in your worker pool.
 
     Example of `nodeSelector`:
-    ```
+    ```yaml
     ...
     spec:
       containers:
@@ -729,7 +729,7 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
     {: codeblock}
 
     Example of `nodeAffinity`:
-    ```
+    ```yaml
     spec:
       containers:
       - name: nginx

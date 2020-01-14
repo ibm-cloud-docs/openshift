@@ -196,7 +196,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
 
 6. Create a Kubernetes secret for your certificate.
    1. Create a configuration file for your secret.
-      ```
+      ```yaml
       apiVersion: v1
       kind: Secret
       metadata:
@@ -334,7 +334,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
 
 11. Create a Kubernetes secret that is named `px-ibm` in the `portworx` project of your cluster to store your {{site.data.keyword.keymanagementservicelong_notm}} information.
     1. Create a configuration file for your Kubernetes secret with the following content.
-       ```
+       ```yaml
        apiVersion: v1
        kind: Secret
        metadata:
@@ -345,7 +345,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
          IBM_SERVICE_API_KEY: <base64_apikey>
          IBM_INSTANCE_ID: <base64_guid>
          IBM_CUSTOMER_ROOT_KEY: <base64_rootkey>
-	     IBM_BASE_URL: <base64_kp_api_endpoint>
+         IBM_BASE_URL: <base64_kp_api_endpoint>
        ```
        {: codeblock}
 
@@ -692,7 +692,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
 
 2. If you don't want to use an existing storage class, create a customized storage class. For a full list of supported options that you can specify in your storage class, see [Using Dynamic Provisioning](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning){: external}.
    1. Create a configuration file for your storage class.
-      ```
+      ```yaml
       kind: StorageClass
       apiVersion: storage.k8s.io/v1
       metadata:
@@ -749,7 +749,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
 
 2. Create a persistent volume claim (PVC).
    1. Create a configuration file for your PVC.
-      ```
+      ```yaml
       kind: PersistentVolumeClaim
       apiVersion: v1
       metadata:
@@ -812,7 +812,7 @@ To access the storage from your app, you must mount the PVC to your app.
    For tips on how to deploy a stateful set with Portworx, see [StatefulSets](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/cassandra/){: external}. The Portworx documentation also includes examples for how to deploy [Cassandra](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/cassandra/){: external}, [Kafka](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/kafka-with-zookeeper/){: external}, [ElasticSearch with Kibana](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/elastic-search-and-kibana/){: external}, and [WordPress with MySQL](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/wordpress/){: external}.
    {: tip}
 
-   ```
+   ```yaml
    apiVersion: apps/v1
    kind: Deployment
    metadata:
@@ -832,7 +832,7 @@ To access the storage from your app, you must mount the PVC to your app.
          containers:
          - image: <image_name>
            name: <container_name>
-	   securityContext:
+         securityContext:
              fsGroup: <group_ID>
            volumeMounts:
            - name: <volume_name>

@@ -567,7 +567,7 @@ Grant users access to your Red Hat OpenShift on IBM Cloud clusters by assigning 
 
 2.  Create a `policy.json` file that scopes the service access role to a Kubernetes namespace in your cluster.
 
-    ```
+    ```json
     {
         "subjects": [
             {
@@ -777,7 +777,7 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
     1. Create a `.yaml` file to define the role or cluster role.
 
-        ```
+        ```yaml
         kind: Role
         apiVersion: rbac.authorization.k8s.io/v1
         metadata:
@@ -854,7 +854,7 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
     1. Create a `.yaml` file to bind users to your role or cluster role. Note the unique URL to use for each subject's name.
 
-        ```
+        ```yaml
         kind: RoleBinding
         apiVersion: rbac.authorization.k8s.io/v1
         metadata:
@@ -994,7 +994,7 @@ Error from server (Forbidden): pods.metrics.k8s.io is forbidden: User "IAM#mynam
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Create a cluster role YAML file. In the `labels` section, specify the existing cluster role that you want to aggregate permissions to. The following example extends the predefined `admin` cluster role to allow users to run `oc top pods`. For more examples, [see the Kubernetes docs](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles){: external}.
-    ```
+    ```yaml
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
     metadata:

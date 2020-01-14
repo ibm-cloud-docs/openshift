@@ -56,7 +56,7 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
     By default, ports 80 and 443 are open. If you want to keep 80 and 443 open, you must also include them in addition to any other ports you specify in the `public-ports` field. Any port that is not specified is closed. If you enabled a private ALB, you must also specify any ports that you want to keep open in the `private-ports` field.
     {: important}
 
-    ```
+    ```yaml
     apiVersion: v1
     data:
       public-ports: "80;443;<port3>"
@@ -69,7 +69,7 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
     {: codeblock}
 
     Example that keeps ports `80`, `443`, and `9443` open:
-    ```
+    ```yaml
     apiVersion: v1
     data:
       public-ports: "80;443;9443"
@@ -209,7 +209,7 @@ To edit the configmap to enable SSL protocols and ciphers:
 
 2. Add the SSL protocols and ciphers. Format ciphers according to the [OpenSSL library cipher list format](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html){: external}.
 
-   ```
+   ```yaml
    apiVersion: v1
    data:
      ssl-protocols: "TLSv1 TLSv1.1 TLSv1.2 TLSv1.3"
@@ -250,7 +250,7 @@ If you have very large Ingress resource files, it might take longer than 5 minut
     {: pre}
 
 2. In the **data** section, add the `ingress-resource-creation-rate` and `ingress-resource-timeout` settings. Values can be formatted as seconds (`s`) and minutes (`m`). Example:
-   ```
+   ```yaml
    apiVersion: v1
    data:
      ingress-resource-creation-rate: 1m
@@ -288,7 +288,7 @@ When you create a classic cluster, a Let's Encrypt certificate is generated for 
 
 2. In the `spec.tls` section, change the value of the `hosts.secretName` setting to the name of your custom secret that contains your custom certificate.
    Example:
-   ```
+   ```yaml
    spec:
      rules:
      ...
@@ -332,7 +332,7 @@ When the `reuse-port` option is disabled, a single listening socket notifies ALB
     {: pre}
 
 2. In the `data` section, add `reuse-port: "true"`. Example:
-   ```
+   ```yaml
    apiVersion: v1
    data:
      private-ports: 80;443;9443
@@ -372,7 +372,7 @@ By default, the Ingress ALB logs each request as it arrives. If you have an envi
         * Buffer size: Add the `buffer-size` field and set it to how much log memory can be held in the buffer before the ALB writes the buffer contents to the log. For example, if the default value of `100KB` is used, the ALB writes buffer contents to the log every time the buffer reaches 100kb of log content.
         * Time interval or buffer size: When both `flush-interval` and `buffer-size` are set, the ALB writes buffer content to the log based on whichever threshold parameter is met first.
 
-    ```
+    ```yaml
     apiVersion: v1
     kind: ConfigMap
     data:
@@ -410,7 +410,7 @@ Keepalive connections can have a major impact on performance by reducing the CPU
 2. Change the values of `keep-alive-requests` and `keep-alive`.
     * `keep-alive-requests`: The number of keepalive client connections that can stay open to the Ingress ALB. The default is `4096`.
     * `keep-alive`: The timeout, in seconds, during which the keepalive client connection stays open to the Ingress ALB. The default is `8s`.
-   ```
+   ```yaml
    apiVersion: v1
    data:
      keep-alive-requests: "4096"
@@ -448,7 +448,7 @@ In the `ibm-cloud-provider-ingress-cm` Ingress configmap, the `backlog` field se
 
 2. Change the value of `backlog` from `32768` to a lower value. The value must be equal to or lesser than 32768.
 
-   ```
+   ```yaml
    apiVersion: v1
    data:
      backlog: "32768"

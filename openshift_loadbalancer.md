@@ -57,7 +57,7 @@ To set up an NLB 1.0 service in a multizone cluster:
   1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
   2. Define a load balancer service for the app that you want to expose. You can specify a zone, a VLAN, and an IP address.
 
-      ```
+      ```yaml
       apiVersion: v1
       kind: Service
       metadata:
@@ -111,7 +111,7 @@ To set up an NLB 1.0 service in a multizone cluster:
 
       Example configuration file to create a private NLB 1.0 service that uses a specified IP address on private VLAN `2234945` in `dal12`:
 
-      ```
+      ```yaml
       apiVersion: v1
       kind: Service
       metadata:
@@ -204,7 +204,7 @@ To create an NLB 1.0 service in a single-zone cluster:
     1.  Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
 
     2.  Define a load balancer service for the app that you want to expose.
-        ```
+        ```yaml
         apiVersion: v1
         kind: Service
         metadata:
@@ -253,7 +253,7 @@ To create an NLB 1.0 service in a single-zone cluster:
 
         Example configuration file to create a private NLB 1.0 service that uses a specified IP address on private VLAN `2234945`:
 
-        ```
+        ```yaml
         apiVersion: v1
         kind: Service
         metadata:
@@ -359,7 +359,7 @@ To force your app pods to deploy to edge nodes, add an edge node [affinity rule]
 
 Example deployment YAML file with edge node affinity and edge node toleration:
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -431,7 +431,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
     For example, if you have multiple VLANs but want your app pods to deploy to worker nodes on the `2234945` public VLAN only:
 
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:

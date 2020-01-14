@@ -399,7 +399,7 @@ When you include an [init container![External link icon](../icons/launch-glyph.s
 
 2.  Add persistent storage to your app by creating a persistent volume claim (PVC). This example uses the `ibmc-file-bronze` storage class. To review available storage classes, run `oc get storageclasses`.
 
-    ```
+    ```yaml
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
@@ -424,7 +424,7 @@ When you include an [init container![External link icon](../icons/launch-glyph.s
 
 4.  In your deployment `.yaml` file, add the init container. Include the UID and GID that you previously retrieved.
 
-    ```
+    ```yaml
     initContainers:
     - name: initcontainer # Or replace the name
       image: alpine:latest
@@ -439,7 +439,7 @@ When you include an [init container![External link icon](../icons/launch-glyph.s
 
     **Example** for a Jenkins deployment:
 
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -572,7 +572,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 1. Create a YAML file for your customized storage class that defines the supplemental group ID that you want to use to provide read and write access to the file storage for your non-root user. To decide on the configuration for your storage class, review [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass). In your storage class YAML file, include the `gidAllocate: "true"` parameter to assign the default group ID `65531` to your non-root user. If you want to assign a different group ID, you must specify the `gidFixed` parameter in addition to the `gidAllocate` parameter.
 
    **Example for using the default group ID `65531`**:
-   ```
+   ```yaml
    apiVersion: storage.k8s.io/v1beta1
    kind: StorageClass
    metadata:
@@ -593,7 +593,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
    {: codeblock}
 
    **Example to specify a different group ID**:
-   ```
+   ```yaml
    apiVersion: storage.k8s.io/v1beta1
    kind: StorageClass
    metadata:
@@ -622,7 +622,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 
 4. Create a YAML file for your PVC that uses the storage class that you created.
 
-   ```
+   ```yaml
    kind: PersistentVolumeClaim
    apiVersion: v1
    metadata:
@@ -664,7 +664,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 7. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage.
 
    **Example for creating an `node-hello` deployment**:
-   ```
+   ```yaml
    apiVersion: apps/v1
    kind: Deployment
    metadata:
@@ -1298,7 +1298,7 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
 
 1. Check the permissions of your files in your bucket.
    1. Create a configuration file for your `test-permission` pod and name the file `test-permission.yaml`.
-      ```
+      ```yaml
       apiVersion: v1
       kind: Pod
       metadata:

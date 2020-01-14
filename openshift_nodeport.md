@@ -82,7 +82,7 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
 
     Example:
 
-    ```
+    ```yaml
     apiVersion: v1
     kind: Service
     metadata:

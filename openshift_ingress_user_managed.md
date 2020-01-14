@@ -61,7 +61,7 @@ In classic clusters, bringing your own Ingress controller is supported only for 
     {: pre}
 
 3. Define a load balancer service to expose your custom Ingress deployment.
-    ```
+    ```yaml
     apiVersion: v1
     kind: Service
     metadata:

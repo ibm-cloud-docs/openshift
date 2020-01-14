@@ -274,7 +274,7 @@ If you have a private-only cluster, you must install the plugin without Tiller.
 
    4. Open the `provisioner-sa.yaml` file and look for the `ibmcloud-object-storage-secret-reader` `ClusterRole` definition.
    5. Add the name of the secret that you created earlier to the list of secrets that the plug-in is authorized to access in the `resourceNames` section.
-      ```
+      ```yaml
       kind: ClusterRole
       apiVersion: rbac.authorization.k8s.io/v1beta1
       metadata:
@@ -812,7 +812,7 @@ Before you begin:
 To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
 1. Create a configuration file to define your persistent volume claim (PVC).
-   ```
+   ```yaml
    kind: PersistentVolumeClaim
    apiVersion: v1
    metadata:
@@ -906,7 +906,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
 4.  {: #cos_app_volume_mount}To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
 
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -1047,7 +1047,7 @@ To deploy a stateful set that uses object storage:
 1. Create a configuration file for your stateful set and the service that you use to expose the stateful set. The following examples show how to deploy NGINX as a stateful set with three replicas, each replica with a separate bucket or sharing the same bucket.
 
    **Example to create a stateful set with three replicas, with each replica using a separate bucket**:
-   ```
+   ```yaml
    apiVersion: v1
    kind: Service
    metadata:
@@ -1109,7 +1109,7 @@ To deploy a stateful set that uses object storage:
    {: codeblock}
 
    **Example to create a stateful set with three replicas that share the same bucket `mybucket`**:
-   ```
+   ```yaml
    apiVersion: v1
    kind: Service
    metadata:

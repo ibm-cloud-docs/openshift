@@ -292,7 +292,7 @@ In VPC clusters, a subnet is limited to one zone. When you attach a public gatew
 6. In the deployment file for your app, [add an affinity rule](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature){: external} for the subnet ID label that you found in step 4.
 
     In the **affinity** section of this example YAML, `ibm-cloud.kubernetes.io/subnet-id` is the `key` and `<subnet_ID>` is the `value`.
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:

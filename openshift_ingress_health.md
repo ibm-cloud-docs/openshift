@@ -158,7 +158,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
 
 2. Add a <code>data</code> section. Add the `log-format` field and optionally, the `log-format-escape-json` field.
 
-    ```
+    ```yaml
     apiVersion: v1
     data:
       log-format: '{<key1>: <log_variable1>, <key2>: <log_variable2>, <key3>: <log_variable3>}'
@@ -209,7 +209,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     {: screen}
 
     To create a custom log format that is based on the default format for ALB logs, modify the following section as needed and add it to your configmap:
-    ```
+    ```yaml
     apiVersion: v1
     data:
       log-format: '{"time_date": "$time_iso8601", "client": "$remote_addr",
@@ -716,7 +716,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
 
 2. Change the value of `vts-status-zone-size` from `10m` to a larger value.
 
-   ```
+   ```yaml
    apiVersion: v1
    data:
      vts-status-zone-size: "10m"
