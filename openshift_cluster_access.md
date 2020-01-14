@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-13"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -35,6 +35,8 @@ subcollection: openshift
 
 # Accessing OpenShift clusters
 {: #access_cluster}
+{: help}
+{: support}
 
 After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
