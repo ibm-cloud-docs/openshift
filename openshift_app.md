@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-09"
+lastupdated: "2020-01-14"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -59,6 +59,8 @@ The `new-app` command creates a build configuration and app image from the sourc
 
 ## Common app modification scenarios
 {: openshift_move_apps_scenarios}
+{: help}
+{: support}
 
 OpenShift has different default settings than community Kubernetes, such as stricter security context constraints. Review the following common scenarios where you might need to modify your apps so that you can deploy them on OpenShift clusters.
 {: shortdesc}
