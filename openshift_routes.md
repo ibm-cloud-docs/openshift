@@ -127,7 +127,7 @@ To use routes to privately expose your apps, create a new router and change the 
   3. In the `spec.ports` section, change the default `80` and `443` ports that are used by the default public router to other ports, such as `8080` and `8443`.
   3. Change `spec.type` to `LoadBalancer`.
   4. Save and close the file. After you finish editing the file, it looks similar to the following:
-      ```
+      ```yaml
       apiVersion: v1
       kind: Service
       metadata:
