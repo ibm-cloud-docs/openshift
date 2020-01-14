@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -110,6 +110,8 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 ## Adding IBM Cloud Paks
 {: #oc_cloud_paks_add}
+{: help}
+{: support}
 
 [IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized, licensed IBM middleware and open source software components as part of your hybrid cloud solution. IBM Cloud Paks run exclusively on OpenShift clusters, not community Kubernetes clusters.
 {: shortdesc}
