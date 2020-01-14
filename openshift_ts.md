@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -49,6 +49,8 @@ For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} 
 
 ## Feedback, questions, and support
 {: #openshift_support}
+{: troubleshoot}
+{: support}
 
 Review different ways to get help and support for your Red Hat OpenShift on IBM Cloud clusters. For any questions or feedback, post in Slack.
 {: shortdesc}
@@ -85,6 +87,8 @@ Review different ways to get help and support for your Red Hat OpenShift on IBM 
 
 ## Missing permissions to create clusters
 {: #rhoks_ts_cluster_permissions}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 You do not have permissions to create a cluster.
@@ -100,6 +104,8 @@ Review [Assigning cluster access](/docs/openshift?topic=openshift-users) to lear
 
 ## No resources found
 {: #rhoks_ts_not_found}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 When you are running an `oc` command such as `oc get nodes` or `oc get secrets`, you see an error message similar to the following.
@@ -146,6 +152,8 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 
 ## Missing the public `containers.appdomain.cloud` subdomain
 {: #roks_ts_subdomain}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 When you expose an app through a router subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
@@ -299,6 +307,8 @@ The infrastructure credentials that are associated with the resource group that 
 
 ## Missing projects or `oc` and `kubectl` commands fail
 {: #rhoks_ts_admin_config}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 You do not see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
@@ -319,6 +329,8 @@ Run `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` and try 
 
 ## Pods in `CrashLoopBackOff` status
 {: #rhoks_ts_pods_crashloop}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 Your pods are in a `CrashLoopBackOff` status.
@@ -334,6 +346,8 @@ Make sure that you followed the docs in the [Moving your apps to OpenShift topic
 
 ## Cannot push or pull images from local machine to Docker registry
 {: #rhoks_ts_docker_local}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 You cannot push or pull Docker images from your local machine to the cluster's built-in Docker registry.
@@ -346,6 +360,8 @@ Create a route for the `docker-registry` service in the `default` project. For m
 
 ## Time out when pushing to the internal registry
 {: #roks_timeout_docker}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 You try to push an image to the [internal registry](/docs/openshift?topic=openshift-images#openshift_internal_registry), but sporadically you see an error message similar to the following.
