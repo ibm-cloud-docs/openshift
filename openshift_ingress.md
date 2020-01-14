@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -239,7 +239,7 @@ If you do not have a TLS certificate ready, follow these steps:
      ```
      {: codeblock}
 
-4. Create the certificate as a Kubernetes secret.
+4. Create a Kubernetes secret for your certificate.
      ```
      oc apply -f ssl-my-test
      ```

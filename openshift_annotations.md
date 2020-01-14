@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -1433,7 +1433,7 @@ spec:
      ca.crt: <ca_certificate>
    ```
    {: codeblock}
-4. Create the certificate as a Kubernetes secret.
+4. Create a Kubernetes secret for your certificate.
    ```
    oc apply -f ssl-my-test
    ```
@@ -1531,7 +1531,7 @@ The CN must exactly match the name of the back-end HTTPS server where the certif
    To also enforce mutual authentication for upstream traffic, you can provide a `client.crt` and `client.key` in addition to the `trusted.crt` in the data section.
    {: tip}
 
-4. Create the certificate as a Kubernetes secret.
+4. Create a Kubernetes secret for your certificate.
    ```
    oc apply -f ssl-my-test
    ```
@@ -1555,7 +1555,7 @@ The CN must exactly match the name of the back-end HTTPS server where the certif
      ca.crt: <ca_certificate>
    ```
    {: codeblock}
-4. Create the certificate as a Kubernetes secret.
+4. Create a Kubernetes secret for your certificate.
    ```
    oc apply -f ssl-my-test
    ```
