@@ -1252,7 +1252,7 @@ Review the following backup and restore options for your file storage:
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
 | Billing | Hourly|
-| Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/file-storage/pricing)|
+| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
 {: caption="File storage class: bronze" caption-side="top"}
 {: #simpletabtable1}
@@ -1268,7 +1268,7 @@ Review the following backup and restore options for your file storage:
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
 | Billing | Hourly|
-| Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/file-storage/pricing)|
+| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
 {: caption="File storage class: silver" caption-side="top"}
 {: #simpletabtable2}
@@ -1284,7 +1284,7 @@ Review the following backup and restore options for your file storage:
 | Size range in gigabytes | 20-4000 Gi|
 | Hard disk | SSD|
 | Billing | Hourly|
-| Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/file-storage/pricing)|
+| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
 {: caption="File storage class: gold" caption-side="top"}
 {: #simpletabtable3}
@@ -1299,7 +1299,7 @@ Review the following backup and restore options for your file storage:
 | IOPS and size | <p><strong>Size range in gigabytes / IOPS range in multiples of 100</strong></p><ul><li>20-39 Gi / 100-1000 IOPS</li><li>40-79 Gi / 100-2000 IOPS</li><li>80-99 Gi / 100-4000 IOPS</li><li>100-499 Gi / 100-6000 IOPS</li><li>500-999 Gi / 100-10000 IOPS</li><li>1000-1999 Gi / 100-20000 IOPS</li><li>2000-2999 Gi / 200-40000 IOPS</li><li>3000-3999 Gi / 200-48000 IOPS</li><li>4000-7999 Gi / 300-48000 IOPS</li><li>8000-9999 Gi / 500-48000 IOPS</li><li>10000-12000 Gi / 1000-48000 IOPS</li></ul>|
 | Hard disk | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage. </br></br>Example: </br>You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi). </br></br><strong>Overview of hard disk types per ratio:</strong><ul><li>Less than or equal to 0.3: SATA</li><li>Greater than 0.3: SSD</li></ul>|
 | Billing | Hourly|
-| Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/file-storage/pricing)|
+| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
 {: caption="File storage class: custom" caption-side="top"}
 {: #simpletabtable4}

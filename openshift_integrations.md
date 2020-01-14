@@ -128,7 +128,7 @@ You can add services to your {{site.data.keyword.openshiftlong_notm}} cluster in
 ## Adding IBM Cloud Paks
 {: #oc_cloud_paks}
 
-You can add [IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) to your {{site.data.keyword.openshiftshort}} clusters.
+You can add [IBM Cloud Paks](https://www.ibm.com/cloud/paks/){: external} to your {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
 <div class = "solutionBoxContainer">
@@ -160,7 +160,7 @@ To access {{site.data.keyword.cloud_notm}} services in your account, you can cre
 ## Deploying apps with Helm charts
 {: #oc_helm}
 
-[Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. Because {{site.data.keyword.openshiftshort}} sets stricter security context constraints the community Kubernetes, you might need to modify your Helm deployment before you install the chart. To install Helm, see the [{{site.data.keyword.containershort_notm}} docs](/docs/containers?topic=containers-helm).
+[Helm](https://helm.sh){: external} is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. Because {{site.data.keyword.openshiftshort}} sets stricter security context constraints the community Kubernetes, you might need to modify your Helm deployment before you install the chart. To install Helm, see the [{{site.data.keyword.containershort_notm}} docs](/docs/containers?topic=containers-helm){: external}.
 {: shortdesc}
 
 <br />
@@ -171,7 +171,7 @@ To access {{site.data.keyword.cloud_notm}} services in your account, you can cre
 {: help}
 {: support}
 
-Instead of Helm, you might use [Operators ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html) to package, deploy, and update your apps. Operators are available for only {{site.data.keyword.openshiftshort}} 4.x versions. In the meantime, you can try out the [experimental {{site.data.keyword.cloud_notm}} Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/seed/olm/blob/master/pocs/openshift-ibmcloud/README.md) and the following tutorial.
+Instead of Helm, you might use [Operators](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html){: external} to package, deploy, and update your apps. Operators are available for only {{site.data.keyword.openshiftshort}} 4.x versions. In the meantime, you can try out the [experimental {{site.data.keyword.cloud_notm}} Operator](https://github.ibm.com/seed/olm/blob/master/pocs/openshift-ibmcloud/README.md){: external} and the following tutorial.
 {: shortdesc}
 
 <div class = "solutionBoxContainer">

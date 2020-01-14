@@ -36,7 +36,7 @@ subcollection: openshift
 # Adding Cloud Paks
 {: #openshift_cloud_paks}
 
-[IBM Cloud Paks&trade; ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized, licensed IBM middleware and open source software components that you can use to modernize, move, and build cloud-native business applications in hybrid and multicloud deployments. By running exclusively on OpenShift and Red Hat Enterprise Linux, Cloud Paks are built atop a secure stack and maintain consistency in deployment and behavior across cloud providers. You have greater flexibility to run and manage your workloads securely where you need them: on-premises, off-premises, in a backup provider, and in {{site.data.keyword.cloud_notm}}.
+[IBM Cloud Paks&trade;](https://www.ibm.com/cloud/paks/){: external} are containerized, licensed IBM middleware and open source software components that you can use to modernize, move, and build cloud-native business applications in hybrid and multicloud deployments. By running exclusively on OpenShift and Red Hat Enterprise Linux, Cloud Paks are built atop a secure stack and maintain consistency in deployment and behavior across cloud providers. You have greater flexibility to run and manage your workloads securely where you need them: on-premises, off-premises, in a backup provider, and in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 ## Overview of Cloud Pak offerings
@@ -113,7 +113,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 {: help}
 {: support}
 
-[IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) are containerized, licensed IBM middleware and open source software components as part of your hybrid cloud solution. IBM Cloud Paks run exclusively on OpenShift clusters, not community Kubernetes clusters.
+[IBM Cloud Paks](https://www.ibm.com/cloud/paks/){: external} are containerized, licensed IBM middleware and open source software components as part of your hybrid cloud solution. IBM Cloud Paks run exclusively on OpenShift clusters, not community Kubernetes clusters.
 {: shortdesc}
 
 
@@ -125,8 +125,8 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
     Do not exceed your entitlement. Your OpenShift Container Platform entitlements include usage across all the cloud providers and environments that you use your entitlements for.
     {: important}
 
-2. In the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog?search=label%3Acloud_pak#software), in the **Software** tab, under **Offering Type**, check **Cloud Paks**.
-3. Select the Cloud Pak that you want to deploy, and follow the installation instructions. Each Cloud Pak requires an entitlement from [IBM Passport Advantage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/), and has its own configuration settings. For more information, view the **About** tab and Cloud Pak documentation.
+2. In the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog?search=label%3Acloud_pak#software){: external}, in the **Software** tab, under **Offering Type**, check **Cloud Paks**.
+3. Select the Cloud Pak that you want to deploy, and follow the installation instructions. Each Cloud Pak requires an entitlement from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external}, and has its own configuration settings. For more information, view the **About** tab and Cloud Pak documentation.
 
 
 
@@ -138,7 +138,7 @@ Now you can run your Cloud Pak on your OpenShift cluster!
 ## FAQs for Cloud Pak on Red Hat OpenShift on IBM Cloud
 {: #faq_cloud_paks}
 
-Review frequently asked questions for [IBM Cloud Paks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/paks/) on Red Hat OpenShift on IBM Cloud clusters. For questions about Cloud Paks that run on other distributions such as on-premises, OpenShift Dedicated, or OpenShift Container Platform on different cloud providers, consult those cloud providers' documentation.
+Review frequently asked questions for [IBM Cloud Paks](https://www.ibm.com/cloud/paks/){: external} on Red Hat OpenShift on IBM Cloud clusters. For questions about Cloud Paks that run on other distributions such as on-premises, OpenShift Dedicated, or OpenShift Container Platform on different cloud providers, consult those cloud providers' documentation.
 {: shortdesc}
 
 ### How do I install a Cloud Pak in my Red Hat OpenShift on IBM Cloud cluster? How do I access it later?

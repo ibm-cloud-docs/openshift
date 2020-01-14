@@ -281,7 +281,7 @@ It depends on what type of account that you're using to access the IBM Cloud inf
 To ensure that all infrastructure-related actions can be successfully completed in the cluster, the user whose credentials you want to set for the API key must have the proper permissions.
 {: shortdesc}
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} console![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
+1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
 
 2. To make sure that all account-related actions can be successfully performed, verify that the user has the correct {{site.data.keyword.cloud_notm}} IAM platform roles.
     1. From the menu bar, select **Manage > Access (IAM)**, and then click the **Users** page.
