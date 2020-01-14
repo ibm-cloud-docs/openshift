@@ -36,7 +36,7 @@ subcollection: openshift
 # Autoscaling clusters
 {: #ca}
 
-With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler){: external}.
+With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
 {: shortdesc}
 
 
@@ -245,7 +245,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 <br>
 **To install the `ibm-iks-cluster-autoscaler` plug-in in your cluster**:
 
-1.  [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the **Helm version 2.12 or later** client on your local machine, and install the Helm server (tiller) with a service account in your cluster.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the **Helm version 2.12 or later** client on your local machine, and install the Helm server (tiller) with a service account in your cluster.
 2.  Verify that tiller is installed with a service account.
 
     ```
@@ -266,7 +266,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         helm version --server
         ```
         {: pre}
-    2.  If Tiller does not run version 2.12 or later, [change the Tiller version](/docs/containers?topic=containers-helm#tiller_version). The following example installs Tiller version 2.12.3.
+    2.  If Tiller does not run version 2.12 or later, [change the Tiller version](/docs/openshift?topic=openshift-helm#tiller_version). The following example installs Tiller version 2.12.3.
         ```
         oc --namespace=kube-system set image deployments/tiller-deploy tiller=gcr.io/kubernetes-helm/tiller@sha256:cab750b402d24dd7b24756858c31eae6a007cd0ee91ea802b3891e2e940d214d
         ```
@@ -463,7 +463,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     <tr>
     <td id="parameter-minsize" headers="parameter-with-default">`"minSize": 1`</td>
     <td headers="parameter-minsize parameter-with-description">Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down the worker pool to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`.
-    <p class="note">Setting a `minSize` does not automatically trigger a scale-up. The `minSize` is a threshold so that the cluster autoscaler does not scale below a certain number of worker nodes per zone. If your cluster does not yet have that number per zone, the cluster autoscaler does not scale up until you have workload resource requests that require more resources. For example, if you have a worker pool with one worker node per three zones (three total worker nodes) and set the `minSize` to `4` per zone, the cluster autoscaler does not immediately provision an additional three worker nodes per zone (12 worker nodes total). Instead, the scale-up is triggered by resource requests. If you create a workload that requests the resources of 15 worker nodes, the cluster autoscaler scales up the worker pool to meet this request. Now, the `minSize` means that the cluster autoscaler does not scale down below four worker nodes per zone even if you remove the workload that requests the amount. For more information, see the [Kubernetes docs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#when-does-cluster-autoscaler-change-the-size-of-a-cluster){: external}.</p></td>
+    <p class="note">Setting a `minSize` does not automatically trigger a scale-up. The `minSize` is a threshold so that the cluster autoscaler does not scale below a certain number of worker nodes per zone. If your cluster does not yet have that number per zone, the cluster autoscaler does not scale up until you have workload resource requests that require more resources. For example, if you have a worker pool with one worker node per three zones (three total worker nodes) and set the `minSize` to `4` per zone, the cluster autoscaler does not immediately provision an additional three worker nodes per zone (12 worker nodes total). Instead, the scale-up is triggered by resource requests. If you create a workload that requests the resources of 15 worker nodes, the cluster autoscaler scales up the worker pool to meet this request. Now, the `minSize` means that the cluster autoscaler does not scale down below four worker nodes per zone even if you remove the workload that requests the amount. For more information, see the [Kubernetes docs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#when-does-cluster-autoscaler-change-the-size-of-a-cluster).</p></td>
     </tr>
     <tr>
     <td id="parameter-maxsize" headers="parameter-with-default">`"maxSize": 2`</td>
@@ -697,7 +697,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 ## Limiting apps to run on only certain autoscaled worker pools
 {: #ca_limit_pool}
 
-To limit a pod deployment to a specific worker pool that is managed by the cluster autoscaler, use labels and `nodeSelector` or `nodeAffinity`. With `nodeAffinity`, you have more control over how the scheduling behavior works to match pods to worker nodes. For more information about assigning pods to worker nodes, [see the Kubernetes docs](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/){: external}.
+To limit a pod deployment to a specific worker pool that is managed by the cluster autoscaler, use labels and `nodeSelector` or `nodeAffinity`. With `nodeAffinity`, you have more control over how the scheduling behavior works to match pods to worker nodes. For more information about assigning pods to worker nodes, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/).
 {: shortdesc}
 
 **Before you begin**:
@@ -765,10 +765,10 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 
 <dl>
   <dt><strong>Pause pods</strong></dt>
-  <dd>You can create a deployment that deploys [pause containers](https://stackoverflow.com/questions/48651269/what-are-the-pause-containers){: external} in pods with specific resource requests, and assign the deployment a low pod priority. When these resources are needed by higher priority workloads, the pause pod is preempted and becomes a pending pod. This event triggers the cluster autoscaler to scale up.<br><br>For more information about setting up a pause pod deployment, see the [Kubernetes FAQ](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-configure-overprovisioning-with-cluster-autoscaler){: external}. You can use [this example overprovisioning configuration file](https://github.com/IBM-Cloud/kube-samples/blob/master/ibm-ks-cluster-autoscaler/overprovisioning-autoscaler.yaml){: external} to create the priority class, service account, and deployments.<p class="note">If you use this method, make sure that you understand how [pod priority](/docs/openshift?topic=openshift-pod_priority) works and how to set pod priority for your deployments. For example, if the pause pod does not have enough resources for a higher priority pod, the pod is not preempted. The higher priority workload remains in pending, so the cluster autoscaler is triggered to scale up. However, in this case, the scale-up action is not early because the workload that you want to run cannot be scheduled because of insufficient resources.</p></dd>
+  <dd>You can create a deployment that deploys [pause containers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/questions/48651269/what-are-the-pause-containers) in pods with specific resource requests, and assign the deployment a low pod priority. When these resources are needed by higher priority workloads, the pause pod is preempted and becomes a pending pod. This event triggers the cluster autoscaler to scale up.<br><br>For more information about setting up a pause pod deployment, see the [Kubernetes FAQ ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-configure-overprovisioning-with-cluster-autoscaler). You can use [this example overprovisioning configuration file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/blob/master/ibm-ks-cluster-autoscaler/overprovisioning-autoscaler.yaml) to create the priority class, service account, and deployments.<p class="note">If you use this method, make sure that you understand how [pod priority](/docs/openshift?topic=openshift-pod_priority) works and how to set pod priority for your deployments. For example, if the pause pod does not have enough resources for a higher priority pod, the pod is not preempted. The higher priority workload remains in pending, so the cluster autoscaler is triggered to scale up. However, in this case, the scale-up action is not early because the workload that you want to run cannot be scheduled because of insufficient resources.</p></dd>
 
   <dt><strong>Horizontal pod autoscaling (HPA)</strong></dt>
-  <dd>Because horizontal pod autoscaling is based on the average CPU usage of the pods, the CPU usage limit that you set is reached before the worker pool runs out of resources. More pods are requested, which then triggers the cluster autoscaler to scale up the worker pool.<br><br>For more information about setting up HPA, see the [Kubernetes docs](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/){: external}.</dd>
+  <dd>Because horizontal pod autoscaling is based on the average CPU usage of the pods, the CPU usage limit that you set is reached before the worker pool runs out of resources. More pods are requested, which then triggers the cluster autoscaler to scale up the worker pool.<br><br>For more information about setting up HPA, see the [Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/).</dd>
 </dl>
 
 <br />
@@ -785,7 +785,7 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 
 **Before you begin**:
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* For a changelog of chart versions, [download the source code `tar` file](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler){: external} and open the `RELEASENOTES.MD` file.
+* For a changelog of chart versions, [download the source code `tar` file](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
 
 **To update the cluster autoscaler Helm chart**:
 1.  Update the Helm repo to retrieve the latest version of all Helm charts in this repo.

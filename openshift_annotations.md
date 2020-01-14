@@ -2102,7 +2102,7 @@ spec:
 </tr>
 <tr>
 <td><code>size</code></td>
-<td>Replace <code>&lt;<em>size</em>&gt;</code> with the size of each buffer in kilobytes (k or K), such as <code>1K</code>. To calculate the proper size, you can check out [this blog post](https://www.getpagespeed.com/server-setup/nginx/tuning-proxy_buffer_size-in-nginx){: external}. </td>
+<td>Replace <code>&lt;<em>size</em>&gt;</code> with the size of each buffer in kilobytes (k or K), such as <code>1K</code>. To calculate the proper size, you can check out [this blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.getpagespeed.com/server-setup/nginx/tuning-proxy_buffer_size-in-nginx). </td>
 </tr>
 </tbody></table>
 

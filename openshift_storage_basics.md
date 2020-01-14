@@ -212,7 +212,7 @@ When you dynamically provision persistent storage by using a storage class, you 
 </tr>
 <tr>
 <td>Portworx</td>
-<td>You can increase your storage size by [changing your PVC specifications](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/resize-pvc/){: external}.</td>
+<td>You can increase your storage size by [changing your PVC specifications ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/resize-pvc/).</td>
    </tr>
 </tbody>
 </table>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -273,7 +273,7 @@ Install the metrics exporter Helm chart to monitor an ALB in your cluster.
 The ALB metrics exporter pods must deploy to the same worker nodes that your ALBs are deployed to. If your ALBs run on edge worker nodes, and those edge nodes are tainted to prevent other workload deployments, the metrics exporter pods cannot be scheduled. You must remove the taints by running `oc taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-`.
 {: note}
 
-1.  **Important**: [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repositories.
+1.  **Important**: [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repositories.
 
 2. Install the `ibmcloud-alb-metrics-exporter` Helm chart to your cluster. This Helm chart deploys an ALB metrics exporter and creates an `alb-metrics-service-account` service account in the `kube-system` namespace. Replace `<zone>` with the zone where the ALB exists and `<alb_ID>` with the ID of the ALB that you want to collect metrics for. To view the IDs for the ALBs in your cluster, run `ibmcloud oc alb ls --cluster <cluster_name>`.
   ```

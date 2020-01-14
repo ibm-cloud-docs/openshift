@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-13"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -496,7 +496,7 @@ Before you begin:
 
 To install Portworx:
 
-1.  [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client version 2.14.3 or higher on your local machine, and install the Helm server (tiller) with a service account in your cluster.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client version 2.14.3 or higher on your local machine, and install the Helm server (tiller) with a service account in your cluster.
 
 2.  Verify that tiller is installed with a service account.
 

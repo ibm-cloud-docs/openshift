@@ -190,7 +190,7 @@ Before you begin:
 Install Helm and get the strongSwan Helm chart to view possible configurations.
 {: shortdesc}
 
-1.  [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repository. Note that Helm version 2.8 or later is required.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repository. Note that Helm version 2.8 or later is required.
 
 2.  Verify that tiller is installed with a service account.
 

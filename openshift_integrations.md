@@ -266,3 +266,4 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>You can install many other integrations into your {{site.data.keyword.openshiftshort}} cluster, such as through the {{site.data.keyword.openshiftshort}} catalog, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.</dd>
 
 </dl>
+

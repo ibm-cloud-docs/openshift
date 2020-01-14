@@ -114,7 +114,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_portworx.md
 
     openshift_integrations.md
-    openshift_cloud_paks.md
+    openshift_integrations_cloud_paks.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -137,6 +137,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_versions_changelog.md
 
     openshift_locations.md
+    openshift_integrations_overview.md
     openshift_users_access_ref.md
     openshift_at_events.md
     {: .navgroup-end}

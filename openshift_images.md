@@ -894,7 +894,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     ```
     {: pre}
 
-Wondering what to do next? You can [set up the **entitled** Helm chart repository](/docs/containers?topic=containers-helm), where Helm charts that incorporate entitled software are stored. If you already have Helm installed in your cluster, run `helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled`.
+Wondering what to do next? You can [set up the **entitled** Helm chart repository](/docs/openshift?topic=openshift-helm), where Helm charts that incorporate entitled software are stored. If you already have Helm installed in your cluster, run `helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled`.
 {: tip}
 
 <br />
