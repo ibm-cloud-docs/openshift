@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
 subcollection: openshift
 
@@ -38,6 +38,11 @@ subcollection: openshift
 
 {{site.data.keyword.openshiftlong}} clusters include an internal registry to build, deploy, and manage container images locally. For a private registry to manage and control access to images across your enterprise, you can also set up your cluster to use {{site.data.keyword.registrylong}}.
 {: shortdesc}
+
+A Docker image is the basis for every container that you create with {{site.data.keyword.containerlong}}.
+{:shortdesc}
+
+An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
 
 ## Choosing an image registry solution
 {: #openshift_registry_options}
@@ -308,6 +313,11 @@ For more information, see the following topics.
 * [Creating your own image pull secret](#other_registry_accounts).
 * [Adding the image pull secret](#use_imagePullSecret) to your deployment configuration or to the project service account.
 
+<br />
+
+
+
+
 
 
 
@@ -456,12 +466,12 @@ You can copy an image pull secret, such as the one that is automatically created
     {: pre}
     Example output:
     ```
-    default-us-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-uk-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-de-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-au-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-jp-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-icr-io                             kubernetes.io/dockerconfigjson        1         16d
+    default-us-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-uk-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-de-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-au-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-jp-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-icr-io                             kubernetes.io/dockerconfigjson        1         16d
     ```
     {: screen}
 3.  Copy each image pull secret from the `default` project to the project of your choice. The new image pull secrets are named `<project_name>-icr-<region>-io`. If you pull images from only a certain region, you can copy only that region's image pull secret.
@@ -888,5 +898,7 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 {: tip}
 
 <br />
+
+
 
 
