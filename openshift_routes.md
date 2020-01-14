@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-13"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -35,6 +35,8 @@ subcollection: openshift
 
 # Exposing apps with routes
 {: #openshift_routes}
+{: help}
+{: support}
 
 Use the router to publicly expose the services in your {{site.data.keyword.openshiftlong}} cluster on the router's external IP address by using a route.
 {: shortdesc}
