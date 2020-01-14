@@ -1418,10 +1418,10 @@ spec:
 
 **To create a mutual authentication secret:**
 
-1. Generate a certificate authority (CA) cert and key from your certificate provider. If you have your own domain, purchase an official TLS certificate for your domain. Make sure the [CN ![External link icon](../icons/launch-glyph.svg "External link icon")](https://support.dnsimple.com/articles/what-is-common-name/) is different for each certificate.
-    For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.akadia.com/services/ssh_test_certificate.html) or this [mutual authentication tutorial, which includes creating your own CA ![External link icon](../icons/launch-glyph.svg "External link icon")](https://blog.codeship.com/how-to-set-up-mutual-tls-authentication/).
+1. Generate a certificate authority (CA) cert and key from your certificate provider. If you have your own domain, purchase an official TLS certificate for your domain. Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
+    For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external} or this [mutual authentication tutorial, which includes creating your own CA](https://blog.codeship.com/how-to-set-up-mutual-tls-authentication/){: external}.
     {: tip}
-2. [Convert the cert into base-64 ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.base64encode.org/).
+2. [Convert the cert into base-64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using cert.
    ```
    apiVersion: v1
@@ -1514,8 +1514,8 @@ The CN must exactly match the name of the back-end HTTPS server where the certif
 
 **To create a one-way authentication secret:**
 
-1. Get the certificate authority (CA) key and certificate from your upstream server and an SSL client certificate. The IBM ALB is based on NGINX, which requires the root certificate, intermediate certificate, and back-end certificate. For more information, see the [NGINX docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.nginx.com/nginx/admin-guide/security-controls/securing-http-traffic-upstream/).
-2. [Convert the cert into base-64 ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.base64encode.org/).
+1. Get the certificate authority (CA) key and certificate from your upstream server and an SSL client certificate. The IBM ALB is based on NGINX, which requires the root certificate, intermediate certificate, and back-end certificate. For more information, see the [NGINX docs](https://docs.nginx.com/nginx/admin-guide/security-controls/securing-http-traffic-upstream/){: external}.
+2. [Convert the cert into base-64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using the cert.
    ```
    apiVersion: v1
@@ -1540,10 +1540,10 @@ The CN must exactly match the name of the back-end HTTPS server where the certif
 </br>
 **To create a mutual authentication secret:**
 
-1. Generate a certificate authority (CA) cert and key from your certificate provider. If you have your own domain, purchase an official TLS certificate for your domain. Make sure the [CN ![External link icon](../icons/launch-glyph.svg "External link icon")](https://support.dnsimple.com/articles/what-is-common-name/) is different for each certificate.
-    For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.akadia.com/services/ssh_test_certificate.html) or this [mutual authentication tutorial, which includes creating your own CA ![External link icon](../icons/launch-glyph.svg "External link icon")](https://blog.codeship.com/how-to-set-up-mutual-tls-authentication/).
+1. Generate a certificate authority (CA) cert and key from your certificate provider. If you have your own domain, purchase an official TLS certificate for your domain. Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
+    For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external} or this [mutual authentication tutorial, which includes creating your own CA](https://blog.codeship.com/how-to-set-up-mutual-tls-authentication/){: external}.
     {: tip}
-2. [Convert the cert into base-64 ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.base64encode.org/).
+2. [Convert the cert into base-64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using the cert.
    ```
    apiVersion: v1
@@ -2102,7 +2102,7 @@ spec:
 </tr>
 <tr>
 <td><code>size</code></td>
-<td>Replace <code>&lt;<em>size</em>&gt;</code> with the size of each buffer in kilobytes (k or K), such as <code>1K</code>. To calculate the proper size, you can check out [this blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.getpagespeed.com/server-setup/nginx/tuning-proxy_buffer_size-in-nginx). </td>
+<td>Replace <code>&lt;<em>size</em>&gt;</code> with the size of each buffer in kilobytes (k or K), such as <code>1K</code>. To calculate the proper size, you can check out [this blog post](https://www.getpagespeed.com/server-setup/nginx/tuning-proxy_buffer_size-in-nginx){: external}. </td>
 </tr>
 </tbody></table>
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -92,7 +92,7 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
   * Access an app via a non-standard TCP port that you opened by using the [`tcp-ports`](/docs/openshift?topic=openshift-ingress_annotation#tcp-ports) annotation.
   * Change the default ports for HTTP (port 80) and HTTPS (port 443) network traffic to a port that you opened by using the [`custom-port`](/docs/openshift?topic=openshift-ingress_annotation#custom-port) annotation.
 
-For more information about configmap resources, see the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/).
+For more information about configmap resources, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){: external}.
 
 <br />
 
@@ -104,7 +104,7 @@ For more information about configmap resources, see the [Kubernetes documentatio
 By default, the source IP address of the client request is not preserved. When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the app pod runs.
 {: shortdesc}
 
-To preserve the original source IP address of the client request, you can enable [source IP preservation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-typeloadbalancer). Preserving the client’s IP is useful, for example, when app servers have to apply security and access-control policies.
+To preserve the original source IP address of the client request, you can enable [source IP preservation](https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-typeloadbalancer){: external}. Preserving the client’s IP is useful, for example, when app servers have to apply security and access-control policies.
 
 If you [disable an ALB](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure), any source IP changes you make to the load balancer service that exposes the ALB are lost. When you re-enable the ALB, you must enable source IP again.
 {: note}
@@ -207,7 +207,7 @@ To edit the configmap to enable SSL protocols and ciphers:
     ```
     {: pre}
 
-2. Add the SSL protocols and ciphers. Format ciphers according to the [OpenSSL library cipher list format ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html).
+2. Add the SSL protocols and ciphers. Format ciphers according to the [OpenSSL library cipher list format](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html){: external}.
 
    ```
    apiVersion: v1
@@ -323,7 +323,7 @@ To optimize performance of your Ingress ALBs, you can change the default setting
 Increase the number of socket listeners from one socket listener for each ALB to one socket listener for each NGINX worker process on the worker node by using the `reuse-port` Ingress directive.
 {: shortdesc}
 
-When the `reuse-port` option is disabled, a single listening socket notifies ALBs about incoming connections and all worker nodes attempt to take the connection. But when `reuse-port` is enabled, one socket listener exists for each ALB IP address and port combination. Instead of each ALB attempting to take the connection, the Linux kernel determines which available socket listener gets the connection. Lock contention between workers is reduced, which can improve performance. For more information about the benefits and drawbacks of the `reuse-port` directive, see [this NGINX blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/).
+When the `reuse-port` option is disabled, a single listening socket notifies ALBs about incoming connections and all worker nodes attempt to take the connection. But when `reuse-port` is enabled, one socket listener exists for each ALB IP address and port combination. Instead of each ALB attempting to take the connection, the Linux kernel determines which available socket listener gets the connection. Lock contention between workers is reduced, which can improve performance. For more information about the benefits and drawbacks of the `reuse-port` directive, see [this NGINX blog post](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/){: external}.
 
 1. Edit the configuration file for the `ibm-cloud-provider-ingress-cm` configmap resource.
     ```

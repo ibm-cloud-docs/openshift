@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -131,7 +131,7 @@ To set up an NLB 1.0 service in a multizone cluster:
       ```
       {: codeblock}
 
-  3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/).
+  3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/){: external}.
 
   4. Create the service in your cluster.
 
@@ -272,7 +272,7 @@ To create an NLB 1.0 service in a single-zone cluster:
         ```
         {: codeblock}
 
-    3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/).
+    3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/){: external}.
 
     4.  Create the service in your cluster.
 
@@ -340,7 +340,7 @@ This feature is for version 1.0 network load balancers (NLBs) only. The source I
 When a client request to your app is sent to your cluster, a load balancer service pod receives the request. If no app pod exists on the same worker node as the load balancer service pod, the NLB forwards the request to a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the load balancer service pod runs.
 {: shortdesc}
 
-To preserve the original source IP address of the client request, you can [enable source IP ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip) for load balancer services. The TCP connection continues all the way to the app pods so that the app can see the actual source IP address of the initiator. Preserving the client’s IP is useful, for example, when app servers have to apply security and access-control policies.
+To preserve the original source IP address of the client request, you can [enable source IP](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip){: external} for load balancer services. The TCP connection continues all the way to the app pods so that the app can see the actual source IP address of the initiator. Preserving the client’s IP is useful, for example, when app servers have to apply security and access-control policies.
 
 After you enable the source IP, load balancer service pods must forward requests to app pods that are deployed to the same worker node only. Typically, load balancer service pods are also deployed to the worker nodes that the app pods are deployed to. However, some situations exist where the load balancer pods and app pods might not be scheduled onto the same worker node:
 
@@ -355,7 +355,7 @@ To force your app to deploy to specific worker nodes where load balancer service
 When you [label worker nodes as edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes) and also [taint the edge nodes](/docs/openshift?topic=openshift-edge#edge_workloads), load balancer service pods deploy only to those edge nodes, and app pods cannot deploy to edge nodes. When source IP is enabled for the NLB service, the load balancer pods on the edge nodes cannot forward incoming requests to your app pods on other worker nodes.
 {:shortdesc}
 
-To force your app pods to deploy to edge nodes, add an edge node [affinity rule ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature) and [toleration ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/#concepts) to the app deployment.
+To force your app pods to deploy to edge nodes, add an edge node [affinity rule](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature){: external} and [toleration](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/#concepts){: external} to the app deployment.
 
 Example deployment YAML file with edge node affinity and edge node toleration:
 
@@ -427,7 +427,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
         For example, if the NLB service IP address is `169.36.5.xxx`, the matching subnet in the example output of the previous step is `169.36.5.xxx/29`. The VLAN ID that the subnet is connected to is `2234945`.
 
-3. [Add an affinity rule ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature) to the app deployment for the VLAN ID that you noted in the previous step.
+3. [Add an affinity rule](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature){: external} to the app deployment for the VLAN ID that you noted in the previous step.
 
     For example, if you have multiple VLANs but want your app pods to deploy to worker nodes on the `2234945` public VLAN only:
 

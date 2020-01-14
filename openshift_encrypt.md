@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -41,7 +41,7 @@ Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluste
 
 You can create sensitive data on different levels in your cluster that each require appropriate protection.
 - **Cluster-level:** Cluster configuration data is stored in the etcd component of your OpenShift master. Data in etcd is stored on the local disk of the OpenShift master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your OpenShift master by [enabling a key management service provider](#keyprotect) for your cluster.
-- **App-level:** When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/secret/), such as an `imagePullSecret` for registry credentials. You can also [encrypt data in Kubernetes secrets](#keyprotect) to prevent unauthorized users from accessing sensitive app information.
+- **App-level:** When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, such as an `imagePullSecret` for registry credentials. You can also [encrypt data in Kubernetes secrets](#keyprotect) to prevent unauthorized users from accessing sensitive app information.
 
 For more information about securing your cluster and personal information, see [Security for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-security#security) and [Storing personal information](/docs/openshift?topic=openshift-security#pi).
 
@@ -70,7 +70,7 @@ _Figure: Overview of data encryption in a cluster_
 ## Understanding Key Management Service (KMS) providers
 {: #kms}
 
-You can protect the etcd component in your Kubernetes master and Kubernetes secrets by using a Kubernetes [key management service (KMS) provider ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/) that encrypts secrets with encryption keys that you control.
+You can protect the etcd component in your Kubernetes master and Kubernetes secrets by using a Kubernetes [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} that encrypts secrets with encryption keys that you control.
 {: shortdesc}
 
 KMS provider integration is a beta feature.
@@ -78,7 +78,7 @@ KMS provider integration is a beta feature.
 
 **What KMS providers are available by default? Can I add other providers?**<br>
 Red Hat OpenShift on IBM Cloud supports the following KMS providers:
-* {{site.data.keyword.keymanagementservicefull}} for [public cloud](/docs/services/key-protect?topic=key-protect-getting-started-tutorial) or [on-prem ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/apis/kms_apis.html#gen_key) environments.
+* {{site.data.keyword.keymanagementservicefull}} for [public cloud](/docs/services/key-protect?topic=key-protect-getting-started-tutorial) or [on-prem](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/apis/kms_apis.html#gen_key){: external} environments.
 * [Hyper Protect Crypto Services](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external} for keep your own key (KYOK) crypto unit support.
 
 Because adding a different KMS provider requires updating the managed master default configuration, you cannot add other KMS providers to the cluster.
@@ -95,7 +95,7 @@ You cannot disable KMS provider encryption. Do not delete root keys in your KMS 
 ## Encrypting the Kubernetes master's local disk and secrets by using a KMS provider (beta)
 {: #keyprotect}
 
-Enable a Kubernetes [key management service (KMS) provider ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/) such as [{{site.data.keyword.keymanagementserviceshort}} ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-getting-started-tutorial) to encrypt the Kubernetes secrets and etcd component of your Kubernetes master.
+Enable a Kubernetes [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-getting-started-tutorial){: external} to encrypt the Kubernetes secrets and etcd component of your Kubernetes master.
 {: shortdesc}
 
 To rotate your encryption key, repeat the [CLI](#kms_cli) or [console](#kms_ui) steps to enable KMS provider encryption with a new root key ID. The new root key is added to the cluster configuration along with the previous root key so that existing encrypted data is still protected.
@@ -206,7 +206,7 @@ After you enable a KMS provider in your cluster, you can verify that your cluste
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Install the etcd CLI (`etcdctl`) version 3 or higher.
-    1.  Download the release package for your operating system from the [etcd project ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/etcd-io/etcd/releases).
+    1.  Download the release package for your operating system from the [etcd project](https://github.com/etcd-io/etcd/releases){: external}.
     2.  Extract and move the `etcdctl` binary file to the location of your binary files, such as the following example.
         ```
         mv Downloads/etcd-v3.3.13-darwin-amd64/etcdctl /usr/local/bin/etcdctl
@@ -253,7 +253,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
       etcdCACertFile: '/Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/ca-<location>-<cluster_name>.pem'
     ```
     {: screen}
-5.  Confirm that the Kubernetes secrets for the cluster are encrypted. Replace the `cluster_name`, `etcdEndpoints`, `etcdCACertFile`, `etcdKeyFile`, and `etcdCertFile` fields with the values that you previously retrieved. The output is unreadable and scrambled, indicating that the secrets are encrypted. 
+5.  Confirm that the Kubernetes secrets for the cluster are encrypted. Replace the `cluster_name`, `etcdEndpoints`, `etcdCACertFile`, `etcdKeyFile`, and `etcdCertFile` fields with the values that you previously retrieved. The output is unreadable and scrambled, indicating that the secrets are encrypted.
     ```
     etcdctl get /kubernetes.io/secrets/default/<cluster_name> --endpoints <etcdEndpoints> --cacert="<etcdCACertFile>" --key="<etcdKeyFile>" --cert="<etcdCertFile>"
     ```
@@ -283,5 +283,6 @@ If you or your company require data sensitivity due to internal policies, govern
 To get started, provision an SGX-enabled bare metal worker cluster with a [supported flavor for {{site.data.keyword.datashield_short}}](/docs/services/data-shield?topic=data-shield-getting-started).
 
 <br>
+
 
 
