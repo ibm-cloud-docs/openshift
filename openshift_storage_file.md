@@ -1635,29 +1635,25 @@ To clean up persistent data:
 
 
 8. {: #sl_delete_storage}List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance.
-
     ```
     ibmcloud sl file volume-list --columns id  --columns notes | grep <pv_name>
     ```
     {: pre}
-
-
     Example output for file storage:
     ```
     id         notes   
     12345678   {"plugin":"ibm-file-plugin-5b55b7b77b-55bb7","region":"us-south","cluster":"aa1a11a1a11b2b2bb22b22222c3c3333","type":"Endurance","ns":"default","pvc":"mypvc","pv":"pvc-d979977d-d79d-77d9-9d7d-d7d97ddd99d7","storageclass":"ibmc-file-gold"}
     ```
     {: screen}
-
-  Understanding the **Notes** field information:
-  *  **`"plugin":"ibm-file-plugin-5b55b7b77b-55bb7"`**: The storage plug-in that the cluster uses.
-  *  **`"region":"us-south"`**: The region that your cluster is in.
-  *  **`"cluster":"aa1a11a1a11b2b2bb22b22222c3c3333"`**: The cluster ID that is associated with the storage instance.
-  *  **`"type":"Endurance"`**: The type of file or block storage, either `Endurance` or `Performance`.
-  *  **`"ns":"default"`**: The namespace that the storage instance is deployed to.
-  *  **`"pvc":"mypvc"`**: The name of the PVC that is associated with the storage instance.
-  *  **`"pv":"pvc-d979977d-d79d-77d9-9d7d-d7d97ddd99d7"`**: The PV that is associated with the storage instance.
-  *  **`"storageclass":"ibmc-file-gold"`**: The type of storage class: bronze, silver, gold, or custom.
+    Understanding the **Notes** field information:
+    *  **`"plugin":"ibm-file-plugin-5b55b7b77b-55bb7"`**: The storage plug-in that the cluster uses.
+    *  **`"region":"us-south"`**: The region that your cluster is in.
+    *  **`"cluster":"aa1a11a1a11b2b2bb22b22222c3c3333"`**: The cluster ID that is associated with the storage instance.
+    *  **`"type":"Endurance"`**: The type of file or block storage, either `Endurance` or `Performance`.
+    *  **`"ns":"default"`**: The namespace that the storage instance is deployed to.
+    *  **`"pvc":"mypvc"`**: The name of the PVC that is associated with the storage instance.
+    *  **`"pv":"pvc-d979977d-d79d-77d9-9d7d-d7d97ddd99d7"`**: The PV that is associated with the storage instance.
+    *  **`"storageclass":"ibmc-file-gold"`**: The type of storage class: bronze, silver, gold, or custom.
 
 9. Remove the physical storage instance.
 
