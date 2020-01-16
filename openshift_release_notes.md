@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-15"
+lastupdated: "2020-01-16"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,7 +44,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 16 January 2020 | **Ingress ALB changelog**: Updated the [`nginx-ingress` image to build 618](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog). |
 | 06 January 2020 | **Ingress ALB changelog**: Updated the [`ingress-auth` image to build 373](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).|
 | 03 January 2020 | **Version changelog**: Worker node patch updates are available for OpenShift [3.11.157_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).|
 
