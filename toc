@@ -92,6 +92,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_loadbalancer_qs.md
         openshift_loadbalancer_about.md
         openshift_loadbalancer.md
+        openshift_loadbalancer_v2.md
         openshift_loadbalancer_dns.md
 
     {: .topicgroup}
