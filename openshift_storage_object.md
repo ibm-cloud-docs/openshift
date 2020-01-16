@@ -55,6 +55,9 @@ With version 1.0.5, the {{site.data.keyword.cos_full_notm}} plug-in is renamed f
 With version 1.0.8, the {{site.data.keyword.cos_full_notm}} plug-in Helm chart is now available in the `ibm-charts` Helm repository. Make sure to fetch the latest version of the Helm chart from this repository. To add the repository, run `helm repo add ibm-charts https://icr.io/helm/ibm-charts`.
 {: note}
 
+<br />
+
+
 ## Creating your object storage service instance
 {: #create_cos_service}
 
@@ -80,6 +83,9 @@ Follow these steps to create an {{site.data.keyword.cos_full_notm}} service inst
   7.  Click **View credentials**.
   8.  Make note of the **apikey** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **cos_hmac_keys** section, note the **access_key_id** and the **secret_access_key**.
 3. [Store your service credentials in a Kubernetes secret inside the cluster](#create_cos_secret) to enable access to your {{site.data.keyword.cos_full_notm}} service instance.
+
+<br />
+
 
 ## Creating a secret for the object storage service credentials
 {: #create_cos_secret}
@@ -155,6 +161,9 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     {: screen}
 
 5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos), or if you already installed the plug-in, [decide on the configuration]( #configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
+
+<br />
+
 
 
 ## Installing the IBM Cloud Object Storage plug-in
@@ -661,6 +670,9 @@ To remove the plug-in:
 
     The `ibmc` plug-in is removed successfully if the `ibmc` plug-in is not listed in your CLI output.
 
+    <br />
+
+
 
 ## Deciding on the object storage configuration
 {: #configure_cos}
@@ -791,6 +803,9 @@ Red Hat OpenShift on IBM Cloud provides pre-defined storage classes that you can
 
 Now that you decided on the configuration that you want, you are ready to [create a PVC](#add_cos) to provision {{site.data.keyword.cos_full_notm}}.
 
+<br />
+
+
 ## Adding object storage to apps
 {: #add_cos}
 
@@ -901,7 +916,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
 4. Optional: If you plan to access your data with a non-root user, or added files to an existing {{site.data.keyword.cos_full_notm}} bucket by using the console or the API directly, make sure that the [files have the correct permission](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_nonroot_access) assigned so that your app can successfully read and update the files as needed.
 
-4.  {: #cos_app_volume_mount}To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
+5.  {: #cos_app_volume_mount}To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
 
     ```yaml
     apiVersion: apps/v1
@@ -982,13 +997,13 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     </tr>
     </tbody></table>
 
-5.  Create the deployment.
+6.  Create the deployment.
     ```
     oc apply -f <local_yaml_path>
     ```
     {: pre}
 
-6.  Verify that the PV is successfully mounted.
+7.  Verify that the PV is successfully mounted.
 
     ```
     oc describe deployment <deployment_name>
@@ -1010,7 +1025,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     ```
     {: screen}
 
-7. Verify that you can write data to your {{site.data.keyword.cos_full_notm}} service instance.
+8. Verify that you can write data to your {{site.data.keyword.cos_full_notm}} service instance.
    1. Log in to the pod that mounts your PV.
       ```
       oc exec <pod_name> -it bash
@@ -1027,6 +1042,9 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
    4. From the {{site.data.keyword.Bluemix}} dashboard, navigate to your {{site.data.keyword.cos_full_notm}} service instance.
    5. From the menu, select **Buckets**.
    6. Open your bucket, and verify that you can see the `test.txt` that you created.
+
+   <br />
+
 
 ## Using object storage in a stateful set
 {: #cos_statefulset}
@@ -1232,6 +1250,9 @@ To deploy a stateful set that uses object storage:
     </tr>
     </tbody></table>
 
+    <br />
+
+
 
 ## Backing up and restoring data
 {: #cos_backup_restore}
@@ -1241,6 +1262,9 @@ To deploy a stateful set that uses object storage:
 
 {{site.data.keyword.cos_full_notm}} does not provide a version history for your data. If you need to maintain and access older versions of your data, you must set up your app to manage the history of data or implement alternative backup solutions. For example, you might want to store your {{site.data.keyword.cos_full_notm}} data in your on-prem database or use tapes to archive your data.
 {: note}
+
+<br />
+
 
 
 

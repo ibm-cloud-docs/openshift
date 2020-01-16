@@ -381,6 +381,9 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
     ```
     {: pre}
 
+    <br />
+
+
 ## Testing and verifying strongSwan VPN connectivity
 {: #vpn_test}
 
