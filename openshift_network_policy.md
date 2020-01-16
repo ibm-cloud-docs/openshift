@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -143,21 +143,9 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
 
 3. Install the Calico CLI, `calicoctl`, according to your operating system.
     * Linux and OS X:
-      1. Create the `/etc/calico` directory.
-          ```
-          sudo mkdir /etc/calico
-          ```
-          {: pre}
+      1. [Download the `-darwin-amd64` version of the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. Make sure to save the file as `calicoctl.exe`.
 
-      2. Move the Calico configuration file that you previously downloaded to the directory.
-          ```
-          sudo mv /Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/calicoctl.cfg /etc/calico
-          ```
-          {: pre}
-
-      3. [Download the `-darwin-amd64` version of the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. Make sure to save the file as `calicoctl.exe`.
-
-      4. Move the executable file to the _/usr/local/bin_ directory.
+      2. Move the executable file to the _/usr/local/bin_ directory.
           - Linux:
             ```
             mv filepath/calicoctl /usr/local/bin/calicoctl
@@ -170,9 +158,21 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
             ```
             {: pre}
 
-      5. Make the file an executable file.
+      3. Make the file an executable file.
           ```
           chmod +x /usr/local/bin/calicoctl
+          ```
+          {: pre}
+
+      4. Create the `/etc/calico` directory.
+          ```
+          sudo mkdir /etc/calico
+          ```
+          {: pre}
+
+      5. Move the Calico configuration file that you previously downloaded to the directory.
+          ```
+          sudo mv /Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/calicoctl.cfg /etc/calico
           ```
           {: pre}
 
