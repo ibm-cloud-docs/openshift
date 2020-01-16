@@ -133,7 +133,9 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` flag, which downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes, and the `--network` flag, which downloads the Calico configuration file to run all Calico commands.
+
+
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -220,7 +222,9 @@ Before you begin:
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` flag, which downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes, and the `--network` flag, which downloads the Calico configuration file to run all Calico commands.
+
+
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -281,7 +285,9 @@ To create Calico policies, use the following steps.
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` flag, which downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes, and the `--network` flag, which downloads the Calico configuration file to run all Calico commands.
+
+
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -321,7 +327,9 @@ Before you begin:
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` flag, which downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes, and the `--network` flag, which downloads the Calico configuration file to run all Calico commands.
+
+
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -415,7 +423,9 @@ Before you begin:
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` flag, which downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes, and the `--network` flag, which downloads the Calico configuration file to run all Calico commands.
+
+
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -483,7 +493,9 @@ Before you begin:
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` flag, which downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes, and the `--network` flag, which downloads the Calico configuration file to run all Calico commands.
+
+
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -682,7 +694,9 @@ Before you begin:
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` flag, which downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes, and the `--network` flag, which downloads the Calico configuration file to run all Calico commands.
+
+
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
