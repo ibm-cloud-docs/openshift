@@ -774,7 +774,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 ## Updating the cluster autoscaler Helm chart
 {: #ca_helm_up}
 
-You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm list| grep cluster-autoscaler`.
+You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm list | grep cluster-autoscaler`.
 {: shortdesc}
 
 Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these instructions](#ca_helm_up_102).
@@ -799,7 +799,7 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 
 3.  Find the name of the cluster autoscaler Helm chart that you installed in your cluster.
     ```
-    helm list| grep cluster-autoscaler
+    helm list | grep cluster-autoscaler
     ```
     {: pre}
 

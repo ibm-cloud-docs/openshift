@@ -506,7 +506,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
   1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
     ```
-    helm list| grep ibmcloud-object-storage-plugin
+    helm list | grep ibmcloud-object-storage-plugin
     ```
     {: pre}
 
@@ -552,7 +552,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
   **With Tiller**:
   1. Find the installation name of your Helm chart.
     ```
-    helm list| grep ibm-object-storage-plugin
+    helm list | grep ibm-object-storage-plugin
     ```
     {: pre}
 
@@ -611,7 +611,7 @@ To remove the plug-in:
   **With Tiller**:
   1. Find the installation name of your Helm chart.
     ```
-    helm list| grep object-storage-plugin
+    helm list | grep object-storage-plugin
     ```
     {: pre}
 
