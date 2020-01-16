@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-16"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -273,7 +273,7 @@ Install the metrics exporter Helm chart to monitor an ALB in your cluster.
 The ALB metrics exporter pods must deploy to the same worker nodes that your ALBs are deployed to. If your ALBs run on edge worker nodes, and those edge nodes are tainted to prevent other workload deployments, the metrics exporter pods cannot be scheduled. You must remove the taints by running `oc taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-`.
 {: note}
 
-1.  **Important**: [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repositories.
+1.  **Important**: [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (Tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repositories.
 
 2. Install the `ibmcloud-alb-metrics-exporter` Helm chart to your cluster. This Helm chart deploys an ALB metrics exporter and creates an `alb-metrics-service-account` service account in the `kube-system` namespace. Replace `<zone>` with the zone where the ALB exists and `<alb_ID>` with the ID of the ALB that you want to collect metrics for. To view the IDs for the ALBs in your cluster, run `ibmcloud oc alb ls --cluster <cluster_name>`.
   ```
@@ -320,9 +320,9 @@ After you install the [metrics exporter](#metrics-exporter), you can install the
   ```
   {: pre}
 
-3. Install the Prometheus Helm chart to your cluster. Replace <ingress_subdomain> with the Ingress subdomain for your cluster. The URL for the Prometheus dashboard is a combination of the default Prometheus subdomain, `prom-dash`, and your Ingress subdomain, for example `prom-dash.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. To find the Ingress subdomain for your cluster, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name&gt;</code>.
+3. Install the Prometheus Helm chart to your cluster. Replace <ingress_subdomain> with the Ingress subdomain for your cluster. The URL for the Prometheus dashboard is a combination of the default Prometheus subdomain, `prom-dash`, and your Ingress subdomain, for example `prom-dash.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. To find the Ingress subdomain for your cluster, run `ibmcloud oc cluster get --cluster <cluster_name>`.
   ```
-  helm install --name prometheus . --set nameSpace=kube-system --set hostName=prom-dash.<ingress_subdomain>
+  helm install . --set name=prometheus --set nameSpace=kube-system --set hostName=prom-dash.<ingress_subdomain>
   ```
   {: pre}
 

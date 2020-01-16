@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-16"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -39,7 +39,6 @@ subcollection: openshift
 With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
 {: shortdesc}
 
-
 Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-app#app_scaling).
 {: tip}
 
@@ -47,7 +46,6 @@ Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?t
 
 ## Understanding scale-up and scale-down
 {: #ca_about}
-
 
 The cluster autoscaler periodically scans the cluster to adjust the number of worker nodes within the worker pools that it manages in response to your workload resource requests and any custom settings that you configure, such as scanning intervals. Every minute, the cluster autoscaler checks for the following situations.
 {: shortdesc}
@@ -220,7 +218,6 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     *  {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc` alias for OpenShift clusters)
     *  {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
     *  Kubernetes (`kubectl`)
-    *  Helm (`helm`)
 2.  [Create a standard cluster](/docs/openshift?topic=openshift-clusters).
 3.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 4.  Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions).
@@ -245,7 +242,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 <br>
 **To install the `ibm-iks-cluster-autoscaler` plug-in in your cluster**:
 
-1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the **Helm version 2.12 or later** client on your local machine, and install the Helm server (tiller) with a service account in your cluster.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the **Helm version 2.12 or later** client on your local machine, and install the Helm server (Tiller) with a service account in your cluster.
 2.  Verify that tiller is installed with a service account.
 
     ```
@@ -272,7 +269,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         ```
         {: pre}
 
-        If you Tiller pod errors with an `Error: ImagePullBackOff` event, make sure that your cluster can pull images on the public network, and try again.
+        If your Tiller pod errors with an `Error: ImagePullBackOff` event, make sure that your cluster can pull images on the public network, and try again.
         {: tip}
 
 4.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
@@ -777,7 +774,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 ## Updating the cluster autoscaler Helm chart
 {: #ca_helm_up}
 
-You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm ls | grep cluster-autoscaler`.
+You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm list| grep cluster-autoscaler`.
 {: shortdesc}
 
 Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these instructions](#ca_helm_up_102).
@@ -802,7 +799,7 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 
 3.  Find the name of the cluster autoscaler Helm chart that you installed in your cluster.
     ```
-    helm ls | grep cluster-autoscaler
+    helm list| grep cluster-autoscaler
     ```
     {: pre}
 
@@ -878,7 +875,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: pre}
 6.  Install the latest cluster autoscaler Helm chart. Apply any custom settings that you previously used with the `--set` flag, such as `scanInterval=2m`.
     ```
-    helm install  iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler [--set <custom_settings>]
+    helm install iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler  [--set <custom_settings>]
     ```
     {: pre}
 7.  Apply the cluster autoscaler configmap that you previously retrieved to enable autoscaling for your worker pools.
@@ -945,12 +942,12 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 2.  List your existing Helm charts and note the name of the cluster autoscaler.
     ```
-    helm ls
+    helm list
     ```
     {: pre}
 3.  Remove the existing Helm chart from your cluster.
     ```
-    helm delete --purge <ibm-iks-cluster-autoscaler_name>
+    helm delete --purge ibm-ks-cluster-autoscaler
     ```
     {: pre}
 

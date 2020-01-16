@@ -172,13 +172,10 @@ Before you begin:
 To install the plug-in:
 
 
-
-If you have a private-only cluster, you must install the plugin without Tiller.
-{: note}
-
 2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. **Note** Tiller requires public network connectivity. Learn more about [Helm and Tiller](/docs/openshift?topic=openshift-helm). Then, [follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install){: new_window} to install the Helm client on your local machine and optionally Tiller with a service account in your cluster.
 
-  **Note**: If you use Windows, you must install Tiller.
+    If you have a private-only cluster, you must install the plugin without Tiller. If you use Windows, you must install Tiller.
+    {: note}
 
 3. If you want to install the plug-in with Tiller, verify that Tiller is installed with a service account. If you do not want to use Tiller, continue with step 4.
    ```
@@ -389,14 +386,14 @@ If you have a private-only cluster, you must install the plugin without Tiller.
     5. Install the plug-in by using Helm.       
       - Install without a limitation to specific Kubernetes secrets.</br>
         ```
-        helm install --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
+        helm install ibm-charts/ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --name ibm-object-storage-plugin
         ```
         {: pre}
 
       - Install the plug-in with a limitation to specific Kubernetes secrets.</br>
         ```
         cd ../..
-        helm install --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" ./ibm-object-storage-plugin --name ibm-object-storage-plugin
+        helm install ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --name ibm-object-storage-plugin
         ```
         {: pre}
 
@@ -500,7 +497,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
   1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
     ```
-    helm ls | grep ibmcloud-object-storage-plugin
+    helm list| grep ibmcloud-object-storage-plugin
     ```
     {: pre}
 
@@ -546,7 +543,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
   **With Tiller**:
   1. Find the installation name of your Helm chart.
     ```
-    helm ls | grep ibm-object-storage-plugin
+    helm list| grep ibm-object-storage-plugin
     ```
     {: pre}
 
@@ -605,7 +602,7 @@ To remove the plug-in:
   **With Tiller**:
   1. Find the installation name of your Helm chart.
     ```
-    helm ls | grep object-storage-plugin
+    helm list| grep object-storage-plugin
     ```
     {: pre}
 
