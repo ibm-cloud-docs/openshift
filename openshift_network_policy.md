@@ -58,7 +58,7 @@ In OpenShift Container Platform version 4.3, Calico is based on the Kubernetes d
 <br />
 
 
-## Default Calico and Kubernetes network policies
+## Default Calico network policies
 {: #default_policy}
 {: help}
 {: support}
@@ -112,21 +112,6 @@ Review the following default Calico host policies that are automatically applied
   </tbody>
 </table>
 
-A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to all clusters.
-
-<table>
-<caption>Default Kubernetes policies for each cluster</caption>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Default Kubernetes policies for each cluster</th>
-</thead>
-<tbody>
- <tr>
-  <td><code>kubernetes-dashboard</code></td>
-  <td>Provided in the <code>kube-system</code> namespace: Blocks all pods from accessing the Kubernetes Dashboard. This policy does not impact accessing the dashboard from the {{site.data.keyword.cloud_notm}} console or by using <code>oc proxy</code>. If a pod requires access to the dashboard, deploy the pod in a namespace that has the <code>kubernetes-dashboard-policy: allow</code> label.</td>
- </tr>
-</tbody>
-</table>
-
 <br />
 
 
@@ -150,7 +135,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
     * Linux and OS X:
       1. [Download the `-darwin-amd64` version of the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. Make sure to save the file as `calicoctl.exe`.
 
-      2. Move the file to the `/usr/local/bin_` directory.
+      2. Move the file to the `/usr/local/bin` directory.
           - Linux:
             ```
             mv filepath/calicoctl /usr/local/bin/calicoctl
@@ -220,7 +205,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
 View the details for default and any added network policies that are applied to your cluster.
 {:shortdesc}
 
-Before you begin:
+**Before you begin:**
 1. [Install and configure the Calico CLI.](#cli_install)
 
 2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -229,9 +214,9 @@ Before you begin:
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
-  {: pre}
+  {: pre}</br>
 
-**To view network policies in clusters**:
+**To view network policies in clusters:**
 
 If you use a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
 {: note}
@@ -320,7 +305,7 @@ Some common uses for Calico pre-DNAT network policies:
 To see how to whitelist or blacklist source IP addresses, try the [Using Calico network policies to block traffic tutorial](/docs/containers?topic=containers-policy_tutorial#policy_tutorial). For more example Calico network policies that control traffic to and from your cluster, you can check out the [stars policy demo](https://docs.projectcalico.org/v3.3/getting-started/kubernetes/tutorials/stars-policy/){: external} and the [advanced network policy](https://docs.projectcalico.org/v3.3/getting-started/kubernetes/tutorials/advanced-policy){: external}.
 {: tip}
 
-Before you begin:
+**Before you begin:**
 1. [Install and configure the Calico CLI.](#cli_install)
 
 2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -329,9 +314,9 @@ Before you begin:
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
-  {: pre}
+  {: pre}</br>
 
-To create a pre-DNAT policy:
+**To create a pre-DNAT policy:**
 
 1. Define a Calico pre-DNAT network policy for ingress (inbound traffic) access to Kubernetes services.
     * Use [Calico v3 policy syntax](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy){: external}.
@@ -413,7 +398,7 @@ This set of Calico policies work in conjunction with the [default Calico policie
 When you apply the egress pod policies that are included in this policy set, only network traffic to the subnets and ports that are specified in the pod policies is permitted. All traffic to any subnets or ports that are not specified in the policies is blocked for all pods in all namespaces. Because only the ports and subnets that are necessary for the pods to function in {{site.data.keyword.containerlong_notm}} are specified in these policies, your pods cannot send network traffic over the internet until you add or change the Calico policy to allow them to.
 {: important}
 
-Before you begin:
+**Before you begin:**
 1. [Install and configure the Calico CLI.](#cli_install)
 
 2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -425,9 +410,9 @@ Before you begin:
   {: pre}
 
 If you use a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
-{: note}
+{: note}</br>
 
-To protect your cluster on the public network by using Calico policies:
+**To protect your cluster on the public network by using Calico policies:**
 
 1. Clone the `IBM-Cloud/kube-samples` repository.
   ```
@@ -479,7 +464,7 @@ To see a list of the ports that are opened by these policies and a list of the p
 When you apply the egress pod policies that are included in this policy set, only network traffic to the subnets and ports that are specified in the pod policies is permitted. All traffic to any subnets or ports that are not specified in the policies is blocked for all pods in all namespaces. Because only the ports and subnets that are necessary for the pods to function in {{site.data.keyword.containerlong_notm}} are specified in these policies, your pods cannot send network traffic over the private network until you add or change the Calico policy to allow them to.
 {: important}
 
-Before you begin:
+**Before you begin:**
 
 2. [Install and configure the Calico CLI.](#cli_install)
 
@@ -492,9 +477,9 @@ Before you begin:
   {: pre}
 
 If you use a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
-{: note}
+{: note}</br>
 
-To isolate your cluster on the private network by using Calico policies:
+**To isolate your cluster on the private network by using Calico policies:**
 
 1. Clone the `IBM-Cloud/kube-samples` repository.
   ```
@@ -520,7 +505,7 @@ To isolate your cluster on the private network by using Calico policies:
   ```
   {: pre}
 
-4. OpenShift version 3.11 clusters only: Set up private host endpoints for your worker nodes. When your worker nodes have private host endpoints, the policies that you apply can target the worker node private interface (eth0) and the pod network of a cluster.
+4. **OpenShift version 3.11 clusters only**: Set up private host endpoints for your worker nodes. When your worker nodes have private host endpoints, the policies that you apply can target the worker node private interface (eth0) and the pod network of a cluster.
   1. Open the `generic-privatehostendpoint.yaml` policy.
   2. Replace `<worker_name>` with the name of a worker node.
     <p class="note">Some worker nodes must follow a different naming structure for Calico policies. You must use the name that is returned when you run `calicoctl get nodes --config=<filepath>/calicoctl.cfg`.</p>
@@ -678,7 +663,7 @@ When you set up network policies to limit traffic to app pods, traffic requests 
 This section shows you how to log traffic that is denied by a Kubernetes network policy. To log traffic that is denied by a Calico network policy, see [Lesson 5 of the Calico network policy tutorial](/docs/containers?topic=containers-policy_tutorial#lesson5).
 {: tip}
 
-Before you begin:
+**Before you begin:**
 1. [Install and configure the Calico CLI.](#cli_install)
 
 2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -687,9 +672,9 @@ Before you begin:
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
-  {: pre}
+  {: pre}</br>
 
-To log denied traffic:
+**To log denied traffic:**
 
 1. Create or use an existing Kubernetes network policy that blocks or limits incoming traffic.
    1. Create a Kubernetes network policy. For example, to control traffic between pods, you might use the following example Kubernetes policy that is named `access-nginx` that limits access to an NGINX app. Incoming traffic to pods that are labeled "run=nginx" is allowed only from pods with the "run=access" label. All other incoming traffic to the "run=nginx" app pods is blocked.
