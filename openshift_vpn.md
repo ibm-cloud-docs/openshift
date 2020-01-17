@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-01-17"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -190,31 +190,16 @@ Before you begin:
 Install Helm and get the strongSwan Helm chart to view possible configurations.
 {: shortdesc}
 
-1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (Tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repository. Note that Helm version 2.8 or later is required.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
 
-2.  Verify that tiller is installed with a service account.
-
-    ```
-    oc get serviceaccount -n kube-system | grep tiller
-    ```
-    {: pre}
-
-    Example output:
+2. Save the default configuration settings for the strongSwan Helm chart in a local YAML file.
 
     ```
-    NAME                                 SECRETS   AGE
-    tiller                               1         2m
-    ```
-    {: screen}
-
-3. Save the default configuration settings for the strongSwan Helm chart in a local YAML file.
-
-    ```
-    helm inspect values iks-charts/strongswan > config.yaml
+    helm show values iks-charts/strongswan > config.yaml
     ```
     {: pre}
 
-4. Open the `config.yaml` file.
+3. Open the `config.yaml` file.
 
 ### Step 2: Configure basic IPSec settings
 {: #strongswan_2}
@@ -363,7 +348,7 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
     {: tip}
 
     ```
-    helm install --name=vpn iks-charts/strongswan -f config.yaml
+    helm install vpn iks-charts/strongswan -f config.yaml
     ```
     {: pre}
 
@@ -417,16 +402,16 @@ After you deploy your Helm chart, test the VPN connectivity.
     {: screen}
 
     * When you try to establish VPN connectivity with the strongSwan Helm chart, it is likely that the VPN status is not `ESTABLISHED` the first time. You might need to check the on-premises VPN endpoint settings and change the configuration file several times before the connection is successful:
-        1. Run `helm delete --purge <release_name>`
+        1. Run `helm uninstall <release_name> -n <namespace>`
         2. Fix the incorrect values in the configuration file.
-        3. Run `helm install --name=vpn iks-charts/strongswan -f config.yaml`
+        3. Run `helm install vpn iks-charts/strongswan -f config.yaml`
       You can also run more checks in the next step.
 
     * If the VPN pod is in an `ERROR` state or continues to crash and restart, it might be due to parameter validation of the `ipsec.conf` settings in the chart's configmap.
         1. Check for any validation errors in the strongSwan pod logs by running `oc logs $STRONGSWAN_POD`.
-        2. If validation errors exist, run `helm delete --purge <release_name>`
+        2. If validation errors exist, run `helm uninstall <release_name> -n <namespace>`
         3. Fix the incorrect values in the configuration file.
-        4. Run `helm install --name=vpn iks-charts/strongswan -f config.yaml`
+        4. Run `helm install vpn iks-charts/strongswan -f config.yaml`
 
 4. You can further test the VPN connectivity by running the five Helm tests that are included in the strongSwan chart definition.
 
@@ -480,7 +465,7 @@ After you deploy your Helm chart, test the VPN connectivity.
 6. Delete the current Helm chart.
 
     ```
-    helm delete --purge vpn
+    helm uninstall vpn -n <namespace>
     ```
     {: pre}
 
@@ -491,7 +476,7 @@ After you deploy your Helm chart, test the VPN connectivity.
 9. Install the Helm chart to your cluster with the updated `config.yaml` file. The updated properties are stored in a configmap for your chart.
 
     ```
-    helm install --name=vpn iks-charts/strongswan -f config.yaml
+    helm install vpn iks-charts/strongswan -f config.yaml
     ```
     {: pre}
 
@@ -676,7 +661,7 @@ To upgrade your strongSwan Helm chart to the latest version:
 You can disable the VPN connection by deleting the Helm chart.
 
   ```
-  helm delete --purge <release_name>
+  helm uninstall <release_name> -n <namespace>
   ```
   {: pre}
 

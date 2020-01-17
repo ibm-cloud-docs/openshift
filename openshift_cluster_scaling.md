@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-01-17"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -242,37 +242,9 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 <br>
 **To install the `ibm-iks-cluster-autoscaler` plug-in in your cluster**:
 
-1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the **Helm version 2.12 or later** client on your local machine, and install the Helm server (Tiller) with a service account in your cluster.
-2.  Verify that tiller is installed with a service account.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm version 3 client on your local machine.
 
-    ```
-    oc get serviceaccount -n kube-system tiller
-    ```
-    {: pre}
-
-    Example output:
-
-    ```
-    NAME                                 SECRETS   AGE
-    tiller                               1         2m
-    ```
-    {: screen}
-3.  Make sure that Tiller is set up with version 2.12 or later.
-    1.  Check what version of Tiller is installed in your cluster.
-        ```
-        helm version --server
-        ```
-        {: pre}
-    2.  If Tiller does not run version 2.12 or later, [change the Tiller version](/docs/openshift?topic=openshift-helm#tiller_version). The following example installs Tiller version 2.12.3.
-        ```
-        oc --namespace=kube-system set image deployments/tiller-deploy tiller=gcr.io/kubernetes-helm/tiller@sha256:cab750b402d24dd7b24756858c31eae6a007cd0ee91ea802b3891e2e940d214d
-        ```
-        {: pre}
-
-        If your Tiller pod errors with an `Error: ImagePullBackOff` event, make sure that your cluster can pull images on the public network, and try again.
-        {: tip}
-
-4.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
+2.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
     ```
     helm repo add iks-charts https://icr.io/helm/iks-charts
     ```
@@ -281,7 +253,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     helm repo update
     ```
     {: pre}
-5.  Decide if you want to [customize the cluster autoscaler settings](#ca_chart_values), such as the worker pools that are autoscaled, or the amount of time that the cluster autoscaler waits before scaling worker nodes up or down. You can customize your settings by using the `--set` flag in the `helm install` command. Depending on the settings that you want to customize, you might need to prepare multiple `--set` flags before you can install the Helm chart. For example, you might want to autoscale your default worker pool by preparing the following `--set` flag.
+3.  Decide if you want to [customize the cluster autoscaler settings](#ca_chart_values), such as the worker pools that are autoscaled, or the amount of time that the cluster autoscaler waits before scaling worker nodes up or down. You can customize your settings by using the `--set` flag in the `helm install` command. Depending on the settings that you want to customize, you might need to prepare multiple `--set` flags before you can install the Helm chart. For example, you might want to autoscale your default worker pool by preparing the following `--set` flag.
     ```
     --set workerpools[0].<pool_name>.max=<number_of_workers>,workerpools[0].<pool_name>.min=<number_of_workers>,workerpools[0].<pool_name>.enabled=(true|false)
     ```
@@ -294,60 +266,38 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     * **`min=<number_of_workers>`**: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`.<p class="note">Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p>
     * **`enabled=(true|false)`**: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap.
 
-6.  Install the cluster autoscaler Helm chart in the `kube-system` namespace of your cluster. In the example command, the default worker pool is enabled for autoscaling with the Helm chart installation. The worker pool details are added to the cluster autoscaler config map.
+4.  Install the cluster autoscaler Helm chart in the `kube-system` namespace of your cluster. In the example command, the default worker pool is enabled for autoscaling with the Helm chart installation. The worker pool details are added to the cluster autoscaler config map.
     ```
-    helm install iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true
+    helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true
     ```
     {: pre}
 
     Example output:
     ```
-    NAME:   ibm-iks-cluster-autoscaler
-    LAST DEPLOYED: Thu Nov 29 13:43:46 2018
+    NAME: ibm-iks-cluster-autoscaler
+    LAST DEPLOYED: Fri Jan 17 12:20:30 2020
     NAMESPACE: kube-system
-    STATUS: DEPLOYED
-
-    RESOURCES:
-    ==> v1/ClusterRole
-    NAME                       AGE
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/Pod(related)
-
-    NAME                                        READY  STATUS             RESTARTS  AGE
-    ibm-iks-cluster-autoscaler-67c8f87b96-qbb6c  0/1    ContainerCreating  0         1s
-
-    ==> v1/ConfigMap
-
-    NAME              AGE
-    iks-ca-configmap  1s
-
-    ==> v1/ClusterRoleBinding
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/Role
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/RoleBinding
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/Service
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1beta1/Deployment
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/ServiceAccount
-    ibm-iks-cluster-autoscaler  1s
-
+    STATUS: deployed
+    REVISION: 1
+    TEST SUITE: None
     NOTES:
     Thank you for installing: ibm-iks-cluster-autoscaler. Your release is named: ibm-iks-cluster-autoscaler
 
-    For more information about using the cluster autoscaler, refer to the chart README.md file.
+    1. Wait for the ibm-worker-recovery pod to go to a "Running" state:
+    
+    kubectl get pod -wn kube-system  -l app=ibm-worker-recovery,release=ibm-worker-recovery
+
+    2. Verify that your checks are in place:
+
+    kubectl get cm -n kube-system -l app=ibm-worker-recovery,release=ibm-worker-recovery
+
+    3. After a few minutes, you can check the Events section in the output of the following command to see activity on the Autorecovery deployment:
+
+    kubectl describe deployment -n kube-system  -l app=ibm-worker-recovery,release=ibm-worker-recovery
     ```
     {: screen}
 
-7.  Verify that the installation is successful.
+5.  Verify that the installation is successful.
 
     1.  Check that the cluster autoscaler pod is in a **Running** state.
         ```
@@ -394,9 +344,9 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         ```
         {: screen}
 
-8.  Repeat these steps for every cluster where you want to provision the cluster autoscaler.
+6.  Repeat these steps for every cluster where you want to provision the cluster autoscaler.
 
-9.  Optional: If you did not set any worker pools for autoscaling with the installation, you can [Update the cluster autoscaler configuration](#ca_cm).
+7.  Optional: If you did not set any worker pools for autoscaling with the installation, you can [Update the cluster autoscaler configuration](#ca_cm).
 
 <br />
 
@@ -774,7 +724,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 ## Updating the cluster autoscaler Helm chart
 {: #ca_helm_up}
 
-You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm list | grep cluster-autoscaler`.
+You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm list -n <namespace> | grep cluster-autoscaler`.
 {: shortdesc}
 
 Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these instructions](#ca_helm_up_102).
@@ -793,13 +743,13 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 
 2.  Optional: Download the latest Helm chart to your local machine. Then, extract the package and review the `release.md` file to find the latest release information.
     ```
-    helm fetch iks-charts/ibm-iks-cluster-autoscaler
+    helm pull iks-charts/ibm-iks-cluster-autoscaler
     ```
     {: pre}
 
 3.  Find the name of the cluster autoscaler Helm chart that you installed in your cluster.
     ```
-    helm list | grep cluster-autoscaler
+    helm list -n <namespace> | grep cluster-autoscaler
     ```
     {: pre}
 
@@ -865,7 +815,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: pre}
 4.  Uninstall your current Helm chart.
     ```
-    helm delete --purge ibm-ks-cluster-autoscaler
+    helm uninstall ibm-ks-cluster-autoscaler -n <namespace>
     ```
     {: pre}
 5.  Update the Helm chart repo to get the latest cluster autoscaler Helm chart version.
@@ -875,7 +825,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: pre}
 6.  Install the latest cluster autoscaler Helm chart. Apply any custom settings that you previously used with the `--set` flag, such as `scanInterval=2m`.
     ```
-    helm install iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler  [--set <custom_settings>]
+    helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system [--set <custom_settings>]
     ```
     {: pre}
 7.  Apply the cluster autoscaler configmap that you previously retrieved to enable autoscaling for your worker pools.
@@ -942,12 +892,12 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 2.  List your existing Helm charts and note the name of the cluster autoscaler.
     ```
-    helm list
+    helm list --all-namespaces
     ```
     {: pre}
 3.  Remove the existing Helm chart from your cluster.
     ```
-    helm delete --purge ibm-ks-cluster-autoscaler
+    helm uninstall ibm-ks-cluster-autoscaler -n <namespace>
     ```
     {: pre}
 
