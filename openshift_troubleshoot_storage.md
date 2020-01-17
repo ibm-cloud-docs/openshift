@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-01-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -93,7 +93,7 @@ Review the options to debug persistent storage and find the root causes for fail
    2. List the Helm charts in the repository.
       **For block storage**:
         ```
-        helm search iks-charts | grep block-storage-plugin
+        helm search repo iks-charts | grep block-storage-plugin
         ```
         {: pre}
 
@@ -106,7 +106,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
       **For object storage**:
         ```
-        helm search ibm-charts | grep object-storage-plugin
+        helm search repo ibm-charts | grep object-storage-plugin
         ```
         {: pre}
 
