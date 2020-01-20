@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -298,7 +298,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
-2.  To label the worker pool with a `key=value` label, use the [PATCH worker pool API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool). Format the body of the request as in the following JSON example. <p class="important">You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added.</p>
+2.  To label the worker pool with a `key=value` label, use the [PATCH worker pool API](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool){: external}. Format the body of the request as in the following JSON example. <p class="important">You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added.</p>
     ```
     {
       "labels": {"key":"value"},
@@ -306,7 +306,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     }
     ```
     {: codeblock}
-3.  **Optional**: To remove a label from a worker pool, run the [PATCH worker pool API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool) again with the label's key field included but the value field empty.<p class="important">Do not remove the worker pool labels that are provided by default because these labels are required for worker pools to function properly. Remove only custom labels that you previously added.</p>
+3.  **Optional**: To remove a label from a worker pool, run the [PATCH worker pool API](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool){: external} again with the label's key field included but the value field empty.<p class="important">Do not remove the worker pool labels that are provided by default because these labels are required for worker pools to function properly. Remove only custom labels that you previously added.</p>
     ```
     {
       "labels": {"key":""},
@@ -347,7 +347,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
             ```
             {: screen}
 
-After you label your worker pool, you can use the [label in your app deployments](/docs/containers?topic=containers-app#label) so that your workloads run on only these worker nodes, or [taints ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) to prevent deployments from running on these worker nodes.
+After you label your worker pool, you can use the [label in your app deployments](/docs/containers?topic=containers-app#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
 
 <br />
 
@@ -358,7 +358,7 @@ After you label your worker pool, you can use the [label in your app deployments
 Critical components, such as `containerd`, `kubelet`, `kube-proxy`, and `calico`, must be functional to have a healthy Kubernetes worker node. Over time these components can break and might leave your worker node in a nonfunctional state. Nonfunctional worker nodes decrease total capacity of the cluster and can result in downtime for your app.
 {:shortdesc}
 
-You can [configure health checks for your worker node and enable Autorecovery](/docs/containers?topic=containers-health#autorecovery). If Autorecovery detects an unhealthy worker node based on the configured checks, Autorecovery triggers a corrective action like an OS reload on the worker node. For more information about how Autorecovery works, see the [Autorecovery blog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/autorecovery-utilizes-consistent-hashing-high-availability).
+You can [configure health checks for your worker node and enable Autorecovery](/docs/containers?topic=containers-health#autorecovery). If Autorecovery detects an unhealthy worker node based on the configured checks, Autorecovery triggers a corrective action like an OS reload on the worker node. For more information about how Autorecovery works, see the [Autorecovery blog](https://www.ibm.com/cloud/blog/autorecovery-utilizes-consistent-hashing-high-availability){: external}.
 
 
 

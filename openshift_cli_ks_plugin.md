@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -452,7 +452,7 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--workers`) and flavor (`--machine-type`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your cluster's `default` worker pool does not charge you the OpenShift license fee for your entitled worker nodes. If you want to use a different worker pool for your Cloud Pak, [create a worker pool](#cs_worker_pool_create) in an existing cluster.<p class="important">Do not exceed your entitlement. Your OpenShift Container Platform entitlements include usage across all the cloud providers and environments that you use your entitlements for.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--workers`) and flavor (`--machine-type`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html). After creation, your cluster's `default` worker pool does not charge you the OpenShift license fee for your entitled worker nodes. If you want to use a different worker pool for your Cloud Pak, [create a worker pool](#cs_worker_pool_create) in an existing cluster.<p class="important">Do not exceed your entitlement. Your OpenShift Container Platform entitlements include usage across all the cloud providers and environments that you use your entitlements for.</p></dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -823,7 +823,7 @@ ibmcloud oc cluster rm --cluster my_cluster
 Add an IBM Cloud service to a cluster by binding the service instance to a Kubernetes namespace. This command creates service credentials of an {{site.data.keyword.cloud_notm}} service and stores these credentials in a Kubernetes secret in your cluster.
 {: shortdesc}
 
-To view available {{site.data.keyword.cloud_notm}} services from the {{site.data.keyword.cloud_notm}} catalog, run `ibmcloud service offerings`. **Note**: You can add only {{site.data.keyword.cloud_notm}} services that support service keys. For more information about service binding and what services you can add to your cluster, see [Adding services by using IBM Cloud service binding](/docs/containers?topic=containers-service-binding).
+To view available {{site.data.keyword.cloud_notm}} services from the {{site.data.keyword.cloud_notm}} catalog, run `ibmcloud service offerings`. **Note**: You can add only {{site.data.keyword.cloud_notm}} services that support service keys. For more information about service binding and what services you can add to your cluster, see [Adding services by using IBM Cloud service binding](/docs/openshift?topic=openshift-service-binding).
 
 ```
 ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE [--key SERVICE_INSTANCE_KEY] [--role IAM_SERVICE_ROLE] --service SERVICE_INSTANCE [-s]
@@ -1689,7 +1689,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --mach
 <dd>Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`. This value is optional.</ul></dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--machine-type`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the OpenShift license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Your OpenShift Container Platform entitlements include usage across all the cloud providers and environments that you use your entitlements for.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--machine-type`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html). After creation, your worker pool does not charge you the OpenShift license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Your OpenShift Container Platform entitlements include usage across all the cloud providers and environments that you use your entitlements for.</p></dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>

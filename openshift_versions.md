@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -40,8 +40,8 @@ subcollection: openshift
 {: shortdesc}
 
 For more information about the OpenShift  and Kubernetes project versions, review the following information.
-* [OpenShift release notes overview ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/release_notes/index.html)
-* [Kubernetes changelog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md)
+* [OpenShift release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
+* [Kubernetes changelog](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md){: external}
 
 ## Update types
 {: #openshift_update_types}

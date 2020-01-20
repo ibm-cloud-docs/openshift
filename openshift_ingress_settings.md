@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -56,7 +56,7 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
     By default, ports 80 and 443 are open. If you want to keep 80 and 443 open, you must also include them in addition to any other ports you specify in the `public-ports` field. Any port that is not specified is closed. If you enabled a private ALB, you must also specify any ports that you want to keep open in the `private-ports` field.
     {: important}
 
-    ```
+    ```yaml
     apiVersion: v1
     data:
       public-ports: "80;443;<port3>"
@@ -69,7 +69,7 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
     {: codeblock}
 
     Example that keeps ports `80`, `443`, and `9443` open:
-    ```
+    ```yaml
     apiVersion: v1
     data:
       public-ports: "80;443;9443"
@@ -92,7 +92,7 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
   * Access an app via a non-standard TCP port that you opened by using the [`tcp-ports`](/docs/openshift?topic=openshift-ingress_annotation#tcp-ports) annotation.
   * Change the default ports for HTTP (port 80) and HTTPS (port 443) network traffic to a port that you opened by using the [`custom-port`](/docs/openshift?topic=openshift-ingress_annotation#custom-port) annotation.
 
-For more information about configmap resources, see the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/).
+For more information about configmap resources, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){: external}.
 
 <br />
 
@@ -104,7 +104,7 @@ For more information about configmap resources, see the [Kubernetes documentatio
 By default, the source IP address of the client request is not preserved. When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the app pod runs.
 {: shortdesc}
 
-To preserve the original source IP address of the client request, you can enable [source IP preservation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-typeloadbalancer). Preserving the client’s IP is useful, for example, when app servers have to apply security and access-control policies.
+To preserve the original source IP address of the client request, you can enable [source IP preservation](https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-typeloadbalancer){: external}. Preserving the client’s IP is useful, for example, when app servers have to apply security and access-control policies.
 
 If you [disable an ALB](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure), any source IP changes you make to the load balancer service that exposes the ALB are lost. When you re-enable the ALB, you must enable source IP again.
 {: note}
@@ -207,9 +207,9 @@ To edit the configmap to enable SSL protocols and ciphers:
     ```
     {: pre}
 
-2. Add the SSL protocols and ciphers. Format ciphers according to the [OpenSSL library cipher list format ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html).
+2. Add the SSL protocols and ciphers. Format ciphers according to the [OpenSSL library cipher list format](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html){: external}.
 
-   ```
+   ```yaml
    apiVersion: v1
    data:
      ssl-protocols: "TLSv1 TLSv1.1 TLSv1.2 TLSv1.3"
@@ -250,7 +250,7 @@ If you have very large Ingress resource files, it might take longer than 5 minut
     {: pre}
 
 2. In the **data** section, add the `ingress-resource-creation-rate` and `ingress-resource-timeout` settings. Values can be formatted as seconds (`s`) and minutes (`m`). Example:
-   ```
+   ```yaml
    apiVersion: v1
    data:
      ingress-resource-creation-rate: 1m
@@ -288,7 +288,7 @@ When you create a classic cluster, a Let's Encrypt certificate is generated for 
 
 2. In the `spec.tls` section, change the value of the `hosts.secretName` setting to the name of your custom secret that contains your custom certificate.
    Example:
-   ```
+   ```yaml
    spec:
      rules:
      ...
@@ -323,7 +323,7 @@ To optimize performance of your Ingress ALBs, you can change the default setting
 Increase the number of socket listeners from one socket listener for each ALB to one socket listener for each NGINX worker process on the worker node by using the `reuse-port` Ingress directive.
 {: shortdesc}
 
-When the `reuse-port` option is disabled, a single listening socket notifies ALBs about incoming connections and all worker nodes attempt to take the connection. But when `reuse-port` is enabled, one socket listener exists for each ALB IP address and port combination. Instead of each ALB attempting to take the connection, the Linux kernel determines which available socket listener gets the connection. Lock contention between workers is reduced, which can improve performance. For more information about the benefits and drawbacks of the `reuse-port` directive, see [this NGINX blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/).
+When the `reuse-port` option is disabled, a single listening socket notifies ALBs about incoming connections and all worker nodes attempt to take the connection. But when `reuse-port` is enabled, one socket listener exists for each ALB IP address and port combination. Instead of each ALB attempting to take the connection, the Linux kernel determines which available socket listener gets the connection. Lock contention between workers is reduced, which can improve performance. For more information about the benefits and drawbacks of the `reuse-port` directive, see [this NGINX blog post](https://www.nginx.com/blog/socket-sharding-nginx-release-1-9-1/){: external}.
 
 1. Edit the configuration file for the `ibm-cloud-provider-ingress-cm` configmap resource.
     ```
@@ -332,7 +332,7 @@ When the `reuse-port` option is disabled, a single listening socket notifies ALB
     {: pre}
 
 2. In the `data` section, add `reuse-port: "true"`. Example:
-   ```
+   ```yaml
    apiVersion: v1
    data:
      private-ports: 80;443;9443
@@ -372,7 +372,7 @@ By default, the Ingress ALB logs each request as it arrives. If you have an envi
         * Buffer size: Add the `buffer-size` field and set it to how much log memory can be held in the buffer before the ALB writes the buffer contents to the log. For example, if the default value of `100KB` is used, the ALB writes buffer contents to the log every time the buffer reaches 100kb of log content.
         * Time interval or buffer size: When both `flush-interval` and `buffer-size` are set, the ALB writes buffer content to the log based on whichever threshold parameter is met first.
 
-    ```
+    ```yaml
     apiVersion: v1
     kind: ConfigMap
     data:
@@ -410,7 +410,7 @@ Keepalive connections can have a major impact on performance by reducing the CPU
 2. Change the values of `keep-alive-requests` and `keep-alive`.
     * `keep-alive-requests`: The number of keepalive client connections that can stay open to the Ingress ALB. The default is `4096`.
     * `keep-alive`: The timeout, in seconds, during which the keepalive client connection stays open to the Ingress ALB. The default is `8s`.
-   ```
+   ```yaml
    apiVersion: v1
    data:
      keep-alive-requests: "4096"
@@ -448,7 +448,7 @@ In the `ibm-cloud-provider-ingress-cm` Ingress configmap, the `backlog` field se
 
 2. Change the value of `backlog` from `32768` to a lower value. The value must be equal to or lesser than 32768.
 
-   ```
+   ```yaml
    apiVersion: v1
    data:
      backlog: "32768"

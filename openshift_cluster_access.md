@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-13"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -35,6 +35,8 @@ subcollection: openshift
 
 # Accessing OpenShift clusters
 {: #access_cluster}
+{: help}
+{: support}
 
 After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
@@ -95,7 +97,7 @@ The OpenShift master is accessible through the private service endpoint if autho
   {: screen}
 
 4. Create a YAML file that is named `oc-api-via-nlb.yaml`. This YAML creates a private `LoadBalancer` service and exposes the private service endpoint through that NLB. Replace `<private_service_endpoint_port>` with the port you found in the previous step.
-  ```
+  ```yaml
   apiVersion: v1
   kind: Service
   metadata:

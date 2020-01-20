@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -174,7 +174,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
    - If you want to keep your data, then choose a `retain` storage class. When you delete the PVC, only the PVC is deleted. The PV, the physical storage device in your IBM Cloud infrastructure account, and your data still exist. To reclaim the storage and use it in your cluster again, you must remove the PV and follow the steps for [using existing block storage](#existing_block).
    - If you want the PV, the data, and your physical block storage device to be deleted when you delete the PVC, choose a storage class without `retain`.
 
-6. Choose if you want to be billed hourly or monthly. Check the [pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) for more information. By default, all block storage devices are provisioned with an hourly billing type.
+6. Choose if you want to be billed hourly or monthly. Check the [pricing](https://www.ibm.com/cloud/block-storage/pricing){: external} for more information. By default, all block storage devices are provisioned with an hourly billing type.
 
 <br />
 
@@ -203,14 +203,14 @@ To add block storage:
     -  **Example for bronze, silver, gold storage classes**:
        The following `.yaml` file creates a claim that is named `mypvc` of the `"ibmc-block-silver"` storage class, billed `"hourly"`, with a gigabyte size of `24Gi`.
 
-       ```
+       ```yaml
        apiVersion: v1
        kind: PersistentVolumeClaim
        metadata:
          name: mypvc
          labels:
            billingType: "hourly"
-	       region: us-south
+         region: us-south
            zone: dal13
        spec:
          accessModes:
@@ -218,21 +218,21 @@ To add block storage:
          resources:
            requests:
              storage: 24Gi
-	     storageClassName: ibmc-block-silver
+         storageClassName: ibmc-block-silver
        ```
        {: codeblock}
 
     -  **Example for using the custom storage class**:
        The following `.yaml` file creates a claim that is named `mypvc` of the storage class `ibmc-block-retain-custom`, billed `"hourly"`, with a gigabyte size of `45Gi` and IOPS of `"300"`.
 
-       ```
+       ```yaml
        apiVersion: v1
        kind: PersistentVolumeClaim
        metadata:
          name: mypvc
          labels:
            billingType: "hourly"
-	       region: us-south
+         region: us-south
            zone: dal13
        spec:
          accessModes:
@@ -241,7 +241,7 @@ To add block storage:
            requests:
              storage: 45Gi
              iops: "300"
-	     storageClassName: ibmc-block-retain-custom
+         storageClassName: ibmc-block-retain-custom
        ```
        {: codeblock}
 
@@ -321,7 +321,7 @@ To add block storage:
 
 4.  {: #block_app_volume_mount}To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
 
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -439,7 +439,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
 {: #existing-block-1}
 
 1.  Retrieve or generate an API key for your IBM Cloud infrastructure account.
-    1. Log in to the [IBM Cloud infrastructure portal ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/classic?).
+    1. Log in to the [IBM Cloud infrastructure portal](https://cloud.ibm.com/classic){: external}.
     2. Select **Account**, then **Users**, and then **User List**.
     3. Find your user ID.
     4. In the **API KEY** column, click **Generate** to generate an API key or **View** to view your existing API key.
@@ -495,7 +495,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
 
 2.  Create a configuration file for your PV. Include the block storage `id`, `ip_addr`, `capacity_gb`, the `datacenter`, and `lunIdID` that you retrieved earlier.
 
-    ```
+    ```yaml
     apiVersion: v1
     kind: PersistentVolume
     metadata:
@@ -572,7 +572,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
 
 5. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields do not match the PV, then a new PV is created automatically instead.
 
-     ```
+     ```yaml
      kind: PersistentVolumeClaim
      apiVersion: v1
      metadata:
@@ -641,7 +641,7 @@ You cannot deploy two stateful sets at the same time. If you try to create a sta
 In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
 
 **Can I delay binding of a PV to my stateful pod until the pod is ready?**<br>
-Yes, you can [create a custom storage class](#topology_yaml) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode) field.
+Yes, you can [create a custom storage class](#topology_yaml) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer`](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} field.
 
 **What options do I have to add block storage to a stateful set?** </br>
 If you want to automatically create your PVC when you create the stateful set, use [dynamic provisioning](#block_dynamic_statefulset). You can also choose to [pre-provision your PVCs or use existing PVCs](#block_static_statefulset) with your stateful set.  
@@ -704,7 +704,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 
      The following example shows how to deploy NGINX as a stateful set with three replicas. For each replica, a 20 gigabyte block storage device is provisioned based on the specifications that are defined in the `ibmc-block-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because block storage cannot be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
 
-     ```
+     ```yaml
      apiVersion: v1
      kind: Service
      metadata:
@@ -760,7 +760,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
             requests:
               storage: 20Gi
               iops: "300" #required only for performance storage
-	      storageClassName: ibmc-block-retain-bronze
+         storageClassName: ibmc-block-retain-bronze
      ```
      {: codeblock}
 
@@ -768,7 +768,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 
      The following example shows how to deploy NGINX as a stateful set with three replicas. The stateful set does not specify the region and zone where the block storage is created. Instead, the stateful set uses an anti-affinity rule to ensure that the pods are spread across worker nodes and zones. By defining `topologykey: failure-domain.beta.kubernetes.io/zone`, the Kubernetes scheduler cannot schedule a pod on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. For each stateful set pod, two PVCs are created as defined in the `volumeClaimTemplates` section, but the creation of the block storage instances is delayed until a stateful set pod that uses the storage is scheduled. This setup is referred to as [topology-aware volume scheduling](https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/).
 
-     ```
+     ```yaml
      apiVersion: storage.k8s.io/v1
      kind: StorageClass
      metadata:
@@ -846,7 +846,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
            resources:
              requests:
                storage: 20Gi
-	       storageClassName: ibmc-block-bronze-delayed
+         storageClassName: ibmc-block-bronze-delayed
        - metadata:
            name: myvol2
          spec:
@@ -855,7 +855,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
            resources:
              requests:
                storage: 20Gi
-	       storageClassName: ibmc-block-bronze-delayed
+         storageClassName: ibmc-block-bronze-delayed
      ```
      {: codeblock}
 
@@ -879,7 +879,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
      </tr>
      <tr>
      <td style="text-align:left"><code>spec.podManagementPolicy</code></td>
-     <td style="text-align:left">Enter the pod management policy that you want to use for your stateful set. Choose between the following options: <ul><li><strong>`OrderedReady`: </strong>With this option, stateful set replicas are deployed one after another. For example, if you specified three replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see [`OrderedReady` Pod Management ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management). </li><li><strong>Parallel: </strong>With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. </li></ul></td>
+     <td style="text-align:left">Enter the pod management policy that you want to use for your stateful set. Choose between the following options: <ul><li><strong>`OrderedReady`: </strong>With this option, stateful set replicas are deployed one after another. For example, if you specified three replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see [`OrderedReady` Pod Management ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management).</li><li><strong>Parallel: </strong>With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. </li></ul></td>
      </tr>
      <tr>
      <td style="text-align:left"><code>spec.selector.matchLabels</code></td>
@@ -1189,7 +1189,7 @@ Topology-aware volume scheduling is supported on clusters that run Kubernetes ve
 The following examples show how to create storage classes that delay the creation of the block storage instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, you must include the `volumeBindingMode: WaitForFirstConsumer` option. If you do not include this option, the `volumeBindingMode` is automatically set to `Immediate` and the block storage instance is created when you create the PVC.
 
 - **Example for Endurance block storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1208,7 +1208,7 @@ The following examples show how to create storage classes that delay the creatio
   {: codeblock}
 
 - **Example for Performance block storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1251,7 +1251,7 @@ The following `.yaml` file customizes a storage class that is based on the `ibm-
 Create the storage class in the same region and zone as your cluster and worker nodes. To get the region of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`. To get the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
 
 - **Example for Endurance block storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1270,7 +1270,7 @@ Create the storage class in the same region and zone as your cluster and worker 
   {: codeblock}
 
 - **Example for Performance block storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1322,7 +1322,7 @@ The following examples create a storage class that provisions block storage with
   ```
 
 - **Example for Performance block storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1488,7 +1488,6 @@ To clean up persistent data:
    {: pre}
 
    
-
 
 8. {: #sl_delete_storage}List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -42,6 +42,7 @@ Review frequently asked questions for using {{site.data.keyword.openshiftlong}}.
 ## What container platforms are available for my cluster?
 {: #container_platforms}
 {: faq}
+{: support}
 
 With {{site.data.keyword.cloud_notm}}, you have a choice between two different container management platforms: the IBM version of community Kubernetes and Red Hat OpenShift on IBM Cloud. The container platform that you select is installed on your cluster master and worker nodes. Later, you can [update the version](/docs/openshift?topic=openshift-update) but cannot roll back to a previous version or switch to a different container platform. If you want to use multiple container platforms, create a separate cluster for each.
 
@@ -59,18 +60,21 @@ For more information, see [Comparison between OpenShift and community Kubernetes
 ## Can I create a free OpenShift cluster?
 {: #openshift_free}
 {: faq}
+{: support}
 
 You can create only standard OpenShift clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-getting-started) and [deploy some apps](/docs/containers?topic=containers-app). Then, redeploy the apps that you try out in the Kubernetes cluster to your [OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app).
 
 ## Which Kubernetes versions does the OpenShift service support?
 {: #supported_kube_versions}
 {: faq}
+{: support}
 
 The supported OpenShift version is 3.11, which includes Kubernetes 1.11.
 
 ## What am I charged for when I use an OpenShift cluster?
 {: #openshift_charges}
 {: faq}
+{: support}
 
 For Red Hat OpenShift on IBM Cloud clusters, you are charged for the same components as in {{site.data.keyword.containerlong_notm}} clusters. For more information, see [What am I charged for when I use {{site.data.keyword.containerlong_notm}}?](/docs/containers?topic=containers-faqs#charges) Additionally, your OpenShift clusters include charges for extra compute and storage resources.
 

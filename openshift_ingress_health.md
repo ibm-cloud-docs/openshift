@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-16"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -158,7 +158,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
 
 2. Add a <code>data</code> section. Add the `log-format` field and optionally, the `log-format-escape-json` field.
 
-    ```
+    ```yaml
     apiVersion: v1
     data:
       log-format: '{<key1>: <log_variable1>, <key2>: <log_variable2>, <key3>: <log_variable3>}'
@@ -209,7 +209,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     {: screen}
 
     To create a custom log format that is based on the default format for ALB logs, modify the following section as needed and add it to your configmap:
-    ```
+    ```yaml
     apiVersion: v1
     data:
       log-format: '{"time_date": "$time_iso8601", "client": "$remote_addr",
@@ -273,7 +273,7 @@ Install the metrics exporter Helm chart to monitor an ALB in your cluster.
 The ALB metrics exporter pods must deploy to the same worker nodes that your ALBs are deployed to. If your ALBs run on edge worker nodes, and those edge nodes are tainted to prevent other workload deployments, the metrics exporter pods cannot be scheduled. You must remove the taints by running `oc taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-`.
 {: note}
 
-1.  **Important**: [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repositories.
+1.  **Important**: [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (Tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repositories.
 
 2. Install the `ibmcloud-alb-metrics-exporter` Helm chart to your cluster. This Helm chart deploys an ALB metrics exporter and creates an `alb-metrics-service-account` service account in the `kube-system` namespace. Replace `<zone>` with the zone where the ALB exists and `<alb_ID>` with the ID of the ALB that you want to collect metrics for. To view the IDs for the ALBs in your cluster, run `ibmcloud oc alb ls --cluster <cluster_name>`.
   ```
@@ -320,9 +320,9 @@ After you install the [metrics exporter](#metrics-exporter), you can install the
   ```
   {: pre}
 
-3. Install the Prometheus Helm chart to your cluster. Replace <ingress_subdomain> with the Ingress subdomain for your cluster. The URL for the Prometheus dashboard is a combination of the default Prometheus subdomain, `prom-dash`, and your Ingress subdomain, for example `prom-dash.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. To find the Ingress subdomain for your cluster, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name&gt;</code>.
+3. Install the Prometheus Helm chart to your cluster. Replace <ingress_subdomain> with the Ingress subdomain for your cluster. The URL for the Prometheus dashboard is a combination of the default Prometheus subdomain, `prom-dash`, and your Ingress subdomain, for example `prom-dash.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. To find the Ingress subdomain for your cluster, run `ibmcloud oc cluster get --cluster <cluster_name>`.
   ```
-  helm install --name prometheus . --set nameSpace=kube-system --set hostName=prom-dash.<ingress_subdomain>
+  helm install . --set name=prometheus --set nameSpace=kube-system --set hostName=prom-dash.<ingress_subdomain>
   ```
   {: pre}
 
@@ -716,7 +716,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
 
 2. Change the value of `vts-status-zone-size` from `10m` to a larger value.
 
-   ```
+   ```yaml
    apiVersion: v1
    data:
      vts-status-zone-size: "10m"

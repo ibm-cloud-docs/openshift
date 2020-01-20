@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-10"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -125,7 +125,7 @@ When you create your {{site.data.keyword.cloud_notm}} account, the default resou
   <p class="important">If you scope a service role to a namespace, you cannot apply the policy to a resource group or assign a platform role at the same time.</p></dd>
 <dt>Resource group</dt>
   <dd><p>You can organize your account resources in customizable groupings so that you can quickly assign individual or groups of users access to more than one resource at a time. Resource groups can help operators and administrators filter resources to view their current usage, troubleshoot issues, and manage teams.</p>
-  <p class="important">A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` [command](/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_service_bind) to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/containers?topic=containers-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that do not use resource groups like {{site.data.keyword.registrylong_notm}} or that do not need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group.</p>
+  <p class="important">A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` [command](/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_service_bind) to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that do not use resource groups like {{site.data.keyword.registrylong_notm}} or that do not need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group.</p>
   <p>Consider giving clusters unique names across resource groups and regions in your account to avoid naming conflicts. You cannot rename a cluster.</p>
   <p>You can assign users an access role to a resource group to grant permissions as described in ,mthe following scenarios. Note that unlike resource instances, you cannot grant access to an individual instance within a resource group.</p>
   <ul><li>All {{site.data.keyword.cloud_notm}} IAM services in the resource group, including all clusters in Red Hat OpenShift on IBM Cloud and images in {{site.data.keyword.registrylong_notm}}.</li>
@@ -281,7 +281,7 @@ It depends on what type of account that you're using to access the IBM Cloud inf
 To ensure that all infrastructure-related actions can be successfully completed in the cluster, the user whose credentials you want to set for the API key must have the proper permissions.
 {: shortdesc}
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} console![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
+1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
 
 2. To make sure that all account-related actions can be successfully performed, verify that the user has the correct {{site.data.keyword.cloud_notm}} IAM platform roles.
     1. From the menu bar, select **Manage > Access (IAM)**, and then click the **Users** page.
@@ -355,7 +355,7 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
 
     1.  Get the user's infrastructure API credentials. Note that the credentials differ from the IBMid.
 
-        1.  From the [{{site.data.keyword.cloud_notm}} ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/) console, select **Manage** > **Access (IAM)** > **Users** table and click the username.
+        1.  From the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external} console, select **Manage** > **Access (IAM)** > **Users** table and click the username.
 
         2.  In the **API Keys** section, find or create a classic infrastructure API key.   
 
@@ -378,7 +378,7 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
 3. [Create a cluster](/docs/openshift?topic=openshift-clusters). To create the cluster, the infrastructure credentials that you set for the region and resource group are used.
 
 4. Verify that your cluster uses the infrastructure account credentials that you set.
-  1. Open the [{{site.data.keyword.cloud_notm}} clusters console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters) and select your cluster. 
+  1. Open the [{{site.data.keyword.cloud_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters){: external} and select your cluster. 
   2. In the Overview tab, look for an **Infrastructure User** field. 
   3. If you see that field, you do not use the default infrastructure credentials that come with your Pay-As-You-Go or Subscription account in this region. Instead, the region is set to use the different infrastructure account credentials that you set.
 
@@ -405,7 +405,7 @@ Grant users access to your Red Hat OpenShift on IBM Cloud clusters by assigning 
 
 Before you begin, verify that you're assigned the **Administrator** platform role for the {{site.data.keyword.cloud_notm}} account in which you're working.
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/). From the menu bar, select **Manage > Access (IAM)**.
+1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}. From the menu bar, select **Manage > Access (IAM)**.
 
 2. Select users individually or create an access group of users.
     * **To assign roles to an individual user**:
@@ -567,7 +567,7 @@ Grant users access to your Red Hat OpenShift on IBM Cloud clusters by assigning 
 
 2.  Create a `policy.json` file that scopes the service access role to a Kubernetes namespace in your cluster.
 
-    ```
+    ```json
     {
         "subjects": [
             {
@@ -743,7 +743,7 @@ Making your own custom RBAC policies? Be sure not to edit the existing IBM role 
 **When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**
 You might want to authorize who can create and update pods in your cluster. With [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs), you can use existing cluster role bindings that come with your cluster, or create your own.
 
-You might also want to integrate add-ons to your cluster. For example, when you [set up Helm in your cluster](/docs/containers?topic=containers-helm#public_helm_install), you must create a service account for Tiller in the `kube-system` namespace and a Kubernetes RBAC cluster role binding for the `tiller-deploy` pod.
+You might also want to integrate add-ons to your cluster. For example, when you [set up Helm in your cluster](/docs/openshift?topic=openshift-helm#public_helm_install), you must create a service account for Tiller in the `tiller` project and a Kubernetes RBAC cluster role binding for the `tiller-deploy` pod.
 
 ### Creating custom RBAC permissions for users, groups, or service accounts
 {: #rbac}
@@ -753,7 +753,7 @@ The `view`, `edit`, `admin`, and `cluster-admin` cluster roles are automatically
 
 You can assign custom RBAC roles and cluster roles to individual users, groups of users, or service accounts. When a binding is created for a group, it affects any user that is added or removed from that group. When you add users to a group, they get the access rights of the group in addition to any individual access rights that you grant them. If they are removed, their access is revoked. Note that you can't add service accounts to access groups.
 
-If you want to assign access to a process that runs in pods, such as a continuous delivery toolchain, you can use [Kubernetes `ServiceAccounts` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/). To follow a tutorial that demonstrates how to set up service accounts for Travis and Jenkins and to assign custom RBAC roles to the service accounts, see the blog post [Kubernetes `ServiceAccounts` for use in automated systems ![External link icon](../icons/launch-glyph.svg "External link icon")](https://medium.com/@jakekitchener/kubernetes-serviceaccounts-for-use-in-automated-systems-515297974982).
+If you want to assign access to a process that runs in pods, such as a continuous delivery toolchain, you can use [Kubernetes `ServiceAccounts`](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/){: external}. To follow a tutorial that demonstrates how to set up service accounts for Travis and Jenkins and to assign custom RBAC roles to the service accounts, see the blog post [Kubernetes `ServiceAccounts` for use in automated systems](https://medium.com/@jakekitchener/kubernetes-serviceaccounts-for-use-in-automated-systems-515297974982){: external}.
 
 To prevent breaking changes, do not change the predefined `view`, `edit`, `admin`, and `cluster-admin` cluster roles. Custom RBAC roles are in addition to and do not change or override any RBAC roles that you might have assigned with {{site.data.keyword.cloud_notm}} IAM service access roles.
 {: important}
@@ -777,7 +777,7 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
     1. Create a `.yaml` file to define the role or cluster role.
 
-        ```
+        ```yaml
         kind: Role
         apiVersion: rbac.authorization.k8s.io/v1
         metadata:
@@ -854,7 +854,7 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
     1. Create a `.yaml` file to bind users to your role or cluster role. Note the unique URL to use for each subject's name.
 
-        ```
+        ```yaml
         kind: RoleBinding
         apiVersion: rbac.authorization.k8s.io/v1
         metadata:
@@ -977,7 +977,7 @@ Now that you created and bound a custom Kubernetes RBAC role or cluster role, fo
 You can extend your users' existing permissions by aggregating, or combining, cluster roles with other cluster roles. When you assign a user an {{site.data.keyword.cloud_notm}} service role, the user is added to a [corresponding Kubernetes RBAC cluster role](/docs/openshift?topic=openshift-access_reference#service). However, you might want to allow certain users to perform additional operations.
 {: shortdesc}
 
-For example, a user with the namespace-scoped `admin` cluster role cannot use the `oc top pods` command to view pod metrics for all the pods in the namespace. You might aggregate a cluster role so that users in the `admin` cluster role are authorized to run the `top pods` command. For more information, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
+For example, a user with the namespace-scoped `admin` cluster role cannot use the `oc top pods` command to view pod metrics for all the pods in the namespace. You might aggregate a cluster role so that users in the `admin` cluster role are authorized to run the `top pods` command. For more information, [see the Kubernetes docs](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles){: external}.
 
 **What are some common operations that I might want to extend permissions for a default cluster role?**<br>
 Review [the operations that each default RBAC cluster role permits](/docs/openshift?topic=openshift-access_reference#rbac_ref) to get a good idea of what your users can do, and then compare the permitted operations to what you want them to be able to do.
@@ -993,8 +993,8 @@ Error from server (Forbidden): pods.metrics.k8s.io is forbidden: User "IAM#mynam
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1.  Create a cluster role YAML file. In the `labels` section, specify the existing cluster role that you want to aggregate permissions to. The following example extends the predefined `admin` cluster role to allow users to run `oc top pods`. For more examples, [see the Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
-    ```
+1.  Create a cluster role YAML file. In the `labels` section, specify the existing cluster role that you want to aggregate permissions to. The following example extends the predefined `admin` cluster role to allow users to run `oc top pods`. For more examples, [see the Kubernetes docs](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles){: external}.
+    ```yaml
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
     metadata:
@@ -1074,7 +1074,7 @@ You can grant classic infrastructure access through the [console](#infra_console
 
 
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com). From the menu bar, select **Manage > Access (IAM)**.
+1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external}. From the menu bar, select **Manage > Access (IAM)**.
 2. Click the **Users** page, and then click the name of the user that you want to set permissions for.
 3. Click the **Classic infrastructure** tab, and then click the **Permissions** tab.
 4. Customize the user's access. The permissions that users need depend on what infrastructure resources they need to use. You have two options for assigning access:
@@ -1222,7 +1222,7 @@ Before you begin:
 Before the user leaves, the {{site.data.keyword.cloud_notm}} account owner must complete the following steps to prevent breaking changes in Red Hat OpenShift on IBM Cloud.
 
 1. Determine which clusters the user created.
-    1.  Log in to the [{{site.data.keyword.cloud_notm}} clusters console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters).
+    1.  Log in to the [{{site.data.keyword.cloud_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters){: external}.
     2.  From the table, select your cluster.
     3.  In the **Overview** tab, look for the **Owner** field.
 
@@ -1261,7 +1261,7 @@ Before you begin, [ensure that the user's infrastructure credentials are not use
 #### Remove a user from an access group
 {: #remove_access_group}
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/) From the menu bar, select **Manage > Access (IAM)**.
+1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} From the menu bar, select **Manage > Access (IAM)**.
 2. Click the **Users** page, and then click the name of the user that you want to remove permissions from.
 3. Click the **Access group** tab.
 4. In the table entry for the access group, click the **Actions menu** ![Action menu icon](../icons/action-menu-icon.svg "Action menu icon") **> Remove user**. When the user is removed, any roles that were assigned to the access group are removed from the user.
@@ -1269,7 +1269,7 @@ Before you begin, [ensure that the user's infrastructure credentials are not use
 #### Remove {{site.data.keyword.cloud_notm}} IAM platform permissions and the associated pre-defined RBAC permissions
 {: #remove_iam_rbac}
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/). From the menu bar, select **Manage > Access (IAM)**.
+1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}. From the menu bar, select **Manage > Access (IAM)**.
 2. Click the **Users** page, and then click the name of the user that you want to remove permissions from.
 3. In the table entry for the user, click the **Actions menu** ![Action menu icon](../icons/action-menu-icon.svg "Action menu icon") **> Remove user**.
 5. When {{site.data.keyword.cloud_notm}} IAM platform permissions are removed, the user's permissions are also automatically removed from the associated predefined RBAC roles. To update the RBAC roles with the changes, run `ibmcloud oc cluster config`. However, if you created [custom RBAC roles or cluster roles](#rbac), you must remove the user from the `.yaml` files for those RBAC role bindings or cluster role bindings. See steps to remove custom RBAC permissions in the next section.
@@ -1316,7 +1316,7 @@ To remove all of a user's Cloud Foundry permissions, you can remove the user's o
 You can remove IBM Cloud infrastructure permissions for a user by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/). From the menu bar, select **Manage > Access (IAM)**.
+1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}. From the menu bar, select **Manage > Access (IAM)**.
 2. Click the **Users** page, and then click the name of the user that you want to remove permissions from.
 3. Click the **Classic infrastructure** tab, then click the **Permissions, Devices, or VPN subnets** tabs.
 4. In each tab, deselect specific permissions.

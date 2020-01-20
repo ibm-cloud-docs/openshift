@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos, vpc subnets, ips, vlans, networking, public gateway
 
@@ -33,7 +33,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Configuring VPC subnets
+# VPC: Configuring subnets and IP addresses
 {: #vpc-subnets}
 
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} VPC cluster.
@@ -51,7 +51,7 @@ Understand the basic concepts of VPC networking in Red Hat OpenShift on IBM Clou
 ### Subnets
 {: #vpc_basics_subnets}
 
-Before you create a VPC cluster for the first time, you must [create a VPC subnet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/vpc/provision/network) in each zone where you want to deploy worker nodes. A VPC subnet is a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they are attached to the same physical wire.
+Before you create a VPC cluster for the first time, you must [create a VPC subnet](https://cloud.ibm.com/vpc/provision/network){: external} in each zone where you want to deploy worker nodes. A VPC subnet is a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they are attached to the same physical wire.
 {: shortdesc}
 
 When you create a cluster, you can specify only one existing VPC subnet for each zone. Each worker node that you add in a cluster is deployed with a private IP address from the VPC subnet in that zone. After the worker node is provisioned, the worker node IP address persists after a `reboot` operation, but the worker node IP address changes after `replace` and `update` operations.
@@ -289,10 +289,10 @@ In VPC clusters, a subnet is limited to one zone. When you attach a public gatew
   ```
   {: screen}
 
-6. In the deployment file for your app, [add an affinity rule ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature) for the subnet ID label that you found in step 4.
+6. In the deployment file for your app, [add an affinity rule](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature){: external} for the subnet ID label that you found in step 4.
 
     In the **affinity** section of this example YAML, `ibm-cloud.kubernetes.io/subnet-id` is the `key` and `<subnet_ID>` is the `value`.
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-10"
+lastupdated: "2020-01-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,13 +39,13 @@ subcollection: openshift
 Every {{site.data.keyword.openshiftlong}} cluster is set up with a network plug-in called Calico. Default network policies are set up to secure the public network interface of every worker node in the cluster.
 {: shortdesc}
 
-If you have unique security requirements or you have a multizone cluster with VLAN spanning enabled, you can use Calico and Kubernetes to create network policies for a cluster. With Kubernetes network policies, you can specify the network traffic that you want to allow or block to and from a pod within a cluster. To set more advanced network policies such as blocking inbound (ingress) traffic to network load balancer (NLB) services, use Calico network policies.
+You can use Calico and Kubernetes to create network policies for a cluster. With Kubernetes network policies, you can specify the network traffic that you want to allow or block to and from a pod within a cluster. To set more advanced network policies such as blocking inbound (ingress) traffic to network load balancer (NLB) services, use Calico network policies.
 
 <dl>
-<dt>[Kubernetes network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/network-policies/)</dt>
-<dd>These policies specify how pods can communicate with other pods and with external endpoints. As of Kubernetes version 1.8, both incoming and outgoing network traffic can be allowed or blocked based on protocol, port, and source or destination IP addresses. Traffic can also be filtered based on pod and namespace labels. Kubernetes network policies are applied by using `oc` commands or the Kubernetes APIs. When a Kubernetes network policy is applied, it is automatically converted into a Calico network policy so that Calico can apply it as an `Iptables` rule. The Calico network policy name has the `knp.default` prefix. To update the policy in the future, update the Kubernetes policy, and the updates are automatically applied to the Calico network policy.</dd>
-<dt>[Calico network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/getting-started/bare-metal/policy/)</dt>
-<dd>These policies are a superset of the Kubernetes network policies and are applied by using `calicoctl` commands. Calico policies add the following features.
+<dt>Kubernetes network policies</dt>
+<dd>[Kubernetes network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/network-policies/) specify how pods can communicate with other pods and with external endpoints. Both incoming and outgoing network traffic can be allowed or blocked based on protocol, port, and source or destination IP addresses. Traffic can also be filtered based on pod and namespace labels. Kubernetes network policies are applied by using `oc` commands or the Kubernetes APIs. When a Kubernetes network policy is applied, it is automatically converted into a Calico network policy so that Calico can apply it as an `Iptables` rule. The Calico network policy name has the `knp.default` prefix. To update the policy in the future, update the Kubernetes policy, and the updates are automatically applied to the Calico network policy.</dd>
+<dt>Calico network policies</dt>
+<dd>[Calico network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/getting-started/bare-metal/policy/) are a superset of the Kubernetes network policies and are applied by using `calicoctl` commands. Calico policies add the following features.
   <ul><li>Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or CIDR.</li>
   <li>Allow or block network traffic for pods across namespaces.</li>
   <li>[Block inbound traffic to Kubernetes LoadBalancer or NodePort services](#block_ingress).</li></ul></dd>
@@ -53,10 +53,12 @@ If you have unique security requirements or you have a multizone cluster with VL
 
 Calico enforces these policies, including any Kubernetes network policies that are automatically converted to Calico policies, by setting up Linux Iptables rules on the Kubernetes worker nodes. Iptables rules serve as a firewall for the worker node to define the characteristics that the network traffic must meet to be forwarded to the targeted resource.
 
+In OpenShift Container Platform version 4.3, Calico is based on the Kubernetes data-store driver. For more information, see the [Calico documentation](https://docs.projectcalico.org/v2.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/){: external}.
+
 <br />
 
 
-## Default Calico and Kubernetes network policies
+## Default Calico network policies
 {: #default_policy}
 {: help}
 {: support}
@@ -64,7 +66,7 @@ Calico enforces these policies, including any Kubernetes network policies that a
 When a cluster with a public VLAN is created, a `HostEndpoint` resource with the `ibm.role: worker_public` label is created automatically for each worker node and its public network interface. To protect the public network interface of a worker node, default Calico policies are applied to any host endpoint with the `ibm.role: worker_public` label.
 {:shortdesc}
 
-In clusters that run Kubernetes version 1.16 or later, a `HostEndpoint` resource with the `ibm.role: worker_private` label is also created automatically for each worker node and its private network interface. To protect the private network interface of a worker node, default Calico policies are applied to any host endpoint with the `ibm.role: worker_private` label.
+In clusters that run OpenShift version 4.3 or later, a `HostEndpoint` resource with the `ibm.role: worker_private` label is also created automatically for each worker node and its private network interface. To protect the private network interface of a worker node, default Calico policies are applied to any host endpoint with the `ibm.role: worker_private` label.
 
 These default Calico host policies allow all outbound network traffic and allow inbound traffic to specific cluster components, such as Kubernetes NodePort, LoadBalancer, and Ingress services. Any other inbound network traffic from the internet to your worker nodes that isn't specified in the default policies is blocked. The default policies don't affect pod to pod traffic.
 
@@ -83,6 +85,10 @@ Review the following default Calico host policies that are automatically applied
       <td><code>allow-all-outbound</code></td>
       <td>Allows all outbound traffic on the public network.</td>
     </tr>
+      <tr>
+        <td><code>allow-all-private-default</code></td>
+        <td>In OpenShift version 4.3 or later: Allows all inbound and outbound traffic on the private network.</td>
+      </tr>
     <tr>
       <td><code>allow-bigfix-port</code></td>
       <td>Allows incoming traffic on port 52311 to the BigFix app to allow necessary worker node updates.</td>
@@ -106,21 +112,6 @@ Review the following default Calico host policies that are automatically applied
   </tbody>
 </table>
 
-A default Kubernetes policy that limits access to the Kubernetes Dashboard is also created. Kubernetes policies don't apply to the host endpoint, but to the `kube-dashboard` pod instead. This policy applies to all clusters.
-
-<table>
-<caption>Default Kubernetes policies for each cluster</caption>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Default Kubernetes policies for each cluster</th>
-</thead>
-<tbody>
- <tr>
-  <td><code>kubernetes-dashboard</code></td>
-  <td>Provided in the <code>kube-system</code> namespace: Blocks all pods from accessing the Kubernetes Dashboard. This policy does not impact accessing the dashboard from the {{site.data.keyword.cloud_notm}} console or by using <code>oc proxy</code>. If a pod requires access to the dashboard, deploy the pod in a namespace that has the <code>kubernetes-dashboard-policy: allow</code> label.</td>
- </tr>
-</tbody>
-</table>
-
 <br />
 
 
@@ -130,10 +121,9 @@ A default Kubernetes policy that limits access to the Kubernetes Dashboard is al
 To view, manage, and add Calico policies, install and configure the Calico CLI.
 {:shortdesc}
 
-
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
@@ -143,21 +133,9 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
 
 3. Install the Calico CLI, `calicoctl`, according to your operating system.
     * Linux and OS X:
-      1. Create the `/etc/calico` directory.
-          ```
-          sudo mkdir /etc/calico
-          ```
-          {: pre}
+      1. [Download the `-darwin-amd64` version of the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. Make sure to save the file as `calicoctl.exe`.
 
-      2. Move the Calico configuration file that you previously downloaded to the directory.
-          ```
-          sudo mv /Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/calicoctl.cfg /etc/calico
-          ```
-          {: pre}
-
-      3. [Download the `-darwin-amd64` version of the Calico CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/projectcalico/calicoctl/releases). Make sure to save the file as `calicoctl.exe`.
-
-      4. Move the executable file to the _/usr/local/bin_ directory.
+      2. Move the file to the `/usr/local/bin` directory.
           - Linux:
             ```
             mv filepath/calicoctl /usr/local/bin/calicoctl
@@ -170,9 +148,21 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
             ```
             {: pre}
 
-      5. Make the file an executable file.
+      3. Make the file an executable file.
           ```
           chmod +x /usr/local/bin/calicoctl
+          ```
+          {: pre}
+
+      4. Create the `/etc/calico` directory.
+          ```
+          sudo mkdir /etc/calico
+          ```
+          {: pre}
+
+      5. Move the Calico configuration file that you previously downloaded to the directory.
+          ```
+          sudo mv /Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/calicoctl.cfg /etc/calico
           ```
           {: pre}
 
@@ -190,7 +180,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
           ```
           {: screen}
     * Windows:
-      1. [Download the Calico CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/projectcalico/calicoctl/releases). Save the file as `calicoctl.exe` in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
+      1. [Download the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. Save the file as `calicoctl.exe` in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
       2. Verify that the Calico configuration is working correctly. Use the `--config` flag to point to the network configuration file that you got in step 1. Include this flag each time you run a `calicoctl` command.
           ```
@@ -215,19 +205,18 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
 View the details for default and any added network policies that are applied to your cluster.
 {:shortdesc}
 
-Before you begin:
+**Before you begin:**
 1. [Install and configure the Calico CLI.](#cli_install)
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+3. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
-
-**To view network policies in clusters**:
+</br>**To view network policies in clusters:**
 
 If you use a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
 {: note}
@@ -240,13 +229,13 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
 
 2. View all of the Calico and Kubernetes network policies that were created for the cluster. This list includes policies that might not be applied to any pods or hosts yet. For a network policy to be enforced, a Kubernetes resource must be found that matches the selector that was defined in the Calico network policy.
 
-    [Network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy) are scoped to specific namespaces:
+    [Network policies](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy){: external} are scoped to specific namespaces:
     ```
     calicoctl get NetworkPolicy --all-namespaces -o wide
     ```
     {:pre}
 
-    [Global network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/globalnetworkpolicy) are not scoped to specific namespaces:
+    [Global network policies](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/globalnetworkpolicy){: external} are not scoped to specific namespaces:
     ```
     calicoctl get GlobalNetworkPolicy -o wide
     ```
@@ -273,23 +262,23 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
 In most cases, the default policies do not need to be changed. Only advanced scenarios might require changes. If you find that you must make changes, you can create your own network policies.
 {:shortdesc}
 
-To create Kubernetes network policies, see the [Kubernetes network policy documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+To create Kubernetes network policies, see the [Kubernetes network policy documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.
 
 To create Calico policies, use the following steps.
 
 1. [Install and configure the Calico CLI.](#cli_install)
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+3. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
-3. Define your Calico [network policy ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy) or [global network policy ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/globalnetworkpolicy) by creating a configuration script (`.yaml`) with Calico v3 policy syntax. These configuration files include the selectors that describe what pods, namespaces, or hosts that these policies apply to. Refer to these [sample Calico policies ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.projectcalico.org/v3.3/getting-started/kubernetes/tutorials/advanced-policy) to help you create your own.
+4. Define your Calico [network policy](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy){: external} or [global network policy](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/globalnetworkpolicy){: external} by creating a configuration script (`.yaml`) with Calico v3 policy syntax. These configuration files include the selectors that describe what pods, namespaces, or hosts that these policies apply to. Refer to these [sample Calico policies](http://docs.projectcalico.org/v3.3/getting-started/kubernetes/tutorials/advanced-policy){: external} to help you create your own.
 
-4. Apply the policies to the cluster. If you use a Windows machine, include the `--config=<filepath>/calicoctl.cfg` flag.
+5. Apply the policies to the cluster. If you use a Windows machine, include the `--config=<filepath>/calicoctl.cfg` flag.
     ```
     calicoctl apply -f policy.yaml [--config=<filepath>/calicoctl.cfg]
     ```
@@ -313,29 +302,28 @@ Some common uses for Calico pre-DNAT network policies:
   - Block traffic from certain source IP addresses or CIDRs (blacklisting)
   - Allow traffic from only certain source IP addresses or CIDRs (whitelisting), and block all other traffic
 
-To see how to whitelist or blacklist source IP addresses, try the [Using Calico network policies to block traffic tutorial](/docs/containers?topic=containers-policy_tutorial#policy_tutorial). For more example Calico network policies that control traffic to and from your cluster, you can check out the [stars policy demo ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/getting-started/kubernetes/tutorials/stars-policy/) and the [advanced network policy ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/getting-started/kubernetes/tutorials/advanced-policy).
+To see how to whitelist or blacklist source IP addresses, try the [Using Calico network policies to block traffic tutorial](/docs/containers?topic=containers-policy_tutorial#policy_tutorial). For more example Calico network policies that control traffic to and from your cluster, you can check out the [stars policy demo](https://docs.projectcalico.org/v3.3/getting-started/kubernetes/tutorials/stars-policy/){: external} and the [advanced network policy](https://docs.projectcalico.org/v3.3/getting-started/kubernetes/tutorials/advanced-policy){: external}.
 {: tip}
 
-Before you begin:
+**Before you begin:**
 1. [Install and configure the Calico CLI.](#cli_install)
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+3. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
-
-To create a pre-DNAT policy:
+</br>**To create a pre-DNAT policy:**
 
 1. Define a Calico pre-DNAT network policy for ingress (inbound traffic) access to Kubernetes services.
-    * Use [Calico v3 policy syntax ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy).
+    * Use [Calico v3 policy syntax](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy){: external}.
 
         Example resource that blocks all node ports:
 
-        ```
+        ```yaml
         apiVersion: projectcalico.org/v3
         kind: GlobalNetworkPolicy
         metadata:
@@ -365,7 +353,7 @@ To create a pre-DNAT policy:
 
         Example resource that whitelists traffic from only a specified source CIDR to an NLB 1.0:
 
-        ```
+        ```yaml
         apiVersion: projectcalico.org/v3
         kind: GlobalNetworkPolicy
         metadata:
@@ -397,35 +385,34 @@ To create a pre-DNAT policy:
   ```
   {: pre}
 
-3. Optional: In multizone clusters, a multizone load balancer (MZLB) health checks the Ingress application load balancers (ALBs) in each zone of your cluster and keeps the DNS lookup results updated based on these health checks. If you use pre-DNAT policies to block all incoming traffic to Ingress services, you must also whitelist [Cloudflare's IPv4 IPs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/) that are used to check the health of your ALBs. For steps on how to create a Calico pre-DNAT policy to whitelist these IPs, see Lesson 3 of the [Calico network policy tutorial](/docs/containers?topic=containers-policy_tutorial#lesson3).
+3. Optional: In multizone clusters, a multizone load balancer (MZLB) health checks the Ingress application load balancers (ALBs) in each zone of your cluster and keeps the DNS lookup results updated based on these health checks. If you use pre-DNAT policies to block all incoming traffic to Ingress services, you must also whitelist [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} that are used to check the health of your ALBs. For steps on how to create a Calico pre-DNAT policy to whitelist these IPs, see Lesson 3 of the [Calico network policy tutorial](/docs/containers?topic=containers-policy_tutorial#lesson3).
 
 ## Isolating clusters on the public network
 {: #isolate_workers_public}
 
-You can isolate your cluster on the public network by applying [Calico public network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation).
+You can isolate your cluster on the public network by applying [Calico public network policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external}.
 {: shortdesc}
 
-This set of Calico policies work in conjunction with the [default Calico policies](#default_policy) to block most public network traffic of a cluster while allowing communication that is necessary for the cluster to function to specific subnets. To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico public network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/public-network-isolation/README.md).
+This set of Calico policies work in conjunction with the [default Calico policies](#default_policy) to block most public network traffic of a cluster while allowing communication that is necessary for the cluster to function to specific subnets. To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico public network policies](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/public-network-isolation/README.md){: external}.
 
 When you apply the egress pod policies that are included in this policy set, only network traffic to the subnets and ports that are specified in the pod policies is permitted. All traffic to any subnets or ports that are not specified in the policies is blocked for all pods in all namespaces. Because only the ports and subnets that are necessary for the pods to function in {{site.data.keyword.containerlong_notm}} are specified in these policies, your pods cannot send network traffic over the internet until you add or change the Calico policy to allow them to.
 {: important}
 
-Before you begin:
+**Before you begin:**
 1. [Install and configure the Calico CLI.](#cli_install)
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+3. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
-
 If you use a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
-{: note}
+{: note}</br>
 
-To protect your cluster on the public network by using Calico policies:
+**To protect your cluster on the public network by using Calico policies:**
 
 1. Clone the `IBM-Cloud/kube-samples` repository.
   ```
@@ -467,33 +454,32 @@ To protect your cluster on the public network by using Calico policies:
 ## Isolating clusters on the private network
 {: #isolate_workers}
 
-You can isolate your cluster from other systems on the private network by applying [Calico private network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/calico-v3).
+You can isolate your cluster from other systems on the private network by applying [Calico private network policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/calico-v3){: external}.
 {: shortdesc}
 
 This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with your worker nodes.
 
-To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico public network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/private-network-isolation/README.md).
+To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico public network policies](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/private-network-isolation/README.md){: external}.
 
 When you apply the egress pod policies that are included in this policy set, only network traffic to the subnets and ports that are specified in the pod policies is permitted. All traffic to any subnets or ports that are not specified in the policies is blocked for all pods in all namespaces. Because only the ports and subnets that are necessary for the pods to function in {{site.data.keyword.containerlong_notm}} are specified in these policies, your pods cannot send network traffic over the private network until you add or change the Calico policy to allow them to.
 {: important}
 
-Before you begin:
-1. If your cluster runs Kubernetes version 1.16, see [this topic](/docs/containers?topic=containers-cs_versions#116_networkpolicies) for information about updating Calico private host endpoints and network policies in version 1.16.
+**Before you begin:**
+
 2. [Install and configure the Calico CLI.](#cli_install)
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+4. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
-
 If you use a Windows machine, you must include the `--config=<filepath>/calicoctl.cfg` flag in all `calicoctl` commands.
-{: note}
+{: note}</br>
 
-To isolate your cluster on the private network by using Calico policies:
+**To isolate your cluster on the private network by using Calico policies:**
 
 1. Clone the `IBM-Cloud/kube-samples` repository.
   ```
@@ -519,7 +505,7 @@ To isolate your cluster on the private network by using Calico policies:
   ```
   {: pre}
 
-4. Version 1.15 and earlier clusters only: Set up private host endpoints for your worker nodes. When your worker nodes have private host endpoints, the policies that you apply can target the worker node private interface (eth0) and the pod network of a cluster.
+4. **OpenShift version 3.11 clusters only**: Set up private host endpoints for your worker nodes. When your worker nodes have private host endpoints, the policies that you apply can target the worker node private interface (eth0) and the pod network of a cluster.
   1. Open the `generic-privatehostendpoint.yaml` policy.
   2. Replace `<worker_name>` with the name of a worker node.
     <p class="note">Some worker nodes must follow a different naming structure for Calico policies. You must use the name that is returned when you run `calicoctl get nodes --config=<filepath>/calicoctl.cfg`.</p>
@@ -563,7 +549,7 @@ To isolate your cluster on the private network by using Calico policies:
 Kubernetes policies protect pods from internal network traffic. You can create simple Kubernetes network policies to isolate app microservices from each other within a namespace or across namespaces.
 {: shortdesc}
 
-For more information about how Kubernetes network policies control pod-to-pod traffic and for more example policies, see the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+For more information about how Kubernetes network policies control pod-to-pod traffic and for more example policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.
 {: tip}
 
 ### Isolate app services within a namespace
@@ -579,7 +565,7 @@ The Accounts team wants to allow traffic from the front end to the back end, and
 
 First, they create a Kubernetes network policy that allows traffic from the front end to the back end:
 
-```
+```yaml
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
@@ -602,7 +588,7 @@ The `spec.podSelector.matchLabels` section lists the labels for the Srv1 back-en
 
 Then, they create a similar Kubernetes network policy that allows traffic from the back end to the database:
 
-```
+```yaml
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
@@ -636,7 +622,7 @@ Services that are owned by different subteams need to communicate, but the servi
 
 The Finance team's Srv2 needs to call information from the Accounts team's Srv1 back end. So the Accounts team creates a Kubernetes network policy that uses labels to allow all traffic from the finance namespace to the Srv1 back end in the accounts namespace. The team also specifies the port 3111 to isolate access through that port only.
 
-```
+```yaml
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
@@ -677,23 +663,22 @@ When you set up network policies to limit traffic to app pods, traffic requests 
 This section shows you how to log traffic that is denied by a Kubernetes network policy. To log traffic that is denied by a Calico network policy, see [Lesson 5 of the Calico network policy tutorial](/docs/containers?topic=containers-policy_tutorial#lesson5).
 {: tip}
 
-Before you begin:
+**Before you begin:**
 1. [Install and configure the Calico CLI.](#cli_install)
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. In the `ibmcloud oc cluster config` command, include the `--admin` and `--network` flags. `--admin` downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. `--network` downloads the Calico configuration file to run all Calico commands.
+3. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
   {: pre}
 
-
-To log denied traffic:
+</br>**To log denied traffic:**
 
 1. Create or use an existing Kubernetes network policy that blocks or limits incoming traffic.
    1. Create a Kubernetes network policy. For example, to control traffic between pods, you might use the following example Kubernetes policy that is named `access-nginx` that limits access to an NGINX app. Incoming traffic to pods that are labeled "run=nginx" is allowed only from pods with the "run=access" label. All other incoming traffic to the "run=nginx" app pods is blocked.
-      ```
+      ```yaml
       kind: NetworkPolicy
       apiVersion: networking.k8s.io/v1
       metadata:
@@ -742,7 +727,7 @@ To log denied traffic:
       {: screen}
 
 2. To log all the traffic that is denied by the policy you created in the previous step, create a Calico NetworkPolicy named `log-denied-packets`. For example, the following log policy uses the same pod selector as the example `access-nginx` Kubernetes policy described in step 1, which adds this policy to the Calico Iptables rule chain. By using a higher-order number, such as `3000`, you can ensure that this rule is added to the end of the Iptables rule chain. Any request packet from the `run=access`-labeled pod that matches the `access-nginx` policy rule is accepted by the `run=nginx`-labeled pods. However, when packets from any other source try to match the low-order `access-nginx` policy rule, they are denied. Those packets then try to match the high-order `log-denied-packets` policy rule. `log-denied-packets` logs any packets that arrive to it, so only packets that were denied by the `run=nginx`-labeled pods are logged. After the packets' attempts are logged, the packets are dropped.
-  ```
+  ```yaml
   apiVersion: projectcalico.org/v3
   kind: NetworkPolicy
   metadata:

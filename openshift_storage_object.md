@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-09"
+lastupdated: "2020-01-16"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -42,6 +42,9 @@ subcollection: openshift
 If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
 
+If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, make sure to install the plug-in without the Helm server Tiller.
+{: important}
+
 
 
 
@@ -51,6 +54,9 @@ With version 1.0.5, the {{site.data.keyword.cos_full_notm}} plug-in is renamed f
 
 With version 1.0.8, the {{site.data.keyword.cos_full_notm}} plug-in Helm chart is now available in the `ibm-charts` Helm repository. Make sure to fetch the latest version of the Helm chart from this repository. To add the repository, run `helm repo add ibm-charts https://icr.io/helm/ibm-charts`.
 {: note}
+
+<br />
+
 
 ## Creating your object storage service instance
 {: #create_cos_service}
@@ -65,7 +71,7 @@ Follow these steps to create an {{site.data.keyword.cos_full_notm}} service inst
 1. Deploy an {{site.data.keyword.cos_full_notm}} service instance.
   1.  Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/catalog/services/cloud-object-storage).
   2.  Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
-  3.  Review the [plan options ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api) for pricing information and select a plan.
+  3.  Review the [plan options](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external} for pricing information and select a plan.
   4.  Click **Create**. The service details page opens.
 2. {: #service_credentials}Retrieve the {{site.data.keyword.cos_full_notm}} service credentials.
   1.  In the navigation on the service details page, click **Service Credentials**.
@@ -77,6 +83,9 @@ Follow these steps to create an {{site.data.keyword.cos_full_notm}} service inst
   7.  Click **View credentials**.
   8.  Make note of the **apikey** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **cos_hmac_keys** section, note the **access_key_id** and the **secret_access_key**.
 3. [Store your service credentials in a Kubernetes secret inside the cluster](#create_cos_secret) to enable access to your {{site.data.keyword.cos_full_notm}} service instance.
+
+<br />
+
 
 ## Creating a secret for the object storage service credentials
 {: #create_cos_secret}
@@ -153,6 +162,9 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 
 5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos), or if you already installed the plug-in, [decide on the configuration]( #configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
 
+<br />
+
+
 
 ## Installing the IBM Cloud Object Storage plug-in
 {: #install_cos}
@@ -169,11 +181,10 @@ Before you begin:
 To install the plug-in:
 
 
+2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. **Note** Tiller requires public network connectivity. Learn more about [Helm and Tiller](/docs/openshift?topic=openshift-helm). Then, [follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install){: new_window} to install the Helm client on your local machine and optionally Tiller with a service account in your cluster.
 
-
-2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. **Note** Tiller requires public network connectivity. Learn more about [Helm and Tiller](/docs/containers?topic=containers-helm). Then, [follow the instructions](/docs/containers?topic=containers-helm#public_helm_install){: new_window} to install the Helm client on your local machine and optionally Tiller with a service account in your cluster.
-
-  **Note**: If you use Windows, you must install Tiller.
+    If you have a private-only cluster, you must install the plugin without Tiller. If you use Windows, you must install Tiller.
+    {: note}
 
 3. If you want to install the plug-in with Tiller, verify that Tiller is installed with a service account. If you do not want to use Tiller, continue with step 4.
    ```
@@ -269,7 +280,7 @@ To install the plug-in:
 
    4. Open the `provisioner-sa.yaml` file and look for the `ibmcloud-object-storage-secret-reader` `ClusterRole` definition.
    5. Add the name of the secret that you created earlier to the list of secrets that the plug-in is authorized to access in the `resourceNames` section.
-      ```
+      ```yaml
       kind: ClusterRole
       apiVersion: rbac.authorization.k8s.io/v1beta1
       metadata:
@@ -284,6 +295,9 @@ To install the plug-in:
    6. Save your changes.
 
 9. Install the {{site.data.keyword.cos_full_notm}} plug-in. When you install the plug-in, pre-defined storage classes are added to your cluster.
+
+If you have a private-only cluster, you must install the plugin without Tiller.
+{: note}
 
   - **For OS X and Linux:**
     - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
@@ -335,7 +349,7 @@ To install the plug-in:
         ```
         {: pre}
 
-    3. Retrieve the infrastructure provider that your cluster uses and store it in an environment variable.
+    2. Retrieve the infrastructure provider that your cluster uses and store it in an environment variable.
 
       a. Retrieve the infrastructure provider.
         ```
@@ -343,24 +357,18 @@ To install the plug-in:
         ```
         {: pre}
 
-      b. Store the infrastructure provider in an environment variable.
+      b. Store the infrastructure provider in an environment variable. If the output contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"CLASSIC"`. If the output contains `gc`, then set the `CLUSTER_PROVIDER` to `"VPC-CLASSIC"`.
+        ```
+        SET CLUSTER_PROVIDER="CLASSIC"
+        ```
+        {: pre}
 
-        * If the output contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"CLASSIC"`.
+        ```
+        SET CLUSTER_PROVIDER="VPC-CLASSIC"
+        ```
+        {: pre}
 
-            ```
-            SET CLUSTER_PROVIDER="CLASSIC"
-            ```
-            {: pre}
-
-        * If the output contains `gc`, then set the `CLUSTER_PROVIDER` to `"VPC-CLASSIC"`.
-
-            ```
-            SET CLUSTER_PROVIDER="VPC-CLASSIC"
-            ```
-            {: pre}
-            
-
-    4. Retrieve the operating system of the worker nodes and store it in an environment variable.
+    3. Retrieve the operating system of the worker nodes and store it in an environment variable.
 
       a. Retrieve the operating system of the worker nodes.
         ```
@@ -387,63 +395,63 @@ To install the plug-in:
     5. Install the plug-in by using Helm.       
       - Install without a limitation to specific Kubernetes secrets.</br>
         ```
-        helm install --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
+        helm install ibm-charts/ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --name ibm-object-storage-plugin
         ```
         {: pre}
 
       - Install the plug-in with a limitation to specific Kubernetes secrets.</br>
         ```
         cd ../..
-        helm install --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" ./ibm-object-storage-plugin --name ibm-object-storage-plugin
+        helm install ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --name ibm-object-storage-plugin
         ```
         {: pre}
 
    Example output for installing without Tiller:
-   ```
-   Rendering the Helm chart templates...
-   DC: dal10
-   Chart: ibm-charts/ibm-object-storage-plugin
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-cross-region.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-regional.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver-sa.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner-sa.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/tests/check-driver-install.yaml
-   wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner.yaml
-   Installing the Helm chart...
-   serviceaccount/ibmcloud-object-storage-driver created
-   daemonset.apps/ibmcloud-object-storage-driver created
-   storageclass.storage.k8s.io/ibmc-s3fs-cold-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-cold-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-flex-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-flex-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-standard-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-standard-regional created
-   storageclass.storage.k8s.io/ibmc-s3fs-vault-cross-region created
-   storageclass.storage.k8s.io/ibmc-s3fs-vault-regional created
-   serviceaccount/ibmcloud-object-storage-plugin created
-   clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
-   clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
-   clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
-   clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
-   deployment.apps/ibmcloud-object-storage-plugin created
-   pod/ibmcloud-object-storage-driver-test created
-   ```
-   {: screen}
+    ```
+    Rendering the Helm chart templates...
+    DC: dal10
+    Chart: ibm-charts/ibm-object-storage-plugin
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-cross-region.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-regional.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver-sa.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner-sa.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/tests/check-driver-install.yaml
+    wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner.yaml
+    Installing the Helm chart...
+    serviceaccount/ibmcloud-object-storage-driver created
+    daemonset.apps/ibmcloud-object-storage-driver created
+    storageclass.storage.k8s.io/ibmc-s3fs-cold-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-cold-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-flex-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-flex-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-standard-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-standard-regional created
+    storageclass.storage.k8s.io/ibmc-s3fs-vault-cross-region created
+    storageclass.storage.k8s.io/ibmc-s3fs-vault-regional created
+    serviceaccount/ibmcloud-object-storage-plugin created
+    clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
+    clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
+    clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
+    clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
+    deployment.apps/ibmcloud-object-storage-plugin created
+    pod/ibmcloud-object-storage-driver-test created
+    ```
+    {: screen}
 
 10. Verify that the plug-in is installed correctly.
     ```
@@ -495,10 +503,10 @@ To install the plug-in:
 You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the latest version.
 {: shortdesc}
 
-1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart. 
+1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
   1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
     ```
-    helm ls | grep ibmcloud-object-storage-plugin
+    helm list | grep ibmcloud-object-storage-plugin
     ```
     {: pre}
 
@@ -544,7 +552,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
   **With Tiller**:
   1. Find the installation name of your Helm chart.
     ```
-    helm ls | grep ibm-object-storage-plugin
+    helm list | grep ibm-object-storage-plugin
     ```
     {: pre}
 
@@ -603,7 +611,7 @@ To remove the plug-in:
   **With Tiller**:
   1. Find the installation name of your Helm chart.
     ```
-    helm ls | grep object-storage-plugin
+    helm list | grep object-storage-plugin
     ```
     {: pre}
 
@@ -662,6 +670,9 @@ To remove the plug-in:
 
     The `ibmc` plug-in is removed successfully if the `ibmc` plug-in is not listed in your CLI output.
 
+    <br />
+
+
 
 ## Deciding on the object storage configuration
 {: #configure_cos}
@@ -692,11 +703,11 @@ Red Hat OpenShift on IBM Cloud provides pre-defined storage classes that you can
    ```
    {: screen}
 
-2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api) for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
+2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external} for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
    - **Standard**: This option is used for hot data that is accessed frequently. Common use cases are web or mobile apps.
    - **Vault**: This option is used for workloads or cool data that are accessed infrequently, such as once a month or less. Common use cases are archives, short-term data retention, digital asset preservation, tape replacement, and disaster recovery.
    - **Cold**: This option is used for cold data that is rarely accessed (every 90 days or less), or inactive data. Common use cases are archives, long-term backups, historical data that you keep for compliance, or workloads and apps that are rarely accessed.
-   - **Flex**: This option is used for workloads and data that do not follow a specific usage pattern, or that are too huge to determine or predict a usage pattern. **Tip:** Check out this [blog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2017/03/interconnect-2017-changing-rules-storage/) to learn how the Flex storage class works compared to traditional storage tiers.   
+   - **Flex**: This option is used for workloads and data that do not follow a specific usage pattern, or that are too huge to determine or predict a usage pattern. **Tip:** Check out this [blog](https://www.ibm.com/blogs/cloud-archive/2017/03/interconnect-2017-changing-rules-storage/){: external} to learn how the Flex storage class works compared to traditional storage tiers.   
 
 3. Decide on the level of resiliency for the data that is stored in your bucket.
    - **Cross-region**: With this option, your data is stored across three regions within a geolocation for highest availability. If you have workloads that are distributed across regions, requests are routed to the nearest regional endpoint. The API endpoint for the geolocation is automatically set by the `ibmc` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes are configured to use the `US GEO` API endpoint for your buckets. For more information, see [Regions and endpoints](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).  
@@ -792,6 +803,9 @@ Red Hat OpenShift on IBM Cloud provides pre-defined storage classes that you can
 
 Now that you decided on the configuration that you want, you are ready to [create a PVC](#add_cos) to provision {{site.data.keyword.cos_full_notm}}.
 
+<br />
+
+
 ## Adding object storage to apps
 {: #add_cos}
 
@@ -810,7 +824,7 @@ Before you begin:
 To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
 1. Create a configuration file to define your persistent volume claim (PVC).
-   ```
+   ```yaml
    kind: PersistentVolumeClaim
    apiVersion: v1
    metadata:
@@ -902,9 +916,9 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
 4. Optional: If you plan to access your data with a non-root user, or added files to an existing {{site.data.keyword.cos_full_notm}} bucket by using the console or the API directly, make sure that the [files have the correct permission](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_nonroot_access) assigned so that your app can successfully read and update the files as needed.
 
-4.  {: #cos_app_volume_mount}To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
+5.  {: #cos_app_volume_mount}To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
 
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -983,13 +997,13 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     </tr>
     </tbody></table>
 
-5.  Create the deployment.
+6.  Create the deployment.
     ```
     oc apply -f <local_yaml_path>
     ```
     {: pre}
 
-6.  Verify that the PV is successfully mounted.
+7.  Verify that the PV is successfully mounted.
 
     ```
     oc describe deployment <deployment_name>
@@ -1011,7 +1025,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     ```
     {: screen}
 
-7. Verify that you can write data to your {{site.data.keyword.cos_full_notm}} service instance.
+8. Verify that you can write data to your {{site.data.keyword.cos_full_notm}} service instance.
    1. Log in to the pod that mounts your PV.
       ```
       oc exec <pod_name> -it bash
@@ -1029,6 +1043,9 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
    5. From the menu, select **Buckets**.
    6. Open your bucket, and verify that you can see the `test.txt` that you created.
 
+   <br />
+
+
 ## Using object storage in a stateful set
 {: #cos_statefulset}
 
@@ -1045,7 +1062,7 @@ To deploy a stateful set that uses object storage:
 1. Create a configuration file for your stateful set and the service that you use to expose the stateful set. The following examples show how to deploy NGINX as a stateful set with three replicas, each replica with a separate bucket or sharing the same bucket.
 
    **Example to create a stateful set with three replicas, with each replica using a separate bucket**:
-   ```
+   ```yaml
    apiVersion: v1
    kind: Service
    metadata:
@@ -1107,7 +1124,7 @@ To deploy a stateful set that uses object storage:
    {: codeblock}
 
    **Example to create a stateful set with three replicas that share the same bucket `mybucket`**:
-   ```
+   ```yaml
    apiVersion: v1
    kind: Service
    metadata:
@@ -1233,15 +1250,21 @@ To deploy a stateful set that uses object storage:
     </tr>
     </tbody></table>
 
+    <br />
+
+
 
 ## Backing up and restoring data
 {: #cos_backup_restore}
 
-{{site.data.keyword.cos_full_notm}} is set up to provide high durability for your data so that your data is protected from being lost. You can find the SLA in the [{{site.data.keyword.cos_full_notm}} service terms ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03).
+{{site.data.keyword.cos_full_notm}} is set up to provide high durability for your data so that your data is protected from being lost. You can find the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03){: external}.
 {: shortdesc}
 
 {{site.data.keyword.cos_full_notm}} does not provide a version history for your data. If you need to maintain and access older versions of your data, you must set up your app to manage the history of data or implement alternative backup solutions. For example, you might want to store your {{site.data.keyword.cos_full_notm}} data in your on-prem database or use tapes to archive your data.
 {: note}
+
+<br />
+
 
 
 

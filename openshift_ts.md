@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -49,6 +49,8 @@ For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} 
 
 ## Feedback, questions, and support
 {: #openshift_support}
+{: troubleshoot}
+{: support}
 
 Review different ways to get help and support for your Red Hat OpenShift on IBM Cloud clusters. For any questions or feedback, post in Slack.
 {: shortdesc}
@@ -59,21 +61,21 @@ Review different ways to get help and support for your Red Hat OpenShift on IBM 
    * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/openshift?topic=openshift-openshift_versions).
 2. Make sure that your command line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
-   * Make sure that [your `kubectl` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
+   * Make sure that [your `kubectl` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
 <br>
 
 **Reviewing issues and status**<br>
-1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status).
+1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Kubernetes Service** component.
 <br>
 
 **Feedback and questions**<br>
 1. Post in the {{site.data.keyword.containerlong_notm}} Slack.
-   *   If you are an external user, post in the [#openshift ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/messages/CKCJLJCH4) channel.
-   *   If you are an IBMer, use the [#iks-openshift-users ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-argonauts.slack.com/messages/CJH0UPN2D) channel.<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.</p>
+   *   If you are an external user, post in the [#openshift](https://ibm-container-service.slack.com/messages/CKCJLJCH4){: external} channel.
+   *   If you are an IBMer, use the [#iks-openshift-users](https://ibm-argonauts.slack.com/messages/CJH0UPN2D){: external} channel.<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.</p>
 2. Review forums such as OpenShift help, Stack Overflow, and IBM Developer to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
-   * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.containerlong_notm}}, post your question on [Stack Overflow ![External link icon](../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/questions/tagged/ibm-cloud+containers) and tag your question with `ibm-cloud`, `containers`, and `openshift`.
-   * For questions about the service and getting started instructions, use the [IBM Developer Answers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/containers/?smartspace=bluemix) forum. Include the `ibm-cloud` and `containers` tags.
+   * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.containerlong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `containers`, and `openshift`.
+   * For questions about the service and getting started instructions, use the [IBM Developer Answers](https://developer.ibm.com/answers/topics/containers/?smartspace=bluemix){: external} forum. Include the `ibm-cloud` and `containers` tags.
    * See [Getting help](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
 <br>
 
@@ -85,6 +87,8 @@ Review different ways to get help and support for your Red Hat OpenShift on IBM 
 
 ## Missing permissions to create clusters
 {: #rhoks_ts_cluster_permissions}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 You do not have permissions to create a cluster.
@@ -100,6 +104,8 @@ Review [Assigning cluster access](/docs/openshift?topic=openshift-users) to lear
 
 ## No resources found
 {: #rhoks_ts_not_found}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 When you are running an `oc` command such as `oc get nodes` or `oc get secrets`, you see an error message similar to the following.
@@ -146,6 +152,8 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 
 ## Missing the public `containers.appdomain.cloud` subdomain
 {: #roks_ts_subdomain}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 When you expose an app through a router subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
@@ -299,6 +307,8 @@ The infrastructure credentials that are associated with the resource group that 
 
 ## Missing projects or `oc` and `kubectl` commands fail
 {: #rhoks_ts_admin_config}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 You do not see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
@@ -319,6 +329,8 @@ Run `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` and try 
 
 ## Pods in `CrashLoopBackOff` status
 {: #rhoks_ts_pods_crashloop}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 Your pods are in a `CrashLoopBackOff` status.
@@ -334,6 +346,8 @@ Make sure that you followed the docs in the [Moving your apps to OpenShift topic
 
 ## Cannot push or pull images from local machine to Docker registry
 {: #rhoks_ts_docker_local}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 You cannot push or pull Docker images from your local machine to the cluster's built-in Docker registry.
@@ -346,6 +360,8 @@ Create a route for the `docker-registry` service in the `default` project. For m
 
 ## Time out when pushing to the internal registry
 {: #roks_timeout_docker}
+{: troubleshoot}
+{: support}
 
 {: tsSymptoms}
 You try to push an image to the [internal registry](/docs/openshift?topic=openshift-images#openshift_internal_registry), but sporadically you see an error message similar to the following.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -57,6 +57,9 @@ For more information about how to create and use PVCs, PVs, and the physical sto
 - [Dynamic provisioning](#dynamic_provisioning)
 - [Static provisioning](#static_provisioning)
 
+<br />
+
+
 ## Dynamic provisioning
 {: #dynamic_provisioning}
 
@@ -93,6 +96,9 @@ For more information about how to dynamically provision persistent storage, see:
 - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
 - [Portworx](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 
+<br />
+
+
 ## Static provisioning
 {: #static_provisioning}
 
@@ -128,7 +134,10 @@ For more information about how to statically provision storage, see:
 - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#existing_file)
 - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#existing_block)
 - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
-- [Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume)
+- [Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume){: external}
+
+<br />
+
 
 ## Storage classes
 {: #storageclasses}
@@ -136,7 +145,7 @@ For more information about how to statically provision storage, see:
 To dynamically provision persistent storage, you must define the type and configuration of the storage that you want.
 {: shortdesc}
 
-A [Kubernetes storage class ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/storage-classes/) is used to abstract the underlying storage platform that is supported in {{site.data.keyword.cloud_notm}} so that you do not have to know all the details about supported sizes, IOPS, or retention policies to successfully provision persistent storage in a cluster. Red Hat OpenShift on IBM Cloud provides pre-defined storage classes for every type of storage that is supported. Each storage class is designed to abstract the supported storage tier while giving you the choice to decide on the size, IOPS, and retention policy that you want.
+A [Kubernetes storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/){: external} is used to abstract the underlying storage platform that is supported in {{site.data.keyword.cloud_notm}} so that you do not have to know all the details about supported sizes, IOPS, or retention policies to successfully provision persistent storage in a cluster. Red Hat OpenShift on IBM Cloud provides pre-defined storage classes for every type of storage that is supported. Each storage class is designed to abstract the supported storage tier while giving you the choice to decide on the size, IOPS, and retention policy that you want.
 
 For the pre-defined storage class specifications, see:
 - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
@@ -149,10 +158,10 @@ Not finding what you are looking for? You can also create your own customized st
 ### Customizing a storage class
 {: #customized_storageclass}
 
-If you cannot use one of the provided storage classes, you can create your own customized storage class. You might want to customize a storage class to specify configurations such as the zone, file system type, server type, or [volume binding mode ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode) options (block storage only).
+If you cannot use one of the provided storage classes, you can create your own customized storage class. You might want to customize a storage class to specify configurations such as the zone, file system type, server type, or [volume binding mode](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} options (block storage only).
 {: shortdesc}
 
-1. Create a customized storage class. You can start by using one of the pre-defined storage classes, or check out our sample customized storage classes. 
+1. Create a customized storage class. You can start by using one of the pre-defined storage classes, or check out our sample customized storage classes.
    - Pre-defined storage classes:
      - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
      - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
@@ -212,7 +221,7 @@ When you dynamically provision persistent storage by using a storage class, you 
 </tr>
 <tr>
 <td>Portworx</td>
-<td>You can increase your storage size by [changing your PVC specifications ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/resize-pvc/). </td>
+<td>You can increase your storage size by [changing your PVC specifications ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/resize-pvc/).</td>
    </tr>
 </tbody>
 </table>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -113,7 +113,7 @@ To set up an NLB 2.0 in a multizone cluster:
   1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
   2. Define a load balancer service for the app that you want to expose. You can specify a zone, a VLAN, and an IP address.
 
-      ```
+      ```yaml
       apiVersion: v1
       kind: Service
       metadata:
@@ -182,7 +182,7 @@ To set up an NLB 2.0 in a multizone cluster:
 
       Example configuration file to create an NLB 2.0 service in `dal12` that uses the Round Robin scheduling algorithm:
 
-      ```
+      ```yaml
       apiVersion: v1
       kind: Service
       metadata:
@@ -202,7 +202,7 @@ To set up an NLB 2.0 in a multizone cluster:
       ```
       {: codeblock}
 
-  3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field.  `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/).
+  3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field.  `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/){: external}.
 
   4. Create the service in your cluster.
 
@@ -277,7 +277,7 @@ To create an NLB 2.0 service in a single-zone cluster:
     1.  Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
 
     2.  Define a load balancer 2.0 service for the app that you want to expose.
-        ```
+        ```yaml
         apiVersion: v1
         kind: Service
         metadata:
@@ -339,7 +339,7 @@ To create an NLB 2.0 service in a single-zone cluster:
         </tr>
         </tbody></table>
 
-    3.  Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/).
+    3.  Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/){: external}.
 
     4.  Create the service in your cluster.
 
@@ -399,7 +399,7 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 ## Scheduling algorithms
 {: #scheduling}
 
-Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its Keepalived short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in Red Hat OpenShift on IBM Cloud. If you do not specify a scheduling algorithm, the Round Robin algorithm is used by default. For more information, see the [Keepalived documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.keepalived.org/doc/scheduling_algorithms.html).
+Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its Keepalived short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in Red Hat OpenShift on IBM Cloud. If you do not specify a scheduling algorithm, the Round Robin algorithm is used by default. For more information, see the [Keepalived documentation](https://www.keepalived.org/doc/scheduling_algorithms.html){: external}.
 {: shortdesc}
 
 ### Supported scheduling algorithms
@@ -426,7 +426,7 @@ Scheduling algorithms determine how an NLB 2.0 assigns network connections to yo
                   - <APP_NAME>
               topologyKey: kubernetes.io/hostname</code></pre>
 
-You can find the complete example in [this IBM Cloud deployment pattern blog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/new-builders/ibm-cloud-kubernetes-service-deployment-patterns-4-multi-zone-cluster-app-exposed-via-loadbalancer-aggregating-whole-region-capacity).</dd>
+You can find the complete example in [this IBM Cloud deployment pattern blog](https://www.ibm.com/cloud/blog/new-builders/ibm-cloud-kubernetes-service-deployment-patterns-4-multi-zone-cluster-app-exposed-via-loadbalancer-aggregating-whole-region-capacity){: external}.</dd>
 </dl>
 
 ### Unsupported scheduling algorithms

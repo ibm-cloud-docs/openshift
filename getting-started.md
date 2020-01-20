@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -130,8 +130,8 @@ Create a Red Hat OpenShift on IBM Cloud cluster on classic {{site.data.keyword.c
 Want to learn more about customizing your cluster setup with the CLI? Check out [Creating an OpenShift cluster](/docs/openshift?topic=openshift-clusters).
 {: tip}
 
-1.  Log in to your [{{site.data.keyword.cloud_notm}} account ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/).
-2.  From the **Catalog**, click [**Red Hat OpenShift Cluster** ![External link icon](../icons/launch-glyph.svg "External link icon")]](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster), and then click **Create**.
+1.  Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
+2.  From the **Catalog**, click [**Red Hat OpenShift Cluster**]](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster){: external}, and then click **Create**.
 3.  Choose your cluster setup details and name.
     *   Enter a unique name for your cluster, and select the resource group that you want to assign to your cluster.
     *   Enter tags that you want to add to your cluster. Tags can help you organize and find your clusters more easily in your  {{site.data.keyword.cloud_notm}} account.
@@ -180,6 +180,6 @@ Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=ope
 * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
 
 <br>
-For more information about deploying and routing network traffic to your apps, see the [OpenShift Developer Guide ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/index.html).
+For more information about deploying and routing network traffic to your apps, see the [OpenShift Developer Guide](https://docs.openshift.com/container-platform/3.11/dev_guide/index.html){: external}.
 
 

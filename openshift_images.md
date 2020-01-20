@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-14"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
 subcollection: openshift
 
@@ -38,6 +38,11 @@ subcollection: openshift
 
 {{site.data.keyword.openshiftlong}} clusters include an internal registry to build, deploy, and manage container images locally. For a private registry to manage and control access to images across your enterprise, you can also set up your cluster to use {{site.data.keyword.registrylong}}.
 {: shortdesc}
+
+A Docker image is the basis for every container that you create with {{site.data.keyword.containerlong}}.
+{:shortdesc}
+
+An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
 
 ## Choosing an image registry solution
 {: #openshift_registry_options}
@@ -94,7 +99,7 @@ Your app's images must be stored in a container registry that your cluster can a
 ## Using the internal registry
 {: #openshift_internal_registry}
 
-OpenShift clusters are set up by default with an internal registry. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster. For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/registry/index.html#install-config-registry-overview).
+OpenShift clusters are set up by default with an internal registry. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/3.11/install_config/registry/index.html#install-config-registry-overview){: external}.
 {: shortdesc}
 
 ### Storing images in the internal registry
@@ -180,7 +185,7 @@ To use the internal registry, set up a public route to access the registry. Then
     docker-registry   docker-registry-default.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud             docker-registry   5000-tcp   reencrypt     None
     ```
     {: screen}
-4.  Edit the route to set the [load balancing strategy ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#load-balancing) to `source` so that the same client IP address reaches the same server, as in a passthrough route setup. You can set the strategy by adding an annotation in the `metadata.annotations` section: `haproxy.router.openshift.io/balance: source`. You can edit the configuration file from the **OpenShift Application Console** or in your terminal by running the following command.
+4.  Edit the route to set the [load balancing strategy](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#load-balancing){: external} to `source` so that the same client IP address reaches the same server, as in a passthrough route setup. You can set the strategy by adding an annotation in the `metadata.annotations` section: `haproxy.router.openshift.io/balance: source`. You can edit the configuration file from the **OpenShift Application Console** or in your terminal by running the following command.
     ```
     oc edit route docker-registry
     ```
@@ -289,7 +294,7 @@ To use the internal registry, set up a public route to access the registry. Then
         {: pre}
     6.  Repeat these steps for each project that you want to pull images from the internal registry.
 
-Now that you set up the internal registry with an accessible route, you can log in, push, and pull images to the registry. For more information, see the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/registry/accessing_registry.html#access-logging-in-to-the-registry).
+Now that you set up the internal registry with an accessible route, you can log in, push, and pull images to the registry. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/3.11/install_config/registry/accessing_registry.html#access-logging-in-to-the-registry){: external}.
 
 <br />
 
@@ -307,6 +312,11 @@ For more information, see the following topics.
 * [Copying the `default-<region>-icr-io` secrets](#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.
 * [Creating your own image pull secret](#other_registry_accounts).
 * [Adding the image pull secret](#use_imagePullSecret) to your deployment configuration or to the project service account.
+
+<br />
+
+
+
 
 
 
@@ -327,7 +337,7 @@ To deploy a container into the **default** project of your cluster:
 1.  Create a deployment configuration file that is named `mydeployment.yaml`.
 2.  Define the deployment and the image to use from your project in {{site.data.keyword.registryshort_notm}}.
 
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -456,12 +466,12 @@ You can copy an image pull secret, such as the one that is automatically created
     {: pre}
     Example output:
     ```
-    default-us-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-uk-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-de-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-au-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-jp-icr-io                          kubernetes.io/dockerconfigjson        1         16d
-    default-icr-io                             kubernetes.io/dockerconfigjson        1         16d
+    default-us-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-uk-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-de-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-au-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-jp-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-icr-io                             kubernetes.io/dockerconfigjson        1         16d
     ```
     {: screen}
 3.  Copy each image pull secret from the `default` project to the project of your choice. The new image pull secrets are named `<project_name>-icr-<region>-io`. If you pull images from only a certain region, you can copy only that region's image pull secret.
@@ -721,7 +731,7 @@ When you refer to the image pull secret in a pod deployment, the image pull secr
 2.  Define the pod and the image pull secret to access images in {{site.data.keyword.registrylong_notm}}.
 
     To access a private image:
-    ```
+    ```yaml
     apiVersion: v1
     kind: Pod
     metadata:
@@ -736,7 +746,7 @@ When you refer to the image pull secret in a pod deployment, the image pull secr
     {: codeblock}
 
     To access an {{site.data.keyword.cloud_notm}} public image:
-    ```
+    ```yaml
     apiVersion: v1
     kind: Pod
     metadata:
@@ -828,7 +838,7 @@ Every OpenShift project has a Kubernetes service account that is named `default`
    {: pre}
 
 4. Deploy a container from an image in your registry.
-   ```
+   ```yaml
    apiVersion: v1
    kind: Pod
    metadata:
@@ -861,7 +871,7 @@ Do you have older entitled software from Passport Advantage? Use the [PPA import
 Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Get the entitlement key for your entitled software library.
-    1.  Log in to [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) and scroll to the **Container software library** section. Click **View library**.
+    1.  Log in to [MyIBM.com](https://myibm.ibm.com){: external} and scroll to the **Container software library** section. Click **View library**.
     2.  From the **Access your container software > Entitlement keys** page, click **Copy key**. This key authorizes access to all the entitled software in your container software library.
 2.  In the project that you want to deploy your entitled containers, create an image pull secret so that you can access the `cp.icr.io` entitled registry. For more information, see [Accessing images that are stored in other private registries](#private_images).
     ```
@@ -884,9 +894,11 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     ```
     {: pre}
 
-Wondering what to do next? You can [set up the **entitled** Helm chart repository](/docs/containers?topic=containers-helm), where Helm charts that incorporate entitled software are stored. If you already have Helm installed in your cluster, run `helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled`.
+Wondering what to do next? You can [set up the **entitled** Helm chart repository](/docs/openshift?topic=openshift-helm), where Helm charts that incorporate entitled software are stored. If you already have Helm installed in your cluster, run `helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled`.
 {: tip}
 
 <br />
+
+
 
 

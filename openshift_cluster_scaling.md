@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-17"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -36,9 +36,8 @@ subcollection: openshift
 # Autoscaling clusters
 {: #ca}
 
-With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
+With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
 {: shortdesc}
-
 
 Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-app#app_scaling).
 {: tip}
@@ -48,7 +47,6 @@ Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?t
 ## Understanding scale-up and scale-down
 {: #ca_about}
 
-
 The cluster autoscaler periodically scans the cluster to adjust the number of worker nodes within the worker pools that it manages in response to your workload resource requests and any custom settings that you configure, such as scanning intervals. Every minute, the cluster autoscaler checks for the following situations.
 {: shortdesc}
 
@@ -57,18 +55,18 @@ The cluster autoscaler periodically scans the cluster to adjust the number of wo
 
 Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes.
 
-The cluster autoscaler adjusts the number of worker nodes by considering the [resource requests ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/) that you define for your deployments, not actual worker node usage. If your pods and deployments don't request appropriate amounts of resources, you must adjust their configuration files. The cluster autoscaler can't adjust them for you. Also, keep in mind that worker nodes use some of their compute resources for basic cluster functionality, default and custom [add-ons](/docs/openshift?topic=openshift-update#addons), and [resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node).
+The cluster autoscaler adjusts the number of worker nodes by considering the [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external} that you define for your deployments, not actual worker node usage. If your pods and deployments don't request appropriate amounts of resources, you must adjust their configuration files. The cluster autoscaler can't adjust them for you. Also, keep in mind that worker nodes use some of their compute resources for basic cluster functionality, default and custom [add-ons](/docs/openshift?topic=openshift-update#addons), and [resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node).
 {: note}
 
 <br>
 **What does scaling up and down look like?**<br>
 In general, the cluster autoscaler calculates the number of worker nodes that your cluster needs to run its workload. Scaling the cluster up or down depends on many factors, including the following.
 *   The minimum and maximum worker node size per zone that you set.
-*   Your pending pod resource requests and certain metadata that you associate with the workload, such as anti-affinity, labels to place pods only on certain flavors, or [pod disruption budgets![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/).
+*   Your pending pod resource requests and certain metadata that you associate with the workload, such as anti-affinity, labels to place pods only on certain flavors, or [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external}.
 *   The worker pools that the cluster autoscaler manages, potentially across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone).
 *   The [custom Helm chart values](#ca_chart_values) that are set, such as skipping worker nodes for deletion if they use local storage.
 
-For more information, see the Kubernetes Cluster Autoscaler FAQs for [How does scale-up work? ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-up-work) and [How does scale-down work? ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work).
+For more information, see the Kubernetes Cluster Autoscaler FAQs for [How does scale-up work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-up-work){: external} and [How does scale-down work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work){: external}.
 
 <br>
 
@@ -151,7 +149,7 @@ _Figure: Autoscaling a cluster up and down._
 ## Following scalable deployment practices
 {: #scalable-practices}
 
-Make the most out of the cluster autoscaler by using the following strategies for your worker node and workload deployment strategies. For more information, see the [Kubernetes Cluster Autoscaler FAQs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md).
+Make the most out of the cluster autoscaler by using the following strategies for your worker node and workload deployment strategies. For more information, see the [Kubernetes Cluster Autoscaler FAQs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}.
 {: shortdesc}
 
 [Try out the cluster autoscaler](#ca_helm) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), what [custom values](#ca_chart_values) you might want to configure, and any other aspects that you might want, like [overprovisioning](#ca_scaleup) worker nodes or [limiting apps](#ca_limit_pool). Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
@@ -164,7 +162,7 @@ Yes, after you install the Helm chart, you can choose which worker pools within 
 ### How can I make sure that the cluster autoscaler responds to what resources my app needs?
 {: #scalable-practices-resrequests}
 
-The cluster autoscaler scales your cluster in response to your workload [resource requests ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/). As such, specify [resource requests ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/) for all your deployments because the resource requests are what the cluster autoscaler uses to calculate how many worker nodes are needed to run the workload. Keep in mind that autoscaling is based on the compute usage that your workload configurations request, and does not consider other factors such as machine costs.
+The cluster autoscaler scales your cluster in response to your workload [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external}. As such, specify [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external} for all your deployments because the resource requests are what the cluster autoscaler uses to calculate how many worker nodes are needed to run the workload. Keep in mind that autoscaling is based on the compute usage that your workload configurations request, and does not consider other factors such as machine costs.
 {: shortdesc}
 
 ### Can I scale down a worker pool to zero (0) nodes?
@@ -180,8 +178,8 @@ If your worker pool has zero (0) worker nodes, the worker pool cannot be scaled.
 
 Yes, you can add several Kubernetes features to your deployment to adjust how the cluster autoscaler considers your resource requests for scaling.
 {: shortdesc}
-*   Use [pod disruption budgets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/) to prevent abrupt rescheduling or deletions of your pods.
-*   If you're using pod priority, you can [edit the priority cutoff ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-cluster-autoscaler-work-with-pod-priority-and-preemption) to change what types of priority trigger scaling up. By default, the priority cutoff is zero (`0`).
+*   Use [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external} to prevent abrupt rescheduling or deletions of your pods.
+*   If you're using pod priority, you can [edit the priority cutoff](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-cluster-autoscaler-work-with-pod-priority-and-preemption){: external} to change what types of priority trigger scaling up. By default, the priority cutoff is zero (`0`).
 
 ### Can I use taints and tolerations with autoscaled worker pools?
 {: #scalable-practices-taints}
@@ -220,7 +218,6 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     *  {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc` alias for OpenShift clusters)
     *  {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
     *  Kubernetes (`kubectl`)
-    *  Helm (`helm`)
 2.  [Create a standard cluster](/docs/openshift?topic=openshift-clusters).
 3.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 4.  Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions).
@@ -245,37 +242,9 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 <br>
 **To install the `ibm-iks-cluster-autoscaler` plug-in in your cluster**:
 
-1.  [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the **Helm version 2.12 or later** client on your local machine, and install the Helm server (tiller) with a service account in your cluster.
-2.  Verify that tiller is installed with a service account.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm version 3 client on your local machine.
 
-    ```
-    oc get serviceaccount -n kube-system tiller
-    ```
-    {: pre}
-
-    Example output:
-
-    ```
-    NAME                                 SECRETS   AGE
-    tiller                               1         2m
-    ```
-    {: screen}
-3.  Make sure that Tiller is set up with version 2.12 or later.
-    1.  Check what version of Tiller is installed in your cluster.
-        ```
-        helm version --server
-        ```
-        {: pre}
-    2.  If Tiller does not run version 2.12 or later, [change the Tiller version](/docs/containers?topic=containers-helm#tiller_version). The following example installs Tiller version 2.12.3.
-        ```
-        oc --namespace=kube-system set image deployments/tiller-deploy tiller=gcr.io/kubernetes-helm/tiller@sha256:cab750b402d24dd7b24756858c31eae6a007cd0ee91ea802b3891e2e940d214d
-        ```
-        {: pre}
-
-        If you Tiller pod errors with an `Error: ImagePullBackOff` event, make sure that your cluster can pull images on the public network, and try again.
-        {: tip}
-
-4.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
+2.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
     ```
     helm repo add iks-charts https://icr.io/helm/iks-charts
     ```
@@ -284,7 +253,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     helm repo update
     ```
     {: pre}
-5.  Decide if you want to [customize the cluster autoscaler settings](#ca_chart_values), such as the worker pools that are autoscaled, or the amount of time that the cluster autoscaler waits before scaling worker nodes up or down. You can customize your settings by using the `--set` flag in the `helm install` command. Depending on the settings that you want to customize, you might need to prepare multiple `--set` flags before you can install the Helm chart. For example, you might want to autoscale your default worker pool by preparing the following `--set` flag.
+3.  Decide if you want to [customize the cluster autoscaler settings](#ca_chart_values), such as the worker pools that are autoscaled, or the amount of time that the cluster autoscaler waits before scaling worker nodes up or down. You can customize your settings by using the `--set` flag in the `helm install` command. Depending on the settings that you want to customize, you might need to prepare multiple `--set` flags before you can install the Helm chart. For example, you might want to autoscale your default worker pool by preparing the following `--set` flag.
     ```
     --set workerpools[0].<pool_name>.max=<number_of_workers>,workerpools[0].<pool_name>.min=<number_of_workers>,workerpools[0].<pool_name>.enabled=(true|false)
     ```
@@ -297,60 +266,38 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     * **`min=<number_of_workers>`**: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`.<p class="note">Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p>
     * **`enabled=(true|false)`**: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap.
 
-6.  Install the cluster autoscaler Helm chart in the `kube-system` namespace of your cluster. In the example command, the default worker pool is enabled for autoscaling with the Helm chart installation. The worker pool details are added to the cluster autoscaler config map.
+4.  Install the cluster autoscaler Helm chart in the `kube-system` namespace of your cluster. In the example command, the default worker pool is enabled for autoscaling with the Helm chart installation. The worker pool details are added to the cluster autoscaler config map.
     ```
-    helm install iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true
+    helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true
     ```
     {: pre}
 
     Example output:
     ```
-    NAME:   ibm-iks-cluster-autoscaler
-    LAST DEPLOYED: Thu Nov 29 13:43:46 2018
+    NAME: ibm-iks-cluster-autoscaler
+    LAST DEPLOYED: Fri Jan 17 12:20:30 2020
     NAMESPACE: kube-system
-    STATUS: DEPLOYED
-
-    RESOURCES:
-    ==> v1/ClusterRole
-    NAME                       AGE
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/Pod(related)
-
-    NAME                                        READY  STATUS             RESTARTS  AGE
-    ibm-iks-cluster-autoscaler-67c8f87b96-qbb6c  0/1    ContainerCreating  0         1s
-
-    ==> v1/ConfigMap
-
-    NAME              AGE
-    iks-ca-configmap  1s
-
-    ==> v1/ClusterRoleBinding
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/Role
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/RoleBinding
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/Service
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1beta1/Deployment
-    ibm-iks-cluster-autoscaler  1s
-
-    ==> v1/ServiceAccount
-    ibm-iks-cluster-autoscaler  1s
-
+    STATUS: deployed
+    REVISION: 1
+    TEST SUITE: None
     NOTES:
     Thank you for installing: ibm-iks-cluster-autoscaler. Your release is named: ibm-iks-cluster-autoscaler
 
-    For more information about using the cluster autoscaler, refer to the chart README.md file.
+    1. Wait for the ibm-worker-recovery pod to go to a "Running" state:
+    
+    kubectl get pod -wn kube-system  -l app=ibm-worker-recovery,release=ibm-worker-recovery
+
+    2. Verify that your checks are in place:
+
+    kubectl get cm -n kube-system -l app=ibm-worker-recovery,release=ibm-worker-recovery
+
+    3. After a few minutes, you can check the Events section in the output of the following command to see activity on the Autorecovery deployment:
+
+    kubectl describe deployment -n kube-system  -l app=ibm-worker-recovery,release=ibm-worker-recovery
     ```
     {: screen}
 
-7.  Verify that the installation is successful.
+5.  Verify that the installation is successful.
 
     1.  Check that the cluster autoscaler pod is in a **Running** state.
         ```
@@ -397,9 +344,9 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         ```
         {: screen}
 
-8.  Repeat these steps for every cluster where you want to provision the cluster autoscaler.
+6.  Repeat these steps for every cluster where you want to provision the cluster autoscaler.
 
-9.  Optional: If you did not set any worker pools for autoscaling with the installation, you can [Update the cluster autoscaler configuration](#ca_cm).
+7.  Optional: If you did not set any worker pools for autoscaling with the installation, you can [Update the cluster autoscaler configuration](#ca_cm).
 
 <br />
 
@@ -463,7 +410,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     <tr>
     <td id="parameter-minsize" headers="parameter-with-default">`"minSize": 1`</td>
     <td headers="parameter-minsize parameter-with-description">Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down the worker pool to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`.
-    <p class="note">Setting a `minSize` does not automatically trigger a scale-up. The `minSize` is a threshold so that the cluster autoscaler does not scale below a certain number of worker nodes per zone. If your cluster does not yet have that number per zone, the cluster autoscaler does not scale up until you have workload resource requests that require more resources. For example, if you have a worker pool with one worker node per three zones (three total worker nodes) and set the `minSize` to `4` per zone, the cluster autoscaler does not immediately provision an additional three worker nodes per zone (12 worker nodes total). Instead, the scale-up is triggered by resource requests. If you create a workload that requests the resources of 15 worker nodes, the cluster autoscaler scales up the worker pool to meet this request. Now, the `minSize` means that the cluster autoscaler does not scale down below four worker nodes per zone even if you remove the workload that requests the amount. For more information, see the [Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#when-does-cluster-autoscaler-change-the-size-of-a-cluster).</p></td>
+    <p class="note">Setting a `minSize` does not automatically trigger a scale-up. The `minSize` is a threshold so that the cluster autoscaler does not scale below a certain number of worker nodes per zone. If your cluster does not yet have that number per zone, the cluster autoscaler does not scale up until you have workload resource requests that require more resources. For example, if you have a worker pool with one worker node per three zones (three total worker nodes) and set the `minSize` to `4` per zone, the cluster autoscaler does not immediately provision an additional three worker nodes per zone (12 worker nodes total). Instead, the scale-up is triggered by resource requests. If you create a workload that requests the resources of 15 worker nodes, the cluster autoscaler scales up the worker pool to meet this request. Now, the `minSize` means that the cluster autoscaler does not scale down below four worker nodes per zone even if you remove the workload that requests the amount. For more information, see the [Kubernetes docs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#when-does-cluster-autoscaler-change-the-size-of-a-cluster).</p></td>
     </tr>
     <tr>
     <td id="parameter-maxsize" headers="parameter-with-default">`"maxSize": 2`</td>
@@ -715,7 +662,7 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 3.  In your pod spec template, match the `nodeSelector` or `nodeAffinity` to the label that you used in your worker pool.
 
     Example of `nodeSelector`:
-    ```
+    ```yaml
     ...
     spec:
       containers:
@@ -729,7 +676,7 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
     {: codeblock}
 
     Example of `nodeAffinity`:
-    ```
+    ```yaml
     spec:
       containers:
       - name: nginx
@@ -758,7 +705,7 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 ## Scaling up worker nodes before the worker pool has insufficient resources
 {: #ca_scaleup}
 
-As described in the [Understanding how the cluster autoscaler works](#ca_about) topic and the [Kubernetes Cluster Autoscaler FAQs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md), the cluster autoscaler scales up your worker pools in response to your requested resources of the workload against the available recourses of the worker pool. However, you might want the cluster autoscaler to scale up worker nodes before the worker pool runs out of resources. In this case, your workload does not need to wait as long for worker nodes to be provisioned because the worker pool is already scaled up to meet the resource requests.
+As described in the [Understanding how the cluster autoscaler works](#ca_about) topic and the [Kubernetes Cluster Autoscaler FAQs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}, the cluster autoscaler scales up your worker pools in response to your requested resources of the workload against the available recourses of the worker pool. However, you might want the cluster autoscaler to scale up worker nodes before the worker pool runs out of resources. In this case, your workload does not need to wait as long for worker nodes to be provisioned because the worker pool is already scaled up to meet the resource requests.
 {: shortdesc}
 
 The cluster autoscaler does not support early scaling (overprovisioning) of worker pools. However, you can configure other Kubernetes resources to work with the cluster autoscaler to achieve early scaling.
@@ -777,7 +724,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 ## Updating the cluster autoscaler Helm chart
 {: #ca_helm_up}
 
-You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm ls | grep cluster-autoscaler`.
+You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm list -n <namespace> | grep cluster-autoscaler`.
 {: shortdesc}
 
 Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these instructions](#ca_helm_up_102).
@@ -785,7 +732,7 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 
 **Before you begin**:
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* For a changelog of chart versions, [download the source code `tar` file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
+* For a changelog of chart versions, [download the source code `tar` file](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
 
 **To update the cluster autoscaler Helm chart**:
 1.  Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
@@ -796,13 +743,13 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
 
 2.  Optional: Download the latest Helm chart to your local machine. Then, extract the package and review the `release.md` file to find the latest release information.
     ```
-    helm fetch iks-charts/ibm-iks-cluster-autoscaler
+    helm pull iks-charts/ibm-iks-cluster-autoscaler
     ```
     {: pre}
 
 3.  Find the name of the cluster autoscaler Helm chart that you installed in your cluster.
     ```
-    helm ls | grep cluster-autoscaler
+    helm list -n <namespace> | grep cluster-autoscaler
     ```
     {: pre}
 
@@ -868,7 +815,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: pre}
 4.  Uninstall your current Helm chart.
     ```
-    helm delete --purge ibm-ks-cluster-autoscaler
+    helm uninstall ibm-ks-cluster-autoscaler -n <namespace>
     ```
     {: pre}
 5.  Update the Helm chart repo to get the latest cluster autoscaler Helm chart version.
@@ -878,7 +825,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: pre}
 6.  Install the latest cluster autoscaler Helm chart. Apply any custom settings that you previously used with the `--set` flag, such as `scanInterval=2m`.
     ```
-    helm install  iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler [--set <custom_settings>]
+    helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system [--set <custom_settings>]
     ```
     {: pre}
 7.  Apply the cluster autoscaler configmap that you previously retrieved to enable autoscaling for your worker pools.
@@ -945,12 +892,12 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 2.  List your existing Helm charts and note the name of the cluster autoscaler.
     ```
-    helm ls
+    helm list --all-namespaces
     ```
     {: pre}
 3.  Remove the existing Helm chart from your cluster.
     ```
-    helm delete --purge <ibm-iks-cluster-autoscaler_name>
+    helm uninstall ibm-ks-cluster-autoscaler -n <namespace>
     ```
     {: pre}
 

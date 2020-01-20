@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-16"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -42,7 +42,7 @@ Make your containerized app available to internet access by using the public IP 
 ## Managing network traffic by using NodePorts
 {: #nodeport_planning}
 
-Expose a public port on your worker node and use the public IP address of the worker node to access your service in the cluster publicly from the internet. 
+Expose a public port on your worker node and use the public IP address of the worker node to access your service in the cluster publicly from the internet.
 {:shortdesc}
 
 
@@ -73,16 +73,16 @@ The public IP address of the worker node is not permanent. When a worker node is
 You can expose your app as a Kubernetes NodePort service for free or standard clusters.
 {:shortdesc}
 
-If you do not already have an app ready, you can use a Kubernetes example app called [Guestbook ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml).
+If you do not already have an app ready, you can use a Kubernetes example app called [Guestbook](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml){: external}.
 
-1.  In the configuration file for your app, define a [service ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/service/) section.
+1.  In the configuration file for your app, define a [service](https://kubernetes.io/docs/concepts/services-networking/service/){: external} section.
 
     For the Guestbook example, a front-end service section exists in the configuration file. To make the Guestbook app available externally, add the NodePort type and a NodePort in the range 30000 - 32767 to the front-end service section.
     {: tip}
 
     Example:
 
-    ```
+    ```yaml
     apiVersion: v1
     kind: Service
     metadata:
@@ -181,5 +181,6 @@ When the app is deployed, you can use the public IP address of any worker node a
     If the **Endpoints** section displays `<none>`, check the `<selectorkey>` and `<selectorvalue>` that you use in the `spec.selector` section of the NodePort service. Ensure that it is the same as the _key/value_ pair that you used in the `spec.template.metadata.labels` section of your deployment YAML.
     {: note}
 
-3.  Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`
+3.  Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`.
+    
 
