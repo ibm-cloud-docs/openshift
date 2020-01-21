@@ -113,6 +113,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_block.md
         openshift_storage_object.md
         openshift_storage_portworx.md
+        openshift_storage_utilities.md
 
     openshift_integrations.md
     openshift_integrations_cloud_paks.md
