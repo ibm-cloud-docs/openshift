@@ -87,7 +87,7 @@ Trying to change the service endpoint for master-worker communication instead? C
 {: tip}
 
 
-Before you begin:[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To change the VLANs that a worker pool uses to provision worker nodes:
 
