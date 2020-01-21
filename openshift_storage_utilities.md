@@ -828,45 +828,45 @@ To back up or restore a PVC by editing the `values.yaml` file:
 4. Save and close the `values.yaml` file.
 
 5. Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<chart_name>` with a name for your Helm chart.
-  
+    
 
-  
-  ```
-  helm install ./ibmcloud-backup-restore --name <chart_name>
-  ```
-  {: pre}
-  
+    
+    ```
+    helm install ./ibmcloud-backup-restore --name <chart_name>
+    ```
+    {: pre}
+    
 
-  Example output for backup:
-  ```
-  NAME: <chart_name>
-  LAST DEPLOYED: Mon Jan 20 09:17:02 2020
-  NAMESPACE: default
-  STATUS: deployed
-  REVISION: 1
-  TEST SUITE: None
-  NOTES:
-  Thank you for installing: ibmcloud-backup-restore.   Your release is named: <chart_name>
+    Example output for backup:
+    ```
+    NAME: <chart_name>
+    LAST DEPLOYED: Mon Jan 20 09:17:02 2020
+    NAMESPACE: default
+    STATUS: deployed
+    REVISION: 1
+    TEST SUITE: None
+    NOTES:
+    Thank you for installing: ibmcloud-backup-restore.   Your release is named: <chart_name>
 
-  Please refer Chart README.md file for creating a sample PVC
-  Please refer Chart RELEASE.md to see the release details/fixes
-  ```
-  {: screen}
+    Please refer Chart README.md file for creating a sample PVC
+    Please refer Chart RELEASE.md to see the release details/fixes
+    ```
+    {: screen}
 
-  Example to deploy by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter. 
-  
-  
-  ```
-  helm install ./ibmcloud-backup-restore --set ACCESS_KEY_ID=<access_key_ID><br>
-  --set SECRET_ACCESS_KEY=<secret_access_key><br>
-  --set ENDPOINT=<public_bucket_endpoint> --set BUCKET_NAME=<bucket_name><br>
-  --set BACKUP_NAME=<backup_name> --set PVC_NAMES[0]=<pvc_name1><br>
-  --set PVC_NAMES[1]=<pvc_name2> --set CHART_TYPE=backup<br>
-  --set BACKUP_TYPE=<backup_type> --set SCHEDULE_TYPE=<schedule_type><br>
-  --set SCHEDULE_INFO=<schedule_info> --name <release_name>
-  ```
-  {: pre}
-  
+    Example to deploy by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter. 
+    
+    
+    ```
+    helm install ./ibmcloud-backup-restore --set ACCESS_KEY_ID=<access_key_ID><br>
+    --set SECRET_ACCESS_KEY=<secret_access_key><br>
+    --set ENDPOINT=<public_bucket_endpoint> --set BUCKET_NAME=<bucket_name><br>
+    --set BACKUP_NAME=<backup_name> --set PVC_NAMES[0]=<pvc_name1><br>
+    --set PVC_NAMES[1]=<pvc_name2> --set CHART_TYPE=backup<br>
+    --set BACKUP_TYPE=<backup_type> --set SCHEDULE_TYPE=<schedule_type><br>
+    --set SCHEDULE_INFO=<schedule_info> --name <release_name>
+    ```
+    {: pre}
+    
 
 5. Verify that your data backup or restore completed successfully. </br>
   **Backup**:
