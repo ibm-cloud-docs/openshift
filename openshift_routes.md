@@ -174,6 +174,8 @@ To use routes to privately expose your apps, create a new router and change the 
 
 4. To have an external endpoint for your private router, you must register your private router service's external IP address with a custom domain.
     1. Create a custom domain. To register your custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/infrastructure/dns?topic=dns-getting-started).
+        If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
+        {: tip}
     2. Map your custom domain to the private router service's external IP address by adding the IP address as an A record.
 
 5. Update the project where your app and private router are deployed to use the private router instead of the default public router.
@@ -188,15 +190,21 @@ To use routes to privately expose your apps, create a new router and change the 
   ```
   {: pre}
 
-7. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}. If you leave the **Hostname** field blank and you registered the router service with a private DNS entry in step 4, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
+7. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the router can send traffic to.
+  ```
+  oc expose deploy <app_deployment_name> --name my-app-svc
+  ```
+  {: pre}
 
-8. Verify that the route for your app is created.
+8. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}. If you leave the **Hostname** field blank and you registered the router service with a private DNS entry in step 4, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
+
+9. Verify that the route for your app is created.
   ```
   oc get routes
   ```
   {: pre}
 
-9. Optional: Customize the private router's routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
+10. Optional: Customize the private router's routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
 
 ## Moving router services across VLANs
 {: #migrate-router-vlan}
