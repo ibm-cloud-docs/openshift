@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-21"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -476,8 +476,6 @@ To optimize performance of your Ingress ALBs, you can also [change the Linux ker
 
 <br />
 
-
-<br>
 
 
 
