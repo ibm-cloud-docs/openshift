@@ -46,7 +46,7 @@ Use the router to publicly expose the services in your {{site.data.keyword.opens
 
 A router is deployed by default to your cluster and functions as the ingress point for external network traffic. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router uses the service selector to find the service and the endpoints that back the service, and creates [routes](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external} that expose services as hostnames to be used by external clients. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. After you set up routes for your services, the router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
 
-The route hostname for a service is formatted like `<service_name>-<project>.<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. Note that this hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster. You can find the router subdomain for your cluster by running `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`.
+You can find the router subdomain for your cluster by running `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. Note that this hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster.
 {: note}
 
 Not sure whether to use OpenShift routes or Ingress routers? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).
@@ -130,7 +130,7 @@ To use routes to privately expose your apps, create a new router and change the 
       metadata:
         annotations:
           prometheus.openshift.io/password: xxxxxxxxxx
-          prometheus.openshift.io/username: xxxxx
+          prometheus.openshift.io/username: admin
           service.alpha.openshift.io/serving-cert-secret-name: router-private-certs
           service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer
           service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
