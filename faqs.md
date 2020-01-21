@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -69,7 +69,9 @@ You can create only standard OpenShift clusters. If you want to test out the cap
 {: faq}
 {: support}
 
-The supported OpenShift version is 3.11, which includes Kubernetes 1.11.
+Red Hat OpenShift on IBM Cloud supports the following versions of OpenShift. The worker node operating system is Red Hat Enterprise Linux 7.
+
+* **Default**: 3.11, which includes Kubernetes 1.11
 
 ## What am I charged for when I use an OpenShift cluster?
 {: #openshift_charges}

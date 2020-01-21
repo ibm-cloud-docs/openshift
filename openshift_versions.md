@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-21"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -36,7 +36,7 @@ subcollection: openshift
 # Version information and update actions
 {: #openshift_versions}
 
-{{site.data.keyword.openshiftlong}} clusters run at OpenShift version 3.11, which includes the Kubernetes project version 1.11. The worker node operating system is Red Hat Enterprise Linux 7.
+Review information about the supported OpenShift versions for {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
 For more information about the OpenShift  and Kubernetes project versions, review the following information.
@@ -68,6 +68,27 @@ Your Red Hat OpenShift on IBM Cloud cluster has three types of updates: major, m
 
 <br />
 
+
+## OpenShift versions
+{: #version_types}
+
+Red Hat OpenShift on IBM Cloud supports the following versions of OpenShift. The worker node operating system is Red Hat Enterprise Linux 7.
+
+* **Default**: 3.11, which includes Kubernetes 1.11
+
+To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
+
+```
+oc version
+```
+{: pre}
+
+Example output:
+```
+Client Version: v3.11.154
+Kubernetes Version: v1.11.0+d4cacc0
+```
+{: screen}
 
 ## Release history
 {: #openshift_release_history}

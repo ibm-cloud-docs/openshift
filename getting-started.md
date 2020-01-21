@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-21"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -93,7 +93,7 @@ subcollection: openshift
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}
 
-With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available clusters that come installed with the [Red Hat OpenShift on IBM Cloud Container Platform![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) software installed on Red Hat Enterprise Linux.
+With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available clusters that come installed with the [Red Hat OpenShift on IBM Cloud Container Platform![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.2/welcome/index.html) software installed on Red Hat Enterprise Linux.
 {: shortdesc}
 
 First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose a sample app in your cluster.
@@ -136,8 +136,9 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
     *   Enter a unique name for your cluster, and select the resource group that you want to assign to your cluster.
     *   Enter tags that you want to add to your cluster. Tags can help you organize and find your clusters more easily in your  {{site.data.keyword.cloud_notm}} account.
     *   For the **Location**, set the **Geography**, and then select any of the six worldwide multizone **Metro** or single zone [locations](/docs/openshift?topic=openshift-regions-and-zones) to use for your **Worker zones**.
-    *   For **Default worker pool**, choose an available flavor for your worker nodes. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
-    *   Set a number of worker nodes to create per zone, such as `3`.
+    *   In the **Default worker pool** section, configure your worker pool version and size.
+        *  For **Flavor**, choose an available flavor for your worker nodes. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
+        *  For **Worker nodes**, set a number of worker nodes to create in each zone of the worker pool, such as `3`.
 4.  To finish, click **Create cluster**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing component take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. </p>
 5.  Verify that your cluster setup is finished before you continue to the next step by checking that the worker nodes on the **Worker Nodes** tab have a **Status** of normal.
 
@@ -152,6 +153,8 @@ Now that your cluster is ready, [deploy an app](#deploy-app).
 
 From the OpenShift console, you can deploy one of the built-in service catalog apps.
 {: shortdesc}
+
+
 
 1.  From the cluster details page, click **OpenShift web console**.
 2.  In the **My Projects** pane, click **Create Project**. Enter a name for your project name, and click **Create**.
@@ -180,6 +183,6 @@ Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=ope
 * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
 
 <br>
-For more information about deploying and routing network traffic to your apps, see the [OpenShift Developer Guide](https://docs.openshift.com/container-platform/3.11/dev_guide/index.html){: external}.
+For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.2/welcome/index.html#developer-activities){: external} documentation.
 
 
