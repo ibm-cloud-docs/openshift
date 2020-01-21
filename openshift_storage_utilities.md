@@ -759,6 +759,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
 3. Configure your Helm chart to back up or restore PVC data. You can configure the backup for more than one PVC.
 
   Example to create a backup pod by configuring the `values.yaml` file:
+  
   ```yaml
   image:
     repository: icr.io/iks-charts/ibmcloud-backup-restore
