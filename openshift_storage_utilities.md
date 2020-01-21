@@ -839,14 +839,14 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
     Example output for backup:
     ```
-    NAME: <chart_name>
+    NAME: <release_name>
     LAST DEPLOYED: Mon Jan 20 09:17:02 2020
     NAMESPACE: default
     STATUS: deployed
     REVISION: 1
     TEST SUITE: None
     NOTES:
-    Thank you for installing: ibmcloud-backup-restore.   Your release is named: <chart_name>
+    Thank you for installing: ibmcloud-backup-restore.   Your release is named: <release_name>
 
     Please refer Chart README.md file for creating a sample PVC
     Please refer Chart RELEASE.md to see the release details/fixes
@@ -1042,5 +1042,8 @@ To back up or restore a PVC by editing the `values.yaml` file:
         
         
 
-    You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
+        You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
+
+
+
 
