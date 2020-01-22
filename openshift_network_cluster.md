@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-22"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -183,6 +183,9 @@ To change the VLANs that a worker pool uses to provision worker nodes:
      {: pre}
 
 8. Optional: You can repeat steps 2 - 7 for each worker pool in your cluster. After you complete these steps, all worker nodes in your cluster are set up with the new VLANs.
+
+9. Move networking services to the new VLANs. The networking services in your cluster are still bound to the old VLAN because their IP addresses are from a subnet on that VLAN.
+  * Routers: Because routers cannot be moved across VLANs, you can instead [create router services on the new VLANs and delete router services on the old VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan).
 
 10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
 

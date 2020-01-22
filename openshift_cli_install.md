@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-22"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -59,7 +59,7 @@ See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/conta
 To view a local version of the OpenShift dashboard and to deploy apps into your Red Hat OpenShift on IBM Cloud clusters, install the OpenShift CLI (`oc`) and Kubernetes CLI (`kubectl`). For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html){: external}.
 {: shortdesc}
 
-Using both community Kubernetes and OpenShift clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on OpenShift and 1.14.10 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} for your cluster `major.minor` Kubernetes version.
+Using both community Kubernetes and OpenShift clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on OpenShift and 1.15.8 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} for your cluster `major.minor` Kubernetes version.
 {: note}
 
 1.  Download the latest OpenShift CLI (`oc`) for your local operating system and OpenShift version. The current default OpenShift version is 3.11.

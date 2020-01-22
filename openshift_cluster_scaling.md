@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-17"
+lastupdated: "2020-01-22"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -242,7 +242,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 <br>
 **To install the `ibm-iks-cluster-autoscaler` plug-in in your cluster**:
 
-1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm version 3 client on your local machine.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-openshift_apps#roks_helm) to install the Helm version 3 client on your local machine.
 
 2.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
     ```
@@ -283,17 +283,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     NOTES:
     Thank you for installing: ibm-iks-cluster-autoscaler. Your release is named: ibm-iks-cluster-autoscaler
 
-    1. Wait for the ibm-worker-recovery pod to go to a "Running" state:
-    
-    kubectl get pod -wn kube-system  -l app=ibm-worker-recovery,release=ibm-worker-recovery
-
-    2. Verify that your checks are in place:
-
-    kubectl get cm -n kube-system -l app=ibm-worker-recovery,release=ibm-worker-recovery
-
-    3. After a few minutes, you can check the Events section in the output of the following command to see activity on the Autorecovery deployment:
-
-    kubectl describe deployment -n kube-system  -l app=ibm-worker-recovery,release=ibm-worker-recovery
+    For more information about using the cluster autoscaler, refer to the chart README.md file.
     ```
     {: screen}
 

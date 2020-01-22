@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -148,6 +148,8 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     {: pre}
 
 <br />
+
+
 
 
 ## Missing the public `containers.appdomain.cloud` subdomain

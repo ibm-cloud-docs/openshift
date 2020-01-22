@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-01-22"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -181,7 +181,7 @@ Before you begin:
 To install the plug-in:
 
 
-2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. **Note** Tiller requires public network connectivity. Learn more about [Helm and Tiller](/docs/openshift?topic=openshift-helm). Then, [follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install){: new_window} to install the Helm client on your local machine and optionally Tiller with a service account in your cluster.
+2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. **Note** Tiller requires public network connectivity. Learn more about [Helm and Tiller](/docs/containers?topic=containers-helm). Then, [follow the instructions](/docs/containers?topic=containers-helm#public_helm_install){: new_window} to install the Helm client on your local machine and optionally Tiller with a service account in your cluster.
 
     If you have a private-only cluster, you must install the plugin without Tiller. If you use Windows, you must install Tiller.
     {: note}
