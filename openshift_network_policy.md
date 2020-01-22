@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-17"
+lastupdated: "2020-01-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -321,7 +321,7 @@ To see how to whitelist or blacklist source IP addresses, try the [Using Calico 
 1. Define a Calico pre-DNAT network policy for ingress (inbound traffic) access to Kubernetes services.
     * Use [Calico v3 policy syntax](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy){: external}.
 
-        Example resource that blocks all node ports:
+        Example resource that blocks traffic to all public node ports:
 
         ```yaml
         apiVersion: projectcalico.org/v3

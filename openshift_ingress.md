@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-22"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -805,8 +805,13 @@ http://<subdomain2>.<domain>/<app1_path>
 {: codeblock}
 
 
-For a comprehensive tutorial on how to secure microservice-to-microservice communication across your clusters by using the private ALB with TLS, check out [this blog post](https://medium.com/ibm-cloud/secure-microservice-to-microservice-communication-across-kubernetes-clusters-using-a-private-ecbe2a8d4fe2){: external}.
-{: tip}
+### Optional: Block traffic to public NodePorts
+{: #block-nodeports}
+
+In clusters that are connected to public and private VLANs, block traffic to public NodePorts.
+{: shortdesc}
+
+Ingress ALBs make your app available over both the ALB IP address and port, and the service's NodePorts. NodePorts are accessible on every IP address (public and private) for every node within the cluster. If your cluster is attached to both public and private VLANs, an ALB with a portable private IP address still has a public NodePort open on every worker node. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts.
 
 <br />
 
