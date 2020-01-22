@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-22"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -101,6 +101,8 @@ First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose 
 
 To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {{site.data.keyword.containerlong}} account](/docs/account?topic=account-upgrading-account) where you are the owner or have [full Administrator access](/docs/iam?topic=iam-iammanidaccser).
 {: note}
+
+
 
   <div class=solutionBoxContainer>
   <div class="solutionBox">

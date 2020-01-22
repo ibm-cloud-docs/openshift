@@ -165,6 +165,8 @@ After you set up your account to create clusters, decide on the setup for your c
 Create your single zone or multizone classic OpenShift cluster by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
+
+
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
 2. From the [{{site.data.keyword.cloud_notm}} Red Hat OpenShift on IBM Cloud Clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster environment.
@@ -210,6 +212,8 @@ Create your single zone or multizone classic OpenShift cluster by using the {{si
 
 Create your single zone or multizone classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
+
+
 
 **Before you begin**:
 * Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
