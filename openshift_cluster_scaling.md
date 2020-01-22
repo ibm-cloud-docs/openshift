@@ -242,7 +242,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 <br>
 **To install the `ibm-iks-cluster-autoscaler` plug-in in your cluster**:
 
-1.  [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the Helm version 3 client on your local machine.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-openshift_apps#roks_helm) to install the Helm version 3 client on your local machine.
 
 2.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
     ```
