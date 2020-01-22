@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-22"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -166,6 +166,67 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     oc get pods
     ```
     {: pre}
+
+<br />
+
+
+## Packaging apps by using Helm charts
+{: #roks_helm}
+
+You can add complex OpenShift apps to your cluster by using Helm charts.
+{: shortdesc}
+
+[Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
+
+Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+
+To set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in your cluster:
+
+1. Install the latest release of the version 3 [Helm CLI](https://github.com/helm/helm/releases){: external} on your local machine.
+
+2. Add the {{site.data.keyword.cloud_notm}} Helm repositories to your Helm instance.
+   ```
+   helm repo add iks-charts https://icr.io/helm/iks-charts
+   ```
+   {: pre}
+   ```
+   helm repo add ibm-charts https://raw.githubusercontent.com/IBM/charts/master/repo/stable
+   ```
+   {: pre}
+   ```
+   helm repo add ibm-community https://raw.githubusercontent.com/IBM/charts/master/repo/community
+   ```
+   {: pre}
+   ```
+   helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled
+   ```
+   {: pre}
+
+3. Update the repos to retrieve the latest versions of all Helm charts.
+   ```
+   helm repo update
+   ```
+   {: pre}
+
+4. List the Helm charts that are currently available in the {{site.data.keyword.cloud_notm}} repositories.
+   ```
+   helm search repo iks-charts
+   ```
+   {: pre}
+   ```
+   helm search repo ibm-charts
+   ```
+   {: pre}
+   ```
+   helm search repo ibm-community
+   ```
+   {: pre}
+   ```
+   helm search repo entitled
+   ```
+   {: pre}
+
+5. Identify the Helm chart that you want to install and follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 
 <br />
 
