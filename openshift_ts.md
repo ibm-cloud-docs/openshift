@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -158,7 +158,15 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 {: support}
 
 {: tsSymptoms}
-When you expose an app through a router subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
+When you expose an app through a router subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`. 
+
+When you try to open the OpenShift web console or another app route in your browser, you might see an error similar to the following.
+
+```
+Application is not available
+The application is currently not serving requests on this endpoint.
+```
+{: screen}
 
 {: tsCauses}
 After the cluster is created and enters a **normal** state, the router subdomain networking and load balancing components still take some time to deploy. If you expose your app before the networking components fully provision, or if the components experience an error, your apps can only be exposed internally with the default router's `svc.cluster.local` domain.
@@ -174,7 +182,7 @@ When the components fully provision, a public router subdomain is available for 
     ```
     {: pre}
 3.  Check that your cluster has public connectivity so that the networking components can talk to the master as they deploy.
-    *  In the output of Step 2, check that your cluster has a **Public Service Endpoint URL**. If your cluster does not have a **Public Service Endpoint URL**, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
+    *  In the output of Step 2, check that your cluster has only a **Public Service Endpoint URL** and not a **Private Service Endpoint URL**. If not, [enable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se). If you created the cluster with a private service endpoint, delete your cluster and create a cluster without the private service endpoint.
     *   Check that at least some of the worker nodes in your cluster have a **Public IP** address. If no worker node does, you must [set up public VLANs for at least one worker pool](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
         ```
         ibmcloud oc workers -c <cluster_name_or_ID>
