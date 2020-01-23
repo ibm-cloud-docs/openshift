@@ -817,6 +817,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
 5. Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<chart_name>` with a name for your Helm chart.
 
+  * Install the Helm chart by using the `helm install` command.
     
 
     
@@ -825,7 +826,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
     helm install ./ibmcloud-backup-restore --name <chart_name>
     ```
     {: pre}
-    
+
     
 
     Example output for backup:
@@ -844,9 +845,9 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ```
     {: screen}
 
-    Example to deploy by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter.
+  * Example to deploy by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter.
 
-    
+  
 
     
 
@@ -861,7 +862,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ```
     {: pre}
 
-    
+  
 
 5. Verify that your data backup or restore completed successfully. </br>
   **Backup**:
