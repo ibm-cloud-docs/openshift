@@ -816,13 +816,16 @@ To back up or restore a PVC by editing the `values.yaml` file:
 4. Save and close the `values.yaml` file.
 
 5. Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<chart_name>` with a name for your Helm chart.
+
     
 
     
+
     ```
     helm install ./ibmcloud-backup-restore --name <chart_name>
     ```
     {: pre}
+    
     
 
     Example output for backup:
@@ -842,8 +845,11 @@ To back up or restore a PVC by editing the `values.yaml` file:
     {: screen}
 
     Example to deploy by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter.
+
     
+
     
+
     ```
     helm install ./ibmcloud-backup-restore --set ACCESS_KEY_ID=<access_key_ID><br>
     --set SECRET_ACCESS_KEY=<secret_access_key><br>
@@ -854,6 +860,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
     --set SCHEDULE_INFO=<schedule_info> --name <release_name>
     ```
     {: pre}
+
     
 
 5. Verify that your data backup or restore completed successfully. </br>
@@ -1025,14 +1032,14 @@ To back up or restore a PVC by editing the `values.yaml` file:
         {: pre}
     7. Delete the Helm chart installation from your cluster. This step is required if you restored data to a block storage PVC. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. Because the `ibm-storage-restore` pod already mounts the PVC, you must remove the pod to release the PVC so that you can mount the PVC to a different pod in your cluster.
 
-        
-        ```
-        helm delete <release_name> --purge
-        ```
-        {: pre}
-        
+      
+      ```
+      helm delete <release_name> --purge
+      ```
+      {: pre}
+      
 
-        
+      
 
       You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
 
