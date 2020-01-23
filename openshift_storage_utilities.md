@@ -842,17 +842,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
         {: screen}
 
     *   Optional: Install the Helm chart by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter.
-
-        ```
-        helm install ./ibmcloud-backup-restore --set ACCESS_KEY_ID=<access_key_ID><br>
-        --set SECRET_ACCESS_KEY=<secret_access_key><br>
-        --set ENDPOINT=<public_bucket_endpoint> --set BUCKET_NAME=<bucket_name><br>
-        --set BACKUP_NAME=<backup_name> --set PVC_NAMES[0]=<pvc_name1><br>
-        --set PVC_NAMES[1]=<pvc_name2> --set CHART_TYPE=backup<br>
-        --set BACKUP_TYPE=<backup_type> --set SCHEDULE_TYPE=<schedule_type><br>
-        --set SCHEDULE_INFO=<schedule_info> --name <release_name>
-        ```
-        {: pre}
+        <p><pre class="pre"><code>helm install ./ibmcloud-backup-restore --set ACCESS_KEY_ID=&lt;access_key_ID&gt;<br> --set SECRET_ACCESS_KEY=&lt;secret_access_key&gt;<br> --set ENDPOINT=&lt;public_bucket_endpoint&gt; --set BUCKET_NAME=&lt;bucket_name&gt;<br> --set BACKUP_NAME=&lt;backup_name&gt; --set PVC_NAMES[0]=&lt;pvc_name1&gt;<br> --set PVC_NAMES[1]=&lt;pvc_name2&gt; --set CHART_TYPE=backup<br> --set BACKUP_TYPE=&lt;backup_type&gt; --set SCHEDULE_TYPE=&lt;schedule_type&gt;<br> --set SCHEDULE_INFO=&lt;schedule_info&gt; --name &lt;release_name&gt;</code>
 
 5. Verify that your data backup or restore completed successfully. </br>
   **Backup**:
