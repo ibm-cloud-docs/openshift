@@ -847,7 +847,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
   * Example to deploy by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter.
 
-  
+    
 
     
 
@@ -862,7 +862,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ```
     {: pre}
 
-  
+    
 
 5. Verify that your data backup or restore completed successfully. </br>
   **Backup**:
@@ -877,6 +877,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ibm-storage-backup                        1/1     Running             0          64m
     ```
     {: screen}
+
   2. Review the logs of the `ibm-storage-backup` pod to make sure that your backup was successful. When you see the `... backup completed` message in the event logs, your backup completed successfully.
 
     ```
