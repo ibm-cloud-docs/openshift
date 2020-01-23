@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -870,12 +870,14 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ```
     {: screen}
   2. Review the logs of the `ibm-storage-backup` pod to make sure that your backup was successful. When you see the `... backup completed` message in the event logs, your backup completed successfully.
+
     ```
     oc logs ibm-storage-backup
     ```
     {: pre}
 
-    Example output for daily backups:
+    Example output for daily backups:<br>
+
     ```
     [2019-04-18 16:01:51,157] [utilities : 151] [INFO] *****************Start logging to ./Backup.log
     [2019-04-18 16:01:51,158] [backup : 48] [INFO] Starting backup:
@@ -1022,14 +1024,16 @@ To back up or restore a PVC by editing the `values.yaml` file:
         ```
         {: pre}
     7. Delete the Helm chart installation from your cluster. This step is required if you restored data to a block storage PVC. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. Because the `ibm-storage-restore` pod already mounts the PVC, you must remove the pod to release the PVC so that you can mount the PVC to a different pod in your cluster.
+
         
         ```
         helm delete <release_name> --purge
         ```
         {: pre}
         
+
         
 
-        You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
+      You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
 
 
