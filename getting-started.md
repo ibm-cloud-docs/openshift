@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-23"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -133,7 +133,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 {: tip}
 
 1.  Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
-2.  From the **Catalog**, click [**Red Hat OpenShift Cluster**]](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster){: external}, and then click **Create**.
+2.  From the **Catalog**, click [**Red Hat OpenShift Cluster**](https://cloud.ibm.com/kubernetes/catalog/openshiftcluster){: external}, and then click **Create**.
 3.  Choose your cluster setup details and name.
     *   Enter a unique name for your cluster, and select the resource group that you want to assign to your cluster.
     *   Enter tags that you want to add to your cluster. Tags can help you organize and find your clusters more easily in your  {{site.data.keyword.cloud_notm}} account.
