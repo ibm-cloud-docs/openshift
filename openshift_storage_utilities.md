@@ -984,51 +984,51 @@ To back up or restore a PVC by editing the `values.yaml` file:
             </tbody></table>
 
       2.  Create the deployment.
-          ```
-          oc apply -f deployment.yaml
-          ```
-          {: pre}
+            ```
+            oc apply -f deployment.yaml
+            ```
+            {: pre}
 
       3.  Verify that your pod has a status of **Running**.
 
-          If you find that your `ibm-storage-restore` pod does not reach a **Completed** or **CrashLoopBackOff** status, restoring your data might have failed. Run `oc logs ibm-storage-restore` to find the root cause for the failure.
-          {: tip}
+            If you find that your `ibm-storage-restore` pod does not reach a **Completed** or **CrashLoopBackOff** status, restoring your data might have failed. Run `oc logs ibm-storage-restore` to find the root cause for the failure.
+            {: tip}
 
-          ```
-          oc get pods | grep restore
-          ```
-          {: pre}
+            ```
+            oc get pods | grep restore
+            ```
+            {: pre}
 
-          Example output:
-          ```
-          restore-7dfc6f4c78-wkcqp                  1/1     Running             0          3m54s
-          ```
-          {: screen}
+            Example output:
+            ```
+            restore-7dfc6f4c78-wkcqp                  1/1     Running             0          3m54s
+            ```
+            {: screen}
 
       4.  Log in to your pod.
-          ```
-          oc exec <pod_name> -it bash
-          ```
-          {: pre}
+            ```
+            oc exec <pod_name> -it bash
+            ```
+            {: pre}
 
       5.  Navigate to the mount directory that you specified in your deployment YAML.
-          ```
-          cd <mount_directory>
-          ```
-          {: pre}
+            ```
+            cd <mount_directory>
+            ```
+            {: pre}
 
       6.  List the files in your mount directory to verify that all your data is restored to the mount directory.
-          ```
-          ls
-          ```
-          {: pre}
+            ```
+            ls
+            ```
+            {: pre}
 
       7.  Delete the Helm chart installation from your cluster. This step is required if you restored data to a block storage PVC. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. Because the `ibm-storage-restore` pod already mounts the PVC, you must remove the pod to release the PVC so that you can mount the PVC to a different pod in your cluster.
-          ```
-          helm delete <release_name> --purge
-          ```
-          {: pre}
-          
+            ```
+            helm delete <release_name> --purge
+            ```
+            {: pre}
+            
 
       8.  You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
 
