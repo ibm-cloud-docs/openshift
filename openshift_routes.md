@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-23"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -46,7 +46,7 @@ Use the router to publicly expose the services in your {{site.data.keyword.opens
 
 A router is deployed by default to your cluster and functions as the ingress point for external network traffic. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router uses the service selector to find the service and the endpoints that back the service, and creates [routes](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external} that expose services as hostnames to be used by external clients. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. After you set up routes for your services, the router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
 
-You can find the router subdomain for your cluster by running `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. Note that this hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster.
+You can find the router subdomain for your cluster by running `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 {: note}
 
 Not sure whether to use OpenShift routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).
@@ -75,20 +75,20 @@ To set up routes to publicly expose apps:
   {: pre}
 
 2. Choose a domain for your app.
-  * IBM-provided domain: If you do not need to use a custom domain, a subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`.
+  * IBM-provided domain: If you do not need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
   * Custom domain: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
-    1. Get the public IP address for the router in the **EXTERNAL-IP** column.
-      ```
-      oc get svc router
-      ```
-      {: pre}
+    1. Get the public IP address for the default public router service in the **EXTERNAL-IP** column.
+        ```
+        oc get svc router
+        ```
+        {: pre}
     2. Create a custom domain with your DNS provider.
         If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
         {: tip}
     3. Map your custom domain to the router's public IP address by adding the IP address as an A record.
 
 3. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}.
-  * If you do not have a custom domain, leave the **Hostname** field blank.
+  * If you do not have a custom domain, leave the **Hostname** field blank. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
   * If you registered a wildcard subdomain, specify a unique subdomain in each route resource that you create. For example, you might specify `svc1.example.com` in this route resource, and `svc2.example.com` in another route resource.
 
 4. Verify that the route for your app is created.
@@ -97,7 +97,7 @@ To set up routes to publicly expose apps:
   ```
   {: pre}
 
-5. Optional: Customize the private router's routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
+5. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
 
 <br />
 
@@ -108,7 +108,7 @@ To set up routes to publicly expose apps:
 To use routes to privately expose your apps, create a new router and change the service that exposes the router to a private load balancer. The router is assigned an IP address through which private requests are forwarded to your app.
 {: shortdesc}
 
-1. Create a router that is named `router-private`. A service that exposes the private router is also automatically created.
+1. Create a router that is named `router-private` in the project where your app is deployed. A service that exposes the private router is also automatically created.
   ```
   oc adm router router-private --replicas=2 --service-account=router -n <project> --images registry.ng.bluemix.net/armada-master/iksorigin-ose-haproxy-router:v3.11.154
   ```
@@ -212,64 +212,65 @@ To use routes to privately expose your apps, create a new router and change the 
 When you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), the worker nodes are connected to the new VLAN and assigned new public or private IP addresses. However, router services cannot automatically migrate to the new VLAN because they are assigned a stable, portable public or private IP address from a subnet that belongs to the old VLAN. When your worker nodes and routers are connected to different VLANs, the routers cannot forward incoming network traffic to app pods to your worker nodes. To move your router services to a different VLAN, you must create the router service on the new VLAN and delete the router service on the old VLAN.
 {: shortdesc}
 
-1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.
-  ```
-  oc get svc router -o yaml
-  ```
-  {: pre}
+1. Create a router service on the new VLAN.
+    1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.
+    ```
+    oc get svc router -o yaml
+    ```
+    {: pre}
 
-2. Create a YAML configuration file for a new router service. Add the Prometheus password annotation and any custom annotations. Save the file as `router-new.yaml`.
-  ```yaml
-  apiVersion: v1
-  kind: Service
-  metadata:
-    annotations:
-      prometheus.openshift.io/password: # your password
-      prometheus.openshift.io/username: admin
-      service.alpha.openshift.io/serving-cert-secret-name: router-certs
-      service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer
-    labels:
-      router: router
-    name: router-new
-    namespace: default
-  spec:
-    externalTrafficPolicy: Cluster
-    ports:
-    - name: 80-tcp
-      port: 80
-      protocol: TCP
-      targetPort: 80
-    - name: 443-tcp
-      port: 443
-      protocol: TCP
-      targetPort: 443
-    selector:
-      router: router
-    sessionAffinity: None
-    type: LoadBalancer
-  ```
-  {: codeblock}
+    2. Create a YAML configuration file for a new router service. Add the Prometheus password annotation and any custom annotations. Save the file as `router-new.yaml`.
+      ```yaml
+      apiVersion: v1
+      kind: Service
+      metadata:
+        annotations:
+          prometheus.openshift.io/password: # your password
+          prometheus.openshift.io/username: admin
+          service.alpha.openshift.io/serving-cert-secret-name: router-certs
+          service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer
+        labels:
+          router: router
+        name: router-new
+        namespace: default
+      spec:
+        externalTrafficPolicy: Cluster
+        ports:
+        - name: 80-tcp
+          port: 80
+          protocol: TCP
+          targetPort: 80
+        - name: 443-tcp
+          port: 443
+          protocol: TCP
+          targetPort: 443
+        selector:
+          router: router
+        sessionAffinity: None
+        type: LoadBalancer
+      ```
+      {: codeblock}
 
-3. Create the new router service.
-  ```
-  oc apply -f router-new.yaml
-  ```
-  {: pre}
+    3. Create the new router service.
+      ```
+      oc apply -f router-new.yaml
+      ```
+      {: pre}
 
-4. Get the **EXTERNAL-IP** address of the new router service. This IP address is from a subnet on the new VLAN.
-  ```
-  oc get svc router-new
-  ```
-  {: pre}
+    4. Get the **EXTERNAL-IP** address of the new router service. This IP address is from a subnet on the new VLAN.
+      ```
+      oc get svc router-new
+      ```
+      {: pre}
 
-  Example output:
-  ```
-  NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                                     AGE
-  router-new                   LoadBalancer   172.21.XX.XX     169.XX.XXX.XX   80:31049/TCP,443:30219/TCP                  2m
-  ```
-  {: screen}
+      Example output:
+      ```
+      NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                                     AGE
+      router-new                   LoadBalancer   172.21.XX.XX     169.XX.XXX.XX   80:31049/TCP,443:30219/TCP                  2m
+      ```
+      {: screen}
 
-5. Note the **Hostname** and **IP** address of the router. In the output, look for the hostname formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. The IP address that is listed is the IP for the service that exposes the router on the old VLAN.
+2. Note the **Hostname** and **IP** address of the router. In the output, look for the hostname formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. The IP address that is listed is the IP for the service that exposes the router on the old VLAN.
   ```
   ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
   ```
@@ -283,28 +284,28 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
   ```
   {: screen}
 
-6. Add the IP address of the new router service to the router's hostname. Your router service on the new VLAN is now registered with the domain for the default router in your cluster, and can forward incoming requests to apps.
+3. Add the IP address of the new router service to the router's hostname. Your router service on the new VLAN is now registered with the domain for the default router in your cluster, and can forward incoming requests to apps.
   ```
   ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <new_IP> --nlb-host <subdomain>
   ```
   {: pre}
 
-7. Remove the IP address of the old router service from the router's hostname.
+4. Remove the IP address of the old router service from the router's hostname.
   ```
   ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --ip <old_IP> --nlb-host <hostname>
   ```
   {: pre}
 
-8. Verify that the hostname for your router is now registered with the new IP address. After your router hostname is updated with the IP address of the new service, no further changes to your router or routes are required.
+5. Verify that the hostname for your router is now registered with the new IP address. After your router hostname is updated with the IP address of the new service, no further changes to your router or routes are required.
   ```
   ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
   ```
   {: pre}
 
-9. Delete the router service on the old VLAN.
-  ```
-  oc delete svc/router
-  ```
-  {: pre}
+6. Delete the router service on the old VLAN.
+    ```
+    oc delete svc router
+    ```
+    {: pre}
 
-10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/containers?topic=containers-subnets#remove-subnets).
+7. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
