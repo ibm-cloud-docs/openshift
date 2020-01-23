@@ -914,74 +914,74 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ```
     {: screen}
 
-6. Verify that your data is successfully backed up or restored.
-    **Backup**:
-    1. Find your {{site.data.keyword.cos_full_notm}} service instance in the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources).
-    2. From the navigation, select **Buckets** and click on the bucket that you used in your backup configuration. Your backup is displayed as an object in your bucket.
-    3. Review the compressed files. You can download the `*.gz` file, extract the file, and verify the backed-up data.
+6.  Verify that your data is successfully backed up or restored.
+    * **Backup**:
+      1. Find your {{site.data.keyword.cos_full_notm}} service instance in the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources).
+      2. From the navigation, select **Buckets** and click on the bucket that you used in your backup configuration. Your backup is displayed as an object in your bucket.
+      3. Review the compressed files. You can download the `*.gz` file, extract the file, and verify the backed-up data.
 
-    **Restore**:
-    1. Create a `deployment.yaml` file with a pod that mounts the PVC that contains your restored data. The following example deploys an `nginx` pod that mounts the PVC on the `/test` mount directory.
-        ```yaml
-        apiVersion: apps/v1
-        kind: Deployment
-        metadata:
-          name: restore
-          labels:
-          app: nginx
-        spec:
-          selector:
-            matchLabels:
-              app: nginx
-          template:
-            metadata:
-              labels:
+    * **Restore**:
+      1. Create a `deployment.yaml` file with a pod that mounts the PVC that contains your restored data. The following example deploys an `nginx` pod that mounts the PVC on the `/test` mount directory.
+          ```yaml
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: restore
+            labels:
+            app: nginx
+          spec:
+            selector:
+              matchLabels:
                 app: nginx
-            spec:
-              containers:
-                - image: nginx
-                  name: nginx
-                  volumeMounts:
+            template:
+              metadata:
+                labels:
+                  app: nginx
+              spec:
+                containers:
+                  - image: nginx
+                    name: nginx
+                    volumeMounts:
+                    - name: <volume_name> # Example: my_volume
+                      mountPath: <mount_path> # Example: /test
+                  volumes:
                   - name: <volume_name> # Example: my_volume
-                    mountPath: <mount_path> # Example: /test
-                volumes:
-                - name: <volume_name> # Example: my_volume
-                  persistentVolumeClaim:
-                    claimName: <pvc_name> # Example: my_pvc
-        ```
-        {: codeblock}
+                    persistentVolumeClaim:
+                      claimName: <pvc_name> # Example: my_pvc
+          ```
+          {: codeblock}
 
-        <table>
-        <caption>Understanding the <code>deployment.yaml</code> file components</caption>
-        <thead>
-        <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>spec.containers.image</code></td>
-        <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registryshort_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
-        </tr>
-        <tr>
-        <td><code>spec.containers.name</code></td>
-        <td>The name of the container that you want to deploy to your cluster.</td>
-        </tr>
-        <tr>
-        <td><code>spec.containers.volumeMounts.mountPath</code></td>
-        <td>The absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps. </td>
-        </tr>
-        <tr>
-        <td><code>spec.containers.volumeMounts.name</code></td>
-        <td>The name of the volume to mount to your pod.</td>
-        </tr>
-        <tr>
-        <td><code>volumes.name</code></td>
-        <td>The name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
-        </tr>
-        <tr>
-        <td><code>volumes.persistentVolumeClaim.claimName</code></td>
-        <td>The name of the PVC that binds the PV that you want to use. </td>
-        </tr>
-        </tbody></table>
+          <table>
+          <caption>Understanding the <code>deployment.yaml</code> file components</caption>
+          <thead>
+          <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+          </thead>
+          <tbody>
+          <tr>
+          <td><code>spec.containers.image</code></td>
+          <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registryshort_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
+          </tr>
+          <tr>
+          <td><code>spec.containers.name</code></td>
+          <td>The name of the container that you want to deploy to your cluster.</td>
+          </tr>
+          <tr>
+          <td><code>spec.containers.volumeMounts.mountPath</code></td>
+          <td>The absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps. </td>
+          </tr>
+          <tr>
+          <td><code>spec.containers.volumeMounts.name</code></td>
+          <td>The name of the volume to mount to your pod.</td>
+          </tr>
+          <tr>
+          <td><code>volumes.name</code></td>
+          <td>The name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
+          </tr>
+          <tr>
+          <td><code>volumes.persistentVolumeClaim.claimName</code></td>
+          <td>The name of the PVC that binds the PV that you want to use. </td>
+          </tr>
+          </tbody></table>
 
     2. Create the deployment.
         ```
