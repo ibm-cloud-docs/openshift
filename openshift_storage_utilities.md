@@ -1036,14 +1036,12 @@ To back up or restore a PVC by editing the `values.yaml` file:
     7. Delete the Helm chart installation from your cluster. This step is required if you restored data to a block storage PVC. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. Because the `ibm-storage-restore` pod already mounts the PVC, you must remove the pod to release the PVC so that you can mount the PVC to a different pod in your cluster.
 
       
-
       ```
       helm delete <release_name> --purge
       ```
       {: pre}
-
+      <br>
       
-
       
 
     8. You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
