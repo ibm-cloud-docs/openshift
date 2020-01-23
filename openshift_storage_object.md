@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-23"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -44,7 +44,6 @@ If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster with
 
 If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, make sure to install the plug-in without the Helm server Tiller.
 {: important}
-
 
 
 
