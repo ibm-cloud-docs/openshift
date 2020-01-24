@@ -722,6 +722,9 @@ Grant users access to your Red Hat OpenShift on IBM Cloud clusters by assigning 
 Use RBAC roles to define the actions that a user can take to work with the Kubernetes resources in your cluster.
 {: shortdesc}
 
+### Understanding RBAC permissions
+{: #understand-rbac}
+
 **What are RBAC roles and cluster roles?**</br>
 RBAC roles and cluster roles define a set of permissions for how users can interact with Kubernetes resources in your cluster. A role is scoped to resources within a specific namespace, like a deployment. A cluster role is scoped to cluster-wide resources, like worker nodes, or to namespace-scoped resources that can be found in each namespace, like pods.
 
