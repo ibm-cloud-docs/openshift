@@ -47,7 +47,7 @@ Use the following checklist to configure user access in your cluster.
 
 1. [Understand how roles, users, and resources in your account](#access_policies) can be managed.
 1. [Set the API key](#api_key) for all the regions and resource groups that you want to create clusters in.
-2. Invite users to your account and [assign them {{site.data.keyword.cloud_notm}} IAM roles](#platform) for the service (**containers-kubernetes** in the API or CLI, and **Kubernetes Service** in the console).<p class="tip">Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.</p>
+2. Invite users to your account and [assign them {{site.data.keyword.cloud_notm}} IAM roles](#platform) for the service (**containers-kubernetes** in the API or CLI, and **Kubernetes Service** in the console).<p class="note">Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.</p>
 3. To allow users to bind services to the cluster or to view logs that are forwarded from cluster logging configurations, [grant users Cloud Foundry roles](/docs/iam?topic=iam-mngcf) for the org and space that the services are deployed to or where logs are collected.
 4. If you use Kubernetes namespaces to isolate resources within the cluster, grant access to namespaces by [assigning users {{site.data.keyword.cloud_notm}} IAM service roles for the namespaces](#platform).
 5. For any automation tooling such as in your CI/CD pipeline, set up service accounts and [assign the service accounts Kubernetes RBAC permissions](#rbac).
@@ -384,9 +384,13 @@ Set {{site.data.keyword.cloud_notm}} IAM platform management and service access 
 {: shortdesc}
 
 {{site.data.keyword.cloud_notm}} IAM roles can't be assigned to a service account. Instead, you can directly [assign RBAC roles to service accounts](#rbac).
-{: tip}
+{: note}
+
+## Example use cases and roles
+{: #example-iam}
 
 Wondering which access roles to assign to your cluster users? Use the examples in following table to determine which roles and scope to assign. You can find more information about what roles authorize which types of actions on the user access reference page in the table's links.
+{: shortdesc}
 
 | Use case | Example roles and scope |
 | --- | --- |
