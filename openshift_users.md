@@ -386,7 +386,7 @@ Set {{site.data.keyword.cloud_notm}} IAM platform management and service access 
 {{site.data.keyword.cloud_notm}} IAM roles can't be assigned to a service account. Instead, you can directly [assign RBAC roles to service accounts](#rbac).
 {: note}
 
-## Example use cases and roles
+### Example use cases and roles
 {: #example-iam}
 
 Wondering which access roles to assign to your cluster users? Use the examples in following table to determine which roles and scope to assign. You can find more information about what roles authorize which types of actions on the user access reference page in the table's links.
