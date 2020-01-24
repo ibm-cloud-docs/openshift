@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-23"
+lastupdated: "2020-01-24"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -214,10 +214,10 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
 
 1. Create a router service on the new VLAN.
     1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.
-    ```
-    oc get svc router -o yaml
-    ```
-    {: pre}
+      ```
+      oc get svc router -o yaml
+      ```
+      {: pre}
 
     2. Create a YAML configuration file for a new router service. Add the Prometheus password annotation and any custom annotations. Save the file as `router-new.yaml`.
       ```yaml
@@ -284,13 +284,13 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
   ```
   {: screen}
 
-3. Add the IP address of the new router service to the router's hostname. Your router service on the new VLAN is now registered with the domain for the default router in your cluster, and can forward incoming requests to apps.
+3. Add the IP address of the new router service that you found in step 1 to the router's hostname. Your router service on the new VLAN is now registered with the domain for the default router in your cluster, and can forward incoming requests to apps.
   ```
   ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <new_IP> --nlb-host <subdomain>
   ```
   {: pre}
 
-4. Remove the IP address of the old router service from the router's hostname.
+4. Remove the IP address of the old router service that you found in step 2 from the router's hostname.
   ```
   ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --ip <old_IP> --nlb-host <hostname>
   ```
