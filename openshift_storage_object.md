@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-23"
+lastupdated: "2020-01-24"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -347,6 +347,12 @@ If you have a private-only cluster, you must install the plugin without Tiller.
         SET DC_NAME=dal13
         ```
         {: pre}
+
+      c. Optional: Set the environment variable in Windows PowerShell.
+        ```
+        $env:DC_NAME="<datacenter>"
+        ```
+        {: codeblock}
 
     2. Retrieve the infrastructure provider that your cluster uses and store it in an environment variable.
 
