@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-23"
+lastupdated: "2020-01-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -271,7 +271,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 3. Verify that the ALB is successfully created.
     1. Check whether an ALB exists for your cluster and that the ALB has a public IP address assigned.
       * If a public ALB is listed and is assigned an IP address, continue to the next step.
-      * If no ALBs are created after several minutes, [contact us](#network_getting_help).
+      * If no ALBs are created after several minutes, [contact us](#getting_help).
 
         ```
         ibmcloud oc alb ls -c <cluster_name_or_ID>
@@ -288,7 +288,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address as the public ALB.
       * If a `LoadBalancer` service is listed and is assigned an IP address, continue to the next step.
-      * If no `LoadBalancer` services are created after several minutes, [contact us](#network_getting_help).
+      * If no `LoadBalancer` services are created after several minutes, [contact us](#getting_help).
 
         ```
         kubectl get svc -n kube-system | grep LoadBalancer
@@ -301,7 +301,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-4. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [contact us](#network_getting_help).
+4. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [contact us](#getting_help).
   ```
   ibmcloud oc cluster get -c <cluster_name_or_ID>
   ```
@@ -547,3 +547,15 @@ The default file storage device that provides the storage for the internal regis
 
 When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `docker-registry` pod that uses the `registry-backing` PVC to verify that the volume is resized.
 {: note}
+
+## Getting help and support
+{: #getting_help}
+
+Still having issues with your cluster?
+{: shortdesc}
+
+-  In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
+-   To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
+-   Post a question in the `#openshift` channel of the [{{site.data.keyword.containerlong_notm}} Slack](https://ibm-container-service.slack.com){: external}.<p class="tip">If you are not using an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.</p>
+-   Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`.</p>
+
