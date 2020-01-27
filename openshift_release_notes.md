@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-27"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 27 January 2020 | <ul><li>**Back up and restore File and Block storage**: Added steps for deploying the [<code>ibmcloud-backup-restore</code> Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore).</li></ul> |
 | 22 January 2020 | <ul><li>**Changing VLANs**: After you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), you can now [move router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan).</li><li>**Storage utilities**: [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities) are now available for OpenShift clusters.</li></ul> |
 | 20 January 2020 | <ul><li>**Helm version 3**: Updated [Adding services by using Helm charts](/docs/containers?topic=containers-helm) to include steps for installing Helm v3 in your cluster. Migrate to Helm v3 today for several advantages over Helm v2, such as the removal of the Helm server, Tiller.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 621](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li><li>**Version changelog**: Patch updates are available for OpenShift [3.11.161_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1538).</li></ul> |
 | 06 January 2020 | **Ingress ALB changelog**: Updated the [`ingress-auth` image to build 373](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).|
