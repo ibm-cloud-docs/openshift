@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -815,46 +815,34 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
 4. Save and close the `values.yaml` file.
 
-5. Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<chart_name>` with a name for your Helm chart.
-    
+5.  Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<release_name>` with a name for your Helm chart.
 
-    
-    ```
-    helm install ./ibmcloud-backup-restore --name <chart_name>
-    ```
-    {: pre}
-    
+    *   Install the Helm chart by using the `helm install` command.
 
-    Example output for backup:
-    ```
-    NAME: <release_name>
-    LAST DEPLOYED: Mon Jan 20 09:17:02 2020
-    NAMESPACE: default
-    STATUS: deployed
-    REVISION: 1
-    TEST SUITE: None
-    NOTES:
-    Thank you for installing: ibmcloud-backup-restore.   Your release is named: <release_name>
+        ```
+        helm install ./ibmcloud-backup-restore --name <release_name>
+        ```
+        {: pre}
 
-    Please refer Chart README.md file for creating a sample PVC
-    Please refer Chart RELEASE.md to see the release details/fixes
-    ```
-    {: screen}
+        Example output for backup:
 
-    Example to deploy by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter.
-    
-    
-    ```
-    helm install ./ibmcloud-backup-restore --set ACCESS_KEY_ID=<access_key_ID><br>
-    --set SECRET_ACCESS_KEY=<secret_access_key><br>
-    --set ENDPOINT=<public_bucket_endpoint> --set BUCKET_NAME=<bucket_name><br>
-    --set BACKUP_NAME=<backup_name> --set PVC_NAMES[0]=<pvc_name1><br>
-    --set PVC_NAMES[1]=<pvc_name2> --set CHART_TYPE=backup<br>
-    --set BACKUP_TYPE=<backup_type> --set SCHEDULE_TYPE=<schedule_type><br>
-    --set SCHEDULE_INFO=<schedule_info> --name <release_name>
-    ```
-    {: pre}
-    
+        ```
+        NAME: <release_name>
+        LAST DEPLOYED: Mon Jan 20 09:17:02 2020
+        NAMESPACE: default
+        STATUS: deployed
+        REVISION: 1
+        TEST SUITE: None
+        NOTES:
+        Thank you for installing: ibmcloud-backup-restore.   Your release is named: <release_name>
+
+        Please refer Chart README.md file for creating a sample PVC
+        Please refer Chart RELEASE.md to see the release details/fixes
+        ```
+        {: screen}
+
+    *   Optional: Install the Helm chart by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter.
+        <p><pre class="pre"><code>helm install ./ibmcloud-backup-restore --set ACCESS_KEY_ID=&lt;access_key_ID&gt;<br> --set SECRET_ACCESS_KEY=&lt;secret_access_key&gt;<br> --set ENDPOINT=&lt;public_bucket_endpoint&gt; --set BUCKET_NAME=&lt;bucket_name&gt;<br> --set BACKUP_NAME=&lt;backup_name&gt; --set PVC_NAMES[0]=&lt;pvc_name1&gt;<br> --set PVC_NAMES[1]=&lt;pvc_name2&gt; --set CHART_TYPE=backup<br> --set BACKUP_TYPE=&lt;backup_type&gt; --set SCHEDULE_TYPE=&lt;schedule_type&gt;<br> --set SCHEDULE_INFO=&lt;schedule_info&gt; --name &lt;release_name&gt;</code></p>
 
 5. Verify that your data backup or restore completed successfully. </br>
   **Backup**:
@@ -869,13 +857,16 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ibm-storage-backup                        1/1     Running             0          64m
     ```
     {: screen}
+
   2. Review the logs of the `ibm-storage-backup` pod to make sure that your backup was successful. When you see the `... backup completed` message in the event logs, your backup completed successfully.
+
     ```
     oc logs ibm-storage-backup
     ```
     {: pre}
 
-    Example output for daily backups:
+    Example output for daily backups:<br>
+
     ```
     [2019-04-18 16:01:51,157] [utilities : 151] [INFO] *****************Start logging to ./Backup.log
     [2019-04-18 16:01:51,158] [backup : 48] [INFO] Starting backup:
@@ -913,123 +904,122 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ```
     {: screen}
 
-6. Verify that your data is successfully backed up or restored. </br>
-    **Backup**:
-    1. Find your {{site.data.keyword.cos_full_notm}} service instance in the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources).
-    2. From the navigation, select **Buckets** and click on the bucket that you used in your backup configuration. Your backup is displayed as an object in your bucket.
-    3. Review the compressed files. You can download the `*.gz` file, extract the file, and verify the backed-up data.
+6.  Verify that your data is successfully backed up or restored.
+    * **Backup**:
+      1. Find your {{site.data.keyword.cos_full_notm}} service instance in the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources).
+      2. From the navigation, select **Buckets** and click on the bucket that you used in your backup configuration. Your backup is displayed as an object in your bucket.
+      3. Review the compressed files. You can download the `*.gz` file, extract the file, and verify the backed-up data.
 
-    **Restore**:
-    1. Create a `deployment.yaml` file with a pod that mounts the PVC that contains your restored data. The following example deploys an `nginx` pod that mounts the PVC on the `/test` mount directory.
-        ```yaml
-        apiVersion: apps/v1
-        kind: Deployment
-        metadata:
-          name: restore
-          labels:
-          app: nginx
-        spec:
-          selector:
-            matchLabels:
-              app: nginx
-          template:
+    * **Restore**:
+      1.  Create a `deployment.yaml` file with a pod that mounts the PVC that contains your restored data. The following example deploys an `nginx` pod that mounts the PVC on the `/test` mount directory.
+            ```yaml
+            apiVersion: apps/v1
+            kind: Deployment
             metadata:
+              name: restore
               labels:
-                app: nginx
+              app: nginx
             spec:
-              containers:
-                - image: nginx
-                  name: nginx
-                  volumeMounts:
-                  - name: <volume_name> # Example: my_volume
-                    mountPath: <mount_path> # Example: /test
-                volumes:
-                - name: <volume_name> # Example: my_volume
-                  persistentVolumeClaim:
-                    claimName: <pvc_name> # Example: my_pvc
-        ```
-        {: codeblock}
+              selector:
+                matchLabels:
+                  app: nginx
+              template:
+                metadata:
+                  labels:
+                    app: nginx
+                spec:
+                  containers:
+                    - image: nginx
+                      name: nginx
+                      volumeMounts:
+                      - name: <volume_name> # Example: my_volume
+                        mountPath: <mount_path> # Example: /test
+                    volumes:
+                    - name: <volume_name> # Example: my_volume
+                      persistentVolumeClaim:
+                        claimName: <pvc_name> # Example: my_pvc
+            ```
+            {: codeblock}
 
-        <table>
-        <caption>Understanding the <code>deployment.yaml</code> file components</caption>
-        <thead>
-        <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>spec.containers.image</code></td>
-        <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registryshort_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
-        </tr>
-        <tr>
-        <td><code>spec.containers.name</code></td>
-        <td>The name of the container that you want to deploy to your cluster.</td>
-        </tr>
-        <tr>
-        <td><code>spec.containers.volumeMounts.mountPath</code></td>
-        <td>The absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps. </td>
-        </tr>
-        <tr>
-        <td><code>spec.containers.volumeMounts.name</code></td>
-        <td>The name of the volume to mount to your pod.</td>
-        </tr>
-        <tr>
-        <td><code>volumes.name</code></td>
-        <td>The name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
-        </tr>
-        <tr>
-        <td><code>volumes.persistentVolumeClaim.claimName</code></td>
-        <td>The name of the PVC that binds the PV that you want to use. </td>
-        </tr>
-        </tbody></table>
+            <table>
+            <caption>Understanding the <code>deployment.yaml</code> file components</caption>
+            <thead>
+            <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+            </thead>
+            <tbody>
+            <tr>
+            <td><code>spec.containers.image</code></td>
+            <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registryshort_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
+            </tr>
+            <tr>
+            <td><code>spec.containers.name</code></td>
+            <td>The name of the container that you want to deploy to your cluster.</td>
+            </tr>
+            <tr>
+            <td><code>spec.containers.volumeMounts.mountPath</code></td>
+            <td>The absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps. </td>
+            </tr>
+            <tr>
+            <td><code>spec.containers.volumeMounts.name</code></td>
+            <td>The name of the volume to mount to your pod.</td>
+            </tr>
+            <tr>
+            <td><code>volumes.name</code></td>
+            <td>The name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
+            </tr>
+            <tr>
+            <td><code>volumes.persistentVolumeClaim.claimName</code></td>
+            <td>The name of the PVC that binds the PV that you want to use. </td>
+            </tr>
+            </tbody></table>
 
-    2. Create the deployment.
-        ```
-        oc apply -f deployment.yaml
-        ```
-        {: pre}
+      2.  Create the deployment.
+            ```
+            oc apply -f deployment.yaml
+            ```
+            {: pre}
 
-    3. Verify that your pod has a status of **Running**.
+      3.  Verify that your pod has a status of **Running**.
 
-        If you find that your `ibm-storage-restore` pod does not reach a **Completed** or **CrashLoopBackOff** status, restoring your data might have failed. Run `oc logs ibm-storage-restore` to find the root cause for the failure.
-        {: tip}
+            If you find that your `ibm-storage-restore` pod does not reach a **Completed** or **CrashLoopBackOff** status, restoring your data might have failed. Run `oc logs ibm-storage-restore` to find the root cause for the failure.
+            {: tip}
 
-        ```
-        oc get pods | grep restore
-        ```
-        {: pre}
+            ```
+            oc get pods | grep restore
+            ```
+            {: pre}
 
-        Example output:
-        ```
-        restore-7dfc6f4c78-wkcqp                  1/1     Running             0          3m54s
-        ```
-        {: screen}
+            Example output:
+            ```
+            restore-7dfc6f4c78-wkcqp                  1/1     Running             0          3m54s
+            ```
+            {: screen}
 
-    4. Log in to your pod.
-        ```
-        oc exec <pod_name> -it bash
-        ```
-        {: pre}
+      4.  Log in to your pod.
+            ```
+            oc exec <pod_name> -it bash
+            ```
+            {: pre}
 
-    5. Navigate to the mount directory that you specified in your deployment YAML.
-        ```
-        cd <mount_directory>
-        ```
-        {: pre}
+      5.  Navigate to the mount directory that you specified in your deployment YAML.
+            ```
+            cd <mount_directory>
+            ```
+            {: pre}
 
-    6. List the files in your mount directory to verify that all your data is restored to the mount directory.
-        ```
-        ls
-        ```
-        {: pre}
-    7. Delete the Helm chart installation from your cluster. This step is required if you restored data to a block storage PVC. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. Because the `ibm-storage-restore` pod already mounts the PVC, you must remove the pod to release the PVC so that you can mount the PVC to a different pod in your cluster.
-        
-        ```
-        helm delete <release_name> --purge
-        ```
-        {: pre}
-        
-        
+      6.  List the files in your mount directory to verify that all your data is restored to the mount directory.
+            ```
+            ls
+            ```
+            {: pre}
 
-        You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
+      7.  Delete the Helm chart installation from your cluster. This step is required if you restored data to a block storage PVC. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. Because the `ibm-storage-restore` pod already mounts the PVC, you must remove the pod to release the PVC so that you can mount the PVC to a different pod in your cluster.
+            ```
+            helm delete <release_name> --purge
+            ```
+            {: pre}
+            
+
+      8.  You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
 
 

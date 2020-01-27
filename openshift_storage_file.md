@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-01-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1115,6 +1115,30 @@ For questions about billing and to find the steps for how to use the {{site.data
       fsf-dal1001g-fz.adn.networklayer.com:/IBM01SEV1234567_6/data01   40G     0   40G   0% /myvol
       ```
       {: screen}
+      
+5. Update the size and IOPS in your PV. Although the size and IOPS of your physical storage changed, these values are not automatically reflected in your PV, and must be manually updated. 
+   1. Update the size of the volume. 
+      ```
+      oc patch pv <pv_name> -p '{"spec":{"capacity":{"storage":"<size>Gi"}}}'
+      ```
+      {: pre}
+      
+      ```
+      oc patch pv <pv_name> -p '{"metadata":{"labels":{"CapacityGb":"<size>"}}}'
+      ```
+      {: pre}
+      
+   2. Update the IOPS of the volume. 
+      ```
+      oc patch pv <pv_name> -p '{"metadata":{"labels":{"Iops":"<iops>"}}}'
+      ```
+      {: pre}
+      
+   3. Verify that the size and IOPS in your volume are successfully updated. 
+      ```
+      oc describe pv <pv_name>
+      ```
+      {: pre}
 
 
 ## Changing the default NFS version

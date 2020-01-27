@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-24"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -44,7 +44,6 @@ If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster with
 
 If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, make sure to install the plug-in without the Helm server Tiller.
 {: important}
-
 
 
 
@@ -348,6 +347,12 @@ If you have a private-only cluster, you must install the plugin without Tiller.
         SET DC_NAME=dal13
         ```
         {: pre}
+
+      c. Optional: Set the environment variable in Windows PowerShell.
+        ```
+        $env:DC_NAME="<datacenter>"
+        ```
+        {: codeblock}
 
     2. Retrieve the infrastructure provider that your cluster uses and store it in an environment variable.
 

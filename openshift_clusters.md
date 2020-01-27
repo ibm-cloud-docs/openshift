@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-27"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -165,6 +165,8 @@ After you set up your account to create clusters, decide on the setup for your c
 Create your single zone or multizone classic OpenShift cluster by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
+
+
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
 2. From the [{{site.data.keyword.cloud_notm}} Red Hat OpenShift on IBM Cloud Clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster environment.
@@ -210,6 +212,8 @@ Create your single zone or multizone classic OpenShift cluster by using the {{si
 
 Create your single zone or multizone classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
+
+
 
 **Before you begin**:
 * Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
@@ -310,10 +314,6 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    <td>If you already have a private VLAN set up in your IBM Cloud infrastructure account for that zone, enter the ID of the private VLAN that you retrieved earlier. If you do not have a private VLAN in your account, do not specify this option. {{site.data.keyword.containerlong_notm}} automatically creates a private VLAN for you.<p>Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.</p></td>
    </tr>
    <tr>
-   <td><code>--private-only</code></td>
-   <td>Create the cluster with private VLANs only. If you include this option, do not include the <code>--public-vlan</code> option.</td>
-   </tr>
-   <tr>
    <td><code>--name <em>&lt;name&gt;</em></code></td>
    <td>Specify a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
 </td>
@@ -341,7 +341,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    </tr>
    </tbody></table>
 
-7. Verify that the creation of the cluster was requested. For virtual machines, it can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account. Bare metal physical machines are provisioned by manual interaction with IBM Cloud infrastructure, and can take more than one business day to complete.
+7. Verify that the creation of the cluster was requested. For virtual machines, it can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account. Bare metal physical machines are provisioned by manual interaction with IBM Cloud infrastructure, and can take more than one business day to complete. 
    ```
    ibmcloud oc cluster ls
    ```

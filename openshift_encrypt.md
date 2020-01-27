@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-24"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -64,6 +64,8 @@ _Figure: Overview of data encryption in a cluster_
 7.  **Data-in-use encryption**: For select, SGX-enabled classic worker node flavors, you can use [{{site.data.keyword.datashield_short}}](#datashield) to encrypt data-in-use within the worker node.
 
 
+
+
 <br />
 
 
@@ -74,7 +76,7 @@ You can protect the etcd component in your Kubernetes master and Kubernetes secr
 {: shortdesc}
 
 KMS provider integration is a beta feature.
-{: note}
+{: important}
 
 **What KMS providers are available by default? Can I add other providers?**<br>
 Red Hat OpenShift on IBM Cloud supports the following KMS providers:
@@ -83,11 +85,14 @@ Red Hat OpenShift on IBM Cloud supports the following KMS providers:
 
 Because adding a different KMS provider requires updating the managed master default configuration, you cannot add other KMS providers to the cluster.
 
+**Can I change the KMS provider?**<br>
+You can have one KMS provider enabled in the cluster. You can switch the KMS provider, but you cannot disable KMS provider encryption after it is enabled. For example, if you enabled {{site.data.keyword.keymanagementservicefull}} in your cluster, but want to use Hyper Protect Crypto Services instead, you can [enable](#keyprotect) Hyper Protect Crypto Services as the KMS provider.
+
+You cannot disable KMS provider encryption. Do not delete root keys in your KMS instance, even if you rotate to use a new key or KMS provider. If you delete a root key that a cluster used, the cluster becomes unusable, loses all its data, and cannot be recovered.
+{: important}
+
 **With a KMS provider, do I control the encryption in my cluster?**<br>
 Yes. When you enable a KMS provider in your cluster, your own KMS root key is used to encrypt data in etcd, including the LUKS secrets. Using your own encryption root key adds a layer of security to your etcd data and Kubernetes secrets and gives you more granular control of who can access sensitive cluster information. For more information, see the [overview](#encrypt_ov) and your KMS provider's documentation, such as [{{site.data.keyword.keymanagementserviceshort}} envelope encryption](/docs/services/key-protect?topic=key-protect-envelope-encryption).
-
-You cannot disable KMS provider encryption. Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
-{: important}
 
 <br />
 
@@ -100,6 +105,9 @@ Enable a Kubernetes [key management service (KMS) provider](https://kubernetes.i
 
 To rotate your encryption key, repeat the [CLI](#kms_cli) or [console](#kms_ui) steps to enable KMS provider encryption with a new root key ID. The new root key is added to the cluster configuration along with the previous root key so that existing encrypted data is still protected.
 {: note}
+
+KMS provider integration is a beta feature.
+{: important}
 
 ### Prerequisites
 {: #kms_prereqs}

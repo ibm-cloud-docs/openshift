@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-24"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -41,6 +41,7 @@ With {{site.data.keyword.openshiftlong}}, you can create highly available cluste
 
 OpenShift worker nodes are available for paid accounts and standard clusters only. OpenShift clusters run version 3.11, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.
 {: note}
+
 
 
 ## Objectives
@@ -89,7 +90,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components 
     {: pre}
 3.  Create a cluster with a unique name. The following command creates a version 3.11 cluster with three worker nodes that have four cores and 16 GB memory in Washington, DC. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`. For more information, see [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
     ```
-    ibmcloud oc cluster create classic --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster create classic --name my_openshift --location wdc04 --kube-version 3.11_openshift --machine-type b3c.4x16.encrypted  --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --public-service-endpoint
     ```
     {: pre}
 4.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
@@ -139,11 +140,13 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
 {:shortdesc}
 
 1.  From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your OpenShift cluster, then click **OpenShift web console**.
-2.  Explore the different areas of the OpenShift web console by clicking the dropdown menu in the **OpenShift Container Platform** menu bar.
-    * **Service Catalog**: Browse the catalog of built-in services that you can deploy on OpenShift. For example, if you already have an `node.js` app that is hosted in GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console.
-    * **Application Console**: For each project namespace that you have access to, you can manage and view logs for your OpenShift resources such as pods, services, routes, builds, images, or persistent volume claims. You can also add services from the catalog to the project.
+2.  Explore the different areas of the OpenShift web console, described as follows.<p></p>
+    **OpenShift web console overview**: Click the dropdown menu in the **OpenShift Container Platform** menu bar.
+    * **Service Catalog**: Browse the catalog of built-in services that you can deploy on OpenShift.For example, if you already have an `node.js` app that is hosted in GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console.
+    * **Application Console**: For each project namespace that you have access to, you can manage and view logs for your {site.data.keyword.openshiftshort}} resources such as pods, services, routes, builds, images, or persistent volume claims. You can also add services from the catalog to the project.
     * **Cluster Console**: For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts, RBAC roles and role bindings, and resource quotas. You can also see combined views of the status and events of the resources within the cluster.
 3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.
+
 
 <br />
 
