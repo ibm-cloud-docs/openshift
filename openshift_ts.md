@@ -185,7 +185,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
 2. Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
   * If the config map shows IP addresses, continue to the next step.
-  * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](#cs_subnet_limit).
+  * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/containers?topic=containers-cs_troubleshoot_network#cs_subnet_limit).
 
     ```
     kubectl describe cm ibm-cloud-provider-vlan-ip-config -n kube-system
