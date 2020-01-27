@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-24"
+lastupdated: "2020-01-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1018,7 +1018,6 @@ To back up or restore a PVC by editing the `values.yaml` file:
             helm delete <release_name> --purge
             ```
             {: pre}
-            
 
       8.  You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
 
