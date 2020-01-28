@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-24"
+lastupdated: "2020-01-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1116,30 +1116,8 @@ For questions about billing and to find the steps for how to use the {{site.data
       ```
       {: screen}
       
-5. Update the size and IOPS in your PV. Although the size and IOPS of your physical storage changed, these values are not automatically reflected in your PV, and must be manually updated. 
-   1. Update the size of the volume. 
-      ```
-      oc patch pv <pv_name> -p '{"spec":{"capacity":{"storage":"<size>Gi"}}}'
-      ```
-      {: pre}
-      
-      ```
-      oc patch pv <pv_name> -p '{"metadata":{"labels":{"CapacityGb":"<size>"}}}'
-      ```
-      {: pre}
-      
-   2. Update the IOPS of the volume. 
-      ```
-      oc patch pv <pv_name> -p '{"metadata":{"labels":{"Iops":"<iops>"}}}'
-      ```
-      {: pre}
-      
-   3. Verify that the size and IOPS in your volume are successfully updated. 
-      ```
-      oc describe pv <pv_name>
-      ```
-      {: pre}
-
+   Although the size and IOPS of your physical storage changed, these values are not reflected in your PV or PVC. If you describe your PV or PVC, the old size and IOPS continue to display. You have the option to manually update the size and IOPS in your PV by using the `oc patch pv` command. However, this command cannot be used to change the size or IOPS in the PVC. To prevent having different sizes and IOPS in your PVC and PV, leave both your PVC and PV as-is. 
+   {: important}
 
 ## Changing the default NFS version
 {: #nfs_version}
