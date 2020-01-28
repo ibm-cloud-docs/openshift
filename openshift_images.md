@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-28"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -33,16 +33,15 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
+
+
 # Building images for your apps
 {: #images}
 
 {{site.data.keyword.openshiftlong}} clusters include an internal registry to build, deploy, and manage container images locally. For a private registry to manage and control access to images across your enterprise, you can also set up your cluster to use {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-A Docker image is the basis for every container that you create with {{site.data.keyword.containerlong}}.
-{:shortdesc}
-
-An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
+A Docker image is the basis for every container that you create with {{site.data.keyword.containerlong}}. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
 
 ## Choosing an image registry solution
 {: #openshift_registry_options}
@@ -297,8 +296,6 @@ To use the internal registry, set up a public route to access the registry. Then
 Now that you set up the internal registry with an accessible route, you can log in, push, and pull images to the registry. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/3.11/install_config/registry/accessing_registry.html#access-logging-in-to-the-registry){: external}.
 
 <br />
-
-
 
 
 ## Using {{site.data.keyword.registrylong_notm}}
@@ -894,10 +891,12 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     ```
     {: pre}
 
-Wondering what to do next? You can [set up the **entitled** Helm chart repository](/docs/openshift?topic=openshift-helm), where Helm charts that incorporate entitled software are stored. If you already have Helm installed in your cluster, run `helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled`.
+Wondering what to do next? You can [set up the **entitled** Helm chart repository](/docs/containers?topic=containers-helm), where Helm charts that incorporate entitled software are stored. If you already have Helm installed in your cluster, run `helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled`.
 {: tip}
 
 <br />
+
+
 
 
 
