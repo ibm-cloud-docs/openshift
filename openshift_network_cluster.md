@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-23"
+lastupdated: "2020-01-28"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -189,30 +189,13 @@ To change the VLANs that a worker pool uses to provision worker nodes:
    {: pre}
 
 7. Optional: Remove the worker nodes with the previous network metadata from the worker pool.
-  1. In the output of the previous step, note the **ID** and **Private IP** of the worker nodes that you want to remove from the worker pool.
-  2. Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling.
-     ```
-     oc cordon <worker_private_ip>
-     ```
-     {: pre}
-  3. Verify that pod scheduling is disabled for your worker node.
-     ```
-     oc get nodes
-     ```
-     {: pre}
-     Your worker node is disabled for pod scheduling if the status displays **`SchedulingDisabled`**.
-  4. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster.
-     ```
-     oc drain <worker_private_ip>
-     ```
-     {: pre}
-     This process can take a few minutes.
-  5. Remove the worker node. Use the worker ID that you previously retrieved.
+  1. In the output of the previous step, note the **ID** of the worker nodes that you want to remove from the worker pool.
+  2. Remove the worker node.
      ```
      ibmcloud oc worker rm --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
      ```
      {: pre}
-  6. Verify that the worker node is removed.
+  3. Verify that the worker node is removed.
      ```
      ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
      ```

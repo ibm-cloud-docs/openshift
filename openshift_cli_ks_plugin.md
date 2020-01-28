@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-23"
+lastupdated: "2020-01-28"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1294,32 +1294,19 @@ Before you reboot your worker node, make sure that pods are rescheduled on other
    {: pre}
    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 
-2. Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **name** of the worker node that you retrieved in the previous step.
-   ```
-   oc cordon <worker_name>
-   ```
-   {: pre}
-
-3. Verify that pod scheduling is disabled for your worker node.
-   ```
-   oc get nodes
-   ```
-   {: pre}
-   Your worker node is disabled for pod scheduling if the status displays **SchedulingDisabled**.
-
-4. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster.
+2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling.
   ```
   oc drain <worker_name>
   ```
   {: pre}
   This process can take a few minutes.
-5. Reboot the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
+3. Reboot the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
   ```
   ibmcloud oc worker reboot --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
   ```
   {: pre}
-6. Wait about 5 minutes before you make your worker node available for pod scheduling to ensure that the reboot is finished. During the reboot, the state of your worker node does not change. The reboot of a worker node is usually completed in a few seconds.
-7. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
+4. Wait about 5 minutes before you make your worker node available for pod scheduling to ensure that the reboot is finished. During the reboot, the state of your worker node does not change. The reboot of a worker node is usually completed in a few seconds.
+5. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
   ```
   oc uncordon <worker_name>
   ```
@@ -1381,31 +1368,19 @@ Before you reload your worker node, make sure that pods are rescheduled on other
    oc get nodes
    ```
    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
-2. Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **name** of the worker node that you retrieved in the previous step.
-   ```
-   oc cordon <worker_name>
-   ```
-   {: pre}
-
-3. Verify that pod scheduling is disabled for your worker node.
-   ```
-   oc get nodes
-   ```
-   {: pre}
-   Your worker node is disabled for pod scheduling if the status displays **SchedulingDisabled**.
- 4. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster.
+2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling.
     ```
     oc drain <worker_name>
     ```
     {: pre}
     This process can take a few minutes.
- 5. Reload the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
+3. Reload the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
     ```
     ibmcloud oc worker reload --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
     ```
     {: pre}
- 6. Wait for the reload to complete.
- 7. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
+4. Wait for the reload to complete.
+5. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
     ```
     oc uncordon <worker_name>
     ```
@@ -1466,30 +1441,18 @@ Before you replace your worker node, make sure that pods are rescheduled on othe
    ```
    {: pre}
    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
-2. Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **name** of the worker node that you retrieved in the previous step.
-   ```
-   oc cordon <worker_name>
-   ```
-   {: pre}
-
-3. Verify that pod scheduling is disabled for your worker node.
-   ```
-   oc get nodes
-   ```
-   {: pre}
-   Your worker node is disabled for pod scheduling if the status displays **SchedulingDisabled**.
-4. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster.
+2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling.
    ```
    oc drain <worker_name>
    ```
    {: pre}
    This process can take a few minutes.
-5. Replace the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
+3. Replace the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
    ```
    ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
    ```
    {: pre}
-6. Verify that the worker node is replaced.
+4. Verify that the worker node is replaced.
    ```
    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
    ```
@@ -1534,45 +1497,6 @@ ibmcloud oc worker replace --cluster my_cluster --worker kube-dal10-cr18a61a63a6
 
 Remove one or more worker nodes from a cluster. If you remove a worker node, your cluster becomes unbalanced. You can automatically rebalance your worker pool by running the `ibmcloud oc worker-pool rebalance` [command](#cs_rebalance).
 {: shortdesc}
-
-Before you remove your worker node, make sure that pods are rescheduled on other worker nodes to help avoid a downtime for your app or data corruption on your worker node.
-{: tip}
-
-1. List all worker nodes in your cluster and note the **name** of the worker node that you want to remove.
-   ```
-   oc get nodes
-   ```
-   {: pre}
-   The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
-2. Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **name** of the worker node that you retrieved in the previous step.
-   ```
-   oc cordon <worker_name>
-   ```
-   {: pre}
-
-3. Verify that pod scheduling is disabled for your worker node.
-   ```
-   oc get nodes
-   ```
-   {: pre}
-   Your worker node is disabled for pod scheduling if the status displays **SchedulingDisabled**.
-4. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster.
-   ```
-   oc drain <worker_name>
-   ```
-   {: pre}
-   This process can take a few minutes.
-5. Remove the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
-   ```
-   ibmcloud oc worker rm --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
-   ```
-   {: pre}
-6. Verify that the worker node is removed.
-   ```
-   ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-   ```
-   {: pre}
-</br>
 
 ```
 ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-s]
