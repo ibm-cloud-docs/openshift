@@ -41,7 +41,7 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong}} clusters include an internal registry to build, deploy, and manage container images locally. For a private registry to manage and control access to images across your enterprise, you can also set up your cluster to use {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-A Docker image is the basis for every container that you create with {{site.data.keyword.containerlong}}. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
+A Docker image is the basis for every container that you create with Red Hat OpenShift on IBM Cloud. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
 
 ## Choosing an image registry solution
 {: #openshift_registry_options}
