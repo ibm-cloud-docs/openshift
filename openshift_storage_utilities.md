@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-01-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -700,7 +700,7 @@ Create and configure an {{site.data.keyword.cos_full_notm}} service instance to 
    1. In the navigation on the service details page, click **Buckets**.
    2. Click **Create bucket**. A dialog box is displayed.
    3. Enter a unique name for your bucket. The name must be unique within {{site.data.keyword.cos_full_notm}} across all regions and across all {{site.data.keyword.cloud_notm}} accounts.
-   4. From the **Resiliency** list, select the level of availability that you want for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+   4. From the **Resiliency** list, select the level of availability that you want for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
    5. Change the **Location** to the region where you want to store your data. Keep in mind that your data might not be allowed to be stored in every region due to legal reasons.  
    6. Click **Create**.
 4. Retrieve the {{site.data.keyword.cos_full_notm}} host name for your bucket.
@@ -708,7 +708,7 @@ Create and configure an {{site.data.keyword.cos_full_notm}} service instance to 
    2. In the navigation on the service details page, click **Buckets** > **Configuration**.
    3. Note the public URL that you can use to access the data in your bucket.
 
-For more information about configuring your service instance, see the [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started) documentation.
+For more information about configuring your service instance, see the [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started) documentation.
 
 ### Using {{site.data.keyword.cos_full_notm}} to back up and restore PVC data
 {: #backup-restore-pvc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-24"
+lastupdated: "2020-01-29"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -173,7 +173,7 @@ To use routes to privately expose your apps, create a new router and change the 
     {: screen}
 
 4. To have an external endpoint for your private router, you must register your private router service's external IP address with a custom domain.
-    1. Create a custom domain. To register your custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/infrastructure/dns?topic=dns-getting-started).
+    1. Create a custom domain. To register your custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started).
         If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
         {: tip}
     2. Map your custom domain to the private router service's external IP address by adding the IP address as an A record.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-29"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -39,7 +39,7 @@ subcollection: openshift
 You can view, manage, and audit user-initiated activities in your {{site.data.keyword.openshiftlong}} community Kubernetes or OpenShift cluster by using the {{site.data.keyword.at_full}} service. 
 {: shortdesc}
 
-Red Hat OpenShift on IBM Cloud automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
+Red Hat OpenShift on IBM Cloud automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
 
 
 ## Tracking cluster management events
@@ -117,7 +117,7 @@ The following list of the cluster management events are sent to {{site.data.keyw
 ## Viewing your cluster events
 {: #at-ui}
 
-To [view events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events) that are sent to {{site.data.keyword.at_full_notm}}, you select the {{site.data.keyword.at_short}} instance that matches with the location of your Red Hat OpenShift on IBM Cloud cluster. You must first have an instance of {{site.data.keyword.at_short}} in each of the locations where your cluster is. Use the following table to find which {{site.data.keyword.at_short}} location your events are sent to based on the Red Hat OpenShift on IBM Cloud location where the cluster is located. Note that clusters in the Montreal, Toronto, and Washington, D.C. locations are available in Dallas.
+To [view events](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events) that are sent to {{site.data.keyword.at_full_notm}}, you select the {{site.data.keyword.at_short}} instance that matches with the location of your Red Hat OpenShift on IBM Cloud cluster. You must first have an instance of {{site.data.keyword.at_short}} in each of the locations where your cluster is. Use the following table to find which {{site.data.keyword.at_short}} location your events are sent to based on the Red Hat OpenShift on IBM Cloud location where the cluster is located. Note that clusters in the Montreal, Toronto, and Washington, D.C. locations are available in Dallas.
 {: shortdesc}
 
 | Red Hat OpenShift on IBM Cloud metro | Red Hat OpenShift on IBM Cloud data center | {{site.data.keyword.at_short}} event location |
