@@ -42,6 +42,64 @@ subcollection: openshift
  NFS file storage instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
+## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}
+
+First time using {{site.data.keyword.filestorage_short}}? Come back here once you've reviewed
+{: tip}
+
+1. Dynamically provision {{site.data.keyword.filestorage_short}} by creating a PVC in your cluster.
+
+  ```yaml
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: # Example: my_pvc
+    labels:
+      billingType: # Example: monthly
+      region: # Example: us-south
+      zone: # Example: dal13
+  spec:
+    accessModes:
+      - ReadWriteMany
+    resources:
+      requests:
+        storage: # Example: 24Gi
+    storageClassName: #Example: ibmc-file-silver
+  ```
+  {: codeblock}
+
+2. Once your PVC is bound, create an app deployment that uses your PVC.
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: # Example: my_deployment
+      labels:
+        app: # Example: my_label
+    spec:
+      selector:
+        matchLabels:
+          app: # Example: my_app
+      template:
+        metadata:
+          labels:
+            app: # Example: my_app
+        spec:
+          containers:
+          - image: # Example: nginx
+            name: # Example: my_container
+            volumeMounts:
+            - name: # Example: my_volume
+              mountPath: # Example: /test
+          volumes:
+          - name: # Example: my_volume
+            persistentVolumeClaim:
+              claimName: # Example: my_pvc
+    ```
+    {: codeblock}
+
+
 
 ## Deciding on the file storage configuration
 {: #file_predefined_storageclass}
