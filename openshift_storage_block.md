@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-01-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -41,6 +41,84 @@ subcollection: openshift
 
 {{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
+
+## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}
+{: #block_qs}
+
+In this quickstart guide, you create a 24Gi silver tier {{site.data.keyword.blockshort}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
+{: shortdesc}
+
+First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come back here after your have [reviewed the storage configurations](#block_predefined_storageclass).
+{: tip}
+
+1. Create a file for your PVC and name it `pvc.yaml`.
+
+  ```yaml
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: my-pvc
+    labels:
+      billingType: "hourly"
+    region: # Example: us-south
+      zone: # Example: dal13
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 24Gi
+    storageClassName: ibmc-block-silver
+  ```
+  {: codeblock}
+
+2. Create the PVC in your cluster.
+  ```sh
+  oc apply -f pvc.yaml
+  ```
+  {: pre}
+
+3. After your PVC is bound, create an app deployment that uses your PVC. Create a file for your deployment and name it `deployment.yaml`.
+
+  ```yaml
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: my-deployment
+    labels:
+      app: 
+  spec:
+    selector:
+      matchLabels:
+        app: my-app
+    template:
+      metadata:
+        labels:
+          app: my-app
+      spec:
+        containers:
+        - image: # Your contanerized app image.
+          name: my-container
+          volumeMounts:
+          - name: my-volume
+            mountPath: /mount-path
+        volumes:
+        - name: my-volume
+          persistentVolumeClaim:
+            claimName: my-pvc
+  ```
+  {: codeblock}
+
+3. Create the deployment in your cluster.
+  ```sh
+  oc apply -f deployment.yaml
+  ```
+  {: pre}
+
+For more information, see:
+  * [Adding {{site.data.keyword.blockstorageshort}} to apps](#add_block).
+  * [Storage class reference](#block_storageclass_reference).
+  * [Customizing storage classes](#block_custom_storageclass).
 
 
 
