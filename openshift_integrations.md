@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-29"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d
 
@@ -222,9 +222,9 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>Your {{site.data.keyword.openshiftshort}} cluster is based on fully-integrated {{site.data.keyword.cloud_notm}} classic infrastructure services such as Virtual Servers, Bare Metal Servers, or VLANs. You create and work with these services instances by using the {{site.data.keyword.containerlong_notm}} API, CLI, or console.<br><br>
   To secure your cluster network or connect to an on-prem data center, you can configure one of the following options:
     <ul><li>[strongSwan IPSec VPN Service](/docs/openshift?topic=openshift-vpn#vpn-setup)</li>
-    <li>[{{site.data.keyword.BluDirectLink}}](/docs/infrastructure/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link)</li>
+    <li>[{{site.data.keyword.BluDirectLink}}](/docs/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link)</li>
     <li>[Virtual Router Appliance (VRA)](/docs/openshift?topic=openshift-vpn#vyatta)</li>
-    <li>[Fortigate Security Appliance (FSA)](/docs/services/vmwaresolutions/services?topic=vmware-solutions-fsa_considerations)</li></ul></dd>
+    <li>[Fortigate Security Appliance (FSA)](/docs/vmwaresolutions/services?topic=vmware-solutions-fsa_considerations)</li></ul></dd>
 
   <dt>{{site.data.keyword.cloud_notm}} storage</dt>
   <dd>Supported persistent storage solutions, such as {{site.data.keyword.cloud_notm}} File Storage, {{site.data.keyword.cloud_notm}} Block Storage, or {{site.data.keyword.cos_full_notm}} are integrated as Kubernetes flex drivers and can be set up by using [Helm charts](#oc_helm). The storage documentation for each solution includes instructions to install and manage storage. For more information about choosing a persistent storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning).</dd>
@@ -248,7 +248,7 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>Add log management capabilities to your cluster by deploying LogDNA as a third-party service to your worker nodes to manage logs from your pod containers. For more information, see the following docs.<ul>
     <li>[About the LogDNA partnership](/docs/containers?topic=containers-service-partners#logdna-partner).</li>
     <li>[Setting up LogDNA in an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-health#openshift_logdna).</li>
-    <li>[Tutorial: Managing Kubernetes cluster logs with {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-kube#kube).</li></ul></dd>
+    <li>[Tutorial: Managing Kubernetes cluster logs with {{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA/tutorials?topic=LogDNA-kube#kube).</li></ul></dd>
 
   <dt>Portworx</dt>
   <dd>[Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://portworx.com/products/introduction/) is a highly available software-defined storage solution that you can use to manage persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones. You can [install Portworx with a Helm chart](/docs/containers?topic=containers-portworx#portworx) and provision storage for your apps by using Kubernetes persistent volumes. However, the default configuration requires that you modify the security context constraints, similar to [LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna).</dd>
@@ -260,7 +260,7 @@ Learn more about the following {{site.data.keyword.cloud_notm}} and third-party 
   <dd>Gain operational visibility into the performance and health of your apps by deploying Sysdig as a third-party service to your worker nodes to forward metrics to {{site.data.keyword.mon_full}}. For more information, see the following docs.<ul>
     <li>[About the Sysdig partnership](/docs/containers?topic=containers-service-partners#sydig-partner).</li>
     <li>[Setting up Sysdig in an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-health#openshift_sysdig).</li>
-    <li>[Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/services/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster).</li></ul></dd>
+    <li>[Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster).</li></ul></dd>
 
   <dt>Other third-party integrations</dt>
   <dd>You can install many other integrations into your {{site.data.keyword.openshiftshort}} cluster, such as through the {{site.data.keyword.openshiftshort}} catalog, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed.</dd>

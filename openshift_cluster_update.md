@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-28"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -378,22 +378,11 @@ To update flavors:
    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
    ```
    {: pre}
-5.  To prevent downtime, reschedule the apps from the old worker nodes before you delete the old worker nodes.
-    1.  Mark the worker node as unschedulable in a process that is known as cordoning. When you cordon a worker node, you make it unavailable for future pod scheduling. Use the **Private IP** of the worker node that you retrieved earlier, which is the worker node name in Kubernetes.
-        ```
-        oc cordon <private_IP_address_of_worker_node>
-        ```
-        {: pre}
-    2.  Verify that pod scheduling is disabled for the worker node by checking that the status is **SchedulingDisabled**.
-        ```
-        oc get nodes
-        ```
-        {: pre}
-    3.  Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. This process can take a few minutes.
-        ```
-        oc drain <worker_name>
-        ```
-        {: pre}
+5.  To prevent downtime, force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the **Private IP** of the worker node that you retrieved earlier. This process can take a few minutes.
+    ```
+    oc drain <worker_private_IP>
+    ```
+    {: pre}
 6. Remove the old worker node. **Note**: If you are removing a flavor that is billed monthly (such as bare metal), you are charged for the entire the month.
    - **For worker nodes in a worker pool**:
      1. Remove the worker pool with the old machine type. Removing a worker pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-01-28"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -45,9 +45,7 @@ Make your containerized app available to internet access by using the public IP 
 Expose a public port on your worker node and use the public IP address of the worker node to access your service in the cluster publicly from the internet.
 {:shortdesc}
 
-
 When you expose your app by creating a Kubernetes service of type NodePort, a NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to the service. The NodePort service serves as the external entry point for incoming requests for your app. The assigned NodePort is publicly exposed in the `kubeproxy` settings of each worker node in the cluster. Every worker node starts listening on the assigned NodePort for incoming requests for the service. To access the service from the internet, you can use the public IP address of any worker node that was assigned during cluster creation and the NodePort in the format `<IP_address>:<nodeport>`. If you want to access the service on the private network, use the private IP address of any worker node instead of the public IP address.
-
 
 The following diagram shows how communication is directed from the internet to an app when a NodePort service is configured:
 
@@ -130,57 +128,53 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
 
 2.  Save the updated configuration file.
 
-3.  Repeat these steps to create a NodePort service for each app that you want to expose to the internet.
+3. When the app is deployed, you can use the public IP address of any worker node and the NodePort to form the public URL to access the app in a browser. If your worker nodes are connected to a private VLAN only, then a private NodePort service was created and can be accessible through a worker node's private IP address.
 
-**What's next:**
+    1.  Get the public IP address for a worker node in the cluster. If you want to access the worker node on a private network, get the private IP address instead.
 
-When the app is deployed, you can use the public IP address of any worker node and the NodePort to form the public URL to access the app in a browser. If your worker nodes are connected to a private VLAN only, then a private NodePort service was created and can be accessible through a worker node's private IP address.
+        ```
+        ibmcloud oc worker ls --cluster <cluster_name>
+        ```
+        {: pre}
 
-1.  Get the public IP address for a worker node in the cluster. If you want to access the worker node on a private network, get the private IP address instead.
+        Output:
 
-    ```
-    ibmcloud oc worker ls --cluster <cluster_name>
-    ```
-    {: pre}
+        ```
+        ID                                                Public IP   Private IP    Size     State    Status
+        prod-dal10-pa215dcf5bbc0844a990fa6b0fcdbff286-w1  192.0.2.23  10.100.10.10  u3c.2x4  normal   Ready
+        prod-dal10-pa215dcf5bbc0844a990fa6b0fcdbff286-w2  192.0.2.27  10.100.10.15  u3c.2x4  normal   Ready
+        ```
+        {: screen}
 
-    Output:
+    2.  If a random NodePort was assigned, find out which one was assigned.
 
-    ```
-    ID                                                Public IP   Private IP    Size     State    Status
-    prod-dal10-pa215dcf5bbc0844a990fa6b0fcdbff286-w1  192.0.2.23  10.100.10.10  u3c.2x4  normal   Ready
-    prod-dal10-pa215dcf5bbc0844a990fa6b0fcdbff286-w2  192.0.2.27  10.100.10.15  u3c.2x4  normal   Ready
-    ```
-    {: screen}
+        ```
+        oc describe service <service_name>
+        ```
+        {: pre}
 
-2.  If a random NodePort was assigned, find out which one was assigned.
+        Output:
 
-    ```
-    oc describe service <service_name>
-    ```
-    {: pre}
+        ```
+        Name:                   <service_name>
+        Namespace:              default
+        Labels:                 run=<deployment_name>
+        Selector:               run=<deployment_name>
+        Type:                   NodePort
+        IP:                     10.10.10.8
+        Port:                   <unset> 8080/TCP
+        NodePort:               <unset> 30872/TCP
+        Endpoints:              172.30.171.87:8080
+        Session Affinity:       None
+        No events.
+        ```
+        {: screen}
 
-    Output:
+        In this example, the NodePort is `30872`.
 
-    ```
-    Name:                   <service_name>
-    Namespace:              default
-    Labels:                 run=<deployment_name>
-    Selector:               run=<deployment_name>
-    Type:                   NodePort
-    IP:                     10.10.10.8
-    Port:                   <unset> 8080/TCP
-    NodePort:               <unset> 30872/TCP
-    Endpoints:              172.30.171.87:8080
-    Session Affinity:       None
-    No events.
-    ```
-    {: screen}
+        If the **Endpoints** section displays `<none>`, check the `<selectorkey>` and `<selectorvalue>` that you use in the `spec.selector` section of the NodePort service. Ensure that it is the same as the _key/value_ pair that you used in the `spec.template.metadata.labels` section of your deployment YAML.
+        {: note}
 
-    In this example, the NodePort is `30872`.
-
-    If the **Endpoints** section displays `<none>`, check the `<selectorkey>` and `<selectorvalue>` that you use in the `spec.selector` section of the NodePort service. Ensure that it is the same as the _key/value_ pair that you used in the `spec.template.metadata.labels` section of your deployment YAML.
-    {: note}
-
-3.  Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`.
-    
+    3.  Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`.
+        
 

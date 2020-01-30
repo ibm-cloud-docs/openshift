@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-28"
 
 keywords: openshift, roks, rhoks, rhos, nlb, lbaas
 
@@ -38,6 +38,10 @@ subcollection: containers
 
 Quickly expose your app to the Internet by creating a layer 4 load balancer.
 {: shortdesc}
+
+First time setting up a load balancer? Check out [Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer) for prerequisite steps and more details. Come back to these quick start steps for a brief refresher the next time you set up a load balancer.
+{: tip}
+
 
 1. Expose your app by creating a version 1.0 network load balancer (NLB 1.0).
   ```
@@ -79,5 +83,6 @@ Quickly expose your app to the Internet by creating a layer 4 load balancer.
 For more information, see:
 * [About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
 * [Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
+* [Classic: Setting up DSR load balancing with an NLB 2.0 (beta)](/docs/openshift?topic=openshift-loadbalancer-v2)
 * [Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname)
 

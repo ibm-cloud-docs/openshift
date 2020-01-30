@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-01-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -170,7 +170,12 @@ Even if the cluster is in a `normal` state, the Ingress subdomain and secret mig
 {: tsResolve}
 Typically, after the cluster is ready, the Ingress subdomain and secret are created after 15 minutes. If the Ingress subdomain and secret are still unavailable after your cluster is in a `normal` state for more than 15 minutes, you can check the progress of the creation process by following these steps:
 
-1. Verify that the worker nodes have a **State** of `normal` and a **Status** of `Ready`. After you create the cluster, it can take up to 20 minutes for the worker nodes to be ready.
+1.  [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Because subdomain is not available, the OpenShift console cannot open. Instead, you can set the cluster context with the `--admin` flag through the CLI.
+    ```
+    ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
+    ```
+    {: pre}
+2. Verify that the worker nodes have a **State** of `normal` and a **Status** of `Ready`. After you create the cluster, it can take up to 20 minutes for the worker nodes to be ready.
    ```
    ibmcloud oc worker ls -c <cluster_name_or_ID>
    ```
@@ -183,7 +188,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
    ```
    {: screen}
 
-2. Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
+3. Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
   * If the config map shows IP addresses, continue to the next step.
   * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/containers?topic=containers-cs_troubleshoot_network#cs_subnet_limit).
 
@@ -268,7 +273,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     ```
     {: screen}
 
-3. Verify that the ALB is successfully created.
+4. Verify that the ALB is successfully created.
     1. Check whether an ALB exists for your cluster and that the ALB has a public IP address assigned.
       * If a public ALB is listed and is assigned an IP address, continue to the next step.
       * If no ALBs are created after several minutes, [contact us](#getting_help).
@@ -301,7 +306,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-4. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [contact us](#getting_help).
+5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [contact us](#getting_help).
   ```
   ibmcloud oc cluster get -c <cluster_name_or_ID>
   ```

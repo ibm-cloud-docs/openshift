@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-28"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -84,7 +84,7 @@ OpenShift has different default settings than community Kubernetes, such as stri
 </tr>
 <tr>
 <td>You deploy your app by using Helm. You might see an error similar to `User "system:serviceaccount:tiller:tiller" cannot create <resource>.rbac.authorization.k8s.io: RBAC: <resource>.rbac.authorization.k8s.io "<resource>.rbac.authorization.k8s.io" not found`</td>
-<td>Make sure that you [set up Tiller](/docs/containers?topic=containers-helm#public_helm_install) with a privileged security account.</td>
+<td>Make sure that you [set up Tiller](/docs/containers?topic=containers-helm#public_helm_install) with a privileged security account. Note that instead of using Tiller, you can update [Helm to version 3](/docs/containers?topic=containers-helm#migrate_v3), in which Tiller is removed. </td>
 </tr>
 <tr>
 <td>Your app uses persistent file storage with a non-root user ID that cannot write to the mounted storage device.</td>
