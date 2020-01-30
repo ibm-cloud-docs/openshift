@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-01-30"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -228,7 +228,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         {: pre}
     2.  Download the cluster configuration files.
         ```
-        ibmcloud oc cluster-config --cluster <cluster_name_or_ID>
+        ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```
         {: pre}
 
@@ -330,7 +330,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
         {: pre}
     2.  Download the cluster configuration files.
         ```
-        ibmcloud oc cluster-config --cluster <cluster_name_or_ID>
+        ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```
         {: pre}
 
