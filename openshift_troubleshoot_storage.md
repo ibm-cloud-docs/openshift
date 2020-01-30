@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-01-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -33,7 +33,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Troubleshooting persistent storage
+# Persistent storage
 {: #cs_troubleshoot_storage}
 
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for troubleshooting persistent storage.
@@ -1221,7 +1221,7 @@ The s3fs API endpoint for the bucket that you want to use might have the wrong f
    ```
    {: pre}
 
-   If the command returns `ibm.io/object-store-endpoint: NA`, your cluster is deployed in a location that is supported in Red Hat OpenShift on IBM Cloud but is not yet supported by the {{site.data.keyword.cos_full_notm}} plug-in. To add the location to the Red Hat OpenShift on IBM Cloud, post a question in our public Slack or open an {{site.data.keyword.cloud_notm}} support case. For more information, see [Getting help and support](/docs/containers?topic=containers-cs_troubleshoot#ts_getting_help).
+   If the command returns `ibm.io/object-store-endpoint: NA`, your cluster is deployed in a location that is supported in Red Hat OpenShift on IBM Cloud but is not yet supported by the {{site.data.keyword.cos_full_notm}} plug-in. To add the location to the Red Hat OpenShift on IBM Cloud, post a question in our public Slack or open an {{site.data.keyword.cloud_notm}} support case. For more information, see [Getting help and support](#getting_help).
 
 2. If you manually added the s3fs API endpoint with the `ibm.io/endpoint` annotation or the IAM API endpoint with the `ibm.io/iam-endpoint` annotation in your PVC, make sure that you added the endpoints in the format `https://<s3fs_api_endpoint>` and `https://<iam_api_endpoint>`. The annotation overwrites the API endpoints that are automatically set by the `ibmc` plug-in in the {{site.data.keyword.cos_full_notm}} storage classes.
    ```
@@ -1572,16 +1572,40 @@ If you went through the troubleshooting guide and you still cannot find an issue
 
 Post a question in the `portworx-on-iks` channel in the [{{site.data.keyword.containerlong_notm}} Slack](https://ibm-container-service.slack.com/){: external}. Make sure to include the cluster ID and the steps that you took to verify your installation. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
 
-## Getting help and support
-{: #storage_getting_help}
+## Feedback, questions, and support
+{: #getting_help}
 
-Still having issues with your cluster?
+Still having issues with your cluster? Review different ways to get help and support for your Red Hat OpenShift on IBM Cloud clusters. For any questions or feedback, post in Slack.
 {: shortdesc}
 
--  In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
--   To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
--   Post a question in the `#openshift` channel of the [{{site.data.keyword.containerlong_notm}} Slack](https://ibm-container-service.slack.com){: external}.<p class="tip">If you are not using an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.</p>
--   Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`.</p>
+**General ways to resolve issues**<br>
+1. Keep your cluster environment up to date.
+   * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/containers?topic=containers-openshift_versions).
+2. Make sure that your command line tools are up to date.
+   * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
+   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
+<br>
+
+**Reviewing issues and status**<br>
+1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
+2. Filter for the **Kubernetes Service** component.
+<br>
+
+**Feedback and questions**<br>
+1. Post in the {{site.data.keyword.containershort}} Slack.
+   * If you are an external user, post in the [#openshift](https://ibm-container-service.slack.com/messages/CKCJLJCH4){: external} channel.
+   * If you are an IBMer, use the [#iks-openshift-users](https://ibm-argonauts.slack.com/messages/CJH0UPN2D){: external} channel.<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack){:external} to this Slack.</p>
+2. Review forums such as OpenShift help, Stack Overflow, and IBM Developer to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
+   * If you have technical questions about developing or deploying clusters or apps with Red Hat OpenShift on IBM Cloud, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `containers`, and `openshift`.
+   * For questions about the service and getting started instructions, use the [IBM Developer Answers](https://developer.ibm.com/answers/topics/containers/?smartspace=bluemix){: external} forum. Include the `ibm-cloud` and `containers` tags.
+   * See [Getting help](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
+<br>
+
+**Getting help**<br>
+1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+2.  In your support case, for **Category**, select **Containers**.
+3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
 
 
 
