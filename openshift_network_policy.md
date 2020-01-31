@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-01-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -132,21 +132,14 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
 2. If corporate network policies use proxies or firewalls to prevent access from your local system to public endpoints, [allow TCP access for Calico commands](/docs/openshift?topic=openshift-firewall#firewall).
 
 3. Install the Calico CLI, `calicoctl`, according to your operating system.
-    * Linux and OS X:
-      1. [Download the `-darwin-amd64` version of the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. Make sure to save the file as `calicoctl.exe`.
+    * **Linux and OS X**:
+      1. [Download the version of the Calico CLI that matches your operating system](https://github.com/projectcalico/calicoctl/releases){: external}.
 
       2. Move the file to the `/usr/local/bin` directory.
-          - Linux:
-            ```
-            mv filepath/calicoctl /usr/local/bin/calicoctl
-            ```
-            {: pre}
-
-          - OS X:
-            ```
-            mv filepath/calicoctl-darwin-amd64 /usr/local/bin/calicoctl
-            ```
-            {: pre}
+          ```
+          mv <filepath>/<filename> /usr/local/bin/calicoctl
+          ```
+          {: pre}
 
       3. Make the file an executable file.
           ```
@@ -179,7 +172,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
           kube-dal10-crc21191ee3997497ca90c8173bbdaf560-w2.cloud.ibm
           ```
           {: screen}
-    * Windows:
+    * **Windows**:
       1. [Download the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. Save the file as `calicoctl.exe` in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
       2. Verify that the Calico configuration is working correctly. Use the `--config` flag to point to the network configuration file that you got in step 1. Include this flag each time you run a `calicoctl` command.
