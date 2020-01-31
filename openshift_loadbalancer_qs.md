@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-28"
+lastupdated: "2020-01-31"
 
 keywords: openshift, roks, rhoks, rhos, nlb, lbaas
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
