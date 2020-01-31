@@ -173,7 +173,7 @@ To install Helm in a cluster with public network access:
 
 2. Check whether you already installed Tiller with a Kubernetes service account in your cluster.
    ```
-   oc get serviceaccount --all-namespaces | grep tiller
+   oc get serviceaccount -n tiller
    ```
    {: pre}
 
@@ -187,9 +187,9 @@ To install Helm in a cluster with public network access:
 
 3. **Important**: To maintain cluster security, set up Tiller with a service account and cluster role binding in your cluster.
    - **If Tiller is already installed with a service account:**
-     1. Create a cluster role binding for the Tiller service account. Replace `<project>` with the project where Tiller is installed in your cluster.
+     1. Create a cluster role binding for the Tiller service account.
         ```
-        oc create clusterrolebinding tiller --clusterrole=cluster-admin --serviceaccount=<project>:tiller -n <project>
+        oc create clusterrolebinding tiller --clusterrole=cluster-admin --serviceaccount=tiller:tiller -n tiller
         ```
         {: pre}
 
@@ -201,7 +201,7 @@ To install Helm in a cluster with public network access:
 
      3. Verify that the `tiller-deploy` pod has a **Status** of `Running` in your cluster.
         ```
-        oc get pods -n <project> -l app=helm
+        oc get pods -n tiller -l app=helm
         ```
         {: pre}
 
@@ -232,7 +232,7 @@ To install Helm in a cluster with public network access:
 
      2. Verify that the Tiller service account is created.
         ```
-        oc get serviceaccount -n tiller tiller
+        oc get serviceaccount tiller -n tiller
         ```
         {: pre}
 
