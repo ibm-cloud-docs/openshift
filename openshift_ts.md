@@ -40,11 +40,11 @@ Review some known issues or common error messages that you might encounter when 
 {: shortdesc}
 
 For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs:
-* [Debugging your cluster](/docs/containers?topic=containers-cs_troubleshoot)
+* [Troubleshooting clusters and masters](/docs/containers?topic=containers-cs_troubleshoot)
 * [Clusters and worker nodes](/docs/containers?topic=containers-cs_troubleshoot_clusters)
 * [Storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)
 * [Logging and monitoring](/docs/containers?topic=containers-cs_troubleshoot_health)
-* [Debugging Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress)
+* [Troubleshooting Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress)
 * [Cluster networking](/docs/containers?topic=containers-cs_troubleshoot_network)
 
 ## Missing permissions to create clusters
