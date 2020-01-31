@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-01-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -152,7 +152,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
 3. Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
   * If the config map shows IP addresses, continue to the next step.
-  * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/containers?topic=containers-cs_troubleshoot_network#cs_subnet_limit).
+  * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress#cs_subnet_limit).
 
     ```
     kubectl describe cm ibm-cloud-provider-vlan-ip-config -n kube-system
@@ -314,7 +314,7 @@ When the components fully provision, a public router subdomain is available for 
         ibmcloud oc workers -c <cluster_name_or_ID>
         ```
         {: pre}
-4.  In the output of Step 2, check that the **Ingress Subdomain** is available. The Ingress components in your cluster must provision before the router components can be created. If the **Ingress Subdomain** and **Ingress Secret** are not available, see [No Ingress subdomain exists after cluster creation](/docs/containers?topic=containers-cs_troubleshoot_network#ingress_subdomain).
+4.  In the output of Step 2, check that the **Ingress Subdomain** is available. The Ingress components in your cluster must provision before the router components can be created. If the **Ingress Subdomain** and **Ingress Secret** are not available, see [No Ingress subdomain exists after cluster creation](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress#ingress_subdomain).
 5.  Check that the **Hostname** of the router subdomain is in the format: `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
     ```
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
