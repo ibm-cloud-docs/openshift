@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,50 +40,12 @@ Review some known issues or common error messages that you might encounter when 
 {: shortdesc}
 
 For general cluster debugging, see the {{site.data.keyword.containerlong_notm}} docs:
-* [Debugging your cluster](/docs/containers?topic=containers-cs_troubleshoot)
+* [Troubleshooting clusters and masters](/docs/containers?topic=containers-cs_troubleshoot)
 * [Clusters and worker nodes](/docs/containers?topic=containers-cs_troubleshoot_clusters)
 * [Storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)
 * [Logging and monitoring](/docs/containers?topic=containers-cs_troubleshoot_health)
-* [Debugging Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress)
+* [Troubleshooting Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress)
 * [Cluster networking](/docs/containers?topic=containers-cs_troubleshoot_network)
-
-## Feedback, questions, and support
-{: #openshift_support}
-{: troubleshoot}
-{: support}
-
-Review different ways to get help and support for your Red Hat OpenShift on IBM Cloud clusters. For any questions or feedback, post in Slack.
-{: shortdesc}
-
-**General ways to resolve issues**<br>
-1. Keep your cluster environment up to date.
-   * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
-   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/openshift?topic=openshift-openshift_versions).
-2. Make sure that your command line tools are up to date.
-   * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
-   * Make sure that [your `kubectl` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
-<br>
-
-**Reviewing issues and status**<br>
-1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
-2. Filter for the **Kubernetes Service** component.
-<br>
-
-**Feedback and questions**<br>
-1. Post in the {{site.data.keyword.containerlong_notm}} Slack.
-   *   If you are an external user, post in the [#openshift](https://ibm-container-service.slack.com/messages/CKCJLJCH4){: external} channel.
-   *   If you are an IBMer, use the [#iks-openshift-users](https://ibm-argonauts.slack.com/messages/CJH0UPN2D){: external} channel.<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.</p>
-2. Review forums such as OpenShift help, Stack Overflow, and IBM Developer to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
-   * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.containerlong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `containers`, and `openshift`.
-   * For questions about the service and getting started instructions, use the [IBM Developer Answers](https://developer.ibm.com/answers/topics/containers/?smartspace=bluemix){: external} forum. Include the `ibm-cloud` and `containers` tags.
-   * See [Getting help](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
-<br>
-
-**Getting help**<br>
-1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
-2.  In your support case, for **Category**, select **Containers**.
-3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
-
 
 ## Missing permissions to create clusters
 {: #rhoks_ts_cluster_permissions}
@@ -170,7 +132,7 @@ Even if the cluster is in a `normal` state, the Ingress subdomain and secret mig
 {: tsResolve}
 Typically, after the cluster is ready, the Ingress subdomain and secret are created after 15 minutes. If the Ingress subdomain and secret are still unavailable after your cluster is in a `normal` state for more than 15 minutes, you can check the progress of the creation process by following these steps:
 
-1.  [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Because subdomain is not available, the OpenShift console cannot open. Instead, you can set the cluster context with the `--admin` flag through the CLI.
+1.  [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Because the subdomain is not available, the OpenShift console cannot open. Instead, you can set the cluster context with the `--admin` flag through the CLI.
     ```
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
     ```
@@ -190,7 +152,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
 3. Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
   * If the config map shows IP addresses, continue to the next step.
-  * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/containers?topic=containers-cs_troubleshoot_network#cs_subnet_limit).
+  * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress#cs_subnet_limit).
 
     ```
     kubectl describe cm ibm-cloud-provider-vlan-ip-config -n kube-system
@@ -352,7 +314,7 @@ When the components fully provision, a public router subdomain is available for 
         ibmcloud oc workers -c <cluster_name_or_ID>
         ```
         {: pre}
-4.  In the output of Step 2, check that the **Ingress Subdomain** is available. The Ingress components in your cluster must provision before the router components can be created. If the **Ingress Subdomain** and **Ingress Secret** are not available, see [No Ingress subdomain exists after cluster creation](/docs/containers?topic=containers-cs_troubleshoot_network#ingress_subdomain).
+4.  In the output of Step 2, check that the **Ingress Subdomain** is available. The Ingress components in your cluster must provision before the router components can be created. If the **Ingress Subdomain** and **Ingress Secret** are not available, see [No Ingress subdomain exists after cluster creation](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress#ingress_subdomain).
 5.  Check that the **Hostname** of the router subdomain is in the format: `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
     ```
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
@@ -361,7 +323,7 @@ When the components fully provision, a public router subdomain is available for 
 
     *  If after two hours of creating the cluster, the router subdomain is not updated, review the **Master Status** of the cluster again, and follow any troubleshooting steps to resolve the issue.
 
-If the troubleshooting steps do not resolve the issue, see [Getting help](#openshift_support).
+If the troubleshooting steps do not resolve the issue, see [Getting help](#getting_help).
 
 <br />
 
@@ -553,14 +515,40 @@ The default file storage device that provides the storage for the internal regis
 When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `docker-registry` pod that uses the `registry-backing` PVC to verify that the volume is resized.
 {: note}
 
-## Getting help and support
+## Feedback, questions, and support
 {: #getting_help}
+{: troubleshoot}
+{: support}
 
-Still having issues with your cluster?
+Still having issues with your cluster? Review different ways to get help and support for your Red Hat OpenShift on IBM Cloud clusters. For any questions or feedback, post in Slack.
 {: shortdesc}
 
--  In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
--   To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
--   Post a question in the `#openshift` channel of the [{{site.data.keyword.containerlong_notm}} Slack](https://ibm-container-service.slack.com){: external}.<p class="tip">If you are not using an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.</p>
--   Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`.</p>
+**General ways to resolve issues**<br>
+1. Keep your cluster environment up to date.
+   * Check monthly for available security and operating system patches to [update your worker nodes](/docs/containers?topic=containers-update#worker_node).
+   * [Update your cluster](/docs/containers?topic=containers-update#master) to the latest default version for [OpenShift](/docs/openshift?topic=openshift-openshift_versions).
+2. Make sure that your command line tools are up to date.
+   * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
+   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
+<br>
+
+**Reviewing issues and status**<br>
+1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
+2. Filter for the **Kubernetes Service** component.
+<br>
+
+**Feedback and questions**<br>
+1. Post in the {{site.data.keyword.containershort}} Slack.
+   * If you are an external user, post in the [#openshift](https://ibm-container-service.slack.com/messages/CKCJLJCH4){: external} channel.
+   * If you are an IBMer, use the [#iks-openshift-users](https://ibm-argonauts.slack.com/messages/CJH0UPN2D){: external} channel.<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack){:external} to this Slack.</p>
+2. Review forums such as OpenShift help, Stack Overflow, and IBM Developer to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
+   * If you have technical questions about developing or deploying clusters or apps with Red Hat OpenShift on IBM Cloud, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `containers`, and `openshift`.
+   * For questions about the service and getting started instructions, use the [IBM Developer Answers](https://developer.ibm.com/answers/topics/containers/?smartspace=bluemix){: external} forum. Include the `ibm-cloud` and `containers` tags.
+   * See [Getting help](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
+<br>
+
+**Getting help**<br>
+1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+2.  In your support case, for **Category**, select **Containers**.
+3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
 

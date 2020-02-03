@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -41,6 +41,8 @@ subcollection: openshift
 
 {{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
+
+<br>
 
 ## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}
 {: #block_qs}

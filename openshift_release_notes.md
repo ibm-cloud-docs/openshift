@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-03"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -39,6 +39,15 @@ subcollection: openshift
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
 
+## February 2020
+{: #feb20}
+
+| Date | Description |
+| ---- | ----------- |
+| 03 February 2020 | **Version changelog**: Updates are available for OpenShift master fix pack[3.11.161_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1539) and worker fix pack [3.11.161_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1540). |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in February 2020"}
+
 ## January 2020
 {: #jan20}
 
@@ -47,10 +56,11 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | 30 January 2020 | **Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 625](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog). |
 | 27 January 2020 | <ul><li>**Back up and restore File and Block storage**: Added steps for deploying the [<code>ibmcloud-backup-restore</code> Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore).</li></ul> |
 | 22 January 2020 | <ul><li>**Changing VLANs**: After you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), you can now [move router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan).</li><li>**Storage utilities**: [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities) are now available for OpenShift clusters.</li></ul> |
-| 20 January 2020 | <ul><li>**Helm version 3**: Updated [Adding services by using Helm charts](/docs/containers?topic=containers-helm) to include steps for installing Helm v3 in your cluster. Migrate to Helm v3 today for several advantages over Helm v2, such as the removal of the Helm server, Tiller.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 621](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li><li>**Version changelog**: Patch updates are available for OpenShift [3.11.161_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1538).</li></ul> |
+| 20 January 2020 | <ul><li>**Helm version 3**: Updated [Adding services by using Helm charts](/docs/openshift?topic=openshift-helm) to include steps for installing Helm v3 in your cluster. Migrate to Helm v3 today for several advantages over Helm v2, such as the removal of the Helm server, Tiller.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 621](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li><li>**Version changelog**: Patch updates are available for OpenShift [3.11.161_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1538).</li></ul> |
 | 06 January 2020 | **Ingress ALB changelog**: Updated the [`ingress-auth` image to build 373](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).|
 | 03 January 2020 | **Version changelog**: Worker node patch updates are available for OpenShift [3.11.157_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).|
-
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in January 2020"}
 
 ## December 2019
 {: #dec19}
@@ -78,7 +88,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>26 November 2019</td>
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.61](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-  <li><strong>Cluster add-ons for OpenShift clusters</strong>: The [Kubernetes web terminal](/docs/openshift?topic=openshift-openshift-cli#cli_web) and the [Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) add-ons are now available for OpenShift clusters.</li>
+  <li><strong>Cluster add-ons for OpenShift clusters</strong>: The [Kubernetes web terminal](/docs/openshift?topic=openshift-openshift-cli#cli_web) and the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) add-ons are now available for OpenShift clusters.</li>
   <li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533_worker).</li></ul></td>
 </tr>
 <tr>
@@ -155,7 +165,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul>
     <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.42](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
     <li><strong>Scaling down file storage</strong>: Added steps for [scaling down the default file storage plug-in](/docs/openshift?topic=openshift-file_storage#file_scaledown_plugin) in classic clusters.</li>
-    <li><strong>Ingress subdomain troubleshooting</strong>: Added troubleshooting steps for when [no Ingress subdomain exists after cluster creation](/docs/containers?topic=containers-cs_troubleshoot_network#ingress_subdomain)</li>
+    <li><strong>Ingress subdomain troubleshooting</strong>: Added troubleshooting steps for when [no Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)</li>
   </ul></td>
 </tr>
 <tr>
@@ -195,7 +205,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>03 October 2019</td>
   <td><ul>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 579 and `ingress-auth` image build to 341](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>DevOps toolchain</strong>: You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/containers?topic=containers-app#continuous-delivery-pipeline).</li>
+  <li><strong>DevOps toolchain</strong>: You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-app#continuous-delivery-pipeline).</li>
   <li><strong>Version changelog</strong>: Patch updates are available for OpenShift [3.11.146_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1525).</li>
   </ul>
   </td>
@@ -479,7 +489,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>14 June 2019</td>
   <td><ul>
-  <li><strong>`kubectl` troubleshooting</strong>: Added a [troubleshooting topic](/docs/containers?topic=containers-cs_troubleshoot_clusters#kubectl_fails) for when you have a `kubectl` client version that is 2 or more versions apart from the server version or the OpenShift version of `kubectl`, which does not work with community Kubernetes clusters.</li>
+  <li><strong>`kubectl` troubleshooting</strong>: Added a [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot#kubectl_fails) for when you have a `kubectl` client version that is 2 or more versions apart from the server version or the OpenShift version of `kubectl`, which does not work with community Kubernetes clusters.</li>
   <li><strong>Tutorials landing page</strong>: Replaced the related links page with a new [tutorials landing page](/docs/containers?topic=containers-tutorials-ov) for all tutorials that are specific to {{site.data.keyword.containershort_notm}}.</li>
   <li><strong>Using existing subnets to create a cluster</strong>: To [reuse subnets from an unneeded cluster when you create a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom), the subnets must be user-managed subnets that you manually added from an on-premises network. All subnets that were automatically ordered during cluster creation are immediately deleted after you delete a cluster, and you cannot reuse these subnets to create a new cluster.</li>
   </ul></td>

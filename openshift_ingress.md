@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-01-31"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -397,7 +397,7 @@ http://<subdomain2>.<domain>/<app1_path>
 {: codeblock}
 
 
-Having trouble connecting to your app through Ingress? Try [debugging Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress).
+Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress).
 {: tip}
 
 <br />

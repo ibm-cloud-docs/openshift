@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-01-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -521,7 +521,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 
 **Before you begin**:
 - Make sure that you [automatically](#automatic_block) or [manually](#manual_block) created raw, unformatted, and unmounted block storage to your non-SDS worker nodes.
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **To attach raw block storage to non-SDS worker nodes**:
 1. Prepare the PV creation.  
@@ -725,7 +725,7 @@ Before you begin:
   {: pre}
 - [Retrieve your {{site.data.keyword.cos_full_notm}} service credentials, the bucket name, and the bucket hostname](#backup_restore_setup_object_storage).
 - [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (Tiller) with a service account, and set up the {{site.data.keyword.cloud_notm}} Helm chart repositories.
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 You can deploy the `ibm-storage-backup` pod or the `ibm-storage-restore` pod by either editing and applying the `values.yaml` file of the Helm chart, or by running the `helm install` command from the CLI.
 {: note}

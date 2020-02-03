@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-03"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -113,6 +113,8 @@ The following list of the cluster management events are sent to {{site.data.keyw
 <td><code>containers-kubernetes.worker.update</code></td>
 <td>A worker node is updated.</td></tr>
 </table>
+
+
 
 ## Viewing your cluster events
 {: #at-ui}
