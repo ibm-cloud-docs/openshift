@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-02-03"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -326,7 +326,7 @@ Error: Chart incompatible with Tiller v2.11.0
 {: screen}
 
 To change your version of Tiller:
-1.  Follow the instructions to install the Helm server Tiller for your [public](#public_helm_install) or [private](#private_local_tiller) cluster.
+1.  Follow the instructions to install the Helm server Tiller [in your cluster](#public_helm_install).
 2.  [Find the version of Tiller ![External link icon](../icons/launch-glyph.svg "External link icon")](https://console.cloud.google.com/gcr/images/kubernetes-helm/GLOBAL/tiller?gcrImageListsize=30) that is required by the Helm chart that you want to install. Hover over the digest image and click the **Copy full image name** icon.
 3. Update your Tiller deployment to use the image that you previously copied.
    ```
