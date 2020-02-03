@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-02-03"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -50,6 +50,33 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 3.11.161_1540_openshift, released 3 February 2020
+{: #311161_1540}
+
+The following table shows the changes that are included in the worker node fix pack `3.11.161_1540_openshift`.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 packages | N/A | N/A | Updated worker node images with package updates for [CVE-2019-13734](https://nvd.nist.gov/vuln/detail/CVE-2019-13734){: external} and [CVE-2019-18408](https://nvd.nist.gov/vuln/detail/CVE-2019-18408){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.161_1538_openshift" caption-side="top"}
+
+### Changelog for master fix pack 3.11.161_1539_openshift, released 3 February 2020
+{: #311161_1539}
+
+The following table shows the changes that are included in the master fix pack `3.11.161_1539_openshift`.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| Cluster ingress route configuration | N/A | N/A | Fixed a bug that reset ingress route configurations to the default subdomain in clusters that were created with version [3.11.141_1524](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_changelog#311141_1524) or earlier. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.7-229 | v1.15.9-240 | Updated to support the Kubernetes 1.15.9 release. Updated to use `calicoctl` version 3.8.6. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 357 | 358 | Image updated for [CVE-2019-5188](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5188){: external}. |
+| OpenVPN server | N/A | N/A | OpenVPN server is now restarted during the [cluster master refresh](https://cloud.ibm.com/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) operation. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.161_1538_openshift" caption-side="top"}
 
 ### Changelog for 3.11.161_1538_openshift, released 20 January 2020
 {: #311161_1538}
