@@ -447,143 +447,6 @@ For example, say you have a multizone cluster in 2 zones, and the 2 public ALBs 
 <br />
 
 
-## Cannot connect to an app via Ingress
-{: #cs_ingress_fails}
-
-{: tsSymptoms}
-You publicly exposed your app by creating an Ingress resource for your app in your classic cluster. When you tried to connect to your app by using the public IP address or Ingress subdomain, the connection failed or timed out.
-
-{: tsResolve}
-First, check that your cluster is fully deployed and has at least 2 worker nodes available per zone to ensure high availability for your ALBALB.
-```
-ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-```
-{: pre}
-
-In your CLI output, make sure that the **Status** of your worker nodes displays **Ready** and that the **Machine Type** shows a flavor other than **free**.
-
-* If your standard cluster is fully deployed and has at least 2 worker nodes per zone, but no **Ingress Subdomain** is available, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
-* For other issues, troubleshoot your Ingress setup by following the steps in [Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress).
-
-If you recently restarted your ALB pods or enabled an ALB, a [readiness check](/docs/openshift?topic=openshift-ingress-settings#readiness-check) prevents ALB pods from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss and can take up to 5 minutes.
-{: note}
-
-<br />
-
-
-## Ingress application load balancer (ALB) secret issues
-{: #cs_albsecret_fails}
-
-
-
-{: tsSymptoms}
-After you deploy an Ingress application load balancer (ALB) secret to your cluster by using the `ibmcloud oc alb cert deploy` command, the `Description` field is not updating with the secret name when you view your certificate in {{site.data.keyword.cloudcerts_full_notm}}.
-
-When you list information about the ALB secret, the state says `*_failed`. For example, `create_failed`, `update_failed`, `delete_failed`.
-
-List the ALB secret details (`ibmcloud ks alb cert get`) and view the ALB secret `status` to get more information on the reason for failure.
-
-{: tsResolve}
-Review the following reasons why the ALB secret might fail and the corresponding troubleshooting steps:
-
-<table>
-<caption>Troubleshooting Ingress application load balancer secrets</caption>
- <thead>
- <th>Why it's happening</th>
- <th>How to fix it</th>
- </thead>
- <tbody>
- <tr>
- <td>The owner of the cluster's API Key does not have the required access roles to download and update certificate data.</td>
- <td>Check with your account Administrator to assign the owner of the cluster's API Key, the following {{site.data.keyword.cloud_notm}} IAM roles:<ul><li>The **Manager** and **Writer** service roles for your {{site.data.keyword.cloudcerts_full_notm}} instance. For more information, see <a href="/docs/certificate-manager?topic=certificate-manager-managing-service-access-roles#managing-service-access-roles">Managing service access</a> for {{site.data.keyword.cloudcerts_short}}.</li><li>The <a href="/docs/containers?topic=containers-users#platform">**Administrator** platform role</a> for the cluster.</li></ul></td>
- </tr>
- <tr>
- <td>The certificate CRN provided at time of create, update, or remove does not belong to the same account as the cluster.</td>
- <td>Check that the certificate CRN you provided is imported to an instance of the {{site.data.keyword.cloudcerts_short}} service that is deployed in the same account as your cluster.</td>
- </tr>
- <tr>
- <td>The certificate CRN provided at time of create is incorrect.</td>
- <td><ol><li>Check the accuracy of the certificate CRN string you provide.</li><li>If the certificate CRN is found to be accurate, then try to update the secret: <code>ibmcloud oc alb cert deploy --update --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt;</code></li><li>If this command results in the <code>update_failed</code> status, then remove the secret: <code>ibmcloud oc alb cert rm --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt;</code></li><li>Deploy the secret again: <code>ibmcloud oc alb cert deploy --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt;</code></li></ol></td>
- </tr>
- <tr>
- <td>The certificate CRN provided at time of update is incorrect.</td>
- <td><ol><li>Check the accuracy of the certificate CRN string you provide.</li><li>If the certificate CRN is found to be accurate, then remove the secret: <code>ibmcloud oc alb cert rm --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt;</code></li><li>Deploy the secret again: <code>ibmcloud oc alb cert deploy --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt;</code></li><li>Try to update the secret: <code>ibmcloud oc alb cert deploy --update --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt;</code></li></ol></td>
- </tr>
- <tr>
- <td>The {{site.data.keyword.cloudcerts_long_notm}} service is experiencing downtime.</td>
- <td>Check that your {{site.data.keyword.cloudcerts_short}} service is up and running.</td>
- </tr>
- <tr>
- <td>Your imported secret has the same name as the IBM-provided Ingress secret.</td>
- <td>Rename your secret. You can check the name of the IBM-provided Ingress secret by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</td>
- </tr>
-  <tr>
-  <td>The description for the certificate is not updated with the secret name when you view the certificate in {{site.data.keyword.cloudcerts_full_notm}}.</td>
-  <td>Check whether the length of the certificate description reached the <a href="/apidocs/certificate-manager#update-a-certificate-s-metadata">upper limit of 1024 characters</a>.</td>
-  </tr>
- </tbody></table>
-
-<br />
-
-
-## ALB does not deploy in a zone
-{: #cs_subnet_limit}
-
-
-
-{: tsSymptoms}
-When you have a multizone cluster and run `ibmcloud oc alb ls --cluster <cluster>`, no ALB is deployed in a zone. For example, if you have worker nodes in 3 zones, you might see an output similar to the following in which a public ALB did not deploy to the third zone.
-```
-ALB ID                                            Enabled    Status     Type      ALB IP           Zone    Build                          ALB VLAN ID   NLB Version
-private-cr96039a75fddb4ad1a09ced6699c88888-alb1   false      disabled   private   -                dal10   ingress:411/ingress-auth:315   2294021       -
-private-cr96039a75fddb4ad1a09ced6699c88888-alb2   false      disabled   private   -                dal12   ingress:411/ingress-auth:315   2234947       -
-private-cr96039a75fddb4ad1a09ced6699c88888-alb3   false      disabled   private   -                dal13   ingress:411/ingress-auth:315   2234943       -
-public-cr96039a75fddb4ad1a09ced6699c88888-alb1    true       enabled    public    169.xx.xxx.xxx   dal10   ingress:411/ingress-auth:315   2294019       -
-public-cr96039a75fddb4ad1a09ced6699c88888-alb2    true       enabled    public    169.xx.xxx.xxx   dal12   ingress:411/ingress-auth:315   2234945       -
-```
-{: screen}
-
-{: tsCauses}
-In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. In that zone, 1 public portable subnet is requested on the public VLAN that you specify and 1 private portable subnet is requested on the private VLAN that you specify. For Red Hat OpenShift on IBM Cloud, VLANs have a limit of 40 subnets. If the cluster's VLAN in a zone already reached that limit, the **Ingress Subdomain** fails to provision and the public Ingress ALB for that zone fails to provision.
-
-To view how many subnets a VLAN has:
-1.  From the [IBM Cloud infrastructure console](https://cloud.ibm.com/classic?), select **Network** > **IP Management** > **VLANs**.
-2.  Click the **VLAN Number** of the VLAN that you used to create your cluster. Review the **Subnets** section to see whether 40 or more subnets exist.
-
-{: tsResolve}
-If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) that uses this new VLAN.
-
-If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. After, you can add new worker nodes to the cluster that use the other VLAN with available subnets. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
-
-If you are not using all the subnets in the VLAN, you can reuse subnets on the VLAN by adding them to your cluster.
-1. Check that the subnet that you want to use is available.
-  <p class="note">The infrastructure account that you use might be shared across multiple {{site.data.keyword.cloud_notm}} accounts. In this case, even if you run the `ibmcloud oc subnets` command to see subnets with **Bound Clusters**, you can see information only for your clusters. Check with the infrastructure account owner to make sure that the subnets are available and not in use by any other account or team.</p>
-
-2. Use the [`ibmcloud oc cluster subnet add` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_add) to make an existing subnet available to your cluster.
-
-3. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
-    ```
-    ibmcloud oc cluster get --show-resources <cluster_name_or_ID>
-    ```
-    {: pre}
-
-    In this example output, a second subnet was added to the `2234945` public VLAN:
-    ```
-    Subnet VLANs
-    VLAN ID   Subnet CIDR          Public   User-managed
-    2234947   10.xxx.xx.xxx/29     false    false
-    2234945   169.xx.xxx.xxx/29    true     false
-    2234945   169.xx.xxx.xxx/29    true     false
-    ```
-    {: screen}
-
-4. Verify that the portable IP addresses from the subnet that you added are used for the ALBs in your cluster. It might take several minutes for the services to use the portable IP addresses from the newly-added subnet.
-  * No Ingress subdomain: Run `ibmcloud oc cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
-  * An ALB does not deploy in a zone: Run `ibmcloud oc alb ls --cluster <cluster>` to verify that the missing ALB is deployed.
-
-<br />
-
-
 ## No Ingress subdomain exists after cluster creation
 {: #ingress_subdomain}
 
@@ -762,28 +625,139 @@ If you need to continue testing, you can change the name of the cluster so that 
 <br />
 
 
-## Connection via WebSocket closes after 60 seconds
-{: #cs_ingress_websocket}
+## Cannot connect to an app via Ingress
+{: #cs_ingress_fails}
 
 {: tsSymptoms}
-Your Ingress service exposes an app that uses a WebSocket. However, the connection between a client and your WebSocket app closes when no traffic is sent between them for 60 seconds.
-
-{: tsCauses}
-The connection to your WebSocket app might drop after 60 seconds of inactivity for one of the following reasons:
-
-* Your Internet connection has a proxy or firewall that doesn't tolerate long connections.
-* A timeout in the ALB to the WebSocket app terminates the connection.
+You publicly exposed your app by creating an Ingress resource for your app in your classic cluster. When you tried to connect to your app by using the public IP address or Ingress subdomain, the connection failed or timed out.
 
 {: tsResolve}
-To prevent the connection from closing after 60 seconds of inactivity:
+First, check that your cluster is fully deployed and has at least 2 worker nodes available per zone to ensure high availability for your ALB.
+```
+ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+```
+{: pre}
 
-1. If you connect to your WebSocket app through a proxy or firewall, make sure the proxy or firewall isn't configured to automatically terminate long connections.
+In your CLI output, make sure that the **Status** of your worker nodes displays **Ready** and that the **Machine Type** shows a flavor other than **free**.
 
-2. To keep the connection alive, you can increase the value of the timeout or set up a heartbeat in your app.
-<dl><dt>Change the timeout</dt>
-<dd>Increase the value of the `proxy-read-timeout` in your ALB configuration. For example, to change the timeout from `60s` to a larger value like `300s`, add this [annotation](/docs/openshift?topic=openshift-ingress_annotation#connection) to your Ingress resource file: `ingress.bluemix.net/proxy-read-timeout: "serviceName=<service_name> timeout=300s"`. The timeout is changed for all public ALBs in your cluster.</dd>
-<dt>Set up a heartbeat</dt>
-<dd>If you don't want to change the ALB's default read timeout value, set up a heartbeat in your WebSocket app. When you set up a heartbeat protocol by using a framework like [WAMP ![External link icon](../icons/launch-glyph.svg "External link icon")](https://wamp-proto.org/), the app's upstream server periodically sends a "ping" message on a timed interval and the client responds with a "pong" message. Set the heartbeat interval to 58 seconds or less so that the "ping/pong" traffic keeps the connection open before the 60-second timeout is enforced.</dd></dl>
+* If your standard cluster is fully deployed and has at least 2 worker nodes per zone, but no **Ingress Subdomain** is available, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
+* For other issues, troubleshoot your Ingress setup by following the steps in [Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress).
+
+If you recently restarted your ALB pods or enabled an ALB, a [readiness check](/docs/openshift?topic=openshift-ingress-settings#readiness-check) prevents ALB pods from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss and can take up to 5 minutes.
+{: note}
+
+<br />
+
+
+## Ingress application load balancer (ALB) secret issues
+{: #cs_albsecret_fails}
+
+
+
+{: tsSymptoms}
+After you deploy an Ingress application load balancer (ALB) secret to your cluster by using the `ibmcloud oc alb cert deploy` command, the `Description` field is not updating with the secret name when you view your certificate in {{site.data.keyword.cloudcerts_full_notm}}.
+
+When you list information about the ALB secret, the state says `*_failed`. For example, `create_failed`, `update_failed`, `delete_failed`.
+
+List the ALB secret details (`ibmcloud ks alb cert get`) and view the ALB secret `status` to get more information on the reason for failure.
+
+{: tsResolve}
+Review the following reasons why the ALB secret might fail and the corresponding troubleshooting steps:
+
+<table>
+<caption>Troubleshooting Ingress application load balancer secrets</caption>
+ <thead>
+ <th>Why it's happening</th>
+ <th>How to fix it</th>
+ </thead>
+ <tbody>
+ <tr>
+ <td>The owner of the cluster's API Key does not have the required access roles to download and update certificate data.</td>
+ <td>Check with your account Administrator to assign the owner of the cluster's API Key, the following {{site.data.keyword.cloud_notm}} IAM roles:<ul><li>The **Manager** and **Writer** service roles for your {{site.data.keyword.cloudcerts_full_notm}} instance. For more information, see <a href="/docs/certificate-manager?topic=certificate-manager-managing-service-access-roles#managing-service-access-roles">Managing service access</a> for {{site.data.keyword.cloudcerts_short}}.</li><li>The <a href="/docs/containers?topic=containers-users#platform">**Administrator** platform role</a> for the cluster.</li></ul></td>
+ </tr>
+ <tr>
+ <td>The certificate CRN provided at time of create, update, or remove does not belong to the same account as the cluster.</td>
+ <td>Check that the certificate CRN you provided is imported to an instance of the {{site.data.keyword.cloudcerts_short}} service that is deployed in the same account as your cluster.</td>
+ </tr>
+ <tr>
+ <td>The certificate CRN provided at time of create is incorrect.</td>
+ <td><ol><li>Check the accuracy of the certificate CRN string you provide.</li><li>If the certificate CRN is found to be accurate, then try to update the secret: <code>ibmcloud oc alb cert deploy --update --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt;</code></li><li>If this command results in the <code>update_failed</code> status, then remove the secret: <code>ibmcloud oc alb cert rm --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt;</code></li><li>Deploy the secret again: <code>ibmcloud oc alb cert deploy --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt;</code></li></ol></td>
+ </tr>
+ <tr>
+ <td>The certificate CRN provided at time of update is incorrect.</td>
+ <td><ol><li>Check the accuracy of the certificate CRN string you provide.</li><li>If the certificate CRN is found to be accurate, then remove the secret: <code>ibmcloud oc alb cert rm --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt;</code></li><li>Deploy the secret again: <code>ibmcloud oc alb cert deploy --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt;</code></li><li>Try to update the secret: <code>ibmcloud oc alb cert deploy --update --cluster &lt;cluster_name_or_ID&gt; --secret-name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt;</code></li></ol></td>
+ </tr>
+ <tr>
+ <td>The {{site.data.keyword.cloudcerts_long_notm}} service is experiencing downtime.</td>
+ <td>Check that your {{site.data.keyword.cloudcerts_short}} service is up and running.</td>
+ </tr>
+ <tr>
+ <td>Your imported secret has the same name as the IBM-provided Ingress secret.</td>
+ <td>Rename your secret. You can check the name of the IBM-provided Ingress secret by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</td>
+ </tr>
+  <tr>
+  <td>The description for the certificate is not updated with the secret name when you view the certificate in {{site.data.keyword.cloudcerts_full_notm}}.</td>
+  <td>Check whether the length of the certificate description reached the <a href="/apidocs/certificate-manager#update-a-certificate-s-metadata">upper limit of 1024 characters</a>.</td>
+  </tr>
+ </tbody></table>
+
+<br />
+
+
+## ALB does not deploy in a zone
+{: #cs_subnet_limit}
+
+
+
+{: tsSymptoms}
+When you have a multizone cluster and run `ibmcloud oc alb ls --cluster <cluster>`, no ALB is deployed in a zone. For example, if you have worker nodes in 3 zones, you might see an output similar to the following in which a public ALB did not deploy to the third zone.
+```
+ALB ID                                            Enabled    Status     Type      ALB IP           Zone    Build                          ALB VLAN ID   NLB Version
+private-cr96039a75fddb4ad1a09ced6699c88888-alb1   false      disabled   private   -                dal10   ingress:411/ingress-auth:315   2294021       -
+private-cr96039a75fddb4ad1a09ced6699c88888-alb2   false      disabled   private   -                dal12   ingress:411/ingress-auth:315   2234947       -
+private-cr96039a75fddb4ad1a09ced6699c88888-alb3   false      disabled   private   -                dal13   ingress:411/ingress-auth:315   2234943       -
+public-cr96039a75fddb4ad1a09ced6699c88888-alb1    true       enabled    public    169.xx.xxx.xxx   dal10   ingress:411/ingress-auth:315   2294019       -
+public-cr96039a75fddb4ad1a09ced6699c88888-alb2    true       enabled    public    169.xx.xxx.xxx   dal12   ingress:411/ingress-auth:315   2234945       -
+```
+{: screen}
+
+{: tsCauses}
+In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. In that zone, 1 public portable subnet is requested on the public VLAN that you specify and 1 private portable subnet is requested on the private VLAN that you specify. For Red Hat OpenShift on IBM Cloud, VLANs have a limit of 40 subnets. If the cluster's VLAN in a zone already reached that limit, the **Ingress Subdomain** fails to provision and the public Ingress ALB for that zone fails to provision.
+
+To view how many subnets a VLAN has:
+1.  From the [IBM Cloud infrastructure console](https://cloud.ibm.com/classic?), select **Network** > **IP Management** > **VLANs**.
+2.  Click the **VLAN Number** of the VLAN that you used to create your cluster. Review the **Subnets** section to see whether 40 or more subnets exist.
+
+{: tsResolve}
+If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) that uses this new VLAN.
+
+If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. After, you can add new worker nodes to the cluster that use the other VLAN with available subnets. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
+
+If you are not using all the subnets in the VLAN, you can reuse subnets on the VLAN by adding them to your cluster.
+1. Check that the subnet that you want to use is available.
+  <p class="note">The infrastructure account that you use might be shared across multiple {{site.data.keyword.cloud_notm}} accounts. In this case, even if you run the `ibmcloud oc subnets` command to see subnets with **Bound Clusters**, you can see information only for your clusters. Check with the infrastructure account owner to make sure that the subnets are available and not in use by any other account or team.</p>
+
+2. Use the [`ibmcloud oc cluster subnet add` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_add) to make an existing subnet available to your cluster.
+
+3. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
+    ```
+    ibmcloud oc cluster get --show-resources <cluster_name_or_ID>
+    ```
+    {: pre}
+
+    In this example output, a second subnet was added to the `2234945` public VLAN:
+    ```
+    Subnet VLANs
+    VLAN ID   Subnet CIDR          Public   User-managed
+    2234947   10.xxx.xx.xxx/29     false    false
+    2234945   169.xx.xxx.xxx/29    true     false
+    2234945   169.xx.xxx.xxx/29    true     false
+    ```
+    {: screen}
+
+4. Verify that the portable IP addresses from the subnet that you added are used for the ALBs in your cluster. It might take several minutes for the services to use the portable IP addresses from the newly-added subnet.
+  * No Ingress subdomain: Run `ibmcloud oc cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
+  * An ALB does not deploy in a zone: Run `ibmcloud oc alb ls --cluster <cluster>` to verify that the missing ALB is deployed.
 
 <br />
 
@@ -830,6 +804,32 @@ If you complete one of the above options but the `keepalived` pods are still not
     oc describe pod ibm-cloud-provider-ip-169-61-XX-XX-55967b5b8c-7zv9t -n ibm-system
     ```
     {: pre}
+
+<br />
+
+
+## Connection via WebSocket closes after 60 seconds
+{: #cs_ingress_websocket}
+
+{: tsSymptoms}
+Your Ingress service exposes an app that uses a WebSocket. However, the connection between a client and your WebSocket app closes when no traffic is sent between them for 60 seconds.
+
+{: tsCauses}
+The connection to your WebSocket app might drop after 60 seconds of inactivity for one of the following reasons:
+
+* Your Internet connection has a proxy or firewall that doesn't tolerate long connections.
+* A timeout in the ALB to the WebSocket app terminates the connection.
+
+{: tsResolve}
+To prevent the connection from closing after 60 seconds of inactivity:
+
+1. If you connect to your WebSocket app through a proxy or firewall, make sure the proxy or firewall isn't configured to automatically terminate long connections.
+
+2. To keep the connection alive, you can increase the value of the timeout or set up a heartbeat in your app.
+<dl><dt>Change the timeout</dt>
+<dd>Increase the value of the `proxy-read-timeout` in your ALB configuration. For example, to change the timeout from `60s` to a larger value like `300s`, add this [annotation](/docs/openshift?topic=openshift-ingress_annotation#connection) to your Ingress resource file: `ingress.bluemix.net/proxy-read-timeout: "serviceName=<service_name> timeout=300s"`. The timeout is changed for all public ALBs in your cluster.</dd>
+<dt>Set up a heartbeat</dt>
+<dd>If you don't want to change the ALB's default read timeout value, set up a heartbeat in your WebSocket app. When you set up a heartbeat protocol by using a framework like [WAMP ![External link icon](../icons/launch-glyph.svg "External link icon")](https://wamp-proto.org/), the app's upstream server periodically sends a "ping" message on a timed interval and the client responds with a "pong" message. Set the heartbeat interval to 58 seconds or less so that the "ping/pong" traffic keeps the connection open before the 60-second timeout is enforced.</dd></dl>
 
 <br />
 
