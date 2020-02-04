@@ -209,23 +209,134 @@ Review common error messages and learn how to resolve them.
 <br />
 
 
-
-## Missing permissions to create clusters or worker nodes
-{: #rhoks_ts_cluster_permissions}
+## Unable to create a cluster or manage worker nodes due to permission errors
+{: #cs_credentials}
 {: troubleshoot}
 {: support}
 
 {: tsSymptoms}
-You do not have permissions to create a cluster or add worker nodes.
+You try to manage worker nodes for a new or an existing cluster by running one of the following commands.
+* Provision workers: `ibmcloud oc cluster create classic`, `ibmcloud oc worker-pool rebalance`, or `ibmcloud oc worker-pool resize`
+* Reload workers: `ibmcloud oc worker reload` or `ibmcloud oc worker update`
+* Reboot workers: `ibmcloud oc worker reboot`
+* Delete workers: `ibmcloud oc cluster rm`, `ibmcloud oc worker rm`, `ibmcloud oc worker-pool rebalance`, or `ibmcloud oc worker-pool resize`
+
+However, you receive an error message similar to one of the following.
+
+```
+We were unable to connect to your IBM Cloud infrastructure account.
+Creating a standard cluster requires that you have either a
+Pay-As-You-Go account that is linked to an IBM Cloud infrastructure
+account term or that you have used the {{site.data.keyword.containerlong_notm}}
+CLI to set your {{site.data.keyword.cloud_notm}} Infrastructure API keys.
+```
+{: screen}
+
+```
+{{site.data.keyword.cloud_notm}} Infrastructure Exception:
+'Item' must be ordered with permission.
+```
+{: screen}
+
+```
+Worker not found. Review {{site.data.keyword.cloud_notm}} infrastructure permissions.
+```
+{: screen}
+
+```
+{{site.data.keyword.cloud_notm}} Infrastructure Exception:
+The user does not have the necessary {{site.data.keyword.cloud_notm}}
+Infrastructure permissions to add servers
+```
+{: screen}
+
+```
+IAM token exchange request failed: Cannot create IMS portal token, as no IMS account is linked to the selected BSS account
+```
+{: screen}
+
+```
+The cluster could not be configured with the registry. Make sure that you have the Administrator role for {{site.data.keyword.registrylong_notm}}.
+```
+{: screen}
 
 {: tsCauses}
-To create an OpenShift cluster, you must have the same permissions as you need to create a community Kubernetes cluster. The required permissions include infrastructure credentials for the region and resource group and {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) **Administrator** permissions.
+The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
 
 {: tsResolve}
-Review [Assigning cluster access](/docs/openshift?topic=openshift-users) to learn how to set up infrastructure credentials for a region and resource group and how to assign users access through IAM.
+The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
+
+Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+
+1.  Identify what user credentials are used for the region and resource group's infrastructure permissions.
+    1.  Check the API key for a region and resource group of the cluster.
+        ```
+        ibmcloud oc api-key info --cluster <cluster_name_or_ID>
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        Getting information about the API key owner for cluster <cluster_name>...
+        OK
+        Name                Email
+        <user_name>         <name@email.com>
+        ```
+        {: screen}
+    2.  Check if the infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
+        ```
+        ibmcloud oc credential get --region <us-south>
+        ```
+        {: pre}
+
+        **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
+        ```
+        OK
+        Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
+        ```
+        {: screen}
+
+        **Example output if credentials are not set to use a different account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
+        ```
+        FAILED
+        No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
+        ```
+        {: screen}
+2.  Validate the infrastructure permissions that the user has.
+    1.  List the suggested and required infrastructure permissions for the region and resource group.
+        ```
+        ibmcloud oc infra-permissions get --region <region>
+        ```
+        {: pre}
+
+        For console and CLI commands to assign these permissions, see [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
+        {: tip}
+
+    2.  Make sure that the [infrastructure credentials owner for the API key or the manually-set account has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions).
+    3.  If necessary, you can change the [API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or [manually-set](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) infrastructure credentials owner for the region and resource group.
+3.  Test that the changed permissions permit authorized users to perform infrastructure operations for the cluster.
+    1.  For example, you might try to a delete a worker node.
+        ```
+        ibmcloud oc worker rm --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+        ```
+        {: pre}
+    2.  Check to see if the worker node is removed.
+        ```
+        ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+        ```
+        {: pre}
+
+        Example output if the worker node removal is successful. The `worker get` operation fails because the worker node is deleted. The infrastructure permissions are correctly set up.
+        ```
+        FAILED
+        The specified worker node could not be found. (E0011)
+        ```
+        {: screen}
+
+    3.  If the worker node is not removed, review that [**State** and **Status** fields](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes) and the [common issues with worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#common_worker_nodes_issues) to continue debugging.
+    4.  If you manually set credentials and still cannot see the cluster's worker nodes in your infrastructure account, you might check whether the [cluster is orphaned](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned).
 
 <br />
-
 
 
 ## Unable to create a cluster or manage worker nodes due to paid account error

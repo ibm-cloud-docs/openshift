@@ -121,6 +121,8 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
 {: troubleshoot}
 {: support}
 
+
+
 {: tsSymptoms}
 You cannot push or pull Docker images from your local machine to the cluster's built-in Docker registry.
 
@@ -688,7 +690,7 @@ To integrate services that do not support service keys, check if the service pro
 {: #cs_helm_install}
 
 {: tsSymptoms}
-When you try to install an updated Helm chart by running `helm install <release_name> iks-charts/<chart_name> -f config.yaml --namespace=kube-system`, you get the `Error: failed to download "iks-charts/<chart_name>"` error message.
+When you try to install an updated Helm chart by running `helm install <release_name> iks-charts/<chart_name> -f config.yaml`, you get the `Error: failed to download "iks-charts/<chart_name>"` error message.
 
 {: tsCauses}
 The URL for the {{site.data.keyword.cloud_notm}} repository in your Helm instance might be incorrect.
@@ -739,7 +741,7 @@ To troubleshoot your Helm chart:
 3. Install the Helm chart with your updates.
 
     ```
-    helm install <release_name> iks-charts/<chart_name> -f config.yaml --namespace=kube-system
+    helm install <release_name> iks-charts/<chart_name> -f config.yaml
     ```
     {: pre}
 

@@ -48,9 +48,6 @@ While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}
 {: troubleshoot}
 {: support}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
-{: note}
-
 {: tsSymptoms}
 When you expose an app through a router subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
 
