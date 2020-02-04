@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-02-04"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -39,7 +39,7 @@ subcollection: openshift
 With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `ibm-iks-cluster-autoscaler` plug-in is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
 {: shortdesc}
 
-Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-app#app_scaling).
+Want to autoscale your pods instead? Check out [Scaling apps](/docs/openshift?topic=openshift-app#app_scaling).
 {: tip}
 
 
@@ -601,7 +601,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
     </tr>
      <tr>
     <td>`workerpools` parameter</td>
-    <td>The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone. These settings are mirrored in the [cluster autoscaler config map](#ca_cm). To set the worker pool, format the option as as follows: <code>--set workerpools[0].<pool_name>.max=<number_of_workers>,workerpools[0].<pool_name>.min=<number_of_workers>,workerpools[0].<pool_name>.enabled=(true|false)</code><br><br>
+    <td>The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone. These settings are mirrored in the [cluster autoscaler config map](#ca_cm). To set the worker pool, format the option as follows: <code>--set workerpools[0].<pool_name>.max=<number_of_workers>,workerpools[0].<pool_name>.min=<number_of_workers>,workerpools[0].<pool_name>.enabled=(true|false)</code><br><br>
     Understanding the `--set workerpools` options:
       <ul><li>**`workerpools[0]`**: The first worker pool to enable or disable for autoscaling. You must include three parameters for each worker pool for the command to succeed: the maximum number of worker nodes (`max`), the minimum number of worker nodes (`min`), and whether you want to enable (`true`) or disable (`false`) autoscaling for this worker pool. To include multiple worker pools, include a comma-separated list and increase the number in brackets, such as: `workerpools[0].default...,workerpools[1].pool1...,workerpools[2].pool2...`.</li>
       <li>**`<pool_name>`**: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.</li>
@@ -611,6 +611,36 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
       <p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system <cluster_autoscaler_pod>`.</p>
       <br><br>By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.</td>
     <td>Disabled</td>
+    </tr>
+    <tr>
+      <td>`livenessProbe.periodSeconds`</td>
+      <td>Specify the interval in seconds that the `kubelet` performs a liveness probe.</td>
+      <td>`10`</td>
+    </tr>
+    <tr>
+      <td>`livenessProbe.failureThreshold`</td>
+      <td>Specify the number of times that the `kubelet` retries a liveness probe after the pod starts and the first liveness probe fails. After the failure threshold is reached, the container is restarted and the pod is marked `Unready` for a readiness probe, if applicable.</td>
+      <td>`3`</td>
+    </tr>
+    <tr>
+      <td>`livenessProbe.successThreshold`</td>
+      <td>Specify the minimum, consecutive number of times that the liveness probe must be successful after a previous failure before the pod is marked `Ready`. If you set a liveness probe, you must set this value to at least `1`.</td>
+      <td>`1`</td>
+    </tr>
+    <tr>
+      <td>`livenessProbe.timeoutSeconds`</td>
+      <td>Specify the time in seconds after which the liveness probe times out.</td>
+      <td>`10`</td>
+    </tr>
+    <tr>
+      <td>`max-inactivity`</td>
+      <td>Set the maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted.</td>
+      <td>`10m`</td>
+    </tr>
+    <tr>
+      <td>`max-failing-time`</td>
+      <td>Set the maximum time in minutes that the cluster autoscaler pod runs without a successfully completed action before the pod is automatically restarted.</td>
+      <td>`15m`</td>
     </tr>
     </tbody>
     </table>
