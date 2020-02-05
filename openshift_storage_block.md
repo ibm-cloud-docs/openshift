@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-03"
+lastupdated: "2020-02-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -47,7 +47,7 @@ subcollection: openshift
 ## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}
 {: #block_qs}
 
-In this quickstart guide, you create a 24Gi silver tier {{site.data.keyword.blockshort}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
+In this quickstart guide, you create a 24Gi silver tier {{site.data.keyword.blockstorageshort}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
 {: shortdesc}
 
 First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come back here after your have [reviewed the storage configurations](#block_predefined_storageclass).
