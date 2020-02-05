@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-05"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -219,7 +219,7 @@ Enable a managed add-on in an existing cluster. This command must be combined wi
 #### `ibmcloud oc cluster addon enable debug-tool`
 {: #cs_cluster_addon_enable_debug}
 
-Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) in a cluster.
+Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) in a cluster.
 {: shortdesc}
 
 ```
@@ -312,7 +312,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--export] [--network] [-
 
 **Minimum required permissions**: **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform role or only a service role, additional constraints apply.
 * **Platform**: If you have only a platform role, you can perform this command, but you need a [service role](/docs/openshift?topic=openshift-users#platform) or a [custom RBAC policy](/docs/openshift?topic=openshift-users#role-binding) to perform Kubernetes actions in the cluster.
-* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name and ID because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli) and work with Kubernetes.
+* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name and ID because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can [launch the Kubernetes dashboard from the CLI](/docs/openshift?topic=openshift-app#db_cli) and work with Kubernetes.
 
 **Command options**:
 <dl>
