@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-05"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -110,7 +110,7 @@ To use routes to privately expose your apps, create a new router and change the 
 
 1. Create a router that is named `router-private` in the project where your app is deployed. A service that exposes the private router is also automatically created.
   ```
-  oc adm router router-private --replicas=2 --service-account=router -n <project> --images registry.ng.bluemix.net/armada-master/iksorigin-ose-haproxy-router:v3.11.154
+  oc adm router router-private --replicas=2 --service-account=router --images registry.ng.bluemix.net/armada-master/iksorigin-ose-haproxy-router:v3.11.154 -n <project>
   ```
   {: pre}
 
