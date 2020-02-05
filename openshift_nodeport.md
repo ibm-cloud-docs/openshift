@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-28"
+lastupdated: "2020-02-05"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -39,7 +39,7 @@ subcollection: openshift
 Make your containerized app available to internet access by using the public IP address of any worker node in a OpenShift cluster and exposing a NodePort. Use this option for testing in {{site.data.keyword.openshiftlong}} and for short-term public access.
 {:shortdesc}
 
-## Managing network traffic by using NodePorts
+## About NodePorts
 {: #nodeport_planning}
 
 Expose a public port on your worker node and use the public IP address of the worker node to access your service in the cluster publicly from the internet.
