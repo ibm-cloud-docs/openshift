@@ -108,7 +108,7 @@ To set up routes to publicly expose apps:
     3. Map your custom domain to the router's public IP address by adding the IP address as an A record.
 
 3. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}.
-  * If you do not have a custom domain, leave the **Hostname** field blank. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+  * If you do not have a custom domain, do not specify a **Hostname** value. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
   * If you registered a wildcard subdomain, specify a unique subdomain in each route resource that you create. For example, you might specify `svc1.example.com` in this route resource, and `svc2.example.com` in another route resource.
 
 4. Verify that the route for your app is created.
@@ -130,7 +130,7 @@ To set up routes to publicly expose apps:
 To use routes to privately expose your apps, create a new router and change the service that exposes the router to a private load balancer. The router is assigned an IP address through which private requests are forwarded to your app.
 {: shortdesc}
 
-When you create a private router, you must specify the ports that the router listens on. Because the private router uses host networking to listen on these ports, all incoming traffic to those ports must go through the private router. Ensure that no other services in your cluster listen on these ports.
+When you create a private router, the private router uses host networking to listen on the ports that you specify. Ensure that no other services that use host networking in your cluster listen on these ports.
 {: important}
 
 1. Create a router that is named `router-private` in the project where your app is deployed. A service that exposes the private router is also automatically created.
@@ -145,7 +145,7 @@ When you create a private router, you must specify the ports that the router lis
       oc edit dc router-private -n <project>
       ```
       {: pre}
-  2. In the `spec.containers.env` section, change the values of `ROUTER_SERVICE_HTTPS_PORT` and `ROUTER_SERVICE_HTTP_PORT` to other ports, such as to `8443` and `8080`. Note that because the private router uses host networking to listen on the ports that you choose, all incoming traffic to these ports must go through the private router. Ensure that no other services in your cluster listen on these ports.
+  2. In the `spec.containers.env` section, change the values of `ROUTER_SERVICE_HTTPS_PORT` and `ROUTER_SERVICE_HTTP_PORT` to other ports, such as to `8443` and `8080`. Note that the private router uses host networking to listen on the ports that you choose, so ensure that no other services that use host networking listen on these ports.
   3. In the `spec.containers.env.ports` section, change the default `80` and `443` ports to the same ports that you specified in the previous step.
   4. Save and close the file.
 
@@ -246,7 +246,7 @@ When you create a private router, you must specify the ports that the router lis
   ```
   {: pre}
 
-9. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}. If you leave the **Hostname** field blank and you registered the router service with a private DNS entry in step 4, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
+9. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}. If you do not specify a **Hostname** value and you registered the router service with a private DNS entry in step 4, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
 
 10. Verify that the route for your app is created.
   ```
