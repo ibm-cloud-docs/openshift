@@ -121,6 +121,7 @@ Expose apps that are inside your cluster to the public by using the public Ingre
 **Before you begin:**
 
 * Review the Ingress [prerequisites](#config_prereqs).
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * VPC clusters: If you use use non-default [VPC security groups](/docs/vpc?topic=vpc-using-security-groups), allow traffic requests that are routed by Ingress to node ports on your worker nodes.
   1. Target Generation 1 of VPC compute.
      ```
@@ -138,12 +139,11 @@ Expose apps that are inside your cluster to the public by using the public Ingre
     1a111a1a-a111-11a1-a111-111111111111   preppy-swimmer-island-green-refreshment    4       -                          2019-08-12T13:24:45-04:00   <vpc_name>(bbbb222b-.)   c3c33cccc33c333ccc3c33cc3c333cc3
     ```
     {: screen}
-  3. Add a rule to allow inbound TCP traffic on ports 30000-32767. For more information about the command options, see the [`security-group-rule-add` CLI reference docs](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
+  3. Add a rule to allow inbound TCP traffic on ports 30000-32767. For more information about the command options, see the [`security-group-rule-add` CLI reference docs](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
     ```
     ibmcloud is security-group-rule-add <security_group_ID> inbound tcp --port-min 30000 --port-max 32767
     ```
     {: pre}
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Step 1: Deploy apps and create app services
 {: #public_inside_1}
@@ -445,6 +445,7 @@ Forward requests directly to the IP address of your external service by setting 
 
 * Review the Ingress [prerequisites](#config_prereqs).
 * Ensure that the external app that you want to include into the cluster load balancing can be accessed by using a public IP address.
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * VPC clusters: If you use use non-default [VPC security groups](/docs/vpc?topic=vpc-using-security-groups), allow traffic requests that are routed by Ingress to node ports on your worker nodes.
   1. Target Generation 1 of VPC compute.
      ```
@@ -462,12 +463,11 @@ Forward requests directly to the IP address of your external service by setting 
     1a111a1a-a111-11a1-a111-111111111111   preppy-swimmer-island-green-refreshment    4       -                          2019-08-12T13:24:45-04:00   <vpc_name>(bbbb222b-.)   c3c33cccc33c333ccc3c33cc3c333cc3
     ```
     {: screen}
-  3. Add a rule to allow inbound TCP traffic on ports 30000-32767. For more information about the command options, see the [`security-group-rule-add` CLI reference docs](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
+  3. Add a rule to allow inbound TCP traffic on ports 30000-32767. For more information about the command options, see the [`security-group-rule-add` CLI reference docs](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
     ```
     ibmcloud is security-group-rule-add <security_group_ID> inbound tcp --port-min 30000 --port-max 32767
     ```
     {: pre}
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To expose apps that are outside of your cluster to the public:
 1.  Define a Kubernetes service configuration file for the app that the ALB will expose. This service that forwards incoming requests to an external endpoint that you create in subsequent steps.

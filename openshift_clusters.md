@@ -167,9 +167,7 @@ Create your single zone or multizone classic OpenShift cluster by using the {{si
     1. Select a metro location. For the best performance, select the metro location that is physically closest to you. Your choices might be limited by geography.
     2. Select the specific zones in which you want to host your cluster. You must select at least one zone but you can select as many as you like. If you select more than one zone, the worker nodes are spread across the zones that you choose which gives you higher availability. If you select only one zone, you can [add zones to your cluster](/docs/openshift?topic=openshift-add_workers#add_zone) after the cluster is created.
   * Single zone clusters: Select a zone in which you want to host your cluster. For the best performance, select the zone that is physically closest to you. Your choices might be limited by geography.
-7. For each of the selected zones, choose your public and private VLANs.
-  * To create a cluster in which you can run internet-facing workloads:
-    1. Select a public VLAN and a private VLAN from your IBM Cloud infrastructure account for each zone. Worker nodes communicate with each other by using the private VLAN, and can communicate with the OpenShift master by using the public or the private VLAN. If you do not have a public or private VLAN in this zone, a public and a private VLAN are automatically created for you. You can use the same VLAN for multiple clusters.
+7. For each of the selected zones, choose your public and private VLANs. Worker nodes communicate with each other by using the private VLAN, and can communicate with the OpenShift master by using the public or the private VLAN. If you do not have a public or private VLAN in this zone, a public and a private VLAN are automatically created for you. You can use the same VLAN for multiple clusters.
 9. Configure your default worker pool. Worker pools are groups of worker nodes that share the same configuration. You can always add more worker pools to your cluster later.
    1. Filter the worker flavors by selecting a machine type. Virtual is billed hourly and bare metal is billed monthly.
       - **Bare metal**: Bare metal servers are provisioned manually by IBM Cloud infrastructure after you order, and can take more than one business day to complete. Bare metal is best suited for high-performance applications that need more resources and host control. Be sure that you want to provision a bare metal machine. Because it is billed monthly, if you cancel it immediately after an order by mistake, you are still charged the full month.
@@ -250,7 +248,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    1518787   vlan   1252     public    fcr02a.dal10
    1518888   vlan   1254     public    fcr02a.dal10
    ```
-   {: screen}If a public and private VLAN already exist, note the matching routers. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match. In the example output, any private VLAN can be used with any public VLAN because the routers all include `02a.dal10`.
+   {: screen} If a public and private VLAN already exist, note the matching routers. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match. In the example output, any private VLAN can be used with any public VLAN because the routers all include `02a.dal10`.
 
 6. Create your standard cluster.
     ```
@@ -371,7 +369,6 @@ When the cluster is up and running, you can check out the following cluster admi
 - Control who can create pods in your cluster with [pod security policies](/docs/containers?topic=containers-psp).
 
 Then, you can check out the following network configuration steps for your cluster setup:
-* Classic clusters:
   * Isolate networking workloads to edge worker nodes [in classic clusters without a gateway](/docs/openshift?topic=openshift-edge) or [in gateway-enabled classic clusters](/docs/openshift?topic=openshift-edge#edge_gateway).
   * Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#public_access) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access).
   * Connect your cluster with services in private networks outside of your {{site.data.keyword.cloud_notm}} account by setting up [{{site.data.keyword.cloud_notm}} Direct Link](/docs/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link) or the [strongSwan IPSec VPN service](/docs/openshift?topic=openshift-vpn).
