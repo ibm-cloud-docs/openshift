@@ -162,7 +162,7 @@ When you create a private router, the private router uses host networking to lis
   router-private-2-5ftqh              1/1       Running     0          2m
   router-private-2-ksknz              1/1       Running     0          2m
   ```
-  {: pre}
+  {: screen}
 
 3. Change the `router-private` service that exposes the router to a private load balancer.
   1. Edit the `router-private` service.
