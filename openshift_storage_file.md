@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1322,14 +1322,17 @@ Review the following backup and restore options for your {{site.data.keyword.fil
 ## Storage class reference
 {: #file_storageclass_reference}
 
+{[relcaim.md]}
+
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-bronze</code></br><code>ibmc-file-retain-bronze</code>|
+| Name | <code>ibmc-file-bronze</code></br><code>ibmc-file-retain-bronze</code> |
 | Type | [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers)|
 | File system | NFS|
 | IOPS per gigabyte | 2|
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
+| Reclaim policy | <code>ibmc-file-bronze</code>: Delete</br><code>ibmc-file-retain-bronze</code>: Retain |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
@@ -1340,12 +1343,13 @@ Review the following backup and restore options for your {{site.data.keyword.fil
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-silver</code></br><code>ibmc-file-retain-silver</code>|
+| Name | <code>ibmc-file-silver</code></br><code>ibmc-file-retain-silver</code> |
 | Type | [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers)|
 | File system | NFS|
 | IOPS per gigabyte | 4|
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
+| Reclaim policy | <code>ibmc-file-silver</code>: Delete</br><code>ibmc-file-retain-silver</code>: Retain |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
@@ -1356,12 +1360,13 @@ Review the following backup and restore options for your {{site.data.keyword.fil
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-gold</code></br><code>ibmc-file-retain-gold</code>|
+| Name | <code>ibmc-file-gold</code></br><code>ibmc-file-retain-gold</code> |
 | Type | [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers)|
 | File system | NFS|
 | IOPS per gigabyte | 10|
 | Size range in gigabytes | 20-4000 Gi|
 | Hard disk | SSD|
+| Reclaim policy | <code>ibmc-file-gold</code>: Delete</br><code>ibmc-file-retain-gold</code>: Retain |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
@@ -1372,11 +1377,12 @@ Review the following backup and restore options for your {{site.data.keyword.fil
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-custom</code></br><code>ibmc-file-retain-custom</code>|
+| Name | <code>ibmc-file-custom</code></br><code>ibmc-file-retain-custom</code> |
 | Type | [Performance](/docs/FileStorage?topic=FileStorage-about#provisioning-with-performance)|
 | File system | NFS|
 | IOPS and size | <p><strong>Size range in gigabytes / IOPS range in multiples of 100</strong></p><ul><li>20-39 Gi / 100-1000 IOPS</li><li>40-79 Gi / 100-2000 IOPS</li><li>80-99 Gi / 100-4000 IOPS</li><li>100-499 Gi / 100-6000 IOPS</li><li>500-999 Gi / 100-10000 IOPS</li><li>1000-1999 Gi / 100-20000 IOPS</li><li>2000-2999 Gi / 200-40000 IOPS</li><li>3000-3999 Gi / 200-48000 IOPS</li><li>4000-7999 Gi / 300-48000 IOPS</li><li>8000-9999 Gi / 500-48000 IOPS</li><li>10000-12000 Gi / 1000-48000 IOPS</li></ul>|
 | Hard disk | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage. </br></br>Example: </br>You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi). </br></br><strong>Overview of hard disk types per ratio:</strong><ul><li>Less than or equal to 0.3: SATA</li><li>Greater than 0.3: SSD</li></ul>|
+| Reclaim policy | <code>ibmc-file-custom</code>: Delete</br><code>ibmc-file-retain-custom</code>: Retain |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
