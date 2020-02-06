@@ -146,6 +146,7 @@ Red Hat OpenShift on IBM Cloud
     Troubleshooting clusters
         openshift_ts.md
         openshift_troubleshoot_workers.md
+        openshift_ts_cluster_autoscaler.md
         openshift_troubleshoot_network.md
         openshift_troubleshoot_app.md
         openshift_troubleshoot_lb.md
