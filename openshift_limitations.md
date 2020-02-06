@@ -46,7 +46,7 @@ If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud l
 ## Service limitations
 {: #tech_limits}
 
-Red Hat OpenShift on IBM Cloud comes with the following service limitations.
+Red Hat OpenShift on IBM Cloud comes with the following service limitations. Keep in mind that the [classic](#classic_limits) cluster limitations also apply.
 {: shortdesc}
 
 | Category | Description |
@@ -78,7 +78,7 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
 ### Compute
 {: #classic_compute_limit}
 
-</br>
+Keep in mind that the [service](#tech_limits) limitations also apply.
 
 | Category | Description |
 | -------- | ----------- |
@@ -93,7 +93,7 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
 ### Networking
 {: #classic_networking_limit}
 
-</br>
+Keep in mind that the [service](#tech_limits) limitations also apply.
 
 | Category | Description |
 | -------- | ----------- |
@@ -110,7 +110,7 @@ Classic infrastructure clusters in Red Hat OpenShift on IBM Cloud are released w
 ### Storage
 {: #classic_storage_limit}
 
-</br>
+Keep in mind that the [service](#tech_limits) limitations also apply.
 
 | Category | Description |
 | -------- | ----------- |
