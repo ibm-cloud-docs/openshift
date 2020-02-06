@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-03"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -474,7 +474,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>21 June 2019</td>
   <td><ul>
   <li><strong>Accessing OpenShift clusters</strong>: Added steps for [automating access to an OpenShift cluster by using an OpenShift login token](/docs/openshift?topic=openshift-openshift-cli#openshift_cluster_login).</li>
-  <li><strong>Troubleshooting OpenShift clusters</strong>: Added a [troubleshooting section](/docs/openshift?topic=openshift-openshift_troubleshoot) to the Creating a Red Hat OpenShift on IBM Cloud cluster tutorial.</li></ul>
+  <li><strong>Troubleshooting OpenShift clusters</strong>: Added a [troubleshooting section](/docs/openshift?topic=openshift-cs_troubleshoot) to the Creating a Red Hat OpenShift on IBM Cloud cluster tutorial.</li></ul>
   </td>
 </tr>
 <tr>

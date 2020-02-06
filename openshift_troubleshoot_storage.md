@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,7 +39,7 @@ subcollection: openshift
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for troubleshooting persistent storage.
 {: shortdesc}
 
-If you have a more general issue, try out [Troubleshooting OpenShift clusters](/docs/openshift?topic=openshift-openshift_troubleshoot). 
+If you have a more general issue, try out [Troubleshooting OpenShift clusters](/docs/openshift?topic=openshift-cs_troubleshoot). 
 
 ## Debugging persistent storage failures
 {: #debug_storage}
