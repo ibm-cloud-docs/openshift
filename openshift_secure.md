@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-02-05"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -38,8 +38,6 @@ subcollection: openshift
 
 You can use built-in security features in {{site.data.keyword.openshiftlong}} for risk analysis and security protection. These features help you to protect your cluster infrastructure and network communication, isolate your compute resources, and ensure security compliance across your infrastructure components and container deployments.
 {: shortdesc}
-
-
 
 ## Overview of security threats for your cluster
 {: #threats}

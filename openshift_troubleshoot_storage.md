@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-03"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,7 +39,7 @@ subcollection: openshift
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for troubleshooting persistent storage.
 {: shortdesc}
 
-If you have a more general issue, try out [Troubleshooting OpenShift clusters](/docs/openshift?topic=openshift-openshift_troubleshoot). 
+If you have a more general issue, try out [Troubleshooting OpenShift clusters](/docs/openshift?topic=openshift-cs_troubleshoot). 
 
 ## Debugging persistent storage failures
 {: #debug_storage}
@@ -943,6 +943,8 @@ Update the file system in the existing PV from `ext4` to `XFS`.
 ## Object storage: Installing the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in fails
 {: #cos_helm_fails}
 
+
+
 {: tsSymptoms}
 When you install the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in, the installation fails with one of the following errors:
 ```
@@ -994,6 +996,8 @@ If you see a `permission denied` error, you do not have the required `read`, `wr
 
 ## Object storage: PVC remains in a pending state
 {: #cos_pvc_pending}
+
+
 
 {: tsSymptoms}
 When you create a PVC and you run `oc get pvc <pvc_name>`, your PVC remains in a **Pending** state, even after waiting for some time.
@@ -1115,6 +1119,8 @@ During the PVC creation and binding, many different tasks are executed by the {{
 ### Object storage: PVC or pod creation fails due to not finding the Kubernetes secret
 {: #cos_secret_access_fails}
 
+
+
 {: tsSymptoms}
 When you create your PVC or deploy a pod that mounts the PVC, the creation or deployment fails.
 
@@ -1151,6 +1157,8 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
 
 ### Object storage: PVC creation fails due to wrong credentials or access denied
 {: #cred_failure}
+
+
 
 {: tsSymptoms}
 When you create the PVC, you see an error message similar to one of the following:
@@ -1198,6 +1206,8 @@ The {{site.data.keyword.cos_full_notm}} service credentials that you use to acce
 ### Object storage: PVC creation fails due to wrong s3fs or IAM API endpoint
 {: #cos_api_endpoint_failure}
 
+
+
 {: tsSymptoms}
 When you create the PVC, the PVC remains in a pending state. After you run the `oc describe pvc <pvc_name>` command, you see one of the following error messages:
 
@@ -1235,6 +1245,8 @@ The s3fs API endpoint for the bucket that you want to use might have the wrong f
 ### Object storage: Cannot access an existing bucket
 {: #cos_access_bucket_fails}
 
+
+
 {: tsSymptoms}
 When you create the PVC, the bucket in {{site.data.keyword.cos_full_notm}} cannot be accessed. You see an error message similar to the following:
 
@@ -1258,6 +1270,8 @@ You might have used the wrong storage class to access your existing bucket, or y
 
 ## Object storage: Changing the ownership of the mount path fails
 {: #cos_mountpath_error}
+
+
 
 {: tsSymptoms}
 You created a deployment that mounts an {{site.data.keyword.cos_full_notm}} bucket to your app. During the deployment, you try to change the ownership of the volume mount path, but this action fails. You see error messages similar to the following:
@@ -1505,6 +1519,8 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
 
 ## Portworx: Debugging your Portworx installation
 {: #debug-portworx}
+
+
 
 {: tsSymptoms}
 When you create a Portworx service instance from the {{site.data.keyword.cloud_notm}} catalog, the Portworx installation in your cluster fails and the service instance shows a status of **Provision failure**.

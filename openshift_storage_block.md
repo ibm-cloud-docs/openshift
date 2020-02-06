@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-03"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -47,7 +47,7 @@ subcollection: openshift
 ## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}
 {: #block_qs}
 
-In this quickstart guide, you create a 24Gi silver tier {{site.data.keyword.blockshort}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
+In this quickstart guide, you create a 24Gi silver tier {{site.data.keyword.blockstorageshort}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
 {: shortdesc}
 
 First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come back here after your have [reviewed the storage configurations](#block_predefined_storageclass).
@@ -1179,6 +1179,8 @@ To make your data even more highly available and protect your app from a zone fa
 ## Storage class reference
 {: #block_storageclass_reference}
 
+{[relcaim.md]}
+
 | Characteristics | Setting|
 |:-----------------|:-----------------|
 | Name | <code>ibmc-block-bronze</code></br><code>ibmc-block-retain-bronze</code> |
@@ -1187,6 +1189,7 @@ To make your data even more highly available and protect your app from a zone fa
 | IOPS per gigabyte | 2 |
 | Size range in gigabytes | 20-12000 Gi |
 | Hard disk | SSD |
+| Reclaim policy | <code>ibmc-block-bronze</code>: Delete</br><code>ibmc-block-retain-bronze</code>: Retain |
 | Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
 | Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
 {: class="simple-tab-table"}
@@ -1203,6 +1206,7 @@ To make your data even more highly available and protect your app from a zone fa
 | IOPS per gigabyte | 4 |
 | Size range in gigabytes | 20-12000 Gi |
 | Hard disk | SSD |
+| Reclaim policy | <code>ibmc-block-silver</code>: Delete</br><code>ibmc-block-retain-silver</code>: Retain |
 | Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
 | Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
 {: class="simple-tab-table"}
@@ -1219,6 +1223,7 @@ To make your data even more highly available and protect your app from a zone fa
 | IOPS per gigabyte | 10 |
 | Size range in gigabytes | 20-4000 Gi |
 | Hard disk | SSD |
+| Reclaim policy | <code>ibmc-block-gold</code>: Delete</br><code>ibmc-block-retain-gold</code>: Retain |
 | Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
 | Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
 {: class="simple-tab-table"}
@@ -1234,6 +1239,7 @@ To make your data even more highly available and protect your app from a zone fa
 | File system | `ext4` |
 | IOPS and size | <strong>Size range in gigabytes / IOPS range in multiples of 100</strong><ul><li>20-39 Gi / 100-1000 IOPS</li><li>40-79 Gi / 100-2000 IOPS</li><li>80-99 Gi / 100-4000 IOPS</li><li>100-499 Gi / 100-6000 IOPS</li><li>500-999 Gi / 100-10000 IOPS</li><li>1000-1999 Gi / 100-20000 IOPS</li><li>2000-2999 Gi / 200-40000 IOPS</li><li>3000-3999 Gi / 200-48000 IOPS</li><li>4000-7999 Gi / 300-48000 IOPS</li><li>8000-9999 Gi / 500-48000 IOPS</li><li>10000-12000 Gi / 1000-48000 IOPS</li></ul> |
 | Hard disk | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage. </br></br>Example: </br>You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi). </br></br><strong>Overview of hard disk types per ratio:</strong><ul><li>Less than or equal to 0.3: SATA</li><li>Greater than 0.3: SSD</li></ul> |
+| Reclaim policy | <code>ibmc-block-custom</code>: Delete</br><code>ibmc-block-retain-custom</code>: Retain |
 | Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
 | Pricing | [Pricing information![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
 {: class="simple-tab-table"}

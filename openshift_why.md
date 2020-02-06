@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,7 +40,7 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong}} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.
 {: shortdesc}
 
-Check out the following [videos and product tours](https://www.ibm.com/demos/collection/Red-Hat-OpenShift-on-IBM-Cloud/?lc=null) to learn more about Red Hat OpenShift on IBM Cloud{: external}.
+Check out the following [videos and product tours](https://www.ibm.com/demos/collection/Red-Hat-OpenShift-on-IBM-Cloud/?lc=null){: external} to learn more about Red Hat OpenShift on IBM Cloud.
 
 
 ## Benefits of using the service

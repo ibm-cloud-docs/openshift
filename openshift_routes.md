@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-05"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -52,7 +52,11 @@ You can find the router subdomain for your cluster by running `ibmcloud oc nlb-d
 Not sure whether to use OpenShift routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).
 {: tip}
 
-The following diagram shows how a router directs communication from the internet to an app.
+### Traffic flow in a single-zone cluster
+{: #route_single}
+
+The following diagram shows how a router directs communication from the internet to an app in a single-zone cluster.
+{: shortdesc}
 
 <img src="images/roks-router.png" alt="Expose an app in a single-zone OpenShift cluster by using a router" width="550" style="width:550px; border-style: none"/>
 
@@ -61,6 +65,22 @@ The following diagram shows how a router directs communication from the internet
 2. The router receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. If multiple app instances are deployed in the cluster, the router sends the requests between the app pods.
 
 3. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the load balancer service to the client.
+
+### Traffic flow in a multizone cluster
+{: #route_multi}
+
+The following diagram shows how a router directs communication from the internet to an app in a multizone cluster.
+{: shortdesc}
+
+<img src="images/roks-router-multi.png" alt="Expose an app in a multizone OpenShift cluster by using a router" width="700" style="width:700px; border-style: none"/>
+
+1. A request to your app uses the route hostname that you set up for your app.
+
+2. A DNS system service resolves the route subdomain to the floating public IP address of a load balancer service that exposes one of the routers. Requests are handled by the routers in various zones in a round-robin cycle.
+
+3. The router receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router sends the requests between the app pods in the zone.
+
+4. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the load balancer service to the client.
 
 ## Setting up routes to publicly expose your apps
 {: #routes-setup}
@@ -88,7 +108,7 @@ To set up routes to publicly expose apps:
     3. Map your custom domain to the router's public IP address by adding the IP address as an A record.
 
 3. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}.
-  * If you do not have a custom domain, leave the **Hostname** field blank. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+  * If you do not have a custom domain, do not specify a **Hostname** value. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
   * If you registered a wildcard subdomain, specify a unique subdomain in each route resource that you create. For example, you might specify `svc1.example.com` in this route resource, and `svc2.example.com` in another route resource.
 
 4. Verify that the route for your app is created.
@@ -102,26 +122,56 @@ To set up routes to publicly expose apps:
 <br />
 
 
+
+
 ## Setting up routes to privately expose your apps
 {: #private-routes-setup}
 
 To use routes to privately expose your apps, create a new router and change the service that exposes the router to a private load balancer. The router is assigned an IP address through which private requests are forwarded to your app.
 {: shortdesc}
 
+When you create a private router, the private router uses host networking to listen on the ports that you specify. Ensure that no other services that use host networking in your cluster listen on these ports.
+{: important}
+
 1. Create a router that is named `router-private` in the project where your app is deployed. A service that exposes the private router is also automatically created.
   ```
-  oc adm router router-private --replicas=2 --service-account=router -n <project> --images registry.ng.bluemix.net/armada-master/iksorigin-ose-haproxy-router:v3.11.154
+  oc adm router router-private --replicas=2 --service-account=router --images registry.ng.bluemix.net/armada-master/iksorigin-ose-haproxy-router:v3.11.154 -n <project>
   ```
   {: pre}
 
-2. Change the `router-private` service that exposes the router to a private load balancer.
+2. Change the ports of the deployment configuration for the private router. You must change these ports because the default ports are already used by the default public router for your cluster.
+  1. Edit the `router-private` deployment configuration.
+      ```
+      oc edit dc router-private -n <project>
+      ```
+      {: pre}
+  2. In the `spec.containers.env` section, change the values of `ROUTER_SERVICE_HTTPS_PORT` and `ROUTER_SERVICE_HTTP_PORT` to other ports, such as to `8443` and `8080`. Note that the private router uses host networking to listen on the ports that you choose, so ensure that no other services that use host networking listen on these ports.
+  3. In the `spec.containers.env.ports` section, change the default `80` and `443` ports to the same ports that you specified in the previous step.
+  4. Save and close the file.
+
+3. Verify that the pods for the private router are re-created and have a **STATUS** of `Running`.
+  ```
+  oc get pods -n <project>
+  ```
+  {: pre}
+
+  Example output:
+  ```
+  NAME                                READY     STATUS      RESTARTS   AGE
+  ...
+  router-private-2-5ftqh              1/1       Running     0          2m
+  router-private-2-ksknz              1/1       Running     0          2m
+  ```
+  {: screen}
+
+3. Change the `router-private` service that exposes the router to a private load balancer.
   1. Edit the `router-private` service.
     ```
     oc edit svc router-private -n <project>
     ```
     {: pre}
   2. In the `metadata.annotations` section, add the `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private` annotation.
-  3. In the `spec.ports` section, change the default `80` and `443` ports that are used by the default public router to other ports, such as `8080` and `8443`.
+  3. In the `spec.ports` section, change the default `80` and `443` ports to the same ports that you specified in the deployment config for the private router.
   3. Change `spec.type` to `LoadBalancer`.
   4. Save and close the file. After you finish editing the file, it looks similar to the following:
       ```yaml
@@ -159,7 +209,7 @@ To use routes to privately expose your apps, create a new router and change the 
       ```
       {: codeblock}
 
-3. Verify that the `router-private` service has a **TYPE** of `LoadBalancer` and note the **EXTERNAL-IP** address.
+4. Verify that the `router-private` service has a **TYPE** of `LoadBalancer` and note the **EXTERNAL-IP** address.
     ```
     oc get svc | grep router-private
     ```
@@ -172,39 +222,39 @@ To use routes to privately expose your apps, create a new router and change the 
     ```
     {: screen}
 
-4. To have an external endpoint for your private router, you must register your private router service's external IP address with a custom domain.
+5. To have an external endpoint for your private router, you must register your private router service's external IP address with a custom domain.
     1. Create a custom domain. To register your custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started).
         If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
         {: tip}
     2. Map your custom domain to the private router service's external IP address by adding the IP address as an A record.
 
-5. Update the project where your app and private router are deployed to use the private router instead of the default public router.
+6. Update the project where your app and private router are deployed to use the private router instead of the default public router.
   ```
   oc label namespace <project> "router=router-private"
   ```
   {: pre}
 
-6. Restart the pods for the private router.
+7. Restart the pods for the private router.
   ```
   oc scale dc/router-private --replicas=0 -n <project> && oc scale dc/router-private --replicas=2 -n <project>
   ```
   {: pre}
 
-7. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the router can send traffic to.
+8. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the router can send traffic to.
   ```
   oc expose deploy <app_deployment_name> --name my-app-svc
   ```
   {: pre}
 
-8. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}. If you leave the **Hostname** field blank and you registered the router service with a private DNS entry in step 4, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
+9. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}. If you do not specify a **Hostname** value and you registered the router service with a private DNS entry in step 4, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
 
-9. Verify that the route for your app is created.
+10. Verify that the route for your app is created.
   ```
   oc get routes
   ```
   {: pre}
 
-10. Optional: Customize the private router's routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
+11. Optional: Customize the private router's routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
 
 ## Moving router services across VLANs
 {: #migrate-router-vlan}

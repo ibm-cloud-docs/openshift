@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -118,7 +118,7 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 Expose apps that are inside your cluster to the public by using the public Ingress ALB.
 {:shortdesc}
 
-Before you begin:
+**Before you begin:**
 
 * Review the Ingress [prerequisites](#config_prereqs).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -397,7 +397,7 @@ http://<subdomain2>.<domain>/<app1_path>
 {: codeblock}
 
 
-Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress).
+Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress).
 {: tip}
 
 <br />
@@ -419,8 +419,7 @@ You have two options for setting up routing to an external app:
 Forward requests directly to the IP address of your external service by setting up a Kubernetes endpoint that defines the external IP address and port of the app.
 {: shortdesc}
 
-Before you begin:
-
+**Before you begin:**
 * Review the Ingress [prerequisites](#config_prereqs).
 * Ensure that the external app that you want to include into the cluster load balancing can be accessed by using a public IP address.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -492,8 +491,7 @@ To expose apps that are outside of your cluster to the public:
 Route requests through the Ingress ALB to your external service by using the `proxy-external-service` annotation in your Ingress resource file.
 {: shortdesc}
 
-Before you begin:
-
+**Before you begin:**
 * Review the Ingress [prerequisites](#config_prereqs).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -569,7 +567,7 @@ Expose apps to a private network by using the private Ingress ALBs.
 
 To use a private ALB, you must first enable the private ALB. Because private VLAN-only clusters are not assigned an IBM-provided Ingress subdomain, no Ingress secret is created during cluster setup. To expose your apps to the private network, you must register your ALB with a custom domain and, optionally, import your own TLS certificate.
 
-Before you begin:
+**Before you begin:**
 * Review the Ingress [prerequisites](#config_prereqs).
 
 ### Step 1: Deploy apps and create app services

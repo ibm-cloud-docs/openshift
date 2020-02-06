@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -68,76 +68,23 @@ Logs are automatically collected for your Ingress ALBs. To view the ALB logs, ch
 ```
 {: screen}
 
-<table>
-<caption>Understanding fields in the default Ingress log format</caption>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding fields in the default Ingress log format</th>
-</thead>
-<tbody>
-<tr>
-<td><code>"time_date": "$time_iso8601"</code></td>
-<td>The local time in the ISO 8601 standard format when the log is written.</td>
-</tr>
-<tr>
-<td><code>"client": "$remote_addr"</code></td>
-<td>The IP address of the request package that the client sent to your app. This IP can change based on the following situations:<ul><li>When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the request package is changed to the public IP address of the worker node where the app pod is running.</li><li>If [source IP preservation is enabled](/docs/openshift?topic=openshift-ingress-settings#preserve_source_ip), the original IP address of the client request to your app is recorded instead.</li></ul></td>
-</tr>
-<tr>
-<td><code>"host": "$http_host"</code></td>
-<td>The host, or subdomain, that your apps are accessible through. This subdomain is configured in the Ingress resource files for your ALBs.</td>
-</tr>
-<tr>
-<td><code>"scheme": "$scheme"</code></td>
-<td>The kind of request: <code>HTTP</code> or <code>HTTPS</code>.</td>
-</tr>
-<tr>
-<td><code>"request_method": "$request_method"</code></td>
-<td>The method of the request call to the back-end app, such as <code>GET</code> or <code>POST</code>.</td>
-</tr>
-<tr>
-<td><code>"request_uri": "$uri"</code></td>
-<td>The original request URI to your app path. ALBs process the paths that apps listen on as prefixes. When an ALB receives a request from a client to an app, the ALB checks the Ingress resource for a path (as a prefix) that matches the path in the request URI.</td>
-</tr>
-<tr>
-<td><code>"request_id": "$request_id"</code></td>
-<td>A unique request identifier generated from 16 random bytes.</td>
-</tr>
-<tr>
-<td><code>"status": $status</code></td>
-<td>The status code for the connection session.<ul>
-<li><code>200</code>: Session completed successfully</li>
-<li><code>400</code>: Client data can't be parsed</li>
-<li><code>403</code>: Access forbidden; for example, when access is limited for certain client IP addresses</li>
-<li><code>500</code>: Internal server error</li>
-<li><code>502</code>: Bad gateway; for example, if an upstream server can't be selected or reached</li>
-<li><code>503</code>: Service unavailable; for example, when access is limited by the number of connections</li>
-</ul></td>
-</tr>
-<tr>
-<td><code>"upstream_addr": "$upstream_addr"</code></td>
-<td>The IP address and port or the path to the UNIX-domain socket of the upstream server. If several servers are contacted during request processing, their addresses are separated by commas: <code>"192.168.1.1:80, 192.168.1.2:80, unix:/tmp/sock"</code>. If the request is redirected internally from one server group to another, then the server addresses from different groups are separated by colons: <code>"192.168.1.1:80, 192.168.1.2:80, unix:/tmp/sock : 192.168.10.1:80, 192.168.10.2:80"</code>. If the ALB can't select a server, the name of the server group is logged instead.</td>
-</tr>
-<tr>
-<td><code>"upstream_status": $upstream_status</code></td>
-<td>The status code of the response obtained from the upstream server for the back-end app, such as standard HTTP response codes. Status codes of several responses are separated by commas and colons like addresses in the <code>$upstream_addr</code> variable. If the ALB can't select a server, the 502 (Bad Gateway) status code is logged.</td>
-</tr>
-<tr>
-<td><code>"request_time": $request_time</code></td>
-<td>The request processing time, which is measured in seconds with a milliseconds resolution. This time starts when the ALB reads the client request's first bytes and stops when the ALB sends the response's last bytes to the client. The log is written immediately after the request processing time stops.</td>
-</tr>
-<tr>
-<td><code>"upstream_response_time": $upstream_response_time</code></td>
-<td>The time that it takes the ALB to receive the response from the upstream server for the back-end app, which is measured in seconds with a milliseconds resolution. Times of several responses are separated by commas and colons.</td>
-</tr>
-<tr>
-<td><code>"upstream_connect_time": $upstream_connect_time</code></td>
-<td>The time that it takes the ALB to establish a connection with the upstream server for the back-end app, which is measured in seconds with a milliseconds resolution. If TLS/SSL is enabled in your Ingress resource configuration, this time includes time spent on the handshake. Times of several connections are separated by commas and colons.</td>
-</tr>
-<tr>
-<td><code>"upstream_header_time": $upstream_header_time</code></td>
-<td>The time that it takes the ALB to receive the response header from the upstream server for the back-end app, which is measured in seconds with a milliseconds resolution. Times of several connections are separated by commas and colons.</td>
-</tr>
-</tbody></table>
+|Field in the default Ingress log format|Value|
+|---|---|
+|"time_date": "$time_iso8601"|The local time in the ISO 8601 standard format when the log is written.|
+|"client": "$remote_addr"|The IP address of the request package that the client sent to your app. This IP can change based on the following situations:When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the request package is changed to the public IP address of the worker node where the app pod is running.If [source IP preservation is enabled](/docs/openshift?topic=openshift-ingress-settings#preserve_source_ip), the original IP address of the client request to your app is recorded instead.|
+|"host": "$http_host"|The host, or subdomain, that your apps are accessible through. This subdomain is configured in the Ingress resource files for your ALBs.|
+|"scheme": "$scheme"|The kind of request: HTTP or HTTPS.|
+|"request_method": "$request_method"|The method of the request call to the back-end app, such as GET or POST.|
+|"request_uri": "$uri"|The original request URI to your app path. ALBs process the paths that apps listen on as prefixes. When an ALB receives a request from a client to an app, the ALB checks the Ingress resource for a path (as a prefix) that matches the path in the request URI.|
+|"request_id": "$request_id"|A unique request identifier generated from 16 random bytes.|
+|"status": $status|The status code for the connection session.<ul><li>`200`: Session completed successfully</li><li>`400`: Client data can't be parsed</li><li>`403`: Access forbidden; for example, when access is limited for certain client IP addresses</li><li>`500`: Internal server error</li><li>`502`: Bad gateway; for example, if an upstream server can't be selected or reached</li><li>`503`: Service unavailable; for example, when access is limited by the number of connections</li></ul>|
+|"upstream_addr": "$upstream_addr"|The IP address and port or the path to the UNIX-domain socket of the upstream server. If several servers are contacted during request processing, their addresses are separated by commas: "192.168.1.1:80, 192.168.1.2:80, unix:/tmp/sock". If the request is redirected internally from one server group to another, then the server addresses from different groups are separated by colons: "192.168.1.1:80, 192.168.1.2:80, unix:/tmp/sock : 192.168.10.1:80, 192.168.10.2:80". If the ALB can't select a server, the name of the server group is logged instead.|
+|"upstream_status": $upstream_status|The status code of the response obtained from the upstream server for the back-end app, such as standard HTTP response codes. Status codes of several responses are separated by commas and colons like addresses in the $upstream_addr variable. If the ALB can't select a server, the 502 (Bad Gateway) status code is logged.|
+|"request_time": $request_time|The request processing time, which is measured in seconds with a milliseconds resolution. This time starts when the ALB reads the client request's first bytes and stops when the ALB sends the response's last bytes to the client. The log is written immediately after the request processing time stops.|
+|"upstream_response_time": $upstream_response_time|The time that it takes the ALB to receive the response from the upstream server for the back-end app, which is measured in seconds with a milliseconds resolution. Times of several responses are separated by commas and colons.|
+|"upstream_connect_time": $upstream_connect_time|The time that it takes the ALB to establish a connection with the upstream server for the back-end app, which is measured in seconds with a milliseconds resolution. If TLS/SSL is enabled in your Ingress resource configuration, this time includes time spent on the handshake. Times of several connections are separated by commas and colons.|
+|"upstream_header_time": $upstream_header_time|The time that it takes the ALB to receive the response header from the upstream server for the back-end app, which is measured in seconds with a milliseconds resolution. Times of several connections are separated by commas and colons.|
+{: caption="Understanding fields in the default Ingress log format" caption-side="top"}
 
 ## Customizing Ingress log content and format
 {: #ingress_log_format}
@@ -156,7 +103,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     ```
     {: pre}
 
-2. Add a <code>data</code> section. Add the `log-format` field and optionally, the `log-format-escape-json` field.
+2. Add a `data` section. Add the `log-format` field and optionally, the `log-format-escape-json` field.
 
     ```yaml
     apiVersion: v1
@@ -173,16 +120,16 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     <table>
     <caption>YAML file components</caption>
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the log-format configuration</th>
+    <th>Understanding the log-format configuration</th>
     </thead>
     <tbody>
     <tr>
-    <td><code>log-format</code></td>
-    <td>Replace <code>&lt;key&gt;</code> with the name for the log component and <code>&lt;log_variable&gt;</code> with a variable for the log component that you want to collect in log entries. You can include text and punctuation that you want the log entry to contain, such as quotation marks around string values and commas to separate log components. For example, formatting a component like <code>request: "$request"</code> generates the following in a log entry: <code>request: "GET / HTTP/1.1"</code> . For a list of all the variables you can use, see the <a href="http://nginx.org/en/docs/varindex.html">NGINX variable index</a>.<br><br>To log an additional header such as <em>x-custom-ID</em>, add the following key-value pair to the custom log content: <br><pre class="codeblock"><code>customID: $http_x_custom_id</code></pre> <br>Hyphens (<code>-</code>) are converted to underscores (<code>_</code>) and <code>$http_</code> must be added as a prefix to the custom header name.</td>
+    <td>`log-format`</td>
+    <td>Replace `&lt;key&gt;` with the name for the log component and `&lt;log_variable&gt;` with a variable for the log component that you want to collect in log entries. You can include text and punctuation that you want the log entry to contain, such as quotation marks around string values and commas to separate log components. For example, formatting a component like `request: "$request"` generates the following in a log entry: `request: "GET / HTTP/1.1"` . For a list of all the variables you can use, see the <a href="http://nginx.org/en/docs/varindex.html">NGINX variable index</a>.<br><br>To log an additional header such as <em>x-custom-ID</em>, add the following key-value pair to the custom log content: <br><pre class="codeblock"><code>customID: $http_x_custom_id</code></pre> <br>Hyphens (`-`) are converted to underscores (`_`) and `$http_` must be added as a prefix to the custom header name.</td>
     </tr>
     <tr>
-    <td><code>log-format-escape-json</code></td>
-    <td>Optional: By default, logs are generated in text format. To generate logs in JSON format, add the <code>log-format-escape-json</code> field and use value <code>true</code>.</td>
+    <td>`log-format-escape-json`</td>
+    <td>Optional: By default, logs are generated in text format. To generate logs in JSON format, add the `log-format-escape-json` field and use value `true`.</td>
     </tr>
     </tbody></table>
 
@@ -359,65 +306,24 @@ The `alb-metrics-exporter` automatically reformats each data field in the JSON f
 
 ALB metrics are in the format `kube_system_<ALB-ID>_<METRIC-NAME> <VALUE>`. For example, if an ALB receives 23 responses with 2xx-level status codes, the metric is formatted as `kube_system_public_crf02710f54fcc40889c301bfd6d5b77fe_alb1_totalHandledRequest {.. metric="2xx"} 23` where `metric` is the prometheus label.
 
-The following table lists the supported ALB metric names with the metric labels in the format `<ALB_metric_name>_<metric_label>`
-<table>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Supported ALB metrics</th>
-</thead>
-<tbody>
-<tr>
-<td><code>connections_reading</code></td>
-<td>The total number of reading client connections.</td>
-</tr>
-<tr>
-<td><code>connections_accepted</code></td>
-<td>The total number of accepted client connections.</td>
-</tr>
-<tr>
-<td><code>connections_active</code></td>
-<td>The total number of active client connections.</td>
-</tr>
-<tr>
-<td><code>connections_handled</code></td>
-<td>The total number of handled client connections.</td>
-</tr>
-<tr>
-<td><code>connections_requests</code></td>
-<td>The total number of requested client connections.</td>
-</tr>
-<tr>
-<td><code>connections_waiting</code></td>
-<td>The total number of waiting client connections.</td>
-</tr>
-<tr>
-<td><code>connections_writing</code></td>
-<td>The total number of writing client connections.</td>
-</tr>
-<tr>
-<td><code>totalHandledRequest_1xx</code></td>
-<td>The number of responses with status codes 1xx.</td>
-</tr>
-<tr>
-<td><code>totalHandledRequest_2xx</code></td>
-<td>The number of responses with status codes 2xx.</td>
-</tr>
-<tr>
-<td><code>totalHandledRequest_3xx</code></td>
-<td>The number of responses with status codes 3xx.</td>
-</tr>
-<tr>
-<td><code>totalHandledRequest_4xx</code></td>
-<td>The number of responses with status codes 4xx.</td>
-</tr>
-<tr>
-<td><code>totalHandledRequest_5xx</code></td>
-<td>The number of responses with status codes 5xx.</td>
-</tr>
-<tr>
-<td><code>totalHandledRequest_total</code></td>
-<td>The total number of client requests received from clients.</td>
-  </tr></tbody>
-</table>
+The following table lists the supported ALB metric names with the metric labels in the format `<ALB_metric_name>_<metric_label>`.
+
+|Metric|Description|
+|---|---|
+|`connections_reading`|The total number of reading client connections.|
+|`connections_accepted`|The total number of accepted client connections.|
+|`connections_active`|The total number of active client connections.|
+|`connections_handled`|The total number of handled client connections.|
+|`connections_requests`|The total number of requested client connections.|
+|`connections_waiting`|The total number of waiting client connections.|
+|`connections_writing`|The total number of writing client connections.|
+|`totalHandledRequest_1xx`|The number of responses with status codes 1xx.|
+|`totalHandledRequest_2xx`|The number of responses with status codes 2xx.|
+|`totalHandledRequest_3xx`|The number of responses with status codes 3xx.|
+|`totalHandledRequest_4xx`|The number of responses with status codes 4xx.|
+|`totalHandledRequest_5xx`|The number of responses with status codes 5xx.|
+|`totalHandledRequest_total`|The total number of client requests received from clients.|
+{: caption="Supported ALB metrics" caption-side="top"}
 
 ### Server metrics
 {: #server_metrics}
@@ -435,114 +341,38 @@ kube_system_server_public_cra6a6eb9e897e41c4a5e58f957b417aec_alb1_bytes{albId="d
 ```
 {: screen}
 
-<table>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the server metric format</th>
-</thead>
-<tbody>
-<tr>
-<td><code>&lt;ALB-ID&gt;</code></td>
-<td>The ALB ID. In the previous example, the ALB ID is <code>public\_cra6a6eb9e897e41c4a5e58f957b417aec\_alb1</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;SUB-TYPE&gt;</code></td>
-<td>The subtype of metric. Each subtype corresponds to one or more metric names.
-<ul>
-<li><code>bytes</code> and <code>processing\_time</code> correspond to metrics <code>in</code> and <code>out</code>.</li>
-<li><code>cache</code> corresponds to metrics <code>bypass</code>, <code>expired</code>, <code>hit</code>, <code>miss</code>, <code>revalidated</code>, <code>scare</code>, <code>stale</code>, and <code>updating</code>.</li>
-<li><code>requests</code> corresponds to metrics <code>requestMsec</code>, <code>1xx</code>, <code>2xx</code>, <code>3xx</code>, <code>4xx</code>, <code>5xx</code>, and <code>total</code>.</li></ul>
-In the previous example, the subtype is <code>bytes</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;SERVER-NAME&gt;</code></td>
-<td>The name of the server that is defined in the Ingress resource. To maintain compatibility with Prometheus, periods (<code>.</code>) are replaced by underscores <code>(\_)</code>. In the previous example, the server name is <code>dev_demostg1_stg_us_south_containers_appdomain_cloud</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;METRIC_NAME&gt;</code></td>
-<td>The name of the collected metric type. For a list of metric names, see the following table for supported server metrics. In the previous example, the metric name is <code>out</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;VALUE&gt;</code></td>
-<td>The value of the collected metric. In the previous example, the value is <code>22319</code>.</td>
-</tr>
-</tbody></table>
+|Metric field|Description|
+|---|---|
+|`<ALB-ID>`|The ALB ID. In the previous example, the ALB ID is `public\_cra6a6eb9e897e41c4a5e58f957b417aec\_alb1`.|
+|`<SUB-TYPE>`|The subtype of metric. Each subtype corresponds to one or more metric names.
+`bytes` and `processing\_time` correspond to metrics `in` and `out`.`cache` corresponds to metrics `bypass`, `expired`, `hit`, `miss`, `revalidated`, `scare`, `stale`, and `updating`.`requests` corresponds to metrics `requestMsec`, `1xx`, `2xx`, `3xx`, `4xx`, `5xx`, and `total`.In the previous example, the subtype is `bytes`.|
+|`<SERVER-NAME>`|The name of the server that is defined in the Ingress resource. To maintain compatibility with Prometheus, periods (`.`) are replaced by underscores `(\_)`. In the previous example, the server name is `dev_demostg1_stg_us_south_containers_appdomain_cloud`.|
+|`<METRIC_NAME>`|The name of the collected metric type. For a list of metric names, see the following table for supported server metrics. In the previous example, the metric name is `out`.|
+|`<VALUE>`|The value of the collected metric. In the previous example, the value is `22319`.|
+{: caption="Understanding the server metric format" caption-side="top"}
 
 The following table lists the supported server metric names.
 
-<table>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Supported server metrics</th>
-</thead>
-<tbody>
-<tr>
-<td><code>in</code></td>
-<td>The total number of bytes received from clients.</td>
-</tr>
-<tr>
-<td><code>out</code></td>
-<td>The total number of bytes sent to clients.</td>
-</tr>
-<tr>
-<td><code>bypass</code></td>
-<td>The number of times that a cacheable item was fetched from the origin server because it has not met the threshold for being in the cache (for example, number of requests).</td>
-</tr>
-<tr>
-<td><code>expired</code></td>
-<td>The number of times that an item was found in the cache but was not selected because it was expired.</td>
-</tr>
-<tr>
-<td><code>hit</code></td>
-<td>The number of times that a valid item was selected from the cache.</td>
-</tr>
-<tr>
-<td><code>miss</code></td>
-<td>The number of times that no valid cache item was found in the cache and the server fetched the item from the origin server.</td>
-</tr>
-<tr>
-<td><code>revalidated</code></td>
-<td>The number of times that an expired item in the cache was revalidated.</td>
-</tr>
-<tr>
-<td><code>scarce</code></td>
-<td>The number of times the cache removed seldom-used or low-priority items to free up scarce memory.</td>
-</tr>
-<tr>
-<td><code>stale</code></td>
-<td>The number of times that an expired item was in found in the cache, but because another request caused the server to fetch the item from the origin server, the item was selected from the cache.</td>
-</tr>
-<tr>
-<td><code>updating</code></td>
-<td>The number of times that stale content was updated.</td>
-</tr>
-<tr>
-<td><code>requestMsec</code></td>
-<td>The average of request processing times in milliseconds.</td>
-</tr>
-<tr>
-<td><code>1xx</code></td>
-<td>The number of responses with status codes 1xx.</td>
-</tr>
-<tr>
-<td><code>2xx</code></td>
-<td>The number of responses with status codes 2xx.</td>
-</tr>
-<tr>
-<td><code>3xx</code></td>
-<td>The number of responses with status codes 3xx.</td>
-</tr>
-<tr>
-<td><code>4xx</code></td>
-<td>The number of responses with status codes 4xx.</td>
-</tr>
-<tr>
-<td><code>5xx</code></td>
-<td>The number of responses with status codes 5xx.</td>
-</tr>
-<tr>
-<td><code>total</code></td>
-<td>The total number of responses with status codes.</td>
-  </tr></tbody>
-</table>
+|Metric|Description|
+|---|---|
+|`in`|The total number of bytes received from clients.|
+|`out`|The total number of bytes sent to clients.|
+|`bypass`|The number of times that a cacheable item was fetched from the origin server because it has not met the threshold for being in the cache (for example, number of requests).|
+|`expired`|The number of times that an item was found in the cache but was not selected because it was expired.|
+|`hit`|The number of times that a valid item was selected from the cache.|
+|`miss`|The number of times that no valid cache item was found in the cache and the server fetched the item from the origin server.|
+|`revalidated`|The number of times that an expired item in the cache was revalidated.|
+|`scarce`|The number of times the cache removed seldom-used or low-priority items to free up scarce memory.|
+|`stale`|The number of times that an expired item was in found in the cache, but because another request caused the server to fetch the item from the origin server, the item was selected from the cache.|
+|`updating`|The number of times that stale content was updated.|
+|`requestMsec`|The average of request processing times in milliseconds.|
+|`1xx`|The number of responses with status codes 1xx.|
+|`2xx`|The number of responses with status codes 2xx.|
+|`3xx`|The number of responses with status codes 3xx.|
+|`4xx`|The number of responses with status codes 4xx.|
+|`5xx`|The number of responses with status codes 5xx.|
+|`total`|The total number of responses with status codes.|
+{: caption="Supported server metrics" caption-side="top"}
 
 ### Upstream metrics
 {: #upstream_metrics}
@@ -568,73 +398,28 @@ kube_system_upstream_public_cra6a6eb9e897e41c4a5e58f957b417aec_alb1_bytes{albId=
 ```
 {: screen}
 
-<table>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the upstream type 1 metric format</th>
-</thead>
-<tbody>
-<tr>
-<td><code>&lt;ALB-ID&gt;</code></td>
-<td>The ALB ID. In the previous example, the ALB ID is <code>public\_crf02710f54fcc40889c301bfd6d5b77fe\_alb1</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;SUB-TYPE&gt;</code></td>
-<td>The subtype of metric. Supported values are <code>bytes</code>, <code>processing\_time</code>, and <code>requests</code>. In the previous example, the subtype is <code>bytes</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;UPSTREAM-NAME&gt;</code></td>
-<td>The name of the upstream service that is defined in the Ingress resource. To maintain compatibility with Prometheus, periods (<code>.</code>) are replaced by underscores <code>(\_)</code>. In the previous example, the upstream name is <code>default-cafe-ingress-dev_demostg1_us-south_containers_appdomain_cloud-coffee-svc</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;METRIC_NAME&gt;</code></td>
-<td>The name of the collected metric type. For a list of metric names, see the following table for supported upstream type 1 metrics. In the previous example, the metric name is <code>in</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;VALUE&gt;</code></td>
-<td>The value of the collected metric. In the previous example, the value is <code>1227</code>.</td>
-</tr>
-</tbody></table>
+|Metric field|Description|
+|---|---|
+|`<ALB-ID>`|The ALB ID. In the previous example, the ALB ID is `public\_crf02710f54fcc40889c301bfd6d5b77fe\_alb1`.|
+|`<SUB-TYPE>`|The subtype of metric. Supported values are `bytes`, `processing\_time`, and `requests`. In the previous example, the subtype is `bytes`.|
+|`<UPSTREAM-NAME>`|The name of the upstream service that is defined in the Ingress resource. To maintain compatibility with Prometheus, periods (`.`) are replaced by underscores `(\_)`. In the previous example, the upstream name is `default-cafe-ingress-dev_demostg1_us-south_containers_appdomain_cloud-coffee-svc`.|
+|`<METRIC_NAME>`|The name of the collected metric type. For a list of metric names, see the following table for supported upstream type 1 metrics. In the previous example, the metric name is `in`.|
+|`<VALUE>`|The value of the collected metric. In the previous example, the value is `1227`.|
+{: caption="Understanding fields in the default Ingress log format" caption-side="top"}
 
 The following table lists the supported upstream type 1 metric names.
 
-<table>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Supported upstream type 1 metrics</th>
-</thead>
-<tbody>
-<tr>
-<td><code>in</code></td>
-<td>The total number of bytes received from the ALB server.</td>
-</tr>
-<tr>
-<td><code>out</code></td>
-<td>The total number of bytes sent to the ALB server.</td>
-</tr>
-<tr>
-<td><code>1xx</code></td>
-<td>The number of responses with status codes 1xx.</td>
-</tr>
-<tr>
-<td><code>2xx</code></td>
-<td>The number of responses with status codes 2xx.</td>
-</tr>
-<tr>
-<td><code>3xx</code></td>
-<td>The number of responses with status codes 3xx.</td>
-</tr>
-<tr>
-<td><code>4xx</code></td>
-<td>The number of responses with status codes 4xx.</td>
-</tr>
-<tr>
-<td><code>5xx</code></td>
-<td>The number of responses with status codes 5xx.</td>
-</tr>
-<tr>
-<td><code>total</code></td>
-<td>The total number of responses with status codes.</td>
-  </tr></tbody>
-</table>
+|Metric|Description|
+|---|---|
+|`in`|The total number of bytes received from the ALB server.|
+|`out`|The total number of bytes sent to the ALB server.|
+|`1xx`|The number of responses with status codes 1xx.|
+|`2xx`|The number of responses with status codes 2xx.|
+|`3xx`|The number of responses with status codes 3xx.|
+|`4xx`|The number of responses with status codes 4xx.|
+|`5xx`|The number of responses with status codes 5xx.|
+|`total`|The total number of responses with status codes.|
+{: caption="Understanding the upstream type 1 metric format" caption-side="top"}
 
 #### Type 2 upstream metrics
 {: #type_two}
@@ -648,51 +433,24 @@ For example, if the upstream service has an average request processing time (inc
 ```
 kube_system_upstream_public_cra6a6eb9e897e41c4a5e58f957b417aec_alb1_requestMsec{albId="default-cafe-ingress-dev_dev_demostg1_us-south_containers_appdomain_cloud-tea-svc",app="alb-metrics-exporter",backend="172_30_75_6_80",instance="172.30.75.3:9913",job="kubernetes-pods",kubernetes_namespace="kube-system",kubernetes_pod_name="alb-metrics-exporter-7d495d785c-swkls",pod_template_hash="3805183417"} 40
 ```
-
 {: screen}
 
-<table>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the upstream type 2 metric format</th>
-</thead>
-<tbody>
-<tr>
-<td><code>&lt;ALB-ID&gt;</code></td>
-<td>The ALB ID. In the previous example, the ALB ID is <code>public\_cra6a6eb9e897e41c4a5e58f957b417aec\_alb1</code>.</td>
-</tr>
-<td><code>&lt;UPSTREAM-NAME&gt;</code></td>
-<td>The name of the upstream service that is defined in the Ingress resource. To maintain compatibility with Prometheus, periods (<code>.</code>) are replaced by underscores (<code>\_</code>). In the previous example, the upstream name is <code>demostg1\_stg\_us\_south\_containers\_appdomain\_cloud\_tea\_svc</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;POD\_IP&gt;</code></td>
-<td>The IP address and port of a specific upstream service pod. To maintain compatibility with Prometheus, periods (<code>.</code>) and colons (<code>:</code>) are replaced by underscores <code>(_)</code>. In the previous example, the upstream pod IP is <code>172_30_75_6_80</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;METRIC_NAME&gt;</code></td>
-<td>The name of the collected metric type. For a list of metric names, see the following table for Supported upstream type 2 metrics. In the previous example, the metric name is <code>requestMsec</code>.</td>
-</tr>
-<tr>
-<td><code>&lt;VALUE&gt;</code></td>
-<td>The value of the collected metric. In the previous example, the value is <code>40</code>.</td>
-</tr>
-</tbody></table>
+|Metric field|Description|
+|---|---|
+|`<ALB-ID>`|The ALB ID. In the previous example, the ALB ID is `public\_cra6a6eb9e897e41c4a5e58f957b417aec\_alb1`.|
+|`<UPSTREAM-NAME>`|The name of the upstream service that is defined in the Ingress resource. To maintain compatibility with Prometheus, periods (`.`) are replaced by underscores (`\_`). In the previous example, the upstream name is `demostg1\_stg\_us\_south\_containers\_appdomain\_cloud\_tea\_svc`.|
+|`<POD\_IP>`|The IP address and port of a specific upstream service pod. To maintain compatibility with Prometheus, periods (`.`) and colons (`:`) are replaced by underscores `(_)`. In the previous example, the upstream pod IP is `172_30_75_6_80`.|
+|`<METRIC_NAME>`|The name of the collected metric type. For a list of metric names, see the following table for Supported upstream type 2 metrics. In the previous example, the metric name is `requestMsec`.|
+|`<VALUE>`|The value of the collected metric. In the previous example, the value is `40`.|
+{: caption="Understanding the upstream type 2 metric format" caption-side="top"}
 
 The following table lists the supported upstream type 2 metric names.
 
-<table>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Supported upstream type 2 metrics</th>
-</thead>
-<tbody>
-<tr>
-<td><code>requestMsec</code></td>
-<td>The average of request processing times, including upstream, in milliseconds.</td>
-</tr>
-<tr>
-<td><code>responseMsec</code></td>
-<td>The average of only upstream response processing times in milliseconds.</td>
-  </tr></tbody>
-</table>
+|Metric|Description|
+|---|---|
+|`requestMsec`|The average of request processing times, including upstream, in milliseconds.|
+|`responseMsec`|The average of only upstream response processing times in milliseconds.|
+{: caption="Supported upstream type 2 metrics" caption-side="top"}
 
 <br />
 

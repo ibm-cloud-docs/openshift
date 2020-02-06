@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-06"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -67,77 +67,20 @@ When version 1.0 releases, permanent syntax and behavior changes are not backwar
 
 Check out the following changes between each version of the CLI plug-in:
 
-<table summary="The rows are read from left to right, with the area of comparison in column one, Classic clusters CLI in column two, and VPC clusters CLI in column three.">
-<caption>Beta versions of the redesigned {{site.data.keyword.containerlong_notm}} plug-in</caption>
-<col width="60%">
-<col width="10%">
-<col width="10%">
-<col width="10%">
-<col width="10%">
- <thead>
-   <th>Functionality</th>
-   <th>`0.2`</th>
-   <th>`0.3`</th>
-   <th>`0.4`</th>
-   <th>`1.0`</th>
- </thead>
- <tbody>
-  <tr>
-  <td>Supported?</td>
-  <td>Deprecated</td>
-  <td>Deprecated</td>
-  <td>Default</td>
-  <td>Latest</td>
-  </tr>
-  <tr>
-  <td>`ibmcloud oc help` output structure<ul><li>Legacy: Alphabetical list of commands</li><li>Beta: Categories of commands</li></ul></td>
-  <td>Legacy</td>
-  <td>Legacy</td>
-  <td>Beta</td>
-  <td>Beta</td>
-  </tr>
-  <tr><td>Command structure<ul><li>Legacy: Hyphenated structure (`ibmcloud oc alb-cert-get`)</li><li>Beta: Spaced structure (`ibmcloud oc alb cert get`)</li></ul></td>
-  <td>Legacy and beta</td>
-  <td>Legacy and beta</td>
-  <td>Legacy and beta</td>
-  <td>Beta</td>
-  </tr>
-  <tr><td>Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul></td>
-  <td>Legacy and beta</td>
-  <td>Legacy and beta</td>
-  <td>Legacy and beta</td>
-  <td>Beta</td>
-  </tr>
-  <tr><td>Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul></td>
-  <td>Legacy</td>
-  <td>Legacy</td>
-  <td>Legacy and beta</td>
-  <td>Beta</td>
-  </tr>
-  <tr><td>Flag format<ul><li>Legacy: Camel-case (`--showResources`)</li><li>Beta: Dashed (`--show-resources`)</li></ul></td>
-  <td>Legacy</td>
-  <td>Legacy</td>
-  <td>Legacy and beta</td>
-  <td>Beta</td>
-  </tr>
-  <tr><td>Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul></td>
-  <td>Legacy</td>
-  <td>Legacy</td>
-  <td>Legacy</td>
-  <td>Beta</td>
-  </tr>
-  <tr><td>API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul></td>
-  <td>Legacy</td>
-  <td>Beta</td>
-  <td>Beta</td>
-  <td>Beta</td>
-  </tr>
- </tbody>
-</table>
+|Functionality|`0.2`|`0.3`|`0.4`|`1.0`|
+|-------------|-----|-----|-----|-----|
+| Supported? | Deprecated | Deprecated | Default | Latest |
+| `ibmcloud oc help` output structure<ul><li>Legacy: Alphabetical list of commands</li><li>Beta: Categories of commands</li></ul> | Legacy | Legacy | Beta | Beta |
+| Command structure<ul><li>Legacy: Hyphenated structure (`ibmcloud oc alb-cert-get`)</li><li>Beta: Spaced structure (`ibmcloud oc alb cert get`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
+| Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
+| Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
+| Flag format<ul><li>Legacy: Camel-case (`--showResources`)</li><li>Beta: Dashed (`--show-resources`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
+| Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul> | Legacy | Legacy | Legacy | Beta |
+| API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul> | Legacy | Beta | Beta | Beta |
+{: caption="Beta versions of the redesigned {{site.data.keyword.containerlong_notm}} plug-in" caption-side="top"}
 
 <br />
 
-<br>
 
 
 
@@ -219,7 +162,7 @@ Enable a managed add-on in an existing cluster. This command must be combined wi
 #### `ibmcloud oc cluster addon enable debug-tool`
 {: #cs_cluster_addon_enable_debug}
 
-Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) in a cluster.
+Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) in a cluster.
 {: shortdesc}
 
 ```
@@ -312,7 +255,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--export] [--network] [-
 
 **Minimum required permissions**: **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform role or only a service role, additional constraints apply.
 * **Platform**: If you have only a platform role, you can perform this command, but you need a [service role](/docs/openshift?topic=openshift-users#platform) or a [custom RBAC policy](/docs/openshift?topic=openshift-users#role-binding) to perform Kubernetes actions in the cluster.
-* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name and ID because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can [launch the Kubernetes dashboard from the CLI](/docs/containers?topic=containers-app#db_cli) and work with Kubernetes.
+* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name and ID because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can [launch the Kubernetes dashboard from the CLI](/docs/openshift?topic=openshift-app#db_cli) and work with Kubernetes.
 
 **Command options**:
 <dl>
