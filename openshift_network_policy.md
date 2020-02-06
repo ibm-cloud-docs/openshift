@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -75,42 +75,16 @@ Do not remove policies that are applied to a host endpoint unless you fully unde
 
 Review the following default Calico host policies that are automatically applied to your cluster.
 
- <table summary="The first row in the table spans both columns. Read the rest of the rows from left to right, with the server zone in column one and IP addresses to match in column two.">
- <caption>Default Calico host policies for each cluster</caption>
-  <thead>
-  <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Default Calico host policies for each cluster</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>allow-all-outbound</code></td>
-      <td>Allows all outbound traffic on the public network.</td>
-    </tr>
-      <tr>
-        <td><code>allow-all-private-default</code></td>
-        <td>In OpenShift version 4.3 or later: Allows all inbound and outbound traffic on the private network.</td>
-      </tr>
-    <tr>
-      <td><code>allow-bigfix-port</code></td>
-      <td>Allows incoming traffic on port 52311 to the BigFix app to allow necessary worker node updates.</td>
-    </tr>
-    <tr>
-      <td><code>allow-icmp</code></td>
-      <td>Allows incoming ICMP packets (pings).</td>
-     </tr>
-    <tr>
-      <td><code>allow-node-port-dnat</code></td>
-      <td>Allows incoming network load balancer (NLB), Ingress application load balancer (ALB), and NodePort service traffic to the pods that those services are exposing. <strong>Note</strong>: You don't need to specify the exposed ports because Kubernetes uses destination network address translation (DNAT) to forward the service requests to the correct pods. That forwarding takes place before the host endpoint policies are applied in Iptables.</td>
-   </tr>
-   <tr>
-      <td><code>allow-sys-mgmt</code></td>
-      <td>Allows incoming connections for specific IBM Cloud infrastructure systems that are used to manage the worker nodes.</td>
-   </tr>
-   <tr>
-    <td><code>allow-vrrp</code></td>
-    <td>Allows VRRP packets, which are used to monitor and move virtual IP addresses between worker nodes.</td>
-   </tr>
-  </tbody>
-</table>
+|Calico policy|Description|
+|--- |--- |
+|`allow-all-outbound`|Allows all outbound traffic on the public network.|
+|`allow-all-private-default`|In OpenShift version 1.164.3 or later: Allows all inbound and outbound traffic on the private network. **Note**: Before you update your cluster to Kubernetes version 1.16, see [this topic](/docs/containers?topic=containers-cs_versions#116_networkpolicies) for information about updating Calico private host endpoints and network policies.|
+|`allow-bigfix-port`|Allows incoming traffic on port 52311 to the BigFix app to allow necessary worker node updates.|
+|`allow-icmp`|Allows incoming ICMP packets (pings).|
+|`allow-node-port-dnat`|Allows incoming network load balancer (NLB), Ingress application load balancer (ALB), and NodePort service traffic to the pods that those services are exposing. Note: You don't need to specify the exposed ports because Kubernetes uses destination network address translation (DNAT) to forward the service requests to the correct pods. That forwarding takes place before the host endpoint policies are applied in Iptables.|
+|`allow-sys-mgmt`|Allows incoming connections for specific IBM Cloud infrastructure systems that are used to manage the worker nodes.|
+|`allow-vrrp`|Allows VRRP packets, which are used to monitor and move virtual IP addresses between worker nodes.|
+{: caption="Default Calico host policies for each cluster"}
 
 <br />
 
@@ -744,20 +718,20 @@ This section shows you how to log traffic that is denied by a Kubernetes network
   </thead>
   <tbody>
   <tr>
-   <td><code>types</code></td>
-   <td>This <code>Ingress</code> policy applies to all incoming traffic requests. The value <code>Ingress</code> is a general term for all incoming traffic, and does not refer to traffic only from the IBM Ingress ALB.</td>
+   <td>`types`</td>
+   <td>This `Ingress` policy applies to all incoming traffic requests. The value `Ingress` is a general term for all incoming traffic, and does not refer to traffic only from the IBM Ingress ALB.</td>
   </tr>
    <tr>
-    <td><code>ingress</code></td>
-    <td><ul><li><code>action</code>: The <code>Log</code> action writes a log entry for any requests that match this policy to the `/var/log/syslog` path on the worker node.</li><li><code>destination</code>: No destination is specified because the <code>selector</code> applies this policy to all pods with a certain label.</li><li><code>source</code>: This policy applies to requests from any source.</li></ul></td>
+    <td>`ingress`</td>
+    <td><ul><li>`action`: The `Log` action writes a log entry for any requests that match this policy to the `/var/log/syslog` path on the worker node.</li><li>`destination`: No destination is specified because the `selector` applies this policy to all pods with a certain label.</li><li>`source`: This policy applies to requests from any source.</li></ul></td>
    </tr>
    <tr>
-    <td><code>selector</code></td>
-    <td>Replace &lt;selector&gt; with the same selector in the `spec.selector` field that you used in your policy from step 1. For example, by using the selector <code>selector: projectcalico.org/orchestrator == 'k8s' && run == 'nginx'</code>, this policy's rule is added to the same Iptables chain as the <code>access-nginx</code> sample Kubernetes network policy rule in step 1. This policy applies only to incoming network traffic to pods that use the same selector label.</td>
+    <td>`selector`</td>
+    <td>Replace &lt;selector&gt; with the same selector in the `spec.selector` field that you used in your policy from step 1. For example, by using the selector `selector: projectcalico.org/orchestrator == 'k8s' && run == 'nginx'`, this policy's rule is added to the same Iptables chain as the `access-nginx` sample Kubernetes network policy rule in step 1. This policy applies only to incoming network traffic to pods that use the same selector label.</td>
    </tr>
    <tr>
-    <td><code>order</code></td>
-    <td>Calico policies have orders that determine when they are applied to incoming request packets. Policies with lower orders, such as <code>1000</code>, are applied first. Policies with higher orders are applied after the lower-order policies. For example, a policy with a very high order, such as <code>3000</code>, is effectively applied last after all the lower-order policies have been applied.</br></br>Incoming request packets go through the Iptables rules chain and try to match rules from lower-order policies first. If a packet matches any rule, the packet is accepted. However, if a packet doesn't match any rule, it arrives at the last rule in the Iptables rules chain with the highest order. To make sure that this policy is the last policy in the chain, use a much higher order, such as <code>3000</code>, than the policy you created in step 1.</td>
+    <td>`order`</td>
+    <td>Calico policies have orders that determine when they are applied to incoming request packets. Policies with lower orders, such as `1000`, are applied first. Policies with higher orders are applied after the lower-order policies. For example, a policy with a very high order, such as `3000`, is effectively applied last after all the lower-order policies have been applied.</br></br>Incoming request packets go through the Iptables rules chain and try to match rules from lower-order policies first. If a packet matches any rule, the packet is accepted. However, if a packet doesn't match any rule, it arrives at the last rule in the Iptables rules chain with the highest order. To make sure that this policy is the last policy in the chain, use a much higher order, such as `3000`, than the policy you created in step 1.</td>
    </tr>
   </tbody>
   </table>

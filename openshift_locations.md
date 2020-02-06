@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -60,36 +60,13 @@ The following image is used as an example to explain how Red Hat OpenShift on IB
 
 ![Organization of Red Hat OpenShift on IBM Cloud locations](images/cs_regions_hierarchy.png)
 
-<table summary="The table shows organization of Red Hat OpenShift on IBM Cloud locations. Rows are to be read from the left to right, with the location type in column one, an example of the type in column two, and the description in column three.">
-<caption>Organization of Red Hat OpenShift on IBM Cloud locations.</caption>
-  <thead>
-  <th>Type</th>
-  <th>Example</th>
-  <th>Description</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Geography</td>
-      <td>North America (`na`)</td>
-      <td>An organizational grouping that is based on geographic continents.</td>
-    </tr>
-    <tr>
-      <td>Country</td>
-      <td>Canada (`ca`)</td>
-      <td>The location's country within the geography.</td>
-    </tr>
-    <tr>
-      <td>Metro</td>
-      <td>Mexico City (`mex-cty`), Dallas (`dal`)</td>
-      <td>The name of a city where 1 or more data centers (zones) are located. A metro can be multizone-capable and have multizone-capable data centers, such as Dallas, or can have only single zone data centers, such as Mexico City. If you create a cluster in a multizone-capable metro, the Kubernetes master and worker nodes can be spread across zones for high availability.</td>
-    </tr>
-    <tr>
-      <td>Data center (zone)</td>
-      <td>Dallas 12 (`dal12`)</td>
-      <td>A physical location of the compute, network, and storage infrastructure and related cooling and power that host cloud services and applications. Clusters can be spread across data centers, or zones, in an multizone architecture for high availability. Zones are isolated from each other, which ensures no shared single point of failure.</td>
-    </tr>
-  </tbody>
-  </table>
+|Type|Example|Description|
+|--- |--- |--- |
+|Geography|North America (`na`)|An organizational grouping that is based on geographic continents.|
+|Country|Canada (`ca`)|The location's country within the geography.|
+|Metro|Mexico City (`mex-cty`), Dallas (`dal`)|The name of a city where 1 or more data centers (zones) are located. A metro can be multizone-capable and have multizone-capable data centers, such as Dallas, or can have only single zone data centers, such as Mexico City. If you create a cluster in a multizone-capable metro, the Kubernetes master and worker nodes can be spread across zones for high availability.|
+|Data center (zone)|Dallas 12 (`dal12`)|A physical location of the compute, network, and storage infrastructure and related cooling and power that host cloud services and applications. Clusters can be spread across data centers, or zones, in an multizone architecture for high availability. Zones are isolated from each other, which ensures no shared single point of failure.|
+{: caption="Organization of Red Hat OpenShift on IBM Cloud locations."}
 
 ### Single and multizone locations in Red Hat OpenShift on IBM Cloud
 {: #zones}
@@ -170,7 +147,7 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
     *   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
     *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
     *   [Managing network traffic by using Ingress](/docs/openshift?topic=openshift-ingress-about).
-    *   [Increasing the availability of your app](/docs/containers?topic=containers-app#increase_availability).
+    *   [Increasing the availability of your app](/docs/openshift?topic=openshift-app#increase_availability).
 
 3.  When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
 

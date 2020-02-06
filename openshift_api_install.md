@@ -64,8 +64,8 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 
 |{{site.data.keyword.cloud_notm}} ID|My options|
 |-----------------------------------|----------|
-|Unfederated ID|<ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> As an alternative to using the {{site.data.keyword.cloud_notm}} username and password, you can <a href="/docs/iam?topic=iam-userapikey#create_user_key" target="_blank">use {{site.data.keyword.cloud_notm}} API keys</a>. {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li><strong>{{site.data.keyword.cloud_notm}} username and password:</strong> You can follow the steps in this topic to fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM access token.</li></ul>|
-|Federated ID|<ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> <a href="/docs/iam?topic=iam-userapikey#create_user_key" target="_blank">{{site.data.keyword.cloud_notm}} API keys</a> are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li><strong>Use a one-time passcode: </strong> If you authenticate with {{site.data.keyword.cloud_notm}} by using a one-time passcode, you cannot fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token because the retrieval of your one-time passcode requires a manual interaction with your web browser. To fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token, you must create an {{site.data.keyword.cloud_notm}} API key instead.</ul>|
+|Unfederated ID|<ul><li>**Generate an {{site.data.keyword.cloud_notm}} API key:** As an alternative to using the {{site.data.keyword.cloud_notm}} username and password, you can [use {{site.data.keyword.cloud_notm}} API keys](/docs/iam?topic=iam-userapikey#create_user_key){:external}. {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li>**{{site.data.keyword.cloud_notm}} username and password:** You can follow the steps in this topic to fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM access token.</li></ul>|
+|Federated ID|<ul><li>**Generate an {{site.data.keyword.cloud_notm}} API key:** [{{site.data.keyword.cloud_notm}} API keys](/docs/iam?topic=iam-userapikey#create_user_key){:external} are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li>**Use a one-time passcode: ** If you authenticate with {{site.data.keyword.cloud_notm}} by using a one-time passcode, you cannot fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token because the retrieval of your one-time passcode requires a manual interaction with your web browser. To fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token, you must create an {{site.data.keyword.cloud_notm}} API key instead.</ul>|
 {: caption="ID types and options" caption-side="top"}
 
 1.  Create your {{site.data.keyword.cloud_notm}} IAM access token. The body information that is included in your request varies based on the {{site.data.keyword.cloud_notm}} authentication method that you use.
@@ -84,7 +84,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     <tbody>
     <tr>
     <td>Header</td>
-    <td><ul><li>Content-Type: application/x-www-form-urlencoded</li> <li>Authorization: Basic Yng6Yng=<p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
+    <td><ul><li>Content-Type: application/x-www-form-urlencoded</li> <li>Authorization: Basic Yng6Yng=<p>**Note**: `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.</p></li></ul>
     </td>
     </tr>
     <tr>
@@ -94,7 +94,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     <li>`username`: Your {{site.data.keyword.cloud_notm}} username.</li>
     <li>`password`: Your {{site.data.keyword.cloud_notm}} password.</li>
     <li>`uaa_client_id: cf`</li>
-    <li>`uaa_client_secret:`</br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li></ul></td>
+    <li>`uaa_client_secret:`</br>**Note**: Add the `uaa_client_secret` key with no value specified.</li></ul></td>
     </tr>
     <tr>
     <td>Body for {{site.data.keyword.cloud_notm}} API keys</td>
@@ -102,15 +102,15 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     <li>`response_type: cloud_iam uaa`</li>
     <li>`apikey`: Your {{site.data.keyword.cloud_notm}} API key</li>
     <li>`uaa_client_id: cf`</li>
-    <li>`uaa_client_secret:` </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li></ul></td>
+    <li>`uaa_client_secret:` </br>**Note**: Add the `uaa_client_secret` key with no value specified.</li></ul></td>
     </tr>
     <tr>
     <td>Body for {{site.data.keyword.cloud_notm}} one-time passcode</td>
-      <td><ul><li><code>grant_type: urn:ibm:params:oauth:grant-type:passcode</code></li>
+      <td><ul><li>`grant_type: urn:ibm:params:oauth:grant-type:passcode`</li>
     <li>`response_type: cloud_iam uaa`</li>
     <li>`passcode`: Your {{site.data.keyword.cloud_notm}} one-time passcode. Run `ibmcloud login --sso` and follow the instructions in your CLI output to retrieve your one-time passcode by using your web browser.</li>
     <li>`uaa_client_id: cf`</li>
-    <li>`uaa_client_secret:` </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li></ul>
+    <li>`uaa_client_secret:` </br>**Note**: Add the `uaa_client_secret` key with no value specified.</li></ul>
     </td>
     </tr>
     </tbody>
@@ -151,9 +151,9 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     <tbody>
   	<tr>
   		<td>Headers</td>
-      <td><ul><li><code>Content-Type: application/json</code></li>
+      <td><ul><li>`Content-Type: application/json`</li>
         <li>`Authorization: bearer <iam_access_token>`</li>
-        <li><code>Accept: application/json</code></li></ul></td>
+        <li>`Accept: application/json`</li></ul></td>
   	</tr>
     </tbody>
     </table>
@@ -197,7 +197,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     <tbody>
     <tr>
     <td>Header</td>
-    <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic Yng6Yng=`<p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
+    <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic Yng6Yng=`<p>**Note**: `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.</p></li></ul>
     </td>
     </tr>
     <tr>
@@ -207,7 +207,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     <li>`username`: Your {{site.data.keyword.cloud_notm}} username. </li>
     <li>`password`: Your {{site.data.keyword.cloud_notm}} password. </li>
     <li>`uaa_client_ID: cf`</li>
-    <li>`uaa_client_secret:` </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li>
+    <li>`uaa_client_secret:` </br>**Note**: Add the `uaa_client_secret` key with no value specified.</li>
     <li>`bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.</li></ul>
     </td>
     </tr>
@@ -217,7 +217,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     <li>`response_type: cloud_iam uaa`</li>
     <li>`apikey`: Your {{site.data.keyword.cloud_notm}} API key.</li>
     <li>`uaa_client_ID: cf`</li>
-    <li>`uaa_client_secret:` </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li>
+    <li>`uaa_client_secret:` </br>**Note**: Add the `uaa_client_secret` key with no value specified.</li>
     <li>`bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.</li></ul>
       </td>
     </tr>
@@ -227,7 +227,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     <li>`response_type: cloud_iam uaa`</li>
     <li>`passcode`: Your {{site.data.keyword.cloud_notm}} passcode. </li>
     <li>`uaa_client_ID: cf`</li>
-    <li>`uaa_client_secret:` </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li>
+    <li>`uaa_client_secret:` </br>**Note**: Add the `uaa_client_secret` key with no value specified.</li>
     <li>`bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.</li></ul></td>
     </tr>
     </tbody>
@@ -371,7 +371,7 @@ The following instructions require public network access in your cluster to conn
    <tbody>
    <tr>
    <td>Header</td>
-   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic Yng6Yng=`</br><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</li><li>`cache-control: no-cache`</li></ul>
+   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic Yng6Yng=`</br>**Note**: `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.</li><li>`cache-control: no-cache`</li></ul>
    </td>
    </tr>
    <tr>
@@ -408,7 +408,7 @@ The following instructions require public network access in your cluster to conn
    <tbody>
    <tr>
    <td>Header</td>
-   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic a3ViZTprdWJl`</br><strong>Note</strong>: <code>a3ViZTprdWJl</code> equals the URL-encoded authorization for the username <strong><code>kube</code></strong> and the password <strong><code>kube</code></strong>.</li><li>`cache-control: no-cache`</li></ul>
+   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic a3ViZTprdWJl`</br>**Note**: `a3ViZTprdWJl` equals the URL-encoded authorization for the username **`kube`** and the password **`kube`**.</li><li>`cache-control: no-cache`</li></ul>
    </td>
    </tr>
    <tr>
@@ -559,7 +559,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
     <tr>
     <td>Header</td>
     <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li>
-      <li>`Authorization: Basic Yng6Yng=`</br></br><strong>Note:</strong> <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</li></ul></td>
+      <li>`Authorization: Basic Yng6Yng=`</br></br>**Note:** `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.</li></ul></td>
     </tr>
     <tr>
     <td>Body when using the refresh token</td>
@@ -568,7 +568,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
     <li>`refresh_token:` Your {{site.data.keyword.cloud_notm}} IAM refresh token. </li>
     <li>`uaa_client_ID: cf`</li>
     <li>`uaa_client_secret:`</li>
-    <li>`bss_account:` Your {{site.data.keyword.cloud_notm}} account ID. </li></ul><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</td>
+    <li>`bss_account:` Your {{site.data.keyword.cloud_notm}} account ID. </li></ul>**Note**: Add the `uaa_client_secret` key with no value specified.</td>
     </tr>
     <tr>
       <td>Body when using the {{site.data.keyword.cloud_notm}} API key</td>
@@ -576,7 +576,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
     <li>`response_type: cloud_iam uaa`</li>
     <li>`apikey:` Your {{site.data.keyword.cloud_notm}} API key. </li>
     <li>`uaa_client_ID: cf`</li>
-        <li>`uaa_client_secret:`</li></ul><strong>Note:</strong> Add the <code>uaa_client_secret</code> key with no value specified.</td>
+        <li>`uaa_client_secret:`</li></ul>**Note:** Add the `uaa_client_secret` key with no value specified.</td>
     </tr>
     </tbody>
     </table>
