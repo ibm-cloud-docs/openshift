@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-03"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -36,11 +36,10 @@ subcollection: openshift
 # {{site.data.keyword.at_full_notm}} events
 {: #at_events}
 
-You can view, manage, and audit user-initiated activities in your {{site.data.keyword.openshiftlong}} community Kubernetes or OpenShift cluster by using the {{site.data.keyword.at_full}} service. 
+You can view, manage, and audit user-initiated activities in your {{site.data.keyword.openshiftlong}} community Kubernetes or OpenShift cluster by using the {{site.data.keyword.at_full}} service.
 {: shortdesc}
 
 Red Hat OpenShift on IBM Cloud automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
-
 
 ## Tracking cluster management events
 {: #cluster-events}
@@ -48,71 +47,39 @@ Red Hat OpenShift on IBM Cloud automatically generates cluster management events
 The following list of the cluster management events are sent to {{site.data.keyword.at_full_notm}}.
 {: shortdesc}
 
-<table>
-<tr>
-<th>Action</th>
-<th>Description</th></tr><tr>
-<td><code>containers-kubernetes.account-credentials.set</code></td>
-<td>Infrastructure credentials in a region for a resource group are set.</td></tr><tr>
-<td><code>containers-kubernetes.account-credentials.unset</code></td>
-<td>Infrastructure credentials in a region for a resource group are unset.</td></tr><tr>
-<td><code>containers-kubernetes.alb.create</code></td>
-<td>An Ingress ALB is created.</td></tr><tr>
-<td><code>containers-kubernetes.alb.delete</code></td>
-<td>An Ingress ALB is deleted.</td></tr><tr>
-<td><code>containers-kubernetes.apikey.reset</code></td>
-<td>An API key is reset for a region and resource group.</td></tr><tr>
-<td><code>containers-kubernetes.cluster.create</code></td>
-<td>A cluster is created.</td></tr><tr>
-<td><code>containers-kubernetes.cluster.delete</code></td>
-<td>A cluster is deleted.</td></tr><tr>
-<td><code>containers-kubernetes.cluster-feature.enable</code></td>
-<td>A feature, such as the public or private service endpoint, is enabled on a cluster.</td></tr><tr>
-<td><code>containers-kubernetes.logging-config.create</code></td>
-<td>A log forwarding configuration is created.</td></tr><tr>
-<td><code>containers-kubernetes.logging-config.delete</code></td>
-<td>A log forwarding configuration is deleted.</td></tr><tr>
-<td><code>containers-kubernetes.logging-config.update</code></td>
-<td>A log forwarding configuration is updated.</td></tr><tr>
-<td><code>containers-kubernetes.logging-config.refresh</code></td>
-<td>A log forwarding configuration is refreshed.</td></tr><tr>
-<td><code>containers-kubernetes.logging-filter.create</code></td>
-<td>A logging filter is created.</td></tr><tr>
-<td><code>containers-kubernetes.logging-filter.delete</code></td>
-<td>A logging filter is deleted.</td></tr><tr>
-<td><code>containers-kubernetes.logging-filter.update</code></td>
-<td>A logging filter is updated.</td></tr><tr>
-<td><code>containers-kubernetes.logging-autoupdate.changed</code></td>
-<td>The logging add-on auto updater is enabled or disabled.</td></tr><tr>
-<td><code>containers-kubernetes.mzlb.create</code></td>
-<td>A multizone load balancer is created.</td></tr><tr>
-<td><code>containers-kubernetes.mzlb.delete</code></td>
-<td>A multizone load balancer is deleted.</td></tr><tr>
-<td><code>containers-kubernetes.service.bind</code></td>
-<td>A service is bound to a cluster.</td></tr><tr>
-<td><code>containers-kubernetes.service.unbind</code></td>
-<td>A service is unbound from a cluster.</td></tr><tr>
-<td><code>containers-kubernetes.subnet.add</code></td>
-<td>An existing IBM Cloud infrastructure subnet is added to a cluster.</td></tr><tr>
-<td><code>containers-kubernetes.subnet.create</code></td>
-<td>A subnet is created.</td></tr><tr>
-<td><code>containers-kubernetes.usersubnet.add</code></td>
-<td>A user-managed subnet is added to a cluster.</td></tr><tr>
-<td><code>containers-kubernetes.usersubnet.delete</code></td>
-<td>A user-managed subnet is removed from a cluster.</td></tr><tr>
-<td><code>containers-kubernetes.version.update</code></td>
-<td>The Kubernetes version of a cluster master node is updated.</td></tr><tr>
-<td><code>containers-kubernetes.worker.create</code></td>
-<td>A worker node is created.</td></tr><tr>
-<td><code>containers-kubernetes.worker.delete</code></td>
-<td>A worker node is deleted.</td></tr><tr>
-<td><code>containers-kubernetes.worker.reboot</code></td>
-<td>A worker node is rebooted.</td></tr><tr>
-<td><code>containers-kubernetes.worker.reload</code></td>
-<td>A worker node is reloaded.</td></tr><tr>
-<td><code>containers-kubernetes.worker.update</code></td>
-<td>A worker node is updated.</td></tr>
-</table>
+|Action|Description|
+|------|-----------|
+| `containers-kubernetes.account-credentials.set` | Infrastructure credentials in a region for a resource group are set. |
+| `containers-kubernetes.account-credentials.unset` | Infrastructure credentials in a region for a resource group are unset. |
+| `containers-kubernetes.alb.create` | An Ingress ALB is created. |
+| `containers-kubernetes.alb.delete` | An Ingress ALB is deleted. |
+| `containers-kubernetes.apikey.reset` | An API key is reset for a region and resource group. |
+| `containers-kubernetes.cluster.create` | A cluster is created. |
+| `containers-kubernetes.cluster.delete` | A cluster is deleted. |
+| `containers-kubernetes.cluster-feature.enable` | A feature, such as the public or private service endpoint, is enabled on a cluster. |
+| `containers-kubernetes.logging-config.create` | A log forwarding configuration is created. |
+| `containers-kubernetes.logging-config.delete` | A log forwarding configuration is deleted. |
+| `containers-kubernetes.logging-config.update` | A log forwarding configuration is updated. |
+| `containers-kubernetes.logging-config.refresh` | A log forwarding configuration is refreshed. |
+| `containers-kubernetes.logging-filter.create` | A logging filter is created. |
+| `containers-kubernetes.logging-filter.delete` | A logging filter is deleted. |
+| `containers-kubernetes.logging-filter.update` | A logging filter is updated. |
+| `containers-kubernetes.logging-autoupdate.changed` | The logging add-on auto updater is enabled or disabled. |
+| `containers-kubernetes.mzlb.create` | A multizone load balancer is created. |
+| `containers-kubernetes.mzlb.delete` | A multizone load balancer is deleted. |
+| `containers-kubernetes.service.bind` | A service is bound to a cluster. |
+| `containers-kubernetes.service.unbind` | A service is unbound from a cluster. |
+| `containers-kubernetes.subnet.add` | An existing IBM Cloud infrastructure subnet is added to a cluster. |
+| `containers-kubernetes.subnet.create` | A subnet is created. |
+| `containers-kubernetes.usersubnet.add` | A user-managed subnet is added to a cluster. |
+| `containers-kubernetes.usersubnet.delete` | A user-managed subnet is removed from a cluster. |
+| `containers-kubernetes.version.update` | The Kubernetes version of a cluster master node is updated. |
+| `containers-kubernetes.worker.create` | A worker node is created. |
+| `containers-kubernetes.worker.delete` | A worker node is deleted. |
+| `containers-kubernetes.worker.reboot` | A worker node is rebooted. |
+| `containers-kubernetes.worker.reload` | A worker node is reloaded. |
+| `containers-kubernetes.worker.update` | A worker node is updated.|
+{: caption="Cluster management events" caption-side="top"}
 
 
 
