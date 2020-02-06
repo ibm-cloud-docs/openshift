@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -347,7 +347,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
             ```
             {: screen}
 
-After you label your worker pool, you can use the [label in your app deployments](/docs/containers?topic=containers-app#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
+After you label your worker pool, you can use the [label in your app deployments](/docs/openshift?topic=openshift-app#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
 
 <br />
 
