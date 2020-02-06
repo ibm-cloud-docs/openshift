@@ -344,11 +344,8 @@ spec:
 
 |Annotation field|Value|
 |----------------|-----|
-| Server snippet |
-| Provide the configuration snippet that you want to use. This sample snippet specifies a location block to handle `/health` requests. The location block is configured to return a healthy response and add a header when it forwards a request. |
-
-</tbody>
-</table>
+| Server snippet | Provide the configuration snippet that you want to use. This sample snippet specifies a location block to handle `/health` requests. The location block is configured to return a healthy response and add a header when it forwards a request. |
+{: caption="Understanding the annotation components" caption-side="top"}
 
 You can use the `server-snippets` annotation to add a header for all service responses at a server level:
 {: tip}
@@ -1352,6 +1349,7 @@ To handle regular expression (regex) paths, this annotation is required.
 {: note}
 
 |Modifier|Description|
+|--------|-----------|
 | `=` | The equal sign modifier causes the ALB to select exact matches only. When an exact match is found, the search stops and the matching path is selected.<br>For example, if your app listens on `/tea`, the ALB selects only exact `/tea` paths when matching a request to your app. |
 | `~` | The tilde modifier causes the ALB to process paths as case-sensitive regex paths during matching.<br>For example, if your app listens on `/coffee`, the ALB can select `/ab/coffee` or `/123/coffee` paths when matching a request to your app even though the paths are not explicitly set for your app. |
 | `~\*` | The tilde modifier that is followed by an asterisk modifier causes the ALB to process paths as case-insensitive regex paths during matching.<br>For example, if your app listens on `/coffee`, the ALB can select `/ab/Coffee` or `/123/COFFEE` paths when matching a request to your app even though the paths are not explicitly set for your app. |
@@ -1742,7 +1740,7 @@ annotations:
   ingress.bluemix.net/server-snippets: |
     add_header <header1> <value1>;
 ```
-{: pre}
+{: codeblock}
 </br>
 
 **Sample Ingress resource YAML**
