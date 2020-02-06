@@ -285,11 +285,52 @@ If you have a cluster that was created after worker pools were introduced, you c
 <br />
 
 
+## Adding tags to existing clusters
+{: #cluster_tags}
+
+You can assign a tag to Red Hat OpenShift on IBM Cloud clusters to help manage your {{site.data.keyword.cloud_notm}} resources. For example, you might add `key:value` tags to your cluster and other cloud resources so that your billing department track resources, such as `costctr:1234`. Tags are visible account-wide. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
+{: shortdesc}
+
+Tags are not the same thing as Kubernetes labels. [Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){: external} are `key:value` pairs that can be used as selectors for the resources that are in your cluster, such as [adding a label to worker pool](#worker_pool_labels) to [deploy an app to only certain worker nodes](/docs/openshift?topic=openshift-deploy_app#node_affinity). Tags are an {{site.data.keyword.cloud_notm}} tool that you can use to filter your {{site.data.keyword.cloud_notm}} resources, such as clusters, storage devices, or {{site.data.keyword.watson}} services.
+{: note}
+
+Do not include personal information in your tags. Learn more about [securing your personal information](/docs/openshift?topic=openshift-security#pi) when you work with Kubernetes resources.
+{: important}
+
+Choose among the following options:
+
+*   [Create a cluster](/docs/openshift?topic=openshift-clusters) with a tag. 
+*   Add tags to an existing cluster.
+
+| Adding tags to clusters with the console. |
+|:-----------------|
+| <p><ol><li>Log in to the [**{{site.data.keyword.cloud_notm}} clusters** console](https://cloud.ibm.com/kubernetes/clusters){: external}.</li><li>Select a cluster with existing tags.</li><li>Next to the cluster name and status, click the **Edit tags** pencil icon.<p class="note">If your cluster does not have any existing tags, you do not have an **Edit tags** pencil icon. Instead, use the [resource list](/docs/resources?topic=resources-tag#add-remove) or CLI.</p></li><li>Enter the tag that you want to add to your cluster. To assign a key-value pair, use a colon such as `costctr:1234`.</li></ol></p> |
+{: caption="Adding tags to clusters with the console." caption-side="top"}
+{: #tags-1}
+{: tab-title="Console"}
+{: tab-group="tags"}
+{: class="simple-tab-table"}
+
+| Adding tags to clusters with the CLI. |
+|:-----------------|
+| <p><ol><li>Log in to the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login).<p class="pre"><code>ibmcloud login [--sso]</code></p></li><li>[Tag your cluster](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_tag_attach). Replace the `--resource-name` wit the name of your cluster. To list available clusters, run `ibmcloud oc cluster ls`. If you want to check your existing tags so as not to duplicate any, run `ibmcloud resource tags`.<p class="pre"><code>ibmcloud resource tag-attach --resource-name <cluster_name> --tag-names <tag1,tag2></code></p><p class="note">If you have more than one resource of the same name in your {{site.data.keyword.cloud_notm}} account, the error message lists the resource CRNs and details, and instructs you to try again with the `--resource-id` flag.</p></li></ol></p> |
+{: caption="Adding tags to clusters with the CLI." caption-side="top"}
+{: #tags-2}
+{: tab-title="CLI"}
+{: tab-group="tags"}
+{: class="simple-tab-table"}
+
+<br />
+
+
 ## Adding labels to existing worker pools
 {: #worker_pool_labels}
 
 You can assign a worker pool a label when you [create the worker pool](#add_pool), or later by following these steps. After a worker pool is labeled, all existing and subsequent worker nodes get this label. You might use labels to deploy specific workloads only to worker nodes in the worker pool, such as [edge nodes for load balancer network traffic](/docs/openshift?topic=openshift-edge).
 {: shortdesc}
+
+Do not include personal information in your labels. Learn more about [securing your personal information](/docs/openshift?topic=openshift-security#pi) when you work with Kubernetes resources.
+{: important}
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
