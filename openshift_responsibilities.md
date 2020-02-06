@@ -81,7 +81,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
      **Your responsibilities**:
      <ul>
      <li>Use the API, CLI, or console tools to [apply](/docs/openshift?topic=openshift-update#update) the provided major and minor Kubernetes master updates and major, minor, and patch worker node updates.</li>
-     <li>Use the API, CLI, or console tools to [recover](/docs/openshift?topic=openshift-openshift_troubleshoot) your infrastructure resources.</li></ul>
+     <li>Use the API, CLI, or console tools to [recover](/docs/openshift?topic=openshift-cs_troubleshoot) your infrastructure resources.</li></ul>
      <br><br></td>
       </tr>
     <tr>
