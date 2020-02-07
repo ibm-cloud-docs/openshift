@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-07"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -125,7 +125,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     <tbody>
     <tr>
     <td>`log-format`</td>
-    <td>Replace `&lt;key&gt;` with the name for the log component and `&lt;log_variable&gt;` with a variable for the log component that you want to collect in log entries. You can include text and punctuation that you want the log entry to contain, such as quotation marks around string values and commas to separate log components. For example, formatting a component like `request: "$request"` generates the following in a log entry: `request: "GET / HTTP/1.1"` . For a list of all the variables you can use, see the <a href="http://nginx.org/en/docs/varindex.html">NGINX variable index</a>.<br><br>To log an additional header such as <em>x-custom-ID</em>, add the following key-value pair to the custom log content: <br><pre class="codeblock"><code>customID: $http_x_custom_id</code></pre> <br>Hyphens (`-`) are converted to underscores (`_`) and `$http_` must be added as a prefix to the custom header name.</td>
+    <td>Replace `&lt;key&gt;` with the name for the log component and `&lt;log_variable&gt;` with a variable for the log component that you want to collect in log entries. You can include text and punctuation that you want the log entry to contain, such as quotation marks around string values and commas to separate log components. For example, formatting a component like `request: "$request"` generates the following in a log entry: `request: "GET / HTTP/1.1"` . For a list of all the variables you can use, see the [NGINX variable index](http://nginx.org/en/docs/varindex.html).<br><br>To log an additional header such as <em>x-custom-ID</em>, add the following key-value pair to the custom log content: <br><pre class="codeblock"><code>customID: $http_x_custom_id</code></pre> <br>Hyphens (`-`) are converted to underscores (`_`) and `$http_` must be added as a prefix to the custom header name.</td>
     </tr>
     <tr>
     <td>`log-format-escape-json`</td>
