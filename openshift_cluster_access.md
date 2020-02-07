@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-07"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -47,7 +47,7 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for OpenShift (`ibmcloud oc`), and OpenShift CLI (`oc`).
 2. [Create your OpenShift cluster](/docs/openshift?topic=openshift-clusters).
 3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall) to the {{site.data.keyword.cloud_notm}} and Red Hat OpenShift on IBM Cloud API endpoints and ports. For private service endpoint-only clusters, you cannot test the connection to your cluster until you expose the private service endpoint of the master to the cluster by using a [private NLB](#access_private_se).
-4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/containers?topic=containers-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
+4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 
 <br />
 
@@ -244,7 +244,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
     ```
     {: pre}
 
-    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/authentication.html#obtaining-oauth-tokens){: external}.
+    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
 
     Example curl request:
     ```

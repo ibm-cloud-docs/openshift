@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-07"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -84,7 +84,7 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
           <li>At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the OpenShift **Cluster Console**.</li>
           <li>Monitoring is on a per-cluster basis.</li>
           <li>The `openshift-monitoring` project stack is set up in a single zone only. No persistent storage is available to back up or view metric history.</li></ul>
-          <br>For more information, see [the OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html).</td>
+          <br>For more information, see [the OpenShift documentation](https://docs.openshift.com/container-platform/4.3/monitoring/cluster-monitoring/about-cluster-monitoring.html){: external}.</td>
         <td>**{{site.data.keyword.mon_full_notm}}**:<ul>
           <li>Customizable user interface for a unified look at your cluster metrics, container security, resource usage, alerts, and custom events.</li>
           <li>Quick integration with the cluster via a script.</li>
@@ -104,7 +104,7 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
 ## Setting up LogDNA and Sysdig add-ons to monitor cluster health
 {: #openshift_logdna_sysdig}
 
-Because OpenShift sets up stricter [Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html){: external} by default than community Kubernetes, you might find that some apps or cluster add-ons that you use on community Kubernetes cannot be deployed on OpenShift in the same way. In particular, many images must run as a `root` user or as a privileged container, which is prevented in OpenShift by default. You can modify the default SCCs by creating privileged security accounts and updating the `securityContext` in the pod specification to use two popular {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
+Because OpenShift sets up stricter [Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external} by default than community Kubernetes, you might find that some apps or cluster add-ons that you use on community Kubernetes cannot be deployed on OpenShift in the same way. In particular, many images must run as a `root` user or as a privileged container, which is prevented in OpenShift by default. You can modify the default SCCs by creating privileged security accounts and updating the `securityContext` in the pod specification to use two popular {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
 Before you begin, log in to your cluster as an administrator.

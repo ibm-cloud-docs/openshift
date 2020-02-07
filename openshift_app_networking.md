@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-02-07"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -46,7 +46,7 @@ To securely expose your apps to external traffic, you can use choose from the fo
 {: shortdesc}
 
 <dl>
-<dt>[OpenShift route ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html)</dt>
+<dt>[OpenShift route](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external}</dt>
 <dd>A route exposes a service as a hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. A router is deployed by default to your cluster, which enable routes to be used by external clients. The router uses the service selector to find the service and the endpoints that back the service. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. **Note**: The hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster. Your route does not use the Ingress subdomain.</dd>
 
 <dt>[NodePort](/docs/openshift?topic=openshift-nodeport)</dt>
@@ -131,7 +131,7 @@ You cannot use multiple app exposure methods for one app.
 <td>Route</td>
 <td>HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules</td>
 <td>Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain OpenShift-native; for example, you can use the OpenShift web console to create and manage routes.</td>
-<td><ol><li>[Create a `ClusterIP` service ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service) to assign an internal IP address to your app.</li><li>[Set up an OpenShift route ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html).</li><li>Customize routing rules with [optional configurations ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html).</li></ol></td>
+<td><ol><li>[Create a `ClusterIP` service](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service){: external} to assign an internal IP address to your app.</li><li>[Set up an OpenShift route](https://docs.openshift.com/container-platform/4.3/applications/deployments/route-based-deployment-strategies.html){: external}.</li><li>Customize routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external}.</li></ol></td>
 </tr>
 <tr>
 <td>NodePort</td>
@@ -192,7 +192,7 @@ Check out the following methods for private app networking:
 
 |Name|Load-balancing method|Use case|Implementation|
 |----|---------------------|--------|--------------|
-|Route|HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain OpenShift-native; for example, you can use the OpenShift web console to create and manage routes.|<ol><li>[Create a `ClusterIP` service](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service){: external} to assign an internal IP address to your app.</li><li>[Create a router that is exposed by a private load balancer.](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)</li><li>[Set up an OpenShift route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}.</li><li>Customize routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}.</li></ol>|
+|Route|HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain OpenShift-native; for example, you can use the OpenShift web console to create and manage routes.|<ol><li>[Create a `ClusterIP` service](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service){: external} to assign an internal IP address to your app.</li><li>[Create a router that is exposed by a private load balancer.](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)</li><li>[Set up an OpenShift route](https://docs.openshift.com/container-platform/4.3/applications/deployments/route-based-deployment-strategies.html){: external}.</li><li>Customize routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external}.</li></ol>|
 |NodePort|Port on a worker node that exposes the app on the worker's private IP address|Test private access to one app or provide access for only a short amount of time.|<ol><li>[Create a NodePort service](/docs/openshift?topic=openshift-nodeport).</li><li>A NodePort service opens a port on a worker node over both the private and public IP address of the worker node. You must use a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts.</li></ol>|
 |NLB 1.0|Basic load balancing that exposes the app with a private IP address|Quickly expose one app to a private network with a private IP address.|<ol><li>[Create a private NLB service](/docs/openshift?topic=openshift-loadbalancer).</li><li>An NLB with a portable private IP address still has a public node port open on every worker node. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts.</li></ol>|
 |NLB v2.0|DSR load balancing that exposes the app with a private IP address|Expose an app that might receive high levels of traffic to a private network with an IP address.|<ol><li>Complete the [prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).</li><li>Create a private NLB 2.0 in a [single-](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config) cluster.</li><li>An NLB with a portable private IP address still has a public node port open on every worker node. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts.</li></ol>|
