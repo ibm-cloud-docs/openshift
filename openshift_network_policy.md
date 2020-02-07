@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -85,6 +85,7 @@ Review the following default Calico host policies that are automatically applied
 |`allow-sys-mgmt`|Allows incoming connections for specific IBM Cloud infrastructure systems that are used to manage the worker nodes.|
 |`allow-vrrp`|Allows VRRP packets, which are used to monitor and move virtual IP addresses between worker nodes.|
 {: caption="Default Calico host policies for each cluster"}
+{: summary="The first row in the table spans both columns. Read the rest of the rows from left to right, with the Calico policy in column one and the description in column two."}
 
 <br />
 

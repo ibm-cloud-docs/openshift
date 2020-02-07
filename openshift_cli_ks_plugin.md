@@ -78,6 +78,7 @@ Check out the following changes between each version of the CLI plug-in:
 | Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul> | Legacy | Legacy | Legacy | Beta |
 | API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul> | Legacy | Beta | Beta | Beta |
 {: caption="Beta versions of the redesigned {{site.data.keyword.containerlong_notm}} plug-in" caption-side="top"}
+{: summary="The rows are read from left to right, with the functionality in column one, version 0.2 of the CLI in column two, version 0.3 in column three, version 0.4 in column four, and version 1.0 in column five."}
 
 <br />
 

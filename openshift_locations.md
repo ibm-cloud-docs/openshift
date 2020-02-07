@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-07"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -67,6 +67,7 @@ The following image is used as an example to explain how Red Hat OpenShift on IB
 |Metro|Mexico City (`mex-cty`), Dallas (`dal`)|The name of a city where 1 or more data centers (zones) are located. A metro can be multizone-capable and have multizone-capable data centers, such as Dallas, or can have only single zone data centers, such as Mexico City. If you create a cluster in a multizone-capable metro, the Kubernetes master and worker nodes can be spread across zones for high availability.|
 |Data center (zone)|Dallas 12 (`dal12`)|A physical location of the compute, network, and storage infrastructure and related cooling and power that host cloud services and applications. Clusters can be spread across data centers, or zones, in an multizone architecture for high availability. Zones are isolated from each other, which ensures no shared single point of failure.|
 {: caption="Organization of Red Hat OpenShift on IBM Cloud locations."}
+{: summary="The table shows organization of Red Hat OpenShift on IBM Cloud locations. Rows are to be read from the left to right, with the location type in column one, an example of the type in column two, and the description in column three."}
 
 ### Single and multizone locations in Red Hat OpenShift on IBM Cloud
 {: #zones}
