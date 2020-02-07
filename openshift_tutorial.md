@@ -147,7 +147,7 @@ If you took a break from the last lesson and started a new terminal, make sure t
     oc new-project hello-world
     ```
     {: pre}
-2.  Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the OpenShift `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the OpenShift docs](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
+2.  Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the OpenShift `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the OpenShift docs](https://docs.openshift.com/container-platform/3.11/dev_guide/application_lifecycle/new_app.html){: external}.
     ```
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```

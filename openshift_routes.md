@@ -44,7 +44,7 @@ Use the router to publicly expose the services in your {{site.data.keyword.opens
 ## Overview
 {: #routes-overview}
 
-A router is deployed by default to your cluster and functions as the ingress point for external network traffic. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router uses the service selector to find the service and the endpoints that back the service, and creates [routes](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external} that expose services as hostnames to be used by external clients. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. After you set up routes for your services, the router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
+A router is deployed by default to your cluster and functions as the ingress point for external network traffic. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router uses the service selector to find the service and the endpoints that back the service, and creates [routes](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external} that expose services as hostnames to be used by external clients. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. After you set up routes for your services, the router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
 
 You can find the router subdomain for your cluster by running `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 {: note}
@@ -107,7 +107,7 @@ To set up routes to publicly expose apps:
         {: tip}
     3. Map your custom domain to the router's public IP address by adding the IP address as an A record.
 
-3. [Set up a route](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/developer-cli-commands.html#expose){: external}.
+3. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}.
   * If you do not have a custom domain, do not specify a **Hostname** value. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
   * If you registered a wildcard subdomain, specify a unique subdomain in each route resource that you create. For example, you might specify `svc1.example.com` in this route resource, and `svc2.example.com` in another route resource.
 
@@ -117,7 +117,7 @@ To set up routes to publicly expose apps:
   ```
   {: pre}
 
-5. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
+5. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
 
 <br />
 
@@ -246,7 +246,7 @@ When you create a private router, the private router uses host networking to lis
   ```
   {: pre}
 
-9. [Set up a route](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/developer-cli-commands.html#expose){: external}. If you do not specify a **Hostname** value and you registered the router service with a private DNS entry in step 4, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
+9. [Set up a route](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external}. If you do not specify a **Hostname** value and you registered the router service with a private DNS entry in step 4, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
 
 10. Verify that the route for your app is created.
   ```
@@ -254,7 +254,7 @@ When you create a private router, the private router uses host networking to lis
   ```
   {: pre}
 
-11. Optional: Customize the private router's routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
+11. Optional: Customize the private router's routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}. For example, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
 
 ## Moving router services across VLANs
 {: #migrate-router-vlan}

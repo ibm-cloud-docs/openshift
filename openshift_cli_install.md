@@ -56,7 +56,7 @@ See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/conta
 {: support}
 {: help}
 
-To view a local version of the OpenShift dashboard and to deploy apps into your Red Hat OpenShift on IBM Cloud clusters, install the OpenShift CLI (`oc`) and Kubernetes CLI (`kubectl`). For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html){: external}.
+To view a local version of the OpenShift dashboard and to deploy apps into your Red Hat OpenShift on IBM Cloud clusters, install the OpenShift CLI (`oc`) and Kubernetes CLI (`kubectl`). For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html){: external}.
 {: shortdesc}
 
 Using both community Kubernetes and OpenShift clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on OpenShift and 1.15.8 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} for your cluster `major.minor` Kubernetes version. 
@@ -99,7 +99,7 @@ Using both community Kubernetes and OpenShift clusters? Your clusters might run 
 
 Next, start [Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial).
 
-For more information about the `oc` CLI, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html){: external}.
+For more information about the OpenShift CLI, see the [`oc` commands docs](https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html){: external}.
 {: note}
 
 <br />

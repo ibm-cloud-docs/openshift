@@ -40,8 +40,7 @@ Review information about the supported OpenShift versions for {{site.data.keywor
 {: shortdesc}
 
 For more information about the OpenShift  and Kubernetes project versions, review the following information.
-
-* [OpenShift 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
+* [OpenShift release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
 * [Kubernetes changelog](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md){: external}
 
 ## Update types
