@@ -133,24 +133,6 @@ Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components 
 <br />
 
 
-## Lesson 2: Navigating the OpenShift console
-{: #openshift_oc_console}
-
-Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to help operate your cluster, such as the OpenShift console.
-{:shortdesc}
-
-1.  From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your OpenShift cluster, then click **OpenShift web console**.
-2.  Explore the different areas of the OpenShift web console, described as follows.<p></p>
-    **OpenShift web console overview**: Click the dropdown menu in the **OpenShift Container Platform** menu bar.
-    * **Service Catalog**: Browse the catalog of built-in services that you can deploy on OpenShift.For example, if you already have an `node.js` app that is hosted in GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console.
-    * **Application Console**: For each project namespace that you have access to, you can manage and view logs for your {site.data.keyword.openshiftshort}} resources such as pods, services, routes, builds, images, or persistent volume claims. You can also add services from the catalog to the project.
-    * **Cluster Console**: For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts, RBAC roles and role bindings, and resource quotas. You can also see combined views of the status and events of the resources within the cluster.
-3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.
-
-
-<br />
-
-
 ## Lesson 3: Deploying an app to your OpenShift cluster
 {: #openshift_deploy_app}
 

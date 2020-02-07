@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -111,7 +111,6 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
       {: pre}
 
 <br />
-
 
 
 

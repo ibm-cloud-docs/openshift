@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-23"
+lastupdated: "2020-02-07"
 
 keywords: openshift, containers, clusters, roks, rhoks, rhos
 
@@ -153,10 +153,8 @@ Now that your cluster is ready, [deploy an app](#deploy-app).
 ## Deploying an app with the OpenShift service catalog
 {: #deploy-app}
 
-From the OpenShift console, you can deploy one of the built-in service catalog apps.
+From the OpenShift console, you can deploy one of the built-in service catalog apps and expose the app with a route.
 {: shortdesc}
-
-
 
 1.  From the cluster details page, click **OpenShift web console**.
 2.  In the **My Projects** pane, click **Create Project**. Enter a name for your project name, and click **Create**.
