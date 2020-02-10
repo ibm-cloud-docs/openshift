@@ -409,7 +409,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>26 July 2019</td>
-  <td><strong>Red Hat OpenShift on IBM Cloud</strong>: Added [integrations](/docs/openshift?topic=openshift-openshift_integrations), [locations](/docs/openshift?topic=openshift-regions-and-zones), and [security context constraints](/docs/openshift?topic=openshift-openshift_scc) topics. Added the `basic-users` and `self-provisioning` cluster roles to the [IAM service role to RBAC sync](/docs/openshift?topic=openshift-access_reference#service) topic.</td>
+  <td><strong>Red Hat OpenShift on IBM Cloud</strong>: Added [integrations](/docs/openshift?topic=openshift-supported_integrations), [locations](/docs/openshift?topic=openshift-regions-and-zones), and [security context constraints](/docs/openshift?topic=openshift-openshift_scc) topics. Added the `basic-users` and `self-provisioning` cluster roles to the [IAM service role to RBAC sync](/docs/openshift?topic=openshift-access_reference#service) topic.</td>
 </tr>
 <tr>
   <td>23 July 2019</td>
