@@ -779,7 +779,7 @@ The OpenShift web console might not open for reasons that include:
     ```
     {: pre}
 2.  Review the output of the previous step to check the **Ingress Subdomain**.
-    *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists after cluster creation](#ingress_subdomain).
+    *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
     *  If your cluster does have a subdomain, continue to the next step.
 3.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console.
     ```
@@ -791,7 +791,7 @@ The OpenShift web console might not open for reasons that include:
     oc get pods -n openshift-console
     ```
     {: pre}
-5.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#openshift_support).
+5.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
 
 <br />
 
