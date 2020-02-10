@@ -82,7 +82,7 @@ When VRF is enabled, any system that is connected to any of the private VLANs in
 ### Worker-to-master and user-to-master communication: Service endpoints
 {: #workeruser-master}
 
-A communication channel must be set up so that worker nodes can establish a connection to the Kubernetes master. In version 3.11 clusters, you can allow your worker nodes and Kubernetes master to communicate by enabling the public service endpoint only or the public and private service endpoints. In version 4.3 clusters, you can allow your worker nodes and Kubernetes master to communicate by enabling the public service endpoint only. You cannot enable the private service endpoint only for OpenShift clusters.
+A communication channel must be set up so that worker nodes can establish a connection to the Kubernetes master. You must allow the public service endpoint in your cluster. You can optionally enable the private service endpoint for version 3.11 clusters, but not for version 4.3 clusters, which must be public only. Furthermore, you cannot have only the private service endpoint for any cluster.
 {: shortdesc}
 
 To secure communication over public and private service endpoints, Red Hat OpenShift on IBM Cloud automatically sets up an OpenVPN connection between the Kubernetes master and the worker node when the cluster is created. Workers securely talk to the master through TLS certificates, and the master talks to workers through the OpenVPN connection.
