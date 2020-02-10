@@ -92,5 +92,3 @@ First time setting up Ingress? Check out [Setting up Ingress in OpenShift versio
   https://<ingress_subdomain>/<app_path>
   ```
   {: codeblock}
-
-

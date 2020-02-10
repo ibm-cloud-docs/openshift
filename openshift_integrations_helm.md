@@ -48,12 +48,12 @@ In OpenShift clusters that run version 4.3 or later, use [Operators](/docs/opens
 ### What is Helm and how do I use it?
 {: #what-is-helm}
 
-[Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
+[Helm](https://helm.sh){: external} is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
 
 ### What Helm charts are supported in Red Hat OpenShift on IBM Cloud?
 {: #supported-charts}
 
-For an overview of available Helm charts, see the [Helm charts catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/helm). The Helm charts that are listed in this catalog are grouped as follows:
+For an overview of available Helm charts, see the [Helm charts catalog](https://cloud.ibm.com/kubernetes/helm){: external}. The Helm charts that are listed in this catalog are grouped as follows:
 
 - **iks-charts**: Helm charts that are approved for Red Hat OpenShift on IBM Cloud. The name of this repo was changed from `ibm` to `iks-charts`.
 - **ibm-charts**: Helm charts that are approved for Red Hat OpenShift on IBM Cloud and {{site.data.keyword.cloud_notm}} Private clusters.

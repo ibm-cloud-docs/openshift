@@ -139,7 +139,6 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
     *   Enter a unique name for your cluster, and select the resource group that you want to assign to your cluster.
     *   Enter tags that you want to add to your cluster. Tags can help you organize and find your clusters more easily in your  {{site.data.keyword.cloud_notm}} account.
     *   For the **Location**, set the **Geography**, and then select any of the six worldwide multizone **Metro** or single zone [locations](/docs/openshift?topic=openshift-regions-and-zones) to use for your **Worker zones**.
-    *   For **Master service endpoint**, you must select **Public endpoint only**. In version 4.3, the private service endpoint is not supported.
     *   In the **Default worker pool** section, configure your worker pool version and size.
         *  For **OpenShift version**, select 4.3.
         *  For **Flavor**, choose an available flavor for your worker nodes.
@@ -166,16 +165,16 @@ From the OpenShift console, you can deploy one of the built-in service catalog a
 5.  Click **From Catalog**. The **Developer Catalog** opens in the pane.
 6.  From the navigation menu in the pane, click **Languages > JavaScript**.
 7.  Click **Node.js**, and then click **Create Application**. The **Create Source-to-Image Application** pane opens.
-8.  In the **Git** section, click **Try Sample**. 
+8.  In the **Git** section, click **Try Sample**.
 9.  Scroll to confirm that **Deployment** and **Create a route to the application** are selected, and then click **Create**.
 8.  Wait a few minutes for the pods to deploy. To check the status of the pods, from the **Topology** pane, click your **nodejs** app and review its sidebar. You must see that the `nodejs` build is complete, and that the `nodejs` pod is in a **Running** state to continue.
 9.  When the deployment is complete, click the route location URL, which has a format similar to the following.
-    
+
     ```
     http://nodejs-<project>.<cluster_name>-<hash>.<region>.containers.appdomain.cloud
     ```
     {: screen}
-    
+
     A new tab in your browser opens with a message similar to the following.
     ```
     Welcome to your Node.js application on OpenShift
