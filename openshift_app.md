@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-07"
+lastupdated: "2020-02-10"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -52,7 +52,7 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 {: pre}
 
 **What does the `new-app` command do?**<br>
-The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [OpenShift documentation](https://docs.openshift.com/container-platform/3.11/dev_guide/application_lifecycle/new_app.html#dev-guide-new-app){: external}.
+The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/creating-applications-using-cli.html){: external}.
 
 <br />
 
@@ -76,11 +76,11 @@ OpenShift has different default settings than community Kubernetes, such as stri
 <tbody>
 <tr>
 <td>Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status</td>
-<td>The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).</td>
+<td>The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}.</td>
 </tr>
 <tr>
 <td>Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories.</td>
-<td>In OpenShift, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html).</td>
+<td>In OpenShift, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html){: external}.</td>
 </tr>
 <tr>
 <td>You deploy your app by using Helm. You might see an error similar to `User "system:serviceaccount:tiller:tiller" cannot create <resource>.rbac.authorization.k8s.io: RBAC: <resource>.rbac.authorization.k8s.io "<resource>.rbac.authorization.k8s.io" not found`</td>
@@ -95,11 +95,11 @@ OpenShift has different default settings than community Kubernetes, such as stri
 <td>Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions:<ul>
 <li>Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port.</li>
 <li>Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc).</li>
-<li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/port_forwarding.html).</li></ul></td>
+<li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding](https://docs.openshift.com/container-platform/4.3/nodes/containers/nodes-containers-port-forwarding.html){: external}.</li></ul></td>
 </tr>
 <tr>
 <td>Other use cases and scenarios</td>
-<td>Review the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html) for migrating databases, web framework apps, CI/CD, and other examples.</td>
+<td>Review the OpenShift documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 2 to version 3](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html){: external}.</td>
 </tr>
 </tbody>
 </table>
@@ -127,7 +127,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     oc create serviceaccount <sa_name>
     ```
     {: pre}
-4.  Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are included in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [OpenShift documentation](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html){: external}.</p>
+4.  Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are included in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}.</p>
     ```
     oc adm policy add-scc-to-user privileged -n <project_name> -z <sa_name>
     ```
@@ -248,7 +248,7 @@ You can use the OpenShift console to manage your apps, deploy apps from the cata
 
 For a quick walk-through of the console, see the [tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console).
 
-For more information about the console, see the [OpenShift documentation](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external}.
+For more information about the console, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
 
 <br />
 
