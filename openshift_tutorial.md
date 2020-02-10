@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-07"
+lastupdated: "2020-02-10"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -133,7 +133,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components 
 <br />
 
 
-## Lesson 3: Deploying an app to your OpenShift cluster
+## Lesson 2: Deploying an app to your OpenShift cluster
 {: #openshift_deploy_app}
 
 With Red Hat OpenShift on IBM Cloud, you can create a new app and expose your app service via an OpenShift router for external users to use.
