@@ -98,8 +98,14 @@ To set up routes to publicly expose apps:
   * IBM-provided domain: If you do not need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
   * Custom domain: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
     1. Get the public IP address for the default public router service in the **EXTERNAL-IP** column.
+      * Version 3.11 clusters:
         ```
         oc get svc router
+        ```
+        {: pre}
+      * Version 4.3 and later clusters:
+        ```
+        oc get svc router-default -n openshift-ingress
         ```
         {: pre}
     2. Create a custom domain with your DNS provider.
@@ -129,6 +135,9 @@ To set up routes to publicly expose apps:
 
 To use routes to privately expose your apps, create a new router and change the service that exposes the router to a private load balancer. The router is assigned an IP address through which private requests are forwarded to your app.
 {: shortdesc}
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Private routes are supported for clusters that run OpenShift version 3.11 only. Private routes are currently not supported for clusters that run OpenShift version 4.3 or later. Instead, you can [create a private network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer).
+{: note}
 
 When you create a private router, the private router uses host networking to listen on the ports that you specify. Ensure that no other services that use host networking in your cluster listen on these ports.
 {: important}
@@ -263,6 +272,7 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
 {: shortdesc}
 
 1. Create a router service on the new VLAN.
+  * **<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3.11 clusters**:
     1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.
       ```
       oc get svc router -o yaml
@@ -320,6 +330,57 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
       ```
       {: screen}
 
+  * **<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Version 4.3 and later clusters**:
+    1. Create a YAML configuration file for a new router service. Save the file as `router-new.yaml`.
+      ```yaml
+      apiVersion: v1
+      kind: Service
+      metadata:
+        annotations:
+        finalizers:
+        - service.kubernetes.io/load-balancer-cleanup
+        labels:
+          app: router
+          router: router-default
+        name: router-new
+        namespace: openshift-ingress
+      spec:
+        externalTrafficPolicy: Local
+        ports:
+        - name: http
+          port: 80
+          protocol: TCP
+          targetPort: http
+        - name: https
+          port: 443
+          protocol: TCP
+          targetPort: https
+        selector:
+          ingresscontroller.operator.openshift.io/deployment-ingresscontroller: default
+        sessionAffinity: None
+        type: LoadBalancer
+      ```
+      {: codeblock}
+
+    2. Create the new router service.
+      ```
+      oc apply -f router-new.yaml -n openshift-ingress
+      ```
+      {: pre}
+
+    3. Get the **EXTERNAL-IP** address of the new router service. This IP address is from a subnet on the new VLAN.
+      ```
+      oc get svc router-new -n openshift-ingress
+      ```
+      {: pre}
+
+      Example output:
+      ```
+      NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                                     AGE
+      router-new                   LoadBalancer   172.21.XX.XX     169.XX.XXX.XX   80:31049/TCP,443:30219/TCP                  2m
+      ```
+      {: screen}
+
 2. Note the **Hostname** and **IP** address of the router. In the output, look for the hostname formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. The IP address that is listed is the IP for the service that exposes the router on the old VLAN.
   ```
   ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
@@ -353,8 +414,14 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
   {: pre}
 
 6. Delete the router service on the old VLAN.
+  * Version 3.11:
     ```
     oc delete svc router
+    ```
+    {: pre}
+  * Version 4.3 and later:
+    ```
+    oc delete svc router-default -n openshift-ingress
     ```
     {: pre}
 
