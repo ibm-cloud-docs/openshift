@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -42,11 +42,14 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for ge
 While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to run tests and gather pertinent Ingress information from your cluster.
 {: tip}
 
-## Debugging Ingress
+## 3.11 clusters: Debugging Ingress
 {: #ingress-debug}
 {: troubleshoot}
 {: support}
 
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
 
 
 You publicly exposed your app by creating an Ingress resource for your app in your cluster. However, when you try to connect to your app through the ALB's public IP address or subdomain, the connection fails or times out. The steps in the following sections can help you debug your Ingress setup.
@@ -458,8 +461,8 @@ Even if the cluster is in a `normal` state, the Ingress subdomain and secret mig
 
 1. When worker nodes are fully deployed and ready on the VLANs, a portable public and a portable private subnet for the VLANs are ordered.
 2. After the portable subnet orders are successfully fulfilled, the `ibm-cloud-provider-vlan-ip-config` config map is updated with the portable public and portable private IP addresses.
-3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the public ALB is triggered for creation.
-4. A load balancer service that exposes the ALB is created and assigned an IP address.
+3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the public ALB (version 3.11 clusters) or router for the Ingress controller (version 4.3 or later clusters) is triggered for creation.
+4. A load balancer service that exposes the ALB or router is created and assigned an IP address.
 5. The load balancer IP address is used to register the Ingress subdomain in Cloudflare. Cloudflare might have latency during the registration process.
 
 {: tsResolve}
@@ -568,7 +571,8 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     ```
     {: screen}
 
-4. Verify that the ALB is successfully created.
+4. Verify that the ALB (version 3.11 clusters) or router for the Ingress controller (version 4.3 or later clusters) is successfully created.
+  * **Version 3.11 clusters:**
     1. Check whether an ALB exists for your cluster and that the ALB has a public IP address assigned.
       * If a public ALB is listed and is assigned an IP address, continue to the next step.
       * If no ALBs are created after several minutes, [contact us](#getting_help).
@@ -598,6 +602,39 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         Example output:
         ```
         public-crbmnj1b1d09lpvv3oof0g-alb1   LoadBalancer   172.21.XXX.XXX   169.XX.XXX.XX   80:30723/TCP,443:31241/TCP   1d
+        ```
+        {: screen}
+  * **Version 4.3 and later clusters:**
+    1. Check whether a router deployment exists for your cluster.
+      * If a router deployment is listed, continue to the next step.
+      * If no router deployment is created after several minutes, [contact us](#getting_help).
+
+        ```
+        oc get deployment -n openshift-ingress
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        NAME             READY   UP-TO-DATE   AVAILABLE   AGE
+        router-default   2/2     2            2           26m
+        ```
+        {: screen}
+
+    2. Check whether the router's load balancer service exists and is assigned a public external IP address.
+      * If a service that is named `router-default` is listed and is assigned an IP address, continue to the next step.
+      * If no `router-default` service is created after several minutes, [contact us](#getting_help).
+
+        ```
+        oc get svc -n openshift-ingress
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+        router-default            LoadBalancer   172.21.47.119   169.XX.XX.XX   80:31182/TCP,443:31154/TCP   27m
+        router-internal-default   ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
         ```
         {: screen}
 
@@ -632,7 +669,7 @@ If you need to continue testing, you can change the name of the cluster so that 
 You publicly exposed your app by creating an Ingress resource for your app in your classic cluster. When you tried to connect to your app by using the public IP address or Ingress subdomain, the connection failed or timed out.
 
 {: tsResolve}
-First, check that your cluster is fully deployed and has at least 2 worker nodes available per zone to ensure high availability for your ALB.
+First, check that your cluster is fully deployed and has at least 2 worker nodes available per zone to ensure high availability for your ALB (version 3.11 clusters) or router for the Ingress controller (version 4.3 or later clusters).
 ```
 ibmcloud oc worker ls --cluster <cluster_name_or_ID>
 ```
@@ -643,15 +680,18 @@ In your CLI output, make sure that the **Status** of your worker nodes displays 
 * If your standard cluster is fully deployed and has at least 2 worker nodes per zone, but no **Ingress Subdomain** is available, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
 * For other issues, troubleshoot your Ingress setup by following the steps in [Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress).
 
-If you recently restarted your ALB pods or enabled an ALB, a [readiness check](/docs/openshift?topic=openshift-ingress-settings#readiness-check) prevents ALB pods from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss and can take up to 5 minutes.
+Version 3.11 clusters: If you recently restarted your ALB pods or enabled an ALB, a [readiness check](/docs/openshift?topic=openshift-ingress-settings#readiness-check) prevents ALB pods from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss and can take up to 5 minutes.
 {: note}
 
 <br />
 
 
-## Ingress application load balancer (ALB) secret issues
+## 3.11 clusters: Ingress application load balancer (ALB) secret issues
 {: #cs_albsecret_fails}
 
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
 
 
 {: tsSymptoms}
@@ -704,9 +744,12 @@ Review the following reasons why the ALB secret might fail and the corresponding
 <br />
 
 
-## ALB does not deploy in a zone
+## 3.11 clusters: ALB does not deploy in a zone
 {: #cs_subnet_limit}
 
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
 
 
 {: tsSymptoms}
@@ -762,9 +805,12 @@ If you are not using all the subnets in the VLAN, you can reuse subnets on the V
 <br />
 
 
-## Source IP preservation fails when using tainted nodes
+## 3.11 clusters: Source IP preservation fails when using tainted nodes
 {: #cs_source_ip_fails}
 
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
 
 
 {: tsSymptoms}

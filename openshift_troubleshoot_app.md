@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-07"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -120,6 +120,9 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
 {: troubleshoot}
 {: support}
 
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
 
 
 {: tsSymptoms}

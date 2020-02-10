@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -122,6 +122,11 @@ The following image shows available non-persistent data storage options in Red H
 <td style="text-align:left">No</td>
 </tr>
 <tr>
+<td style="text-align:left">Supported OpenShift versions</td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3</li></ul></td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3</li></ul></td>
+</tr>
+<tr>
 <td style="text-align:left">Data types</td>
 <td style="text-align:left">All</td>
 <td style="text-align:left">All</td>
@@ -212,6 +217,11 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <td style="text-align:left">Multizone-capable</td>
 <td style="text-align:left">No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication.</td>
 <td style="text-align:left">No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication.</td>
+</tr>
+<tr>
+<td style="text-align:left">Supported OpenShift versions</td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3</li></ul></td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3</li></ul></td>
 </tr>
 <tr>
 <td style="text-align:left">Ideal data types</td>
@@ -319,6 +329,12 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <td style="text-align:left">Yes</td>
 <td style="text-align:left">Yes</td>
 <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Supported OpenShift versions</td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3</li></ul></td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li></ul></td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3</li></ul></td>
 </tr>
 <tr>
 <td style="text-align:left">Ideal data types</td>

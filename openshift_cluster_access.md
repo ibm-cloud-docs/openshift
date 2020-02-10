@@ -226,7 +226,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ibmcloud login --apikey <API_key>
         ```
         {: pre}
-    2.  Download the cluster configuration files.
+    2.  Download the cluster configuration files. For version 4.3 clusters, include the `--admin` flag.
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```

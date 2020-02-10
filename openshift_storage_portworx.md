@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,7 +39,8 @@ subcollection: openshift
 [Portworx](https://portworx.com/products/introduction/){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
 {: shortdesc}
 
-
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Portworx is available only for clusters that run OpenShift Container Platform version 3.11, and is not supported for OpenShift version 4.3 clusters.
+{: important}
 
 
 ## About Portworx
@@ -508,7 +509,7 @@ Before you begin:
 
 To install Portworx:
 
-1.  [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client version 2.14.3 or higher on your local machine, and install the Helm server (Tiller) with a service account in your cluster.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client version 2.14.3 or higher on your local machine, and install the Helm server (Tiller) with a service account in your cluster.
 
 2.  Verify that tiller is installed with a service account.
 

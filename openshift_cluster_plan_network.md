@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-05"
+lastupdated: "2020-02-10"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -82,7 +82,7 @@ When VRF is enabled, any system that is connected to any of the private VLANs in
 ### Worker-to-master and user-to-master communication: Service endpoints
 {: #workeruser-master}
 
-A communication channel must be set up so that worker nodes can establish a connection to the Kubernetes master. You can allow your worker nodes and Kubernetes master to communicate by enabling the public service endpoint only, public and private service endpoints, or the private service endpoint only.
+A communication channel must be set up so that worker nodes can establish a connection to the Kubernetes master. In version 3.11 clusters, you can allow your worker nodes and Kubernetes master to communicate by enabling the public service endpoint only or the public and private service endpoints. In version 4.3 clusters, you can allow your worker nodes and Kubernetes master to communicate by enabling the public service endpoint only. You cannot enable the private service endpoint only for OpenShift clusters.
 {: shortdesc}
 
 To secure communication over public and private service endpoints, Red Hat OpenShift on IBM Cloud automatically sets up an OpenVPN connection between the Kubernetes master and the worker node when the cluster is created. Workers securely talk to the master through TLS certificates, and the master talks to workers through the OpenVPN connection.

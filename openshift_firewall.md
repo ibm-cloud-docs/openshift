@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-05"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -398,7 +398,8 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
   - Allow outbound TCP and UDP to port 2049 to allow mounting file storage as volumes.
   - Allow outbound TCP and UDP to port 3260 for communication to block storage.
   - Allow inbound TCP and UDP connections to port 10250 for the OpenShift dashboard and commands such as `oc logs` and `oc exec`.
-  - Allow inbound and outbound connections to TCP and UDP port 53 for DNS access.
+  - OpenShift version 3.11 only: Allow inbound and outbound connections to TCP and UDP port 53 for DNS access.
+  - OpenShift version 4.3 and later only: Allow inbound and outbound connections to TCP and UDP port 5353 for DNS access.
 
 5. Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEncap traffic between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for private load balancers and the IPEncap protocol to permit pod to pod traffic across subnets.
 

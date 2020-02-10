@@ -91,7 +91,13 @@ Red Hat OpenShift on IBM Cloud
         openshift_loadbalancer_dns.md
 
     {: .topicgroup}
-    Exposing apps with Ingress
+    Exposing apps with Ingress in OpenShift 4.3 and later clusters
+        openshift_ingress_qs_roks4.md
+        openshift_ingress_about_roks4.md
+        openshift_ingress_roks4.md
+
+    {: .topicgroup}
+    Exposing apps with Ingress in OpenShift 3.11 clusters
         openshift_ingress_qs.md
         openshift_ingress_about.md
         openshift_ingress.md
@@ -110,8 +116,14 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_portworx.md
         openshift_storage_utilities.md
 
-    openshift_integrations.md
-    openshift_integrations_cloud_paks.md
+    {: .topicgroup}
+    Enhancing your cluster with Cloud Paks, Operators, and integrations
+        openshift_integrations_partnerships.md
+        openshift_integrations_ibm_third_party.md
+        openshift_integrations_cloud_paks.md
+        openshift_integrations_operators.md
+        openshift_integrations_helm.md
+        openshift_integrations_service_binding.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

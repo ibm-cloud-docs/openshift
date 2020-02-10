@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -944,6 +944,9 @@ Update the file system in the existing PV from `ext4` to `XFS`.
 {: #cos_helm_fails}
 
 
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
+
 
 {: tsSymptoms}
 When you install the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in, the installation fails with one of the following errors:
@@ -997,6 +1000,9 @@ If you see a `permission denied` error, you do not have the required `read`, `wr
 ## Object storage: PVC remains in a pending state
 {: #cos_pvc_pending}
 
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
 
 
 {: tsSymptoms}
@@ -1120,6 +1126,9 @@ During the PVC creation and binding, many different tasks are executed by the {{
 {: #cos_secret_access_fails}
 
 
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
+
 
 {: tsSymptoms}
 When you create your PVC or deploy a pod that mounts the PVC, the creation or deployment fails.
@@ -1158,6 +1167,9 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
 ### Object storage: PVC creation fails due to wrong credentials or access denied
 {: #cred_failure}
 
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
 
 
 {: tsSymptoms}
@@ -1207,6 +1219,9 @@ The {{site.data.keyword.cos_full_notm}} service credentials that you use to acce
 {: #cos_api_endpoint_failure}
 
 
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
+
 
 {: tsSymptoms}
 When you create the PVC, the PVC remains in a pending state. After you run the `oc describe pvc <pvc_name>` command, you see one of the following error messages:
@@ -1246,6 +1261,9 @@ The s3fs API endpoint for the bucket that you want to use might have the wrong f
 {: #cos_access_bucket_fails}
 
 
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
+
 
 {: tsSymptoms}
 When you create the PVC, the bucket in {{site.data.keyword.cos_full_notm}} cannot be accessed. You see an error message similar to the following:
@@ -1271,6 +1289,9 @@ You might have used the wrong storage class to access your existing bucket, or y
 ## Object storage: Changing the ownership of the mount path fails
 {: #cos_mountpath_error}
 
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
 
 
 {: tsSymptoms}
@@ -1520,6 +1541,9 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
 ## Portworx: Debugging your Portworx installation
 {: #debug-portworx}
 
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
 
 
 {: tsSymptoms}
