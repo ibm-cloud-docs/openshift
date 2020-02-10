@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -38,6 +38,9 @@ subcollection: openshift
 
 Customize logging and set up monitoring to help you troubleshoot issues and improve the performance of your Ingress configuration.
 {: shortdesc}
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is applicable to clusters that run OpenShift version 3.11 only. To learn about Ingress for OpenShift version 4.3 or later, see [About Ingress in OpenShift version 4.3 or later](/openshift?topic=openshift-ingress-about-roks4).
+{: important}
 
 ## Viewing Ingress logs
 {: #ingress_logs}
@@ -125,7 +128,7 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     <tbody>
     <tr>
     <td>`log-format`</td>
-    <td>Replace `&lt;key&gt;` with the name for the log component and `&lt;log_variable&gt;` with a variable for the log component that you want to collect in log entries. You can include text and punctuation that you want the log entry to contain, such as quotation marks around string values and commas to separate log components. For example, formatting a component like `request: "$request"` generates the following in a log entry: `request: "GET / HTTP/1.1"` . For a list of all the variables you can use, see the <a href="http://nginx.org/en/docs/varindex.html">NGINX variable index</a>.<br><br>To log an additional header such as <em>x-custom-ID</em>, add the following key-value pair to the custom log content: <br><pre class="codeblock"><code>customID: $http_x_custom_id</code></pre> <br>Hyphens (`-`) are converted to underscores (`_`) and `$http_` must be added as a prefix to the custom header name.</td>
+    <td>Replace `&lt;key&gt;` with the name for the log component and `&lt;log_variable&gt;` with a variable for the log component that you want to collect in log entries. You can include text and punctuation that you want the log entry to contain, such as quotation marks around string values and commas to separate log components. For example, formatting a component like `request: "$request"` generates the following in a log entry: `request: "GET / HTTP/1.1"` . For a list of all the variables you can use, see the [NGINX variable index](http://nginx.org/en/docs/varindex.html).<br><br>To log an additional header such as <em>x-custom-ID</em>, add the following key-value pair to the custom log content: <br><pre class="codeblock"><code>customID: $http_x_custom_id</code></pre> <br>Hyphens (`-`) are converted to underscores (`_`) and `$http_` must be added as a prefix to the custom header name.</td>
     </tr>
     <tr>
     <td>`log-format-escape-json`</td>

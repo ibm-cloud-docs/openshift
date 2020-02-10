@@ -33,28 +33,25 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Quick start for Ingress in OpenShift version 3.11
-{: #ingress-qs}
-{: help}
-{: support}
+# Quick start for Ingress in OpenShift version 4.3 and later
+{: #ingress-qs-roks4}
 
 Quickly expose your app to the Internet by creating an Ingress resource.
 {: shortdesc}
 
-First time setting up Ingress? Check out [Setting up Ingress](/docs/openshift?topic=openshift-ingress) for prerequisite steps and more details. Come back to these quick start steps for a brief refresher the next time you set up an Ingress resource.
+First time setting up Ingress? Check out [Setting up Ingress in OpenShift version 4.3 or later](/docs/openshift?topic=openshift-ingress-roks4) for prerequisite steps and more details. Come back to these quick start steps for a brief refresher the next time you set up an Ingress resource.
 {: tip}
 
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run OpenShift version 4.3 or later only. For clusters that run OpenShift version 3.11, see [Quick start for Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-qs).
+{: note}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run OpenShift version 3.11 only. For clusters that run OpenShift version 4.3 or later, see [Quick start for Ingress in OpenShift version 4.3 or later](/docs/openshift?topic=openshift-ingress-qs-roks4).
-{: important}
-
-1. Create a Kubernetes ClusterIP service for you app so that it can be included in the Ingress application load balancing.
+1. Create a Kubernetes `ClusterIP` service for you app so that it can be included in the router load balancing.
   ```
-  oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+  oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <project>
   ```
   {: pre}
 
-2. Get the Ingress subdomain and secret for your cluster.
+2. Get the Ingress subdomain for your cluster.
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID> | grep Ingress
     ```
@@ -66,17 +63,13 @@ First time setting up Ingress? Check out [Setting up Ingress](/docs/openshift?to
     ```
     {: screen}
 
-3. Using the Ingress subdomain and secret, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If you app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
+3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If you app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
   ```yaml
   apiVersion: extensions/v1beta1
   kind: Ingress
   metadata:
     name: myingressresource
   spec:
-    tls:
-    - hosts:
-      - <ingress_subdomain>
-      secretName: <ingress_secret>
     rules:
     - host: <ingress_subdomain>
       http:
@@ -88,9 +81,9 @@ First time setting up Ingress? Check out [Setting up Ingress](/docs/openshift?to
   ```
   {: codeblock}
 
-4. Create the Ingress resource.
+4. Create the Ingress resource in the same project as your app service.
   ```
-  oc apply -f myingressresource.yaml
+  oc apply -f myingressresource.yaml -n <project>
   ```
   {: pre}
 
@@ -99,4 +92,3 @@ First time setting up Ingress? Check out [Setting up Ingress](/docs/openshift?to
   https://<ingress_subdomain>/<app_path>
   ```
   {: codeblock}
-

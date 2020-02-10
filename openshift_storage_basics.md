@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -225,6 +225,39 @@ When you dynamically provision persistent storage by using a storage class, you 
    </tr>
 </tbody>
 </table>
+
+### Changing the default storage class
+{: #default_storageclass}
+
+You can change the default storage class that a persistent volume (PV) uses if no storage class is specified in the persistent volume claim (PVC). You can have only one default storage class. The default storage classes vary by the Kubernetes version of your cluster. When you update a cluster from an earlier version of Kubernetes, the default storage class does not change.
+{: shortdesc}
+
+*  **Kubernetes 1.17 and later**: `ibmc-file-gold`
+*  **Kubernetes 1.16 and earlier**: `ibmc-file-bronze`
+
+To change the default storage class for a cluster:
+
+1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+2.  List available storage classes. Note the name of the storage class that you want to make the default, and the current default storage class that has `(default)` in the **Name**.
+    ```
+    oc get storageclasses
+    ```
+    {: pre}
+3.  Create a default storage class, replacing `<storageclass>` with the storage class that you want to use.
+    ```
+    oc patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+    ```
+    {: pre}
+4.  Remove the previous default storage class.
+    ```
+    oc patch storageclass <previous_default_storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+    ```
+    {: pre}
+5.  Verify that the default storage class is set.
+    ```
+    oc get storageclasses | grep "(default)"
+    ```
+    {: pre}
 
 
 

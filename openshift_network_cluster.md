@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -38,17 +38,16 @@ subcollection: openshift
 
 After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-clusters), you can change the service endpoints that your Kubernetes master is accessible through or change the VLAN connections for your worker nodes.
 {: shortdesc}
+<p class="important">In OpenShift clusters, you must enable the public service endpoint during cluster creation, and you cannot later disable it. If no public service endpoint for the cluster exists, a subdomain for the router is not generated.<br><br><img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Also, for clusters that run version 4.3, you cannot use the private service endpoint. If your cluster does have a private service endpoint, you must delete the cluster and re-create it without a private service endpoint.</p>
 
-In OpenShift clusters, you must enable the public service endpoint during cluster creation, and you cannot later disable it. If no public service endpoint for the cluster exists, a subdomain for the router is not generated.
-{: important}
-
-## Setting up the private service endpoint
+## 3.11 clusters only: Setting up the private service endpoint
 {: #set-up-private-se}
 
 Enable the private service endpoint for your cluster.
 {: shortdesc}
 
-
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> You can set up the private service endpoint for clusters that run OpenShift version 3.11 only. You cannot use the private service endpoint with version 4.3 clusters.
+{: note}
 
 The private service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private service endpoint, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#workeruser-master). Note that you cannot disable the private service endpoint after you enable it.
 
@@ -86,7 +85,7 @@ The private service endpoint makes your Kubernetes master privately accessible. 
 Enable the public service endpoint for your cluster.
 {: shortdesc}
 
-Your cluster must have a public service endpoint.
+Your cluster must have a public service endpoint. Also, if your cluster runs version 4.3, you cannot have a private service endpoint. You must use only the public service endpoint.
 {: important}
 
 The public service endpoint makes your Kubernetes master publicly accessible. Your worker nodes and your authorized cluster users can securely communicate with the Kubernetes master over the public network. For more information, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#internet-facing).

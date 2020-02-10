@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,7 +39,7 @@ subcollection: openshift
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Billing](/docs/FileStorage?topic=FileStorage-about#billing).
 {: shortdesc}
 
- NFS {{site.data.keyword.filestorage_short}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is available for clusters that run OpenShift Container Platform version 3.11 and 4.3. NFS {{site.data.keyword.filestorage_short}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
 ## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}
@@ -362,7 +362,7 @@ To add {{site.data.keyword.filestorage_short}}:
        </tr>
        <tr>
        <td><code>spec.storageClassName</code></td>
-       <td>The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](#file_storageclass_reference) or [create your own storage class](#file_custom_storageclass). </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code>. </br></br><strong>Tip:</strong> If you want to change the default storage class, run <code>oc patch storageclass &lt;storageclass&gt; -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'</code> and replace <code>&lt;storageclass&gt;</code> with the name of the storage class.</td>
+       <td>The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](#file_storageclass_reference) or [create your own storage class](#file_custom_storageclass). </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code>. </br></br>**Tip:** Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).</td>
        </tr>
        </tbody></table>
 

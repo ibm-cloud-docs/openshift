@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -56,7 +56,7 @@ See the topic in the [{{site.data.keyword.containerlong_notm}} docs](/docs/conta
 {: support}
 {: help}
 
-To view a local version of the OpenShift dashboard and to deploy apps into your Red Hat OpenShift on IBM Cloud clusters, install the OpenShift CLI (`oc`) and Kubernetes CLI (`kubectl`). For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/3.11/cli_reference/get_started_cli.html){: external}.
+To view a local version of the OpenShift dashboard and to deploy apps into your Red Hat OpenShift on IBM Cloud clusters, install the OpenShift CLI (`oc`) and Kubernetes CLI (`kubectl`). For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html){: external}.
 {: shortdesc}
 
 Using both community Kubernetes and OpenShift clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on OpenShift and 1.15.8 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} for your cluster `major.minor` Kubernetes version. 
@@ -66,7 +66,7 @@ Using both community Kubernetes and OpenShift clusters? Your clusters might run 
 
     *   [OpenShift Container Platform 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
 
-2.  [Download the Kubernetes CLI (`kubectl`)](/docs/containers?topic=containers-cs_cli_install#kubectl) for your OpenShift cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.16.5.
+2.  [Download the Kubernetes CLI (`kubectl`)](/docs/containers?topic=containers-cs_cli_install#kubectl) for your OpenShift cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.17.2.
 
     *  For clusters that run OpenShift 3.11: Download at least version 1.13. Because `kubectl` versions 1.11 and 1.12 are no longer supported, the `kubectl` version that you use for your OpenShift 3.11, Kubernetes 1.11 cluster cannot meet the `+/- 1` [skew policy](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external}. Instead, use at least `kubectl` version 1.13 to protect your cluster from Common Vulnerability and Exposures (CVEs) that might arise in unsupported versions.
 
@@ -99,7 +99,7 @@ Using both community Kubernetes and OpenShift clusters? Your clusters might run 
 
 Next, start [Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial).
 
-For more information about the OpenShift CLI, see the [`oc` commands docs](https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html){: external}.
+For more information about the `oc` CLI, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html){: external}.
 {: note}
 
 <br />

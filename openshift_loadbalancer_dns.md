@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-06"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -36,7 +36,7 @@ subcollection: openshift
 # Registering a DNS subdomain for an NLB
 {: #loadbalancer_hostname}
 
-After you set up network load balancers (NLBs), you can create DNS entries for the NLB IPs by creating subdomains. You can also set up TCP/HTTP(S) monitors to health check the NLB IP addresses behind each subdomain. 
+After you set up network load balancers (NLBs), you can create DNS entries for the NLB IPs by creating subdomains. You can also set up TCP/HTTP(S) monitors to health check the NLB IP addresses behind each subdomain.
 {: shortdesc}
 
 <dl>
@@ -123,40 +123,19 @@ Subdomains for NLBs follow the format `<cluster_name>-<globally_unique_account_H
 
 For example, a subdomain that you create for an NLB might look like `mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud`. The following table describes each component of the subdomain.
 
-<table>
-<thead>
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the NLB subdomain format</th>
-</thead>
-<tbody>
-<tr>
-<td><code>&lt;cluster_name&gt;</code></td>
-<td>The name of your cluster.
-<ul><li>If the cluster name is 26 characters or fewer, the entire cluster name is included and is not modified: <code>myclustername</code>.</li>
-<li>If the cluster name is 26 characters or greater and the cluster name is unique in this region, only the first 24 characters of the cluster name are used: <code>myveryverylongclusternam</code>.</li>
-<li>If the cluster name is 26 characters or greater and there is an existing cluster of the same name in this region, only the first 17 characters of the cluster name are used and a dash with six random characters is added: <code>myveryverylongclu-ABC123</code>.</li></ul>
-</td>
-</tr>
-<tr>
-<td><code>&lt;globally_unique_account_HASH&gt;</code></td>
-<td>A globally unique HASH is created for your {{site.data.keyword.cloud_notm}} account. All subdomains that you create for NLBs in clusters in your account use this globally unique HASH.</td>
-</tr>
-<tr>
-<td><code>0001</code></td>
-<td>
-The first and second characters, <code>00</code>, indicate a public subdomain. The third and fourth characters, such as <code>01</code> or another number, act as a counter for each subdomain that you create.</td>
-</tr>
-<tr>
-<td><code>&lt;region&gt;</code></td>
-<td>The region that the cluster is created in.</td>
-</tr>
-<tr>
-<td><code>containers.appdomain.cloud</code></td>
-<td>The subdomain for Red Hat OpenShift on IBM Cloud subdomains.</td>
-</tr>
-</tbody>
-</table>
+|NLB subdomain component|Description|
+|----|----|
+|`*`|The wildcard for the subdomain is registered by default for your cluster.|
+|`<cluster_name>`|The name of your cluster.<ul><li>If the cluster name is 26 characters or fewer, the entire cluster name is included and is not modified: `myclustername`.</li><li>If the cluster name is 26 characters or greater and the cluster name is unique in this region, only the first 24 characters of the cluster name are used: `myveryverylongclusternam`.</li><li>If the cluster name is 26 characters or greater and there is an existing cluster of the same name in this region, only the first 17 characters of the cluster name are used and a dash with six random characters is added: `myveryverylongclu-ABC123`.</li></ul>|
+|`<globally_unique_account_HASH>`|A globally unique HASH is created for your {{site.data.keyword.cloud_notm}} account. All subdomains that you create for NLBs in clusters in your account use this globally unique HASH.|
+|`0001`|The first and second characters indicate a public or a private (internal) subdomain.<ul><li>`00` indicates a subdomain that has a public DNS entry.</li><li>`i0` indicates a subdomain that has a private DNS entry.</li><ul>
+The first and second characters, `00`, indicate a public subdomain. The third and fourth characters, such as `01` or another number, act as a counter for each subdomain that you create.|
+|`<region>`|The region that the cluster is created in.|
+|`containers.appdomain.cloud`|The subdomain for Red Hat OpenShift on IBM Cloud subdomains.|
+{: caption="Understanding the NLB subdomain format"}
 
-</br>
+<br />
+
 
 ## Enable health checks on a subdomain by creating a health monitor
 {: #loadbalancer_hostname_monitor}

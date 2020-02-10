@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-10"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -78,6 +78,7 @@ Check out the following changes between each version of the CLI plug-in:
 | Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul> | Legacy | Legacy | Legacy | Beta |
 | API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul> | Legacy | Beta | Beta | Beta |
 {: caption="Beta versions of the redesigned {{site.data.keyword.containerlong_notm}} plug-in" caption-side="top"}
+{: summary="The rows are read from left to right, with the functionality in column one, version 0.2 of the CLI in column two, version 0.3 in column three, version 0.4 in column four, and version 1.0 in column five."}
 
 <br />
 
@@ -376,10 +377,10 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <p>To find out whether you already have a public VLAN for a specific zone or to find the name of an existing public VLAN, run <code>ibmcloud oc vlan ls --zone <em>&lt;zone&gt;</em></code>.</p></dd>
 
 <dt><code>--private-service-endpoint</code></dt>
-<dd>**Standard clusters in [accounts that are enabled with VRF and service endpoints](/docs/resources?topic=resources-private-network-endpoints)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11 clusters only, standard clusters in [accounts that are enabled with VRF and service endpoints](/docs/resources?topic=resources-private-network-endpoints)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--public-service-endpoint</code></dt>
-<dd>Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. If you have an [account that is enabled with VRF and service endpoints](/docs/resources?topic=resources-private-network-endpoints) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd>Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. For 3.11 clusters only, i you have an [account that is enabled with VRF and service endpoints](/docs/resources?topic=resources-private-network-endpoints) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--workers WORKER</code></dt>
 <dd>The number of worker nodes that you want to deploy in your cluster. If you do not specify this option, a cluster with one worker node is created. This value is optional for standard clusters and is not available for free clusters.
@@ -1925,16 +1926,36 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 </dl>
 
 **Usage**:
-<ol><li>Check the VLANs that are available in your cluster. <pre class="pre"><code>ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt; --show-resources</code></pre><p>Example output:</p>
-<pre class="screen"><code>Subnet VLANs
-VLAN ID   Subnet CIDR         Public   User-managed
-229xxxx   169.xx.xxx.xxx/29   true     false
-229xxxx   10.xxx.xx.x/29      false    false</code></pre></li>
-<li>Check that the public and private VLAN IDs that you want to use are compatible. To be compatible, the <strong>Router</strong> must have the same pod ID. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.<pre class="pre"><code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code></pre><p>Example output:</p>
-<pre class="screen"><code>ID        Name   Number   Type      Router         Supports Virtual Workers
-229xxxx          1234     private   bcr01a.dal12   true
-229xxxx          5678     public    fcr01a.dal12   true</code></pre><p>Note that <strong>Router</strong> pod IDs match: `01a` and `01a`. If one pod ID was `01a` and the other was `02a`, you cannot set these public and private VLAN IDs for your worker pool.</p></li>
-<li>If you do not have any VLANs available, you can <a href="/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans">order new VLANs</a>.</li></ol>
+1. Check the VLANs that are available in your cluster.
+  ```
+  ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources
+  ```
+  {: pre}
+
+  Example output:
+  ```
+  Subnet VLANs
+  VLAN ID   Subnet CIDR         Public   User-managed
+  229xxxx   169.xx.xxx.xxx/29   true     false
+  229xxxx   10.xxx.xx.x/29      false    false
+  ```
+  {: screen}
+
+2. Check that the public and private VLAN IDs that you want to use are compatible. To be compatible, the **Router** must have the same pod ID. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.
+  ```
+  ibmcloud oc vlan ls --zone <zone>
+  ```
+  {: pre}
+
+  In the exmaple output, note that **Router** pod IDs match: `01a` and `01a`. If one pod ID was `01a` and the other was `02a`, you cannot set these public and private VLAN IDs for your worker pool.
+  ```
+  ID        Name   Number   Type      Router         Supports Virtual Workers
+  229xxxx          1234     private   bcr01a.dal12   true
+  229xxxx          5678     public    fcr01a.dal12   true
+  ```
+  {: screen}
+
+3. If you do not have any VLANs available, you can [order new VLANs](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans).
 
 **Example**:
 ```

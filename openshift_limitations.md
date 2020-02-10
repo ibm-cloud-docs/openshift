@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -56,16 +56,39 @@ Red Hat OpenShift on IBM Cloud comes with the following service limitations. Kee
 | Container images | You cannot use the [Container Image Security Enforcement (CISE) Helm chart](/docs/services/Registry?topic=registry-security_enforce) with OpenShift clusters. |
 | Free clusters | You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then redeploy the apps that you try out in the Kubernetes cluster to your OpenShift cluster. |
 | Kubernetes | Make sure to review the [Kubernetes project limitations](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external}. |
-| OpenShift | Make sure to review the [OpenShift Container Platform limitations](https://docs.openshift.com/container-platform/3.11/scaling_performance/cluster_limits.html#scaling-performance-cluster-limits){: external} for your version.|
+| OpenShift | Make sure to review the [OpenShift Container Platform limitations](https://docs.openshift.com/container-platform/4.3/scalability_and_performance/planning-your-environment-according-to-object-maximums.html){: external} for your version.|
 | Kubernetes pod logs | To check the logs for individual app pods, you can use the terminal to run `oc logs <pod name>`. Do not use the Kubernetes dashboard to stream logs for your pods, which might cause a disruption in your access to the Kubernetes dashboard. |
 | Kubernetes API audit logs | Collecting and forwarding API audit logs to {{site.data.keyword.la_full_notm}} is not supported. |
-| Logging | You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you cannot modify the default configuration of the Red Hat OpenShift on IBM Cloud cluster. |
+| Logging | <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you cannot modify the default configuration of the Red Hat OpenShift on IBM Cloud cluster.<br><br><img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 4.3**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator). |
 | Monitoring | The [built-in Prometheus](/docs/openshift?topic=openshift-openshift_apps#openshift_access_oc_services) alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are part of the IBM-managed cluster master, so you can ignore these alerts.</br></br>Example alert:</br>`alert: KubeControllerManagerDown`</br>`expr: absent(up{job="kube-controllers"}`</br>`  == 1)</br>for: 15m</br>labels:`</br>  `severity: critical`</br>`annotations:`</br>` message: KubeControllerManager has disappeared from Prometheus target discovery.`|
 {: summary="This table contains information on general Red Hat OpenShift on IBM Cloud limitations. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Red Hat OpenShift on IBM Cloud limitations"}
 
 <br />
 
+
+
+
+### Version 4.3 cluster limitations
+{: #ocp4_limitations}
+
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-beta-flair.png" alt="Beta icon" width="30" style="width:30px; border-style: none"/> Red Hat OpenShift on IBM Cloud version 4.3 is available as a beta. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Beta releases have limited features and might experience intermittent errors. For more information, review the [troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot), [limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations), and [internal](https://ibm-argonauts.slack.com/archives/CJH0UPN2D){: external} or [external](https://ibm-container-service.slack.com/archives/CKCJLJCH4){: external} Slack channel.
+{: preview}
+
+Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_limits) limitations also apply.
+
+| Category | Description |
+| -------- | ----------- |
+| Container logs | If you use a container logging operator such as Fluentd to send logs to an Elasticsearch stack, you must [update the cluster logging deployment to use the `/var/data` path to container logs](/docs/openshift?topic=openshift-health#oc_logging_operator).|
+| Key management service (KMS) provider | You cannot use a KMS provider such as {{site.data.keyword.keymanagementservicelong}} to encrypt secrets in your cluster. |
+| Managed add-ons | Managed add-ons such as the debug tool are not supported. |
+| Private clusters | You cannot create OpenShift clusters with a private service endpoint. Also, as with version 3.11, you cannot create clusters with only private VLAN connectivity. |
+| Private routing | Private routes are currently not supported. Instead, you can [create a private network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer). |
+| Serverless | The Knative managed add-on is not supported. Instead, try out the tech preview for the [OpenShift Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}. |
+| Service mesh | The Istio managed add-on is not supported. Instead, use the [Red Hat service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/servicemesh-release-notes.html){: external}. **Note**: The default {{site.data.keyword.cloud_notm}} configuration of the routers enables host networking, which is not compatible with the service mesh network policy. For the service mesh ingress to work, [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external}.|
+| Virtual private cloud (VPC) | As with version 3.11, you cannot create OpenShift version 4.3 clusters in a VPC. |
+{: summary="This table contains information on limitations for OpenShift Container Platform version 4.3 clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
+{: caption="OpenShift Container Platform version 4.3 cluster limitations"}
 
 
 
@@ -115,7 +138,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Category | Description |
 | -------- | ----------- |
 | Volume instances | You can have a total of 250 IBM Cloud infrastructure file and block storage volumes per account. If you mount more than this amount, you might see an "out of capacity" message when you provision persistent volumes and need to contact your IBM Cloud infrastructure representative. For more FAQs, see the [file](/docs/FileStorage?topic=FileStorage-file-storage-faqs#how-many-volumes-can-i-provision-) and [block](/docs/BlockStorage?topic=BlockStorage-block-storage-faqs#how-many-instances-can-share-the-use-of-a-block-storage-volume-) storage docs. |
-| File storage | Because of the way that {{site.data.keyword.cloud_notm}} NFS file storage configures Linux user permissions, you might encounter errors when you use file storage. If so, you might need to configure [OpenShift Security Context Constraints](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html){: external} or use a different storage type. |
+| File storage | Because of the way that {{site.data.keyword.cloud_notm}} NFS file storage configures Linux user permissions, you might encounter errors when you use file storage. If so, you might need to configure [OpenShift Security Context Constraints](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external} or use a different storage type. |
 {: summary="This table contains information on storage limitations for classic clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Classic cluster storage limitations"}
 

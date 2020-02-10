@@ -91,7 +91,13 @@ Red Hat OpenShift on IBM Cloud
         openshift_loadbalancer_dns.md
 
     {: .topicgroup}
-    Exposing apps with Ingress
+    Exposing apps with Ingress in OpenShift 4.3 and later clusters
+        openshift_ingress_qs_roks4.md
+        openshift_ingress_about_roks4.md
+        openshift_ingress_roks4.md
+
+    {: .topicgroup}
+    Exposing apps with Ingress in OpenShift 3.11 clusters
         openshift_ingress_qs.md
         openshift_ingress_about.md
         openshift_ingress.md
@@ -110,8 +116,14 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_portworx.md
         openshift_storage_utilities.md
 
-    openshift_integrations.md
-    openshift_integrations_cloud_paks.md
+    {: .topicgroup}
+    Enhancing your cluster with Cloud Paks, Operators, and integrations
+        openshift_integrations_partnerships.md
+        openshift_integrations_ibm_third_party.md
+        openshift_integrations_cloud_paks.md
+        openshift_integrations_operators.md
+        openshift_integrations_helm.md
+        openshift_integrations_service_binding.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -121,7 +133,7 @@ Red Hat OpenShift on IBM Cloud
     API reference
         [IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/)
         [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json)
-        [OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/3.11/rest_api/index.html)
+        [OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.3/rest_api/index.html)
 
     {: .topicgroup}
     CLI plug-in reference

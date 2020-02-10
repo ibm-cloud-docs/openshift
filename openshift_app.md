@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-28"
+lastupdated: "2020-02-10"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -42,7 +42,27 @@ With {{site.data.keyword.openshiftlong}} clusters, you can deploy apps from a re
 ## Moving your apps to OpenShift
 {: #openshift_move_apps}
 
-To create a new app in your Red Hat OpenShift on IBM Cloud cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html#new-app){: external}. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [OpenShift documentation](https://docs.openshift.com/container-platform/3.11/getting_started/developers_cli.html){: external}.
+
+To create an app in your Red Hat OpenShift on IBM Cloud cluster, you can use the OpenShift console or CLI.
+{: shortdesc}
+
+### Deploying apps through the console
+{: #deploy_apps_ui}
+
+You can create apps through various methods in the OpenShift console by using the **Developer** perspective. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.2/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
+{: shortdesc}
+
+1.  From the [Cluster](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) page, select your cluster.
+2.  Click **OpenShift web console**.
+3.  From the perspective switcher, select **Developer**. The OpenShift web console switches to the Developer perspective, and the menu now offers items such as **+Add**, **Topology**, and **Builds**.
+4.  Click **+Add**.
+5.  In the **Add** pane menu bar, select the **Project** that you want to create your app in from the drop-down list.
+6.  Click the method that you want to use to add your app, and follow the instructions. For example, click **From Git**.
+
+### Deploying apps through the CLI
+{: #deploy_apps_cli}
+
+To create an app in your Red Hat OpenShift on IBM Cloud cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/creating-applications-using-cli.html){: external}.
 {: shortdesc}
 
 
@@ -52,7 +72,7 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 {: pre}
 
 **What does the `new-app` command do?**<br>
-The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [OpenShift documentation](https://docs.openshift.com/container-platform/3.11/dev_guide/application_lifecycle/new_app.html#dev-guide-new-app){: external}.
+The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/creating-applications-using-cli.html){: external}.
 
 <br />
 
@@ -76,7 +96,7 @@ OpenShift has different default settings than community Kubernetes, such as stri
 <tbody>
 <tr>
 <td>Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status</td>
-<td>The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html).</td>
+<td>The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html).</td>
 </tr>
 <tr>
 <td>Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories.</td>
@@ -95,11 +115,11 @@ OpenShift has different default settings than community Kubernetes, such as stri
 <td>Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions:<ul>
 <li>Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port.</li>
 <li>Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc).</li>
-<li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/port_forwarding.html).</li></ul></td>
+<li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/nodes/containers/nodes-containers-port-forwarding.html).</li></ul></td>
 </tr>
 <tr>
 <td>Other use cases and scenarios</td>
-<td>Review the [OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html) for migrating databases, web framework apps, CI/CD, and other examples.</td>
+<td>Review the OpenShift documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 2 to version 3 ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html), or [from OCP version 3 to version 4](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration).</td>
 </tr>
 </tbody>
 </table>
@@ -127,7 +147,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     oc create serviceaccount <sa_name>
     ```
     {: pre}
-4.  Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are included in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [OpenShift documentation](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html){: external}.</p>
+4.  Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are included in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}.</p>
     ```
     oc adm policy add-scc-to-user privileged -n <project_name> -z <sa_name>
     ```
@@ -170,13 +190,238 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 <br />
 
 
-## Packaging apps by using Helm charts
+## Packaging apps in 4.3 clusters for reuse in multiple environments with Kustomize
+{: #kustomize}
+
+As part of a [twelve-factor](https://12factor.net/){: external}, cloud-native app, you want to maintain dev-to-prod parity by setting up a continuous development and delivery pipeline that uses a common, version-controlled codebase source. In your codebase repositories, you store your Kubernetes resource configuration manifest files, often in YAML format. You can use the Kubernetes project [Kustomize](https://kustomize.io/){: external} both to standardize and customize your deployments across multiple environments.
+{: shortdesc}
+
+For example, you can set up a base `kustomization` YAML to declare Kubernetes objects such as deployments and PVCs that are shared in your development, testing, and production environments. Next, you can set up separate `kustomization` YAMLs that have customized configurations for each environment, such as more replicas in production than testing. These customized YAMLs can then overlay, or build on, the shared base YAML so that you can manage environments that are mostly identical except for a few overlay configuration differences that you source-control. For more information about Kustomize such as a glossary and FAQs, check out the [Kustomize docs](https://github.com/kubernetes-sigs/kustomize/tree/master/docs){: external}.
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Kustomize is not supported for OpenShift clusters that run version 3.11.
+{: note}
+
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+
+To set up configuration files with Kustomize:
+1.  [Install the `kustomize` tool](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/INSTALL.md){: external}.
+    *   For macOS, you can use the `brew` package manager.
+        ```
+        brew install kustomize
+        ```
+        {: pre}
+    *   For Windows, you can use the `chocolatey` package manager.
+        ```
+        choco install kustomize
+        ```
+        {: pre}
+2.  Create a directory for your app in a version control system, such as Git.
+    ```
+    git init ~/<my_app>
+    ```
+    {: pre}
+3.  Create your repo structure for your `kustomize` [`base`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#base){: external} directory, [`overlay`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#overlay){: external} directory, and environment directories such as staging and production. In the subsequent steps, you set up these repos for use with `kustomize`.
+    ```
+    mkdir -p ~/<my_app>/base &&
+    mkdir -p ~/<my_app>/overlay &&
+    mkdir -p ~/<my_app>/overlay/staging &&
+    mkdir -p ~/<my_app>/overlay/prod
+    ```
+    {: pre}
+
+    Example repo structure:
+    ```
+    .
+    ├── base
+    └── overlay
+        ├── prod
+        └── staging
+    ```
+    {: screen}
+4.  Set up the `base` repo.
+    1.  Navigate to the base repo.
+        ```
+        cd ~/<my_app>/base
+        ```
+        {: pre}
+    2.  Create an initial set of Kubernetes configuration YAML files for your app deployment.
+    3.  Create a [`kustomization` file](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file) that specifies the base configuration to be applied across environments. The `kustomization` file must include the list of Kubernetes resource configuration YAMLs that are stored in the same `base` repo. In the `kustomization` file, you can also add configurations that apply to all the resource YAMLs in the base repo, such as a prefix or suffix that is appended to all the resource names, a label, the existing namespace all the resources are created in, secrets, configmaps, and more.
+        ```
+        apiVersion: kustomize.config.k8s.io/v1beta1
+        kind: Kustomization
+        namespace: wasliberty
+        namePrefix: kustomtest-
+        nameSuffix: -v2
+        commonLabels:
+          app: kustomized-wasliberty
+        resources:
+        - deployment.yaml
+        - service.yaml
+        - pvc.yaml
+        - configmap.yaml
+        - secret.yaml
+        ```
+        {: codeblock}
+
+        The names of the `resources` YAMLs must match the names of the other files in the `base` repo. You might include multiple configurations in the same file, but in the example, the configurations are separate files such as `deployment.yaml`, `service.yaml`, and `pvc.yaml`.
+
+    4.  Build your resource YAML files with the configurations that you defined in the `kustomization` base YAML file. The resources are built by combining the configurations in the `kustomization` and resource YAMLs together. The combined YAML files are returned in `stdout` in the terminal output. Use this same command to build any subsequent changes that you make to the `kustomization` YAML, such adding a label.
+        ```
+        kustomize build
+        ```
+        {: pre}
+5.  Set up your overlay repo with unique `kustomization` YAML files for each of your environments, such as staging and prod.
+    1.  In the staging repo, create a `kustomization.yaml` file. Add any configurations that are unique to staging, such as a label, image tag, or YAML for a new component that you want to test out.
+        ```
+        apiVersion: kustomize.config.k8s.io/v1beta1
+        kind: Kustomization
+        namePrefix: staging-
+        commonLabels:
+          env: staging
+          owner: TeamA
+        bases:
+        - ../../base
+        patchesStrategicMerge:
+        - configmap.yaml
+        - new_staging_resource.yaml
+        resources:
+        - new_staging_resource.yaml
+        ```
+        {: codeblock}
+        <table summary="A table that describes in Column 1 the YAML file fields and in Column 2 how to fill out those fields.">
+        <caption>YAML components</caption>
+        <thead>
+        <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>namePrefix</code></td>
+        <td>Specify a prefix to attach to the name of each resource that you want to create with your staging `kustomization` file, such as `staging-`.</td>
+        </tr>
+        <tr>
+        <td><code>commonLabels</code></td>
+        <td>Add labels that are unique to the staging objects, such as the staging environment and responsible team.</td>
+        </tr>
+        <tr>
+        <td><code>bases</code></td>
+        <td>Add a relative path to a directory or URL to a remote repo that contains a base `kustomization` file. In this example, the relative path points to the base `kustomization` file in the `base` repo that you previously created. This field is required for an overlay `kustomization`.</td>
+        </tr>
+        <tr>
+        <td><code>patchesStrategicMerge</code></td>
+        <td>List the resource configuration YAML files that you want to merge to the base `kustomization`. You must also add these files to the same repo as the `kustomization` file, such as `overlay/staging`. These resource configuration files can contain small changes that are merged to the base configuration files of the same name as a patch. The resource gets all the components that are in the `base` configuration file, plus any additional components that you specify in the `overlay` configuration file.<br><br>If the configuration is a new file that is not in the base, you must also add the file name to the `resources` field.</td>
+        </tr>
+        <tr>
+        <td><code>resources</code></td>
+        <td>List any resource configuration YAML files that are unique to the staging repo and not included in the base repo. Include these files in the `patchesStrategicMerge` field also, and add them to the same repo as the `kustomization` file, such as `overlay/staging`.</td>
+        </tr>
+        <tr>
+        <td>Other possible configurations</td>
+        <td>For more configurations that you might add to your file, see the [Make a `kustomization` file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file).</td>
+        </tr>
+        </tbody></table>
+    2.  Build your staging overlay configuration files.
+        ```
+        kustomize build overlay/staging
+        ```
+        {: pre}
+    3.  Repeat these steps to create your prod overlay `kustomization` and other configuration YAML files. For example, you might increase the number of replicas in your `deployment.yaml` so that your prod environment can handle more user requests.
+    4.  Review your `kustomize` repo structure to make sure that it includes all the YAML configuration files that you need. The structure might look similar to the following example.
+        ```
+        ├── base
+        │   ├── configmap.yaml
+        │   ├── deployment.yaml
+        │   ├── kustomization.yaml
+        │   ├── pvc.yaml
+        │   ├── secret.yaml
+        │   └── service.yaml
+        └── overlay
+            ├── prod
+            │   ├── deployment.yaml
+            │   ├── kustomization.yaml
+            │   └── new_prod_resource.yaml
+            └── staging
+                ├── configmap.yaml
+                ├── kustomization.yaml
+                └── new_staging_resource.yaml
+        ```
+        {: screen}
+6.  Apply the Kubernetes resources for the environment that you want to deploy. The following example uses the staging repo.
+    1.  Navigate to the staging overlay directory. If you did not build your resources in the previous step, create them now.
+        ```
+        cd overlay/staging && kustomize build
+        ```
+        {: pre}
+    2.  Apply the Kubernetes resources to your cluster. Include the `-k` flag and the directory where the `kustomization` file is located. For example, if you are already in the staging directory, include `../staging` to mark the path to the directory.
+        ```
+        oc apply -k ../staging
+        ```
+        {: pre}
+        Example output:
+        ```
+        configmap/staging-kustomtest-configmap-v2 created
+        secret/staging-kustomtest-secret-v2 created
+        service/staging-kustomtest-service-v2 created
+        deployment.apps/staging-kustomtest-deployment-v2 created
+        job.batch/staging-pi created
+        persistentvolumeclaim/staging-kustomtest-pvc-v2 created
+        ```
+    3.  Check to make sure that the staging-unique changes are applied. For example, if you added a `staging-` prefix, the pods and other resources that are created include this prefix in their name.
+        ```
+        oc get -k ../staging
+        ```
+        {: pre}
+        Example output:
+        ```
+        NAME                                        DATA   AGE
+        configmap/staging-kustomtest-configmap-v2   2      90s
+
+        NAME                                  TYPE     DATA   AGE
+        secret/staging-kustomtest-secret-v2   Opaque   2      90s
+
+        NAME                                    TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+        service/staging-kustomtest-service-v2   NodePort   172.21.xxx.xxx   <none>        9080:30200/TCP   90s
+
+        NAME                                               READY   UP-TO-DATE   AVAILABLE   AGE
+        deployment.apps/staging-kustomtest-deployment-v2   0/3     3            0           91s
+
+        NAME                   COMPLETIONS   DURATION   AGE
+        job.batch/staging-pi   1/1           41s        2m37s
+
+        NAME                                              STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS       AGE
+        persistentvolumeclaim/staging-kustomtest-pvc-v2   Pending                                      ibmc-file-bronze   90s
+        ```
+        {: screen}
+    4.  Repeat these steps for each environment that you want to build.
+7.  **Optional**: Clean up your environment by removing all the resources that you applied with Kustomize.
+    ```
+    oc delete -k <directory>
+    ```
+    {: pre}
+    Example output:
+    ```
+    configmap "staging-kustomtest-configmap-v2" deleted
+    secret "staging-kustomtest-secret-v2" deleted
+    service "staging-kustomtest-service-v2" deleted
+    deployment.apps "staging-kustomtest-deployment-v2" deleted
+    job.batch "staging-pi" deleted
+    persistentvolumeclaim "staging-kustomtest-pvc-v2" deleted
+    ```
+    {: screen}
+
+<br />
+
+
+
+## Packaging apps in OpenShift 3.11 clusters by using Helm charts
 {: #roks_helm}
 
 You can add complex OpenShift apps to your cluster by using Helm charts.
 {: shortdesc}
 
-[Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> In OpenShift clusters that run version 4.3 or later, instead of Helm charts, use [Operators](/docs/openshift?topic=openshift-operators) to package, deploy, and update apps or [Kustomize](#kustomize) to package apps for reuse. If you have custom Helm charts, you can create a [Helm-based Operator](https://docs.openshift.com/container-platform/4.2/operators/operator_sdk/osdk-helm.html){: external} instead.
+{: tip}
+
+[Helm](https://helm.sh){: external} is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
 
 Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
@@ -248,7 +493,7 @@ You can use the OpenShift console to manage your apps, deploy apps from the cata
 
 For a quick walk-through of the console, see the [tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console).
 
-For more information about the console, see the [OpenShift documentation](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external}.
+For more information about the console, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
 
 <br />
 

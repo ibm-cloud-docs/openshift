@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
@@ -36,7 +36,7 @@ subcollection: openshift
 # Configuring security context constraints
 {: #openshift_scc}
 
-With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html){: external}.
+With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}.
 {: shortdesc}
 
 **Why do I set security context constraints?**</br>
@@ -77,7 +77,7 @@ The default {{site.data.keyword.openshiftshort}} SCCs are stricter than the defa
 ## Customizing security context constraints
 {: #customize_sccs}
 
-To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_scc.html){: external}. You can also add users or groups to the default security context constraints.
+To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}. You can also add users or groups to the default security context constraints.
 {: shortdesc}
 
 Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 CLI has a bug that yields an error when you run commands against {{site.data.keyword.openshiftshort}}-specific resources, such as `kubectl get scc`.

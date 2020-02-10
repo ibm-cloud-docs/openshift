@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -59,12 +59,12 @@ Have you created a cluster before and are just looking for quick example command
 
 * Classic cluster, shared virtual machine:
    ```
-   ibmcloud oc cluster create classic --name my_cluster --kube-version 3.11_openshift --zone dal10 --machine-type b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+   ibmcloud oc cluster create classic --name my_cluster --kube-version 4.3_openshift --zone dal10 --machine-type b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
    ```
    {: pre}
 *  Classic cluster, bare metal:
    ```
-   ibmcloud oc cluster create classic --name my_cluster --kube-version 3.11_openshift --zone dal10 --machine-type mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+   ibmcloud oc cluster create classic --name my_cluster --kube-version 4.3_openshift --zone dal10 --machine-type mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
    ```
    {: pre}
 *  For a classic multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones), [add zones](/docs/openshift?topic=openshift-add_workers#add_zone):
@@ -150,7 +150,8 @@ After you set up your account to create clusters, decide on the setup for your c
 Create your single zone or multizone classic OpenShift cluster by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
-
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-beta-flair.png" alt="Beta icon" width="30" style="width:30px; border-style: none"/> Red Hat OpenShift on IBM Cloud version 4.3 is available as a beta. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Beta releases have limited features and might experience intermittent errors. For more information, review the [troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot), [limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations), and [internal](https://ibm-argonauts.slack.com/archives/CJH0UPN2D){: external} or [external](https://ibm-container-service.slack.com/archives/CKCJLJCH4){: external} Slack channel.
+{: preview}
 
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
 2. From the [{{site.data.keyword.cloud_notm}} Red Hat OpenShift on IBM Cloud Clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
@@ -170,6 +171,7 @@ Create your single zone or multizone classic OpenShift cluster by using the {{si
   * Single zone clusters: Select a zone in which you want to host your cluster. For the best performance, select the zone that is physically closest to you. Your choices might be limited by geography.
 7. For each of the selected zones, choose your public and private VLANs. Worker nodes communicate with each other by using the private VLAN, and can communicate with the OpenShift master by using the public or the private VLAN. If you do not have a public or private VLAN in this zone, a public and a private VLAN are automatically created for you. You can use the same VLAN for multiple clusters.
 9. Configure your default worker pool. Worker pools are groups of worker nodes that share the same configuration. You can always add more worker pools to your cluster later.
+   1. Select the **OpenShift version** that you want to use in your cluster. For differences across versions, see [Comparison between OpenShift 3.11 and 4.3 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3).
    1. Filter the worker flavors by selecting a machine type. Virtual is billed hourly and bare metal is billed monthly.
       - **Bare metal**: Bare metal servers are provisioned manually by IBM Cloud infrastructure after you order, and can take more than one business day to complete. Bare metal is best suited for high-performance applications that need more resources and host control. Be sure that you want to provision a bare metal machine. Because it is billed monthly, if you cancel it immediately after an order by mistake, you are still charged the full month.
       - **Virtual - shared**: Infrastructure resources, such as the hypervisor and physical hardware, are shared across you and other IBM customers, but each worker node is accessible only by you. Although this option is less expensive and sufficient in most cases, you might want to verify your performance and infrastructure requirements with your company policies.
@@ -190,7 +192,8 @@ Create your single zone or multizone classic OpenShift cluster by using the {{si
 Create your single zone or multizone classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
 
-
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-beta-flair.png" alt="Beta icon" width="30" style="width:30px; border-style: none"/> Red Hat OpenShift on IBM Cloud version 4.3 is available as a beta. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Beta releases have limited features and might experience intermittent errors. For more information, review the [troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot), [limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations), and [internal](https://ibm-argonauts.slack.com/archives/CJH0UPN2D){: external} or [external](https://ibm-container-service.slack.com/archives/CKCJLJCH4){: external} Slack channel.
+{: preview}
 
 **Before you begin**:
 * Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
@@ -308,7 +311,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    </tr>
    <tr>
    <td><code>--private-service-endpoint</code></td>
-   <td>**In [VRF-enabled](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoint-enabled](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) accounts**: Enable the private service endpoint so that your OpenShift master and the worker nodes can communicate over the private VLAN. In addition, enable the public service endpoint by using the `--public-service-endpoint` flag to access your cluster over the internet. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</td>   
+   <td>**For OpenShift 3.11 clusters only, in [VRF-enabled](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoint-enabled](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) accounts**: Enable the private service endpoint so that your OpenShift master and the worker nodes can communicate over the private VLAN. In addition, enable the public service endpoint by using the `--public-service-endpoint` flag to access your cluster over the internet. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</td>   
    </tr>
    <tr>
    <td><code>--disable-disk-encrypt</code></td>

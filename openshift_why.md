@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -93,6 +93,40 @@ Both OpenShift and community Kubernetes clusters are production-ready container 
 |Supported operating system| Ubuntu 16.64, 18.64 |Red Hat Enterprise Linux 7|
 |Preferred external traffic networking| Ingress | Router |
 {: caption="Characteristics of community Kubernetes and OpenShift clusters" caption-side="top"}
+
+
+## Comparison between OpenShift 3.11 and 4.3 clusters
+{: #3.11_vs_4.3}
+
+Review the following characteristics to decide which Red Hat OpenShift on IBM Cloud cluster version to create. In both Red Hat OpenShift on IBM Cloud versions, you get the same overall [benefits](#benefits), such as the IBM-managed master, version and security patch updates, and IBM Support according to your [terms of service](/docs/overview/terms-of-use?topic=overview-terms#terms).
+{: shortdesc}
+
+You cannot update from an OpenShift 3.11 to 4.3 cluster. Instead, [create a 4.3 cluster](/docs/openshift?topic=openshift-clusters).
+{: note}
+
+|Characteristics|OpenShift 3.11|OpenShift 4.3|
+|---------------|-------------|-----------------|
+| RHEL version | 7 | 7 |
+| Kubernetes version | 1.11 | 1.16 |
+| CRI-O runtime version | 1.11 | 1.16 |
+| Worker node DNS | `dnsmasq` daemon set | `openshift-dns` operator (CoreDNS) |
+| App service integration tool | Service catalog | Operators |
+| Managed OpenShift master | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Provided version and security patch updates | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Encryption with {{site.data.keyword.keymanagementservicelong_notm}} | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Istio | | [Service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/servicemesh-release-notes.html){: external} |
+| Knative | | [Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}|
+| Debug tool | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Kube terminal | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Cluster autoscaler | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Classic File Storage | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Classic Block Storage | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| {{site.data.keyword.cos_full_notm}} | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Portworx | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Subdomains for ingress | Separate subdomains for `Ingress` and `Route` resources | Same subdomain for both `Ingress` and `Router` resources |
+| Ingress resources with Red Hat OpenShift on IBM Cloud ALBs | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Ingress resources with OpenShift Ingress controllers | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+{: caption="Supported features in OpenShift 3.11 and 4.3 clusters" caption-side="top"}
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-05"
+lastupdated: "2020-02-07"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -58,7 +58,7 @@ Before you create an NLB 2.0, you must complete the following prerequisite steps
        * For type of support, select **Technical**.
        * For offering, select **Containers**.
        * For subject, enter **Public and private VLAN network question**
-    4. Add the following information to the description: "Please set up the network to allow capacity aggregation on the public and private VLANs associated with my account. The reference ticket for this request is: https://control.softlayer.com/support/tickets/63859145". Note that if you want to allow capacity aggregation on specific VLANs, such as the public VLANs for one cluster only, you can specify those VLAN IDs in the description.
+    4. Add the following information to the description: "Please set up the network to allow capacity aggregation on the public and private VLANs associated with my account. The reference ticket for this request is the SoftLayer ticket number 63859145.". Note that if you want to allow capacity aggregation on specific VLANs, such as the public VLANs for one cluster only, you can specify those VLAN IDs in the description.
     5. Click **Submit**.
 
 3. Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
