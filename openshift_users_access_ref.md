@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -228,11 +228,11 @@ The following table shows the Kubernetes resource permissions that are granted b
 <tbody>
   <tr>
     <td id="service-role-reader" headers="service-role">Reader role</td>
-    <td headers="service-role-reader rbac-role">When scoped to one namespace: <strong><code>view</code></strong> cluster role applied by the <strong><code>ibm-view</code></strong> role binding in that namespace</br><br>When scoped to all namespaces: <strong><code>view</code></strong> cluster role applied by the <strong><code>ibm-view</code></strong> role binding in each namespace of the cluster</td>
+    <td headers="service-role-reader rbac-role">When scoped to one namespace: <strong><code>view</code></strong> cluster role applied by the <strong><code>ibm-view</code></strong> role binding in that namespace</br><br>When scoped to all namespaces: <strong><code>view</code></strong> cluster role applied by the <strong><code>ibm-view</code></strong> role binding in each namespace of the cluster. You can also view the cluster in the {{site.data.keyword.cloud_notm}} console and CLI.</td>
     <td headers="service-role-reader kube-perm"><ul>
       <li>Read access to resources in a namespace</li>
       <li>No read access to roles and role bindings or to Kubernetes secrets</li>
-      <li>Access the Kubernetes dashboard to view resources in a namespace</li></ul>
+      <li>Access the OpenShift dashboard to view resources in a namespace</li></ul>
     </td>
   </tr>
   <tr>

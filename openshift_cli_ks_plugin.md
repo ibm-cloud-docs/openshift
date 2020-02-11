@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-11"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -3767,6 +3767,8 @@ This command requires the {{site.data.keyword.containerlong_notm}} admin access 
 
 Before you use this command, make sure that the user who executes this command has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/openshift?topic=openshift-users#users). Target the resource group and region that you want to set the API key for.
 {: important}
+
+
 
 ```
 ibmcloud oc api-key reset --region REGION [-s]
