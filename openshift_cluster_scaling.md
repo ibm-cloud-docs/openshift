@@ -280,7 +280,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     </thead>
     <tbody>
     <tr>
-    <td><p class="pre"><code>helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true</code></p></td>
+    <td><p><pre class="pre"><code>helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true</code></pre></p></td>
     </tr>
     </tbody>
     </table>
@@ -296,7 +296,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     </thead>
     <tbody>
     <tr>
-    <td><p class="pre"><code>helm install iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true</code></p></td>
+    <td><p><pre class="pre"><code>helm install iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true</code></pre></p></td>
     </tr>
     </tbody>
     </table><p>Example output:</p>
