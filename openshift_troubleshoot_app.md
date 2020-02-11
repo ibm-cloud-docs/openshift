@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -483,7 +483,7 @@ Your pods are in a `CrashLoopBackOff` status.
 When you try to deploy an app that works on community Kubernetes platforms, you might see this status or a related error message because OpenShift sets up stricter security settings by default than community Kubernetes.
 
 {: tsResolve}
-Make sure that you followed the docs in the [Moving your apps to OpenShift topic](/docs/openshift?topic=openshift-openshift_apps#openshift_move_apps).
+Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-openshift_apps#openshift_move_apps_scenarios) and follow the docs in the [Moving your apps to OpenShift topic](/docs/openshift?topic=openshift-openshift_apps#openshift_move_apps).
 
 <br />
 

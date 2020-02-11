@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-11"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -242,7 +242,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 <br>
 **To install the `ibm-iks-cluster-autoscaler` plug-in in your cluster**:
 
-1.  [Follow the instructions](/docs/openshift?topic=openshift-openshift_apps#roks_helm) to install the Helm version 3 client on your local machine.
+1.  [Follow the instructions](/docs/openshift?topic=openshift-openshift_apps#roks_helm) to install the **Helm version 3** client on your local machine.
 
 2.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
     ```
@@ -267,12 +267,39 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     * **`enabled=(true|false)`**: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap.
 
 4.  Install the cluster autoscaler Helm chart in the `kube-system` namespace of your cluster. In the example command, the default worker pool is enabled for autoscaling with the Helm chart installation. The worker pool details are added to the cluster autoscaler config map.
-    ```
-    helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true
-    ```
-    {: pre}
 
-    Example output:
+    <table class="simple-tab-table" id="helm3" tab-title="Helm 3 install command" tab-group="helm-install" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
+    <caption caption-side="top">
+      Install the cluster autoscaler chart in Helm version 3<br>
+      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The row contains the installation command.</span>
+    </caption>
+    <thead>
+    <tr>
+    <th>Command</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><p><pre class="pre"><code>helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true</code></pre></p></td>
+    </tr>
+    </tbody>
+    </table>
+    <table class="simple-tab-table" id="helm2" tab-title="Helm 2 install command" tab-group="helm-install" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
+    <caption caption-side="top">
+      Install the cluster autoscaler chart in Helm version 2<br>
+      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The row contains the installation command.</span>
+    </caption>
+    <thead>
+    <tr>
+    <th>Command</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><p><pre class="pre"><code>helm install iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true</code></pre></p></td>
+    </tr>
+    </tbody>
+    </table><p>Example output:</p>
     ```
     NAME: ibm-iks-cluster-autoscaler
     LAST DEPLOYED: Fri Jan 17 12:20:30 2020

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -121,7 +121,7 @@ You cannot update from an OpenShift 3.11 to 4.3 cluster. Instead, [create a 4.3 
 | Cluster autoscaler | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Classic File Storage | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Classic Block Storage | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| {{site.data.keyword.cos_full_notm}} | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| {{site.data.keyword.cos_full_notm}} | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Portworx | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
 | Subdomains for ingress | Separate subdomains for `Ingress` and `Route` resources | Same subdomain for both `Ingress` and `Router` resources |
 | Ingress resources with Red Hat OpenShift on IBM Cloud ALBs | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
