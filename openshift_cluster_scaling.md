@@ -267,10 +267,6 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     * **`enabled=(true|false)`**: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap.
 
 4.  Install the cluster autoscaler Helm chart in the `kube-system` namespace of your cluster. In the example command, the default worker pool is enabled for autoscaling with the Helm chart installation. The worker pool details are added to the cluster autoscaler config map.
-    ```
-    helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true
-    ```
-    {: pre}
 
     <table class="simple-tab-table" id="helm3" tab-title="Helm 3 install command" tab-group="helm-install" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
@@ -303,9 +299,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     <td><p class="pre"><code>helm install iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler --set workerpools[0].default.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true</code></p></td>
     </tr>
     </tbody>
-    </table>
-    
-    Example output:
+    </table><p>Example output:</p>
     ```
     NAME: ibm-iks-cluster-autoscaler
     LAST DEPLOYED: Fri Jan 17 12:20:30 2020
