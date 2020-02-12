@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-12"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -67,7 +67,7 @@ Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitle
 ### Do I install Helm v2 or v3?
 {: #helm-v2-v3}
 
-[Helm v3 was released on 13 November 2019](https://helm.sh/blog/helm-3-released/){:external}. Helm v3 provides several advantages over Helm v2. For example, the Helm server [Tiller is removed in Helm v3](https://helm.sh/docs/faq/#removal-of-tiller){: external}. You no longer need to set up a Tiller service account or initialize Helm with Tiller. Additionally, [chart release names are now scoped to namespaces](https://helm.sh/docs/faq/#release-names-are-now-scoped-to-the-namespace){: external} so that you can release one version of the same chart across several namespaces.
+[Helm v3 was released on 13 November 2019](https://helm.sh/blog/helm-3-released/){: external}. Helm v3 provides several advantages over Helm v2. For example, the Helm server [Tiller is removed in Helm v3](https://helm.sh/docs/faq/#removal-of-tiller){: external}. You no longer need to set up a Tiller service account or initialize Helm with Tiller. Additionally, [chart release names are now scoped to namespaces](https://helm.sh/docs/faq/#release-names-are-now-scoped-to-the-namespace){: external} so that you can release one version of the same chart across several namespaces.
 
 [Install Helm v2](#install_v2) only if you have specific requirements to use Helm v2 in your cluster. Otherwise, [install the latest release of Helm v3](#install_v3). If you already installed Helm v2 in your cluster, you can [migrate from Helm v2 to v3](#migrate_v3).
 
@@ -140,7 +140,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 ## Migrating from Helm v2 to v3
 {: #migrate_v3}
 
-[Helm v3 was released on 13 November 2019](https://helm.sh/blog/helm-3-released/){:external}. In Helm v3, the Helm server Tiller is removed, among many other changes. Continue to use Helm with Tiller only if you have specific requirements to use Helm v2 in your cluster. Otherwise, migrate to Helm v3.
+[Helm v3 was released on 13 November 2019](https://helm.sh/blog/helm-3-released/){: external}. In Helm v3, the Helm server Tiller is removed, among many other changes. Continue to use Helm with Tiller only if you have specific requirements to use Helm v2 in your cluster. Otherwise, migrate to Helm v3.
 {: shortdesc}
 
 1. Before you migrate, review the [list of changes between v2 and v3](https://helm.sh/docs/topics/v2_v3_migration/){: external} and the [v3 FAQs](https://helm.sh/docs/faq/){: external}.
@@ -157,7 +157,7 @@ As you work with Helm charts, keep in mind the Helm v3 changes, such as the fact
 ## Installing Helm v2 in your cluster
 {: #install_v2}
 
-[Helm v3 was released on 13 November 2019](https://helm.sh/blog/helm-3-released/){:external}. Helm v2 requires you to set up the Helm server, Tiller, which is removed in Helm v3. Because Tiller requires a specific service account due to security issues, install Helm v2 only if you have specific requirements to use Helm v2 in your cluster. Otherwise, [install the latest release of Helm v3](#install_v3).
+[Helm v3 was released on 13 November 2019](https://helm.sh/blog/helm-3-released/){: external}. Helm v2 requires you to set up the Helm server, Tiller, which is removed in Helm v3. Because Tiller requires a specific service account due to security issues, install Helm v2 only if you have specific requirements to use Helm v2 in your cluster. Otherwise, [install the latest release of Helm v3](#install_v3).
 {: note}
 
 ### Setting up Helm v2 in a cluster with public access
@@ -360,9 +360,9 @@ To change your version of Tiller:
 Review the following links to find additional Helm information.
 {: shortdesc}
 
-* View the available Helm charts that you can use in Red Hat OpenShift on IBM Cloud in the [Helm Charts Catalog](https://cloud.ibm.com/kubernetes/helm){:external}.
+* View the available Helm charts that you can use in Red Hat OpenShift on IBM Cloud in the [Helm Charts Catalog](https://cloud.ibm.com/kubernetes/helm){: external}.
 * Review the [list of changes between Helm v2 and v3](https://helm.sh/docs/topics/v2_v3_migration/){: external} and the [v3 FAQs](https://helm.sh/docs/faq/){: external}.
-* Learn more about how you can [increase deployment velocity with Kubernetes Helm Charts](https://developer.ibm.com/recipes/tutorials/increase-deployment-velocity-with-kubernetes-helm-charts/){:external}.
+* Learn more about how you can [increase deployment velocity with Kubernetes Helm Charts](https://developer.ibm.com/recipes/tutorials/increase-deployment-velocity-with-kubernetes-helm-charts/){: external}.
 
 
 
