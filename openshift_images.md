@@ -153,7 +153,7 @@ Before you begin:
 
 To use the internal registry, set up a public route to access the registry. Then, create an image pull secret that includes the credentials to access the registry so that deployments in other projects can pull images from this registry.
 
-1.  From the `default` project, make sure that the `docker-registry` service exists for the internal registry.
+1.  From the `openshift-image-registry` project, make sure that the `image-registry` service exists for the internal registry.
     ```
     oc get svc
     ```
@@ -161,32 +161,30 @@ To use the internal registry, set up a public route to access the registry. Then
 
     Example output:
     ```
-    NAME               TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
-    docker-registry    ClusterIP      172.21.xxx.xxx    <none>          5000/TCP                     36d
-    kubernetes         ClusterIP      172.21.xxx.xxx    <none>          443/TCP,53/UDP,53/TCP        36d
-    registry-console   ClusterIP      172.21.xxx.xxx    <none>          9000/TCP                     36d
-    router             LoadBalancer   172.21.xxx.xxx    169.xx.xxx.xxx   80:31049/TCP,443:30219/TCP   36d
+    NAME                      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)     AGE
+    image-registry            ClusterIP   172.21.199.210   <none>        5000/TCP    37h
+    image-registry-operator   ClusterIP   None             <none>        60000/TCP   37h
     ```
     {: screen}
-2.  Create a secured route for the `docker-registry` service that uses `reencrypt` TLS termination. With re-encryption, the router terminates the TLS connection with a certificate, and then re-encrypts the connection to the internal registry with a different certificate. With this approach, the full path of the connection between the user and the internal registry is encrypted. To provide your own custom domain name, include the `--hostname` flag.
+2.  Create a secured route for the `image-registry` service that uses `reencrypt` TLS termination. With re-encryption, the router terminates the TLS connection with a certificate, and then re-encrypts the connection to the internal registry with a different certificate. With this approach, the full path of the connection between the user and the internal registry is encrypted. To provide your own custom domain name, include the `--hostname` flag.
     ```
-    oc create route reencrypt --service=docker-registry
+    oc create route reencrypt --service=image-registry
     ```
     {: pre}
-3.  Retrieve the hostname (**HOST/PORT**) and the **PORT** that were assigned to the `docker-registry` route.
+3.  Retrieve the hostname (**HOST/PORT**) and the **PORT** that were assigned to the `image-registry` route.
     ```
-    oc get route docker-registry
+    oc get route image-registry
     ```
     {: pre}
     Example output:
     ```
     NAME              HOST/PORT                                                                                                  PATH      SERVICES          PORT       TERMINATION   WILDCARD
-    docker-registry   docker-registry-default.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud             docker-registry   5000-tcp   reencrypt     None
+    image-registry   image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud             image-registry   5000-tcp   reencrypt     None
     ```
     {: screen}
 4.  Edit the route to set the [load balancing strategy](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#load-balancing){: external} to `source` so that the same client IP address reaches the same server, as in a passthrough route setup. You can set the strategy by adding an annotation in the `metadata.annotations` section: `haproxy.router.openshift.io/balance: source`. You can edit the configuration file from the **OpenShift Application Console** or in your terminal by running the following command.
     ```
-    oc edit route docker-registry
+    oc edit route image-registry
     ```
     {: pre}
 
@@ -202,7 +200,7 @@ To use the internal registry, set up a public route to access the registry. Then
     {: screen}
 5.  Log in to the internal registry by using the route as the hostname.
     ```
-    docker login -u $(oc whoami) -p $(oc whoami -t) docker-registry-default.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud
+    docker login -u $(oc whoami) -p $(oc whoami -t) image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud
     ```
     {: pre}
 6.  Now that you are logged in, try pushing a sample `hello-world` app to the internal registry.
@@ -213,12 +211,12 @@ To use the internal registry, set up a public route to access the registry. Then
         {: pre}
     2.  Tag the local image with the hostname of your internal registry, the project that you want to deploy the image to, and the image name and tag.
         ```
-        docker tag hello-world:latest docker-registry-default.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud/<project>/<image_name>:<tag>
+        docker tag hello-world:latest image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud/<project>/<image_name>:<tag>
         ```
         {: pre}
     3.  Push the image to your cluster's internal registry.
         ```
-        docker push docker-registry-default.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud/<project>/<image_name>:<tag>
+        docker push image-registry-openshift-image-registry.cluster_name>-<ID_string>.<region>.containers.appdomain.cloud/<project>/<image_name>:<tag>
         ```
         {: pre}
     4.  Verify that the image is added to the OpenShift image stream.
@@ -230,7 +228,7 @@ To use the internal registry, set up a public route to access the registry. Then
         Example output:
         ```
         NAME          DOCKER REPO                                            TAGS      UPDATED
-        hello-world   docker-registry.default.svc:5000/default/hello-world   latest    7 hours ago
+        hello-world   image-registry.openshift-image-registry.svc:5000/default/hello-world   latest    7 hours ago
         ```
         {: screen}
 7.  To enable deployments in your project to pull images from the internal registry, create an image pull secret in your project that holds the credentials to access your internal registry. Then, add the image pull secret to the default service account for each project.
@@ -277,13 +275,13 @@ To use the internal registry, set up a public route to access the registry. Then
     4.  Create a new image pull secret for the internal registry.
         * **<secret_name>**: Give your image pull secret a name, such as `internal-registry`.
         * **--namespace**: Enter the project to create the image pull secret in, such as `default`.
-        * **--docker-server**: Instead of the internal service IP address (`172.21.xxx.xxx:5000`), enter the hostname of the `docker-registry` route with the port (`docker-registry-default.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud:5000`).
+        * **--docker-server**: Instead of the internal service IP address (`172.21.xxx.xxx:5000`), enter the hostname of the `image-registry` route with the port (`image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud:5000`).
         * **--docker-username**: Copy the `"username"` from the previous image pull secret, such as `serviceaccount`.
         * **--docker-password**: Copy the `"password"` from the previous image pull secret.
         * **--docker-email**: If you have one, enter your Docker email address. If you do not, enter a fictional email address, such as `a@b.c`. This email is required to create a Kubernetes secret, but is not used after creation.
 
         ```
-        oc create secret docker-registry internal-registry --namespace default --docker-server docker-registry-default.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud:5000 --docker-username serviceaccount --docker-password <eyJ...> --docker-email a@b.c
+        oc create secret image-registry internal-registry --namespace default --docker-server image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud:5000 --docker-username serviceaccount --docker-password <eyJ...> --docker-email a@b.c
         ```
         {: pre}
     5.  Add the image pull secret to the default service account of your project.
