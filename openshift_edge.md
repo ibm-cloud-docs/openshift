@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-02-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -204,7 +204,7 @@ Before you begin:
 
 1. Apply a taint to all worker nodes with the `dedicated=edge` label. The taint prevents pods from running on the worker node and removes pods that do not have the `dedicated=edge` label from the worker node. The pods that are removed are redeployed to other worker nodes with capacity.
   ```
-  oc taint node -l dedicated=edge dedicated=edge:NoSchedule dedicated=edge:NoExecute
+  oc adm taint node -l dedicated=edge dedicated=edge:NoSchedule dedicated=edge:NoExecute
   ```
   {: pre}
   Now, only pods with the `dedicated=edge` toleration are deployed to your edge worker nodes.
@@ -228,7 +228,7 @@ Before you begin:
 
 4. To remove a taint, run the following command.
     ```
-    oc taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-
+    oc adm taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-
     ```
     {: pre}
 
