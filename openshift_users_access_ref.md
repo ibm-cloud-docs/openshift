@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-11"
+lastupdated: "2020-02-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -264,7 +264,7 @@ The following table shows the Kubernetes resource permissions that are granted b
     <td><ul>
       <li>Get basic information about projects that the user has access to.</li>
       <li>Create authorized resources in the projects that the user has access to.</li>
-      <li>For more information, see the [OpenShift docs)](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html){: external}.</li></ul></td>
+      <li>For more information, see the [OpenShift docs  ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).</li></ul></td>
   </tr>
 </tbody>
 </table>
