@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-11"
+lastupdated: "2020-02-13"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -45,7 +45,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | Date | Description |
 | ---- | ----------- |
 | 10 February 2020 | **New! OpenShift 4.3**: OpenShift 4.3 is now available as a beta. During the beta, the OpenShift license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you cannot update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_versions#ocp43). |
-| 06 February 2020 | <ul><li>**Cluster autoscaler**: Added a [debugging guide for the cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler).</li><li>**Expanded troubleshooting**: You can now find troubleshooting steps for OpenShift clusters in the following pages:<ul><li>[Clusters and masters](/docs/openshift?topic=openshift-cs_troubleshoot)</li><li>[Worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters)</li><li>[Cluster networking](/docs/openshift?topic=openshift-cs_troubleshoot_network)</li><li>[Apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_app)</li><li>[Load balancers](/docs/openshift?topic=openshift-cs_troubleshoot_lb)</li><li>[Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress)</li><li>[Persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)</li></ul></li><li>**Tags**: Added how to [add {{site.data.keyword.cloud_notm}} tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags).</li></ul> |
+| 06 February 2020 | <ul><li>**Cluster autoscaler**: Added a [debugging guide for the cluster autoscaler](/docs/containers?topic=containers-troubleshoot_cluster_autoscaler).</li><li>**Expanded troubleshooting**: You can now find troubleshooting steps for OpenShift clusters in the following pages:<ul><li>[Clusters and masters](/docs/openshift?topic=openshift-cs_troubleshoot)</li><li>[Worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters)</li><li>[Cluster networking](/docs/openshift?topic=openshift-cs_troubleshoot_network)</li><li>[Apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_app)</li><li>[Load balancers](/docs/openshift?topic=openshift-cs_troubleshoot_lb)</li><li>[Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress)</li><li>[Persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)</li></ul></li><li>**Tags**: Added how to [add {{site.data.keyword.cloud_notm}} tags to existing clusters](/docs/containers?topic=containers-add_workers#cluster_tags).</li></ul> |
 | 03 February 2020 | **Version changelog**: Updates are available for OpenShift master fix pack[3.11.161_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1539) and worker fix pack [3.11.161_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1540). |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in February 2020"}
@@ -56,9 +56,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | Date | Description |
 | ---- | ----------- |
 | 30 January 2020 | **Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 625](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog). |
-| 27 January 2020 | <ul><li>**Back up and restore File and Block storage**: Added steps for deploying the [<code>ibmcloud-backup-restore</code> Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore).</li></ul> |
+| 27 January 2020 | <ul><li>**Back up and restore File and Block storage**: Added steps for deploying the [<code>ibmcloud-backup-restore</code> Helm chart](/docs/containers?topic=containers-utilities#ibmcloud-backup-restore).</li></ul> |
 | 22 January 2020 | <ul><li>**Changing VLANs**: After you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), you can now [move router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan).</li><li>**Storage utilities**: [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities) are now available for OpenShift clusters.</li></ul> |
-| 20 January 2020 | <ul><li>**Helm version 3**: Updated [Adding services by using Helm charts](/docs/openshift?topic=openshift-helm) to include steps for installing Helm v3 in your cluster. Migrate to Helm v3 today for several advantages over Helm v2, such as the removal of the Helm server, Tiller.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 621](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li><li>**Version changelog**: Patch updates are available for OpenShift [3.11.161_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1538).</li></ul> |
+| 20 January 2020 | <ul><li>**Helm version 3**: Updated [Adding services by using Helm charts](/docs/containers?topic=containers-helm) to include steps for installing Helm v3 in your cluster. Migrate to Helm v3 today for several advantages over Helm v2, such as the removal of the Helm server, Tiller.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 621](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li><li>**Version changelog**: Patch updates are available for OpenShift [3.11.161_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1538).</li></ul> |
 | 06 January 2020 | **Ingress ALB changelog**: Updated the [`ingress-auth` image to build 373](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).|
 | 03 January 2020 | **Version changelog**: Worker node patch updates are available for OpenShift [3.11.157_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
@@ -70,10 +70,10 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | Date | Description |
 | ---- | ----------- |
 | 18 December 2019 | **Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 615 and the `ingress-auth` image to build 372](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog). |
-| 17 December 2019 | **Version changelog**: Master patch updates are available for OpenShift [3.11.154_1536_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).<li>**Assigning access**: Updated the steps to [assign access to your clusters through the {{site.data.keyword.cloud_notm}} IAM console](/docs/openshift?topic=openshift-users#add_users).</li></ul>|
-| 11 December 2019 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.64](/docs/openshift?topic=openshift-cs_cli_changelog).</li><li>**CLI installation**: Updated the link to download the [`oc` CLI client](/docs/openshift?topic=openshift-openshift-cli).</li></ul>|
+| 17 December 2019 | **Version changelog**: Master patch updates are available for OpenShift [3.11.154_1536_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).<li>**Assigning access**: Updated the steps to [assign access to your clusters through the {{site.data.keyword.cloud_notm}} IAM console](/docs/containers?topic=containers-users#add_users).</li></ul>|
+| 11 December 2019 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.64](/docs/containers?topic=containers-cs_cli_changelog).</li><li>**CLI installation**: Updated the link to download the [`oc` CLI client](/docs/openshift?topic=openshift-openshift-cli).</li></ul>|
 | 09 December 2019 | **Version changelog**: Worker node patch updates are available for OpenShift [3.11.154_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1534_worker). |
-| 04 December 2019 | <ul><li>**Exposing apps with load balancers or Ingress ALBs**: Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/openshift?topic=openshift-ingress-qs).</li><li>**OpenShift charges**: Now when you create OpenShift clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use OpenShift clusters?](/docs/openshift?topic=openshift-faqs#openshift_charges).</li><li>**OpenShift routes**: Added steps for [bringing your own hostname](/docs/openshift?topic=openshift-openshift_routes#routes-setup) for public routes and steps for [setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup).</li><li>**Use the internal KVDB in Portworx**: Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb).</li></ul>|
+| 04 December 2019 | <ul><li>**Exposing apps with load balancers or Ingress ALBs**: Added quick start pages to help you get up and running with [load balancers](/docs/containers?topic=containers-loadbalancer-qs) and [Ingress ALBs](/docs/containers?topic=containers-ingress-qs).</li><li>**OpenShift charges**: Now when you create OpenShift clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use OpenShift clusters?](/docs/openshift?topic=openshift-faqs#openshift_charges).</li><li>**OpenShift routes**: Added steps for [bringing your own hostname](/docs/openshift?topic=openshift-openshift_routes#routes-setup) for public routes and steps for [setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup).</li><li>**Use the internal KVDB in Portworx**: Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/containers?topic=containers-portworx#portworx-kvdb).</li></ul>|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in December 2019"}
 
@@ -89,16 +89,16 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tbody>
 <tr>
   <td>26 November 2019</td>
-  <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.61](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-  <li><strong>Cluster add-ons for OpenShift clusters</strong>: The [Kubernetes web terminal](/docs/openshift?topic=openshift-openshift-cli#cli_web) and the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) add-ons are now available for OpenShift clusters.</li>
+  <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.61](/docs/containers?topic=containers-cs_cli_changelog).</li>
+  <li><strong>Cluster add-ons for OpenShift clusters</strong>: The [Kubernetes web terminal](/docs/openshift?topic=openshift-openshift-cli#cli_web) and the [Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) add-ons are now available for OpenShift clusters.</li>
   <li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533_worker).</li></ul></td>
 </tr>
 <tr>
 <td>22 November 2019</td>
 <td><ul>
-<li><strong>Bring your own DNS for load balancers</strong>: Added steps for bringing your own custom domain for [NLBs](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)</li>
-<li><strong>Gateway appliance firewalls</strong>: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) that you must open in a public gateway device firewall</li>
-<li><strong>Ingress ALB subdomain format</strong>: [Changes are made to the Ingress subdomain](/docs/openshift?topic=openshift-ingress-about#ingress-resource). New clusters are assigned an Ingress subdomain in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud` and an Ingress secret in the format `<cluster_name>.<globally_unique_account_HASH>-0000`. Any existing clusters that use the `<cluster_name>.<region>.containers.mybluemix.net` subdomain are assigned a CNAME record that maps to a `<cluster_name>.<region_or_zone>.containers.appdomain.cloud` subdomain.</li>
+<li><strong>Bring your own DNS for load balancers</strong>: Added steps for bringing your own custom domain for [NLBs](/docs/containers?topic=containers-loadbalancer_hostname#loadbalancer_hostname_dns)</li>
+<li><strong>Gateway appliance firewalls</strong>: Updated the [required IP addresses and ports](/docs/containers?topic=containers-firewall#vyatta_firewall) that you must open in a public gateway device firewall</li>
+<li><strong>Ingress ALB subdomain format</strong>: [Changes are made to the Ingress subdomain](/docs/containers?topic=containers-ingress-about#ingress-resource). New clusters are assigned an Ingress subdomain in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud` and an Ingress secret in the format `<cluster_name>.<globally_unique_account_HASH>-0000`. Any existing clusters that use the `<cluster_name>.<region>.containers.mybluemix.net` subdomain are assigned a CNAME record that maps to a `<cluster_name>.<region_or_zone>.containers.appdomain.cloud` subdomain.</li>
 </ul></td>
 </tr>
 <tr>
@@ -123,18 +123,18 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <li>[Creating your own image pull secret](/docs/openshift?topic=openshift-images#other_registry_accounts).</li>
 <li>[Adding the image pull secret](/docs/openshift?topic=openshift-images#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
 </li>
-<li><strong>Exposing apps that are external to your cluster by using Ingress</strong>: Added information for how to use the [`proxy-external-service` Ingress annotation](/docs/openshift?topic=openshift-ingress#proxy-external) to include an app that is external to your cluster in Ingress application load balancing.</li>
+<li><strong>Exposing apps that are external to your cluster by using Ingress</strong>: Added information for how to use the [`proxy-external-service` Ingress annotation](/docs/containers?topic=containers-ingress#proxy-external) to include an app that is external to your cluster in Ingress application load balancing.</li>
 <li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1530).</li>
 </ul></td>
 </tr>
 <tr>
 <td>07 November 2019</td>
-<td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.51](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+<td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.51](/docs/containers?topic=containers-cs_cli_changelog).</li>
 <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `ingress-auth` image to build 345](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul></td>
 </tr>
 <tr>
 <td>01 November 2019</td>
-<td><strong>New! Keep your own key (KYOK) support (beta)</strong>: You can now [enable several key management service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms), so that you can use your own root key to encrypt the secrets in your cluster.</td>
+<td><strong>New! Keep your own key (KYOK) support (beta)</strong>: You can now [enable several key management service (KMS) providers](/docs/containers?topic=containers-encryption#kms), so that you can use your own root key to encrypt the secrets in your cluster.</td>
 </tr>
 </tbody>
 </table>
@@ -165,16 +165,16 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr><tr>
 <td>24 October 2019</td>
   <td><ul>
-    <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.42](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-    <li><strong>Scaling down file storage</strong>: Added steps for [scaling down the default file storage plug-in](/docs/openshift?topic=openshift-file_storage#file_scaledown_plugin) in classic clusters.</li>
-    <li><strong>Ingress subdomain troubleshooting</strong>: Added troubleshooting steps for when [no Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)</li>
+    <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.42](/docs/containers?topic=containers-cs_cli_changelog).</li>
+    <li><strong>Scaling down file storage</strong>: Added steps for [scaling down the default file storage plug-in](/docs/containers?topic=containers-file_storage#file_scaledown_plugin) in classic clusters.</li>
+    <li><strong>Ingress subdomain troubleshooting</strong>: Added troubleshooting steps for when [no Ingress subdomain exists after cluster creation](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress#ingress_subdomain)</li>
   </ul></td>
 </tr>
 <tr>
 <td>23 October 2019</td>
   <td><ul>
     <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 584 and `ingress-auth` image build to 344](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-    <li><strong>Ingress annotations</strong>: Added the [`proxy-ssl-verify-depth` and `proxy-ssl-name` optional parameters to the `ssl-services` annotation](/docs/openshift?topic=openshift-ingress_annotation#ssl-services).</li></ul></td>
+    <li><strong>Ingress annotations</strong>: Added the [`proxy-ssl-verify-depth` and `proxy-ssl-name` optional parameters to the `ssl-services` annotation](/docs/containers?topic=containers-ingress_annotation#ssl-services).</li></ul></td>
 </tr>
 <tr>
   <td>22 October 2019</td>
@@ -182,13 +182,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>17 October 2019</td>
-  <td><strong>New! Cluster autoscaler</strong>: The cluster autoscaler is available for [private network-only clusters](/docs/openshift?topic=openshift-ca#ca_private_cluster). To get started, [update to the latest Helm chart version](/docs/openshift?topic=openshift-ca#ca_helm_up).</td>
+  <td><strong>New! Cluster autoscaler</strong>: The cluster autoscaler is available for [private network-only clusters](/docs/containers?topic=containers-ca#ca_private_cluster). To get started, [update to the latest Helm chart version](/docs/containers?topic=containers-ca#ca_helm_up).</td>
 </tr>
 <tr>
   <td>14 October 2019</td>
   <td><ul>
   <li><strong>Calico MTU</strong>: Added [steps](/docs/containers?topic=containers-kernel#calico-mtu) for changing the Calico plug-in maximum transmission unit (MTU) to meet the network throughput requirements of your environment.</li>
-  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.38](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.38](/docs/containers?topic=containers-cs_cli_changelog).</li>
   </li>
   <li><strong>Cloud Paks</strong>: By using the {{site.data.keyword.cloud_notm}} catalog, you can [add Cloud Paks to your OpenShift clusters](/docs/openshift?topic=openshift-openshift_cloud_paks).</li>
   <li><strong>Cluster autoscaler</strong>: You can [install the cluster autoscaler](/docs/openshift?topic=openshift-ca) Helm chart on OpenShift clusters with Helm Tiller version 2.12 or later.</li>
@@ -207,7 +207,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>03 October 2019</td>
   <td><ul>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 579 and `ingress-auth` image build to 341](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>DevOps toolchain</strong>: You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-app#continuous-delivery-pipeline).</li>
+  <li><strong>DevOps toolchain</strong>: You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/containers?topic=containers-app#continuous-delivery-pipeline).</li>
   <li><strong>Version changelog</strong>: Patch updates are available for OpenShift [3.11.146_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1525).</li>
   </ul>
   </td>
@@ -223,7 +223,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li><strong>New! Single zone location for OpenShift clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).<ul>
       <li>Oslo, Norway</li>
       <li>San Jose, California, US</li></ul></li>
-    <li><strong>Using the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster</strong>: To work with the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster, added steps for [creating a customized storage class](/docs/openshift?topic=openshift-object_storage#customized_storageclass_vpc) that uses the `direct` service endpoint of your {{site.data.keyword.cos_full_notm}} service instance.</li>
+    <li><strong>Using the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster</strong>: To work with the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster, added steps for [creating a customized storage class](/docs/containers?topic=containers-object_storage#customized_storageclass_vpc) that uses the `direct` service endpoint of your {{site.data.keyword.cos_full_notm}} service instance.</li>
   </ul>
   </td>
 </tr>
@@ -245,13 +245,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>24 September 2019</td>
   <td><ul>
-  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.31](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.31](/docs/containers?topic=containers-cs_cli_changelog).</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 566](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
   </ul></td>
 </tr>
 <tr>
   <td>19 September 2019</td>
-  <td><strong>Sending custom Ingress certificates to legacy clients</strong>: Added [steps](/docs/openshift?topic=openshift-ingress-settings#default_server_cert) for ensuring that your custom certificate, instead of the default IBM-provided certificate, is sent by the Ingress ALB to legacy clients that do not support SNI.</td>
+  <td><strong>Sending custom Ingress certificates to legacy clients</strong>: Added [steps](/docs/containers?topic=containers-ingress-settings#default_server_cert) for ensuring that your custom certificate, instead of the default IBM-provided certificate, is sent by the Ingress ALB to legacy clients that do not support SNI.</td>
 </tr>
 <tr>
   <td>17 September 2019</td>
@@ -264,8 +264,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>16 September 2019</td>
-  <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.23](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-  <li><strong>{{site.data.keyword.at_full_notm}} events</strong>: Added information about [which {{site.data.keyword.at_short}} location your events are sent to](/docs/openshift?topic=openshift-at_events#at-ui) based on the {{site.data.keyword.containerlong_notm}} location where the cluster is located.</li>
+  <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.23](/docs/containers?topic=containers-cs_cli_changelog).</li>
+  <li><strong>{{site.data.keyword.at_full_notm}} events</strong>: Added information about [which {{site.data.keyword.at_short}} location your events are sent to](/docs/containers?topic=containers-at_events#at-ui) based on the {{site.data.keyword.containerlong_notm}} location where the cluster is located.</li>
   <li><strong>New! Melbourne, Australia `mel01` single zone location for OpenShift clusters</strong>: For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li>
   <li><strong><strong>Version changelog</strong>: Master fix pack updates are available for OpenShift [3.11.141_1524_openshift](/docs/openshift?topic=openshift-openshift_changelog#311141_1524).</li></ul>
   </td>
@@ -283,7 +283,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li>[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov) with links to tutorials.</li>
     <li>[Using the internal registry in OpenShift](/docs/openshift?topic=openshift-images#openshift_internal_registry)</ul>
   </li>
-    <li><strong>Entitled software</strong>: If you have licensed products from your [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) container software library, you can [set up your cluster to pull images from the entitled registry](/docs/openshift?topic=openshift-images#secret_entitled_software).</li>
+    <li><strong>Entitled software</strong>: If you have licensed products from your [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) container software library, you can [set up your cluster to pull images from the entitled registry](/docs/containers?topic=containers-images#secret_entitled_software).</li>
   <li><strong>`script update` command</strong>: Added [steps for using the `script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.containerlong_notm}} plug-in.</li>
   </ul></td>
 </tr>
@@ -301,13 +301,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>04 September 2019</td>
-  <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.3](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-  <li><strong>IAM whitelisting</strong>: If you use an IAM whitelist, you must [whitelist the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/openshift?topic=openshift-firewall#iam_whitelist) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.</li>
+  <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.3](/docs/containers?topic=containers-cs_cli_changelog).</li>
+  <li><strong>IAM whitelisting</strong>: If you use an IAM whitelist, you must [whitelist the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/containers?topic=containers-firewall#iam_whitelist) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.</li>
   <li><strong>New! Montreal, Canada `mon01` single zone location for OpenShift clusters</strong>: For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li></ul></td>
 </tr>
 <tr>
   <td>03 September 2019</td>
-  <td><ul><li><strong>New! {{site.data.keyword.containerlong_notm}} plug-in version `0.4`</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for multiple changes in the [release of version 0.4.1](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+  <td><ul><li><strong>New! {{site.data.keyword.containerlong_notm}} plug-in version `0.4`</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for multiple changes in the [release of version 0.4.1](/docs/containers?topic=containers-cs_cli_changelog).</li>
   <li><strong>Version changelog</strong>: Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-changelog#11210_1566_worker), and OpenShift [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog#311135_1523_worker).</li></ul></td>
 </tr>
 </tbody></table>
@@ -336,14 +336,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>28 August 2019</td>
   <td><ul>
-  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.112](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.112](/docs/containers?topic=containers-cs_cli_changelog).</li>
   <li><strong>Version changelog</strong>: Changelog added for master fix pack [3.11.135_1522_openshift](/docs/openshift?topic=openshift-openshift_changelog#311135_1522).</li>
   </ul></td>
 </tr>
 <tr>
   <td>26 August 2019</td>
   <td><ul>
-  <li><strong>Cluster autoscaler</strong>: With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/openshift?topic=openshift-ca#ca_helm) instead of modifying the config map after installation.</li>
+  <li><strong>Cluster autoscaler</strong>: With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/containers?topic=containers-ca#ca_helm) instead of modifying the config map after installation.</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 524 and `ingress-auth` image to build 337](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
   <li><strong>New! Seoul, Korea `seo01` single zone location for OpenShift clusters</strong>: For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li></ul></td>
 </tr>
@@ -359,7 +359,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>17 August 2019</td>
   <td><ul>
-  <li><strong>{{site.data.keyword.at_full}}</strong>: The [{{site.data.keyword.at_full_notm}} service](/docs/openshift?topic=openshift-at_events) is now supported for you to view, manage, and audit user-initiated activities in your clusters.</li>
+  <li><strong>{{site.data.keyword.at_full}}</strong>: The [{{site.data.keyword.at_full_notm}} service](/docs/containers?topic=containers-at_events) is now supported for you to view, manage, and audit user-initiated activities in your clusters.</li>
   <li><strong>Version changelog</strong>: Changelog added for master fix pack [3.11.135_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog#311135_1521_master).</li></ul></td>
 </tr>
 <tr>
@@ -370,13 +370,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>12 August 2019</td>
   <td><ul>
-  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.103](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.103](/docs/containers?topic=containers-cs_cli_changelog).</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB `ingress-auth` image to build 335 for [`musl libc` vulnerabilities](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul></td>
 </tr>
 <tr>
   <td>05 August 2019</td>
   <td><ul>
-  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.99](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.99](/docs/containers?topic=containers-cs_cli_changelog).</li>
   <li><strong>Version changelog</strong>: Changelogs added for worker node patch [3.11.129_1518_openshift](/docs/openshift?topic=openshift-openshift_changelog#311129_1518_worker).</li></ul></td>
 </tr>
 <tr>
@@ -402,9 +402,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>30 July 2019</td>
   <td><ul>
-  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.95](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.95](/docs/containers?topic=containers-cs_cli_changelog).</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB `nginx-ingress` image to build 515 for the [ALB pod readiness check](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>Removing subnets from a cluster</strong>: Added steps for removing subnets [in an IBM Cloud infrastructure account](/docs/openshift?topic=openshift-subnets#remove-sl-subnets) or [in an on-premises network](/docs/openshift?topic=openshift-subnets#remove-user-subnets) from a cluster. </li>
+  <li><strong>Removing subnets from a cluster</strong>: Added steps for removing subnets [in an IBM Cloud infrastructure account](/docs/containers?topic=containers-subnets#remove-sl-subnets) or [in an on-premises network](/docs/containers?topic=containers-subnets#remove-user-subnets) from a cluster. </li>
   </ul></td>
 </tr>
 <tr>
@@ -442,14 +442,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>02 July 2019</td>
-  <td><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.58](/docs/openshift?topic=openshift-cs_cli_changelog).</td>
+  <td><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.58](/docs/containers?topic=containers-cs_cli_changelog).</td>
 </tr>
 <tr>
   <td>01 July 2019</td>
   <td><ul>
-  <li><strong>Infrastructure permissions</strong>: Updated the [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) required for common use cases.</li>
+  <li><strong>Infrastructure permissions</strong>: Updated the [classic infrastructure roles](/docs/containers?topic=containers-access_reference#infra) required for common use cases.</li>
   <li><strong>OpenShift FAQs</strong>: Expanded the [FAQs](/docs/containers?topic=containers-faqs#container_platforms) to include information about OpenShift clusters.</li>
-  <li><strong>strongSwan VPN service</strong>: If you install strongSwan in a multizone cluster and use the `enableSingleSourceIP=true` setting, you can now [set `local.subnet` to the `%zoneSubnet` variable and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster](/docs/openshift?topic=openshift-vpn#strongswan_4).</li>
+  <li><strong>strongSwan VPN service</strong>: If you install strongSwan in a multizone cluster and use the `enableSingleSourceIP=true` setting, you can now [set `local.subnet` to the `%zoneSubnet` variable and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster](/docs/containers?topic=containers-vpn#strongswan_4).</li>
   </ul></td>
 </tr>
 </tbody></table>
@@ -468,7 +468,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>24 June 2019</td>
   <td><ul>
-  <li><strong>Calico network policies</strong>: Added a set of [public Calico policies](/docs/openshift?topic=openshift-network_policies#isolate_workers_public) and expanded the set of [private Calico policies](/docs/openshift?topic=openshift-network_policies#isolate_workers) to protect your cluster on public and private networks.</li>
+  <li><strong>Calico network policies</strong>: Added a set of [public Calico policies](/docs/containers?topic=containers-network_policies#isolate_workers_public) and expanded the set of [private Calico policies](/docs/containers?topic=containers-network_policies#isolate_workers) to protect your cluster on public and private networks.</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `nginx-ingress` image to build 477](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
   </ul></td>
 </tr>
@@ -482,29 +482,29 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>18 June 2019</td>
   <td><ul>
-  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of versions 0.3.47 and 0.3.49](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+  <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of versions 0.3.47 and 0.3.49](/docs/containers?topic=containers-cs_cli_changelog).</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `nginx-ingress` image to build 473 and `ingress-auth` image to build 331](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
   <li><strong>Removing persistent storage</strong>: Updated the information for how you are billed when you [delete persistent storage](/docs/containers?topic=containers-cleanup).</li>
-  <li><strong>Service bindings with private endpoint</strong>: [Added steps](/docs/openshift?topic=openshift-service-binding) for how to manually create service credentials with the private service endpoint when you bind the service to your cluster.</li>
+  <li><strong>Service bindings with private endpoint</strong>: [Added steps](/docs/containers?topic=containers-service-binding) for how to manually create service credentials with the private service endpoint when you bind the service to your cluster.</li>
   </ul></td>
 </tr>
 <tr>
   <td>14 June 2019</td>
   <td><ul>
-  <li><strong>`kubectl` troubleshooting</strong>: Added a [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot#kubectl_fails) for when you have a `kubectl` client version that is 2 or more versions apart from the server version or the OpenShift version of `kubectl`, which does not work with community Kubernetes clusters.</li>
+  <li><strong>`kubectl` troubleshooting</strong>: Added a [troubleshooting topic](/docs/containers?topic=containers-cs_troubleshoot#kubectl_fails) for when you have a `kubectl` client version that is 2 or more versions apart from the server version or the OpenShift version of `kubectl`, which does not work with community Kubernetes clusters.</li>
   <li><strong>Tutorials landing page</strong>: Replaced the related links page with a new [tutorials landing page](/docs/containers?topic=containers-tutorials-ov) for all tutorials that are specific to {{site.data.keyword.containershort_notm}}.</li>
-  <li><strong>Using existing subnets to create a cluster</strong>: To [reuse subnets from an unneeded cluster when you create a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom), the subnets must be user-managed subnets that you manually added from an on-premises network. All subnets that were automatically ordered during cluster creation are immediately deleted after you delete a cluster, and you cannot reuse these subnets to create a new cluster.</li>
+  <li><strong>Using existing subnets to create a cluster</strong>: To [reuse subnets from an unneeded cluster when you create a new cluster](/docs/containers?topic=containers-subnets#subnets_custom), the subnets must be user-managed subnets that you manually added from an on-premises network. All subnets that were automatically ordered during cluster creation are immediately deleted after you delete a cluster, and you cannot reuse these subnets to create a new cluster.</li>
   </ul></td>
 </tr>
 <tr>
   <td>12 June 2019</td>
-  <td><strong>Aggregating cluster roles</strong>: Added steps for [extending users' existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate).</td>
+  <td><strong>Aggregating cluster roles</strong>: Added steps for [extending users' existing permissions by aggregating cluster roles](/docs/containers?topic=containers-users#rbac_aggregate).</td>
 </tr>
 <tr>
   <td>07 June 2019</td>
   <td><ul>
   <li><strong>Access to the Kubernetes master through the private service endpoint</strong>: Added [steps](/docs/openshift?topic=openshift-access_cluster#access_private_se) to expose the private service endpoint through a private load balancer. After you complete these steps, your authorized cluster users can access the Kubernetes master from a VPN or {{site.data.keyword.cloud_notm}} Direct Link connection.</li>
-  <li><strong>{{site.data.keyword.BluDirectLink}}</strong>: Added {{site.data.keyword.cloud_notm}} Direct Link to the [VPN connectivity](/docs/openshift?topic=openshift-vpn) and [hybrid cloud](/docs/containers?topic=containers-hybrid_iks_icp) pages as a way to create a direct, private connection between your remote network environments and {{site.data.keyword.containerlong_notm}} without routing over the public internet.</li>
+  <li><strong>{{site.data.keyword.BluDirectLink}}</strong>: Added {{site.data.keyword.cloud_notm}} Direct Link to the [VPN connectivity](/docs/containers?topic=containers-vpn) and [hybrid cloud](/docs/containers?topic=containers-hybrid_iks_icp) pages as a way to create a direct, private connection between your remote network environments and {{site.data.keyword.containerlong_notm}} without routing over the public internet.</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `ingress-auth` image to build 330](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
   <li><strong>OpenShift beta</strong>: [Added a lesson](/docs/openshift?topic=openshift-openshift_tutorial#openshift_logdna_sysdig) about how to modify app deployments for privileged security context constraints for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} add-ons.</li>
   </ul></td>
@@ -519,7 +519,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>05 June 2019</td>
   <td><ul>
-  <li><strong>CLI reference</strong>: Updated the [CLI reference page](/docs/openshift?topic=openshift-kubernetes-service-cli) to reflect multiple changes for the [release of version 0.3.34](/docs/openshift?topic=openshift-cs_cli_changelog) of the {{site.data.keyword.containerlong_notm}} CLI plug-in.</li>
+  <li><strong>CLI reference</strong>: Updated the [CLI reference page](/docs/openshift?topic=openshift-kubernetes-service-cli) to reflect multiple changes for the [release of version 0.3.34](/docs/containers?topic=containers-cs_cli_changelog) of the {{site.data.keyword.containerlong_notm}} CLI plug-in.</li>
   <li><strong>New! Red Hat OpenShift on IBM Cloud clusters</strong>: With the Red Hat OpenShift on IBM Cloud beta, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the OpenShift container orchestration platform software. You get all the advantages of managed {{site.data.keyword.containerlong_notm}} for your cluster infrastructure environment, along with the [OpenShift tooling and catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) that runs on Red Hat Enterprise Linux for your app deployments. To get started, see [Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial).</li>
   </ul></td>
 </tr>
