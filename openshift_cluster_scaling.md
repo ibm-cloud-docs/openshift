@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-11"
+lastupdated: "2020-02-14"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -50,8 +50,8 @@ Want to autoscale your pods instead? Check out [Scaling apps](/docs/openshift?to
 The cluster autoscaler periodically scans the cluster to adjust the number of worker nodes within the worker pools that it manages in response to your workload resource requests and any custom settings that you configure, such as scanning intervals. Every minute, the cluster autoscaler checks for the following situations.
 {: shortdesc}
 
-*   **Pending pods to scale up**: A pod is considered pending when insufficient compute resources exist to schedule the pod on a worker node. When the cluster autoscaler detects pending pods, the autoscaler scales up your worker nodes evenly across zones to meet the workload resource requests.
-*   **Underutilized worker nodes to scale down**: By default, worker nodes that run with less than 50% of the total compute resources that are requested for 10 minutes or more and that can reschedule their workloads onto other worker nodes are considered underutilized. If the cluster autoscaler detects underutilized worker nodes, it scales down your worker nodes one at a time so that you have only the compute resources that you need. If you want, you can [customize](/docs/openshift?topic=openshift-ca#ca_chart_values) the default scale-down utilization threshold of 50% for 10 minutes.
+* **Pending pods to scale up**: A pod is considered pending when insufficient compute resources exist to schedule the pod on a worker node. When the cluster autoscaler detects pending pods, the autoscaler scales up your worker nodes evenly across zones to meet the workload resource requests.
+* **Underutilized worker nodes to scale down**: By default, worker nodes that run with less than 50% of the total compute resources that are requested for 10 minutes or more and that can reschedule their workloads onto other worker nodes are considered underutilized. If the cluster autoscaler detects underutilized worker nodes, it scales down your worker nodes one at a time so that you have only the compute resources that you need. If you want, you can [customize](/docs/openshift?topic=openshift-ca#ca_chart_values) the default scale-down utilization threshold of 50% for 10 minutes.
 
 Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes.
 
@@ -768,20 +768,28 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 <br />
 
 
-## Updating the cluster autoscaler Helm chart
+## Upgrading a cluster autoscaler release
 {: #ca_helm_up}
 
-You can update the existing cluster autoscaler Helm chart to the latest version. To check your current Helm chart version, run `helm list -n <namespace> | grep cluster-autoscaler`.
+You can upgrade the existing cluster autoscaler release to the latest version of the Helm chart. To check your current release version, run `helm list -n <namespace> | grep cluster-autoscaler`. Compare your version to the latest available release by reviewing the **Chart Version** in the [{{site.data.keyword.cloud_notm}} Helm Catalog](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler){: external}.
 {: shortdesc}
 
-Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these instructions](#ca_helm_up_102).
-{: note}
+### Prerequisites
+{: #ca_helm_up_prereqs}
 
-**Before you begin**:
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* For a changelog of chart versions, [download the source code `tar` file](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
+Before you begin to upgrade your cluster autoscaler release, complete the following steps.
+{: shortdesc}
 
-**To update the cluster autoscaler Helm chart**:
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+3. To review the changelog of chart versions, [download the source code `tar` file](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
+
+### Upgrading the cluster autoscaler release version
+{: #ca_helm_up_general}
+
+To upgrade your cluster autoscaler release, you can update the Helm chart repo and recreate the cluster autoscaler pods. Use the same version of Helm that you used to install the initial Helm chart and release. For example, if you installed the release with Helm version 2, these upgrade steps might not work if you now have Helm version 3. Instead, see [Upgrading a release from Helm version 2 to version 3](#ca_helm_up_2to3).
+
+Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
+
 1.  Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
     ```
     helm repo update
@@ -794,7 +802,7 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
     ```
     {: pre}
 
-3.  Find the name of the cluster autoscaler Helm chart that you installed in your cluster.
+3.  Find the name of the cluster autoscaler release that you installed in your cluster.
     ```
     helm list -n <namespace> | grep cluster-autoscaler
     ```
@@ -806,7 +814,7 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
     ```
     {: screen}
 
-4.  Update the cluster autoscaler Helm chart to the latest version.
+4.  Upgrade the cluster autoscaler release to the latest version.
     ```
     helm upgrade --force --recreate-pods <helm_chart_name>  iks-charts/ibm-iks-cluster-autoscaler
     ```
@@ -837,55 +845,58 @@ Updating to the latest Helm chart from version 1.0.2 or earlier? [Follow these i
     ```
     {: screen}
 
-### Updating to the latest Helm chart from version 1.0.2 or earlier
-{: #ca_helm_up_102}
+### Upgrading a release from Helm v2 to v3
+{: #ca_helm_up_2to3}
 
-The latest Helm chart version of the cluster autoscaler requires a full removal of previously installed cluster autoscaler Helm chart versions. If you installed the Helm chart version 1.0.2 or earlier, uninstall that version first before you install the latest Helm chart of the cluster autoscaler.
+When you upgrade a release of the cluster autoscaler, you must use the same version of Helm that you used to install the initial Helm chart and release. The cluster autoscaler Helm chart supports both Helm version 2.15 and 3.0. If you installed the Helm chart and release with Helm v2 and then try to upgrade from a Helm v3 client, you might experience errors. Instead, uninstall the release and reinstall the latest release with Helm v3. For more information, see [Migrating from Helm v2 to v3](/docs/openshift?topic=openshift-helm#migrate_v3).
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Additionally, if you have release version 1.0.2 or earlier, you must uninstall that release before you install the latest release.
 
-1.  Get your cluster autoscaler configmap.
+Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
+
+1.  [Migrate to](/docs/openshift?topic=openshift-helm#migrate_v3) or [install](/docs/openshift?topic=openshift-helm#install_v3) Helm version 3.
+2.  Get your cluster autoscaler configmap.
     ```
     oc get cm iks-ca-configmap -n kube-system -o yaml > iks-ca-configmap.yaml
     ```
     {: pre}
-2.  Remove all worker pools from the configmap by setting the `"enabled"` value to `false`.
+3.  Remove all worker pools from the configmap by setting the `"enabled"` value to `false`.
     ```
     oc edit cm iks-ca-configmap -n kube-system
     ```
     {: pre}
-3.  If you applied custom settings to the Helm chart, note your custom settings.
+4.  If you applied custom settings to the Helm chart, note your custom settings.
     ```
     helm get values ibm-ks-cluster-autoscaler -a
     ```
     {: pre}
-4.  Uninstall your current Helm chart.
+5.  Uninstall your current Helm chart.
     ```
     helm uninstall ibm-ks-cluster-autoscaler -n <namespace>
     ```
     {: pre}
-5.  Update the Helm chart repo to get the latest cluster autoscaler Helm chart version.
+6.  Update the Helm chart repo to get the latest cluster autoscaler Helm chart version.
     ```
     helm repo update
     ```
     {: pre}
-6.  Install the latest cluster autoscaler Helm chart. Apply any custom settings that you previously used with the `--set` flag, such as `scanInterval=2m`.
+7.  Install the latest cluster autoscaler Helm chart. Apply any custom settings that you previously used with the `--set` flag, such as `scanInterval=2m`.
     ```
     helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system [--set <custom_settings>]
     ```
     {: pre}
-7.  Apply the cluster autoscaler configmap that you previously retrieved to enable autoscaling for your worker pools.
+8.  Apply the cluster autoscaler configmap that you previously retrieved to enable autoscaling for your worker pools.
     ```
     oc apply -f iks-ca-configmap.yaml
     ```
     {: pre}
-8.  Get your cluster autoscaler pod.
+9.  Get your cluster autoscaler pod.
     ```
     oc get pods -n kube-system
     ```
     {: pre}
-9.  Review the **`Events`** section of the cluster autoscaler pod and look for a **`ConfigUpdated`** event to verify that the configmap is successfully updated. The event message for your configmap is in the following format: `minSize:maxSize:PoolName:<SUCCESS|FAILED>:error message`.
+10.  Review the **`Events`** section of the cluster autoscaler pod and look for a **`ConfigUpdated`** event to verify that the configmap is successfully updated. The event message for your configmap is in the following format: `minSize:maxSize:PoolName:<SUCCESS|FAILED>:error message`.
     ```
     oc describe pod -n kube-system <cluster_autoscaler_pod>
     ```

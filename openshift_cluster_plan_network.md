@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-14"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -202,7 +202,7 @@ To achieve this cluster setup, you can allow limited public connectivity to your
 
 <p>
 <figure>
- <img src="images/cs_clusters_planning_calico.png" width="850" style="width:850px; border-style: none" alt="Architecture image for a cluster that uses edge nodes and Calico network policies for secure public access"/>
+ <img src="images/cs_clusters_planning_calico.png" width="850" style="width:850px" alt="Architecture image for a cluster that uses edge nodes and Calico network policies for secure public access"/>
  <figcaption>Network setup for a cluster that uses edge nodes and Calico network policies for secure public access</figcaption>
 </figure>
 </p>

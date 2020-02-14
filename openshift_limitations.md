@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -143,6 +143,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 {: caption="Classic cluster storage limitations"}
 
 <br />
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-12"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -1622,7 +1622,7 @@ spec:
 |Annotation field|Value|
 |----------------|-----|
 | `serviceName` | Replace `<myservice>` with the name of a service to apply proxy-buffers-size. |
-| `size` | Replace `<size>` with the size of each buffer in kilobytes (k or K), such as `1K`. To calculate the proper size, you can check out [this blog post](https://www.getpagespeed.com/server-setup/nginx/tuning-proxy_buffer_size-in-nginx){:external}. |
+| `size` | Replace `<size>` with the size of each buffer in kilobytes (k or K), such as `1K`. To calculate the proper size, you can check out [this blog post](https://www.getpagespeed.com/server-setup/nginx/tuning-proxy_buffer_size-in-nginx){: external}. |
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
