@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-13"
+lastupdated: "2020-02-14"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -61,7 +61,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
     <li>Integrate ordered infrastructure resources to work automatically with your cluster architecture and become available to your deployed apps and workloads.</li></ul>
     <br><br>
     **Your responsibilities**:
-    <ul><li>Use the provided API, CLI, or console tools to adjust [compute](/docs/containers?topic=containers-add_workers) and [storage](/docs/containers?topic=containers-storage_planning#storage_planning) capacity, and to adjust [networking configuration](/docs/containers?topic=containers-cs_network_cluster#cs_network_cluster) to meet the needs of your workload.</li></ul><br><br>
+    <ul><li>Use the provided API, CLI, or console tools to adjust [compute](/docs/openshift?topic=openshift-add_workers) and [storage](/docs/openshift?topic=openshift-storage_planning#storage_planning) capacity, and to adjust [networking configuration](/docs/openshift?topic=openshift-cs_network_cluster#cs_network_cluster) to meet the needs of your workload.</li></ul><br><br>
     </td>
      </tr>
      <tr>
@@ -80,7 +80,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
      <br><br>
      **Your responsibilities**:
      <ul>
-     <li>Use the API, CLI, or console tools to [apply](/docs/containers?topic=containers-update#update) the provided major and minor Kubernetes master updates and major, minor, and patch worker node updates.</li>
+     <li>Use the API, CLI, or console tools to [apply](/docs/openshift?topic=openshift-update#update) the provided major and minor Kubernetes master updates and major, minor, and patch worker node updates.</li>
      <li>Use the API, CLI, or console tools to [recover](/docs/openshift?topic=openshift-cs_troubleshoot) your infrastructure resources.</li></ul>
      <br><br></td>
       </tr>
@@ -107,7 +107,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
       **Your responsibilities**:
       <ul>
       <li>Use the API, CLI, or console tools to apply the provided [security patch updates](/docs/openshift?topic=openshift-openshift_changelog) to your worker nodes.</li>
-      <li>Choose how to set up your [cluster network](/docs/containers?topic=containers-plan_clusters) and configure further [security settings](/docs/containers?topic=containers-security#security) to meet your workload's security and compliance needs. If applicable, configure your [firewall](/docs/containers?topic=containers-firewall#firewall).</li></ul>
+      <li>Choose how to set up your [cluster network](/docs/openshift?topic=openshift-plan_clusters) and configure further [security settings](/docs/openshift?topic=openshift-security#security) to meet your workload's security and compliance needs. If applicable, configure your [firewall](/docs/openshift?topic=openshift-firewall#firewall).</li></ul>
       <br><br></td>
       </tr>
 
@@ -128,12 +128,13 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
         <br><br>
         **Your responsibilities**:
         <ul>
-        <li>Use the provided tools and features to [configure and deploy](/docs/openshift?topic=openshift-openshift_apps); [set up permissions](/docs/containers?topic=containers-users#users); [integrate with other services](/docs/openshift?topic=openshift-supported_integrations); [externally serve](/docs/containers?topic=openshift-cs_network_planning); [set up and monitor the health](/docs/openshift?topic=openshift-health); [save, back up, and restore data](/docs/containers?topic=containers-storage_planning#storage_planning); and otherwise manage your [highly available](/docs/containers?topic=containers-ha#ha) and resilient workloads.</li>
+        <li>Use the provided tools and features to [configure and deploy](/docs/openshift?topic=openshift-openshift_apps); [set up permissions](/docs/openshift?topic=openshift-users#users); [integrate with other services](/docs/openshift?topic=openshift-supported_integrations); [externally serve](/docs/containers?topic=openshift-cs_network_planning); [set up and monitor the health](/docs/openshift?topic=openshift-health); [save, back up, and restore data](/docs/openshift?topic=openshift-storage_planning#storage_planning); and otherwise manage your [highly available](/docs/openshift?topic=openshift-ha#ha) and resilient workloads.</li>
         </ul>
         </td>
         </tr>
   </tbody>
   </table>
+
 
 
 
