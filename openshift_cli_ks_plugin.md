@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-11"
+lastupdated: "2020-02-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -62,7 +62,7 @@ The following beta versions of the redesigned {{site.data.keyword.containerlong_
     ```
     {: pre}
 
-When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 14 March 2020 to update CLI command syntax.</br></br>To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run.
+When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 16 March 2020 to update CLI command syntax.</br></br>To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run.
 {: important}
 
 Check out the following changes between each version of the CLI plug-in:
@@ -246,7 +246,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 After logging in, download Kubernetes configuration data and certificates to connect to your cluster and run `oc` commands. The files are downloaded to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`.
 {: shortdesc}
 
-In [CLI plug-in version 1.0](#cs_beta), `cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately. Note that any pre-existing `kubeconfig` files are not merged automatically.</br></br>When version 1.0 releases on 14 March 2020, the permanent behavior changes to this command are not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the CLI plug-in within the script or the environment where the script is run.
+In [CLI plug-in version 1.0](#cs_beta), `cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately. Note that any pre-existing `kubeconfig` files are not merged automatically.</br></br>When version 1.0 releases on 16 March 2020, the permanent behavior changes to this command are not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the CLI plug-in within the script or the environment where the script is run.
 {: important}
 
 ```
@@ -4205,7 +4205,7 @@ ibmcloud oc messages
 List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations).
 {: shortdesc}
 
-In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the `locations` command. When version 1.0 releases on 14 March 2020, the permanent syntax change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the CLI plug-in within the script or the environment where the script is run.
+In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the `locations` command. When version 1.0 releases on 16 March 2020, the permanent syntax change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the CLI plug-in within the script or the environment where the script is run.
 {: important}
 
 ```
