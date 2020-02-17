@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-02-17"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 17 February 2020 | <ul><li>**Migration operator**: Updated the [migration operator storage configuration file](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-destination) to clarify {{site.data.keyword.cos_short}} endpoints.</li><li>**Version changelogs**: Master and worker node patch updates are available for OpenShift [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542)</li></ul>|
 | 10 February 2020 | **New! OpenShift 4.3**: OpenShift 4.3 is now available as a beta. During the beta, the OpenShift license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you cannot update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_versions#ocp43). |
 | 06 February 2020 | <ul><li>**Cluster autoscaler**: Added a [debugging guide for the cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler).</li><li>**Expanded troubleshooting**: You can now find troubleshooting steps for OpenShift clusters in the following pages:<ul><li>[Clusters and masters](/docs/openshift?topic=openshift-cs_troubleshoot)</li><li>[Worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters)</li><li>[Cluster networking](/docs/openshift?topic=openshift-cs_troubleshoot_network)</li><li>[Apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_app)</li><li>[Load balancers](/docs/openshift?topic=openshift-cs_troubleshoot_lb)</li><li>[Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress)</li><li>[Persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)</li></ul></li><li>**Tags**: Added how to [add {{site.data.keyword.cloud_notm}} tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags).</li></ul> |
 | 03 February 2020 | **Version changelog**: Updates are available for OpenShift master fix pack[3.11.161_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1539) and worker fix pack [3.11.161_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1540). |
