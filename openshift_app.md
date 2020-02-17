@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-11"
+lastupdated: "2020-02-17"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -33,161 +33,588 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Deploying apps in OpenShift clusters
+# Developing apps to run on OpenShift
 {: #openshift_apps}
 
-With {{site.data.keyword.openshiftlong}} clusters, you can deploy apps from a remote file or repository such as GitHub with a single command. Also, your clusters come with various built-in services that you can use to help operate your cluster.
+Develop a configuration to deploy your app workload to {{site.data.keyword.openshiftlong}}. Because Kubernetes is an extensible container orchestration platform that does not mandate a specific language or app, you can run various workloads such as stateless, stateful, and data-processing apps that are written in the language of your choice.
+{: shortdesc}
+<br>
+
+## Specifying your app requirements in your YAML file
+{: #app_yaml}
+
+In Kubernetes, you describe your app in a YAML file that declares the configuration of the Kubernetes object. The Kubernetes API server then processes the YAML file and stores the configuration and required state of the object in the etcd data store. The Kubernetes scheduler schedules your workloads onto the worker nodes within your cluster, taking into account the specification in your YAML file, any cluster policies that the admin sets, and available cluster capacity.
 {: shortdesc}
 
-## Moving your apps to OpenShift
-{: #openshift_move_apps}
+Review a copy of the [complete YAML file](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/deploy-apps-clusters/deploy_wasliberty.yaml). Then, review the following sections to understand how you can enhance your app deployment.
 
+Want more information about how Kubernetes objects work together for your deployment? Check out [Understanding Kubernetes objects for apps](/docs/openshift?topic=openshift-plan_deploy#kube-objects).
+{: tip}
 
-To create an app in your Red Hat OpenShift on IBM Cloud cluster, you can use the OpenShift console or CLI.
+### Basic deployment metadata
+{: #metadata}
+
+Use the appropriate API version for the [kind of Kubernetes object](#object) that you deploy. The API version determines the supported features for the Kubernetes object that are available to you. The name that you give in the metadata is the object's name, not its label. You use the name when interacting with your object, such as `oc get deployment <name>`.
 {: shortdesc}
 
-### Deploying apps through the console
-{: #deploy_apps_ui}
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wasliberty
+```
+{: codeblock}
 
-You can create apps through various methods in the OpenShift console by using the **Developer** perspective. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.2/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
+### Replica set
+{: #replicaset}
+
+To increase the availability of your app, you can specify a replica set in your deployment. In a replica set, you define how many instances of your app that you want to deploy. Replica sets are managed and monitored by your Kubernetes deployment. If one app instance goes down, Kubernetes automatically spins up a new instance of your app to maintain the specified number of app instances.
 {: shortdesc}
 
-1.  From the [Cluster](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) page, select your cluster.
-2.  Click **OpenShift web console**.
-3.  From the perspective switcher, select **Developer**. The OpenShift web console switches to the Developer perspective, and the menu now offers items such as **+Add**, **Topology**, and **Builds**.
-4.  Click **+Add**.
-5.  In the **Add** pane menu bar, select the **Project** that you want to create your app in from the drop-down list.
-6.  Click the method that you want to use to add your app, and follow the instructions. For example, click **From Git**.
+```yaml
+spec:
+  replicas: 3
+```
+{: codeblock}
 
-### Deploying apps through the CLI
-{: #deploy_apps_cli}
+### Labels
+{: #label}
 
-To create an app in your Red Hat OpenShift on IBM Cloud cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/creating-applications-using-cli.html){: external}.
+With [labels](/docs/openshift?topic=openshift-plan_deploy#deploy_organize), you can mark different types of resources in your cluster with the same `key: value` pair. Then, you can specify the selector to match the label so that you can build upon these other resources. If you plan to expose your app publicly, you must use a label that matches the selector that you specify in the service. In the example, the deployment spec uses the template that matches the label `app: wasliberty.`
 {: shortdesc}
 
+You can retrieve objects that are labeled in your cluster, such as to see `staging` or `production` components. For example, list all resources with an `env: production` label across all namespaces in the cluster. **Note:** You need access to all namespaces to run this command.
 
 ```
-oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-dir=<subdirectory>]
+oc get all -l env=production --all-namespaces
 ```
 {: pre}
 
-**What does the `new-app` command do?**<br>
-The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/creating-applications-using-cli.html){: external}.
+* For more information about labels, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){: external}.
+* To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with labels or [update an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
+* For a more detailed example, see [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity).
 
-<br />
+```yaml
+selector:
+  matchLabels:
+    app: wasliberty
+template:
+  metadata:
+    labels:
+      app: wasliberty
+```
+{: codeblock}
 
+### Affinity
+{: #affinity}
 
-## Common app modification scenarios
-{: openshift_move_apps_scenarios}
-{: help}
-{: support}
-
-OpenShift has different default settings than community Kubernetes, such as stricter security context constraints. Review the following common scenarios where you might need to modify your apps so that you can deploy them on OpenShift clusters.
+Specify affinity (co-location) when you want more control over which worker nodes the pods are scheduled on. Affinity affects the pods only at scheduling time. For example, to spread the deployment across worker nodes instead of allowing pods to schedule on the same node, use the `podAntiAffinity` option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.
 {: shortdesc}
 
-<table summary="The first column describes an app scenario. The second column explains the steps that you can take to address the app scenario.">
-<caption>Common scenarios that require app modifications</caption>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Steps you can take</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status</td>
-<td>The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html).</td>
-</tr>
-<tr>
-<td>Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories.</td>
-<td>In OpenShift, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html).</td>
-</tr>
-<tr>
-<td>You deploy your app by using Helm. You might see an error similar to `User "system:serviceaccount:tiller:tiller" cannot create <resource>.rbac.authorization.k8s.io: RBAC: <resource>.rbac.authorization.k8s.io "<resource>.rbac.authorization.k8s.io" not found`</td>
-<td>Make sure that you [set up Tiller](/docs/containers?topic=containers-helm#public_helm_install) with a privileged security account. Note that instead of using Tiller, you can update [Helm to version 3](/docs/containers?topic=containers-helm#migrate_v3), in which Tiller is removed. </td>
-</tr>
-<tr>
-<td>Your app uses persistent file storage with a non-root user ID that cannot write to the mounted storage device.</td>
-<td>[Adjust the security context](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot) for the app deployment so that `runAsUser` is set to `0`.</td>
-</tr>
-<tr>
-<td>Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error.</td>
-<td>Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions:<ul>
-<li>Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port.</li>
-<li>Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc).</li>
-<li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/nodes/containers/nodes-containers-port-forwarding.html).</li></ul></td>
-</tr>
-<tr>
-<td>Other use cases and scenarios</td>
-<td>Review the OpenShift documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 2 to version 3 ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html), or [from OCP version 3 to version 4](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration).</td>
-</tr>
-</tbody>
-</table>
+For more information, see the [Kubernetes documentation on Assigning Pods to Nodes](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/){: external}.
 
-### Example steps for giving a deployment privileged access
-{: #openshift_move_apps_example_scc}
+* **Required anti-affinity**: You can deploy only the number of replicas that you have worker nodes for. For example, if you have three worker nodes in your cluster but you define five replicas in your YAML file, then only three replicas deploy. Each replica lives on a different worker node. The leftover two replicas remain pending. If you add another worker node to your cluster, then one of the leftover replicas deploys to the new worker node automatically. If a worker node fails, the pod does not reschedule because the affinity policy is required. For an example YAML with required, see [Liberty app with required pod anti-affinity](https://github.com/IBM-Cloud/kube-samples/blob/master/deploy-apps-clusters/liberty_requiredAntiAffinity.yaml){: external}.
+* **Preferred anti-affinity**: You can deploy your pods to nodes with available capacity, which provides more flexibility for your workload. When possible, the pods are scheduled on different worker nodes. For example, if you have three worker nodes with enough capacity in your cluster, it can schedule the five replica pods across the nodes. However, if you add two more worker nodes to your cluster, the affinity rule does not force the two extra pods that are running on the existing nodes to reschedule onto the free node.
+* **Worker node affinity**: You can configure your deployment to run on only certain worker nodes, such as bare metal. For more information, see [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity).
 
-If you have an app that runs with root permissions, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your OpenShift cluster. For example, you might set up your project with a service account to control privileged access, and then modify your deployment to use this service account.
+Example for preferred anti-affinity:
+```yaml
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - wasliberty
+          topologyKey: kubernetes.io/hostname
+```
+{: codeblock}
+
+### Container image
+{: #image}
+
+Specify the image that you want to use for your containers, the location of the image, and the image pull policy. If you do not specify an image tag, by default it pulls the image that is tagged `latest`.
 {: shortdesc}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+Avoid using the latest tag for production workloads. You might not have tested your workload with the latest image if you are using a public or shared repository, such as Docker Hub or {{site.data.keyword.registryshort_notm}}.
+{: important}
 
-1.  As a cluster administrator, create a project.
-    ```
-    oc adm new-project <project_name>
-    ```
-    {: pre}
-2.  Target the project so that the subsequent resources that you create are in the project namespace.
-    ```
-    oc project <project_name>
-    ```
-    {: pre}
-3.  Create a service account for the project.
-    ```
-    oc create serviceaccount <sa_name>
-    ```
-    {: pre}
-4.  Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are included in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}.</p>
-    ```
-    oc adm policy add-scc-to-user privileged -n <project_name> -z <sa_name>
-    ```
-    {: pre}
-5.  In your deployment configuration file, refer to the privileged service account and set the security context to privileged.
-    *   In `spec.template.spec`, add `serviceAccount: <sa_name>`.
-    *   In `spec.template.spec.containers`, add `securityContext: privileged: true`.
+For example, to list the tags of public IBM images:
+1. Switch to the global registry region.
+  ```
+  ibmcloud cr region-set global
+  ```
+  {: pre}
+2. List the IBM images.
+  ```
+  ibmcloud cr images --include-ibm
+  ```
 
-    Example:
-    ```
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: myapp_deployment
-      labels:
-        app: myapp
+The default `imagePullPolicy` is set to `IfNotPresent`, which pulls the image only if it does not exist locally. If you want the image to be pulled every time that the container starts, specify the `imagePullPolicy: Always`.
+
+```yaml
+containers:
+- name: wasliberty
+  image: icr.io/ibm/liberty:webProfile8
+  imagePullPolicy: Always
+```
+{: codeblock}
+
+### Port for the app's service
+{: #port}
+
+Select a container port to open the app's services on. To see which port needs to be opened, refer to your app specs or Dockerfile. The port is accessible from the private network, but not from a public network connection. To expose the app publicly, you must create a NodePort, load balancer, or Ingress service. You use this same port number when you [create a `Service` object](#app-service).
+{: shortdesc}
+
+Port 25 is blocked for all services in {{site.data.keyword.cloud_notm}}.
+{: note}
+
+```yaml
+ports:
+- containerPort: 9080
+```
+{: codeblock}
+
+### Resource requests and limits
+{: #resourcereq}
+
+Cluster administrators make sure that teams that share a cluster don't take up more than their fair share of compute resources (memory and CPU) by creating a [`ResourceQuota` object](https://kubernetes.io/docs/concepts/policy/resource-quotas/){: external} for each OpenShift project in the cluster. If the cluster admin sets a compute resource quota, then each container within the deployment template must specify resource requests and limits for memory and CPU, otherwise the pod creation fails.
+{: shortdesc}
+
+1. Check whether a resource quota is set for a namespace.
+  ```
+  oc get quota --namespace=<namespace>
+  ```
+  {: pre}
+2. See what the quota limits are.
+  ```
+  oc describe quota <quota_name> --namespace=<namespace>
+  ```
+  {: pre}
+
+Even if no resource quota is set, you can include resource requests and limits in your deployment to improve the management of worker node resources.
+
+If a container exceeds its limit, the container might be restarted or fail. If a container exceeds a request, its pod might be evicted if the worker node runs out of that resource that is exceeded. For more information about troubleshooting, see [Pods repeatedly fail to restart or are unexpectedly removed](/docs/openshift?topic=openshift-cs_troubleshoot_app#pods_fail).
+{: note}
+
+**Request**: The minimum amount of the resource that the scheduler reserves for the container to use. If the amount is equal to the limit, the request is guaranteed. If the amount is less than the limit, the request is still guaranteed, but the scheduler can use the difference between the request and the limit to fulfill the resources of other containers.
+
+**Limit**: The maximum amount of the resource that the container can consume. If the total amount of resources that is used across the containers exceeds the amount available on the worker node, containers can be evicted to free up space. To prevent eviction, set the resource request equal to the limit of the container. If no limit is specified, the default is the worker node's capacity.
+
+For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external}.
+
+```yaml
+resources:
+  requests:
+    memory: "512Mi"
+    cpu: "500m"
+  limits:
+    memory: "1024Mi"
+    cpu: "1000m"
+```
+{: codeblock}
+
+### Liveness and readiness probes
+{: #probe}
+
+By default, Kubernetes sends traffic to your app pods after all containers in the pod start, and restarts containers when they crash. However, you can set health checks to improve the robustness of service traffic routing.
+{: shortdesc}
+
+For example, your app might have a startup delay. The app processes might begin before the entire app is completely ready, which can affect responses especially when scaling up across many instances. With health checks, you can let your system can know whether your app is running and ready to receive requests. By setting these probes, you can also help prevent downtime when you perform a [rolling update](#app_rolling) of your app. You can set two types of health checks: liveness and readiness probes.
+
+**Liveness probe**: Set up a liveness probe to check whether the container is running. If the probe fails, the container is restarted. If the container does not specify a liveness probe, the probe succeeds because it assumes that the container is alive when the container is in a **Running** status.
+
+**Readiness probe**: Set up a readiness probe to check whether the container is ready to receive requests and external traffic. If the probe fails, the pod's IP address is removed as a usable IP address for services that match the pod, but the container is not restarted. Setting a readiness probe with an initial delay is especially important if your app takes a while to start up. Before the initial delay, the probe does not start, giving your container time to come up. If the container does not provide a readiness probe, the probe succeeds because it assumes that the container is alive when the container is in a **Running** status.
+
+You can set up the probes as commands, HTTP requests, or TCP sockets. The example uses HTTP requests. Give the liveness probe more time than the readiness probe. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: external}.
+
+```yaml
+livenessProbe:
+  httpGet:
+    path: /
+    port: 9080
+  initialDelaySeconds: 300
+  periodSeconds: 15
+readinessProbe:
+  httpGet:
+    path: /
+    port: 9080
+  initialDelaySeconds: 45
+  periodSeconds: 5
+```
+{: codeblock}
+
+### Pod Disruption Budget
+{: #disruption-budget}
+
+To increase your app's availability, you can control how your app reacts to [disruptions](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external} based on the type of availability that you want with a `PodDisruptionBudget` object.
+{: shortdesc}
+
+A pod disruption budget can help you plan how your app behaves during voluntary disruptions, such as when you initiate a direct restart by updating the app deployment, or involuntary disruptions, such as a kernel panic.
+* `minAvailable`: You can specify the number or percentage of pods that must still be available after a disruption occurs.
+* `maxUnavailable`: You can specify the number or percentage of pods that can be unavailable after a disruption occurs. The example uses `maxUnavailable: 1`.
+* `selector`: Fill in the label to select the set of pods that the PodDisruptionBudget applies to. Note that if you used this same label in other pod deployments, the pod applies to those as well.
+
+For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/run-application/configure-pdb/){: external}.
+
+```yaml
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: wasliberty
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: wasliberty
+```
+{: codeblock}
+
+### Exposing the app service
+{: #app-service}
+
+You can create a service that exposes your app. In the `spec` section, make sure to match the `port` and label values with the ones that you used in the deployment. The service exposes objects that match the label, such as `app: wasliberty` in the following example.
+{: shortdesc}
+
+* By default, a service uses [`ClusterIP`](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/){: external}, which makes the service accessible only within the cluster but not outside the cluster.
+* You can create a NodePort, load balancer, or Ingress service to expose the app publicly. These services have two IPs, one external and one internal. When traffic is received on the external IP, it is forwarded to the internal cluster IP. Then, from the internal cluster IP, the traffic is routed to the container IP of the app.
+* The example uses `NodePort` to expose the service outside the cluster. For more information about how to set up external access, see [Choosing a NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#external).
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: wasliberty
+  labels:
+    app: wasliberty
+spec:
+  ports:
+  - port: 9080
+  selector:
+    app: wasliberty
+    type: NodePort
+```
+
+If you have a requirement to deploy `hostNetwork` pods to listen on specific ports or to use a `hostPort` to expose your app pods on a specific port on the worker node, use a port in the `11000-11200` range. Red Hat OpenShift on IBM Cloud designates the `11000-11200` port range on worker nodes for this purpose to avoid conflicts with local ports and other ports that Red Hat OpenShift on IBM Cloud uses. Because `hostNetwork` pods and `hostPorts` refer to a particular worker node IP address, the pods are limited to run only on that worker node. If something unanticipated happens, such as the worker node being removed or running out of resources, your pod cannot be rescheduled. If you want to expose a pod’s port on the worker node, consider using a [`NodePort` service](/docs/openshift?topic=openshift-nodeport) instead. For more information, see the [Kubernetes best practices documentation](https://kubernetes.io/docs/concepts/configuration/overview/#services){: external}.
+{: important}
+
+### Configmaps for container environment variables
+{: #configmap}
+
+Configmaps provide non-sensitive configuration information for your deployment workloads.
+{: shortdesc}
+
+The following example shows how you can reference values from your configmap as environment variables in the container spec section of your deployment YAML. By referencing values from your configmap, you can decouple this configuration information from your deployment to keep your containerized app portable.
+* [Help me decide whether to use a Kubernetes `ConfigMap` or `Secret` object for variables](#variables).
+* For more ways to use configmaps, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){: external}.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wasliberty
+spec:
+  replicas: 3
+  template:
+    ...
     spec:
       ...
-      template:
+      containers:
+      - name: wasliberty
         ...
-        spec:
-          serviceAccount: <sa_name>
-          containers:
-          - securityContext:
-              privileged: true
+        env:
+          - name: VERSION
+            valueFrom:
+              configMapKeyRef:
+                name: wasliberty
+                key: VERSION
+          - name: LANGUAGE
+            valueFrom:
+              configMapKeyRef:
+                name: wasliberty
+                key: LANGUAGE
+        ...
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wasliberty
+  labels:
+    app: wasliberty
+data:
+  VERSION: "1.0"
+  LANGUAGE: en
+```
+{: codeblock}
+
+### Secrets for container environment variables
+{: #secret}
+
+Secrets provide sensitive configuration information such as passwords for your deployment workloads.
+{: shortdesc}
+
+The following example shows how you can reference values from your secret as environment variables in the container spec section of your deployment YAML. You can also mount the secret as a volume. By referencing values from your secret, you can decouple this configuration information from your deployment to keep your containerized app portable.
+* [Help me decide whether to use a ConfigMap or Secret for variables](#variables).
+* For more information, see [Understanding when to use secrets](/docs/openshift?topic=openshift-encryption#secrets).
+
+```yaml
+apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: wasliberty
+  spec:
+    replicas: 3
+    template:
+      ...
+      spec:
+        ...
+        containers:
+        - name: wasliberty
           ...
-    ```
-    {: screen}
-6.  Deploy your app configuration file.
-    ```
-    oc apply -f <filepath/deployment.yaml>
-    ```
-    {: pre}
-7.  Verify that the pod is in a **Running** status. If your pod shows an error status or is stuck in one status for a long time, describe the pod and review the **Events** section to start troubleshooting your deployment.
-    ```
-    oc get pods
-    ```
-    {: pre}
+          env:
+          - name: username
+            valueFrom:
+              secretKeyRef:
+                name: wasliberty
+                key: username
+          - name: password
+            valueFrom:
+              secretKeyRef:
+                name: wasliberty
+                key: password
+          ...
+  ---
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: wasliberty
+    labels:
+      app: wasliberty
+  type: Opaque
+  data:
+    username: dXNlcm5hbWU=
+    password: cGFzc3dvcmQ=
+```
+{: codeblock}
+
+### Persistent volumes for container storage
+{: #pv}
+
+Persistent volumes (PVs) interface with physical storage to provide persistent data storage for your container workloads.
+{: shortdesc}
+
+The following example shows how you can add persistent storage to your app. To provision persistent storage, you create a persistent volume claim (PVC) to describe the type and size of file storage that you want to have. After you create the PVC, the persistent volume and the physical storage are automatically created by using [dynamic provisioning](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning). By referencing the PVC in your deployment YAML, the storage is automatically mounted to your app pod. When the container in your pod writes data to the `/test` mount path directory, data is stored on the NFS file storage instance.
+* For more information, see [Understanding Kubernetes storage basics](/docs/openshift?topic=openshift-kube_concepts#kube_concepts).
+* For options on other types of storage that you can provision, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wasliberty
+spec:
+  replicas: 3
+  template:
+    ...
+    spec:
+      ...
+      containers:
+      - name: wasliberty
+        ...
+        volumeMounts:
+        - name: pvmount
+          mountPath: /test
+      volumes:
+      - name: pvmount
+        persistentVolumeClaim:
+          claimName: wasliberty
+        ...
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wasliberty
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "ibmc-file-bronze"
+  labels:
+    billingType: "hourly"
+    app: wasliberty
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 24Gi
+```
+{: codeblock}
 
 <br />
+
+
+## Complete example deployment YAML
+{: #yaml-example}
+
+The following example is a copy of the deployment YAML that is [discussed section-by-section previously](#app_yaml). You can also [download the YAML from GitHub](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/deploy-apps-clusters/deploy_wasliberty.yaml){: external}.
+{: shortdesc}
+
+To apply the YAML:
+
+```
+oc apply -f file.yaml [-n <namespace>]
+```
+{: pre}
+
+Example YAML:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wasliberty
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wasliberty
+  template:
+    metadata:
+      labels:
+        app: wasliberty
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - wasliberty
+              topologyKey: kubernetes.io/hostname
+      containers:
+      - name: wasliberty
+        image: icr.io/ibm/liberty:latest
+        env:
+          - name: VERSION
+            valueFrom:
+              configMapKeyRef:
+                name: wasliberty
+                key: VERSION
+          - name: LANGUAGE
+            valueFrom:
+              configMapKeyRef:
+                name: wasliberty
+                key: LANGUAGE
+          - name: username
+            valueFrom:
+              secretKeyRef:
+                name: wasliberty
+                key: username
+          - name: password
+            valueFrom:
+              secretKeyRef:
+                name: wasliberty
+                key: password
+        ports:
+          - containerPort: 9080
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1024Mi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 9080
+          initialDelaySeconds: 300
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 9080
+          initialDelaySeconds: 45
+          periodSeconds: 5
+        volumeMounts:
+        - name: pvmount
+          mountPath: /test
+      volumes:
+      - name: pvmount
+        persistentVolumeClaim:
+          claimName: wasliberty
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: wasliberty
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: wasliberty
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wasliberty
+  labels:
+    app: wasliberty
+spec:
+  ports:
+  - port: 9080
+  selector:
+    app: wasliberty
+  type: NodePort
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wasliberty
+  labels:
+    app: wasliberty
+data:
+  VERSION: "1.0"
+  LANGUAGE: en
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: wasliberty
+  labels:
+    app: wasliberty
+type: Opaque
+data:
+  username: dXNlcm5hbWU=
+  password: cGFzc3dvcmQ=
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wasliberty
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "ibmc-file-bronze"
+  labels:
+    billingType: "hourly"
+    app: wasliberty
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 24Gi
+```
+{: codeblock}
+
+<br />
+
 
 
 ## Packaging apps in 4.3 clusters for reuse in multiple environments with Kustomize
@@ -244,7 +671,7 @@ To set up configuration files with Kustomize:
         cd ~/<my_app>/base
         ```
         {: pre}
-    2.  Create an initial set of Kubernetes configuration YAML files for your app deployment.
+    2.  Create an initial set of Kubernetes configuration YAML files for your app deployment. You might use the `wasliberty` [YAML example](#yaml-example) to create a deployment, service, config map, and persistent volume claim.
     3.  Create a [`kustomization` file](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file) that specifies the base configuration to be applied across environments. The `kustomization` file must include the list of Kubernetes resource configuration YAMLs that are stored in the same `base` repo. In the `kustomization` file, you can also add configurations that apply to all the resource YAMLs in the base repo, such as a prefix or suffix that is appended to all the resource names, a label, the existing namespace all the resources are created in, secrets, configmaps, and more.
         ```
         apiVersion: kustomize.config.k8s.io/v1beta1
@@ -475,144 +902,3 @@ To set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in 
 
 <br />
 
-
-## Deploying Cloud Paks, licensed software, and other integrations
-{: #openshift_app_cloud_paks}
-
-You can deploy IBM Cloud Paks&trade;, licensed software, and other 3rd party integrations to Red Hat OpenShift on IBM Cloud clusters. You have various tools to deploy integrations, such as {{site.data.keyword.cloud_notm}} service binding, managed add-ons, Helm charts, and more. After you install an integration, follow that product's documentation for configuration settings and other instructions to integrate with your apps. For more information, see [Enhancing cluster capabilities with integrations](/docs/openshift?topic=openshift-supported_integrations).
-{: shortdesc}
-
-<br />
-
-
-## Accessing the OpenShift web console
-{: #openshift_console}
-
-You can use the OpenShift console to manage your apps, deploy apps from the catalog, and access built-in functionality to help you operate your cluster. The OpenShift console is deployed to your cluster by default, instead of the Kubernetes dashboard as in community Kubernetes clusters.
-{: shortdesc}
-
-For more information about the console, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
-
-1.  From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your OpenShift cluster, then click **OpenShift web console**.
-2.  Explore the different areas of the OpenShift web console, as described in the following tabbed table.
-
-    <table class="simple-tab-table" id="console1" tab-title="4.x" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
-    <caption caption-side="top">
-      <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> OpenShift console overview<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, anthe description of the console area in the third column. You can change between {{site.data.keyword.openshift}} console versions by toggling the tabs at the beginning of the table.</span>
-    </caption>
-    <thead>
-    <tr>
-    <th>Area</th>
-    <th>Location in console</th>
-    <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Administrator perspective</td>
-    <td>Side navigation menu perspective switcher.</td>
-    <td>From the Administrator perspective, you can manage and set up the components that your team needs to ruyour apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](https://docs.openshift.com/container-platform/4.2/web-console/using-dashboard-to-get-cluster-information.html){: external} in the OpenShift documentation.</td>
-    </tr>
-    <tr>
-    <td>Developer perspective</td>
-    <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way tovisualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](https://docs.openshift.com/container-platform/4.2/web-console/odc-about-developer-perspective.html){: external} in the OpenShift documentation.</td>
-    </tr>
-    </tbody>
-    </table>
-    <table class="simple-tab-table" id="console2" tab-title="3.x" tab-group="console-version" aria-describedby="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">
-    <caption caption-side="top">
-      <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift console overview<br>
-      <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshift}} console versions by toggling the tabs at the beginning of the table.</span>
-    </caption>
-    <thead>
-    <tr>
-    <th>Area</th>
-    <th>Location in console</th>
-    <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Service Catalog</td>
-    <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>Browse the catalog of built-in services that you can deploy on OpenShift. For example, if you already have a `node.js` app that is hosted on GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the [OpenShift Web Console Walkthrough](https://docs.openshift.comcontainer-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
-    </tr>
-    <tr>
-    <td>Application Console</td>
-    <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>For each project that you have access to, you can manage your OpenShift resources such aspods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for theseresources, or add services from the catalog to the project. For more information, see the [OpenShift Web Console Walkthrough](https:/docs.openshift.com/container-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
-    </tr>
-    <tr>
-    <td>Cluster Console</td>
-    <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the clusterin a combined view. For more information, see the [OpenShift Web Console Walkthrough](https:/docs.openshift.com/container-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
-    </tr>
-    </tbody>
-    </table><p></p>
-3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.
-
-<br />
-
-
-## Accessing built-in OpenShift services
-{: #openshift_access_oc_services}
-
-Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to help operate your cluster, such as the OpenShift console, Prometheus, and Grafana. You can access these services by using the local host of a [route](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html){: external}. The default route domain names follow a cluster-specific pattern of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.
-{:shortdesc}
-
-You can access the built-in OpenShift service routes from the [console](#openshift_services_console) or [CLI](#openshift_services_cli). You might want to use the console to navigate through Kubernetes resources in one project. By using the CLI, you can list resources such as routes across projects.
-
-### Accessing built-in OpenShift services from the console
-{: #openshift_services_console}
-1.  From the OpenShift web console, in the dropdown menu in the OpenShift container platform menu bar, click **Application Console**.
-2.  Select the **default** project, then in the navigation pane, click **Applications > Pods**.
-3.  Verify that the **router** pods are in a **Running** status. The router functions as the ingress point for external network traffic. You can use the router to publicly expose the services in your cluster on the router's external IP address by using a route. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
-4.  From the **default** project navigation pane, click **Applications > Deployments** and then click the **registry-console** deployment. Your OpenShift cluster comes with an internal registry that you can use to manage local images for your deployments. To view your images, click **Applications > Routes** and open the registry console **Hostname** URL.
-5.  In the OpenShift container platform menu bar, from the dropdown menu, click **Cluster Console**.
-6.  From the navigation pane, expand **Monitoring**.
-7.  Click the built-in monitoring tool that you want to access, such as **Dashboards**. The Grafana route opens in the following format: `https://grafana-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.<p class="note">The first time that you access the hostname, you might need to authenticate, such as by clicking **Log in with OpenShift** and authorizing access to your IAM identity.</p>
-
-### Accessing built-in OpenShift services from the CLI
-{: #openshift_services_cli}
-
-1.  From the **Application Console** or **Service Console** view in the OpenShift  web console, click your profile **IAM#user.name@email.com > Copy Login Command** and paste the login command into your terminal to authenticate.
-    ```
-    oc login https://c1-e.<region>.containers.cloud.ibm.com:<port> --token=<access_token>
-    ```
-    {: pre}
-2.  Verify that your router is deployed. The router functions as the ingress point for external network traffic. You can use the router to publicly expose the services in your cluster on the router's external IP address by using a route. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
-    ```
-    oc get svc router -n default
-    ```
-    {: pre}
-
-    Example output:
-    ```
-    NAME      TYPE           CLUSTER-IP               EXTERNAL-IP     PORT(S)                      AGE
-    router    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xxx   80:30399/TCP,443:32651/TCP                      5h
-    ```
-    {: screen}
-2.  Get the **Host/Port** hostname of the service route that you want to access. For example, you might want to access your Grafana dashboard to check metrics on your cluster's resource usage. The default route domain names follow a cluster-specific pattern of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.
-    ```
-    oc get route --all-namespaces
-    ```
-    {: pre}
-
-    Example output:
-    ```
-    NAMESPACE                          NAME                HOST/PORT                                                                    PATH                  SERVICES            PORT               TERMINATION          WILDCARD
-    default                            registry-console    registry-console-default.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                              registry-console    registry-console   passthrough          None
-    kube-service-catalog               apiserver           apiserver-kube-service-catalog.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                        apiserver           secure             passthrough          None
-    openshift-ansible-service-broker   asb-1338            asb-1338-openshift-ansible-service-broker.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud            asb                 1338               reencrypt            None
-    openshift-console                  console             console.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                                              console             https              reencrypt/Redirect   None
-    openshift-monitoring               alertmanager-main   alertmanager-main-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                alertmanager-main   web                reencrypt            None
-    openshift-monitoring               grafana             grafana-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                          grafana             https              reencrypt            None
-    openshift-monitoring               prometheus-k8s      prometheus-k8s-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                   prometheus-k8s      web                reencrypt
-    ```
-    {: screen}
-3.  In your web browser, open the route that you want to access, for example: `https://grafana-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. The first time that you access the hostname, you might need to authenticate, such as by clicking **Log in with OpenShift** and authorizing access to your IAM identity.
-
-<br>
-Now you're in the built-in OpenShift app! For example, if you're in Grafana, you might check out your namespace CPU usage or other graphs. To access other built-in tools, open their route hostnames.

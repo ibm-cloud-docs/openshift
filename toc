@@ -23,6 +23,11 @@ Red Hat OpenShift on IBM Cloud
         openshift_uc_gov.md
 
     {: .topicgroup}
+    Learning paths
+        openshift_path_admin.md
+        openshift_path_dev.md
+
+    {: .topicgroup}
     Your cluster strategy
         openshift_responsibilities.md
         openshift_secure.md
@@ -45,41 +50,60 @@ Red Hat OpenShift on IBM Cloud
         openshift_api_install.md
 
     {: .topicgroup}
-    Setting up clusters
+    Planning your cluster
+        openshift_kube_strategy.md
         openshift_cluster_plan_network.md
         openshift_cluster_plan_ha.md
         openshift_worker_plan.md
-        openshift_clusters.md
-        openshift_cluster_access.md
-        openshift_worker_add.md
 
     {: .topicgroup}
-    Administering clusters
+    Creating and accessing clusters
+        openshift_clusters.md
+        openshift_cluster_access.md
+        openshift_users.md
+
+    {: .topicgroup}
+    Managing the cluster lifecycle
+        openshift_worker_add.md
         openshift_cluster_scaling.md
         openshift_cluster_update.md
-        openshift_users.md
-        openshift_encrypt.md
-        openshift_scc.md
-        openshift_pod_priority.md
-        openshift_health.md
         openshift_cluster_remove.md
 
     {: .topicgroup}
-    Managing the cluster network
-        openshift_firewall.md
-        openshift_network_policy.md
-        openshift_edge.md
-        openshift_vpn.md
-        openshift_subnets.md
-        openshift_network_cluster.md
+    Securing cluster workloads
+        openshift_encrypt.md
+        openshift_scc.md
+        openshift_pod_priority.md
 
     {: .topicgroup}
-    Deploying apps
+    Securing the cluster network
+        openshift_firewall.md
+        openshift_edge.md
+        openshift_network_policy.md
+
+    {: .topicgroup}
+    Managing the cluster network
+        openshift_subnets.md
+        openshift_network_cluster.md
+        openshift_vpn.md
+
+    openshift_health.md
+
+    {: .topicgroup}
+    Setting up an image build pipeline
+        openshift_registry.md
+        openshift_cicd.md
+
+    {: .topicgroup}
+    Developing and deploying apps
+        openshift_app_plan.md
         openshift_images.md
         openshift_app.md
+        openshift_app_deploy.md
+        openshift_nodeport.md
+        openshift_app_update.md
 
     openshift_app_networking.md
-    openshift_nodeport.md
     openshift_routes.md
 
     {: .topicgroup}

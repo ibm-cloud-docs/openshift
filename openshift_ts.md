@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -248,7 +248,7 @@ The **Master Status** provides details of what operation from the master state i
     </tr>
     <tr>
        <td>`update_cancelled`</td>
-       <td>The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).<p class="note">If you do not want to update the master to the default `major.minor` version during the update, include the `--kube-version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.15.8`. To list available versions, run `ibmcloud oc versions`.</p></td>
+       <td>The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).<p class="note">If you do not want to update the master to the default `major.minor` version during the update, include the `--kube-version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.15.10`. To list available versions, run `ibmcloud oc versions`.</p></td>
     </tr>
     <tr>
        <td>`update_failed`</td>
@@ -564,7 +564,7 @@ Your cluster cannot pull images from the {{site.data.keyword.registryshort_notm}
 {: screen}
 
 {: tsCauses}
-During cluster creation, a service ID is created for your cluster and assigned the **Reader** service access policy to {{site.data.keyword.registrylong_notm}}. Then, an API key for this service ID is generated and stored in [an image pull secret](/docs/openshift?topic=openshift-images#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}.
+During cluster creation, a service ID is created for your cluster and assigned the **Reader** service access policy to {{site.data.keyword.registrylong_notm}}. Then, an API key for this service ID is generated and stored in [an image pull secret](/docs/openshift?topic=openshift-registry#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}.
 
 To successfully assign the **Reader** service access policy to the service ID during cluster creation, you must have the **Administrator** platform access policy to {{site.data.keyword.registrylong_notm}}.
 
