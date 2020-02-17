@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-17"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -50,6 +50,21 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
+
+### Changelog for fix pack 3.11.161_1542_openshift, released 17 February 2020
+{: #311161_1542}
+
+The following table shows the changes that are included in the master and worker node fix pack update `3.11.161_1542_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+{: shortdesc}
+
+| Component | Location | Previous | Current | Description |
+| --- | --- | --- | --- | --- | 
+| Cluster master HA configuration | Master | N/A | N/A | Updated configuration to improve availability during cluster master operations. |
+| Heapster | Master | v1.5.4 | v3.11.161 | Replaces [Kubernetes Heapster](https://github.com/kubernetes/heapster/releases/tag/v1.5.4){: external} with [OpenShift Heapster](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-161){: external}. |
+| {{site.data.keyword.cloud_notm} Controller Manager | v1.15.9-240 | v1.15.10-252 | Updated to support the Kubernetes 1.15.10 release. |
+| RHEL 7 packages | Worker | 3.10.0-1062.9.1.el7 | 3.10.0-1062.12.1.el7 | Updated worker node images with kernel and package updates for  [CVE-2019-18408](https://nvd.nist.gov/vuln/detail/CVE-2019-18408){: external}, [CVE-2019-13734](https://nvd.nist.gov/vuln/detail/CVE-2019-13734){: external}, [CVE-2019-14816](https://nvd.nist.gov/vuln/detail/CVE-2019-14816){: external}, [CVE-2019-14895](https://nvd.nist.gov/vuln/detail/CVE-2019-14895){: external}, [CVE-2019-14898](https://nvd.nist.gov/vuln/detail/CVE-2019-14898){: external}, [CVE-2019-14901](https://nvd.nist.gov/vuln/detail/CVE-2019-14901){: external}, and [CVE-2019-17133](https://nvd.nist.gov/vuln/detail/CVE-2019-17133). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is where the component is located, the master, worker node, or both. The third column is the previous version number of the component. The fourth column is the current version number of the component. The fifth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.161_1540_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.161_1540_openshift, released 3 February 2020
 {: #311161_1540}
