@@ -197,7 +197,7 @@ Before you migrate your workloads from an OpenShift version 3.11 cluster to a ve
     1.  Identify an existing or create an {{site.data.keyword.cos_short}} instance. When you create the instance, make sure to select **Include HMAC Credential**. For more information, see [Preparing your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service).
     2.  [Create a bucket](/docs/cloud-object-storage-infrastructure?topic=cloud-object-storage-infrastructure-storing-and-retrieving-data#buckets) in your {{site.data.keyword.cos_short}} instance. Note the bucket's region **Location**, such as `us-south`.
     3.  Get your HMAC authentication credentials. From the [{{site.data.keyword.cos_full_notm}}](https://cloud.ibm.com/objectstorage/){: external} console, click **Service credentials** and find credentials that include a `cos_hmac_keys` object with `access_key_id` and `secret_access_key` values. If you do not have credentials with HMAC keys, click **New credential**. Create credentials that include HMAC credentials.
-    4.  Get your {{site.data.keyword.cos_short}} instance endpoint for the same geography as your cluster is in. For example, `https://s3.us.cloud-object-storage.appdomain.cloud`.
+    4.  Get your {{site.data.keyword.cos_short}} instance endpoint for the same geography as your cluster is in. From the [{{site.data.keyword.cos_full_notm}}](https://cloud.ibm.com/objectstorage/){: external} instance console, click **Endpoints** and then select the location that you want to use. For example, `https://s3.us.cloud-object-storage.appdomain.cloud`.
 
 ### Step 1: Deploy the migration operator to the source cluster
 {: #ocp3to4-migrate-source}
@@ -214,12 +214,12 @@ Deploy the migration operator to the source Red Hat OpenShift on IBM Cloud versi
 
     Example output:
     ```
-    Master URL: https://c100-e.containers.test.cloud.ibm.com:32750
+    Master URL: https://c100-e.<region>.containers.cloud.ibm.com:32xxx
     ```
     {: screen}
 3.  Check that the app status that you want to migrate is **Running** before you migrate the app. If the status is not healthy, describe the pod for more information to troubleshoot the issue.
     ```
-    oc get pods -n <my_project>
+    oc get pods -n <project>
     ```
     {: pre}
 4.  Deploy the migration operator to your source cluster. The configuration includes setting up an `openshift-migration` project; creating a custom resource definition for the migration operator; creating a service account, roles, and rolebindings for the resources; and creating the migration operator deployment.
@@ -233,7 +233,7 @@ Deploy the migration operator to the source Red Hat OpenShift on IBM Cloud versi
         curl https://raw.githubusercontent.com/fusor/mig-operator/master/deploy/non-olm/v1.0.1/controller-3.yml > migration-controller3.yaml
         ```
         {: pre}
-    2.  Replace the `mig_ui_cluster_api_endpoint` value with the cluster master URL that you previously retrieved.
+    2.  Uncomment and replace the `mig_ui_cluster_api_endpoint` value with the cluster master URL that you previously retrieved.
     3.  Apply the configuration file to your cluster.
         ```
         oc apply -f migration-controller3.yaml
@@ -320,7 +320,12 @@ Both the version 3.11 source and 4.3 destination clusters have the migration ope
     oc create -f migstorage-creds.yaml
     ```
     {: pre}
-4.  Create a configuration file for a migration storage resource that has the information of your {{site.data.keyword.cos_full_notm}} configuration that you retrieved in the [prerequisites](#ocp3to4-migrate-prereqs). Replace `<cos_bucket_name>`, `<cos_bucket_region>` (twice), and `<cos_endpoint>` with your {{site.data.keyword.cos_short}} values, such as `migrate_bucket`, `us-south`, and `https://s3.us.cloud-object-storage.appdomain.cloud`.
+4.  Create a configuration file for a migration storage resource that has the information of your {{site.data.keyword.cos_full_notm}} configuration that you retrieved in the [prerequisites](#ocp3to4-migrate-prereqs).
+
+    * **`<cos_bucket_name>`**: Replace with the name of your bucket in the {{site.data.keyword.cos_short}} instance, such as `migrate_bucket`.
+    * **`<cos_endpoint>`** (twice): Replace with the public endpoint of your {{site.data.keyword.cos_short}} instance, such as `https://s3.us.cloud-object-storage.appdomain.cloud`.
+    * **`<cos_bucket_region>`** (twice): Replace with the region of your {{site.data.keyword.cos_short}} instance that you can find in the endpoint, such as `us`.
+
     ```
     apiVersion: migration.openshift.io/v1alpha1
     kind: MigStorage
@@ -339,6 +344,7 @@ Both the version 3.11 source and 4.3 destination clusters have the migration ope
           namespace: openshift-migration
           name: migstorage-creds
         awsPublicUrl: https://<cos_endpoint>
+        awsS3Url: https://<cos_endpoint>
       volumeSnapshotConfig:
         awsRegion: <cos_bucket_region>
         credsSecretRef:
