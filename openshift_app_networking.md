@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -46,8 +46,8 @@ To securely expose your apps to external traffic, you can use choose from the fo
 {: shortdesc}
 
 <dl>
-<dt>[OpenShift route ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html)</dt>
-<dd>A route exposes a service as a hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. A router is deployed by default to your cluster, which enable routes to be used by external clients. The router uses the service selector to find the service and the endpoints that back the service. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. **Note**: The hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster. Your route does not use the Ingress subdomain.</dd>
+<dt>[OpenShift route](/docs/openshift?topic=openshift-openshift_routes)</dt>
+<dd>A route exposes a service as a hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`. A router is deployed by default to your cluster, which enable routes to be used by external clients. The router uses the service selector to find the service and the endpoints that back the service. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. Note that the router supports only the HTTP and HTTPS protocols.</dd>
 
 <dt>[NodePort](/docs/openshift?topic=openshift-nodeport)</dt>
 <dd>When you expose apps with a NodePort service, a NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to the service. To access the service from outside the cluster, you use the public or private IP address of any worker node and the NodePort in the format <code>&lt;IP_address&gt;:&lt;nodeport&gt;</code>. However, the public and private IP addresses of the worker node are not permanent. When a worker node is removed or re-created, a new public and a new private IP address are assigned to the worker node. NodePorts are ideal for testing public or private access or providing access for only a short amount of time.</dd>
@@ -85,7 +85,22 @@ Because routes and Ingress offer similar capabilities, both load balancing solut
 * **Portability across clouds**: If you anticipate running the same app in OpenShift clusters in a hybrid scenario across multiple cloud providers, use the OpenShift router. Routes are configured and work the same way across cloud providers, whereas Ingress might vary with each provider.
 * **Annotations to extend routing capabilities**: With the Ingress ALB, you can customize Ingress routing rules with annotations. Some of these annotations help to integrate other {{site.data.keyword.cloud_notm}} services to your routes, such as {{site.data.keyword.appid_short}} to provide authentication for the Ingress URL that is assigned to your app. These annotations are not available for the OpenShift router, which must use [route-specific `haproxy` annotations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
 
-The following table compares the features of each app exposure method.<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift version 3.11 clusters:
+The following table compares the features of each app exposure method.
+
+|Characteristics|NodePort|NLB|Ingress controller|Route|
+|---------------|--------|---|------------------|-----|
+|Stable external IP| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|External hostname||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|HTTP(S) load balancing| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />*|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|TLS termination| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Custom routing rules|| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Multiple apps per route or service| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Consistent hybrid multicloud deployment| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+{: class="simple-tab-table"}
+{: caption="Comparison of external networking for apps in OpenShift version 4.3 clusters." caption-side="top"}
+{: #roks-net-compare-43}
+{: tab-title="<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> OpenShift 4.3"}
+{: tab-group="openshift-network-compare"}
 
 |Characteristics|NodePort|NLB|Ingress ALB|Route|
 |---------------|--------|---|-----------|-----|
@@ -97,22 +112,11 @@ The following table compares the features of each app exposure method.<img src="
 |Multiple apps per route or service| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |{{site.data.keyword.cloud_notm}} extensions like {{site.data.keyword.appid_short}}| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Consistent hybrid multicloud deployment| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-{: caption="Comparison of OpenShift external networking for apps" caption-side="top"}
-
-`*` An SSL certificate for HTTPS load balancing is provided by `ibmcloud oc nlb-dns` commands. In classic clusters, these commands are supported for public NLBs only.
-{: note}
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> OpenShift version 4.3 and later clusters:
-
-|Characteristics|NodePort|NLB|Ingress controller|Route|
-|---------------|--------|---|------------------|-----|
-|Stable external IP| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|External hostname||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|HTTP(S) load balancing| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />*|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|TLS termination| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Custom routing rules|| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Multiple apps per route or service| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Consistent hybrid multicloud deployment| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-{: caption="Comparison of OpenShift external networking for apps" caption-side="top"}
+{: class="simple-tab-table"}
+{: caption="Comparison of external networking for apps in OpenShift version 3.11 clusters." caption-side="top"}
+{: #roks-net-compare-311}
+{: tab-title="<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift 3.11"}
+{: tab-group="openshift-network-compare"}
 
 `*` An SSL certificate for HTTPS load balancing is provided by `ibmcloud oc nlb-dns` commands. In classic clusters, these commands are supported for public NLBs only.
 {: note}
