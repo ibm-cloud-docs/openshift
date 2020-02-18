@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-18"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -46,7 +46,7 @@ To update your app, you can choose from various strategies such as the following
 
 <dl>
 <dt>Rolling deployment</dt>
-  <dd>You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are backwards-compatible so that users who are served the `v2` app version do not experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](#app_rolling).</dd>
+  <dd>You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are backwards-compatible so that users who are served the `v2` app version do not experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](/docs/openshift?topic=openshift-update_app#app_rolling).</dd>
 <dt>Instantaneous switch</dt>
   <dd>Also referred to as a blue-green deployment, an instantaneous switch requires double the compute resources to have two versions of an app running at once. With this approach, you can switch your users to the newer version in near real time. Make sure that you use service label selectors (such as `version: green` and `version: blue`) to make sure that requests are sent to the right app version. You can create the new `version: green` deployment, wait until it is ready, and then delete the `version: blue` deployment. Or you can perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling), but set the `maxUnavailable` parameter to `0%` and the `maxSurge` parameter to `100%`.</dd>
 <dt>Canary or A/B deployment</dt>
@@ -99,7 +99,7 @@ Steps:
     <td>The port where your app is available externally.</td>
     </tr></tbody></table>
 
-    For more complex deployments, you might need to create a [configuration file](#app_cli).
+    For more complex deployments, you might need to create a [configuration file](/docs/openshift?topic=openshift-deploy_app#app_cli).
     {: tip}
 
 2.  Create an autoscaler and define your policy. For more information about working with the `oc autoscale` command, see [the Kubernetes documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#autoscale){: external}.
@@ -139,16 +139,16 @@ Steps:
 You can manage the rollout of your app changes in an automated and controlled fashion for workloads with a pod template such as deployments. If your rollout isn't going according to plan, you can roll back your deployment to the previous revision.
 {:shortdesc}
 
-Want to prevent downtime during your rolling update? Be sure to specify a [readiness probe in your deployment](#probe) so that the rollout proceeds to the next app pod after the most recently updated pod is ready.
+Want to prevent downtime during your rolling update? Be sure to specify a [readiness probe in your deployment](/docs/openshift?topic=openshift-app#probe) so that the rollout proceeds to the next app pod after the most recently updated pod is ready.
 {: tip}
 
 Before you begin:
 *   [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-*   Create a [deployment](#app_cli).
+*   Create a [deployment](/docs/openshift?topic=openshift-deploy_app#app_cli).
 *   Make sure that you have a [service role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 To manage rolling updates to your apps:
-1.  To make sure that your deployments are marked as ready only when the container is running and ready to service requests, add [liveness and readiness probes to your deployment](#probe).
+1.  To make sure that your deployments are marked as ready only when the container is running and ready to service requests, add [liveness and readiness probes to your deployment](/docs/openshift?topic=openshift-app#probe).
 
 2.  Update your deployment to include a rolling update strategy that specifies the maximum surge and unavailable pods or percentage of pods during the update.
 

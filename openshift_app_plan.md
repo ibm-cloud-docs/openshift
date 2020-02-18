@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -299,7 +299,7 @@ Want to make your secrets even more secured? Ask your cluster admin to [enable {
 ### How can I make sure that my app has the right resources?
 {: #resources}
 
-When you [specify your app YAML file](#app_yaml), you can add Kubernetes functionalities to your app configuration that help your app get the right resources. In particular, [set resource limits and requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external} for each container that is defined in your YAML file.
+When you [specify your app YAML file](/docs/openshift?topic=openshift-app#app_yaml), you can add Kubernetes functionalities to your app configuration that help your app get the right resources. In particular, [set resource limits and requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external} for each container that is defined in your YAML file.
 {: shortdesc}
 
 Additionally, your cluster admin might set up resource controls that can affect your app deployment, such as the following.
@@ -309,18 +309,18 @@ Additionally, your cluster admin might set up resource controls that can affect 
 ### How can I add capabilities to my app configuration?
 {: #capabilities}
 
-See [Specifying your app requirements in your YAML file](#app_yaml) for descriptions of what you might include in a deployment. The example includes:
-* [Replica sets](#replicaset)
-* [Labels](#label)
-* [Affinity](#affinity)
-* [Image policies](#image)
-* [Ports](#port)
-* [Resource requests and limits](#resourcereq)
-* [Liveness and readiness probes](#probe)
-* [Services](#app-service) to expose the app service on a port
-* [Configmaps](#configmap) to set container environment variables
-* [Secrets](#secret) to set container environment variables
-* [Persistent volumes](#pv) that are mounted to the container for storage
+See [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-app#app_yaml) for descriptions of what you might include in a deployment. The example includes:
+* [Replica sets](/docs/openshift?topic=openshift-app#replicaset)
+* [Labels](/docs/openshift?topic=openshift-app#label)
+* [Affinity](/docs/openshift?topic=openshift-app#affinity)
+* [Image policies](/docs/openshift?topic=openshift-app#image)
+* [Ports](/docs/openshift?topic=openshift-app#port)
+* [Resource requests and limits](/docs/openshift?topic=openshift-app#resourcereq)
+* [Liveness and readiness probes](/docs/openshift?topic=openshift-app#probe)
+* [Services](/docs/openshift?topic=openshift-app#app-service) to expose the app service on a port
+* [Configmaps](/docs/openshift?topic=openshift-app#configmap) to set container environment variables
+* [Secrets](/docs/openshift?topic=openshift-app#secret) to set container environment variables
+* [Persistent volumes](/docs/openshift?topic=openshift-app#pv) that are mounted to the container for storage
 
 ### How can I add IBM services to my app, such as Watson?
 {: #services}
@@ -364,7 +364,7 @@ Consider the following options to increase availability of your app.
   <dt>Spread pods across multiple nodes (anti-affinity)</dt>
     <dd><p>When you create your deployment, each pod can be deployed to the same worker node. This is known as affinity, or co-location. To protect your app against worker node failure, you can configure your deployment to spread your pods across multiple worker nodes by using the <code>podAntiAffinity</code> option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.
       <p>For more information, see the Kubernetes documentation on [Assigning Pods to Nodes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/).</p>
-      <p>For an example of affinity in an app deployment, see [Making your app deployment YAML file](#app_yaml).</p>
+      <p>For an example of affinity in an app deployment, see [Making your app deployment YAML file](/docs/openshift?topic=openshift-app#app_yaml).</p>
       </dd>
     </dd>
 <dt>Distribute pods across multiple zones or regions</dt>

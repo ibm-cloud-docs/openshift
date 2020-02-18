@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-18"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -54,7 +54,7 @@ Want more information about how Kubernetes objects work together for your deploy
 ### Basic deployment metadata
 {: #metadata}
 
-Use the appropriate API version for the [kind of Kubernetes object](#object) that you deploy. The API version determines the supported features for the Kubernetes object that are available to you. The name that you give in the metadata is the object's name, not its label. You use the name when interacting with your object, such as `oc get deployment <name>`.
+Use the appropriate API version for the [kind of Kubernetes object](/docs/openshift?topic=openshift-plan_deploy#object) that you deploy. The API version determines the supported features for the Kubernetes object that are available to you. The name that you give in the metadata is the object's name, not its label. You use the name when interacting with your object, such as `oc get deployment <name>`.
 {: shortdesc}
 
 ```yaml
@@ -225,7 +225,7 @@ resources:
 By default, Kubernetes sends traffic to your app pods after all containers in the pod start, and restarts containers when they crash. However, you can set health checks to improve the robustness of service traffic routing.
 {: shortdesc}
 
-For example, your app might have a startup delay. The app processes might begin before the entire app is completely ready, which can affect responses especially when scaling up across many instances. With health checks, you can let your system can know whether your app is running and ready to receive requests. By setting these probes, you can also help prevent downtime when you perform a [rolling update](#app_rolling) of your app. You can set two types of health checks: liveness and readiness probes.
+For example, your app might have a startup delay. The app processes might begin before the entire app is completely ready, which can affect responses especially when scaling up across many instances. With health checks, you can let your system can know whether your app is running and ready to receive requests. By setting these probes, you can also help prevent downtime when you perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling) of your app. You can set two types of health checks: liveness and readiness probes.
 
 **Liveness probe**: Set up a liveness probe to check whether the container is running. If the probe fails, the container is restarted. If the container does not specify a liveness probe, the probe succeeds because it assumes that the container is alive when the container is in a **Running** status.
 
@@ -310,7 +310,7 @@ Configmaps provide non-sensitive configuration information for your deployment w
 {: shortdesc}
 
 The following example shows how you can reference values from your configmap as environment variables in the container spec section of your deployment YAML. By referencing values from your configmap, you can decouple this configuration information from your deployment to keep your containerized app portable.
-* [Help me decide whether to use a Kubernetes `ConfigMap` or `Secret` object for variables](#variables).
+* [Help me decide whether to use a Kubernetes `ConfigMap` or `Secret` object for variables](/docs/openshift?topic=openshift-plan_deploy#variables).
 * For more ways to use configmaps, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){: external}.
 
 ```yaml
@@ -359,7 +359,7 @@ Secrets provide sensitive configuration information such as passwords for your d
 {: shortdesc}
 
 The following example shows how you can reference values from your secret as environment variables in the container spec section of your deployment YAML. You can also mount the secret as a volume. By referencing values from your secret, you can decouple this configuration information from your deployment to keep your containerized app portable.
-* [Help me decide whether to use a ConfigMap or Secret for variables](#variables).
+* [Help me decide whether to use a ConfigMap or Secret for variables](/docs/openshift?topic=openshift-plan_deploy#variables).
 * For more information, see [Understanding when to use secrets](/docs/openshift?topic=openshift-encryption#secrets).
 
 ```yaml

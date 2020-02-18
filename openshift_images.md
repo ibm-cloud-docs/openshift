@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -47,7 +47,7 @@ An image is created from a Dockerfile, which is a file that contains instruction
 ## Deploying containers from an {{site.data.keyword.registryshort_notm}} image to the `default` OpenShift project
 {: #namespace}
 
-You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registryshort_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](#cluster_registry_auth).
+You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registryshort_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
 {:shortdesc}
 
 Before you begin:
@@ -104,7 +104,7 @@ If the cluster administrator did not [store the image pull secret in the Kuberne
 {: shortdesc}
 
 Before you begin:
-* [Create an image pull secret](#other) to access images in other registries or OpenShift projects other than `default`.
+* [Create an image pull secret](/docs/openshift?topic=openshift-registry#other) to access images in other registries or OpenShift projects other than `default`.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 Steps:

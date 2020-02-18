@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -83,7 +83,7 @@ As a cluster admin, you are responsible to set up, operate, secure, and manage t
 The cluster admin persona must have a broad knowledge that includes compute, network, storage, security, and compliance. In a typical company, this knowledge is spread across multiple specialists, such as System Engineers, System Administrators, Network Engineers, Network Architects, IT Managers, or Security and Compliance Specialists. Consider assigning the cluster admin role to multiple people in your company so that you have the required knowledge to successfully operate your cluster.
 
 **What are an app developer's main tasks and technical skills?** </br>
-As a developer, you design, create, secure, deploy, test, run, and monitor cloud-native, containerized apps in an OpenShift cluster. To create and run these apps, you must be familiar with the concept of microservices, the [12-factor app](#12factor) guidelines, [Docker and containerization principles](https://www.docker.com/), and available [OpenShift deployment options](/docs/openshift?topic=openshift-plan_deploy). If you want to deploy serverless apps, make yourself familiar with [Knative](/docs/containers?topic=containers-cs_network_planning).
+As a developer, you design, create, secure, deploy, test, run, and monitor cloud-native, containerized apps in an OpenShift cluster. To create and run these apps, you must be familiar with the concept of microservices, the [12-factor app](/docs/openshift?topic=openshift-plan_deploy#12factor) guidelines, [Docker and containerization principles](https://www.docker.com/), and available [OpenShift deployment options](/docs/openshift?topic=openshift-plan_deploy). If you want to deploy serverless apps, make yourself familiar with [Knative](/docs/containers?topic=containers-cs_network_planning).
 
 OpenShift and Red Hat OpenShift on IBM Cloud provide multiple options for how to [expose an app and keep an app private](/docs/containers?topic=containers-cs_network_planning), [add persistent storage](/docs/openshift?topic=openshift-storage_planning), [integrate other services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations), and how you can [secure your workloads and protect sensitive data](/docs/openshift?topic=openshift-security#container). Before you move your app to a cluster in Red Hat OpenShift on IBM Cloud, verify that you can run your app as a containerized app on the supported Ubuntu 16.64, 18.64 operating system and that OpenShift and Red Hat OpenShift on IBM Cloud provide the capabilities that your workload needs.
 
