@@ -99,7 +99,7 @@ The following table compares the features of each app exposure method.
 {: class="simple-tab-table"}
 {: caption="Comparison of external networking for apps in OpenShift version 4.3 clusters." caption-side="top"}
 {: #roks-net-compare-43}
-{: tab-title="<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> OpenShift 4.3"}
+{: tab-title="OpenShift 4.3"}
 {: tab-group="openshift-network-compare"}
 
 |Characteristics|NodePort|NLB|Ingress ALB|Route|
@@ -115,7 +115,7 @@ The following table compares the features of each app exposure method.
 {: class="simple-tab-table"}
 {: caption="Comparison of external networking for apps in OpenShift version 3.11 clusters." caption-side="top"}
 {: #roks-net-compare-311}
-{: tab-title="<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift 3.11"}
+{: tab-title="OpenShift 3.11"}
 {: tab-group="openshift-network-compare"}
 
 `*` An SSL certificate for HTTPS load balancing is provided by `ibmcloud oc nlb-dns` commands. In classic clusters, these commands are supported for public NLBs only.
