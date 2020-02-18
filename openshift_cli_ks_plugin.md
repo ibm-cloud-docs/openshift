@@ -111,33 +111,11 @@ Disable a managed add-on in an existing cluster. This command must be combined w
 #### `ibmcloud oc cluster addon disable debug-tool`
 {: #cs_cluster_addon_disable_debug}
 
-Disable the add-on for the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> 3.11 clusters only: Disable the add-on for the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool.
 {: shortdesc}
 
 ```
 ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>-f</code>
-<dd>Force the command to run with no user prompts. This value is optional.</dd>
-</dl>
-
-#### `ibmcloud oc cluster addon disable kube-terminal`
-{: #cs_cluster_addon_disable_kube-terminal}
-
-Disable the [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on. To use the Kubernetes Terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 ```
 {: pre}
 
@@ -163,7 +141,7 @@ Enable a managed add-on in an existing cluster. This command must be combined wi
 #### `ibmcloud oc cluster addon enable debug-tool`
 {: #cs_cluster_addon_enable_debug}
 
-Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) in a cluster.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> 3.11 clusters only: Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) in a cluster.
 {: shortdesc}
 
 ```
@@ -187,28 +165,6 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION
   ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
   ```
   {: pre}
-
-#### `ibmcloud oc cluster addon enable kube-terminal`
-{: #cs_cluster_addon_enable_kube-terminal}
-
-Enable the [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on to use the Kubernetes Terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
-{: shortdesc}
-
-```
-ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERSION]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--version <em>VERSION</em></code></dt>
-<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
-</dl>
 
 ### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}

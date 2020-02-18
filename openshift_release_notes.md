@@ -92,7 +92,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>26 November 2019</td>
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.61](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-  <li><strong>Cluster add-ons for OpenShift clusters</strong>: The [Kubernetes web terminal](/docs/openshift?topic=openshift-openshift-cli#cli_web) and the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) add-ons are now available for OpenShift clusters.</li>
+  <li><strong>Diagnostics and Debug Tool add-on for OpenShift clusters</strong>: The [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) add-on is now available for OpenShift version 3.11 clusters.</li>
   <li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533_worker).</li></ul></td>
 </tr>
 <tr>

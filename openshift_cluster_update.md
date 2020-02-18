@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -440,7 +440,7 @@ Yes. Your cluster is deployed with the following managed components and associat
 * `vpn`
 
 **Can I install other plug-ins or add-ons than the default components?**</br>
-Yes. Red Hat OpenShift on IBM Cloud provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/openshift?topic=openshift-helm#public_helm_install) to install the [block storage plug-in](/docs/openshift?topic=openshift-block_storage#install_block) or [strongSwan VPN](/docs/openshift?topic=openshift-vpn#vpn-setup). Or you might want to enable IBM-managed add-ons in your cluster, such as the Kubernetes web terminal or the Diagnostics and Debug Tool. You must update these Helm charts and add-ons separately by following the instructions in the Helm chart readme files or by following the steps to [update managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
+Yes. Red Hat OpenShift on IBM Cloud provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/openshift?topic=openshift-helm#public_helm_install) to install the [block storage plug-in](/docs/openshift?topic=openshift-block_storage#install_block) or [strongSwan VPN](/docs/openshift?topic=openshift-vpn#vpn-setup). Or you might want to enable IBM-managed add-ons in your cluster, such as the Diagnostics and Debug Tool in version 3.11 clusters. You must update these Helm charts and add-ons separately by following the instructions in the Helm chart readme files or by following the steps to [update managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
 
 ### Managing automatic updates for Fluentd
 {: #logging-up}

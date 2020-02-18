@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,7 +39,7 @@ subcollection: openshift
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for troubleshooting app deployments and integrated services.
 {: shortdesc}
 
-While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to run tests and gather pertinent information from your cluster.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> 3.11 clusters only: While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to run tests and gather pertinent information from your cluster.
 {: tip}
 
 ## Debugging app deployments
@@ -48,6 +48,8 @@ While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}
 Review the options that you have to debug your app deployments and find the root causes for failures.
 
 Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the namespace where your app is deployed.
+
+1. Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-openshift_apps#openshift_move_apps_scenarios) so that you can deploy them on OpenShift clusters.
 
 1. Look for abnormalities in the service or deployment resources by running the `describe` command.
     ```
@@ -87,11 +89,14 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
       oc exec -it <pod_name> -- /bin/bash
       ```
       {: pre}
-   3. Curl the cluster IP address and port of the service. If the IP address and port are not accessible, look at the endpoints for the service. If no endpoints are listed, then the selector for the service does not match the pods. If endpoints are listed, then look at the target port field on the service and make sure that the target port is the same as what is being used for the pods.
+   3. Curl the cluster IP address and port of the service.
       ```
       curl <cluster_IP>:<port>
       ```
       {: pre}
+   4. If the IP address and port are not accessible, look at the endpoints for the service.
+      * If no endpoints are listed, then the selector for the service does not match the pods. For example, your app deployment might have the label `app=foo`, but the service might have the selector `run=foo`.
+      * If endpoints are listed, then look at the target port field on the service and make sure that the target port is the same as what is being used for the pods. For example, your app might listen on port 9080, but the service might listen on port 80.
 
 6. For Ingress services, verify that the service is accessible from within the cluster.
    1. Get the name of a pod.
@@ -104,7 +109,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
       oc exec -it <pod_name> -- /bin/bash
       ```
       {: pre}
-   2. Curl the URL specified for the Ingress service. If the URL is not accessible, check for a firewall issue between the cluster and the external endpoint. 
+   2. Curl the URL specified for the Ingress service. If the URL is not accessible, check for a firewall issue between the cluster and the external endpoint.
       ```
       curl <host_name>.<domain>
       ```
@@ -783,6 +788,6 @@ Still having issues with your cluster? Review different ways to get help and sup
 **Getting help**<br>
 1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
 2.  In your support case, for **Category**, select **Containers**.
-3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
+3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. 3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
 
 

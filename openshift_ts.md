@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -52,13 +52,16 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for ge
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Kubernetes Service** component.
 
-## Running tests with the Diagnostics and Debug Tool
+## 3.11 clusters: Running tests with the Diagnostics and Debug Tool
 {: #debug_utility}
 {: troubleshoot}
 {: support}
 
 While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run tests and gather pertinent information from your cluster.
 {: shortdesc}
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The Diagnostics and Debug Tool is supported only for OpenShift 3.11 clusters, and is not supported for OpenShift 4.3 clusters.
+{: note}
 
 **Before you begin**:
 If you previously installed the debug tool by using Helm, first uninstall the `ibmcloud-iks-debug` Helm chart.
@@ -853,6 +856,6 @@ Still having issues with your cluster? Review different ways to get help and sup
 **Getting help**<br>
 1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
 2.  In your support case, for **Category**, select **Containers**.
-3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
+3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. 3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
 
 

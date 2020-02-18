@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -81,7 +81,7 @@ Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_lim
 | -------- | ----------- |
 | Container logs | If you use a container logging operator such as Fluentd to send logs to an Elasticsearch stack, you must [update the cluster logging deployment to use the `/var/data` path to container logs](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Key management service (KMS) provider | You cannot use a KMS provider such as {{site.data.keyword.keymanagementservicelong}} to encrypt secrets in your cluster. |
-| Managed add-ons | Managed add-ons such as the debug tool are not supported. |
+| Managed add-ons | Managed add-ons such as the debug tool or Kubernetes web terminal are not supported. |
 | Private clusters | You cannot create OpenShift clusters with a private service endpoint. Version 4.3 clusters must have only the public service endpoint enabled. Also, as with version 3.11, you cannot create clusters with only private VLAN connectivity. |
 | Private routing | Private routes are currently not supported. Instead, you can [create a private network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer). |
 | Serverless | The Knative managed add-on is not supported. Instead, try out the tech preview for the [OpenShift Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}. |

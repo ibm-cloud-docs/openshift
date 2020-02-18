@@ -47,7 +47,6 @@ Use the router to publicly expose the services in your {{site.data.keyword.opens
 A router is deployed by default to your cluster and functions as the ingress point for external network traffic. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router uses the service selector to find the service and the endpoints that back the service, and creates [routes](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external} that expose services as hostnames to be used by external clients. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. After you set up routes for your services, the router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service. Note that the router supports only the HTTP and HTTPS protocols.
 
 You can find the router subdomain for your cluster by running `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
-{: note}
 
 Not sure whether to use OpenShift routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).
 {: tip}
@@ -105,7 +104,7 @@ To set up routes to publicly expose apps:
         {: pre}
       * Version 4.3 and later clusters:
         ```
-        oc get svc router-default -n openshift-ingress
+        oc get svc -n openshift-ingress
         ```
         {: pre}
     2. Create a custom domain with your DNS provider.
