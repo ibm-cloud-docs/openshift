@@ -139,7 +139,7 @@ Steps:
 You can manage the rollout of your app changes in an automated and controlled fashion for workloads with a pod template such as deployments. If your rollout isn't going according to plan, you can roll back your deployment to the previous revision.
 {:shortdesc}
 
-Want to prevent downtime during your rolling update? Be sure to specify a [readiness probe in your deployment](/docs/openshift?topic=openshift-app#probe) so that the rollout proceeds to the next app pod after the most recently updated pod is ready.
+Want to prevent downtime during your rolling update? Be sure to specify a [readiness probe in your deployment](/docs/openshift?topic=openshift-openshift_apps#probe) so that the rollout proceeds to the next app pod after the most recently updated pod is ready.
 {: tip}
 
 Before you begin:
@@ -148,7 +148,7 @@ Before you begin:
 *   Make sure that you have a [service role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 To manage rolling updates to your apps:
-1.  To make sure that your deployments are marked as ready only when the container is running and ready to service requests, add [liveness and readiness probes to your deployment](/docs/openshift?topic=openshift-app#probe).
+1.  To make sure that your deployments are marked as ready only when the container is running and ready to service requests, add [liveness and readiness probes to your deployment](/docs/openshift?topic=openshift-openshift_apps#probe).
 
 2.  Update your deployment to include a rolling update strategy that specifies the maximum surge and unavailable pods or percentage of pods during the update.
 
@@ -291,7 +291,7 @@ To see a list of supported integrations and steps for setting up a continuous de
 ## Copying deployments to another cluster
 {: #copy_apps_cluster}
 
-When you use a [version control system such as Git](/docs/openshift?topic=openshift-plan_deploy#deploy_organize), configuration management projects such as [`kustomize`](/docs/containers?topic=containers-app#kustomize), or continuous delivery tools such as [Razee](https://razee.io/){: external} in your cluster, you can deploy your app configuration files quickly from cluster to cluster. Sometimes you have only a few deployments that you tested in a cluster and prefer to copy these deployments and redeploy in another cluster.
+When you use a [version control system such as Git](/docs/openshift?topic=openshift-plan_deploy#deploy_organize), configuration management projects such as [`kustomize`](/docs/openshift?topic=openshift-openshift_apps#kustomize), or continuous delivery tools such as [Razee](https://razee.io/){: external} in your cluster, you can deploy your app configuration files quickly from cluster to cluster. Sometimes you have only a few deployments that you tested in a cluster and prefer to copy these deployments and redeploy in another cluster.
 {: shortdesc}
 
 Before you begin, you need two clusters and the **Manager** [service role](/docs/openshift?topic=openshift-users#platform) for all projects in both clusters so that you can copy all the resources from one cluster and deploy them to another.

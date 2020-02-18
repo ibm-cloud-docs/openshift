@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -650,7 +650,7 @@ You can define an image pull secret in your pod deployment or store the image pu
 {: shortdesc}
 
 To plan how image pull secrets are used in your cluster, choose between the following options:
-* Referring to the image pull secret in your pod deployment: Use this option if you do not want to grant access to your registry for all pods in your project by default. Developers can [include the image pull secret in each pod deployment](/docs/containers?topic=containers-app#pod_imagePullSecret) that must access your registry.
+* Referring to the image pull secret in your pod deployment: Use this option if you do not want to grant access to your registry for all pods in your project by default. Developers can [include the image pull secret in each pod deployment](/docs/openshift?topic=openshift-openshift_apps#pod_imagePullSecret) that must access your registry.
 * Storing the image pull secret in the Kubernetes service account: Use this option to grant access to images in your registry for all deployments in the selected OpenShift projects. To store in image pull secret in the Kubernetes service account, use the [following steps](#store_imagePullSecret).
 
 ### Storing the image pull secret in the Kubernetes service account for the selected project

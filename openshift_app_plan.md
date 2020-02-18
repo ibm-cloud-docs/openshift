@@ -247,7 +247,7 @@ spec:
 
 You can keep adding features, such as pod anti-affinity or resource limits, all in the same YAML file.
 
-For a more detailed explanation of different features that you can add to your deployment, take a look at [Making your app deployment YAML file](/docs/openshift?topic=openshift-app#app_yaml).
+For a more detailed explanation of different features that you can add to your deployment, take a look at [Making your app deployment YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml).
 {: tip}
 
 ### What type of Kubernetes objects can I make for my app?
@@ -299,7 +299,7 @@ Want to make your secrets even more secured? Ask your cluster admin to [enable {
 ### How can I make sure that my app has the right resources?
 {: #resources}
 
-When you [specify your app YAML file](/docs/openshift?topic=openshift-app#app_yaml), you can add Kubernetes functionalities to your app configuration that help your app get the right resources. In particular, [set resource limits and requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external} for each container that is defined in your YAML file.
+When you [specify your app YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), you can add Kubernetes functionalities to your app configuration that help your app get the right resources. In particular, [set resource limits and requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external} for each container that is defined in your YAML file.
 {: shortdesc}
 
 Additionally, your cluster admin might set up resource controls that can affect your app deployment, such as the following.
@@ -309,18 +309,18 @@ Additionally, your cluster admin might set up resource controls that can affect 
 ### How can I add capabilities to my app configuration?
 {: #capabilities}
 
-See [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-app#app_yaml) for descriptions of what you might include in a deployment. The example includes:
-* [Replica sets](/docs/openshift?topic=openshift-app#replicaset)
-* [Labels](/docs/openshift?topic=openshift-app#label)
-* [Affinity](/docs/openshift?topic=openshift-app#affinity)
-* [Image policies](/docs/openshift?topic=openshift-app#image)
-* [Ports](/docs/openshift?topic=openshift-app#port)
-* [Resource requests and limits](/docs/openshift?topic=openshift-app#resourcereq)
-* [Liveness and readiness probes](/docs/openshift?topic=openshift-app#probe)
-* [Services](/docs/openshift?topic=openshift-app#app-service) to expose the app service on a port
-* [Configmaps](/docs/openshift?topic=openshift-app#configmap) to set container environment variables
-* [Secrets](/docs/openshift?topic=openshift-app#secret) to set container environment variables
-* [Persistent volumes](/docs/openshift?topic=openshift-app#pv) that are mounted to the container for storage
+See [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml) for descriptions of what you might include in a deployment. The example includes:
+* [Replica sets](/docs/openshift?topic=openshift-openshift_apps#replicaset)
+* [Labels](/docs/openshift?topic=openshift-openshift_apps#label)
+* [Affinity](/docs/openshift?topic=openshift-openshift_apps#affinity)
+* [Image policies](/docs/openshift?topic=openshift-openshift_apps#image)
+* [Ports](/docs/openshift?topic=openshift-openshift_apps#port)
+* [Resource requests and limits](/docs/openshift?topic=openshift-openshift_apps#resourcereq)
+* [Liveness and readiness probes](/docs/openshift?topic=openshift-openshift_apps#probe)
+* [Services](/docs/openshift?topic=openshift-openshift_apps#app-service) to expose the app service on a port
+* [Configmaps](/docs/openshift?topic=openshift-openshift_apps#configmap) to set container environment variables
+* [Secrets](/docs/openshift?topic=openshift-openshift_apps#secret) to set container environment variables
+* [Persistent volumes](/docs/openshift?topic=openshift-openshift_apps#pv) that are mounted to the container for storage
 
 ### How can I add IBM services to my app, such as Watson?
 {: #services}
@@ -364,7 +364,7 @@ Consider the following options to increase availability of your app.
   <dt>Spread pods across multiple nodes (anti-affinity)</dt>
     <dd><p>When you create your deployment, each pod can be deployed to the same worker node. This is known as affinity, or co-location. To protect your app against worker node failure, you can configure your deployment to spread your pods across multiple worker nodes by using the <code>podAntiAffinity</code> option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.
       <p>For more information, see the Kubernetes documentation on [Assigning Pods to Nodes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/).</p>
-      <p>For an example of affinity in an app deployment, see [Making your app deployment YAML file](/docs/openshift?topic=openshift-app#app_yaml).</p>
+      <p>For an example of affinity in an app deployment, see [Making your app deployment YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml).</p>
       </dd>
     </dd>
 <dt>Distribute pods across multiple zones or regions</dt>
@@ -415,7 +415,7 @@ A few tips for organizing deployment YAML files:
     ```
     {: codeblock}
 *  You can use the `oc apply -f` command to apply to an entire directory, not just a single file.
-*  Try out the [`kustomize` project](/docs/containers?topic=containers-app#kustomize) that you can use to help write, customize, and reuse your Kubernetes resource YAML configurations.
+*  Try out the [`kustomize` project](/docs/openshift?topic=openshift-openshift_apps#kustomize) that you can use to help write, customize, and reuse your Kubernetes resource YAML configurations.
 
 Within the YAML file, you can use labels or annotations as metadata to manage your deployments.
 
