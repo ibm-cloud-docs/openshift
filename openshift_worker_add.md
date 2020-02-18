@@ -390,8 +390,5 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 After you label your worker pool, you can use the [label in your app deployments](/docs/openshift?topic=openshift-openshift_apps#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
 
-<br />
-
-
 
 
