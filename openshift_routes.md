@@ -104,7 +104,7 @@ To set up routes to publicly expose apps:
         {: pre}
       * Version 4.3 and later clusters:
         ```
-        oc get svc -n openshift-ingress
+        oc get svc router-default -n openshift-ingress
         ```
         {: pre}
     2. Create a custom domain with your DNS provider.

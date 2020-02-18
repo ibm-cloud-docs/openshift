@@ -64,7 +64,7 @@ If you want to register your app with a different domain, you can [create a cust
 One HAProxy-based OpenShift router is created in each zone where you have worker nodes for each Ingress controller. The Ingress operator configures the router with the same domain that is specified in the Ingress controller. The router listens for incoming HTTP, HTTPS, or TCP service requests through that domain. The router's load balancer component then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
 {: shortdesc}
 
-To find the router IP addresses for the default Ingress controller, run `oc get svc -n openshift-ingress` and look for the **EXTERNAL IP** field.
+To find the router IP address for the default Ingress controller, run `oc get svc -n openshift-ingress` and look for the **EXTERNAL IP** field of the `router-default` service.
 
 If you manually create a router, the router is not managed by the Ingress operator and is not automatically registered with the Ingress subdomain or an app in your cluster.
 {: note}
