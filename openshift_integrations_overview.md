@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-19"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -40,7 +40,7 @@ subcollection: openshift
 
 
 
-Learn more about the following {{site.data.keyword.cloud_notm}} and third-party integrations for {{site.data.keyword.openshiftlong}} clusters.
+Learn more about the following {{site.data.keyword.IBM}}, {{site.data.keyword.cloud}}, and third-party integrations for Red Hat OpenShift on IBM Cloud clusters.
 {: shortdesc}
 
 |Service|Description|
