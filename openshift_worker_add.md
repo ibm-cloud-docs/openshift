@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-19"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -131,7 +131,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 4. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. If you provision a bare metal or dedicated VM worker pool, specify `--hardware dedicated`.
    ```
-   ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
+   ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone>
    ```
    {: pre}
 
@@ -272,7 +272,7 @@ If you have a cluster that was created after worker pools were introduced, you c
 
 4. Add stand-alone worker nodes to the cluster. For bare metal flavors, specify `dedicated`.
    ```
-   ibmcloud oc worker add --cluster <cluster_name_or_ID> --workers <number_of_worker_nodes> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --machine-type <flavor> --hardware <shared_or_dedicated>
+   ibmcloud oc worker add --cluster <cluster_name_or_ID> --workers <number_of_worker_nodes> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --flavor <flavor> --hardware <shared_or_dedicated>
    ```
    {: pre}
 

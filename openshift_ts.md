@@ -251,7 +251,7 @@ The **Master Status** provides details of what operation from the master state i
     </tr>
     <tr>
        <td>`update_cancelled`</td>
-       <td>The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).<p class="note">If you do not want to update the master to the default `major.minor` version during the update, include the `--kube-version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.15.10`. To list available versions, run `ibmcloud oc versions`.</p></td>
+       <td>The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).<p class="note">If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.15.10`. To list available versions, run `ibmcloud oc versions`.</p></td>
     </tr>
     <tr>
        <td>`update_failed`</td>
@@ -788,7 +788,7 @@ The OpenShift web console might not open for reasons that include:
 3.  Review the output of the first step to check the **Version**. If your cluster does not run version `4.3.1_1508_openshift` or later, update the cluster and worker nodes.
     1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version of `4.3`.
         ```
-        ibmcloud oc cluster update -c <cluster_name_or_ID> --kube-version 4.3_openshift -f
+        ibmcloud oc cluster update -c <cluster_name_or_ID> --version 4.3_openshift -f
         ```
         {: pre}
     2.  List your worker nodes.

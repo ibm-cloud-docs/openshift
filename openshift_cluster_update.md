@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-19"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -351,7 +351,7 @@ To update flavors:
    - **For worker nodes in a worker pool**:
      1. Create a worker pool with the number of worker nodes that you want to replace.
           ```
-          ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --machine-type <flavor> --size-per-zone <number_of_workers_per_zone>
+          ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone>
           ```
           {: pre}
 
@@ -369,7 +369,7 @@ To update flavors:
 
    - **Deprecated: For stand-alone worker nodes**:
        ```
-       ibmcloud oc worker add --cluster <cluster_name> --machine-type <flavor> --workers <number_of_worker_nodes> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+       ibmcloud oc worker add --cluster <cluster_name> --flavor <flavor> --workers <number_of_worker_nodes> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
        ```
        {: pre}
 
