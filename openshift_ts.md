@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -771,7 +771,8 @@ Application is not available
 The OpenShift web console might not open for reasons that include:
 1.  The cluster has a private service endpoint enabled.
 2.  The cluster ingress and networking components are not available.
-3.  The console pod is not healthy.
+3.  The cluster is running an older version.
+4.  The console pod or other system pods are not healthy, such as when not enough worker nodes exist to run the pods.
 
 <br>
 
@@ -784,17 +785,63 @@ The OpenShift web console might not open for reasons that include:
 2.  Review the output of the previous step to check the **Ingress Subdomain**.
     *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
     *  If your cluster does have a subdomain, continue to the next step.
-3.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console.
+3.  Review the output of the first step to check the **Version**. If your cluster does not run version `4.3.1_1508_openshift` or later, update the cluster and worker nodes.
+    1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version of `4.3`.
+        ```
+        ibmcloud oc cluster update -c <cluster_name_or_ID> --kube-version 4.3_openshift -f
+        ```
+        {: pre}
+    2.  List your worker nodes.
+        ```
+        ibmcloud oc worker ls -c <cluster_name_or_ID>
+        ```
+        {: pre}
+    3.  [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to match the cluster master version.
+        ```
+        ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w <worker3_ID>
+        ```
+        {: pre}
+4.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console.
     ```
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
     ```
     {: pre}
-4.  Review the health of the console pod. If the pod is not in a **Running** status, describe the pod and check the events. For example, might not have enough resources for the pod to run and must [resize your worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to add worker nodes.
-    ```
-    oc get pods -n openshift-console
-    ```
-    {: pre}
-5.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
+5.  Review the health of the console pod.
+    1.  Find the console pods.
+        ```
+        oc get pods -n openshift-console
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        NAME                         READY   STATUS    RESTARTS   AGE
+        console-844d8bb9bd-92d7f     1/1     Running   0          21h
+        console-844d8bb9bd-kvr9r     1/1     Running   0          21h
+        ```
+        {: screen}
+    2.  If a pod is not in a **Running** status, describe the pod and check the events. For example, the cluster might not have enough resources for the pod to run and you must [resize your worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to add worker nodes.
+        ```
+        oc describe pod -n openshift-console <pod>
+        ```
+        {: pre}
+    3.  Try to restart the console pod and check if the OpenShift web console opens.
+        ```
+        oc delete pod -n openshift-console <pod>
+        ```
+        {: pre}
+5.  Check if other system pods are experiencing issues. 
+    1.  Check for pending pods.
+        ```
+        oc get pods --all-namespaces | grep Pending
+        ```
+        {: pre}
+    2.  Describe the pods and check for the events. For example, you might find a `Volume could not be created` error message because you created the cluster without the correct storage permission. Red Hat OpenShift on IBM Cloud clusters come with a File storage device by default to store images for the system and other pods. Revise your [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) and try again.
+        ```
+        oc describe pod -n <project_name> <pod_name>
+        ```
+        {: pre}
+6.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
 
 <br />
 
