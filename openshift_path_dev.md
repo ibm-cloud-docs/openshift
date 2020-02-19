@@ -87,7 +87,6 @@ subcollection: openshift
     }
 -->
 </style>
-<br>
 
 # Learning path for developers
 {: #learning-path-dev}
