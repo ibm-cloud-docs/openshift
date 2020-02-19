@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -75,7 +75,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
      <li>Set up an OpenVPN connection between the master and worker nodes when the cluster is created.</li>
      <li>Monitor and report the health of the master and worker nodes in the various interfaces.</li>
      <li>Provide worker node major, minor, and patch OS, version, and security updates.</li>
-     <li>Fulfill automation requests to update and recover worker nodes. Provide the optional [worker node Autorecovery](/docs/openshift?topic=openshift-health#autorecovery).</li>
+     <li>Fulfill automation requests to update and recover worker nodes.</li>
      </ul>
      <br><br>
      **Your responsibilities**:
@@ -117,7 +117,7 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
         **IBM responsibilities**:
         <ul>
         <li>Provision clusters with Kubernetes components installed so that you can access the Kubernetes API.</li>
-        <li>Provide a number of managed add-ons to extend your app's capabilities, such as the Kubernetes web terminal or the Diagnostics and Debug Tool. Maintenance is simplified for you because IBM provides the installation and updates for the managed add-ons.</li>
+        <li>Provide a number of managed add-ons to extend your app's capabilities, such as the Diagnostics and Debug Tool for version 3.11 clusters. Maintenance is simplified for you because IBM provides the installation and updates for the managed add-ons.</li>
         <li>Provide cluster integration with select third-party partnership technologies, such as {{site.data.keyword.la_short}}, {{site.data.keyword.mon_short}}, and Portworx.</li>
         <li>Provide automation to enable service binding to other {{site.data.keyword.cloud_notm}} services.</li>
         <li>Create clusters with image pull secrets so that your deployments in the `default` Kubernetes namespace can pull images from {{site.data.keyword.registrylong_notm}}.</li>
@@ -134,7 +134,6 @@ IBM provides you with an enterprise cloud platform for you to deploy apps alongs
         </tr>
   </tbody>
   </table>
-
 
 
 

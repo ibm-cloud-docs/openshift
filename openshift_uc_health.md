@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -50,7 +50,7 @@ Why {{site.data.keyword.cloud_notm}}: To improve patient service, the provider l
 
 Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [Horizontal scaling](/docs/containers?topic=containers-app#highly_available_apps)
+* [Horizontal scaling](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
 * [Container security and isolation](/docs/openshift?topic=openshift-security#security) 
 * [{{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/products/cloud-pak-for-data)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-02-19"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -59,12 +59,12 @@ Have you created a cluster before and are just looking for quick example command
 
 * Classic cluster, shared virtual machine:
    ```
-   ibmcloud oc cluster create classic --name my_cluster --kube-version 4.3_openshift --zone dal10 --machine-type b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+   ibmcloud oc cluster create classic --name my_cluster --version 4.3_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
    ```
    {: pre}
 *  Classic cluster, bare metal:
    ```
-   ibmcloud oc cluster create classic --name my_cluster --kube-version 4.3_openshift --zone dal10 --machine-type mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+   ibmcloud oc cluster create classic --name my_cluster --version 4.3_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
    ```
    {: pre}
 *  For a classic multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones), [add zones](/docs/openshift?topic=openshift-add_workers#add_zone):
@@ -256,7 +256,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 6. Create your standard cluster.
     ```
-    ibmcloud oc cluster create classic --zone <zone> --machine-type <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --name <cluster_name> --kube-version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--disable-disk-encrypt]
+    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--disable-disk-encrypt]
     ```
     {: pre}
 
@@ -275,7 +275,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    <td>Specify the {{site.data.keyword.cloud_notm}} zone ID that you chose earlier and that you want to use to create your cluster.</td>
    </tr>
    <tr>
-   <td><code>--machine-type <em>&lt;flavor&gt;</em></code></td>
+   <td><code>--flavor <em>&lt;flavor&gt;</em></code></td>
    <td>Specify the flavor for your worker node that you chose earlier.</td>
    </tr>
    <tr>
@@ -300,7 +300,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    <td>Specify the number of worker nodes to include in the cluster. If the <code>--workers</code> option is not specified, one worker node is created.</td>
    </tr>
    <tr>
-   <td><code>--kube-version <em>&lt;major.minor.patch&gt;</em></code></td>
+   <td><code>--version <em>&lt;major.minor.patch&gt;</em></code></td>
    <td>The OpenShift version for the cluster master node. This value is required. When the version is not specified, the cluster is created with the default supported Kubernetes version. If you do not specify a supported OpenShift version, your cluster is created as a community Kubernetes cluster. To see available versions, run <code>ibmcloud oc versions</code>.
 </td>
    </tr>
@@ -343,7 +343,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    When the worker nodes are ready, the worker node state changes to **normal** and the status changes to **Ready**. When the node status is **Ready**, you can then access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process. Note that if you created your cluster with a private VLAN only, no **Public IP** addresses are assigned to your worker nodes.
    ```
    ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.15.8
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.15.10
    ```
    {: screen}
 
@@ -369,7 +369,7 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 
 When the cluster is up and running, you can check out the following cluster administration tasks:
 - If you created the cluster in a multizone capable zone, [spread worker nodes by adding a zone to your cluster](/docs/openshift?topic=openshift-add_workers).
-- [Deploy an app in your cluster.](/docs/openshift?topic=openshift-app#app_cli)
+- [Deploy an app in your cluster.](/docs/openshift?topic=openshift-deploy_app#app_cli)
 - [Set up your own private registry in {{site.data.keyword.cloud_notm}} to store and share Docker images with other users.](/docs/Registry?topic=registry-getting-started)
 - [Set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
 - Control who can create pods in your cluster with [pod security policies](/docs/containers?topic=containers-psp).

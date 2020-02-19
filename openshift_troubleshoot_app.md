@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,7 +39,7 @@ subcollection: openshift
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for troubleshooting app deployments and integrated services.
 {: shortdesc}
 
-While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to run tests and gather pertinent information from your cluster.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> 3.11 clusters only: While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to run tests and gather pertinent information from your cluster.
 {: tip}
 
 ## Debugging app deployments
@@ -48,6 +48,8 @@ While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}
 Review the options that you have to debug your app deployments and find the root causes for failures.
 
 Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the namespace where your app is deployed.
+
+1. Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-openshift_apps#openshift_move_apps_scenarios) so that you can deploy them on OpenShift clusters.
 
 1. Look for abnormalities in the service or deployment resources by running the `describe` command.
     ```
@@ -87,11 +89,14 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
       oc exec -it <pod_name> -- /bin/bash
       ```
       {: pre}
-   3. Curl the cluster IP address and port of the service. If the IP address and port are not accessible, look at the endpoints for the service. If no endpoints are listed, then the selector for the service does not match the pods. If endpoints are listed, then look at the target port field on the service and make sure that the target port is the same as what is being used for the pods.
+   3. Curl the cluster IP address and port of the service.
       ```
       curl <cluster_IP>:<port>
       ```
       {: pre}
+   4. If the IP address and port are not accessible, look at the endpoints for the service.
+      * If no endpoints are listed, then the selector for the service does not match the pods. For example, your app deployment might have the label `app=foo`, but the service might have the selector `run=foo`.
+      * If endpoints are listed, then look at the target port field on the service and make sure that the target port is the same as what is being used for the pods. For example, your app might listen on port 9080, but the service might listen on port 80.
 
 6. For Ingress services, verify that the service is accessible from within the cluster.
    1. Get the name of a pod.
@@ -104,7 +109,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
       oc exec -it <pod_name> -- /bin/bash
       ```
       {: pre}
-   2. Curl the URL specified for the Ingress service. If the URL is not accessible, check for a firewall issue between the cluster and the external endpoint. 
+   2. Curl the URL specified for the Ingress service. If the URL is not accessible, check for a firewall issue between the cluster and the external endpoint.
       ```
       curl <host_name>.<domain>
       ```
@@ -132,7 +137,7 @@ You cannot push or pull Docker images from your local machine to the cluster's b
 By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or DockerHub by using the `oc new-app` command. Or you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine.
 
 {: tsResolve}
-Create a route for the `docker-registry` service in the `default` project. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-images#route_internal_registry).
+Create a route for the `docker-registry` service in the `default` project. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry).
 
 <br />
 
@@ -143,7 +148,7 @@ Create a route for the `docker-registry` service in the `default` project. For m
 {: support}
 
 {: tsSymptoms}
-You try to push an image to the [internal registry](/docs/openshift?topic=openshift-images#openshift_internal_registry), but sporadically you see an error message similar to the following.
+You try to push an image to the [internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry), but sporadically you see an error message similar to the following.
 ```
 received unexpected HTTP status: 504 Gateway Time-out
 ```
@@ -200,7 +205,7 @@ Failed to pull image "registry.ng.bluemix.net/<namespace>/<image>:<tag>" ... 401
 {: screen}
 
 {: tsCauses}
-Your cluster uses an API key or token that is stored in an [image pull secret](/docs/openshift?topic=openshift-images#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}. By default, new clusters have image pull secrets that use API keys so that the cluster can pull images from any regional `icr.io` registry for containers that are deployed to the `default` OpenShift project.
+Your cluster uses an API key or token that is stored in an [image pull secret](/docs/openshift?topic=openshift-registry#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}. By default, new clusters have image pull secrets that use API keys so that the cluster can pull images from any regional `icr.io` registry for containers that are deployed to the `default` OpenShift project.
 
 For clusters that were created before **1 July 2019**, the cluster might have an image pull secret that uses a token. Tokens grant access to {{site.data.keyword.registrylong_notm}} for only certain regional registries that use the deprecated `<region>.registry.bluemix.net` domains.
 
@@ -239,13 +244,13 @@ For clusters that were created before **1 July 2019**, the cluster might have an
     ```
     {: screen}
 4.  If no image pull secrets are listed, set up the image pull secret in your project.
-    1.  Verify that the `default` project has `icr-io` image pull secrets for each regional registry that you want to use. If no `icr-io` secrets are listed in the project, [use the `ibmcloud oc cluster pull-secret apply --cluster <cluster_name_or_ID>` command](/docs/openshift?topic=openshift-images#imagePullSecret_migrate_api_key) to create the image pull secrets in the `default` project.
+    1.  Verify that the `default` project has `icr-io` image pull secrets for each regional registry that you want to use. If no `icr-io` secrets are listed in the project, [use the `ibmcloud oc cluster pull-secret apply --cluster <cluster_name_or_ID>` command](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key) to create the image pull secrets in the `default` project.
         ```
         oc get secrets -n default | grep "icr-io"
         ```
         {: pre}
-    2.  [Copy the image pull secrets from the `default` OpenShift project to the project where you want to deploy your workload](/docs/openshift?topic=openshift-images#copy_imagePullSecret).
-    3.  [Add the image pull secret to the service account for this OpenShift project](/docs/containers?topic=containers-images#store_imagePullSecret) so that all pods in the project can use the image pull secret credentials.
+    2.  [Copy the image pull secrets from the `default` OpenShift project to the project where you want to deploy your workload](/docs/openshift?topic=openshift-registry#copy_imagePullSecret).
+    3.  [Add the image pull secret to the service account for this OpenShift project](/docs/containers?topic=containers-registry#store_imagePullSecret) so that all pods in the project can use the image pull secret credentials.
 5.  If image pull secrets are listed in the pod, determine what type of credentials you use to access {{site.data.keyword.registrylong_notm}}.
     *   **Deprecated**: If the secret has `bluemix` in the name, you use a registry token to authenticate with the deprecated `registry.<region>.bluemix.net` domain names. Continue with [Troubleshooting image pull secrets that use tokens](#ts_image_pull_token).
     *   If the secret has `icr` in the name, you use an API key to authenticate with the `icr.io` domain names. Continue with [Troubleshooting image pull secrets that use API keys](#ts_image_pull_apikey).
@@ -320,7 +325,7 @@ The following steps assume that the API key stores the credentials of a service 
         {"auths":{"<region>.icr.io":{"username":"iamapikey","password":"<password_string>","email":"<name@abc.com>","auth":"<auth_string>"}}}
         ```
         {: screen}
-    4.  Compare the image pull secret regional registry domain name with the domain name that you specified in the container image. By default, new clusters have image pull secrets for each regional registry domain name for containers that run in the `default` OpenShift project. However, if you modified the default settings or are using a different OpenShift project, you might not have an image pull secret for the regional registry. [Copy an image pull secret](/docs/openshift?topic=openshift-images#copy_imagePullSecret) for the regional registry domain name.
+    4.  Compare the image pull secret regional registry domain name with the domain name that you specified in the container image. By default, new clusters have image pull secrets for each regional registry domain name for containers that run in the `default` OpenShift project. However, if you modified the default settings or are using a different OpenShift project, you might not have an image pull secret for the regional registry. [Copy an image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) for the regional registry domain name.
     5.  Log in to the registry from your local machine by using the `username` and `password` from your image pull secret. If you cannot log in, you might need to fix the service ID.
         ```
         docker login -u iamapikey -p <password_string> <region>.icr.io
@@ -332,7 +337,7 @@ The following steps assume that the API key stores the credentials of a service 
             ```
             {: pre}
         2.  Re-create your deployment in the `default` OpenShift project. If you still see an authorization error message, repeat Steps 1-5 with the new image pull secrets. If you still cannot log in, [open an {{site.data.keyword.cloud_notm}} Support case](#getting_help).
-    6.  If the login succeeds, pull an image locally. If the command fails with an `access denied` error, the registry account is in a different {{site.data.keyword.cloud_notm}} account than the one your cluster is in. [Create an image pull secret to access images in the other account](/docs/openshift?topic=openshift-images#other_registry_accounts). If you can pull an image to your local machine, then your API key has the right permissions, but the API setup in your cluster is not correct. You cannot resolve this issue. [Open an {{site.data.keyword.cloud_notm}} Support case](#getting_help).
+    6.  If the login succeeds, pull an image locally. If the command fails with an `access denied` error, the registry account is in a different {{site.data.keyword.cloud_notm}} account than the one your cluster is in. [Create an image pull secret to access images in the other account](/docs/openshift?topic=openshift-registry#other_registry_accounts). If you can pull an image to your local machine, then your API key has the right permissions, but the API setup in your cluster is not correct. You cannot resolve this issue. [Open an {{site.data.keyword.cloud_notm}} Support case](#getting_help).
         ```
         docker pull <region>icr.io/<namespace>/<image>:<tag>
         ```
@@ -347,7 +352,7 @@ The following steps assume that the API key stores the credentials of a service 
 If your pod configuration has an image pull secret that uses a token, check that the token credentials are valid.
 {: shortdesc}
 
-This method of using a token to authorize cluster access to {{site.data.keyword.registrylong_notm}} for the `registry.bluemix.net` domain names is deprecated. Before tokens become unsupported, update your deployments to [use the API key method](/docs/openshift?topic=openshift-images#cluster_registry_auth) to authorize cluster access to the new `icr.io` registry domain names.
+This method of using a token to authorize cluster access to {{site.data.keyword.registrylong_notm}} for the `registry.bluemix.net` domain names is deprecated. Before tokens become unsupported, update your deployments to [use the API key method](/docs/openshift?topic=openshift-registry#cluster_registry_auth) to authorize cluster access to the new `icr.io` registry domain names.
 {: deprecated}
 
 1.  Get the image pull secret configuration. If the pod is not in the `default` project, include the `-n` flag.
@@ -483,7 +488,7 @@ Your pods are in a `CrashLoopBackOff` status.
 When you try to deploy an app that works on community Kubernetes platforms, you might see this status or a related error message because OpenShift sets up stricter security settings by default than community Kubernetes.
 
 {: tsResolve}
-Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-openshift_apps#openshift_move_apps_scenarios) and follow the docs in the [Moving your apps to OpenShift topic](/docs/openshift?topic=openshift-openshift_apps#openshift_move_apps).
+Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps_scenarios) and follow the docs in the [Moving your apps to OpenShift topic](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps).
 
 <br />
 
@@ -783,6 +788,6 @@ Still having issues with your cluster? Review different ways to get help and sup
 **Getting help**<br>
 1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
 2.  In your support case, for **Category**, select **Containers**.
-3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
+3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. 3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-02-17"
 
 keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
 
@@ -57,7 +57,7 @@ Red Hat OpenShift on IBM Cloud provides several approaches to add more availabil
 <dl>
 <dt> 1. Container or pod failure.</dt>
   <dd><p>Containers and pods are, by design, short-lived and can fail unexpectedly. For example, a container or pod might crash if an error occurs in your app. To make your app highly available, you must ensure that you have enough instances of your app to handle the workload plus additional instances in the case of a failure. Ideally, these instances are distributed across multiple worker nodes to protect your app from a worker node failure.</p>
-  <p>See [Deploying highly available apps](/docs/containers?topic=containers-app#highly_available_apps).</p></dd>
+  <p>See [Deploying highly available apps](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps).</p></dd>
 <dt> 2. Worker node failure.</dt>
   <dd><p>A worker node is a VM that runs on top of physical hardware. Worker node failures include hardware outages, such as power, cooling, or networking, and issues on the VM itself. You can account for a worker node failure by setting up multiple worker nodes in your cluster.</p><p class="note">Worker nodes in one zone are not guaranteed to be on separate physical compute hosts. For example, you might have a cluster with three worker nodes, but all three worker nodes were created on the same physical compute host in the IBM zone. If this physical compute host goes down, all your worker nodes are down. To protect against this failure, you must [set up a multizone cluster or create multiple single zone clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters) in different zones.</p>
   <p>See [Creating clusters with multiple worker nodes.](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)</p></dd>

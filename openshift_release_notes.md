@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-19"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,7 +44,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 17 February 2020 | <ul><li>**Migration operator**: Updated the [migration operator storage configuration file](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-destination) to clarify {{site.data.keyword.cos_short}} endpoints.</li><li>**Version changelogs**: Master and worker node patch updates are available for OpenShift [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542)</li></ul>|
+| 19 February 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.90](/docs/openshift?topic=openshift-cs_cli_changelog).</li><li>**Developing and deploying apps**: You can now find expanded information on how to develop and deploy an app to your OpenShift cluster in the following pages:<ul><li>[Planning app deployments](/docs/openshift?topic=openshift-plan_deploy)</li><li>[Building images for your apps](/docs/openshift?topic=openshift-images)</li><li>[Developing apps to run on OpenShift](/docs/openshift?topic=openshift-openshift_apps)</li><li>[Deploying apps in OpenShift clusters](/docs/openshift?topic=openshift-deploy_app)</li><li>[Managing the app lifecycle](/docs/openshift?topic=openshift-update_app)</li></ul></li><li>**Learning paths**: Curated learning paths for [administrators](docs/openshift?topic=openshift-learning-path-admin) and [developers](docs/openshift?topic=openshift-learning-path-dev) are now available to help guide you through your Red Hat OpenShift on IBM Cloud experience.</li><li>**Setting up image build pipelines**: You can now find expanded information on how to set up an image registry and build pipelines in the following pages:<ul><li>[Setting up an image registry](/docs/openshift?topic=openshift-registry)</li><li>[Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd)</li></ul></li><li>**Firewall subnets**: Removed outdated [subnet IP addresses for {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#vyatta_firewall).</li></ul> |
+| 18 February 2020 | **Version changelogs**: OpenShift master fix pack for [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_master).|
+| 17 February 2020 | <ul><li>**Migration operator**: Updated the [migration operator storage configuration file](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-destination) to clarify {{site.data.keyword.cos_short}} endpoints.</li><li>**Version changelogs**: Master and worker node patch updates are available for OpenShift worker fix pack [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_worker)</li></ul>|
 | 10 February 2020 | **New! OpenShift 4.3**: OpenShift 4.3 is now available as a beta. During the beta, the OpenShift license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you cannot update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_versions#ocp43). |
 | 06 February 2020 | <ul><li>**Cluster autoscaler**: Added a [debugging guide for the cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler).</li><li>**Expanded troubleshooting**: You can now find troubleshooting steps for OpenShift clusters in the following pages:<ul><li>[Clusters and masters](/docs/openshift?topic=openshift-cs_troubleshoot)</li><li>[Worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters)</li><li>[Cluster networking](/docs/openshift?topic=openshift-cs_troubleshoot_network)</li><li>[Apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_app)</li><li>[Load balancers](/docs/openshift?topic=openshift-cs_troubleshoot_lb)</li><li>[Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress)</li><li>[Persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)</li></ul></li><li>**Tags**: Added how to [add {{site.data.keyword.cloud_notm}} tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags).</li></ul> |
 | 03 February 2020 | **Version changelog**: Updates are available for OpenShift master fix pack[3.11.161_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1539) and worker fix pack [3.11.161_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1540). |
@@ -91,7 +93,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>26 November 2019</td>
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.61](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-  <li><strong>Cluster add-ons for OpenShift clusters</strong>: The [Kubernetes web terminal](/docs/openshift?topic=openshift-openshift-cli#cli_web) and the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) add-ons are now available for OpenShift clusters.</li>
+  <li><strong>Diagnostics and Debug Tool add-on for OpenShift clusters</strong>: The [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) add-on is now available for OpenShift version 3.11 clusters.</li>
   <li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533_worker).</li></ul></td>
 </tr>
 <tr>
@@ -119,10 +121,10 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <li><strong>OpenShift overview</strong>: Added an [OpenShift overview page](/docs/openshift?topic=openshift-overview).</li>
 <li><strong>Setting pod priority</strong>: Added a [pod priority page](/docs/openshift?topic=openshift-pod_priority).</li>
 <li><strong>Using {{site.data.keyword.registrylong_notm}}</strong>: Added the following topics about using {{site.data.keyword.registrylong_notm}}:
-<ul><li>[Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-images#cluster_registry_auth).</li>
-<li>[Copying the `default-<region>-icr-io` secrets](/docs/openshift?topic=openshift-images#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.</li>
-<li>[Creating your own image pull secret](/docs/openshift?topic=openshift-images#other_registry_accounts).</li>
-<li>[Adding the image pull secret](/docs/openshift?topic=openshift-images#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
+<ul><li>[Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth).</li>
+<li>[Copying the `default-<region>-icr-io` secrets](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.</li>
+<li>[Creating your own image pull secret](/docs/openshift?topic=openshift-registry#other_registry_accounts).</li>
+<li>[Adding the image pull secret](/docs/openshift?topic=openshift-registry#use_imagePullSecret) to your deployment configuration or to the project service account.</li></ul>
 </li>
 <li><strong>Exposing apps that are external to your cluster by using Ingress</strong>: Added information for how to use the [`proxy-external-service` Ingress annotation](/docs/openshift?topic=openshift-ingress#proxy-external) to include an app that is external to your cluster in Ingress application load balancing.</li>
 <li><strong>Version changelog</strong>: Worker node patch updates are available for OpenShift [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1530).</li>
@@ -208,7 +210,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>03 October 2019</td>
   <td><ul>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 579 and `ingress-auth` image build to 341](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>DevOps toolchain</strong>: You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-app#continuous-delivery-pipeline).</li>
+  <li><strong>DevOps toolchain</strong>: You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-cicd#continuous-delivery-pipeline).</li>
   <li><strong>Version changelog</strong>: Patch updates are available for OpenShift [3.11.146_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1525).</li>
   </ul>
   </td>
@@ -218,7 +220,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul>
     <li><strong>End of service of {{site.data.keyword.loganalysislong_notm}} and {{site.data.keyword.monitoringlong_notm}}</strong>: Removed steps for using {{site.data.keyword.loganalysislong_notm}} and {{site.data.keyword.monitoringlong_notm}} to work with cluster logs and metrics. You can collect logs and metrics for your cluster by setting up [{{site.data.keyword.la_full_notm}}](/docs/containers?topic=containers-health#logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster) instead.</li>
     <li><strong>OpenShift options</strong>: To help you decide whether to use built-in OpenShift capabilities or integration with {{site.data.keyword.cloud_notm}} services, the following topics are added:<ul>
-      <li>[Choosing an image registry solution](/docs/openshift?topic=openshift-images#openshift_registry_options)</li>
+      <li>[Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)</li>
       <li>[Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress) like router or Ingress</li>
       <li>[Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)</li></ul></li>
     <li><strong>New! Single zone location for OpenShift clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).<ul>
@@ -278,13 +280,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li>[Security information for OpenShift clusters](/docs/openshift?topic=openshift-security).
     <li>[Accessing clusters](/docs/openshift?topic=openshift-access_cluster).</li>
     <li>[App networking options](/docs/openshift?topic=openshift-cs_network_planning) with comparisons of routes, NodePort, load balancers, and Ingress.</li>
-    <li>[Common app modification scenarios](/docs/openshift?topic=openshift-openshift_apps#common-app-modification-scenarios) for moving apps from community Kubernetes to OpenShift.</li>
+    <li>[Common app modification scenarios](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for moving apps from community Kubernetes to OpenShift.</li>
     <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#openshift_charges) to explain the monthly license in more detail.</li>
-    <li>[Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-images#openshift_internal_registry).</li>
+    <li>[Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry).</li>
     <li>[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov) with links to tutorials.</li>
-    <li>[Using the internal registry in OpenShift](/docs/openshift?topic=openshift-images#openshift_internal_registry)</ul>
+    <li>[Using the internal registry in OpenShift](/docs/openshift?topic=openshift-registry#openshift_internal_registry)</ul>
   </li>
-    <li><strong>Entitled software</strong>: If you have licensed products from your [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) container software library, you can [set up your cluster to pull images from the entitled registry](/docs/openshift?topic=openshift-images#secret_entitled_software).</li>
+    <li><strong>Entitled software</strong>: If you have licensed products from your [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) container software library, you can [set up your cluster to pull images from the entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li>
   <li><strong>`script update` command</strong>: Added [steps for using the `script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.containerlong_notm}} plug-in.</li>
   </ul></td>
 </tr>

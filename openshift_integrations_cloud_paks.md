@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-02-19"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -119,8 +119,8 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 
 1.  Add your Cloud Pak entitlement from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external} to your Red Hat OpenShift on IBM Cloud cluster.
-    *  **For new clusters**: [Create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) with the `--entitlement cloud_pak` option. When you specify the number of workers (`--workers`) and flavor (`--machine-type`), make sure to specify only the number and size of worker nodes that you are entitled to use. After creation, your cluster's `default` worker pool does not charge you the OpenShift license fee for your entitled worker nodes. If you want to use a different worker pool for your Cloud Pak, follow the steps for existing clusters.
-    * **For existing clusters or worker pools other than `default`**: Create a [worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) with the `--entitlement cloud_pak` option. When you specify the number of workers (`--size-per-zone`) and flavor (`--machine-type`), make sure to specify only the number and size of worker nodes that you are entitled to use. After creation, your worker pool does not charge you the OpenShift license fee for your entitled worker nodes.
+    *  **For new clusters**: [Create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) with the `--entitlement cloud_pak` option. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use. After creation, your cluster's `default` worker pool does not charge you the OpenShift license fee for your entitled worker nodes. If you want to use a different worker pool for your Cloud Pak, follow the steps for existing clusters.
+    * **For existing clusters or worker pools other than `default`**: Create a [worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) with the `--entitlement cloud_pak` option. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use. After creation, your worker pool does not charge you the OpenShift license fee for your entitled worker nodes.
 
     Do not exceed your entitlement. Your OpenShift Container Platform entitlements include usage across all the cloud providers and environments that you use your entitlements for.
     {: important}

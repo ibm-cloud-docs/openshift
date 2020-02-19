@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -52,13 +52,16 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for ge
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Kubernetes Service** component.
 
-## Running tests with the Diagnostics and Debug Tool
+## 3.11 clusters: Running tests with the Diagnostics and Debug Tool
 {: #debug_utility}
 {: troubleshoot}
 {: support}
 
 While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run tests and gather pertinent information from your cluster.
 {: shortdesc}
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The Diagnostics and Debug Tool is supported only for OpenShift 3.11 clusters, and is not supported for OpenShift 4.3 clusters.
+{: note}
 
 **Before you begin**:
 If you previously installed the debug tool by using Helm, first uninstall the `ibmcloud-iks-debug` Helm chart.
@@ -248,7 +251,7 @@ The **Master Status** provides details of what operation from the master state i
     </tr>
     <tr>
        <td>`update_cancelled`</td>
-       <td>The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).<p class="note">If you do not want to update the master to the default `major.minor` version during the update, include the `--kube-version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.15.8`. To list available versions, run `ibmcloud oc versions`.</p></td>
+       <td>The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).<p class="note">If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.15.10`. To list available versions, run `ibmcloud oc versions`.</p></td>
     </tr>
     <tr>
        <td>`update_failed`</td>
@@ -564,7 +567,7 @@ Your cluster cannot pull images from the {{site.data.keyword.registryshort_notm}
 {: screen}
 
 {: tsCauses}
-During cluster creation, a service ID is created for your cluster and assigned the **Reader** service access policy to {{site.data.keyword.registrylong_notm}}. Then, an API key for this service ID is generated and stored in [an image pull secret](/docs/openshift?topic=openshift-images#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}.
+During cluster creation, a service ID is created for your cluster and assigned the **Reader** service access policy to {{site.data.keyword.registrylong_notm}}. Then, an API key for this service ID is generated and stored in [an image pull secret](/docs/openshift?topic=openshift-registry#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}.
 
 To successfully assign the **Reader** service access policy to the service ID during cluster creation, you must have the **Administrator** platform access policy to {{site.data.keyword.registrylong_notm}}.
 
@@ -768,7 +771,8 @@ Application is not available
 The OpenShift web console might not open for reasons that include:
 1.  The cluster has a private service endpoint enabled.
 2.  The cluster ingress and networking components are not available.
-3.  The console pod is not healthy.
+3.  The cluster is running an older version.
+4.  The console pod or other system pods are not healthy, such as when not enough worker nodes exist to run the pods.
 
 <br>
 
@@ -781,17 +785,63 @@ The OpenShift web console might not open for reasons that include:
 2.  Review the output of the previous step to check the **Ingress Subdomain**.
     *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
     *  If your cluster does have a subdomain, continue to the next step.
-3.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console.
+3.  Review the output of the first step to check the **Version**. If your cluster does not run version `4.3.1_1508_openshift` or later, update the cluster and worker nodes.
+    1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version of `4.3`.
+        ```
+        ibmcloud oc cluster update -c <cluster_name_or_ID> --version 4.3_openshift -f
+        ```
+        {: pre}
+    2.  List your worker nodes.
+        ```
+        ibmcloud oc worker ls -c <cluster_name_or_ID>
+        ```
+        {: pre}
+    3.  [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to match the cluster master version.
+        ```
+        ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w <worker3_ID>
+        ```
+        {: pre}
+4.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console.
     ```
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
     ```
     {: pre}
-4.  Review the health of the console pod. If the pod is not in a **Running** status, describe the pod and check the events. For example, might not have enough resources for the pod to run and must [resize your worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to add worker nodes.
-    ```
-    oc get pods -n openshift-console
-    ```
-    {: pre}
-5.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
+5.  Review the health of the console pod.
+    1.  Find the console pods.
+        ```
+        oc get pods -n openshift-console
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        NAME                         READY   STATUS    RESTARTS   AGE
+        console-844d8bb9bd-92d7f     1/1     Running   0          21h
+        console-844d8bb9bd-kvr9r     1/1     Running   0          21h
+        ```
+        {: screen}
+    2.  If a pod is not in a **Running** status, describe the pod and check the events. For example, the cluster might not have enough resources for the pod to run and you must [resize your worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to add worker nodes.
+        ```
+        oc describe pod -n openshift-console <pod>
+        ```
+        {: pre}
+    3.  Try to restart the console pod and check if the OpenShift web console opens.
+        ```
+        oc delete pod -n openshift-console <pod>
+        ```
+        {: pre}
+5.  Check if other system pods are experiencing issues. 
+    1.  Check for pending pods.
+        ```
+        oc get pods --all-namespaces | grep Pending
+        ```
+        {: pre}
+    2.  Describe the pods and check for the events. For example, you might find a `Volume could not be created` error message because you created the cluster without the correct storage permission. Red Hat OpenShift on IBM Cloud clusters come with a File storage device by default to store images for the system and other pods. Revise your [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) and try again.
+        ```
+        oc describe pod -n <project_name> <pod_name>
+        ```
+        {: pre}
+6.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
 
 <br />
 
@@ -853,6 +903,6 @@ Still having issues with your cluster? Review different ways to get help and sup
 **Getting help**<br>
 1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
 2.  In your support case, for **Category**, select **Containers**.
-3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
+3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. 3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
 
 

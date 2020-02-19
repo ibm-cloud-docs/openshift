@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-17"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -60,7 +60,7 @@ For an overview of available Helm charts, see the [Helm charts catalog](https://
 - **ibm-community**: Helm charts that originated outside IBM, such as from [Red Hat OpenShift on IBM Cloud partners](/docs/openshift?topic=openshift-service-partners). These charts are supported and maintained by the community partners.
 - **kubernetes**: Helm charts that are provided by the Kubernetes community and considered `stable` by the community governance. These charts are not verified to work in Red Hat OpenShift on IBM Cloud or {{site.data.keyword.cloud_notm}} Private clusters.
 - **kubernetes-incubator**: Helm charts that are provided by the Kubernetes community and considered `incubator` by the community governance. These charts are not verified to work in Red Hat OpenShift on IBM Cloud or {{site.data.keyword.cloud_notm}} Private clusters.
-- **entitled**: Helm charts of licensed software that you must purchase and for which you must set up cluster access with an entitlement key. For more information, see [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-images#secret_entitled_software).
+- **entitled**: Helm charts of licensed software that you must purchase and for which you must set up cluster access with an entitlement key. For more information, see [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software).
 
 Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitled** repositories are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using these Helm charts, you can use one of the Red Hat OpenShift on IBM Cloud support channels. For more information, see [Getting help and support](/docs/containers?topic=containers-cs_troubleshoot_clusters#clusters_getting_help).
 
