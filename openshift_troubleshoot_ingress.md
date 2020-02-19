@@ -272,7 +272,7 @@ ibmcloud oc worker ls --cluster <cluster_name_or_ID>
 In your CLI output, make sure that the **Status** of your worker nodes displays **Ready** and that the **Machine Type** shows a flavor other than **free**.
 
 * If your standard cluster is fully deployed and has at least 2 worker nodes per zone, but no **Ingress Subdomain** is available, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
-* For other issues, troubleshoot your Ingress setup by following the steps in [3.11 clusters: Debugging Ingress](#debug-ingress)or [4.3 clusters: Debugging Ingress](#ingress-debug-roks4).
+* For other issues, troubleshoot your Ingress setup by following the steps in [3.11 clusters: Debugging Ingress](#ingress-debug)or [4.3 clusters: Debugging Ingress](#ingress-debug-roks4).
 
 Version 3.11 clusters: If you recently restarted your ALB pods or enabled an ALB, a [readiness check](/docs/openshift?topic=openshift-ingress-settings#readiness-check) prevents ALB pods from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss and can take up to 5 minutes.
 {: note}
