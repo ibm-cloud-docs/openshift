@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-19"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -87,6 +87,7 @@ subcollection: openshift
     }
 -->
 </style>
+<br>
 
 # Learning path for developers
 {: #learning-path-dev}
