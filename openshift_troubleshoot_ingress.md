@@ -280,6 +280,278 @@ Version 3.11 clusters: If you recently restarted your ALB pods or enabled an ALB
 <br />
 
 
+## 4.3 clusters: Debugging Ingress
+{: #ingress-debug-roks4}
+{: troubleshoot}
+{: support}
+
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 4.3. For 3.11 clusters, see [3.11 clusters: Debugging Ingress](#ingress-debug).
+{: note}
+
+{: tsSymptoms}
+You publicly exposed your app by creating an Ingress resource for your app in your cluster. However, when you try to connect to your app through the Ingress subdomain or the IP address of the Ingress controller's router, the connection fails or times out.
+
+{: tsResolve}
+The steps in the following sections can help you debug your Ingress setup.
+
+Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}} IAM access policies](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}:
+  - **Editor** or **Administrator** platform role for the cluster
+  - **Writer** or **Manager** service role
+
+### Step 1: Check your app deployment and Ingress resource configuration
+{: #app-debug-ingress-43}
+
+Start by checking for errors in your app deployment and the Ingress resource deployment. Error messages in your deployments can help you find the root causes for failures and further debug your Ingress setup in the next sections.
+{: shortdesc}
+
+1. Before you debug Ingress, first check out [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app#debug_apps). Ingress issues are often caused by underlying issues in your app deployment or in the `ClusterIP` service that exposes your app. For example, your app label and service selector might not match, or your app and service target ports might not match.
+
+2. Check your Ingress resource deployment and look for warnings or error messages.
+    ```
+    oc describe ingress <ingress_resource_name>
+    ```
+    {: pre}
+
+    In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. Check the [Ingress resource configuration documentation](/docs/openshift?topic=openshift-ingress#public_inside_4). For annotations, note that the {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later. If you want to customize routing rules for apps in a cluster that runs OpenShift version 4.3 or later, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external} that manages traffic for your app. These annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. To add annotations to the router, run `oc edit svc router-default -n openshift-ingress`.
+
+    ```
+    Name:             myingress
+    Namespace:        default
+    Address:          169.xx.xxx.xxx,169.xx.xxx.xxx
+    Default backend:  default-http-backend:80 (<none>)
+    Rules:
+      Host                                             Path  Backends
+      ----                                             ----  --------
+      mycluster-<hash>-0000.us-south.containers.appdomain.cloud
+                                                       /tea      myservice1:80 (<none>)
+                                                       /coffee   myservice2:80 (<none>)
+    Annotations:
+      custom-port:        protocol=http port=7490; protocol=https port=4431
+      location-modifier:  modifier='~' serviceName=myservice1;modifier='^~' serviceName=myservice2
+    Events:
+      Type     Reason             Age   From                                Message
+      ----     ------             ----  ----                                -------
+      Warning  TLSSecretNotFound  1m    router-default-69d6f598f8-vn8tj     Failed to apply ingress resource.
+      Warning  AnnotationError    2s    router-default-69d6f598f8-vn8tj     Failed to apply ingress.bluemix.net/custom-port annotation.
+      Warning  TLSSecretNotFound  1m    router-dal10-y2d4359tf4-g4ar7       Failed to apply ingress resource.
+      Warning  AnnotationError    2s    router-dal10-y2d4359tf4-g4ar7       Failed to apply ingress.bluemix.net/custom-port annotation.
+    ```
+    {: screen}
+
+3. Check the Ingress resource configuration file.
+    ```
+    oc get ingress -o yaml
+    ```
+    {: pre}
+
+    1. Ensure that you define a host in only one Ingress resource. If one host is defined in multiple Ingress resources, the Ingress controller might not forward traffic properly and you might experience errors.
+
+    2. Check that the subdomain and TLS certificate are correct. To find the IBM provided Ingress subdomain and TLS certificate, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
+
+    3.  Make sure that your app listens on the same path that is configured in the **path** section of your Ingress. If your app is set up to listen on the root path, use `/` as the path. If incoming traffic to this path must be routed to a different path that your app listens on, use the [rewrite paths](/docs/openshift?topic=openshift-ingress_annotation#rewrite-path) annotation.
+
+    4. Edit your resource configuration YAML as needed. When you close the editor, your changes are saved and automatically applied.
+        ```
+        oc edit ingress <myingressresource>
+        ```
+        {: pre}
+
+### Step 2: Check the health of the Ingress controller's router
+{: #errors-43}
+
+Verify that the Ingress operator and the Ingress controller's router are healthy. Ingress controllers are managed by the Ingress operator. The router forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
+{: shortdesc}
+
+1. Check the status of your Ingress operator pods.
+    1. Get the Ingress operator pods that are running in your cluster.
+        ```
+        oc get pods -n openshift-ingress-operator
+        ```
+        {: pre}
+
+    2. Make sure that all pods are running by checking the **STATUS** column.
+
+    3. If a pod does not have a `Running` status, you can delete the pod to restart it.
+        ```
+        oc delete pod <pod> -n openshift-ingress-operator
+        ```
+        {: pre}
+
+2. Check the status and logs of your Ingress controller's router pods.
+    1. Get the Ingress controller's router pods that are running in your cluster.
+        ```
+        oc get pods -n openshift-ingress
+        ```
+        {: pre}
+
+    2. Make sure that all `router-default` pods and pods for routers in any other zone are running by checking the **STATUS** column. If you have a multizone cluster, note that the router in the first zone where you have workers nodes is always named `router-default`, and routers in zones that you subsequently add to your cluster have names such as `router-dal12`.
+
+    3. If a pod does not have a `Running` status, you can delete the pod to restart it.
+        ```
+        oc delete pod <pod> -n openshift-ingress
+        ```
+        {: pre}
+
+    4. Get the logs for each pod and look for error messages in the logs. 
+        ```
+        oc logs <pod> -n openshift-ingress
+        ```
+        {: pre}
+
+### Step 3: Ping the Ingress subdomain and router public IP address
+{: #ping-43}
+
+Check the availability of the public IP addresses of the Ingress controller's routers and verify your subdomain mappings.
+{: shortdesc}
+
+1. Get the external IP addresses that the router services are listening on. If you have a multizone cluster, note that the router in the first zone where you have workers nodes is always named `router-default`, and routers in zones that you subsequently add to your cluster have names such as `router-dal12`.
+    ```
+    oc get svc -n openshift-ingress
+    ```
+    {: pre}
+
+    Example output for a multizone cluster with worker nodes in `dal10` and `dal13`:
+    ```
+    NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+    router-dal13                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32318/TCP,443:30915/TCP   26d
+    router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26d
+    router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26d
+    ```
+    {: screen}
+
+    If a router has no external IP address, see [4.3 clusters: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43).
+    {: note}
+
+2. Check the health of your router by pinging its IP address.
+    ```
+    ping <router_IP>
+    ```
+    {: pre}
+
+    * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your [firewall](/docs/openshift?topic=openshift-cs_troubleshoot#cs_firewall).
+    * If you don't have a firewall or your firewall does not block the pings and the pings still timeout, [check the status of your router pods](#errors-43).
+
+3. Get the IBM-provided Ingress subdomain.
+    ```
+    ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    Ingress Subdomain:      mycluster-<hash>-0000.us-south.containers.appdomain.cloud
+    Ingress Secret:         mycluster-<hash>-0000
+    ```
+    {: screen}
+
+4. Ensure that the router IP address is registered with your cluster's IBM-provided Ingress subdomain. For example, in a multizone cluster, the public router IP in each zone where you have worker nodes must be registered under the same subdomain.
+    ```
+    host <ingress_subdomain>
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    mycluster-<hash>-0000.us-south.containers.appdomain.cloud has address 169.XX.XX.XXX
+    mycluster-<hash>-0000.us-south.containers.appdomain.cloud has address 169.XX.XXX.XX
+    ```
+    {: screen}
+
+5. If you use a custom domain, verify that you used your DNS provider to map the custom domain to the IBM-provided subdomain or the router's public IP address.
+    * **IBM-provided subdomain CNAME**: Check that your custom domain is mapped to the cluster's IBM-provided subdomain in the Canonical Name record (CNAME).
+        ```
+        host www.my-domain.com
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        www.my-domain.com is an alias for mycluster-<hash>-0000.us-south.containers.appdomain.cloud
+        mycluster-<hash>-0000.us-south.containers.appdomain.cloud has address 169.XX.XX.XXX
+        mycluster-<hash>-0000.us-south.containers.appdomain.cloud has address 169.XX.XX.XXX
+        ```
+        {: screen}
+
+    * **Public IP address A record**: Check that your custom domain is mapped to the router's portable public IP address in the A record.
+        ```
+        host www.my-domain.com
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        www.my-domain.com has address 169.XX.XX.XXX
+        www.my-domain.com has address 169.XX.XX.XXX
+        ```
+        {: screen}
+
+<br />
+
+
+## 4.3 clusters: Router for Ingress controller does not deploy in a zone
+{: #cs_subnet_limit_43}
+
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 4.3.
+{: note}
+
+{: tsSymptoms}
+When you run `oc get svc -n openshift-ingress`, one or more zones has no public router.
+* No `router-default` service is deployed, or the service might not have an external IP address assigned. For example, in a single-zone cluster, you might see the following:
+  ```
+  NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+  router-default                               LoadBalancer   172.21.47.119   <none>         80:32637/TCP,443:31719/TCP   26m
+  router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
+  ```
+  {: screen}
+* If you have a multizone cluster, one zone has no router service. For example, in a multizone cluster that has worker nodes in `dal10` and `dal12`, you might see a `router-default` service for `dal10`, but no `router-dal12` for `dal12`. Note that the router in the first zone where you have workers nodes is always named `router-default`, and routers in zones that you subsequently add to your cluster have names such as `router-dal12`.
+  ```
+  NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+  router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
+  router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
+  ```
+  {: screen}
+
+{: tsCauses}
+In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. In that zone, 1 public portable subnet is requested on the public VLAN that you specify and 1 private portable subnet is requested on the private VLAN that you specify. For Red Hat OpenShift on IBM Cloud, VLANs have a limit of 40 subnets. If the cluster's VLAN in a zone already reached that limit, the **Ingress Subdomain** fails to provision and the default public router for the Ingress controller fails to provision.
+
+To view how many subnets a VLAN has:
+1.  From the [IBM Cloud infrastructure console](https://cloud.ibm.com/classic?), select **Network** > **IP Management** > **VLANs**.
+2.  Click the **VLAN Number** of the VLAN that you used to create your cluster. Review the **Subnets** section to see whether 40 or more subnets exist.
+
+{: tsResolve}
+Option 1: If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) that uses this new VLAN.
+
+Option 2: If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Then, you can add new worker nodes to the cluster that use the other VLAN with available subnets. Create at least 2 worker nodes per zone. Now, IP addresses are available so that the routers can automatically deploy.
+
+Option 3: If you are not using all the subnets in the VLAN, you can reuse subnets on the VLAN by adding them to your cluster.
+1. Check that the subnet that you want to use is available.
+  <p class="note">The infrastructure account that you use might be shared across multiple {{site.data.keyword.cloud_notm}} accounts. In this case, even if you run the `ibmcloud oc subnets` command to see subnets with **Bound Clusters**, you can see information only for your clusters. Check with the infrastructure account owner to make sure that the subnets are available and not in use by any other account or team.</p>
+
+2. Use the [`ibmcloud oc cluster subnet add` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_add) to make an existing subnet available to your cluster.
+
+3. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
+    ```
+    ibmcloud oc cluster get --show-resources <cluster_name_or_ID>
+    ```
+    {: pre}
+
+    In this example output, a second subnet was added to the `2234945` public VLAN:
+    ```
+    Subnet VLANs
+    VLAN ID   Subnet CIDR          Public   User-managed
+    2234947   10.xxx.xx.xxx/29     false    false
+    2234945   169.xx.xxx.xxx/29    true     false
+    2234945   169.xx.xxx.xxx/29    true     false
+    ```
+    {: screen}
+
+4. Verify that the portable IP addresses from the subnet that you added are used for the router in your cluster. It might take several minutes for the services to use the portable IP addresses from the newly-added subnet.
+  * **No Ingress subdomain**: Run `ibmcloud oc cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
+  * **A router does not deploy in a zone**: Run `oc get svc -n openshift-ingress` to verify that the missing router is deployed with an external IP address.
+
+<br />
+
+
 ## 3.11 clusters: Debugging Ingress
 {: #ingress-debug}
 {: troubleshoot}
