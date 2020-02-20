@@ -127,7 +127,7 @@ In the following steps, you set up a project and privileged service account for 
 * You must have the following permissions:
   * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
   * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/iam?topic=iam-userroles) for {{site.data.keyword.la_full_notm}}.
-* For the cluster that you want to collect API server audit logs from: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+* For the cluster that you want to collect API server audit logs from: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **To set up {{site.data.keyword.la_full_notm}}:**
 
@@ -159,7 +159,7 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 * You must have the following permissions:
   * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
   * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/iam?topic=iam-userroles) for {{site.data.keyword.la_full_notm}}.
-* For the cluster that you want to collect API server audit logs from: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+* For the cluster that you want to collect API server audit logs from: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 * Keep in mind that only one audit webhook can be created in a cluster.
 
 **To forward Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}:**
@@ -298,7 +298,7 @@ Create an {{site.data.keyword.mon_full_notm}} instance in your {{site.data.keywo
 * You must have the following permissions:
   * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
   * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/iam?topic=iam-userroles) for {{site.data.keyword.mon_full_notm}}.
-* For the cluster that you want to collect API server audit logs from: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+* For the cluster that you want to collect API server audit logs from: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **To set up {{site.data.keyword.mon_full_notm}}:**
 

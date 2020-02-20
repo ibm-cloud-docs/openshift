@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-20"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -850,7 +850,7 @@ You can add complex OpenShift apps to your cluster by using Helm charts.
 
 [Helm](https://helm.sh){: external} is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in your cluster:
 
