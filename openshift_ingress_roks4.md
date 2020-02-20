@@ -277,8 +277,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     <td>The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.</td>
     </tr>
     </tbody></table>
-
-    <p class="tip">If you use a custom domain and did not specify the custom TLS secret in the Ingress controller configuration, you can specify the secret by adding a `spec.tls` section to this Ingress resource:
+    <p class="note">If you use the IBM-provided Ingress subdomain, do not include a `spec.tls` section in your Ingress resource. The default Ingress controller is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. The Ingress controller can access and apply the default in any project where you create this Ingress resource.</br></br>If you use a custom domain and did not specify the custom TLS secret when you created the Ingress controller configuration, you can specify the secret by adding a `spec.tls` section to this Ingress resource:
         <pre class="screen">
         tls:
         - hosts:
