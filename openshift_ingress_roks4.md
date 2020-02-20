@@ -48,7 +48,7 @@ Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by crea
 Before you get started with Ingress, review the following prerequisites.
 {:shortdesc}
 
-- Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/containers?topic=containers-users#platform):
+- Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
     - **Administrator** platform role for the cluster
     - **Manager** service role in all projects
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller and router in that zone.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-19"
+lastupdated: "2020-02-20"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -197,7 +197,7 @@ Begin working with your cluster by setting up the CLI and accessing the cluster.
 2. **User permissions**: Ensure that your cluster administrator gives you the proper [{{site.data.keyword.cloud_notm}} IAM role](/docs/openshift?topic=openshift-learning-path-admin#admin_secure) to access the cluster.
 3. **Cluster access**: [Access your cluster through the public or private service endpoint](/docs/openshift?topic=openshift-access_cluster).
 
-</br>Need help? Check out [Troubleshooting worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_troubleshoot_clusters).
+</br>Need help? Check out [Troubleshooting clusters and masters](/docs/openshift?topic=openshift-cs_troubleshoot) and [Troubleshooting worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters).
 
 <br />
 
@@ -228,6 +228,8 @@ Configure your app in a YAML file that declares the configuration of the Kuberne
   1. <ff-roks>Version 4.3 and later clusters: </ff-roks>To plan customized configurations for more than one environment, such as development, testing, and production environments, [use the Kustomize tool](/docs/openshift?topic=openshift-openshift_apps#kustomize) to manage your configuration YAML file.
   2. If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, [package your application to help automate deployments](/docs/openshift?topic=openshift-plan_deploy#packaging).
 
+</br>Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_app).
+
 <br />
 
 
@@ -244,7 +246,7 @@ Deploy your app to the cluster by running your app configuration file.
 * [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
 
 
-</br>Need help? Check out [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app#debug_apps).
+</br>Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_app).
 
 <br />
 
@@ -310,8 +312,9 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
   * Ingress:
     * Version 4.3 and later clusters: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public) or the [private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private).
     * Version 3.11 clusters: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress#ingress_expose_public) or the [private network](/docs/openshift?topic=openshift-ingress#ingress_expose_private).
+  * Routes: [Create a route to expose your app on a subdomain.](/docs/openshift?topic=openshift-openshift_routes)
 
-</br>Need help? Check out [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_troubleshoot_debug_ingress) and [Troubleshooting load balancers](/docs/openshift?topic=openshift-cs_troubleshoot_lb).
+</br>Need help? Check out [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress) and [Troubleshooting load balancers](/docs/openshift?topic=openshift-cs_troubleshoot_lb).
 
 <br />
 

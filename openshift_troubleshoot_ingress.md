@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-19"
+lastupdated: "2020-02-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -298,6 +298,9 @@ Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}
   - **Editor** or **Administrator** platform role for the cluster
   - **Writer** or **Manager** service role
 
+Seeing an **Application is not available** page when you try to access your app's subdomain? [Check your app deployment and Ingress resource configuration](#app-debug-ingress-43). Seeing a **Connection timeout** page? [Check the health of the Ingress controller's router pods](#errors-43).
+{: tip}
+
 ### Step 1: Check your app deployment and Ingress resource configuration
 {: #app-debug-ingress-43}
 
@@ -384,7 +387,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
         ```
         {: pre}
 
-    2. Make sure that all `router-default` pods and pods for routers in any other zone are running by checking the **STATUS** column. If you have a multizone cluster, note that the router in the first zone where you have workers nodes is always named `router-default`, and routers in zones that you subsequently add to your cluster have names such as `router-dal12`.
+    2. Make sure that all `router-default` pods and pods for routers in any other zone are running by checking the **STATUS** column. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
 
     3. If a pod does not have a `Running` status, you can delete the pod to restart it.
         ```
@@ -404,7 +407,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
 Check the availability of the public IP addresses of the Ingress controller's routers and verify your subdomain mappings.
 {: shortdesc}
 
-1. Get the external IP addresses that the router services are listening on. If you have a multizone cluster, note that the router in the first zone where you have workers nodes is always named `router-default`, and routers in zones that you subsequently add to your cluster have names such as `router-dal12`.
+1. Get the external IP addresses that the router services are listening on. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
     ```
     oc get svc -n openshift-ingress
     ```
@@ -427,7 +430,6 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     ping <router_IP>
     ```
     {: pre}
-
     * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your [firewall](/docs/openshift?topic=openshift-cs_troubleshoot#cs_firewall).
     * If you don't have a firewall or your firewall does not block the pings and the pings still timeout, [check the status of your router pods](#errors-43).
 
@@ -503,7 +505,7 @@ When you run `oc get svc -n openshift-ingress`, one or more zones has no public 
   router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
   ```
   {: screen}
-* If you have a multizone cluster, one zone has no router service. For example, in a multizone cluster that has worker nodes in `dal10` and `dal12`, you might see a `router-default` service for `dal10`, but no `router-dal12` for `dal12`. Note that the router in the first zone where you have workers nodes is always named `router-default`, and routers in zones that you subsequently add to your cluster have names such as `router-dal12`.
+* If you have a multizone cluster, one zone has no router service. For example, in a multizone cluster that has worker nodes in `dal10` and `dal12`, you might see a `router-default` service for `dal10`, but no `router-dal12` for `dal12`. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
   ```
   NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
   router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
