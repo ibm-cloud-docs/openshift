@@ -60,7 +60,7 @@ To install the CLIs:
     -   The base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`).
     -   The {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`).
     -   {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by IBM, and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
-    -   The Kubernetes CLI (`kubectl`) that matches the default version: 1.15.10.<p class="note">After you install the {{site.data.keyword.cloud_notm}} CLI, you [also install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli).</p>
+    -   The Kubernetes CLI (`kubectl`) that matches the default version: 1.15.10.<p class="note">After you install the {{site.data.keyword.cloud_notm}} CLI, you must [also install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli).</p>
     -   The Helm CLI (`helm`). You might use Helm as a package manager to install {{site.data.keyword.cloud_notm}} services and complex apps to your cluster via Helm charts. You must still [set up Helm](/docs/openshift?topic=openshift-helm) in each cluster where you want to use Helm.
 
     Plan to use the CLI often? Try [Enabling shell autocompletion for {{site.data.keyword.cloud_notm}} CLI (Linux/MacOS only)](/docs/cli/reference/ibmcloud?topic=cloud-cli-shell-autocomplete#shell-autocomplete-linux).
@@ -96,6 +96,9 @@ For reference information about these CLIs, see the documentation for those tool
 -   [`ibmcloud` commands](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
 -   [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli)
 -   [`ibmcloud cr` commands](/docs/Registry?topic=container-registry-cli-plugin-containerregcli)
+
+<br />
+
 
 
 ## Installing the OpenShift Origin CLI (`oc`)
@@ -161,7 +164,7 @@ For more information about the `oc` CLI, see the [OpenShift documentation](https
 You can use the commands that are provided with the OpenShift CLI to manage clusters in {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-All `oc` commands that are available in OpenShift 3.11 and 4.3 are supported for use with clusters in {{site.data.keyword.cloud_notm}}. After you create a cluster, set the context for your local CLI to that cluster with an environment variable. Then, you can run the OpenShift `oc` commands to work with your cluster in {{site.data.keyword.cloud_notm}}.
+All `oc` commands that are available in OpenShift 3.11 are supported for use with clusters in {{site.data.keyword.cloud_notm}}. After you create a cluster, set the context for your local CLI to that cluster with an environment variable. Then, you can run the OpenShift `oc` commands to work with your cluster in {{site.data.keyword.cloud_notm}}.
 
 Before you can run `oc` commands:
 * [Install the required CLIs](#cs_cli_install).
@@ -171,8 +174,8 @@ Before you can run `oc` commands:
 To run `kubectl` commands to manage your cluster:
 
 1. Depending on which [version of the {{site.data.keyword.containerlong_notm}} plug-in you use](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta), you must follow different steps to use `oc` commands.
-* Version 0.4 (default) or earlier: Ensure that your {{site.data.keyword.containerlong_notm}} plug-in uses the latest `0.4` version by running `ibmcloud plugin update kubernetes-service`.
-* Version 1.0 (beta): To use `1.0`, set the `IKS_BETA_VERSION` environment variable by running `export IKS_BETA_VERSION=1.0`.
+  * Version 0.4 (default) or earlier: Ensure that your {{site.data.keyword.containerlong_notm}} plug-in uses the latest `0.4` version by running `ibmcloud plugin update kubernetes-service`. In CLI plug-in version 0.4 or earlier, `cluster config` provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.
+  * Version 1.0 (beta): To use `1.0`, set the `IKS_BETA_VERSION` environment variable by running `export IKS_BETA_VERSION=1.0`. In CLI plug-in version 1.0, `cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately. Note that any pre-existing `kubeconfig` files are not merged automatically.
 
 2.  Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
     ```
@@ -198,60 +201,59 @@ To run `kubectl` commands to manage your cluster:
     {: pre}
 
 5.  Set the cluster as the context for this session. Complete these configuration steps every time that you work with your cluster.
-  * **CLI plug-in version 0.4 or earlier**: In CLI plug-in version 0.4 and earlier, `cluster config` provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.
-    1.  Get the command to set the environment variable and download the Kubernetes configuration files.<p class="tip">Using Windows PowerShell? Include the `--powershell` flag to get environment variables in Windows PowerShell format.</p>
-        ```
-        ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin
-        ```
-        {: pre}
+    * **CLI plug-in version 0.4 or earlier**:
+      1.  Get the command to set the environment variable and download the Kubernetes configuration files.<p class="tip">Using Windows PowerShell? Include the `--powershell` flag to get environment variables in Windows PowerShell format.</p>
+          ```
+          ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin
+          ```
+          {: pre}
 
-        After downloading the configuration files, a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable.
+          After downloading the configuration files, a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable.
 
-        Example:
-        ```
-        export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
-        ```
-        {: screen}
+          Example:
+          ```
+          export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
+          ```
+          {: screen}
 
-    2.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
+      2.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
 
-        **Mac or Linux users**: Instead of running the `ibmcloud oc cluster config` command and copying the `KUBECONFIG` environment variable, you can run `ibmcloud oc cluster config --export <cluster-name>`. Depending on your shell, you can set up your shell by running `eval $(ibmcloud oc cluster config --export <cluster-name>)`.
-        {: tip}
+          **Mac or Linux users**: Instead of running the `ibmcloud oc cluster config` command and copying the `KUBECONFIG` environment variable, you can run `ibmcloud oc cluster config --export <cluster-name>`. Depending on your shell, you can set up your shell by running `eval $(ibmcloud oc cluster config --export <cluster-name>)`.
+          {: tip}
 
-    3.  Verify that the `KUBECONFIG` environment variable is set properly.
+      3.  Verify that the `KUBECONFIG` environment variable is set properly.
 
-        Example:
-        ```
-        echo $KUBECONFIG
-        ```
-        {: pre}
+          Example:
+          ```
+          echo $KUBECONFIG
+          ```
+          {: pre}
 
-        Output:
-        ```
-        /Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
-        ```
-        {: screen}
+          Output:
+          ```
+          /Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
+          ```
+          {: screen}
+    * **CLI plug-in version 1.0**:
+      1. Append the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable.
+          ```
+          ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin
+          ```
+          {: pre}
 
-  * **CLI plug-in version 1.0**: In CLI plug-in version 1.0, `cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately. Note that any pre-existing `kubeconfig` files are not merged automatically.
-    1. Append the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable.
-        ```
-        ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin
-        ```
-        {: pre}
+      2. Verify that the `KUBECONFIG` environment variable is set properly.
 
-    2. Verify that the `KUBECONFIG` environment variable is set properly.
+          Example:
+          ```
+          echo $KUBECONFIG
+          ```
+          {: pre}
 
-        Example:
-        ```
-        echo $KUBECONFIG
-        ```
-        {: pre}
-
-        Output:
-        ```
-        /Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
-        ```
-        {: screen}
+          Output:
+          ```
+          /Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
+          ```
+          {: screen}
 
 6.  Verify that the `oc` commands run properly with your cluster by checking the OpenShift CLI server version.
     ```
@@ -318,7 +320,7 @@ To update the CLIs:
         ```
         {: pre}
 
-        The {{site.data.keyword.containerlong_notm}} plug-in is displayed in the results as kubernetes-service.
+        The {{site.data.keyword.containerlong_notm}} plug-in is displayed in the results as `kubernetes-service`.
 
     3.  Initialize the CLI.
 
@@ -344,7 +346,7 @@ To update the CLIs:
         ```
         {: pre}
 
-        The registry plug-in is displayed in the results as container-registry.
+        The registry plug-in is displayed in the results as `container-registry`.
 
 <br />
 
@@ -359,7 +361,6 @@ This task includes the information for removing these CLIs:
 
 
 -   {{site.data.keyword.containerlong_notm}} plug-in
--   OpenShift CLI
 -   {{site.data.keyword.registryshort_notm}} plug-in
 
 To uninstall the CLIs:
@@ -393,22 +394,22 @@ To uninstall the CLIs:
 ## Using the {{site.data.keyword.cloud-shell_notm}} in your web browser (beta)
 {: #cloud-shell}
 
-The [{{site.data.keyword.cloud-shell_full}}](https://cloud.ibm.com/shell){: externa;} allows you to use the {{site.data.keyword.cloud_notm}} CLI and various CLI plug-ins to manage your cluster directly from your web browser.
+[{{site.data.keyword.cloud-shell_full}}](https://cloud.ibm.com/shell){: external} allows you to use the {{site.data.keyword.cloud_notm}} CLI and various CLI plug-ins to manage your cluster directly from your web browser.
 {: shortdesc}
 
-{{site.data.keyword.cloud-shell_notm}} is a beta feature that is subject to change, and available only for select Kubernetes versions that depend on your cluster infrastructure provider.
+The {{site.data.keyword.cloud-shell_notm}} is a beta feature that is subject to change. Do not use it for production workloads.
 {: preview}
 
-{{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), the {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`), the {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`), and the OpenShift CLI (`oc`).
+The {{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), the {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`), the {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`), and the OpenShift CLI (`oc`).
 
-While you use {{site.data.keyword.cloud-shell_short}}, keep in mind the following limitations:
+While you use the {{site.data.keyword.cloud-shell_short}}, keep in mind the following limitations:
 * You can open up to five concurrent sessions, which operate independently so you can work with different resources, regions, and accounts at once.
-* Any files that you download and edit locally, such as YAML files, are stored temporarily in {{site.data.keyword.cloud-shell_short}} and do not persist across sessions.
-* {{site.data.keyword.cloud-shell_notm}} has a usage quota that limits you to 4 hours of continuous use or up to 30 hours within a week.
+* Any files that you download and edit locally, such as YAML files, are stored temporarily in the {{site.data.keyword.cloud-shell_short}} and do not persist across sessions.
+* {{site.data.keyword.cloud-shell_short}} has a usage quota that limits you to 4 hours of continuous use or up to 30 hours within a week.
 
 To launch and use the {{site.data.keyword.cloud-shell_notm}}:
 
-1. In the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){:external}, open {{site.data.keyword.cloud-shell_short}} by clicking the {{site.data.keyword.cloud-shell_short}} icon ![{{site.data.keyword.cloud-shell_notm}} icon](../icons/terminal-cloud-shell.svg) in the console menu bar.
+1. In the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){:external} menu bar, click the {{site.data.keyword.cloud-shell_short}} icon ![{{site.data.keyword.cloud-shell_notm}} icon](../icons/terminal-cloud-shell.svg).
 2. A session starts and automatically logs you in with your current account through the {{site.data.keyword.cloud_notm}} CLI.
 3. Target your session context the cluster that you want to work with so that you can run `oc` commands.
   1.  Get the command to set the environment variable and download the Kubernetes configuration files to your temporary home directory.
