@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-20"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -45,8 +45,7 @@ Use the router to publicly expose the services in your {{site.data.keyword.opens
 {: #routes-overview}
 
 A router is deployed by default to your cluster and functions as the ingress point for external network traffic. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router uses the service selector to find the service and the endpoints that back the service, and creates [routes](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external} that expose services as hostnames to be used by external clients. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. After you set up routes for your services, the router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service. Note that the router supports only the HTTP and HTTPS protocols.
-
-You can find the router subdomain for your cluster by running `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+* </staging ingress-mzr>To see the router subdomain for your cluster, run `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 
 Not sure whether to use OpenShift routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).
 {: tip}
@@ -59,9 +58,9 @@ The following diagram shows how a router directs communication from the internet
 
 <img src="images/roks-router.png" alt="Expose an app in a single-zone OpenShift cluster by using a router" width="550" style="width:550px; border-style: none"/>
 
-1. A request to your app uses the route hostname that you set up for your app. A DNS system service resolves the subdomain to the floating public IP address of the load balancer service that exposes the router.
+1. A request to your app uses the route hostname that you set up for your app. A DNS system service resolves the subdomain to the floating public IP address of router service.
 
-2. The router receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. If multiple app instances are deployed in the cluster, the router sends the requests between the app pods.
+2. The router service receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. If multiple app instances are deployed in the cluster, the router sends the requests between the app pods.
 
 3. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the load balancer service to the client.
 
@@ -75,7 +74,7 @@ The following diagram shows how a router directs communication from the internet
 
 1. A request to your app uses the route hostname that you set up for your app.
 
-2. A DNS system service resolves the route subdomain to the floating public IP address of a load balancer service that exposes one of the routers. Requests are handled by the routers in various zones in a round-robin cycle.
+2. A DNS system service resolves the route subdomain to the floating public IP address of a router service. Requests are handled by the router services in various zones in a round-robin cycle.
 
 3. The router receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router sends the requests between the app pods in the zone.
 
@@ -132,7 +131,7 @@ To set up routes to publicly expose apps:
 ## Setting up routes to privately expose your apps
 {: #private-routes-setup}
 
-To use routes to privately expose your apps, create a new router and change the service that exposes the router to a private load balancer. The router is assigned an IP address through which private requests are forwarded to your app.
+To use routes to privately expose your apps, create a new router and change the service that exposes the router to a private load balancer. The router service is assigned an IP address through which private requests are forwarded to your app.
 {: shortdesc}
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Private routes are supported for clusters that run OpenShift version 3.11 only. Private routes are currently not supported for clusters that run OpenShift version 4.3 or later. Instead, you can [create a private network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer).

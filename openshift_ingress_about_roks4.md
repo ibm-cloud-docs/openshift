@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-20"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -61,10 +61,7 @@ If you want to register your app with a different domain, you can [create a cust
 ### Router
 {: #ingress-router}
 
-One HAProxy-based OpenShift router is created in each zone where you have worker nodes for each Ingress controller. The Ingress operator configures the router with the same domain that is specified in the Ingress controller. The router listens for incoming HTTP, HTTPS, or TCP service requests through that domain. The router's load balancer component then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
-{: shortdesc}
-
-To find the router IP address for the default Ingress controller, run `oc get svc -n openshift-ingress` and look for the **EXTERNAL IP** field of the `router-default` service.
+One HAProxy-based OpenShift router is created for each Ingress controllerIP address of the default Ingress controller router service, run `oc get svc -n openshift-ingress` and look for the **EXTERNAL IP** field of the `router-default` service.
 
 If you manually create a router, the router is not managed by the Ingress operator and is not automatically registered with the Ingress subdomain or an app in your cluster.
 {: note}
@@ -104,13 +101,11 @@ The following diagram shows how Ingress directs communication from the internet 
 
 2. A DNS system service resolves the subdomain in the URL to the portable public IP address of the load balancer that exposes the router in your cluster.
 
-3. Based on the resolved IP address, the client sends the request to the load balancer service that exposes the router.
+3. Based on the resolved IP address, the client sends the request to the router service.
 
-4. The load balancer service routes the request to the router.
+4. The router checks the routing rules that are implemented by the Ingress controller for a routing rule for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods.
 
-5. The router checks the routing rules that are implemented by the Ingress controller for a routing rule for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods.
-
-6. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the request exists. The router then sends the response packet to the client.
+5. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the request exists. The router then sends the response packet to the client.
 
 ### Multizone cluster
 {: #classic-multi-roks4}
@@ -122,12 +117,10 @@ The following diagram shows how Ingress directs communication from the internet 
 
 1. A user sends a request to your app by accessing your app's URL. This URL is the Ingress subdomain for your cluster appended with the Ingress resource path for your exposed app, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`.
 
-2. A DNS system service, which acts as the global load balancer, resolves the subdomain in the URL to the portable public IP address of the load balancer that exposes a router in one zone of the cluster. The IP addresses are resolved in a round-robin cycle, ensuring that requests are equally load balanced among the routers in various zones.
+2. A DNS system service, which acts as the global load balancer, resolves the subdomain in the URL to the portable public IP address of a router service in one zone of the cluster. The IP addresses are resolved in a round-robin cycle, ensuring that requests are equally load balanced among the routers in various zones.
 
-3. The client sends the request to the IP address of the load balancer service that exposes the router for your app.
+3. The client sends the request to the IP address of the service that exposes the router.
 
-4. The load balancer service routes the request to the router.
+4. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router service sends the requests between the app pods across all zones.
 
-5. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods across all zones.
-
-6. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the request exists. The router then sends the response packet to the client.
+5. When the app returns a response packet, it uses the IP address of the worker node where the router service that forwarded the request exists. The router then sends the response packet to the client.

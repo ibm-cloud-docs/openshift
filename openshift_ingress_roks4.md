@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-20"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -428,9 +428,9 @@ To add annotations to the router:
   ```
   {: pre}
 
-2. In the output, look for the router for the Ingress controller that you want to annotate. Choose a router that is named in one of the following formats:
-  * To annotate the router for the default Ingress controller, which is registered with your cluster's default Ingress subdomain, look for the router that is named `router-default`.
-  * If you created a custom Ingress controller and registered it with your custom subdomain, look for the router that is named, for example, `router-custom-ingress-controller-<hash>` or `router-private-ingress-controller-<hash>`.
+2. In the output, look for the router service for the Ingress controller that you want to annotate. Choose a router service that is named in one of the following formats:
+  * To annotate the router for the default Ingress controller, which is registered with your cluster's default Ingress subdomain, look for the router service that is named `router-default`.
+  * If you created a custom Ingress controller and registered it with your custom subdomain, look for the router service that is named, for example, `router-custom-ingress-controller-<hash>` or `router-private-ingress-controller-<hash>`.
 
 3. Open the configuration for the router and add [supported HA-proxy router annotations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
   ```
