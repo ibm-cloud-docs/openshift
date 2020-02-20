@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-19"
+lastupdated: "2020-02-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -772,7 +772,8 @@ The OpenShift web console might not open for reasons that include:
 1.  The cluster has a private service endpoint enabled.
 2.  The cluster ingress and networking components are not available.
 3.  The cluster is running an older version.
-4.  The console pod or other system pods are not healthy, such as when not enough worker nodes exist to run the pods.
+4.  Your account does not have VRF or VLAN spanning enabled for a multizone cluster.
+5.  The console pod or other system pods are not healthy, such as when not enough worker nodes exist to run the pods.
 
 <br>
 
@@ -801,12 +802,13 @@ The OpenShift web console might not open for reasons that include:
         ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w <worker3_ID>
         ```
         {: pre}
-4.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console.
+4.  Review the output of the first step to check the **Worker Zones**. If your cluster has multiple zones, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation).
+5.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console.
     ```
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
     ```
     {: pre}
-5.  Review the health of the console pod.
+6.  Review the health of the console pod.
     1.  Find the console pods.
         ```
         oc get pods -n openshift-console
@@ -830,7 +832,7 @@ The OpenShift web console might not open for reasons that include:
         oc delete pod -n openshift-console <pod>
         ```
         {: pre}
-5.  Check if other system pods are experiencing issues. 
+7.  Check if other system pods are experiencing issues. 
     1.  Check for pending pods.
         ```
         oc get pods --all-namespaces | grep Pending
@@ -841,7 +843,7 @@ The OpenShift web console might not open for reasons that include:
         oc describe pod -n <project_name> <pod_name>
         ```
         {: pre}
-6.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
+8.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
 
 <br />
 
