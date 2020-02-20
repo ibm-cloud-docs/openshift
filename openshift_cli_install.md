@@ -168,6 +168,8 @@ Before you can run `oc` commands:
 * [Create a cluster](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
 * Make sure that you have a [service role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with OpenShift resources. If you have only a service role but no platform role, you need the cluster admin to give you the cluster name and ID, or the **Viewer** platform role to list clusters.
 
+To run `kubectl` commands to manage your cluster:
+
 1. Depending on which [version of the {{site.data.keyword.containerlong_notm}} plug-in you use](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta), you must follow different steps to use `oc` commands.
 * Version 0.4 (default) or earlier: Ensure that your {{site.data.keyword.containerlong_notm}} plug-in uses the latest `0.4` version by running `ibmcloud plugin update kubernetes-service`.
 * Version 1.0 (beta): To use `1.0`, set the `IKS_BETA_VERSION` environment variable by running `export IKS_BETA_VERSION=1.0`.
@@ -391,21 +393,22 @@ To uninstall the CLIs:
 ## Using the {{site.data.keyword.cloud-shell_notm}} in your web browser (beta)
 {: #cloud-shell}
 
-The [{{site.data.keyword.cloud-shell_full}}] allows you to use the {{site.data.keyword.cloud_notm}} CLI and various CLI plug-ins to manage your cluster directly from your web browser.
+The [{{site.data.keyword.cloud-shell_full}}](https://cloud.ibm.com/shell){: externa;} allows you to use the {{site.data.keyword.cloud_notm}} CLI and various CLI plug-ins to manage your cluster directly from your web browser.
 {: shortdesc}
 
 {{site.data.keyword.cloud-shell_notm}} is a beta feature that is subject to change, and available only for select Kubernetes versions that depend on your cluster infrastructure provider.
 {: preview}
 
-{{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started) (`ibmcloud`), the {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`), the {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`), and the OpenShift CLI (`oc`).
+{{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), the {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`), the {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`), and the OpenShift CLI (`oc`).
 
-You can open up to five concurrent sessions, which operate independently so you can work with different resources, regions, and accounts at once.
-Any files that you download and edit locally, such as YAML files, are stored temporarily in the {{site.data.keyword.cloud-shell_short}} and do not persist across sessions.
-{{site.data.keyword.cloud-shell_notm}} has a usage quota that limits you to 4 hours of continuous use or up to 30 hours within a week.
+While you use {{site.data.keyword.cloud-shell_short}}, keep in mind the following limitations:
+* You can open up to five concurrent sessions, which operate independently so you can work with different resources, regions, and accounts at once.
+* Any files that you download and edit locally, such as YAML files, are stored temporarily in {{site.data.keyword.cloud-shell_short}} and do not persist across sessions.
+* {{site.data.keyword.cloud-shell_notm}} has a usage quota that limits you to 4 hours of continuous use or up to 30 hours within a week.
 
 To launch and use the {{site.data.keyword.cloud-shell_notm}}:
 
-1. In the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){:external}, open the {{site.data.keyword.cloud-shell_notm}} by clicking the {{site.data.keyword.cloud-shell_short}} icon ![{{site.data.keyword.cloud-shell_notm}} icon](../icons/terminal-cloud-shell.svg) in the console menu bar.
+1. In the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){:external}, open {{site.data.keyword.cloud-shell_short}} by clicking the {{site.data.keyword.cloud-shell_short}} icon ![{{site.data.keyword.cloud-shell_notm}} icon](../icons/terminal-cloud-shell.svg) in the console menu bar.
 2. A session starts and automatically logs you in with your current account through the {{site.data.keyword.cloud_notm}} CLI.
 3. Target your session context the cluster that you want to work with so that you can run `oc` commands.
   1.  Get the command to set the environment variable and download the Kubernetes configuration files to your temporary home directory.
