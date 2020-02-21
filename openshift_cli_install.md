@@ -171,7 +171,7 @@ Before you can run `oc` commands:
 * [Create a cluster](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
 * Make sure that you have a [service role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with OpenShift resources. If you have only a service role but no platform role, you need the cluster admin to give you the cluster name and ID, or the **Viewer** platform role to list clusters.
 
-To run `kubectl` commands to manage your cluster:
+To run `oc` commands to manage your cluster:
 
 1. Depending on which [version of the {{site.data.keyword.containerlong_notm}} plug-in you use](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta), you must follow different steps to use `oc` commands.
   * **Version 0.4 (default) or earlier**: Ensure that your {{site.data.keyword.containerlong_notm}} plug-in uses the latest `0.4` version by running `ibmcloud plugin update kubernetes-service`. In CLI plug-in version 0.4 or earlier, `cluster config` provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.
