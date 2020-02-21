@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-21"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -53,7 +53,7 @@ Create a network load balancer (NLB) to expose your custom Ingress controller de
 In classic clusters, bringing your own Ingress controller is supported only for providing public external access to your apps and is not supported for providing private external access.
 {: note}
 
-1. Get the configuration file for your Ingress controller ready. For example, you can use the [cloud-generic NGINX community Ingress controller](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/cloud-generic){: external}. If you use the community controller, edit the `kustomization.yaml` file by following these steps.
+1. Get the configuration file for your Ingress controller ready. For example, you can use the [cloud-generic NGINX community Ingress controller](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/static/provider/cloud-generic.yaml){: external}. If you use the community controller, edit the `kustomization.yaml` file by following these steps.
   1. Replace the `namespace: ingress-nginx` with `namespace: kube-system`.
   2. In the `commonLabels` section, replace the `app.kubernetes.io/name: ingress-nginx` and `app.kubernetes.io/part-of: ingress-nginx` labels with one `app: ingress-nginx` label.
 
