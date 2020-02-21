@@ -60,7 +60,7 @@ To install the CLIs:
     -   The base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`).
     -   The {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`).
     -   {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by IBM, and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
-    -   The Kubernetes CLI (`kubectl`) that matches the default version: 1.15.10.<p class="note">After you install the {{site.data.keyword.cloud_notm}} CLI, you must [also install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli).</p>
+    -   The Kubernetes CLI (`kubectl`) that matches the default version: 1.15.10.<p class="note">After you install the {{site.data.keyword.cloud_notm}} CLI, you must [also install the `oc` CLI and the `kubectl` version that matches your cluster](/docs/openshift?topic=openshift-openshift-cli).</p>
     -   The Helm CLI (`helm`). You might use Helm as a package manager to install {{site.data.keyword.cloud_notm}} services and complex apps to your cluster via Helm charts. You must still [set up Helm](/docs/openshift?topic=openshift-helm) in each cluster where you want to use Helm.
 
     Plan to use the CLI often? Try [Enabling shell autocompletion for {{site.data.keyword.cloud_notm}} CLI (Linux/MacOS only)](/docs/cli/reference/ibmcloud?topic=cloud-cli-shell-autocomplete#shell-autocomplete-linux).
@@ -382,7 +382,7 @@ To uninstall the CLIs:
 [{{site.data.keyword.cloud-shell_full}}](https://cloud.ibm.com/shell){: external} allows you to use the {{site.data.keyword.cloud_notm}} CLI and various CLI plug-ins to manage your cluster directly from your web browser.
 {: shortdesc}
 
-The {{site.data.keyword.cloud-shell_notm}} is a beta feature that is subject to change. Do not use it for production workloads.
+<img src="images/icon-beta-flair.png" alt="Beta icon" width="30" style="width:30px; border-style: none"/> The {{site.data.keyword.cloud-shell_notm}} is a beta feature that is subject to change. Do not use it for production workloads.
 {: preview}
 
 The {{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), the {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`), the {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`), and the OpenShift CLI (`oc`).
