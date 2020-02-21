@@ -221,10 +221,10 @@ To run `kubectl` commands to manage your cluster:
           **Mac or Linux users**: Instead of running the `ibmcloud oc cluster config` command and copying the `KUBECONFIG` environment variable, you can run `ibmcloud oc cluster config --export <cluster-name>`. Depending on your shell, you can set up your shell by running `eval $(ibmcloud oc cluster config --export <cluster-name>)`.
           {: tip}
     * **CLI plug-in version 1.0**: Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable.
-          ```
-          ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin
-          ```
-          {: pre}
+      ```
+      ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin
+      ```
+      {: pre}
 
 7. Verify that the `KUBECONFIG` environment variable is set properly.
 
@@ -396,7 +396,7 @@ To launch and use the {{site.data.keyword.cloud-shell_notm}}:
 
 1. In the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){:external} menu bar, click the {{site.data.keyword.cloud-shell_short}} icon ![{{site.data.keyword.cloud-shell_notm}} icon](../icons/terminal-cloud-shell.svg).
 2. A session starts and automatically logs you in with your current account through the {{site.data.keyword.cloud_notm}} CLI.
-3. Target your session context the cluster that you want to work with so that you can run `oc` commands.
+3. Target your session context to the cluster that you want to work with so that you can manage the cluster with `oc` commands.
   1.  Get the command to set the environment variable and download the Kubernetes configuration files to your temporary home directory.
       ```
       ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin
