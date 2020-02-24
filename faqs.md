@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -61,6 +61,7 @@ For more information, see [Comparison between OpenShift and community Kubernetes
 {: #openshift_free}
 {: faq}
 {: support}
+
 
 You can create only standard OpenShift clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-getting-started) and [deploy some apps](/docs/containers?topic=containers-app). Then, redeploy the apps that you try out in the Kubernetes cluster to your [OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app).
 
