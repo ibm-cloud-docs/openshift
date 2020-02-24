@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-19"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -86,7 +86,7 @@ Prepare your {{site.data.keyword.cloud_notm}} account for {{site.data.keyword.co
 
 1. [Create or upgrade your account to a billable account ({{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription)](https://cloud.ibm.com/registration/).
 
-2. [Set up an API key for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-users#api_key) in the region and resource groups that you want to create clusters. Assign the API key with the appropriate service and infrastructure permissions to create clusters.<p class="tip">Are you the account owner? You already have the necessary permissions! When you create a cluster, the API key for that region and resource group is set with your credentials.</p>
+2. [Set up an API key for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-users#api_key) in the region and resource groups where you want to create clusters. Assign the API key with the appropriate service and infrastructure permissions to create clusters.<p class="tip">Are you the account owner? You already have the necessary permissions! When you create a cluster, the API key for that region and resource group is set with your credentials.</p>
 
   **Services**:
     * [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}} at the account level.
@@ -196,7 +196,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 **Before you begin**:
 * Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
-* Install the {{site.data.keyword.cloud_notm}} CLI and the [{{site.data.keyword.containerlong_notm}} plug-in](/docs/containers?topic=containers-cs_cli_install#cs_cli_install).
+* Install the {{site.data.keyword.cloud_notm}} CLI and the [Red Hat OpenShift on IBM Cloud plug-in](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_install).
 
 <br>
 
