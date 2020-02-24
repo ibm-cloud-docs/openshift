@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-19"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhos, rhoks, multi az, multi-az, szr, mzr
 
@@ -97,6 +97,10 @@ To convert a single zone cluster to a multizone cluster, your cluster must be se
 
 
 
+
+
+**Can I spread the default components of my OpenShift cluster across zones?**<br>
+It depends on the component. For example, when change your cluster to be multizone by adding a zone to your cluster, your router deploys replicas across zones. The internal registry, however, uses a file storage device to store images. Because file storage is a zonal resource, the registry pods must be in the same, single zone as the file storage device and cannot be spread across zones or deployed to a different zone.
 
 
 

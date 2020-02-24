@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-20"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -268,8 +268,6 @@ Set up logging and monitoring to help you troubleshoot issues and improve the he
 2. **LogDNA and Sysdig**: [Set up the LogDNA and Sysdig add-ons](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig) to monitor cluster health.
 
 
-</br>Need help? Check out [Troubleshooting logging and monitoring](/docs/containers?topic=containers-cs_troubleshoot_health#cs_troubleshoot_health).
-
 <br />
 
 
@@ -332,7 +330,7 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
   * [Fluentd and Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog)
 * **Removing**: [Remove clusters and clean up related resources](/docs/openshift?topic=openshift-remove).
 
-</br>Need help? Check out [Troubleshooting clusters and masters](/docs/openshift?topic=openshift-cs_troubleshoot).
+</br>Need help? Check out troubleshooting [clusters and masters](/docs/openshift?topic=openshift-cs_troubleshoot), [worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters), or the [cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler).
 
 
 

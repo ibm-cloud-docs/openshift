@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -75,7 +75,7 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
   {: codeblock}
 
 2. Create the PVC in your cluster.
-  ```sh
+  ```
   oc apply -f pvc.yaml
   ```
   {: pre}
@@ -112,7 +112,7 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
   {: codeblock}
 
 3. Create the deployment in your cluster.
-  ```sh
+  ```
   oc apply -f deployment.yaml
   ```
   {: pre}
@@ -257,6 +257,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
 6. Choose if you want to be billed hourly or monthly. Check the [pricing](https://www.ibm.com/cloud/block-storage/pricing){: external} for more information. By default, all block storage devices are provisioned with an hourly billing type.
 
 <br />
+
 
 
 
@@ -1179,7 +1180,7 @@ To make your data even more highly available and protect your app from a zone fa
 ## Storage class reference
 {: #block_storageclass_reference}
 
-Storage classes that have `retain` in the title, have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that do not have `retain` in the title, have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
+Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that do not have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
 {: tip}
 
 

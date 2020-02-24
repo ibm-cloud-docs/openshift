@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -48,7 +48,7 @@ Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by crea
 Before you get started with Ingress, review the following prerequisites.
 {:shortdesc}
 
-- Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/containers?topic=containers-users#platform):
+- Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
     - **Administrator** platform role for the cluster
     - **Manager** service role in all projects
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller and router in that zone.
@@ -277,8 +277,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     <td>The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.</td>
     </tr>
     </tbody></table>
-
-    <p class="tip">If you use a custom domain and did not specify the custom TLS secret in the Ingress controller configuration, you can specify the secret by adding a `spec.tls` section to this Ingress resource:
+    <p class="note">If you use the IBM-provided Ingress subdomain, do not include a `spec.tls` section in your Ingress resource. The default Ingress controller is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. The Ingress controller can access and apply the default in any project where you create this Ingress resource.</br></br>If you use a custom domain and did not specify the custom TLS secret when you created the Ingress controller configuration, you can specify the secret by adding a `spec.tls` section to this Ingress resource:
         <pre class="screen">
         tls:
         - hosts:
@@ -428,11 +427,11 @@ To add annotations to the router:
   ```
   {: pre}
 
-2. In the output, look for the router for the Ingress controller that you want to annotate. Choose a router that is named in one of the following formats:
-  * To annotate the router for the default Ingress controller, which is registered with your cluster's default Ingress subdomain, look for the router that is named `router-default`.
-  * If you created a custom Ingress controller and registered it with your custom subdomain, look for the router that is named, for example, `router-custom-ingress-controller-<hash>` or `router-private-ingress-controller-<hash>`.
+2. In the output, look for the router service for the Ingress controller that you want to annotate. Choose a router service that is named in one of the following formats:
+  * To annotate the router for the default Ingress controller, which is registered with your cluster's default Ingress subdomain, look for the router service that is named `router-default`. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
+  * If you created a custom Ingress controller and registered it with your custom subdomain, look for the router service that is named, for example, `router-custom-ingress-controller-<hash>` or `router-private-ingress-controller-<hash>`.
 
-3. Open the configuration for the router and add [supported HA-proxy router annotations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
+3. Open the configuration for the router and add [supported HA-proxy router annotations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}. Repeat this process for the router in each zone.
   ```
   oc edit svc router-default -n openshift-ingress
   ```

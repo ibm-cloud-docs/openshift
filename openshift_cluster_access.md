@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-21"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -61,7 +61,8 @@ For OpenShift clusters with a public service endpoint, you can get the `oc login
 {: shortdesc}
 
 1.  In the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
-2.  Click the **Access** tab and follow the instructions.
+2.  In the **Actions...** drop-down list, select **Connect via CLI**.
+3.  Follow the instructions.
 
 <p class="note">If you cannot or do not want to open the OpenShift console, you can set the cluster context with the `--admin` flag through the CLI.<p class="pre"><code>ibmcloud oc cluster config -c <cluster_name_or_ID> --admin</code></p></p>
 

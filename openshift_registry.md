@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-20"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -73,7 +73,7 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>[Retaining images](/docs/Registry?topic=registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
         <li>Using the private service endpoint so that clusters on only the private network can still access the registry.</li>
         <li>[Setting storage and image pull traffic quotas](/docs/Registry?topic=registry-registry_quota) to better control image storage, usage, and billing.</li>
-        <li>Pulling licensed IBM content from the [entitled registry](/docs/containers?topic=containers-registry#secret_entitled_software).</li></ul>
+        <li>Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li></ul>
         <br>To get started, see the following topics:<ul>
         <li>[Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-getting-started).</li>
         <li>[Using {{site.data.keyword.registrylong_notm}}](#openshift_iccr).</li></ul></td>
@@ -147,7 +147,7 @@ Before you begin:
 *  Install Docker on your local machine.
 *  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> For OpenShift 3.11 clusters, the internal registry is in the `default` project and uses the `docker-registry` service. The following steps are specific for 4.3 clusters. To set up the route in a 3.11 cluster, replace the `openshift-image-registry` project with `default` and the `image-registry` service with `docker-registry`. 
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> For OpenShift 3.11 clusters, the internal registry is in the `default` project and uses the `docker-registry` service. The following steps are specific for 4.3 clusters. To set up the route in a 3.11 cluster, replace the `openshift-image-registry` project with `default` and the `image-registry` service with `docker-registry`.
 {: important}
 
 To use the internal registry, set up a public route to access the registry. Then, create an image pull secret that includes the credentials to access the registry so that deployments in other projects can pull images from this registry.
@@ -754,6 +754,4 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
 
 Wondering what to do next? You can [set up the **entitled** Helm chart repository](/docs/openshift?topic=openshift-helm), where Helm charts that incorporate entitled software are stored. If you already have Helm installed in your cluster, run `helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled`.
 {: tip}
-
-
 

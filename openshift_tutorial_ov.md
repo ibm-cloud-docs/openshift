@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2019
-lastupdated: "2019-07-19"
+  years: 2014, 2020
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -152,6 +152,21 @@ subcollection: openshift
             </div>
         </div>
     </div>
+  </a>
+  <a href = "/docs/terraform?topic=terraform-redhat">
+  <div class = "solutionBox">
+      <div class = "solutionBoxContent">
+              Automate version 3.11 cluster creation with Terraform
+          <div class="solutionBoxDescription">
+              <div class="descriptionContainer">
+                </br><p>Use Terraform to automate the deployment of an {{site.data.keyword.openshiftlong_notm}} cluster that runs {{site.data.keyword.openshiftshort}} version 3.11.</p></br>
+              </div>
+              <div class="architectureDiagramContainer">
+                  <img class="architectureDiagram" src="images/terraform_roks_tutorial_ov.png" alt="Terraform deployment automation architecture" />
+              </div>
+          </div>
+      </div>
+  </div>
   </a>
 </div>
 

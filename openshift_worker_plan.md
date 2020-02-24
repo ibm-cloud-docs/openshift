@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -43,7 +43,7 @@ A worker node flavor describes the compute resources, such as CPU, memory, and d
 
 ## Available hardware for worker nodes
 {: #shared_dedicated_node}
-The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, and the {{site.data.keyword.containerlong_notm}} location where you want to create your cluster.
+The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, and the Red Hat OpenShift on IBM Cloud location where you want to create your cluster.
 {: shortdesc}
 
 
@@ -195,7 +195,7 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 <td>10000 Mbps</td>
 </tr>
 <tr>
-<td><strong>Data-intensive bare metal, md3c.28x512.4x4tb</strong>: Use this type for a significant amount of local disk storage, including RAID to increase data availability, for workloads such as distributed file systems, large databases, and big data analytics..</td>
+<td><strong>Data-intensive bare metal, md3c.28x512.4x4tb</strong>: Use this type for a significant amount of local disk storage, including RAID to increase data availability, for workloads such as distributed file systems, large databases, and big data analytics.</td>
 <td>28 / 512 GB</td>
 <td>2x2 TB RAID1 / 4x4 TB SATA RAID10</td>
 <td>10000 Mbps</td>
