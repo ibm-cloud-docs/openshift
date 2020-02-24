@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -45,7 +45,10 @@ Use the router to publicly expose the services in your {{site.data.keyword.opens
 {: #routes-overview}
 
 A router is deployed by default to your cluster and functions as the ingress point for external network traffic. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router uses the service selector to find the service and the endpoints that back the service, and creates [routes](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external} that expose services as hostnames to be used by external clients. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. After you set up routes for your services, the router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service. Note that the router supports only the HTTP and HTTPS protocols.
-* </staging ingress-mzr>To see the router subdomain for your cluster, run `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+
+If you have a multizone cluster, one router is deployed to your cluster, and a router service is created in each zone. Note that the router service in the first zone where you have workers nodes is always named `router-default` in 4.3 clusters or `router` in 3.11 clusters, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
+* To see the router services in each zone of your cluster, run `oc get svc -n openshift-ingress`.
+* To see the router subdomain for your cluster and the IP addresses for the router service in each zone, run `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 
 Not sure whether to use OpenShift routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).
 {: tip}
@@ -95,7 +98,7 @@ To set up routes to publicly expose apps:
 2. Choose a domain for your app.
   * IBM-provided domain: If you do not need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
   * Custom domain: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
-    1. Get the public IP address for the default public router service in the **EXTERNAL-IP** column.
+    1. Get the public IP address for the default public router service in each zone in the **EXTERNAL-IP** column. Note that the router service in the first zone where you have workers nodes is always named `router-default` in 4.3 clusters or `router` in 3.11 clusters, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
       * Version 3.11 clusters:
         ```
         oc get svc router
@@ -103,7 +106,7 @@ To set up routes to publicly expose apps:
         {: pre}
       * Version 4.3 and later clusters:
         ```
-        oc get svc router-default -n openshift-ingress
+        oc get svc -n openshift-ingress
         ```
         {: pre}
     2. Create a custom domain with your DNS provider.
@@ -271,13 +274,16 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
 
 1. Create a router service on the new VLAN.
   * **<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3.11 clusters**:
-    1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.
+    1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.<p class="note>Note that the router service in the first zone where you have workers nodes is always named `router` in 3.11 clusters, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.</p>
       ```
       oc get svc router -o yaml
       ```
       {: pre}
 
-    2. Create a YAML configuration file for a new router service. Add the Prometheus password annotation and any custom annotations. Save the file as `router-new.yaml`.
+    2. Create a YAML configuration file for a new router service.
+      1. Add the Prometheus password annotation and any custom annotations.
+      2. Specify the zone that your router service deploys to.
+      3. Save the file as `router-new.yaml`.
       ```yaml
       apiVersion: v1
       kind: Service
@@ -287,6 +293,8 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
           prometheus.openshift.io/username: admin
           service.alpha.openshift.io/serving-cert-secret-name: router-certs
           service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer
+          service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: <zone>
+          service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
         labels:
           router: router
         name: router-new
@@ -329,12 +337,14 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
       {: screen}
 
   * **<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Version 4.3 and later clusters**:
-    1. Create a YAML configuration file for a new router service. Save the file as `router-new.yaml`.
+    1. Create a YAML configuration file for a new router service. Specify the zone that the router service deploys to. Save the file as `router-new.yaml`.
       ```yaml
       apiVersion: v1
       kind: Service
       metadata:
         annotations:
+          service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: <zone>
+          service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
         finalizers:
         - service.kubernetes.io/load-balancer-cleanup
         labels:
@@ -414,12 +424,12 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
 6. Delete the router service on the old VLAN.
   * Version 3.11:
     ```
-    oc delete svc router
+    oc delete svc <old_router_svc>
     ```
     {: pre}
   * Version 4.3 and later:
     ```
-    oc delete svc router-default -n openshift-ingress
+    oc delete svc <old_router_svc> -n openshift-ingress
     ```
     {: pre}
 

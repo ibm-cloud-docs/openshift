@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -61,7 +61,12 @@ If you want to register your app with a different domain, you can [create a cust
 ### Router
 {: #ingress-router}
 
-One HAProxy-based OpenShift router is created for each Ingress controllerIP address of the default Ingress controller router service, run `oc get svc -n openshift-ingress` and look for the **EXTERNAL IP** field of the `router-default` service.
+One HAProxy-based OpenShift router is created for each Ingress controller, and one router service is created in each zone where you have worker nodes.
+{: shortdesc}
+
+The Ingress operator configures the router with the same domain that is specified in the Ingress controller. The router listens for incoming HTTP, HTTPS, or TCP service requests through that domain. The router's load balancer serice component then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
+
+To find the IP addresses of the default Ingress controller router services, run `oc get svc -n openshift-ingress` and look for the **EXTERNAL IP** field. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
 
 If you manually create a router, the router is not managed by the Ingress operator and is not automatically registered with the Ingress subdomain or an app in your cluster.
 {: note}
