@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -377,6 +377,12 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
     3. If a pod does not have a `Running` status, you can delete the pod to restart it.
         ```
         oc delete pod <pod> -n openshift-ingress-operator
+        ```
+        {: pre}
+
+    4. Get the logs for the Ingress controller and look for error messages in the logs.
+        ```
+        oc logs deployments/ingress-operator --namespace=openshift-ingress-operator
         ```
         {: pre}
 
