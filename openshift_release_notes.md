@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 22 February 2020 | **Unsupported: Kubernetes version 1.13**: With the release of version 1.17, clusters that run version 1.13 are unsupported. To continue receiving important security updates and support, you must [update the cluster to a supported version](/docs/containers?topic=containers-cs_versions#prep-up) immediately. |
 | 19 February 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.90](/docs/openshift?topic=openshift-cs_cli_changelog).</li><li>**Troubleshooting Ingress**: Added a [debugging guide](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4) and [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43) for Ingress in version 4.3 clusters.</li><li>**Developing and deploying apps**: You can now find expanded information on how to develop and deploy an app to your OpenShift cluster in the following pages:<ul><li>[Planning app deployments](/docs/openshift?topic=openshift-plan_deploy)</li><li>[Building images for your apps](/docs/openshift?topic=openshift-images)</li><li>[Developing apps to run on OpenShift](/docs/openshift?topic=openshift-openshift_apps)</li><li>[Deploying apps in OpenShift clusters](/docs/openshift?topic=openshift-deploy_app)</li><li>[Managing the app lifecycle](/docs/openshift?topic=openshift-update_app)</li></ul></li><li>**Learning paths**: Curated learning paths for [administrators](docs/openshift?topic=openshift-learning-path-admin) and [developers](docs/openshift?topic=openshift-learning-path-dev) are now available to help guide you through your Red Hat OpenShift on IBM Cloud experience.</li><li>**Setting up image build pipelines**: You can now find expanded information on how to set up an image registry and build pipelines in the following pages:<ul><li>[Setting up an image registry](/docs/openshift?topic=openshift-registry)</li><li>[Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd)</li></ul></li><li>**Firewall subnets**: Removed outdated [subnet IP addresses for {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#vyatta_firewall).</li></ul> |
 | 18 February 2020 | **Version changelogs**: OpenShift master fix pack for [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_master).|
 | 17 February 2020 | <ul><li>**Migration operator**: Updated the [migration operator storage configuration file](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-destination) to clarify {{site.data.keyword.cos_short}} endpoints.</li><li>**Version changelogs**: Master and worker node patch updates are available for OpenShift worker fix pack [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_worker)</li></ul>|
@@ -287,7 +288,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li>[Using the internal registry in OpenShift](/docs/openshift?topic=openshift-registry#openshift_internal_registry)</ul>
   </li>
     <li><strong>Entitled software</strong>: If you have licensed products from your [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) container software library, you can [set up your cluster to pull images from the entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li>
-  <li><strong>`script update` command</strong>: Added [steps for using the `script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.containerlong_notm}} plug-in.</li>
+  <li><strong>`script update` command</strong>: Added [steps for using the `script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) to prepare your automation scripts for the release of version 1.0 of the Red Hat OpenShift on IBM Cloud plug-in.</li>
   </ul></td>
 </tr>
 <tr>
@@ -310,7 +311,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
   <td>03 September 2019</td>
-  <td><ul><li><strong>New! {{site.data.keyword.containerlong_notm}} plug-in version `0.4`</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for multiple changes in the [release of version 0.4.1](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
+  <td><ul><li><strong>New! Red Hat OpenShift on IBM Cloud plug-in version `0.4`</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for multiple changes in the [release of version 0.4.1](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
   <li><strong>Version changelog</strong>: Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-changelog#11210_1566_worker), and OpenShift [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog#311135_1523_worker).</li></ul></td>
 </tr>
 </tbody></table>

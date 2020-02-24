@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1322,7 +1322,7 @@ Review the following backup and restore options for your {{site.data.keyword.fil
 ## Storage class reference
 {: #file_storageclass_reference}
 
-Storage classes that have `retain` in the title, have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that do not have `retain` in the title, have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
+Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that do not have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
 {: tip}
 
 

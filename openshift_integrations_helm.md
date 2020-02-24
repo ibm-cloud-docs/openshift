@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-02-24"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -80,7 +80,7 @@ Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitle
 Set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in your cluster.
 {: shortdesc}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
 
 1. Install the latest release of the version 3 [Helm CLI](https://github.com/helm/helm/releases){: external} on your local machine.
 
@@ -167,7 +167,7 @@ If you have a classic cluster that is connected to a public VLAN, or a VPC clust
 {: shortdesc}
 
 Before you begin:
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
 - To install Tiller with a Kubernetes service account and cluster role binding in the `tiller` project, make sure that you have the [`cluster-admin` role](/docs/openshift?topic=openshift-users#access_policies).
 
 To install Helm in a cluster with public network access:
@@ -318,7 +318,7 @@ To install Helm in a cluster with public network access:
 ### Installing Tiller with a different version than your cluster
 {: #tiller_version}
 
-By default, when you initiate Helm for your cluster, the version of Tiller matches the version of your cluster. For example, if you have a cluster that runs Kubernetes version 1.13, the Tiller version is 2.13. You can update your Tiller deployment to use a different version of the Tiller image. For more information, see the [Helm documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh/docs/install/).
+By default, when you initiate Helm for your cluster, the version of Tiller matches the version of your cluster. For example, if you have a cluster that runs Kubernetes version 1.15, the Tiller version is 2.15. You can update your Tiller deployment to use a different version of the Tiller image. For more information, see the [Helm documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh/docs/install/).
 {: shortdesc}
 
 Some Helm charts might not be compatible with an older Tiller version. You see an error similar to the following:
