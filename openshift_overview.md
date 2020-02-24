@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -62,8 +62,6 @@ With Red Hat OpenShift on IBM Cloud, you can create your cluster of compute host
 
 [Classic clusters](/docs/containers?topic=containers-getting-started) are created on your choice of virtual or bare metal worker nodes that are connected to VLANs. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for software-defined storage solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
 
-For more information, see [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers). 
-
 **Where can I learn more about the service?** </br>
 Review the following links to find out more about the benefits and responsibilities when you use Red Hat OpenShift on IBM Cloud.
 
@@ -72,7 +70,7 @@ Review the following links to find out more about the benefits and responsibilit
 - [Red Hat OpenShift on IBM Cloud service architecture](/docs/openshift?topic=openshift-service-arch#architecture)
 - [Use cases](/docs/containers?topic=containers-cs_uc_intro)
 - [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks)
-- [Defining your Kubernetes strategy](/docs/containers?topic=containers-strategy)
+- [Defining your Kubernetes strategy](/docs/openshift?topic=openshift-strategy)
 - [Limitations](/docs/openshift?topic=openshift-limitations)
 - Learn how you can use Red Hat OpenShift on IBM Cloud to modernize and run containerized apps in these <a href="https://www.ibm.com/demos/collection/Containers-(Kubernetes)-on-IBM-Cloud/?lc=null">videos</a>.
 
