@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-02-24"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -43,7 +43,7 @@ A worker node flavor describes the compute resources, such as CPU, memory, and d
 
 ## Available hardware for worker nodes
 {: #shared_dedicated_node}
-The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, and the {{site.data.keyword.containerlong_notm}} location where you want to create your cluster.
+The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, and the Red Hat OpenShift on IBM Cloud location where you want to create your cluster.
 {: shortdesc}
 
 
