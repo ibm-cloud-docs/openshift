@@ -271,7 +271,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.23](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
   <li><strong>{{site.data.keyword.at_full_notm}} events</strong>: Added information about [which {{site.data.keyword.at_short}} location your events are sent to](/docs/openshift?topic=openshift-at_events#at-ui) based on the {{site.data.keyword.containerlong_notm}} location where the cluster is located.</li>
   <li><strong>New! Melbourne, Australia `mel01` single zone location for OpenShift clusters</strong>: For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li>
-  <li><strong><strong>Version changelog</strong>: Master fix pack updates are available for OpenShift [3.11.141_1524_openshift](/docs/openshift?topic=openshift-openshift_changelog#311141_1524).</li></ul>
+  <li><strong>Version changelog</strong>: Master fix pack updates are available for OpenShift [3.11.141_1524_openshift](/docs/openshift?topic=openshift-openshift_changelog#311141_1524).</li></ul>
   </td>
 </tr>
 <tr>
