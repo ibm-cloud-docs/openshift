@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-24"
+lastupdated: "2020-02-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -62,7 +62,7 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
     name: my-pvc
     labels:
       billingType: "hourly"
-    region: # Example: us-south
+      region: # Example: us-south
       zone: # Example: dal13
   spec:
     accessModes:
