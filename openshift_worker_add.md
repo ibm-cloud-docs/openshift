@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-19"
+lastupdated: "2020-02-26"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -339,22 +339,46 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
-2.  To label the worker pool with a `key=value` label, use the [PATCH worker pool API](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool){: external}. Format the body of the request as in the following JSON example. <p class="important">You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added.</p>
+2.  To label the worker pool with a `key=value` label, use the [POST worker pool labels API](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels){: external}. When you set a worker pool label, all the existing custom labels are replaced. Format the body of the request as in the following JSON example. <p class="important">You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool or worker node labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added. To list existing worker node labels, run `oc describe node <worker_node_private_IP>`.</p>
+    
+    Example to set `<key>: <value>` as the only custom label in the worker pool.
     ```
     {
-      "labels": {"key":"value"},
+      "labels": {"<key>":"<value>"},
       "state": "labels"
     }
     ```
     {: codeblock}
-3.  **Optional**: To remove a label from a worker pool, run the [PATCH worker pool API](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool){: external} again with the label's key field included but the value field empty.<p class="important">Do not remove the worker pool labels that are provided by default because these labels are required for worker pools to function properly. Remove only custom labels that you previously added.</p>
+
+    Example to set `<key>: <value>` as a new custom label in a worker pool with existing labels `team: DevOps` and `app: test`.
     ```
     {
-      "labels": {"key":""},
+      "labels": {"<key>":"<value>","team":"DevOps","app":"test"},
       "state": "labels"
     }
     ```
     {: codeblock}
+
+3.  **Optional**: To remove a label from a worker pool, use the [POST worker pool labels API](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels){: external} again with the label's key field included but the value field empty. Remember that when you set a label, all existing custom labels are replaced. If you want to keep existing custom labels, include these labels in the body.<p class="important">Do not remove the worker pool and worker node labels that are provided by default because these labels are required for worker pools to function properly. Remove only custom labels that you previously added.</p>
+
+    Example to remove a label. All other custom labels are also removed.
+    ```
+    {
+      "labels": {"<key>":""},
+      "state": "labels"
+    }
+    ```
+    {: codeblock}
+
+    Example to remove a `<key>` label but keep other custom labels `team: DevOps` and `app: test`.
+    ```
+    {
+      "labels": {"<key>":"","team":"DevOps","app":"test"},
+      "state": "labels"
+    }
+    ```
+    {: codeblock}
+
 4.  Verify that the worker pool and worker node have the `key=value` label that you assigned.
     *   To check worker pools:
         ```
@@ -373,7 +397,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
             ```
             {: pre}
 
-            Example output for an added label:
+            Example output for an added label (`app=test`):
             ```
             Labels:   app=test
                       arch=amd64
