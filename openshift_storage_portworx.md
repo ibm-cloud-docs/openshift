@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-21"
+lastupdated: "2020-02-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -509,22 +509,7 @@ Before you begin:
 
 To install Portworx:
 
-1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client version 2.14.3 or higher on your local machine, and install the Helm server (Tiller) with a service account in your cluster.
-
-2.  Verify that tiller is installed with a service account.
-
-    ```
-    oc get serviceaccount -n kube-system tiller
-    ```
-    {: pre}
-
-    Example output:
-
-    ```
-    NAME                                 SECRETS   AGE
-    tiller                               1         2m
-    ```
-    {: screen}
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm version 3 client on your local machine.
 
 3. Open the Portworx service from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/portworx-enterprise){: external} and complete the fields as follows:
    1. Select the region where your Red Hat OpenShift on IBM Cloud cluster is located.
@@ -632,7 +617,7 @@ You can upgrade Portworx to the latest version.
 
 1. Find the installation name of your Portworx Helm chart.
    ```
-   helm list | grep portworx
+   helm list -A | grep portworx
    ```
    {: pre}
 
@@ -656,20 +641,20 @@ If you do not want to use Portworx in your cluster, you can uninstall the Helm c
 
 1. Find the installation name of your Portworx Helm chart.
    ```
-   helm list | grep portworx
+   helm ls -A | grep portworx
    ```
    {: pre}
 
    Example output:
    ```
-   <helm_chart_name>            1       	Mon Sep 17 16:33:01 2018	DEPLOYED	portworx-1.0.0     default     
+   NAME        	 NAMESPACE  	REVISION	UPDATED                             	STATUS  	 CHART                              	APP VERSION
+   <release_name>	 <namespace>    	1     2020-01-27 09:18:33.046018 -0500 EST	deployed  portworx-1.0.0     default     
    ```
    {: screen}
 
 2. Delete Portworx by removing the Helm chart.
    ```
-   helm delete --purge <helm_chart_name>
-   ```
+   helm uninstall <release_name>
    {: pre}
 
 3. Verify that the Portworx pods are removed.
@@ -1103,7 +1088,9 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 ## Getting help and support
 {: #portworx_help}
 
-If you run into an issue with using Portworx or you want to chat about Portworx configurations for your specific use case, post a question in the `portworx-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack](https://ibm-container-service.slack.com/){: external}. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
+If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an email to `mailto:support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `mailto:support@portworx.com`.
+
+You can also chat about Portworx configurations for your specific use case by posting a question in the `portworx-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack](https://ibm-cloud-success.slack.com/){: external}. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
 
 
 

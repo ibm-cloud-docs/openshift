@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="openshift" category="containers" audience="compute" href="/docs/openshift?topic=openshift-getting-started" path="openshift"}
+{: .toc subcollection="openshift" category="containers,compute" audience="compute" href="/docs/openshift?topic=openshift-getting-started" path="openshift"}
 Red Hat OpenShift on IBM Cloud
 
     {: .navgroup id="learn"}

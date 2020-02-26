@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-26"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -127,7 +127,7 @@ With operators, you can manage the lifecycle of the apps in your cluster, includ
 In OpenShift clusters that run version 4.3 or later, operators are available in your cluster by default. Use [Operators](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html){: external} to package, deploy, and update the apps in your Red Hat OpenShift on IBM Cloud clusters.
 {: shortdesc}
 
-1.  To user operators, follow the OpenShift documentation.
+1.  To use operators, follow the OpenShift documentation.
     *   [Adding Operators to a cluster](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-adding-operators-to-cluster.html){: external}
     *   [Deleting Operators from a cluster](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-deleting-operators-from-cluster.html){: external}
     *   [Creating applications from installed Operators](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-creating-apps-from-installed-operators.html){: external}

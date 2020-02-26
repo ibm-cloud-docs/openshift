@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-02-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -60,7 +60,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | View a list of supported versions for managed add-ons in Red Hat OpenShift on IBM Cloud. | [`ibmcloud oc addon-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions) | [`GET /v1/addon`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetAddons) |
 | Target or view the API endpoint for Red Hat OpenShift on IBM Cloud. | [`ibmcloud oc api`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api) | - |
 | View a list of supported commands and parameters. | `ibmcloud oc help` | - |
-| Initialize the {{site.data.keyword.containerlong_notm}} plug-in or specify the region where you want to create or access OpenShift clusters. | [`ibmcloud oc init`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init) | - |
+| Initialize the Red Hat OpenShift on IBM Cloud plug-in or specify the region where you want to create or access OpenShift clusters. | [`ibmcloud oc init`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init) | - |
 | Deprecated: View a list of Kubernetes versions supported in Red Hat OpenShift on IBM Cloud. | `ibmcloud oc kube-versions`| [`GET /v1/kube-versions`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetKubeVersions) |
 | View a list of available flavors for your worker nodes. | [`ibmcloud oc flavors`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types) (machine-types) | [`GET /v2​/getFlavors`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2GetFlavors) |
 | View current messages for the IBMid user. | [`ibmcloud oc messages`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages) | [`GET /v1/messages`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetMessages) |
@@ -162,6 +162,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Create a worker pool in a classic cluster. | [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) | [`POST /v1/clusters/{idOrName}/workerpools`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/CreateWorkerPool) |
 | Rebalance a worker pool. | [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) | [`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool) |
 | Resize a worker pool. | [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) | [`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool) |
+| Set a label on a worker pool. | <ul><li>**v1 API**: </li>[`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool)<li>**v2 API**: [`POST /v2/setWorkerPoolLabels`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels)</li></ul>|
 | Delete a worker pool. | [`ibmcloud oc worker-pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm) | [`DELETE /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/RemoveWorkerPool) |
 | Reboot a worker node. | [`ibmcloud oc worker reboot`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) | [`PUT /v1/clusters/{idOrName}/workers/{workerId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/UpdateClusterWorker) |
 | Reload a worker node. | [`ibmcloud oc worker reload`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) | [`PUT /v1/clusters/{idOrName}/workers/{workerId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/UpdateClusterWorker) |

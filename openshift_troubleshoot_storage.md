@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-24"
+lastupdated: "2020-02-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,8 +78,6 @@ Review the options to debug persistent storage and find the root causes for fail
       The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
    2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-cs_cli_install#kubectl).
 
-3. For block storage, object storage, and Portworx only: Make sure that you [installed the Helm server Tiller with a Kubernetes services account](/docs/openshift?topic=openshift-helm#public_helm_install).
-
 4. For block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
 
    **Block and object storage**:
@@ -118,7 +116,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
    3. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
       ```
-      helm list
+      helm list --all-namespaces
       ```
       {: pre}
 
@@ -130,7 +128,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
    2. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
       ```
-      helm list
+      helm list --all-namespaces
       ```
       {: pre}
 
@@ -845,7 +843,7 @@ If a network error occurs while a pod writes to a volume, IBM Cloud infrastructu
 {: tsResolve}
 1. Check the version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in that is installed in your cluster.
    ```
-   helm list
+   helm list --all-namespaces
    ```
    {: pre}
 
@@ -1610,7 +1608,7 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 If you went through the troubleshooting guide and you still cannot find an issue for why the installation failed, reach out to the Portworx and IBM team.
 {: shortdesc}
 
-Post a question in the `portworx-on-iks` channel in the [{{site.data.keyword.containerlong_notm}} Slack](https://ibm-container-service.slack.com/){: external}. Make sure to include the cluster ID and the steps that you took to verify your installation. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
+Post a question in the `portworx-on-iks` channel in the [{{site.data.keyword.containerlong_notm}} Slack](https://ibm-cloud-success.slack.com/){: external}. Make sure to include the cluster ID and the steps that you took to verify your installation. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
 
 ## Feedback, questions, and support
 {: #getting_help}
@@ -1634,7 +1632,7 @@ Still having issues with your cluster? Review different ways to get help and sup
 
 **Feedback and questions**<br>
 1. Post in the {{site.data.keyword.containershort}} Slack.
-   * If you are an external user, post in the [#openshift](https://ibm-container-service.slack.com/messages/CKCJLJCH4){: external} channel.
+   * If you are an external user, post in the [#openshift](https://ibm-cloud-success.slack.com/messages/CKCJLJCH4){: external} channel.
    * If you are an IBMer, use the [#iks-openshift-users](https://ibm-argonauts.slack.com/messages/CJH0UPN2D){: external} channel.<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack){: external} to this Slack.</p>
 2. Review forums such as OpenShift help, Stack Overflow, and IBM Developer to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
    * If you have technical questions about developing or deploying clusters or apps with Red Hat OpenShift on IBM Cloud, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `containers`, and `openshift`.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-21"
+lastupdated: "2020-02-26"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -76,7 +76,7 @@ For more information, see [Managing Kubernetes cluster logs with {{site.data.key
 ### Billing and support
 {: #logdna-billing-support}
 
-{{site.data.keyword.la_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.la_full_notm}}, post a question in the `logdna-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
+{{site.data.keyword.la_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.la_full_notm}}, post a question in the `logdna-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
 
 ## Sysdig
 {: #sydig-partner}
@@ -116,7 +116,7 @@ For more information, see [Analyze metrics for an app that is deployed in a Kube
 
 Because Sysdig Monitor is provided by {{site.data.keyword.mon_full_notm}}, your usage is included in the {{site.data.keyword.cloud_notm}} bill for platform services. For pricing information, review available plans in the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/observe/monitoring/create).
 
-{{site.data.keyword.mon_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.mon_full_notm}}, post a question in the `sysdig-monitoring` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
+{{site.data.keyword.mon_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.mon_full_notm}}, post a question in the `sysdig-monitoring` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
 
 ## Portworx
 {: #portworx-parter}
@@ -164,6 +164,6 @@ For more information about how to install and use Portworx with Red Hat OpenShif
 Classic SDS worker node machines that come with local disks, and classic virtual machines that you use for Portworx are included in your monthly Red Hat OpenShift on IBM Cloud bill. For pricing information, see the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/cluster). The Portworx license is a separate cost and is not included in your monthly bill.
 {: shortdesc}
 
-If you run into an issue with using Portworx or you want to chat about Portworx configurations for your specific use case, post a question in the `portworx-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-container-service.slack.com/). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
+If you run into an issue with using Portworx or you want to chat about Portworx configurations for your specific use case, post a question in the `portworx-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
 
 

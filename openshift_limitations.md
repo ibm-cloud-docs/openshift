@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-24"
+lastupdated: "2020-02-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,7 +40,7 @@ subcollection: openshift
 {: shortdesc}
 <br>
 
-If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud limitations, contact the IBM team in the [internal](https://ibm-argonauts.slack.com/messages/C4S4NUCB1){: external} or [external Slack](https://ibm-container-service.slack.com){: external}.
+If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud limitations, contact the IBM team in the [internal](https://ibm-argonauts.slack.com/messages/C4S4NUCB1){: external} or [external Slack](https://ibm-cloud-success.slack.com){: external}.
 {: tip}
 
 ## Service limitations
@@ -72,7 +72,7 @@ Red Hat OpenShift on IBM Cloud comes with the following service limitations. Kee
 ### Version 4.3 cluster limitations
 {: #ocp4_limitations}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-beta-flair.png" alt="Beta icon" width="30" style="width:30px; border-style: none"/> Red Hat OpenShift on IBM Cloud version 4.3 is available as a beta. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Beta releases have limited features and might experience intermittent errors. For more information, review the [troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot), [limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations), and [internal](https://ibm-argonauts.slack.com/archives/CJH0UPN2D){: external} or [external](https://ibm-container-service.slack.com/archives/CKCJLJCH4){: external} Slack channel.
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-beta-flair.png" alt="Beta icon" width="30" style="width:30px; border-style: none"/> Red Hat OpenShift on IBM Cloud version 4.3 is available as a beta. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Beta releases have limited features and might experience intermittent errors. For more information, review the [troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot), [limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations), and [internal](https://ibm-argonauts.slack.com/archives/CJH0UPN2D){: external} or [external](https://ibm-cloud-success.slack.com/archives/CKCJLJCH4){: external} Slack channel.
 {: preview}
 
 Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_limits) limitations also apply.
@@ -109,7 +109,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Pod instances | You can run 110 pods per worker node. If you have worker nodes that run Kubernetes 1.14.3_1524 or later, and are provisioned with 11 CPU cores or more, you can support 10 pods per core, up to a limit of 250 pods per worker node. The number of pods includes `kube-system` and `ibm-system` pods that run on the worker node. For improved performance, consider limiting the number of pods that you run per compute core so that you do not overuse the worker node. For example, on a worker node with a `b3c.4x16` flavor, you might run 10 pods per core that use no more than 75% of the worker node total capacity. |
 | Worker node flavors | Worker nodes are available in [select flavors](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node) of compute resources. |
 | Worker node host access | For security, you cannot SSH into the worker node compute host. |
-| Worker node instances | You can have 900 worker nodes per cluster. If you plan to exceed 900 per cluster, contact the Red Hat OpenShift on IBM Cloud team in the [internal](https://ibm-argonauts.slack.com/messages/C4S4NUCB1){: external} or [external Slack](https://ibm-container-service.slack.com){: external} first. If you see an IBM Cloud infrastructure capacity limit on the number of instances per data center or that are ordered each month, contact your IBM Cloud infrastructure representative. |
+| Worker node instances | You can have 900 worker nodes per cluster. If you plan to exceed 900 per cluster, contact the Red Hat OpenShift on IBM Cloud team in the [internal](https://ibm-argonauts.slack.com/messages/C4S4NUCB1){: external} or [external Slack](https://ibm-cloud-success.slack.com){: external} first. If you see an IBM Cloud infrastructure capacity limit on the number of instances per data center or that are ordered each month, contact your IBM Cloud infrastructure representative. |
 {: summary="This table contains information on compute limitations for classic clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Classic cluster compute limitations"}
 
