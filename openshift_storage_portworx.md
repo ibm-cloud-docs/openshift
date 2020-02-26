@@ -1105,7 +1105,7 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 
 If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an email to `mailto:support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `mailto:support@portworx.com`.
 
-You can also chat about Portworx configurations for your specific use case by posting a question in the `portworx-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack](https://ibm-container-service.slack.com/){: external}. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
+You can also chat about Portworx configurations for your specific use case by posting a question in the `portworx-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack](https://ibm-cloud-success.slack.com/){: external}. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
 
 
 
