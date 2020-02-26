@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-21"
+lastupdated: "2020-02-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -51,11 +51,11 @@ Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registryshort_n
 ## Using the beta plug-in
 {: #cs_beta}
 
-A redesigned version of the {{site.data.keyword.containerlong_notm}} plug-in is available as a beta. The redesigned {{site.data.keyword.containerlong_notm}} plug-in groups commands into categories and changes commands from a hyphenated structure to a spaced structure.
+A redesigned version of the Red Hat OpenShift on IBM Cloud plug-in is available as a beta. The redesigned Red Hat OpenShift on IBM Cloud plug-in groups commands into categories and changes commands from a hyphenated structure to a spaced structure.
 {: shortdesc}
 
-The following beta versions of the redesigned {{site.data.keyword.containerlong_notm}} plug-in are available.
-* The default behavior is `0.4`. Ensure that your {{site.data.keyword.containerlong_notm}} plug-in uses the latest `0.4` version by running `ibmcloud plugin update kubernetes-service`.
+The following beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in are available.
+* The default behavior is `0.4`. Ensure that your Red Hat OpenShift on IBM Cloud plug-in uses the latest `0.4` version by running `ibmcloud plugin update kubernetes-service`.
 * To use `1.0`, set the `IKS_BETA_VERSION` environment variable:
     ```
     export IKS_BETA_VERSION=1.0
@@ -77,7 +77,7 @@ Check out the following changes between each version of the CLI plug-in:
 | Flag format<ul><li>Legacy: Camel-case (`--showResources`)</li><li>Beta: Dashed (`--show-resources`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
 | Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul> | Legacy | Legacy | Legacy | Beta |
 | API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul> | Legacy | Beta | Beta | Beta |
-{: caption="Beta versions of the redesigned {{site.data.keyword.containerlong_notm}} plug-in" caption-side="top"}
+{: caption="Beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in" caption-side="top"}
 {: summary="The rows are read from left to right, with the functionality in column one, version 0.2 of the CLI in column two, version 0.3 in column three, version 0.4 in column four, and version 1.0 in column five."}
 
 <br />
@@ -94,7 +94,7 @@ Check out the following changes between each version of the CLI plug-in:
 The following image depicts the structure and grouping of the `ibmcloud oc` commands.
 {: shortdesc}
 
-![Image of the structure and groupings of commands in {{site.data.keyword.containerlong_notm}} plug-in](images/cs_cli_ref_imagemap.png)
+![Image of the structure and groupings of commands in Red Hat OpenShift on IBM Cloud plug-in](images/cs_cli_ref_imagemap.png)
 
 ## `cluster` commands
 {: #cluster}
@@ -3375,7 +3375,7 @@ Configure and optionally enable a health check monitor for an existing NLB subdo
 You can use this command to create and enable a new health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` flag and the flags for all settings that you want to configure. To update an existing monitor, include only the flags for the settings that you want to change.
 
 ```
-ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--enable] [--desc DESCRIPTION] [--type TYPE] [--method METHOD] [--path PATH] [--timeout TIMEOUT] [--retries RETRIES] [--interval INTERVAL] [--port PORT] [--header HEADER] [--expected-body BODY STRING] [--expected-codes HTTP CODES] [--follows-redirects TRUE] [--allows-insecure TRUE] [--json] [-s]
+ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--enable] [--description DESCRIPTION] [--type TYPE] [--method METHOD] [--path PATH] [--timeout TIMEOUT] [--retries RETRIES] [--interval INTERVAL] [--port PORT] [--header HEADER] [--expected-body BODY STRING] [--expected-codes HTTP CODES] [--follows-redirects TRUE] [--allows-insecure TRUE] [--json] [-s]
 ```
 {: pre}
 
@@ -3440,7 +3440,7 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--
 
 **Example**:
 ```
-ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --desc "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60  --expected-body "healthy" --expected-codes 2xx --follows-redirects true
+ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --description "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60  --expected-body "healthy" --expected-codes 2xx --follows-redirects true
 ```
 {: pre}
 
@@ -4283,7 +4283,7 @@ Region:                us-south
 ## `init` command
 {: #cs_init}
 
-Initialize the {{site.data.keyword.containerlong_notm}} plug-in or specify the region where you want to create or access OpenShift clusters.
+Initialize the Red Hat OpenShift on IBM Cloud plug-in or specify the region where you want to create or access OpenShift clusters.
 {: shortdesc}
 
 Region-specific endpoints are deprecated. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
@@ -4355,7 +4355,7 @@ Find the {{site.data.keyword.containerlong_notm}} region that you are currently 
 
 You can work with resources that you have access to in any location, even if you set a region by running `ibmcloud oc region set` and the resource that you want to work with is in another region. If you have clusters with the same name in different regions, use the cluster ID when you run commands.
 
-<p class="deprecated">Region-specific endpoints are deprecated, and this command might not work as expected.<br>Legacy behavior: If you use the {{site.data.keyword.containerlong_notm}} plug-in version <code>0.3</code> or later and need to list and work with resources from one region only, you can use the <code>ibmcloud oc init</code> [command](#cs_init) to target a regional endpoint instead of the global endpoint.</br>If you use the {{site.data.keyword.containerlong_notm}} plug-in version <code>0.2</code> (deprecated), you create and manage clusters specific to the region. Use the <code>ibmcloud oc region set</code> command to change regions.</p>
+<p class="deprecated">Region-specific endpoints are deprecated, and this command might not work as expected.<br>Legacy behavior: If you use the Red Hat OpenShift on IBM Cloud plug-in version <code>0.3</code> or later and need to list and work with resources from one region only, you can use the <code>ibmcloud oc init</code> [command](#cs_init) to target a regional endpoint instead of the global endpoint.</br>If you use the Red Hat OpenShift on IBM Cloud plug-in version <code>0.2</code> (deprecated), you create and manage clusters specific to the region. Use the <code>ibmcloud oc region set</code> command to change regions.</p>
 
 ```
 ibmcloud oc region get
@@ -4393,7 +4393,7 @@ Set the region for {{site.data.keyword.containerlong_notm}}.
 
 You can work with resources that you have access to in any location, even if you set a region by running `ibmcloud oc region set` and the resource that you want to work with is in another region. If you have clusters with the same name in different regions, use the cluster ID when you run commands.
 
-<p class="deprecated">Region-specific endpoints are deprecated, and this command might not work as expected. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.<br>If you use the {{site.data.keyword.containerlong_notm}} plug-in version <code>0.3</code> or later and need to list and work with resources from one region only, you can use the <code>ibmcloud oc init</code> [command](#cs_init) to target a regional endpoint instead of the global endpoint.<br>If you use the `0.2` beta version (deprecated) of the {{site.data.keyword.containerlong_notm}} plug-in, you create and manage clusters specific to the region. For example, you can log in to {{site.data.keyword.cloud_notm}} in the US South region and create a cluster. Next, you can use `ibmcloud oc region set eu-central` to target the EU Central region and create another cluster. Finally, you can use `ibmcloud oc region set us-south` to return to US South to manage your cluster in that region.</p>
+<p class="deprecated">Region-specific endpoints are deprecated, and this command might not work as expected. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.<br>If you use the Red Hat OpenShift on IBM Cloud plug-in version <code>0.3</code> or later and need to list and work with resources from one region only, you can use the <code>ibmcloud oc init</code> [command](#cs_init) to target a regional endpoint instead of the global endpoint.<br>If you use the `0.2` beta version (deprecated) of the Red Hat OpenShift on IBM Cloud plug-in, you create and manage clusters specific to the region. For example, you can log in to {{site.data.keyword.cloud_notm}} in the US South region and create a cluster. Next, you can use `ibmcloud oc region set eu-central` to target the EU Central region and create another cluster. Finally, you can use `ibmcloud oc region set us-south` to return to US South to manage your cluster in that region.</p>
 
 ```
 ibmcloud oc region set --region REGION
@@ -4424,7 +4424,7 @@ ibmcloud oc region set --region eu-central
 ### `ibmcloud oc script update`
 {: #script_update}
 
-Rewrite scripts that call kubernetes-service commands. Legacy-structured commands are replaced with beta-structured commands. For a list of all changes between the legacy and beta formats, see the comparison table in [Using the beta {{site.data.keyword.containerlong_notm}} plug-in](#cs_beta).
+Rewrite scripts that call kubernetes-service commands. Legacy-structured commands are replaced with beta-structured commands. For a list of all changes between the legacy and beta formats, see the comparison table in [Using the beta Red Hat OpenShift on IBM Cloud plug-in](#cs_beta).
 {: shortdesc}
 
 <p class="important">Most command behavior and syntax changes in version 1.0. These changes are not backwards compatible. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run. Do not change the `IKS_BETA_VERSION` environment variable to a different version.</p>
@@ -4446,7 +4446,7 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 </dl>
 </br>
 
-To use this command to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.containerlong_notm}} plug-in:
+To use this command to prepare your automation scripts for the release of version 1.0 of the Red Hat OpenShift on IBM Cloud plug-in:
 1. Run the command on a test script without the `--in-place` flag.
   ```
   ibmcloud oc script update ./mytestscript.sh

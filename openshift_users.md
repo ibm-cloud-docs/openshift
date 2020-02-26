@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-11"
+lastupdated: "2020-02-26"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -141,7 +141,7 @@ When you create your {{site.data.keyword.cloud_notm}} account, the default resou
   <dd><p>You can organize your account resources in customizable groupings so that you can quickly assign individual or groups of users access to more than one resource at a time. Resource groups can help operators and administrators filter resources to view their current usage, troubleshoot issues, and manage teams.</p>
   <p class="important">A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` command to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that do not use resource groups like {{site.data.keyword.registrylong_notm}} or that do not need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group.</p>
   <p>Consider giving clusters unique names across resource groups and regions in your account to avoid naming conflicts. You cannot rename a cluster.</p>
-  <p>You can assign users an access role to a resource group to grant permissions as described in ,mthe following scenarios. Note that unlike resource instances, you cannot grant access to an individual instance within a resource group.</p>
+  <p>You can assign users an access role to a resource group to grant permissions as described in the following scenarios. Note that unlike resource instances, you cannot grant access to an individual instance within a resource group.</p>
   <ul><li>All {{site.data.keyword.cloud_notm}} IAM services in the resource group, including all clusters in Red Hat OpenShift on IBM Cloud and images in {{site.data.keyword.registrylong_notm}}.</li>
   <li>All instances within a service in the resource group, such as all the clusters in Red Hat OpenShift on IBM Cloud.</li>
   <li>All instances within a region of a service in the resource group, such as all the clusters in the **US South** region of Red Hat OpenShift on IBM Cloud.</li></ul></dd>
@@ -443,7 +443,7 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
    10. **Optional: Resource groups only**: In the **Assign access to a resource group** field, select at least the **Viewer** platform role so that users can work with clusters in a resource group other than the default.
    11.  In the side panel, review the **Access summary** of your changes, and click **Assign**.
 
-4.  For the user to be added, the RBAC permissions must be synced to the cluster. The user who is granted access must [launch the Kubernetes dashboard](/docs/openshift?topic=openshift-app#db_gui) to initiate the sync. RBAC permissions are cached, so the sync might not be instantaneous.
+4.  For the user to be added, the RBAC permissions must be synced to the cluster. The user who is granted access must [launch the Kubernetes dashboard](/docs/containers?topic=containers-app#db_gui) to initiate the sync. RBAC permissions are cached, so the sync might not be instantaneous.
 
 ### Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI
 {: #add_users_cli}
@@ -776,7 +776,7 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
 **Before you begin**:
 
-- Target the [Kubernetes CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
+- Target the [Kubernetes CLI](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure) to your cluster.
 - Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for all namespaces.
 - To assign access to individual users or users in an access group, ensure that the user or group has been assigned at least one [{{site.data.keyword.cloud_notm}} IAM platform role](#platform) at the Red Hat OpenShift on IBM Cloud service level.
 
@@ -1056,7 +1056,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     oc apply -f <cluster_role_file.yaml>
     ```
     {: pre}
-3.  Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and test the action, such as `oc top pods`.
+3.  Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure) and test the action, such as `oc top pods`.
 
 
 <br />
