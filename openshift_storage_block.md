@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-25"
+lastupdated: "2020-02-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -33,13 +33,16 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Storing data on classic IBM Cloud Block Storage
+# Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}
 {: #block_storage}
 
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is persistent, high-performance iSCSI storage that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out whether {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For more information about pricing, see [Billing](/docs/BlockStorage?topic=BlockStorage-About#billing).
 {: shortdesc}
 
 {{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
+{: important}
+
+If you installed the {{site.data.keyword.blockstorageshort}} plugin with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
 {: important}
 
 <br>

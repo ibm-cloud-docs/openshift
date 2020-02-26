@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-26"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -42,11 +42,10 @@ subcollection: openshift
 If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
 
-If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, make sure to install the plug-in without the Helm server Tiller.
+
+
+If you installed the {{site.data.keyword.cos_full_notm}} plugin with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
 {: important}
-
-
-
 
 With version 1.0.5, the {{site.data.keyword.cos_full_notm}} plug-in is renamed from `ibmcloud-object-storage-plugin` to `ibm-object-storage-plugin`. To install the new version of the plug-in, you must [uninstall the old Helm chart installation](#remove_cos_plugin) and [reinstall the Helm chart with the new {{site.data.keyword.cos_full_notm}} plug-in version](#install_cos).
 {: note}
@@ -179,55 +178,56 @@ Before you begin:
 
 To install the plug-in:
 
+1. Make sure that your worker node applies the latest patch for your minor version to run your worker node with the latest security settings. The patch version also ensures that the root password on the worker node is renewed. 
+   
+   If you did not apply updates or reload your worker node within the last 90 days, your root password on the worker node expires and the installation of the storage plug-in might fail. 
+   {: note}
+   1. List the current patch version of your worker nodes.
+      ```
+      ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+      ```
+      {: pre}
 
-2.  Choose if you want to install the {{site.data.keyword.cos_full_notm}} plug-in with or without the Helm server, Tiller. **Note** Tiller requires public network connectivity. Learn more about [Helm and Tiller](/docs/containers?topic=containers-helm). Then, [follow the instructions](/docs/containers?topic=containers-helm#public_helm_install){: new_window} to install the Helm client on your local machine and optionally Tiller with a service account in your cluster.
+      Example output:
+      ```
+      OK
+      ID                                                  Public IP        Private IP     Machine Type           State    Status   Zone    Version
+      kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.15.10_1523*
+      ```
+      {: screen}
 
-    If you have a private-only cluster, you must install the plugin without Tiller. If you use Windows, you must install Tiller.
-    {: note}
+      If your worker node does not apply the latest patch version, you see an asterisk (`*`) in the **Version** column of your CLI output.
 
-3. If you want to install the plug-in with Tiller, verify that Tiller is installed with a service account. If you do not want to use Tiller, continue with step 4.
-   ```
-   oc get serviceaccount -n kube-system tiller
-   ```
-   {: pre}
+   2. Review the [version changelog](/docs/containers?topic=containers-changelog) to find the changes that are included in the latest patch version.
 
-   Example output:
-   ```
-   NAME                                 SECRETS   AGE
-   tiller                               1         2m
-   ```
-   {: screen}
+   3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
+
+2. [Follow the instructions](/docs/openshift?topic=openshift-openshift_apps#roks_helm) to install the version 3 Helm client on your local machine.
 
 4. Add the {{site.data.keyword.cloud_notm}} Helm repo to your cluster.
-   ```
-   helm repo add ibm-charts https://icr.io/helm/ibm-charts
-   ```
-   {: pre}
+  ```
+  helm repo add ibm-charts https://icr.io/helm/ibm-charts
+  ```
+  {: pre}
 
 5. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
-   ```
-   helm repo update
-   ```
-   {: pre}
+  ```
+  helm repo update
+  ```
+  {: pre}
 
 6. Download the Helm charts and unpack the charts in your current directory.
-   ```
-   helm fetch --untar ibm-charts/ibm-object-storage-plugin
-   ```
-   {: pre}
+  ```
+  helm pull --untar ibm-charts/ibm-object-storage-plugin
+  ```
+  {: pre}
 
 7. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
   1. Install the Helm plug-in.
     ```
-    helm plugin install ./ibm-object-storage-plugin/helm-ibmc
+    helm plugin install ibm-charts/ibm-object-storage-plugin/helm-ibmc
     ```
     {: pre}
-
-    Example output:
-    ```
-    Installed plugin: ibmc
-    ```
-    {: screen}
 
     If you see the error `Error: plugin already exists`, remove the `ibmc` Helm plug-in by running `rm -rf ~/.helm/plugins/helm-ibmc`.
     {: tip}
@@ -295,35 +295,17 @@ To install the plug-in:
 
 9. Install the {{site.data.keyword.cos_full_notm}} plug-in. When you install the plug-in, pre-defined storage classes are added to your cluster.
 
-If you have a private-only cluster, you must install the plugin without Tiller.
-{: note}
-
   - **For OS X and Linux:**
     - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
-      **Without Tiller**:
       ```
       helm ibmc template ibm-charts/ibm-object-storage-plugin --apply
       ```
       {: pre}
 
-      **With Tiller**:
-      ```
-      helm ibmc install ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
-      ```
-      {: pre}
-
     - If you completed the previous step, install with a limitation to specific Kubernetes secrets.</br>
-      **Without Tiller**:
       ```
       cd ../..
       helm ibmc template ./ibm-object-storage-plugin --apply
-      ```
-      {: pre}
-
-      **With Tiller**:
-      ```
-      cd ../..
-      helm ibmc install ./ibm-object-storage-plugin --name ibm-object-storage-plugin
       ```
       {: pre}
 
@@ -400,63 +382,16 @@ If you have a private-only cluster, you must install the plugin without Tiller.
     5. Install the plug-in by using Helm.       
       - Install without a limitation to specific Kubernetes secrets.</br>
         ```
-        helm install ibm-charts/ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --name ibm-object-storage-plugin
+        helm install ibm-object-storage-plugin ibm-charts/ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}"
         ```
         {: pre}
 
       - Install the plug-in with a limitation to specific Kubernetes secrets.</br>
         ```
         cd ../..
-        helm install ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --name ibm-object-storage-plugin
+        helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}"
         ```
         {: pre}
-
-   Example output for installing without Tiller:
-    ```
-    Rendering the Helm chart templates...
-    DC: dal10
-    Chart: ibm-charts/ibm-object-storage-plugin
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-cross-region.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-cold-regional.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-cross-region.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-cross-region.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-perf-regional.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-flex-regional.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-cross-region.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-cross-region.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-perf-regional.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-standard-regional.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-cross-region.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/ibmc-s3fs-vault-regional.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver-sa.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner-sa.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/flex-driver.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/tests/check-driver-install.yaml
-    wrote object-storage-templates/ibm-object-storage-plugin/templates/provisioner.yaml
-    Installing the Helm chart...
-    serviceaccount/ibmcloud-object-storage-driver created
-    daemonset.apps/ibmcloud-object-storage-driver created
-    storageclass.storage.k8s.io/ibmc-s3fs-cold-cross-region created
-    storageclass.storage.k8s.io/ibmc-s3fs-cold-regional created
-    storageclass.storage.k8s.io/ibmc-s3fs-flex-cross-region created
-    storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-cross-region created
-    storageclass.storage.k8s.io/ibmc-s3fs-flex-perf-regional created
-    storageclass.storage.k8s.io/ibmc-s3fs-flex-regional created
-    storageclass.storage.k8s.io/ibmc-s3fs-standard-cross-region created
-    storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-cross-region created
-    storageclass.storage.k8s.io/ibmc-s3fs-standard-perf-regional created
-    storageclass.storage.k8s.io/ibmc-s3fs-standard-regional created
-    storageclass.storage.k8s.io/ibmc-s3fs-vault-cross-region created
-    storageclass.storage.k8s.io/ibmc-s3fs-vault-regional created
-    serviceaccount/ibmcloud-object-storage-plugin created
-    clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
-    clusterrole.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
-    clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-plugin created
-    clusterrolebinding.rbac.authorization.k8s.io/ibmcloud-object-storage-secret-reader created
-    deployment.apps/ibmcloud-object-storage-plugin created
-    pod/ibmcloud-object-storage-driver-test created
-    ```
-    {: screen}
 
 10. Verify that the plug-in is installed correctly.
     ```
@@ -511,87 +446,69 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
   1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
     ```
-    helm list | grep ibmcloud-object-storage-plugin
+    helm ls -A
     ```
     {: pre}
 
     Example output:
     ```
-    ibmcloud-object-storage-plugin	1       	Mon Sep 18 15:31:40 2017	DEPLOYED	ibmcloud-object-storage-plugin-1.0.4	default
+    NAME        	  NAMESPACE  	REVISION	UPDATED                             	  STATUS  	CHART                              	APP VERSION	           
+    <release_name>  <namespace> 	1       	2020-02-13 16:05:58.599679 -0500 EST	deployed	ibm-object-storage-plugin-1.1.2    	1.1.2
     ```
     {: screen}
 
   2. If you have version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove the Helm chart from your cluster. If you have version 1.0.5 or later of the Helm chart that is named `ibm-object-storage-plugin`, continue with Step 2.
     ```
-    helm delete --purge ibmcloud-object-storage-plugin
+    helm uninstall ibmcloud-object-storage-plugin -n <namespace>
     ```
     {: pre}
 
   3. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
 
 2. Update the {{site.data.keyword.cloud_notm}} Helm repo to retrieve the latest version of all Helm charts in this repo.
-   ```
-   helm repo update
-   ```
-   {: pre}
+  ```
+  helm repo update
+  ```
+  {: pre}
 
 3. If you use OS X or a Linux distribution, update the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in to the latest version.
-   ```
-   helm ibmc --update
-   ```
-   {: pre}
+  ```
+  helm ibmc --update
+  ```
+  {: pre}
 
 4. Download the latest {{site.data.keyword.cos_full_notm}} Helm chart to your local machine and extract the package to review the `release.md` file to find the latest release information.
-   ```
-   helm fetch --untar ibm-charts/ibm-object-storage-plugin
-   ```
-   {: pre}
+  ```
+  helm pull --untar ibm-charts/ibm-object-storage-plugin
+  ```
+  {: pre}
+
 
 5. Upgrade the plug-in. </br>
-  **Without Tiller**:
   ```
   helm ibmc template ibm-charts/ibm-object-storage-plugin --update
   ```
   {: pre}
 
-  **With Tiller**:
-  1. Find the installation name of your Helm chart.
-    ```
-    helm list | grep ibm-object-storage-plugin
-    ```
-    {: pre}
-
-    Example output:
-    ```
-    <helm_chart_name> 	1       	Mon Sep 18 15:31:40 2017	DEPLOYED	ibm-object-storage-plugin-1.0.5	default
-    ```
-    {: screen}
-
-  2. Upgrade the {{site.data.keyword.cos_full_notm}} Helm chart to the latest version.
-    ```   
-    helm ibmc upgrade <helm_chart_name> ibm-charts/ibm-object-storage-plugin --force --recreate-pods -f
-    ```
-    {: pre}
-
 6. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded.  
-   ```
-   oc rollout status deployment/ibmcloud-object-storage-plugin -n kube-system
-   ```
-   {: pre}
+  ```
+  oc rollout status deployment/ibmcloud-object-storage-plugin -n kube-system
+  ```
+  {: pre}
 
    The upgrade of the plug-in is successful when you see `deployment "ibmcloud-object-storage-plugin" successfully rolled out` in your CLI output.
 
 7. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded.
-   ```
-   oc rollout status ds/ibmcloud-object-storage-driver -n kube-system
-   ```
-   {: pre}
+  ```
+  oc rollout status ds/ibmcloud-object-storage-driver -n kube-system
+  ```
+  {: pre}
 
    The upgrade is successful when you see `daemon set "ibmcloud-object-storage-driver" successfully rolled out` in your CLI output.
 
 8. Verify that the {{site.data.keyword.cos_full_notm}} pods are in a `Running` state.
    ```
-   oc get pods -n kube-system -o wide | grep object-storage
+   oc get pods -n <namespace> -o wide | grep object-storage
    ```
    {: pre}
 
@@ -613,46 +530,26 @@ Before you begin:
 To remove the plug-in:
 
 1. Remove the plug-in from your cluster. </br>
-  **With Tiller**:
-  1. Find the installation name of your Helm chart.
-    ```
-    helm list | grep object-storage-plugin
-    ```
-    {: pre}
-
-    Example output:
-    ```
-    <helm_chart_name> 	1       	Mon Sep 18 15:31:40 2017	DEPLOYED	ibmcloud-object-storage-plugin-1.0.0	default
-    ```
-    {: screen}
-
-  2. Delete the {{site.data.keyword.cos_full_notm}} plug-in by removing the Helm chart.
-    ```
-    helm delete --purge <helm_chart_name>
-    ```
-    {: pre}
-
-  **Without Tiller**:
   ```
   helm ibmc template ibm-charts/ibm-object-storage-plugin --delete
   ```
   {: pre}
 
 2. Verify that the {{site.data.keyword.cos_full_notm}} pods are removed.
-   ```
-   oc get pod -n kube-system | grep object-storage
-   ```
-   {: pre}
+  ```
+  oc get pod -n <namespace> | grep object-storage
+  ```
+  {: pre}
 
-   The removal of the pods is successful if no pods are displayed in your CLI output.
+  The removal of the pods is successful if no pods are displayed in your CLI output.
 
 3. Verify that the storage classes are removed.
-   ```
-   oc get storageclasses | grep s3
-   ```
-   {: pre}
+  ```
+  oc get storageclasses | grep s3
+  ```
+  {: pre}
 
-   The removal of the storage classes is successful if no storage classes are displayed in your CLI output.
+  The removal of the storage classes is successful if no storage classes are displayed in your CLI output.
 
 4. If you use OS X or a Linux distribution, remove the `ibmc` Helm plug-in. If you use Windows, this step is not required.
   1. Remove the `ibmc` plug-in.

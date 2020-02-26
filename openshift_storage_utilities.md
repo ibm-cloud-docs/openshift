@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -49,22 +49,7 @@ The {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in creates pods 
 Looking for instructions for how to update or remove the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in? See [Updating the plug-in](#update_block_attacher) and [Removing the plug-in](#remove_block_attacher).
 {: tip}
 
-1.  [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine and install the Helm server (Tiller) with a service account.
-
-2.  Verify that tiller is installed with a service account.
-
-    ```
-    oc get serviceaccount -n kube-system | grep tiller
-    ```
-    {: pre}
-
-    Example output:
-
-    ```
-    NAME                                 SECRETS   AGE
-    tiller                               1         2m
-    ```
-    {: screen}
+1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm client version 3 on your local machine.
 
 3. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
    ```
@@ -72,9 +57,10 @@ Looking for instructions for how to update or remove the {{site.data.keyword.clo
    ```
    {: pre}
 
-4. Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. When you install the plug-in, pre-defined block storage classes are added to your cluster.
+4. Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. When you install the plug-in, pre-defined block storage classes are added to your cluster. 
+   
    ```
-   helm install iks-charts/ibm-block-storage-attacher --name block-attacher
+   helm install block-attacher iks-charts/ibm-block-storage-attacher
    ```
    {: pre}
 
@@ -154,13 +140,13 @@ You can upgrade the existing {{site.data.keyword.cloud_notm}} Block Storage Atta
 
 2. Optional: Download the latest Helm chart to your local machine. Then, extract the package and review the `release.md` file to find the latest release information.
    ```
-   helm fetch iks-charts/ibmcloud-block-storage-plugin
+   helm pull iks-charts/ibmcloud-block-storage-plugin
    ```
    {: pre}
 
 3. Find the name of the Helm chart for the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in.
    ```
-   helm list | grep ibm-block-storage-attacher
+   helm ls -A
    ```
    {: pre}
 
@@ -196,7 +182,7 @@ If you do not want to provision and use the {{site.data.keyword.cloud_notm}} Blo
 
 2. Delete the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in by removing the Helm chart.
    ```
-   helm delete --purge <helm_chart_name>
+   helm uninstall <helm_chart_name> -n <namespace>
    ```
    {: pre}
 
@@ -724,7 +710,7 @@ Before you begin:
   ```
   {: pre}
 - [Retrieve your {{site.data.keyword.cos_full_notm}} service credentials, the bucket name, and the bucket hostname](#backup_restore_setup_object_storage).
-- [Follow the instructions](/docs/containers?topic=containers-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (Tiller) with a service account, and set up the {{site.data.keyword.cloud_notm}} Helm chart repositories.
+- [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm client on your local machine and set up the {{site.data.keyword.cloud_notm}} Helm chart repositories.
 - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 You can deploy the `ibm-storage-backup` pod or the `ibm-storage-restore` pod by either editing and applying the `values.yaml` file of the Helm chart, or by running the `helm install` command from the CLI.
@@ -815,12 +801,11 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
 4. Save and close the `values.yaml` file.
 
-5.  Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<release_name>` with a name for your Helm chart.
+5.  Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<release_name>` with a name for your Helm chart. Be sure to install the backup and restore pods in the same as the PVC that you want to backup or restore.
 
     *   Install the Helm chart by using the `helm install` command.
-
         ```
-        helm install ./ibmcloud-backup-restore --name <release_name>
+        helm install <release_name> ./ibmcloud-backup-restore -n <namespace>
         ```
         {: pre}
 
@@ -842,13 +827,13 @@ To back up or restore a PVC by editing the `values.yaml` file:
         {: screen}
 
     *   Optional: Install the Helm chart by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter.
-        <p><pre class="pre"><code>helm install ./ibmcloud-backup-restore --set ACCESS_KEY_ID=&lt;access_key_ID&gt;<br> --set SECRET_ACCESS_KEY=&lt;secret_access_key&gt;<br> --set ENDPOINT=&lt;public_bucket_endpoint&gt; --set BUCKET_NAME=&lt;bucket_name&gt;<br> --set BACKUP_NAME=&lt;backup_name&gt; --set PVC_NAMES[0]=&lt;pvc_name1&gt;<br> --set PVC_NAMES[1]=&lt;pvc_name2&gt; --set CHART_TYPE=backup<br> --set BACKUP_TYPE=&lt;backup_type&gt; --set SCHEDULE_TYPE=&lt;schedule_type&gt;<br> --set SCHEDULE_INFO=&lt;schedule_info&gt; --name &lt;release_name&gt;</code></p>
+        <p><pre class="pre"><code>helm install &lt;release_name&gt; --set ACCESS_KEY_ID=&lt;access_key_ID&gt;<br> --set SECRET_ACCESS_KEY=&lt;secret_access_key&gt;<br> --set ENDPOINT=&lt;public_bucket_endpoint&gt; --set BUCKET_NAME=&lt;bucket_name&gt;<br> --set BACKUP_NAME=&lt;backup_name&gt; --set PVC_NAMES[0]=&lt;pvc_name1&gt;<br> --set PVC_NAMES[1]=&lt;pvc_name2&gt; --set CHART_TYPE=backup<br> --set BACKUP_TYPE=&lt;backup_type&gt; --set SCHEDULE_TYPE=&lt;schedule_type&gt;<br> --set SCHEDULE_INFO=&lt;schedule_info&gt; ./ibmcloud-backup-restore</code></p>
 
 5. Verify that your data backup or restore completed successfully. </br>
   **Backup**:
   1. Verify that the `ibm-storage-backup` pod has a status of **Running**.
     ```
-    oc get pods | grep backup
+    oc get pods -A | grep backup
     ```
     {: pre}
 
@@ -1015,7 +1000,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
       7.  Delete the Helm chart installation from your cluster. This step is required if you restored data to a block storage PVC. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. Because the `ibm-storage-restore` pod already mounts the PVC, you must remove the pod to release the PVC so that you can mount the PVC to a different pod in your cluster.
             ```
-            helm delete <release_name> --purge
+            helm uninstall <release_name> -n <namespace>
             ```
             {: pre}
 

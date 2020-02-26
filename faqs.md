@@ -72,8 +72,10 @@ You can create only standard OpenShift clusters. If you want to test out the cap
 
 Red Hat OpenShift on IBM Cloud supports the following versions of OpenShift. The worker node operating system is Red Hat Enterprise Linux 7.
 
+
 * **Default**: 3.11, which includes Kubernetes 1.11
 * **Latest**: 4.3, which includes Kubernetes 1.16
+
 
 ## What am I charged for when I use an OpenShift cluster?
 {: #openshift_charges}

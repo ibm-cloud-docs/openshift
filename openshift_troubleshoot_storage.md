@@ -78,8 +78,6 @@ Review the options to debug persistent storage and find the root causes for fail
       The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
    2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-cs_cli_install#kubectl).
 
-3. For block storage, object storage, and Portworx only: Make sure that you [installed the Helm server Tiller with a Kubernetes services account](/docs/openshift?topic=openshift-helm#public_helm_install).
-
 4. For block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
 
    **Block and object storage**:
@@ -118,7 +116,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
    3. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
       ```
-      helm list
+      helm list --all-namespaces
       ```
       {: pre}
 
@@ -130,7 +128,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
    2. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
       ```
-      helm list
+      helm list --all-namespaces
       ```
       {: pre}
 
@@ -845,7 +843,7 @@ If a network error occurs while a pod writes to a volume, IBM Cloud infrastructu
 {: tsResolve}
 1. Check the version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in that is installed in your cluster.
    ```
-   helm list
+   helm list --all-namespaces
    ```
    {: pre}
 
