@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-24"
+lastupdated: "2020-02-27"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -414,7 +414,7 @@ To expose apps that are outside of your cluster to the public:
 ## Customizing Ingress routing with annotations
 {: #annotations-roks4}
 
-If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external} that manages traffic for your app.
+If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
 
 These annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
 {: important}
@@ -431,7 +431,7 @@ To add annotations to the router:
   * To annotate the router for the default Ingress controller, which is registered with your cluster's default Ingress subdomain, look for the router service that is named `router-default`. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
   * If you created a custom Ingress controller and registered it with your custom subdomain, look for the router service that is named, for example, `router-custom-ingress-controller-<hash>` or `router-private-ingress-controller-<hash>`.
 
-3. Open the configuration for the router and add [supported HA-proxy router annotations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}. Repeat this process for the router in each zone.
+3. Open the configuration for the router and add [supported HA-proxy router annotations](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}. Repeat this process for the router in each zone.
   ```
   oc edit svc router-default -n openshift-ingress
   ```
