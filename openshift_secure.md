@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-28"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -219,8 +219,8 @@ The image does not include components that ensure secure end-to-end communicatio
     <td>By default, every worker node is provisioned with two local SSD, AES 256-bit encrypted data partitions. The first partition contains the kernel image that is used to boot the worker node and is not encrypted. The second partition holds the container file system and is unlocked by using LUKS encryption keys. Each worker node in a cluster has its own unique LUKS encryption key, managed by Red Hat OpenShift on IBM Cloud. When you create a cluster or add a worker node to an existing cluster, the keys are pulled securely and then discarded after the encrypted disk is unlocked. <p class="note">Encryption can impact disk I/O performance. For workloads that require high-performance disk I/O, test a cluster with encryption both enabled and disabled to help you decide whether to turn off encryption.</p></td>
       </tr>
     <tr>
-      <td>Expert AppArmor policies</td>
-      <td>Every worker node is set up with security and access policies that are enforced by [AppArmor ![External link icon](../icons/launch-glyph.svg "External link icon")](https://wiki.ubuntu.com/AppArmor) profiles that are loaded into the worker node during bootstrapping. AppArmor profiles cannot be changed by the user or owner of the machine. </td>
+      <td>SELinux</td>
+      <td>Every worker node is set up with security and access policies that are enforced by [Security-Enhanced Linux (SELinux)](https://www.redhat.com/en/topics/linux/what-is-selinux){: external} profiles that are loaded into the worker node during bootstrapping. SELinux profiles cannot be changed by the user or owner of the machine. </td>
     </tr>
     <tr>
       <td>SSH disabled</td>
