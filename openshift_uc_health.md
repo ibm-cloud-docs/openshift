@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-03-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -64,7 +64,6 @@ Accelerated development is a key win for the IT Exec. With the move to public cl
 Security first: With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive patient workloads now have familiar isolation but within the flexibility of public cloud. From that core, Vulnerability Advisor provides scanning:
 * Image vulnerability scanning
 * Policy scanning based on ISO 27k
-* Package scanning for known malware
 
 Secure patient data leads to happier patients.
 
@@ -82,7 +81,7 @@ Secure patient data leads to happier patients.
 On-demand compute, storage, and I/O services run in the public cloud with secure access to on-premises enterprise assets. Implement a CI/CD process and other parts of the IBM Garage Method to dramatically shorten delivery cycles.
 
 **Step 1: Secure the compute platform**
-* From that core, Vulnerability Advisor provides image, policy, container, and packaging scanning vulnerability scanning, for known malware.
+* From that core, Vulnerability Advisor provides image, policy, container, and packaging scanning vulnerability scanning.
 * Consistently enforce policy-driven authentication to your services and APIs with a simple Ingress annotation. With declarative security you can ensure user authentication and token validation by using {{site.data.keyword.appid_short_notm}}.
 
 **Step 2: Lift and shift**
@@ -178,7 +177,6 @@ Developers started by deploying their research-sharing SaaS apps in containers w
 Security first: The Development Exec chose bare metal to host the research clusters. With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive research workloads now have familiar isolation but within the flexibility of public cloud. Because this nonprofit also has a partnership with pharmaceutical companies, app security is crucial. Competition is fierce, and corporate espionage is possible. From that secure core, Vulnerability Advisor provides scanning:
 * Image vulnerability scanning
 * Policy scanning based on ISO 27k
-* Package scanning for known malware
 
 Secured research apps lead to increased clinical trial participation.
 
@@ -206,7 +204,7 @@ Technical solution:
 
 **Step 2: Use secure and performant compute**
 * ML apps that require higher-performing compute are hosted on Red Hat OpenShift on IBM Cloud on Bare Metal. This ML cluster is centralized, so each regional cluster doesn't have the expense of bare metal workers; Kubernetes deployments are easier too.
-* Vulnerability Advisor provides image, policy, container, and packaging scanning vulnerability scanning, for known malware.
+* Vulnerability Advisor provides image, policy, container, and packaging scanning vulnerability scanning.
 
 **Step 3: Ensure global availability**
 * After Developers build and test the apps in their Development and Test clusters, they use the IBM CI/CD toolchains to deploy apps into clusters across the globe.
