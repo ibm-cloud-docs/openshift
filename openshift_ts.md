@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-28"
+lastupdated: "2020-03-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -803,7 +803,7 @@ The OpenShift web console might not open for reasons that include:
         ```
         {: pre}
 4.  Review the output of the first step to check the **Worker Zones**. If your cluster has multiple zones, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation).
-5.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console.
+5.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console. For other log in options, see [Connecting to the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
     ```
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
     ```
