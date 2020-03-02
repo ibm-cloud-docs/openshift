@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-21"
+lastupdated: "2020-03-02"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -57,14 +57,54 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 {: #access_public_se}
 
 
-For OpenShift clusters with a public service endpoint, you can get the `oc login` token by following the instructions in the console.
+For OpenShift clusters with a public service endpoint, you can log in to your cluster from the console or CLI.
+{: shortdesc}
+
+### Connecting to the cluster from the console
+{: #access_oc_console}
+
+You can quickly access your Red Hat OpenShift on IBM Cloud cluster from the console.
 {: shortdesc}
 
 1.  In the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
-2.  In the **Actions...** drop-down list, select **Connect via CLI**.
-3.  Follow the instructions.
+2.  Click **OpenShift console**.
+3.  To continue working in the terminal, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the terminal as follows.
+    *  **Version 3.11**: Paste the copied `oc login` command into your terminal.
+    *  **Version 4.3**: Click **Display Token**, copy the `oc login` command, and paste the command into your terminal.
 
-<p class="note">If you cannot or do not want to open the OpenShift console, you can set the cluster context with the `--admin` flag through the CLI.<p class="pre"><code>ibmcloud oc cluster config -c <cluster_name_or_ID> --admin</code></p></p>
+### Connecting to the cluster from the CLI
+{: #access_oc_cli}
+
+In most cases, you can use the OpenShift web console to get the `oc login` token to access your cluster. If you cannot or do not want to open the OpenShift console, choose among the following options to log in to your Red Hat OpenShift on IBM Cloud cluster by using the CLI.
+{: shortdesc}
+
+Choose from the following options.
+*   **Log in as admin**:
+    1.  Make sure that you have the [**Administrator** platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+    2.  Set your terminal context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
+        ```
+        ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
+        ```
+        {: pre}
+*   **Log in with an API key**: See [Using an API key to log in to OpenShift](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+*   **Log in with {{site.data.keyword.cloud_notm}} passcode**:
+    1.  Get the **Master URL** of your cluster in the output of the following command.
+        ```
+        ibmcloud oc cluster get -c <cluster_name_or_ID>
+        ```
+        {: pre}
+    2.  In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
+        ```
+        https://iam.cloud.ibm.com/identity/passcode
+        ```
+        {: codeblock}
+    3.  Log in with your IBMid and copy the passcode.
+    4.  Log in to your cluster with the passcode.
+        ```
+        oc login -u passcode -p <iam_passcode> --server=<master_URL>
+        ```
+        {: pre}
+
 
 
 <br />
@@ -367,6 +407,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     IAM#first.last@email.com       55555ee5-e555-55e5-e5e5-555555ee55ee               IAM:IBMid-666666FFF6
     ```
     {: screen}
+
 
 
 

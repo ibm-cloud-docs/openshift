@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -79,6 +79,7 @@ Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_lim
 
 | Category | Description |
 | -------- | ----------- |
+| Cluster autoscaling | The Red Hat OpenShift cluster autoscaler from the OpenShift **Administration > Cluster Settings** console or `ClusterAutoscaler` object from the `autoscaling.openshift.io/v1` API is not supported. Instead, use the [`ibm-iks-cluster-autoscaler` Helm plug-in](/docs/openshift?topic=openshift-ca). |
 | Container logs | If you use a container logging operator such as Fluentd to send logs to an Elasticsearch stack, you must [update the cluster logging deployment to use the `/var/data` path to container logs](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Key management service (KMS) provider | You cannot use a KMS provider such as {{site.data.keyword.keymanagementservicelong}} to encrypt secrets in your cluster. |
 | Managed add-ons | Managed add-ons such as the debug tool or Kubernetes web terminal are not supported. |

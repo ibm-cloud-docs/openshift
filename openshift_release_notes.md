@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-24"
+lastupdated: "2020-03-02"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -38,6 +38,15 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
+
+## March 2020
+{: #mar20}
+
+| Date | Description |
+| ---- | ----------- |
+| 02 March 2020 | **Version changelogs**: Worker node patch updates are available for OpenShift [3.11.170_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1543_worker). |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in March 2020"}
 
 ## February 2020
 {: #feb20}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-03-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -169,11 +169,11 @@ Accelerated development is a key win for the Exec. With the use of modern contai
 
 Also, logging and monitoring for the tools, especially where they used {{site.data.keyword.watson}} AI, rapidly integrate into the system. Developers don’t waste time building complex logging systems, just to be able to troubleshoot their live systems. A key factor for less staffing costs is that IBM manages Kubernetes, so the Developers can focus on better payment tools.
 
-Security first: With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive payment tools now have familiar isolation but within the flexibility of public cloud. Scans for vulnerabilities and malware are run continuously.
+Security first: With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive payment tools now have familiar isolation but within the flexibility of public cloud. Scans for vulnerabilities are run continuously.
 
 **Step 1: Lift and shift to secure compute**
 * Migrate virtual machine images to container images that run in Red Hat OpenShift on IBM Cloud in the public {{site.data.keyword.cloud_notm}}. Deploy IBM Cloud Pak for Applications, so that developers have their familiar application development tools on the cloud. 
-* From that core, Vulnerability Advisor provides image, policy, container, and packaging vulnerability scanning, for known malware.
+* From that core, Vulnerability Advisor provides image, policy, container, and packaging vulnerability scanning.
 * Private data center / on-premises capital costs are greatly reduced and replaced with a utility computing model that scales based on workload demand.
 * Consistently enforce policy-driven authentication to your services and APIs with a simple Ingress annotation. With declarative security you can ensure user authentication and token validation by using {{site.data.keyword.appid_short_notm}}.
 

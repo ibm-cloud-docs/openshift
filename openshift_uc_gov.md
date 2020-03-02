@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -154,8 +154,6 @@ Security first: The IT Execs chose bare metal clusters. With bare metal for Red 
 Because the shipping company also wants to work with other ports, app security is crucial. Shipping manifests and customs information are highly confidential. From that secure core, Vulnerability Advisor provides these scans:
 * Image vulnerability scans
 * Policy scans that are based on ISO 27k
-* Live container scans
-* Package scans for known malware
 
 At the same time, {{site.data.keyword.iamlong}} helps to control who has which level of access to the resources.
 
