@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -58,8 +58,7 @@ Red Hat OpenShift on IBM Cloud comes with the following service limitations. Kee
 | Kubernetes | Make sure to review the [Kubernetes project limitations](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external}. |
 | OpenShift | Make sure to review the [OpenShift Container Platform limitations](https://docs.openshift.com/container-platform/4.3/scalability_and_performance/planning-your-environment-according-to-object-maximums.html){: external} for your version.|
 | Kubernetes pod logs | To check the logs for individual app pods, you can use the terminal to run `oc logs <pod name>`. Do not use the Kubernetes dashboard to stream logs for your pods, which might cause a disruption in your access to the Kubernetes dashboard. |
-| Kubernetes API audit logs | Collecting and forwarding API audit logs to {{site.data.keyword.la_full_notm}} is not supported. |
-| Logging | <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you cannot modify the default configuration of the Red Hat OpenShift on IBM Cloud cluster.<br><br><img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 4.3**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator). |
+| Logging | <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11 only**: <ul><li>You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you cannot modify the default configuration of the Red Hat OpenShift on IBM Cloud cluster.</li><li>Collecting and forwarding API audit logs to {{site.data.keyword.la_full_notm}} is not supported.</li></ul> |
 | Monitoring | The [built-in Prometheus](/docs/openshift?topic=openshift-deploy_app#openshift_access_oc_services) alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are part of the IBM-managed cluster master, so you can ignore these alerts.</br></br>Example alert:</br>`alert: KubeControllerManagerDown`</br>`expr: absent(up{job="kube-controllers"}`</br>`  == 1)</br>for: 15m</br>labels:`</br>  `severity: critical`</br>`annotations:`</br>` message: KubeControllerManager has disappeared from Prometheus target discovery.`|
 {: summary="This table contains information on general Red Hat OpenShift on IBM Cloud limitations. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Red Hat OpenShift on IBM Cloud limitations"}
@@ -85,6 +84,7 @@ Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_lim
 | Managed add-ons | Managed add-ons such as the debug tool or Kubernetes web terminal are not supported. |
 | Private clusters | You cannot create OpenShift clusters with a private service endpoint. Version 4.3 clusters must have only the public service endpoint enabled. Also, as with version 3.11, you cannot create clusters with only private VLAN connectivity. |
 | Private routing | Private routes are currently not supported. Instead, you can [create a private network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer). |
+| Logging | To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Serverless | The Knative managed add-on is not supported. Instead, try out the tech preview for the [OpenShift Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}. |
 | Service mesh | The Istio managed add-on is not supported. Instead, use the [Red Hat service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/servicemesh-release-notes.html){: external}. **Note**: The default {{site.data.keyword.cloud_notm}} configuration of the routers enables host networking, which is not compatible with the service mesh network policy. For the service mesh ingress to work, [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external}.|
 | Virtual private cloud (VPC) | As with version 3.11, you cannot create OpenShift version 4.3 clusters in a VPC. |
@@ -144,7 +144,6 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 {: caption="Classic cluster storage limitations"}
 
 <br />
-
 
 
 

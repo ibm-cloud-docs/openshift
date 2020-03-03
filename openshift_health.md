@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-03-03"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -146,6 +146,9 @@ For more information about how to use {{site.data.keyword.la_short}}, see the [N
 
 Collect and forward any events that are passed through your Kubernetes API server to {{site.data.keyword.la_full_notm}}.
 {: shortdesc}
+
+Forwarding Kubernetes API audit logs to LogDNA is not supported for version 3.11 clusters.
+{: note}
 
 In the following steps, you create an audit system in your cluster that consists of an audit webhook, a log collection service and webserver app, and a logging agent. The webhook collects the Kubernetes API server events from your cluster master. The log collection service is a Kubernetes `ClusterIP` service that is created from an image from the public {{site.data.keyword.cloud_notm}} registry. This service exposes a simple `node.js` HTTP webserver app that is exposed only on the private network. The webserver app parses the log data from the audit webhook and creates each log as a unique JSON line. Finally, the logging agent forwards the logs from the webserver app to {{site.data.keyword.la_full_notm}}, where you can view the logs.
 
