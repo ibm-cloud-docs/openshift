@@ -43,7 +43,7 @@ In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-in
 Refer to the following tables for a summary of changes for each version of the [Red Hat OpenShift on IBM Cloud plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
 
 ## Using the beta plug-in
-{: #cs_beta}
+{: #changelog_beta}
 
 A redesigned version of the Red Hat OpenShift on IBM Cloud plug-in is available as a beta. The redesigned Red Hat OpenShift on IBM Cloud plug-in groups commands into categories and changes commands from a hyphenated structure to a spaced structure.
 {: shortdesc}
