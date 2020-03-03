@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -51,7 +51,7 @@ Before you use annotations, make sure that you have properly set up your Ingress
 | [Location snippets](#location-snippets) | `location-snippets` | Add a custom location block configuration for a service. |
 | [Private ALB routing](#alb-id) | `ALB-ID` | Route incoming requests to your apps with a private ALB. |
 | [Server snippets](#server-snippets) | `server-snippets` | Add a custom server block configuration. |
-{: caption="" caption-side="top"}
+{: caption="General annotations" caption-side="top"}
 
 <br>
 
@@ -2025,6 +2025,51 @@ If you set the request type to api, an API request that contains an {{site.data.
 For security reasons, {{site.data.keyword.appid_short_notm}} authentication supports only back ends with TLS/SSL enabled.
 {: note}
 
+**Usage**
+
+Because the app uses {{site.data.keyword.appid_short_notm}} for authentication, you must provision an {{site.data.keyword.appid_short_notm}} instance, configure the instance with valid redirect URIs, and generate a bind secret by binding the instance to your cluster.
+
+1. Choose an existing or create a new {{site.data.keyword.appid_short_notm}} instance.
+  * To use an existing instance, ensure that the service instance name doesn't contain spaces. To remove spaces, select the more options menu next to the name of your service instance and select **Rename service**.
+  * To provision a [new {{site.data.keyword.appid_short_notm}} instance](https://cloud.ibm.com/catalog/services/app-id):
+      1. Replace the auto-filled **Service name** with your own unique name for the service instance. The service instance name can't contain spaces.
+      2. Choose the same region that your cluster is deployed in.
+      3. Click **Create**.
+
+2. Add redirect URLs for your app. A redirect URL is the callback endpoint of your app. To prevent phishing attacks, {{site.data.keyword.appid_full_notm}} validates the request URL against the whitelist of redirect URLs.
+  1. In the {{site.data.keyword.appid_short_notm}} management console, navigate to **Manage Authentication**.
+  2. In the **Identity providers** tab, make sure that you have an Identity Provider selected. If no Identity Provider is selected, the user will not be authenticated but will be issued an access token for anonymous access to the app.
+  3. In the **Authentication settings** tab, add redirect URLs for your app in the format `http://<hostname>/<app_path>/appid_callback` or `https://<hostname>/<app_path>/appid_callback`.
+
+    {{site.data.keyword.appid_full_notm}} offers a logout function: If `/logout` exists in your {{site.data.keyword.appid_full_notm}} path, cookies are removed and the user is sent back to the login page. To use this function, you must append `/appid_logout` to your domain in the format `https://<hostname>/<app_path>/appid_logout` and include this URL in the redirect URLs list.
+    {: note}
+
+3. Bind the {{site.data.keyword.appid_short_notm}} service instance to your cluster. The command creates a service key for the service instance, or you can include the `--key` flag to use existing service key credentials.
+  ```
+  ibmcloud oc cluster service bind --cluster <cluster_name_or_ID> --namespace <namespace> --service <service_instance_name> [--key <service_instance_key>]
+  ```
+  {: pre}
+  When the service is successfully added to your cluster, a cluster secret is created that holds the credentials of your service instance. Example CLI output:
+  ```
+  ibmcloud oc cluster service bind --cluster mycluster --namespace mynamespace --service appid1
+  Binding service instance to namespace...
+  OK
+  Namespace:    mynamespace
+  Secret name:  binding-<service_instance_name>
+  ```
+  {: screen}
+
+4. Get the secret that was created in your cluster namespace.
+  ```
+  oc get secrets --namespace=<namespace>
+  ```
+  {: pre}
+
+5. Use the bind secret and the cluster namespace to add the `appid-auth` annotation to your Ingress resource.
+
+<p class="important">When you use the bind secret in the `appid-auth` annotation, the secret is cached by the Ingress ALB. If you change the {{site.data.keyword.appid_short_notm}} service binding, the new secret for {{site.data.keyword.appid_short_notm}} that is generated is not used by the ALB. You must restart your ALB pods to pick up the new secret.  You can find the ALB pod names by running `oc get pods -n kube-system | grep alb` and restart the ALB pods by running `oc delete pod <pod> -n kube-system` for each pod.</p>
+
+
 **Sample Ingress resource YAML**
 
 ```yaml
@@ -2058,48 +2103,6 @@ spec:
 | `serviceName` | Replace `<em><myservice></em>` with the name of the Kubernetes service that you created for your app. This field is required. If a service name is not included, then the annotation is enabled for all services. If a service name is included, then the annotation is enabled only for that service. Specify only one service name per service path that you define in the resource file. |
 | `idToken=true` | Optional: The Liberty OIDC client is unable to parse both the access and the identity token at the same time. When working with Liberty, set this value to false so that the identity token is not sent to the Liberty server. |
 {: caption="Understanding the annotation components" caption-side="top"}
-
-**Usage**
-
-Because the app uses {{site.data.keyword.appid_short_notm}} for authentication, you must provision an {{site.data.keyword.appid_short_notm}} instance, configure the instance with valid redirect URIs, and generate a bind secret by binding the instance to your cluster.
-
-1. Choose an existing or create a new {{site.data.keyword.appid_short_notm}} instance.
-  * To use an existing instance, ensure that the service instance name doesn't contain spaces. To remove spaces, select the more options menu next to the name of your service instance and select **Rename service**.
-  * To provision a [new {{site.data.keyword.appid_short_notm}} instance](https://cloud.ibm.com/catalog/services/app-id):
-      1. Replace the auto-filled **Service name** with your own unique name for the service instance. The service instance name can't contain spaces.
-      2. Choose the same region that your cluster is deployed in.
-      3. Click **Create**.
-
-2. Add redirect URLs for your app. A redirect URL is the callback endpoint of your app. To prevent phishing attacks, App ID validates the request URL against the whitelist of redirect URLs.
-  1. In the {{site.data.keyword.appid_short_notm}} management console, navigate to **Manage Authentication**.
-  2. In the **Identity providers** tab, make sure that you have an Identity Provider selected. If no Identity Provider is selected, the user will not be authenticated but will be issued an access token for anonymous access to the app.
-  3. In the **Authentication settings** tab, add redirect URLs for your app in the format `http://<hostname>/<app_path>/appid_callback` or `https://<hostname>/<app_path>/appid_callback`.
-
-    {{site.data.keyword.appid_full_notm}} offers a logout function: If `/logout` exists in your {{site.data.keyword.appid_full_notm}} path, cookies are removed and the user is sent back to the login page. To use this function, you must append `/appid_logout` to your domain in the format `https://<hostname>/<app_path>/appid_logout` and include this URL in the redirect URLs list.
-    {: note}
-
-3. Bind the {{site.data.keyword.appid_short_notm}} service instance to your cluster. The command creates a service key for the service instance, or you can include the `--key` flag to use existing service key credentials.
-  ```
-  ibmcloud oc cluster service bind --cluster <cluster_name_or_ID> --namespace <namespace> --service <service_instance_name> [--key <service_instance_key>]
-  ```
-  {: pre}
-  When the service is successfully added to your cluster, a cluster secret is created that holds the credentials of your service instance. Example CLI output:
-  ```
-  ibmcloud oc cluster service bind --cluster mycluster --namespace mynamespace --service appid1
-  Binding service instance to namespace...
-  OK
-  Namespace:    mynamespace
-  Secret name:  binding-<service_instance_name>
-  ```
-  {: screen}
-
-4. Get the secret that was created in your cluster namespace.
-  ```
-  oc get secrets --namespace=<namespace>
-  ```
-  {: pre}
-
-5. Use the bind secret and the cluster namespace to add the `appid-auth` annotation to your Ingress resource.
 
 
 
