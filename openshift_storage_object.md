@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-03"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -1320,6 +1320,7 @@ To deploy a stateful set that uses object storage:
 </tr>
 </tbody>
 </table>
+
 
 
 

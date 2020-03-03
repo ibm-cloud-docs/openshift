@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-03-03"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -76,7 +76,7 @@ _Figure: Overview of data encryption in a cluster_
 You can protect the etcd component in your Kubernetes master and Kubernetes secrets by using a Kubernetes [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} that encrypts secrets with encryption keys that you control.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> KMS provider integration is a beta feature that is available only in version 3.11 clusters, not for version 4.3 clusters..
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> KMS provider integration is available only in version 3.11 clusters, not for version 4.3 clusters.
 {: important}
 
 **What KMS providers are available by default? Can I add other providers?**<br>
@@ -98,7 +98,7 @@ Yes. When you enable a KMS provider in your cluster, your own KMS root key is us
 <br />
 
 
-## Encrypting the Kubernetes master's local disk and secrets by using a KMS provider (beta)
+## Encrypting the Kubernetes master's local disk and secrets by using a KMS provider
 {: #keyprotect}
 
 Enable a Kubernetes [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external} to encrypt the Kubernetes secrets and etcd component of your Kubernetes master.
@@ -107,7 +107,7 @@ Enable a Kubernetes [key management service (KMS) provider](https://kubernetes.i
 To rotate your encryption key, repeat the [CLI](#kms_cli) or [console](#kms_ui) steps to enable KMS provider encryption with a new root key ID. The new root key is added to the cluster configuration along with the previous root key so that existing encrypted data is still protected.
 {: note}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> KMS provider integration is a beta feature that is available only in version 3.11 clusters, not for version 4.3 clusters..
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> KMS provider integration is available only in version 3.11 clusters, not for version 4.3 clusters.
 {: important}
 
 ### Prerequisites
@@ -278,7 +278,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: screen}
 
-## Encrypting data in classic clusters by using IBM Cloud Data Shield
+## Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)
 {: #datashield}
 
 {{site.data.keyword.datashield_short}} is integrated with Intel® Software Guard Extensions (SGX) and Fortanix® technology so that the app code and data of your containerized workloads are protected in use. The app code and data run in CPU-hardened enclaves, which are trusted areas of memory on the worker node that protect critical aspects of the app, which helps to keep the code and data confidential and unmodified.

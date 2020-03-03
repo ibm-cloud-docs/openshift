@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1101,6 +1101,29 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 
 <br />
 
+
+## 3.11 clusters: Ingress ALB cannot be enabled due to subnet errors
+{: #cs_alb_subnet}
+
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
+
+
+{: tsSymptoms}
+When you try to enable an Ingress ALB by running the `ibmcloud oc alb-configure --enable` command, you see the following error:
+```
+No valid subnets found for the specified zone. Verify that a subnet exists on the VLAN in the zone that you specify by running 'ibmcloud ks subnets'. Note: If the problem persists, verify that your ALBs and worker nodes are on the same VLANs by following the steps in this troubleshooting doc: <https://ibm.biz/alb-vlan-ts>
+```
+{: screen}
+
+However, you ran `ibmcloud oc ks subnets` and verified that one or more subnets are available on the VLAN in the zone where the ALB exists.
+
+{: tsCauses}
+Your ALBs and your worker nodes might not exist on the same VLANs. This can occur when you delete worker nodes on the VLANs that the ALBs were also originally created on, and then create new worker nodes on new VLANs.
+
+{: tsResolve}
+Move your ALBs to the same VLANs that your worker nodes exist on by following the steps in [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress-settings#migrate-alb-vlan).
 
 ## 3.11 clusters: Source IP preservation fails when using tainted nodes
 {: #cs_source_ip_fails}
