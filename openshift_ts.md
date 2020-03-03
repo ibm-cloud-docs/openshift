@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -756,9 +756,6 @@ Re-authenticate with the OpenShift token by [copying the `oc login` command from
 ## OpenShift console does not open
 {: #oc_console_fails}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 4.3.
-{: note}
-
 {: tsSymptoms}
 When you click the **OpenShift web console** from your cluster details, the console does not open. You see a message similar to the following.
 
@@ -769,29 +766,43 @@ Application is not available
 
 {: tsCauses}
 The OpenShift web console might not open for reasons that include:
-1.  The cluster has a private service endpoint enabled.
-2.  The cluster ingress and networking components are not available.
-3.  The cluster is running an older version.
-4.  Your account does not have VRF or VLAN spanning enabled for a multizone cluster.
-5.  The console pod or other system pods are not healthy, such as when not enough worker nodes exist to run the pods.
+1.  Your account has multifactor authentication (MFA) enabled.
+2.  <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 only**: The cluster has a private service endpoint enabled.
+3.  The cluster ingress and networking components are not available.
+4.  The cluster is running an older version.
+5.  Your account does not have VRF or VLAN spanning enabled for a multizone cluster.
+6.  The console pod or other system pods are not healthy, such as when not enough worker nodes exist to run the pods.
 
 <br>
 
 {: tsResolve}
-1.  Check your cluster details. If your cluster has a **Private Service Endpoint URL**, you must delete the cluster and re-create a cluster that has a public service endpoint only. Private service endpoints are a limitation in version 4.3 clusters. If your cluster does not have a private service endpoint, continue to the next step.
+1.  Make sure that your account does not use multifactor authentication (MFA). For more information, see [Disabling required MFA for all users in your account](/docs/iam?topic=iam-enablemfa#disablemfa).
+    1.  Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
+    2.  From the menu bar, click your **Avatar** icon **> Profile and settings > Login settings**.
+    3.  If **Time-based one-time passcode authentication** is set up, disable this setting.
+2.  Check your cluster details. **OpenShift version 4.3 only**: If your cluster has a **Private Service Endpoint URL**, you must delete the cluster and re-create a cluster that has a public service endpoint only. Private service endpoints are a limitation in version 4.3 clusters. If your cluster does not have a private service endpoint, continue to the next step.
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
-2.  Review the output of the previous step to check the **Ingress Subdomain**.
+3.  Review the output of the previous step to check the **Ingress Subdomain**.
     *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
     *  If your cluster does have a subdomain, continue to the next step.
-3.  Review the output of the first step to check the **Version**. If your cluster does not run version `4.3.1_1508_openshift` or later, update the cluster and worker nodes.
-    1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version of `4.3`.
+4.  Review the output of the first step to check the **Version**. If your cluster does not run the latest version, update the cluster and worker nodes.
+    1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version.
+        
+        **4.3**:
         ```
         ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.3_openshift -f
         ```
         {: pre}
+
+        **3.11**:
+        ```
+        ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 3.11_openshift -f
+        ```
+        {: pre}
+
     2.  List your worker nodes.
         ```
         ibmcloud oc worker ls -c <cluster_name_or_ID>
@@ -802,14 +813,14 @@ The OpenShift web console might not open for reasons that include:
         ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w <worker3_ID>
         ```
         {: pre}
-4.  Review the output of the first step to check the **Worker Zones**. If your cluster has multiple zones, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation).
-5.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console. For other log in options, see [Connecting to the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
+5.  Review the output of the first step to check the **Worker Zones**. If your cluster has multiple zones, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation).
+6.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console. For other log in options, see [Connecting to the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
     ```
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
     ```
     {: pre}
-6.  Review the health of the console pod.
-    1.  Find the console pods.
+7.  Review the health of the console pod.
+    1.  Find the console pods. The following example uses the `openshift-console` project for clusters that run version 4.3 or later. If your cluster runs version 3.11, change the project to `default`.
         ```
         oc get pods -n openshift-console
         ```
@@ -832,7 +843,7 @@ The OpenShift web console might not open for reasons that include:
         oc delete pod -n openshift-console <pod>
         ```
         {: pre}
-7.  Check if other system pods are experiencing issues. 
+8.  Check if other system pods are experiencing issues. 
     1.  Check for pending pods.
         ```
         oc get pods --all-namespaces | grep Pending
@@ -843,7 +854,7 @@ The OpenShift web console might not open for reasons that include:
         oc describe pod -n <project_name> <pod_name>
         ```
         {: pre}
-8.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
+9.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
 
 <br />
 
