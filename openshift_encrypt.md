@@ -278,7 +278,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: screen}
 
-## Encrypting data in classic clusters by using IBM Cloud Data Shield
+## Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)
 {: #datashield}
 
 {{site.data.keyword.datashield_short}} is integrated with Intel® Software Guard Extensions (SGX) and Fortanix® technology so that the app code and data of your containerized workloads are protected in use. The app code and data run in CPU-hardened enclaves, which are trusted areas of memory on the worker node that protect critical aspects of the app, which helps to keep the code and data confidential and unmodified.
