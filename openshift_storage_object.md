@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-03"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -1321,5 +1321,7 @@ To deploy a stateful set that uses object storage:
 </tbody>
 </table>
 
+## Limitations
+{{site.data.keyword.cos_full_notm}} is based on the `s3fs-fuse` file system. You can review a list of limitations in the [`s3fs-fuse` repo](https://github.com/s3fs-fuse/s3fs-fuse#limitations).
 
 
