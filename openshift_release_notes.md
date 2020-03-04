@@ -535,14 +535,5 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <li><strong>CLI reference</strong>: Updated the [CLI reference page](/docs/openshift?topic=openshift-kubernetes-service-cli) to reflect multiple changes for the [release of version 0.3.34](/docs/openshift?topic=openshift-cs_cli_changelog) of the {{site.data.keyword.containerlong_notm}} CLI plug-in.</li>
   <li><strong>New! Red Hat OpenShift on IBM Cloud clusters</strong>: With the Red Hat OpenShift on IBM Cloud beta, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the OpenShift container orchestration platform software. You get all the advantages of managed {{site.data.keyword.containerlong_notm}} for your cluster infrastructure environment, along with the [OpenShift tooling and catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) that runs on Red Hat Enterprise Linux for your app deployments. To get started, see [Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial).</li>
   </ul></td>
-  <tr>
-   <td></td>
-</tr>
-    <tr>
-   <td></td>
-</tr>
-      <tr>
-   <td></td>
-</tr>
 </tbody></table>
 
