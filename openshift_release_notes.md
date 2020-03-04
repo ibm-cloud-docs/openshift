@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-04"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 04 March 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.102](/docs/openshift?topic=openshift-cs_cli_changelog#04).</li><li>**Ingress ALB changelog**: Updated the [`ingress-auth` image build to 390](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul> |
 | 02 March 2020 | **Version changelogs**: Worker node patch updates are available for OpenShift [3.11.170_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1543_worker). |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in March 2020"}
