@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-28"
+lastupdated: "2020-03-04"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -59,12 +59,12 @@ Have you created a cluster before and are just looking for quick example command
 
 * Classic cluster, shared virtual machine:
    ```
-   ibmcloud oc cluster create classic --name my_cluster --kube-version 4.3_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+   ibmcloud oc cluster create classic --name my_cluster --version 4.3_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
    ```
    {: pre}
 *  Classic cluster, bare metal:
    ```
-   ibmcloud oc cluster create classic --name my_cluster --kube-version 4.3_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+   ibmcloud oc cluster create classic --name my_cluster --version 4.3_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
    ```
    {: pre}
 *  For a classic multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones), [add zones](/docs/openshift?topic=openshift-add_workers#add_zone):
@@ -256,7 +256,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 6. Create your standard cluster.
     ```
-    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --name <cluster_name> --kube-version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--disable-disk-encrypt]
+    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--disable-disk-encrypt]
     ```
     {: pre}
 
@@ -300,7 +300,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    <td>Specify the number of worker nodes to include in the cluster. If the <code>--workers</code> option is not specified, one worker node is created.</td>
    </tr>
    <tr>
-   <td><code>--kube-version <em>&lt;major.minor.patch&gt;</em></code></td>
+   <td><code>--version <em>&lt;major.minor.patch&gt;</em></code></td>
    <td>The OpenShift version for the cluster master node. This value is required. When the version is not specified, the cluster is created with the default supported Kubernetes version. If you do not specify a supported OpenShift version, your cluster is created as a community Kubernetes cluster. To see available versions, run <code>ibmcloud oc versions</code>.
 </td>
    </tr>
