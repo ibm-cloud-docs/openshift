@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-04"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -283,6 +283,9 @@ If you have a cluster that was created after worker pools were introduced, you c
    {: pre}
 
 <br />
+
+
+
 
 
 ## Adding tags to existing clusters
