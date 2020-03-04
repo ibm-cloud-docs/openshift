@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-03-04"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -277,8 +277,8 @@ Set up logging and monitoring to help you troubleshoot issues and improve the he
 Set up an image registry and a continuous integration and delivery (CI/CD) pipeline for your cluster.
 {: shortdesc}
 
-1. **Registry**: Choose and set up an [image registry](/docs/openshift?topic=openshift-registry) so that developers can pull images from the registry in their app deployment YAML files.
-2. **CI/CD**:
+1.  **Registry**: Choose and set up an [image registry](/docs/openshift?topic=openshift-registry) so that developers can pull images from the registry in their app deployment YAML files.
+2.  **CI/CD**:
   * Review available [options for automating app deployment](/docs/openshift?topic=openshift-cicd).
   * Set up toolchains with [{{site.data.keyword.deliverypipelinelong}}](/docs/openshift?topic=openshift-cicd#continuous-delivery-pipeline).
 

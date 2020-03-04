@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-03-04"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -99,7 +99,7 @@ For more, see the following tutorials:
 
 
 
-#### Common app modification scenarios
+## Common app modification scenarios
 {: #openshift_move_apps_scenarios}
 
 OpenShift has different default settings than community Kubernetes, such as stricter security context constraints. Review the following common scenarios where you might need to modify your apps so that you can deploy them on OpenShift clusters.
