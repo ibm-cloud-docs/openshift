@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -97,7 +97,7 @@ If you previously installed the debug tool by using Helm, first uninstall the `i
 
 3. On the Diagnostics and Debug Tool card, click **Install**.
 
-4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed.
+4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/containers?topic=containers-cs_troubleshoot_addons#debug_addons).</p>
 
 5. On the Diagnostics and Debug Tool card, click **Dashboard**.
 
@@ -217,48 +217,18 @@ The **Master Health** reflects the state of master components and notifies you i
 **Master Status and State**<br>
 The **Master Status** provides details of what operation from the master state is in progress. The status includes a timestamp of how long the master has been in the same state, such as `Ready (1 month ago)`. The **Master State** reflects the lifecycle of possible operations that can be performed on the master, such as deploying, updating, and deleting. Each state is described in the following table.
 
-<table summary="Every table row should be read left to right, with the master state in column one and a description in column two.">
-<caption>Master states</caption>
-   <thead>
-   <th>Master state</th>
-   <th>Description</th>
-   </thead>
-   <tbody>
-<tr>
-   <td>`deployed`</td>
-   <td>The master is successfully deployed. Check the status to verify that the master is `Ready` or to see if an update is available.</td>
-   </tr>
- <tr>
-     <td>`deploying`</td>
-     <td>The master is currently deploying. Wait for the state to become `deployed` before working with your cluster, such as adding worker nodes.</td>
-    </tr>
-   <tr>
-     <td>`deploy_failed`</td>
-     <td>The master failed to deploy. IBM Support is notified and works to resolve the issue. Check the **Master Status** field for more information, or wait for the state to become `deployed`.</td>
-   </tr>
-   <tr>
-   <td>`deleting`</td>
-   <td>The master is currently deleting because you deleted the cluster. You cannot undo a deletion. After the cluster is deleted, you can no longer check the master state because the cluster is completely removed.</td>
-   </tr>
-     <tr>
-       <td>`delete_failed`</td>
-       <td>The master failed to delete. IBM Support is notified and works to resolve the issue. You cannot resolve the issue by trying to delete the cluster again. Instead, check the **Master Status** field for more information, or wait for the cluster to delete.</td>
-      </tr>
-      <tr>
-       <td>`updating`</td>
-       <td>The master is updating its Kubernetes version. The update might be a patch update that is automatically applied, or a minor or major version that you applied by updating the cluster. During the update, your highly available master can continue processing requests, and your app workloads and worker nodes continue to run. After the master update is complete, you can [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).<br><br>
-       If the update is unsuccessful, the master returns to a `deployed` state and continues running the previous version. IBM Support is notified and works to resolve the issue. You can check if the update failed in the **Master Status** field.</td>
-    </tr>
-    <tr>
-       <td>`update_cancelled`</td>
-       <td>The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).<p class="note">If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.15.10`. To list available versions, run `ibmcloud oc versions`.</p></td>
-    </tr>
-    <tr>
-       <td>`update_failed`</td>
-       <td>The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, open an {{site.data.keyword.cloud_notm}} support case. IBM Support might identify other issues in your cluster that you must fix before the master can be updated.</td>
-    </tr>
-   </tbody>
- </table>
+|Master state|Description|
+|--- |--- |
+|`deployed`|The master is successfully deployed. Check the status to verify that the master is `Ready` or to see if an update is available.|
+|`deploying`|The master is currently deploying. Wait for the state to become `deployed` before working with your cluster, such as adding worker nodes.|
+|`deploy_failed`|The master failed to deploy. IBM Support is notified and works to resolve the issue. Check the **Master Status** field for more information, or wait for the state to become `deployed`.|
+|`deleting`|The master is currently deleting because you deleted the cluster. You cannot undo a deletion. After the cluster is deleted, you can no longer check the master state because the cluster is completely removed.|
+|`delete_failed`|The master failed to delete. IBM Support is notified and works to resolve the issue. You cannot resolve the issue by trying to delete the cluster again. Instead, check the **Master Status** field for more information, or wait for the cluster to delete.|
+|`updating`|The master is updating its Kubernetes version. The update might be a patch update that is automatically applied, or a minor or major version that you applied by updating the cluster. During the update, your highly available master can continue processing requests, and your app workloads and worker nodes continue to run. After the master update is complete, you can [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).</br></br>If the update is unsuccessful, the master returns to a `deployed` state and continues running the previous version. IBM Support is notified and works to resolve the issue. You can check if the update failed in the **Master Status** field.|
+|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.15.10`. To list available versions, run `ibmcloud oc versions`.|
+|`update_failed`|The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, open an {{site.data.keyword.cloud_notm}} support case. IBM Support might identify other issues in your cluster that you must fix before the master can be updated.|
+{: caption="Master states"}
+{: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
 
 
 <br />
