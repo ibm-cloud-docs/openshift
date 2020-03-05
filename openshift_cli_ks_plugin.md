@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-05"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -273,9 +273,9 @@ ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] 
 <dd>The path to the YAML file to create your standard cluster. Instead of defining the characteristics of your cluster by using the options provided in this command, you can use a YAML file. This value is optional for standard clusters and is not available for free clusters. <p class="note">If you provide the same option in the command as parameter in the YAML file, the value in the command takes precedence over the value in the YAML. For example, if you define a location in your YAML file and use the <code>--zone</code> option in the command, the value that you entered in the command option overrides the value in the YAML file.</p>
 <pre class="codeblock">
 <code>name: <em>&lt;cluster_name&gt;</em>
-zone: <em>&lt;zone&gt;</em>
+location: <em>&lt;zone&gt;</em>
 no-subnet: <em>&lt;no-subnet&gt;</em>
-flavor: <em>&lt;flavor&gt;</em>
+machine-type: <em>&lt;flavor&gt;</em>
 private-vlan: <em>&lt;private_VLAN&gt;</em>
 public-vlan: <em>&lt;public_VLAN&gt;</em>
 private-service-endpoint: <em>&lt;true&gt;</em>
