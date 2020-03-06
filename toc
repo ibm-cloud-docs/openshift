@@ -126,6 +126,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_ingress_about.md
         openshift_ingress.md
         openshift_annotations.md
+        openshift_ingress_manage.md
         openshift_ingress_settings.md
         openshift_ingress_health.md
         openshift_ingress_user_managed.md

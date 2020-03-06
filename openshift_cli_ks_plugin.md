@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-06"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1973,7 +1973,7 @@ View and configure an Ingress application load balancer (ALB).
 Disable automatic updates of all Ingress ALB pods in a cluster.
 {: shortdesc}
 
-By default, automatic updates to the Ingress application load balancer (ALB) add-on are enabled. ALB pods are automatically updated when a new build version is available. To instead update the add-on manually, use this command to disable automatic updates. You can then update ALB pods by running the [`ibmcloud oc alb update` command](#cs_alb_update).
+By default, automatic updates to Ingress application load balancers (ALBs) are enabled. ALB pods are automatically updated when a new build version is available. To instead update the add-on manually, use this command to disable automatic updates. You can then update ALB pods by running the [`ibmcloud oc alb update` command](#cs_alb_update).
 
 When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the build version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
 
@@ -2249,7 +2249,7 @@ Enable or disable an ALB in your standard cluster.
 You can use this command to:
 * Enable a default private ALB. When you create a cluster, a default private ALB is created for you in each zone where you have workers and an available private subnet, but the default private ALBs are not enabled. However, all default public ALBs are automatically enabled, and any public or private ALBs that you create with the `ibmcloud oc alb create classic` command are enabled by default too.
 * Enable an ALB that you previously disabled.
-* Disable an ALB. For example, disable an ALB on an old VLAN after you create an ALB on a new VLAN. For more information, see [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress-settings#migrate-alb-vlan).
+* Disable an ALB. For example, disable an ALB on an old VLAN after you create an ALB on a new VLAN. For more information, see [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress-manage#migrate-alb-vlan).
 * Disable the IBM-provided ALB deployment so that you can deploy your own Ingress controller and leverage the DNS registration for the IBM-provided Ingress subdomain or the load balancer service that is used to expose the Ingress controller.
 
 ```
