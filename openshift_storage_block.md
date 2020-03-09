@@ -1423,6 +1423,7 @@ The following examples create a storage class that provisions block storage with
       addonmanager.kubernetes.io/mode: Reconcile
   provisioner: ibm.io/ibmc-block
   parameters:
+    classVersion: "2"
     type: "Performance"
     sizeIOPSRange: |-
       [20-39]Gi:[100-1000]
@@ -1438,7 +1439,6 @@ The following examples create a storage class that provisions block storage with
       [10000-12000]Gi:[1000-48000]
     fsType: "xfs"
   reclaimPolicy: "Delete"
-  classVersion: "2"
   ```
   {: codeblock}
 
