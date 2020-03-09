@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1352,6 +1352,7 @@ Create the storage class in the same region and zone as your cluster and worker 
       kubernetes.io/cluster-service: "true"
   provisioner: ibm.io/ibmc-block
   parameters:
+    classVersion: "2"
     zone: "dal12"
     region: "us-south"
     type: "Endurance"
@@ -1371,6 +1372,7 @@ Create the storage class in the same region and zone as your cluster and worker 
       kubernetes.io/cluster-service: "true"
   provisioner: ibm.io/ibmc-block
   parameters:
+    classVersion: "2"
     zone: "dal12"
     region: "us-south"
     type: "Performance"
@@ -1397,7 +1399,7 @@ The following examples create a storage class that provisions block storage with
 {: shortdesc}
 
 - **Example for Endurance block storage:**
-  ```
+  ```yaml
   apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -1406,12 +1408,14 @@ The following examples create a storage class that provisions block storage with
       addonmanager.kubernetes.io/mode: Reconcile
   provisioner: ibm.io/ibmc-block
   parameters:
+    classVersion: "2"
     type: "Endurance"
     iopsPerGB: "4"
     sizeRange: "[20-12000]Gi"
     fsType: "xfs"
   reclaimPolicy: "Delete"
   ```
+  {: codeblock}
 
 - **Example for Performance block storage:**
   ```yaml
