@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-05"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -41,6 +41,9 @@ subcollection: openshift
 Use the router to publicly expose the services in your {{site.data.keyword.openshiftlong}} cluster on the router's external IP address by using a route.
 {: shortdesc}
 
+Not sure whether to use OpenShift routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).
+{: tip}
+
 ## Overview
 {: #routes-overview}
 
@@ -49,9 +52,6 @@ A router is deployed by default to your cluster and functions as the ingress poi
 If you have a multizone cluster, one router is deployed to your cluster, and a router service is created in each zone. Note that the router service in the first zone where you have workers nodes is always named `router-default` in 4.3 clusters or `router` in 3.11 clusters, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
 * To see the router services in each zone of your cluster, run `oc get svc -n openshift-ingress`.
 * To see the router subdomain for your cluster and the IP addresses for the router service in each zone, run `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and looking for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
-
-Not sure whether to use OpenShift routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).
-{: tip}
 
 ### Traffic flow in a single-zone cluster
 {: #route_single}
@@ -114,7 +114,7 @@ To set up routes to publicly expose apps:
         {: tip}
     3. Map your custom domain to the router's public IP address by adding the IP address as an A record.
 
-3. [Set up a route](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/developer-cli-commands.html#expose){: external}.
+3. Set up a [simple route](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/developer-cli-commands.html#expose){: external} or [secure route](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html){: external}.
   * If you do not have a custom domain, do not specify a **Hostname** value. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
   * If you registered a wildcard subdomain, specify a unique subdomain in each route resource that you create. For example, you might specify `svc1.example.com` in this route resource, and `svc2.example.com` in another route resource.
 
