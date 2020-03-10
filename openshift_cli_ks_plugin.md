@@ -2417,6 +2417,8 @@ ibmcloud oc alb ls --cluster my_cluster
 ### `ibmcloud oc alb rollback`
 {: #cs_alb_rollback}
 
+
+
 If your ALB pods were recently updated, but a custom configuration for your ALBs is affected by the latest build, you can roll back the update to the build that your ALB pods were previously running. All ALB pods in your cluster revert to their previously running state.
 {: shortdesc}
 
