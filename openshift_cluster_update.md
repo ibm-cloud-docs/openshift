@@ -469,87 +469,8 @@ You can manage automatic updates of the Fluentd component in the following ways.
 ### Managing automatic updates for Ingress ALBs
 {: #alb}
 
-Control when the Ingress application load balancer (ALB) component is updated.
+Control when the Ingress application load balancer (ALB) component is updated. For information about keeping ALBs up-to-date, see [Managing the Ingress ALB lifecycle](/docs/openshift?topic=openshift-ingress-manage).
 {: shortdesc}
-
-When the Ingress ALB component is updated, the `nginx-ingress` and `ingress-auth` containers in all ALB pods are updated to the latest build version. By default, automatic updates to ALBs are enabled. Updates are performed on a rolling basis so that your Ingress ALBs don't experience any downtime. When a pod restarts after the update is applied, a [readiness check](/docs/openshift?topic=openshift-ingress-manage#readiness-check) prevents the ALB pod from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss during ALB pod updates and can take up to 5 minutes.
-
-If you disable automatic updates, you are responsible for updating your ALBs. As updates become available, you are notified in the CLI when you run the `ibmcloud oc alb ls` or `alb autoupdate get` commands.
-
-When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the build version of your Ingress ALBs. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALBs' images.
-{: note}
-
-Before you begin:
-
-1. Verify that your ALBs are running.
-    ```
-    ibmcloud oc alb ls
-    ```
-    {: pre}
-
-2. Check the status of automatic updates for the Ingress ALB component.
-    ```
-    ibmcloud oc alb autoupdate get --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-
-    Example output when automatic updates are enabled:
-    ```
-    Retrieving automatic update status of application load balancer (ALB) pods in cluster mycluster...
-    OK
-    Automatic updates of the ALB pods are enabled in cluster mycluster
-    ALBs are at the latest version in cluster mycluster
-    ```
-    {: screen}
-
-    Example output when automatic updates are disabled:
-    ```
-    Retrieving automatic update status of application load balancer (ALB) pods in cluster mycluster...
-    OK
-    Automatic updates of the ALB pods are disabled in cluster mycluster
-    ALBs are not at the latest version in cluster mycluster. To view the current version, run 'ibmcloud oc alb ls'.
-    ```
-    {: screen}
-
-3. Verify the current **Build** version of your ALB pods.
-    ```
-    ibmcloud oc alb ls --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-
-    Example output:
-    ```
-    ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                           ALB VLAN ID   NLB Version
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   10.xxx.xx.xxx   dal10   ingress:411/ingress-auth:315*   2294021       -
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.xx.xxx.xxx  dal10   ingress:411/ingress-auth:315*   2234945       -
-
-    * An update is available for the ALB pods. Review any potentially disruptive changes for the latest version before you update: https://cloud.ibm.com/docs/containers?topic=containers-update#alb
-    ```
-    {: screen}
-
-You can manage automatic updates of the Ingress ALB component in the following ways. **Note**: To run the following commands, you must have the [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
-* Disable automatic updates.
-    ```
-    ibmcloud oc alb autoupdate disable --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-* Manually update your Ingress ALBs.
-    1. If an update is available and you want to update your ALBs, first check the [changelog for the latest version of the Ingress ALB component](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) to verify any potentially disruptive changes.
-    2. Force a one-time update of your ALB pods. All ALB pods in the cluster are updated to the latest build version. You cannot update an individual ALB or choose which build to update ALBs to. Automatic updates remain disabled.
-        ```
-        ibmcloud oc alb update --cluster <cluster_name_or_ID>
-        ```
-        {: pre}
-* If your ALB pods were recently updated, but a custom configuration for your ALBs is affected by the latest build, you can roll back the update to the build that your ALB pods were previously running. **Note**: After you roll back an update, automatic updates for ALB pods are disabled.
-    ```
-    ibmcloud oc alb rollback --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-* Re-enable automatic updates. Whenever the next build becomes available, the ALB pods are automatically updated to the latest build.
-    ```
-    ibmcloud oc alb autoupdate enable --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
 
 <br />
 
