@@ -1322,7 +1322,7 @@ To deploy a stateful set that uses object storage:
 </table>
 
 ## Limitations
-{: #limitations}
+{: #cos_limitations}
 
 {{site.data.keyword.cos_full_notm}} is based on the `s3fs-fuse` file system. You can review a list of limitations in the [`s3fs-fuse` repository](https://github.com/s3fs-fuse/s3fs-fuse#limitations).
 

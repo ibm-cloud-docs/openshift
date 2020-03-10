@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-03-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -36,7 +36,7 @@ subcollection: openshift
 # Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}
 {: #block_storage}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is persistent, high-performance iSCSI storage that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out whether {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For more information about pricing, see [Billing](/docs/BlockStorage?topic=BlockStorage-About#billing).
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is persistent, high-performance iSCSI storage that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out whether {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For more information about pricing, see [Pricing](https://www.ibm.com/cloud/block-storage/pricing).
 {: shortdesc}
 
 {{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
@@ -170,8 +170,8 @@ Make sure to choose your storage configuration carefully to have enough capacity
    {: tip}
 
 3. Choose the type of block storage that you want to provision.
-   - **Bronze, silver, and gold storage classes:** These storage classes provision [Endurance storage](/docs/BlockStorage?topic=BlockStorage-About#provendurance). With Endurance storage, you can choose the size of the storage in gigabytes at predefined IOPS tiers.
-   - **Custom storage class:** This storage class provisions [Performance storage](/docs/BlockStorage?topic=BlockStorage-About#provperformance). With performance storage, you have more control over the size of the storage and the IOPS.
+   - **Bronze, silver, and gold storage classes:** These storage classes provision [Endurance storage](https://www.ibm.com/cloud/block-storage/pricing). With Endurance storage, you can choose the size of the storage in gigabytes at predefined IOPS tiers.
+   - **Custom storage class:** This storage class provisions [Performance storage](https://www.ibm.com/cloud/block-storage/pricing). With performance storage, you have more control over the size of the storage and the IOPS.
 
 4. Choose the size and IOPS for your block storage. The size and the number of IOPS define the total number of IOPS (input/ output operations per second) that serves as an indicator for how fast your storage is. The more total IOPS your storage has, the faster it processes read and write operations.
    - **Bronze, silver, and gold storage classes:** These storage classes come with a fixed number of IOPS per gigabyte and are provisioned on SSD hard disks. The total number of IOPS depends on the size of the storage that you choose. You can select any whole number of gigabyte within the allowed size range, such as 20 Gi, 256 Gi, or 11854 Gi. To determine the total number of IOPS, you must multiply the IOPS with the selected size. For example, if you select a 1000Gi block storage size in the silver storage class that comes with 4 IOPS per GB, your storage has a total of 4000 IOPS.  
@@ -1190,7 +1190,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Characteristics | Setting|
 |:-----------------|:-----------------|
 | Name | <code>ibmc-block-bronze</code></br><code>ibmc-block-retain-bronze</code> |
-| Type | [Endurance storage](/docs/BlockStorage?topic=BlockStorage-About#provendurance) |
+| Type | Endurance storage |
 | File system | `ext4` |
 | IOPS per gigabyte | 2 |
 | Size range in gigabytes | 20-12000 Gi |
@@ -1207,7 +1207,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Characteristics | Setting|
 |:-----------------|:-----------------|
 | Name | <code>ibmc-block-silver</code></br><code>ibmc-block-retain-silver</code> |
-| Type | [Endurance storage](/docs/BlockStorage?topic=BlockStorage-About#provendurance) |
+| Type | Endurance storage |
 | File system | `ext4` |
 | IOPS per gigabyte | 4 |
 | Size range in gigabytes | 20-12000 Gi |
@@ -1224,7 +1224,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Characteristics | Setting|
 |:-----------------|:-----------------|
 | Name | <code>ibmc-block-gold</code></br><code>ibmc-block-retain-gold</code> |
-| Type | [Endurance storage](/docs/BlockStorage?topic=BlockStorage-About#provendurance) |
+| Type | Endurance storage |
 | File system | `ext4` |
 | IOPS per gigabyte | 10 |
 | Size range in gigabytes | 20-4000 Gi |
@@ -1241,7 +1241,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Characteristics | Setting|
 |:-----------------|:-----------------|
 | Name | <code>ibmc-block-custom</code></br><code>ibmc-block-retain-custom</code> |
-| Type | [Performance](/docs/BlockStorage?topic=BlockStorage-About#provperformance) |
+| Type | Performance |
 | File system | `ext4` |
 | IOPS and size | <strong>Size range in gigabytes / IOPS range in multiples of 100</strong><ul><li>20-39 Gi / 100-1000 IOPS</li><li>40-79 Gi / 100-2000 IOPS</li><li>80-99 Gi / 100-4000 IOPS</li><li>100-499 Gi / 100-6000 IOPS</li><li>500-999 Gi / 100-10000 IOPS</li><li>1000-1999 Gi / 100-20000 IOPS</li><li>2000-2999 Gi / 200-40000 IOPS</li><li>3000-3999 Gi / 200-48000 IOPS</li><li>4000-7999 Gi / 300-48000 IOPS</li><li>8000-9999 Gi / 500-48000 IOPS</li><li>10000-12000 Gi / 1000-48000 IOPS</li></ul> |
 | Hard disk | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage. </br></br>Example: </br>You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi). </br></br><strong>Overview of hard disk types per ratio:</strong><ul><li>Less than or equal to 0.3: SATA</li><li>Greater than 0.3: SSD</li></ul> |

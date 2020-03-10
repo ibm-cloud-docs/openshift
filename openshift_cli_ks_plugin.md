@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-10"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -61,10 +61,11 @@ The following beta versions of the redesigned Red Hat OpenShift on IBM Cloud plu
     ```
     {: pre}
 
-When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 16 March 2020 to update CLI command syntax.</br></br>To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run.
+When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 16 March 2020 to update CLI command syntax.</br></br>To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run.
 {: important}
 
-Check out the following changes between each version of the CLI plug-in:
+
+Check out the following syntax and behavior changes between each version of the CLI plug-in:
 
 |Functionality|`0.2`|`0.3`|`0.4`|`1.0`|
 |-------------|-----|-----|-----|-----|
@@ -292,7 +293,7 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional for VM standard clusters and is not available for free clusters. For bare metal flavors, specify `dedicated`.</dd>
 
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>The zone where you want to create the cluster. This value is required for standard clusters. Free clusters can be created in the region that you target with the <code>ibmcloud oc region init</code> command, but you cannot specify the zone.
+<dd>The zone where you want to create the cluster. This value is required for standard clusters. Free clusters can be created in the region that you target with the <code>ibmcloud oc init</code> command, but you cannot specify the zone.
 
 <p>Review [available zones](/docs/openshift?topic=openshift-regions-and-zones#zones). To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones).</p>
 
@@ -1324,7 +1325,7 @@ ibmcloud oc worker reload --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658
 Delete a worker node and replace it with a new worker node in the same worker pool.
 {: shortdesc}
 
-The replacement worker node is created in the same zone and has the same flavor as the old worker node, but is assigned new public or private IP addresses. You might replace a worker node if you cannot reload or update the worker node, such as if it enters a troubled state.
+The replacement worker node is created in the same zone and has the same flavor as the old worker node, but might be assigned new public or private IP addresses. You might replace a worker node if you cannot reload or update the worker node, such as if it enters a troubled state.
 
 You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` flag. If you do not include the `--update` flag, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 
@@ -1973,9 +1974,9 @@ View and configure an Ingress application load balancer (ALB).
 Disable automatic updates of all Ingress ALB pods in a cluster.
 {: shortdesc}
 
-By default, automatic updates to Ingress application load balancers (ALBs) are enabled. ALB pods are automatically updated when a new build version is available. To instead update the add-on manually, use this command to disable automatic updates. You can then update ALB pods by running the [`ibmcloud oc alb update` command](#cs_alb_update).
+By default, automatic updates to Ingress application load balancers (ALBs) are enabled. ALB pods are automatically updated when a new image version is available. To instead update the add-on manually, use this command to disable automatic updates. You can then update ALB pods by running the [`ibmcloud oc alb update` command](#cs_alb_update).
 
-When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the build version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
+When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the image version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
 
 ```
 ibmcloud oc alb autoupdate disable --cluster CLUSTER [-s]
@@ -2007,7 +2008,7 @@ ibmcloud oc alb autoupdate disable --cluster mycluster
 Enable automatic updates of all Ingress ALB pods in a cluster.
 {: shortdesc}
 
-If automatic updates for the Ingress ALB add-on are disabled, you can re-enable automatic updates. Whenever the next build version becomes available, the ALBs are automatically updated to the latest build.
+If automatic updates for the Ingress ALB add-on are disabled, you can re-enable automatic updates. Whenever the next image version becomes available, the ALBs are automatically updated to the latest build.
 
 ```
 ibmcloud oc alb autoupdate enable --cluster CLUSTER [-s]
@@ -2030,7 +2031,7 @@ ibmcloud oc alb autoupdate enable --cluster CLUSTER [-s]
 ### `ibmcloud oc alb autoupdate get`
 {: #cs_alb_autoupdate_get}
 
-Check whether automatic updates for the Ingress ALB add-on are enabled and whether your ALBs are updated to the latest build version.
+Check whether automatic updates for the Ingress ALB add-on are enabled and whether your ALBs are updated to the latest image version.
 {: shortdesc}
 
 ```
@@ -2416,6 +2417,8 @@ ibmcloud oc alb ls --cluster my_cluster
 ### `ibmcloud oc alb rollback`
 {: #cs_alb_rollback}
 
+
+
 If your ALB pods were recently updated, but a custom configuration for your ALBs is affected by the latest build, you can roll back the update to the build that your ALB pods were previously running. All ALB pods in your cluster revert to their previously running state.
 {: shortdesc}
 
@@ -2469,12 +2472,14 @@ ibmcloud oc alb types [--json] [-s]
 ### `ibmcloud oc alb update`
 {: #cs_alb_update}
 
+
+
 Force an update of the Ingress ALB pods in the cluster to the latest version.
 {: shortdesc}
 
 If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. When you choose to manually update the add-on, all ALB pods in the cluster are updated to the latest build. You cannot update an individual ALB or choose which build to update the add-on to. Automatic updates remain disabled.
 
-When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the build version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
+When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the image version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
 
 ```
 ibmcloud oc alb update --cluster CLUSTER [--json] [-s]
@@ -2495,117 +2500,8 @@ ibmcloud oc alb update --cluster CLUSTER [--json] [-s]
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
-<br />
 
 
-## `kms` commands
-{: #ks_kms}
-
-Enable a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control.
-{: shortdesc}
-
-### `ibmcloud oc kms crk ls`
-{: #ks_kms_crk_ls}
-
-List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data encryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms).
-{: shortdesc}
-
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
-{: important}
-
-```
-ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--json] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
-<dd>The ID of the key management service instance that you want to list root keys for. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc kms crk ls --instance-id 1aa1a111-1111-1111-a111-a1aaaa1a1a1a
-```
-{: pre}
-
-### `ibmcloud oc kms enable`
-{: #ks_kms_enable}
-
-Encrypt your Kubernetes secrets by [enabling a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster. To rotate a key in a cluster with existing key encryption, rerun this command with a new root key ID.
-{: shortdesc}
-
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
-{: important}
-
-```
-ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [--public-endpoint] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>--container, -c <em>CLUSTER_NAME_OR_ID</em></code></dt>
-<dd>The name or ID of the cluster.</dd>
-
-<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
-<dd>The ID of the KMS instance that you want to use to encrypt the secrets in your cluster. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
-
-<dt><code>--crk <em>ROOT_KEY_ID</em></code></dt>
-<dd>The ID of the customer root key (CRK) in your KMS instance that you want to use to wrap the data encryption keys (DEK) that are stored locally in your cluster. To list available root keys, run `ibmcloud oc kms crk ls --instance-id <kms_instance_id>`.</dd>
-
-<dt><code>--public-endpoint</code></dt>
-<dd>Optional: Specify this option to use the KMS public service endpoint. If you do not include this flag, the private service endpoint is used by default.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc kms enable -c mycluster --instance-id a11aa11a-bbb2-3333-d444-e5e555e5ee5 --crk 1a111a1a-bb22-3c3c-4d44-55e555e55e55
-```
-{: pre}
-
-### `ibmcloud oc kms instance ls`
-{: #ks_kms_instance_ls}
-
-List available [key management service (KMS) instances](/docs/openshift?topic=openshift-encryption#kms) in your {{site.data.keyword.cloud_notm}} account that you can choose to enable in your cluster.
-{: shortdesc}
-
-```
-ibmcloud oc kms instance ls [--json] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc kms instance ls
-```
-{: pre}
 <br />
 
 
@@ -2623,7 +2519,7 @@ Disable automatic updates of all Fluentd pods in a cluster.
 
 
 
-Disable automatic updates of your Fluentd pods in a specific cluster. When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Fluentd configmap, but does not change the build version of your Fluentd for logging add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your add-on images.
+Disable automatic updates of your Fluentd pods in a specific cluster. When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Fluentd configmap, but does not change the image version of your Fluentd for logging add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your add-on images.
 
 ```
 ibmcloud oc logging autoupdate disable --cluster CLUSTER [-s]
@@ -2644,7 +2540,7 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER [-s]
 ### `ibmcloud oc logging autoupdate enable`
 {: #cs_log_autoupdate_enable}
 
-Enable automatic updates for your Fluentd pods in a specific cluster. Fluentd pods are automatically updated when a new build version is available.
+Enable automatic updates for your Fluentd pods in a specific cluster. Fluentd pods are automatically updated when a new image version is available.
 {: shortdesc}
 
 
@@ -3908,6 +3804,118 @@ ibmcloud oc credential unset --region REGION [-s]
 **Example**:
 ```
 ibmcloud oc credential unset --region us-south
+```
+{: pre}
+
+<br />
+
+
+## `kms` commands
+{: #ks_kms}
+
+Enable a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control.
+{: shortdesc}
+
+### `ibmcloud oc kms crk ls`
+{: #ks_kms_crk_ls}
+
+List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data encryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms).
+{: shortdesc}
+
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
+{: important}
+
+```
+ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--json] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
+<dd>The ID of the key management service instance that you want to list root keys for. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc kms crk ls --instance-id 1aa1a111-1111-1111-a111-a1aaaa1a1a1a
+```
+{: pre}
+
+### `ibmcloud oc kms enable`
+{: #ks_kms_enable}
+
+Encrypt your Kubernetes secrets by [enabling a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster. To rotate a key in a cluster with existing key encryption, rerun this command with a new root key ID.
+{: shortdesc}
+
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
+{: important}
+
+```
+ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [--public-endpoint] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--container, -c <em>CLUSTER_NAME_OR_ID</em></code></dt>
+<dd>The name or ID of the cluster.</dd>
+
+<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
+<dd>The ID of the KMS instance that you want to use to encrypt the secrets in your cluster. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
+
+<dt><code>--crk <em>ROOT_KEY_ID</em></code></dt>
+<dd>The ID of the customer root key (CRK) in your KMS instance that you want to use to wrap the data encryption keys (DEK) that are stored locally in your cluster. To list available root keys, run `ibmcloud oc kms crk ls --instance-id <kms_instance_id>`.</dd>
+
+<dt><code>--public-endpoint</code></dt>
+<dd>Optional: Specify this option to use the KMS public service endpoint. If you do not include this flag, the private service endpoint is used by default.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc kms enable -c mycluster --instance-id a11aa11a-bbb2-3333-d444-e5e555e5ee5 --crk 1a111a1a-bb22-3c3c-4d44-55e555e55e55
+```
+{: pre}
+
+### `ibmcloud oc kms instance ls`
+{: #ks_kms_instance_ls}
+
+List available [key management service (KMS) instances](/docs/openshift?topic=openshift-encryption#kms) in your {{site.data.keyword.cloud_notm}} account that you can choose to enable in your cluster.
+{: shortdesc}
+
+```
+ibmcloud oc kms instance ls [--json] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc kms instance ls
 ```
 {: pre}
 
