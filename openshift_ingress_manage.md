@@ -54,7 +54,17 @@ Manage automatic updates of all Ingress ALB pods in a cluster.
 
 By default, automatic updates to Ingress ALBs are enabled. ALB pods are automatically updated when a new image version is available. When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the image version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
 
-You can turn off the automatic updates for all Ingress ALBs in your cluster by running `ibmcloud oc alb autoupdate disable -c <cluster_name_or_ID>` or re-enable automatic updates by running `ibmcloud oc alb update -c <cluster_name_or_ID>`.
+You can disable or enable the automatic updates for all Ingress ALBs in your cluster.
+* To disable automatic updates:
+  ```
+  ibmcloud oc alb autoupdate disable -c <cluster_name_or_ID>
+  ```
+  {: pre}
+* To re-enable automatic updates:
+  ```
+  ibmcloud oc alb autoupdate enable -c <cluster_name_or_ID>
+  ```
+  {: pre}
 
 If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods by running `ibmcloud oc alb update -c <cluster_name_or_ID>`. When you choose to manually update the add-on, all ALB pods in the cluster are updated to the latest image version. You cannot update an individual ALB or choose which image version to update the add-on to. For example, you cannot change your ALB image to another type when you manually update. Automatic updates remain disabled.
 
