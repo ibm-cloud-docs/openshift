@@ -2499,117 +2499,6 @@ ibmcloud oc alb update --cluster CLUSTER [--json] [-s]
 <br />
 
 
-## `kms` commands
-{: #ks_kms}
-
-Enable a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control.
-{: shortdesc}
-
-### `ibmcloud oc kms crk ls`
-{: #ks_kms_crk_ls}
-
-List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data encryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms).
-{: shortdesc}
-
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
-{: important}
-
-```
-ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--json] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
-<dd>The ID of the key management service instance that you want to list root keys for. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc kms crk ls --instance-id 1aa1a111-1111-1111-a111-a1aaaa1a1a1a
-```
-{: pre}
-
-### `ibmcloud oc kms enable`
-{: #ks_kms_enable}
-
-Encrypt your Kubernetes secrets by [enabling a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster. To rotate a key in a cluster with existing key encryption, rerun this command with a new root key ID.
-{: shortdesc}
-
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
-{: important}
-
-```
-ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [--public-endpoint] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>--container, -c <em>CLUSTER_NAME_OR_ID</em></code></dt>
-<dd>The name or ID of the cluster.</dd>
-
-<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
-<dd>The ID of the KMS instance that you want to use to encrypt the secrets in your cluster. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
-
-<dt><code>--crk <em>ROOT_KEY_ID</em></code></dt>
-<dd>The ID of the customer root key (CRK) in your KMS instance that you want to use to wrap the data encryption keys (DEK) that are stored locally in your cluster. To list available root keys, run `ibmcloud oc kms crk ls --instance-id <kms_instance_id>`.</dd>
-
-<dt><code>--public-endpoint</code></dt>
-<dd>Optional: Specify this option to use the KMS public service endpoint. If you do not include this flag, the private service endpoint is used by default.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc kms enable -c mycluster --instance-id a11aa11a-bbb2-3333-d444-e5e555e5ee5 --crk 1a111a1a-bb22-3c3c-4d44-55e555e55e55
-```
-{: pre}
-
-### `ibmcloud oc kms instance ls`
-{: #ks_kms_instance_ls}
-
-List available [key management service (KMS) instances](/docs/openshift?topic=openshift-encryption#kms) in your {{site.data.keyword.cloud_notm}} account that you can choose to enable in your cluster.
-{: shortdesc}
-
-```
-ibmcloud oc kms instance ls [--json] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc kms instance ls
-```
-{: pre}
-<br />
-
-
 ## `logging` commands
 {: #logging_commands}
 
@@ -3909,6 +3798,118 @@ ibmcloud oc credential unset --region REGION [-s]
 **Example**:
 ```
 ibmcloud oc credential unset --region us-south
+```
+{: pre}
+
+<br />
+
+
+## `kms` commands
+{: #ks_kms}
+
+Enable a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control.
+{: shortdesc}
+
+### `ibmcloud oc kms crk ls`
+{: #ks_kms_crk_ls}
+
+List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data encryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms).
+{: shortdesc}
+
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
+{: important}
+
+```
+ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--json] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
+<dd>The ID of the key management service instance that you want to list root keys for. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc kms crk ls --instance-id 1aa1a111-1111-1111-a111-a1aaaa1a1a1a
+```
+{: pre}
+
+### `ibmcloud oc kms enable`
+{: #ks_kms_enable}
+
+Encrypt your Kubernetes secrets by [enabling a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster. To rotate a key in a cluster with existing key encryption, rerun this command with a new root key ID.
+{: shortdesc}
+
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
+{: important}
+
+```
+ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [--public-endpoint] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--container, -c <em>CLUSTER_NAME_OR_ID</em></code></dt>
+<dd>The name or ID of the cluster.</dd>
+
+<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
+<dd>The ID of the KMS instance that you want to use to encrypt the secrets in your cluster. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
+
+<dt><code>--crk <em>ROOT_KEY_ID</em></code></dt>
+<dd>The ID of the customer root key (CRK) in your KMS instance that you want to use to wrap the data encryption keys (DEK) that are stored locally in your cluster. To list available root keys, run `ibmcloud oc kms crk ls --instance-id <kms_instance_id>`.</dd>
+
+<dt><code>--public-endpoint</code></dt>
+<dd>Optional: Specify this option to use the KMS public service endpoint. If you do not include this flag, the private service endpoint is used by default.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc kms enable -c mycluster --instance-id a11aa11a-bbb2-3333-d444-e5e555e5ee5 --crk 1a111a1a-bb22-3c3c-4d44-55e555e55e55
+```
+{: pre}
+
+### `ibmcloud oc kms instance ls`
+{: #ks_kms_instance_ls}
+
+List available [key management service (KMS) instances](/docs/openshift?topic=openshift-encryption#kms) in your {{site.data.keyword.cloud_notm}} account that you can choose to enable in your cluster.
+{: shortdesc}
+
+```
+ibmcloud oc kms instance ls [--json] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc kms instance ls
 ```
 {: pre}
 
