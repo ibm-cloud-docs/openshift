@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-10"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -62,8 +62,6 @@ Unlike the master, you must update your workers for each patch version.
 
 **What happens during the master update?**</br>
 Your master is highly available with three replica master pods. The master pods have a rolling update, during which only one pod is unavailable at a time. Two instances are up and running so that you can access and change the cluster during the update. Your worker nodes, apps, and resources continue to run.
-
-For clusters that run previous versions of Kubernetes, when you update the Kubernetes API server, the API server is down for about 5 - 10 minutes. During the update, you cannot access or change the cluster. However, worker nodes, apps, and resources that cluster users deployed are not modified and continue to run.
 
 **Can I roll back the update?**</br>
 No, you cannot roll back a cluster to a previous version after the update process takes place. Be sure to use a test cluster and follow the instructions to address potential issues before you update your production master.
@@ -426,17 +424,16 @@ You can optionally disable automatic updates for the following components:
 
 Yes. Your cluster is deployed with the following managed components and associated resources that cannot be changed, except to scale pods or edit configmaps for certain performance benefits. If you try to change one of these deployment components, their original settings are restored on a regular interval when they are updated with the cluster master. However, note that resources that you create that are associated with these components, such as Calico network policies that you create to be implemented by the Calico deployment components, are not updated.
 
-* `calico`
-* `coredns`
-* `coredns-autoscaler`
-* `heapster`
+* `calico` components
+* `coredns` components
+* `ibm-cloud-provider-ip`
 * `ibm-file-plugin`
-* `ibm-storage-watcher`
 * `ibm-keepalived-watcher`
-* `kube-dns-amd64`
-* `kube-dns-autoscaler`
-* `kubernetes-dashboard`
+* `ibm-master-proxy`
+* `ibm-storage-watcher`
+* `kubernetes-dashboard` components
 * `metrics-server`
+* `olm-operator` and `catalog` components (1.16 and later)
 * `vpn`
 
 **Can I install other plug-ins or add-ons than the default components?**</br>
