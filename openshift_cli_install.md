@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-03-10"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -98,6 +98,9 @@ For reference information about these CLIs, see the documentation for those tool
 -   [`ibmcloud cr` commands](/docs/Registry?topic=container-registry-cli-plugin-containerregcli)
 
 <br />
+
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-10"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -59,7 +59,8 @@ The following beta versions of the redesigned Red Hat OpenShift on IBM Cloud plu
 When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 16 March 2020 to update CLI command syntax.</br></br>To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run.
 {: important}
 
-Check out the following changes between each version of the CLI plug-in:
+
+Check out the following syntax and behavior changes between each version of the CLI plug-in:
 
 |Functionality|`0.2`|`0.3`|`0.4`|`1.0`|
 |-------------|-----|-----|-----|-----|
@@ -100,6 +101,9 @@ Review the following changes for 0.4 versions of the CLI plug-in.
 {: caption="Overview of version changes for version 0.4 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
 {: summary="Overview of version changes for version 0.4 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
 
+<br />
+
+
 ## Version 0.3
 {: #03}
 
@@ -125,6 +129,9 @@ Version 0.3 of the CLI plug-in is deprecated. Ensure that your Red Hat OpenShift
 {: caption="Overview of version changes for version 0.3 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
 {: summary="Overview of version changes for version 0.3 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
 
+<br />
+
+
 ## Version 0.2
 {: #02}
 
@@ -149,6 +156,9 @@ Version 0.2 of the CLI plug-in is deprecated. Ensure that your Red Hat OpenShift
 | 0.2.19 | 16 Jan 2019 | <ul><li>Adds the `IKS_BETA_VERSION` environment variable to enable the redesigned beta version of the Red Hat OpenShift on IBM Cloud plug-in CLI. To try out the redesigned version, see [Using the beta command structure](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta).</li><li>Increases the default timeout value for `ibmcloud oc subnets` to `60s`.</li><li>Fixes a minor bug and updates the help text in various languages.</li></ul> |
 {: caption="Overview of version changes for version 0.2 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
 {: summary="Overview of version changes for version 0.2 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
+
+<br />
+
 
 ## Version 0.1
 {: #01}
