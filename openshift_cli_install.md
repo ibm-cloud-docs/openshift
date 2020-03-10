@@ -176,6 +176,11 @@ This task includes the information for updating the following CLIs:
 -   OpenShift CLI
 -   {{site.data.keyword.registryshort_notm}} plug-in
 
+
+When version 1.0 of the Red Hat OpenShift on IBM Cloud plug-in releases, permanent syntax and behavior changes are not backwards compatible. You have until 16 March 2020 to update `ibmcloud oc` CLI command syntax. For more information, see [Using the beta plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).</br></br>To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run.
+{: important}
+
+
 <br>
 To update the CLIs:
 
