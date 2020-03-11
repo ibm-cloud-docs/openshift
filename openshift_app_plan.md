@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-11"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -117,7 +117,7 @@ OpenShift has different default settings than community Kubernetes, such as stri
 {: caption="Common scenarios that require app modifications" caption-side="top"}
 {: summary="The first column describes an app scenario. The second column explains the steps that you can take to address the app scenario."}
 
-#### Example steps for giving a deployment privileged access
+### Example steps for giving a deployment privileged access
 {: #openshift_move_apps_example_scc}
 
 If you have an app that runs with root permissions, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your OpenShift cluster. For example, you might set up your project with a service account to control privileged access, and then modify your deployment to use this service account.
