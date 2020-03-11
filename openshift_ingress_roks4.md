@@ -176,40 +176,38 @@ The Ingress controller for your app is already registered with the IBM-provided 
 
 2.  If you want to configure TLS termination, get your custom TLS secret ready.
   * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}:
-    1. Import the certificate to your cluster. When you import a certificate, a secret that holds the TLS certificate is automatically created in the `ibm-cert-store` namespace. <p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
-      ```
-      ibmcloud oc alb cert deploy --secret-name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn>
-      ```
-      {: pre}
-    2. Copy the secret into the namespace where your app service is deployed.
-      ```
-      oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-namespace>/g' | kubectl -n <new-namespace> create -f -
-      ```
-      {: pre}
-  * To create TLS certificate:
-    1. Generate a certificate authority (CA) cert and key from your certificate provider.
-      * If you have your own domain, purchase an official TLS certificate for your domain.
-      * Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
-      * If you registered a wildcard domain, generate a wildcard certificate.
-      * TLS certificates that contain pre-shared keys (TLS-PSK) are not supported.
-    2. Convert the cert and key into base-64.
-       1. Encode the cert and key into base-64 and save the base-64 encoded value in a new file.
-          ```
-          openssl base64 -in tls.key -out tls.key.base64
-          ```
-          {: pre}
-       2. View the base-64 encoded value for your cert and key.
-          ```
-          cat tls.key.base64
-          ```
-          {: pre}
-    3. Create a Kubernetes secret for your certificate in the namespace where your app services are deployed.
+      1. Import the certificate to your cluster. When you import a certificate, a secret that holds the TLS certificate and key is automatically created in the `ibm-cert-store` namespace. <p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
+        ```
+        ibmcloud oc alb cert deploy --secret-name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn>
+        ```
+        {: pre}
+      2. Copy the secret into the namespace where your app service is deployed.
+        ```
+        oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-namespace>/g' | kubectl -n <new-namespace> create -f -
+        ```
+        {: pre}
+  * To create a TLS certificate:
+      1. Generate a certificate authority (CA) cert and key from your certificate provider.
+          * If you have your own domain, purchase an official TLS certificate for your domain.
+          * Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
+          * If you registered a wildcard domain, generate a wildcard certificate.
+          * TLS certificates that contain pre-shared keys (TLS-PSK) are not supported.
+      2. Encode the cert and key into base-64 and save the base-64 encoded value in a new file.
+        ```
+        openssl base64 -in tls.key -out tls.key.base64
+        ```
+        {: pre}
+      3. View the base-64 encoded value for your cert and key.
+        ```
+        cat tls.key.base64
+        ```
+        {: pre}
+      4. Create a Kubernetes secret for your certificate in the namespace where your app services are deployed. Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
          ```
          oc create secret tls <secret_name> -n <namespace> --cert=<tls.crt> --key=<tls.key>
          ```
          {: pre}
-         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
-         {: note}
+         
 
 ### Step 3: Create the Ingress resource
 {: #ingress-roks4-public-3}
@@ -254,9 +252,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     </tr>
     <tr>
     <td><code>host</code></td>
-    <td>Replace <em>&lt;domain&gt;</em> with the IBM-provided Ingress subdomain or your custom domain.
-    </br></br>
-    <strong>Note:</strong><ul><li>If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`.</li><li>Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li></ul></td>
+    <td>Replace <em>&lt;domain&gt;</em> with the IBM-provided Ingress subdomain or your custom domain.<ul><li>If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`.</li><li>Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li></ul></td>
     </tr>
     <tr>
     <td><code>path</code></td>
@@ -279,14 +275,12 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     oc apply -f myingressresource.yaml -n <project>
     ```
     {: pre}
-4.   Verify that the Ingress resource was created successfully.
+4.   Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
 
-      ```
-      oc describe ingress myingressresource
-      ```
-      {: pre}
-
-      1. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
+    ```
+    oc describe ingress myingressresource
+    ```
+    {: pre}
 
 
 Your Ingress resource is created in the same project as your app services, and your apps are registered with the Ingress controller.
@@ -406,7 +400,7 @@ To expose apps that are outside of your cluster to the public:
 
 If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
 
-These annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
+These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
 {: important}
 
 To add annotations to the router:

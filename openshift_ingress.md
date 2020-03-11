@@ -354,14 +354,12 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     oc apply -f myingressresource.yaml -n <namespace>
     ```
     {: pre}
-4.   Verify that the Ingress resource was created successfully.
+4.   Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
 
-      ```
-      oc describe ingress myingressresource
-      ```
-      {: pre}
-
-      1. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
+    ```
+    oc describe ingress myingressresource
+    ```
+    {: pre}
 
 
 Your Ingress resource is created in the same namespace as your app services. Your apps in this namespace are registered with the cluster's Ingress ALB.
@@ -541,14 +539,12 @@ To expose apps that are outside of your cluster to the public:
     oc apply -f myingressresource.yaml
     ```
     {: pre}
-4.   Verify that the Ingress resource was created successfully.
+4.   Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
 
-      ```
-      oc describe ingress myingressresource
-      ```
-      {: pre}
-
-      1. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
+    ```
+    oc describe ingress myingressresource
+    ```
+    {: pre}
 
 5. In a web browser, enter the URL of the app service to access.
   ```
@@ -756,14 +752,12 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     oc apply -f myingressresource.yaml -n <namespace>
     ```
     {: pre}
-4.   Verify that the Ingress resource was created successfully.
+4.   Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
 
-      ```
-      oc describe ingress myingressresource
-      ```
-      {: pre}
-
-      1. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
+    ```
+    oc describe ingress myingressresource
+    ```
+    {: pre}
 
 
 Your Ingress resource is created in the same namespace as your app services. Your apps in this namespace are registered with the cluster's Ingress ALB.
