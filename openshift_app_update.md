@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-03-11"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -64,45 +64,22 @@ Looking for information about scaling Cloud Foundry applications? Check out [IBM
 {: tip}
 
 Before you begin:
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
 - Make sure that you are assigned a [service role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 Steps:
 
-1.  Deploy your app to a cluster from the CLI. When you deploy your app, you must request CPU.
-
+1.  Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/openshift?topic=openshift-deploy_app#app_cli).
     ```
-    oc run <app_name> --image=<image> --requests=cpu=<cpu> --expose --port=<port_number>
+    oc create deployment <app_name> --image=<image>
     ```
     {: pre}
-
-    <table summary="A table that describes in Column 1 the oc command options and in Column 2 how to fill out those options.">
-    <caption>Command components for `oc run`</caption>
-    <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command&apos;s components</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>--image</code></td>
-    <td>The application that you want to deploy.</td>
-    </tr>
-    <tr>
-    <td><code>--request=cpu</code></td>
-    <td>The required CPU for the container, which is specified in millicores. As an example, <code>--requests=200m</code>.</td>
-    </tr>
-    <tr>
-    <td><code>--expose</code></td>
-    <td>When true, creates an external service.</td>
-    </tr>
-    <tr>
-    <td><code>--port</code></td>
-    <td>The port where your app is available externally.</td>
-    </tr></tbody></table>
-
-    For more complex deployments, you might need to create a [configuration file](/docs/openshift?topic=openshift-deploy_app#app_cli).
-    {: tip}
-
-2.  Create an autoscaler and define your policy. For more information about working with the `oc autoscale` command, see [the Kubernetes documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#autoscale){: external}.
+2.  Set CPU resource limits in millicores for the containers that run in your deployment, such as `100m`. You can also set memory limits, but the horizontal pod autoscaler only considers CPU resource limits for scaling purposes. For more information, see the [`kubectl set resources` documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-resources-em-){: external}.
+    ```
+    oc set resources deployment <app_name> --limits=cpu=100m
+    ```
+    {: pre}
+3.  Create a horizontal pod autoscaler and define your policy. For more information, see the [`kubectl autoscale` documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#autoscale){: external}.
 
     ```
     oc autoscale deployment <deployment_name> --cpu-percent=<percentage> --min=<min_value> --max=<max_value>
@@ -143,7 +120,7 @@ Want to prevent downtime during your rolling update? Be sure to specify a [readi
 {: tip}
 
 Before you begin:
-*   [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+*   [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
 *   Create a [deployment](/docs/openshift?topic=openshift-deploy_app#app_cli).
 *   Make sure that you have a [service role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 

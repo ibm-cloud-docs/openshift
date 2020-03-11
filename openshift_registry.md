@@ -755,7 +755,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     {: pre}
 4.  Create a pod in the project that builds a container from an image in the entitled registry.
     ```
-    oc run <pod_name> --image=cp.icr.io/<image_name> -n <project>
+    oc run <pod_name> --image=cp.icr.io/<image_name> -n <project> --generator=run-pod/v1
     ```
     {: pre}
 5.  Check that your container was able to successfully build from the entitled image by verifying that the pod is in a **Running** status.
