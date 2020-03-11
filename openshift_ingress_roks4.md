@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-11"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -52,8 +52,8 @@ Before you get started with Ingress, review the following prerequisites.
     - **Administrator** platform role for the cluster
     - **Manager** service role in all projects
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller and router in that zone.
-- Ingress requires at least two worker nodes per zone to ensure high availability.
-* Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the ALB can route packets to various subnets in the account.
+- Ingress requires at least two worker nodes per zone to ensure high availability and to ensure that updates to your Ingress configuration roll out correctly. If only one worker node exists per zone, any time that you update your Ingress resources, you must manually restart the router pods for your Ingress controller so that the pods pick up the changes.
+* Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#how-you-can-initiate-the-conversion). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
 <br />
 
@@ -147,9 +147,9 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 Choose the domain that you use to access your apps and the TLS termination for the app.
 {: shortdesc}
 
-You can use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain, and configure a custom Ingress controller with the domain.
+**Domain**: You can use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain, and configure a custom Ingress controller with the domain.
 
-The Ingress controller load balances HTTP network traffic to the apps in your cluster. To also load balance incoming HTTPS connections, you can configure the Ingress controller with a TLS certificate to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.
+**TLS termination**: The Ingress controller load balances HTTP network traffic to the apps in your cluster. To load balance incoming HTTPS connections, you can use a TLS certificate so that the Ingress controller can decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.<p class="note">Currently, when you configure TLS termination for Ingress, only HTTPS connections are permitted.</p>
 
 **To use the IBM-provided Ingress domain and TLS secret:**
 
@@ -173,7 +173,20 @@ The Ingress controller for your app is already registered with the IBM-provided 
 1.  Get your custom domain ready.
     1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer.
     2.  Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
+
 2.  If you want to configure TLS termination, get your custom TLS secret ready.
+  * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}:
+    1. Import the certificate to your cluster. When you import a certificate, a secret that holds the TLS certificate is automatically created in the `ibm-cert-store` namespace. <p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
+      ```
+      ibmcloud oc alb cert deploy --secret-name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn>
+      ```
+      {: pre}
+    2. Copy the secret into the namespace where your app service is deployed.
+      ```
+      oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-namespace>/g' | kubectl -n <new-namespace> create -f -
+      ```
+      {: pre}
+  * To create TLS certificate:
     1. Generate a certificate authority (CA) cert and key from your certificate provider.
       * If you have your own domain, purchase an official TLS certificate for your domain.
       * Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
@@ -185,43 +198,18 @@ The Ingress controller for your app is already registered with the IBM-provided 
           openssl base64 -in tls.key -out tls.key.base64
           ```
           {: pre}
-
        2. View the base-64 encoded value for your cert and key.
           ```
           cat tls.key.base64
           ```
           {: pre}
-
-    3. Create a Kubernetes secret for your certificate.
+    3. Create a Kubernetes secret for your certificate in the namespace where your app services are deployed.
          ```
-         oc create secret tls <secret_name> -n openshift-ingress --cert=<tls.crt> --key=<tls.key>
+         oc create secret tls <secret_name> -n <namespace> --cert=<tls.crt> --key=<tls.key>
          ```
          {: pre}
-         Make sure that you do not create the secret with the same name as the IBM-provided Ingress secret. You can get the name of the IBM-provided Ingress secret by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
          {: note}
-
-3.  Create a custom Ingress controller. You must specify your custom domain and secret in a new Ingress controller because the settings for the default Ingress controller cannot be changed.
-    1.  Create an Ingress controller configuration file.
-        ```yaml
-        apiVersion: operator.openshift.io/v1
-        kind: IngressController
-        metadata:
-          name: custom-ingress-controller
-        spec:
-          domain: <custom_domain>
-          defaultCertificate: <custom_TLS_secret_name>
-        ```
-        {: codeblock}
-
-        When you specify your custom secret in this Ingress controller configuration, the TLS certificate is applied to all apps that you register with this custom domain. If you want to apply the TLS certificate to only certain apps, specify the secret only in the Ingress resource files for those apps, and do not specify the secret in this Ingress controller configuration.
-        {: tip}
-    2. Create the Ingress controller in your cluster.
-      ```
-      oc create -f custom-ingress-controller.yaml -n openshift-ingress-operator
-      ```
-      {: pre}
-
-After you create the Ingress controller, a router is automatically created and deployed based on the Ingress controller settings.
 
 ### Step 3: Create the Ingress resource
 {: #ingress-roks4-public-3}
@@ -236,6 +224,10 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     metadata:
       name: myingressresource
     spec:
+      tls:
+      - hosts:
+        - <custom_domain>
+        secretName: <custom_secret_name>
       rules:
       - host: <domain>
         http:
@@ -257,6 +249,10 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     </thead>
     <tbody>
     <tr>
+    <td><code>tls</code></td>
+    <td><p class="note">If you use the IBM-provided Ingress subdomain, do not include a `spec.tls` section in your Ingress resource. The default Ingress controller is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. The Ingress controller can access and apply the default certificate in any project where you create this Ingress resource.</p>If you use a custom domain and want to use TLS, include this TLS section in your resource with the following fields:<ul><li>Replace <em>&lt;domain&gt;</em> with your custom domain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li><li>Replace <em>&lt;tls_secret_name&gt;</em> with the secret that you created earlier that holds your custom TLS certificate and key.</li></ul></td>
+    </tr>
+    <tr>
     <td><code>host</code></td>
     <td>Replace <em>&lt;domain&gt;</em> with the IBM-provided Ingress subdomain or your custom domain.
     </br></br>
@@ -277,12 +273,6 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     <td>The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.</td>
     </tr>
     </tbody></table>
-    <p class="note">If you use the IBM-provided Ingress subdomain, do not include a `spec.tls` section in your Ingress resource. The default Ingress controller is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. The Ingress controller can access and apply the default in any project where you create this Ingress resource.</br></br>If you use a custom domain and did not specify the custom TLS secret when you created the Ingress controller configuration, you can specify the secret by adding a `spec.tls` section to this Ingress resource:
-        <pre class="screen">
-        tls:
-        - hosts:
-          - &lt;custom_domain&gt;
-          secretName: &lt;custom_secret_name&gt;</pre></p>
 
 3.  Create the Ingress resource for your cluster. Ensure that the resource deploys into the same project as the app services that you specified in the resource.
     ```
