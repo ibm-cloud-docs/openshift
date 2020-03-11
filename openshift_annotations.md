@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-11"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -586,7 +586,7 @@ kind: Ingress
 metadata:
   name: myingress
   annotations:
-    ingress.bluemix.net/sticky-cookie-services: "serviceName=<myservice1> name=<cookie_name1> expires=<expiration_time1> path=<cookie_path1> hash=<hash_algorithm1>;serviceName=<myservice2> name=<cookie_name2> expires=<expiration_time2> path=<cookie_path2> hash=<hash_algorithm2>"
+    ingress.bluemix.net/sticky-cookie-services: "serviceName=<myservice1> name=<cookie_name1> expires=<expiration_time1> path=<cookie_path1> hash=sha1 [secure] [httponly]"
 spec:
   tls:
   - hosts:
@@ -614,7 +614,9 @@ spec:
 | `name` | Replace `<cookie_name>` with the name of a sticky cookie that is created during a session. |
 | `expires` | Replace `<expiration_time>` with the time in seconds (s), minutes (m), or hours (h) before the sticky cookie expires. This time is independent of the user activity. After the cookie is expired, the cookie is deleted by the client web browser and no longer sent to the ALB. For example, to set an expiration time of 1 second, 1 minute, or 1 hour, enter `1s`, `1m`, or `1h`. |
 | `path` | Replace `<cookie_path>` with the path that is appended to the Ingress subdomain and that indicates for which domains and subdomains the cookie is sent to the ALB. For example, if your Ingress domain is `www.myingress.com` and you want to send the cookie in every client request, you must set `path=/`. If you want to send the cookie only for `www.myingress.com/myapp` and all its subdomains, then you must set `path=/myapp`. |
-| `hash` | Replace `<hash_algorithm>` with the hash algorithm that protects the information in the cookie. Only `sha1` is supported. SHA1 creates a hash sum based on the information in the cookie and appends this hash sum to the cookie. The server can decrypt the information in the cookie and verify data integrity. |
+| `hash` | The hash algorithm that protects the information in the cookie. Only `sha1` is supported. SHA1 creates a hash sum based on the information in the cookie and appends this hash sum to the cookie. The server can decrypt the information in the cookie and verify data integrity. |
+| `secure` | Include this parameter to enable secure cookies that are transferred only via HTTPS. This parameter is not required for HTTPS connections, but causes failures for HTTP connections. |
+| `httponly` | Include this parameter to help prevent Cross Site Scripting attacks that use JavaScript to steal session cookies. If any apps that you expose with Ingress require JavaScript to interact with the session cookie, do not include this parameter. |
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
