@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -169,7 +169,7 @@ Set up the build with access to the image, either by pulling the image from the 
             ```
             {: pre}
 
-            Example to refer to the secret in the builder configuration file.
+            Example to refer to the secret in the build configuration file.
             ```
             spec:
                 output:
