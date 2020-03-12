@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-03-12"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -462,7 +462,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>01 July 2019</td>
   <td><ul>
   <li><strong>Infrastructure permissions</strong>: Updated the [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) required for common use cases.</li>
-  <li><strong>OpenShift FAQs</strong>: Expanded the [FAQs](/docs/containers?topic=containers-faqs#container_platforms) to include information about OpenShift clusters.</li>
+  <li><strong>OpenShift FAQs</strong>: Expanded the [FAQs](/docs/openshift?topic=openshift-faqs#container_platforms) to include information about OpenShift clusters.</li>
   <li><strong>strongSwan VPN service</strong>: If you install strongSwan in a multizone cluster and use the `enableSingleSourceIP=true` setting, you can now [set `local.subnet` to the `%zoneSubnet` variable and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster](/docs/openshift?topic=openshift-vpn#strongswan_4).</li>
   </ul></td>
 </tr>
