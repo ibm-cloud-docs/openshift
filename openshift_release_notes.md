@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 12 March 2020 | **Feature gates**: Added the [feature gates for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-settings#feature-gates) that differ from community OpenShift distributions.|
 | 09 March 2020 | **Managing Ingress ALBs**: For version 3.11 clusters only: Added a page for [managing the lifecycle of your ALBs](/docs/openshift?topic=openshift-ingress-manage), including information about creating, updating, and moving ALBs. |
 | 04 March 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.102](/docs/openshift?topic=openshift-cs_cli_changelog#04).</li><li>**Ingress ALB changelog**: Updated the [`ingress-auth` image build to 390](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul> |
 | 02 March 2020 | **Version changelogs**: Worker node patch updates are available for OpenShift [3.11.170_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1543_worker). |
