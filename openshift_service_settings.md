@@ -48,7 +48,7 @@ Review the feature gates that are applied to all master and worker node componen
 {: shortdesc}
 
 | OpenShift version | Default feature gates |
-|------|--------------|
+|---|---|
 | 4.3 | <ul><li><code>ExpandInUsePersistentVolumes=true</code></li><li><code>NodeDisruptionExclusion=false</code></li><li><code>ServiceNodeExclusion=false</code></li><li><code>SCTPSupport=false</code></li></ul>|
-{: summary="The rows are read from left to right. The version is in the first column, with the default feature gates in the second column."}
 {: caption="Overview of feature gates" caption-side="top"}
+{: summary="The rows are read from left to right. The version is in the first column, with the default feature gates in the second column."}
