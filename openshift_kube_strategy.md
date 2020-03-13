@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -111,15 +111,14 @@ First, let's begin with your existing or project workload usage.
 
 Now let's add some other features that you might use.
 
-
-
-1.  Consider whether your app pulls large or many images, which can take up local storage on the worker node.
-2.  Decide whether you want to [integrate services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations) into your cluster, such as [Helm](/docs/openshift?topic=openshift-helm#public_helm_install) or [Prometheus](https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus){: external}. These integrated services and add-ons spin up pods that consume cluster resources.
+1.  Keep in mind that the [worker nodes reserve certain amounts of CPU and memory resources](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node) to run required components, such as the operating system or container runtime.
+2.  Consider whether your app pulls large or many images, which can take up local storage on the worker node.
+3.  Decide whether you want to [integrate services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations) into your cluster, such as [Helm](/docs/openshift?topic=openshift-helm#public_helm_install) or [Prometheus](https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus){: external}. These integrated services and add-ons spin up pods that consume cluster resources.
 
 ### What type of availability do I want my workload to have?
 {: #sizing_availability}
 
-Don't forget that you want your workload to be up as much as possible!
+Don't forget that you want your workload to be up as much as possible! As such, you might need replicas of your workload pods.
 
 1.  Plan out your strategy for [highly available clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters), such as deciding between single or multizone clusters.
 2.  Review [highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps) to help decide how you can make your app available.
@@ -136,8 +135,49 @@ Now that you have a good idea of what your workload looks like, let's map the es
     *   **Don't overload worker nodes**: To avoid your pods competing for CPU or running inefficiently, you must know what resources your apps require so that you can plan the number of worker nodes that you need. For example, if your apps require less resources than the resources that are available on the worker node, you can limit the number of pods that you deploy to one worker node. Keep your worker node at around 75% capacity to leave space for other pods that might need to be scheduled. If your apps require more resources than you have available on your worker node, use a different worker node flavor that can fulfill these requirements. You know that your worker nodes are overloaded when they frequently report back a status of `NotReady` or evict pods due to the lack of memory or other resources.
     *   **Larger vs. smaller worker node flavors**: Larger nodes can be more cost efficient than smaller nodes, particularly for workloads that are designed to gain efficiency when they process on a high-performance machine. However, if a large worker node goes down, you need to be sure that your cluster has enough capacity to gracefully reschedule all the workload pods onto other worker nodes in the cluster. Smaller worker can help you scale more gracefully.
     *   **Replicas of your app**: To determine the number of worker nodes that you want, you can also consider how many replicas of your app that you want to run. For example, if you know that your workload requires 32 CPU cores, and you plan to run 16 replicas of your app, each replica pod needs 2 CPU cores. If you want to run only one app pod per worker node, you can order an appropriate number of worker nodes for your cluster type to support this configuration.
-3.  Run performance tests to continue refining the number of worker nodes you need in your cluster, with representative latency, scalability, data set, and workload requirements.
-4.  For workloads that need to scale up and down in response to resource requests, set up the [horizontal pod autoscaler](/docs/openshift?topic=openshift-update_app#app_scaling) and [cluster worker pool autoscaler](/docs/openshift?topic=openshift-ca#ca).
+
+### How do I monitor resource usage and capacity in my cluster?
+{: #sizing_manage} 
+
+Now that you have a good estimate of your app size and the worker nodes that you need to run your workload, you can deploy your app and continuously monitor performance to maximize your compute resource usage.
+
+1.  [Create your cluster](/docs/openshift?topic=openshift-clusters) with the worker pool flavor and number of worker nodes that you [previously estimated](#sizing_workers).
+2.  Review what compute resources your cluster uses by default and calculate the remaining cluster capacity that you can use for your workloads.
+    1.  Find the CPU and memory usage across all worker nodes. From the [{{site.data.keyword.cloud_notm}} Red Hat OpenShift on IBM Cloud Clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, you can also click your cluster and review the **Cluster Insights** card.
+        ```
+        oc top nodes
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        NAME            CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+        10.xxx.xx.xxx   149m         7%     2402Mi          84%       
+        10.xxx.xx.xxx   122m         6%     2395Mi          83%       
+        10.xxx.xx.xxx   144m         7%     2376Mi          83%   
+        ```
+        {: screen}
+    3.  Add the CPU and memory usage amounts to the [worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node) that are set for each worker node by default.
+    4.  Subtract the worker node reserved and default app usage amounts from the total worker node size. This amount represents the total compute resources of your worker nodes before you deploy any apps or other workloads.
+3.  [Deploy your apps](/docs/openshift?topic=openshift-deploy_app) to the cluster, and make sure to [set resource requests and limits](/docs/openshift?topic=openshift-app#resourcereq) based on the [app size that you previously estimated](#sizing_resources) for your apps, to limit the amount of compute resources the apps can consume.
+4.  Deploy any add-ons, plug-ins, or other cloud services that you want to use.
+5.  Review what compute resources your workloads consume and calculate the remaining cluster capacity to deploy additional apps or scale existing apps.
+    1.  List the pods that run in your cluster.
+        ```
+        oc get pods --all-namespaces
+        ```
+        {: pre}
+    2.  Get the details of a pod. Note the **limits** and **request** map of the CPU and memory.
+        ```
+        oc get pod -n <project> <pod> -o=jsonpath='{range .spec.containers[*]}  {.name}:{.resources}{"\n"}{end}'
+        ```
+        {: pre}
+    3.  Repeat the previous step for each pod in your cluster.
+    4.  Add up the resource requests and limits of the apps that you deployed by default.
+6.  Subtract the sum of your workload resource limits that you estimated in Step 5 from the available compute resources of your worker nodes that you estimated in Step 2. The remaining amount is the extra compute resources that you have to run new workloads or to scale existing your workloads.
+7.  For workloads that need to scale up and down in response to resource requests, set up the [horizontal pod autoscaler](/docs/openshift?topic=openshift-update_app#app_scaling) and [cluster worker pool autoscaler](/docs/openshift?topic=openshift-ca#ca).
+8.  [Set up monitoring tools](/docs/containers?topic=containers-health#view_metrics) to continue reviewing CPU and memory usage across worker nodes in your cluster.
+9.  Run performance tests to continue refining the number of worker nodes you need in your cluster, with representative latency, scalability, data set, and workload requirements.
 
 <br />
 
