@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-03-13"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -96,6 +96,7 @@ By default, your worker nodes can automatically connect to the Kubernetes master
 To make your master publicly or privately accessible to cluster users, you can enable the public and private service endpoints. You can enable the private service endpoint only by using the CLI to create a cluster. Before you can create a version 3.11 cluster with public and private service endpoints, VRF is required in your {{site.data.keyword.cloud_notm}} account, and you must enable your account to use service endpoints. To enable VRF and service endpoints, run `ibmcloud account update --service-endpoint-enable true`.
 * Communication between worker nodes and master is established over both the private network through the private service endpoint and the public network through the public service endpoint. By routing half of the worker-to-master traffic over the public endpoint and half over the private endpoint, your master-to-worker communication is protected from potential outages of the public or private network.
 * The master is publicly accessible to authorized cluster users through the public service endpoint. The master is privately accessible through the private service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network through a VPN connection or {{site.data.keyword.cloud_notm}} Direct Link. Note that you must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.cloud_notm}} Direct Link connection.
+* To create a cluster with the public and private service endpoints enabled, use the `ibmcloud oc cluster create classic` [CLI command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) and include the `--public-service-endpoint` and `--private-service-endpoint` flags.
 
 </br>
 
