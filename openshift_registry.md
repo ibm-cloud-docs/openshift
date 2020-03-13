@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-13"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -94,8 +94,11 @@ Your app's images must be stored in a container registry that your cluster can a
 ## Using the internal registry
 {: #openshift_internal_registry}
 
-OpenShift clusters are set up by default with an internal registry. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}.
+OpenShift clusters are set up by default with an internal registry. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster.
 {: shortdesc}
+
+Want to learn more about how builds, image streams, and the internal registry work together? Read the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}. 
+{: tip}
 
 For more information, see the following topics.
 * [Storing images in the internal registry](#storage_internal_registry)
