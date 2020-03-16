@@ -317,7 +317,7 @@ Before you begin, [create a worker pool](/docs/openshift?topic=openshift-add_wor
 3. Create a daemon set to install the drivers and platform software on your SGX-capable worker nodes.
 
   ```
-  curl -fssl https://raw.githubusercontent.com/ibm-cloud-security/data-shield-reference-apps/master/scripts/sgx-driver-psw/config_openshift/create_openshift_config.sh | bash
+  oc create -f https://raw.githubusercontent.com/ibm-cloud-security/data-shield-reference-apps/master/scripts/sgx-driver-psw/install_sgx/deployment_install_sgx_openshift.yaml
   ```
   {: codeblock}
 
@@ -351,7 +351,7 @@ Before you begin, [create a worker pool](/docs/openshift?topic=openshift-add_wor
 
 Now, you can develop your confidential computing app to use the enclave for sensitive data.
 
-To uninstall the drivers and platform software, you can follow the same steps, but with the following installation command: `curl -fssl https://raw.githubusercontent.com/ibm-cloud-security/data-shield-reference-apps/master/scripts/sgx-driver-psw/config_openshift/create_openshift_config.sh | bash`
+To uninstall the drivers and platform software, you can follow the same steps, but with the following installation command: `oc create -f https://raw.githubusercontent.com/ibm-cloud-security/data-shield-reference-apps/master/scripts/sgx-driver-psw/uninstall_sgx/deployment_uninstall_sgx_openshift.yaml`
 {: note}
 
 <br />
