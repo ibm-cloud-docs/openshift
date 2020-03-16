@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-16"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,7 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| XX March 2020 | **Sizing workloads**: Enhanced the topic with a [How do I monitor resource usage and capacity in my cluster?](/docs/openshift?topic=openshift-strategy#sizing_manage) FAQ. |
+| 16 March 2020 | <ul><li>**New! CLI 1.0**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.0](/docs/openshift?topic=openshift-cs_cli_changelog#10). This version contains permanent syntax and behavior changes that are not backwards compatible, so before you update be sure to follow the guidance in [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).</li><li>**Sizing workloads**: Enhanced the topic with a [How do I monitor resource usage and capacity in my cluster?](/docs/openshift?topic=openshift-strategy#sizing_manage) FAQ.</li></ul> |
 | 12 March 2020 | **Feature gates**: Added the [feature gates for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-settings#feature-gates) that differ from community OpenShift distributions.|
 | 09 March 2020 | **Managing Ingress ALBs**: For version 3.11 clusters only: Added a page for [managing the lifecycle of your ALBs](/docs/openshift?topic=openshift-ingress-manage), including information about creating, updating, and moving ALBs. |
 | 04 March 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.102](/docs/openshift?topic=openshift-cs_cli_changelog#04).</li><li>**Ingress ALB changelog**: Updated the [`ingress-auth` image build to 390](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul> |
