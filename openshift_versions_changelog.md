@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-16"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,7 +39,7 @@ subcollection: openshift
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters. Changes include updates to OpenShift, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
 {:shortdesc}
 
-Unless otherwise noted in the changelogs, the {{site.data.keyword.cloud_notm}} provider version enables Kubernetes APIs and features that are at beta. Kubernetes alpha features, which are subject to change, are disabled.
+Unless otherwise noted in the changelogs, the {{site.data.keyword.cloud_notm}} provider version enables OpenShift APIs and features that are at beta. OpenShift alpha features, which are subject to change, are disabled.
 
 Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https://cloud.ibm.com/status?selected=security) for security vulnerabilities that affect Red Hat OpenShift on IBM Cloud. You can filter the results to view only **Kubernetes Service** security bulletins that are relevant to Red Hat OpenShift on IBM Cloud. Changelog entries that address other security vulnerabilities but do not also refer to an IBM security bulletin are for vulnerabilities that are not known to affect Red Hat OpenShift on IBM Cloud in normal usage. If you run privileged containers, run commands on the workers, or execute untrusted code, then you might be at risk.
 
@@ -50,6 +50,21 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
+
+### Changelog for 3.11.170_1544_openshift, released 16 March 2020
+{: #311170_1544}
+
+The following table shows the changes that are included in the master and worker node update `3.11.170_1544_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+{: shortdesc}
+
+| Component | Location | Previous | Current | Description |
+| --------- | -------- | ------- | -------- | ----------- |
+| Calico | Master | v3.6.5 | v3.8.6 | See the [Calico release notes](https://docs.projectcalico.org/v3.8/release-notes/){: external}. |
+| Cluster health | Master | N/A | N/A | Cluster health status now includes links to IBM Cloud documentation. |
+| OpenShift | Both | 3.11.161 | 3.11.170 | See the [OpenShift  release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-170){: external}. |
+| RHEL 7 Packages | Worker | N/A | N/A | Updated worker node images with package updates for [CVE-2020-8597](https://nvd.nist.gov/vuln/detail/CVE-2020-8597){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is where the component is located: the master, worker node, or both. The third column is the previous version number of the component. The fourth column is the current version number of the component. The fifth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.170_1543" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.170_1543_openshift, released 17 February 2020
 {: #311170_1543_worker}
@@ -109,10 +124,10 @@ The following table shows the changes that are included in the master fix pack `
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| Cluster ingress route configuration | N/A | N/A | Fixed a bug that reset ingress route configurations to the default subdomain in clusters that were created with version [3.11.141_1524](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_changelog#311141_1524) or earlier. |
+| Cluster ingress route configuration | N/A | N/A | Fixed a bug that reset ingress route configurations to the default subdomain in clusters that were created with version [3.11.141_1524](/docs/openshift?topic=openshift-openshift_changelog#311141_1524) or earlier. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.7-229 | v1.15.9-240 | Updated to support the Kubernetes 1.15.9 release. Updated to use `calicoctl` version 3.8.6. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 357 | 358 | Image updated for [CVE-2019-5188](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5188){: external}. |
-| OpenVPN server | N/A | N/A | OpenVPN server is now restarted during the [cluster master refresh](https://cloud.ibm.com/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) operation. |
+| OpenVPN server | N/A | N/A | OpenVPN server is now restarted during the [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) operation. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.161_1538_openshift" caption-side="top"}
 

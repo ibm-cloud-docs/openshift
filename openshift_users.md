@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-11"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -155,10 +155,14 @@ When you create your {{site.data.keyword.cloud_notm}} account, the default resou
 {: help}
 {: support}
 
-To successfully provision and work with clusters, you must ensure that your {{site.data.keyword.cloud_notm}} account is correctly set up to access {{site.data.keyword.cloud_notm}} infrastructure in each resource group and region that your clusters are in.
+To successfully provision and work with clusters, you must ensure that your {{site.data.keyword.cloud_notm}} account is correctly set up to access {{site.data.keyword.cloud_notm}} infrastructure in each resource group and region that your clusters are in. In most cases, you can set up infrastructure access by [using the API key](#api_key_most_cases). For other options, see [Understanding other options than the API key](#api_key_other)
 {: shortdesc}
 
-**Most cases**: Your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account is already set up with access to {{site.data.keyword.cloud_notm}} infrastructure. To use this infrastructure in Red Hat OpenShift on IBM Cloud, the **account owner** must set the API key for the region and resource group.
+### Setting up the API key in most cases
+{: #api_key_most_cases}
+
+Your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account is already set up with access to {{site.data.keyword.cloud_notm}} infrastructure. To use this infrastructure in Red Hat OpenShift on IBM Cloud, the **account owner** must set the [API key](#api_key_about) for the region and resource group.
+{: shortdesc}
 
 1. Log in to the terminal as the account owner.
     ```
@@ -186,7 +190,12 @@ To successfully provision and work with clusters, you must ensure that your {{si
 
 5. Repeat these steps for each region and resource group that you want to create clusters in.
 
-**Alternative options and more information**: For different ways to access the IBM Cloud infrastructure portfolio, check out the following sections.
+### Understanding other options than the API key
+{: #api_key_other}
+
+For different ways to access the IBM Cloud infrastructure portfolio, check out the following sections.
+{: shortdesc}
+
 * If you aren't sure whether your account already has access to the IBM Cloud infrastructure portfolio, see [Understanding access to the infrastructure portfolio](#understand_infra).
 * If the account owner does not set the API key, [ensure that the user who sets the API key has the correct permissions](#owner_permissions).
 * For more information about using your Pay-As-You-Go or Subscription account to set the API key, see [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](#default_account).
@@ -229,10 +238,22 @@ To access the IBM Cloud infrastructure portfolio, you use an {{site.data.keyword
   </table>
 
 **Now that my infrastructure portfolio is set up, how does Red Hat OpenShift on IBM Cloud access the portfolio?**</br>
+{: #api_key_about}
 
-Red Hat OpenShift on IBM Cloud accesses the IBM Cloud infrastructure portfolio by using an API key. The API key impersonates, or stores the credentials of, a user with access to an IBM Cloud infrastructure account. API keys are set by region within a resource group, and are shared by users in that region.
- 
-Then, let that user perform the first admin action in a region and resource group. The user's infrastructure credentials are stored in an API key for that region and resource group.
+Red Hat OpenShift on IBM Cloud accesses the IBM Cloud infrastructure portfolio by using an API key. The API key impersonates, or stores the credentials of, a user with access to an IBM Cloud infrastructure account. API keys are set by region within a resource group, and are shared by users in that region. To check if an API key is already set for the region and resource group, you can use the following command.
+
+```
+ibmcloud oc api-key info --cluster <cluster_name_or_ID>
+```
+{: pre}
+
+To enable all users to access the infrastructure portfolio, the user whose credentials are stored in the API key must have the appropriate permissions to the infrastructure provider.
+* Classic clusters: **Super User** role or the [minimum required permissions](/docs/openshift?topic=openshift-access_reference#infra) for classic infrastructure.
+* [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}} at the account level.
+* [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}.
+* [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for Container Registry at the account level.
+
+Then, let that user perform the first admin action in a region and resource group or [reset the API key](#api_key_most_cases). The user's infrastructure credentials are stored in an API key for that region and resource group.
 
 Other users within the account share the API key for accessing the infrastructure. When users log in to the {{site.data.keyword.cloud_notm}} account, an {{site.data.keyword.cloud_notm}} IAM token that is based on the API key is generated for the CLI session and enables infrastructure-related commands to be run in a cluster.
 

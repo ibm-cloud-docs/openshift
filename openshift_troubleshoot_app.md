@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -118,6 +118,71 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
 <br />
 
 
+
+
+## Build error due to image pull authentication
+{: #ts_build_img_pull}
+{: troubleshoot}
+
+{: tsSymptoms}
+When a build such as from Operator Hub or the built-in developer content catalog tries to pull an image from a Red Hat registry, the build might fail with an authentication error similar to the following.
+
+```
+error: build error: After retrying 2 times, Pull image still failed due to error: unauthorized: authentication required
+```
+{: screen}
+
+{: tsCauses}
+By default, your cluster is set up with image pull secrets to Red Hat registries such as `registry.redhat.io`, `registry.connect.redhat.com`, and `cloud.openshift.com`. Additionally in the `default` project, your cluster has image pull secrets to access the `<region>.icr.io` registries for {{site.data.keyword.registrylong_notm}}. 
+
+However, if an operator or built-in template has a build component that must pull an image from a private registry, the build might fail with an authentication error because the build does not have access to the default image pull secrets in its service account. By default, builds can pull images that are stored only in the internal registry.
+
+{: tsResolve}
+Set up the build with access to the image, either by pulling the image from the private registry or by importing the image from the private registry into the internal registry. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
+
+1.  Check the build configuration file to see what registry the build needs pull access to. For example, if your build is part of an OpenShift template, the build config `spec.strategy.sourceStrategy.from.name` value refers to the `registry.redhat.io` private registry.
+    ```
+    oc -n openshift get template react-web-app-example -o yaml
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.redhat.io/rhoar-nodejs-tech-preview/rhoar-nodejs-10-webapp
+    ```
+    {: screen}
+2.  Set up the build with image pull access. You can choose from pulling the image from the private registry or using an image stream from the internal registry.
+    *   **Pull image from a private registry**: 
+        1.  In each project, add an image pull secret with pull access to the private registry that the build uses.    
+            *  **For Red Hat registries**: [Copy the `pull-secret` secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) from the `openshift-config` project. This secret includes pull access to the following private registries: `cloud.openshift.com`, `quay.io`, `registry.connect.redhat.com`, and `registry.redhat.io`.
+            *  **For {{site.data.keyword.registrylong_notm}}**: [Copy the `<region>.icr.io` secrets](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) from the `default` project.
+            *  **For other private registries**: [Create an image pull secret](/docs/openshift?topic=openshift-registry#private_images) with image pull access to the private registry. 
+        2.  [Add the secret to the builder service account](/docs/openshift?topic=openshift-registry#store_imagePullSecret) or [specify the image pull secret in the build configuration file](/docs/openshift?topic=openshift-images#pod_imagePullSecret).
+            
+            Example to link the secret to the builder service account in a project.
+            ```
+            oc secrets link builder <pull-secret>
+            ```
+            {: pre}
+
+            Example to refer to the secret in the build configuration file.
+            ```
+            spec:
+                output:
+                    to:
+                        kind: "DockerImage"
+                        name: "<private.registry.com>/<namespace>/<image>:<tag>"
+                    pushSecret:
+                        name: "<pull-secret>"
+            ```
+            {: codeblock}
+    * **Use an image stream from the internal registry**: [Create an image stream in the internal registry from an imported image from the private registry](/docs/openshift?topic=openshift-registry#imagestream_registry). Then, update the build configuration file to refer to the image stream instead of pulling the image directly from the private registry.
+
+<br />
 
 
 ## Cannot push or pull images from local machine to Docker registry

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-13"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -60,7 +60,6 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>Images can be shared across all projects in the cluster, with access that is controlled through RBAC roles.</li>
         <li>Integrating the internal registry with other Red Hat products like CloudForms for extended features such as vulnerability scanning.</li>
         <li>Option to expose the internal registry with a route so that users can pull images from the registry over the public network.</li>
-        <li>Option to set up the internal registry to [pull](#imagestream_registry) images from or [push](#builds_registry) images to a private registry such as {{site.data.keyword.registrylong_notm}}.</ul>
         <br>For more information, see [Using the internal registry](#openshift_internal_registry).</td>
     </tr>
     <tr>
@@ -68,8 +67,6 @@ Your app's images must be stored in a container registry that your cluster can a
         <td>Private registries are a good choice to protect your images from being used and changed by unauthorized users. Private registries must be set up by the cluster administrator to make sure that access, storage quotas, image trust and other features work as intended.<br><br>
         By default, your [OpenShift clusters are integrated with the private {{site.data.keyword.registrylong_notm}}](#openshift_iccr) through image pull secrets that are set up in the `default` project. {{site.data.keyword.registrylong_notm}} is a highly available, multi-tenant private registry to store your own images. You can also pull IBM-provided images from the global `icr.io` registry, and licensed software from the entitled registry. With {{site.data.keyword.registrylong_notm}}, you can manage images for multiple clusters with seamless integration with {{site.data.keyword.cloud_notm}} IAM and billing.<br><br>
         Advantages of using {{site.data.keyword.registrylong_notm}} with the internal registry:<ul>
-        <li>Local image caching for faster builds via the internal registry.</li>
-        <li>Deployments in other projects can refer to the image stream so that you do not need to copy pull secrets to each project.</li>
         <li>Sharing images across multiple clusters without needing to push images to multiple registries.</li>
         <li>[Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.</li>
         <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=registry-user) and [separate regional registries](/docs/Registry?topic=registry-registry_overview#registry_regions).</li>
@@ -79,7 +76,6 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li></ul>
         <br>To get started, see the following topics:<ul>
         <li>[Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-getting-started).</li>
-        <li>[Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](#imagestream_registry)</li>
         <li>[Using {{site.data.keyword.registrylong_notm}}](#openshift_iccr).</li></ul></td>
     </tr>
     <tr>
@@ -98,8 +94,11 @@ Your app's images must be stored in a container registry that your cluster can a
 ## Using the internal registry
 {: #openshift_internal_registry}
 
-OpenShift clusters are set up by default with an internal registry. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}.
+OpenShift clusters are set up by default with an internal registry. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster.
 {: shortdesc}
+
+Want to learn more about how builds, image streams, and the internal registry work together? Read the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}. 
+{: tip}
 
 For more information, see the following topics.
 * [Storing images in the internal registry](#storage_internal_registry)
@@ -488,7 +487,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     {: pre}
 2.  Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials in the image pull secret. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including both the cluster and project name.
     ```
-    ibmcloud iam service-id-create <cluster_name>-<project>-id --description "Service ID for IBM Cloud Container Registry in Kubernetes cluster <cluster_name> project <project>"
+    ibmcloud iam service-id-create <cluster_name>-<project>-id --description "Service ID for IBM Cloud Container Registry in OpenShift cluster <cluster_name> project <project>"
     ```
     {: pre}
 3.  Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to {{site.data.keyword.registryshort_notm}}.
@@ -525,7 +524,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tbody></table>
 4.  Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, ``<cluster_name>-<kube_namespace>-id`. Be sure to give the API key a description that helps you retrieve the key later.
     ```
-    ibmcloud iam service-api-key-create <cluster_name>-<kube_namespace>-key <cluster_name>-<kube_namespace>-id --description "API key for service ID <service_id> in Kubernetes cluster <cluster_name> namespace <kube_namespace>"
+    ibmcloud iam service-api-key-create <cluster_name>-<project>-key <cluster_name>-<project>-id --description "API key for service ID <service_id> in OpenShift cluster <cluster_name> project <project>"
     ```
     {: pre}
 5.  Retrieve your **API Key** value from the output of the previous command.
@@ -662,7 +661,7 @@ You can define an image pull secret in your pod deployment or store the image pu
 {: shortdesc}
 
 To plan how image pull secrets are used in your cluster, choose between the following options:
-* Referring to the image pull secret in your pod deployment: Use this option if you do not want to grant access to your registry for all pods in your project by default. Developers can [include the image pull secret in each pod deployment](/docs/openshift?topic=openshift-openshift_apps#pod_imagePullSecret) that must access your registry.
+* Referring to the image pull secret in your pod deployment: Use this option if you do not want to grant access to your registry for all pods in your project by default. Developers can [include the image pull secret in each pod deployment](/docs/openshift?topic=openshift-images#pod_imagePullSecret) that must access your registry.
 * Storing the image pull secret in the Kubernetes service account: Use this option to grant access to images in your registry for all deployments in the selected OpenShift projects. To store in image pull secret in the Kubernetes service account, use the [following steps](#store_imagePullSecret).
 
 ### Storing the image pull secret in the Kubernetes service account for the selected project
@@ -755,7 +754,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     {: pre}
 4.  Create a pod in the project that builds a container from an image in the entitled registry.
     ```
-    oc run <pod_name> --image=cp.icr.io/<image_name> -n <project>
+    oc run <pod_name> --image=cp.icr.io/<image_name> -n <project> --generator=run-pod/v1
     ```
     {: pre}
 5.  Check that your container was able to successfully build from the entitled image by verifying that the pod is in a **Running** status.

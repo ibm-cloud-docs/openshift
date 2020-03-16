@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-03-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -70,13 +70,15 @@ Review the options to debug persistent storage and find the root causes for fail
 
       Example output:
       ```
-      Client Version: version.Info{Major:"1", Minor:"1.16", GitVersion:"v1.16.7", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
-      Server Version: version.Info{Major:"1", Minor:"1.16", GitVersion:"v1.16.7+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+      Client Version: version.Info{Major:"1", Minor:"1.16", GitVersion:"v1.16.8", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
+      Server Version: version.Info{Major:"1", Minor:"1.16", GitVersion:"v1.16.8+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
       ```
       {: screen}
 
       The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
    2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-cs_cli_install#kubectl).
+
+
 
 4. For block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
 
@@ -134,6 +136,7 @@ Review the options to debug persistent storage and find the root causes for fail
 
    3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
 
+
 5. Verify that the storage driver and plug-in pods show a status of **Running**.
    1. List the pods in the `kube-system` project.
       ```
@@ -142,17 +145,36 @@ Review the options to debug persistent storage and find the root causes for fail
       {: pre}
 
    2. If the pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all of the following commands.
-      ```
-      oc describe pod <pod_name> -n kube-system
-      ```
-      {: pre}
+      1. Get the names of the containers that run in the driver pod.
+         ```
+         kubectl get pod <pod_name> -n kube-system -o jsonpath="{.spec['containers','initContainers'][*].name}" | tr -s '[[:space:]]' '\n'
+         ```
+         {: pre}
 
-      ```
-      oc logs <pod_name> -n kube-system
-      ```
-      {: pre}
+         
+
+         Example output for {{site.data.keyword.blockstorageshort}}:
+         ```
+         ibmcloud-block-storage-driver-container
+         ```
+         {: pre}
+
+      2. Export the logs from the driver pod to a `logs.txt` file on your local machine. Include the driver container name.
+
+         ```
+         oc logs <pod_name> -n kube-system -c <container_name> > logs.txt
+         ```
+         {: pre}
+
+      3. Review the log file.
+         ```
+         cat logs.txt
+         ```
+         {: pre}
 
    3. Analyze the **Events** section of the CLI output of the `oc describe pod` command and the latest logs to find the root cause for the error.
+
+
 
 6. Check whether your PVC is successfully provisioned.
    1. Check the state of your PVC. A PVC is successfully provisioned if the PVC shows a status of **Bound**.

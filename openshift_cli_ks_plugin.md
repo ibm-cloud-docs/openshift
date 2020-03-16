@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-16"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -47,21 +47,11 @@ In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-in
 Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registryshort_notm}} CLI reference](/docs/Registry?topic=container-registry-cli-plugin-containerregcli). Looking for `kubectl` commands? See the [Kubernetes documentation](https://kubectl.docs.kubernetes.io/){: external}.
 {:tip}
 
-## Using the beta plug-in
+## Using version 1.0 of the plug-in
 {: #cs_beta}
 
-A redesigned version of the Red Hat OpenShift on IBM Cloud plug-in is available as a beta. The redesigned Red Hat OpenShift on IBM Cloud plug-in groups commands into categories and changes commands from a hyphenated structure to a spaced structure.
-{: shortdesc}
 
-The following beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in are available.
-* The default behavior is `0.4`. Ensure that your Red Hat OpenShift on IBM Cloud plug-in uses the latest `0.4` version by running `ibmcloud plugin update kubernetes-service`.
-* To use `1.0`, set the `IKS_BETA_VERSION` environment variable:
-    ```
-    export IKS_BETA_VERSION=1.0
-    ```
-    {: pre}
-
-When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 16 March 2020 to update CLI command syntax.</br></br>To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run.
+[Version 1.0 of the CLI plug-in was released on 16 March 2020](/docs/openshift?topic=openshift-cs_cli_changelog). This version contains permanent syntax and behavior changes that are not backwards compatible.</br></br>To maintain all CLI functionality, update and test any automation before you update to 1.0 by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
 
 
@@ -69,7 +59,7 @@ Check out the following syntax and behavior changes between each version of the 
 
 |Functionality|`0.2`|`0.3`|`0.4`|`1.0`|
 |-------------|-----|-----|-----|-----|
-| Supported? | Deprecated | Deprecated | Default | Latest |
+| Supported? | Deprecated | Deprecated | Deprecated | Default |
 | `ibmcloud oc help` output structure<ul><li>Legacy: Alphabetical list of commands</li><li>Beta: Categories of commands</li></ul> | Legacy | Legacy | Beta | Beta |
 | Command structure<ul><li>Legacy: Hyphenated structure (`ibmcloud oc alb-cert-get`)</li><li>Beta: Spaced structure (`ibmcloud oc alb cert get`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
 | Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
@@ -202,7 +192,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 After logging in, download Kubernetes configuration data and certificates to connect to your cluster and run `oc` commands. The files are downloaded to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`.
 {: shortdesc}
 
-In [CLI plug-in version 1.0](#cs_beta), `cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately. Note that any pre-existing `kubeconfig` files are not merged automatically.</br></br>When version 1.0 releases on 16 March 2020, the permanent behavior changes to this command are not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the CLI plug-in within the script or the environment where the script is run.
+In [CLI plug-in version 1.0](#cs_beta), `cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately. Note that any pre-existing `kubeconfig` files are not merged automatically.</br></br>Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior changes to this command are not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
 
 ```
@@ -256,7 +246,7 @@ Create a cluster with worker nodes on classic infrastructure. For free clusters,
 {: shortdesc}
 
 ```
-ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt]  [--skip-advance-permissions-check] [--entitlement cloud_pak][-s]
+ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement cloud_pak][-s]
 ```
 {: pre}
 
@@ -346,7 +336,22 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dt><code><strong>--disable-disk-encrypt</strong></code></br></dt>
 <dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.</dd>
 
+<dt id="pod-subnet"><code><strong>--pod-subnet <em>SUBNET</em></strong></code></br></dt>
+<dd>**Standard clusters that run Kubernetes 1.15 or later**: All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR to provide the private IP addresses for pods.
+<p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pods for eight workers, use <code>/21</code> to have enough pods for 16 workers, and so on.</p>
+<p>The subnet must be within one of the following ranges:
+<ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+<li><code>172.21.0.0 - 172.31.255.255</code></li>
+<li><code>192.168.0.0 - 192.168.254.255</code></li>
+<li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The service subnet is in the 172.21.0.0/16 range by default.</p></dd>
 
+<dt id="service-subnet"><code><strong>--service-subnet <em>SUBNET</em></strong></code></br>
+<dd>**Standard clusters that run Kubernetes 1.15 or later**: All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.cloud_notm}} Direct Link or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR to provide the private IP addresses for services.
+<p>The subnet must be specified in CIDR format with a size of at least <code>/24</code>, which allows a maximum of 255 services in the cluster, or larger. The subnet must be within one of the following ranges:
+<ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+<li><code>172.21.0.0 - 172.31.255.255</code></li>
+<li><code>192.168.0.0 - 192.168.254.255</code></li>
+<li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The pod subnet is in the 172.30.0.0/16 range by default.</p></dd>
 
 <dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
 <dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
@@ -3676,7 +3681,7 @@ ibmcloud oc api-key reset --region REGION [-s]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region. To list available regions, run <code>ibmcloud oc region ls</code>.</dd>
+<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -3715,7 +3720,7 @@ ibmcloud oc credential get --region REGION [-s] [--json]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region. To list available regions, run <code>ibmcloud oc region ls</code>.</dd>
+<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -3763,7 +3768,7 @@ ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastruc
 <dd>IBM Cloud infrastructure account API key. This value is required. To view or generate an infrastructure API key, see [Managing classic infrastructure API keys](/docs/iam?topic=iam-classic_keys).</dd>
 
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region. To list available regions, run <code>ibmcloud oc region ls</code>.</dd>
+<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -3795,7 +3800,7 @@ ibmcloud oc credential unset --region REGION [-s]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region. To list available regions, run <code>ibmcloud oc region ls</code>.</dd>
+<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -3959,7 +3964,7 @@ ibmcloud oc infra-permissions get --region REGION [--json] [-s]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region. To list available regions, run <code>ibmcloud oc region ls</code>. This value is required.</dd>
+<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`. This value is required.</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -4099,7 +4104,7 @@ ibmcloud oc vlan spanning get --region REGION [--json] [-s]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region. To list available regions, run <code>ibmcloud oc region ls</code>.</dd>
+<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -4213,7 +4218,7 @@ ibmcloud oc messages
 List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations).
 {: shortdesc}
 
-In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the `locations` command. When version 1.0 releases on 16 March 2020, the permanent syntax change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the CLI plug-in within the script or the environment where the script is run.
+In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the `locations` command. Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
 
 ```
@@ -4393,83 +4398,6 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-s]
 <br />
 
 
-## Deprecated: `region` commands
-{: #region}
-
-View available locations, view the currently targeted region, and set the targeted region.
-{: shortdesc}
-
-### Deprecated: `ibmcloud oc region get`
-{: #cs_region}
-
-Find the {{site.data.keyword.containerlong_notm}} region that you are currently targeted to.
-{: shortdesc}
-
-You can work with resources that you have access to in any location, even if you set a region by running `ibmcloud oc region set` and the resource that you want to work with is in another region. If you have clusters with the same name in different regions, use the cluster ID when you run commands.
-
-<p class="deprecated">Region-specific endpoints are deprecated, and this command might not work as expected.<br>Legacy behavior: If you use the Red Hat OpenShift on IBM Cloud plug-in version <code>0.3</code> or later and need to list and work with resources from one region only, you can use the <code>ibmcloud oc init</code> [command](#cs_init) to target a regional endpoint instead of the global endpoint.</br>If you use the Red Hat OpenShift on IBM Cloud plug-in version <code>0.2</code> (deprecated), you create and manage clusters specific to the region. Use the <code>ibmcloud oc region set</code> command to change regions.</p>
-
-```
-ibmcloud oc region get
-```
-{: pre}
-
-**Minimum required permissions**: None
-
-</br>
-
-### Deprecated: `ibmcloud oc region ls`
-{: #cs_regions}
-
-List the available regions. The `Region Name` is the {{site.data.keyword.containerlong_notm}} name, and the `Region Alias` is the general {{site.data.keyword.cloud_notm}} name for the region.
-{: shortdesc}
-
-Region-specific endpoints are deprecated, and this command might not work as expected. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
-{: deprecated}
-
-**Minimum required permissions**: None
-
-**Example**:
-```
-ibmcloud oc region ls
-```
-{: pre}
-
-</br>
-
-### Deprecated: `ibmcloud oc region set`
-{: #cs_region-set}
-
-Set the region for {{site.data.keyword.containerlong_notm}}.
-{: shortdesc}
-
-You can work with resources that you have access to in any location, even if you set a region by running `ibmcloud oc region set` and the resource that you want to work with is in another region. If you have clusters with the same name in different regions, use the cluster ID when you run commands.
-
-<p class="deprecated">Region-specific endpoints are deprecated, and this command might not work as expected. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.<br>If you use the Red Hat OpenShift on IBM Cloud plug-in version <code>0.3</code> or later and need to list and work with resources from one region only, you can use the <code>ibmcloud oc init</code> [command](#cs_init) to target a regional endpoint instead of the global endpoint.<br>If you use the `0.2` beta version (deprecated) of the Red Hat OpenShift on IBM Cloud plug-in, you create and manage clusters specific to the region. For example, you can log in to {{site.data.keyword.cloud_notm}} in the US South region and create a cluster. Next, you can use `ibmcloud oc region set eu-central` to target the EU Central region and create another cluster. Finally, you can use `ibmcloud oc region set us-south` to return to US South to manage your cluster in that region.</p>
-
-```
-ibmcloud oc region set --region REGION
-```
-{: pre}
-
-**Minimum required permissions**: None
-
-**Command options**:
-<dl>
-<dt><code>--region <em>REGION</em></code></dt>
-<dd>Enter the region that you want to target. This value is optional. If you do not provide the region, you can select it from the list in the output.
-
-For a list of available regions, review [Locations](/docs/openshift?topic=openshift-regions-and-zones) or use the `ibmcloud oc region ls` [command](#cs_regions).</dd></dl>
-
-**Example**:
-```
-ibmcloud oc region set --region eu-central
-```
-{: pre}
-
-<br />
-
-
 ## `script` commands
 {: #script}
 
@@ -4535,6 +4463,11 @@ To use this command to prepare your automation scripts for the release of versio
   {: pre}
 6. Test your automation with the updated script. Note that you might incur charges if your automation includes creating clusters.
 7. Update all of your scripts.
+8. Update your CLI plug-in to version 1.0.
+  ```
+  ibmcloud plugin update kubernetes-service
+  ```
+  {: pre}
 
 <br />
 

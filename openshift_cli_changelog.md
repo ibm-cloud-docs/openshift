@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-16"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -42,29 +42,17 @@ In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-in
 <br>
 Refer to the following tables for a summary of changes for each version of the [Red Hat OpenShift on IBM Cloud plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
 
-## Using the beta plug-in
+## Using version 1.0 of the plug-in
 {: #changelog_beta}
 
-A redesigned version of the Red Hat OpenShift on IBM Cloud plug-in is available as a beta. The redesigned Red Hat OpenShift on IBM Cloud plug-in groups commands into categories and changes commands from a hyphenated structure to a spaced structure.
-{: shortdesc}
-
-The following beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in are available.
-* The default behavior is `0.4`. Ensure that your Red Hat OpenShift on IBM Cloud plug-in uses the latest `0.4` version by running `ibmcloud plugin update kubernetes-service`.
-* To use `1.0`, set the `IKS_BETA_VERSION` environment variable:
-    ```
-    export IKS_BETA_VERSION=1.0
-    ```
-    {: pre}
-
-When version 1.0 releases, permanent syntax and behavior changes are not backwards compatible. You have until 16 March 2020 to update CLI command syntax.</br></br>To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run.
+Version 1.0 of the CLI plug-in was released on 16 March 2020. This version contains permanent syntax and behavior changes that are not backwards compatible.</br></br>To maintain all CLI functionality, update and test any automation before you update to 1.0 by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
-
 
 Check out the following syntax and behavior changes between each version of the CLI plug-in:
 
 |Functionality|`0.2`|`0.3`|`0.4`|`1.0`|
 |-------------|-----|-----|-----|-----|
-| Supported? | Deprecated | Deprecated | Default | Latest |
+| Supported? | Deprecated | Deprecated | Deprecated | Default |
 | `ibmcloud oc help` output structure<ul><li>Legacy: Alphabetical list of commands</li><li>Beta: Categories of commands</li></ul> | Legacy | Legacy | Beta | Beta |
 | Command structure<ul><li>Legacy: Hyphenated structure (`ibmcloud oc alb-cert-get`)</li><li>Beta: Spaced structure (`ibmcloud oc alb cert get`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
 | Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
@@ -74,6 +62,24 @@ Check out the following syntax and behavior changes between each version of the 
 | API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul> | Legacy | Beta | Beta | Beta |
 {: caption="Beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in" caption-side="top"}
 {: summary="The rows are read from left to right, with the functionality in column one, version 0.2 of the CLI in column two, version 0.3 in column three, version 0.4 in column four, and version 1.0 in column five."}
+
+<br />
+
+
+## Version 1.0
+{: #10}
+
+Review the following changes for 1.0 versions of the CLI plug-in.
+{: shortdesc}
+
+Version 1.0 of the CLI plug-in was released on 16 March 2020. This version contains permanent syntax and behavior changes that are not backwards compatible.</br></br>To maintain all CLI functionality, update and test any automation before you update to 1.0 by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
+{: important}
+
+|Version|Release date|Changes|
+|-------|------------|-------|
+| 1.0.0 | 16 Mar 2020 | Introduces permanent behavior and syntax changes that are not backwards compatible. For a summary of the changes in version 1.0, see [Using version 1.0 of the plug-in](#changelog_beta).|
+{: caption="Overview of version changes for version 1.0 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
+{: summary="Overview of version changes for version 1.0 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
 
 <br />
 

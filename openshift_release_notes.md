@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-03-16"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 16 March 2020 | <ul><li>**New! CLI 1.0**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.0](/docs/openshift?topic=openshift-cs_cli_changelog#10). This version contains permanent syntax and behavior changes that are not backwards compatible, so before you update be sure to follow the guidance in [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).</li><li>**Default service settings**: Added a page to describe the [default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings).</li><li>**Image build errors**: Added a troubleshooting topic for [build errors due to image pull authentication](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_build_img_pull).</li><li>**Installing SGX drivers**: Added a topic for [installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-add_workers#install-sgx).</li><li>**Sizing workloads**: Enhanced the topic with a [How do I monitor resource usage and capacity in my cluster?](/docs/openshift?topic=openshift-strategy#sizing_manage) FAQ.</li><li>**`sticky-cookie-services` annotation**, OpenShift version 3.11 only: Added the `secure` and `httponly` parameters to the [`sticky-cookie-services` annotation](/docs/openshift?topic=openshift-ingress_annotation#sticky-cookie-services).</li><li>**Enabling TLS for Ingress**, OpenShift version 4.3 only: If you use a custom domain and want to enable TLS for Ingress, you must [add a TLS section to each Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3) instead of specifying the certificate in the configuration file for the custom Ingress controller.</li><li>**Version changelogs**: Master and worker node patch updates are available for OpenShift [3.11.170_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1544)</li></ul> |
+| 12 March 2020 | **Feature gates**: Added the [feature gates for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-settings#feature-gates) that differ from community OpenShift distributions.|
 | 09 March 2020 | **Managing Ingress ALBs**: For version 3.11 clusters only: Added a page for [managing the lifecycle of your ALBs](/docs/openshift?topic=openshift-ingress-manage), including information about creating, updating, and moving ALBs. |
 | 04 March 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.102](/docs/openshift?topic=openshift-cs_cli_changelog#04).</li><li>**Ingress ALB changelog**: Updated the [`ingress-auth` image build to 390](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul> |
 | 02 March 2020 | **Version changelogs**: Worker node patch updates are available for OpenShift [3.11.170_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1543_worker). |
@@ -462,7 +464,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>01 July 2019</td>
   <td><ul>
   <li><strong>Infrastructure permissions</strong>: Updated the [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) required for common use cases.</li>
-  <li><strong>OpenShift FAQs</strong>: Expanded the [FAQs](/docs/containers?topic=containers-faqs#container_platforms) to include information about OpenShift clusters.</li>
+  <li><strong>OpenShift FAQs</strong>: Expanded the [FAQs](/docs/openshift?topic=openshift-faqs#container_platforms) to include information about OpenShift clusters.</li>
   <li><strong>strongSwan VPN service</strong>: If you install strongSwan in a multizone cluster and use the `enableSingleSourceIP=true` setting, you can now [set `local.subnet` to the `%zoneSubnet` variable and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster](/docs/openshift?topic=openshift-vpn#strongswan_4).</li>
   </ul></td>
 </tr>
