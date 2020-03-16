@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-16"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -256,7 +256,7 @@ Create a cluster with worker nodes on classic infrastructure. For free clusters,
 {: shortdesc}
 
 ```
-ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt]  [--skip-advance-permissions-check] [--entitlement cloud_pak][-s]
+ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement cloud_pak][-s]
 ```
 {: pre}
 
@@ -346,7 +346,22 @@ service-subnet: <em>&lt;subnet&gt;</em>
 <dt><code><strong>--disable-disk-encrypt</strong></code></br></dt>
 <dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.</dd>
 
+<dt id="pod-subnet"><code><strong>--pod-subnet <em>SUBNET</em></strong></code></br></dt>
+<dd>**Standard clusters that run Kubernetes 1.15 or later**: All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR to provide the private IP addresses for pods.
+<p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pods for eight workers, use <code>/21</code> to have enough pods for 16 workers, and so on.</p>
+<p>The subnet must be within one of the following ranges:
+<ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+<li><code>172.21.0.0 - 172.31.255.255</code></li>
+<li><code>192.168.0.0 - 192.168.254.255</code></li>
+<li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The service subnet is in the 172.21.0.0/16 range by default.</p></dd>
 
+<dt id="service-subnet"><code><strong>--service-subnet <em>SUBNET</em></strong></code></br>
+<dd>**Standard clusters that run Kubernetes 1.15 or later**: All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.cloud_notm}} Direct Link or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR to provide the private IP addresses for services.
+<p>The subnet must be specified in CIDR format with a size of at least <code>/24</code>, which allows a maximum of 255 services in the cluster, or larger. The subnet must be within one of the following ranges:
+<ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+<li><code>172.21.0.0 - 172.31.255.255</code></li>
+<li><code>192.168.0.0 - 192.168.254.255</code></li>
+<li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The pod subnet is in the 172.30.0.0/16 range by default.</p></dd>
 
 <dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
 <dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
