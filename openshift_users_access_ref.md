@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -213,7 +213,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding Kubernetes role-based access control (RBAC) role in a specific namespace. To learn more about service access roles, see [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-users#platform). Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.
 {: shortdesc}
 
-Looking for which Kubernetes actions each service role grants through RBAC? See [Kubernetes resource permissions per RBAC role](#rbac_ref). To learn more about RBAC roles, see [Assigning RBAC permissions](/docs/openshift?topic=openshift-users#role-binding) and [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate).
+Looking for which Kubernetes actions each service role grants through RBAC? See [Kubernetes resource permissions per RBAC role](#rbac_ref). To learn more about RBAC roles, see [Assigning RBAC permissions](/docs/openshift?topic=openshift-users#role-binding) and [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate). For the username details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](#iam_issuer_users).
 {: tip}
 
 The following table shows the Kubernetes resource permissions that are granted by each service role and its corresponding RBAC role.
@@ -275,7 +275,8 @@ The following table shows the Kubernetes resource permissions that are granted b
 ## Kubernetes resource permissions per RBAC role
 {: #rbac_ref}
 
-Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding, predefined Kubernetes role-based access control (RBAC) role. If you plan to manage your own custom Kubernetes RBAC roles, see [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac).
+Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding, predefined Kubernetes role-based access control (RBAC) role. If you plan to manage your own custom Kubernetes RBAC roles, see [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac). For the username details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](#iam_issuer_users).
+{: tip}
 {: shortdesc}
 
 Wondering if you have the correct permissions to run a certain `oc` command on a resource in a namespace? Try the [`oc auth can-i` command](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em-){: external}.
@@ -546,6 +547,26 @@ The following table shows the permissions that are granted by each RBAC role to 
 </tr>
 </tbody>
 </table>
+
+<br />
+
+
+## {{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users
+{: #iam_issuer_users}
+
+Users with a service role to Red Hat OpenShift on IBM Cloud in IAM are given [corresponding user roles in RBAC](#rbac_ref). The RBAC user details include a unique issuer ID, subject identifier claim, and OpenShift username. These details vary with the OpenShift version of the cluster. When you update a cluster from a previous version, the details are automatically updated. RBAC usernames are prefixed by `IAM#`, such as in the output of `oc get users`. For more information about how OpenID authentication works, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/authentication/identity_providers/configuring-oidc-identity-provider.html){: external}.
+{: shortdesc}
+
+You might use this information if you build automation tooling within the cluster that relies on the user details to authenticate with the OpenShift API server.
+
+| Version | Issuer | Claim | Casing`*` |
+| --- | --- | --- | --- |
+| 3.11 or later | `https://iam.cloud.ibm.com/identity` | `sub_<account_ID>` | lowercase |
+{: summary="The rows are read from left to right. The first column is the OpenShift version of the cluster. The second column is the {{site.data.keyword.cloud_notm}} IAM Issuer ID. The third column is the subject identifier claim. The fourth column is the casing style of the username."}
+{: caption="{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users" caption-side="top"}
+
+`*`: An example of lowercase is `user.name@company.com`. An example of camel case is `User.Name@company.com`.
+{: note}
 
 <br />
 
