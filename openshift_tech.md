@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-03-17"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards
 
@@ -77,3 +77,5 @@ Scroll through the following table for more information about the cluster master
 {: tab-title="Worker nodes"}
 {: tab-group="roks-components"}
 {: class="simple-tab-table"}
+
+
