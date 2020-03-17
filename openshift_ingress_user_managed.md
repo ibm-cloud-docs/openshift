@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-17"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -88,7 +88,7 @@ In classic clusters, bringing your own Ingress controller is supported only for 
 
 5. Get the **EXTERNAL-IP** address for the load balancer.
     ```
-    oc get svc my-lb-svc -n kube-system
+    oc get ingress-nginx -n kube-system
     ```
     {: pre}
 
@@ -151,7 +151,19 @@ In classic clusters, bringing your own Ingress controller is supported only for 
         ```
         {: pre}
 
-      5. Verify that your load balancer is now registered with the Ingress subdomain.
+      5. Get the ID of the ALB.
+        ```
+        ibmcloud oc albs --cluster <cluster-name>
+        ```
+        {: pre}
+
+      6. Disable the ALB.
+        ```
+        ibmcloud oc alb configure classic --alb-id <alb-id> --disable
+        ```
+        {: pre}
+
+      7. Verify that your load balancer is now registered with the Ingress subdomain.
         ```
         ibmcloud oc nlb-dns ls -c <cluster>
         ```
