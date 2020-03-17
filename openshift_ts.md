@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -390,7 +390,7 @@ The cluster could not be configured with the registry. Make sure that you have t
 {: screen}
 
 {: tsCauses}
-The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
+The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different classic IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
 
 {: tsResolve}
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
@@ -412,20 +412,20 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         <user_name>         <name@email.com>
         ```
         {: screen}
-    2.  Check if the infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
+    2.  Check if the classic infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
         ```
         ibmcloud oc credential get --region <us-south>
         ```
         {: pre}
 
-        **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
+        **Example output if credentials are set to use a different classic account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
         ```
         OK
         Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
         ```
         {: screen}
 
-        **Example output if credentials are not set to use a different account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
+        **Example output if credentials are not set to use a different classic account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
         ```
         FAILED
         No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)

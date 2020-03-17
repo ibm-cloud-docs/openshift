@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -261,7 +261,7 @@ The cluster could not be configured with the registry. Make sure that you have t
 {: screen}
 
 {: tsCauses}
-The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
+The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different classic IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
 
 {: tsResolve}
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
@@ -283,20 +283,20 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         <user_name>         <name@email.com>
         ```
         {: screen}
-    2.  Check if the infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
+    2.  Check if the classic infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
         ```
         ibmcloud oc credential get --region <us-south>
         ```
         {: pre}
 
-        **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
+        **Example output if credentials are set to use a different classic account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
         ```
         OK
         Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
         ```
         {: screen}
 
-        **Example output if credentials are not set to use a different account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
+        **Example output if credentials are not set to use a different classic account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
         ```
         FAILED
         No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
@@ -469,17 +469,17 @@ You cannot perform infrastructure-related commands on your cluster, such as:
 * Resizing worker pools
 * Updating your cluster
 
-You cannot view the cluster worker nodes in your IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
+You cannot view the cluster worker nodes in your classic IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
 
 Further, you verified that you have the [proper infrastructure credentials](#cs_credentials).
 
 {: tsCauses}
-The cluster might be provisioned in an IBM Cloud infrastructure account that is no longer linked to your Red Hat OpenShift on IBM Cloud account. The cluster is orphaned. Because the resources are in a different account, you do not have the infrastructure credentials to modify the resources.
+The cluster might be provisioned in a classic IBM Cloud infrastructure account that is no longer linked to your Red Hat OpenShift on IBM Cloud account. The cluster is orphaned. Because the resources are in a different account, you do not have the infrastructure credentials to modify the resources.
 
 Consider the following scenario to understand how clusters might become orphaned.
 1.  You have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account.
 2.  You create a cluster named `Cluster1`. The worker nodes and other infrastructure resources are provisioned into the infrastructure account that comes with your Pay-As-You-Go account.
-3.  Later, you find out that your team uses a legacy or shared IBM Cloud infrastructure account. You use the `ibmcloud oc credential set` command to change the IBM Cloud infrastructure credentials to use your team account.
+3.  Later, you find out that your team uses a legacy or shared classic IBM Cloud infrastructure account. You use the `ibmcloud oc credential set` command to change the IBM Cloud infrastructure credentials to use your team account.
 4.  You create another cluster named `Cluster2`. The worker nodes and other infrastructure resources are provisioned into the team infrastructure account.
 5.  You notice that `Cluster1` needs a worker node update, a worker node reload, or you just want to clean it up by deleting it. However, because `Cluster1` was provisioned into a different infrastructure account, you cannot modify its infrastructure resources. `Cluster1` is orphaned.
 6.  You follow the resolution steps in the following section, but do not set your infrastructure credentials back to your team account. You can delete `Cluster1`, but now `Cluster2` is orphaned.

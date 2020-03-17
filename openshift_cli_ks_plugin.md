@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -924,7 +924,7 @@ ibmcloud oc cluster subnet create --cluster my_cluster --size 8 --vlan 1764905
 ### `ibmcloud oc cluster subnet detach`
 {: #cs_cluster_subnet_detach}
 
-Detach a public or private portable subnet in an IBM Cloud infrastructure account from a cluster. The subnet remains available in your IBM Cloud infrastructure account. **Note**: Any services that were deployed to an IP address from the subnet remain active after the subnet is removed.
+Detach a public or private portable classic subnet in an IBM Cloud infrastructure account from a cluster. The subnet remains available in your IBM Cloud infrastructure account. **Note**: Any services that were deployed to an IP address from the subnet remain active after the subnet is removed.
 {: shortdesc}
 
 ```
@@ -1185,7 +1185,7 @@ ibmcloud oc worker ls --cluster my_cluster
 Reboot a worker node in a cluster.
 {: shortdesc}
 
-During the reboot, the state of your worker node does not change. For example, you might use a reboot if the worker node status in IBM Cloud infrastructure is `Powered Off` and you need to turn on the worker node. A reboot clears temporary directories, but does not clear the entire file system or reformat the disks. The worker node IP address remains the same after the reboot operation.
+During the reboot, the state of your worker node does not change. For example, you might use a reboot if the worker node status in classic IBM Cloud infrastructure is `Powered Off` and you need to turn on the worker node. A reboot clears temporary directories, but does not clear the entire file system or reformat the disks. The worker node IP address remains the same after the reboot operation.
 
 Rebooting a worker node can cause data corruption on the worker node. Use this command with caution and when you know that a reboot can help recover your worker node. In all other cases, [reload your worker node](#cs_worker_reload) instead.
 {: important}
@@ -3624,7 +3624,7 @@ View the name and email address for the owner of the {{site.data.keyword.cloud_n
 
 The {{site.data.keyword.cloud_notm}} API key is automatically set for a resource group and region when the first action that requires the {{site.data.keyword.containerlong_notm}} admin access policy is performed. For example, one of your admin users creates the first cluster in the `default` resource group in the `us-south` region. By doing that, the {{site.data.keyword.cloud_notm}} IAM API key for this user is stored in the account for this resource group and region. The API key is used to order resources in IBM Cloud infrastructure, such as new worker nodes or VLANs. A different API key can be set for each region within a resource group.
 
-When a different user performs an action in this resource group and region that requires interaction with the IBM Cloud infrastructure portfolio, such as creating a new cluster or reloading a worker node, the stored API key is used to determine whether sufficient permissions exist to perform that action. To make sure that infrastructure-related actions in your cluster can be successfully performed, assign your {{site.data.keyword.containerlong_notm}} admin users the **Super user** infrastructure access policy. For more information, see [Managing user access](/docs/openshift?topic=openshift-users#infra_access).
+When a different user performs an action in this resource group and region that requires interaction with the IBM Cloud infrastructure portfolio, such as creating a new cluster or reloading a worker node, the stored API key is used to determine whether sufficient permissions exist to perform that action. To make sure that infrastructure-related actions in your cluster can be successfully performed, assign your {{site.data.keyword.containerlong_notm}} admin users the **Super user** classic infrastructure access policy . For more information, see [Managing user access](/docs/openshift?topic=openshift-users#infra_access).
 
 If you find that you need to update the API key that is stored for a resource group and region, you can do so by running the [ibmcloud oc api-key reset](#cs_api_key_reset) command. This command requires the {{site.data.keyword.containerlong_notm}} admin access policy and stores the API key of the user that executes this command in the account.
 
@@ -3699,7 +3699,7 @@ ibmcloud oc api-key reset --region us-south
 ## `credential` commands
 {: #credential}
 
-Set and unset credentials that allow you to access the IBM Cloud infrastructure portfolio through your IBM Cloud account.
+Set and unset credentials that allow you to access the classic IBM Cloud infrastructure portfolio through your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
 
@@ -3929,6 +3929,11 @@ ibmcloud oc kms instance ls
 
 ## `infra-permissions` commands
 {: #infra-commands}
+
+Check classic IBM Cloud infrastructure permissions that are used in Red Hat OpenShift on IBM Cloud.
+{: shortdesc}
+
+
 
 ### `ibmcloud oc infra-permissions get`
 {: #infra_permissions_get}
