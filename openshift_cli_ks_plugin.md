@@ -1908,7 +1908,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
   ```
   {: pre}
 
-  In the exmaple output, note that **Router** pod IDs match: `01a` and `01a`. If one pod ID was `01a` and the other was `02a`, you cannot set these public and private VLAN IDs for your worker pool.
+  In the example output, note that **Router** pod IDs match: `01a` and `01a`. If one pod ID was `01a` and the other was `02a`, you cannot set these public and private VLAN IDs for your worker pool.
   ```
   ID        Name   Number   Type      Router         Supports Virtual Workers
   229xxxx          1234     private   bcr01a.dal12   true

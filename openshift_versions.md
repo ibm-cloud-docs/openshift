@@ -411,7 +411,7 @@ To migrate workloads from the version 3.11 source cluster, the version 4.3 desti
     oc create -f sa-secret-source.yaml
     ```
     {: pre}
-3.  Create a confiuration file for a migration cluster resource that refers to the version 3.11 source cluster's master URL that you retrieved in [Step 1](#ocp3to4-migrate-source).
+3.  Create a configuration file for a migration cluster resource that refers to the version 3.11 source cluster's master URL that you retrieved in [Step 1](#ocp3to4-migrate-source).
     ```
     apiVersion: migration.openshift.io/v1alpha1
     kind: MigCluster
@@ -531,7 +531,7 @@ To complete the migration process, create a sample plan to verify that what you 
     ```
     {: screen}
 
-    Example of an unsuccesful message with troubleshooting information.
+    Example of an unsuccessful message with troubleshooting information.
     ```
     Message:               Namespaces [migrate-hw] not found on the source cluster.
     ```

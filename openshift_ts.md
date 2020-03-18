@@ -286,7 +286,7 @@ To check your client `kubectl` version against the cluster server version, run `
 {: tsResolve}
 [Install the version of `kubectl`](/docs/openshift?topic=openshift-openshift-cli#kubectl) that matches the Kubernetes version of your cluster.
 
-If you have multiple clusters at different Kubernetes versions or different container platforms such as OpenShift, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local terminal profile to point to the `kubectl` binary directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
+If you have multiple clusters at different Kubernetes versions or different container platforms such as OpenShift, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local terminal profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
 
 <br />
 

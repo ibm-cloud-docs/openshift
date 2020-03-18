@@ -786,7 +786,7 @@ Before you begin to upgrade your cluster autoscaler release, complete the follow
 ### Upgrading the cluster autoscaler release version
 {: #ca_helm_up_general}
 
-To upgrade your cluster autoscaler release, you can update the Helm chart repo and recreate the cluster autoscaler pods. Use the same version of Helm that you used to install the initial Helm chart and release. For example, if you installed the release with Helm version 2, these upgrade steps might not work if you now have Helm version 3. Instead, see [Upgrading a release from Helm version 2 to version 3](#ca_helm_up_2to3).
+To upgrade your cluster autoscaler release, you can update the Helm chart repo and re-create the cluster autoscaler pods. Use the same version of Helm that you used to install the initial Helm chart and release. For example, if you installed the release with Helm version 2, these upgrade steps might not work if you now have Helm version 3. Instead, see [Upgrading a release from Helm version 2 to version 3](#ca_helm_up_2to3).
 
 Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
 
