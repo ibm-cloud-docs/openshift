@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 18 March 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall.</li></ul>
 | 16 March 2020 | <ul><li>**New! CLI 1.0**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.0](/docs/openshift?topic=openshift-cs_cli_changelog#10). This version contains permanent syntax and behavior changes that are not backwards compatible, so before you update be sure to follow the guidance in [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).</li><li>**Default service settings**: Added a page to describe the [default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings).</li><li>**Image build errors**: Added a troubleshooting topic for [build errors due to image pull authentication](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_build_img_pull).</li><li>**Installing SGX drivers**: Added a topic for [installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-add_workers#install-sgx).</li><li>**Sizing workloads**: Enhanced the topic with a [How do I monitor resource usage and capacity in my cluster?](/docs/openshift?topic=openshift-strategy#sizing_manage) FAQ.</li><li>**`sticky-cookie-services` annotation**, OpenShift version 3.11 only: Added the `secure` and `httponly` parameters to the [`sticky-cookie-services` annotation](/docs/openshift?topic=openshift-ingress_annotation#sticky-cookie-services).</li><li>**Enabling TLS for Ingress**, OpenShift version 4.3 only: If you use a custom domain and want to enable TLS for Ingress, you must [add a TLS section to each Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3) instead of specifying the certificate in the configuration file for the custom Ingress controller.</li><li>**Version changelogs**: Master and worker node patch updates are available for OpenShift [3.11.170_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1544)</li></ul> |
 | 12 March 2020 | **Feature gates**: Added the [feature gates for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-settings#feature-gates) that differ from community OpenShift distributions.|
 | 09 March 2020 | **Managing Ingress ALBs**: For version 3.11 clusters only: Added a page for [managing the lifecycle of your ALBs](/docs/openshift?topic=openshift-ingress-manage), including information about creating, updating, and moving ALBs. |
@@ -113,7 +114,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <td>22 November 2019</td>
 <td><ul>
 <li><strong>Bring your own DNS for load balancers</strong>: Added steps for bringing your own custom domain for [NLBs](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)</li>
-<li><strong>Gateway appliance firewalls</strong>: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) that you must open in a public gateway device firewall</li>
+<li><strong>Gateway appliance firewalls</strong>: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) that you must open in a public gateway device firewall.</li>
 <li><strong>Ingress ALB subdomain format</strong>: [Changes are made to the Ingress subdomain](/docs/openshift?topic=openshift-ingress-about#ingress-resource). New clusters are assigned an Ingress subdomain in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud` and an Ingress secret in the format `<cluster_name>.<globally_unique_account_HASH>-0000`. Any existing clusters that use the `<cluster_name>.<region>.containers.mybluemix.net` subdomain are assigned a CNAME record that maps to a `<cluster_name>.<region_or_zone>.containers.appdomain.cloud` subdomain.</li>
 </ul></td>
 </tr>
@@ -538,5 +539,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <li><strong>CLI reference</strong>: Updated the [CLI reference page](/docs/openshift?topic=openshift-kubernetes-service-cli) to reflect multiple changes for the [release of version 0.3.34](/docs/openshift?topic=openshift-cs_cli_changelog) of the {{site.data.keyword.containerlong_notm}} CLI plug-in.</li>
   <li><strong>New! Red Hat OpenShift on IBM Cloud clusters</strong>: With the Red Hat OpenShift on IBM Cloud beta, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the OpenShift container orchestration platform software. You get all the advantages of managed {{site.data.keyword.containerlong_notm}} for your cluster infrastructure environment, along with the [OpenShift tooling and catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/welcome/index.html) that runs on Red Hat Enterprise Linux for your app deployments. To get started, see [Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial).</li>
   </ul></td>
+</tr>
 </tbody></table>
 
