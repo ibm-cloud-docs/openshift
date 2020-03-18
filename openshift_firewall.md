@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -296,7 +296,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
           <tr>
             <td>US East</td>
              <td>mon01<br>tor01<br><br>wdc04, wdc06, wdc07</td>
-             <td><code>169.54.126.219, 169.54.80.106</code><br><code>169.53.167.50, 169.53.171.210</code><br><br><code>169.63.88.186, 169.60.73.142, 169.61.109.34, 169.63.88.178, 169.60.101.42, 169.61.83.62, 169.47.174.106, 169.61.74.210, 169.63.149.122</code></td>
+             <td><code>169.54.126.219, 169.54.80.106</code><br><code>169.53.167.50, 169.53.171.210</code><br><br><code>169.63.88.186, 169.60.73.142, 169.61.109.34, 169.63.88.178, 169.60.101.42, 169.61.83.62, 169.63.111.82, 169.63.160.130, 52.117.88.42, 169.47.174.106, 169.61.74.210, 169.63.149.122</code></td>
           </tr>
           <tr>
             <td>US South</td>
