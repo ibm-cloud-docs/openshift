@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-03-18"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -359,8 +359,8 @@ Secrets provide sensitive configuration information such as passwords for your d
 {: shortdesc}
 
 The following example shows how you can reference values from your secret as environment variables in the container spec section of your deployment YAML. You can also mount the secret as a volume. By referencing values from your secret, you can decouple this configuration information from your deployment to keep your containerized app portable.
-* [Help me decide whether to use a ConfigMap or Secret for variables](/docs/openshift?topic=openshift-plan_deploy#variables).
-* For more information, see [Understanding when to use secrets](/docs/openshift?topic=openshift-encryption#secrets).
+* [Help me decide whether to use a Kubernetes `ConfigMap` or `Secret` object for variables](/docs/openshift?topic=openshift-plan_deploy#variables).
+* To create a secret, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/secret/).
 
 ```yaml
 apiVersion: apps/v1
