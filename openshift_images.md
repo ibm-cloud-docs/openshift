@@ -193,7 +193,7 @@ For example, you might pull an image from any private or public registry source,
 
 
 ## Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor
-{: #push-images}
+{: #va-images}
 
 Vulnerability Advisor checks the security status of container images that are provided by IBM, third parties, or added to your organization's {{site.data.keyword.registrylong_notm}} namespace.
 {: shortdesc}

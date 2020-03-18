@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -283,7 +283,7 @@ Deploy the migration operator to the destination Red Hat OpenShift on IBM Cloud 
     {: pre}
 
 ### Step 3: Configure storage information in the destination cluster
-{: #ocp3to4-migrate-destination}
+{: #ocp3to4-storage-destination}
 
 Both the version 3.11 source and 4.3 destination clusters have the migration operator installed. Now, you can set up the storage resources that are needed to backup and restore the data from the source cluster to the destination cluster.
 {: shortdesc}

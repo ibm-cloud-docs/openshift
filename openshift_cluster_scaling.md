@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-19"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -284,10 +284,10 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     </tr>
     </tbody>
     </table>
-    <table class="simple-tab-table" id="helm2" tab-title="Helm 2 install command" tab-group="helm-install" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
+    <table class="simple-tab-table" id="helm2" tab-title="Helm 2 install command" tab-group="helm-install" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9034">
     <caption caption-side="top">
       Install the cluster autoscaler chart in Helm version 2<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The row contains the installation command.</span>
+      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9034">The row contains the installation command.</span>
     </caption>
     <thead>
     <tr>
