@@ -92,14 +92,14 @@ In classic clusters, bringing your own Ingress controller is supported only for 
 
 5. Get the **EXTERNAL-IP** address for the load balancer.
     ```
-    oc get ingress-nginx -n kube-system
+    oc get svc ingress-nginx -n kube-system
     ```
     {: pre}
 
     In the following example output, the **EXTERNAL-IP** is `168.1.1.1`.
     ```
-    NAME         TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)            AGE
-    my-lb-svc    LoadBalancer   172.21.xxx.xxx   168.1.1.1        80:30104/TCP       2m
+    NAME             TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)            AGE
+    ingress-nginx    LoadBalancer   172.21.xxx.xxx   168.1.1.1        80:30104/TCP       2m
     ```
     {: screen}
 
@@ -155,19 +155,20 @@ In classic clusters, bringing your own Ingress controller is supported only for 
         ```
         {: pre}
 
-      5. Get the ID of the ALB.
-        ```
-        ibmcloud oc albs --cluster <cluster-name>
-        ```
-        {: pre}
+      5. If you do not plan to continue to use IBM-provided ALBs concurrently with your custom Ingress controller:
+          1. Get the ID of the ALBs.
+            ```
+            ibmcloud oc albs --cluster <cluster-name>
+            ```
+            {: pre}
 
-      6. Disable the ALB.
-        ```
-        ibmcloud oc alb configure classic --alb-id <alb-id> --disable
-        ```
-        {: pre}
+          2. Disable each ALB.
+            ```
+            ibmcloud oc alb configure classic --alb-id <alb-id> --disable
+            ```
+            {: pre}
 
-      7. Verify that your load balancer is now registered with the Ingress subdomain.
+      6. Verify that your load balancer is now registered with the Ingress subdomain.
         ```
         ibmcloud oc nlb-dns ls -c <cluster>
         ```
