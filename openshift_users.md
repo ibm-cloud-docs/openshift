@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-17"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -163,6 +163,9 @@ To successfully provision and work with clusters, you must ensure that your {{si
 
 Your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account is already set up with access to {{site.data.keyword.cloud_notm}} infrastructure. To use this infrastructure in Red Hat OpenShift on IBM Cloud, the **account owner** must set the [API key](#api_key_about) for the region and resource group.
 {: shortdesc}
+
+The quickest way to set up the API key is to ask the account owner, who already has the required infrastructure permissions. However, the account owner might want to create a functional ID with all the required infrastructure permissions (**Super User** role for classic infrastructure). Then, if the account owner is unavailable or changes, the API key owner remains the functional ID.
+{: tip}
 
 1. Log in to the terminal as the account owner.
     ```
