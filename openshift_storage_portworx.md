@@ -872,7 +872,7 @@ To access the storage from your app, you must mount the PVC to your app.
     </tr>
     <tr>
     <td><code>spec.containers.image</code></td>
-    <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registryshort_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
+    <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
     </tr>
     <tr>
     <td><code>spec.containers.name</code></td>

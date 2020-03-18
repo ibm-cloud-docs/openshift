@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-07"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -403,7 +403,7 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
   ```
   {: pre}
 
-4. Optional: To allow your worker nodes to access other {{site.data.keyword.cloud_notm}} services over the public network, apply the `allow-public-services.yaml` and `allow-public-services-pods.yaml` policies. The policy allows access to the IP addresses for {{site.data.keyword.registryshort_notm}}, and if the services are available in the region, {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. To access other IBM Cloud services, you must manually add the subnets for those services to this policy.
+4. Optional: To allow your worker nodes to access other {{site.data.keyword.cloud_notm}} services over the public network, apply the `allow-public-services.yaml` and `allow-public-services-pods.yaml` policies. The policy allows access to the IP addresses for {{site.data.keyword.registrylong_notm}}, and if the services are available in the region, {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. To access other IBM Cloud services, you must manually add the subnets for those services to this policy.
   ```
   calicoctl apply -f allow-public-services.yaml
   calicoctl apply -f allow-public-services-pods.yaml
@@ -487,7 +487,7 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
     ```
     {: pre}
 
-5. Optional: To allow your workers and pods to access {{site.data.keyword.registryshort_notm}} over the private network, apply the `allow-private-services.yaml` and `allow-private-services-pods.yaml` policies. To access other IBM Cloud services that support private service endpoints, you must manually add the subnets for those services to this policy.
+5. Optional: To allow your workers and pods to access {{site.data.keyword.registrylong_notm}} over the private network, apply the `allow-private-services.yaml` and `allow-private-services-pods.yaml` policies. To access other IBM Cloud services that support private service endpoints, you must manually add the subnets for those services to this policy.
   ```
   calicoctl apply -f allow-private-services.yaml
   calicoctl apply -f allow-private-services-pods.yaml

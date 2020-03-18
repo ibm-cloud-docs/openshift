@@ -87,7 +87,7 @@ You can take some general steps to containerize your app as follows.
 {: support}
 
 1.  Use the [Twelve-Factor App](https://12factor.net/){: external} as a guide for isolating dependencies, separating processes into separate services, and reducing the statefulness of your app as much as possible.
-2.  Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registryshort_notm}}.
+2.  Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registrylong_notm}}.
 3.  Add to your Docker image only what is necessary to run the app.
     
     Don't want to make a Dockerfile yourself? Try out the [`ibmcloud dev enable` command](/docs/cli?topic=cloud-cli-idt-cli#enable), which detects your app's programming language and builds a Dockerfile and containerization components for you.
@@ -497,7 +497,7 @@ As you plan and develop your app, consider the following options to maintain a s
 
 <dl>
 <dt>Image security</dt>
-<dd>To protect your app, you must protect the image and establish checks to ensure the image's integrity. Review the [image and registry security topic](/docs/openshift?topic=openshift-security#images_registry) for steps that you can take to ensure secure container images. For example, you might use Vulnerability Advisor checks the security status of container images. When you add an image to your organization's {{site.data.keyword.registryshort_notm}} namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability. To get started, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).</dd>
+<dd>To protect your app, you must protect the image and establish checks to ensure the image's integrity. Review the [image and registry security topic](/docs/openshift?topic=openshift-security#images_registry) for steps that you can take to ensure secure container images. For example, you might use Vulnerability Advisor checks the security status of container images. When you add an image to your organization's {{site.data.keyword.registrylong_notm}} namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability. To get started, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).</dd>
 <dt>Kubernetes secrets</dt>
 <dd>When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](/docs/openshift?topic=openshift-security#pi), such as an `imagePullSecret` for registry credentials. You can then reference these secrets in your deployment YAML file.</dd>
 <dt>Secret encryption</dt>

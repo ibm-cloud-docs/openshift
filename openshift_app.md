@@ -141,7 +141,7 @@ spec:
 Specify the image that you want to use for your containers, the location of the image, and the image pull policy. If you do not specify an image tag, by default it pulls the image that is tagged `latest`.
 {: shortdesc}
 
-Avoid using the latest tag for production workloads. You might not have tested your workload with the latest image if you are using a public or shared repository, such as Docker Hub or {{site.data.keyword.registryshort_notm}}.
+Avoid using the latest tag for production workloads. You might not have tested your workload with the latest image if you are using a public or shared repository, such as Docker Hub or {{site.data.keyword.registrylong_notm}}.
 {: important}
 
 For example, to list the tags of public IBM images:

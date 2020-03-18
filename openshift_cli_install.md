@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -59,7 +59,7 @@ To install the CLIs:
 1.  Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started#idt-prereq){: external}. This installation includes:
     -   The base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`).
     -   The Red Hat OpenShift on IBM Cloud plug-in (`ibmcloud oc`).
-    -   {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by IBM, and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
+    -   {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by IBM, and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
     -   The Kubernetes CLI (`kubectl`) that matches the default version: 1.16.8.<p class="note">After you install the {{site.data.keyword.cloud_notm}} CLI, you must [also install the `oc` CLI and the `kubectl` version that matches your cluster](#cli_oc).</p>
     -   The Helm CLI (`helm`). You might use Helm as a package manager to install {{site.data.keyword.cloud_notm}} services and complex apps to your cluster via Helm charts. You must still [set up Helm](/docs/openshift?topic=openshift-helm) in each cluster where you want to use Helm.
 
@@ -75,7 +75,7 @@ To install the CLIs:
     If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
     {: tip}
 
-4.  Verify that the Red Hat OpenShift on IBM Cloud plug-in and {{site.data.keyword.registryshort_notm}} plug-in are installed correctly.
+4.  Verify that the Red Hat OpenShift on IBM Cloud plug-in and {{site.data.keyword.registrylong_notm}} plug-in are installed correctly.
     ```
     ibmcloud plugin list
     ```
@@ -174,7 +174,7 @@ This task includes the information for updating the following CLIs:
 -   {{site.data.keyword.cloud_notm}} CLI version 0.8.0 or later
 -   Red Hat OpenShift on IBM Cloud plug-in
 -   OpenShift CLI
--   {{site.data.keyword.registryshort_notm}} plug-in
+-   {{site.data.keyword.registrylong_notm}} plug-in
 
 
 [Version 1.0 of the CLI plug-in was released on 16 March 2020](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta). This version contains permanent syntax and behavior changes that are not backwards compatible.</br></br>To maintain all CLI functionality, update and test any automation before you update to 1.0 by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
@@ -222,7 +222,7 @@ To update the CLIs:
 
 4.  [Update the OpenShift CLI](#cli_oc).
 
-5.  Update the {{site.data.keyword.registryshort_notm}} plug-in.
+5.  Update the {{site.data.keyword.registrylong_notm}} plug-in.
     1.  Install the update from the {{site.data.keyword.cloud_notm}} plug-in repository.
 
         ```
@@ -252,7 +252,7 @@ This task includes the information for removing these CLIs:
 
 
 -   Red Hat OpenShift on IBM Cloud plug-in
--   {{site.data.keyword.registryshort_notm}} plug-in
+-   {{site.data.keyword.registrylong_notm}} plug-in
 
 To uninstall the CLIs:
 
@@ -263,7 +263,7 @@ To uninstall the CLIs:
     ```
     {: pre}
 
-2.  Uninstall the {{site.data.keyword.registryshort_notm}} plug-in.
+2.  Uninstall the {{site.data.keyword.registrylong_notm}} plug-in.
 
     ```
     ibmcloud plugin uninstall container-registry
@@ -299,7 +299,7 @@ To uninstall the CLIs:
 <img src="images/icon-beta-flair.png" alt="Beta icon" width="30" style="width:30px; border-style: none"/> The {{site.data.keyword.cloud-shell_notm}} is a beta feature that is subject to change. Do not use it for production workloads.
 {: preview}
 
-The {{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), the {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`), the {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`), and the OpenShift CLI (`oc`).
+The {{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), the {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`), the {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`), and the OpenShift CLI (`oc`).
 
 While you use the {{site.data.keyword.cloud-shell_short}}, keep in mind the following limitations:
 * You can open up to five concurrent sessions, which operate independently so you can work with different resources, regions, and accounts at once.

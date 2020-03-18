@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-17"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -91,7 +91,7 @@ Prepare your {{site.data.keyword.cloud_notm}} account for {{site.data.keyword.co
   **Services**:
     * [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}} at the account level.
     * [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}.
-    * [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for Container Registry at the account level. If your account predates 4 October 2018, you need to [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-user#existing_users). With IAM policies, you can control access to resources such as registry namespaces.
+    * [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for Container Registry at the account level. If your account predates 4 October 2018, you need to [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-user#existing_users). With IAM policies, you can control access to resources such as registry namespaces.
 
   **Infrastructure**:
     * **Super User** role or the [minimum required permissions](/docs/openshift?topic=openshift-access_reference#infra) for classic infrastructure.

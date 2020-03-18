@@ -821,7 +821,7 @@ To add block storage:
       </tr>
     <tr>
     <td><code>spec.containers.image</code></td>
-    <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registryshort_notm}} account, run `ibmcloud cr image-list`.</td>
+    <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.</td>
     </tr>
     <tr>
     <td><code>spec.containers.name</code></td>

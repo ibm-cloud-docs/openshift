@@ -89,7 +89,7 @@ If corporate network policies prevent access from your local system to public en
 
    ```
    {: screen}
-5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registryshort_notm}} regional service endpoints by reviewing [this table](#firewall_registry).
+5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](#firewall_registry).
   * Global registry: `icr.io`
   * AP North: `jp.icr.io`
   * AP South: `au.icr.io`

@@ -303,7 +303,7 @@ To ensure that all infrastructure-related actions can be successfully completed 
     2. Click the name of the user who you want to set the API key for or whose credentials you want to set for the API key, and then click the **Access policies** tab.
     3. If the user doesn't have the **Administrator** platform role for all Red Hat OpenShift on IBM Cloud clusters in all regions, [assign that platform role to the user](#platform).
     4. If the user doesn't have at least the **Viewer** platform role for the resource group where you want to set the API key, [assign that resource group role to the user](#platform).
-    5. To create clusters, the user also needs the **Administrator** platform role for {{site.data.keyword.registrylong_notm}} at the account level. Do not limit policies for {{site.data.keyword.registryshort_notm}} to the resource group level.
+    5. To create clusters, the user also needs the **Administrator** platform role for {{site.data.keyword.registrylong_notm}} at the account level. Do not limit policies for {{site.data.keyword.registrylong_notm}} to the resource group level.
 
 3. To make sure that all infrastructure-related actions in your cluster can be successfully performed, verify that the user has the correct infrastructure access policies.
   1. From the menu bar, select **Manage > Access (IAM)**.
