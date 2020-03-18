@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-18"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -82,7 +82,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components 
 {:shortdesc}
 
 1.  Install the command-line tools.
-    *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registryshort_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+    *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
     *   [Install the OpenShift (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 2.  Log in to the account and resource group where you want to create OpenShift clusters. If you have a federated account, include the `--sso` flag.
     ```
@@ -159,12 +159,12 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
     <tr>
     <td>Administrator perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Administrator perspective, you can manage and set up the components that your team needs to ruyour apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](https://docs.openshift.com/container-platform/4.2/web-console/using-dashboard-to-get-cluster-information.html){: external} in the OpenShift documentation.</td>
+    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](https://docs.openshift.com/container-platform/4.2/web-console/using-dashboard-to-get-cluster-information.html){: external} in the OpenShift documentation.</td>
     </tr>
     <tr>
     <td>Developer perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way tovisualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](https://docs.openshift.com/container-platform/4.2/web-console/odc-about-developer-perspective.html){: external} in the OpenShift documentation.</td>
+    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](https://docs.openshift.com/container-platform/4.2/web-console/odc-about-developer-perspective.html){: external} in the OpenShift documentation.</td>
     </tr>
     </tbody>
     </table>
@@ -189,12 +189,12 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
     <tr>
     <td>Application Console</td>
     <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>For each project that you have access to, you can manage your OpenShift resources such aspods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for theseresources, or add services from the catalog to the project. For more information, see the [OpenShift Web Console Walkthrough](https:/docs.openshift.com/container-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
+    <td>For each project that you have access to, you can manage your OpenShift resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the [OpenShift Web Console Walkthrough](https:/docs.openshift.com/container-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
     </tr>
     <tr>
     <td>Cluster Console</td>
     <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the clusterin a combined view. For more information, see the [OpenShift Web Console Walkthrough](https:/docs.openshift.com/container-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
+    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [OpenShift Web Console Walkthrough](https:/docs.openshift.com/container-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
     </tr>
     </tbody>
     </table><p></p>

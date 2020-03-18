@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-17"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -349,7 +349,7 @@ When you use the API for automation, be sure to rely on the responses from the A
 ## Working with your cluster by using the Kubernetes API
 {: #kube_api}
 
-You can use the [Kubernetes API](https://kubernetes.io/docs/reference/using-api/api-overview/){: external} to interact with your cluster in Red Hat OpenShift on IBM Cloud.
+You can use the [Kubernetes API](https://kubernetes.io/docs/reference/using-api/api-overview/){: external} to interact with your cluster in Red Hat OpenShift on IBM Cloud. For authentication details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users).
 {: shortdesc}
 
 The following instructions require public network access in your cluster to connect to the public service endpoint of your Kubernetes master.

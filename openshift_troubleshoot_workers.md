@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -140,7 +140,8 @@ Review the options to debug your worker nodes and find the root causes for failu
 ## Common issues with worker nodes
 {: #common_worker_nodes_issues}
 
-Review common error messages and learn how to resolve them.
+Review common error messages and learn how to resolve them. Messages might begin with the prefix, `'<provider>' infrastructure exception:`, where `<provider>` identifies which infrastructure provider the worker node uses.
+{: shortdesc}
 
   <table>
   <caption>Common error messages</caption>
@@ -150,12 +151,12 @@ Review common error messages and learn how to resolve them.
     </thead>
     <tbody>
       <tr>
-        <td>{{site.data.keyword.cloud_notm}} classic infrastructure exception: Your account is currently prohibited from ordering 'Computing Instances'.</td>
+        <td>Your account is currently prohibited from ordering 'Computing Instances'.</td>
         <td>Your IBM Cloud infrastructure account might be restricted from ordering compute resources. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](#getting_help).</td>
       </tr>
       <tr>
-      <td>{{site.data.keyword.cloud_notm}} classic infrastructure exception: Could not place order.<br><br>
-      {{site.data.keyword.cloud_notm}} classic infrastructure exception: Could not place order. There are insufficient resources behind router 'router_name' to fulfill the request for the following guests: 'worker_id'.</td>
+      <td>Could not place order.<br><br>
+      Could not place order. There are insufficient resources behind router 'router_name' to fulfill the request for the following guests: 'worker_id'.</td>
       <td>The zone that you selected might not have enough infrastructure capacity to provision your worker nodes. Or you might have exceeded a limit in your IBM Cloud infrastructure account. To resolve, try one of the following options:
       <ul><li>Infrastructure resource availability in zones can fluctuate often. Wait a few minutes and try again.</li>
       <li>For a single zone cluster, create the cluster in a different zone. For a multizone cluster, add a zone to the cluster.</li>
@@ -164,19 +165,20 @@ Review common error messages and learn how to resolve them.
       <li>Open an [IBM Cloud infrastructure support case](#getting_help)</li></ul></td>
       </tr>
       <tr>
-        <td>{{site.data.keyword.cloud_notm}} classic infrastructure exception: Could not obtain network VLAN with ID: <code>&lt;vlan id&gt;</code>.</td>
+        <td>Could not obtain network VLAN with ID: <code>&lt;vlan id&gt;</code>.</td>
         <td>Your worker node could not be provisioned because the selected VLAN ID could not be found for one of the following reasons:<ul><li>You might have specified the VLAN number instead of the VLAN ID. The VLAN number is 3 or 4 digits long, whereas the VLAN ID is 7 digits long. Run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code> to retrieve the VLAN ID.<li>The VLAN ID might not be associated with the IBM Cloud infrastructure account that you use. Run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code> to list available VLAN IDs for your account. To change the IBM Cloud infrastructure account, see [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set). </ul></td>
       </tr>
       <tr>
-        <td>SoftLayer_Exception_Order_InvalidLocation: The location provided for this order is invalid. (HTTP 500)</td>
+        <td>The location provided for this order is invalid.</td>
         <td>Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](#getting_help) to verify that you account is set up correctly.</td>
        </tr>
        <tr>
-        <td>{{site.data.keyword.cloud_notm}} classic infrastructure exception: The user does not have the necessary {{site.data.keyword.cloud_notm}} classic infrastructure permissions to add servers
+        <td>The user does not have the necessary {{site.data.keyword.cloud_notm}} classic infrastructure permissions to add servers
         </br></br>
-        {{site.data.keyword.cloud_notm}} classic infrastructure exception: 'Item' must be ordered with permission.
+        'Item' must be ordered with permission.
         </br></br>
-        The {{site.data.keyword.cloud_notm}} classic infrastructure credentials could not be validated.</td>
+        The IBM Cloud infrastructure credentials could not be validated.<br><br>
+        '<Provider>' infrastructure request not authorized</td>
         <td>You might not have the required permissions to perform the action in your IBM Cloud infrastructure portfolio, or you are using the wrong infrastructure credentials. See [Setting up the API key to enable access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#api_key).</td>
       </tr>
       <tr>
@@ -188,18 +190,18 @@ Review common error messages and learn how to resolve them.
        <li>If you want the cluster to have a public IP, [add new worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) with both public and private VLANs.</li></ul></li></ul></td>
      </tr>
   <tr>
-    <td>Worker not responding to soft reboot.</td>
+    <td>The worker did not respond to the soft reboot request. A hard reboot might be necessary.</td>
     <td>Although you issued a reboot on your worker node, the worker node is unresponsive. You can rerun the [reboot command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) with the `--hard` flag to power off the worker node, or run the `worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).</td>
   </tr>
       <tr>
-  <td>Cannot create IMS portal token, as no IMS account is linked to the selected BSS account</br></br>Provided user not found or active</br></br>SoftLayer_Exception_User_Customer_InvalidUserStatus: User account is currently cancel_pending.</br></br>Worker not found. Review {{site.data.keyword.cloud_notm}} classic infrastructure user permissions</td>
+  <td>Cannot create IMS portal token, as no IMS account is linked to the selected BSS account</br></br>Provided user not found or active</br></br>User account is currently cancel_pending.</br></br>The worker node instance '&lt;ID&gt;' cannot be found. Review '&lt;provider&gt;' infrastructure user permissions.<br><br>The worker node instance cannot be found. Review '&lt;provider&gt;' infrastructure user permissions.<br><br>The worker node instance cannot be identified. Review '&lt;provider&gt;' infrastructure user permissions.</td>
   <td>The owner of the API key that is used to access the IBM Cloud infrastructure portfolio does not have the required permissions to perform the action, or might be pending deletion.</br></br><strong>As the user</strong>, follow these steps:
   <ol><li>If you have access to multiple accounts, make sure that you are logged in to the account where you want to work with Red Hat OpenShift on IBM Cloud. </li>
   <li>Run <code>ibmcloud oc api-key info --cluster &lt;cluster_name_or_ID&gt;</code> to view the current API key owner that is used to access the IBM Cloud infrastructure portfolio. </li>
   <li>Run <code>ibmcloud account list</code> to view the owner of the {{site.data.keyword.cloud_notm}} account that you currently use. </li>
   <li>Contact the owner of the {{site.data.keyword.cloud_notm}} account and report that the API key owner has insufficient permissions in IBM Cloud infrastructure or might be pending to be deleted. </li></ol>
   </br><strong>As the account owner</strong>, follow these steps:
-  <ol><li>Review the [required permissions in IBM Cloud infrastructure](/docs/openshift?topic=openshift-users#infra_access) to perform the action that previously failed. </li>
+  <ol><li>Review the [required classic permissions in IBM Cloud infrastructure](/docs/openshift?topic=openshift-users#infra_access) to perform the action that previously failed.</li>
   <li>Fix the permissions of the API key owner or create a new API key by using the [<code>ibmcloud oc api-key reset --region <region></code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command. </li>
   <li>If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [<code>ibmcloud oc credential unset --region <region></code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to remove the credentials from your account.</li></ol></td>
   </tr>
@@ -233,25 +235,28 @@ CLI to set your {{site.data.keyword.cloud_notm}} Infrastructure API keys.
 {: screen}
 
 ```
-{{site.data.keyword.cloud_notm}} Infrastructure Exception:
 'Item' must be ordered with permission.
 ```
 {: screen}
 
 ```
-Worker not found. Review {{site.data.keyword.cloud_notm}} infrastructure permissions.
+The worker node instance '<ID>' cannot be found. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
 ```
-{{site.data.keyword.cloud_notm}} Infrastructure Exception:
-The user does not have the necessary {{site.data.keyword.cloud_notm}}
-Infrastructure permissions to add servers
+The worker node instance cannot be found. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
 ```
-IAM token exchange request failed: Cannot create IMS portal token, as no IMS account is linked to the selected BSS account
+The worker node instance cannot be identified. Review '<provider>' infrastructure user permissions.
+```
+{: screen}
+
+```
+The IAM token exchange request failed with the message: <message>
+IAM token exchange request failed: <message>
 ```
 {: screen}
 
@@ -261,7 +266,7 @@ The cluster could not be configured with the registry. Make sure that you have t
 {: screen}
 
 {: tsCauses}
-The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
+The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different classic IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
 
 {: tsResolve}
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
@@ -283,20 +288,20 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         <user_name>         <name@email.com>
         ```
         {: screen}
-    2.  Check if the infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
+    2.  Check if the classic infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
         ```
         ibmcloud oc credential get --region <us-south>
         ```
         {: pre}
 
-        **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
+        **Example output if credentials are set to use a different classic account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
         ```
         OK
         Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
         ```
         {: screen}
 
-        **Example output if credentials are not set to use a different account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
+        **Example output if credentials are not set to use a different classic account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
         ```
         FAILED
         No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
@@ -469,17 +474,17 @@ You cannot perform infrastructure-related commands on your cluster, such as:
 * Resizing worker pools
 * Updating your cluster
 
-You cannot view the cluster worker nodes in your IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
+You cannot view the cluster worker nodes in your classic IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
 
 Further, you verified that you have the [proper infrastructure credentials](#cs_credentials).
 
 {: tsCauses}
-The cluster might be provisioned in an IBM Cloud infrastructure account that is no longer linked to your Red Hat OpenShift on IBM Cloud account. The cluster is orphaned. Because the resources are in a different account, you do not have the infrastructure credentials to modify the resources.
+The cluster might be provisioned in a classic IBM Cloud infrastructure account that is no longer linked to your Red Hat OpenShift on IBM Cloud account. The cluster is orphaned. Because the resources are in a different account, you do not have the infrastructure credentials to modify the resources.
 
 Consider the following scenario to understand how clusters might become orphaned.
 1.  You have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account.
 2.  You create a cluster named `Cluster1`. The worker nodes and other infrastructure resources are provisioned into the infrastructure account that comes with your Pay-As-You-Go account.
-3.  Later, you find out that your team uses a legacy or shared IBM Cloud infrastructure account. You use the `ibmcloud oc credential set` command to change the IBM Cloud infrastructure credentials to use your team account.
+3.  Later, you find out that your team uses a legacy or shared classic IBM Cloud infrastructure account. You use the `ibmcloud oc credential set` command to change the IBM Cloud infrastructure credentials to use your team account.
 4.  You create another cluster named `Cluster2`. The worker nodes and other infrastructure resources are provisioned into the team infrastructure account.
 5.  You notice that `Cluster1` needs a worker node update, a worker node reload, or you just want to clean it up by deleting it. However, because `Cluster1` was provisioned into a different infrastructure account, you cannot modify its infrastructure resources. `Cluster1` is orphaned.
 6.  You follow the resolution steps in the following section, but do not set your infrastructure credentials back to your team account. You can delete `Cluster1`, but now `Cluster2` is orphaned.
@@ -533,7 +538,7 @@ Use a Kubernetes [`DaemonSet`](https://kubernetes.io/docs/concepts/workloads/con
 When you use `ibmcloud oc worker` commands with your bare metal worker node, you see a message similar to the following.
 
 ```
-Instance ID inconsistent with worker records
+The worker node instance ID changed. Reload the worker node if bare metal hardware was serviced.
 ```
 {: screen}
 
@@ -660,8 +665,30 @@ Still having issues with your cluster? Review different ways to get help and sup
 <br>
 
 **Getting help**<br>
-1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
-2.  In your support case, for **Category**, select **Containers**.
-3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. 3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
+1. Before you open a support case, gather relevant information about your cluster environment.
+   1. Get your cluster details.
+      ```
+      ibmcloud oc cluster get -c <cluster_name_or_ID>
+      ```
+      {: pre}
+   2. If your issue involves worker nodes, get the worker node details.
+      1. List all worker nodes in the cluster, and note the **ID** of any worker nodes with an unhealthy **State** or **Status**.
+         ```
+         ibmcloud oc worker ls -c <cluster_name_or_ID>
+         ```
+         {: pre}
+      2. Get the details of the unhealthy worker node.
+         ```
+         ibmcloud oc worker get -w <worker_ID> -c <cluster_name_or_ID>
+         ```
+         {: pre}
+   3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. 
+   
+   3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
+   {: tip}
+
+2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+3.  In your support case, for **Category**, select **Containers**.
+4.  For the **Offering**, select your OpenShift cluster. Include the relevant information that you previously gathered.
 
 

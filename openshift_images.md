@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -45,21 +45,21 @@ A Docker image is the basis for every container that you create with {{site.data
 An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
 
 
-## Deploying containers from an {{site.data.keyword.registryshort_notm}} image to the `default` OpenShift project
+## Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` OpenShift project
 {: #namespace}
 
-You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registryshort_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
+You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registrylong_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
 {:shortdesc}
 
 Before you begin:
-1. [Set up a namespace in {{site.data.keyword.registryshort_notm}} and push images to this namespace](/docs/Registry?topic=registry-getting-started#gs_registry_namespace_add).
+1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 2. [Create a cluster](/docs/openshift?topic=openshift-clusters).
 4. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To deploy a container into the **default** project of your cluster:
 
 1.  Create a deployment configuration file that is named `mydeployment.yaml`.
-2.  Define the deployment and the image to use from your project in {{site.data.keyword.registryshort_notm}}.
+2.  Define the deployment and the image to use from your project in {{site.data.keyword.registrylong_notm}}.
 
     ```yaml
     apiVersion: apps/v1
@@ -84,7 +84,7 @@ To deploy a container into the **default** project of your cluster:
 
     Replace the image URL variables with the information for your image:
     *  **`<app_name>`**: The name of your app.
-    *  **`<region>`**: The regional {{site.data.keyword.registryshort_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run `ibmcloud cr api`.
+    *  **`<region>`**: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run `ibmcloud cr api`.
     *  **`<namespace>`**: The registry namespace. To get your namespace information, run `ibmcloud cr namespace-list`.
     *  **`<my_image>:<tag>`**: The image and tag that you want to use to build the container. To get the images available in your registry, run `ibmcloud cr images`.
 
@@ -181,21 +181,21 @@ Steps:
 <br />
 
 
-## Pushing images to {{site.data.keyword.registryshort_notm}}
+## Pushing images to {{site.data.keyword.registrylong_notm}}
 {: #push-images}
 
-After the cluster administrator [sets up an image registry with {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-getting-started#getting-started), you can securely store and share Docker images with other users by adding images to your namespace.
+After the cluster administrator [sets up an image registry with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-getting-started#getting-started), you can securely store and share Docker images with other users by adding images to your namespace.
 {: shortdesc}
 
-For example, you might pull an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registryshort_notm}}. Or, you might push a Docker image that you work with to your namespace so that other users can access the image. To get started, see [Adding images to your namespace](/docs/Registry?topic=registry-registry_images_).
+For example, you might pull an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}. Or, you might push a Docker image that you work with to your namespace so that other users can access the image. To get started, see [Adding images to your namespace](/docs/Registry?topic=registry-registry_images_).
 
 <br />
 
 
-## Managing security of images in {{site.data.keyword.registryshort_notm}} with Vulnerability Advisor
-{: #push-images}
+## Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor
+{: #va-images}
 
-Vulnerability Advisor checks the security status of container images that are provided by IBM, third parties, or added to your organization's {{site.data.keyword.registryshort_notm}} namespace.
+Vulnerability Advisor checks the security status of container images that are provided by IBM, third parties, or added to your organization's {{site.data.keyword.registrylong_notm}} namespace.
 {: shortdesc}
 
 When you add an image to a namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability. To get started, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).

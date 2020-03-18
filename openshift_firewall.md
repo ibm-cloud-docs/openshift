@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -89,7 +89,7 @@ If corporate network policies prevent access from your local system to public en
 
    ```
    {: screen}
-5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registryshort_notm}} regional service endpoints by reviewing [this table](#firewall_registry).
+5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](#firewall_registry).
   * Global registry: `icr.io`
   * AP North: `jp.icr.io`
   * AP South: `au.icr.io`
@@ -296,7 +296,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
           <tr>
             <td>US East</td>
              <td>mon01<br>tor01<br><br>wdc04, wdc06, wdc07</td>
-             <td><code>169.54.126.219, 169.54.80.106</code><br><code>169.53.167.50, 169.53.171.210</code><br><br><code>169.63.88.186, 169.60.73.142, 169.61.109.34, 169.63.88.178, 169.60.101.42, 169.61.83.62, 169.47.174.106, 169.61.74.210, 169.63.149.122</code></td>
+             <td><code>169.54.126.219, 169.54.80.106</code><br><code>169.53.167.50, 169.53.171.210</code><br><br><code>169.63.88.186, 169.60.73.142, 169.61.109.34, 169.63.88.178, 169.60.101.42, 169.61.83.62, 169.63.111.82, 169.63.160.130, 52.117.88.42, 169.47.174.106, 169.61.74.210, 169.63.149.122</code></td>
           </tr>
           <tr>
             <td>US South</td>

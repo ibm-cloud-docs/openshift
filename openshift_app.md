@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-03-18"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -141,7 +141,7 @@ spec:
 Specify the image that you want to use for your containers, the location of the image, and the image pull policy. If you do not specify an image tag, by default it pulls the image that is tagged `latest`.
 {: shortdesc}
 
-Avoid using the latest tag for production workloads. You might not have tested your workload with the latest image if you are using a public or shared repository, such as Docker Hub or {{site.data.keyword.registryshort_notm}}.
+Avoid using the latest tag for production workloads. You might not have tested your workload with the latest image if you are using a public or shared repository, such as Docker Hub or {{site.data.keyword.registrylong_notm}}.
 {: important}
 
 For example, to list the tags of public IBM images:
@@ -359,8 +359,8 @@ Secrets provide sensitive configuration information such as passwords for your d
 {: shortdesc}
 
 The following example shows how you can reference values from your secret as environment variables in the container spec section of your deployment YAML. You can also mount the secret as a volume. By referencing values from your secret, you can decouple this configuration information from your deployment to keep your containerized app portable.
-* [Help me decide whether to use a ConfigMap or Secret for variables](/docs/openshift?topic=openshift-plan_deploy#variables).
-* For more information, see [Understanding when to use secrets](/docs/openshift?topic=openshift-encryption#secrets).
+* [Help me decide whether to use a Kubernetes `ConfigMap` or `Secret` object for variables](/docs/openshift?topic=openshift-plan_deploy#variables).
+* To create a secret, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/secret/).
 
 ```yaml
 apiVersion: apps/v1

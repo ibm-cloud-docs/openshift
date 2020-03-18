@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-03-17"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards
 
@@ -33,11 +33,14 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Service architecture
-{: #service-arch}
+# Service architecture and dependencies
+{: #service-arch-dependencies}
 
 The following diagram and table describe the default components that are set up in a {{site.data.keyword.openshiftlong}} architecture.
 {: shortdesc}
+
+## Service architecture
+{: #service-architecture}
 
 For more information about the OpenShift Container Platform architecture, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/architecture/architecture.html){: external}.
 {: note}
@@ -77,3 +80,5 @@ Scroll through the following table for more information about the cluster master
 {: tab-title="Worker nodes"}
 {: tab-group="roks-components"}
 {: class="simple-tab-table"}
+
+

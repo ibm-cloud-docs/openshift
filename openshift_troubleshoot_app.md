@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -341,7 +341,7 @@ The following steps assume that the API key stores the credentials of a service 
     ServiceId-bb22...   <service_ID_name>  2019-02-01T19:01+0000   2019-02-01T19:01+0000   Service ID for IBM Cloud Container Registry in Kubernetes cluster <cluster_name> namespace <project>                                                                                                                                         false
     ```
     {: screen}
-2.  Verify that the service ID is assigned at least an {{site.data.keyword.cloud_notm}} IAM **Reader** [service access role policy for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-user#create). If the service ID does not have the **Reader** service role, [edit the IAM policies](/docs/iam?topic=iam-serviceidpolicy#access_edit). If the policies are correct, continue with the next step to see if the credentials are valid.
+2.  Verify that the service ID is assigned at least an {{site.data.keyword.cloud_notm}} IAM **Reader** [service access role policy for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-user#create). If the service ID does not have the **Reader** service role, [edit the IAM policies](/docs/iam?topic=iam-serviceidpolicy#access_edit). If the policies are correct, continue with the next step to see if the credentials are valid.
     ```
     ibmcloud iam service-policies <service_ID_name>
     ```
@@ -465,7 +465,7 @@ The pods deploy successfully to clusters, but the containers do not start.
 Containers might not start when the registry quota is reached.
 
 {: tsResolve}
-[Free up storage in {{site.data.keyword.registryshort_notm}}.](/docs/Registry?topic=registry-registry_quota#registry_quota_freeup)
+[Free up storage in {{site.data.keyword.registrylong_notm}}.](/docs/Registry?topic=registry-registry_quota#registry_quota_freeup)
 
 <br />
 
@@ -846,8 +846,30 @@ Still having issues with your cluster? Review different ways to get help and sup
 <br>
 
 **Getting help**<br>
-1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
-2.  In your support case, for **Category**, select **Containers**.
-3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. 3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
+1. Before you open a support case, gather relevant information about your cluster environment.
+   1. Get your cluster details.
+      ```
+      ibmcloud oc cluster get -c <cluster_name_or_ID>
+      ```
+      {: pre}
+   2. If your issue involves worker nodes, get the worker node details.
+      1. List all worker nodes in the cluster, and note the **ID** of any worker nodes with an unhealthy **State** or **Status**.
+         ```
+         ibmcloud oc worker ls -c <cluster_name_or_ID>
+         ```
+         {: pre}
+      2. Get the details of the unhealthy worker node.
+         ```
+         ibmcloud oc worker get -w <worker_ID> -c <cluster_name_or_ID>
+         ```
+         {: pre}
+   3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. 
+   
+   3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
+   {: tip}
+
+2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+3.  In your support case, for **Category**, select **Containers**.
+4.  For the **Offering**, select your OpenShift cluster. Include the relevant information that you previously gathered.
 
 

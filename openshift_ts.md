@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -286,7 +286,7 @@ To check your client `kubectl` version against the cluster server version, run `
 {: tsResolve}
 [Install the version of `kubectl`](/docs/openshift?topic=openshift-openshift-cli#kubectl) that matches the Kubernetes version of your cluster.
 
-If you have multiple clusters at different Kubernetes versions or different container platforms such as OpenShift, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local terminal profile to point to the `kubectl` binary directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
+If you have multiple clusters at different Kubernetes versions or different container platforms such as OpenShift, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local terminal profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
 
 <br />
 
@@ -362,25 +362,28 @@ CLI to set your {{site.data.keyword.cloud_notm}} Infrastructure API keys.
 {: screen}
 
 ```
-{{site.data.keyword.cloud_notm}} Infrastructure Exception:
 'Item' must be ordered with permission.
 ```
 {: screen}
 
 ```
-Worker not found. Review {{site.data.keyword.cloud_notm}} infrastructure permissions.
+The worker node instance '<ID>' cannot be found. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
 ```
-{{site.data.keyword.cloud_notm}} Infrastructure Exception:
-The user does not have the necessary {{site.data.keyword.cloud_notm}}
-Infrastructure permissions to add servers
+The worker node instance cannot be found. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
 ```
-IAM token exchange request failed: Cannot create IMS portal token, as no IMS account is linked to the selected BSS account
+The worker node instance cannot be identified. Review '<provider>' infrastructure user permissions.
+```
+{: screen}
+
+```
+The IAM token exchange request failed with the message: <message>
+IAM token exchange request failed: <message>
 ```
 {: screen}
 
@@ -390,7 +393,7 @@ The cluster could not be configured with the registry. Make sure that you have t
 {: screen}
 
 {: tsCauses}
-The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
+The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different classic IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
 
 {: tsResolve}
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
@@ -412,20 +415,20 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         <user_name>         <name@email.com>
         ```
         {: screen}
-    2.  Check if the infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
+    2.  Check if the classic infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
         ```
         ibmcloud oc credential get --region <us-south>
         ```
         {: pre}
 
-        **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
+        **Example output if credentials are set to use a different classic account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
         ```
         OK
         Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
         ```
         {: screen}
 
-        **Example output if credentials are not set to use a different account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
+        **Example output if credentials are not set to use a different classic account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
         ```
         FAILED
         No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
@@ -524,7 +527,7 @@ Classic clusters only: The {{site.data.keyword.cloud_notm}} account owner or an 
 
 
 
-## Cluster create error cannot pull images from {{site.data.keyword.registryshort_notm}}
+## Cluster create error cannot pull images from {{site.data.keyword.registrylong_notm}}
 {: #ts_image_pull_create}
 
 {: tsSymptoms}
@@ -532,7 +535,7 @@ When you created a cluster, you received an error message similar to the followi
 
 
 ```
-Your cluster cannot pull images from the {{site.data.keyword.registryshort_notm}} 'icr.io' domains because an IAM access policy could not be created. Make sure that you have the IAM Administrator platform role to {{site.data.keyword.registryshort_notm}}. Then, create an image pull secret with IAM credentials to the registry by running 'ibmcloud ks cluster pull-secret apply'.
+Your cluster cannot pull images from the {{site.data.keyword.registrylong_notm}} 'icr.io' domains because an IAM access policy could not be created. Make sure that you have the IAM Administrator platform role to {{site.data.keyword.registrylong_notm}}. Then, create an image pull secret with IAM credentials to the registry by running 'ibmcloud ks cluster pull-secret apply'.
 ```
 {: screen}
 
@@ -884,8 +887,30 @@ Still having issues with your cluster? Review different ways to get help and sup
 <br>
 
 **Getting help**<br>
-1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
-2.  In your support case, for **Category**, select **Containers**.
-3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. 3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
+1. Before you open a support case, gather relevant information about your cluster environment.
+   1. Get your cluster details.
+      ```
+      ibmcloud oc cluster get -c <cluster_name_or_ID>
+      ```
+      {: pre}
+   2. If your issue involves worker nodes, get the worker node details.
+      1. List all worker nodes in the cluster, and note the **ID** of any worker nodes with an unhealthy **State** or **Status**.
+         ```
+         ibmcloud oc worker ls -c <cluster_name_or_ID>
+         ```
+         {: pre}
+      2. Get the details of the unhealthy worker node.
+         ```
+         ibmcloud oc worker get -w <worker_ID> -c <cluster_name_or_ID>
+         ```
+         {: pre}
+   3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. 
+   
+   3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
+   {: tip}
+
+2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+3.  In your support case, for **Category**, select **Containers**.
+4.  For the **Offering**, select your OpenShift cluster. Include the relevant information that you previously gathered.
 
 

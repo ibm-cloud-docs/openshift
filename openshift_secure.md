@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-28"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -364,11 +364,11 @@ By default, Red Hat OpenShift on IBM Cloud provides many features for your clust
 
 <img src="images/trusted_story.png" width="700" alt="Deploying containers with trusted content" style="width:700px; border-style: none"/>
 
-1.  **Content Trust for your images**: Ensure the integrity of your images by enabling content trust in your {{site.data.keyword.registryshort_notm}}. With trusted content, you can control who can sign images as trusted. After trusted signers push an image to your registry, users can pull the signed content so that they can verify the source of the image. For more information, see [Signing images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent).
+1.  **Content Trust for your images**: Ensure the integrity of your images by enabling content trust in your {{site.data.keyword.registrylong_notm}}. With trusted content, you can control who can sign images as trusted. After trusted signers push an image to your registry, users can pull the signed content so that they can verify the source of the image. For more information, see [Signing images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent).
 
 2.  **Container Image Security Enforcement**: Create an admission controller with custom policies so that you can verify container images before you deploy them. With Container Image Security Enforcement, you control where the images are deployed from and ensure that they meet [Vulnerability Advisor](/docs/va?topic=va-va_index) policies or [content trust](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent) requirements. If a deployment does not meet the policies that you set, security enforcement prevents modifications to your cluster. For more information, see [Enforcing container image security](/docs/Registry?topic=registry-security_enforce#security_enforce).
 
-3.  **Image Vulnerability Scanner**: By default, Vulnerability Advisor scans images that are stored in {{site.data.keyword.registryshort_notm}} to find potential security vulnerabilities. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
+3.  **Image Vulnerability Scanner**: By default, Vulnerability Advisor scans images that are stored in {{site.data.keyword.registrylong_notm}} to find potential security vulnerabilities. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
 4.  **Network insights with Security Advisor (beta)**: With {{site.data.keyword.cloud_notm}} Security Advisor, you can centralize security insights from {{site.data.keyword.cloud_notm}} services such as Vulnerability Advisor and {{site.data.keyword.cloudcerts_short}}. When you enable Security Advisor in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [Network Analytics](/docs/security-advisor?topic=security-advisor-setup-network#setup-network). To install, see [Setting up monitoring of suspicious clients and server IP addresses for a Kubernetes cluster](/docs/security-advisor?topic=security-advisor-setup-network#setup-network).
 
@@ -384,7 +384,7 @@ Every deployment is based on an image that holds the instructions for how to spi
 {: shortdesc}
 
 **Should I use a public or a private registry to store my images?** </br>
-Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registryshort_notm}} or the [internal registry](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external} that is automatically set up in your OpenShift cluster, and make sure to control access to the registry and the image content that can be pushed.
+Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external} that is automatically set up in your OpenShift cluster, and make sure to control access to the registry and the image content that can be pushed.
 
 **Why is it important to check images against vulnerabilities?** </br>
 Research shows that most malicious attacks leverage known software vulnerabilities and weak system configurations. When you deploy a container from an image, the container spins up with the OS and extra binaries that you described in the image. Just like you protect your virtual or physical machine, you must eliminate known vulnerabilities in the OS and binaries that you use inside the container to protect your app from being accessed by unauthorized users. </br>
@@ -396,15 +396,15 @@ To protect your apps, consider to address the following areas:
 Automate the process to build your container image from your source code to eliminate source code variations and defects. By integrating the build process into your CI/CD pipeline, you can ensure that your image is scanned and built only if the image passes the security checks that you specified. To avoid that developers apply hot fixes to sensitive images, limit the number of people in your organization who have access to the build process.
 
 2. **Scan images before they deploy into production:** </br>
-Make sure to scan every image before you deploy a container from it. For example, if you use {{site.data.keyword.registryshort_notm}}, all images are automatically scanned for vulnerabilities when you push the image to your namespace. If vulnerabilities are found, consider eliminating the vulnerabilities or block deployment for those images. Find a person or team in your organization who is responsible for monitoring and removing vulnerabilities. Depending on your organizational structure, this person might be part of a security, operations, or deployment team. Use admission controllers, such as the [Container Image Security Enforcement](/docs/Registry?topic=registry-security_enforce#security_enforce) to block deployments from images that did not pass vulnerability checks and enable [content trust](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent) so that images must be approved by a trusted signer before they can be pushed to the container registry.
+Make sure to scan every image before you deploy a container from it. For example, if you use {{site.data.keyword.registrylong_notm}}, all images are automatically scanned for vulnerabilities when you push the image to your namespace. If vulnerabilities are found, consider eliminating the vulnerabilities or block deployment for those images. Find a person or team in your organization who is responsible for monitoring and removing vulnerabilities. Depending on your organizational structure, this person might be part of a security, operations, or deployment team. Use admission controllers, such as the [Container Image Security Enforcement](/docs/Registry?topic=registry-security_enforce#security_enforce) to block deployments from images that did not pass vulnerability checks and enable [content trust](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent) so that images must be approved by a trusted signer before they can be pushed to the container registry.
 
 3. **Regularly scan running containers:** </br>
 Even if you deployed a container from an image that passes the vulnerability check, the operating system or binaries that run in the container might get vulnerable over time. To protect your app, you must ensure that running containers are regularly scanned so that you can detect and remediate vulnerabilities. Depending on the app, to add extra security, you can establish a process that takes down vulnerable containers after they are detected.
 
 **Can I use the built-in container registry in my OpenShift cluster to address build automation, image and container scanning?** </br>
-You can use the built-in container registry to automate the container image build process from your source code in an external source repository to your internal registry. However, images are not automatically scanned for vulnerabilities when they are pushed to the internal registry. To set up image scanning, set up a registry namespace and push your images to the managed {{site.data.keyword.registryshort_notm}} instead. 
+You can use the built-in container registry to automate the container image build process from your source code in an external source repository to your internal registry. However, images are not automatically scanned for vulnerabilities when they are pushed to the internal registry. To set up image scanning, set up a registry namespace and push your images to the managed {{site.data.keyword.registrylong_notm}} instead. 
 
-**How can {{site.data.keyword.registryshort_notm}} help me to protect my images and deployment process?**  
+**How can {{site.data.keyword.registrylong_notm}} help me to protect my images and deployment process?**  
 
 
 ![Deploying containers with trusted content](images/oc_image_security.png)
@@ -417,7 +417,7 @@ You can use the built-in container registry to automate the container image buil
   </thead>
   <tbody>
     <tr>
-      <td>Secured Docker private image repository in {{site.data.keyword.registryshort_notm}}</td>
+      <td>Secured Docker private image repository in {{site.data.keyword.registrylong_notm}}</td>
       <td>Set up your own Docker [image repository](/docs/Registry?topic=registry-getting-started#getting-started) in a multi-tenant, highly available, and scalable private image registry that is hosted and managed by IBM. By using the registry, you can build, securely store, and share Docker images across cluster users. </br></br>Learn more about [securing your personal information](/docs/openshift?topic=openshift-security#pi) when you work with container images.</td>
     </tr>
     <tr>
@@ -426,7 +426,7 @@ You can use the built-in container registry to automate the container image buil
     </tr>
     <tr>
       <td>Automatic vulnerability scans</td>
-      <td>When you use {{site.data.keyword.registryshort_notm}}, you can leverage the built-in security scanning that is provided by [Vulnerability Advisor](/docs/va?topic=va-va_index#va_registry_cli). Every image that is pushed to your registry namespace is automatically scanned for vulnerabilities against a database of known CentOS, Debian, Red Hat, and Ubuntu issues. If vulnerabilities are found, Vulnerability Advisor provides instructions for how to resolve them to ensure image integrity and security.</td>
+      <td>When you use {{site.data.keyword.registrylong_notm}}, you can leverage the built-in security scanning that is provided by [Vulnerability Advisor](/docs/va?topic=va-va_index#va_registry_cli). Every image that is pushed to your registry namespace is automatically scanned for vulnerabilities against a database of known CentOS, Debian, Red Hat, and Ubuntu issues. If vulnerabilities are found, Vulnerability Advisor provides instructions for how to resolve them to ensure image integrity and security.</td>
     </tr>
     <tr>
       <td>Block deployments from vulnerable images or untrusted users</td>

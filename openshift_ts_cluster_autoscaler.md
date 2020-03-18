@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -168,7 +168,7 @@ Before you begin, [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: screen}
 
-6.  If you do not find any failures or error messages and you already enabled logging, restart the cluster autoscaler pod. The deployment recreates the pod.
+6.  If you do not find any failures or error messages and you already enabled logging, restart the cluster autoscaler pod. The deployment re-creates the pod.
     ```
     oc delete pod -n kube-system <pod_name>
     ```
@@ -197,7 +197,7 @@ Still having issues with your cluster? Review different ways to get help and sup
 
 **Feedback and questions**<br>
 1. Post in the {{site.data.keyword.containershort}} Slack.
-   * If you are an external user, post in the [#openshift](https://ibm-container-service.slack.com/messages/CKCJLJCH4){: external} channel.
+   * If you are an external user, post in the [#openshift](https://ibm-cloud-success.slack.com/messages/CKCJLJCH4){: external} channel.
    * If you are an IBMer, use the [#iks-openshift-users](https://ibm-argonauts.slack.com/messages/CJH0UPN2D){: external} channel.<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack){: external} to this Slack.</p>
 2. Review forums such as OpenShift help, Stack Overflow, and IBM Developer to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
    * If you have technical questions about developing or deploying clusters or apps with Red Hat OpenShift on IBM Cloud, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `containers`, and `openshift`.
@@ -206,9 +206,31 @@ Still having issues with your cluster? Review different ways to get help and sup
 <br>
 
 **Getting help**<br>
-1.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
-2.  In your support case, for **Category**, select **Containers**.
-3.  For the **Offering**, select your OpenShift cluster.<p class="tip">When you report an issue, include your cluster ID. To get your cluster ID, run `ibmcloud oc cluster ls`. You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information from your cluster to share with IBM Support.</p>
+1. Before you open a support case, gather relevant information about your cluster environment.
+   1. Get your cluster details.
+      ```
+      ibmcloud oc cluster get -c <cluster_name_or_ID>
+      ```
+      {: pre}
+   2. If your issue involves worker nodes, get the worker node details.
+      1. List all worker nodes in the cluster, and note the **ID** of any worker nodes with an unhealthy **State** or **Status**.
+         ```
+         ibmcloud oc worker ls -c <cluster_name_or_ID>
+         ```
+         {: pre}
+      2. Get the details of the unhealthy worker node.
+         ```
+         ibmcloud oc worker get -w <worker_ID> -c <cluster_name_or_ID>
+         ```
+         {: pre}
+   3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. 
+   
+   3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
+   {: tip}
+
+2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+3.  In your support case, for **Category**, select **Containers**.
+4.  For the **Offering**, select your OpenShift cluster. Include the relevant information that you previously gathered.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-19"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -284,10 +284,10 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     </tr>
     </tbody>
     </table>
-    <table class="simple-tab-table" id="helm2" tab-title="Helm 2 install command" tab-group="helm-install" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
+    <table class="simple-tab-table" id="helm2" tab-title="Helm 2 install command" tab-group="helm-install" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9034">
     <caption caption-side="top">
       Install the cluster autoscaler chart in Helm version 2<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The row contains the installation command.</span>
+      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9034">The row contains the installation command.</span>
     </caption>
     <thead>
     <tr>
@@ -786,7 +786,7 @@ Before you begin to upgrade your cluster autoscaler release, complete the follow
 ### Upgrading the cluster autoscaler release version
 {: #ca_helm_up_general}
 
-To upgrade your cluster autoscaler release, you can update the Helm chart repo and recreate the cluster autoscaler pods. Use the same version of Helm that you used to install the initial Helm chart and release. For example, if you installed the release with Helm version 2, these upgrade steps might not work if you now have Helm version 3. Instead, see [Upgrading a release from Helm version 2 to version 3](#ca_helm_up_2to3).
+To upgrade your cluster autoscaler release, you can update the Helm chart repo and re-create the cluster autoscaler pods. Use the same version of Helm that you used to install the initial Helm chart and release. For example, if you installed the release with Helm version 2, these upgrade steps might not work if you now have Helm version 3. Instead, see [Upgrading a release from Helm version 2 to version 3](#ca_helm_up_2to3).
 
 Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
 

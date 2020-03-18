@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -285,7 +285,7 @@ To add different block storage configurations, add block storage to a subset of 
    </tbody>
    </table>  
 
-5. Retrieve your IBM Cloud infrastructure username and API key. The username and API key are used by the `mkpvyaml` script to access the cluster.
+5. Retrieve your classic IBM Cloud infrastructure username and API key. The username and API key are used by the `mkpvyaml` script to access the cluster.
    1.  Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external}.
    2.  From the menu bar, select **Manage > Access (IAM)**.
    3.  Select the **Users** tab and then click on your username.
@@ -934,7 +934,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
             <tbody>
             <tr>
             <td><code>spec.containers.image</code></td>
-            <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registryshort_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
+            <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
             </tr>
             <tr>
             <td><code>spec.containers.name</code></td>

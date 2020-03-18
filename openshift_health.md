@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-18"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -167,7 +167,7 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 
 **To forward Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}:**
 
-1. [Set up a {{site.data.keyword.la_full_notm}} instance and configure the LogDNA agent in your cluster](#openshift_logdna).
+1. [Set up an {{site.data.keyword.la_full_notm}} instance and configure the LogDNA agent in your cluster](#openshift_logdna).
 
 2. Target the global container registry for public {{site.data.keyword.cloud_notm}} images.
   ```
@@ -512,7 +512,7 @@ To deploy the [OpenShift Container Platform cluster logging operator](https://do
           name: vardata
         ```
         {: codeblock}
-    5.  Apply your changes and wait for the Fluentd pods to recreate.
+    5.  Apply your changes and wait for the Fluentd pods to re-create.
 8.  Verify that container logs are sent to Elasticsearch by checking the Kibana console.
     1.  From the OpenShift console `openshift-logging` project, click **Networking > Routers**, and click the **Kibana** route.
     2.  In the Kibana console that opens, confirm that you see logs for containers.

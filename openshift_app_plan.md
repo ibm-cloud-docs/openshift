@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -87,8 +87,11 @@ You can take some general steps to containerize your app as follows.
 {: support}
 
 1.  Use the [Twelve-Factor App](https://12factor.net/){: external} as a guide for isolating dependencies, separating processes into separate services, and reducing the statefulness of your app as much as possible.
-2.  Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registryshort_notm}}.
+2.  Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registrylong_notm}}.
 3.  Add to your Docker image only what is necessary to run the app.
+    
+    Don't want to make a Dockerfile yourself? Try out the [`ibmcloud dev enable` command](/docs/cli?topic=cloud-cli-idt-cli#enable), which detects your app's programming language and builds a Dockerfile and containerization components for you.
+    {: tip}
 4.  Review the [common app modification scenarios](#openshift_move_apps_scenarios).
 4.  Instead of relying on local storage, plan to use persistent storage or cloud database-as-a-service solutions to back up your app's data.
 5.  Over time, refactor your app processes into microservices.
@@ -450,7 +453,7 @@ If you want to run your app in multiple clusters, public and private environment
 <dt>Set up a continuous integration and delivery (CI/CD) pipeline</dt>
   <dd>With your app configuration files organized in a source control management system such as Git, you can build your pipeline to test and deploy code to different environments, such as `test` and `prod`. Work with your cluster administrator to [set up continuous integration and delivery](/docs/openshift?topic=openshift-cicd).</dd>
 <dt>Package your app configuration files</dt>
-  <dd>With the [Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh/docs/) Kubernetes package manager, you can specify all Kubernetes resources that your app requires in a Helm chart. Then, you can use Helm to create the YAML configuration files and deploy these files in your cluster. You can also [integrate {{site.data.keyword.cloud_notm}}-provided Helm charts ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/helm) to extend your cluster's capabilities, such as with a block storage plug-in.<p class="tip">Are you just looking for an easy way to create YAML file templates? Some people use Helm to do just that, or you might try out other community tools such as [`ytt` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://get-ytt.io/).</p></dd>
+  <dd>Packakge your app with tools like Kustomize or Helm.<ul><li>With the [`kustomize` project](/docs/openshift?topic=openshift-openshift_apps#kustomize), you can write, customize, and reuse your Kubernetes resource YAML configurations.</li><li>With the [Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh/docs/) Kubernetes package manager, you can specify all Kubernetes resources that your app requires in a Helm chart. Then, you can use Helm to create the YAML configuration files and deploy these files in your cluster. You can also [integrate {{site.data.keyword.cloud_notm}}-provided Helm charts ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/helm) to extend your cluster's capabilities, such as with a block storage plug-in.</li></ul><p class="tip">Are you just looking for an easy way to create YAML file templates? Some people use Helm to do just that, or you might try out other community tools such as [`ytt` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://get-ytt.io/).</p></dd>
 </dl>
 
 <br />
@@ -494,7 +497,7 @@ As you plan and develop your app, consider the following options to maintain a s
 
 <dl>
 <dt>Image security</dt>
-<dd>To protect your app, you must protect the image and establish checks to ensure the image's integrity. Review the [image and registry security topic](/docs/openshift?topic=openshift-security#images_registry) for steps that you can take to ensure secure container images. For example, you might use Vulnerability Advisor checks the security status of container images. When you add an image to your organization's {{site.data.keyword.registryshort_notm}} namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability. To get started, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).</dd>
+<dd>To protect your app, you must protect the image and establish checks to ensure the image's integrity. Review the [image and registry security topic](/docs/openshift?topic=openshift-security#images_registry) for steps that you can take to ensure secure container images. For example, you might use Vulnerability Advisor checks the security status of container images. When you add an image to your organization's {{site.data.keyword.registrylong_notm}} namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability. To get started, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).</dd>
 <dt>Kubernetes secrets</dt>
 <dd>When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](/docs/openshift?topic=openshift-security#pi), such as an `imagePullSecret` for registry credentials. You can then reference these secrets in your deployment YAML file.</dd>
 <dt>Secret encryption</dt>

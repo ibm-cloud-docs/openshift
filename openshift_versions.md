@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-18"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -196,8 +196,8 @@ Before you migrate your workloads from an OpenShift version 3.11 cluster to a ve
 3.  Prepare an [{{site.data.keyword.cos_full_notm}}](https://cloud.ibm.com/objectstorage/){: external} bucket for the migration backup and restore. 
     1.  Identify an existing or create an {{site.data.keyword.cos_short}} instance. When you create the instance, make sure to select **Include HMAC Credential**. For more information, see [Preparing your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service).
     2.  [Create a bucket](/docs/cloud-object-storage-infrastructure?topic=cloud-object-storage-infrastructure-storing-and-retrieving-data#buckets) in your {{site.data.keyword.cos_short}} instance. Note the bucket's region **Location**, such as `us-south`.
-    3.  Get your HMAC authentication credentials. From the [{{site.data.keyword.cos_full_notm}}](https://cloud.ibm.com/objectstorage/){: external} console, click **Service credentials** and find credentials that include a `cos_hmac_keys` object with `access_key_id` and `secret_access_key` values. If you do not have credentials with HMAC keys, click **New credential**. Create credentials that include HMAC credentials.
-    4.  Get your {{site.data.keyword.cos_short}} instance endpoint for the same geography as your cluster is in. From the [{{site.data.keyword.cos_full_notm}}](https://cloud.ibm.com/objectstorage/){: external} instance console, click **Endpoints** and then select the location that you want to use. For example, `https://s3.us.cloud-object-storage.appdomain.cloud`.
+    3.  Get your HMAC authentication credentials. From the {{site.data.keyword.cos_full_notm}} instance in the console, click **Service credentials** and find credentials that include a `cos_hmac_keys` object with `access_key_id` and `secret_access_key` values. If you do not have credentials with HMAC keys, click **New credential**. Create credentials that include HMAC credentials.
+    4.  Get your {{site.data.keyword.cos_short}} instance endpoint for the same geography as your cluster is in. From the {{site.data.keyword.cos_full_notm}} instance in the console, click **Endpoints** and then select the location that you want to use. For example, `https://s3.us.cloud-object-storage.appdomain.cloud`.
 
 ### Step 1: Deploy the migration operator to the source cluster
 {: #ocp3to4-migrate-source}
@@ -283,7 +283,7 @@ Deploy the migration operator to the destination Red Hat OpenShift on IBM Cloud 
     {: pre}
 
 ### Step 3: Configure storage information in the destination cluster
-{: #ocp3to4-migrate-destination}
+{: #ocp3to4-storage-destination}
 
 Both the version 3.11 source and 4.3 destination clusters have the migration operator installed. Now, you can set up the storage resources that are needed to backup and restore the data from the source cluster to the destination cluster.
 {: shortdesc}
@@ -411,7 +411,7 @@ To migrate workloads from the version 3.11 source cluster, the version 4.3 desti
     oc create -f sa-secret-source.yaml
     ```
     {: pre}
-3.  Create a confiuration file for a migration cluster resource that refers to the version 3.11 source cluster's master URL that you retrieved in [Step 1](#ocp3to4-migrate-source).
+3.  Create a configuration file for a migration cluster resource that refers to the version 3.11 source cluster's master URL that you retrieved in [Step 1](#ocp3to4-migrate-source).
     ```
     apiVersion: migration.openshift.io/v1alpha1
     kind: MigCluster
@@ -531,7 +531,7 @@ To complete the migration process, create a sample plan to verify that what you 
     ```
     {: screen}
 
-    Example of an unsuccesful message with troubleshooting information.
+    Example of an unsuccessful message with troubleshooting information.
     ```
     Message:               Namespaces [migrate-hw] not found on the source cluster.
     ```
