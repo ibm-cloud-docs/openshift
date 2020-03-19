@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-19"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -44,7 +44,7 @@ If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster with
 
 
 
-If you installed the {{site.data.keyword.cos_full_notm}} plugin with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
+If you installed the {{site.data.keyword.cos_full_notm}} plug-in with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
 {: important}
 
 With version 1.0.5, the {{site.data.keyword.cos_full_notm}} plug-in is renamed from `ibmcloud-object-storage-plugin` to `ibm-object-storage-plugin`. To install the new version of the plug-in, you must [uninstall the old Helm chart installation](#remove_cos_plugin) and [reinstall the Helm chart with the new {{site.data.keyword.cos_full_notm}} plug-in version](#install_cos).

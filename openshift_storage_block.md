@@ -42,7 +42,7 @@ subcollection: openshift
 {{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
-If you installed the {{site.data.keyword.blockstorageshort}} plugin with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
+If you installed the {{site.data.keyword.blockstorageshort}} plug-in with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
 {: important}
 
 <br>
