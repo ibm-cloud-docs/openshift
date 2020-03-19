@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-19"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -114,6 +114,7 @@ The following tables list the available single and multizone locations in Red Ha
 | North America | Canada | Toronto | tor01 | US East (`us-east`) |
 | North America | Mexico | Mexico City | mex01 | US South (`us-south`) |
 | North America | United States | Dallas | dal10, dal12, dal13 | US South (`us-south`) |
+| North America | United States | Houston | hou02`*` | US South (`us-south`) |
 | North America | United States | San Jose | sjc03, sjc04 | US South (`us-south`) |
 | North America | United States | Washington, D.C. | wdc04, wdc06, wdc07 | US East (`us-east`) |
 | South America | Brazil | São Paulo | sao01 | US South (`us-south`) |
@@ -122,6 +123,8 @@ The following tables list the available single and multizone locations in Red Ha
 {: #locationtabtablesingle}
 {: tab-title="Single zones for classic clusters"}
 {: tab-group="location-multi-single"}
+
+<p class="note">`*` hou02 supports free clusters that are created in US South, and is not available for standard, production clusters.</p>
 
 ### Single zone clusters
 {: #regions_single_zone}
