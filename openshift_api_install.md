@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-17"
+lastupdated: "2020-03-19"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -72,7 +72,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 1.  Create your {{site.data.keyword.cloud_notm}} IAM access token. The body information that is included in your request varies based on the {{site.data.keyword.cloud_notm}} authentication method that you use.
 
     ```
-    POST https://iam.bluemix.net/identity/token
+    POST https://iam.cloud.ibm.com/identity/token
     ```
     {: codeblock}
 
@@ -139,7 +139,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 2.  Retrieve the ID of the {{site.data.keyword.cloud_notm}} account that you want to work with. Replace `<iam_access_token>` with the {{site.data.keyword.cloud_notm}} IAM token that you retrieved from the **access_token** field of your API output in the previous step. In your API output, you can find the ID of your {{site.data.keyword.cloud_notm}} account in the **resources.metadata.guid** field.
 
     ```
-    GET https://accountmanagement.ng.bluemix.net/v1/accounts
+    GET https://accounts.cloud.ibm.com/coe/v2/accounts
     ```
     {: codeblock}
 
@@ -163,18 +163,19 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 
     ```
     {
-      "total_results": 3,
-      "total_pages": 1,
-      "prev_url": null,
-      "next_url": null,
-      "resources":
+    "next_url": null,
+    "total_results": 5,
+    "resources": [
         {
-          "metadata": {
-            "guid": "<account_ID>",
-            "url": "/v1/accounts/<account_ID>",
-            "created_at": "2016-01-07T18:55:09.726Z",
-            "updated_at": "2017-04-28T23:46:03.739Z",
-            "origin": "BSS"
+            "metadata": {
+                "guid": "<account_ID>",
+                "url": "/coe/v2/accounts/<account_ID>",
+                "created_at": "2016-09-29T02:49:41.842Z",
+                "updated_at": "2018-08-16T18:56:00.442Z",
+                "anonymousId": "1111a1aa1a1111a1aa11aa11111a1111"
+            },
+            "entity": {
+                "name": "<account_name>",
     ...
     ```
     {: screen}
@@ -185,7 +186,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     {: note}
 
     ```
-    POST https://iam.bluemix.net/identity/token
+    POST https://iam.cloud.ibm.com/identity/token
     ```
     {: codeblock}
 
@@ -359,7 +360,7 @@ The following instructions require public network access in your cluster to conn
 
 2. Retrieve an {{site.data.keyword.cloud_notm}} IAM delegated refresh token.
    ```
-   POST https://iam.bluemix.net/identity/token
+   POST https://iam.cloud.ibm.com/identity/token
    ```
    {: codeblock}
 
@@ -396,7 +397,7 @@ The following instructions require public network access in your cluster to conn
 
 3. Retrieve an {{site.data.keyword.cloud_notm}} IAM ID, IAM access, and IAM refresh token by using the delegated refresh token from the previous step. In your API output, you can find the IAM ID token in the **id_token** field, the IAM access token in the **access_token** field, and the IAM refresh token in the **refresh_token** field.
    ```
-   POST https://iam.bluemix.net/identity/token
+   POST https://iam.cloud.ibm.com/identity/token
    ```
    {: codeblock}
 
@@ -546,7 +547,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
 
 1.  Generate a new {{site.data.keyword.cloud_notm}} IAM access token by using the refresh token or the {{site.data.keyword.cloud_notm}} API key.
     ```
-    POST https://iam.bluemix.net/identity/token
+    POST https://iam.cloud.ibm.com/identity/token
     ```
     {: codeblock}
 
