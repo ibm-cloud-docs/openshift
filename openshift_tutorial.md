@@ -99,20 +99,11 @@ Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components 
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
-5.  Download the configuration files to connect to your cluster.
+5.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable.
     ```
     ibmcloud oc cluster config --cluster <cluster_name_or_ID>
     ```
     {: pre}
-
-    When the download of the configuration files is finished, a command is displayed that you can copy and paste to set the path to the local Kubernetes configuration file as an environment variable.
-
-    Example for OS X:
-
-    ```
-    export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>/kube-config-<datacenter>-<cluster_name>.yml
-    ```
-    {: screen}
 6.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
 7.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the OpenShift console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
 8.  Verify that the `oc` commands run properly with your cluster by checking the version.
