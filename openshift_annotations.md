@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-20"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -39,11 +39,14 @@ subcollection: openshift
 To add capabilities to your Ingress application load balancer (ALB), you can specify annotations as metadata in an Ingress resource.
 {: shortdesc}
 
+
 Before you use annotations, make sure that you have properly set up your Ingress service configuration by following the steps in [HTTPS load balancing with Ingress application load balancers (ALB)](/docs/openshift?topic=openshift-ingress). Once you have set up the Ingress ALB with a basic configuration, you can then expand its capabilities by adding annotations to the Ingress resource file.
 {: note}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> These annotations are applicable for Ingress in clusters that run OpenShift version 3.11 only. If you want to customize routing rules for apps in a cluster that runs OpenShift version 4.3 or later, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. To add annotations to the router, run `oc edit svc router-default -n openshift-ingress`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> These custom annotations are applicable for Ingress in clusters that run OpenShift version 3.11 only. Red Hat OpenShift on IBM Cloud annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later. If you want to customize routing rules for apps in a cluster that runs OpenShift version 4.3 or later, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. To add annotations to the router, run `oc edit svc router-default -n openshift-ingress`.
 {: important}
+
+
 
 |General annotations|Name|Description|
 |-------------------|----|-----------|
