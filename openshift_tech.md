@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-20"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards
 
@@ -87,7 +87,7 @@ Scroll through the following table for more information about the cluster master
 {: #dependencies-ibmcloud}
 
 Review the {{site.data.keyword.cloud_notm}} services that Red Hat OpenShift on IBM Cloud connects to over the public network. 
-{: #shortdesc}
+{: shortdesc}
 
 
 | Service name | Description| 
@@ -112,7 +112,7 @@ Review the {{site.data.keyword.cloud_notm}} services that Red Hat OpenShift on I
 {: #dependencies-3rd-party}
 
 Review the list of 3rd party services that Red Hat OpenShift on IBM Cloud connects to over the public network. 
-{: #shortdesc}
+{: shortdesc}
 
 | Service name | Description| 
 | -----------|-------------------------------| 
