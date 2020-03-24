@@ -3538,7 +3538,7 @@ ibmcloud oc nlb-dns rm classic --cluster mycluster --ip 1.1.1.1 --nlb-host myclu
 
 </br>
 
-### Expermimental: `ibmcloud oc nlb-dns secret regenerate`
+### Experimental: `ibmcloud oc nlb-dns secret regenerate`
 {: #cs_nlb-dns-secret-regenerate}
 
 Regenerate the certificate and secret for an NLB subdomain.
@@ -3574,7 +3574,7 @@ ibmcloud oc nlb-dns secret regenerate --cluster mycluster --nlb-subdomain myclus
 
 </br>
 
-### Expermimental: `ibmcloud oc nlb-dns secret rm`
+### Experimental: `ibmcloud oc nlb-dns secret rm`
 {: #cs_nlb-dns-secret-rm}
 
 Delete a secret from an NLB subdomain and prevent future renewal of the certificate.
