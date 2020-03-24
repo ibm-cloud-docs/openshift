@@ -34,7 +34,7 @@ subcollection: openshift
 
 
 # Service architecture and dependencies
-{: #service-arch-dependencies}
+{: #service-arch}
 
 The following diagram and table describe the default components that are set up in a {{site.data.keyword.openshiftlong}} architecture.
 {: shortdesc}
