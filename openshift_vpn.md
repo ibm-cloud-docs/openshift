@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-24"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -314,7 +314,7 @@ To monitor the status of the strongSwan VPN, you can set up a webhook to automat
 
 6. Copy the webhook URL that is generated. The URL format looks similar to the following:
   ```
-  https://hooks.slack.com/services/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
+  https://hooks.slack.com/services/A1AA11A1A/AAA1AAA1A/a1aaaaAAAaAaAAAaaaaaAaAA
   ```
   {: screen}
 
