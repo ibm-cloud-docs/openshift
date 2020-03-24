@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="openshift" category="containers,compute" audience="compute" href="/docs/openshift?topic=openshift-getting-started" path="openshift"}
+{: .toc subcollection="openshift" category="containers,compute" audience="compute" href="/docs/openshift?topic=openshift-getting-started" console-page="/kubernetes/overview?platformType=openshift" product-page="https://www.ibm.com/cloud/openshift" path="openshift"}
 Red Hat OpenShift on IBM Cloud
 
     {: .navgroup id="learn"}
@@ -37,7 +37,7 @@ Red Hat OpenShift on IBM Cloud
     Tutorials
         openshift_tutorial_ov.md
         openshift_tutorial.md
-        [Tutorial: Scalable web application on OpenShift](/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift)
+        [Tutorial: Scalable web application on OpenShift](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift)
         [OpenShift interactive learning portal](https://learn.openshift.com/)
         [Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift)
         [IBM Developer OpenShift tutorials](https://ibmdev1.rtp.raleigh.ibm.com/components/redhat-openshift-ibm-cloud/)

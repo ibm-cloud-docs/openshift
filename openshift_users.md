@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-24"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -133,7 +133,7 @@ When you create your {{site.data.keyword.cloud_notm}} account, the default resou
   <li>All instances within a service, such as all the clusters in Red Hat OpenShift on IBM Cloud.</li>
   <li>All instances within a region of a service, such as all the clusters in the **US South** region of Red Hat OpenShift on IBM Cloud.</li>
   <li>To an individual instance, such as one cluster.</li></ul></dd>
-<dt>Kubernetes namespace (projects in OpenShift)</dt>
+  <dt>Kubernetes namespace (projects in OpenShift)</dt>
   <dd><p>As part of cluster resource instances in {{site.data.keyword.cloud_notm}} IAM, you can assign users with service access roles to namespaces within your clusters.</p>
   <p>When you assign access to a namespace, the policy applies to all current and future instances of the namespace in all the clusters that you authorize. For example, say that you want a `dev` group of users to be able to deploy Kubernetes resources in a `test` namespace in all your clusters in AP North. If you assign the `dev` access group the **Writer** service access role for the Kubernetes namespace `test` in all clusters in the AP North region within the `default` resource group, the `dev` group can access the `test` namespace in any AP North cluster in the `default` resource group that currently has or eventually has a `test` namespace.</p>
   <p class="important">If you scope a service role to a namespace, you cannot apply the policy to a resource group or assign a platform role at the same time.</p></dd>
@@ -764,7 +764,7 @@ If you want users to be able to interact with Kubernetes resources from within a
 
 To learn more about the actions permitted by each RBAC role, check out the [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service) reference topic. To see the permissions that are granted by each RBAC role to individual Kubernetes resources, check out [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref).
 
-**OpenShift clusters only**: All users of an OpenShift cluster are added to the following OpenShift RBAC groups: `basic-users` and `self-provisioners`.
+All users of an OpenShift cluster are added to the following OpenShift RBAC groups by cluster version. <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3.11 clusters: `basic-users` and `self-provisioners`. <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Version 4.x clusters: `basic-users`.
 {: note}
 
 **Can I create custom roles or cluster roles?**

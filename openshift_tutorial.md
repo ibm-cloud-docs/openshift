@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-20"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -99,20 +99,11 @@ Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components 
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
-5.  Download the configuration files to connect to your cluster.
+5.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable.
     ```
     ibmcloud oc cluster config --cluster <cluster_name_or_ID>
     ```
     {: pre}
-
-    When the download of the configuration files is finished, a command is displayed that you can copy and paste to set the path to the local Kubernetes configuration file as an environment variable.
-
-    Example for OS X:
-
-    ```
-    export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>/kube-config-<datacenter>-<cluster_name>.yml
-    ```
-    {: screen}
 6.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
 7.  From the OpenShift web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the OpenShift console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
 8.  Verify that the `oc` commands run properly with your cluster by checking the version.
@@ -146,7 +137,7 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
     <table class="simple-tab-table" id="console1" tab-title="4.x" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
       <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> OpenShift console overview<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, anthe description of the console area in the third column. You can change between {{site.data.keyword.openshift}} console versions by toggling the tabs at the beginning of the table.</span>
+      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, anthe description of the console area in the third column. You can change between OpenShift console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
     <tr>
@@ -171,7 +162,7 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
     <table class="simple-tab-table" id="console2" tab-title="3.x" tab-group="console-version" aria-describedby="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">
     <caption caption-side="top">
       <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift console overview<br>
-      <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshift}} console versions by toggling the tabs at the beginning of the table.</span>
+      <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between OpenShift console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
     <tr>

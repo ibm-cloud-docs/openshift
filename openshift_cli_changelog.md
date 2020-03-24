@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-17"
+lastupdated: "2020-03-24"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -53,14 +53,14 @@ Check out the following syntax and behavior changes between each version of the 
 |Functionality|`0.2`|`0.3`|`0.4`|`1.0`|
 |-------------|-----|-----|-----|-----|
 | Supported? | Deprecated | Deprecated | Deprecated | Default |
-| `ibmcloud oc help` output structure<ul><li>Legacy: Alphabetical list of commands</li><li>Beta: Categories of commands</li></ul> | Legacy | Legacy | Beta | Beta |
-| Command structure<ul><li>Legacy: Hyphenated structure (`ibmcloud oc alb-cert-get`)</li><li>Beta: Spaced structure (`ibmcloud oc alb cert get`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
-| Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
-| Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
-| Flag format<ul><li>Legacy: Camel-case (`--showResources`)</li><li>Beta: Dashed (`--show-resources`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
-| Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul> | Legacy | Legacy | Legacy | Beta |
-| API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul> | Legacy | Beta | Beta | Beta |
-{: caption="Beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in" caption-side="top"}
+| `ibmcloud oc help` output structure<ul><li>Legacy: Alphabetical list of commands</li><li>Latest: Categories of commands</li></ul> | Legacy | Legacy | Latest | Latest |
+| Command structure<ul><li>Legacy: Hyphenated structure (`ibmcloud oc alb-cert-get`)</li><li>Latest: Spaced structure (`ibmcloud oc alb cert get`)</li></ul> | Legacy and latest | Legacy and latest | Legacy and latest | Latest |
+| Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Latest: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul> | Legacy and latest | Legacy and latest | Legacy and latest | Latest |
+| Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Latest: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul> | Legacy | Legacy | Legacy and latest | Latest |
+| Flag format<ul><li>Legacy: Camel-case (`--showResources`)</li><li>Latest: Dashed (`--show-resources`)</li></ul> | Legacy | Legacy | Legacy and latest | Latest |
+| Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Latest: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul> | Legacy | Legacy | Legacy | Latest |
+| API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Latest: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul> | Legacy | Latest | Latest | Latest |
+{: caption="Latest versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in" caption-side="top"}
 {: summary="The rows are read from left to right, with the functionality in column one, version 0.2 of the CLI in column two, version 0.3 in column three, version 0.4 in column four, and version 1.0 in column five."}
 
 <br />
@@ -77,6 +77,7 @@ Version 1.0 of the CLI plug-in was released on 16 March 2020. This version conta
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.15 | 24 Mar 2020 | <ul><li>Adds the [`ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate) and [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm) commands to help you manage secrets for NLB subdomains.</li><li>Adds the optional `--pool WORKER_POOL` flag to `ibmcloud oc zone rm`.</li><li>Deprecates the option to specify a YAML file in the `--file` flag of the `ibmcloud oc cluster create` and `ibmcloud oc worker add` commands. Instead, specify values for your cluster in the supported flags for these commands.</li><li>Fixes the following bugs:<ul><li>For `ibmcloud oc cluster rm`, the `--force-delete-storage` flag no longer sets the `-f` flag.</li><li>For `ibmcloud oc cluster create`, the `--private-only` flag no longer requires the `--private-vlan` flag.</li></ul></li><li>Updates the help text in various languages.</li></ul>|
 | 1.0.0 | 16 Mar 2020 | Introduces permanent behavior and syntax changes that are not backwards compatible. For a summary of the changes in version 1.0, see [Using version 1.0 of the plug-in](#changelog_beta).|
 {: caption="Overview of version changes for version 1.0 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
 {: summary="Overview of version changes for version 1.0 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}

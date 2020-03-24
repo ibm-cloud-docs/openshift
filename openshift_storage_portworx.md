@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -502,7 +502,7 @@ Before you begin:
 - Make sure that you have the right [permissions](/docs/openshift?topic=openshift-clusters#cluster_prepare) to create Red Hat OpenShift on IBM Cloud clusters.
 - [Create or use an existing cluster](/docs/openshift?topic=openshift-clusters).
 - If you want to use non-SDS worker nodes for your Portworx storage layer, [add an unformatted block storage device to your worker node](#create_block_storage).
-- Choose if you want to [use the internal Portworx key-value database (KVDB](#portworx-kvdb) or [create a Databases for etcd service instance](#databases-for-etcd) to store the Portworx configuration and metadata.
+- Choose if you want to [use the internal Portworx key-value database (KVDB)](#portworx-kvdb) or [create a Databases for etcd service instance](#databases-for-etcd) to store the Portworx configuration and metadata.
 - Decide whether you want to encrypt your Portworx volumes with {{site.data.keyword.keymanagementservicelong_notm}}. To encrypt your volumes, you must [set up an {{site.data.keyword.keymanagementservicelong_notm}} service instance and store your service information in a Kubernetes secret](#encrypt_volumes).
 - Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/openshift?topic=openshift-images#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/openshift?topic=openshift-images#store_imagePullSecret) of the `kube-system` project.
 - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).

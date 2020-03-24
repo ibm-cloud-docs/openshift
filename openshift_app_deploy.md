@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-20"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -410,7 +410,7 @@ For more information about the console, see the [OpenShift documentation](https:
     <table class="simple-tab-table" id="console1" tab-title="4.x" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
       <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> OpenShift console overview<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, anthe description of the console area in the third column. You can change between {{site.data.keyword.openshift}} console versions by toggling the tabs at the beginning of the table.</span>
+      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, anthe description of the console area in the third column. You can change between OpenShift console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
     <tr>
@@ -435,7 +435,7 @@ For more information about the console, see the [OpenShift documentation](https:
     <table class="simple-tab-table" id="console2" tab-title="3.x" tab-group="console-version" aria-describedby="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">
     <caption caption-side="top">
       <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift console overview<br>
-      <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshift}} console versions by toggling the tabs at the beginning of the table.</span>
+      <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between OpenShift console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
     <tr>

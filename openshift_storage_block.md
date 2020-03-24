@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -42,7 +42,7 @@ subcollection: openshift
 {{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
-If you installed the {{site.data.keyword.blockstorageshort}} plugin with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
+If you installed the {{site.data.keyword.blockstorageshort}} plug-in with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
 {: important}
 
 <br>
@@ -1297,7 +1297,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
            resources:
              requests:
                storage: 20Gi
-         storageClassName: ibmc-block-bronze-delayed
+           storageClassName: ibmc-block-bronze-delayed
        - metadata:
            name: myvol2
          spec:
@@ -1306,7 +1306,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
            resources:
              requests:
                storage: 20Gi
-         storageClassName: ibmc-block-bronze-delayed
+           storageClassName: ibmc-block-bronze-delayed
      ```
      {: codeblock}
 

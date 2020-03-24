@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-24"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -246,7 +246,7 @@ Create a cluster with worker nodes on classic infrastructure. For free clusters,
 {: shortdesc}
 
 ```
-ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement cloud_pak][-s]
+ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement cloud_pak][-s]
 ```
 {: pre}
 
@@ -258,26 +258,6 @@ ibmcloud oc cluster create classic [--file FILE_LOCATION] [--hardware HARDWARE] 
 **Command options**
 
 <dl>
-<dt><code>--file <em>FILE_LOCATION</em></code></dt>
-
-<dd>The path to the YAML file to create your standard cluster. Instead of defining the characteristics of your cluster by using the options provided in this command, you can use a YAML file. This value is optional for standard clusters and is not available for free clusters. <p class="note">If you provide the same option in the command as parameter in the YAML file, the value in the command takes precedence over the value in the YAML. For example, if you define a location in your YAML file and use the <code>--zone</code> option in the command, the value that you entered in the command option overrides the value in the YAML file.</p>
-<pre class="codeblock">
-<code>name: <em>&lt;cluster_name&gt;</em>
-location: <em>&lt;zone&gt;</em>
-no-subnet: <em>&lt;no-subnet&gt;</em>
-machine-type: <em>&lt;flavor&gt;</em>
-private-vlan: <em>&lt;private_VLAN&gt;</em>
-public-vlan: <em>&lt;public_VLAN&gt;</em>
-private-service-endpoint: <em>&lt;true&gt;</em>
-public-service-endpoint: <em>&lt;true&gt;</em>
-hardware: <em>&lt;shared_or_dedicated&gt;</em>
-workerNum: <em>&lt;number_workers&gt;</em>
-kube-version: <em>&lt;kube-version&gt;</em>
-diskEncryption: <em>false</em>
-pod-subnet: <em>&lt;subnet&gt;</em>
-service-subnet: <em>&lt;subnet&gt;</em>
-</code></pre>
-</dd>
 
 <dt><code>--hardware <em>HARDWARE</em></code></dt>
 <dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional for VM standard clusters and is not available for free clusters. For bare metal flavors, specify `dedicated`.</dd>
@@ -1045,7 +1025,7 @@ This command is deprecated. Create a worker pool by running [`ibmcloud oc worker
 {: deprecated}
 
 ```
-ibmcloud oc worker add --cluster CLUSTER [--file FILE_LOCATION] [--hardware HARDWARE] --flavor FLAVOR --workers NUMBER --private-vlan PRIVATE_VLAN --public-vlan PUBLIC_VLAN [--disable-disk-encrypt] [-s]
+ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR --workers NUMBER --private-vlan PRIVATE_VLAN --public-vlan PUBLIC_VLAN [--disable-disk-encrypt] [-s]
 ```
 {: pre}
 
@@ -1055,21 +1035,6 @@ ibmcloud oc worker add --cluster CLUSTER [--file FILE_LOCATION] [--hardware HARD
 <dl>
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--file <em>FILE_LOCATION</em></code></dt>
-<dd>The path to the YAML file to add worker nodes to the cluster. Instead of defining additional worker nodes by using the options provided in this command, you can use a YAML file. This value is optional.
-
-<p class="note">If you provide the same option in the command as the parameter in the YAML file, the value in the command takes precedence over the value in the YAML. For example, you define a flavor in your YAML file and use the <code>--flavor</code> option in the command, the value that you entered in the command option overrides the value in the YAML file.</p>
-
-<pre class="codeblock">
-<code>name: <em>&lt;cluster_name_or_ID&gt;</em>
-zone: <em>&lt;zone&gt;</em>
-flavor: <em>&lt;flavor&gt;</em>
-private-vlan: <em>&lt;private_VLAN&gt;</em>
-public-vlan: <em>&lt;public_VLAN&gt;</em>
-hardware: <em>&lt;shared_or_dedicated&gt;</em>
-workerNum: <em>&lt;number_workers&gt;</em>
-diskEncryption: <em>false</em></code></pre></dd>
 
 <dt><code>--hardware <em>HARDWARE</em></code></dt>
 <dd>The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional. For bare metal flavors, specify `dedicated`.</dd>
@@ -1930,14 +1895,14 @@ ibmcloud oc zone network-set --zone dal10 -c my_cluster -p pool1 -p pool2 --priv
 ### `ibmcloud oc zone rm`
 {: #cs_zone_rm}
 
-**Multizone clusters only**: Remove a zone from all the worker pools in your cluster. All worker nodes in the worker pool for this zone are deleted.
+**Multizone clusters only**: Remove a zone from one or more worker pools in your cluster. All worker nodes in the worker pool for this zone are deleted.
 {: shortdesc}
 
 Before you remove a zone, make sure that you have enough worker nodes in other zones in the cluster so that your pods can reschedule. Rescheduling your pods can avoid a downtime for your app or data corruption on your worker node.
 {: tip}
 
 ```
-ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [-f] [-s]
+ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--pool WORKER_POOL] [-f] [-s]
 ```
 {: pre}
 
@@ -1950,6 +1915,9 @@ ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [-f] [-s]
 
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>The zone that you want to remove. This value is required.</dd>
+
+<dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
+<dd>The name of the worker pool to remove the zone from. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`. To remove the zone from all worker pools in the cluster, do not include this flag.</dd>
 
 <dt><code>-f</code></dt>
 <dd>Force the update without user prompts. This value is optional.</dd>
@@ -3272,52 +3240,16 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 
 </br>
 
-### `ibmcloud oc nlb-dns rm classic`
-{: #cs_nlb-dns-rm}
-
-Remove a network load balancer (NLB) IP address from a subdomain. If you remove all IPs from a subdomain, the subdomain still exists but no IPs are associated with it. <strong>Note</strong>: You must run this command for each IP address that you want to remove.
-{: shortdesc}
-
-```
-ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>--ip <em>IP</em></code></dt>
-<dd>The NLB IP that you want to remove. To see the IPs registered with each subdomain, run `ibmcloud oc nlb-dns ls --cluster <cluster>`.</dd>
-
-<dt><code>--nlb-host <em>SUBDOMAIN</em></code></dt>
-<dd>The subdomain that you want to remove an IP from. To see existing subdomains, run <code>ibmcloud oc nlb-dns ls</code>.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc nlb-dns rm classic --cluster mycluster --ip 1.1.1.1 --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
-```
-{: pre}
-
-</br>
-
 ### `ibmcloud oc nlb-dns monitor configure`
 {: #cs_nlb-dns-monitor-configure}
 
 Configure and optionally enable a health check monitor for an existing NLB subdomain in a cluster. When you enable a monitor for your subdomain, the monitor health checks the NLB IP in each zone and keeps the DNS lookup results updated based on these health checks.
 {: shortdesc}
 
-You can use this command to create and enable a new health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` flag and the flags for all settings that you want to configure. To update an existing monitor, include only the flags for the settings that you want to change.
+You can use this command to create and enable a new health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` flag and the flags for all settings that you want to configure.
+
+To update an existing monitor, you must include all the flags for the settings that you want, including exsting settings.
+{: note}
 
 ```
 ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--enable] [--description DESCRIPTION] [--type TYPE] [--method METHOD] [--path PATH] [--timeout TIMEOUT] [--retries RETRIES] [--interval INTERVAL] [--port PORT] [--header HEADER] [--expected-body BODY STRING] [--expected-codes HTTP CODES] [--follows-redirects TRUE] [--allows-insecure TRUE] [--json] [-s]
@@ -3362,7 +3294,7 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--
 <dd>The port number to connect to for the health check. When <code>type</code> is <code>TCP</code>, this parameter is required. When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: <code>0</code>. Default for HTTP: <code>80</code>. Default for HTTPS: <code>443</code>.</dd>
 
 <dt><code>--header <em>HEADER</em></code></dt>
-<dd>When <code>type</code> is <code>HTTPS</code> or <code>HTTPS</code>: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden.</dd>
+<dd>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden.</dd>
 
 <dt><code>--expected-body <em>BODY STRING</em></code></dt>
 <dd>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.</dd>
@@ -3562,6 +3494,120 @@ ibmcloud oc nlb-dns monitor status --cluster CLUSTER [--nlb-host SUBDOMAIN] [--j
 **Example**:
 ```
 ibmcloud oc nlb-dns monitor status --cluster mycluster
+```
+{: pre}
+
+</br>
+
+### `ibmcloud oc nlb-dns rm classic`
+{: #cs_nlb-dns-rm}
+
+Remove a network load balancer (NLB) IP address from a subdomain. If you remove all IPs from a subdomain, the subdomain still exists but no IPs are associated with it. <strong>Note</strong>: You must run this command for each IP address that you want to remove.
+{: shortdesc}
+
+```
+ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>--ip <em>IP</em></code></dt>
+<dd>The NLB IP that you want to remove. To see the IPs registered with each subdomain, run `ibmcloud oc nlb-dns ls --cluster <cluster>`.</dd>
+
+<dt><code>--nlb-host <em>SUBDOMAIN</em></code></dt>
+<dd>The subdomain that you want to remove an IP from. To see existing subdomains, run <code>ibmcloud oc nlb-dns ls</code>.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc nlb-dns rm classic --cluster mycluster --ip 1.1.1.1 --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
+```
+{: pre}
+
+</br>
+
+### Experimental: `ibmcloud oc nlb-dns secret regenerate`
+{: #cs_nlb-dns-secret-regenerate}
+
+Regenerate the certificate and secret for an NLB subdomain.
+{: shortdesc}
+
+```
+ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--json] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>--nlb-subdomain <em>SUBDOMAIN</em></code></dt>
+<dd>The subdomain to regenerate the secret for. To list subdomains, run <code>ibmcloud oc nlb-dns ls --cluster CLUSTER</code>.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc nlb-dns secret regenerate --cluster mycluster --nlb-subdomain mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
+```
+{: pre}
+
+</br>
+
+### Experimental: `ibmcloud oc nlb-dns secret rm`
+{: #cs_nlb-dns-secret-rm}
+
+Delete a secret from an NLB subdomain and prevent future renewal of the certificate.
+{: shortdesc}
+
+```
+ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [--json] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>--nlb-subdomain <em>SUBDOMAIN</em></code></dt>
+<dd>The subdomain to delete the secret for. To list subdomains, run <code>ibmcloud oc nlb-dns ls --cluster CLUSTER</code>.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Force the command to run with no user prompts. This value is optional.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc nlb-dns secret rm --cluster mycluster --nlb-subdomain mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
 ```
 {: pre}
 

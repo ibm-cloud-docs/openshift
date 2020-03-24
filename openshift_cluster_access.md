@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-20"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -47,7 +47,7 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for OpenShift (`ibmcloud oc`), and OpenShift CLI (`oc`).
 2. [Create your OpenShift cluster](/docs/openshift?topic=openshift-clusters).
 3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall) to the {{site.data.keyword.cloud_notm}} and Red Hat OpenShift on IBM Cloud API endpoints and ports. For private service endpoint-only clusters, you cannot test the connection to your cluster until you expose the private service endpoint of the master to the cluster by using a [private NLB](#access_private_se).
-4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
+4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 
 <br />
 
@@ -121,7 +121,7 @@ The OpenShift master is accessible through the private service endpoint if autho
 
 3. Get the private service endpoint URL and port for your cluster.
   ```
-  ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+  ibmcloud oc cluster get -c <cluster_name_or_ID>
   ```
   {: pre}
 
@@ -267,25 +267,18 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ibmcloud login --apikey <API_key>
         ```
         {: pre}
-    2.  Download the cluster configuration files. For version 4.3 clusters, include the `--admin` flag.
+    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable. For version 4.3 clusters, include the `--admin` flag.
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```
         {: pre}
-
-        After downloading the configuration files, a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable, such as the following example.
-        ```
-        export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
-        ```
-        {: screen}
-    3.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
 3.  Use the API key to log in to your OpenShift cluster. The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
     ```
     oc login -u apikey -p <API_key>
     ```
     {: pre}
 
-    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get --cluster <cluster_name_or_ID>`. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
+    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get -c <cluster_name_or_ID>`. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
 
     Example curl request:
     ```
@@ -344,7 +337,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
       <td>To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run `ibmcloud oc clusters`.<p class="note">If you do not include the service instance, the access policy grants the service ID access to to all your {{site.data.keyword.containerlong_notm}} clusters, Kubernetes and OpenShift. You can also scope the access policy to a region (`--region`) or resource group (`--resource-group-name`).</td>
     </tr>
     </tbody></table>
-3.  Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, ``<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
+3.  Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
     ```
     ibmcloud iam service-api-key-create <cluster_name>-key <service_ID> --description "API key for service ID <service_ID> in OpenShift cluster <cluster_name>"
     ```
@@ -369,18 +362,11 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
         ibmcloud login --apikey <API_key>
         ```
         {: pre}
-    2.  Download the cluster configuration files.
+    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable.
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```
         {: pre}
-
-        After downloading the configuration files, a command is displayed that you can use to set the path to the local Kubernetes configuration file as an environment variable, such as the following example.
-        ```
-        export KUBECONFIG=/Users/<user_name>/.bluemix/plugins/kubernetes-service/clusters/mycluster/kube-config-prod-dal10-mycluster.yml
-        ```
-        {: screen}
-    3.  Copy and paste the command that is displayed in your terminal to set the `KUBECONFIG` environment variable.
 5.  [Use the service ID's API key to log in to your OpenShift cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
     ```
     oc login -u apikey -p <API_key>
