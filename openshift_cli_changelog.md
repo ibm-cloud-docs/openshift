@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-17"
+lastupdated: "2020-03-24"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -77,6 +77,7 @@ Version 1.0 of the CLI plug-in was released on 16 March 2020. This version conta
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.15 | 25 Mar 2020 | <ul><li>Adds the [`ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate) and [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm) commands to help you manage secrets for NLB subdomains.</li><li>Adds the optional `--pool WORKER_POOL` flag to `ibmcloud oc zone rm`.</li><li>Deprecates the option to specify a YAML file in the `--file` flag of the `ibmcloud oc cluster create` and `ibmcloud oc worker add` commands. Instead, specify values for your cluster in the supported flags for these commands.</li><li>Fixes the following bugs:<ul><li>For `ibmcloud oc cluster rm`, the `--force-delete-storage` flag no longer sets the `-f` flag.</li><li>For `ibmcloud oc cluster create`, the `--private-only` flag no longer requires the `--private-vlan` flag.</li></ul></li><li>Updates the help text in various languages.</li></ul>|
 | 1.0.0 | 16 Mar 2020 | Introduces permanent behavior and syntax changes that are not backwards compatible. For a summary of the changes in version 1.0, see [Using version 1.0 of the plug-in](#changelog_beta).|
 {: caption="Overview of version changes for version 1.0 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
 {: summary="Overview of version changes for version 1.0 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
