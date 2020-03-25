@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -757,60 +757,33 @@ To integrate services that do not support service keys, check if the service pro
 {: #cs_helm_install}
 
 {: tsSymptoms}
-When you try to install an updated Helm chart by running `helm install <release_name> iks-charts/<chart_name> -f config.yaml`, you get the `Error: failed to download "iks-charts/<chart_name>"` error message.
+When you try to install an updated Helm chart by running `helm install <release_name> <helm_repo>/<chart_name> -f config.yaml`, you get the `Error: failed to download "<helm_repo>/<chart_name>"` error message.
 
 {: tsCauses}
-The URL for the {{site.data.keyword.cloud_notm}} repository in your Helm instance might be incorrect.
+You might need to update your Helm installation because of the following reasons:
+* The URL to the {{site.data.keyword.cloud_notm}} repository that is configured on your local machine might be incorrect.
+* The name of your local Helm repository might not match the Helm repository name or URL of the installation command that you copied from the Helm chart instructions.
+* The Helm chart that you want to install does not support the version of Helm that you installed on your local machine.
+* Your cluster network setup changed from public access to private-only access, but Helm was not updated.
 
 {: tsResolve}
 To troubleshoot your Helm chart:
 
-1. List the repositories currently available in your Helm instance.
-
+1.  List the {{site.data.keyword.cloud_notm}} Helm repositories currently available in your Helm instance.
     ```
     helm repo list
     ```
     {: pre}
-
-2. In the output, verify that the URL for the {{site.data.keyword.cloud_notm}} repository, `ibm`, is `https://icr.io/helm/iks-charts`.
-
+2.  Remove the {{site.data.keyword.cloud_notm}} Helm repositories.
     ```
-    NAME    URL
-    stable  https://kubernetes-charts.storage.googleapis.com
-    local   http://127.0.0.1:8888/charts
-    ibm     https://icr.io/helm/iks-charts
-    ```
-    {: screen}
-
-    * If the URL is incorrect:
-
-        1. Remove the {{site.data.keyword.cloud_notm}} repository.
-
-            ```
-            helm repo remove ibm
-            ```
-            {: pre}
-
-        2. Add the {{site.data.keyword.cloud_notm}} repository again.
-
-            ```
-            helm repo add iks-charts  https://icr.io/helm/iks-charts
-            ```
-            {: pre}
-
-    * If the URL is correct, get the latest updates from the repository.
-
-        ```
-        helm repo update
-        ```
-        {: pre}
-
-3. Install the Helm chart with your updates.
-
-    ```
-    helm install <release_name> iks-charts/<chart_name> -f config.yaml
+    helm repo remove <helm_repo>
     ```
     {: pre}
+3.  Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories.
+    * **Helm v3**: See [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3).
+    * **Helm v2**: See [Installing Helm v2 in your cluster](/docs/openshift?topic=openshift-helm#install_v2).
+
+Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 
 <br />
 
