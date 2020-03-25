@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-25"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -50,10 +50,8 @@ Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_no
 ## Using version 1.0 of the plug-in
 {: #cs_beta}
 
-
 [Version 1.0 of the CLI plug-in was released on 16 March 2020](/docs/openshift?topic=openshift-cs_cli_changelog). This version contains permanent syntax and behavior changes that are not backwards compatible.</br></br>To maintain all CLI functionality, update and test any automation before you update to 1.0 by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
-
 
 Check out the following syntax and behavior changes between each version of the CLI plug-in:
 
@@ -3544,6 +3542,11 @@ ibmcloud oc nlb-dns rm classic --cluster mycluster --ip 1.1.1.1 --nlb-host myclu
 Regenerate the certificate and secret for an NLB subdomain.
 {: shortdesc}
 
+If the Let’s Encrypt certificate creation fails during secret regeneration, a 10 minute wait period must pass before the regeneration is automatically attempted again. The regeneration of the secret takes another 5 minutes to complete, making it a total of 15 minutes before the process is completed.
+
+To avoid the Let’s Encrypt rate limit, do not regenerate a secret more than 5 times per day.
+{: note}
+
 ```
 ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--json] [-s]
 ```
@@ -3579,6 +3582,8 @@ ibmcloud oc nlb-dns secret regenerate --cluster mycluster --nlb-subdomain myclus
 
 Delete a secret from an NLB subdomain and prevent future renewal of the certificate.
 {: shortdesc}
+
+You might delete the secret for an NLB subdomain if you no longer use the subdomain, or if the owner of the secret leaves your organization.
 
 ```
 ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [--json] [-s]

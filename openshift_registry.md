@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-25"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -112,30 +112,47 @@ By default, your OpenShift cluster's internal registry uses an [{{site.data.keyw
 
 To view volume details including the storage class and size, you can describe the persistent volume claim.
 
-```
-oc describe pvc registry-backing -n default
-```
-{: pre}
+| Command |
+| --- |
+| <pre class="pre"><code>oc describe pvc -n openshift-image-registry image-registry-storage</code></pre> |
+{: summary="The row contains the command to describe the storage device that backs the internal registry."}
+{: class="simple-tab-table"}
+{: caption="<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Command to describe the storage device in OpenShift 4.3 or later" caption-side="top"}
+{: #registrystorage1}
+{: tab-title="4.3+"}
+{: tab-group="registrystorage"}
+
+| Command |
+| --- |
+| <pre class="pre"><code>oc describe pvc registry-backing -n default</code></pre> |
+{: summary="The row contains the command to describe the storage device that backs the internal registry."}
+{: class="simple-tab-table"}
+{: caption="<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Command to describe the storage device in OpenShift 3.11" caption-side="top"}
+{: #registrystorage2}
+{: tab-title="3.11"}
+{: tab-group="registrystorage"}
 
 Example output:
 ```
-Name:          registry-backing
-Namespace:     default
-StorageClass:  ibmc-file-bronze
+Name:          image-registry-storage
+Namespace:     openshift-image-registry
+StorageClass:  ibmc-file-gold
 Status:        Bound
-Volume:        pvc-1c6bb7e9-b3f3-11e9-a5b4-020670ab62dc
+Volume:        pvc-<ID_string>
 Labels:        billingType=hourly
-               region=us-east
-               zone=wdc04
-Annotations:   ibm.io/provisioning-status=complete
-               kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"billingType":"hourly"},"name":"registry-backing","namespace":...
-               pv.kubernetes.io/bind-completed=yes
-               pv.kubernetes.io/bound-by-controller=yes
-               volume.beta.kubernetes.io/storage-provisioner=ibm.io/ibmc-file
+               region=us-south
+               zone=dal10
+Annotations:   ibm.io/provisioning-status: complete
+               imageregistry.openshift.io: true
+               pv.kubernetes.io/bind-completed: yes
+               pv.kubernetes.io/bound-by-controller: yes
+               volume.beta.kubernetes.io/storage-provisioner: ibm.io/ibmc-file
 Finalizers:    [kubernetes.io/pvc-protection]
-Capacity:      20Gi
+Capacity:      100Gi
 Access Modes:  RWX
+VolumeMode:    Filesystem
 Events:        <none>
+Mounted By:    image-registry-<ID_string>
 ```
 {: screen}
 

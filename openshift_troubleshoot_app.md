@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -757,60 +757,33 @@ To integrate services that do not support service keys, check if the service pro
 {: #cs_helm_install}
 
 {: tsSymptoms}
-When you try to install an updated Helm chart by running `helm install <release_name> iks-charts/<chart_name> -f config.yaml`, you get the `Error: failed to download "iks-charts/<chart_name>"` error message.
+When you try to install an updated Helm chart by running `helm install <release_name> <helm_repo>/<chart_name> -f config.yaml`, you get the `Error: failed to download "<helm_repo>/<chart_name>"` error message.
 
 {: tsCauses}
-The URL for the {{site.data.keyword.cloud_notm}} repository in your Helm instance might be incorrect.
+You might need to update your Helm installation because of the following reasons:
+* The URL to the {{site.data.keyword.cloud_notm}} repository that is configured on your local machine might be incorrect.
+* The name of your local Helm repository might not match the Helm repository name or URL of the installation command that you copied from the Helm chart instructions.
+* The Helm chart that you want to install does not support the version of Helm that you installed on your local machine.
+* Your cluster network setup changed from public access to private-only access, but Helm was not updated.
 
 {: tsResolve}
 To troubleshoot your Helm chart:
 
-1. List the repositories currently available in your Helm instance.
-
+1.  List the {{site.data.keyword.cloud_notm}} Helm repositories currently available in your Helm instance.
     ```
     helm repo list
     ```
     {: pre}
-
-2. In the output, verify that the URL for the {{site.data.keyword.cloud_notm}} repository, `ibm`, is `https://icr.io/helm/iks-charts`.
-
+2.  Remove the {{site.data.keyword.cloud_notm}} Helm repositories.
     ```
-    NAME    URL
-    stable  https://kubernetes-charts.storage.googleapis.com
-    local   http://127.0.0.1:8888/charts
-    ibm     https://icr.io/helm/iks-charts
-    ```
-    {: screen}
-
-    * If the URL is incorrect:
-
-        1. Remove the {{site.data.keyword.cloud_notm}} repository.
-
-            ```
-            helm repo remove ibm
-            ```
-            {: pre}
-
-        2. Add the {{site.data.keyword.cloud_notm}} repository again.
-
-            ```
-            helm repo add iks-charts  https://icr.io/helm/iks-charts
-            ```
-            {: pre}
-
-    * If the URL is correct, get the latest updates from the repository.
-
-        ```
-        helm repo update
-        ```
-        {: pre}
-
-3. Install the Helm chart with your updates.
-
-    ```
-    helm install <release_name> iks-charts/<chart_name> -f config.yaml
+    helm repo remove <helm_repo>
     ```
     {: pre}
+3.  Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories.
+    * **Helm v3**: See [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3).
+    * **Helm v2**: See [Installing Helm v2 in your cluster](/docs/openshift?topic=openshift-helm#install_v2).
+
+Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 
 <br />
 
@@ -839,9 +812,8 @@ Still having issues with your cluster? Review different ways to get help and sup
 1. Post in the {{site.data.keyword.containershort}} Slack.
    * If you are an external user, post in the [#openshift](https://ibm-cloud-success.slack.com/messages/CKCJLJCH4){: external} channel.
    * If you are an IBMer, use the [#iks-openshift-users](https://ibm-argonauts.slack.com/messages/CJH0UPN2D){: external} channel.<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack){: external} to this Slack.</p>
-2. Review forums such as OpenShift help, Stack Overflow, and IBM Developer to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
-   * If you have technical questions about developing or deploying clusters or apps with Red Hat OpenShift on IBM Cloud, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `containers`, and `openshift`.
-   * For questions about the service and getting started instructions, use the [IBM Developer Answers](https://developer.ibm.com/answers/topics/containers/?smartspace=bluemix){: external} forum. Include the `ibm-cloud` and `containers` tags.
+2. Review forums such as OpenShift help or Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
+   * If you have technical questions about developing or deploying clusters or apps with Red Hat OpenShift on IBM Cloud, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`,  and `containers`.
    * See [Getting help](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
 <br>
 
