@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-27"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -79,7 +79,7 @@ The following tables list the available single and multizone locations in Red Ha
 {: shortdesc}
 
 * **Multizone**: If you create a cluster in a multizone metro location, the replicas of your highly available Kubernetes master are automatically spread across zones. You have the option to spread your worker nodes across zones to protect your apps from a zone failure.
-* **Single zone**: If you create a cluster in a single zone (data center) location, you can create multiple worker nodes but you cannot spread them across zones. The highly available master includes three replicas on separate hosts, but is not spread across zones.<p class="note">To create clusters in a single zone, [use the CLI](/docs/openshift?topic=openshift-clusters#openshift_create_cluster_cli).</p>
+* **Single zone**: If you create a cluster in a single zone (data center) location, you can create multiple worker nodes but you cannot spread them across zones. The highly available master includes three replicas on separate hosts, but is not spread across zones.<p class="note">To create clusters in a single zone, [use the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).</p>
 
 | Geography |  Country  | Metro | Data center |  Deprecated region  |
 |-----|-----|-----|-----|-----|
@@ -154,7 +154,7 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
     *   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
     *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
     *   [Managing network traffic by using Ingress](/docs/openshift?topic=openshift-ingress-about).
-    *   [Increasing the availability of your app](/docs/openshift?topic=openshift-openshift_apps#increase_availability).
+    *   [Increasing the availability of your app](/docs/openshift?topic=openshift-openshift_apps).
 
 3.  When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
 
