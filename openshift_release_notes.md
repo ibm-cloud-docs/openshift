@@ -180,7 +180,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
 <td>28 October 2019</td>
-<td><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-changelog#11312_15409), [1.12.10_1570](/docs/containers?topic=containers-changelog#11210_1570), and OpenShift [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1528).</td>
+<td><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-changelog#11312_1540), [1.12.10_1570](/docs/containers?topic=containers-changelog#11210_1570), and OpenShift [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1529).</td>
 </tr><tr>
 <td>24 October 2019</td>
   <td><ul>
@@ -198,10 +198,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>22 October 2019</td>
   <td><strong>Version changelogs</strong>: Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-changelog#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-changelog#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-changelog#11312_1539), and OpenShift [3.11.146_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1528).</td>
-</tr>
-<tr>
-  <td>17 October 2019</td>
-  <td><strong>New! Cluster autoscaler</strong>: The cluster autoscaler is available for [private network-only clusters](/docs/openshift?topic=openshift-ca#ca_private_cluster). To get started, [update to the latest Helm chart version](/docs/openshift?topic=openshift-ca#ca_helm_up).</td>
 </tr>
 <tr>
   <td>14 October 2019</td>
@@ -297,7 +293,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li>[Accessing clusters](/docs/openshift?topic=openshift-access_cluster).</li>
     <li>[App networking options](/docs/openshift?topic=openshift-cs_network_planning) with comparisons of routes, NodePort, load balancers, and Ingress.</li>
     <li>[Common app modification scenarios](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for moving apps from community Kubernetes to OpenShift.</li>
-    <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#openshift_charges) to explain the monthly license in more detail.</li>
+    <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#charges) to explain the monthly license in more detail.</li>
     <li>[Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry).</li>
     <li>[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov) with links to tutorials.</li>
     <li>[Using the internal registry in OpenShift](/docs/openshift?topic=openshift-registry#openshift_internal_registry)</ul>
@@ -525,7 +521,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <li><strong>Access to the Kubernetes master through the private service endpoint</strong>: Added [steps](/docs/openshift?topic=openshift-access_cluster#access_private_se) to expose the private service endpoint through a private load balancer. After you complete these steps, your authorized cluster users can access the Kubernetes master from a VPN or {{site.data.keyword.cloud_notm}} Direct Link connection.</li>
   <li><strong>{{site.data.keyword.BluDirectLink}}</strong>: Added {{site.data.keyword.cloud_notm}} Direct Link to the [VPN connectivity](/docs/openshift?topic=openshift-vpn) and [hybrid cloud](/docs/containers?topic=containers-hybrid_iks_icp) pages as a way to create a direct, private connection between your remote network environments and {{site.data.keyword.containerlong_notm}} without routing over the public internet.</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `ingress-auth` image to build 330](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>OpenShift beta</strong>: [Added a lesson](/docs/openshift?topic=openshift-openshift_tutorial#openshift_logdna_sysdig) about how to modify app deployments for privileged security context constraints for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} add-ons.</li>
+  <li><strong>OpenShift beta</strong>: [Added a lesson](/docs/openshift?topic=openshift-health#openshift_logdna) about how to modify app deployments for privileged security context constraints for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} add-ons.</li>
   </ul></td>
 </tr>
 <tr>
