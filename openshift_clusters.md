@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-27"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -196,7 +196,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 **Before you begin**:
 * Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
-* Install the {{site.data.keyword.cloud_notm}} CLI and the [Red Hat OpenShift on IBM Cloud plug-in](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_install).
+* Install the {{site.data.keyword.cloud_notm}} CLI and the [Red Hat OpenShift on IBM Cloud plug-in](/docs/openshift?topic=openshift-openshift-cli).
 
 <br>
 
