@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -806,12 +806,17 @@ The OpenShift web console might not open for reasons that include:
         console-844d8bb9bd-kvr9r     1/1     Running   0          21h
         ```
         {: screen}
-    2.  If a pod is not in a **Running** status, describe the pod and check the events. For example, the cluster might not have enough resources for the pod to run and you must [resize your worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to add worker nodes.
+    2.  If the pod is in a **Running** status, review the logs for the pod for any messages that might indicate why the console does not open.
+        ```
+        oc logs -n openshift-console console-844d8bb9bd-92d7f
+        ```
+        {: pre}
+    3.  If a pod is not in a **Running** status, describe the pod and check the events. For example, the cluster might not have enough resources for the pod to run and you must [resize your worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to add worker nodes.
         ```
         oc describe pod -n openshift-console <pod>
         ```
         {: pre}
-    3.  Try to restart the console pod and check if the OpenShift web console opens.
+    4.  Try to restart the console pod and check if the OpenShift web console opens.
         ```
         oc delete pod -n openshift-console <pod>
         ```
