@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-03-27"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -78,7 +78,7 @@ This tutorial is for cluster administrators who want to learn how to create a Re
 ## Lesson 1: Creating a Red Hat OpenShift on IBM Cloud cluster
 {: #openshift_create_cluster}
 
-Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-service-arch). OpenShift is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
+Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture). OpenShift is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
 {:shortdesc}
 
 1.  Install the command-line tools.
