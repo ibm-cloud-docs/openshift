@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-03-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -142,7 +142,7 @@ Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Chatbot service powered by Watson](https://developer.ibm.com/patterns/create-cognitive-banking-chatbot/)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
-* [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime#nodejs_runtime)
+* [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime)
 
 **Context: Rapidly building and deploying innovative HR benefits site in less than 3 weeks**
 * Employee growth and changing HR policies meant that a whole new site would be required for annual enrollment.
