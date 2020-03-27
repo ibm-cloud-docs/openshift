@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-03-27"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 27 March 2020 | **Tech overview**: Added an [Overview of personal and sensitive data storage and removal options](/docs/containers?topic=containers-service-arch#ibm-data). |
 | 25 March 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 627](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul> |
 | 24 March 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.15](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**Service dependencies**: Added information about [dependencies on other {{site.data.keyword.cloud_notm}} and 3rd party services](/docs/containers?topic=containers-service-arch#dependencies-ibmcloud).</li></ul> |
 | 18 March 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall.</li><li>**IAM issuer details**: Added a [reference topic](/docs/openshift?topic=openshift-access_reference#iam_issuer_users) for the IAM issuer details of RBAC users.</li></ul> |
@@ -60,7 +61,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 19 February 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.90](/docs/openshift?topic=openshift-cs_cli_changelog).</li><li>**Troubleshooting Ingress**: Added a [debugging guide](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4) and [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43) for Ingress in version 4.3 clusters.</li><li>**Developing and deploying apps**: You can now find expanded information on how to develop and deploy an app to your OpenShift cluster in the following pages:<ul><li>[Planning app deployments](/docs/openshift?topic=openshift-plan_deploy)</li><li>[Building images for your apps](/docs/openshift?topic=openshift-images)</li><li>[Developing apps to run on OpenShift](/docs/openshift?topic=openshift-openshift_apps)</li><li>[Deploying apps in OpenShift clusters](/docs/openshift?topic=openshift-deploy_app)</li><li>[Managing the app lifecycle](/docs/openshift?topic=openshift-update_app)</li></ul></li><li>**Learning paths**: Curated learning paths for [administrators](docs/openshift?topic=openshift-learning-path-admin) and [developers](docs/openshift?topic=openshift-learning-path-dev) are now available to help guide you through your Red Hat OpenShift on IBM Cloud experience.</li><li>**Setting up image build pipelines**: You can now find expanded information on how to set up an image registry and build pipelines in the following pages:<ul><li>[Setting up an image registry](/docs/openshift?topic=openshift-registry)</li><li>[Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd)</li></ul></li><li>**Firewall subnets**: Removed outdated [subnet IP addresses for {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#vyatta_firewall).</li></ul> |
+| 19 February 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.90](/docs/openshift?topic=openshift-cs_cli_changelog).</li><li>**Troubleshooting Ingress**: Added a [debugging guide](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4) and [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43) for Ingress in version 4.3 clusters.</li><li>**Developing and deploying apps**: You can now find expanded information on how to develop and deploy an app to your OpenShift cluster in the following pages:<ul><li>[Planning app deployments](/docs/openshift?topic=openshift-plan_deploy)</li><li>[Building images for your apps](/docs/openshift?topic=openshift-images)</li><li>[Developing apps to run on OpenShift](/docs/openshift?topic=openshift-openshift_apps)</li><li>[Deploying apps in OpenShift clusters](/docs/openshift?topic=openshift-deploy_app)</li><li>[Managing the app lifecycle](/docs/openshift?topic=openshift-update_app)</li></ul></li><li>**Learning paths**: Curated learning paths for [administrators](/docs/openshift?topic=openshift-learning-path-admin) and [developers](/docs/openshift?topic=openshift-learning-path-dev) are now available to help guide you through your Red Hat OpenShift on IBM Cloud experience.</li><li>**Setting up image build pipelines**: You can now find expanded information on how to set up an image registry and build pipelines in the following pages:<ul><li>[Setting up an image registry](/docs/openshift?topic=openshift-registry)</li><li>[Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd)</li></ul></li><li>**Firewall subnets**: Removed outdated [subnet IP addresses for {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#vyatta_firewall).</li></ul> |
 | 18 February 2020 | **Version changelogs**: OpenShift master fix pack for [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_master).|
 | 17 February 2020 | <ul><li>**Migration operator**: Updated the [migration operator storage configuration file](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-destination) to clarify {{site.data.keyword.cos_short}} endpoints.</li><li>**Version changelogs**: Master and worker node patch updates are available for OpenShift worker fix pack [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_worker)</li></ul>|
 | 10 February 2020 | **New! OpenShift 4.3**: OpenShift 4.3 is now available as a beta. During the beta, the OpenShift license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you cannot update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_versions#ocp43). |
@@ -180,7 +181,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 </tr>
 <tr>
 <td>28 October 2019</td>
-<td><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-changelog#11312_15409), [1.12.10_1570](/docs/containers?topic=containers-changelog#11210_1570), and OpenShift [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1528).</td>
+<td><strong>Version changelogs</strong>: Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-changelog#11312_1540), [1.12.10_1570](/docs/containers?topic=containers-changelog#11210_1570), and OpenShift [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1529).</td>
 </tr><tr>
 <td>24 October 2019</td>
   <td><ul>
@@ -198,10 +199,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>22 October 2019</td>
   <td><strong>Version changelogs</strong>: Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-changelog#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-changelog#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-changelog#11312_1539), and OpenShift [3.11.146_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1528).</td>
-</tr>
-<tr>
-  <td>17 October 2019</td>
-  <td><strong>New! Cluster autoscaler</strong>: The cluster autoscaler is available for [private network-only clusters](/docs/openshift?topic=openshift-ca#ca_private_cluster). To get started, [update to the latest Helm chart version](/docs/openshift?topic=openshift-ca#ca_helm_up).</td>
 </tr>
 <tr>
   <td>14 October 2019</td>
@@ -297,7 +294,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li>[Accessing clusters](/docs/openshift?topic=openshift-access_cluster).</li>
     <li>[App networking options](/docs/openshift?topic=openshift-cs_network_planning) with comparisons of routes, NodePort, load balancers, and Ingress.</li>
     <li>[Common app modification scenarios](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for moving apps from community Kubernetes to OpenShift.</li>
-    <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#openshift_charges) to explain the monthly license in more detail.</li>
+    <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#charges) to explain the monthly license in more detail.</li>
     <li>[Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry).</li>
     <li>[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov) with links to tutorials.</li>
     <li>[Using the internal registry in OpenShift](/docs/openshift?topic=openshift-registry#openshift_internal_registry)</ul>
@@ -525,7 +522,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <li><strong>Access to the Kubernetes master through the private service endpoint</strong>: Added [steps](/docs/openshift?topic=openshift-access_cluster#access_private_se) to expose the private service endpoint through a private load balancer. After you complete these steps, your authorized cluster users can access the Kubernetes master from a VPN or {{site.data.keyword.cloud_notm}} Direct Link connection.</li>
   <li><strong>{{site.data.keyword.BluDirectLink}}</strong>: Added {{site.data.keyword.cloud_notm}} Direct Link to the [VPN connectivity](/docs/openshift?topic=openshift-vpn) and [hybrid cloud](/docs/containers?topic=containers-hybrid_iks_icp) pages as a way to create a direct, private connection between your remote network environments and {{site.data.keyword.containerlong_notm}} without routing over the public internet.</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `ingress-auth` image to build 330](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>OpenShift beta</strong>: [Added a lesson](/docs/openshift?topic=openshift-openshift_tutorial#openshift_logdna_sysdig) about how to modify app deployments for privileged security context constraints for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} add-ons.</li>
+  <li><strong>OpenShift beta</strong>: [Added a lesson](/docs/openshift?topic=openshift-health#openshift_logdna) about how to modify app deployments for privileged security context constraints for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} add-ons.</li>
   </ul></td>
 </tr>
 <tr>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-03-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -761,7 +761,7 @@ When you try to install an updated Helm chart by running `helm install <release_
 
 {: tsCauses}
 You might need to update your Helm installation because of the following reasons:
-* The URL to the {{site.data.keyword.cloud_notm}} repository that is configured on your local machine might be incorrect.
+* The URL to the {{site.data.keyword.cloud_notm}} Helm repository that is configured on your local machine might be incorrect.
 * The name of your local Helm repository might not match the Helm repository name or URL of the installation command that you copied from the Helm chart instructions.
 * The Helm chart that you want to install does not support the version of Helm that you installed on your local machine.
 * Your cluster network setup changed from public access to private-only access, but Helm was not updated.

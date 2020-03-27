@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-27"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -222,15 +222,21 @@ To install the plug-in:
   ```
   {: pre}
 
-7. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
+  If the output shows `Error: plugin already exists`, delete your `ibm-object-storage-plugin` directory and rerun the `helm pull` command.
+  {: tip}
+  
+7. If you previously installed the {{site.data.keyword.cos_full_notm}} Helm plug-in, remove the `ibmc` plug-in. 
+  ```
+  helm plugin rm ibmc
+  ```
+  {: pre}
+
+8. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
   1. Install the Helm plug-in.
     ```
-    helm plugin install ibm-charts/ibm-object-storage-plugin/helm-ibmc
+    helm plugin install ./ibm-object-storage-plugin/helm-ibmc
     ```
     {: pre}
-
-    If you see the error `Error: plugin already exists`, remove the `ibmc` Helm plug-in by running `rm -rf ~/.helm/plugins/helm-ibmc`.
-    {: tip}
 
   2. Verify that the `ibmc` plug-in is installed successfully.
     ```
@@ -238,33 +244,32 @@ To install the plug-in:
     ```
     {: pre}
 
-    If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run `chmod 755 ~/.helm/plugins/helm-ibmc/ibmc.sh`. Then, rerun `helm ibmc --help`.
+    If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run `chmod 755 /Users/<user_name>/Library/helm/plugins/helm-ibmc/ibmc.sh`. Then, rerun `helm ibmc --help`.
     {: tip}
 
     Example output:
     ```
+    Helm version: v3.1.2+gd878d4d
     Install or upgrade Helm charts in IBM K8S Service(IKS) and IBM Cloud Private(ICP)
 
+    Usage:
+    Helm ibmc [command]
+
     Available Commands:
-        helm ibmc install [CHART] [flags]                      Install a Helm chart
-        helm ibmc upgrade [RELEASE] [CHART] [flags]            Upgrade the release to a new version of the Helm chart
-        helm ibmc template [CHART] [flags] [--apply|--delete]  Install/uninstall a Helm chart without tiller
+      install           Install a Helm chart
+      upgrade           Upgrade the release to a new version of the Helm chart
 
     Available Flags:
-        -h, --help                    (Optional) This text.
-        -u, --update                  (Optional) Update this plugin to the latest version
+      -h, --help        (Optional) This text.
+      -u, --update      (Optional) Update this plugin to the latest version
 
     Example Usage:
-        With Tiller:
-            Install:   helm ibmc install ibm-charts/ibm-object-storage-plugin --name ibm-object-storage-plugin
-        Without Tiller:
-            Install:   helm ibmc template ibm-charts/ibm-object-storage-plugin --apply
-            Dry-run:   helm ibmc template ibm-charts/ibm-object-storage-plugin
-            Uninstall: helm ibmc template ibm-charts/ibm-object-storage-plugin --delete
+        Install: helm ibmc install ibm-object-storage-plugin ibm-charts/ibm-object-storage-plugin
+        Upgrade: helm ibmc upgrade [RELEASE] ibm-charts/ibm-object-storage-plugin
 
     Note:
         1. It is always recommended to install latest version of ibm-object-storage-plugin chart.
-        2. It is always recommended to have 'oc' client up-to-date.
+        2. It is always recommended to have 'kubectl' client up-to-date.
     ```
     {: screen}
 
@@ -298,14 +303,14 @@ To install the plug-in:
   - **For OS X and Linux:**
     - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
       ```
-      helm ibmc template ibm-charts/ibm-object-storage-plugin --apply
+      helm ibmc install ibm-object-storage-plugin ibm-charts/ibm-object-storage-plugin
       ```
       {: pre}
 
     - If you completed the previous step, install with a limitation to specific Kubernetes secrets.</br>
       ```
       cd ../..
-      helm ibmc template ./ibm-object-storage-plugin --apply
+      helm ibmc install ./ibm-object-storage-plugin
       ```
       {: pre}
 

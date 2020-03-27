@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-27"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -250,7 +250,7 @@ Use built-in security features to protect your cluster infrastructure and networ
     2. Set up a firewall by using a [gateway appliance](/docs/openshift?topic=openshift-firewall#vyatta_firewall) or [Calico network policies](/docs/openshift?topic=openshift-network_policies).
 3. **Workload security**:
   1. [Encrypt sensitive information](/docs/openshift?topic=openshift-encryption) in the cluster, such as the master's local disk and secrets.
-  2. Set up a [private image registry](docs/openshift?topic=openshift-security#images_registry) for your developers, such as the one provided by {{site.data.keyword.registryshort}}, to control access to the registry and the image content that can be pushed.
+  2. Set up a [private image registry](/docs/openshift?topic=openshift-security#images_registry) for your developers, such as the one provided by {{site.data.keyword.registryshort}}, to control access to the registry and the image content that can be pushed.
   3. [Set pod priority](/docs/openshift?topic=openshift-pod_priority) to indicate the relative priority of the pods that make up your cluster's workload.
   4. Authorize who can create and update pods by configuring [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc).
 

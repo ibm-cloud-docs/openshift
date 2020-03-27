@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-27"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -357,7 +357,7 @@ You can verify the health, capacity, and performance of your apps, services, and
 To set up a host-based intrusion detection system (HIDS) and security event log monitoring (SELM), install third-party tools that are designed to monitor your cluster and containerized apps to detect intrusion or misuse, such as [Twistlock](https://www.twistlock.com/){: external} or the [Sysdig Falco project](https://sysdig.com/opensource/falco/){: external}. Sysdig Falco is a separate tool and is not included if you choose to install the IBM-provided [Sysdig add-on](/docs/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster){: external} in your cluster.  
 
 **How can I audit events that happen in my cluster?**</br>
-You can [set up {{site.data.keyword.cloudaccesstraillong}} in your Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-at_events#at_events). For more information, view the [{{site.data.keyword.cloudaccesstrailshort}} documentation](/docs/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov#activity_tracker_ov).
+You can [set up {{site.data.keyword.cloudaccesstraillong}} in your Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-at_events#at_events). For more information, view the [{{site.data.keyword.cloudaccesstrailshort}} documentation](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
 
 **What are my options to enable trust in my cluster?** </br>
 By default, Red Hat OpenShift on IBM Cloud provides many features for your cluster components so that you can deploy your containerized apps in a security-rich environment. Extend your level of trust in your cluster to better ensure that what happens within your cluster is what you intended to happen. You can implement trust in your cluster in various ways, as shown in the following diagram.

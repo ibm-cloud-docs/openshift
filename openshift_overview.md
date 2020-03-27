@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-24"
+lastupdated: "2020-03-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -67,11 +67,11 @@ Review the following links to find out more about the benefits and responsibilit
 
 - [Benefits of using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-cs_ov)
 - [Comparison of free and standard clusters](/docs/openshift?topic=openshift-cs_ov#cluster_types)
-- [Red Hat OpenShift on IBM Cloud service architecture](/docs/openshift?topic=openshift-service-arch#architecture)
+- [Red Hat OpenShift on IBM Cloud service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
 - [Use cases](/docs/containers?topic=containers-cs_uc_intro)
 - [Your responsibilities by using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks)
 - [Defining your Kubernetes strategy](/docs/openshift?topic=openshift-strategy)
-- [Limitations](/docs/openshift?topic=openshift-limitations)
+- [Limitations](/docs/openshift?topic=openshift-openshift_limitations)
 - Learn how you can use Red Hat OpenShift on IBM Cloud to modernize and run containerized apps in these <a href="https://www.ibm.com/demos/collection/Containers-(Kubernetes)-on-IBM-Cloud/?lc=null">videos</a>.
 
 <br />

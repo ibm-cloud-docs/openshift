@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-03-27"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -344,8 +344,13 @@ See the following topics.
 To pull images from a registry, your Red Hat OpenShift on IBM Cloud cluster uses a special type of Kubernetes secret, an `imagePullSecret`. This image pull secret stores the credentials to access a container registry. The container registry can be your namespace in {{site.data.keyword.registrylong_notm}}, a namespace in {{site.data.keyword.registrylong_notm}} that belongs to a different {{site.data.keyword.cloud_notm}} account, or any other private registry such as Docker. Your cluster is set up to pull images from your namespace in {{site.data.keyword.registrylong_notm}} and deploy containers from these images to the `default` Kubernetes namespace in your cluster. If you need to pull images in other cluster OpenShift project or other registries, you must set up the image pull secret.
 {:shortdesc}
 
+
+
 **How is my cluster set up to pull images from the `default` OpenShift project?**<br>
 When you create a cluster, the cluster has an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM **Reader** service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are impersonated in a non-expiring API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and the list of secrets in the `default` service account for this OpenShift project. By using image pull secrets, your deployments can pull (read-only access) images in your [global and regional registry](/docs/Registry?topic=registry-registry_overview#registry_regions) to build containers in the `default` OpenShift project. The global registry securely stores public, IBM-provided images that you can refer to across your deployments instead of having different references for images that are stored in each regional registry. The regional registry securely stores your own private Docker images.
+
+**What if I don't have image pull secrets in the `default` OpenShift project?**<br>
+You can check the image pull secrets by logging in to your cluster and running `oc get secrets -n default | grep "icr-io"`. If no `icr.io` secrets are listed, the person who created the cluster might not have had the required permissions to {{site.data.keyword.registrylong_notm}} in IAM. See [Updating existing clusters to use the API key image pull secret](#imagePullSecret_migrate_api_key).
 
 **Can I restrict pull access to a certain regional registry?**<br>
 Yes, you can [edit the existing IAM policy of the service ID](/docs/iam?topic=iam-serviceidpolicy#access_edit) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-user#existing_users).
@@ -366,6 +371,70 @@ The default cluster setup creates a service ID to store {{site.data.keyword.clou
 
 **After I copy or create an image pull secret in another OpenShift project, am I done?**<br>
 Not quite. Your containers must be authorized to pull images by using the secret that you created. You can add the image pull secret to the service account for the namespace, or refer to the secret in each deployment. For instructions, see [Using the image pull secret to deploy containers](#use_imagePullSecret).
+
+
+
+<br />
+
+
+## Updating existing clusters to use the API key image pull secret
+{: #imagePullSecret_migrate_api_key}
+
+New Red Hat OpenShift on IBM Cloud clusters store an API key in [image pull secrets to authorize access to {{site.data.keyword.registrylong_notm}}](#cluster_registry_auth). With these image pull secrets, you can deploy containers from images that are stored in the `icr.io` registry domains. You can add the image pull secrets to your cluster if your cluster was not created with the secrets.
+{: shortdesc}
+
+**Before you begin**:
+*   [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+*   Make sure that you have the following permissions:
+    *   {{site.data.keyword.cloud_notm}} IAM **Operator or Administrator** platform role for Red Hat OpenShift on IBM Cloud. The account owner can give you the role by running:
+        ```
+        ibmcloud iam user-policy-create <your_user_email> --service-name containers-kubernetes --roles Administrator,Operator
+        ```
+        {: pre}
+    *   {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for {{site.data.keyword.registrylong_notm}}, across all regions and resource groups. The policy cannot be scoped to a particular region or resource group. The account owner can give you the role by running:
+        ```
+        ibmcloud iam user-policy-create <your_user_email> --service-name container-registry --roles Administrator
+        ```
+        {: pre}
+
+**To update your cluster image pull secret in the `default` Kubernetes namespace**:
+1.  Get your cluster ID.
+    ```
+    ibmcloud oc cluster ls
+    ```
+    {: pre}
+2.  Run the following command to create a service ID for the cluster, assign the service ID an IAM **Reader** service role for {{site.data.keyword.registrylong_notm}}, create an API key to impersonate the service ID credentials, and store the API key in a Kubernetes image pull secret in the cluster. The image pull secret is in the `default` OpenShift project.
+    ```
+    ibmcloud oc cluster pull-secret apply --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
+
+    When you run this command, the creation of IAM credentials and image pull secrets is initiated and can take some time to complete. You cannot deploy containers that pull an image from the {{site.data.keyword.registrylong_notm}} `icr.io` domains until the image pull secrets are created.
+    {: important}
+
+3.  Verify that the image pull secrets are created in your cluster. Note that you have a separate image pull secret for each {{site.data.keyword.registrylong_notm}} region.
+    ```
+    oc get secrets
+    ```
+    {: pre}
+    Example output:
+    ```
+    default-us-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-uk-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-de-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-au-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-jp-icr-io                          kubernetes.io/dockerconfigjson        1         16d
+    default-icr-io                             kubernetes.io/dockerconfigjson        1         16d
+    ```
+    {: screen}
+4.  Update your container deployments to pull images from the `icr.io` domain name.
+5.  Optional: If you have a firewall, make sure you [allow outbound network traffic to the registry subnets](/docs/openshift?topic=openshift-firewall#firewall_outbound) for the domains that you use.
+
+**What's next?**
+*   To pull images in OpenShift projects other than `default` or from other {{site.data.keyword.cloud_notm}} accounts, [copy or create another image pull secret](#other).
+*   To restrict the image pull secret access to particular registry resources such as namespaces or regions:
+    1.  Make sure that [{{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}} are enabled](/docs/Registry?topic=registry-user#existing_users).
+    2.  [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/iam?topic=iam-serviceidpolicy#access_edit) for the service ID, or [create another image pull secret](#other_registry_accounts).
 
 <br />
 
