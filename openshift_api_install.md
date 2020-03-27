@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-27"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -55,7 +55,7 @@ You can use the Red Hat OpenShift on IBM Cloud API to automate the creation, dep
 {:shortdesc}
 
 
-The Red Hat OpenShift on IBM Cloud API requires header information that you must provide in your API request and that can vary depending on the API that you want to use. To determine what header information is needed for your API, see the [Red Hat OpenShift on IBM Cloud API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/){: external}.
+The Red Hat OpenShift on IBM Cloud API requires header information that you must provide in your API request and that can vary depending on the API that you want to use. To determine what header information is needed for your API, see the [Red Hat OpenShift on IBM Cloud API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}.
 
 To authenticate with Red Hat OpenShift on IBM Cloud, you must provide an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) token that is generated with your {{site.data.keyword.cloud_notm}} credentials and that includes the {{site.data.keyword.cloud_notm}} account ID where the cluster was created. Depending on the way you authenticate with {{site.data.keyword.cloud_notm}}, you can choose between the following options to automate the creation of your {{site.data.keyword.cloud_notm}} IAM token.
 
