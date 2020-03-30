@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-30"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -243,7 +243,6 @@ Deploy your app to the cluster by running your app configuration file.
 * [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui)
 * [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli)
 * [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity)
-* [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
 
 
 </br>Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_app).

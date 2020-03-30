@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1328,13 +1328,14 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-bronze</code></br><code>ibmc-file-retain-bronze</code> |
+| Name | <code>ibmc-file-bronze</code></br><code>ibmc-file-retain-bronze</code></br><code>ibmc-file-bronze-gid</code> |
 | Type | [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers)|
 | File system | NFS|
 | IOPS per gigabyte | 2|
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
-| Reclaim policy | <code>ibmc-file-bronze</code>: Delete</br><code>ibmc-file-retain-bronze</code>: Retain |
+| Reclaim policy | <code>ibmc-file-bronze</code>: Delete</br><code>ibmc-file-retain-bronze</code>: Retain </br><code>ibmc-file-bronze-gid:</code> Delete|
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
@@ -1345,13 +1346,14 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-silver</code></br><code>ibmc-file-retain-silver</code> |
+| Name | <code>ibmc-file-silver</code></br><code>ibmc-file-retain-silver</code></br><code>ibmc-file-silver-gid</code> |
 | Type | [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers)|
 | File system | NFS|
 | IOPS per gigabyte | 4|
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
-| Reclaim policy | <code>ibmc-file-silver</code>: Delete</br><code>ibmc-file-retain-silver</code>: Retain |
+| Reclaim policy | <code>ibmc-file-silver</code>: Delete</br><code>ibmc-file-retain-silver</code>: Retain </br><code>ibmc-file-silver-gid:</code> Delete |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
@@ -1362,13 +1364,14 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-gold</code></br><code>ibmc-file-retain-gold</code> |
+| Name | <code>ibmc-file-gold</code></br><code>ibmc-file-retain-gold</code></br><code>ibmc-file-gold-gid</code>  |
 | Type | [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers)|
 | File system | NFS|
 | IOPS per gigabyte | 10|
 | Size range in gigabytes | 20-4000 Gi|
 | Hard disk | SSD|
-| Reclaim policy | <code>ibmc-file-gold</code>: Delete</br><code>ibmc-file-retain-gold</code>: Retain |
+| Reclaim policy | <code>ibmc-file-gold</code>: Delete</br><code>ibmc-file-retain-gold</code>: Retain </br><code>ibmc-file-gold-gid:</code> Delete |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}

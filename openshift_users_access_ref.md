@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -64,7 +64,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Deprecated: View a list of Kubernetes versions supported in Red Hat OpenShift on IBM Cloud. | `ibmcloud oc kube-versions`| [`GET /v1/kube-versions`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetKubeVersions) |
 | View a list of available flavors for your worker nodes. | [`ibmcloud oc flavors`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types) (machine-types) | [`GET /v2​/getFlavors`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2GetFlavors) |
 | View current messages for the IBMid user. | [`ibmcloud oc messages`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages) | [`GET /v1/messages`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetMessages) |
-| View a list of supported locations in Red Hat OpenShift on IBM Cloud. | [`ibmcloud oc supported-locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations) | [`GET /v1/locations`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/ListLocations) |
+| View a list of supported locations in Red Hat OpenShift on IBM Cloud. | [`ibmcloud oc locations`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_locations) | [`GET /v1/locations`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/ListLocations) |
 | View a list of supported versions in Red Hat OpenShift on IBM Cloud. | [`ibmcloud oc versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command) | - |
 | View a list of available zones that you can create a cluster in. | [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters) |[`GET /v1/zones`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetZones) |
 {: class="simple-tab-table"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -586,38 +586,24 @@ Your app deployment or Helm chart configuration specifies the [security context]
 {: tsResolve}
 To allow a non-root user read and write access to a file storage device, you must allocate a [supplemental group ID](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#users-and-groups){: external} in a storage class, refer to this storage class in the PVC, and set the pod's security context with a `runAsUser` value that is automatically added to the supplemental group ID. When you grant the supplemental group ID read and write access to the file storage, any non-root user that belongs to the group ID, including your pod, is granted access to the file storage.
 
+You can use one of the provided [`gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) or create a custom storage class to define your own supplemental group ID. 
+
 Allocating a supplemental group ID for a non-root user of a file storage device is supported for single zone clusters only, and cannot be used in multizone clusters.
 {: note}
 
-1. Create a YAML file for your customized storage class that defines the supplemental group ID that you want to use to provide read and write access to the file storage for your non-root user. To decide on the configuration for your storage class, review [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass). In your storage class YAML file, include the `gidAllocate: "true"` parameter to assign the default group ID `65531` to your non-root user. If you want to assign a different group ID, you must specify the `gidFixed` parameter in addition to the `gidAllocate` parameter.
+1. Select one of the [provided `gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) to assign the default group ID `65531` to your non-root user that you want to read and write to your file storage. If you want to assign a custom group ID, create a YAML file for a customized storage class. In your customized storage class YAML file, include the `gidAllocate: "true"` parameter and define the group ID in the `gidFixed` parameter.
 
-   **Example for using the default group ID `65531`**:
+   **Example storage classes for assigning the default group ID `65531`**:
+   - `ibmc-file-bronze-gid`
+   - `ibmc-file-silver-gid`
+   - `ibmc-file-gold-gid`
+
+   **Example customized storage class to specify a different group ID**:
    ```yaml
    apiVersion: storage.k8s.io/v1beta1
    kind: StorageClass
    metadata:
-      name: ibmc-file-bronze-gid
-      labels:
-        kubernetes.io/cluster-service: "true"
-   provisioner: ibm.io/ibmc-file
-   parameters:
-      type: "Endurance"
-      iopsPerGB: "2"
-      sizeRange: "[1-12000]Gi"
-      mountOptions: nfsvers=4.1,hard
-      billingType: "hourly"
-      reclaimPolicy: "Delete"
-      classVersion: "2"
-      gidAllocate: "true"
-   ```
-   {: codeblock}
-
-   **Example to specify a different group ID**:
-   ```yaml
-   apiVersion: storage.k8s.io/v1beta1
-   kind: StorageClass
-   metadata:
-     name: ibmc-file-bronze-gid-fixed
+     name: ibmc-file-bronze-gid-custom
      labels:
        kubernetes.io/cluster-service: "true"
    provisioner: ibm.io/ibmc-file
@@ -633,14 +619,10 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
      gidFixed: "65165"
    ```
    {: codeblock}
+   
+   To create the storage class in your cluster, run `kubectl apply -f storageclass.yaml`. 
 
-3. Create the storage class in your cluster.
-   ```
-   kubectl apply -f storageclass.yaml
-   ```
-   {: pre}
-
-4. Create a YAML file for your PVC that uses the storage class that you created.
+3. Create a YAML file for your PVC that uses the storage class that you created.
 
    ```yaml
    kind: PersistentVolumeClaim
@@ -659,13 +641,13 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
    ```
    {: codeblock}
 
-5. Create the PVC in your cluster.
+4. Create the PVC in your cluster.
    ```
    kubectl apply -f pvc.yaml
    ```
    {: pre}
 
-6. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status.
+5. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status.
    ```
    kubectl get pvc
    ```
@@ -681,7 +663,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
    ```
    {: screen}
 
-7. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage.
+6. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage.
 
    **Example for creating an `node-hello` deployment**:
    ```yaml
@@ -715,13 +697,13 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
    ```
    {: codeblock}
 
-8. Create the deployment in your cluster.
+7. Create the deployment in your cluster.
    ```
    kubectl apply -f deployment.yaml
    ```
    {: pre}
 
-9. Verify that your pod is in a **Running** status.
+8. Verify that your pod is in a **Running** status.
    ```
    kubectl get pods
    ```
@@ -734,13 +716,13 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
    ```
    {: screen}
 
-10. Log in to your pod.
+9. Log in to your pod.
     ```
     kubectl exec <pod_name> -it bash
     ```
     {: pre}
 
-11. Verify the read and write permissions for the non-root user.
+10. Verify the read and write permissions for the non-root user.
     1. List the user ID and group IDs for the current user inside the pod.
        ```
        id

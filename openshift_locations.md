@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-03-30"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -51,7 +51,7 @@ _Red Hat OpenShift on IBM Cloud locations_
 {: shortdesc}
 
 ```
-ibmcloud oc supported-locations
+ibmcloud oc locations
 ```
 {: pre}
 

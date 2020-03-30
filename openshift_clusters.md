@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-03-30"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -221,7 +221,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 3. Review the zones where you can create your cluster. In the output of the following command, zones have a **Location Type** of `dc`. To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones). Multizone-capable zones have a metro value in the **Multizone Metro** column. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#add_zone) to your cluster after the cluster is created.
     ```
-    ibmcloud oc supported-locations
+    ibmcloud oc locations
     ```
     {: pre}
     When you select a zone that is located outside your country, keep in mind that you might require legal authorization before data can be physically stored in a foreign country.
@@ -327,7 +327,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    When the provisioning of your OpenShift master is completed, the **State** of your cluster changes to `deployed`. After your OpenShift master is ready, the provisioning of your worker nodes is initiated.
    ```
    Name         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     3.11.170_xxxx_openshift      Default             classic
+   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     3.11.188_xxxx_openshift      Default             classic
    ```
    {: screen}
 

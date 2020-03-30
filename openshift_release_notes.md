@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-03-30"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 30 March 2020 | <ul><li>**Version changelogs**: Worker node patch updates are available for OpenShift [3.11.188_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog#311188_1545_worker).</li><li>**`gid` file storage classes**: Added `gid` file storage classes to specify a supplemental group ID that you can assign to a non-root user ID so that the non-root user can read and write to the file storage instance. For more information, see the [storage class reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference). </li></ul> |
 | 27 March 2020 | **Tech overview**: Added an [Overview of personal and sensitive data storage and removal options](/docs/containers?topic=containers-service-arch#ibm-data). |
 | 25 March 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 627](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul> |
 | 24 March 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.15](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**Service dependencies**: Added information about [dependencies on other {{site.data.keyword.cloud_notm}} and 3rd party services](/docs/containers?topic=containers-service-arch#dependencies-ibmcloud).</li></ul> |

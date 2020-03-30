@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-30"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -78,7 +78,7 @@ Want to be sure that you always have enough worker nodes to cover your workload?
 ## Virtual machines
 {: #vm}
 
-With VMs, you get greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price. You can use VMs for most general-purpose use cases such as testing and development environments, staging, and prod environments, microservices, and business apps. However, there is a trade-off in performance. If you need high-performance computing for RAM-, data-, or GPU-intensive workloads, consider creating classic clusters with [bare metal](#bm) worker nodes.
+With VMs, you get greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price. You can use VMs for most general-purpose use cases such as testing and development environments, staging, and prod environments, microservices, and business apps. However, there is a trade-off in performance. If you need high-performance computing for data- or RAM-intensive workloads, consider creating classic clusters with [bare metal](#bm) worker nodes.
 {: shortdesc}
 
 **Do I want to use shared or dedicated hardware?**</br>
@@ -152,7 +152,7 @@ Bare metal servers are billed monthly. If you cancel a bare metal server before 
 **What bare metal flavors can I order?**</br>
 Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [VM](#vm) or [SDS](#sds) flavors.
 
-Bare metal machines are optimized for different use cases such as RAM-intensive, data-intensive, or GPU-intensive workloads.
+Bare metal machines are optimized for different use cases such as data- or RAM-intensive workloads.
 
 Choose a flavor, or machine type, with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
 
@@ -175,18 +175,6 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 <tr>
 <td><strong>RAM-intensive bare metal, mr3c.28x512</strong>: Maximize the RAM available to your worker nodes.</td>
 <td>28 / 512 GB</td>
-<td>2 TB SATA / 960 GB SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>GPU bare metal, mg3c.16x128</strong>: Choose this type for mathematically intensive workloads such as high-performance computing, machine learning, or 3D applications. This flavor has one Tesla K80 physical card that has two graphics processing units (GPUs) per card for a total of two GPUs.</td>
-<td>16 / 128 GB</td>
-<td>2 TB SATA / 960 GB SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>GPU bare metal, mg3c.28x256</strong>: Choose this type for mathematically intensive workloads such as high-performance computing, machine learning, or 3D applications. This flavor has two Tesla K80 physical cards that have two GPUs per card for a total of four GPUs.</td>
-<td>28 / 256 GB</td>
 <td>2 TB SATA / 960 GB SSD</td>
 <td>10000 Mbps</td>
 </tr>
