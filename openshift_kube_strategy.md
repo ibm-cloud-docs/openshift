@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -229,7 +229,7 @@ The number of clusters that you create depends on your workload, company policie
   <dd>To ensure that every team has the necessary resources to deploy services and run apps in the cluster, you must set up [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for every namespace. Resource quotas determine the deployment constraints for a project, such as the number of Kubernetes resources that you can deploy, and the amount of CPU and memory that can be consumed by those resources. After you set a quota, users must include resource requests and limits in their deployments.</dd>
 <dt>Organize your Kubernetes objects with labels</dt>
   <dd><p>To organize and select your Kubernetes resources such as `pods` or `nodes`, [use Kubernetes labels ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/). By default, Red Hat OpenShift on IBM Cloud applies some labels, including `arch`, `os`, `region`, `zone`, and `machine-type`.</p>
-  <p>Example use cases for labels include [limiting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge), [deploying an app to a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app), and [restricting your app workloads![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/) to run on worker nodes that meet certain flavor or SDS capabilities, such as bare metal worker nodes. To see what labels are already applied to a resource, use the <code>oc get</code> command with the <code>--show-labels</code> flag. For example:</p>
+  <p>Example use cases for labels include [limiting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge) and [restricting your app workloads![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/) to run on worker nodes that meet certain flavor or SDS capabilities, such as bare metal worker nodes. To see what labels are already applied to a resource, use the <code>oc get</code> command with the <code>--show-labels</code> flag. For example:</p>
   <p><pre class="pre"><code>oc get node &lt;node_ID&gt; --show-labels</code></pre></p>
   To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with labels or [update an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).</dd>
 </dl>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-03-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -154,7 +154,7 @@ The research nonprofit wants to aggregate cancer research data across the globe.
 
 Researchers need to affiliate with a regional cluster, and apps ingest, transform, and anonymize the data:
 1. Syncing the anonymized data across regional clusters or shipping them to a centralized data store
-2. Processing the data, by using ML like PyTorch on bare metal worker nodes that provide GPUs
+2. Processing the data, by using ML like PyTorch on bare metal worker nodes
 
 **INGEST** {{site.data.keyword.cloudant}} is used at each regional cluster that stores researchers’ rich data documents and can be queried and processed as needed. {{site.data.keyword.cloudant}} encrypts data at rest and in transit, which complies with regional data-privacy laws.
 
