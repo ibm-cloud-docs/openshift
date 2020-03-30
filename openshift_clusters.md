@@ -327,7 +327,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    When the provisioning of your OpenShift master is completed, the **State** of your cluster changes to `deployed`. After your OpenShift master is ready, the provisioning of your worker nodes is initiated.
    ```
    Name         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     3.11.170_xxxx_openshift      Default             classic
+   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     3.11.188_xxxx_openshift      Default             classic
    ```
    {: screen}
 
