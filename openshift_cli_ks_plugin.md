@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-03-31"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -63,7 +63,7 @@ Check out the following syntax and behavior changes between each version of the 
 | Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
 | Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
 | Flag format<ul><li>Legacy: Camel-case (`--showResources`)</li><li>Beta: Dashed (`--show-resources`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
-| Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately.</li></ul> | Legacy | Legacy | Legacy | Beta |
+| Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [first file that is set by the `KUBECONFIG` environment variable](/docs/openshift?topic=openshift-cs_cli_install#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/openshift?topic=openshift-cs_cli_install#cli_config_multiple).</li></ul> | Legacy | Legacy | Legacy | Beta |
 | API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul> | Legacy | Beta | Beta | Beta |
 {: caption="Beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in" caption-side="top"}
 {: summary="The rows are read from left to right, with the functionality in column one, version 0.2 of the CLI in column two, version 0.3 in column three, version 0.4 in column four, and version 1.0 in column five."}
@@ -190,7 +190,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 After logging in, download Kubernetes configuration data and certificates to connect to your cluster and run `oc` commands. The files are downloaded to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`.
 {: shortdesc}
 
-In [CLI plug-in version 1.0](#cs_beta), `cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the first file that is set by the `KUBECONFIG` environment variable. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately. Note that any pre-existing `kubeconfig` files are not merged automatically.</br></br>Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior changes to this command are not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
+In [CLI plug-in version 1.0](#cs_beta), `cluster config` appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [first file that is set by the `KUBECONFIG` environment variable](/docs/openshift?topic=openshift-cs_cli_install#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/openshift?topic=openshift-cs_cli_install#cli_config_multiple). Note that any pre-existing `kubeconfig` files are not merged automatically.</br></br>Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior changes to this command are not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
 
 ```
