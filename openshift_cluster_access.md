@@ -300,7 +300,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 
         ```
         {: screen}
-    2.  <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshift}} version 4.3 or later only**: Get the token endpoint of the OpenShift `oauth` server.
+    2.  <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later only**: Get the token endpoint of the OpenShift `oauth` server.
         ```
         curl https://<master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
         ```
@@ -311,8 +311,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         https://<token_endpoint>/oauth/token
         ```
     3.  Log in to the cluster with the endpoint that you previously retrieved.
-        * <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshift}} version 4.3 or later**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server. 
-        * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshift}} version 3.11**: Replace `<URL>` with the master URL.
+        * <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server. 
+        * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 3.11**: Replace `<URL>` with the master URL.
 
         Example curl request:
         ```
