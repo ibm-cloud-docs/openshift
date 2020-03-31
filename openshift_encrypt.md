@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-31"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -140,7 +140,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     {: pre}
 3.  Get the **ID** of the root key that you previously created.
     ```
-    ibmcloud oc kms crk ls
+    ibmcloud oc kms crk ls --instance-id <KMS_instance_ID>
     ```
     {: pre}
 4.  Enable the KMS provider to encrypt secrets in your cluster. Fill in the flags with the information that you previously retrieved. To use the KMS provider's private service endpoint to download the encryption keys, such as for private-only clusters, include the `--private-endpoint` flag. The enablement process can take some time to complete.<p class="important">During the enablement, you might not be able to access the Kubernetes master such as to update YAML configurations for deployments.</p>
@@ -218,12 +218,12 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     1.  Download the release package for your operating system from the [etcd project](https://github.com/etcd-io/etcd/releases){: external}.
     2.  Extract and move the `etcdctl` binary file to the location of your binary files, such as the following example.
         ```
-        mv Downloads/etcd-v3.3.13-darwin-amd64/etcdctl /usr/local/bin/etcdctl
+        mv Downloads/etcd-v3.4.6-darwin-amd64/etcdctl /usr/local/bin/etcdctl
         ```
         {: pre}
     3.  Verify that `etcdctl` is installed.
         ```
-        etcdctl --version
+        etcdctl version
         ```
         {: screen}
 2.  Set your terminal session context to use the appropriate `etcdctl` API version.
@@ -277,6 +277,9 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
                         ??Aynw#?$?J???p?x??pΝ???]ؖE6I?ө?o??t]??p?s?#0%BׇB?????k*֊ؖ??~?B??????V??
     ```
     {: screen}
+
+    If you see a `context deadline exceeded` error, you might have a temporary connectivity issue. Verify that you downloaded the Calico configuration file with the `ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --network` command. Run the `etcdctl get` commmand with the `--debug=true` flag to see any additional information. Then wait a few minutes and try again. 
+    {: tip}
 
 ## Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)
 {: #datashield}
