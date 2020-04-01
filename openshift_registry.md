@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-01"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -59,7 +59,7 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>OpenShift-native image stream, build, and app deployment process on a per cluster basis.</li>
         <li>Images can be shared across all projects in the cluster, with access that is controlled through RBAC roles.</li>
         <li>Integrating the internal registry with other Red Hat products like CloudForms for extended features such as vulnerability scanning.</li>
-        <li>Option to expose the internal registry with a route so that users can pull images from the registry over the public network.</li>
+        <li>Option to expose the internal registry with a route so that users can pull images from the registry over the public network.</li></ul>
         <br>For more information, see [Using the internal registry](#openshift_internal_registry).</td>
     </tr>
     <tr>
