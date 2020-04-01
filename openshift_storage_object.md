@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-04-01"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -176,7 +176,7 @@ Looking for instructions for how to update or remove the {{site.data.keyword.cos
 Before you begin:
 - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To install the plug-in:
+To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
 
 1. Make sure that your worker node applies the latest patch for your minor version to run your worker node with the latest security settings. The patch version also ensures that the root password on the worker node is renewed. 
    
@@ -204,19 +204,19 @@ To install the plug-in:
 
 2. [Follow the instructions](/docs/openshift?topic=openshift-openshift_apps#roks_helm) to install the version 3 Helm client on your local machine.
 
-4. Add the {{site.data.keyword.cloud_notm}} Helm repo to your cluster.
+3. Add the {{site.data.keyword.cloud_notm}} Helm repo to your cluster.
   ```
   helm repo add ibm-charts https://icr.io/helm/ibm-charts
   ```
   {: pre}
 
-5. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
+4. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
   ```
   helm repo update
   ```
   {: pre}
 
-6. Download the Helm charts and unpack the charts in your current directory.
+5. Download the Helm charts and unpack the charts in your current directory.
   ```
   helm pull --untar ibm-charts/ibm-object-storage-plugin
   ```
@@ -225,13 +225,13 @@ To install the plug-in:
   If the output shows `Error: plugin already exists`, delete your `ibm-object-storage-plugin` directory and rerun the `helm pull` command.
   {: tip}
   
-7. If you previously installed the {{site.data.keyword.cos_full_notm}} Helm plug-in, remove the `ibmc` plug-in. 
+6. If you previously installed the {{site.data.keyword.cos_full_notm}} Helm plug-in, remove the `ibmc` plug-in. 
   ```
   helm plugin rm ibmc
   ```
   {: pre}
 
-8. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
+7. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
   1. Install the Helm plug-in.
     ```
     helm plugin install ./ibm-object-storage-plugin/helm-ibmc
@@ -298,19 +298,19 @@ To install the plug-in:
       {: codeblock}
    6. Save your changes.
 
-9. Install the {{site.data.keyword.cos_full_notm}} plug-in. When you install the plug-in, pre-defined storage classes are added to your cluster.
+9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster.
 
   - **For OS X and Linux:**
     - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
       ```
-      helm ibmc install ibm-object-storage-plugin ibm-charts/ibm-object-storage-plugin
+      helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin
       ```
       {: pre}
 
-    - If you completed the previous step, install with a limitation to specific Kubernetes secrets.</br>
+    - If you completed the previous step, install with a limitation to specific Kubernetes secrets. If you are still targeting the `templates` directory, change directories.</br>
       ```
       cd ../..
-      helm ibmc install ./ibm-object-storage-plugin
+      helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin
       ```
       {: pre}
 
@@ -384,7 +384,7 @@ To install the plug-in:
             ```
             {: pre}
 
-    5. Install the plug-in by using Helm.       
+    4. Install the plug-in.       
       - Install without a limitation to specific Kubernetes secrets.</br>
         ```
         helm install ibm-object-storage-plugin ibm-charts/ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}"
@@ -491,10 +491,9 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
   ```
   {: pre}
 
-
-5. Upgrade the plug-in. </br>
+5. Install the latest version of the plug-in. </br>
   ```
-  helm ibmc template ibm-charts/ibm-object-storage-plugin --update
+  helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin
   ```
   {: pre}
 
@@ -527,10 +526,10 @@ If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-i
 ### Removing the IBM Cloud Object Storage plug-in
 {: #remove_cos_plugin}
 
-If you do not want to provision and use {{site.data.keyword.cos_full_notm}} in your cluster, you can uninstall the plug-in.
+If you do not want to provision and use {{site.data.keyword.cos_full_notm}} in your cluster, you can uninstall the `ibm-object-storage-plugin` and the `ibmc` Helm plugin.
 {: shortdesc}
 
-Removing the plug-in does not remove existing PVCs, PVs, or data. When you remove the plug-in, all the related pods and daemon sets are removed from your cluster. You cannot provision new {{site.data.keyword.cos_full_notm}} for your cluster or use existing PVCs and PVs after you remove the plug-in, unless you configure your app to use the {{site.data.keyword.cos_full_notm}} API directly.
+Removing the `ibmc` Helm plug-in or the `ibm-object-storage-plugin` does not remove existing PVCs, PVs, data. When you remove the `ibm-object-storage-plugin`, all the related pods and daemon sets are removed from your cluster. You cannot provision new {{site.data.keyword.cos_full_notm}} for your cluster or use existing PVCs and PVs after you remove the plug-in, unless you configure your app to use the {{site.data.keyword.cos_full_notm}} API directly.
 {: important}
 
 Before you begin:
@@ -538,15 +537,34 @@ Before you begin:
 - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 - Make sure that you do not have any PVCs or PVs in your cluster that use {{site.data.keyword.cos_full_notm}}. To list all pods that mount a specific PVC, run `oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"`.
 
-To remove the plug-in:
+To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
 
-1. Remove the plug-in from your cluster. </br>
+1. Get the name of your `ibm-object-storage-plugin` Helm installation.
   ```
-  helm ibmc template ibm-charts/ibm-object-storage-plugin --delete
+  helm ls -A
   ```
   {: pre}
 
-2. Verify that the {{site.data.keyword.cos_full_notm}} pods are removed.
+  Example output
+  ```
+  NAME                     	NAMESPACE	REVISION	UPDATED                             	STATUS  	CHART                              	APP VERSION	           
+  ibm-object-storage-plugin	default  	2       	2020-04-01 08:46:01.403477 -0400 EDT	deployed	ibm-object-storage-plugin-1.1.4    	1.1.4  
+  ```
+  {: screen}
+
+2. Uninstall the `ibm-object-storage-plugin`.
+  ```
+  helm uninstall <release_name>
+  ```
+  {: pre}
+
+  Example command for a release named `ibm-object-storage-plugin`:
+  ```
+  helm uninstall ibm-object-storage-plugin
+  ```
+  {: pre}
+
+3. Verify that the `ibm-object-storage-plugin` pods are removed.
   ```
   oc get pod -n <namespace> | grep object-storage
   ```
@@ -554,7 +572,7 @@ To remove the plug-in:
 
   The removal of the pods is successful if no pods are displayed in your CLI output.
 
-3. Verify that the storage classes are removed.
+4. Verify that the storage classes are removed.
   ```
   oc get storageclasses | grep s3
   ```
@@ -562,10 +580,11 @@ To remove the plug-in:
 
   The removal of the storage classes is successful if no storage classes are displayed in your CLI output.
 
-4. If you use OS X or a Linux distribution, remove the `ibmc` Helm plug-in. If you use Windows, this step is not required.
-  1. Remove the `ibmc` plug-in.
+5. If you use OS X or a Linux distribution, remove the `ibmc` Helm plug-in. If you use Windows, this step is not required.
+
+  1. Remove the `ibmc` Helm plug-in.
     ```
-    rm -rf ~/.helm/plugins/helm-ibmc
+    helm plugin uninstall ibmc
     ```
     {: pre}
 
