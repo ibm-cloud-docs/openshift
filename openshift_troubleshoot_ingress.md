@@ -365,7 +365,7 @@ Start by checking for errors in your app deployment and the Ingress resource dep
 Use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run Ingress tests and gather pertinent Ingress information from your cluster. To use the debug tool, you can enable the add-on in your cluster.
 {: shortdesc}
 
-1. In your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the name of the cluster where you want to install the debug tool add-on.
+1. In the [{{site.data.keyword.cloud_notm}} Red Hat OpenShift on IBM Cloud Clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the name of the cluster where you want to install the debug tool add-on.
 
 2. Click the **Add-ons** tab.
 
