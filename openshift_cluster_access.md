@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-04-01"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -267,7 +267,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ibmcloud login --apikey <API_key>
         ```
         {: pre}
-    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable. For version 4.3 clusters, include the `--admin` flag.
+    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable.
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```
