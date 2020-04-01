@@ -193,4 +193,5 @@ Red Hat OpenShift on IBM Cloud
 
     openshift_release_notes.md
     openshift_limitations.md
+    sitemap.md
     {: .navgroup-end}
