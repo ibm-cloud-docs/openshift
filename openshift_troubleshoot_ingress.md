@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-04-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,7 +39,7 @@ subcollection: openshift
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for general Ingress troubleshooting and debugging.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> 3.11 clusters only: While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](#debug-tool-ingress) to run tests and gather pertinent Ingress information from your cluster.
+While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](#debug-tool-ingress) to run tests and gather pertinent Ingress information from your cluster.
 {: tip}
 
 
@@ -359,7 +359,31 @@ Start by checking for errors in your app deployment and the Ingress resource dep
         ```
         {: pre}
 
-### Step 2: Check the health of the Ingress controller's router
+### Step 2: Run Ingress tests in the Diagnostics and Debug Tool
+{: #debug-tool-43}
+
+Use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run Ingress tests and gather pertinent Ingress information from your cluster. To use the debug tool, you can enable the add-on in your cluster.
+{: shortdesc}
+
+1. In your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the name of the cluster where you want to install the debug tool add-on.
+
+2. Click the **Add-ons** tab.
+
+3. On the Diagnostics and Debug Tool card, click **Install**.
+
+4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/containers?topic=containers-cs_troubleshoot_addons#debug_addons).</p>
+
+5. On the Diagnostics and Debug Tool card, click **Dashboard**.
+
+5. In the debug tool dashboard, select the **ingress** group of tests. Some tests check for potential warnings, errors, or issues, and some tests only gather information that you can reference while you troubleshoot. For more information about the function of each test, click the information icon next to the test's name.
+
+6. Click **Run**.
+
+7. Check the results of each test.
+  * If any test fails, click the information icon next to the test's name in the left-hand column for information about how to resolve the issue.
+  * You can also use the results of tests that only gather information while you debug your Ingress service in the following sections.
+
+### Step 3: Check the health of the Ingress controller's router
 {: #errors-43}
 
 Verify that the Ingress operator and the Ingress controller's router are healthy. Ingress controllers are managed by the Ingress operator. The router forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
@@ -407,7 +431,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
         ```
         {: pre}
 
-### Step 3: Ping the Ingress subdomain and router public IP address
+### Step 4: Ping the Ingress subdomain and router public IP address
 {: #ping-43}
 
 Check the availability of the public IP addresses of the Ingress controller's routers and verify your subdomain mappings.
@@ -1247,9 +1271,9 @@ Still having issues with your cluster? Review different ways to get help and sup
          ibmcloud oc worker get -w <worker_ID> -c <cluster_name_or_ID>
          ```
          {: pre}
-   3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. 
-   
-   3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
+   3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them.
+
+   You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
    {: tip}
 
 2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
