@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-02"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -216,20 +216,20 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
   ```
   {: pre}
 
-5. Download the Helm charts and unpack the charts in your current directory.
+5. If you previously installed the {{site.data.keyword.cos_full_notm}} Helm plug-in, remove the `ibmc` plug-in. 
+  ```
+  helm plugin uninstall ibmc
+  ```
+  {: pre}
+
+6. Download the Helm charts and unpack the charts in your current directory.
   ```
   helm pull --untar ibm-charts/ibm-object-storage-plugin
   ```
   {: pre}
 
-  If the output shows `Error: plugin already exists`, delete your `ibm-object-storage-plugin` directory and rerun the `helm pull` command.
+  If the output shows `Error: failed to untar: a file or directory with the name ibm-object-storage-plugin already exists`, delete your `ibm-object-storage-plugin` directory and rerun the `helm pull` command.
   {: tip}
-  
-6. If you previously installed the {{site.data.keyword.cos_full_notm}} Helm plug-in, remove the `ibmc` plug-in. 
-  ```
-  helm plugin rm ibmc
-  ```
-  {: pre}
 
 7. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
   1. Install the Helm plug-in.
