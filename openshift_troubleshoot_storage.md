@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1061,8 +1061,8 @@ During the installation, many different tasks are executed by the {{site.data.ke
    5. Get a list of cluster roles that are created by the `ibmcloud-object-storage-plugin`.
       ```
       oc get ClusterRole --all-namespaces \
-            -l app=ibmcloud-object-storage-plugin \
-            -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
+         -l app=ibmcloud-object-storage-plugin \
+         -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
       ```
       {: pre}
 
