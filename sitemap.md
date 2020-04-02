@@ -41,8 +41,11 @@ subcollection: openshift
 ## [Getting started with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-getting-started)
 {: #sitemap_getting_started_with_red_hat_openshift_on_ibm_cloud}
 
+
 [Creating a classic OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+
 [Deploying an app with the OpenShift service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
+
 [What's next?](/docs/openshift?topic=openshift-getting-started#whats-next)
 
 
@@ -411,9 +414,13 @@ subcollection: openshift
 ## [Logging and monitoring cluster health](/docs/openshift?topic=openshift-health)
 {: #sitemap_logging_and_monitoring_cluster_health}
 
+
 [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
+
 [Setting up LogDNA and Sysdig add-ons to monitor cluster health](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig)
+
 [Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools](/docs/openshift?topic=openshift-health#openshift_other_logmet)
+
 [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 * [Setting up logging with LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna)
 * [Setting up API audit log forwarding to LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
@@ -520,9 +527,13 @@ subcollection: openshift
 ## [Choosing an app exposure service](/docs/openshift?topic=openshift-cs_network_planning)
 {: #sitemap_choosing_an_app_exposure_service}
 
+
 [Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
+
 [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
+
 [Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
+
 [Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
 * [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
 * [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
@@ -531,9 +542,13 @@ subcollection: openshift
 ## [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes)
 {: #sitemap_exposing_apps_with_routes}
 
+
 [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
+
 [Setting up routes to publicly expose your apps](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
+
 [Setting up routes to privately expose your apps](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
+
 [Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
 * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
 * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
@@ -1020,7 +1035,9 @@ subcollection: openshift
 ## [Locations](/docs/openshift?topic=openshift-regions-and-zones)
 {: #sitemap_locations}
 
+
 [Red Hat OpenShift on IBM Cloud locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
+
 [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
 * [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones)
@@ -1038,23 +1055,32 @@ subcollection: openshift
 ## [User access permissions](/docs/openshift?topic=openshift-access_reference)
 {: #sitemap_user_access_permissions}
 
+
 [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
+
 [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
+
 [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
+
 [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
+
 [Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
+
 [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 
 
 ## [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
 {: #sitemap__events}
 
+
 [Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
+
 [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
 
 
 ## [Default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings)
 {: #sitemap_default_service_settings_for_openshift_components}
+
 
 [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
@@ -1062,26 +1088,47 @@ subcollection: openshift
 ## [FAQs](/docs/openshift?topic=openshift-faqs)
 {: #sitemap_faqs}
 
+
 [How does Red Hat OpenShift on IBM Cloud work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
+
 [Why should I use Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-faqs#faq_benefits)
+
 [Can I get a free cluster?](/docs/openshift?topic=openshift-faqs#faq_free)
+
 [What container platforms are available for my cluster?](/docs/openshift?topic=openshift-faqs#container_platforms)
+
 [Does the service come with a managed OpenShift master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)
+
 [Are the master and worker nodes highly available?](/docs/openshift?topic=openshift-faqs#faq_ha)
+
 [What options do I have to secure my cluster?](/docs/openshift?topic=openshift-faqs#secure_cluster)
+
 [What access policies do I give my cluster users?](/docs/openshift?topic=openshift-faqs#faq_access)
+
 [Where can I find a list of security bulletins that affect my cluster?](/docs/openshift?topic=openshift-faqs#faq_security_bulletins)
+
 [Does the service offer support for bare metal?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
+
 [Which Kubernetes versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
+
 [Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
+
 [Is the service highly available?](/docs/openshift?topic=openshift-faqs#ha_sla)
+
 [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards)
+
 [Can I use IBM Cloud and other services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
+
 [Where can I find more information about Red Hat OpenShift on IBM Cloud pricing models?](/docs/openshift?topic=openshift-faqs#pricing)
+
 [What am I charged for when I use Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-faqs#charges)
+
 [Are my platform and infrastructure resources consolidated in one bill?](/docs/openshift?topic=openshift-faqs#bill)
+
 [Can I estimate my costs?](/docs/openshift?topic=openshift-faqs#cost_estimate)
+
 [Can I view my current usage?](/docs/openshift?topic=openshift-faqs#usage)
+
 [Can I add tags to my cluster?](/docs/openshift?topic=openshift-faqs#faq_tags)
 
 
@@ -1166,22 +1213,34 @@ subcollection: openshift
 ## [Release notes](/docs/openshift?topic=openshift-iks-release)
 {: #sitemap_release_notes}
 
+
 [March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
+
 [February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
+
 [January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
+
 [December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
+
 [November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
+
 [October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
+
 [September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
+
 [August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
+
 [July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
+
 [June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
 
 
 ## [Service limitations](/docs/openshift?topic=openshift-openshift_limitations)
 {: #sitemap_service_limitations}
 
+
 [Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
+
 [Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
 * [Version 4.3 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
 * [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)
