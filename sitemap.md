@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-04-03"
 
 keywords: openshift
 subcollection: openshift
@@ -37,7 +37,9 @@ subcollection: openshift
 
 
 
-## [Getting started with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-getting-started)
+## Getting started with Red Hat OpenShift on IBM Cloud
+
+[Getting started with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-getting-started)
 {: #sitemap_getting_started_with_red_hat_openshift_on_ibm_cloud}
 
 
@@ -178,10 +180,6 @@ subcollection: openshift
 * [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
 * [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
- * [Tutorial: Scalable web application on OpenShift](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift)
- * [OpenShift interactive learning portal](https://learn.openshift.com/)
- * [Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift)
- * [IBM Developer OpenShift tutorials](https://ibmdev1.rtp.raleigh.ibm.com/components/redhat-openshift-ibm-cloud/)
 
 
 ## Installing the CLI and API
@@ -447,7 +445,9 @@ subcollection: openshift
   * [Limiting strongSwan VPN traffic by namespace](/docs/openshift?topic=openshift-vpn#limit_namespace)
   * [Limiting strongSwan VPN traffic by worker node](/docs/openshift?topic=openshift-vpn#limit_worker)
 
-## [Logging and monitoring cluster health](/docs/openshift?topic=openshift-health)
+## Logging and monitoring cluster health
+
+[Logging and monitoring cluster health](/docs/openshift?topic=openshift-health)
 {: #sitemap_logging_and_monitoring_cluster_health}
 
 
@@ -567,7 +567,9 @@ subcollection: openshift
 * [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-update_app#cicd)
 * [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster)
 
-## [Choosing an app exposure service](/docs/openshift?topic=openshift-cs_network_planning)
+## Choosing an app exposure service
+
+[Choosing an app exposure service](/docs/openshift?topic=openshift-cs_network_planning)
 {: #sitemap_choosing_an_app_exposure_service}
 
 
@@ -581,7 +583,9 @@ subcollection: openshift
 * [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
 * [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
 
-## [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes)
+## Exposing apps with routes
+
+[Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes)
 {: #sitemap_exposing_apps_with_routes}
 
 
@@ -930,15 +934,11 @@ subcollection: openshift
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
   * [Mounting the secret as a volume to your pod](/docs/openshift?topic=openshift-service-binding#mount_secret)
   * [Referencing the secret in environment variables](/docs/openshift?topic=openshift-service-binding#reference_secret)
-* [OpenShift Container Platform documentation](https://docs.openshift.com/)
 
 
 ## API reference
 {: #sitemap_api_reference}
 
- * [IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/)
- * [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json)
- * [OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.3/rest_api/index.html)
 
 
 ## CLI plug-in reference
@@ -1106,7 +1106,9 @@ subcollection: openshift
   * [Changelog for worker node patch 3.11.129_1518_openshift, released 5 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1518_worker)
   * [Changelog for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1517)
 
-## [Locations](/docs/openshift?topic=openshift-regions-and-zones)
+## Locations
+
+[Locations](/docs/openshift?topic=openshift-regions-and-zones)
 {: #sitemap_locations}
 
 
@@ -1120,11 +1122,15 @@ subcollection: openshift
 * [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
 * [Logging in to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
 
-## [Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations)
+## Supported IBM Cloud and third-party integrations
+
+[Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations)
 {: #sitemap_supported_ibm_cloud_and_third-party_integrations}
 
 
-## [User access permissions](/docs/openshift?topic=openshift-access_reference)
+## User access permissions
+
+[User access permissions](/docs/openshift?topic=openshift-access_reference)
 {: #sitemap_user_access_permissions}
 
 
@@ -1140,7 +1146,9 @@ subcollection: openshift
 
 [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 
-## [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
+## {{site.data.keyword.at_full_notm}} events
+
+[{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
 {: #sitemap__events}
 
 
@@ -1148,13 +1156,17 @@ subcollection: openshift
 
 [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
 
-## [Default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings)
+## Default service settings for OpenShift components
+
+[Default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings)
 {: #sitemap_default_service_settings_for_openshift_components}
 
 
 [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
-## [FAQs](/docs/openshift?topic=openshift-faqs)
+## FAQs
+
+[FAQs](/docs/openshift?topic=openshift-faqs)
 {: #sitemap_faqs}
 
 
@@ -1286,7 +1298,9 @@ subcollection: openshift
 * [PVC creation fails because of missing permissions](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help)
 
-## [Release notes](/docs/openshift?topic=openshift-iks-release)
+## Release notes
+
+[Release notes](/docs/openshift?topic=openshift-iks-release)
 {: #sitemap_release_notes}
 
 
@@ -1310,7 +1324,9 @@ subcollection: openshift
 
 [June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
 
-## [Service limitations](/docs/openshift?topic=openshift-openshift_limitations)
+## Service limitations
+
+[Service limitations](/docs/openshift?topic=openshift-openshift_limitations)
 {: #sitemap_service_limitations}
 
 
