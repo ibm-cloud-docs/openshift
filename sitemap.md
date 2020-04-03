@@ -179,7 +179,18 @@ subcollection: openshift
 * [Time required](/docs/openshift?topic=openshift-openshift_tutorial#openshift_time)
 * [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
 * [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
+* [Lesson 1: Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
+* [Lesson 2: Navigating the OpenShift console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+* [Lesson 3: Deploying an app to your OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
+
+[Tutorial: Scalable web application on OpenShift](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
+
+[OpenShift interactive learning portal](https://learn.openshift.com/){: external}
+
+[Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: external}
+
+[IBM Developer OpenShift tutorials](https://ibmdev1.rtp.raleigh.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
 
 
 ## Installing the CLI and API
@@ -226,8 +237,12 @@ subcollection: openshift
 [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters)
 * [Understanding network basics of clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics)
 * [Example scenarios for cluster network setups](/docs/openshift?topic=openshift-plan_clusters#classic-scenarios)
+  * [Worker-to-worker communication: VLANs and subnets](/docs/openshift?topic=openshift-plan_clusters#worker-worker)
+  * [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_clusters#workeruser-master)
   * [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem)
   * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#external-workers)
+  * [Scenario: Run internet-facing app workloads in a cluster](/docs/openshift?topic=openshift-plan_clusters#internet-facing)
+  * [Scenario: Extend your on-premises data center to a cluster and add limited public access](/docs/openshift?topic=openshift-plan_clusters#limited-public)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters)
 * [Single zone cluster](/docs/openshift?topic=openshift-ha_clusters#single_zone)
@@ -301,6 +316,7 @@ subcollection: openshift
 * [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool)
 * [Adding worker nodes by creating a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool)
 * [Adding worker nodes by adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#add_zone)
+* [Deprecated: Adding stand-alone worker nodes](/docs/openshift?topic=openshift-add_workers#standalone)
 * [Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-add_workers#install-sgx)
 * [Adding tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags)
 * [Adding labels to existing worker pools](/docs/openshift?topic=openshift-add_workers#worker_pool_labels)
@@ -427,6 +443,7 @@ subcollection: openshift
   * [Removing a subnet in an on-premises network from a cluster](/docs/openshift?topic=openshift-subnets#remove-user-subnets)
 
 [Changing service endpoints or VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster)
+* [3.11 clusters only: Setting up the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
 * [Setting up the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
 
@@ -442,27 +459,27 @@ subcollection: openshift
   * [Configuring a single outbound VPN connection from a multizone cluster](/docs/openshift?topic=openshift-vpn#multizone_one_outbound)
   * [Configuring a single inbound VPN connection to a multizone cluster](/docs/openshift?topic=openshift-vpn#multizone_one_inbound)
   * [Configuring an inbound VPN connection in each zone of a multizone cluster](/docs/openshift?topic=openshift-vpn#multizone_multiple)
+  * [Step 1: Get the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#strongswan_1)
+  * [Step 2: Configure basic IPSec settings](/docs/openshift?topic=openshift-vpn#strongswan_2)
+  * [Step 3: Select inbound or outbound VPN connection](/docs/openshift?topic=openshift-vpn#strongswan_3)
+  * [Step 4: Access cluster resources over the VPN connection](/docs/openshift?topic=openshift-vpn#strongswan_4)
+  * [Step 5: Access remote network resources over the VPN connection](/docs/openshift?topic=openshift-vpn#strongswan_5)
+  * [Step 6 (optional): Enable monitoring with the Slack webhook integration](/docs/openshift?topic=openshift-vpn#strongswan_6)
+  * [Step 7: Deploy the Helm chart](/docs/openshift?topic=openshift-vpn#strongswan_7)
   * [Limiting strongSwan VPN traffic by namespace](/docs/openshift?topic=openshift-vpn#limit_namespace)
   * [Limiting strongSwan VPN traffic by worker node](/docs/openshift?topic=openshift-vpn#limit_worker)
 
-## Logging and monitoring cluster health
-
 [Logging and monitoring cluster health](/docs/openshift?topic=openshift-health)
-{: #sitemap_logging_and_monitoring_cluster_health}
-
-
-[Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
-
-[Setting up LogDNA and Sysdig add-ons to monitor cluster health](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig)
-
-[Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools](/docs/openshift?topic=openshift-health#openshift_other_logmet)
-
-[Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
-* [Setting up logging with LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna)
-* [Setting up API audit log forwarding to LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
-* [Setting up monitoring with Sysdig](/docs/openshift?topic=openshift-health#openshift_sysdig)
-* [Installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_install)
-* [Uninstalling the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_remove)
+* [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
+* [Setting up LogDNA and Sysdig add-ons to monitor cluster health](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig)
+* [Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools](/docs/openshift?topic=openshift-health#openshift_other_logmet)
+* [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
+  * [Setting up logging with LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna)
+  * [Setting up API audit log forwarding to LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
+  * [Setting up monitoring with Sysdig](/docs/openshift?topic=openshift-health#openshift_sysdig)
+  * [Optional: Cleaning up](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig_cleanup)
+  * [Installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_install)
+  * [Uninstalling the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_remove)
 
 
 ## Setting up an image build pipeline
@@ -567,37 +584,21 @@ subcollection: openshift
 * [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-update_app#cicd)
 * [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster)
 
-## Choosing an app exposure service
-
 [Choosing an app exposure service](/docs/openshift?topic=openshift-cs_network_planning)
-{: #sitemap_choosing_an_app_exposure_service}
-
-
-[Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
-
-[Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
-
-[Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
-
-[Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
-* [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
-* [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
-
-## Exposing apps with routes
+* [Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
+* [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
+* [Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
+* [Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
+  * [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
+  * [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
 
 [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes)
-{: #sitemap_exposing_apps_with_routes}
-
-
-[Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
-
-[Setting up routes to publicly expose your apps](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
-
-[Setting up routes to privately expose your apps](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
-
-[Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
-* [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
-* [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
+* [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
+* [Setting up routes to publicly expose your apps](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
+* [Setting up routes to privately expose your apps](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
+* [Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
+  * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
+  * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
 
 
 ## Exposing apps with load balancers
@@ -661,6 +662,10 @@ subcollection: openshift
   * [All apps are in one project](/docs/openshift?topic=openshift-ingress-roks4#one-project)
   * [Apps are in multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multi-project)
   * [Multiple domains within a project](/docs/openshift?topic=openshift-ingress-roks4#multi-domains-project)
+  * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-1)
+  * [Step 2: Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-2)
+  * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3)
+  * [Step 4: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-4)
 
 
 ## Exposing apps with Ingress in OpenShift 3.11 clusters
@@ -687,8 +692,20 @@ subcollection: openshift
   * [All apps are in one namespace](/docs/openshift?topic=openshift-ingress#one-ns)
   * [Apps are in multiple namespaces](/docs/openshift?topic=openshift-ingress#multi-ns)
   * [Multiple domains within a namespace](/docs/openshift?topic=openshift-ingress#multi-domains)
+  * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress#public_inside_1)
+  * [Step 2: Select an app domain](/docs/openshift?topic=openshift-ingress#public_inside_2)
+  * [Step 3: Select TLS termination](/docs/openshift?topic=openshift-ingress#public_inside_3)
+  * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress#public_inside_4)
+  * [Step 5: Access your app from the internet](/docs/openshift?topic=openshift-ingress#public_inside_5)
   * [Exposing external apps through a Kubernetes endpoint](/docs/openshift?topic=openshift-ingress#external_ip)
   * [Exposing external apps through the `proxy-external-service` Ingress annotation](/docs/openshift?topic=openshift-ingress#proxy-external)
+  * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress#private_1)
+  * [Step 2: Enable the default private ALB](/docs/openshift?topic=openshift-ingress#private_ingress)
+  * [Step 3: Map your custom domain](/docs/openshift?topic=openshift-ingress#private_3)
+  * [Step 4: Select TLS termination](/docs/openshift?topic=openshift-ingress#private_4)
+  * [Step 5: Create the Ingress resource](/docs/openshift?topic=openshift-ingress#private_5)
+  * [Step 6: Access your app from your private network](/docs/openshift?topic=openshift-ingress#private_6)
+  * [Optional: Block traffic to public NodePorts](/docs/openshift?topic=openshift-ingress#block-nodeports)
 
 [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress_annotation)
 * [General annotations](/docs/openshift?topic=openshift-ingress_annotation#general)
@@ -798,6 +815,10 @@ subcollection: openshift
 * [Storage class reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
 * [Sample customized storage classes](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
 * [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-file_storage#cleanup)
+  * [Step 1: Preparing your existing storage.](/docs/openshift?topic=openshift-file_storage#existing-file-1)
+  * [Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-file_storage#existing-file-2)
+  * [Dynamic provisioning: Creating the PVC when you create a stateful set](/docs/openshift?topic=openshift-file_storage#file_dynamic_statefulset)
+  * [Static provisioning: Using an existing PVC with your stateful set](/docs/openshift?topic=openshift-file_storage#file_static_statefulset)
   * [Creating topology-aware storage](/docs/openshift?topic=openshift-file_storage#file-topology)
   * [Specifying the zone for multizone clusters](/docs/openshift?topic=openshift-file_storage#file_multizone_yaml)
   * [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version_class)
@@ -819,6 +840,10 @@ subcollection: openshift
   * [Encrypting volume data by using a custom storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
   * [Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret](/docs/openshift?topic=openshift-block_storage#pvc_encrypt_label)
   * [Verifying the encryption of your {{site.data.keyword.blockstorageshort}} volumes](/docs/openshift?topic=openshift-block_storage#block_encrypt)
+  * [Step 1: Retrieving the information of your existing block storage](/docs/openshift?topic=openshift-block_storage#existing-block-1)
+  * [Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-block_storage#existing-block-2)
+  * [Dynamic provisioning: Creating the PVC when you create a stateful set](/docs/openshift?topic=openshift-block_storage#block_dynamic_statefulset)
+  * [Static provisioning: Using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
   * [Creating topology-aware storage](/docs/openshift?topic=openshift-block_storage#topology_yaml)
   * [Specifying the zone and region](/docs/openshift?topic=openshift-block_storage#block_multizone_yaml)
   * [Mounting block storage with an `XFS` file system](/docs/openshift?topic=openshift-block_storage#xfs)
@@ -936,9 +961,18 @@ subcollection: openshift
   * [Referencing the secret in environment variables](/docs/openshift?topic=openshift-service-binding#reference_secret)
 
 
+##[OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
+
+
 ## API reference
 {: #sitemap_api_reference}
 
+
+[IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/){: external}
+
+[IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
+
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.3/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -990,6 +1024,7 @@ subcollection: openshift
   * [`ibmcloud oc cluster subnet detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_detach)
   * [`ibmcloud oc cluster user-subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_add)
   * [`ibmcloud oc cluster user-subnet rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_rm)
+  * [Deprecated: `ibmcloud oc worker add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add)
   * [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_get)
   * [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_workers)
   * [`ibmcloud oc worker reboot`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot)
@@ -1011,7 +1046,10 @@ subcollection: openshift
   * [`ibmcloud oc alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
   * [`ibmcloud oc alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)
   * [`ibmcloud oc alb autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_get)
+  * [Beta: `ibmcloud oc alb cert deploy`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_cert_deploy)
+  * [Beta: `ibmcloud oc alb cert get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_cert_get)
   * [`ibmcloud oc alb cert ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_certs)
+  * [Beta: `ibmcloud oc alb cert rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_cert_rm)
   * [`ibmcloud oc alb configure classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure)
   * [`ibmcloud oc alb create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_create)
   * [`ibmcloud oc alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get)
@@ -1043,6 +1081,8 @@ subcollection: openshift
   * [`ibmcloud oc nlb-dns monitor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-ls)
   * [`ibmcloud oc nlb-dns monitor status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-status)
   * [`ibmcloud oc nlb-dns rm classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm)
+  * [Experimental: `ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate)
+  * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
   * [`ibmcloud oc api-key info`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_info)
   * [`ibmcloud oc api-key reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset)
   * [`ibmcloud oc credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credential_get)
@@ -1076,6 +1116,11 @@ subcollection: openshift
 * [OpenShift 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 * [Migrating from version 3.11 to 4.3 clusters](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration)
   * [Prerequisites](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-prereqs)
+  * [Step 1: Deploy the migration operator to the source cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-source)
+  * [Step 2: Deploy the migration operator to the destination cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-destination)
+  * [Step 3: Configure storage information in the destination cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-storage-destination)
+  * [Step 4: Configure the destination cluster with information about the source cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-configure-destination)
+  * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
   * [Changelog for worker node fix pack 3.11.188_1545_openshift, released 30 March 2020](/docs/openshift?topic=openshift-openshift_changelog#311188_1545_worker)
@@ -1106,63 +1151,32 @@ subcollection: openshift
   * [Changelog for worker node patch 3.11.129_1518_openshift, released 5 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1518_worker)
   * [Changelog for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1517)
 
-## Locations
-
 [Locations](/docs/openshift?topic=openshift-regions-and-zones)
-{: #sitemap_locations}
-
-
-[Red Hat OpenShift on IBM Cloud locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
-
-[Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
-* [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
-* [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones)
-* [Single zone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
-* [Multizone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
-* [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
-* [Logging in to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
-
-## Supported IBM Cloud and third-party integrations
+* [Red Hat OpenShift on IBM Cloud locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
+* [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
+  * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
+  * [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones)
+  * [Single zone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
+  * [Multizone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
+  * [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
+  * [Logging in to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
 
 [Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations)
-{: #sitemap_supported_ibm_cloud_and_third-party_integrations}
-
-
-## User access permissions
 
 [User access permissions](/docs/openshift?topic=openshift-access_reference)
-{: #sitemap_user_access_permissions}
-
-
-[{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
-
-[{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
-
-[Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
-
-[{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
-
-[Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
-
-[Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
-
-## {{site.data.keyword.at_full_notm}} events
+* [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
+* [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
+* [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
+* [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
+* [Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
+* [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 
 [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
-{: #sitemap__events}
-
-
-[Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
-
-[Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
-
-## Default service settings for OpenShift components
+* [Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
+* [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
 
 [Default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings)
-{: #sitemap_default_service_settings_for_openshift_components}
-
-
-[Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
+* [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
 ## FAQs
 
@@ -1289,51 +1303,68 @@ subcollection: openshift
 * [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)
 * [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_rate_limit)
 * [Cannot connect to an app via Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_fails)
+* [4.3 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4)
+* [4.3 clusters: Router for Ingress controller does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43)
+* [3.11 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug)
+* [3.11 clusters: Ingress application load balancer (ALB) secret issues](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_albsecret_fails)
+* [3.11 clusters: ALB does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit)
+* [3.11 clusters: Ingress ALB cannot be enabled due to subnet errors](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_alb_subnet)
+* [3.11 clusters: Source IP preservation fails when using tainted nodes](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_source_ip_fails)
 * [Connection via WebSocket closes after 60 seconds](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_websocket)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#getting_help)
+  * [Step 1: Check your app deployment and Ingress resource configuration](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress-43)
+  * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-43)
+  * [Step 3: Check the health of the Ingress controller's router](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#errors-43)
+  * [Step 4: Ping the Ingress subdomain and router public IP address](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43)
+  * [Step 1: Check your app deployment](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress)
+  * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-ingress)
+  * [Step 3: Check for error messages in your Ingress deployment and the ALB pod logs](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#errors)
+  * [Step 4: Ping the ALB subdomain and public IP addresses](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping)
+  * [Step 5: Check your domain mappings and Ingress resource configuration](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ts_ingress_config)
   * [Removing an ALB from DNS for debugging](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#one_alb)
 
 [Persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)
 * [Debugging persistent storage failures](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug_storage)
+* [File storage and block storage: PVC remains in a pending state](/docs/openshift?topic=openshift-cs_troubleshoot_storage#file_pvc_pending)
+* [File storage: App cannot access or write to PVC](/docs/openshift?topic=openshift-cs_troubleshoot_storage#file_app_failures)
+* [Block Storage: App cannot access or write to PVC](/docs/openshift?topic=openshift-cs_troubleshoot_storage#block_app_failures)
+* [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_helm_fails)
+* [Object storage: Installing the Object storage plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_plugin_fails)
+* [Object storage: PVC remains in a pending state](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_pvc_pending)
+* [Object storage: Changing the ownership of the mount path fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_mountpath_error)
+* [Object storage: Accessing files with a non-root user fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_nonroot_access)
 * [PVC creation fails because of missing permissions](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions)
+* [Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug-portworx)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help)
-
-## Release notes
+  * [File storage: File systems for worker nodes change to read-only](/docs/openshift?topic=openshift-cs_troubleshoot_storage#readonly_nodes)
+  * [File storage: App fails when a non-root user owns the NFS file storage mount path](/docs/openshift?topic=openshift-cs_troubleshoot_storage#nonroot)
+  * [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot)
+  * [Block storage: Block storage changes to read-only](/docs/openshift?topic=openshift-cs_troubleshoot_storage#readonly_block)
+  * [Block storage: Mounting existing block storage to a pod fails due to the wrong file system](/docs/openshift?topic=openshift-cs_troubleshoot_storage#block_filesystem)
+  * [Object storage: PVC or pod creation fails due to not finding the Kubernetes secret](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_secret_access_fails)
+  * [Object storage: PVC creation fails due to wrong credentials or access denied](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cred_failure)
+  * [Object storage: PVC creation fails due to wrong s3fs or IAM API endpoint](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_api_endpoint_failure)
+  * [Object storage: Cannot access an existing bucket](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_access_bucket_fails)
+  * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-catalog)
+  * [Step 2: Verifying the cluster setup](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-cluster)
+  * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-support)
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
-{: #sitemap_release_notes}
-
-
-[March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
-
-[February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
-
-[January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
-
-[December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
-
-[November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
-
-[October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
-
-[September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
-
-[August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
-
-[July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
-
-[June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
-
-## Service limitations
+* [March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
+* [February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
+* [January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
+* [December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
+* [November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
+* [October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
+* [September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
+* [August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
+* [July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
+* [June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
 
 [Service limitations](/docs/openshift?topic=openshift-openshift_limitations)
-{: #sitemap_service_limitations}
-
-
-[Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
-
-[Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
-* [Version 4.3 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
-* [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)
-* [Networking](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit)
-* [Storage](/docs/openshift?topic=openshift-openshift_limitations#classic_storage_limit)
+* [Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
+* [Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
+  * [Version 4.3 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
+  * [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)
+  * [Networking](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit)
+  * [Storage](/docs/openshift?topic=openshift-openshift_limitations#classic_storage_limit)

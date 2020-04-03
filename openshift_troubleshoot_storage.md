@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-04-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1066,7 +1066,7 @@ During the installation, many different tasks are executed by the {{site.data.ke
       ```
       {: pre}
 
-   6 Get a list of deployments that are created by the `ibmcloud-object-storage-plugin`.
+   6. Get a list of deployments that are created by the `ibmcloud-object-storage-plugin`.
       ```
       oc get Deployments --all-namespaces \
          -l app=ibmcloud-object-storage-plugin \
