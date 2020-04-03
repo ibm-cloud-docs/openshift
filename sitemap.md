@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Site map for {{site.data.keyword.openshiftshort}}
+# Site map
 {: #sitemap}
 
 
