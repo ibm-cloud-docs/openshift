@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -145,7 +145,7 @@ To troubleshoot your NLB service:
 
 
 ## Cannot deploy a load balancer
-{: #cs_subnet_limit}
+{: #cs_subnet_limit_lb}
 
 {: tsSymptoms}
 When you describe the `ibm-cloud-provider-vlan-ip-config` configmap in your classic cluster, you might see an error message similar to the following example output.
@@ -202,7 +202,7 @@ If you are not using all the subnets in the VLAN, you can reuse subnets on the V
 
 
 ## Source IP preservation fails when using tainted nodes
-{: #cs_source_ip_fails}
+{: #cs_source_ip_fails_lb}
 
 {: tsSymptoms}
 In a classic cluster, you enabled source IP preservation for a [version 1.0 load balancer](/docs/openshift?topic=openshift-loadbalancer#node_affinity_tolerations) service by changing `externalTrafficPolicy` to `Local` in the service's configuration file. However, no traffic reaches the back-end service for your app.
@@ -336,7 +336,7 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
 
 
 ## Feedback, questions, and support
-{: #getting_help}
+{: #getting_help_lb}
 
 Still having issues with your cluster? Review different ways to get help and support for your Red Hat OpenShift on IBM Cloud clusters. For any questions or feedback, post in Slack.
 {: shortdesc}

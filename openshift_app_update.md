@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-04-06"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -255,7 +255,7 @@ To manage rolling updates to your apps:
 
 
 ## Setting up continuous integration and delivery
-{: #cicd}
+{: #app_cicd}
 
 With {{site.data.keyword.cloud_notm}} and other open source tools, you can set up continuous integration and delivery (CI/CD), version control, tool chains, and more to help automate app development and deployment.
 {: shortdesc}

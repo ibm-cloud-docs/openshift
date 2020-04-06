@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-04-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -278,8 +278,8 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
   [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
 
   1. Make sure that you are assigned the Editor platform access role and the Writer service access role for {{site.data.keyword.keymanagementserviceshort}} so that you can create your own root key that you use to encrypt your {{site.data.keyword.blockstorageshort}} instance. You can review your IAM access roles in the [IAM console](https://cloud.ibm.com/iam){: external}. For more information about IAM roles, see [IAM access](/docs/iam?topic=iam-userroles).
-  2. If you do not have a {{site.data.keyword.keymanagementserviceshort}} instance, [provision one](/docs/services/key-protect?topic=key-protect-provision#provision).
-  3. [Create a root key](/docs/services/key-protect?topic=key-protect-create-root-keys#create-root-keys). By default, the root key is created without an expiration date.
+  2. If you do not have a {{site.data.keyword.keymanagementserviceshort}} instance, [provision one](/docs/key-protect?topic=key-protect-provision).
+  3. [Create a root key](/docs/services/key-protect?topic=key-protect-create-root-keys). By default, the root key is created without an expiration date.
   
   4. Create an IAM service ID. Replace `<service_ID_name>` with the name that you want to assign to your service ID. This service ID is used to access your {{site.data.keyword.keymanagementserviceshort}} instance from your {{site.data.keyword.blockstorageshort}} volume.
     ```
@@ -319,7 +319,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ```
     {: pre}
 
-  8. [Create an IAM service policy](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) to grant your service ID access to your {{site.data.keyword.keymanagementserviceshort}} instance. The following command grants your service ID `Reader` access to your {{site.data.keyword.keymanagementserviceshort}} instance. The Reader access role is the minimum service access role that your service ID must have to retrieve {{site.data.keyword.keymanagementserviceshort}} keys. For more information, see [Managing user access for {{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-manage-access).
+  8. [Create an IAM service policy](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) to grant your service ID access to your {{site.data.keyword.keymanagementserviceshort}} instance. The following command grants your service ID `Reader` access to your {{site.data.keyword.keymanagementserviceshort}} instance. The Reader access role is the minimum service access role that your service ID must have to retrieve {{site.data.keyword.keymanagementserviceshort}} keys. For more information, see [Managing user access for {{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-manage-access).
     ```
     ibmcloud iam service-policy-create <service_ID_name> --roles Reader --service-name kms --service-instance <service_instance_GUID>
     ```
@@ -422,7 +422,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     </tr>	    
     <tr>
     <td><code>stringData.config.key_protect_endpoint</code></td>
-    <td>Enter the regional endpoint of your {{site.data.keyword.keymanagementserviceshort}} instance. For a list of Key Protect endpoints, see [Regions and endpoints](/docs/services/key-protect?topic=key-protect-regions).</td>
+    <td>Enter the regional endpoint of your {{site.data.keyword.keymanagementserviceshort}} instance. For a list of Key Protect endpoints, see [Regions and endpoints](/docs/key-protect?topic=key-protect-regions).</td>
     </tr>
     <tr>
     <td><code>stringData.config.root_key_crn</code></td>

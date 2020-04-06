@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-04-06"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -505,12 +505,14 @@ As you plan and develop your app, consider the following options to maintain a s
 </dl>
 
 ## Managing access and monitoring app health
-{: #other}
+{: #app_plan_logmet}
 
 After you deploy your app, you can control who can access the app, and monitor the health and performance of the app.
 {: shortdesc}
 
 ### How can I control who has access to my app deployments?
+{: #app_plan_logmet_access}
+
 The account and cluster administrators can control access on many different levels: the cluster, OpenShift project, pod, and container.
 {: shortdesc}
 
@@ -524,6 +526,8 @@ Want to control access at the application level? To create a sign-on flow that y
 {: tip}
 
 ### After I deploy my app, how can I monitor its health?
+{: #app_plan_logmet_monitor}
+
 You can set up {{site.data.keyword.cloud_notm}} [logging and monitoring](/docs/containers?topic=containers-health) for your cluster.
 {: shortdesc}
 

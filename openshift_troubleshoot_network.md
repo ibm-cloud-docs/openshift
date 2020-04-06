@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -336,7 +336,7 @@ To ensure that all Calico factors align:
 
 
 ## Feedback, questions, and support
-{: #getting_help}
+{: #getting_help_network}
 
 Still having issues with your cluster? Review different ways to get help and support for your Red Hat OpenShift on IBM Cloud clusters. For any questions or feedback, post in Slack.
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-04-06"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -96,7 +96,7 @@ For more information about Red Hat OpenShift on IBM Cloud partners and the benef
 {: #cluster-add-ons}
 Red Hat OpenShift on IBM Cloud integrates popular open source integrations by using [managed add-ons](/docs/containers?topic=containers-managed-addons). Managed add-ons are an easy way to install an open source tool in your cluster that is tested by IBM and approved to be used in Red Hat OpenShift on IBM Cloud.
 
-Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the Red Hat OpenShift on IBM Cloud support channels. For more information, see [Getting help and support](/docs/containers?topic=containers-cs_troubleshoot_clusters#clusters_getting_help).
+Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the Red Hat OpenShift on IBM Cloud support channels. For more information, see [Getting help and support](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help).
 
 If the tool that you add to your cluster incurs costs, these costs are automatically integrated and listed as part of your monthly {{site.data.keyword.cloud_notm}} billing. The billing cycle is determined by {{site.data.keyword.cloud_notm}} depending on when you enabled the add-on in your cluster.
 

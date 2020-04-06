@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -133,7 +133,7 @@ Review the options to debug your clusters and find the root causes for failures.
        <tbody>
     <tr>
        <td>`Aborted`</td>
-       <td>The deletion of the cluster is requested by the user before the Kubernetes master is deployed. After the deletion of the cluster is completed, the cluster is removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-cs_troubleshoot#ts_getting_help).</td>
+       <td>The deletion of the cluster is requested by the user before the Kubernetes master is deployed. After the deletion of the cluster is completed, the cluster is removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help).</td>
        </tr>
      <tr>
          <td>`Critical`</td>
@@ -145,7 +145,7 @@ Review the options to debug your clusters and find the root causes for failures.
        </tr>
        <tr>
          <td>`Deleted`</td>
-         <td>The cluster is deleted but not yet removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-cs_troubleshoot#ts_getting_help). </td>
+         <td>The cluster is deleted but not yet removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help). </td>
        </tr>
        <tr>
        <td>`Deleting`</td>
@@ -153,7 +153,7 @@ Review the options to debug your clusters and find the root causes for failures.
        </tr>
        <tr>
          <td>`Deploy failed`</td>
-         <td>The deployment of the Kubernetes master could not be completed. You cannot resolve this state. Contact IBM Cloud support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-cs_troubleshoot#ts_getting_help).</td>
+         <td>The deployment of the Kubernetes master could not be completed. You cannot resolve this state. Contact IBM Cloud support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help).</td>
        </tr>
          <tr>
            <td>`Deploying`</td>
@@ -169,7 +169,7 @@ Review the options to debug your clusters and find the root causes for failures.
          </tr>
        <tr>
          <td>`Requested`</td>
-         <td>A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to <code>Deploying</code>. If your cluster is stuck in the <code>Requested</code> state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-cs_troubleshoot#ts_getting_help). </td>
+         <td>A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to <code>Deploying</code>. If your cluster is stuck in the <code>Requested</code> state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help). </td>
        </tr>
        <tr>
          <td>`Updating`</td>
