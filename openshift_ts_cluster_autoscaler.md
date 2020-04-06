@@ -173,7 +173,7 @@ Before you begin, [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     oc delete pod -n kube-system <pod_name>
     ```
     {: pre}
-7.  Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](#getting_help).
+7.  Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](#getting_help_ca).
 
 ## Feedback, questions, and support
 {: #getting_help_ca}

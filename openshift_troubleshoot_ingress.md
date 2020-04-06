@@ -169,7 +169,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
   * **Version 3.11 clusters:**
     1. Check whether an ALB exists for your cluster and that the ALB has a public IP address assigned.
       * If a public ALB is listed and is assigned an IP address, continue to the next step.
-      * If no ALBs are created after several minutes, [contact us](#getting_help).
+      * If no ALBs are created after several minutes, [review ways to get help](#getting_help_ingress).
 
         ```
         ibmcloud oc alb ls -c <cluster_name_or_ID>
@@ -186,7 +186,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address as the public ALB.
       * If a `LoadBalancer` service is listed and is assigned an IP address, continue to the next step.
-      * If no `LoadBalancer` services are created after several minutes, [contact us](#getting_help).
+      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](#getting_help_ingress).
 
         ```
         kubectl get svc -n kube-system | grep LoadBalancer
@@ -201,7 +201,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
   * **Version 4.3 and later clusters:**
     1. Check whether a router deployment exists for your cluster.
       * If a router deployment is listed, continue to the next step.
-      * If no router deployment is created after several minutes, [contact us](#getting_help).
+      * If no router deployment is created after several minutes, [review ways to get help](#getting_help_ingress).
 
         ```
         oc get deployment -n openshift-ingress
@@ -217,7 +217,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the router's load balancer service exists and is assigned a public external IP address.
       * If a service that is named `router-default` is listed and is assigned an IP address, continue to the next step.
-      * If no `router-default` service is created after several minutes, [contact us](#getting_help).
+      * If no `router-default` service is created after several minutes, [review ways to get help](#getting_help_ingress).
 
         ```
         oc get svc -n openshift-ingress
@@ -232,7 +232,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [contact us](#getting_help).
+5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](#getting_help_ingress).
   ```
   ibmcloud oc cluster get -c <cluster_name_or_ID>
   ```
