@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-04-06"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -153,8 +153,6 @@ If you have a classic Red Hat OpenShift on IBM Cloud cluster, you can choose wor
 {: shortdesc}
 
 Portworx is installed by using a [Helm chart](/docs/openshift?topic=openshift-portworx#install_portworx). When you install the Helm chart, Portworx automatically analyzes the local persistent storage that is available in your cluster and adds the storage to the Portworx storage layer. To add storage from your Portworx storage layer to your apps, you must use [Kubernetes persistent volume claims](/docs/openshift?topic=openshift-portworx#add_portworx_storage).
-
-To install Portworx in your classic Red Hat OpenShift on IBM Cloud cluster, you must have a Portworx license. If you are a first time user, you can use the `px-enterprise` edition as a Trial version. The Trial version provides you with the full Portworx functionality that you can test out for 30 days. After the Trial version expires, you must [purchase a Portworx license ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/containers?topic=containers-portworx#portworx_license) to continue using your Portworx cluster.
 
 For more information about how to install and use Portworx with Red Hat OpenShift on IBM Cloud, see [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
 

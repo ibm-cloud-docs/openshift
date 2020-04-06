@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-04-01"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -50,7 +50,7 @@ This task includes the information for installing these CLIs and plug-ins:
 * Red Hat OpenShift on IBM Cloud plug-in (`ibmcloud oc` alias for OpenShift clusters)
 * {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
 
-If you want to use the {{site.data.keyword.cloud_notm}} console instead, you can run CLI commands directly from your web browser in the [{{site.data.keyword.cloud-shell_notm}}](#cloud-shell).
+If you want to use the {{site.data.keyword.cloud_notm}} console instead, you can run CLI commands directly from your web browser in the [{{site.data.keyword.cloud-shell_notm}}](#cloud-shell) or, after your cluster is created, the [Kubernetes Web Terminal](#cli_web).
 {: tip}
 
 <br>

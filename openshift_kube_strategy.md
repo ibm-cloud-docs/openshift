@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-04-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -53,14 +53,14 @@ Not on slack yet? [Request an invite!](https://cloud.ibm.com/kubernetes/slack){:
 {: tip}
 
 ### Can I automate my infrastructure deployments?
-{: #packaging}
+{: #infra_packaging}
 
 If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, you might wonder how you can make your deployment strategy work across these environments.
 
 You can use the open source [Terraform](/docs/terraform?topic=terraform-getting-started#getting-started) tool to automate the provisioning of {{site.data.keyword.cloud_notm}} infrastructure, including Kubernetes clusters. Follow along with this tutorial to [plan, create, and update deployment environments](/docs/tutorials?topic=solution-tutorials-plan-create-update-deployments#plan-create-update-deployments). After you create a cluster, you can also set up the [Red Hat OpenShift on IBM Cloud cluster autoscaler](/docs/openshift?topic=openshift-ca) so that your worker pool scales up and down worker nodes in response to your workload's resource requests.</dd>
 
 ### What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?
-{: #app_types}
+{: #app_kinds}
 
 Your containerized app must be able to run on the supported operating system, Ubuntu 16.64, 18.64. You also want to consider the statefulness of your app. For more information about the kinds of apps that can run in Red Hat OpenShift on IBM Cloud, see [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy#app_types).
 

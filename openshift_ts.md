@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -52,16 +52,13 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for ge
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Kubernetes Service** component.
 
-## 3.11 clusters: Running tests with the Diagnostics and Debug Tool
+## Running tests with the Diagnostics and Debug Tool
 {: #debug_utility}
 {: troubleshoot}
 {: support}
 
 While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run tests and gather pertinent information from your cluster.
 {: shortdesc}
-
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The Diagnostics and Debug Tool is supported only for OpenShift 3.11 clusters, and is not supported for OpenShift 4.3 clusters.
-{: note}
 
 **Before you begin**:
 If you previously installed the debug tool by using Helm, first uninstall the `ibmcloud-iks-debug` Helm chart.
@@ -136,7 +133,7 @@ Review the options to debug your clusters and find the root causes for failures.
        <tbody>
     <tr>
        <td>`Aborted`</td>
-       <td>The deletion of the cluster is requested by the user before the Kubernetes master is deployed. After the deletion of the cluster is completed, the cluster is removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-cs_troubleshoot#ts_getting_help).</td>
+       <td>The deletion of the cluster is requested by the user before the Kubernetes master is deployed. After the deletion of the cluster is completed, the cluster is removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help).</td>
        </tr>
      <tr>
          <td>`Critical`</td>
@@ -148,7 +145,7 @@ Review the options to debug your clusters and find the root causes for failures.
        </tr>
        <tr>
          <td>`Deleted`</td>
-         <td>The cluster is deleted but not yet removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-cs_troubleshoot#ts_getting_help). </td>
+         <td>The cluster is deleted but not yet removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help). </td>
        </tr>
        <tr>
        <td>`Deleting`</td>
@@ -156,7 +153,7 @@ Review the options to debug your clusters and find the root causes for failures.
        </tr>
        <tr>
          <td>`Deploy failed`</td>
-         <td>The deployment of the Kubernetes master could not be completed. You cannot resolve this state. Contact IBM Cloud support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-cs_troubleshoot#ts_getting_help).</td>
+         <td>The deployment of the Kubernetes master could not be completed. You cannot resolve this state. Contact IBM Cloud support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help).</td>
        </tr>
          <tr>
            <td>`Deploying`</td>
@@ -172,7 +169,7 @@ Review the options to debug your clusters and find the root causes for failures.
          </tr>
        <tr>
          <td>`Requested`</td>
-         <td>A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to <code>Deploying</code>. If your cluster is stuck in the <code>Requested</code> state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-cs_troubleshoot#ts_getting_help). </td>
+         <td>A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to <code>Deploying</code>. If your cluster is stuck in the <code>Requested</code> state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help). </td>
        </tr>
        <tr>
          <td>`Updating`</td>
@@ -763,7 +760,7 @@ The OpenShift web console might not open for reasons that include:
     *  If your cluster does have a subdomain, continue to the next step.
 4.  Review the output of the first step to check the **Version**. If your cluster does not run the latest version, update the cluster and worker nodes.
     1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version.
-        
+
         **4.3**:
         ```
         ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.3_openshift -f
@@ -821,7 +818,7 @@ The OpenShift web console might not open for reasons that include:
         oc delete pod -n openshift-console <pod>
         ```
         {: pre}
-8.  Check if other system pods are experiencing issues. 
+8.  Check if other system pods are experiencing issues.
     1.  Check for pending pods.
         ```
         oc get pods --all-namespaces | grep Pending
@@ -908,9 +905,9 @@ Still having issues with your cluster? Review different ways to get help and sup
          ibmcloud oc worker get -w <worker_ID> -c <cluster_name_or_ID>
          ```
          {: pre}
-   3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. 
-   
-   3.11 clusters only: You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
+   3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them.
+
+   You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
    {: tip}
 
 2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).

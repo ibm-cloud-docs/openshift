@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-04-01"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -267,24 +267,58 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ibmcloud login --apikey <API_key>
         ```
         {: pre}
-    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable. For version 4.3 clusters, include the `--admin` flag.
+    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable.
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```
         {: pre}
-3.  Use the API key to log in to your OpenShift cluster. The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
+3.  Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an OpenShift token. You can log in from the CLI or API. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
+
+    **From the CLI**: Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value.
     ```
     oc login -u apikey -p <API_key>
     ```
     {: pre}
 
-    You can also use an API call to exchange your {{site.data.keyword.cloud_notm}} IAM credentials for an OpenShift token. To get the `master_URL`, run `ibmcloud oc cluster-get -c <cluster_name_or_ID>`. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
+    **From the API**: Log in to your cluster with the API such as via a curl request. 
+    
+    1.  Get the **Master URL** of your cluster.
+        ```
+        ibmcloud oc cluster get -c <cluster_name_or_ID>
+        ```
+        {: pre}
 
-    Example curl request:
-    ```
-    curl -u 'apikey:<API_key>' -H "X-CSRF-Token: a" 'https://<master_URL>:<port>/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
-    ```
-    {: pre}
+        Example output:
+        ```
+        Name:                           mycluster   
+        ID:                             1234567  
+        State:                          normal   
+        Created:                        2020-01-22T19:22:16+0000   
+        Location:                       dal10   
+        Master URL:                     https://c100-e.<region>.containers.cloud.ibm.com:<port>   
+        ...
+
+        ```
+        {: screen}
+    2.  <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later only**: Get the token endpoint of the OpenShift `oauth` server.
+        ```
+        curl https://<master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        https://<token_endpoint>/oauth/token
+        ```
+    3.  Log in to the cluster with the endpoint that you previously retrieved.
+        * <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server. 
+        * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 3.11**: Replace `<URL>` with the master URL.
+
+        Example curl request:
+        ```
+        curl -u 'apikey:<API_key>' -H "X-CSRF-Token: a" 'https://<URL>/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
+        ```
+        {: pre}
 
 ### Using a service ID to log in to OpenShift clusters
 {: #access_service_id}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-04-01"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -274,7 +274,7 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
 
 1. Create a router service on the new VLAN.
   * **<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3.11 clusters**:
-    1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.<p class="note>Note that the router service in the first zone where you have workers nodes is always named `router` in 3.11 clusters, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.</p>
+    1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.<p class="note">Note that the router service in the first zone where you have workers nodes is always named `router` in 3.11 clusters, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.</p>
       ```
       oc get svc router -o yaml
       ```

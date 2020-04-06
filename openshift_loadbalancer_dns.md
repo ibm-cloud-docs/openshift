@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-31"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -48,8 +48,6 @@ After you set up network load balancers (NLBs), you can create DNS entries for t
 <dd>Enable health checks on the NLB IP addresses behind a single subdomain to determine whether they are available or not. When you enable a monitor for your subdomain, the monitor health checks each NLB IP and keeps the DNS lookup results updated based on these health checks. For example, if your NLBs have IP addresses `1.1.1.1`, `2.2.2.2`, and `3.3.3.3`, a normal operation DNS lookup of your subdomain returns all 3 IPs, 1 of which the client accesses at random. If the NLB with IP address `3.3.3.3` becomes unavailable for any reason, such as due to zone failure, then the health check for that IP fails, the monitor removes the failed IP from the subdomain, and the DNS lookup returns only the healthy `1.1.1.1` and `2.2.2.2` IPs.</dd>
 </dl>
 
-
-
 You can see all subdomains that are registered for NLB IPs in your cluster by running the following command.
 ```
 ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
@@ -78,7 +76,7 @@ To create a subdomain for one or more NLB IP addresses:
   ```
   {: pre}
 
-  In the following example output, the NLB **EXTERNAL-IP**s are `168.2.4.5` and `88.2.4.5`.
+  In the following example output, the NLB **EXTERNAL-IPs** are `168.2.4.5` and `88.2.4.5`.
   ```
   NAME             TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)                AGE
   lb-myapp-dal10   LoadBalancer   172.21.xxx.xxx   168.2.4.5         1883:30303/TCP         6d
@@ -126,7 +124,7 @@ For example, a subdomain that you create for an NLB might look like `mycluster-a
 |NLB subdomain component|Description|
 |----|----|
 |`*`|The wildcard for the subdomain is registered by default for your cluster.|
-|`<cluster_name>`|The name of your cluster.<ul><li>If the cluster name is 26 characters or fewer, the entire cluster name is included and is not modified: `myclustername`.</li><li>If the cluster name is 26 characters or greater and the cluster name is unique in this region, only the first 24 characters of the cluster name are used: `myveryverylongclusternam`.</li><li>If the cluster name is 26 characters or greater and there is an existing cluster of the same name in this region, only the first 17 characters of the cluster name are used and a dash with six random characters is added: `myveryverylongclu-ABC123`.</li></ul>|
+|`<cluster_name>`|The name of your cluster.<ul><li>If the cluster name is 26 characters or fewer and the cluster name is unique in this region, the entire cluster name is included and is not modified: `myclustername`.</li><li>If the cluster name is 26 characters or fewer and there is an existing cluster of the same name in this region, the entire cluster name is included and a dash with six random characters is added: `myclustername-ABC123`.</li><li>If the cluster name is 26 characters or greater and the cluster name is unique in this region, only the first 24 characters of the cluster name are used: `myveryverylongclusternam`.</li><li>If the cluster name is 26 characters or greater and there is an existing cluster of the same name in this region, only the first 17 characters of the cluster name are used and a dash with six random characters is added: `myveryverylongclu-ABC123`.</li></ul>|
 |`<globally_unique_account_HASH>`|A globally unique HASH is created for your {{site.data.keyword.cloud_notm}} account. All subdomains that you create for NLBs in clusters in your account use this globally unique HASH.|
 |`0001`|The first and second characters indicate a public or a private (internal) subdomain.<ul><li>`00` indicates a subdomain that has a public DNS entry.</li><li>`i0` indicates a subdomain that has a private DNS entry.</li></ul>
 The first and second characters, `00`, indicate a public subdomain. The third and fourth characters, such as `01` or another number, act as a counter for each subdomain that you create.|
