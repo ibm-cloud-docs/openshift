@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-03"
+lastupdated: "2020-04-06"
 
 keywords: openshift
 subcollection: openshift
@@ -1345,6 +1345,7 @@ subcollection: openshift
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help)
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+* [April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
 * [March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
 * [February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
 * [January 2020](/docs/openshift?topic=openshift-iks-release#jan20)

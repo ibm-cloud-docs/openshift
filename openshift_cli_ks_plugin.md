@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-06"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2491,7 +2491,7 @@ ibmcloud oc alb types [--json] [-s]
 
 
 
-Force an update of the Ingress ALB pods in the cluster to the latest version.
+Force an update of the pods for individual or all Ingress ALBs in the cluster to the latest or a specific version.
 {: shortdesc}
 
 If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. When you choose to manually update the add-on, all ALB pods in the cluster are updated to the latest build. You cannot update an individual ALB or choose which build to update the add-on to. Automatic updates remain disabled.
@@ -2499,7 +2499,7 @@ If automatic updates for the Ingress ALB add-on are disabled and you want to upd
 When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the image version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
 
 ```
-ibmcloud oc alb update --cluster CLUSTER [--json] [-s]
+ibmcloud oc alb update --cluster CLUSTER [--alb-id ALB1_ID --alb-id ALB2_ID ...] [--json] [-s]
 ```
 {: pre}
 
@@ -2509,6 +2509,9 @@ ibmcloud oc alb update --cluster CLUSTER [--json] [-s]
 <dl>
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster where you want to roll back the ALB builds. This value is required.</dd>
+
+<dt><code>--alb-id <em>CLUSTER</em></code></dt>
+<dd>Optional: The ID of the individual ALB to update. To list ALB IDs, run `ibmcloud oc alb ls -c <cluster>`. To update multiple ALBs, use multiple flags, such as `--alb-id ALB1_ID --alb-id ALB2_ID`. If you omit this flag, all ALBs in the cluster are updated.</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -4275,7 +4278,7 @@ Each flavor includes the amount of virtual CPU, memory, and disk space for each 
 You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal. [Learn more about your flavor options](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 
 ```
-ibmcloud oc flavors --zone ZONE [--json] [-s]
+ibmcloud oc flavors --zone ZONE [--show-storage] [--json] [-s]
 ```
 {: pre}
 
@@ -4285,6 +4288,9 @@ ibmcloud oc flavors --zone ZONE [--json] [-s]
 <dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>Enter the zone where you want to list available flavors. This value is required. To see available zones for classic clusters, run `ibmcloud oc zone ls`.</dd>
+
+<dt><code>--show-storage</code></dt>
+<dd>Optional: Show additional raw disks that are available for SDS worker node flavors. For more information, see [Software-defined storage (SDS) machines](https://cloud.ibm.com/docs/containers?topic=containers-planning_worker_nodes#sds).</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
