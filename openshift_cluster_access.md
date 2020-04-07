@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-07"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -48,6 +48,9 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 2. [Create your OpenShift cluster](/docs/openshift?topic=openshift-clusters).
 3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall) to the {{site.data.keyword.cloud_notm}} and Red Hat OpenShift on IBM Cloud API endpoints and ports. For private service endpoint-only clusters, you cannot test the connection to your cluster until you expose the private service endpoint of the master to the cluster by using a [private NLB](#access_private_se).
 4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
+5.  In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
+    *  **Public Service Endpoint URL**: Continue with [Accessing OpenShift clusters through the public service endpoint](#access_public_se).
+    *  **Private Service Endpoint URL only**: If your cluster has only a private service endpoint enabled, continue with [Accessing clusters through the private service endpoint](#access_private_se). Note that this step requires a private network connection to your cluster.
 
 <br />
 
@@ -67,10 +70,12 @@ You can quickly access your Red Hat OpenShift on IBM Cloud cluster from the cons
 {: shortdesc}
 
 1.  In the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
-2.  Click **OpenShift console**.
+2.  Click **OpenShift web console**.
 3.  To continue working in the terminal, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the terminal as follows.
     *  **Version 3.11**: Paste the copied `oc login` command into your terminal.
     *  **Version 4.3**: Click **Display Token**, copy the `oc login` command, and paste the command into your terminal.
+
+**What's next?** Try [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui).
 
 ### Connecting to the cluster from the CLI
 {: #access_oc_cli}
@@ -104,6 +109,8 @@ Choose from the following options.
         oc login -u passcode -p <iam_passcode> --server=<master_URL>
         ```
         {: pre}
+
+**What's next?** Try [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli).
 
 
 
