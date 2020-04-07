@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -747,7 +747,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
   PVC_NAMES:
     - # Example: my_pvc
     - # Optional example: my_pvc2
-  CHART_TYPE: # Example: backup
+  CHART_TYPE: # Example: backup or restore
   BACKUP_TYPE: # Example: incremental
   SCHEDULE_TYPE: # Example: periodic
   SCHEDULE_INFO: # Example: weekly
@@ -783,6 +783,10 @@ To back up or restore a PVC by editing the `values.yaml` file:
     <tr>
     <td><code>PVC_NAMES</code></td>
     <td><ul><li><strong>Backup: </strong>Enter the name of the PVC that you want to back up. If you want to back up multiple PVCs, add each PVC to the list of PVCs. To list available PVCs in your cluster that you can back up, run <code>oc get pvc</code>. </li><li><strong>Restore: </strong>Enter the name of the PVC to which you want to restore data from {{site.data.keyword.cos_full_notm}}. You can restore data to one PVC at a time only. To list available PVCs in your cluster that you can restore data to, run <code>oc get pvc</code>.</li></ul></td>
+    </tr>
+    <tr>
+    <td><code>CHART_TYPE</code></td>
+    <td><ul><li>Enter the name of the chart type that you want to deploy. Enter <code>backup</code> to deploy the backup chart. Enter <code>restore</code> to deploy the restore chart.</td>
     </tr>
     <tr>
     <td><code>BACKUP_TYPE</code></td>
