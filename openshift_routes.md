@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-07"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -77,7 +77,7 @@ The following diagram shows how a router directs communication from the internet
 
 1. A request to your app uses the route hostname that you set up for your app.
 
-2. A DNS system service resolves the route subdomain to the floating public IP address of a router service. Requests are handled by the router services in various zones in a round-robin cycle.
+2. A DNS system service resolves the route subdomain to the floating public IP address of a router service that was reported as healthy by the MZLB. The MZLB continuously checks the portable public IP addresses of the services that expose the router in each zone in your cluster. Requests are handled by the router services in various zones in a round-robin cycle.
 
 3. The router receives the request and forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router sends the requests between the app pods in the zone.
 
