@@ -114,20 +114,20 @@ To view volume details including the storage class and size, you can describe th
 
 | Command |
 | --- |
-| `oc describe pvc -n openshift-image-registry image-registry-storage` |
+| <pre class="pre"><code>oc describe pvc -n openshift-image-registry image-registry-storage</code></pre> |
 {: summary="The row contains the command to describe the storage device that backs the internal registry."}
 {: class="simple-tab-table"}
-{: caption="<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Command to describe the storage device in OpenShift 4.3 or later" caption-side="top"}
+{: caption="Command to describe the storage device in OpenShift 4.3 or later" caption-side="top"}
 {: #registrystorage1}
 {: tab-title="4.3+"}
 {: tab-group="registrystorage"}
 
 | Command |
 | --- |
-| `oc describe pvc registry-backing -n default` |
+| <pre class="pre"><code>oc describe pvc registry-backing -n default</code></pre> |
 {: summary="The row contains the command to describe the storage device that backs the internal registry."}
 {: class="simple-tab-table"}
-{: caption="<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Command to describe the storage device in OpenShift 3.11" caption-side="top"}
+{: caption="Command to describe the storage device in OpenShift 3.11" caption-side="top"}
 {: #registrystorage2}
 {: tab-title="3.11"}
 {: tab-group="registrystorage"}
