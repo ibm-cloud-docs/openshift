@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-04-08"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -326,7 +326,7 @@ See [Specifying your app requirements in your YAML file](/docs/openshift?topic=o
 * [Persistent volumes](/docs/openshift?topic=openshift-openshift_apps#pv) that are mounted to the container for storage
 
 ### How can I add IBM services to my app, such as Watson?
-{: #services}
+{: #services_ibm}
 
 See [Adding services to apps](/docs/openshift?topic=openshift-service-binding#adding_app).
 
@@ -430,7 +430,7 @@ Within the YAML file, you can use labels or annotations as metadata to manage yo
 **Annotations**: [Annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/){: external} are similar to labels in that they are also `key:value` pairs. They are better for non-identifying information that can be leveraged by tools or libraries, such as holding extra information about where an object came from, how to use the object, pointers to related tracking repos, or a policy about the object. You don't select objects based on annotations.
 
 ### What app update strategies can I use?
-{: #updating_apps}
+{: #updating_apps_strategy}
 
 To update your app, you can choose from various strategies such as the following. You might start with a rolling deployment or instantaneous switch before you progress to a more complicated canary deployment.
 
