@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-04-08"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -114,7 +114,7 @@ To view volume details including the storage class and size, you can describe th
 
 | Command |
 | --- |
-| <pre class="pre"><code>oc describe pvc -n openshift-image-registry image-registry-storage</code></pre> |
+| `oc describe pvc -n openshift-image-registry image-registry-storage` |
 {: summary="The row contains the command to describe the storage device that backs the internal registry."}
 {: class="simple-tab-table"}
 {: caption="<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Command to describe the storage device in OpenShift 4.3 or later" caption-side="top"}
@@ -124,7 +124,7 @@ To view volume details including the storage class and size, you can describe th
 
 | Command |
 | --- |
-| <pre class="pre"><code>oc describe pvc registry-backing -n default</code></pre> |
+| `oc describe pvc registry-backing -n default` |
 {: summary="The row contains the command to describe the storage device that backs the internal registry."}
 {: class="simple-tab-table"}
 {: caption="<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Command to describe the storage device in OpenShift 3.11" caption-side="top"}
