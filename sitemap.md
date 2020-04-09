@@ -601,7 +601,8 @@ subcollection: openshift
   * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
   * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
 * [Setting up routes to publicly expose your apps](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
-* [Setting up routes to privately expose your apps](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
+* [Setting up routes to privately expose your apps in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
+* [Setting up routes to privately expose your apps in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
 * [Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
 
 
@@ -669,6 +670,12 @@ subcollection: openshift
   * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3)
   * [Step 4: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-4)
 * [Exposing apps that are outside your cluster to the public](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-external)
+* [Exposing apps to a private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private)
+  * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-1)
+  * [Step 2: Register your custom domain and TLS certificate](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-2)
+  * [Step 3: Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-3)
+  * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4)
+  * [Step 5: Access your app from your private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-5)
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 
