@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-04-09"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -439,7 +439,7 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
     If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `oc patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
     {: tip}
 
-13. Follow the instructions to [add object storage to your apps](#add_cos).
+12. Follow the instructions to [add object storage to your apps](#add_cos).
 
 If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_helm_fails) and [Object storage: Installing the Object storage plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_plugin_fails).
 {: tip}
@@ -1196,7 +1196,6 @@ To deploy a stateful set that uses object storage:
 {: note}
 
 <br />
-
 
 
 
