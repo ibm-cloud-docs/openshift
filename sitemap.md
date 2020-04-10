@@ -625,13 +625,17 @@ subcollection: openshift
 * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
 * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
 
-[Setting up routes to publicly expose your apps](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
+[Route types](/docs/openshift?topic=openshift-openshift_routes#route-types)
 
-[Setting up routes to privately expose your apps in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
+[Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
 
-[Setting up routes to privately expose your apps in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
+[Setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes)
+* [Setting up private routes in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
+* [Setting up private routes in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
 
 [Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
+* [Moving router services across VLANs in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-43)
+* [Moving router services across VLANs in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-311)
 
 
 ## Exposing apps with load balancers

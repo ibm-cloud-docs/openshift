@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-09"
+lastupdated: "2020-04-10"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -176,14 +176,14 @@ The Ingress controller for your app is already registered with the IBM-provided 
 
 2.  If you want to configure TLS termination, get your custom TLS secret ready.
   * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}:
-      1. Import the certificate to your cluster. When you import a certificate, a secret that holds the TLS certificate and key is automatically created in the `ibm-cert-store` namespace. <p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
+      1. Import the certificate to your cluster. When you import a certificate, a secret that holds the TLS certificate and key is automatically created in the `ibm-cert-store` project. <p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
         ```
         ibmcloud oc alb cert deploy --secret-name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn>
         ```
         {: pre}
-      2. Copy the secret into the namespace where your app service is deployed.
+      2. Copy the secret into the project where your app service is deployed.
         ```
-        oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-namespace>/g' | kubectl -n <new-namespace> create -f -
+        oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-project>/g' | oc -n <new-project> create -f -
         ```
         {: pre}
   * To create a TLS certificate:
@@ -192,19 +192,19 @@ The Ingress controller for your app is already registered with the IBM-provided 
           * Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
           * If you registered a wildcard domain, generate a wildcard certificate.
           * TLS certificates that contain pre-shared keys (TLS-PSK) are not supported.
-      2. Encode the cert and key into base-64 and save the base-64 encoded value in a new file.
+      2. Encode the cert and key into base64 and save the base64 encoded value in a new file.
         ```
         openssl base64 -in tls.key -out tls.key.base64
         ```
         {: pre}
-      3. View the base-64 encoded value for your cert and key.
+      3. View the base64 encoded value for your cert and key.
         ```
         cat tls.key.base64
         ```
         {: pre}
-      4. Create a Kubernetes secret for your certificate in the namespace where your app services are deployed. Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+      4. Create a Kubernetes secret for your certificate in the project where your app services are deployed. Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
          ```
-         oc create secret tls <secret_name> -n <namespace> --cert=<tls.crt> --key=<tls.key>
+         oc create secret tls <secret_name> -n <project> --cert=<tls.crt> --key=<tls.key>
          ```
          {: pre}
          
@@ -435,40 +435,40 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
 
 2.  If you want to configure TLS termination, get your custom TLS secret ready.
   * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}:
-    1. Import the certificate to your cluster. When you import a certificate, a secret that holds the TLS certificate and key is automatically created in the `ibm-cert-store` namespace.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
-      ```
-      ibmcloud oc alb cert deploy --secret-name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn>
-      ```
-      {: pre}
-    2. Copy the secret into the namespace where your app service is deployed.
-      ```
-      oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-namespace>/g' | kubectl -n <new-namespace> create -f -
-      ```
+      1. Import the certificate to your cluster. When you import a certificate, a secret that holds the TLS certificate and key is automatically created in the `ibm-cert-store` project.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
+        ```
+        ibmcloud oc alb cert deploy --secret-name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn>
+        ```
+        {: pre}
+      2. Copy the secret into the project where your app service is deployed.
+        ```
+        oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-project>/g' | oc -n <new-project> create -f -
+        ```
       {: pre}
   * To create TLS certificate:
-    1. Generate a certificate authority (CA) cert and key from your certificate provider.
-      * If you have your own domain, purchase an official TLS certificate for your domain.
-      * Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
-      * If you registered a wildcard domain, generate a wildcard certificate.
-      * TLS certificates that contain pre-shared keys (TLS-PSK) are not supported.
-    2. Convert the cert and key into base-64.
-       1. Encode the cert and key into base-64 and save the base-64 encoded value in a new file.
-          ```
-          openssl base64 -in tls.key -out tls.key.base64
-          ```
-          {: pre}
-       2. View the base-64 encoded value for your cert and key.
-          ```
-          cat tls.key.base64
-          ```
-          {: pre}
-    3. Create a Kubernetes secret for your certificate in the namespace where your app services are deployed.
-         ```
-         oc create secret tls <secret_name> -n <namespace> --cert=<tls.crt> --key=<tls.key>
-         ```
-         {: pre}
-         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
-         {: note}
+      1. Generate a certificate authority (CA) cert and key from your certificate provider.
+          * If you have your own domain, purchase an official TLS certificate for your domain.
+          * Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
+          * If you registered a wildcard domain, generate a wildcard certificate.
+          * TLS certificates that contain pre-shared keys (TLS-PSK) are not supported.
+      2. Convert the cert and key into base64.
+         1. Encode the cert and key into base64 and save the base64 encoded value in a new file.
+            ```
+            openssl base64 -in tls.key -out tls.key.base64
+            ```
+            {: pre}
+         2. View the base64 encoded value for your cert and key.
+            ```
+            cat tls.key.base64
+            ```
+            {: pre}
+      3. Create a Kubernetes secret for your certificate in the project where your app services are deployed.
+           ```
+           oc create secret tls <secret_name> -n <project> --cert=<tls.crt> --key=<tls.key>
+           ```
+           {: pre}
+           Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+           {: note}
 
 ### Step 3: Create and configure a private Ingress controller
 {: #ingress-roks4-private-3}
@@ -636,7 +636,7 @@ http://<subdomain2>.<domain>/<app1_path>
 
 If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
 
-These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
+These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.</br></br>{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
 {: important}
 
 To add annotations to the router:

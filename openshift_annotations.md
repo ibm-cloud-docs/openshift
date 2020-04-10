@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-04-10"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -1060,7 +1060,7 @@ spec:
 1. Generate a certificate authority (CA) cert and key from your certificate provider. If you have your own domain, purchase an official TLS certificate for your domain. Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
     For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external} or this [mutual authentication tutorial, which includes creating your own CA](https://blog.codeship.com/how-to-set-up-mutual-tls-authentication/){: external}.
     {: tip}
-2. [Convert the cert into base-64](https://www.base64encode.org/){: external}.
+2. [Convert the cert into base64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using cert.
    ```yaml
    apiVersion: v1
@@ -1136,7 +1136,7 @@ spec:
 **To create a one-way authentication secret:**
 
 1. Get the certificate authority (CA) key and certificate from your upstream server and an SSL client certificate. The IBM ALB is based on NGINX, which requires the root certificate, intermediate certificate, and back-end certificate. For more information, see the [NGINX docs](https://docs.nginx.com/nginx/admin-guide/security-controls/securing-http-traffic-upstream/){: external}.
-2. [Convert the cert into base-64](https://www.base64encode.org/){: external}.
+2. [Convert the cert into base64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using the cert.
    ```yaml
    apiVersion: v1
@@ -1164,7 +1164,7 @@ spec:
 1. Generate a certificate authority (CA) cert and key from your certificate provider. If you have your own domain, purchase an official TLS certificate for your domain. Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
     For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external} or this [mutual authentication tutorial, which includes creating your own CA](https://blog.codeship.com/how-to-set-up-mutual-tls-authentication/){: external}.
     {: tip}
-2. [Convert the cert into base-64](https://www.base64encode.org/){: external}.
+2. [Convert the cert into base64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using the cert.
    ```yaml
    apiVersion: v1
