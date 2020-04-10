@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-04-10"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -221,7 +221,7 @@ When you use the new global functionality in the Red Hat OpenShift on IBM Cloud 
 </br></br>
 **Red Hat OpenShift on IBM Cloud API**:
 * [Get started with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api).
-* [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/).
+* [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/#/).
 * Generate a client of the API to use in automation by using the [`swagger.json` API](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json).
 
 To interact with the global Red Hat OpenShift on IBM Cloud API, enter the command type and append `global/v1/command` to the endpoint.

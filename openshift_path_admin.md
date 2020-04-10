@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-10"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -205,7 +205,7 @@ Create a cluster with infrastructure, network, and availability setups that are 
 1. **Firewall**: If you have corporate firewalls, make sure that you [open the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#corporate) to work with Red Hat OpenShift on IBM Cloud.
 2. **CLI and API**:
   1. [Set up the CLIs](/docs/openshift?topic=openshift-openshift-cli) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog).
-  2. Optionally set up [automated deployments with the API](/docs/openshift?topic=openshift-cs_api_install). As you work with your cluster, refer to the [IBM Cloud Kubernetes Service API reference](https://containers.cloud.ibm.com/global/swagger-global-api/) and [Community Kubernetes API reference](https://kubernetes.io/docs/reference/).
+  2. Optionally set up [automated deployments with the API](/docs/openshift?topic=openshift-cs_api_install). As you work with your cluster, refer to the [IBM Cloud Kubernetes Service API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/) and [Community Kubernetes API reference](https://kubernetes.io/docs/reference/).
 3. **Cluster deployment**:
   1. [Create the cluster](/docs/openshift?topic=openshift-clusters).
   2. After the cluster is ready, [access your cluster](/docs/openshift?topic=openshift-access_cluster).
