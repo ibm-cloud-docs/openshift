@@ -471,17 +471,26 @@ subcollection: openshift
 * [Upgrading or disabling the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade)
 * [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
 
+
+## Logging and monitoring cluster health
+{: #sitemap_logging_and_monitoring_cluster_health}
+
+
 [Logging and monitoring cluster health](/docs/openshift?topic=openshift-health)
-* [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
-* [Setting up LogDNA and Sysdig add-ons to monitor cluster health](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig)
-  * [Setting up logging with LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna)
-  * [Setting up API audit log forwarding to LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
-  * [Setting up monitoring with Sysdig](/docs/openshift?topic=openshift-health#openshift_sysdig)
-  * [Optional: Cleaning up](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig_cleanup)
-* [Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools](/docs/openshift?topic=openshift-health#openshift_other_logmet)
-* [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
-  * [Installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_install)
-  * [Uninstalling the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_remove)
+
+[Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
+
+[Setting up LogDNA and Sysdig add-ons to monitor cluster health](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig)
+* [Setting up logging with LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna)
+* [Setting up API audit log forwarding to LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
+* [Setting up monitoring with Sysdig](/docs/openshift?topic=openshift-health#openshift_sysdig)
+* [Optional: Cleaning up](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig_cleanup)
+
+[Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools](/docs/openshift?topic=openshift-health#openshift_other_logmet)
+
+[Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
+* [Installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_install)
+* [Uninstalling the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_remove)
 
 
 ## Setting up an image build pipeline
@@ -588,22 +597,41 @@ subcollection: openshift
 * [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-update_app#app_cicd)
 * [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster)
 
+
+## Choosing an app exposure service
+{: #sitemap_choosing_an_app_exposure_service}
+
+
 [Choosing an app exposure service](/docs/openshift?topic=openshift-cs_network_planning)
-* [Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
-* [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
-* [Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
-  * [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
-* [Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
-  * [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
+
+[Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
+
+[Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
+
+[Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
+* [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
+
+[Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
+* [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
+
+
+## Exposing apps with routes
+{: #sitemap_exposing_apps_with_routes}
+
 
 [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes)
-* [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
-  * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
-  * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
-* [Setting up routes to publicly expose your apps](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
-* [Setting up routes to privately expose your apps in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
-* [Setting up routes to privately expose your apps in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
-* [Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
+
+[Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
+* [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
+* [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
+
+[Setting up routes to publicly expose your apps](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
+
+[Setting up routes to privately expose your apps in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
+
+[Setting up routes to privately expose your apps in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
+
+[Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
 
 
 ## Exposing apps with load balancers
@@ -1162,32 +1190,68 @@ subcollection: openshift
   * [Changelog for worker node patch 3.11.129_1518_openshift, released 5 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1518_worker)
   * [Changelog for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1517)
 
+
+## Locations
+{: #sitemap_locations}
+
+
 [Locations](/docs/openshift?topic=openshift-regions-and-zones)
-* [Red Hat OpenShift on IBM Cloud locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
-  * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
-  * [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones)
-  * [Single zone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
-  * [Multizone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
-* [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
-  * [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
-  * [Logging in to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
+
+[Red Hat OpenShift on IBM Cloud locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
+* [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
+* [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones)
+* [Single zone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
+* [Multizone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
+
+[Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
+* [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
+* [Logging in to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
+
+
+## Supported IBM Cloud and third-party integrations
+{: #sitemap_supported_ibm_cloud_and_third-party_integrations}
+
 
 [Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations)
 
+
+## User access permissions
+{: #sitemap_user_access_permissions}
+
+
 [User access permissions](/docs/openshift?topic=openshift-access_reference)
-* [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
-* [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
-* [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
-* [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
-* [Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
-* [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
+
+[{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
+
+[{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
+
+[Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
+
+[{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
+
+[Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
+
+[Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
+
+
+## {{site.data.keyword.at_full_notm}} events
+{: #sitemap__events}
+
 
 [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
-* [Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
-* [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
+
+[Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
+
+[Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
+
+
+## Default service settings for OpenShift components
+{: #sitemap_default_service_settings_for_openshift_components}
+
 
 [Default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings)
-* [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
+
+[Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
 
 ## FAQs
@@ -1361,23 +1425,46 @@ subcollection: openshift
   * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-support)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help_storage)
 
+
+## Release notes
+{: #sitemap_release_notes}
+
+
 [Release notes](/docs/openshift?topic=openshift-iks-release)
-* [April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
-* [March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
-* [February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
-* [January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
-* [December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
-* [November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
-* [October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
-* [September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
-* [August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
-* [July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
-* [June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
+
+[April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
+
+[March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
+
+[February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
+
+[January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
+
+[December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
+
+[November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
+
+[October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
+
+[September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
+
+[August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
+
+[July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
+
+[June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
+
+
+## Service limitations
+{: #sitemap_service_limitations}
+
 
 [Service limitations](/docs/openshift?topic=openshift-openshift_limitations)
-* [Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
-  * [Version 4.3 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
-* [Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
-  * [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)
-  * [Networking](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit)
-  * [Storage](/docs/openshift?topic=openshift-openshift_limitations#classic_storage_limit)
+
+[Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
+* [Version 4.3 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
+
+[Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
+* [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)
+* [Networking](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit)
+* [Storage](/docs/openshift?topic=openshift-openshift_limitations#classic_storage_limit)
