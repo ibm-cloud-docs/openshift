@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-10"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -47,9 +47,7 @@ Not sure whether to use OpenShift routes or Ingress? Check out [Choosing among l
 ## Overview
 {: #routes-overview}
 
-A router is deployed by default to your cluster and functions as the ingress point for external network traffic. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router uses the service selector to find the service and the endpoints that back the service, and creates [routes](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external} that expose services as hostnames to be used by external clients. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname.
-
-After you set up routes for your services, the router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service. Note that the router supports only the HTTP and HTTPS protocols.
+A router is deployed by default to your cluster and functions as the ingress point for external network traffic. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router uses the service selector to find the service and the endpoints that back the service, and creates [routes](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external} that expose services as hostnames to be used by external clients. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the router for your hostname. After you set up routes for your services, the router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
 
 If you have a multizone cluster, one router is deployed to your cluster, and a router service is created in each zone. Note that the router service in the first zone where you have workers nodes is always named `router-default` in 4.3 clusters or `router` in 3.11 clusters, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
 * To see the router services in each zone of your cluster, run `oc get svc -n openshift-ingress`.
@@ -105,7 +103,7 @@ OpenShift offers four types of routes based on the type of TLS termination that 
 ## Setting up public routes
 {: #routes-setup}
 
-To set up routes to publicly expose apps:
+To set up routes to publicly expose apps in version 4.3 and 3.11 clusters:
 {: shortdesc}
 
 1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the router can send traffic to.
@@ -135,26 +133,26 @@ To set up routes to publicly expose apps:
 
 3. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you do not have a custom domain, do not include the `--hostname` flag. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
-        ```
-        oc expose service <app_service_name> [--hostname <subdomain>]
-        ```
-        {: pre}
+      ```
+      oc expose service <app_service_name> [--hostname <subdomain>]
+      ```
+      {: pre}
     * Passthrough:
-        ```
-        oc create route passthrough --service <app_service_name> [--hostname <subdomain>]
-        ```
-        {: pre}
-        <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
+      ```
+      oc create route passthrough --service <app_service_name> [--hostname <subdomain>]
+      ```
+      {: pre}
+      <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
     * Edge: For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
-        ```
-        oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
-        ```
-        {: pre}
-    * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}
-        ```
-        oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --dest-ca-cert <destca.crt> --ca-cert <ca.crt> [--hostname <subdomain>]
-        ```
-        {: pre}
+      ```
+      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
+      ```
+      {: pre}
+    * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+      ```
+      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --dest-ca-cert <destca.crt> --ca-cert <ca.crt> [--hostname <subdomain>]
+      ```
+      {: pre}
 
 4. Verify that the route for your app service is created.
   ```
@@ -197,13 +195,13 @@ To use routes to privately expose your apps in version 4.3 clusters, you must cr
     ```
     {: codeblock}
 
-3. Create the Ingress controller in your cluster. When you create the Ingress controller, a private router is automatically created and deployed based on the Ingress controller settings. Additionally, a router service is created to expose the router with an IP address.
+3. Create the Ingress controller in the `openshift-ingress-operator` namespace of your cluster. When you create the Ingress controller, a private router is automatically created and deployed in the `openshift-ingress` namespace based on the Ingress controller settings. Additionally, a router service is created to expose the router with an IP address.
   ```
   oc create -f private.yaml -n openshift-ingress-operator
   ```
   {: pre}
 
-4.  Get the portable private IP address for the router service. In the output, look for the IP address in the **EXTERNAL IP** field for the router service that is named `router-private`.
+4.  Get the **EXTERNAL IP** field of the `router-private` service.
   ```
   oc get svc router-private -n openshift-ingress
   ```
@@ -232,26 +230,26 @@ To use routes to privately expose your apps in version 4.3 clusters, you must cr
 
 8. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you do not include the `--hostname` flag, a route hostname is generated for you in the format `<app_service_name>-<app_project>.<custom_domain>`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
-        ```
-        oc expose service <app_service_name> [--hostname <subdomain>]
-        ```
-        {: pre}
+      ```
+      oc expose service <app_service_name> [--hostname <subdomain>]
+      ```
+      {: pre}
     * Passthrough:
-        ```
-        oc create route passthrough --service <app_service_name> [--hostname <subdomain>]
-        ```
-        {: pre}
-        <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
+      ```
+      oc create route passthrough --service <app_service_name> [--hostname <subdomain>]
+      ```
+      {: pre}
+      <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
     * Edge: For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
-        ```
-        oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
-        ```
-        {: pre}
-    * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}
-        ```
-        oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --dest-ca-cert <destca.crt> --ca-cert <ca.crt> [--hostname <subdomain>]
-        ```
-        {: pre}
+      ```
+      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
+      ```
+      {: pre}
+    * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+      ```
+      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --dest-ca-cert <destca.crt> --ca-cert <ca.crt> [--hostname <subdomain>]
+      ```
+      {: pre}
 
 9. Verify that the route for your app is created.
   ```
@@ -492,7 +490,7 @@ Move router services across VLANs in version 4.3 and later clusters.
       ```
       {: pre}
 
-      Example output:
+      Example output for a public router service:
       ```
       NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                                     AGE
       router-new                   LoadBalancer   172.21.XX.XX     169.XX.XXX.XX   80:31049/TCP,443:30219/TCP                  2m
@@ -515,11 +513,12 @@ Move router services across VLANs in version 4.3 and later clusters.
   ```
   {: screen}
 
-3. Add the IP address of the new router service that you found in step 1 to the router's hostname. If you created services for multiple zones in step 1, include each IP address separately in repeated `--ip` flags. Your router service on the new VLAN is now registered with the domain for the default router in your cluster, and can forward incoming requests to apps.
+3. Add the IP address of the new router service that you found in step 1 to the router's hostname. If you created services for multiple zones in step 1, include each IP address separately in repeated `--ip` flags.
   ```
   ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <new_IP> --nlb-host <subdomain>
   ```
   {: pre}
+  Your router service on the new VLAN is now registered with the domain for the default router in your cluster, and can forward incoming requests to apps.
 
 4. Get the IP address of the old router service on the old VLAN. **Multizone clusters**: If you changed the VLANs for worker nodes in multiple zones, get the IP address for the router service in each zone where the VLANs changed. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
     ```
@@ -574,38 +573,38 @@ Move router services across VLANs in version 3.11 clusters.
         1. Add the Prometheus password annotation and any custom annotations.
         2. Specify the zone that your router service deploys to.
         3. Save the file as `router-new.yaml`.
-        ```yaml
-        apiVersion: v1
-        kind: Service
-        metadata:
-          annotations:
-            prometheus.openshift.io/password: # your password
-            prometheus.openshift.io/username: admin
-            service.alpha.openshift.io/serving-cert-secret-name: router-certs
-            service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer
-            service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: <zone>
-            service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
-          labels:
-            router: router
-          name: router-new
-          namespace: default
-        spec:
-          externalTrafficPolicy: Cluster
-          ports:
-          - name: 80-tcp
-            port: 80
-            protocol: TCP
-            targetPort: 80
-          - name: 443-tcp
-            port: 443
-            protocol: TCP
-            targetPort: 443
-          selector:
-            router: router
-          sessionAffinity: None
-          type: LoadBalancer
-        ```
-        {: codeblock}
+          ```yaml
+          apiVersion: v1
+          kind: Service
+          metadata:
+            annotations:
+              prometheus.openshift.io/password: # your password
+              prometheus.openshift.io/username: admin
+              service.alpha.openshift.io/serving-cert-secret-name: router-certs
+              service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer
+              service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: <zone>
+              service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
+            labels:
+              router: router
+            name: router-new
+            namespace: default
+          spec:
+            externalTrafficPolicy: Cluster
+            ports:
+            - name: 80-tcp
+              port: 80
+              protocol: TCP
+              targetPort: 80
+            - name: 443-tcp
+              port: 443
+              protocol: TCP
+              targetPort: 443
+            selector:
+              router: router
+            sessionAffinity: None
+            type: LoadBalancer
+          ```
+          {: codeblock}
 
     3. Create the new router service.
       ```
@@ -642,11 +641,12 @@ Move router services across VLANs in version 3.11 clusters.
   ```
   {: screen}
 
-3. Add the IP address of the new router service that you found in step 1 to the router's hostname. If you created services for multiple zones in step 1, include each IP address separately in repeated `--ip` flags. Your router service on the new VLAN is now registered with the domain for the default router in your cluster, and can forward incoming requests to apps.
+3. Add the IP address of the new router service that you found in step 1 to the router's hostname. If you created services for multiple zones in step 1, include each IP address separately in repeated `--ip` flags.
   ```
   ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <new_IP> --nlb-host <subdomain>
   ```
   {: pre}
+  Your router service on the new VLAN is now registered with the domain for the default router in your cluster, and can forward incoming requests to apps.
 
 4. Get the IP address of the old router service on the old VLAN. **Multizone clusters**: If you changed the VLANs for worker nodes in multiple zones, get the IP address for the router service in each zone where the VLANs changed. Note that the router service in the first zone where you have workers nodes is always named `router`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
     ```

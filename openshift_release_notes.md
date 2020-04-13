@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 13 April 2020 | <ul><li>**New! Private Ingress and routes**: In version 4.3 clusters, you can now create [private Ingress controllers](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private) and [private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43) to expose your apps on the private network only.</li></ul>
 | 06 April 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.28](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in April 2020"}
@@ -249,7 +250,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li><strong>New! Single zone location for OpenShift clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).<ul>
       <li>Oslo, Norway</li>
       <li>San Jose, California, US</li></ul></li>
-    <li><strong>Using the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster</strong>: To work with the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster, added steps for [creating a customized storage class](/docs/openshift?topic=openshift-object_storage#customized_storageclass_vpc) that uses the `direct` service endpoint of your {{site.data.keyword.cos_full_notm}} service instance.</li>
+    <li><strong>Using the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster</strong>: To work with the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster, added steps for [creating a customized storage class](/docs/containers?topic=containers-object_storage#customized_storageclass_vpc) that uses the `direct` service endpoint of your {{site.data.keyword.cos_full_notm}} service instance.</li>
   </ul>
   </td>
 </tr>

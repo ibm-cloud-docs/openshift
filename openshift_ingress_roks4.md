@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-10"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -147,9 +147,9 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 Choose the domain that you use to access your apps and the TLS termination for the app.
 {: shortdesc}
 
-**Domain**: You can use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain, and configure a custom Ingress controller with the domain.
+You can use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain, and configure a custom Ingress controller with the domain.
 
-**TLS termination**: The Ingress controller load balances HTTP network traffic to the apps in your cluster. To load balance incoming HTTPS connections, you can use a TLS certificate so that the Ingress controller can decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.<p class="note">Currently, when you configure TLS termination for Ingress, only HTTPS connections are permitted.</p>
+The Ingress controller load balances HTTP network traffic to the apps in your cluster. To load balance incoming HTTPS connections, you can use a TLS certificate so that the Ingress controller can decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.<p class="note">Currently, when you configure TLS termination for Ingress, only HTTPS connections are permitted.</p>
 
 **To use the IBM-provided Ingress domain and TLS secret:**
 
@@ -444,7 +444,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
         ```
         oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-project>/g' | oc -n <new-project> create -f -
         ```
-      {: pre}
+        {: pre}
   * To create TLS certificate:
       1. Generate a certificate authority (CA) cert and key from your certificate provider.
           * If you have your own domain, purchase an official TLS certificate for your domain.
