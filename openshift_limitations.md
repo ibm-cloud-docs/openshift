@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -53,7 +53,7 @@ Red Hat OpenShift on IBM Cloud comes with the following service limitations. Kee
 | -------- | ----------- |
 | API rate limits | 100 requests per 10 seconds to the Red Hat OpenShift on IBM Cloud API for each unique source IP address. |
 | App deployment | The apps that you deploy to and services that you integrate with your cluster must be able to run on the operating system of the worker nodes. |
-| Container images | You cannot use the [Container Image Security Enforcement (CISE) Helm chart](/docs/services/Registry?topic=registry-security_enforce) with OpenShift clusters. |
+| Container images | You cannot use the [Container Image Security Enforcement (CISE) Helm chart](/docs/Registry?topic=registry-security_enforce) with OpenShift clusters. |
 | Free clusters | You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then redeploy the apps that you try out in the Kubernetes cluster to your OpenShift cluster. |
 | Kubernetes | Make sure to review the [Kubernetes project limitations](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external}. |
 | OpenShift | Make sure to review the [OpenShift Container Platform limitations](https://docs.openshift.com/container-platform/4.3/scalability_and_performance/planning-your-environment-according-to-object-maximums.html){: external} for your version.|
@@ -83,8 +83,8 @@ Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_lim
 | Container logs | If you use a container logging operator such as Fluentd to send logs to an Elasticsearch stack, you must [update the cluster logging deployment to use the `/var/data` path to container logs](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Key management service (KMS) provider | You cannot use a KMS provider such as {{site.data.keyword.keymanagementservicelong}} to encrypt secrets in your cluster. |
 | Private clusters | You cannot create OpenShift clusters with a private service endpoint. Version 4.3 clusters must have only the public service endpoint enabled. Also, as with version 3.11, you cannot create clusters with only private VLAN connectivity. |
-| Private routing | Private routes are currently not supported. Instead, you can [create a private network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer). |
 | Logging | To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).|
+| Service catalog | The service catalog is not supported. Use [Operators](/docs/openshift?topic=openshift-operators#operators_4) instead. |
 | Serverless | The Knative managed add-on is not supported. Instead, try out the tech preview for the [OpenShift Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}. |
 | Service mesh | The Istio managed add-on is not supported. Instead, use the [Red Hat service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/servicemesh-release-notes.html){: external}. **Note**: The default {{site.data.keyword.cloud_notm}} configuration of the routers enables host networking, which is not compatible with the service mesh network policy. For the service mesh ingress to work, [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external}.|
 | Virtual private cloud (VPC) | As with version 3.11, you cannot create OpenShift version 4.3 clusters in a VPC. |
@@ -121,7 +121,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 
 | Category | Description |
 | -------- | ----------- |
-| Ingress ALBs | <ul><li>The Ingress application load balancer (ALB) can process 32,768 connections per second. </li><li>HTTP2 is not supported.</li></ul> |
+| Ingress ALBs | <ul><li>The Ingress application load balancer (ALB) can process 32,768 connections per second. </li><li>HTTP/2 is not supported.</li></ul> |
 | Network load balancers (NLB)| <ul><li>You cannot create version 2.0 network load balancers (NLB 2.0) to expose your apps.</li><li>You cannot create subdomains for private NLBs.</li><li>You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-getting-customer-support).</li></ul> | 
 | Private VLANs only | Private network load balancers (NLBs) cannot be registered with the domain name server (DNS), so the cluster cannot be created with only a private network interface. At least some of the cluster's worker nodes must have both public and private VLANs. You can still create a private service to expose your apps on only the private network. |
 | Service endpoints | When you create a cluster, you must enable the public service endpoint, and can optionally enable the private service endpoint in version 3.11. | 

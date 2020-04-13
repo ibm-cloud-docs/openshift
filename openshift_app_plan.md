@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-08"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -326,7 +326,7 @@ See [Specifying your app requirements in your YAML file](/docs/openshift?topic=o
 * [Persistent volumes](/docs/openshift?topic=openshift-openshift_apps#pv) that are mounted to the container for storage
 
 ### How can I add IBM services to my app, such as Watson?
-{: #services}
+{: #services_ibm}
 
 See [Adding services to apps](/docs/openshift?topic=openshift-service-binding#adding_app).
 
@@ -430,7 +430,7 @@ Within the YAML file, you can use labels or annotations as metadata to manage yo
 **Annotations**: [Annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/){: external} are similar to labels in that they are also `key:value` pairs. They are better for non-identifying information that can be leveraged by tools or libraries, such as holding extra information about where an object came from, how to use the object, pointers to related tracking repos, or a policy about the object. You don't select objects based on annotations.
 
 ### What app update strategies can I use?
-{: #updating_apps}
+{: #updating_apps_strategy}
 
 To update your app, you can choose from various strategies such as the following. You might start with a rolling deployment or instantaneous switch before you progress to a more complicated canary deployment.
 
@@ -499,7 +499,7 @@ As you plan and develop your app, consider the following options to maintain a s
 <dt>Image security</dt>
 <dd>To protect your app, you must protect the image and establish checks to ensure the image's integrity. Review the [image and registry security topic](/docs/openshift?topic=openshift-security#images_registry) for steps that you can take to ensure secure container images. For example, you might use Vulnerability Advisor checks the security status of container images. When you add an image to your organization's {{site.data.keyword.registrylong_notm}} namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability. To get started, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).</dd>
 <dt>Kubernetes secrets</dt>
-<dd>When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](/docs/openshift?topic=openshift-security#pi), such as an `imagePullSecret` for registry credentials. You can then reference these secrets in your deployment YAML file.</dd>
+<dd>When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](/docs/openshift?topic=openshift-security#pi), such as an image pull secret for registry credentials. You can then reference these secrets in your deployment YAML file.</dd>
 <dt>Secret encryption</dt>
 <dd>You can encrypt the Kubernetes secrets that you create in your cluster by using a key management service (KMS) provider, such as {{site.data.keyword.keymanagementserviceshort}}. To get started, see [Encrypt secrets by using a KMS provider (beta)](/docs/openshift?topic=openshift-encryption#keyprotect) and [Verify that secrets are encrypted](/docs/openshift?topic=openshift-encryption#verify_kms).</dd>
 </dl>

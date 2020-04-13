@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-13"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -47,6 +47,7 @@ In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-in
 Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_notm}} CLI reference](/docs/Registry?topic=container-registry-cli-plugin-containerregcli). Looking for `kubectl` commands? See the [Kubernetes documentation](https://kubectl.docs.kubernetes.io/){: external}.
 {:tip}
 
+
 ## Using version 1.0 of the plug-in
 {: #cs_beta}
 
@@ -64,7 +65,6 @@ Check out the following syntax and behavior changes between each version of the 
 | Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
 | Flag format<ul><li>Legacy: Camel-case (`--showResources`)</li><li>Beta: Dashed (`--show-resources`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
 | Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [first file that is set by the `KUBECONFIG` environment variable](/docs/openshift?topic=openshift-cs_cli_install#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/openshift?topic=openshift-cs_cli_install#cli_config_multiple).</li></ul> | Legacy | Legacy | Legacy | Beta |
-| API endpoint<ul><li>Legacy: [Target a region and use a regional endpoint to work with resources in that region](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li><li>Beta: [Use the global endpoint to work with resources in any location](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions).</li></ul> | Legacy | Beta | Beta | Beta |
 {: caption="Beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in" caption-side="top"}
 {: summary="The rows are read from left to right, with the functionality in column one, version 0.2 of the CLI in column two, version 0.3 in column three, version 0.4 in column four, and version 1.0 in column five."}
 
@@ -246,7 +246,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--export] [--network] [-
 
 **Minimum required permissions**: **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform role or only a service role, additional constraints apply.
 * **Platform**: If you have only a platform role, you can perform this command, but you need a [service role](/docs/openshift?topic=openshift-users#platform) or a [custom RBAC policy](/docs/openshift?topic=openshift-users#role-binding) to perform Kubernetes actions in the cluster.
-* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name and ID because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can [launch the Kubernetes dashboard from the CLI](/docs/openshift?topic=openshift-openshift_apps#db_cli) and work with Kubernetes.
+* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name, ID, and master URL because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can launch the OpenShift web console by opening your browser to `<master_URL>/console`.
 
 **Command options**:
 <dl>
@@ -680,14 +680,14 @@ ibmcloud oc cluster master update --cluster my_cluster
 ### `ibmcloud oc cluster pull-secret apply`
 {: #cs_cluster_pull_secret_apply}
 
-Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create a policy for the service ID that assigns the **Reader** service access role in {{site.data.keyword.registrylong_notm}}, and then create an API key for the service ID. The API key is then stored in a Kubernetes `imagePullSecret` so that you can pull images from your {{site.data.keyword.registrylong_notm}} namespaces for containers that are in the `default` Kubernetes namespace. This process happens automatically when you create a cluster. If you got an error during the cluster creation process or have an existing cluster, you can use this command to apply the process again.
+Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create a policy for the service ID that assigns the **Reader** service access role in {{site.data.keyword.registrylong_notm}}, and then create an API key for the service ID. The API key is then stored in a Kubernetes image pull secret so that you can pull images from your {{site.data.keyword.registrylong_notm}} namespaces for containers that are in the `default` Kubernetes namespace. This process happens automatically when you create a cluster. If you got an error during the cluster creation process or have an existing cluster, you can use this command to apply the process again.
 {: shortdesc}
 
 This API key method replaces the previous method of authorizing a cluster to access {{site.data.keyword.registrylong_notm}} by automatically creating a [token](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external} and storing the token in an image pull secret. Now, by using IAM API keys to access {{site.data.keyword.registrylong_notm}}, you can customize IAM policies for the service ID to restrict access to your namespaces or specific images. For example, you can change the service ID policies in the cluster's image pull secret to pull images from only a certain registry region or namespace. Before you can customize IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-user#existing_users).
 
-For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#cluster_registry_auth).
+For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](docs/openshift?topic=openshift-registry#cluster_registry_auth).
 
-<p class="important">When you run this command, the creation of IAM credentials and image pull secrets is initiated and can take some time to complete. You cannot deploy containers that pull an image from the {{site.data.keyword.registrylong_notm}} `icr.io` domains until the image pull secrets are created. To check the image pull secrets, run `oc get secrets | grep icr`.</br></br>If you added IAM policies to an existing service ID, such as to restrict access to a regional registry, the service ID, IAM policies, and API key for the image pull secret are reset by this command.</p>
+<p class="important">When you run this command, the creation of IAM credentials and image pull secrets is initiated and can take some time to complete. You cannot deploy containers that pull an image from the {{site.data.keyword.registrylong_notm}} `icr.io` domains until the image pull secrets are created. To check the image pull secrets, run `oc get secrets | grep icr-io`.</br></br>If you added IAM policies to an existing service ID, such as to restrict access to a regional registry, the service ID, IAM policies, and API key for the image pull secret are reset by this command.</p>
 
 ```
 ibmcloud oc cluster pull-secret apply --cluster CLUSTER
@@ -1794,7 +1794,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
     <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd>
 
 <dt><code>--private-only</code></dt>
-<dd>Use this option to prevent a public VLAN from being created. Required only when you specify the `--private-vlan` flag and do not include the `--public-vlan` flag.<p class="note">If worker nodes are set up with a private VLAN only, you must enable the private service endpoint or configure a gateway appliance. For OpenShift clusters, note the [limitation](/docs/openshift?topic=openshift-openshift_limitations#oc_limits_networking) that the cluster must have some public VLAN worker nodes. For more information, see [Planning your private cluster and worker node setup](/docs/openshift?topic=openshift-plan_clusters#private_clusters).</p></dd>
+<dd>Use this option to prevent a public VLAN from being created. Required only when you specify the `--private-vlan` flag and do not include the `--public-vlan` flag.<p class="note">If worker nodes are set up with a private VLAN only, you must enable the private service endpoint or configure a gateway appliance. For OpenShift clusters, note the [limitation](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit) that the cluster must have some public VLAN worker nodes.</p></dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -1886,7 +1886,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 <dd>The ID of the public VLAN. This value is required only if you want to change the public VLAN for the zone. To change the public VLAN, you must always provide a compatible private VLAN. New worker nodes are added to the VLAN that you specify, but the VLANs for any existing worker nodes are not changed.<p class="note">The private and public VLANs must be compatible, which you can determine from the **Router** ID prefix.</p></dd>
 
 <dt><code>--private-only</code></dt>
-<dd>Optional: Unset the public VLAN so that the workers in this zone are connected to a private VLAN only. For OpenShift clusters, note the [limitation](/docs/openshift?topic=openshift-openshift_limitations#oc_limits_networking) that the cluster must have some public VLAN worker nodes. </dd>
+<dd>Optional: Unset the public VLAN so that the workers in this zone are connected to a private VLAN only. For OpenShift clusters, note the [limitation](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit) that the cluster must have some public VLAN worker nodes. </dd>
 
 <dt><code>-f</code></dt>
 <dd>Force the command to run without user prompts. This value is optional.</dd>
@@ -4326,7 +4326,7 @@ ibmcloud oc messages
 List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations).
 {: shortdesc}
 
-In [CLI plug-in version 1.0](#cs_beta), `locations` is replaced by the `locations` command. Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
+In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the `locations` command. Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
 
 ```

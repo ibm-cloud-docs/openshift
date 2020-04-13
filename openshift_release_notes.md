@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 13 April 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_private) that you must open in a private gateway device firewall for {{site.data.keyword.registrylong_notm}}.</li><li>**New! Private Ingress and routes**: In version 4.3 clusters, you can now create [private Ingress controllers](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private) and [private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43) to expose your apps on the private network only.</li><li>**Version changelogs**: Worker node patch updates are available for OpenShift [3.11.200_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog#311200_1546_worker).</li></ul>
 | 06 April 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.28](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in April 2020"}
@@ -103,7 +104,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | 17 December 2019 | **Version changelog**: Master patch updates are available for OpenShift [3.11.154_1536_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).<li>**Assigning access**: Updated the steps to [assign access to your clusters through the {{site.data.keyword.cloud_notm}} IAM console](/docs/openshift?topic=openshift-users#add_users).</li></ul>|
 | 11 December 2019 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 0.4.64](/docs/openshift?topic=openshift-cs_cli_changelog).</li><li>**CLI installation**: Updated the link to download the [`oc` CLI client](/docs/openshift?topic=openshift-openshift-cli).</li></ul>|
 | 09 December 2019 | **Version changelog**: Worker node patch updates are available for OpenShift [3.11.154_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1534_worker). |
-| 04 December 2019 | <ul><li>**Exposing apps with load balancers or Ingress ALBs**: Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/openshift?topic=openshift-ingress-qs).</li><li>**OpenShift charges**: Now when you create OpenShift clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use OpenShift clusters?](/docs/openshift?topic=openshift-faqs#openshift_charges).</li><li>**OpenShift routes**: Added steps for [bringing your own hostname](/docs/openshift?topic=openshift-openshift_routes#routes-setup) for public routes and steps for [setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup).</li><li>**Use the internal KVDB in Portworx**: Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb).</li></ul>|
+| 04 December 2019 | <ul><li>**Exposing apps with load balancers or Ingress ALBs**: Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/openshift?topic=openshift-ingress-qs).</li><li>**OpenShift charges**: Now when you create OpenShift clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use OpenShift clusters?](/docs/openshift?topic=openshift-faqs#charges).</li><li>**OpenShift routes**: Added steps for [bringing your own hostname](/docs/openshift?topic=openshift-openshift_routes#routes-setup) for public routes and steps for [setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup).</li><li>**Use the internal KVDB in Portworx**: Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb).</li></ul>|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in December 2019"}
 
@@ -196,7 +197,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <td>24 October 2019</td>
   <td><ul>
     <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.42](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-    <li><strong>Scaling down file storage</strong>: Added steps for [scaling down the default file storage plug-in](/docs/openshift?topic=openshift-file_storage#file_scaledown_plugin) in classic clusters.</li>
     <li><strong>Ingress subdomain troubleshooting</strong>: Added troubleshooting steps for when [no Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)</li>
   </ul></td>
 </tr>
@@ -249,7 +249,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li><strong>New! Single zone location for OpenShift clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).<ul>
       <li>Oslo, Norway</li>
       <li>San Jose, California, US</li></ul></li>
-    <li><strong>Using the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster</strong>: To work with the {{site.data.keyword.cos_full_notm}} plug-in in a VPC cluster, added steps for [creating a customized storage class](/docs/openshift?topic=openshift-object_storage#customized_storageclass_vpc) that uses the `direct` service endpoint of your {{site.data.keyword.cos_full_notm}} service instance.</li>
   </ul>
   </td>
 </tr>
@@ -459,14 +458,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   </td>
 </tr>
 <tr>
-  <td>08 July 2019</td>
-  <td><strong>App networking</strong>: You can now find information about app networking with NLBs and Ingress ALBs in the following pages:
-    <ul><li>[Basic and DSR load balancing with network load balancers (NLB)](/docs/containers?topic=containers-cs_sitemap#sitemap-nlb)</li>
-    <li>[HTTPS load balancing with Ingress application load balancers (ALB)](/docs/containers?topic=containers-cs_sitemap#sitemap-ingress)</li></ul>
-  
-  </td>
-</tr>
-<tr>
   <td>02 July 2019</td>
   <td><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.58](/docs/openshift?topic=openshift-cs_cli_changelog).</td>
 </tr>
@@ -501,7 +492,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>21 June 2019</td>
   <td><ul>
-  <li><strong>Accessing OpenShift clusters</strong>: Added steps for [automating access to an OpenShift cluster by using an OpenShift login token](/docs/openshift?topic=openshift-openshift-cli#openshift_cluster_login).</li>
+  <li><strong>Accessing OpenShift clusters</strong>: Added steps for [automating access to an OpenShift cluster by using an OpenShift login token](/docs/openshift?topic=openshift-access_cluster#access_oc_console).</li>
   <li><strong>Troubleshooting OpenShift clusters</strong>: Added a [troubleshooting section](/docs/openshift?topic=openshift-cs_troubleshoot) to the Creating a Red Hat OpenShift on IBM Cloud cluster tutorial.</li></ul>
   </td>
 </tr>

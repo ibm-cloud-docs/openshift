@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-04-13"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -216,7 +216,7 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
   ```
   {: pre}
 
-5. If you previously installed the {{site.data.keyword.cos_full_notm}} Helm plug-in, remove the `ibmc` plug-in. 
+5. If you previously installed the {{site.data.keyword.cos_full_notm}} Helm plug-in, remove the `ibmc` plug-in.
   ```
   helm plugin uninstall ibmc
   ```
@@ -439,7 +439,7 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
     If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `oc patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
     {: tip}
 
-13. Follow the instructions to [add object storage to your apps](#add_cos).
+12. Follow the instructions to [add object storage to your apps](#add_cos).
 
 If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_helm_fails) and [Object storage: Installing the Object storage plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_plugin_fails).
 {: tip}
@@ -612,7 +612,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
 Red Hat OpenShift on IBM Cloud provides pre-defined storage classes that you can use to create buckets with a specific configuration.
 {: shortdesc}
 
-1. List available storage classes in Red Hat OpenShift on IBM Cloud. 
+1. List available storage classes in Red Hat OpenShift on IBM Cloud.
    ```
    oc get storageclasses | grep s3
    ```
@@ -822,7 +822,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
    </tr>
    <tr>
    <td><code>spec.storageClassName</code></td>
-   <td>Choose between the following options: <ul><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>true</strong>: Enter the storage class that you want to use for your new bucket. </li><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>false</strong>: Enter the storage class that you used to create your existing bucket. </br></br>If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the <strong>Class</strong> and <strong>Location</strong> of your existing bucket. Then, use the appropriate [storage class](#cos_storageclass_reference). <p class="note">The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.</p></li></ul>  </td>
+   <td>Choose between the following options: <ul><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>true</strong>: Enter the storage class that you want to use for your new bucket. </li><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>false</strong>: Enter the storage class that you used to create your existing bucket. </br></br>If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the <strong>Class</strong> and <strong>Location</strong> of your existing bucket. Then, use the appropriate [storage class](#cos_storageclass_reference).<p class="note">The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.</p></li></ul>  </td>
    </tr>
    </tbody>
    </table>
@@ -987,7 +987,7 @@ If you have a stateful app such as a database, you can create stateful sets that
 Before you begin:
 - [Create and prepare your {{site.data.keyword.cos_full_notm}} service instance](#create_cos_service).
 - [Create a secret to store your {{site.data.keyword.cos_full_notm}} service credentials](#create_cos_secret).
-- [Decide on the configuration for your {{site.data.keyword.cos_full_notm}}](#configure_cos). 
+- [Decide on the configuration for your {{site.data.keyword.cos_full_notm}}](#configure_cos).
 
 To deploy a stateful set that uses object storage:
 
@@ -1170,7 +1170,7 @@ To deploy a stateful set that uses object storage:
     </tr>
     <tr>
     <td style="text-align:left"><code>spec.volumeClaimTemplates.metadata.</code></br><code>annotations.volume.beta.</code></br><code>kubernetes.io/storage-class</code></td>
-    <td style="text-align:left">Enter the storage class that you want to use. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the storage class that you want to use for your new bucket.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the storage class that you used to create your existing bucket. </li></ul></br>  To list existing storage classes, run <code>oc get storageclasses | grep s3</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-s3fs</code> provisioner so that your stateful set is provisioned with object storage.</td>
+    <td style="text-align:left">Enter the storage class that you want to use. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the storage class that you want to use for your new bucket.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the storage class that you used to create your existing bucket.</li></ul></br>  To list existing storage classes, run <code>oc get storageclasses | grep s3</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-s3fs</code> provisioner so that your stateful set is provisioned with object storage.</td>
     </tr>
     <tr>
     <td style="text-align:left"><code>spec.volumeClaimTemplates.</code></br><code>spec.storageClassName</code></td>
@@ -1196,7 +1196,6 @@ To deploy a stateful set that uses object storage:
 {: note}
 
 <br />
-
 
 
 

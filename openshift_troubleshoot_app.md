@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -49,7 +49,7 @@ Review the options that you have to debug your app deployments and find the root
 
 Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the namespace where your app is deployed.
 
-1. Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-openshift_apps#openshift_move_apps_scenarios) so that you can deploy them on OpenShift clusters.
+1. Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) so that you can deploy them on OpenShift clusters.
 
 1. Look for abnormalities in the service or deployment resources by running the `describe` command.
     ```
@@ -180,7 +180,6 @@ Set up the build with access to the image, either by pulling the image from the 
                         name: "<pull-secret>"
             ```
             {: codeblock}
-    * **Use an image stream from the internal registry**: [Create an image stream in the internal registry from an imported image from the private registry](/docs/openshift?topic=openshift-registry#imagestream_registry). Then, update the build configuration file to refer to the image stream instead of pulling the image directly from the private registry.
 
 <br />
 
@@ -548,7 +547,7 @@ Your pods are in a `CrashLoopBackOff` status.
 When you try to deploy an app that works on community Kubernetes platforms, you might see this status or a related error message because OpenShift sets up stricter security settings by default than community Kubernetes.
 
 {: tsResolve}
-Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps_scenarios) and follow the docs in the [Moving your apps to OpenShift topic](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps).
+Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) and follow the docs in the [Moving your apps to OpenShift topic](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps).
 
 <br />
 
@@ -620,47 +619,6 @@ To see if your pod is being replaced by higher priority pods:
 7.  Repeat steps 1 to 3 for other pods in the cluster, to check what priority class they are using. If those other pods' priority class is higher than your pod, your pod is not provisioned unless there is enough resources for your pod and every pod with higher priority.
 
 8.  Contact your cluster admin to add more capacity to your cluster and confirm that the right priority classes are assigned.
-
-<br />
-
-
-## Binding a service to a cluster results in same name error
-{: #cs_duplicate_services}
-
-{: tsSymptoms}
-When you run `ibmcloud oc cluster service bind --cluster <cluster_name> --namespace <project> --service <service_instance_name>`, you see the following message.
-
-```
-Multiple services with the same name were found.
-Run 'ibmcloud service list' to view available Bluemix service instances...
-```
-{: screen}
-
-{: tsCauses}
-Multiple service instances might have the same name in different regions.
-
-{: tsResolve}
-Use the service GUID instead of the service instance name in the `ibmcloud oc cluster service bind` command.
-
-1. [Log in to the {{site.data.keyword.cloud_notm}} region that includes the service instance to bind.](/docs/openshift?topic=openshift-regions-and-zones#bluemix_regions)
-
-2. Get the GUID for the service instance.
-  ```
-  ibmcloud service show <service_instance_name> --guid
-  ```
-  {: pre}
-
-  Output:
-  ```
-  Invoking 'cf service <service_instance_name> --guid'...
-  <service_instance_GUID>
-  ```
-  {: screen}
-3. Bind the service to the cluster again.
-  ```
-  ibmcloud oc cluster service bind --cluster <cluster_name> --namespace <project> --service <service_instance_GUID>
-  ```
-  {: pre}
 
 <br />
 
@@ -800,7 +758,7 @@ Still having issues with your cluster? Review different ways to get help and sup
    * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/openshift?topic=openshift-openshift_versions).
 2. Make sure that your command line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
-   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
+   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
 <br>
 
 **Reviewing issues and status**<br>

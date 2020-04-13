@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-04-07"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -53,21 +53,21 @@ You can deploy containers to your cluster from an IBM-provided public image or a
 
 Before you begin:
 1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=registry-getting-started#gs_registry_namespace_add).
-2. [Create a cluster](/docs/openshift?topic=openshift-clusters).
-4. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. [Create an OpenShift cluster](/docs/openshift?topic=openshift-clusters).
+3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To deploy a container into the **default** project of your cluster:
 
-1.  Create a deployment configuration file that is named `mydeployment.yaml`.
+1.  Create a deployment configuration file that is named `<deployment>.yaml`.
 2.  Define the deployment and the image to use from your project in {{site.data.keyword.registrylong_notm}}.
 
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-      name: <app_name>-deployment
+      name: <deployment>
     spec:
-      replicas: 3
+      replicas: <number_of_replicas>
       selector:
         matchLabels:
           app: <app_name>
@@ -78,20 +78,45 @@ To deploy a container into the **default** project of your cluster:
         spec:
           containers:
           - name: <app_name>
-            image: <region>.icr.io/<namespace>/<my_image>:<tag>
+            image: <region>.icr.io/<project>/<image>:<tag>
     ```
     {: codeblock}
 
-    Replace the image URL variables with the information for your image:
-    *  **`<app_name>`**: The name of your app.
-    *  **`<region>`**: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run `ibmcloud cr api`.
-    *  **`<namespace>`**: The registry namespace. To get your namespace information, run `ibmcloud cr namespace-list`.
-    *  **`<my_image>:<tag>`**: The image and tag that you want to use to build the container. To get the images available in your registry, run `ibmcloud cr images`.
+    <table>
+    <caption>Understanding the YAML file components</caption>
+    <thead>
+    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code><em>&lt;deployment&gt;</em></code></td>
+    <td>Give your deployment a name.</td>
+    </tr>
+    <tr>
+    <td><code><em>&lt;number_of_replicas&gt;</em></code></td>
+    <td>Enter the number of replica pods that the deployment creates.</td>
+    </tr>
+    <tr>
+    <td><code>app: <em>&lt;app_name&gt;</em></code></td>
+    <td>Use the name of your app as a label for the container.</td>
+    </tr>
+    <tr>
+    <td><code>name: <em>&lt;app_name&gt;</em></code></td>
+    <td>Give your container a name, such as the name of your `app` label.</td>
+    </tr>
+    <tr>
+    <td><code>image: <em>&lt;region&gt;</em>.icr.io/<em>&lt;project&gt;</em>/<em>&lt;image&gt;</em>:<em>&lt;tag&gt;</em></code></td>
+    <td>Replace the image URL variables with the information for your image:
+      <ul><li>**`<region>`**: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run `ibmcloud cr api`.</li>
+      <li>**`<namespace>`**: The registry namespace. To get your namespace information, run `ibmcloud cr namespace-list`.</li>
+      <li>**`<image>:<tag>`**: The image and tag that you want to use for your container. To list the images that are available in your registry namespace, run `ibmcloud cr images`.</li></ul></td>
+    </tr>
+    </tbody></table>
 
 3.  Create the deployment in your cluster.
 
     ```
-    oc apply -f mydeployment.yaml
+    oc apply -f <deployment>.yaml
     ```
     {: pre}
 

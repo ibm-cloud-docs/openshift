@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-10"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -216,14 +216,14 @@ The certificate is also registered with {{site.data.keyword.cloudcerts_long_notm
 
 If you do not have a TLS certificate ready, follow these steps:
 1. Generate a certificate authority (CA) cert and key from your certificate provider. If you have your own domain, purchase an official TLS certificate for your domain. Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
-2. Convert the cert and key into base-64.
-   1. Encode the cert and key into base-64 and save the base-64 encoded value in a new file.
+2. Convert the cert and key into base64.
+   1. Encode the cert and key into base64 and save the base64 encoded value in a new file.
       ```
       openssl base64 -in tls.key -out tls.key.base64
       ```
       {: pre}
 
-   2. View the base-64 encoded value for your cert and key.
+   2. View the base64 encoded value for your cert and key.
       ```
       cat tls.key.base64
       ```

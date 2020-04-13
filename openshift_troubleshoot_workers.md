@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -45,7 +45,7 @@ As you use Red Hat OpenShift on IBM Cloud, consider these techniques for general
    * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/containers?topic=containers-cs_versions).
 2. Make sure that your command line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
-   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
+   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
 <br>
 
 **Reviewing issues and status**<br>
@@ -119,7 +119,7 @@ Review the options to debug your worker nodes and find the root causes for failu
         </tr>
         <tr>
          <td>`Unknown`</td>
-         <td>The Kubernetes master is not reachable for one of the following reasons:<ul><li>You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) the worker node.</li><li>You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. Red Hat OpenShift on IBM Cloud requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/openshift?topic=openshift-cs_troubleshoot#cs_firewall).</li><li>The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help).</li></ul></td>
+         <td>The Kubernetes master is not reachable for one of the following reasons:<ul><li>You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) the worker node.</li><li>You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. Red Hat OpenShift on IBM Cloud requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/openshift?topic=openshift-firewall#vyatta_firewall).</li><li>The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help).</li></ul></td>
     </tr>
        <tr>
           <td>`Warning`</td>
@@ -183,11 +183,7 @@ Review common error messages and learn how to resolve them. Messages might begin
       </tr>
       <tr>
        <td>Worker unable to talk to {{site.data.keyword.containerlong_notm}} servers. Please verify your firewall setup is allowing traffic from this worker.
-       <td><ul><li>If you have a firewall, [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).</li>
-       <li>Check whether your cluster does not have a public IP by running `ibmcloud oc worker ls --cluster <mycluster>`. If no public IP is listed, then your cluster has only private VLANs.
-       <ul><li>If you want the cluster to have only private VLANs, set up your [VLAN connection](/docs/openshift?topic=openshift-plan_clusters#private_clusters) and your [firewall](/docs/openshift?topic=openshift-firewall#firewall_outbound).</li>
-       <li>If you created the cluster with only the private service endpoint before you enabled your account for [VRF](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint), your workers cannot connect to the master. Try [setting up the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se) so that you can use your cluster until your support cases are processed to update your account. If you still want a private service endpoint only cluster after your account is updated, you can then disable the public service endpoint.</li>
-       <li>If you want the cluster to have a public IP, [add new worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) with both public and private VLANs.</li></ul></li></ul></td>
+       <td><ul><li>If you have a firewall, [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).</li></ul></td>
      </tr>
   <tr>
     <td>The worker did not respond to the soft reboot request. A hard reboot might be necessary.</td>
@@ -646,7 +642,7 @@ Still having issues with your cluster? Review different ways to get help and sup
    * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/openshift?topic=openshift-openshift_versions).
 2. Make sure that your command line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
-   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
+   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
 <br>
 
 **Reviewing issues and status**<br>

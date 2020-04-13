@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-04-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,7 +39,7 @@ subcollection: openshift
 [Portworx](https://portworx.com/products/introduction/){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Portworx is supported only in clusters that run version 3.11, not version 4.3.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Portworx is supported only in clusters that run version 3.11, and not available in version 4.3.
 {: important}
 
 
@@ -504,7 +504,7 @@ Before you begin:
 - If you want to use non-SDS worker nodes for your Portworx storage layer, [add an unformatted block storage device to your worker node](#create_block_storage).
 - Choose if you want to [use the internal Portworx key-value database (KVDB)](#portworx-kvdb) or [create a Databases for etcd service instance](#databases-for-etcd) to store the Portworx configuration and metadata.
 - Decide whether you want to encrypt your Portworx volumes with {{site.data.keyword.keymanagementservicelong_notm}}. To encrypt your volumes, you must [set up an {{site.data.keyword.keymanagementservicelong_notm}} service instance and store your service information in a Kubernetes secret](#encrypt_volumes).
-- Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/openshift?topic=openshift-images#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/openshift?topic=openshift-images#store_imagePullSecret) of the `kube-system` project.
+- Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/containers?topic=containers-registry#store_imagePullSecret) of the `kube-system` project.
 - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To install Portworx:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -43,7 +43,6 @@ You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you 
 
 _Red Hat OpenShift on IBM Cloud locations_
 
-
 ## Red Hat OpenShift on IBM Cloud locations
 {: #locations}
 
@@ -67,8 +66,8 @@ The following image is used as an example to explain how Red Hat OpenShift on IB
 |--- |--- |--- |
 |Geography|North America (`na`)|An organizational grouping that is based on geographic continents.|
 |Country|Canada (`ca`)|The location's country within the geography.|
-|Metro|Mexico City (`mex-cty`), Dallas (`dal`)|The name of a city where 1 or more data centers (zones) are located. A metro can be multizone-capable and have multizone-capable data centers, such as Dallas, or can have only single zone data centers, such as Mexico City. If you create a cluster in a multizone-capable metro, the Kubernetes master and worker nodes can be spread across zones for high availability.|
-|Data center (zone)|Dallas 12 (`dal12`)|A physical location of the compute, network, and storage infrastructure and related cooling and power that host cloud services and applications. Clusters can be spread across data centers, or zones, in an multizone architecture for high availability. Zones are isolated from each other, which ensures no shared single point of failure.|
+|Metro|Mexico City (`mex-cty`), Dallas (`dal`)|The name of a city where 1 or more data centers (zones) are located. A metro can have a multizone region with multizone-capable data centers, such as Dallas, or can have only single zone data centers, such as Mexico City. If you create a cluster in a multizone-capable metro, the Kubernetes master and worker nodes can be spread across zones for high availability.|
+|Data center (zone)|Dallas 12 (`dal12`)|A physical location of the compute, network, and storage infrastructure and related cooling and power that host cloud services and applications. In a region, clusters can be spread across data centers, or zones, in an multizone architecture for high availability. Zones are isolated from each other, which ensures no shared single point of failure.|
 {: caption="Organization of Red Hat OpenShift on IBM Cloud locations."}
 {: summary="The table shows organization of Red Hat OpenShift on IBM Cloud locations. Rows are to be read from the left to right, with the location type in column one, an example of the type in column two, and the description in column three."}
 
@@ -78,10 +77,10 @@ The following image is used as an example to explain how Red Hat OpenShift on IB
 The following tables list the available single and multizone locations in Red Hat OpenShift on IBM Cloud.
 {: shortdesc}
 
-* **Multizone**: If you create a cluster in a multizone metro location, the replicas of your highly available Kubernetes master are automatically spread across zones. You have the option to spread your worker nodes across zones to protect your apps from a zone failure.
+* **Multizone**: If you create a cluster in a multizone metro location, the replicas of your highly available Kubernetes master are automatically spread across zones. You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a zone is multizone-capable, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
 * **Single zone**: If you create a cluster in a single zone (data center) location, you can create multiple worker nodes but you cannot spread them across zones. The highly available master includes three replicas on separate hosts, but is not spread across zones.<p class="note">To create clusters in a single zone, [use the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).</p>
 
-| Geography |  Country  | Metro | Data center |  Deprecated region  |
+| Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
 | Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
@@ -95,7 +94,7 @@ The following tables list the available single and multizone locations in Red Ha
 {: tab-title="Multizone metros for classic clusters"}
 {: tab-group="location-multi-single"}
 
-| Geography |  Country  | Metro | Data center |  Deprecated region  |
+| Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Melbourne | mel01 | AP South (`ap-south`, `au-syd`) |
 | Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
@@ -221,7 +220,7 @@ When you use the new global functionality in the Red Hat OpenShift on IBM Cloud 
 </br></br>
 **Red Hat OpenShift on IBM Cloud API**:
 * [Get started with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api).
-* [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/).
+* [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/#/).
 * Generate a client of the API to use in automation by using the [`swagger.json` API](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json).
 
 To interact with the global Red Hat OpenShift on IBM Cloud API, enter the command type and append `global/v1/command` to the endpoint.

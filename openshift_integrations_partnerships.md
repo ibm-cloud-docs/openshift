@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-07"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -124,7 +124,7 @@ Because Sysdig Monitor is provided by {{site.data.keyword.mon_full_notm}}, your 
 [Portworx ![External link icon](../icons/launch-glyph.svg "External link icon")](https://portworx.com/products/introduction/) is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Portworx is supported only in clusters that run version 3.11, not version 4.3.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Portworx is supported only in clusters that run version 3.11, and not available in version 4.3.
 {: important}
 
 **What is software-defined storage (SDS)?** </br>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -747,7 +747,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
   PVC_NAMES:
     - # Example: my_pvc
     - # Optional example: my_pvc2
-  CHART_TYPE: # Example: backup
+  CHART_TYPE: # Example: backup or restore
   BACKUP_TYPE: # Example: incremental
   SCHEDULE_TYPE: # Example: periodic
   SCHEDULE_INFO: # Example: weekly
@@ -785,6 +785,10 @@ To back up or restore a PVC by editing the `values.yaml` file:
     <td><ul><li><strong>Backup: </strong>Enter the name of the PVC that you want to back up. If you want to back up multiple PVCs, add each PVC to the list of PVCs. To list available PVCs in your cluster that you can back up, run <code>oc get pvc</code>. </li><li><strong>Restore: </strong>Enter the name of the PVC to which you want to restore data from {{site.data.keyword.cos_full_notm}}. You can restore data to one PVC at a time only. To list available PVCs in your cluster that you can restore data to, run <code>oc get pvc</code>.</li></ul></td>
     </tr>
     <tr>
+    <td><code>CHART_TYPE</code></td>
+    <td><ul><li>Enter the name of the chart type that you want to deploy. Enter <code>backup</code> to deploy the backup chart. Enter <code>restore</code> to deploy the restore chart.</td>
+    </tr>
+    <tr>
     <td><code>BACKUP_TYPE</code></td>
     <td>Required only for backups. Enter <strong>full</strong> to create a full backup, or <strong>incremental</strong> if you want to back up only new or changed files. If you choose <strong>incremental</strong>, you must specify the <code>SCHEDULING_INFO</code> and <code>SCHEDULING_TYPE</code> option. If you don't specify the <code>BACKUP_TYPE</code> option, a full backup is created by default. </td>
     </tr>
@@ -801,7 +805,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
 4. Save and close the `values.yaml` file.
 
-5.  Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<release_name>` with a name for your Helm chart. Be sure to install the backup and restore pods in the same as the PVC that you want to backup or restore.
+5.  Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<release_name>` with a name for your Helm chart. Be sure to install the backup and restore pods in the same zone as the PVC that you want to backup or restore.
 
     *   Install the Helm chart by using the `helm install` command.
         ```

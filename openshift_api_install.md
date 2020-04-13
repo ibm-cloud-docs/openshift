@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-10"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -43,7 +43,7 @@ subcollection: openshift
 {: #api_about}
 
 
-The Red Hat OpenShift on IBM Cloud API automates the provisioning and management of {{site.data.keyword.cloud_notm}} infrastructure resources for your OpenShift clusters so that your apps have the compute, networking, and storage resources that they need to serve your users. The API endpoint is `https://containers.cloud.ibm.com/global/v1`. For more information, see the [API reference documentation](https://containers.cloud.ibm.com/global/swagger-global-api){: external}.
+The Red Hat OpenShift on IBM Cloud API automates the provisioning and management of {{site.data.keyword.cloud_notm}} infrastructure resources for your OpenShift clusters so that your apps have the compute, networking, and storage resources that they need to serve your users. The API endpoint is `https://containers.cloud.ibm.com/global/v1`. For more information, see the [API reference documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}.
 {:shortdesc}
 
 
@@ -339,7 +339,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
      </tbody>
      </table>
 
-5.  Review the [Red Hat OpenShift on IBM Cloud API documentation](https://containers.cloud.ibm.com/global/swagger-global-api){: external} to find a list of supported APIs.
+5.  Review the [Red Hat OpenShift on IBM Cloud API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external} to find a list of supported APIs.
 
 When you use the API for automation, be sure to rely on the responses from the API, not files within those responses. For example, the Kubernetes configuration file for your cluster context is subject to change, so do not build automation based on specific contents of this file when you use the `GET /v1/clusters/{idOrName}/config` call.
 {: note}
@@ -601,7 +601,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
 
     You can find your new {{site.data.keyword.cloud_notm}} IAM token in the **access_token**, and the refresh token in the **refresh_token** field of your API output.
 
-2.  Continue working with the [Red Hat OpenShift on IBM Cloud API documentation](https://containers.cloud.ibm.com/global/swagger-global-api){: external} by using the token from the previous step.
+2.  Continue working with the [Red Hat OpenShift on IBM Cloud API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external} by using the token from the previous step.
 
 <br />
 

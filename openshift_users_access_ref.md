@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -411,6 +411,11 @@ The following table shows the permissions that are granted by each RBAC role to 
   <td>None</td>
   <td>`admin` scoped to a namespace: None<br><br>
   `cluster-admin` for all namespaces: All verbs</td>
+</tr><tr>
+  <td><code>persistentvolume</code></td>
+  <td>None</td>
+  <td>None</td>
+  <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
 </tr><tr>
   <td><code>persistentvolumeclaims</code></td>
   <td><code>get</code>, <code>list</code>, <code>watch</code></td>

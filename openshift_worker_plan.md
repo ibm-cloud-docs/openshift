@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -98,16 +98,15 @@ Every VM comes with an attached disk for storage of information that the VM need
 Classic VMs have two attached disks. The primary storage disk has 25 GB for the OS file system, and the secondary storage disk has 100 GB for data such as the container runtime and the `kubelet`. For reliability, the primary and secondary storage volumes are local disks instead of storage area networking (SAN). Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. The secondary disk is encrypted by default.
 
 **What virtual machine flavors are available?**</br>
+{: #vm-table}
+
 The following table shows available worker node flavors for classic clusters. Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`.
 
 If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker node flavors, you can [update your cluster to have Ubuntu 18 `x3c` worker nodes](/docs/openshift?topic=openshift-update#machine_type).
 {: tip}
 
-{: #vm-table}
-
 | Name and use case | Cores/ Memory | Primary/ Secondary disk | Network speed |
 |:-----------------|:-----------------|:------------------|:-------------|
-| **Virtual, u3c.2x4**: Use this smallest size VM for quick testing, proofs of concept, and other light workloads.<p class="note">Available for only Kubernetes clusters. Not available for OpenShift clusters. </p> | 2 / 4 GB | 25 GB / 100 GB | 1000 Mbps |
 | **Virtual, b3c.4x16**: Select this balanced VM for testing and development, and other light workloads. | 4 / 16 GB | 25 GB / 100 GB | 1000 Mbps |
 | **Virtual, b3c.16x64**: Select this balanced VM for mid-sized workloads. | 16 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
 | **Virtual, b3c.32x128**: Select this balanced VM for mid to large workloads, such as a database and a dynamic website with many concurrent users. | 32 / 128 GB | 25 GB / 100 GB | 1000 Mbps |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -83,7 +83,7 @@ One Ingress resource is required for each project where you have apps that you w
 * If the apps in your cluster are all in the same project, you must create one Ingress resource to define the routing rules for the apps that you want to expose. Note that if you want to use different domains for the apps within the same project, you can create one resource per domain.
 * If the apps in your cluster are in different projects, you must create one Ingress resource for each project to define the app's routing rules.
 
-For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress#multiple_projects).
+For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects).
 
 If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
 {: important}
@@ -122,7 +122,7 @@ The following diagram shows how Ingress directs communication from the internet 
 
 1. A user sends a request to your app by accessing your app's URL. This URL is the Ingress subdomain for your cluster appended with the Ingress resource path for your exposed app, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`.
 
-2. A DNS system service, which acts as the global load balancer, resolves the subdomain in the URL to the portable public IP address of a router service in one zone of the cluster. The IP addresses are resolved in a round-robin cycle, ensuring that requests are equally load balanced among the routers in various zones.
+2. A DNS system service resolves the route subdomain to the floating public IP address of a router service that was reported as healthy by the MZLB. The MZLB continuously checks the portable public IP addresses of the services that expose the router in each zone in your cluster. Requests are handled by the router services in various zones in a round-robin cycle.
 
 3. The client sends the request to the IP address of the service that exposes the router.
 

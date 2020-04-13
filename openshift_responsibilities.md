@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-10"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -104,7 +104,7 @@ You and IBM share responsibilities for keeping your clusters at the latest conta
 | Resource | IBM responsibilities | Your responsibilities |
 | -------- | -------------------- | --------------------- |
 | Worker nodes | <ul><li>Provide worker node patch operating system (OS), version, and security updates.</li><li>Fulfill automation requests to update and recover worker nodes.</li></ul> | <ul><li>Use the API, CLI, or console tools to [apply](/docs/openshift?topic=openshift-update#update) the provided worker node updates that include operating system patches; or to request that worker nodes are rebooted, reloaded, or replaced.</li></ul> |
-| Cluster version | <ul><li>Provide a suite of tools to automate cluster management, such as the Red Hat OpenShift on IBM Cloud [API](https://containers.cloud.ibm.com/global/swagger-global-api/){: external}, [CLI plug-in](/docs/openshift?topic=openshift-kubernetes-service-cli), and [console](https://cloud.ibm.com/kubernetes/clusters){: external}.</li><li>Automatically apply OpenShift master patch OS, version, and security updates.</li><li>Make major and minor updates for master nodes available for you to apply.</li><li>Provide worker node major, minor, and patch OS, version, and security updates.</li><li>Fulfill automation requests to update cluster master and worker nodes.</li></ul> | <ul><li>Use the API, CLI, or console tools to [apply](/docs/openshift?topic=openshift-update#update) the provided major and minor OpenShift master updates and major, minor, and patch worker node updates.</li></ul> |
+| Cluster version | <ul><li>Provide a suite of tools to automate cluster management, such as the Red Hat OpenShift on IBM Cloud [API](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}, [CLI plug-in](/docs/openshift?topic=openshift-kubernetes-service-cli), and [console](https://cloud.ibm.com/kubernetes/clusters){: external}.</li><li>Automatically apply OpenShift master patch OS, version, and security updates.</li><li>Make major and minor updates for master nodes available for you to apply.</li><li>Provide worker node major, minor, and patch OS, version, and security updates.</li><li>Fulfill automation requests to update cluster master and worker nodes.</li></ul> | <ul><li>Use the API, CLI, or console tools to [apply](/docs/openshift?topic=openshift-update#update) the provided major and minor OpenShift master updates and major, minor, and patch worker node updates.</li></ul> |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 3. Responsibilities for change management" caption-side="top"}
 

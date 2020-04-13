@@ -156,7 +156,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     API reference
-        [IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/)
+        [IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/#/)
         [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json)
         [OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.3/rest_api/index.html)
 
@@ -193,4 +193,5 @@ Red Hat OpenShift on IBM Cloud
 
     openshift_release_notes.md
     openshift_limitations.md
+    sitemap.md
     {: .navgroup-end}

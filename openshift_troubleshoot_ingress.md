@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -461,7 +461,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     ping <router_IP>
     ```
     {: pre}
-    * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your [firewall](/docs/openshift?topic=openshift-cs_troubleshoot#cs_firewall).
+    * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your firewall.
     * If you don't have a firewall or your firewall does not block the pings and the pings still timeout, [check the status of your router pods](#errors-43).
   * Multizone clusters: Router services in multizone clusters are created with a `/healthz` path so that you can check the health of each service IP address. The following HTTP cURL command uses the `/healthz` past, which is configured to return the `ok` status for a healthy IP.
     ```
@@ -766,7 +766,7 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses.
         ```
         {: pre}
 
-        * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your [firewall](/docs/openshift?topic=openshift-cs_troubleshoot#cs_firewall).
+        * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your firewall.
         * If you don't have a firewall or your firewall does not block the pings and the pings still timeout, [check the status of your ALB pods](#check_pods).
 
     * Multizone clusters only: You can use the MZLB health check to determine the status of your ALB IPs. For more information about the MZLB, see [Multizone load balancer (MZLB)](/docs/openshift?topic=openshift-ingress-about#ingress_components). The MZLB health check is available only for clusters that have the new Ingress subdomain in the format `<cluster_name>.<region_or_zone>.containers.appdomain.cloud`. If your cluster still uses the older format of `<cluster_name>.<region>.containers.mybluemix.net`, [convert your single zone cluster to multizone](/docs/openshift?topic=openshift-add_workers#add_zone). Your cluster is assigned a subdomain with the new format, but can also continue to use the older subdomain format. Alternatively, you can order a new cluster that is automatically assigned the new subdomain format.
@@ -1236,7 +1236,7 @@ Still having issues with your cluster? Review different ways to get help and sup
    * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/openshift?topic=openshift-openshift_versions).
 2. Make sure that your command line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
-   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#kubectl) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
+   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
 <br>
 
 **Reviewing issues and status**<br>
