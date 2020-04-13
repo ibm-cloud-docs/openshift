@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-13"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -175,17 +175,17 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
     <tr>
     <td>Service Catalog</td>
     <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>Browse the catalog of built-in services that you can deploy on OpenShift. For example, if you already have a `node.js` app that is hosted on GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the [OpenShift Web Console Walkthrough](https://docs.openshift.comcontainer-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
+    <td>Browse the catalog of built-in services that you can deploy on OpenShift. For example, if you already have a `node.js` app that is hosted on GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the [OpenShift Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
     </tr>
     <tr>
     <td>Application Console</td>
     <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>For each project that you have access to, you can manage your OpenShift resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the [OpenShift Web Console Walkthrough](https:/docs.openshift.com/container-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
+    <td>For each project that you have access to, you can manage your OpenShift resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the [OpenShift Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
     </tr>
     <tr>
     <td>Cluster Console</td>
     <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [OpenShift Web Console Walkthrough](https:/docs.openshift.com/container-platform/3.11getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
+    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [OpenShift Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the OpenShift documentation.</td>
     </tr>
     </tbody>
     </table><p></p>

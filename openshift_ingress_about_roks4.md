@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -83,7 +83,7 @@ One Ingress resource is required for each project where you have apps that you w
 * If the apps in your cluster are all in the same project, you must create one Ingress resource to define the routing rules for the apps that you want to expose. Note that if you want to use different domains for the apps within the same project, you can create one resource per domain.
 * If the apps in your cluster are in different projects, you must create one Ingress resource for each project to define the app's routing rules.
 
-For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress#multiple_projects).
+For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects).
 
 If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
 {: important}

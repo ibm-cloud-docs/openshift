@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-09"
+lastupdated: "2020-04-13"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -141,7 +141,7 @@ In OpenShift clusters that run version 4.3 or later, operators are available in 
 ## Using Operators in 3.11 clusters
 {: #operators_311}
 
-Try out the [experimental {{site.data.keyword.cloud_notm}} Operator](https://github.ibm.com/seed/olm/blob/master/pocs/openshift-ibmcloud/README.md){: external} and the following tutorial.
+Try out the following tutorial.
 {: shortdesc}
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The {{site.data.keyword.cloud_notm}} Operator and other Operators are experimental for version 3.11, and you are responsible for its maintenance and support. If you have a 4.x cluster, use the built-in [Operators and OperatorHub instead](#operators_4).
@@ -181,6 +181,4 @@ The catalog services and related [templates](https://docs.openshift.com/containe
 {: note}
 
 <br />
-
-
 

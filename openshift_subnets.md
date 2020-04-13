@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -153,7 +153,7 @@ Before you begin:
     ```
     {: screen}
 
-2. [Create a cluster in the CLI](/docs/openshift?topic=openshift-clusters#openshift_create_cluster_cli) by using the VLAN ID that you identified. Include the `--no-subnet` flag to prevent a new portable public IP subnet and a new portable private IP subnet from being created automatically.
+2. [Create a cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps) by using the VLAN ID that you identified. Include the `--no-subnet` flag to prevent a new portable public IP subnet and a new portable private IP subnet from being created automatically.
 
     ```
     ibmcloud oc cluster create classic --zone dal10 --flavor b3c.4x16 --no-subnet --public-vlan 2234945 --private-vlan 2234947 --workers 3 --name my_cluster
@@ -169,7 +169,7 @@ Before you begin:
     ```
     {: pre}
 
-    When your cluster is fully provisioned, the **State** changes to `deployed`. 
+    When your cluster is fully provisioned, the **State** changes to `deployed`.
 
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
