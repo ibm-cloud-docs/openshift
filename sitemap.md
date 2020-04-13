@@ -1366,7 +1366,6 @@ subcollection: openshift
 * [Pods remain in pending state](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_pods_pending)
 * [Pods in `CrashLoopBackOff` status](/docs/openshift?topic=openshift-cs_troubleshoot_app#rhoks_ts_pods_crashloop)
 * [Pods repeatedly fail to restart or are unexpectedly removed](/docs/openshift?topic=openshift-cs_troubleshoot_app#pods_fail)
-* [Binding a service to a cluster results in same name error](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_duplicate_services)
 * [Binding a service to a cluster results in service not found error](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_not_found_services)
 * [Binding a service to a cluster results in service does not support service keys error](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_service_keys)
 * [Cannot install a Helm chart with updated configuration values](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_helm_install)

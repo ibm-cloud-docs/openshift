@@ -458,14 +458,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   </td>
 </tr>
 <tr>
-  <td>08 July 2019</td>
-  <td><strong>App networking</strong>: You can now find information about app networking with NLBs and Ingress ALBs in the following pages:
-    <ul><li>[Basic and DSR load balancing with network load balancers (NLB)](/docs/containers?topic=containers-cs_sitemap#sitemap-nlb)</li>
-    <li>[HTTPS load balancing with Ingress application load balancers (ALB)](/docs/containers?topic=containers-cs_sitemap#sitemap-ingress)</li></ul>
-  
-  </td>
-</tr>
-<tr>
   <td>02 July 2019</td>
   <td><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.58](/docs/openshift?topic=openshift-cs_cli_changelog).</td>
 </tr>
