@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-10"
+lastupdated: "2020-04-13"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -4327,7 +4327,7 @@ ibmcloud oc messages
 List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations).
 {: shortdesc}
 
-In [CLI plug-in version 1.0](#cs_beta), `locations` is replaced by the `locations` command. Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
+In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the `locations` command. Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
 
 ```
