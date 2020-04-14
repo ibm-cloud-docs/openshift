@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-09"
+lastupdated: "2020-04-14"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -1125,7 +1125,7 @@ Before you begin:
 7. To save your changes, click **Set**.
 8. **Important**: If you are assigning permissions so that a user can manage clusters and worker nodes, you must assign the user access for working with support cases.
   1. Click the **Access policies** tab, and then click **Assign access**.
-  2. Click the **Assign access to account management services** card.
+  2. Click the **Account management** card.
   3. Select **Support Center**.
   4. To allow the user to view, add, and edit support cases, select **Administrator**.
   5. Click **Assign**.

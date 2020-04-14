@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-04-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -229,6 +229,8 @@ The **Master Status** provides details of what operation from the master state i
 
 
 <br />
+
+
 
 
 ## Common CLI issues

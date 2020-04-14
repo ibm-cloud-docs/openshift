@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-10"
+lastupdated: "2020-04-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -631,9 +631,9 @@ The following table shows the classic infrastructure permissions that the creden
 | OS Reloads and Rescue Kernel | Update, reboot, and reload worker nodes. | Classic infrastructure > Permissions > Devices|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission SERVER_RELOAD --enable true</code></pre>  |
 | View Virtual Server Details | Required if the cluster has VM worker nodes. List and get details of VM worker nodes. | Classic infrastructure > Permissions > Devices|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission VIRTUAL_GUEST_VIEW --enable true</code></pre>  |
 | View Hardware Details | Required if the cluster has bare metal worker nodes. List and get details of bare metal worker nodes. | Classic infrastructure > Permissions > Devices|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission HARDWARE_VIEW --enable true</code></pre>  |
-| Add Support Case | As part of the cluster creation automation, support cases are opened to provision the cluster infrastructure. | Assign access to account management services > Support Center > Administrator|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission TICKET_ADD --enable true</code></pre>  |
-| Edit Support Case | As part of the cluster creation automation, support cases are updated to provision the cluster infrastructure. | Assign access to account management services > Support Center > Administrator|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission TICKET_EDIT --enable true</code></pre>  |
-| View Support Case | As part of the cluster creation automation, support cases are used to provision the cluster infrastructure. | Assign access to account management services > Support Center > Administrator|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission TICKET_VIEW --enable true</code></pre>  |
+| Add Support Case | As part of the cluster creation automation, support cases are opened to provision the cluster infrastructure. | Account management > Support Center > Administrator|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission TICKET_ADD --enable true</code></pre>  |
+| Edit Support Case | As part of the cluster creation automation, support cases are updated to provision the cluster infrastructure. | Account management > Support Center > Administrator|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission TICKET_EDIT --enable true</code></pre>  |
+| View Support Case | As part of the cluster creation automation, support cases are used to provision the cluster infrastructure. | Account management > Support Center > Administrator|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission TICKET_VIEW --enable true</code></pre>  |
 {: class="simple-tab-table"}
 {: caption="Required classic infrastructure permissions" caption-side="top"}
 {: #classic-permissions-required}
