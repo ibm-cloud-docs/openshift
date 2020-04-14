@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-04-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -45,7 +45,7 @@ First time setting up Ingress? Check out [Setting up Ingress in OpenShift versio
 <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run OpenShift version 4.3 or later only. For clusters that run OpenShift version 3.11, see [Quick start for Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-qs).
 {: note}
 
-1. Create a Kubernetes `ClusterIP` service for you app so that it can be included in the router load balancing.
+1. Create a Kubernetes `ClusterIP` service for your app so that it can be included in the router load balancing.
   ```
   oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <project>
   ```
@@ -63,7 +63,7 @@ First time setting up Ingress? Check out [Setting up Ingress in OpenShift versio
     ```
     {: screen}
 
-3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If you app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
+3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
   ```yaml
   apiVersion: extensions/v1beta1
   kind: Ingress
