@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-04-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -427,7 +427,7 @@ You can isolate your cluster from other systems on the private network by applyi
 
 This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with your worker nodes.
 
-To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico public network policies](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/private-network-isolation/README.md){: external}.
+To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico private network policies](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/private-network-isolation/README.md){: external}.
 
 When you apply the egress pod policies that are included in this policy set, only network traffic to the subnets and ports that are specified in the pod policies is permitted. All traffic to any subnets or ports that are not specified in the policies is blocked for all pods in all namespaces. Because only the ports and subnets that are necessary for the pods to function in {{site.data.keyword.containerlong_notm}} are specified in these policies, your pods cannot send network traffic over the private network until you add or change the Calico policy to allow them to.
 {: important}
