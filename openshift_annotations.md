@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-10"
+lastupdated: "2020-04-16"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -2105,7 +2105,7 @@ spec:
 | `bindSecret` | Replace <em>`<bind_secret>`</em> with the Kubernetes secret, which stores the bind secret for your {{site.data.keyword.appid_short_notm}} service instance. |
 | `namespace` | Replace <em>`<namespace>`</em> with the namespace of the bind secret. This field defaults to the `default` namespace. |
 | `requestType` | Replace `<em><request_type></em>` with the type of request you want to send to {{site.data.keyword.appid_short_notm}}. Accepted values are `web` or `api`. The default is `api`. |
-| `serviceName` | Replace `<em><myservice></em>` with the name of the Kubernetes service that you created for your app. This field is required. If a service name is not included, then the annotation is enabled for all services. If a service name is included, then the annotation is enabled only for that service. Specify only one service name per service path that you define in the resource file. |
+| `serviceName` | Replace `<em><myservice></em>` with the name of the Kubernetes service that you created for your app. This field is required. Specify only one service name per service path that you define in the resource file. |
 | `idToken=true` | Optional: The Liberty OIDC client is unable to parse both the access and the identity token at the same time. When working with Liberty, set this value to false so that the identity token is not sent to the Liberty server. |
 {: caption="Understanding the annotation components" caption-side="top"}
 
