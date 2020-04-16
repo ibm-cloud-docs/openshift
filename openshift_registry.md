@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-08"
+lastupdated: "2020-04-14"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -156,7 +156,7 @@ Mounted By:    image-registry-<ID_string>
 ```
 {: screen}
 
-If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `image-registry` (OpenShift 4.3) or `docker-registry` (OpenShift 3.11) pod that uses the `registry-backing` PVC to verify that the volume is resized.
+If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `openshift-image-registry` (OpenShift 4.3) or `docker-registry` (OpenShift 3.11) pod that uses the `registry-backing` PVC to verify that the volume is resized.
 {: note}
 
 <br />

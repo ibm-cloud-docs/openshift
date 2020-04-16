@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-04-14"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -54,8 +54,10 @@ The following list of the cluster management events are sent to {{site.data.keyw
 | `containers-kubernetes.alb.create` | An Ingress ALB is created. |
 | `containers-kubernetes.alb.delete` | An Ingress ALB is deleted. |
 | `containers-kubernetes.apikey.reset` | An API key is reset for a region and resource group. |
-| `containers-kubernetes.cluster.create` | A cluster is created. |
+| `containers-kubernetes.cluster.config` | A `kubeconfig` file that contains the certificates and secrets to access a cluster is requested. 
+| `containers-kubernetes.cluster.create` | A cluster is created or failed to create. |
 | `containers-kubernetes.cluster.delete` | A cluster is deleted. |
+| `containers-kubernetes.cluster.update` | A refresh or update of the OpenShift master is requested.|
 | `containers-kubernetes.cluster-feature.enable` | A feature, such as the public or private service endpoint, is enabled on a cluster. |
 | `containers-kubernetes.logging-config.create` | A log forwarding configuration is created. |
 | `containers-kubernetes.logging-config.delete` | A log forwarding configuration is deleted. |
@@ -79,6 +81,9 @@ The following list of the cluster management events are sent to {{site.data.keyw
 | `containers-kubernetes.worker.reboot` | A worker node is rebooted. |
 | `containers-kubernetes.worker.reload` | A worker node is reloaded. |
 | `containers-kubernetes.worker.update` | A worker node is updated.|
+| `containers-kubernetes.workerpool.create` | A worker pool is created.|
+| `containers-kubernetes.workerpool.update` | A worker pool is updated. |
+| `containers-kubernetes.zone.update` | The networking attributes for a zone that a worker pool uses are updated. |
 {: caption="Cluster management events" caption-side="top"}
 
 
