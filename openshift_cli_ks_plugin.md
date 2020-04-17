@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-04-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1208,7 +1208,7 @@ Before you reboot your worker node, make sure that pods are rescheduled on other
    {: pre}
    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 
-2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling.
+2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Replace `<worker_name>` with the private IP address of the worker node that you previously retrieved.
   ```
   oc drain <worker_name>
   ```
@@ -1282,22 +1282,13 @@ Before you reload your worker node, make sure that pods are rescheduled on other
    oc get nodes
    ```
    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
-2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling.
-    ```
-    oc drain <worker_name>
-    ```
-    {: pre}
-    This process can take a few minutes.
-3. Reload the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
+
+2. Reload the worker node. As part of the reload process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
     ```
     ibmcloud oc worker reload --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
     ```
     {: pre}
-4. Wait for the reload to complete.
-5. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
-    ```
-    oc uncordon <worker_name>
-    ```
+3. Wait for the reload to complete. When your worker node is in a Normal state, the worker node becomes available for pod scheduling again.
 </br>
 
 ```
@@ -1355,18 +1346,13 @@ Before you replace your worker node, make sure that pods are rescheduled on othe
    ```
    {: pre}
    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
-2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling.
-   ```
-   oc drain <worker_name>
-   ```
-   {: pre}
-   This process can take a few minutes.
-3. Replace the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
+
+2. Replace the worker node. As part of the replace process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
    ```
    ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
    ```
    {: pre}
-4. Verify that the worker node is replaced.
+3. Verify that the worker node is replaced.
    ```
    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
    ```

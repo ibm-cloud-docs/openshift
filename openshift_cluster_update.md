@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-17"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -376,12 +376,8 @@ To update flavors:
    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
    ```
    {: pre}
-5.  To prevent downtime, force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the **Private IP** of the worker node that you retrieved earlier. This process can take a few minutes.
-    ```
-    oc drain <worker_private_IP>
-    ```
-    {: pre}
-6. Remove the old worker node. **Note**: If you are removing a flavor that is billed monthly (such as bare metal), you are charged for the entire the month.
+
+5. Remove the old worker node. **Note**: If you are removing a flavor that is billed monthly (such as bare metal), you are charged for the entire the month.
    - **For worker nodes in a worker pool**:
      1. Remove the worker pool with the old machine type. Removing a worker pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.
         ```
@@ -401,13 +397,13 @@ To update flavors:
       ```
       {: pre}
 
-7. Verify that the worker nodes are removed from your cluster.
+6. Verify that the worker nodes are removed from your cluster.
    ```
    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
    ```
    {: pre}
 
-8. Repeat these steps to update other worker pools or stand-alone worker nodes to different flavors.
+7. Repeat these steps to update other worker pools or stand-alone worker nodes to different flavors.
 
 ## Updating cluster components
 {: #components}
