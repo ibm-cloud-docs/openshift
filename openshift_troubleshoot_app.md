@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -223,6 +223,9 @@ When you resize the volume in your IBM Cloud infrastructure account, the attache
 {: note}
 
 <br />
+
+
+
 
 
 

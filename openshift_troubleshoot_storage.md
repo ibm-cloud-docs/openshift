@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-04-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -503,7 +503,7 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
     ```
     {: pre}
 
-    Is the init container failing? Because OpenShift sets restricted security context constraints, you might see an error such as `chown: /opt/ibm-ucd/server/ext_lib: Operation not permitted`. For your deployment, [use a SCC](/docs/openshift?topic=openshift-openshift_scc) that allows `chown` operations and try again.
+    Is the init container failing? Because OpenShift sets restricted security context constraints, you might see an error such as `chown: /opt/ibm-ucd/server/ext_lib: Operation not permitted`. For your deployment, [use an SCC](/docs/openshift?topic=openshift-openshift_scc) that allows `chown` operations and try again.
     {: note}
 
 6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path.
