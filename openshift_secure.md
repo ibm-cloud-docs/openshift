@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-15"
+lastupdated: "2020-04-17"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -503,10 +503,10 @@ You are responsible for ensuring the security of your personal information in Ku
 
 <dl>
   <dt>Use a Kubernetes secret to store personal information</dt>
-  <dd>Store personal information only in Kubernetes resources that are designed to hold personal information. For example, do not use your name in the name of an OpenShift project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets](/container-platform/3.11/dev_guide/secrets.html){: external} instead.</dd>
+  <dd>Store personal information only in Kubernetes resources that are designed to hold personal information. For example, do not use your name in the name of an OpenShift project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets](https://docs.openshift.com/container-platform/3.11/dev_guide/secrets.html){: external} instead.</dd>
 
   <dt>Use a Kubernetes `imagePullSecret` to store image registry credentials</dt>
-  <dd>Do not store personal information in container images or registry namespaces. For proper protection and encryption, store registry credentials in <a href="/docs/containers?topic=containers-registry#other">Kubernetes `imagePullSecrets`</a> and other personal information in [secrets](/container-platform/3.11/dev_guide/secrets.html){: external} instead. Remember that if personal information is stored in a previous layer of an image, deleting an image might not be sufficient to delete this personal information.</dd>
+  <dd>Do not store personal information in container images or registry namespaces. For proper protection and encryption, store registry credentials in <a href="/docs/containers?topic=containers-registry#other">Kubernetes `imagePullSecrets`</a> and other personal information in [secrets](https://docs.openshift.com/container-platform/3.11/dev_guide/secrets.html){: external} instead. Remember that if personal information is stored in a previous layer of an image, deleting an image might not be sufficient to delete this personal information.</dd>
   </dl>
 
 
