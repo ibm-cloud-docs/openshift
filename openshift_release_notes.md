@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-16"
+lastupdated: "2020-04-20"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 20 April 2020 | <ul><li>**Debugging guide**: Added a [Debugging guide](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails) for default OpenShift components such as the console, internal registry, or OperatorHub.</li><li>**Version changelog**: [Patch updates](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master) are available for master fix pack `4.3.12_1520_openshift` and worker node fix pack `4.3.10_1518_openshift`.</li></ul>
 | 16 April 2020 | **Ingress ALB changelog**: Updated the [`ingress-auth` image build to 394](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).|
 | 13 April 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_private) that you must open in a private gateway device firewall for {{site.data.keyword.registrylong_notm}}.</li><li>**New! Private Ingress and routes**: In version 4.3 clusters, you can now create [private Ingress controllers](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private) and [private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43) to expose your apps on the private network only.</li><li>**Version changelogs**: Worker node patch updates are available for OpenShift [3.11.200_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog#311200_1546_worker).</li></ul>
 | 06 April 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.28](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li></ul> |
