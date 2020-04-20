@@ -72,6 +72,8 @@ subcollection: openshift
 
 [Service architecture and dependencies](/docs/openshift?topic=openshift-service-arch)
 * [Service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
+  * [OpenShift version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
+  * [OpenShift version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
 * [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-arch#ibm-data)
   * [What information is stored with IBM when using Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-service-arch#pi-info)
   * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-arch#pi-storage)
