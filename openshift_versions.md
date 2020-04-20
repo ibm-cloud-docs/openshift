@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-04-20"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -101,9 +101,6 @@ The following table records Red Hat OpenShift on IBM Cloud version release histo
 Red Hat OpenShift on IBM Cloud was first generally available with OpenShift version 3.11, which includes the Kubernetes project version 1.11. Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: important}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-beta-flair.png" alt="Beta icon" width="30" style="width:30px; border-style: none"/> Red Hat OpenShift on IBM Cloud version 4.3 is available as a beta. During the beta, the OpenShift license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Beta releases have limited features and might experience intermittent errors. For more information, review the [troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot), [limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations), and [internal](https://test.cloud.ibm.com/docs/containers?topic=containers-cs_internal#internal_help) or [external](https://ibm-cloud-success.slack.com/archives/CKCJLJCH4){: external} Slack channel.
-{: preview}
-
 <table summary="This table shows the release history for Red Hat OpenShift on IBM Cloud.">
 <caption>Release history for Red Hat OpenShift on IBM Cloud.</caption>
 <col width="20%" align="center">
@@ -122,7 +119,7 @@ Red Hat OpenShift on IBM Cloud was first generally available with OpenShift vers
 <tr>
   <td><img src="images/icon_beta.png" align="left" width="28" style="width:28px;" alt="This version is supported as a beta."/></td>
   <td>4.3 / 1.16</td>
-  <td>10 Feb 2020</td>
+  <td>20 Apr 2020 at 10:58 UTC</td>
   <td>`†`</td>
 </tr>
 <tr>
@@ -141,15 +138,12 @@ Red Hat OpenShift on IBM Cloud was first generally available with OpenShift vers
 ## OpenShift 4.3
 {: #ocp43}
 
-<p><img src="images/logo_openshift.svg" alt="OpenShift icon" width="15" style="width:15px; border-style: none"/> <img src="images/certified_kubernetes_1x16.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.16 certification for Red Hat OpenShift on IBM Cloud."/> Red Hat OpenShift on IBM Cloud is a Certified Kubernetes product for version 1.16 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._</p> 
+<p><img src="images/logo_redhat.png" alt="Red Hat OpenShift icon" width="16" style="width:16px; border-style: none"/> <img src="images/certified_kubernetes_1x16.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.16 certification for Red Hat OpenShift on IBM Cloud."/> Red Hat OpenShift on IBM Cloud is a Certified Kubernetes product for version 1.16 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._</p> 
 
 With the release of OpenShift Container Platform 4.3, you get a new experience and capabilities for managing your cluster and its workloads. For more information, see the [OpenShift blog](https://blog.openshift.com/introducing-red-hat-openshift-4-3-to-enhance-kubernetes-security/){: external}.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-beta-flair.png" alt="Beta icon" width="30" style="width:30px; border-style: none"/> Red Hat OpenShift on IBM Cloud version 4.3 is available as a beta. During the beta, the OpenShift license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Beta releases have limited features and might experience intermittent errors. For more information, review the [troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot), [limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations), and [internal](https://test.cloud.ibm.com/docs/containers?topic=containers-cs_internal#internal_help) or [external](https://ibm-cloud-success.slack.com/archives/CKCJLJCH4){: external} Slack channel.
-{: preview}
-
-To create a 4.3 beta cluster, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial). You cannot update an existing version 3.11 cluster to a 4.3 cluster, but you can [migrate workloads to 4.3 clusters](#ocp-3-to-4-migration).
+To create a 4.3 cluster, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial). You cannot update an existing version 3.11 cluster to a 4.3 cluster, but you can [migrate workloads to 4.3 clusters](#ocp-3-to-4-migration).
 
 Review the following benefit highlights when you use version 4.3 clusters.
 *   Ability to use your own [Operators](/docs/openshift?topic=openshift-operators) or operators that are provided by the OperatorHub to package and deploy services for your cluster.
