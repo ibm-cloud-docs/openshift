@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-17"
+lastupdated: "2020-04-20"
 
 keywords: openshift
 subcollection: openshift
@@ -72,6 +72,8 @@ subcollection: openshift
 
 [Service architecture and dependencies](/docs/openshift?topic=openshift-service-arch)
 * [Service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
+  * [OpenShift version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
+  * [OpenShift version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
 * [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-arch#ibm-data)
   * [What information is stored with IBM when using Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-service-arch#pi-info)
   * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-arch#pi-storage)
@@ -1166,6 +1168,7 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+  * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
   * [Changelog for worker node fix pack 3.11.200_1546_openshift, released 13 April 2020](/docs/openshift?topic=openshift-openshift_changelog#311200_1546_worker)
   * [Changelog for worker node fix pack 3.11.188_1545_openshift, released 30 March 2020](/docs/openshift?topic=openshift-openshift_changelog#311188_1545_worker)
   * [Changelog for 3.11.170_1544_openshift, released 16 March 2020](/docs/openshift?topic=openshift-openshift_changelog#311170_1544)
@@ -1316,6 +1319,7 @@ subcollection: openshift
 * [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
 * [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot#debug_clusters)
 * [Reviewing master health](/docs/openshift?topic=openshift-cs_troubleshoot#debug_master)
+* [Debugging OpenShift web console, OperatorHub, internal registry, and other components](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails)
 * [Common CLI issues](/docs/openshift?topic=openshift-cs_troubleshoot#ts_clis)
   * [Firewall prevents running CLI commands](/docs/openshift?topic=openshift-cs_troubleshoot#ts_firewall_clis)
   * [`kubectl` or `oc` commands do not work](/docs/openshift?topic=openshift-cs_troubleshoot#kubectl_fails)
@@ -1327,7 +1331,6 @@ subcollection: openshift
 * [Cluster remains in a pending State](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_pending)
 * [Unable to view or work with a cluster](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_access)
 * [No resources found](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_not_found)
-* [OpenShift console does not open](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails)
 * [VPN server error due to infrastructure credentials](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_openvpn_login)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help)
 
@@ -1361,6 +1364,7 @@ subcollection: openshift
 * [Build error due to image pull authentication](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_build_img_pull)
 * [Cannot push or pull images from local machine to Docker registry](/docs/openshift?topic=openshift-cs_troubleshoot_app#rhoks_ts_docker_local)
 * [Time out when pushing to the internal registry](/docs/openshift?topic=openshift-cs_troubleshoot_app#roks_timeout_docker)
+* [Pod cannot complete operation with a permission denied error because of SCC](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_scc)
 * [Failed to pull image from registry with `ImagePullBackOff` or authorization errors](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_image_pull)
 * [Containers do not start](/docs/openshift?topic=openshift-cs_troubleshoot_app#containers_do_not_start)
 * [Pods remain in pending state](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_pods_pending)
