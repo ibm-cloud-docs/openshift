@@ -1364,6 +1364,7 @@ subcollection: openshift
 * [Build error due to image pull authentication](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_build_img_pull)
 * [Cannot push or pull images from local machine to Docker registry](/docs/openshift?topic=openshift-cs_troubleshoot_app#rhoks_ts_docker_local)
 * [Time out when pushing to the internal registry](/docs/openshift?topic=openshift-cs_troubleshoot_app#roks_timeout_docker)
+* [Pod cannot complete operation with a permission denied error because of SCC](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_scc)
 * [Failed to pull image from registry with `ImagePullBackOff` or authorization errors](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_image_pull)
 * [Containers do not start](/docs/openshift?topic=openshift-cs_troubleshoot_app#containers_do_not_start)
 * [Pods remain in pending state](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_pods_pending)
