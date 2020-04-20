@@ -1319,6 +1319,7 @@ subcollection: openshift
 * [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
 * [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot#debug_clusters)
 * [Reviewing master health](/docs/openshift?topic=openshift-cs_troubleshoot#debug_master)
+* [Debugging OpenShift web console, OperatorHub, internal registry, and other components](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails)
 * [Common CLI issues](/docs/openshift?topic=openshift-cs_troubleshoot#ts_clis)
   * [Firewall prevents running CLI commands](/docs/openshift?topic=openshift-cs_troubleshoot#ts_firewall_clis)
   * [`kubectl` or `oc` commands do not work](/docs/openshift?topic=openshift-cs_troubleshoot#kubectl_fails)
@@ -1330,7 +1331,6 @@ subcollection: openshift
 * [Cluster remains in a pending State](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_pending)
 * [Unable to view or work with a cluster](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_access)
 * [No resources found](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_not_found)
-* [OpenShift console does not open](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails)
 * [VPN server error due to infrastructure credentials](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_openvpn_login)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help)
 

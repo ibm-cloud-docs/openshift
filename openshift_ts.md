@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-17"
+lastupdated: "2020-04-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -227,6 +227,161 @@ The **Master Status** provides details of what operation from the master state i
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
 
+
+<br />
+
+
+
+
+## Debugging OpenShift web console, OperatorHub, internal registry, and other components
+{: #oc_console_fails}
+
+OpenShift clusters have many built-in components that work together to simplify the developer experience. For example, you can use the OpenShift web console to manage and deploy your cluster workloads, or enable 3rd-party operators from the OperatorHub to enhance your cluster with a service mesh and other capabilities.  
+{: shortdesc}
+
+Commonly used components include the following:
+* **OpenShift web console** in the `openshift-console` project
+* **OperatorHub** in the `openshift-marketplace` project
+* **Internal registry** in the `openshift-image-registry` project
+
+If these components fail, review the following debug steps.
+
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Some components, such as the OperatorHub, are available only in clusters that run OpenShift version 4.3 or later, or run in different projects in version 3.11. You can still troubleshoot OpenShift components in 3.11 clusters, but the project and resource names might vary.
+{: note}
+
+1.  Check that your {{site.data.keyword.cloud_notm}} account is set up properly. Some common scenarios that can prevent the default components from running properly include the following:
+    * If you have a firewall, make sure that [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall) so that you do not block any ingress or egress traffic for the OperatorHub or other OpenShift components.
+    *   If your cluster has multiple zones, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation). To check if VRF is already enabled, run `ibmcloud account show`. To check if VLAN spanning is enabled, run `ibmcloud oc vlan-spanning get`.
+    * Make sure that your account does not use multifactor authentication (MFA). For more information, see [Disabling required MFA for all users in your account](/docs/iam?topic=iam-enablemfa#disablemfa).
+2.  Check that your cluster is set up properly. If you just created your cluster, wait awhile for your cluster components to fully provision.
+    1.  Get the details of your cluster.
+        ```
+        ibmcloud oc cluster get -c <cluster_name_or_ID>
+        ```
+        {: pre}
+    2.  Review the output of the previous step to check the **Ingress Subdomain**.
+        *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
+        *  If your cluster does have a subdomain, continue to the next step.
+    3.  Verify that your cluster runs the latest **Version**. If your cluster does not run the latest version, update the cluster and worker nodes.
+        1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version.
+
+            **4.3**:
+            ```
+            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.3_openshift -f
+            ```
+            {: pre}
+
+            **3.11**:
+            ```
+            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 3.11_openshift -f
+            ```
+            {: pre}
+
+        2.  List your worker nodes.
+            ```
+            ibmcloud oc worker ls -c <cluster_name_or_ID>
+            ```
+            {: pre}
+        3.  [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to match the cluster master version.
+            ```
+            ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w <worker3_ID>
+            ```
+            {: pre}
+    4.  Check the cluster **State**. If the state is not **normal**, see [Debugging clusters](#debug_clusters).
+    5.  Check the **Master health**. If the state is not **normal**, see [Reviewing master health](#debug_master).
+    6.  Check the worker nodes that the OpenShift components might run on. If the state is not **normal**, see [Debugging worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes).
+        ```
+        ibmcloud oc worker ls -c <cluster_name_or_ID>
+        ```
+        {: pre}
+3.  [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the OpenShift web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
+4.  Check the health of the OpenShift component pods that do not work. 
+    1.  Check the status of the pod.
+        ```
+        oc get pods -n <project>
+        ```
+        {: pre}
+    2.  If a pod is not in a **Running** status, describe the pod and check for the events. For example, you might see an error that the pod cannot be scheduled because of a lack of CPU or memory resources, which is common if you have a cluster with less than 3 worker nodes. [Resize your worker pool](/docs/openshift?topic=openshift-add_workers) and try again.
+        ```
+        oc describe pod -n <project> <pod>
+        ```
+        {: pre}
+
+    3.  If you do not see any helpful information in the events section, check the pod logs for any error messages or other troubleshooting information.
+        ```
+        oc logs pod -n <project> <pod>
+        ```
+        {: pre}
+    4.  Restart the pod and check if it reaches a **Running** status.
+        ```
+        oc delete pod -n <project> <pod>
+        ```
+        {: pre}
+5.  If the pods are healthy, check if other system pods are experiencing issues. Oftentimes to function properly, one component depends on another component to be healthy. For example, the OperatorHub has a set of images that are stored in external registries such as `quay.io`. These images are pulled into the internal registry to use across the projects in your OpenShift cluster. If any of the OperatorHub or internal registry components are not set up properly, such as due to lack of permissions or compute resources, the OperatorHub and catalog do not display.
+    1.  Check for pending pods.
+        ```
+        oc get pods --all-namespaces | grep Pending
+        ```
+        {: pre}
+    2.  Describe the pods and check for the **Events**.
+        ```
+        oc describe pod -n <project_name> <pod_name>
+        ```
+        {: pre}
+
+        For example, some common messages that you might see from `openshift-image-registry` pods include:
+        * A `Volume could not be created` error message because you created the cluster without the correct storage permission. Red Hat OpenShift on IBM Cloud clusters come with a file storage device by default to store images for the system and other pods. Revise your [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) and restart the pod.
+        * An `order will exceed maximum number of storage volumes allowed` error message because you have exceeded the combined quota of file and block storage devices that are allowed per account. [Remove unused storage devices](/docs/openshift?topic=openshift-file_storage#cleanup) or [increase your storage quota](/docs/FileStorage?topic=FileStorage-managinglimits), and restart the pod.
+        * A message that images cannot be stored because the file storage device is full. [Resize the storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration) and restart the pod.
+        * A `Pull image still failed due to error: unauthorized: authentication required` error message because the internal registry cannot pull images from an external registry. Check that [the image pull secrets](/docs/openshift?topic=openshift-registry#cluster_registry_auth) are set for the project and restart the pod.
+    3.  Check the **Node** that the failing pods run on. If all the pods run on the same worker node, the worker node might have a network connectivity issue. Reload the worker node.
+        ```
+        ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
+        ```
+        {: pre}
+6.  Check that the OpenVPN in the cluster is set up properly.
+    1.  Check that the OpenVPN pod is **Running**.
+        ```
+        oc get pods -n kube-system -l app=vpn
+        ```
+        {: pre}
+    2.  Check the OpenVPN logs, and check for an `ERROR` message such as `WORKERIP:<port>`, such as `WORKERIP:10250`, that indicates that the VPN tunnel does not work.
+        ```
+        oc logs -n kube-system <vpn_pod> --tail 10
+        ```
+        {: pre}
+    3.  If you see the worker IP error, check if worker-to-worker communication is broken. Log in to a `calico-node` pod in the `calico-system` project, and check for the same `WORKERIP:10250` error.
+        ```
+        oc exec -n calico-system <calico-node_pod> -- date 
+        ```
+        {: pre}
+    4.  If the worker-to-worker communication is broken, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation).
+    5.  If you see a different error from either the OpenVPN or `calico-node` pod, restart the OpenVPN pod.
+        ```
+        oc delete pod -n kube-system <vpn_pod>
+        ```
+        {: pre}
+    6.  If the OpenVPN still fails, check the worker node that the pod runs on.
+        ```
+        oc describe pod -n kube-system <vpn_pod> | grep "Node:"
+        ```
+        {: pre}
+    7.  Cordon the worker node so that the OpenVPN pod is rescheduled to a different worker node.
+        ```
+        oc cordon <worker_node>
+        ```
+        {: pre}
+    8.  Check the OpenVPN pod logs again. If the pod no longer has an error, the worker node might have a network connectivity issue. Reload the worker node.
+        ```
+        ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
+        ```
+        {: pre}
+7.  Refresh the cluster master to set up the default OpenShift components. After you refresh the cluster, wait a few minutes to allow the operation to complete.
+    ```
+    ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
+    ```
+    {: pre}
+7.  Try to use the OpenShift component again. If the error still exists, see [Feedback, questions, and support](#getting_help).
 
 <br />
 
@@ -721,121 +876,6 @@ Your OpenShift token is expired. OpenShift token that are generated by using you
 Re-authenticate with the OpenShift token by [copying the `oc login` command from the web console](/docs/openshift?topic=openshift-access_cluster#access_public_se) or [creating an API key](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 
 <br />
-
-
-
-
-## OpenShift console does not open
-{: #oc_console_fails}
-
-{: tsSymptoms}
-When you click the **OpenShift web console** from your cluster details, the console does not open. You see a message similar to the following.
-
-```
-Application is not available
-```
-{: screen}
-
-{: tsCauses}
-The OpenShift web console might not open for reasons that include:
-1.  Your account has multifactor authentication (MFA) enabled.
-2.  <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 only**: The cluster has a private service endpoint enabled.
-3.  The cluster ingress and networking components are not available.
-4.  The cluster is running an older version.
-5.  Your account does not have VRF or VLAN spanning enabled for a multizone cluster.
-6.  The console pod or other system pods are not healthy, such as when not enough worker nodes exist to run the pods.
-
-<br>
-
-{: tsResolve}
-1.  Make sure that your account does not use multifactor authentication (MFA). For more information, see [Disabling required MFA for all users in your account](/docs/iam?topic=iam-enablemfa#disablemfa).
-    1.  Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
-    2.  From the menu bar, click your **Avatar** icon **> Profile and settings > Login settings**.
-    3.  If **Time-based one-time passcode authentication** is set up, disable this setting.
-2.  Check your cluster details. **OpenShift version 4.3 only**: If your cluster has a **Private Service Endpoint URL**, you must delete the cluster and re-create a cluster that has a public service endpoint only. Private service endpoints are a limitation in version 4.3 clusters. If your cluster does not have a private service endpoint, continue to the next step.
-    ```
-    ibmcloud oc cluster get -c <cluster_name_or_ID>
-    ```
-    {: pre}
-3.  Review the output of the previous step to check the **Ingress Subdomain**.
-    *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
-    *  If your cluster does have a subdomain, continue to the next step.
-4.  Review the output of the first step to check the **Version**. If your cluster does not run the latest version, update the cluster and worker nodes.
-    1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version.
-
-        **4.3**:
-        ```
-        ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.3_openshift -f
-        ```
-        {: pre}
-
-        **3.11**:
-        ```
-        ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 3.11_openshift -f
-        ```
-        {: pre}
-
-    2.  List your worker nodes.
-        ```
-        ibmcloud oc worker ls -c <cluster_name_or_ID>
-        ```
-        {: pre}
-    3.  [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to match the cluster master version.
-        ```
-        ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w <worker3_ID>
-        ```
-        {: pre}
-5.  Review the output of the first step to check the **Worker Zones**. If your cluster has multiple zones, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation).
-6.  Log in to your cluster with the `--admin` credentials so that you do not need to copy the `oc login` token from the OpenShift web console. For other log in options, see [Connecting to the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
-    ```
-    ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
-    ```
-    {: pre}
-7.  Review the health of the console pod.
-    1.  Find the console pods. The following example uses the `openshift-console` project for clusters that run version 4.3 or later. If your cluster runs version 3.11, change the project to `default`.
-        ```
-        oc get pods -n openshift-console
-        ```
-        {: pre}
-
-        Example output:
-        ```
-        NAME                         READY   STATUS    RESTARTS   AGE
-        console-844d8bb9bd-92d7f     1/1     Running   0          21h
-        console-844d8bb9bd-kvr9r     1/1     Running   0          21h
-        ```
-        {: screen}
-    2.  If the pod is in a **Running** status, review the logs for the pod for any messages that might indicate why the console does not open.
-        ```
-        oc logs -n openshift-console console-844d8bb9bd-92d7f
-        ```
-        {: pre}
-    3.  If a pod is not in a **Running** status, describe the pod and check the events. For example, the cluster might not have enough resources for the pod to run and you must [resize your worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to add worker nodes.
-        ```
-        oc describe pod -n openshift-console <pod>
-        ```
-        {: pre}
-    4.  Try to restart the console pod and check if the OpenShift web console opens.
-        ```
-        oc delete pod -n openshift-console <pod>
-        ```
-        {: pre}
-8.  Check if other system pods are experiencing issues.
-    1.  Check for pending pods.
-        ```
-        oc get pods --all-namespaces | grep Pending
-        ```
-        {: pre}
-    2.  Describe the pods and check for the events. For example, you might find a `Volume could not be created` error message because you created the cluster without the correct storage permission. Red Hat OpenShift on IBM Cloud clusters come with a File storage device by default to store images for the system and other pods. Revise your [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) and try again.
-        ```
-        oc describe pod -n <project_name> <pod_name>
-        ```
-        {: pre}
-9.  Open the OpenShift web console. If the error still exists, see [Feedback, questions, and support](#getting_help).
-
-<br />
-
-
 
 
 ## VPN server error due to infrastructure credentials
