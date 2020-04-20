@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -262,7 +262,7 @@ The following table shows the Kubernetes resource permissions that are granted b
   </tr>
     <tr>
     <td>Any service role</td>
-    <td>All users of an OpenShift cluster are given the following roles that vary by cluster version.<ul><li><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3.11 clusters: `basic-users` and `self-provisioners`.</li><li><img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Version 4.x clusters: `basic-users`.</li></ul></td>
+    <td>All users of an OpenShift cluster are given the following roles that vary by cluster version.<ul><li><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`.</li><li><img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.</li></ul></td>
     <td><ul>
       <li>Get basic information about projects that the user has access to.</li>
       <li>Create authorized resources in the projects that the user has access to.</li>
