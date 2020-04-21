@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-04-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -707,12 +707,11 @@ Start by checking for error messages in the Ingress resource deployment events a
         ibmcloud oc alb configure classic --alb-id <ALB_ID> --enable
         ```
         {: pre}
-      * VPC clusters:
+      * VPC Gen 1 clusters:
         ```
         ibmcloud oc alb configure vpc-classic --alb-id <ALB_ID> --disable
         ```
         {: pre}
-
         ```
         ibmcloud oc alb configure vpc-classic --alb-id <ALB_ID> --enable
         ```
