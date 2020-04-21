@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-21"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -85,8 +85,12 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 1. Install the latest release of the version 3 [Helm CLI](https://github.com/helm/helm/releases){: external} on your local machine.
 
 2. Add the {{site.data.keyword.cloud_notm}} Helm repositories to your Helm instance.
+   
+   If you enabled [VRF](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public registry domain: `helm repo add iks-charts https://icr.io/helm/iks-charts`.
+   {: note}
+   
    ```
-   helm repo add iks-charts https://icr.io/helm/iks-charts
+   helm repo add iks-charts https://private.icr.io/helm/iks-charts
    ```
    {: pre}
 
@@ -266,8 +270,12 @@ To install Helm in a cluster with public network access:
         {: screen}
 
 4. Add the {{site.data.keyword.cloud_notm}} Helm repositories to your Helm instance.
+   
+   If you enabled [VRF](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public registry domain: `helm repo add iks-charts https://icr.io/helm/iks-charts`.
+   {: note}
+   
    ```
-   helm repo add iks-charts https://icr.io/helm/iks-charts
+   helm repo add iks-charts https://private.icr.io/helm/iks-charts
    ```
    {: pre}
 
