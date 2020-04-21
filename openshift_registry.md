@@ -349,6 +349,12 @@ However, by default, your cluster is set up to pull images from only your accoun
 
 
 
+### Default image pull secret setup
+{: #cluster_registry_auth_default}
+
+Generally, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images from all {{site.data.keyword.registrylong_notm}} `icr.io` domains from the `default` OpenShift project only. Review the following FAQs to learn more about how to pull images in other OpenShift projects or accounts, restrict pull access, or why your cluster might not have the default image pull secrets.
+{: shortdesc}
+
 **How is my cluster set up to pull images from the `default` OpenShift project?**<br>
 When you create a cluster, the cluster has an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM **Reader** service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are impersonated in a non-expiring API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and the list of secrets in the `default` service account for this OpenShift project. By using image pull secrets, your deployments can pull images (read-only access) from the [global and regional {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_overview#registry_regions) to deploy containers in the `default` OpenShift project.
 
@@ -387,7 +393,23 @@ The `all-icr-io` image pull secret is added in clusters that run the following v
 **After I copy or create an image pull secret in another OpenShift project, am I done?**<br>
 Not quite. Your containers must be authorized to pull images by using the secret that you created. You can add the image pull secret to the service account for the namespace, or refer to the secret in each deployment. For instructions, see [Using the image pull secret to deploy containers](#use_imagePullSecret).
 
+### Private network connection to `icr.io` registries
+{: #cluster_registry_auth_private}
 
+When you set up your {{site.data.keyword.cloud_notm}} account to use service endpoints, you can use a private network connection to push images to and to pull images from {{site.data.keyword.registrylong_notm}}. When you use the private network to pull images, your image pull traffic is not charged as [public bandwidth](/docs/containers?topic=containers-faqs#bandwidth), because the traffic is on the private network. For more information, see the [{{site.data.keyword.registrylong_notm}} private network documentation](/docs/Registry?topic=registry-registry_private).
+{: shortdesc}
+
+**What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**<br>
+1.  Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. 
+2.  [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
+
+Now, {{site.data.keyword.registrylong_notm}} automatically uses the private service endpoint. You do not need to enable the private service endpoint for your Red Hat OpenShift on IBM Cloud clusters.
+
+**I have a private-only cluster. How do I enforce that my image traffic remains on the private network?**<br>
+The image push and pull traffic is automatically on the private network. Red Hat OpenShift on IBM Cloud can use the public `icr.io` registry domains in existing image pull secrets to authenticate requests to {{site.data.keyword.registrylong_notm}}. These requests are automatically redirected to the private `icr.io` registry domains. You do not need to modify the image pull secrets or configure additional settings.
+
+**Do I have to use the private `icr.io` registry addresses for anything else?**<br>
+Yes, if you [sign your images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent), the signatures contain the registry domain name. If you want to use the private `icr.io` domain for your signed images, resign your images with the private `icr.io` domains.
 
 <br />
 
