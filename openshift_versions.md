@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-20"
+lastupdated: "2020-04-21"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -119,7 +119,7 @@ Red Hat OpenShift on IBM Cloud was first generally available with OpenShift vers
 <tr>
   <td><img src="images/icon_beta.png" align="left" width="28" style="width:28px;" alt="This version is supported as a beta."/></td>
   <td>4.3 / 1.16</td>
-  <td>20 Apr 2020 at 10:58 UTC</td>
+  <td>20 Apr 2020 at 12:00 UTC</td>
   <td>`†`</td>
 </tr>
 <tr>
