@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-20"
+lastupdated: "2020-04-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -363,16 +363,8 @@ For clusters that were created before **1 July 2019**, the cluster might have an
     Example output:
     ```
     ...
-    imagePullSecrets:
-    - name: bluemix-default-secret
-    - name: bluemix-default-secret-regional
-    - name: bluemix-default-secret-international
-    - name: default-us-icr-io
-    - name: default-uk-icr-io
-    - name: default-de-icr-io
-    - name: default-au-icr-io
-    - name: default-jp-icr-io
-    - name: default-icr-io
+    imagePullSecrets:<ff-all-icr>
+    - name: all-icr-io</ff-all-icr>
     ...
     ```
     {: screen}

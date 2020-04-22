@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-21"
+lastupdated: "2020-04-22"
 
 keywords: openshift
 subcollection: openshift
@@ -506,6 +506,8 @@ subcollection: openshift
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
 * [Using {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr)
 * [Understanding how to authorize your cluster to pull images from a private registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth)
+  * [Default image pull secret setup](/docs/openshift?topic=openshift-registry#cluster_registry_auth_default)
+  * [Private network connection to `icr.io` registries](/docs/openshift?topic=openshift-registry#cluster_registry_auth_private)
 * [Updating existing clusters to use the API key image pull secret](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key)
 * [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default OpenShift projects](/docs/openshift?topic=openshift-registry#other)
   * [Copying an existing image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret)
@@ -1169,6 +1171,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
+  * [Changelog for master fix pack 3.11.200_1548_openshift, released 22 April 2020](/docs/openshift?topic=openshift-openshift_changelog#311200_1548)
   * [Changelog for worker node fix pack 3.11.200_1546_openshift, released 13 April 2020](/docs/openshift?topic=openshift-openshift_changelog#311200_1546_worker)
   * [Changelog for worker node fix pack 3.11.188_1545_openshift, released 30 March 2020](/docs/openshift?topic=openshift-openshift_changelog#311188_1545_worker)
   * [Changelog for 3.11.170_1544_openshift, released 16 March 2020](/docs/openshift?topic=openshift-openshift_changelog#311170_1544)
