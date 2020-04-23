@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-04-23"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -80,7 +80,7 @@ The following table shows the changes that are included in the master fix pack u
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
 
-### Changelog for master fix pack 3.11.200_1548_openshift, released 22 April 2020
+### Changelog for master fix pack 3.11.200_1548_openshift, released 23 April 2020
 {: #311200_1548}
 
 The following table shows the changes that are included in the master fix pack update `3.11.200_1548_openshift`. Master patch updates are applied automatically.
