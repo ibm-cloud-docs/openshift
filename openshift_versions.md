@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-21"
+lastupdated: "2020-04-24"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -138,7 +138,7 @@ Red Hat OpenShift on IBM Cloud was first generally available with OpenShift vers
 ## OpenShift 4.3
 {: #ocp43}
 
-<img src="images/logo_redhat.png" alt="Red Hat OpenShift icon" width="16" style="width:16px; border-style: none"/> <img src="images/certified_kubernetes_1x16.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.16 certification for Red Hat OpenShift on IBM Cloud."/> Red Hat OpenShift on IBM Cloud is a Certified Kubernetes product for version 1.16 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+<img src="images/certified_kubernetes_1x16.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.16 certification for Red Hat OpenShift on IBM Cloud."/> <img src="images/logo_redhat.png" alt="Red Hat OpenShift icon" width="16" style="width:16px; border-style: none"/> Red Hat OpenShift on IBM Cloud is a Certified Kubernetes product for version 1.16 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 With the release of OpenShift Container Platform 4.3, you get a new experience and capabilities for managing your cluster and its workloads. For more information, see the [OpenShift blog](https://blog.openshift.com/introducing-red-hat-openshift-4-3-to-enhance-kubernetes-security/){: external}.
 {: shortdesc}
@@ -183,11 +183,11 @@ Before you migrate your workloads from an OpenShift version 3.11 cluster to a ve
 
 1.  Identify your source Red Hat OpenShift on IBM Cloud version 3.11 cluster.
 2.  [Create](/docs/openshift?topic=openshift-clusters) a destination Red Hat OpenShift on IBM Cloud version 4.3 cluster.
-    
+
     For multizone clusters, both the source and destination clusters must be in the same zones. Also, to migrate persistent storage from the source cluster, both the source and destination clusters must be in the same zone.
     {: important}
 
-3.  Prepare an [{{site.data.keyword.cos_full_notm}}](https://cloud.ibm.com/objectstorage/){: external} bucket for the migration backup and restore. 
+3.  Prepare an [{{site.data.keyword.cos_full_notm}}](https://cloud.ibm.com/objectstorage/){: external} bucket for the migration backup and restore.
     1.  Identify an existing or create an {{site.data.keyword.cos_short}} instance. When you create the instance, make sure to select **Include HMAC Credential**. For more information, see [Preparing your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service).
     2.  [Create a bucket](/docs/cloud-object-storage-infrastructure?topic=cloud-object-storage-infrastructure-storing-and-retrieving-data#buckets) in your {{site.data.keyword.cos_short}} instance. Note the bucket's region **Location**, such as `us-south`.
     3.  Get your HMAC authentication credentials. From the {{site.data.keyword.cos_full_notm}} instance in the console, click **Service credentials** and find credentials that include a `cos_hmac_keys` object with `access_key_id` and `secret_access_key` values. If you do not have credentials with HMAC keys, click **New credential**. Create credentials that include HMAC credentials.
@@ -286,7 +286,7 @@ Both the version 3.11 source and 4.3 destination clusters have the migration ope
 
     Do not use `echo` when you base64 encode the values because `echo` injects an extra line character that causes the authentication to fail.
     {: tip}
-    
+
     ```
     printf "<access_key_id>" | base64
     ```
@@ -346,7 +346,7 @@ Both the version 3.11 source and 4.3 destination clusters have the migration ope
           name: migstorage-creds
     ```
     {: codeblock}
-5.  Create the migration storage resource. 
+5.  Create the migration storage resource.
     ```
     oc create -f migstorage-sample.yaml
     ```
@@ -521,7 +521,7 @@ To complete the migration process, create a sample plan to verify that what you 
 
     Example of a successful message.
     ```
-    Message:               The migration plan is ready. 
+    Message:               The migration plan is ready.
     ```
     {: screen}
 
@@ -567,7 +567,7 @@ To complete the migration process, create a sample plan to verify that what you 
     {: pre}
 
 6.  Check the status of your migration. The migration can take some time to complete.
-    
+
     Check the status of all pods. If a pod is not in a **Running** status, describe the pod and check the `Events` section for errors.
     ```
     oc -n openshift-migration get pods
@@ -590,4 +590,3 @@ To complete the migration process, create a sample plan to verify that what you 
     {: tip}
 
 The migration is complete when the version 4.3 destination cluster includes the project and resources that you migrated.
-
