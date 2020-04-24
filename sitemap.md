@@ -515,6 +515,7 @@ subcollection: openshift
   * [Accessing images that are stored in other private registries](/docs/openshift?topic=openshift-registry#private_images)
 * [Using the image pull secret to deploy containers](/docs/openshift?topic=openshift-registry#use_imagePullSecret)
 * [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software)
+* [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret)
 
 [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd)
 * [Supported automation tools](/docs/openshift?topic=openshift-cicd#cicd_strategy)

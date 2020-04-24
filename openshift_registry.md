@@ -861,3 +861,155 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 
 
 
+<br />
+
+
+## Adding a private registry to the global pull secret
+{: #cluster_global_pull_secret}
+
+With OpenShift Container Platform, you can set up a global image pull secret that each worker node in the cluster can use to pull images from a private registry. 
+{: shortdesc}
+
+By default, your Red Hat OpenShift on IBM Cloud cluster has a global image pull secret for the following registries, so that default OpenShift components can be deployed.
+* `cloud.openshift.com`
+* `quay.io`
+* `registry.connect.redhat.com`
+* `registry.redhat.io`
+
+Do not replace the global pull secret with a pull secret that does not have credentials to the default Red Hat registries. If you do, the default OpenShift components that are installed in your cluster, such as the OperatorHub, might fail because they cannot pull images from these registries.
+{: important}
+
+Before you begin:
+*   [Download the `jq` JSON processor command line package](https://stedolan.github.io/jq/download/){: external}. You use `jq` to combine the JSON value of the default global pull secret with the private registry pull secret that you want to add.
+*   [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+
+To add private registries, edit the global `pull-secret` in the `openshift-config` project.
+1.  Create a secret value that holds the credentials to access your private registry and store the decoded secret value in a JSON file. When you create the secret value, the credentials are automatically encoded to base64. By using the `--dry-run` option, the secret value is created only and no secret object is created in your cluster. The decoded secret value is then stored in a JSON file to later use in your global pull secret.
+    ```
+    oc create secret docker-registry <secret_name> --docker-server=<registry_URL> --docker-username=<docker_username> --docker-password=<docker_password> --docker-email=<docker_email> --dry-run=true --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode > myregistryconfigjson
+    ```
+    {: pre}
+    <table>
+    <caption>Understanding this command's components</caption>
+    <thead>
+    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>--namespace <em>&lt;project&gt;</em></code></td>
+    <td>Required. The OpenShift project of your cluster where you want to use the secret and deploy containers to. To list available projects in your cluster, run <code>oc get projects</code>.</td>
+    </tr>
+    <tr>
+    <td><code><em>&lt;secret_name&gt;</em></code></td>
+    <td>Required. The name that you want to use for your image pull secret.</td>
+    </tr>
+    <tr>
+    <td><code>--docker-server <em>&lt;registry_URL&gt;</em></code></td>
+    <td>Required. The URL to the registry where your private images are stored.</td>
+    </tr>
+    <tr>
+    <td><code>--docker-username <em>&lt;docker_username&gt;</em></code></td>
+    <td>Required. The username to log in to your private registry.</td>
+    </tr>
+    <tr>
+    <td><code>--docker-password <em>&lt;token_value&gt;</em></code></td>
+    <td>Required. The password to log in to your private registry, such as a token value.</td>
+    </tr>
+    <tr>
+    <td><code>--docker-email <em>&lt;docker-email&gt;</em></code></td>
+    <td>Required. If you have one, enter your Docker email address. If you do not have one, enter a fictional email address, such as`a@b.c`. This email is required to create a Kubernetes secret, but is not used after creation.</td>
+    </tr>
+    <tr>
+    <td><code>--dry-run=true</code></td>
+    <td>Include this flag to create the secret value only, and not create and store the secret object in your cluster.</td>
+    </tr>
+    <tr>
+    <td><code>--output="jsonpath={.data.\.dockerconfigjson}"</code></td>
+    <td>Get only the `.dockerconfigjson` value from the data section of the Kubernetes secret.</td>
+    </tr>
+    <tr>
+    <td><code>| base64 --decode > myregistryconfigjson</code></td>
+    <td>Download the decoded secret data to a local `myregistryconfigjson` file.</td>
+    </tr>
+    </tbody></table>
+2.  Retrieve the decoded secret value of the default global pull secret and store the value in a `dockerconfigjson` file.
+    ```
+    oc get secret pull-secret -n openshift-config --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode > dockerconfigjson
+    ```
+    {: pre}
+3.  Combine the downloaded private registry pull secret `myregistryconfigjson` file with the default global pull secret `dockerconfigjson` file.
+    ```
+    jq -s '.[0] * .[1]' dockerconfigjson myregistryconfigjson > dockerconfigjson-merged
+    ```
+    {: pre}
+4.  Update the global pull secret with the combined `dockerconfigjson-merged` file.
+    ```
+    oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=dockerconfigjson-merged
+    ```
+    {: pre}
+5.  Verify that the global pull secret is updated. Check that your private registry and each of the default Red Hat registries are in the output of the following command.
+    ```
+    oc get secret pull-secret -n openshift-config --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    {
+        "auths": {
+            "cloud.openshift.com": {
+                "auth": "<encoded_string>",
+                "email": "email@example.com"
+            },
+            "quay.io": {
+                "auth": "<encoded_string>",
+                "email": "email@example.com"
+            },
+            "registry.connect.redhat.com": {
+                "auth": "<encoded_string>",
+                "email": "email@example.com"
+            },
+            "registry.redhat.io": {
+                "auth": "<encoded_string>",
+                "email": "email@example.com"
+            },
+            "<private_registry>": {
+                "username": "iamapikey",
+                "password": "<encoded_string>",
+                "email": "email@example.com",
+                "auth": "<encoded_string>"
+            }
+        }
+    }
+    ```
+    {: screen}
+6.  To pick up the global configuration changes, reload all of the worker nodes in your cluster.
+    1.  Note the **ID** of the worker nodes in your cluster.
+        ```
+        ibmcloud oc worker ls -c <cluster_name_or_ID>
+        ```
+        {: pre}
+    2.  Reload each worker node.
+        ```
+        ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
+        ```
+        {: pre}
+7.  After the worker node are back in a healthy state, verify that the global pull secret is updated on a worker node. 
+    1.  Start a debugging pod to log in to a worker node. Use the **Private IP** that you retrieved earlier for the `<node_name>`. 
+        ```
+        oc debug node/<node_name>
+        ```
+        {: pre}
+    2.  Change the root directory to the host so that you can view files on the worker node.
+        ```
+        chroot /host
+        ```
+        {: pre}
+    3.  Verify that the Docker configuration file has the registry credentials that match the global pull secret that you set.
+        ```
+        vi /.docker/config.json
+        ```
+        {: pre}
+
+
+
