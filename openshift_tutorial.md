@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-20"
+lastupdated: "2020-04-24"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -39,7 +39,7 @@ subcollection: openshift
 With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog](https://docs.openshift.com/container-platform/4.2/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 {: shortdesc}
 
-OpenShift worker nodes are available for paid accounts and standard clusters only. You can create OpenShift clusters that run version 3.11 or 4.3. The operating system is Red Hat Enterprise Linux 7.
+OpenShift worker nodes are available for paid accounts and standard clusters only. You can create OpenShift clusters that run version 4.3 or 3.11. The operating system is Red Hat Enterprise Linux 7.
 {: note}
 
 ## Objectives
@@ -112,7 +112,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components 
     Example output:
     ```
     Client Version: v4.3.0
-    Kubernetes Version: v1.11.2
+    Kubernetes Version: v1.16.2
     ```
     {: screen}
 

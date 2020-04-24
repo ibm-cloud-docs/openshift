@@ -75,8 +75,8 @@ Your Red Hat OpenShift on IBM Cloud cluster has three types of updates: major, m
 
 Red Hat OpenShift on IBM Cloud supports the following versions of OpenShift. The worker node operating system is Red Hat Enterprise Linux 7.
 
-* **Default**: 3.11, which includes Kubernetes 1.11
-* **Latest**: 4.3, which includes Kubernetes 1.16
+* **Default and latest**: 4.3, which includes Kubernetes 1.16
+* **Other**: 3.11, which includes Kubernetes 1.11
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
 
@@ -87,8 +87,9 @@ oc version
 
 Example output:
 ```
-Client Version: v3.11.154
-Kubernetes Version: v1.11.0+d4cacc0
+Client Version: 4.3.3
+Server Version: 4.3.12
+Kubernetes Version: v1.16.2
 ```
 {: screen}
 
