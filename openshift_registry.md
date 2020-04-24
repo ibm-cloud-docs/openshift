@@ -33,6 +33,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
+
 # Setting up an image registry
 {: #registry}
 
