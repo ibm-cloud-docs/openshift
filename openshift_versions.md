@@ -99,7 +99,7 @@ Kubernetes Version: v1.16.2
 The following table records Red Hat OpenShift on IBM Cloud version release history. You can use this information for planning purposes, such as to estimate general time frames when a certain release might become unsupported. After the Red Hat OpenShift community releases a version update, the IBM team begins a process of hardening and testing the release for {{site.data.keyword.containerlong_notm}} environments. Availability and unsupported release dates depend on the results of these tests, community updates, security patches, and technology changes between versions. Plan to keep your cluster master and worker node version up-to-date.
 {: shortdesc}
 
-Red Hat OpenShift on IBM Cloud was first generally available with OpenShift version 3.11, which includes the Kubernetes project version 1.11. Dates that are marked with a dagger (`†`) are tentative and subject to change.
+Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: important}
 
 <table summary="This table shows the release history for Red Hat OpenShift on IBM Cloud.">
@@ -118,7 +118,7 @@ Red Hat OpenShift on IBM Cloud was first generally available with OpenShift vers
 </thead>
 <tbody>
 <tr>
-  <td><img src="images/icon_beta.png" align="left" width="28" style="width:28px;" alt="This version is supported as a beta."/></td>
+  <td><img src="images/checkmark-filled.png" align="left" width="28" style="width:28px;" alt="This version is supported as a beta."/></td>
   <td>4.3 / 1.16</td>
   <td>20 Apr 2020 at 12:00 UTC</td>
   <td>`†`</td>
