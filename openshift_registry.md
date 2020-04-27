@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-04-27"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -111,27 +111,18 @@ For more information, see the following topics.
 By default, your OpenShift cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}
 
-To view volume details including the storage class and size, you can describe the persistent volume claim.
+To view volume details including the storage class and size, you can describe the persistent volume claim. 
 
-| Command |
-| --- |
-| <pre class="pre"><code>oc describe pvc -n openshift-image-registry image-registry-storage</code></pre> |
-{: summary="The row contains the command to describe the storage device that backs the internal registry."}
-{: class="simple-tab-table"}
-{: caption="Command to describe the storage device in OpenShift 4.3 or later" caption-side="top"}
-{: #registrystorage1}
-{: tab-title="4.3+"}
-{: tab-group="registrystorage"}
-
-| Command |
-| --- |
-| <pre class="pre"><code>oc describe pvc registry-backing -n default</code></pre> |
-{: summary="The row contains the command to describe the storage device that backs the internal registry."}
-{: class="simple-tab-table"}
-{: caption="Command to describe the storage device in OpenShift 3.11" caption-side="top"}
-{: #registrystorage2}
-{: tab-title="3.11"}
-{: tab-group="registrystorage"}
+*   **Version 4**:
+    ```
+    oc describe pvc -n openshift-image-registry image-registry-storage
+    ```
+    {: pre}
+*   **Version 3**:
+    ```
+    oc describe pvc registry-backing -n default
+    ```
+    {: pre}
 
 Example output:
 ```
