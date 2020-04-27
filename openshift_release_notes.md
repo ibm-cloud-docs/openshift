@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-04-27"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 27 April 2020 | **Ingress ALB changelog**: Updated the [`ingress-auth` image build to 401](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog). |
 | 24 April 2020 | <ul><li>**Global pull secret**: Added how to [update the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret).</li><li>**OpenShift 4.3**: [OpenShift version 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43) is now the default version.</li></ul>|
 | 23 April 2020 | **Version changelogs**: Master patch updates are available for OpenShift [3.11.200_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog#311200_1548). |
 | 22 April 2020 | <ul><li>**Image pull secrets**: In clusters that run the latest 4.3 version, the `default-icr-io` and `default-<region>-icr-io` image pull secrets in the `default` project are replaced by a single `all-icr-io` image pull secret that has credentials to all the public and private regional registry domains.</li><li>**Private network connection to registry**: For accounts that have VRF and service endpoints enabled, image push and pull traffic to {{site.data.keyword.registrylong_notm}} is now on [the private network](/docs/openshift?topic=openshift-registry#cluster_registry_auth_private).</li></ul>|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-04-27"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -90,7 +90,7 @@ You can also use these steps to create more ALBs across zones in your cluster. W
 
 1. In each zone where you have worker nodes, create an ALB.
   ```
-  ibmcloud oc alb-create --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> [--user-ip <IP_address>]
+  ibmcloud oc alb create --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> [--user-ip <IP_address>]
   ```
   {: pre}
 
@@ -177,7 +177,7 @@ Note that all public ALBs in your cluster share the same IBM-assigned Ingress su
 
 2. In each zone, create an ALB on the new VLAN.
   ```
-  ibmcloud oc alb-create --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> [--user-ip <IP_address>]
+  ibmcloud oc alb create --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> [--user-ip <IP_address>]
   ```
   {: pre}
 
@@ -230,7 +230,7 @@ Note that all public ALBs in your cluster share the same IBM-assigned Ingress su
 
 4. Disable each ALB that is connected to the old VLANs.
   ```
-  ibmcloud oc alb-configure --alb-id <old_ALB_ID> --disable
+  ibmcloud oc alb configure --alb-id <old_ALB_ID> --disable
   ```
   {: pre}
 
