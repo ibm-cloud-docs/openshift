@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-21"
+lastupdated: "2020-04-27"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -206,7 +206,7 @@ If a container exceeds its limit, the container might be restarted or fail. If a
 
 **Limit**: The maximum amount of the resource that the container can consume. If the total amount of resources that is used across the containers exceeds the amount available on the worker node, containers can be evicted to free up space. To prevent eviction, set the resource request equal to the limit of the container. If no limit is specified, the default is the worker node's capacity.
 
-For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external}.
+For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external}.
 
 ```yaml
 resources:

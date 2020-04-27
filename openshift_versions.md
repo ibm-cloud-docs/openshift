@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-04-27"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -118,7 +118,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 </thead>
 <tbody>
 <tr>
-  <td><img src="images/checkmark-filled.png" align="left" width="28" style="width:28px;" alt="This version is supported as a beta."/></td>
+  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported as a beta."/></td>
   <td>4.3 / 1.16</td>
   <td>20 Apr 2020 at 12:00 UTC</td>
   <td>`†`</td>
@@ -139,7 +139,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 ## OpenShift 4.3
 {: #ocp43}
 
-<img src="images/certified_kubernetes_1x16.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.16 certification for Red Hat OpenShift on IBM Cloud."/> <img src="images/logo_redhat.png" alt="Red Hat OpenShift icon" width="16" style="width:16px; border-style: none"/> Red Hat OpenShift on IBM Cloud is a Certified Kubernetes product for version 1.16 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+<img src="images/certified_kubernetes_1x16.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.16 certification for Red Hat OpenShift on IBM Cloud."/> Red Hat OpenShift on IBM Cloud is a Certified Kubernetes product for version 1.16 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 With the release of OpenShift Container Platform 4.3, you get a new experience and capabilities for managing your cluster and its workloads. For more information, see the [OpenShift blog](https://blog.openshift.com/introducing-red-hat-openshift-4-3-to-enhance-kubernetes-security/){: external}.
 {: shortdesc}
@@ -160,21 +160,21 @@ For more information, check out the [comparison table between supported features
 ## Migrating from version 3.11 to 4.3 clusters
 {: #ocp-3-to-4-migration}
 
-You cannot update your Red Hat OpenShift on IBM Cloud cluster from version 3.11 to 4.3. Instead, you can use the [OpenShift Migration Operator](https://github.com/fusor/mig-operator){: external} to migrate your workloads from a 3.11 source cluster to a 4.3 destination cluster.
+You cannot update your Red Hat OpenShift on IBM Cloud cluster from version 3.11 to 4.3. Instead, you can use the [OpenShift Migration Operator](https://github.com/konveyor/mig-operator){: external} to migrate your workloads from a 3.11 source cluster to a 4.3 destination cluster.
 {: shortdesc}
 
 <p class="important">Keep in mind the following limitations to the migration operator.<ul><li>The OpenShift Migration Operator is a community tool that you choose to use, and is not supported by IBM or Red Hat.</li><li>You must [complete the prerequisites](#ocp3to4-migrate-prereqs) to prepare the resources in your {{site.data.keyword.cloud_notm}} account.</li><li>The instructions are intended for version 1.0.1 of the migration operator and for 3.11 source and 4.3 destination clusters. The instructions might not work with other versions.</li><li>The migration operator console does not work with Red Hat OpenShift on IBM Cloud. Instead, you can use the CLI to apply configuration files.</li><li>The migration operator is scoped to resources within a project or multiple projects. You cannot migrate resources that reside outside a project, such as cluster role bindings.</li><li>You cannot configure cross-origin resource sharing for 3.11 clusters.</li></ul></p>
 
 **How does the migration operator work?**<br>
-The migration operator is a set of custom resources that use [Velero](https://velero.io/){: external} and [Restic](https://restic.net/){: external} open source projects to back up your cluster resources in a project to an {{site.data.keyword.cos_full_notm}} service instance. Then, the operator restores the project resources on the destination cluster. For more information, see the [OpenShift tech topic](https://www.openshift.com/learn/topics/migration){: external} and a [conceptual overview of the architecture](https://github.com/fusor/mig-operator/blob/master/docs/usage/2.md).
+The migration operator is a set of custom resources that use [Velero](https://velero.io/){: external} and [Restic](https://restic.net/){: external} open source projects to back up your cluster resources in a project to an {{site.data.keyword.cos_full_notm}} service instance. Then, the operator restores the project resources on the destination cluster. For more information, see the [OpenShift tech topic](https://www.openshift.com/learn/topics/migration){: external} and a [conceptual overview of the architecture](https://github.com/konveyor/mig-operator/blob/master/docs/usage/2.md).
 
-For an architectural overview of the custom resource definitions that are applied in the clusters, see [CRD Architecture](https://github.com/fusor/mig-operator/blob/master/docs/usage/5.md#51-crd-architecture){: external}.
+For an architectural overview of the custom resource definitions that are applied in the clusters, see [CRD Architecture](https://github.com/konveyor/mig-operator/blob/master/docs/usage/5.md#51-crd-architecture){: external}.
 
 **Can I try out the migration with a sample app?**<br>
-Yes, the open source documentation includes two examples of [MSSQL](https://github.com/fusor/mig-operator/blob/master/docs/usage/3.md){: external} and [Sock Shop](https://github.com/fusor/mig-operator/blob/master/docs/usage/4.md){: external} apps. Keep in mind that the migration operator console is not supported in Red Hat OpenShift on IBM Cloud, so you can use the CLI instead.
+Yes, the open source documentation includes two examples of [MSSQL](https://github.com/konveyor/mig-operator/blob/master/docs/usage/3.md){: external} and [Sock Shop](https://github.com/konveyor/mig-operator/blob/master/docs/usage/4.md){: external} apps. Keep in mind that the migration operator console is not supported in Red Hat OpenShift on IBM Cloud, so you can use the CLI instead.
 
 **If the console does not work, where are instructions to apply the configuration files myself?**<br>
-After you complete the [prerequisites](#ocp3to4-migrate-prereqs), you can use the following [steps](#ocp3to4-migrate-source) as an example to configure your source and destination clusters for the migration. Remember that the instructions are intended for version 1.0.1 of the migration operator and for 3.11 source and 4.3 destination clusters. The instructions might not work with other versions, and are not updated in sync with the [open source community project docs](https://github.com/fusor/mig-operator/tree/master/docs/usage){: external}.
+After you complete the [prerequisites](#ocp3to4-migrate-prereqs), you can use the following [steps](#ocp3to4-migrate-source) as an example to configure your source and destination clusters for the migration. Remember that the instructions are intended for version 1.0.1 of the migration operator and for 3.11 source and 4.3 destination clusters. The instructions might not work with other versions, and are not updated in sync with the [open source community project docs](https://github.com/konveyor/mig-operator/tree/master/docs/usage){: external}.
 
 ### Prerequisites
 {: #ocp3to4-migrate-prereqs}
@@ -219,13 +219,13 @@ Deploy the migration operator to the source Red Hat OpenShift on IBM Cloud versi
     {: pre}
 4.  Deploy the migration operator to your source cluster. The configuration includes setting up an `openshift-migration` project; creating a custom resource definition for the migration operator; creating a service account, roles, and rolebindings for the resources; and creating the migration operator deployment.
     ```
-    oc create -f https://raw.githubusercontent.com/fusor/mig-operator/master/deploy/non-olm/v1.0.1/operator.yml
+    oc create -f https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/v1.0.1/operator.yml
     ```
     {: pre}
 5.  Deploy the migration controller to your source cluster.
     1.  Get the migration controller configuration file from GitHub.
         ```
-        curl https://raw.githubusercontent.com/fusor/mig-operator/master/deploy/non-olm/v1.0.1/controller-3.yml > migration-controller3.yaml
+        curl https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/v1.0.1/controller-3.yml > migration-controller3.yaml
         ```
         {: pre}
     2.  Uncomment and replace the `mig_ui_cluster_api_endpoint` value with the cluster master URL that you previously retrieved.
@@ -256,13 +256,13 @@ Deploy the migration operator to the destination Red Hat OpenShift on IBM Cloud 
 1.  For your version 4.3 cluster: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 2.  Deploy the migration operator to your destination cluster. The configuration includes setting up an `openshift-migration` project; creating a custom resource definition for the migration operator; creating a service account, roles, and rolebindings for the resources; and creating the migration operator deployment.
     ```
-    oc create -f https://raw.githubusercontent.com/fusor/mig-operator/master/deploy/non-olm/v1.0.1/operator.yml
+    oc create -f https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/v1.0.1/operator.yml
     ```
     {: pre}
 3.  Deploy the migration controller to your destination cluster. You must deploy the controller to both clusters due to the limitation of the migration operator console not being supported in Red Hat OpenShift on IBM Cloud.
     1.  Get the migration controller configuration file from GitHub.
         ```
-        curl https://raw.githubusercontent.com/fusor/mig-operator/master/deploy/non-olm/v1.0.1/controller-4.yml > migration-controller4.yaml
+        curl https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/v1.0.1/controller-4.yml > migration-controller4.yaml
         ```
         {: pre}
     2.  Change the `migration_ui` value to `false` and save the file.
@@ -587,7 +587,7 @@ To complete the migration process, create a sample plan to verify that what you 
     ```
     {: pre}
 
-    Do you see an error message similar to `Message: The migration has failed. See: Errors.`? Try [Debugging failed migrations](https://github.com/fusor/mig-operator/blob/master/docs/usage/5.md){: external}. For example, if you see a `Backup` error, check the Velero pod logs on the source cluster for more troubleshooting information.
+    Do you see an error message similar to `Message: The migration has failed. See: Errors.`? Try [Debugging failed migrations](https://github.com/konveyor/mig-operator/blob/master/docs/usage/5.md){: external}. For example, if you see a `Backup` error, check the Velero pod logs on the source cluster for more troubleshooting information.
     {: tip}
 
 The migration is complete when the version 4.3 destination cluster includes the project and resources that you migrated.

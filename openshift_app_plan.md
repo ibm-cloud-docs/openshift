@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-08"
+lastupdated: "2020-04-27"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -302,7 +302,7 @@ Want to make your secrets even more secured? Ask your cluster admin to [enable {
 ### How can I make sure that my app has the right resources?
 {: #resources}
 
-When you [specify your app YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), you can add Kubernetes functionalities to your app configuration that help your app get the right resources. In particular, [set resource limits and requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/){: external} for each container that is defined in your YAML file.
+When you [specify your app YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), you can add Kubernetes functionalities to your app configuration that help your app get the right resources. In particular, [set resource limits and requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} for each container that is defined in your YAML file.
 {: shortdesc}
 
 Additionally, your cluster admin might set up resource controls that can affect your app deployment, such as the following.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -49,7 +49,7 @@ Why {{site.data.keyword.cloud_notm}}: With Red Hat OpenShift on IBM Cloud, the E
 
 Key technologies:    
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [Provide access to public data with {{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started)
 * [Plug-and-play IBM Cloud Analytics services](https://www.ibm.com/cloud/analytics)
 
@@ -128,7 +128,7 @@ Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud allows gove
 Key technologies:    
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Container security and isolation](/docs/openshift?topic=openshift-security#security)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime)
 
 **Context: Port secures exchange of port data and shipping manifests that connects public and private organizations.**

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-16"
+lastupdated: "2020-04-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -36,7 +36,7 @@ subcollection: openshift
 # Storing data on software-defined storage (SDS) with Portworx
 {: #portworx}
 
-[Portworx](https://portworx.com/products/introduction/){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
+[Portworx](https://portworx.com/products/portworx-enterprise//){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
 {: shortdesc}
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Portworx is supported only in clusters that run version 3.11, and not available in version 4.3.
