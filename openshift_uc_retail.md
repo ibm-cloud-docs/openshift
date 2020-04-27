@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-04-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -50,7 +50,7 @@ Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud provides a 
 Red Hat OpenShift on IBM Cloud and key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [{{site.data.keyword.cos_full}} to persist and sync data across apps](/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#pub-sub-object-storage)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 
 **Context: Retailer shares data, by using APIs with global business partners to drive omnichannel sales**
 
@@ -138,7 +138,7 @@ Key technologies:
 * [Horizontal scaling to accelerate development](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Insights to market trends with Watson Discovery](https://www.ibm.com/cloud/watson-discovery)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/garage/toolchains/)
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [Inventory management with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=eventstreams-about#about)
 
 **Context: Traditional grocer increases customer traffic and sales with digital insights**
