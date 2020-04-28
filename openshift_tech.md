@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-20"
+lastupdated: "2020-04-28"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards
 
@@ -173,7 +173,7 @@ Review what information is stored with IBM when you use Red Hat OpenShift on IBM
 ### What information is stored with IBM when using Red Hat OpenShift on IBM Cloud?
 {: #pi-info}
 
-For each cluster that you create with Red Hat OpenShift on IBM Cloud cluster, IBM stores the information that is described in the following table: 
+For each cluster that you create with Red Hat OpenShift on IBM Cloud, IBM stores the information that is described in the following table: 
 
 |Information type|Data|
 |-------|----------|
