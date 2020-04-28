@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-04-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -463,7 +463,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     {: pre}
     * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your firewall.
     * If you don't have a firewall or your firewall does not block the pings and the pings still timeout, [check the status of your router pods](#errors-43).
-  * Multizone clusters: Router services in multizone clusters are created with a `/healthz` path so that you can check the health of each service IP address. The following HTTP cURL command uses the `/healthz` past, which is configured to return the `ok` status for a healthy IP.
+  * Multizone clusters: Router services in multizone clusters are created with a `/healthz` path so that you can check the health of each service IP address. The following HTTP cURL command uses the `/healthz` path, which is configured to return the `ok` status for a healthy IP.
     ```
     curl -X GET http://<router_svc_ip>/healthz -H "Host:router-default.<ingress_subdomain>"
     ```
