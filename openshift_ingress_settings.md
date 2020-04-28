@@ -48,7 +48,7 @@ After you expose your apps by creating an Ingress resource, you can further conf
 Expose non-default ports for the Ingress ALB.
 {: shortdesc}
 
-1. Edit the configuration file for the `ibm-cloud-provider-ingress-cm` configmap resource.
+1. Edit the YAML file for the `ibm-cloud-provider-ingress-cm` configmap.
   ```
   oc edit cm ibm-cloud-provider-ingress-cm -n kube-system
   ```
