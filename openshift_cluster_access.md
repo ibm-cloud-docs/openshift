@@ -147,33 +147,33 @@ The OpenShift master is accessible through the private service endpoint if autho
   {: screen}
 
 4. Create a YAML file that is named `oc-api-via-nlb.yaml`. This YAML creates a private `LoadBalancer` service and exposes the private service endpoint through that NLB. Replace `<private_service_endpoint_port>` with the port you found in the previous step.
-  ```yaml
-  apiVersion: v1
-  kind: Service
-  metadata:
-    name: oc-api-via-nlb
-    annotations:
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
-    namespace: default
-  spec:
-    type: LoadBalancer
-    ports:
-    - protocol: TCP
-      port: <private_service_endpoint_port>
-      targetPort: <private_service_endpoint_port>
-  ---
-  kind: Endpoints
-  apiVersion: v1
-  metadata:
-    name: oc-api-via-nlb
-    namespace: default
-  subsets:
-    - addresses:
-        - ip: 172.20.0.1
-      ports:
-        - port: 2040
-  ```
-  {: codeblock}
+   ```yaml
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: oc-api-via-nlb
+     annotations:
+       service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
+     namespace: default
+   spec:
+     type: LoadBalancer
+     ports:
+     - protocol: TCP
+       port: <private_service_endpoint_port>
+       targetPort: <private_service_endpoint_port>
+   ---
+   kind: Endpoints
+   apiVersion: v1
+   metadata:
+     name: oc-api-via-nlb
+     namespace: default
+   subsets:
+     - addresses:
+         - ip: 172.20.0.1
+       ports:
+         - port: 2040
+   ```
+   {: codeblock}
 
 5. Create the NLB and endpoint.
    1. Apply the configuration file that you previously created.

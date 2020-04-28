@@ -96,24 +96,18 @@ By default, each ALB has 2 replicas. Scale up your ALB processing capabilities b
   ```
   {: pre}
 
-2. For each ALB that is listed in the `data` section, add `"replicas": <number_of_replicas>,`.
-    Example for increasing the number of ALB pods to 3 replicas:
-    ```
-    ...
-    data:
-      <albID-1>: |
-        {
-            "cmd-line-args": ["--http-port=8080", "--https-port=9443"],
-            "replicas": 3,
-        }
-      <albID-2>: |
-        {
-            "cmd-line-args": ["--http-port=8080", "--https-port=9443"],
-            "replicas": 3,
-        }
-      ...
-    ```
-    {: screen}
+2. For each ALB that is listed in the `data` section, add `'{"replicas":<number_of_replicas>}'`. Example for increasing the number of ALB pods to 4 replicas:
+   ```yaml
+   apiVersion: v1
+   data:
+     <alb1-id>: '{"replicas":4}'
+     <alb2-id>: '{"replicas":4}'
+   kind: ConfigMap
+   metadata:
+     name: ibm-ingress-deploy-config
+     namespace: kube-system
+   ```
+   {: screen}
 
 3. Save and close the file. Your changes are applied automatically.
 
