@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-04-28"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -53,7 +53,6 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
     *  **Private Service Endpoint URL only**: If your cluster has only a private service endpoint enabled, continue with [Accessing clusters through the private service endpoint](#access_private_se). Note that this step requires a private network connection to your cluster.
 
 <br />
-
 
 
 ## Accessing OpenShift clusters through the public service endpoint
@@ -287,8 +286,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
     ```
     {: pre}
 
-    **From the API**: Log in to your cluster with the API such as via a curl request. 
-    
+    **From the API**: Log in to your cluster with the API such as via a curl request.
+
     1.  Get the **Master URL** of your cluster.
         ```
         ibmcloud oc cluster get -c <cluster_name_or_ID>
@@ -318,7 +317,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         https://<token_endpoint>/oauth/token
         ```
     3.  Log in to the cluster with the endpoint that you previously retrieved.
-        * <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server. 
+        * <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
         * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 3.11**: Replace `<URL>` with the master URL.
 
         Example curl request:
