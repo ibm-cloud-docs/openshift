@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-04-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -45,7 +45,7 @@ After you expose your apps by creating an Ingress resource, you can further conf
 ## Opening non-default ports in the Ingress ALB
 {: #opening_ingress_ports}
 
-By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose other ports, you can edit the `ibm-cloud-provider-ingress-cm` configmap resource.
+Expose non-default ports for the Ingress ALB.
 {: shortdesc}
 
 1. Edit the configuration file for the `ibm-cloud-provider-ingress-cm` configmap resource.
@@ -54,22 +54,10 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
   ```
   {: pre}
 
-2. Add a <code>data</code> section and specify public ports `80`, `443`, and any other ports you want to expose separated by a semi-colon (;).
+2. Add a `data` section and specify the public ports `80`, `443`, and any other ports you want to expose separated by a semi-colon (;).
 
     By default, ports 80 and 443 are open. If you want to keep 80 and 443 open, you must also include them in addition to any other ports you specify in the `public-ports` field. Any port that is not specified is closed. If you enabled a private ALB, you must also specify any ports that you want to keep open in the `private-ports` field.
     {: important}
-
-    ```yaml
-    apiVersion: v1
-    data:
-      public-ports: "80;443;<port3>"
-      private-ports: "80;443;<port4>"
-    kind: ConfigMap
-    metadata:
-      name: ibm-cloud-provider-ingress-cm
-      namespace: kube-system
-    ```
-    {: codeblock}
 
     Example that keeps ports `80`, `443`, and `9443` open:
     ```yaml
@@ -94,8 +82,6 @@ By default, only ports 80 and 443 are exposed in the Ingress ALB. To expose othe
 5. Optional:
   * Access an app via a non-standard TCP port that you opened by using the [`tcp-ports`](/docs/openshift?topic=openshift-ingress_annotation#tcp-ports) annotation.
   * Change the default ports for HTTP (port 80) and HTTPS (port 443) network traffic to a port that you opened by using the [`custom-port`](/docs/openshift?topic=openshift-ingress_annotation#custom-port) annotation.
-
-For more information about configmap resources, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){: external}.
 
 <br />
 
