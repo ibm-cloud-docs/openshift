@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2020
 lastupdated: "2020-04-29"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift, roks, rhoks, rhos, http2
 
 subcollection: openshift
 
