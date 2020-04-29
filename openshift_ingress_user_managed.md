@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-04-29"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -43,6 +43,9 @@ Bring your own Ingress controller to run on {{site.data.keyword.cloud_notm}} and
 {: important}
 
 In Red Hat OpenShift on IBM Cloud, IBM-provided application load balancers (ALBs) are based on a custom implementation of the NGINX Ingress controller. However, depending on what your app requires, you might want to configure your own custom Ingress controller instead of using the IBM-provided ALBs. For example, you might want to use the Istio `ingressgateway` load balancer service to control traffic for your cluster. When you bring your own Ingress controller, you are responsible for supplying the controller image, maintaining the controller, updating the controller, and any security-related updates to keep your Ingress controller free from vulnerabilities.
+
+If you choose to bring your own Ingress controller, IBM does not provide support for your Ingress deployment. You are responsible for configuring, updating, and managing your Ingress system. The following sections help you get started, but you are responsible for any changes that you must make to the steps.
+{: important}
 
 ## Exposing your Ingress controller by creating an NLB and a hostname
 {: #user_managed_nlb}
