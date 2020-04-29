@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-04-28"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -53,7 +53,6 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
     *  **Private Service Endpoint URL only**: If your cluster has only a private service endpoint enabled, continue with [Accessing clusters through the private service endpoint](#access_private_se). Note that this step requires a private network connection to your cluster.
 
 <br />
-
 
 
 ## Accessing OpenShift clusters through the public service endpoint
@@ -148,33 +147,33 @@ The OpenShift master is accessible through the private service endpoint if autho
   {: screen}
 
 4. Create a YAML file that is named `oc-api-via-nlb.yaml`. This YAML creates a private `LoadBalancer` service and exposes the private service endpoint through that NLB. Replace `<private_service_endpoint_port>` with the port you found in the previous step.
-  ```yaml
-  apiVersion: v1
-  kind: Service
-  metadata:
-    name: oc-api-via-nlb
-    annotations:
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
-    namespace: default
-  spec:
-    type: LoadBalancer
-    ports:
-    - protocol: TCP
-      port: <private_service_endpoint_port>
-      targetPort: <private_service_endpoint_port>
-  ---
-  kind: Endpoints
-  apiVersion: v1
-  metadata:
-    name: oc-api-via-nlb
-    namespace: default
-  subsets:
-    - addresses:
-        - ip: 172.20.0.1
-      ports:
-        - port: 2040
-  ```
-  {: codeblock}
+   ```yaml
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: oc-api-via-nlb
+     annotations:
+       service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
+     namespace: default
+   spec:
+     type: LoadBalancer
+     ports:
+     - protocol: TCP
+       port: <private_service_endpoint_port>
+       targetPort: <private_service_endpoint_port>
+   ---
+   kind: Endpoints
+   apiVersion: v1
+   metadata:
+     name: oc-api-via-nlb
+     namespace: default
+   subsets:
+     - addresses:
+         - ip: 172.20.0.1
+       ports:
+         - port: 2040
+   ```
+   {: codeblock}
 
 5. Create the NLB and endpoint.
    1. Apply the configuration file that you previously created.
@@ -287,8 +286,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
     ```
     {: pre}
 
-    **From the API**: Log in to your cluster with the API such as via a curl request. 
-    
+    **From the API**: Log in to your cluster with the API such as via a curl request.
+
     1.  Get the **Master URL** of your cluster.
         ```
         ibmcloud oc cluster get -c <cluster_name_or_ID>
@@ -318,7 +317,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         https://<token_endpoint>/oauth/token
         ```
     3.  Log in to the cluster with the endpoint that you previously retrieved.
-        * <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server. 
+        * <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
         * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 3.11**: Replace `<URL>` with the master URL.
 
         Example curl request:

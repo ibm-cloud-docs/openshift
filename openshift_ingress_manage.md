@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-04-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -81,7 +81,47 @@ ibmcloud oc alb rollback --cluster <cluster_name_or_ID>
 ## Scaling ALBs
 {: #scale_albs}
 
-When you create a standard cluster, one public and one private ALB is created in each zone where you have worker nodes. Each ALB can handle 32,768 connections per second. However, if you must process more than 32,768 connections per second, you can scale up your ALBs by creating more ALBs.
+When you create a standard cluster, one public and one private ALB is created in each zone where you have worker nodes. Each ALB can handle 32,768 connections per second. However, if you must process more than 32,768 connections per second, you can scale up your ALBs by increasing the number of ALB pod replicas or by creating more ALBs.
+{: shortdesc}
+
+### Increasing the number of ALB pod replicas
+{: #alb_replicas}
+
+By default, each ALB has 2 replicas. Scale up your ALB processing capabilities by increasing the number of ALB pods.
+{: shortdesc}
+
+1. Edit the YAML file for the `ibm-ingress-deploy-config` configmap.
+  ```
+  oc edit cm ibm-ingress-deploy-config -n kube-system
+  ```
+  {: pre}
+
+2. For each ALB that is listed in the `data` section, add `'{"replicas":<number_of_replicas>}'`. Example for increasing the number of ALB pods to 4 replicas:
+   ```yaml
+   apiVersion: v1
+   data:
+     <alb1-id>: '{"replicas":4}'
+     <alb2-id>: '{"replicas":4}'
+   kind: ConfigMap
+   metadata:
+     name: ibm-ingress-deploy-config
+     namespace: kube-system
+   ```
+   {: screen}
+
+3. Save and close the file. Your changes are applied automatically.
+
+4. Verify that the number of ALB pods that are `Ready` are increased to the number of replicas that you specified.
+  ```
+  oc get pods -n kube-system | grep alb
+  ```
+  {: pre}
+
+### Creating more ALBs
+{: #create_alb}
+
+Scale up your ALB processing capabilities by creating more ALBs.
+{: shortdesc}
 
 For example, if you have worker nodes in `dal10`, a default public ALB exists in `dal10`. This default public ALB is deployed as two pods on two worker nodes in that zone. However, to handle more connections per second, you want to increase the number of ALBs in `dal10`. You can create a second public ALB in `dal10`. This ALB is also deployed as two pods on two worker nodes in `dal10`. All public ALBs in your cluster share the same IBM-assigned Ingress subdomain, so the IP address of the new ALB is automatically added to your Ingress subdomain. You do not need to change your Ingress resource files.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-20"
+lastupdated: "2020-04-28"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards
 
@@ -173,7 +173,7 @@ Review what information is stored with IBM when you use Red Hat OpenShift on IBM
 ### What information is stored with IBM when using Red Hat OpenShift on IBM Cloud?
 {: #pi-info}
 
-For each cluster that you create with Red Hat OpenShift on IBM Cloud cluster, IBM stores the information that is described in the following table: 
+For each cluster that you create with Red Hat OpenShift on IBM Cloud, IBM stores the information that is described in the following table: 
 
 |Information type|Data|
 |-------|----------|
@@ -255,6 +255,6 @@ Review the list of 3rd party services that Red Hat OpenShift on IBM Cloud connec
 | Github Enterprise | GitHub Enterprise is used to track service enhancements, features, and customer issues. When a customer issue is identified, the cluster ID, worker node IDs, the flavor of the worker nodes, and the zone where the worker nodes are deployed to are documented. This information is then shared with the service team to start troubleshooting the issue. | 
 | Launch Darkly | To manage the roll out of new features in Red Hat OpenShift on IBM Cloud, Launch Darkly feature flags are used. A feature flag controls the visibility and availability of a feature to a selected user base. | 
 | Let's Encrypt | This service is used as the Certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_short}}.|
-| Razee | [Razee](https://razee.io/){: external} is an open-source project that was developed by IBM to automate and manage the deployment of Kubernetes resources, versions, features, and security patches across Red Hat OpenShift on IBM Cloud environments, and to visualize deployment information. Razee integrates with Launch Darkly to control the visibility of these features to the Red Hat OpenShift on IBM Cloud use base. You can also use Razee to manage the rollout of your own deployments across multiple clusters. For more information, see the [Razee documentation](https://github.com/razee-io/Razee){: external}.   |
+| Razee | [Razee](https://razee.io/){: external} is an open-source project that was developed by IBM to automate and manage the deployment of Kubernetes resources, versions, features, and security patches across Red Hat OpenShift on IBM Cloud environments, and to visualize deployment information. Razee integrates with Launch Darkly to control the visibility of these features to the Red Hat OpenShift on IBM Cloud user base. You can also use Razee to manage the rollout of your own deployments across multiple clusters. For more information, see the [Razee documentation](https://github.com/razee-io/Razee){: external}.   |
 | Slack | Slack is used as the IBM-internal communication medium to troubleshoot cluster issues and bring together internal SMEs to resolve customer issues. Diagnostic information about clusters are sent to a private Slack channel and include the customer account ID, cluster ID, and details about the worker nodes. |
 

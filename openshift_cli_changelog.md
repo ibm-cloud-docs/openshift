@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-04-28"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -102,7 +102,7 @@ Review the following changes for 0.4 versions of the CLI plug-in.
 | 0.4.42 | 24 Oct 2019 |<ul><li>Adds the cluster ID to the output of `ibmcloud oc cluster create`.</li><li>Updates the Go version to 1.12.10 to fix `golang` vulnerabilities for [CVE-2019-16276](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-16276){: external}.</li></ul>|
 | 0.4.38 | 14 Oct 2019 |<ul><li>Adds the `--secret-namespace` flag to the `ibmcloud oc nlb-dns create classic` command to specify the Kubernetes namespace that you want the SSL secret for the DNS subdomain to be created in.</li><li>Updates the help text in various languages.</li></ul>|
 | 0.4.31 | 24 Sep 2019 |<ul><li>Removes the deprecated `region get`, `region set`, and `region ls` commands from help output.</li><li>Updates command structure to the new spaced format in help output.</li><li>Adds a warning to the output of legacy `cluster config` behavior. For more information, see the [version 1.0 plug-in documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta).</li><li>Fixes a bug so that `worker reload` and `messages` commands now fail if the command errors.</li><li>Updates the help text in various languages.</li></ul>|
-| 0.4.23 | 16 Sep 2019 |<ul><li>Decreases startup time for the plug-in.</li><li>Fixes a Go version issue for macOS users.</li><li>Improves debug tracing.</li><li>In `ibmcloud oc logging filter` commands, changes the `--logging-config` flag from accepting multiple values in a comma-separated list to requiring repeated flags.</li><li>Minor bug and security fixes.</li><li>Updates message, warning, and help text.</li></ul>|
+| 0.4.23 | 16 Sep 2019 |<ul><li>Decreases startup time for the plug-in.</li><li>Fixes a Go version issue for macOS users.</li><li>Improves debug tracing.</li><li>In `ibmcloud oc logging filter` commands, the syntax of the `--logging-config` flag changes from accepting multiple values in a comma-separated list to requiring repeated flags.</li><li>Minor bug and security fixes.</li><li>Updates message, warning, and help text.</li></ul>|
 | 0.4.3 | 04 Sep 2019 | Adds deprecation warnings for legacy commands to error messages that are sent to `stderr`. |
 | 0.4.1 | 03 Sep 2019 |<ul><li>Sets the Red Hat OpenShift on IBM Cloud plug-in to the redesigned format by default. This redesigned version includes changes such as categorical lists instead of an alphabetical list of commands in the output of `ibmcloud oc help`, spaced-structured commands instead of hyphenated-structure commands, repeated flags instead of multiple values in comma-separated lists, and more. For a full list of the changes between version `0.3` and `0.4`, see the comparison table in [Using the beta Red Hat OpenShift on IBM Cloud plug-in](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta).</li><li>Adds the [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) command to rewrite scripts that call `ibmcloud oc` commands.</li><li>Improves error handling for `ibmcloud oc cluster ls`.</li><li>Updates help text.</li></ul>|
 {: caption="Overview of version changes for version 0.4 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-04-29"
 
 keywords: openshift
 subcollection: openshift
@@ -814,6 +814,8 @@ subcollection: openshift
 [Managing the Ingress ALB lifecycle](/docs/openshift?topic=openshift-ingress-manage)
 * [Updating ALBs](/docs/openshift?topic=openshift-ingress-manage#alb-update)
 * [Scaling ALBs](/docs/openshift?topic=openshift-ingress-manage#scale_albs)
+  * [Increasing the number of ALB pod replicas](/docs/openshift?topic=openshift-ingress-manage#alb_replicas)
+  * [Creating more ALBs](/docs/openshift?topic=openshift-ingress-manage#create_alb)
 * [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress-manage#migrate-alb-vlan)
 * [Increasing the restart readiness check time for ALB pods](/docs/openshift?topic=openshift-ingress-manage#readiness-check)
 

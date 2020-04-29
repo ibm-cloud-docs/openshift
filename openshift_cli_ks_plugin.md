@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-17"
+lastupdated: "2020-04-28"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2285,16 +2285,9 @@ ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip
 </dl>
 
 **Examples**:
-
-Example for enabling an ALB:
-```
-ibmcloud oc alb configure classic --alb-id private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --enable
-```
-{: pre}
-
 Example for enabling an ALB with a user-provided IP address:
 ```
-ibmcloud oc alb configure classic --alb-id private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --enable --user-ip user_ip
+ibmcloud oc alb configure classic --alb-id private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --enable --user-ip 169.XX.XXX.XX
 ```
 {: pre}
 

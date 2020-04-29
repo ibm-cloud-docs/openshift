@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-04-29"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -145,7 +145,7 @@ To set up routes to publicly expose apps in version 4.3 and 3.11 clusters:
       <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
     * Edge: For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route edge --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
       ```
       {: pre}
     * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
@@ -242,7 +242,7 @@ To use routes to privately expose your apps in version 4.3 clusters, you must cr
       <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
     * Edge: For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route edge --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
       ```
       {: pre}
     * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
