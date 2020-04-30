@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-29"
+lastupdated: "2020-04-30"
 
-keywords: openshift, roks, rhoks, rhos, http2
+keywords: openshift, roks, rhoks, rhos, http2, quota
 
 subcollection: openshift
 
@@ -43,16 +43,17 @@ subcollection: openshift
 If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud limitations, contact the IBM team in the [internal](https://test.cloud.ibm.com/docs/containers?topic=containers-cs_internal#internal_help) or [external Slack](https://ibm-cloud-success.slack.com){: external}.
 {: tip}
 
-## Service limitations
+## Service and quota limitations
 {: #tech_limits}
 
-Red Hat OpenShift on IBM Cloud comes with the following service limitations. Keep in mind that the [classic](#classic_limits) cluster limitations also apply.
+Red Hat OpenShift on IBM Cloud comes with the following service limitations and quotas. Keep in mind that the [classic](#classic_limits) cluster limitations also apply.
 {: shortdesc}
 
 | Category | Description |
 | -------- | ----------- |
 | API rate limits | 100 requests per 10 seconds to the Red Hat OpenShift on IBM Cloud API for each unique source IP address. |
 | App deployment | The apps that you deploy to and services that you integrate with your cluster must be able to run on the operating system of the worker nodes. |
+| Cluster quota | You cannot exceed 100 clusters per region. If you need more than 100 clusters, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support). In the support case, include the new cluster quota limit for the region that you want. |
 | Container images | You cannot use the [Container Image Security Enforcement (CISE) Helm chart](/docs/Registry?topic=registry-security_enforce) with OpenShift clusters. |
 | Free clusters | You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then redeploy the apps that you try out in the Kubernetes cluster to your OpenShift cluster. |
 | Kubernetes | Make sure to review the [Kubernetes project limitations](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external}. |
@@ -61,6 +62,7 @@ Red Hat OpenShift on IBM Cloud comes with the following service limitations. Kee
 | Logging | <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11 only**: <ul><li>You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you cannot modify the default configuration of the Red Hat OpenShift on IBM Cloud cluster.</li><li>Collecting and forwarding API audit logs to {{site.data.keyword.la_full_notm}} is not supported.</li></ul> |
 | Monitoring | The [built-in Prometheus](/docs/openshift?topic=openshift-deploy_app#openshift_access_oc_services) alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are part of the IBM-managed cluster master, so you can ignore these alerts.</br></br>Example alert:</br>`alert: KubeControllerManagerDown`</br>`expr: absent(up{job="kube-controllers"}`</br>`  == 1)</br>for: 15m</br>labels:`</br>  `severity: critical`</br>`annotations:`</br>` message: KubeControllerManager has disappeared from Prometheus target discovery.`|
 | Multifactor authentication | If your account uses [multifactor authentication (MFA)](/docs/iam?topic=iam-types), the OpenShift web console cannot authenticate and does not work. |
+| Worker node quota | You cannot exceed 500 worker nodes across all clusters in a region. If you need more than 500 worker nodes in a region, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support). In the support case, include the new worker node quota limit for the region that you want.|
 {: summary="This table contains information on general Red Hat OpenShift on IBM Cloud limitations. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Red Hat OpenShift on IBM Cloud limitations"}
 
@@ -108,7 +110,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Pod instances | You can run 110 pods per worker node. If you have worker nodes that run Kubernetes 1.14.3_1524 or later, and are provisioned with 11 CPU cores or more, you can support 10 pods per core, up to a limit of 250 pods per worker node. The number of pods includes `kube-system` and `ibm-system` pods that run on the worker node. For improved performance, consider limiting the number of pods that you run per compute core so that you do not overuse the worker node. For example, on a worker node with a `b3c.4x16` flavor, you might run 10 pods per core that use no more than 75% of the worker node total capacity. |
 | Worker node flavors | Worker nodes are available in [select flavors](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node) of compute resources. |
 | Worker node host access | For security, you cannot SSH into the worker node compute host. |
-| Worker node instances | You can have 900 worker nodes per cluster. If you plan to exceed 900 per cluster, contact the Red Hat OpenShift on IBM Cloud team in the [internal](https://test.cloud.ibm.com/docs/containers?topic=containers-cs_internal#internal_help) or [external Slack](https://ibm-cloud-success.slack.com){: external} first. If you see an IBM Cloud infrastructure capacity limit on the number of instances per data center or that are ordered each month, contact your IBM Cloud infrastructure representative. |
+| Worker node instances | You cannot exceed 500 worker nodes across all clusters in a region. If you see an IBM Cloud infrastructure capacity limit on the number of instances per data center or that are ordered each month, contact your IBM Cloud infrastructure representative. |
 {: summary="This table contains information on compute limitations for classic clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Classic cluster compute limitations"}
 

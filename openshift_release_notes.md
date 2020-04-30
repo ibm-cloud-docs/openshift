@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-29"
+lastupdated: "2020-04-30"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 30 April 2020 | **Cluster and worker node quotas**: Now, each region in your {{site.data.keyword.cloud_notm}} account has quotas for OpenShift clusters and workers. You can have **100 clusters** and **500 worker nodes** across clusters per region. With quotas in place, your account is better protected from accidental requests or billing surprises. Need more clusters? No problem, just [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support). In the support case, include the new cluster or worker node quota limit for the region that you want. For more information, see the [Service limitations](/docs/openshift?topic=openshift-limitations). |
 | 29 April 2020 | <ul><li>**ALB pod scaling**: Added steps for sclaing up your ALB processing capabilities by [increasing the number of ALB pods replicas](/docs/openshift?topic=openshift-ingress-manage#alb_replicas).</li></ul> |
 | 27 April 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`ingress-auth` image build to 401](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li><li>**Version changelogs**: Worker node patch updates are available for OpenShift [`4.3.13_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4313_1521) and [`3.11.200_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311200_1549).</li></ul> |
 | 24 April 2020 | <ul><li>**Global pull secret**: Added how to [update the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret).</li><li>**OpenShift 4.3**: [OpenShift version 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43) is now the default version.</li></ul>|

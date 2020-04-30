@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-29"
+lastupdated: "2020-04-30"
 
 keywords: openshift
 subcollection: openshift
@@ -1477,7 +1477,7 @@ subcollection: openshift
 
 [Service limitations](/docs/openshift?topic=openshift-openshift_limitations)
 
-[Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
+[Service and quota limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
 * [Version 4.3 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
 
 [Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
