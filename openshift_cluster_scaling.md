@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-29"
+lastupdated: "2020-05-01"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -682,11 +682,37 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
     helm upgrade --reset-values ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --recreate-pods
     ```
     {: pre}
-3.  To verify your changes, review the Helm chart values again.
-    ```
-    helm get values ibm-iks-cluster-autoscaler -a
-    ```
-    {: pre}
+3. Verify your changes.
+    1. Review the Helm chart values again.
+      ```
+      helm get values ibm-iks-cluster-autoscaler -a
+      ```
+      {: pre}
+
+    2. Verify that the config map is correct by checking that the `workerPoolsConfig.json` field is updated and that the `workerPoolsConfigStatus` field shows a `SUCCESS` message.
+      ```
+      oc get cm iks-ca-configmap -n kube-system -o yaml
+      ```
+      {: pre}
+
+      Example output where the default worker pool is enabled for autoscaling:
+      ```
+      apiVersion: v1
+      data:
+        workerPoolsConfig.json: |
+          [{"name": "default", "minSize": 3, "maxSize": 5, "enabled": true }]
+      kind: ConfigMap
+      metadata:
+        annotations:
+          workerPoolsConfigStatus: '{"1:2:default":"SUCCESS"}'
+        creationTimestamp: "2019-08-23T14:26:54Z"
+        name: iks-ca-configmap
+        namespace: kube-system
+        resourceVersion: "12757878"
+        selfLink: /api/v1/namespaces/kube-system/configmaps/iks-ca-configmap
+        uid: bd661f95-35ef-433d-97e0-5d1ac092eafb
+      ```
+      {: screen}
 
 ## Limiting apps to run on only certain autoscaled worker pools
 {: #ca_limit_pool}
