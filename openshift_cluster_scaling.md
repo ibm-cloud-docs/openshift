@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-01"
+lastupdated: "2020-05-03"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -668,9 +668,13 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
     <tr>
     <td>`customImageVersion`</td>
     <td>To override the default installation version, specify the version of the cluster autoscaler Helm chart that you want to install.</td>
+    </tr>
+    <tr>
     <td>`maxRetryGap`</td>
     <td>Set the maximum time in seconds to retry after failing to connect to the service API.</td>
     <td>60</td>
+    </tr>
+    <tr>
     <td>`retryAttempts`</td>Set the maximum number of attempts to retry after failing to connect to the service API.</td>
     <td>32</td>
     </tr>
