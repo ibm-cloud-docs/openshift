@@ -45,7 +45,7 @@ You can use Calico and Kubernetes to create network policies for a cluster. With
 <dt>Kubernetes network policies</dt>
 <dd>[Kubernetes network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/services-networking/network-policies/) specify how pods can communicate with other pods and with external endpoints. Both incoming and outgoing network traffic can be allowed or blocked based on protocol, port, and source or destination IP addresses. Traffic can also be filtered based on pod and namespace labels. Kubernetes network policies are applied by using `oc` commands or the Kubernetes APIs. When a Kubernetes network policy is applied, it is automatically converted into a Calico network policy so that Calico can apply it as an `Iptables` rule. The Calico network policy name has the `knp.default` prefix. To update the policy in the future, update the Kubernetes policy, and the updates are automatically applied to the Calico network policy.</dd>
 <dt>Calico network policies</dt>
-<dd>[Calico network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/getting-started/bare-metal/policy/) are a superset of the Kubernetes network policies and are applied by using `calicoctl` commands. Calico policies add the following features.
+<dd>[Calico network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/security/protect-host) are a superset of the Kubernetes network policies and are applied by using `calicoctl` commands. Calico policies add the following features.
   <ul><li>Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or CIDR.</li>
   <li>Allow or block network traffic for pods across namespaces.</li>
   <li>[Block inbound traffic to Kubernetes LoadBalancer or NodePort services](#block_ingress).</li></ul></dd>
@@ -53,7 +53,7 @@ You can use Calico and Kubernetes to create network policies for a cluster. With
 
 Calico enforces these policies, including any Kubernetes network policies that are automatically converted to Calico policies, by setting up Linux Iptables rules on the Kubernetes worker nodes. Iptables rules serve as a firewall for the worker node to define the characteristics that the network traffic must meet to be forwarded to the targeted resource.
 
-In OpenShift Container Platform version 4.3, Calico is based on the Kubernetes data-store driver. For more information, see the [Calico documentation](https://docs.projectcalico.org/v2.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/){: external}.
+In OpenShift Container Platform version 4.3, Calico is based on the Kubernetes data-store driver. For more information, see the [Calico documentation](https://docs.projectcalico.org/getting-started/kubernetes/installation/hosted/kubernetes-datastore/){: external}.
 
 <br />
 
@@ -270,7 +270,7 @@ Some common uses for Calico pre-DNAT network policies:
   - Block traffic from certain source IP addresses or CIDRs (blacklisting)
   - Allow traffic from only certain source IP addresses or CIDRs (whitelisting), and block all other traffic
 
-To see how to whitelist or blacklist source IP addresses, try the [Using Calico network policies to block traffic tutorial](/docs/containers?topic=containers-policy_tutorial#policy_tutorial). For more example Calico network policies that control traffic to and from your cluster, you can check out the [stars policy demo](https://docs.projectcalico.org/getting-started/kubernetes/tutorials/stars-policy/){: external} and the [advanced network policy](https://docs.projectcalico.org/getting-started/kubernetes/tutorials/advanced-policy){: external}.
+To see how to whitelist or blacklist source IP addresses, try the [Using Calico network policies to block traffic tutorial](/docs/containers?topic=containers-policy_tutorial#policy_tutorial). For more example Calico network policies that control traffic to and from your cluster, you can check out the [stars policy demo](https://docs.projectcalico.org/security/tutorials/kubernetes-policy-demo/kubernetes-demo){: external} and the [advanced network policy](https://docs.projectcalico.org/security/tutorials/kubernetes-policy-advanced){: external}.
 {: tip}
 
 **Before you begin:**

@@ -51,7 +51,7 @@ Seeing errors when you deploy your app? OpenShift has different default settings
 ### Deploying apps through the console
 {: #deploy_apps_ui}
 
-You can create apps through various methods in the OpenShift console by using the **Developer** perspective. For more information, see the [OpenShift documentation](http://docs.openshift.com/container-platform/4.2/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
+You can create apps through various methods in the OpenShift console by using the **Developer** perspective. For more information, see the [OpenShift documentation](http://docs.openshift.com/container-platform/4.2/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
 
 1.  From the [Cluster](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) page, select your cluster.
@@ -235,7 +235,7 @@ You can deploy IBM Cloud Paks&trade;, licensed software, and other 3rd party int
 You can use the OpenShift console to manage your apps, deploy apps from the catalog, and access built-in functionality to help you operate your cluster. The OpenShift console is deployed to your cluster by default, instead of the Kubernetes dashboard as in community Kubernetes clusters.
 {: shortdesc}
 
-For more information about the console, see the [OpenShift documentation](http://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
+For more information about the console, see the [OpenShift documentation](http://docs.openshift.com/container-platform/4.3/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
 
 1.  From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your OpenShift cluster, then click **OpenShift web console**.
 2.  Explore the different areas of the OpenShift web console, as described in the following tabbed table.

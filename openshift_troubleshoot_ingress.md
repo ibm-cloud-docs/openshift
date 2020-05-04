@@ -1084,7 +1084,7 @@ Ingress requires at least two worker nodes per zone to ensure high availability 
 
 {: tsResolve}
 The method to increase the number of worker nodes per zone depends on whether you restrict network traffic to edge worker nodes.
-* **If you do not use edge nodes**: Ensure that at least two worker nodes exist in each zone by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool), [creating a new worker pool in a VPC cluster](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [creating a new worker pool in a classic cluster](/docs/openshift?topic=openshift-add_workers#add_pool).
+* **If you do not use edge nodes**: Ensure that at least two worker nodes exist in each zone by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) or [creating a new worker pool in a classic cluster](/docs/openshift?topic=openshift-add_workers#add_pool).
 * **If you use edge nodes**: Ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge) are enabled in each zone.
 
 After the new worker nodes deploy, the ALB pods are automatically scheduled to deploy to those worker nodes.
