@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-28"
+lastupdated: "2020-05-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1061,6 +1061,33 @@ Review the following reasons why the ALB secret might fail and the corresponding
   </tr>
  </tbody></table>
 
+<br />
+
+
+## 3.11: ALB pods do not deploy to worker nodes
+{: #alb-pod-affinity}
+
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
+{: note}
+
+
+{: tsSymptoms}
+When you run `oc get pods -n kube-system | grep alb`, either no ALB pods or only some ALB pods successfully deployed to your worker nodes. When you describe an ALB pod by running `oc describe pod -n kube-system <pod_name>`, you see a message similar to the following in the **Events** section of the output.
+```
+0/3 nodes are available: 1 node(s) didn’t match pod affinity/anti-affinity, 2 node(s) didn’t match node selector.
+```
+{: screen}
+
+{: tsCauses}
+Ingress requires at least two worker nodes per zone to ensure high availability and that periodic updates are applied. By default, ALB pods have two replicas. However, ALB pods have anti-affinity rules to ensure that only one pod is scheduled to each worker node for high availability. When only one worker node exists per zone in your cluster, ALB pods cannot deploy correctly.
+
+{: tsResolve}
+The method to increase the number of worker nodes per zone depends on whether you restrict network traffic to edge worker nodes.
+* **If you do not use edge nodes**: Ensure that at least two worker nodes exist in each zone by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool), [creating a new worker pool in a VPC cluster](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [creating a new worker pool in a classic cluster](/docs/openshift?topic=openshift-add_workers#add_pool).
+* **If you use edge nodes**: Ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge) are enabled in each zone.
+
+After the new worker nodes deploy, the ALB pods are automatically scheduled to deploy to those worker nodes.
 <br />
 
 
