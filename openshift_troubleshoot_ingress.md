@@ -1064,7 +1064,7 @@ Review the following reasons why the ALB secret might fail and the corresponding
 <br />
 
 
-## 3.11: ALB pods do not deploy to worker nodes
+## 3.11 clusters: ALB pods do not deploy to worker nodes
 {: #alb-pod-affinity}
 
 
