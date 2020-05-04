@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-05-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -128,7 +128,7 @@ Technical solution:
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.
 * Shipping customers have real-time access to shipments’ locations, delivery schedules, and even approved port records.
 * Transit partners at various shipping terminals are aware of manifests and shipment details so that onsite logistics are improved, instead of delayed.
-* Separately from this story, [Maersk and IBM formed a joint venture](https://www.ibm.com/press/us/en/pressrelease/53602.wss) to improve international supply chains with Blockchain.
+* Separately from this story, [Maersk and IBM formed a joint venture](https://www.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03) to improve international supply chains with Blockchain.
 
 ## Airline delivers innovative Human Resources (HR) benefits site in under 3 weeks
 {: #uc_airline}
