@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-05-04"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -159,7 +159,7 @@ For more information about how to install and use Portworx with Red Hat OpenShif
 ### Billing and support
 {: #portworx-billing-support}
 
-Classic SDS worker node machines that come with local disks, and classic virtual machines that you use for Portworx are included in your monthly Red Hat OpenShift on IBM Cloud bill. For pricing information, see the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/cluster). The Portworx license is a separate cost and is not included in your monthly bill.
+Classic SDS worker node machines that come with local disks, and classic virtual machines that you use for Portworx are included in your monthly Red Hat OpenShift on IBM Cloud bill. For pricing information, see the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/about). The Portworx license is a separate cost and is not included in your monthly bill.
 {: shortdesc}
 
 If you run into an issue with using Portworx or you want to chat about Portworx configurations for your specific use case, post a question in the `portworx-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).

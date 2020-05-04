@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-05-04"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -426,7 +426,7 @@ Scheduling algorithms determine how an NLB 2.0 assigns network connections to yo
                   - <APP_NAME>
               topologyKey: kubernetes.io/hostname</code></pre>
 
-You can find the complete example in [this IBM Cloud deployment pattern blog](https://www.ibm.com/cloud/blog/new-builders/ibm-cloud-kubernetes-service-deployment-patterns-4-multi-zone-cluster-app-exposed-via-loadbalancer-aggregating-whole-region-capacity){: external}.</dd>
+You can find the complete example in [this IBM Cloud deployment pattern blog](https://www.ibm.com/cloud/blog/ibm-cloud-kubernetes-service-deployment-patterns-4-multi-zone-cluster-app-exposed-via-loadbalancer-aggregating-whole-region-capacity){: external}.</dd>
 </dl>
 
 ### Unsupported scheduling algorithms

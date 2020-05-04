@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-30"
+lastupdated: "2020-05-04"
 
 keywords: openshift
 subcollection: openshift
@@ -1409,6 +1409,7 @@ subcollection: openshift
   * [Step 5: Check your domain mappings and Ingress resource configuration](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ts_ingress_config)
   * [Removing an ALB from DNS for debugging](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#one_alb)
 * [3.11 clusters: Ingress application load balancer (ALB) secret issues](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_albsecret_fails)
+* [3.11 clusters: ALB pods do not deploy to worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#alb-pod-affinity)
 * [3.11 clusters: ALB does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit)
 * [3.11 clusters: Ingress ALB cannot be enabled due to subnet errors](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_alb_subnet)
 * [3.11 clusters: Source IP preservation fails when using tainted nodes](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_source_ip_fails)
@@ -1447,6 +1448,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[May 2020](/docs/openshift?topic=openshift-iks-release#may20)
 
 [April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
 

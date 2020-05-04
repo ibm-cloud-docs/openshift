@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-05-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -329,7 +329,7 @@ You must use the v3.3 or later Calico CLI, `calicoctl.cfg` v3 configuration file
 To ensure that all Calico factors align:
 
 1. [Install and configure a version 3.3 or later Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
-2. Ensure that any policies you create and want to apply to your cluster use [Calico v3 syntax](https://docs.projectcalico.org/v3.3/reference/calicoctl/resources/networkpolicy){: external}. If you have an existing policy `.yaml` or `.json` file in Calico v2 syntax, you can convert it to Calico v3 syntax by using the [`calicoctl convert` command](https://docs.projectcalico.org/v3.3/reference/calicoctl/commands/convert){: external}.
+2. Ensure that any policies you create and want to apply to your cluster use [Calico v3 syntax](https://docs.projectcalico.org/reference/resources/networkpolicy){: external}. If you have an existing policy `.yaml` or `.json` file in Calico v2 syntax, you can convert it to Calico v3 syntax by using the [`calicoctl convert` command](https://docs.projectcalico.org/reference/calicoctl/commands/convert){: external}.
 3. To [view policies](/docs/openshift?topic=openshift-network_policies#view_policies), ensure that you use `calicoctl get GlobalNetworkPolicy` for global policies and `calicoctl get NetworkPolicy --namespace <policy_project>` for policies that are scoped to specific projects.
 
 <br />

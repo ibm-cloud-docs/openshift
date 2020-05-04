@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-05-04"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -147,12 +147,12 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
     <tr>
     <td>Administrator perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](https://docs.openshift.com/container-platform/4.2/web-console/using-dashboard-to-get-cluster-information.html){: external} in the OpenShift documentation.</td>
+    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.2/web_console/using-dashboard-to-get-cluster-information.html){: external} in the OpenShift documentation.</td>
     </tr>
     <tr>
     <td>Developer perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](https://docs.openshift.com/container-platform/4.2/web-console/odc-about-developer-perspective.html){: external} in the OpenShift documentation.</td>
+    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.2/web_console/odc-about-developer-perspective.html){: external} in the OpenShift documentation.</td>
     </tr>
     </tbody>
     </table>
@@ -205,7 +205,7 @@ If you took a break from the last lesson and started a new terminal, make sure t
     oc new-project hello-world
     ```
     {: pre}
-2.  Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the OpenShift `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the OpenShift docs](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
+2.  Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the OpenShift `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the OpenShift docs](http://docs.openshift.com/container-platform/4.3/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
     ```
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```

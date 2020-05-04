@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-05-04"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -51,7 +51,7 @@ Seeing errors when you deploy your app? OpenShift has different default settings
 ### Deploying apps through the console
 {: #deploy_apps_ui}
 
-You can create apps through various methods in the OpenShift console by using the **Developer** perspective. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.2/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
+You can create apps through various methods in the OpenShift console by using the **Developer** perspective. For more information, see the [OpenShift documentation](http://docs.openshift.com/container-platform/4.2/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
 
 1.  From the [Cluster](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) page, select your cluster.
@@ -64,7 +64,7 @@ You can create apps through various methods in the OpenShift console by using th
 ### Deploying apps through the CLI
 {: #deploy_apps_cli}
 
-To create an app in your Red Hat OpenShift on IBM Cloud cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [OpenShift documentation](https://docs.openshift.com/container-platform/4.2/applications/application-life-cycle-management/creating-applications-using-cli.html){: external}.
+To create an app in your Red Hat OpenShift on IBM Cloud cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [OpenShift documentation](http://docs.openshift.com/container-platform/4.2/applications/application_life_cycle_management/creating-applications-using-cli.html){: external}.
 {: shortdesc}
 
 ```
@@ -73,7 +73,7 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 {: pre}
 
 **What does the `new-app` command do?**<br>
-The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/creating-applications-using-cli.html){: external}.
+The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [OpenShift documentation](http://docs.openshift.com/container-platform/4.3/applications/application_life_cycle_management/creating-applications-using-cli.html){: external}.
 
 <br />
 
@@ -235,7 +235,7 @@ You can deploy IBM Cloud Paks&trade;, licensed software, and other 3rd party int
 You can use the OpenShift console to manage your apps, deploy apps from the catalog, and access built-in functionality to help you operate your cluster. The OpenShift console is deployed to your cluster by default, instead of the Kubernetes dashboard as in community Kubernetes clusters.
 {: shortdesc}
 
-For more information about the console, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/applications/application-life-cycle-management/odc-creating-applications-using-developer-perspective.html){: external}.
+For more information about the console, see the [OpenShift documentation](http://docs.openshift.com/container-platform/4.3/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
 
 1.  From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your OpenShift cluster, then click **OpenShift web console**.
 2.  Explore the different areas of the OpenShift web console, as described in the following tabbed table.
@@ -256,12 +256,12 @@ For more information about the console, see the [OpenShift documentation](https:
     <tr>
     <td>Administrator perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](https://docs.openshift.com/container-platform/4.2/web-console/using-dashboard-to-get-cluster-information.html){: external} in the OpenShift documentation.</td>
+    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.2/web_console/using-dashboard-to-get-cluster-information.html){: external} in the OpenShift documentation.</td>
     </tr>
     <tr>
     <td>Developer perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](https://docs.openshift.com/container-platform/4.2/web-console/odc-about-developer-perspective.html){: external} in the OpenShift documentation.</td>
+    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.2/web_console/odc-about-developer-perspective.html){: external} in the OpenShift documentation.</td>
     </tr>
     </tbody>
     </table>

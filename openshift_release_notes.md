@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-30"
+lastupdated: "2020-05-04"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -38,6 +38,15 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
+
+## May 2020
+{: #may20}
+
+| Date | Description |
+| ---- | ----------- |
+| 04 May 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall for {{site.data.keyword.registrylong_notm}}.</li><li>Version 3.11 clusters only: Added a [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#alb-pod-affinity) for when ALB pods do not deploy correctly to worker nodes.</li></ul> |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in May 2020"}
 
 ## April 2020
 {: #apr20}

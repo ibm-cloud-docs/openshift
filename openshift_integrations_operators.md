@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-20"
+lastupdated: "2020-05-04"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -133,7 +133,7 @@ In OpenShift clusters that run version 4.3 or later, operators are available in 
     *   [Creating applications from installed Operators](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-creating-apps-from-installed-operators.html){: external}
     *   [Making your own custom Operator](https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md#testing-operator-deployment-on-openshift){: external}.
         *  For help creating custom Operators, see the [Operator SDK](https://docs.openshift.com/container-platform/4.2/operators/operator_sdk/osdk-getting-started.html){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.openshift.com/container-platform/4.2/operators/operator_sdk/osdk-helm.html){: external}.
-        *  To manage your custom Operator, see the [Operator Lifecycle Manager](https://docs.openshift.com/container-platform/4.2/operators/understanding-olm/olm-understanding-olm.html){: external} documentation.
+        *  To manage your custom Operator, see the [Operator Lifecycle Manager](http://docs.openshift.com/container-platform/4.2/operators/understanding_olm/olm-understanding-olm.html){: external} documentation.
 2.  Review any custom steps to install an operator in your cluster.
     *   To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
 3.  If the operator uses a template with a build component that must pull an image from a private registry, the build might fail with an authentication error. To resolve this error, see [Build error due to image pull authentication](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_build_img_pull).
