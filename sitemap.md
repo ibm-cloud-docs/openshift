@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-03"
+lastupdated: "2020-05-04"
 
 keywords: openshift
 subcollection: openshift
@@ -1447,6 +1447,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[May 2020](/docs/openshift?topic=openshift-iks-release#may20)
 
 [April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
 
