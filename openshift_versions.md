@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-05"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -39,7 +39,7 @@ subcollection: openshift
 Review information about the supported OpenShift versions for {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-For more information about the OpenShift  and Kubernetes project versions, review the following information.
+For more information about the OpenShift and Kubernetes project versions, review the following information.
 * [OpenShift 4.3 release notes overview](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html){: external}
 * [OpenShift 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
 * [Kubernetes changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
@@ -49,6 +49,9 @@ For more information about the OpenShift  and Kubernetes project versions, revie
 
 Your Red Hat OpenShift on IBM Cloud cluster has three types of updates: major, minor, and patch. As updates become available, you are notified when you view information about the cluster master or worker nodes, such as with the `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get` commands.
 {:shortdesc}
+
+You must [update your cluster](/docs/openshift?topic=openshift-update) by using the Red Hat OpenShift on IBM Cloud API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the OpenShift web console.
+{: note}
 
 |Update type|Examples of version labels|Updated by|Impact
 |-----|-----|-----|-----|

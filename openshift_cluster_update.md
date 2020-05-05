@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-17"
+lastupdated: "2020-05-05"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade
 
@@ -39,10 +39,13 @@ subcollection: openshift
 You can install updates to keep your {{site.data.keyword.openshiftlong}} clusters up-to-date.
 {:shortdesc}
 
+You must update your cluster by using the Red Hat OpenShift on IBM Cloud API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the OpenShift web console.
+{: note}
+
 ## Updating the master
 {: #master}
 
-Periodically, {{site.data.keyword.openshiftshort}} releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
+Periodically, OpenShift releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
 {:shortdesc}
 
 **How do I know when to update the master?**</br>
@@ -117,7 +120,7 @@ Before you update your worker nodes, review the prerequisite steps.
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version cannot be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [OpenShift version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
 - If you want to apply a patch update, review the [OpenShift version changelog](/docs/openshift?topic=openshift-openshift_changelog).
@@ -300,7 +303,7 @@ You can update the flavors, or machine types, of your worker nodes by adding new
 {: shortdesc}
 
 Before you begin:
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 - If you store data on your worker node, the data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
