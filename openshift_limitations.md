@@ -40,7 +40,7 @@ subcollection: openshift
 {: shortdesc}
 <br>
 
-If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud limitations, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support) and provide the cluster ID, the new quota limit in your support ticket. 
+If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud limitations, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support) and provide the cluster ID, the new quota limit, and the region in your support ticket. 
 {: tip}
 
 ## Service and quota limitations
