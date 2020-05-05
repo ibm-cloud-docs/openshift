@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-23"
+lastupdated: "2020-05-05"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -161,37 +161,35 @@ To successfully provision and work with clusters, you must ensure that your {{si
 ### Setting up the API key in most cases
 {: #api_key_most_cases}
 
-Your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account is already set up with access to {{site.data.keyword.cloud_notm}} infrastructure. To use this infrastructure in Red Hat OpenShift on IBM Cloud, the **account owner** must set the [API key](#api_key_about) for the region and resource group.
+Your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account is already set up with access to {{site.data.keyword.cloud_notm}} infrastructure. To use this infrastructure in Red Hat OpenShift on IBM Cloud, the **account owner** must make sure that the [API key](#api_key_about) is set up for each region and resource group.
 {: shortdesc}
 
-The quickest way to set up the API key is to ask the account owner, who already has the required infrastructure permissions. However, the account owner might want to create a functional ID with all the required infrastructure permissions (**Super User** role for classic infrastructure). Then, if the account owner is unavailable or changes, the API key owner remains the functional ID.
+The quickest way to set up the API key is to ask the account owner, who already has the required infrastructure permissions. However, the account owner might want to create a functional ID with all the required infrastructure permissions. Then, if the account owner is unavailable or changes, the API key owner remains the functional ID.
 {: tip}
 
-1. Log in to the terminal as the account owner.
+1.  As the account owner, [invite a functional ID](/docs/iam?topic=iam-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user.
+2.  [Assign the functional ID the the correct permissions](#owner_permissions).
+3.  Log in as the functional ID.
     ```
-    ibmcloud login [--sso]
+    ibmcloud login
     ```
     {: pre}
-
-2. Target the resource group where you want to set the API key. If you do not target a resource group, the API key is set for the default resource group. To list available resource groups, run `ibmcloud resource groups`.
+4. Target the resource group where you want to set the API key. If you do not target a resource group, the API key is set for the default resource group. To list available resource groups, run `ibmcloud resource groups`.
     ```
     ibmcloud target -g <resource_group_name>
     ```
     {:pre}
-
-3. Set the API key for the region and resource group.
+5. Set the API key for the region and resource group.
     ```
     ibmcloud oc api-key reset --region <region>
     ```
     {: pre}    
-
-4. Verify that the API key is set.
+6. Verify that the API key is set.
     ```
     ibmcloud oc api-key info --cluster <cluster_name_or_ID>
     ```
     {: pre}
-
-5. Repeat these steps for each region and resource group that you want to create clusters in.
+7. Repeat these steps for each region and resource group that you want to create clusters in.
 
 ### Understanding other options than the API key
 {: #api_key_other}
@@ -243,20 +241,20 @@ To access the IBM Cloud infrastructure portfolio, you use an {{site.data.keyword
 **Now that my infrastructure portfolio is set up, how does Red Hat OpenShift on IBM Cloud access the portfolio?**</br>
 {: #api_key_about}
 
-Red Hat OpenShift on IBM Cloud accesses the IBM Cloud infrastructure portfolio by using an API key. The API key impersonates, or stores the credentials of, a user with access to an IBM Cloud infrastructure account. API keys are set by region within a resource group, and are shared by users in that region. To check if an API key is already set for the region and resource group, you can use the following command.
+Red Hat OpenShift on IBM Cloud accesses the IBM Cloud infrastructure portfolio by using an [API key](/docs/iam?topic=iam-manapikey). The API key impersonates, or stores the credentials of, a user with access to an IBM Cloud infrastructure account. API keys are set by region within a resource group, and are shared by users in that region. To check if an API key is already set for the region and resource group, you can use the following command.
 
 ```
 ibmcloud oc api-key info --cluster <cluster_name_or_ID>
 ```
 {: pre}
 
-To enable all users to access the infrastructure portfolio, the user whose credentials are stored in the API key must have the appropriate permissions to the infrastructure provider.
+To enable all users to access the infrastructure portfolio, the user whose credentials are stored in the API key, such as a functional ID, must have the appropriate permissions to the infrastructure provider.
 * Classic clusters: **Super User** role or the [minimum required permissions](/docs/openshift?topic=openshift-access_reference#infra) for classic infrastructure.
 * [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}} at the account level.
 * [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}.
 * [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for Container Registry at the account level.
 
-Then, let that user perform the first admin action in a region and resource group or [reset the API key](#api_key_most_cases). The user's infrastructure credentials are stored in an API key for that region and resource group.
+Then, log in as the user or functional ID and perform the first admin action in a region and resource group or [reset the API key](#api_key_most_cases). The user's infrastructure credentials are stored in an API key for that region and resource group.
 
 Other users within the account share the API key for accessing the infrastructure. When users log in to the {{site.data.keyword.cloud_notm}} account, an {{site.data.keyword.cloud_notm}} IAM token that is based on the API key is generated for the CLI session and enables infrastructure-related commands to be run in a cluster.
 
@@ -293,7 +291,7 @@ It depends on what type of account that you're using to access the IBM Cloud inf
 ### Ensuring that the API key or infrastructure credentials owner has the correct permissions
 {: #owner_permissions}
 
-To ensure that all infrastructure-related actions can be successfully completed in the cluster, the user whose credentials you want to set for the API key must have the proper permissions.
+To ensure that all infrastructure-related actions can be successfully completed in the cluster, the user whose credentials you want to set for the API key must have the proper permissions. Consider using a functional ID user for the API key owner instead of a personal user. In case the person leaves the team, the functional ID user remains the API key owner.
 {: shortdesc}
 
 1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
@@ -301,9 +299,11 @@ To ensure that all infrastructure-related actions can be successfully completed 
 2. To make sure that all account-related actions can be successfully performed, verify that the user has the correct {{site.data.keyword.cloud_notm}} IAM platform roles.
     1. From the menu bar, select **Manage > Access (IAM)**, and then click the **Users** page.
     2. Click the name of the user who you want to set the API key for or whose credentials you want to set for the API key, and then click the **Access policies** tab.
-    3. If the user doesn't have the **Administrator** platform role for all Red Hat OpenShift on IBM Cloud clusters in all regions, [assign that platform role to the user](#platform).
-    4. If the user doesn't have at least the **Viewer** platform role for the resource group where you want to set the API key, [assign that resource group role to the user](#platform).
-    5. To create clusters, the user also needs the **Administrator** platform role for {{site.data.keyword.registrylong_notm}} at the account level. Do not limit policies for {{site.data.keyword.registrylong_notm}} to the resource group level.
+    3.  [Assign the user](#platform) the minimum roles that are needed to create and manage clusters.
+        * **Administrator** platform role for all Red Hat OpenShift on IBM Cloud clusters in all regions.
+        * **Viewer** platform role for the resource group where you want to set the API key.
+        * **Administrator** platform role for {{site.data.keyword.registrylong_notm}} at the account level. Do not limit policies for {{site.data.keyword.registrylong_notm}} to the resource group level.
+        * If you plan to [encrypt your cluster](/docs/openshift?topic=openshift-encryption#keyprotect), assign the user the appropriate permission to the key management service provider, such as the **Administrator** platform role for {{site.data.keyword.keymanagementserviceshort}}.
 
 3. To make sure that all infrastructure-related actions in your cluster can be successfully performed, verify that the user has the correct infrastructure access policies.
   1. From the menu bar, select **Manage > Access (IAM)**.
@@ -324,7 +324,8 @@ Be sure that you want to reset the key and understand the impact to your app. Th
 {: note}
 
 **Before you begin**:
-- If the account owner is not setting the API key, [ensure that the user who sets the API key has the correct permissions](#owner_permissions).
+- If the account owner does not set the API key, [ensure that the user who sets the API key has the correct permissions](#owner_permissions).
+- Consider using a functional ID user for the API key owner instead of a personal user. In case the person leaves the team, the functional ID user remains the API key owner.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set the API key to access the IBM Cloud infrastructure portfolio:
@@ -1092,7 +1093,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 ## Customizing classic infrastructure permissions
 {: #infra_access}
 
-When you assign the **Super User** infrastructure role to the admin who sets the API key or whose infrastructure credentials are set, other users within the account share the API key or credentials for performing infrastructure actions. You can then control which infrastructure actions the users can perform by assigning the appropriate [{{site.data.keyword.cloud_notm}} IAM platform role](#platform). You don't need to edit the user's IBM Cloud infrastructure permissions.
+When you assign the **Super User** infrastructure role to the admin or functional ID that sets the API key or whose infrastructure credentials are set, other users within the account share the API key or credentials for performing infrastructure actions. You can then control which infrastructure actions the users can perform by assigning the appropriate [{{site.data.keyword.cloud_notm}} IAM platform role](#platform). You don't need to edit the user's IBM Cloud infrastructure permissions.
 {: shortdesc}
 
 For compliance, security, or billing reasons, you might not want to give the **Super User** infrastructure role to the user who sets the API key or whose credentials are set with the `ibmcloud oc credential set` command. However, if this user doesn't have the **Super User** role, then infrastructure-related actions, such as creating a cluster or reloading a worker node, can fail. Instead of using {{site.data.keyword.cloud_notm}} IAM platform roles to control users' infrastructure access, you must set specific IBM Cloud infrastructure permissions for users.
@@ -1105,8 +1106,10 @@ For example, if your account is not VRF-enabled, your IBM Cloud infrastructure a
 
 
 Before you begin:
-*   Make sure that you are the account owner or have **Super User** and all device access. You can't grant a user access that you don't have.
-*   Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
+*   Make sure that you have the **Super User** role and all device access. You can't grant a user access that you don't have.
+*   Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) to know what to assign the personal user or functional ID.
+
+To customize classic infrastructure permissions through the console:
 
 1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external}. From the menu bar, select **Manage > Access (IAM)**.
 2. Click the **Users** page, and then click the name of the user that you want to set permissions for.
@@ -1141,6 +1144,8 @@ Downgrading permissions? The action can take a few minutes to complete.
 Before you begin:
 *   Make sure that you are the account owner or have **Super User** and all device access. You can't grant a user access that you don't have.
 *   Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
+
+To customize classic infrastructure permissions through the CLI:
 
 1.  Check whether the credentials for classic infrastructure access for Red Hat OpenShift on IBM Cloud in the region and resource group have any missing required or suggested permissions.
     ```
@@ -1208,8 +1213,14 @@ Before you begin:
 If a user no longer needs specific access permissions, or if the user is leaving your organization, the {{site.data.keyword.cloud_notm}} account owner can remove that user's permissions.
 {: shortdesc}
 
+### Checking if the user's credentials are used for infrastructure permissions
+{: #removing_check_infra}
+
 Before you remove a user's specific access permissions or remove a user from your account completely, ensure that the user's infrastructure credentials are not used to set the API key or for the `ibmcloud oc credential set` command. Otherwise, the other users in the account might lose access to the IBM Cloud infrastructure portal and infrastructure-related commands might fail.
-{: important}
+{: shortdesc}
+
+To avoid this issue for future users, consider using a functional ID user for the API key owner instead of a personal user. In case the person leaves the team, the functional ID user remains the API key owner.
+{: tip}
 
 1. Target your CLI context to a region and resource group where you have clusters.
     ```
@@ -1229,42 +1240,25 @@ Before you remove a user's specific access permissions or remove a user from you
         ```
         {: pre}
 
-3. If the user's username is returned, use another user's credentials to set the API key or infrastructure credentials.
-
-  If the account owner is not setting the API key, or if you are not setting the account owner's infrastructure credentials, [ensure that the user who sets the API key or whose credentials you are setting has the correct permissions](#owner_permissions).
-  {: note}
-
-    * To reset the API key:
+3.  **API key**: If the user's username is returned, use another user's credentials to set the API key.
+    1.  [Invite a functional ID user](/docs/iam?topic=iam-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user. In case a person leaves the team, the functional ID user remains the API key owner.
+    2.  [Ensure that the functional ID user who sets the API key has the correct permissions](#owner_permissions).
+    3.  Log in as the functional ID.
+        ```
+        ibmcloud login
+        ```
+        {: pre}
+    4.  Change the infrastructure credentials to the functional ID user.
         ```
         ibmcloud oc api-key reset --region <region>
         ```
         {: pre}
-    * To reset the infrastructure credentials:
+    5.  Refresh the clusters in the region to pick up on the new API key configuration.
         ```
-        ibmcloud oc credential set classic --infrastructure-username <infrastructure_API_username> --infrastructure-api-key <infrastructure_API_authentication_key> --region <region>
+        ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
         ```
         {: pre}
-
-4. Repeat these steps for each combination of resource groups and regions where you have clusters.
-
-### Removing a user from your account
-{: #remove_user}
-
-If a user in your account is leaving your organization, you must remove permissions for that user carefully to ensure that you do not orphan clusters or other resources. After you remove permissions, you can remove the user from your {{site.data.keyword.cloud_notm}} account.
-{: shortdesc}
-
-Before you begin:
-- [Ensure that the user's infrastructure credentials are not used to set the API key or for the `ibmcloud oc credential set` command](#removing).
-- If you have other service instances in your {{site.data.keyword.cloud_notm}} account that the user might have provisioned, check the documentation for those services for any steps that you must complete before you remove the user from the account.
-
-Before the user leaves, the {{site.data.keyword.cloud_notm}} account owner must complete the following steps to prevent breaking changes in Red Hat OpenShift on IBM Cloud.
-
-1. Determine which clusters the user created.
-    1.  Log in to the [{{site.data.keyword.cloud_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters){: external}.
-    2.  From the table, select your cluster.
-    3.  In the **Overview** tab, look for the **Owner** field.
-
-2. For each cluster that the user created, follow these steps:
+4.  **Infrastructure account**: If the user's username is returned as the owner of the infrastructure account, migrate your existing clusters to a different infrastructure account before removing the user. For each cluster that the user created, follow these steps:
     1. Check which infrastructure account the user used to provision the cluster.
         1.  In the **Worker Nodes** tab, select a worker node and note its **ID**.
         2.  Open the menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon") and click **Classic Infrastructure**.
@@ -1274,14 +1268,18 @@ Before the user leaves, the {{site.data.keyword.cloud_notm}} account owner must 
     2. Determine what happens to the infrastructure account that the user used to provision the clusters after the user leaves.
         * If the user does not own the infrastructure account, then other users have access to this infrastructure account and it persists after the user leaves. You can continue to work with these clusters in your account. Make sure that at least one other user has the [**Administrator** platform role](#platform) for the clusters.
         * If the user owns the infrastructure account, then the infrastructure account is deleted when the user leaves. You cannot continue to work with these clusters. To prevent the cluster from becoming orphaned, the user must delete the clusters before the user leaves. If the user has left but the clusters were not deleted, you must use the `ibmcloud oc credential set` command to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, and delete the cluster. For more information, see [Unable to modify or delete infrastructure in an orphaned cluster](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned).
+5. Repeat these steps for each combination of resource groups and regions where you have clusters.
 
-3. Remove the user from the {{site.data.keyword.cloud_notm}} account.
-    1. From the menu bar, select **Manage > Access (IAM)**. Then click the **Users** page.
-    2. Click the user's username.
-    3. In the table entry for the user, click the **Action menu** ![Action menu icon](../icons/action-menu-icon.svg "Action menu icon") **> Remove user**. When you remove a user, the user's assigned {{site.data.keyword.cloud_notm}} IAM platform roles, Cloud Foundry roles, and IBM Cloud infrastructure roles are automatically removed.
+### Removing a user from your account
+{: #remove_user}
 
+If a user in your account is leaving your organization, you must remove permissions for that user carefully to ensure that you do not orphan clusters or other resources. After you remove permissions, you can remove the user from your {{site.data.keyword.cloud_notm}} account.
+{: shortdesc}
+
+1.  [Check that the user's infrastructure credentials are not used](#removing_check_infra) for any Red Hat OpenShift on IBM Cloud resources.
+2.  If you have other service instances in your {{site.data.keyword.cloud_notm}} account that the user might have provisioned, check the documentation for those services for any steps that you must complete before you remove the user from the account.
+3.  [Remove the user from the {{site.data.keyword.cloud_notm}} account](/docs/iam?topic=iam-remove). When you remove a user, the user's assigned {{site.data.keyword.cloud_notm}} IAM platform roles, Cloud Foundry roles, and IBM Cloud infrastructure roles are automatically removed.
 4.  When {{site.data.keyword.cloud_notm}} IAM platform permissions are removed, the user's permissions are also automatically removed from the associated predefined RBAC roles. However, if you created custom RBAC roles or cluster roles, [remove the user from those RBAC role bindings or cluster role bindings](#remove_custom_rbac).<p class="note">The {{site.data.keyword.cloud_notm}} IAM permission removal process is asynchronous and can take some time to complete.</p>
-
 
 ### Removing specific permissions
 {: #remove_permissions}
@@ -1289,20 +1287,12 @@ Before the user leaves, the {{site.data.keyword.cloud_notm}} account owner must 
 If you want to remove specific permissions for a user, you can remove individual access policies that have been assigned to the user.
 {: shortdesc}
 
-Before you begin, [ensure that the user's infrastructure credentials are not used to set the API key or for the `ibmcloud oc credential set` command](#removing). After verification, you can remove:
-* [a user from an access group](#remove_access_group)
+Before you begin, [check that the user's infrastructure credentials are not used](#removing_check_infra) for any Red Hat OpenShift on IBM Cloud resources. After checking, you can remove:
+* [a user from an access group](/docs/iam?topic=iam-iammanidaccser#removing_access)
 * [a user's {{site.data.keyword.cloud_notm}} IAM platform and associated RBAC permissions](#remove_iam_rbac)
 * [a user's custom RBAC permissions](#remove_custom_rbac)
 * [a user's Cloud Foundry permissions](#remove_cloud_foundry)
 * [a user's infrastructure permissions](#remove_infra)
-
-#### Remove a user from an access group
-{: #remove_access_group}
-
-1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} From the menu bar, select **Manage > Access (IAM)**.
-2. Click the **Users** page, and then click the name of the user that you want to remove permissions from.
-3. Click the **Access group** tab.
-4. In the table entry for the access group, click the **Actions menu** ![Action menu icon](../icons/action-menu-icon.svg "Action menu icon") **> Remove user**. When the user is removed, any roles that were assigned to the access group are removed from the user.
 
 #### Remove {{site.data.keyword.cloud_notm}} IAM platform permissions and the associated pre-defined RBAC permissions
 {: #remove_iam_rbac}

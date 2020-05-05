@@ -308,6 +308,7 @@ subcollection: openshift
   * [Assigning infrastructure access through the console](/docs/openshift?topic=openshift-users#infra_console)
   * [Assigning infrastructure access through the CLI](/docs/openshift?topic=openshift-users#infra_cli)
 * [Removing user permissions](/docs/openshift?topic=openshift-users#removing)
+  * [Checking if the user's credentials are used for infrastructure permissions](/docs/openshift?topic=openshift-users#removing_check_infra)
   * [Removing a user from your account](/docs/openshift?topic=openshift-users#remove_user)
   * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
 
