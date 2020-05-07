@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-07"
 
-keywords: openshift, containers, clusters, roks, rhoks, rhos
+keywords: openshift, containers, clusters, roks, rhoks, rhos, red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster
 
 subcollection: openshift
 
