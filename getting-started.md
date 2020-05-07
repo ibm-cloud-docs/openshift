@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2020
 lastupdated: "2020-05-07"
 
-keywords: openshift, containers, clusters, roks, rhoks, rhos, red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster
+keywords: red hat openshift, red hat, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, openshift, containers, clusters, roks, rhoks, rhos, 
 
 subcollection: openshift
 
@@ -93,7 +93,7 @@ subcollection: openshift
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}
 
-With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available clusters that run the [Red Hat OpenShift on IBM Cloud Container Platform](https://docs.openshift.com/container-platform/4.2/welcome/index.html){: external} software on Red Hat Enterprise Linux machines.
+With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available OpenShift clusters that run the [Red Hat OpenShift on IBM Cloud Container Platform](https://docs.openshift.com/container-platform/4.2/welcome/index.html){: external} software on Red Hat Enterprise Linux machines.
 {: shortdesc}
 
 First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose a sample app in your cluster.
