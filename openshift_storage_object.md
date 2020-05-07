@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-29"
+lastupdated: "2020-05-07"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -41,8 +41,6 @@ subcollection: openshift
 
 If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
-
-
 
 If you installed the {{site.data.keyword.cos_full_notm}} plug-in with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
 {: important}
@@ -173,8 +171,7 @@ Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set
 Looking for instructions for how to update or remove the {{site.data.keyword.cos_full_notm}} plug-in? See [Updating the plug-in](#update_cos_plugin) and [Removing the plug-in](#remove_cos_plugin).
 {: tip}
 
-Before you begin:
-- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
 
@@ -208,7 +205,7 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
 
    If you enabled [VRF](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public registry domain: `helm repo add ibm-charts https://icr.io/helm/ibm-charts`.
    {: note}
-   
+
    ```
    helm repo add ibm-charts https://icr.io/helm/ibm-charts
    ```
