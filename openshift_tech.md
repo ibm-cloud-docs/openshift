@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-07"
 
-keywords: openshift, roks, rhoks, rhos, compliance, security standards
+keywords: openshift, roks, rhoks, rhos, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies, 
 
 subcollection: openshift
 

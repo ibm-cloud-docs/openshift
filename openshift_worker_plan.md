@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-05-06"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -63,7 +63,7 @@ Yes. To add different flavors to your cluster, you must [create another worker p
 See [updating flavors](/docs/openshift?topic=openshift-update#machine_type).
 
 **Are the worker nodes encrypted?**<br>
-The secondary disk of the worker node is encrypted. For more information, see [Overview of cluster encryption](/docs/openshift?topic=openshift-encryption#encrypt_ov). After you create a worker pool, you might notice that the worker node flavor has `.encrypted` in the name, such as `b3c.4x16.encrypted`. 
+The secondary disk of the worker node is encrypted. For more information, see [Overview of cluster encryption](/docs/openshift?topic=openshift-encryption#encrypt_ov). After you create a worker pool, you might notice that the worker node flavor has `.encrypted` in the name, such as `b3c.4x16.encrypted`.
 
 **How do I manage my worker nodes?** </br>
 Worker nodes in classic clusters are provisioned into your {{site.data.keyword.cloud_notm}} account. You can manage your worker nodes by using Red Hat OpenShift on IBM Cloud, but you can also use the [classic infrastructure dashboard](https://cloud.ibm.com/classic/) in the {{site.data.keyword.cloud_notm}} console to work with your worker node directly.  
@@ -72,6 +72,12 @@ Worker nodes in classic clusters are provisioned into your {{site.data.keyword.c
 
 **What limitations do I need to be aware of?** </br>
 Kubernetes limits the maximum number of worker nodes that you can have in a cluster. Review [worker node and pod quotas](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external} for more information.
+
+**Why do my worker nodes have the `master` role?**
+
+When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift clusters, operators use the `master` role as a `nodeSelector` so that the operators can deploy properly to your worker nodes. No master node processes occur on your worker nodes.
+
+
 
 Red Hat OpenShift on IBM Cloud also sets compute resource reserves that limit available compute resources on each worker node. For more information, see [worker node resource reserves](#resource_limit_node).
 
