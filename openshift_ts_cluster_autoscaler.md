@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-05-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -173,7 +173,49 @@ Before you begin, [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     oc delete pod -n kube-system <pod_name>
     ```
     {: pre}
-7.  Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](#getting_help_ca).
+
+7. Optional: If you completed the debugging steps and your cluster still does not scale, you can disable and reenable the autoscaler by editing the config map.
+    1. Edit the `iks-ca-configmap`.
+        ```
+        oc edit cm iks-ca-configmap -n kube-system
+        ```
+        {: pre}
+
+        Example output:
+        ```yaml
+        apiVersion: v1
+        data:
+        workerPoolsConfig.json: |
+            [{"name": "default", "minSize": 2, "maxSize": 5, "enabled": true }]
+        kind: ConfigMap
+        metadata:
+        annotations:
+            workerPoolsConfigStatus: '{"2:5:default":"SUCCESS"}'
+        creationTimestamp: "2020-03-24T17:44:35Z"
+        name: iks-ca-configmap
+        namespace: kube-system
+        resourceVersion: "40964517"
+        selfLink: /api/v1/namespaces/kube-system/configmaps/iks-ca-configmap
+        uid: 11a1111a-aaaa-1a11-aaa1-aa1aaaa11111
+        ```
+        {: codeblock}
+
+    2. Set the `enabled` parameter to `false` and save your changes.
+    3. Edit the `iks-ca-configmap` again. Set the enabled parameter to `true` and save your changes.
+        ```
+        oc edit cm iks-ca-configmap -n kube-system
+        ```
+        {: pre}
+
+    4. If your cluster still does not scale after disabling and reenabling the cluster autoscaler, you can edit the `minSize` or `maxSize` parameters in the `iks-ca-configmap`. In some cases, editing the `minSize` and `maxSize` worker parameters successfully restarts the cluster autoscaler.
+        ```
+        oc edit cm iks-ca-configmap -n kube-system
+        ```
+        {: pre}
+
+    5. Edit the `minSize` or `maxSize` parameters and save your changes.
+
+8.  Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](#getting_help_ca).
 
 ## Feedback, questions, and support
 {: #getting_help_ca}
