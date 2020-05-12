@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -365,7 +365,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
         Replace <em>&lt;sysdig_public_IP&gt;</em> with the [Sysdig IP addresses](/docs/Monitoring-with-Sysdig?topic=Sysdig-network#network).
     *   **{{site.data.keyword.la_full_notm}}**:
         <pre class="screen">TCP port 443, port 80 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logDNA_public_IP&gt;</pre>
-        Replace &gt;<em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-network#network).
+        Replace &gt;<em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-service-connection#network_outgoing_traffic).
 
 6. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
@@ -430,7 +430,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
    - Allow all egress network traffic on TCP port 443.
    - Allow access to the IBM Cloud infrastructure IP range for the zone that your cluster is in for both the [**Front-end (public) network**](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#frontend-public-network) and [**Back-end (private) Network**](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#backend-private-network). To find the zone of your cluster, run `ibmcloud oc cluster ls`.
 8. Optional: To send logging and metric data, set up firewall rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
-   *  [{{site.data.keyword.la_short}} private endpoints](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-network#ips_api)
+   *  [{{site.data.keyword.la_short}} private endpoints](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-service-connection#ips_api)
    *  [{{site.data.keyword.mon_short}} private endpoints](/docs/Monitoring-with-Sysdig?topic=Sysdig-network#network_outgoing_traffic)
 
 </br>
