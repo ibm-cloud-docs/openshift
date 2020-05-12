@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-11"
+lastupdated: "2020-05-12"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 12 May 2020 | **Version changelogs**: Master patch update is available for OpenShift [`4.3.18_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4318_1522). |
 | 11 May 2020 | <ul>**Version changelogs**: Worker node patch updates are available for OpenShift [`4.3.13_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4314_1522) and [`3.11.216_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311216_1550). |
 | 08 May 2020 | **CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.57](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
 | 04 May 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall for {{site.data.keyword.registrylong_notm}}.</li><li>**Ingress troubleshooting in version 3.11 clusters**:Added a [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#alb-pod-affinity) for when ALB pods do not deploy correctly to worker nodes.</li></ul> |
