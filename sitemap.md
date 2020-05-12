@@ -695,6 +695,8 @@ subcollection: openshift
 * [How does a request get to my app with Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#roks4-flow)
   * [Single-zone cluster](/docs/openshift?topic=openshift-ingress-about-roks4#classic-single-roks4)
   * [Multizone cluster](/docs/openshift?topic=openshift-ingress-about-roks4#classic-multi-roks4)
+* [How can I customize routing for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#custom-routing)
+* [How can I enable TLS certificates for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#certs)
 
 [Setting up Ingress in OpenShift version 4.3 or later](/docs/openshift?topic=openshift-ingress-roks4)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-prereqs)
