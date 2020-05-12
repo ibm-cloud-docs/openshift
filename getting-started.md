@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-07"
+lastupdated: "2020-05-12"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos 
 
@@ -88,8 +88,6 @@ subcollection: openshift
 -->
 </style>
 
-
-
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}
 
@@ -131,17 +129,20 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 {: tip}
 
 1.  Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
-2.  From the **Catalog**, click [**Red Hat OpenShift Cluster**](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}, and then click **Create**.
-3.  Choose your cluster setup details and name.
-    *   Enter a unique name for your cluster, and select the resource group that you want to assign to your cluster.
-    *   Enter tags that you want to add to your cluster. Tags can help you organize and find your clusters more easily in your  {{site.data.keyword.cloud_notm}} account.
-    *   For the **Location**, set the **Geography**, and then select any of the six worldwide multizone **Metro** or single zone [locations](/docs/openshift?topic=openshift-regions-and-zones) to use for your **Worker zones**.
-    *   In the **Default worker pool** section, configure your worker pool version and size.
-        *  For **OpenShift version**, select 4.3.
-        *  For **Flavor**, choose an available flavor for your worker nodes.
-        *  For **Worker nodes**, set a number of worker nodes to create in each zone of the worker pool, such as `3`.
-4.  To finish, click **Create cluster**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
-5.  Verify that your cluster setup is finished before you continue to the next step by checking that the worker nodes on the **Worker Nodes** tab have a **Status** of normal.
+2.  From the **Catalog**, click [**Red Hat OpenShift on IBM Cloud**](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}.
+3.  Review the platform version details, **OpenShift 4.3.18**.
+4.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
+6.  Configure the **Location** details for your cluster.
+    1.  Select the **Resource group** that you want to create your cluster in. You cannot change the resource group later. If you do not select a resource group, your cluster is created in the default resource group.
+    2.  Select a **Geography** to create the cluster in, such as **North America**. The geography helps filter the **Availability** and **Data centers** values that you can select.
+    3.  Select the **Availability** that you want for your cluster, such as **Single zone**.
+    4.  Select the **Data center** to create your cluster in, such as **Dallas 10**.
+7.  Configure your **Worker pool** setup.
+    1.  If you want a larger size for your worker nodes, click **Change flavor**. Otherwise, leave the default **4 vCPUs / 16 GB** flavor selected.
+    2.  Set how many worker nodes to create per zone, such as **3**. Note that you must have at least 2 worker nodes per zone to run the default OpenShift components.
+8.  Fill out the **Resource details** to customize the cluster name and any tags that you want to use to organize your {{site.data.keyword.cloud_notm}} resources.
+9.  Review the **Summary**, and then click **Create**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
+10.  Verify that your cluster setup is finished before you continue to the next step by checking that the worker nodes on the **Worker Nodes** tab have a **Status** of normal.
 
 Now that your cluster is ready, [deploy an app](#deploy-app).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-05-12"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -183,7 +183,7 @@ The Ingress controller for your app is already registered with the IBM-provided 
         {: pre}
       2. Copy the secret into the project where your app service is deployed.
         ```
-        oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-project>/g' | oc -n <new-project> create -f -
+        oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/ibm-cert-store/<new-project>/g' | oc -n <new-project> create -f -
         ```
         {: pre}
   * To create a TLS certificate:
@@ -442,7 +442,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
         {: pre}
       2. Copy the secret into the project where your app service is deployed.
         ```
-        oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/default/<new-project>/g' | oc -n <new-project> create -f -
+        oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/ibm-cert-store/<new-project>/g' | oc -n <new-project> create -f -
         ```
         {: pre}
   * To create TLS certificate:
