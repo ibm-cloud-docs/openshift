@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-05"
+lastupdated: "2020-05-13"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -771,13 +771,13 @@ To learn more about the actions permitted by each RBAC role, check out the [{{si
 All users of an OpenShift cluster are added to the following OpenShift RBAC groups by cluster version. <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`. <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.
 {: note}
 
-**Can I create custom roles or cluster roles?**
+**Can I create custom roles or cluster roles?**</br>
 The `view`, `edit`, `admin`, and `cluster-admin` cluster roles are predefined roles that are automatically created when you assign a user the corresponding {{site.data.keyword.cloud_notm}} IAM service role. To grant other Kubernetes permissions, you can [create custom RBAC permissions](#rbac). Custom RBAC roles are in addition to and do not change or override any RBAC roles that you might have assigned with service access roles. Note that to create custom RBAC permissions, you must have the IAM **Manager** service access role that gives you the `cluster-admin` Kubernetes RBAC role. However, the other users do not need an IAM service access role if you manage your own custom Kubernetes RBAC roles.
 
 Making your own custom RBAC policies? Be sure not to edit the existing IBM role bindings that are in the cluster, or name new role bindings with the same name. Any changes to IBM-provided RBAC role bindings are overwritten periodically. Instead, create your own role bindings.
 {: tip}
 
-**When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**
+**When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**</br>
 You might want to authorize who can create and update pods in your cluster. With [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs), you can use existing cluster role bindings that come with your cluster, or create your own.
 
 You might also want to integrate add-ons to your cluster. For example, when you [set up Helm in your cluster](/docs/openshift?topic=openshift-helm#public_helm_install), you must create a service account for Tiller in the `tiller` project and a Kubernetes RBAC cluster role binding for the `tiller-deploy` pod.
