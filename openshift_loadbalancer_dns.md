@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-05-13"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -158,7 +158,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
 
 2. Create a health check monitor for the subdomain. If you do not include a configuration parameter, the default value is used.
   ```
-  ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --enable --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
+  ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --enable --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --header <header> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
   ```
   {: pre}
 
@@ -213,6 +213,10 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
   <td>The port number to connect to for the health check. When <code>type</code> is <code>TCP</code>, this parameter is required. When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: <code>0</code>. Default for HTTP: <code>80</code>. Default for HTTPS: <code>443</code>.</td>
   </tr>
   <tr>
+  <td><code>--header &lt;header&gt;</code></td>
+  <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden.</td>
+  </tr>
+  <tr>
   <td><code>--expected-body &lt;expected-body&gt;</code></td>
   <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.</td>
   </tr>
@@ -233,7 +237,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
 
   Example command:
   ```
-  ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --description "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60 --expected-body "healthy" --expected-codes 2xx --follows-redirects true
+  ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --description "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60 --header "Host":["example.com"] --expected-body "healthy" --expected-codes 2xx --follows-redirects true
   ```
   {: pre}
 
@@ -305,7 +309,7 @@ ibmcloud oc nlb-dns rm classic --cluster <cluster_name_or_id> --ip <ip> --nlb-ho
 
 If you need to change your health monitor configuration, you can change specific settings. Include only the flags for the settings that you want to change.
 ```
-ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
+ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --header <header> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
 ```
 {: pre}
 
