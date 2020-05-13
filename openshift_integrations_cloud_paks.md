@@ -118,6 +118,15 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 
 
+Before you begin:
+* Verify that your account administrator [set up your {{site.data.keyword.cloud_notm}} account with the Cloud Pak entitlement](#oc_cloud_paks_assign).
+* Make sure that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-clusters#cluster_prepare). These permissions include the following:
+  * The IAM **Administrator** platform role for {{site.data.keyword.containershort}}.
+  * The IAM **Administrator** platform role for {{site.data.keyword.registryshort}}.
+  * The IAM **Viewer** platform role for the resource group if you create the cluster in a resource group other than `default`.
+  * The appropriate infrastructure permissions, such as an API key with the **Super User** role for classic infrastructure. 
+
+To add a Cloud Pak from the {{site.data.keyword.cloud_notm}} catalog:
 
 1.  Add your Cloud Pak entitlement from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external} to your Red Hat OpenShift on IBM Cloud cluster.
     *  **For new clusters**: [Create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) with the `--entitlement cloud_pak` option. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use. After your cluster is created, you are not charged the OpenShift license fee for the entitled worker nodes in the `default` worker pool. If you want to use a different worker pool for your Cloud Pak, follow the steps for existing clusters.
@@ -136,6 +145,32 @@ Now you can run your Cloud Pak on your OpenShift cluster!
 <br />
 
 
+## Assigning a Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account
+{: #oc_cloud_paks_assign}
+
+To deploy a Cloud Pak to your Red Hat OpenShift on IBM Cloud cluster, your entitlement to the Cloud Pak must be assigned to your {{site.data.keyword.cloud_notm}} account.
+{: shortdesc}
+
+1.  Verify that your {{site.data.keyword.cloud_notm}} account ID matches your IBM Passport Advantage ID.
+    1.  Get your {{site.data.keyword.cloud_notm}} account ID. 
+        1.  Log in to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external}. 
+        2.  From the menu bar, click **Manage > Account**. 
+        3.  From the navigation pane, click **Account Settings**, and note your **ID**, such as `1aa111aa1a11111aaa1a1111aa1aa111`.
+    2.  Log in to [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} and check your account ID.
+    3.  Compare the IDs. If the IDs do not match, try using a different {{site.data.keyword.cloud_notm}} or IBM Passport Advantage account that match. If you cannot find matching IDs, contact [eCustomer care](https://www-112.ibm.com/software/howtobuy/passportadvantage/homepage/ecarec){: external}.
+2.  Make sure that the account owner gives you permission to assign entitlements.
+    1.  From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click **Manage > Access (IAM)**.
+    2.  From the **Users** tab, click the user that you want to assign permissions.
+    3.  Click **Access policies > Assign access +**.
+    4.  Click **Account management**.
+    5.  From the **What type of access do you want to assign?** drop-down menu, select **License and Entitlement**.
+    6.  Select at least the **Editor** platform role, then click **Add**.
+3.  Assign the Cloud Pak license to your {{site.data.keyword.cloud_notm}} account.  
+    1.  From the [{{site.data.keyword.cloud_notm}} software catalog](https://cloud.ibm.com/catalog#software){: external}, find the Cloud Pak that you want to assign.
+    2.  From the **Create > Assign a license** section, select the license that you want to use and click **Assign**.
+4.  Continue to [create the Cloud Pak instance](#oc_cloud_paks_add).
+
+<br />
 
 
 ## FAQs for Cloud Pak on Red Hat OpenShift on IBM Cloud
@@ -152,7 +187,7 @@ Cloud Paks are integrated with the {{site.data.keyword.cloud_notm}} catalog so t
 ### Can I use the OpenShift entitlement that comes with my Cloud Pak for my cluster?
 {: #cloud_pak_byo_entitlement}
 
-Yes, if your Cloud Pak includes an entitlement to run certain worker node flavors that are installed with OpenShift Container Platform. To view your entitlements, check in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}.
+Yes, if your Cloud Pak includes an entitlement to run certain worker node flavors that are installed with OpenShift Container Platform. To view your entitlements, check in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. Note that your {{site.data.keyword.cloud_notm}} ID must match your IBM Passport Advantage ID.
 
 You can create the cluster or the worker pool within an existing cluster with the Cloud Pak entitlement by using the `--entitlement cloud_pak` option in the [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) or [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) CLI commands. Make sure to specify the correct number and flavor of worker nodes that you are entitled to use.
 

@@ -986,6 +986,7 @@ subcollection: openshift
 [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
 * [Overview of Cloud Pak offerings](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_pak_ov)
 * [Adding IBM Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_add)
+* [Assigning a Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_assign)
 * [FAQs for Cloud Pak on Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-openshift_cloud_paks#faq_cloud_paks)
   * [How do I install a Cloud Pak in my Red Hat OpenShift on IBM Cloud cluster? How do I access it later?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_manage)
   * [Can I use the OpenShift entitlement that comes with my Cloud Pak for my cluster?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_byo_entitlement)
