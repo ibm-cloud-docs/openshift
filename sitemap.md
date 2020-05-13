@@ -505,6 +505,8 @@ subcollection: openshift
 * [Using the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
 * [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#storage_internal_registry)
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
+* [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
+* [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)
 * [Using {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr)
 * [Understanding how to authorize your cluster to pull images from a private registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth)
   * [Default image pull secret setup](/docs/openshift?topic=openshift-registry#cluster_registry_auth_default)
@@ -557,6 +559,7 @@ subcollection: openshift
   * [After I deploy my app, how can I monitor its health?](/docs/openshift?topic=openshift-plan_deploy#app_plan_logmet_monitor)
 
 [Building images for your apps](/docs/openshift?topic=openshift-images)
+* [Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy)
 * [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` OpenShift project](/docs/openshift?topic=openshift-images#namespace)
 * [Referring to the image pull secret in your pod deployment](/docs/openshift?topic=openshift-images#pod_imagePullSecret)
 * [Pushing images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images)
