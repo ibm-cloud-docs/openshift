@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-05-13"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -65,6 +65,11 @@ Have you created a cluster before and are just looking for quick example command
 *  Classic cluster, bare metal:
    ```
    ibmcloud oc cluster create classic --name my_cluster --version 4.3_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+   ```
+   {: pre}
+*  Classic cluster with an IBM Cloud&trade; Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each:
+   ```
+   ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.3_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
    ```
    {: pre}
 *  For a classic multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones), [add zones](/docs/openshift?topic=openshift-add_workers#add_zone):
@@ -310,6 +315,9 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    <td><code>--disable-disk-encrypt</code></td>
    <td>Worker nodes feature AES 256-bit [disk encryption](/docs/containers?topic=containers-security#encrypted_disk) by default. If you want to disable encryption, include this option.</td>
    </tr>
+   <tr>
+   <td><code><strong>--entitlement cloud_pak</strong></code></td>
+   <td>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the OpenShift license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></td></tr>
    </tbody></table>
 
 7. Verify that the creation of the cluster was requested. For virtual machines, it can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account. Bare metal physical machines are provisioned by manual interaction with IBM Cloud infrastructure, and can take more than one business day to complete.
