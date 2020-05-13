@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-13"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -137,7 +137,7 @@ To deploy apps to specific worker nodes:
     ```
     {: screen}
 
-4. [Add an affinity rule](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature){: external} for the worker pool ID label to the app deployment.
+4. [Add an affinity rule](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for the worker pool ID label to the app deployment.
 
     Example YAML:
 

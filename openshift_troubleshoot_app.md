@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-21"
+lastupdated: "2020-05-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -180,6 +180,7 @@ Set up the build with access to the image, either by pulling the image from the 
                         name: "<pull-secret>"
             ```
             {: codeblock}
+    * **Use an image stream from the internal registry**: [Create an image stream in the internal registry from an imported image from the private registry](/docs/openshift?topic=openshift-registry#imagestream_registry). Then, update the build configuration file to refer to the image stream instead of pulling the image directly from the private registry.
 
 <br />
 
@@ -363,8 +364,8 @@ For clusters that were created before **1 July 2019**, the cluster might have an
     Example output:
     ```
     ...
-    imagePullSecrets:<ff-all-icr>
-    - name: all-icr-io</ff-all-icr>
+    imagePullSecrets:
+    - name: all-icr-io
     ...
     ```
     {: screen}

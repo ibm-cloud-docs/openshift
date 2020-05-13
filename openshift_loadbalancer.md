@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-05-13"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -355,7 +355,7 @@ To force your app to deploy to specific worker nodes where load balancer service
 When you [label worker nodes as edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes) and also [taint the edge nodes](/docs/openshift?topic=openshift-edge#edge_workloads), load balancer service pods deploy only to those edge nodes, and app pods cannot deploy to edge nodes. When source IP is enabled for the NLB service, the load balancer pods on the edge nodes cannot forward incoming requests to your app pods on other worker nodes.
 {:shortdesc}
 
-To force your app pods to deploy to edge nodes, add an edge node [affinity rule](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature){: external} and [toleration](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/#concepts){: external} to the app deployment.
+To force your app pods to deploy to edge nodes, add an edge node [affinity rule](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} and [toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to the app deployment.
 
 Example deployment YAML file with edge node affinity and edge node toleration:
 
@@ -427,7 +427,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
         For example, if the NLB service IP address is `169.36.5.xxx`, the matching subnet in the example output of the previous step is `169.36.5.xxx/29`. The VLAN ID that the subnet is connected to is `2234945`.
 
-3. [Add an affinity rule](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature){: external} to the app deployment for the VLAN ID that you noted in the previous step.
+3. [Add an affinity rule](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} to the app deployment for the VLAN ID that you noted in the previous step.
 
     For example, if you have multiple VLANs but want your app pods to deploy to worker nodes on the `2234945` public VLAN only:
 

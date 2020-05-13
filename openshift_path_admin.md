@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-10"
+lastupdated: "2020-05-13"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -277,7 +277,9 @@ Set up logging and monitoring to help you troubleshoot issues and improve the he
 Set up an image registry and a continuous integration and delivery (CI/CD) pipeline for your cluster.
 {: shortdesc}
 
-1.  **Registry**: Choose and set up an [image registry](/docs/openshift?topic=openshift-registry) so that developers can pull images from the registry in their app deployment YAML files.
+1.  **Registry**: Choose and set up an [image registry](/docs/openshift?topic=openshift-registry) so that developers can pull images from the registry in their app deployment YAML files. Your cluster comes with the following default configurations that your developers can use.
+    *  **Internal OpenShift container registry**: The [internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry) is set up by default, with the images stored in an attached storage device. You can also choose to [pull an image from a private registry](/docs/openshift?topic=openshift-registry#imagestream_registry) like {{site.data.keyword.registrylong_notm}} into the image stream of the internal registry so that the image is available locally to all the projects in the cluster.
+    * **Private registry**: Your cluster is set up to pull images from [{{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr) in the `default` project only. To pull images from a private registry in other projects, [create an image pull secret](/docs/openshift?topic=openshift-registry#other) in the other projects or [import an image from your private registry into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry).
 2.  **CI/CD**:
   * Review available [options for automating app deployment](/docs/openshift?topic=openshift-cicd).
   * Set up toolchains with [{{site.data.keyword.deliverypipelinelong}}](/docs/openshift?topic=openshift-cicd#continuous-delivery-pipeline).

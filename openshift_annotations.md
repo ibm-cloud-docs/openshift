@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-12"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -1535,7 +1535,7 @@ spec:
 |Annotation field|Value|
 |----------------|-----|
 | `enabled` | To disable response data buffering on the ALB, set to `false`. |
-| `serviceName` | Replace `<em><myservice1></em>` with the name of the Kubernetes service that you created for your app. Separate multiple services with a semi-colon (;). This field is optional. If you do not specify a service name, then all services use this annotation. |
+| `serviceName` | Replace <em>`<myservice1>`</em> with the name of the Kubernetes service that you created for your app. Separate multiple services with a semi-colon (;). This field is optional. If you do not specify a service name, then all services use this annotation. |
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
@@ -1721,8 +1721,8 @@ spec:
 
 |Annotation field|Value|
 |----------------|-----|
-| `enabled` | To enable setting of server_port for the subdomain, set to `true`. |
-| `serviceName` | Replace `<em><myservice></em>` with the name of the Kubernetes service that you created for your app. Separate multiple services with a semi-colon (;). This field is optional. If you do not specify a service name, then all services use this annotation. |
+| `enabled` | Set to `true` to add `:server_port` to the host header of requests. |
+| `serviceName` | Replace <em>`<myservice>`</em> with the name of the Kubernetes service that you created for your app. Separate multiple services with a semi-colon (;). This field is optional. If you do not specify a service name, then all services use this annotation. |
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />

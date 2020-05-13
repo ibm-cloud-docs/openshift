@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-05-12"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -38,6 +38,8 @@ subcollection: openshift
 
 Ingress is a service that balances network traffic workloads in your cluster by forwarding public or private requests to your apps. You can use Ingress to expose multiple app services to the public or to a private network by using a unique public or private domain.
 {: shortdesc}
+
+In your cluster, the OpenShift router is a layer 7 load balancer which implements an HAProxy Ingress controller. A layer 4 `LoadBalancer` service exposes the router so that the router can receive external requests that come into your cluster. The router then forwards requests to app pods in your cluster based on distinguishing layr 7 protocol characteristics, such as headers.
 
 <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 4.3 or later only. To learn about Ingress for OpenShift version 3.11 clusters, see [About Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-about).
 {: note}
@@ -129,3 +131,29 @@ The following diagram shows how Ingress directs communication from the internet 
 4. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router service sends the requests between the app pods across all zones.
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router service that forwarded the request exists. The router then sends the response packet to the client.
+
+<br />
+
+
+## How can I customize routing for Ingress?
+{: #custom-routing}
+
+If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
+
+These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.</br></br>{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
+
+To get started, see [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4).
+
+<br />
+
+
+## How can I enable TLS certificates for Ingress?
+{: #certs}
+
+When you configure the public router, you choose the domain that your apps will be accessible through. You can use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, or you can set up a CNAME record to map a custom domain to the IBM-provided domain. To load balance incoming HTTPS connections to your subdomain, you can configure the Ingress controller for your router to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.
+{: shortdesc}
+
+* If you use the IBM-provided Ingress subdomain, the Ingress controller for your app is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. The certificates expire every 90 days and are automatically renewed 37 days before they expire.
+* If you use a custom domain, you must create a new Ingress controller, and you can use your own TLS certificate to manage TLS termination. For example, you can import a secret from {{site.data.keyword.cloudcerts_long_notm}}, which adds the secret to the `ibm-cert-store` project. If your Ingress resources are deployed in projects other than `ibm-cert-store`, you must copy the secret to those projects.
+
+To get started, see [Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-2).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-05-13"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -60,7 +60,8 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>OpenShift-native image stream, build, and app deployment process on a per cluster basis.</li>
         <li>Images can be shared across all projects in the cluster, with access that is controlled through RBAC roles.</li>
         <li>Integrating the internal registry with other Red Hat products like CloudForms for extended features such as vulnerability scanning.</li>
-        <li>Option to expose the internal registry with a route so that users can pull images from the registry over the public network.</li></ul>
+        <li>Option to expose the internal registry with a route so that users can pull images from the registry over the public network.</li>
+        <li>Option to set up the internal registry to [pull](#imagestream_registry) images from or [push](#builds_registry) images to a private registry such as {{site.data.keyword.registrylong_notm}}.</ul>
         <br>For more information, see [Using the internal registry](#openshift_internal_registry).</td>
     </tr>
     <tr>
@@ -68,6 +69,8 @@ Your app's images must be stored in a container registry that your cluster can a
         <td>Private registries are a good choice to protect your images from being used and changed by unauthorized users. Private registries must be set up by the cluster administrator to make sure that access, storage quotas, image trust and other features work as intended.<br><br>
         By default, your [OpenShift clusters are integrated with the private {{site.data.keyword.registrylong_notm}}](#openshift_iccr) through image pull secrets that are set up in the `default` project. {{site.data.keyword.registrylong_notm}} is a highly available, multi-tenant private registry to store your own images. You can also pull IBM-provided images from the global `icr.io` registry, and licensed software from the entitled registry. With {{site.data.keyword.registrylong_notm}}, you can manage images for multiple clusters with seamless integration with {{site.data.keyword.cloud_notm}} IAM and billing.<br><br>
         Advantages of using {{site.data.keyword.registrylong_notm}} with the internal registry:<ul>
+        <li>Local image caching for faster builds via the internal registry.</li>
+        <li>Deployments in other projects can refer to the image stream so that you do not need to copy pull secrets to each project.</li>
         <li>Sharing images across multiple clusters without needing to push images to multiple registries.</li>
         <li>[Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.</li>
         <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=registry-user) and [separate regional registries](/docs/Registry?topic=registry-registry_overview#registry_regions).</li>
@@ -77,6 +80,7 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li></ul>
         <br>To get started, see the following topics:<ul>
         <li>[Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-getting-started).</li>
+        <li>[Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](#imagestream_registry)</li>
         <li>[Using {{site.data.keyword.registrylong_notm}}](#openshift_iccr).</li></ul></td>
     </tr>
     <tr>
@@ -104,6 +108,8 @@ Want to learn more about how builds, image streams, and the internal registry wo
 For more information, see the following topics.
 * [Storing images in the internal registry](#storage_internal_registry)
 * [Setting up a secure external route for the internal registry](#route_internal_registry)
+* [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](#imagestream_registry)
+* [Setting up builds in the internal to push images to {{site.data.keyword.registrylong_notm}}](#builds_registry)
 
 ## Storing images in the internal registry
 {: #storage_internal_registry}
@@ -310,14 +316,178 @@ Now that you set up the internal registry with an accessible route, you can log 
 <br />
 
 
+## Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream
+{: #imagestream_registry}
+
+By default, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images from the remote, private {{site.data.keyword.registrylong_notm}} `icr.io` domains in the `default` project. You can import an image from {{site.data.keyword.registrylong_notm}} into the internal registry of your OpenShift cluster by tagging the image as an [image stream](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html){: external}. With this setup, you can deploy apps from the image by using the local cache of the internal registry, which can make your app deployments build faster. Also, deployments in other projects can refer to the image stream so that you do not have to create image pull secret credentials to {{site.data.keyword.registrylong_notm}} in each project. 
+{: shortdesc}
+
+If you update your image in {{site.data.keyword.registrylong_notm}}, the image is not pulled automatically into the internal registry of your OpenShift cluster. Instead, [configure periodic importing](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}, or repeat these steps to tag the image. Depending on the image pull policy that you use in your deployment, you might also need to restart your deployment.
+{: note}
+
+1.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+2.  Switch to the `default` project to pull your image into the image stream. The `default` project is already set up with credentials to access the `icr.io` registries.
+    ```
+    oc project default
+    ```
+    {: pre}
+3.  List the available images in your {{site.data.keyword.registrylong_notm}}. Note the **Repository** and **Tag** of the image that you want to pull into the internal registry of your OpenShift cluster .
+    ```
+    ibmcloud cr images
+    ```
+    {: pre}
+4.  Tag the image to pull it from your {{site.data.keyword.registrylong_notm}} namespace into the internal registry as an image stream. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html){: external} or run `oc tag --help`.
+    ```
+    oc tag <region>.icr.io/<namespace>/<image>:<tag> default/<image>:<tag> --reference-policy=local [--scheduled]
+    ```
+    {: pre}
+
+    <table>
+    <caption>Understanding this command's components</caption>
+    <thead>
+    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code><em>&lt;region&gt;.icr.io/&lt;namespace&gt;/&lt;image&gt;:&lt;tag&gt;</em></code></td>
+    <td>Use the **Repository** and **Tag** information that you previously retrieved to fill out the {{site.data.keyword.registrylong_notm}} region, namespace, image, and tag name of the image that you want to pull.</td>
+    </tr>
+    <tr>
+    <td><code>default/<em>&lt;image&lt;:&lt;tag&lt;</em></code></td>
+    <td>Enter the information for the internal image stream that you create from the {{site.data.keyword.registrylong_notm}} tagged image. You create this image stream in the `default` project, which is also the project where the image stream is created if you do not specify a project. The values for `<image>:<tag>` typically match the values that you previously retrieved.</td>
+    </tr>
+    <tr>
+    <td><code>--reference-policy=local</code></td>
+    <td>Set this value to `local` so that a copy of the image from {{site.data.keyword.registrylong_notm}} is imported into the local cache of the internal registry and made available to the cluster's projects as an image stream. If you do not include this value, the image stream refers back to {{site.data.keyword.registrylong_notm}} when you use it in your deployments and therefore requires credentials in the project.</td>
+    </tr>
+    <tr>
+    <td><code>--scheduled</code></td>
+    <td>Set this optional flag to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}.</td>
+    </tr>
+    </tbody></table>
+5.  Verify that your image stream is created. 
+    ```
+    oc get imagestreams
+    ```
+    {: pre}
+6.  Verify that the image stream successfully pulled the image from {{site.data.keyword.registrylong_notm}}. In the output, check that the **latest tagged from** image matches your `* <region>.icr.io/<namespace>/<image>@<digest>` image.
+    ```
+    oc describe is/<imagestream>
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    Name:			<imagestream>
+    Namespace:		default
+    Created:		2 days ago
+    Labels:			<none>
+    Annotations:		openshift.io/image.dockerRepositoryCheck=2020-03-31T09:41:36Z
+    Image Repository:	image-registry.openshift-image-registry.svc:5000/default/ant1
+    Image Lookup:		local=false
+    Unique Images:		1
+    Tags:			    1
+    
+    latest
+        tagged from <region>.icr.io/<namespace>/<image>:<tag>
+    
+        * <region>.icr.io/<namespace>/<image>@<digest>
+            2 days ago
+    ```
+    {: screen}
+
+Now, your developers can [use the image stream in an app deployment](/docs/openshift?topic=openshift-images#oc_imagestream_deploy). The image successfully builds from the locally pulled image in the internal registry. You do not need to set up an image pull secret in the project to {{site.data.keyword.registrylong_notm}}, because the image stream is local to the cluster.
+
+<br />
+
+
+## Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}
+{: #builds_registry}
+
+When you create a [build](https://docs.openshift.com/container-platform/4.3/builds/understanding-image-builds.html){: external} in your Red Hat OpenShift on IBM Cloud cluster, you can [set up the internal registry to push the image to your external repository](https://docs.openshift.com/container-platform/4.3/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external} in {{site.data.keyword.registrylong_notm}}. By default, the image pull secret in the `default` project of your cluster only has read access to pull images from {{site.data.keyword.registrylong_notm}}. To push images, you must add a secret with write access.
+{: shortdesc}
+
+1.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+2.  Switch to the `default` project.
+    ```
+    oc project default
+    ```
+    {: pre}
+3.  [Follow the steps to set up an {{site.data.keyword.cloud_notm}} IAM API key](/docs/openshift?topic=openshift-registry#other_registry_accounts) with the `Reader` and `Writer` service access roles to pull from and push images to your `icr.io` registries.
+    Keep in mind that any user with access to the project can use this secret to push images to your private registry. You might want to set up [logging and monitoring](/docs/openshift?topic=openshift-health) tools so that you can observe who does what actions in your cluster.
+    {: note}
+4.  Repeat the previous step for each `icr.io` region that you want to push images to.
+5.  Add the secret to the build service account and refer to the secrets in the build configuration file. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
+    1.  Add the secret to the build service account by linking the secret that you just created to the `builder` role that all builds in the cluster use.
+        ```
+        oc secrets link builder <secret_name>
+        ```
+        {: pre}
+    2.  List the build configurations and note the ones that you want to give push and pull access to {{site.data.keyword.registrylong_notm}}.
+        ```
+        oc get bc
+        ```
+        {: pre}
+    3.  Set the image push secret for the build configuration to use the secret that you just created with `Writer` service access to {{site.data.keyword.registrylong_notm}}.
+        ```
+        oc set build-secret --push bc/<build_config_name> <secret_name>
+        ```
+        {: pre}
+    4.  Set the image pull secret for the build configuration to pull from the registry that you want to pull the initial build image from. For example, you can use the secret that you just created with `Reader` service access to {{site.data.keyword.registrylong_notm}} if the source image is in a {{site.data.keyword.registrylong_notm}} repository.
+        ```
+        oc set build-secret --pull bc/<build_config_name> <secret_name>
+        ```
+        {: pre}
+6.  After you update the build service account and build configuration file to push to {{site.data.keyword.registrylong_notm}}, restart your build.
+    ```
+    oc start-build <build_name>
+    ```
+    {: pre}
+7.  Get the name of your build pod, such as `<build>-2-build`.
+    ```
+    oc get pods
+    ```
+    {: pre}
+8.  Check the logs of the build and note where the image was pushed.
+    ```
+    oc logs <build_pod>
+    ```
+    {: pre}
+
+    Example of a successful image push log:
+    ```
+    ...
+    Successfully pushed <region>.icr.io/<namespace>/<build_name>@sha256:<hash>
+    Push successful
+    ```
+    {: screen}
+9.  Check your images in your private registry to confirm that the image is created.
+    ```
+    ibmcloud cr image list
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    Repository                                Tag       Digest     Namespace     Created         Size     Security status   
+    <region>.icr.io/<namespace>/<build_name>  latest    <digest>   <namespace>   2 minutes ago   182 MB   33 Issues  
+    ```
+    {: screen}
+
+Your OpenShift build can now pull images from and push images to {{site.data.keyword.registrylong_notm}}.
+
+<br />
+
 
 ## Using {{site.data.keyword.registrylong_notm}}
 {: #openshift_iccr}
 
-By default, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images from the remote, private {{site.data.keyword.registrylong_notm}} `icr.io` domains in the `default` project. If you want to use images that are stored in {{site.data.keyword.registrylong_notm}} for other projects, create image pull secrets for each global and regional registry in each project.
+By default, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images from the remote, private {{site.data.keyword.registrylong_notm}} `icr.io` domains in the `default` project. If you want to use images that are stored in {{site.data.keyword.registrylong_notm}} for other projects, you can pull the image to the internal registry in an image stream, or create image pull secrets for each global and regional registry in each project.
 {: shortdesc}
 
-See the following topics.
+**To import images into the internal registry**: See [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](#imagestream_registry).
+
+**To pull images directly from the external {{site.data.keyword.registrylong_notm}}**: See the following topics.
 * [Understanding how to authorize your cluster to pull images from a registry](#cluster_registry_auth).
 * [Copying the `default-<region>-icr-io` secrets](#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.
 * [Creating your own image pull secret](#other_registry_accounts).

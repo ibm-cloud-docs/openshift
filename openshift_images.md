@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-05-13"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -43,6 +43,35 @@ A Docker image is the basis for every container that you create with {{site.data
 {:shortdesc}
 
 An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
+
+## Deploying containers from an existing image stream in the internal registry
+{: #oc_imagestream_deploy}
+
+You can deploy an app from an existing [image stream](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html){: external} that your cluster administrator set up in the internal registry of your OpenShift cluster. For example, your cluster administrator might have [set up the image stream to import an image from an external private registry](/docs/openshift?topic=openshift-registry#imagestream_registry), such as {{site.data.keyword.registrylong_notm}}.
+{: shortdesc}
+
+**Using an image stream from the CLI**:
+1.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+2.  List the available image streams in a project. If you know the project, name, and tag of the image stream, you can use local image streams in other projects without setting up image pull stream credentials.
+    ```
+    oc get is -n <project>
+    ```
+    {: pre}
+3.  Create your app from the image stream.
+    ```
+    oc new-app --image-stream="<project>/<imagestream>:<tag>"
+    ```
+    {: pre}
+
+**Using an image stream from the OpenShift web console**:
+1.  From the [OpenShift web console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui), switch to the **Developer** perspective and click **+Add**.
+2.  In the **Add** pane menu bar, select a **Project** that is not `default` to create your app in, and click **Container Image**.
+3.  In the **Image** section, select **Image name from internal registry**.
+4.  Select `default` **Project**, `<image>` **ImageStreams**, and `<tag>` **Tag** of the image stream that you previously created.
+5.  Review the rest of the application details, and click **Create**.
+
+<br />
+
 
 
 ## Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` OpenShift project
