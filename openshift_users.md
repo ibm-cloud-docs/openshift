@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-14"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -465,7 +465,7 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
       * **Platform access role**: Grants access to Red Hat OpenShift on IBM Cloud so that users can manage infrastructure resources such as clusters, worker nodes, worker pools, Ingress application load balancers, and storage. To find a list of supported actions per role, see [platform roles reference page](/docs/openshift?topic=openshift-access_reference#iam_platform).<p class="note">If you assign a user the **Administrator** platform role for only one cluster, you must also assign the user the **Viewer** platform role for all clusters in that region in the resource group.</p>
       * **Service access role**: Grants access to the Kubernetes API from within a cluster so that users can manage Kubernetes resources such as pods, deployments, services, and namespaces. To find a list of supported actions per role, see [service roles reference page](/docs/openshift?topic=openshift-access_reference#service).<p class="note">Do not assign a platform role at the same time as you assign a service role. If you also want the user to have a platform role, repeat these steps but leave the namespace field blank and assign only a platform role (do not assign a service access role again).</p>
    8. Click **Add**.
-   9.  If you assigned only service roles to users, the users must be given the cluster master URL to open the OpenShift web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform). Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
+   9.  If you assigned only service roles to users, the users must be given the cluster master URL to open the OpenShift web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
    10. **Optional: Resource groups only**: In the **Assign access to a resource group** field, select at least the **Viewer** platform role so that users can work with clusters in a resource group other than the default.
    11.  In the side panel, review the **Access summary** of your changes, and click **Assign**.
 
@@ -686,7 +686,7 @@ Grant users access to your Red Hat OpenShift on IBM Cloud clusters by assigning 
         ```
         {: pre}
 
-4.  If you assigned only service roles to users, the users must be given the cluster master URL to open the OpenShift web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform). Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
+4.  If you assigned only service roles to users, the users must be given the cluster master URL to open the OpenShift web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
 
 5.  For the changes to take effect, the user that is granted access must refresh the cluster configuration. Users are not added to the role bindings until they individually refresh the cluster configuration, even if you added multiple users at the same time. Users are also not added to a role binding if they have a higher permission. For example, if users have a cluster role and are in a cluster role binding, they are not added to each individual namespace role binding as well.
     ```
