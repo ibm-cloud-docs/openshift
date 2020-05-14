@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -333,7 +333,7 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <tr>
 <td style="text-align:left">Supported OpenShift versions</td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li></ul></td>
+<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3</li></ul></td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3</li></ul></td>
 </tr>
 <tr>
