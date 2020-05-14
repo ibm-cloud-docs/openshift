@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-05-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -52,7 +52,7 @@ Before you get started with Ingress, review the following prerequisites.
     - **Administrator** platform role for the cluster
     - **Manager** service role in all projects
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller and router in that zone.
-- Ingress requires at least two worker nodes per zone to ensure high availability and to ensure that updates to your Ingress configuration roll out correctly. If only one worker node exists per zone, any time that you update your Ingress resources, you must manually restart the router pods for your Ingress controller so that the pods pick up the changes.
+- To ensure high availability, at least two worker nodes per zone are recommended.
 * Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
 <br />
