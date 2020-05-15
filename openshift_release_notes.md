@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -234,7 +234,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>14 October 2019</td>
   <td><ul>
-  <li><strong>Calico MTU</strong>: Added [steps](/docs/containers?topic=containers-kernel#calico-mtu) for changing the Calico plug-in maximum transmission unit (MTU) to meet the network throughput requirements of your environment.</li>
+  <li><strong>Calico MTU</strong>: Added [steps](/docs/openshift?topic=openshift-kernel#calico-mtu) for changing the Calico plug-in maximum transmission unit (MTU) to meet the network throughput requirements of your environment.</li>
   <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.38](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
   </li>
   <li><strong>Cloud Paks</strong>: By using the {{site.data.keyword.cloud_notm}} catalog, you can [add Cloud Paks to your OpenShift clusters](/docs/openshift?topic=openshift-openshift_cloud_paks).</li>
