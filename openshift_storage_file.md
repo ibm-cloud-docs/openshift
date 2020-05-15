@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -268,7 +268,6 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
 {:shortdesc}
 
 Before you begin:
-- If you have a firewall, [allow egress access](/docs/openshift?topic=openshift-firewall#pvc) for the IBM Cloud infrastructure IP ranges of the zones that your clusters are in so that you can create PVCs.
 - [Decide on a pre-defined storage class](#file_predefined_storageclass) or create a [customized storage class](#file_custom_storageclass).
 
 Looking to deploy {{site.data.keyword.filestorage_short}} in a stateful set? See [Using {{site.data.keyword.filestorage_short}} in a stateful set](#file_statefulset) for more information.
