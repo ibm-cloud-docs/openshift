@@ -152,7 +152,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
    6. Decide if you want to use the default {{site.data.keyword.keymanagementserviceshort}} service instance or your own.
    5. Review the pricing plan.
    6. Click **Create** to start setting up your service instance. The setup might take a few minutes to complete.
-3. Create service credentials for your Databases for etcd service instance.<containers priv-lim><containers priv-lim>
+3. Create service credentials for your Databases for etcd service instance.
    1. In the navigation on the service details page, click **Service Credentials**.
    2. Click **New credentials**.
    3. Enter a name for your service credentials and click **Add**.
@@ -942,7 +942,7 @@ To access the storage from your app, you must mount the PVC to your app.
 
       <br />
 
-      
+
 
 
 ## Exploring other Portworx features
@@ -1085,7 +1085,6 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 {: #portworx_help}
 
 If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an e-mail to `support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@portworx.com`.
-
 
 
 
