@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-09"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -786,7 +786,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
     </tr>
     <tr>
     <td><code>CHART_TYPE</code></td>
-    <td><ul><li>Enter the name of the chart type that you want to deploy. Enter <code>backup</code> to deploy the backup chart. Enter <code>restore</code> to deploy the restore chart.</td>
+    <td>Enter the name of the chart type that you want to deploy. Enter <code>backup</code> to deploy the backup chart. Enter <code>restore</code> to deploy the restore chart.</td>
     </tr>
     <tr>
     <td><code>BACKUP_TYPE</code></td>
