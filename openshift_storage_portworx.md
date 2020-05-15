@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-14"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -71,9 +71,7 @@ One of the biggest challenges when you run stateful apps in a cluster is to make
 You can also choose to use only a subset of worker nodes for your Portworx storage layer. For example, you might have a worker pool with SDS worker nodes that come with local raw block storage, and another worker pool with virtual worker nodes that do not come with local storage. When you install Portworx, a Portworx pod is scheduled onto every worker node in your cluster as part of a daemon set. Because your SDS worker nodes have local storage, these worker nodes are included into the Portworx storage layer only. Your virtual worker nodes are not included as a storage node because of the missing local storage. However, when you deploy an app pod to your virtual worker node, this pod can still access data that is physically stored on an SDS worker node by using the Portworx daemon set pod. This setup is referred to as `storage-heavy` and offers slightly slower performance than the `hyper-converged` setup because the virtual worker node must talk to the SDS worker node over the private network to access the data.
 
 **What limitations must I plan for?** </br>
-Portworx is available for standard clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, you cannot use Portworx unless you open up all egress network traffic on TCP port 443, or enable the public service endpoint.
-
-
+Portworx is available for standard clusters that are set up with public network connectivity.
 
 All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.
 
@@ -154,7 +152,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
    6. Decide if you want to use the default {{site.data.keyword.keymanagementserviceshort}} service instance or your own.
    5. Review the pricing plan.
    6. Click **Create** to start setting up your service instance. The setup might take a few minutes to complete.
-3. Create service credentials for your Databases for etcd service instance. 
+3. Create service credentials for your Databases for etcd service instance.<containers priv-lim><containers priv-lim>
    1. In the navigation on the service details page, click **Service Credentials**.
    2. Click **New credentials**.
    3. Enter a name for your service credentials and click **Add**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -402,33 +402,6 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
   - OpenShift version 4.3 and later only: Allow inbound and outbound connections to TCP and UDP port 5353 for DNS access.
 
 5. Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEncap traffic between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for private load balancers and the IPEncap protocol to permit pod to pod traffic across subnets.
-
-7. {: #pvc}To create persistent volume claims in a cluster where worker nodes are connected to private VLANs only, make sure that your cluster is set up with the following Kubernetes version or {{site.data.keyword.cloud_notm}} storage plug-in versions. These versions enable private network communication from your cluster to your persistent storage instances.
-    <table>
-    <caption>Overview of required Kubernetes or {{site.data.keyword.cloud_notm}} storage plug-in versions for private clusters</caption>
-    <thead>
-      <th>Type of storage</th>
-      <th>Required version</th>
-   </thead>
-   <tbody>
-     <tr>
-       <td>File storage</td>
-       <td>Kubernetes version <code>1.13.4_1512</code>, <code>1.12.6_1544</code>, <code>1.11.8_1550</code>, <code>1.10.13_1551</code>, or later</td>
-     </tr>
-     <tr>
-       <td>Block storage</td>
-       <td>{{site.data.keyword.cloud_notm}} Block Storage plug-in version 1.3.0 or later</td>
-     </tr>
-     <tr>
-       <td>Object storage</td>
-       <td><ul><li>{{site.data.keyword.cos_full_notm}} plug-in version 1.0.3 or later</li><li>{{site.data.keyword.cos_full_notm}} service set up with HMAC authentication</li></ul></td>
-     </tr>
-   </tbody>
-   </table>
-
-   If you must use a Kubernetes version or {{site.data.keyword.cloud_notm}} storage plug-in version that does not support network communication over the private network, or if you want to use {{site.data.keyword.cos_full_notm}} without HMAC authentication, allow egress access through your firewall to IBM Cloud infrastructure and {{site.data.keyword.cloud_notm}} Identity and Access Management:
-   - Allow all egress network traffic on TCP port 443.
-   - Allow access to the IBM Cloud infrastructure IP range for the zone that your cluster is in for both the [**Front-end (public) network**](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#frontend-public-network) and [**Back-end (private) Network**](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#backend-private-network). To find the zone of your cluster, run `ibmcloud oc cluster ls`.
 8. Optional: To send logging and metric data, set up firewall rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
    *  [{{site.data.keyword.la_short}} private endpoints](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-service-connection#ips_api)
    *  [{{site.data.keyword.mon_short}} private endpoints](/docs/Monitoring-with-Sysdig?topic=Sysdig-network#network_outgoing_traffic)
