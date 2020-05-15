@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-15"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -96,7 +96,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components 
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
-5.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the first file in the `KUBECONFIG` environment variable.
+5.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable.
     ```
     ibmcloud oc cluster config --cluster <cluster_name_or_ID>
     ```

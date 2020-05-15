@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-07"
+lastupdated: "2020-05-15"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -39,9 +39,6 @@ subcollection: openshift
 [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started) is persistent, highly available storage that you can mount to your apps. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud {{site.data.keyword.cos_short}} buckets to pods in your cluster. Information that is stored with {{site.data.keyword.cos_full_notm}} is encrypted in transit and at rest, dispersed across multiple geographic locations, and accessed over HTTP by using a REST API.
 {: shortdesc}
 
-If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
-{: important}
-
 If you installed the {{site.data.keyword.cos_full_notm}} plug-in with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
 {: important}
 
@@ -74,7 +71,7 @@ Follow these steps to create an {{site.data.keyword.cos_full_notm}} service inst
   2.  Click **New credential**. A dialog box displays.
   3.  Enter a name for your credentials.
   4.  From the **Role** drop-down, select `Writer` or `Manager`. When you select `Reader`, then you cannot use the credentials to create buckets in {{site.data.keyword.cos_full_notm}} and write data to it.
-  5.  Optional: In **Add Inline Configuration Parameters (Optional)**, enter `{"HMAC":true}` to create additional HMAC credentials for the {{site.data.keyword.cos_full_notm}} service. HMAC authentication adds an extra layer of security to the OAuth2 authentication by preventing the misuse of expired or randomly created OAuth2 tokens. **Important**: If you have a private-only cluster with no public access, you must use HMAC authentication so that you can access the {{site.data.keyword.cos_full_notm}} service over the private network.
+  5.  Optional: In **Add Inline Configuration Parameters (Optional)**, enter `{"HMAC":true}` to create additional HMAC credentials for the {{site.data.keyword.cos_full_notm}} service. HMAC authentication adds an extra layer of security to the OAuth2 authentication by preventing the misuse of expired or randomly created OAuth2 tokens.
   6.  Click **Add**. Your new credentials are listed in the **Service Credentials** table.
   7.  Click **View credentials**.
   8.  Make note of the **apikey** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **cos_hmac_keys** section, note the **access_key_id** and the **secret_access_key**.

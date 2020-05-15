@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-05"
+lastupdated: "2020-05-14"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -465,7 +465,7 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
       * **Platform access role**: Grants access to Red Hat OpenShift on IBM Cloud so that users can manage infrastructure resources such as clusters, worker nodes, worker pools, Ingress application load balancers, and storage. To find a list of supported actions per role, see [platform roles reference page](/docs/openshift?topic=openshift-access_reference#iam_platform).<p class="note">If you assign a user the **Administrator** platform role for only one cluster, you must also assign the user the **Viewer** platform role for all clusters in that region in the resource group.</p>
       * **Service access role**: Grants access to the Kubernetes API from within a cluster so that users can manage Kubernetes resources such as pods, deployments, services, and namespaces. To find a list of supported actions per role, see [service roles reference page](/docs/openshift?topic=openshift-access_reference#service).<p class="note">Do not assign a platform role at the same time as you assign a service role. If you also want the user to have a platform role, repeat these steps but leave the namespace field blank and assign only a platform role (do not assign a service access role again).</p>
    8. Click **Add**.
-   9.  If you assigned only service roles to users, the users must be given the cluster master URL to open the OpenShift web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform). Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
+   9.  If you assigned only service roles to users, the users must be given the cluster master URL to open the OpenShift web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
    10. **Optional: Resource groups only**: In the **Assign access to a resource group** field, select at least the **Viewer** platform role so that users can work with clusters in a resource group other than the default.
    11.  In the side panel, review the **Access summary** of your changes, and click **Assign**.
 
@@ -686,7 +686,7 @@ Grant users access to your Red Hat OpenShift on IBM Cloud clusters by assigning 
         ```
         {: pre}
 
-4.  If you assigned only service roles to users, the users must be given the cluster master URL to open the OpenShift web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform). Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
+4.  If you assigned only service roles to users, the users must be given the cluster master URL to open the OpenShift web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
 
 5.  For the changes to take effect, the user that is granted access must refresh the cluster configuration. Users are not added to the role bindings until they individually refresh the cluster configuration, even if you added multiple users at the same time. Users are also not added to a role binding if they have a higher permission. For example, if users have a cluster role and are in a cluster role binding, they are not added to each individual namespace role binding as well.
     ```
@@ -771,13 +771,13 @@ To learn more about the actions permitted by each RBAC role, check out the [{{si
 All users of an OpenShift cluster are added to the following OpenShift RBAC groups by cluster version. <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`. <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.
 {: note}
 
-**Can I create custom roles or cluster roles?**
+**Can I create custom roles or cluster roles?**</br>
 The `view`, `edit`, `admin`, and `cluster-admin` cluster roles are predefined roles that are automatically created when you assign a user the corresponding {{site.data.keyword.cloud_notm}} IAM service role. To grant other Kubernetes permissions, you can [create custom RBAC permissions](#rbac). Custom RBAC roles are in addition to and do not change or override any RBAC roles that you might have assigned with service access roles. Note that to create custom RBAC permissions, you must have the IAM **Manager** service access role that gives you the `cluster-admin` Kubernetes RBAC role. However, the other users do not need an IAM service access role if you manage your own custom Kubernetes RBAC roles.
 
 Making your own custom RBAC policies? Be sure not to edit the existing IBM role bindings that are in the cluster, or name new role bindings with the same name. Any changes to IBM-provided RBAC role bindings are overwritten periodically. Instead, create your own role bindings.
 {: tip}
 
-**When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**
+**When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**</br>
 You might want to authorize who can create and update pods in your cluster. With [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs), you can use existing cluster role bindings that come with your cluster, or create your own.
 
 You might also want to integrate add-ons to your cluster. For example, when you [set up Helm in your cluster](/docs/openshift?topic=openshift-helm#public_helm_install), you must create a service account for Tiller in the `tiller` project and a Kubernetes RBAC cluster role binding for the `tiller-deploy` pod.

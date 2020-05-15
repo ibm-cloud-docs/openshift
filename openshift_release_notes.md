@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,9 +44,10 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 15 May 2020 | **Cloud Paks entitlements**: Added information about [Assigning a Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_assign). |
 | 13 May 2020 | **Registry**: Added the following topics about using {{site.data.keyword.registrylong_notm}} with the internal OpenShift container registry. For more information, see [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options).<ul><li>[Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry).</li><li>[Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy).</li><li>[Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry).</li></ul> |
 | 12 May 2020 | **Version changelogs**: Master patch update is available for OpenShift [`4.3.18_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4318_1522).</li> |
-| 11 May 2020 | <ul>**Version changelogs**: Worker node patch updates are available for OpenShift [`4.3.13_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4314_1522) and [`3.11.216_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311216_1550). |
+| 11 May 2020 | **Version changelogs**: Worker node patch updates are available for OpenShift [`4.3.13_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4314_1522) and [`3.11.216_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311216_1550). |
 | 08 May 2020 | **CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.57](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
 | 04 May 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall for {{site.data.keyword.registrylong_notm}}.</li><li>**Ingress troubleshooting in version 3.11 clusters**:Added a [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#alb-pod-affinity) for when ALB pods do not deploy correctly to worker nodes.</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
@@ -234,7 +235,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>14 October 2019</td>
   <td><ul>
-  <li><strong>Calico MTU</strong>: Added [steps](/docs/containers?topic=containers-kernel#calico-mtu) for changing the Calico plug-in maximum transmission unit (MTU) to meet the network throughput requirements of your environment.</li>
   <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.38](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
   </li>
   <li><strong>Cloud Paks</strong>: By using the {{site.data.keyword.cloud_notm}} catalog, you can [add Cloud Paks to your OpenShift clusters](/docs/openshift?topic=openshift-openshift_cloud_paks).</li>

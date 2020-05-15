@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-08"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -641,7 +641,7 @@ Block storage comes with a `ReadWriteOnce` access mode. You can mount it to only
 {: note}
 
 Before you begin:
-- If you have a firewall, [allow egress access](/docs/openshift?topic=openshift-firewall#pvc) for the IBM Cloud infrastructure IP ranges of the zones that your clusters are in so that you can create PVCs.
+- If you have a firewall, [allow egress access](/docs/openshift?topic=openshift-firewall#vyatta_firewall) for the IBM Cloud infrastructure IP ranges of the zones that your clusters are in so that you can create PVCs.
 - [Decide on a pre-defined storage class](#block_predefined_storageclass) or create a [customized storage class](#block_custom_storageclass).
 
 Looking to deploy block storage in a stateful set? For more information, see [Using block storage in a stateful set](#block_statefulset).
