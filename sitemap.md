@@ -815,7 +815,6 @@ subcollection: openshift
   * [Enabling log buffering and flush timeout](/docs/openshift?topic=openshift-ingress-settings#access-log)
   * [Changing the number or duration of keepalive connections](/docs/openshift?topic=openshift-ingress-settings#keepalive_time)
   * [Changing the pending connections backlog](/docs/openshift?topic=openshift-ingress-settings#backlog)
-  * [Tuning kernel performance](/docs/openshift?topic=openshift-ingress-settings#ingress_kernel)
 
 [Managing the Ingress ALB lifecycle](/docs/openshift?topic=openshift-ingress-manage)
 * [Updating ALBs](/docs/openshift?topic=openshift-ingress-manage#alb-update)
