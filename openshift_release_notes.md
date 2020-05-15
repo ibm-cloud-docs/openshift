@@ -44,7 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 18 May 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 628](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li><li>**Cloud Paks entitlements**: </li></ul>|
+| 15 May 2020 | **Cloud Paks entitlements**: |
 | 13 May 2020 | **Registry**: Added the following topics about using {{site.data.keyword.registrylong_notm}} with the internal OpenShift container registry. For more information, see [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options).<ul><li>[Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry).</li><li>[Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy).</li><li>[Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry).</li></ul> |
 | 12 May 2020 | **Version changelogs**: Master patch update is available for OpenShift [`4.3.18_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4318_1522).</li> |
 | 11 May 2020 | **Version changelogs**: Worker node patch updates are available for OpenShift [`4.3.13_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4314_1522) and [`3.11.216_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311216_1550). |
