@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -564,9 +564,6 @@ When you set up your {{site.data.keyword.cloud_notm}} account to use service end
 2.  [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 
 Now, {{site.data.keyword.registrylong_notm}} automatically uses the private service endpoint. You do not need to enable the private service endpoint for your Red Hat OpenShift on IBM Cloud clusters.
-
-**I have a private-only cluster. How do I enforce that my image traffic remains on the private network?**<br>
-The image push and pull traffic is automatically on the private network. Red Hat OpenShift on IBM Cloud can use the public `icr.io` registry domains in existing image pull secrets to authenticate requests to {{site.data.keyword.registrylong_notm}}. These requests are automatically redirected to the private `icr.io` registry domains. You do not need to modify the image pull secrets or configure additional settings.
 
 **Do I have to use the private `icr.io` registry addresses for anything else?**<br>
 Yes, if you [sign your images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent), the signatures contain the registry domain name. If you want to use the private `icr.io` domain for your signed images, resign your images with the private `icr.io` domains.

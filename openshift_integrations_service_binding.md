@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-05-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -63,7 +63,7 @@ Yes, you can use services that meet naming requirements and reuse the service cr
 **What if I want to use service credentials that use the private service endpoint?**</br>
 By default, the `ibmcloud oc cluster service bind` command creates service credentials with the public service endpoint. To use the private service endpoint, you must manually create service credentials for your service that use the private service endpoint, and then use the `--key` option to specify the name of the existing service credentials.  
 
-Your service might not yet support private service endpoints. If you have a private-only cluster, you must use service credentials that use the private service endpoint, or open up the public IP address and port to connect to your service.
+Your service might not yet support private service endpoints.
 
 **Can I use all {{site.data.keyword.cloud_notm}} services in my cluster?**</br>
 You can use service binding only for services that support service keys so that the service credentials can automatically be created and stored in a Kubernetes secret. To find a list of services that support service keys, see [Enabling external apps to use {{site.data.keyword.cloud_notm}} services](/docs/resources?topic=resources-externalapp#externalapp).

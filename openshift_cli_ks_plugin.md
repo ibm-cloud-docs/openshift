@@ -1751,7 +1751,7 @@ After you create a classic cluster or worker pool, you can add a zone. When you 
 {: shortdesc}
 
 ```
-ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--private-only] [--json] [-s]
+ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--json] [-s]
 ```
 {: pre}
 
@@ -1845,7 +1845,7 @@ ibmcloud oc zone ls -l ap
 {: shortdesc}
 
 ```
-ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--private-only] [-f] [-s]
+ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [-f] [-s]
 ```
 {: pre}
 
@@ -1867,9 +1867,6 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 
 <dt><code>--public-vlan <em>PUBLIC_VLAN</em></code></dt>
 <dd>The ID of the public VLAN. This value is required only if you want to change the public VLAN for the zone. To change the public VLAN, you must always provide a compatible private VLAN. New worker nodes are added to the VLAN that you specify, but the VLANs for any existing worker nodes are not changed.<p class="note">The private and public VLANs must be compatible, which you can determine from the **Router** ID prefix.</p></dd>
-
-<dt><code>--private-only</code></dt>
-<dd>Optional: Unset the public VLAN so that the workers in this zone are connected to a private VLAN only. For OpenShift clusters, note the [limitation](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit) that the cluster must have some public VLAN worker nodes. </dd>
 
 <dt><code>-f</code></dt>
 <dd>Force the command to run without user prompts. This value is optional.</dd>

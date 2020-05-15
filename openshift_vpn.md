@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-14"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -676,7 +676,7 @@ You can disable the VPN connection by deleting the Helm chart.
 The [Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) provides the latest Vyatta 5600 operating system for x86 bare metal servers. You can use a VRA as VPN gateway to securely connect to an on-premises network.
 {:shortdesc}
 
-All public and private network traffic that enters or exits the cluster VLANs is routed through a VRA. You can use the VRA as a VPN endpoint to create an encrypted IPSec tunnel between servers in IBM Cloud infrastructure and on-premises resources. For example, the following diagram shows how an app on a private-only worker node in Red Hat OpenShift on IBM Cloud can communicate with an on-premises server via a VRA VPN connection:
+All public and private network traffic that enters or exits the cluster VLANs is routed through a VRA. You can use the VRA as a VPN endpoint to create an encrypted IPSec tunnel between servers in IBM Cloud infrastructure and on-premises resources. For example, the following diagram shows how an app on a worker node in Red Hat OpenShift on IBM Cloud can communicate with an on-premises server via a VRA VPN connection on the private VLAN:
 
 <img src="images/cs_vpn_vyatta.png" width="725" alt="Expose an app in Red Hat OpenShift on IBM Cloud by using a load balancer" style="width:725px; border-style: none"/>
 

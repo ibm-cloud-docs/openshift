@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -789,7 +789,6 @@ You might need to update your Helm installation because of the following reasons
 * The URL to the {{site.data.keyword.cloud_notm}} Helm repository that is configured on your local machine might be incorrect.
 * The name of your local Helm repository might not match the Helm repository name or URL of the installation command that you copied from the Helm chart instructions.
 * The Helm chart that you want to install does not support the version of Helm that you installed on your local machine.
-* Your cluster network setup changed from public access to private-only access, but Helm was not updated.
 
 {: tsResolve}
 To troubleshoot your Helm chart:
@@ -811,7 +810,17 @@ To troubleshoot your Helm chart:
 Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 
 <br />
+or specified custom Calico policies,that block public network connectivity to the container registry where the image is stored.
 
+{: tsResolve}
+- If you have a custom firewall or set custom Calico policies, allow outbound and inbound network traffic between your worker nodes and the container registry where the image is stored. If the image is stored in {{site.data.keyword.registrylong_notm}}, review the required ports in [Allowing the cluster to access infrastructure resources and other services](/docs/openshift?topic=openshift-firewall#firewall_outbound).
+- If you created a private cluster by enabling the private service endpoint only, you can [enable the public service endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_disable) for your cluster. If want to install Helm charts in a private cluster without opening up a public connection, you can install Helm [with Tiller](/docs/openshift?topic=openshift-helm#private_local_tiller) or [without Tiller](/docs/openshift?topic=openshift-helm#private_install_without_tiller).
+
+    [Helm v3 was released on 13 November 2019](https://helm.sh/blog/helm-3-released/){: external}. Tiller is removed in Helm v3. Install Helm v2 only if you have specific requirements to use Helm v2 in your cluster. Otherwise, [install the latest release of Helm v3](/docs/openshift?topic=openshift-helm#install_v3).
+    {: note}
+
+<br />
+</containers priv-lim>
 
 ## Feedback, questions, and support
 {: #getting_help_app}
