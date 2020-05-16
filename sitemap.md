@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-05-16"
 
 keywords: openshift
 subcollection: openshift
@@ -618,10 +618,10 @@ subcollection: openshift
 [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
 
 [Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
-* [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
+* [Public app networking](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
 
 [Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
-* [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
+* [Private app networking](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
 
 
 ## Exposing apps with routes

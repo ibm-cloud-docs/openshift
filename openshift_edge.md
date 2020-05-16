@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -47,8 +47,11 @@ If you want to restrict network traffic to edge worker nodes in a multizone clus
 ## Isolating networking workloads to edge nodes
 {: #edge_nodes}
 
-Add the `dedicated=edge` label to worker nodes on each public or private VLAN in your cluster. The labels ensure that network load balancers (NLBs) and Ingress application load balancers (ALBs) are deployed to those worker nodes only. For NLBs, ensure that two or more worker nodes per zone are edge nodes. For ALBs, ensure that three or more worker nodes per zone are edge nodes.
-{:shortdesc}
+Add the `dedicated=edge` label to worker nodes on each public or private VLAN in your cluster.
+{: shortdesc}
+
+* <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> In version 4.3 and later clusters, the labels ensure that network load balancer (NLB) pods are deployed to those worker nodes only. For NLBs, ensure that two or more worker nodes per zone are edge nodes. Note that router pods for Ingress controllers and routes are not deployed to edge nodes and remain on non-edge worker nodes.
+* <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> In version 3.11 clusters, the labels ensure that network load balancers (NLBs) and Ingress application load balancers (ALBs) are deployed to those worker nodes only. For NLBs, ensure that two or more worker nodes per zone are edge nodes. For ALBs, ensure that three or more worker nodes per zone are edge nodes. Both public and private NLBs and ALBs can deploy to edge worker nodes. Note that router pods are not deployed to edge nodes and remain on non-edge worker nodes.
 
 Before you begin:
 
@@ -59,7 +62,7 @@ Before you begin:
 
 </br>To create an edge node worker pool:
 
-1. [Create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone if you use NLBs or 3 or more workers per zone if you use ALBs. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
+1. [Create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone if you use NLBs or for version 3.11 clusters, 3 or more workers per zone if you use ALBs. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
 
   <p class="tip">If you want to use an existing worker pool, the pool must span all zones in your cluster and have at least two workers per zone. You can label the worker pool with `dedicated=edge` by using the [POST worker pool labels API](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels){: external}. In the body of the request, pass in the following JSON.
       <pre class="screen">
@@ -68,7 +71,7 @@ Before you begin:
         "state": "labels"
       }</pre></p>
 
-  <p class="important">To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least three edge worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that do not permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two edge nodes per zone, both ALB pod replicas already exist on those edge nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three edge nodes are present in a zone, the new ALB pod can be scheduled to the third edge node. Then, the old ALB pod is removed.</p>
+  <p class="important">Version 3.11 clusters: To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least three edge worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that do not permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two edge nodes per zone, both ALB pod replicas already exist on those edge nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three edge nodes are present in a zone, the new ALB pod can be scheduled to the third edge node. Then, the old ALB pod is removed.</p>
 
 2. Verify that the worker pool and worker nodes have the `dedicated=edge` label.
   * To check the worker pool:
@@ -135,7 +138,7 @@ Before you begin:
       * If the NLB pods are correctly deployed to edge nodes, no NLB pods are returned. Your NLBs are successfully rescheduled onto only edge worker nodes.
       * If NLB pods are returned, continue to the next step.
 
-  * ALB pods:
+  * ALB pods (version 3.11 only):
     1. Confirm that all ALB pods are deployed to edge nodes. Each public and private ALB that is enabled in your cluster has two pods.
       ```
       oc describe nodes -l dedicated=edge | grep alb
@@ -192,7 +195,7 @@ Before you begin:
 A benefit of edge worker nodes is that they can be specified to run networking services only.
 {:shortdesc}
 
-Using the `dedicated=edge` toleration means that all network load balancer (NLB) and Ingress application load balancer (ALB) services are deployed to the labeled worker nodes only. However, to prevent other workloads from running on edge worker nodes and consuming worker node resources, you must use [Kubernetes taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external}.
+Using the `dedicated=edge` toleration means that all network load balancer (NLB) and, in version 3.11 clusters, Ingress application load balancer (ALB) services are deployed to the labeled worker nodes only. However, to prevent other workloads from running on edge worker nodes and consuming worker node resources, you must use [Kubernetes taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external}.
 
 
 
