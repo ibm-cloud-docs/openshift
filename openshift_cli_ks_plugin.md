@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-05-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2296,7 +2296,7 @@ ibmcloud oc alb configure classic --alb-id public-cr18a61a63a6a94b658596aa93a087
 ### `ibmcloud oc alb create classic`
 {: #cs_alb_create}
 
-Version 3.11 clusters only: Create a public or private ALB in a zone. The ALB that you create is enabled by default.
+Version 3.11 clusters only: Create a public or private ALB in a classic cluster. The ALB that you create is enabled by default.
 {: shortdesc}
 
 ```
@@ -2338,7 +2338,7 @@ ibmcloud oc alb create classic --cluster mycluster --type public --zone dal10 --
 ### `ibmcloud oc alb get`
 {: #cs_alb_get}
 
-View the details of an Ingress ALB in a cluster.
+Version 3.11 clusters only: View the details of an Ingress ALB in a cluster.
 {: shortdesc}
 
 ```
@@ -2371,7 +2371,7 @@ ibmcloud oc alb get --alb-id public-cr18a61a63a6a94b658596aa93a087aaa9-alb1
 ### `ibmcloud oc alb ls`
 {: #cs_albs}
 
-List all Ingress ALB IDs in a cluster and view whether an update for the ALB pods is available.
+Version 3.11 clusters only: List all Ingress ALB IDs in a cluster and view whether an update for the ALB pods is available.
 {: shortdesc}
 
 If no ALB IDs are returned, then the cluster does not have a portable subnet. You can [create](#cs_cluster_subnet_create) or [add](#cs_cluster_subnet_add) subnets to a cluster.
@@ -2409,7 +2409,7 @@ ibmcloud oc alb ls --cluster my_cluster
 
 
 
-If your ALB pods were recently updated, but a custom configuration for your ALBs is affected by the latest build, you can roll back the update to the build that your ALB pods were previously running. All ALB pods in your cluster revert to their previously running state.
+Version 3.11 clusters only: If your ALB pods were recently updated, but a custom configuration for your ALBs is affected by the latest build, you can roll back the update to the build that your ALB pods were previously running. All ALB pods in your cluster revert to their previously running state.
 {: shortdesc}
 
 After you roll back an update, automatic updates for ALB pods are disabled. To re-enable automatic updates, use the [`alb autoupdate enable` command](#cs_alb_autoupdate_enable).
@@ -2438,7 +2438,7 @@ ibmcloud oc alb rollback --cluster CLUSTER [--json] [-s]
 ### `ibmcloud oc alb types`
 {: #cs_alb_types}
 
-List Ingress ALB types that are supported.
+Version 3.11 clusters only: List Ingress ALB types that are supported.
 {: shortdesc}
 
 ```
@@ -2464,7 +2464,7 @@ ibmcloud oc alb types [--json] [-s]
 
 
 
-Force an update of the pods for individual or all Ingress ALBs in the cluster to the latest or a specific version.
+Version 3.11 clusters only: Force an update of the pods for individual or all Ingress ALBs in the cluster to the latest or a specific version.
 {: shortdesc}
 
 If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. When you choose to manually update the add-on, all ALB pods in the cluster are updated to the latest build. You cannot update an individual ALB or choose which build to update the add-on to. Automatic updates remain disabled.

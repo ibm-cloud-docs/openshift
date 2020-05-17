@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-16"
+lastupdated: "2020-05-17"
 
 keywords: openshift
 subcollection: openshift
@@ -45,7 +45,7 @@ subcollection: openshift
 
 [Getting started with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-getting-started)
 
-[Creating a classic OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+[Creating a OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
 
 [Deploying an app with the OpenShift service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
 
