@@ -33,7 +33,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster
+# Creating Red Hat OpenShift on IBM Cloud clusters
 {: #openshift_tutorial}
 
 With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog](https://docs.openshift.com/container-platform/4.2/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.

@@ -178,7 +178,7 @@ subcollection: openshift
 * [Create a cluster and deploy apps](/docs/openshift?topic=openshift-tutorials-ov#tutorials-create-cluster-deploy-app)
 * [Dive deeper into {{site.data.keyword.openshiftshort}} technology](/docs/openshift?topic=openshift-tutorials-ov#tutorials-deep-dive)
 
-[Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial)
+[Creating Red Hat OpenShift on IBM Cloud clusters](/docs/openshift?topic=openshift-openshift_tutorial)
 * [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 * [Time required](/docs/openshift?topic=openshift-openshift_tutorial#openshift_time)
 * [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
