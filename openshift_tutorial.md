@@ -221,7 +221,7 @@ If you took a break from the last lesson and started a new terminal, make sure t
         Example output:
         ```
         NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
-        hello-world   ClusterIP   172.21.xxx.xxx   <nones>       8080/TCP   31m
+        hello-world   ClusterIP   172.21.xxx.xxx   <none>       8080/TCP   31m
         ```
         {: screen}
     2.  List the pods. Pods with `build` in the name are jobs that **Completed** as part of the new app build process. Make sure that the **hello-world** pod status is **Running**.

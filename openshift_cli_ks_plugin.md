@@ -680,7 +680,7 @@ ibmcloud oc cluster master update --cluster my_cluster
 ### `ibmcloud oc cluster pull-secret apply`
 {: #cs_cluster_pull_secret_apply}
 
-Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create a policy for the service ID that assigns the **Reader** service access role in {{site.data.keyword.registrylong_notm}}, and then create an API key for the service ID. The API key is then stored in a Kubernetes image pull secret so that you can pull images from your {{site.data.keyword.registrylong_notm}} namespaces for containers that are in the `default` Kubernetes namespace. This process happens automatically when you create a cluster. If you got an error during the cluster creation process or have an existing cluster, you can use this command to apply the process again.
+Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create a policy for the service ID that assigns the **Reader** service access role in {{site.data.keyword.registrylong_notm}}, and then create an API key for the service ID. The API key is then stored in a Kubernetes image pull secret so that you can pull images from your {{site.data.keyword.registrylong_notm}} namespaces for containers that are in the `default` OpenShift project. This process happens automatically when you create a cluster. If you got an error during the cluster creation process or have an existing cluster, you can use this command to apply the process again.
 {: shortdesc}
 
 This API key method replaces the previous method of authorizing a cluster to access {{site.data.keyword.registrylong_notm}} by automatically creating a [token](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external} and storing the token in an image pull secret. Now, by using IAM API keys to access {{site.data.keyword.registrylong_notm}}, you can customize IAM policies for the service ID to restrict access to your namespaces or specific images. For example, you can change the service ID policies in the cluster's image pull secret to pull images from only a certain registry region or namespace. Before you can customize IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-user#existing_users).
@@ -749,7 +749,7 @@ ibmcloud oc cluster rm --cluster my_cluster
 ### `ibmcloud oc cluster service bind`
 {: #cs_cluster_service_bind}
 
-Add an IBM Cloud service to a cluster by binding the service instance to a Kubernetes namespace. This command creates service credentials of an {{site.data.keyword.cloud_notm}} service and stores these credentials in a Kubernetes secret in your cluster.
+Add an IBM Cloud service to a cluster by binding the service instance to a OpenShift project. This command creates service credentials of an {{site.data.keyword.cloud_notm}} service and stores these credentials in a Kubernetes secret in your cluster.
 {: shortdesc}
 
 To view available {{site.data.keyword.cloud_notm}} services from the {{site.data.keyword.cloud_notm}} catalog, run `ibmcloud service offerings`. **Note**: You can add only {{site.data.keyword.cloud_notm}} services that support service keys. For more information about service binding and what services you can add to your cluster, see [Adding services by using IBM Cloud service binding](/docs/openshift?topic=openshift-service-binding).
@@ -767,7 +767,7 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESP
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The name of the Kubernetes namespace where you want to create the Kubernetes secret for your service credentials. This value is required.</dd>
+<dd>The name of the OpenShift project where you want to create the Kubernetes secret for your service credentials. This value is required.</dd>
 
 <dt><code>--key <em>SERVICE_INSTANCE_KEY</em></code></dt>
 <dd>The name or GUID of an existing service key. This value is optional. When you use the `service-binding` command, new service credentials are automatically created for your service instance and assigned the IAM **Writer** service access role for IAM-enabled services. If you want to use an existing service key that you created earlier, use this option. If you define a service key, you cannot set the `--role` option at the same time because your service keys are already created with a specific IAM service access role. </dd>
@@ -794,7 +794,7 @@ ibmcloud oc cluster service bind --cluster my_cluster --namespace my_namespace -
 ### `ibmcloud oc cluster service ls`
 {: #cs_cluster_services}
 
-List the services that are bound to one or all of the Kubernetes namespace in a cluster. If no options are specified, the services for the default namespace are displayed.
+List the services that are bound to one or all of the OpenShift project in a cluster. If no options are specified, the services for the default project are displayed.
 {: shortdesc}
 
 ```
@@ -810,10 +810,10 @@ ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPA
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>Include the services that are bound to a specific namespace in a cluster. This value is optional.</dd>
+<dd>Include the services that are bound to a specific project in a cluster. This value is optional.</dd>
 
 <dt><code>--all-namespaces</code></dt>
-<dd>Include the services that are bound to all of the namespaces in a cluster. This value is optional.</dd>
+<dd>Include the services that are bound to all of the projects in a cluster. This value is optional.</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -833,7 +833,7 @@ ibmcloud oc cluster service ls --cluster my_cluster --namespace my_namespace
 ### `ibmcloud oc cluster service unbind`
 {: #cs_cluster_service_unbind}
 
-Remove an {{site.data.keyword.cloud_notm}} service from a cluster by unbinding it from a Kubernetes namespace.
+Remove an {{site.data.keyword.cloud_notm}} service from a cluster by unbinding it from a OpenShift project.
 {: shortdesc}
 
 When you remove an {{site.data.keyword.cloud_notm}} service, the service credentials are removed from the cluster. If a pod is still using the service, it fails because the service credentials cannot be found.
@@ -852,7 +852,7 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAME
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The name of the Kubernetes namespace. This value is required.</dd>
+<dd>The name of the OpenShift project. This value is required.</dd>
 
 <dt><code>--service <em>SERVICE_INSTANCE</em></code></dt>
 <dd>The name of the {{site.data.keyword.cloud_notm}} service instance that you want to remove. To find the name of the service instance, run `ibmcloud oc cluster service ls --cluster <cluster_name_or_ID>`. This value is required.</dd>
@@ -2058,7 +2058,7 @@ ibmcloud oc alb autoupdate get --cluster CLUSTER [--json] [-s]
 Deploy or update a certificate from your {{site.data.keyword.cloudcerts_long_notm}} instance to the ALB in a cluster.
 {: shortdesc}
 
-When you import a certificate with this command, the certificate secret is created in a namespace called `ibm-cert-store`. A reference to this secret is then created in the `default` namespace, which any Ingress resource in any namespace can access. When the ALB is processing requests, it follows this reference to pick up and use the certificate secret from the `ibm-cert-store` namespace.
+When you import a certificate with this command, the certificate secret is created in a project called `ibm-cert-store`. A reference to this secret is then created in the `default` project, which any Ingress resource in any project can access. When the ALB is processing requests, it follows this reference to pick up and use the certificate secret from the `ibm-cert-store` project.
 
 You can also use the `--update` parameter to update certificates, such as to update the certificate in your cluster after you renew the certificate in {{site.data.keyword.cloudcerts_short}}. You can update certificates that are imported from the same {{site.data.keyword.cloudcerts_long_notm}} instance only.
 
@@ -2288,48 +2288,6 @@ ibmcloud oc alb configure classic --alb-id private-cr18a61a63a6a94b658596aa93a08
 Example for disabling an ALB:
 ```
 ibmcloud oc alb configure classic --alb-id public-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --disable
-```
-{: pre}
-
-</br>
-
-### `ibmcloud oc alb create classic`
-{: #cs_alb_create}
-
-Version 3.11 clusters only: Create a public or private ALB in a classic cluster. The ALB that you create is enabled by default.
-{: shortdesc}
-
-```
-ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZONE --vlan VLAN_ID [--user-ip IP] [-s]
-```
-{: pre}
-
-**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster.</dd>
-
-<dt><code>--type<em> PUBLIC|PRIVATE</em></code></dt>
-<dd>The type of ALB: <code>public</code> or <code>private</code>.</dd>
-
-<dt><code>--zone <em>ZONE</em></code></dt>
-<dd>The zone to create the ALB in.</dd>
-
-<dt><code>--vlan <em>VLAN_ID</em></code></dt>
-<dd>The ID of the VLAN to create the ALB on. This VLAN must match the ALB <code>type</code> and must be in the same <code>zone</code> as the ALB that you want to create.</dd>
-
-<dt><code>--user-ip <em>IP</em></code></dt>
-<dd>Optional: An IP address to assign to the ALB. This IP must be on the <code>vlan</code> that you specified and must be in the same <code>zone</code> as the ALB that you want to create. This IP address must not be in use by another load balancer or ALB in the cluster.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc alb create classic --cluster mycluster --type public --zone dal10 --vlan 2234945 --user-ip 1.1.1.1
 ```
 {: pre}
 
@@ -2680,7 +2638,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --typ
 <dd>Enter <code>syslog</code> to forward logs to an external server.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The Kubernetes namespace that you want to forward logs from. Log forwarding is not supported for the <code>ibm-system</code> and <code>kube-system</code> Kubernetes namespaces. This value is valid only for the container log source and is optional. If you do not specify a namespace, then all namespaces in the cluster use this configuration.</dd>
+<dd>The OpenShift project that you want to forward logs from. Log forwarding is not supported for the <code>ibm-system</code> and <code>kube-system</code> OpenShift projects. This value is valid only for the container log source and is optional. If you do not specify a project, then all projects in the cluster use this configuration.</dd>
 
 <dt><code>--hostname <em>LOG_SERVER_HOSTNAME</em></code></dt>
 <dd>The hostname or IP address of the log collector server.</dd>
@@ -2790,7 +2748,7 @@ ibmcloud oc logging config rm --cluster CLUSTER (--namespace NAMESPACE --id LOG_
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>-n, --namespace <em>NAMESPACE</em></code></dt>
-<dd>The namespace you want to remove the log forwarding configuration from. If there is more than one config for the same namespace, use the <code>--id &lt;logging_configuration_ID&gt;</code> flag instead.</dd>
+<dd>The project you want to remove the log forwarding configuration from. If there is more than one config for the same project, use the <code>--id &lt;logging_configuration_ID&gt;</code> flag instead.</dd>
 
 <dt><code>--id <em>LOG_CONFIG_ID</em></code></dt>
 <dd>If you want to remove a single logging configuration, the logging configuration ID.</dd>
@@ -2838,7 +2796,7 @@ ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LO
 <dd>The log forwarding protocol that you want to use. Currently, <code>syslog</code> and <code>ibm</code> are supported. This value is required.</dd>
 
 <dt><code>-n, --namespace <em>NAMESPACE</em></code>
-<dd>The Kubernetes namespace that you want to forward logs from. Log forwarding is not supported for the <code>ibm-system</code> and <code>kube-system</code> Kubernetes namespaces. This value is valid only for the <code>container</code> log source. If you do not specify a namespace, then all namespaces in the cluster use this configuration.</dd>
+<dd>The OpenShift project that you want to forward logs from. Log forwarding is not supported for the <code>ibm-system</code> and <code>kube-system</code> OpenShift projects. This value is valid only for the <code>container</code> log source. If you do not specify a project, then all projects in the cluster use this configuration.</dd>
 
 <dt><code>--hostname <em>LOG_SERVER_HOSTNAME</em></code></dt>
 <dd>The hostname or IP address of the log collector server.</dd>
@@ -2912,7 +2870,7 @@ ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-c
 <dd>The logging configuration ID. If not provided, the filter is applied to all of the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the <code>--show-matching-configs</code> flag with the command. To specify multiple IDs, use multiple flags, such as `-lc id1 -lc id2`. This value is optional.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The Kubernetes namespace from which you want to filter logs. This value is optional.</dd>
+<dd>The OpenShift project from which you want to filter logs. This value is optional.</dd>
 
 <dt><code>--container <em>CONTAINER_NAME</em></code></dt>
 <dd>The name of the container from which you want to filter out logs. This flag applies only when you are using log type <code>container</code>. This value is optional.</dd>
@@ -2938,7 +2896,7 @@ ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-c
 
 **Examples**:
 
-This example filters out all logs that are forwarded from containers with the name `test-container` in the default namespace that are at the debug level or less, and have a log message that contains "GET request".
+This example filters out all logs that are forwarded from containers with the name `test-container` in the default project that are at the debug level or less, and have a log message that contains "GET request".
 ```
 ibmcloud oc logging filter create --cluster example-cluster --type container --namespace default --container test-container --level debug --message "GET request"
 ```
@@ -3061,7 +3019,7 @@ ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TY
 <dd>The logging configuration ID. If not provided, the filter is applied to all of the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the <code>--show-matching-configs</code> flag with the command. To specify multiple IDs, use multiple flags, such as `-lc id1 -lc id2`. This value is optional.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The Kubernetes namespace from which you want to filter logs. This value is optional.</dd>
+<dd>The OpenShift project from which you want to filter logs. This value is optional.</dd>
 
 <dt><code>--container <em>CONTAINER_NAME</em></code></dt>
 <dd>The name of the container from which you want to filter out logs. This flag applies only when you are using log type <code>container</code>. This value is optional.</dd>
@@ -3087,7 +3045,7 @@ ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TY
 
 **Examples**:
 
-This example filters out all logs that are forwarded from containers with the name `test-container` in the default namespace that are at the debug level or less, and have a log message that contains "GET request".
+This example filters out all logs that are forwarded from containers with the name `test-container` in the default project that are at the debug level or less, and have a log message that contains "GET request".
 ```
 ibmcloud oc logging filter update --cluster example-cluster --id 885274 --type container --namespace default --container test-container --level debug --message "GET request"
 ```
@@ -3207,7 +3165,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 <dd>The network load balancer IP address that you want to register. To see your NLB IP addresses, run <code>oc get svc</code>. To specify multiple IP addresses, use multiple `--ip` flags.</dd>
 
 <dt><code>--secret-namespace <em>NAMESPACE</em></code></dt>
-<dd>The Kubernetes namespace where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a namespace, the secret is automatically created in the <code>default</code> namespace.</dd>
+<dd>The OpenShift project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
 
 <dt><code>--type public</code></dt>
 <dd>The subdomain type. Currently only `public` is supported.</dd>
