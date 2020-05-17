@@ -45,7 +45,7 @@ subcollection: openshift
 
 [Getting started with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-getting-started)
 
-[Creating a OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+[Creating an OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
 
 [Deploying an app with the OpenShift service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
 

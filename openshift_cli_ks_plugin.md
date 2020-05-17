@@ -1065,7 +1065,7 @@ View and modify worker nodes for a cluster.
 Add stand-alone worker nodes to a cluster.
 {: shortdesc}
 
-This command is deprecated. Create a worker pool by running [`ibmcloud oc worker-pool create classic`](#cs_worker_pool_create), or add workers to an existing worker pool by running [`ibmcloud oc worker-pool resize`](#cs_worker_pool_resize).
+This command is deprecated. Create a worker pool by running [`ibmcloud oc worker-pool create classic`](#cs_worker_pool_create) or add workers to an existing worker pool by running [`ibmcloud oc worker-pool resize`](#cs_worker_pool_resize).
 {: deprecated}
 
 ```

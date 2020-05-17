@@ -119,7 +119,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
   </div>
 </div>
 
-## Creating a OpenShift cluster
+## Creating an OpenShift cluster
 {: #clusters_gs}
 
 Create a Red Hat OpenShift on IBM Cloud cluster on classic {{site.data.keyword.cloud_notm}} infrastructure in the {{site.data.keyword.cloud_notm}} console. To get started, create a cluster that runs OpenShift Container Platform version 4.3. The operating system is Red Hat Enterprise Linux 7.
@@ -132,7 +132,6 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 2.  From the **Catalog**, click [**Red Hat OpenShift on IBM Cloud**](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}.
 3.  Review the platform version details, **OpenShift 4.3.18**.
 4.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
-5.  For the **Infrastructure**, select **Classic**.
 6.  Configure the **Location** details for your cluster.
     1.  Select the **Resource group** that you want to create your cluster in. You cannot change the resource group later. If you do not select a resource group, your cluster is created in the default resource group.
     2.  Select a **Geography** to create the cluster in, such as **North America**. The geography helps filter the **Availability** and **Data centers** values that you can select.
