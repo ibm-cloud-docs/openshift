@@ -139,21 +139,6 @@ subcollection: openshift
       </div>
   </div>
   </a>
-    <a href = "/docs/openshift?topic=openshift-openshift_tutorial_vpc">
-    <div class = "solutionBox">
-        <div class = "solutionBoxContent">
-          {{site.data.keyword.openshiftshort}} cluster on VPC Gen 2
-          <div class="solutionBoxDescription">
-                <div class="descriptionContainer">
-                  </br><p>Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cloud with worker nodes on the next generation of compute infrastructure.</p></br>
-                  </div>
-                  <div class="architectureDiagramContainer">
-                    <img class="architectureDiagram" src="openshift/images/vpc_roks_tutorial_lesson4_lb.png" alt="OpenShift tutorial diagram flow" /></br>
-                </div>
-            </div>
-        </div>
-    </div>
-    </a>
   <a href = "/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift">
     <div class = "solutionBox">
         <div class = "solutionBoxContent">
