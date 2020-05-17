@@ -91,7 +91,7 @@ subcollection: openshift
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}
 
-With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available OpenShift clusters that run the [Red Hat OpenShift on IBM Cloud Container Platform](https://docs.openshift.com/container-platform/4.2/welcome/index.html){: external} software on Red Hat Enterprise Linux machines.
+With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available OpenShift clusters that run the [Red Hat OpenShift on IBM Cloud Container Platform](https://docs.openshift.com/container-platform/4.3/welcome/index.html){: external} software on Red Hat Enterprise Linux machines.
 {: shortdesc}
 
 First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose a sample app in your cluster.
@@ -192,7 +192,7 @@ Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=ope
 * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
 
 <br>
-For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.2/welcome/index.html#developer-activities){: external} documentation.
+For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.
 
 Looking for an overview of all your options in Red Hat OpenShift on IBM Cloud? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 {: tip}

@@ -36,7 +36,7 @@ subcollection: openshift
 # Creating Red Hat OpenShift on IBM Cloud clusters
 {: #openshift_tutorial}
 
-With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog](https://docs.openshift.com/container-platform/4.2/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
+With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog](https://docs.openshift.com/container-platform/4.3/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 {: shortdesc}
 
 OpenShift worker nodes are available for paid accounts and standard clusters only. You can create OpenShift clusters that run version 4.3 or 3.11. The operating system is Red Hat Enterprise Linux 7.
@@ -299,6 +299,6 @@ If you took a break from the last lesson and started a new terminal, make sure t
 ## What's next?
 {: #openshift_next}
 
-For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.2/welcome/index.html#developer-activities){: external} documentation.
+For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.
 
 Install two popular Red Hat OpenShift on IBM Cloud add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig).
