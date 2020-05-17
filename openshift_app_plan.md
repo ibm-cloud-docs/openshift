@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-17"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -89,7 +89,7 @@ You can take some general steps to containerize your app as follows.
 1.  Use the [Twelve-Factor App](https://12factor.net/){: external} as a guide for isolating dependencies, separating processes into separate services, and reducing the statefulness of your app as much as possible.
 2.  Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registrylong_notm}}.
 3.  Add to your Docker image only what is necessary to run the app.
-    
+
     Don't want to make a Dockerfile yourself? Try out the [`ibmcloud dev enable` command](/docs/cli?topic=cloud-cli-idt-cli#enable), which detects your app's programming language and builds a Dockerfile and containerization components for you.
     {: tip}
 4.  Review the [common app modification scenarios](#openshift_move_apps_scenarios).
@@ -501,7 +501,7 @@ As you plan and develop your app, consider the following options to maintain a s
 <dt>Kubernetes secrets</dt>
 <dd>When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](/docs/openshift?topic=openshift-security#pi), such as an image pull secret for registry credentials. You can then reference these secrets in your deployment YAML file.</dd>
 <dt>Secret encryption</dt>
-<dd>You can encrypt the Kubernetes secrets that you create in your cluster by using a key management service (KMS) provider, such as {{site.data.keyword.keymanagementserviceshort}}. To get started, see [Encrypt secrets by using a KMS provider (beta)](/docs/openshift?topic=openshift-encryption#keyprotect) and [Verify that secrets are encrypted](/docs/openshift?topic=openshift-encryption#verify_kms).</dd>
+<dd>You can encrypt the Kubernetes secrets that you create in your cluster by using a key management service (KMS) provider, such as {{site.data.keyword.keymanagementserviceshort}}. To get started, see [Encrypt secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect) and [Verify that secrets are encrypted](/docs/openshift?topic=openshift-encryption#verify_kms).</dd>
 </dl>
 
 ## Managing access and monitoring app health

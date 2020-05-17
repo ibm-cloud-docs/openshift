@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-05-17"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -289,7 +289,7 @@ Use Kubernetes secrets to store confidential information, such as credentials or
 
 
 1. **Secrets**: Store personal or sensitive information in [Kubernetes secrets](/docs/openshift?topic=openshift-security#pi) that your app can access.
-2. **Secret encryption**: [Encrypt secrets by using a KMS provider (beta)](/docs/openshift?topic=openshift-encryption#keyprotect) and [verify that secrets are encrypted](/docs/openshift?topic=openshift-encryption#verify_kms).
+2. **Secret encryption**: [Encrypt secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect) and [verify that secrets are encrypted](/docs/openshift?topic=openshift-encryption#verify_kms).
 
 <br />
 
