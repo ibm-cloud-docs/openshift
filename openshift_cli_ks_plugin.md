@@ -1087,7 +1087,7 @@ ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR -
 <dd>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
 
 <dt><code>--workers <em>NUMBER</em></code></dt>
-<dd>An integer that represents the number of worker nodes to create in the cluster. The default value is 1. This value is optional.</dd>
+<dd>An integer that represents the number of worker nodes to create in the cluster. Note that you must have at least 2 worker nodes per zone to run the default OpenShift components.</dd>
 
 <dt><code>--private-vlan <em>PRIVATE_VLAN</em></code></dt>
 <dd>The private VLAN that was specified when the cluster was created. This value is required. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.</dd>
