@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-05-17"
 
-keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos 
+keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
 subcollection: openshift
 
@@ -91,7 +91,7 @@ subcollection: openshift
 # Getting started with Red Hat OpenShift on IBM Cloud
 {: #getting-started}
 
-With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available OpenShift clusters that run the [Red Hat OpenShift on IBM Cloud Container Platform](https://docs.openshift.com/container-platform/4.2/welcome/index.html){: external} software on Red Hat Enterprise Linux machines.
+With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available OpenShift clusters that run the [Red Hat OpenShift on IBM Cloud Container Platform](https://docs.openshift.com/container-platform/4.3/welcome/index.html){: external} software on Red Hat Enterprise Linux machines.
 {: shortdesc}
 
 First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose a sample app in your cluster.
@@ -100,26 +100,26 @@ First, create a Red Hat OpenShift on IBM Cloud cluster. Then, deploy and expose 
 To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {{site.data.keyword.containerlong}} account](/docs/account?topic=account-upgrading-account) where you are the owner or have [full Administrator access](/docs/iam?topic=iam-iammanidaccser).
 {: note}
 
-  <div class=solutionBoxContainer>
+<div class=solutionBoxContainer>
   <div class="solutionBox">
    <a href = "#clusters_gs">
     <div>
          <h2><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a cluster</h2>
          <p class="bx--type-caption">Create an OpenShift cluster on {{site.data.keyword.cloud_notm}} workers nodes, subnets, and VLAN networking. Choose from a variety of virtual, bare metal, or software-defined storage flavors.</p>
     </div>
-    </a>
-</div>
+   </a>
+  </div>
   <div class="solutionBox">
    <a href = "#deploy-app">
     <div>
          <h2><img src="images/icon-containers-bw.svg" alt="Container icon" width="15" style="width:15px; border-style: none"/> Deploy and expose an app</h2>
          <p class="bx--type-caption">Deploy a sample `websphere-liberty` app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
-     </div>
-    </a>
-</div>
     </div>
+  </a>
+  </div>
+</div>
 
-## Creating a classic OpenShift cluster
+## Creating an OpenShift cluster
 {: #clusters_gs}
 
 Create a Red Hat OpenShift on IBM Cloud cluster on classic {{site.data.keyword.cloud_notm}} infrastructure in the {{site.data.keyword.cloud_notm}} console. To get started, create a cluster that runs OpenShift Container Platform version 4.3. The operating system is Red Hat Enterprise Linux 7.
@@ -144,9 +144,10 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 9.  Review the **Summary**, and then click **Create**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes. Wait until the cluster is ready before continuing to the next step by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
 10.  Verify that your cluster setup is finished before you continue to the next step by checking that the worker nodes on the **Worker Nodes** tab have a **Status** of normal.
 
-Now that your cluster is ready, [deploy an app](#deploy-app).
+Now that your cluster is ready, [deploying your first app](#deploy-app)!
 
 <br />
+
 
 
 
@@ -191,7 +192,7 @@ Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=ope
 * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
 
 <br>
-For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.2/welcome/index.html#developer-activities){: external} documentation.
+For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.
 
 Looking for an overview of all your options in Red Hat OpenShift on IBM Cloud? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 {: tip}

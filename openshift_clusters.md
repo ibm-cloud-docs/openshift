@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-18"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -43,7 +43,7 @@ After [getting started](/docs/containers?topic=containers-getting-started), you 
 
 1.  [Prepare your account to create clusters](/docs/openshift?topic=openshift-clusters#cluster_prepare). This step includes creating a billable account, setting up an API key with infrastructure permissions, making sure that you have Administrator access in {{site.data.keyword.cloud_notm}} IAM, planning resource groups, and setting up account networking.
 2.  [Decide on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level). This step includes planning cluster network and HA setup, estimating costs, and if applicable, allowing network traffic through a firewall.
-3.  Create your [cluster](#clusters_ui) by following the steps in the {{site.data.keyword.cloud_notm}} console or CLI.
+3.  Create your classic cluster by following the steps in the {{site.data.keyword.cloud_notm}} console or CLI.
 
 <br />
 
@@ -144,6 +144,7 @@ After you set up your account to create clusters, decide on the setup for your c
 
 
 <br />
+
 
 
 
@@ -364,6 +365,8 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 
 
 <br />
+
+
 
 
 

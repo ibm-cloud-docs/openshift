@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-05-18"
 
 keywords: openshift
 subcollection: openshift
@@ -45,7 +45,7 @@ subcollection: openshift
 
 [Getting started with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-getting-started)
 
-[Creating a classic OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+[Creating an OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
 
 [Deploying an app with the OpenShift service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
 
@@ -178,7 +178,7 @@ subcollection: openshift
 * [Create a cluster and deploy apps](/docs/openshift?topic=openshift-tutorials-ov#tutorials-create-cluster-deploy-app)
 * [Dive deeper into {{site.data.keyword.openshiftshort}} technology](/docs/openshift?topic=openshift-tutorials-ov#tutorials-deep-dive)
 
-[Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial)
+[Creating Red Hat OpenShift on IBM Cloud clusters](/docs/openshift?topic=openshift-openshift_tutorial)
 * [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 * [Time required](/docs/openshift?topic=openshift-openshift_tutorial#openshift_time)
 * [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
@@ -188,7 +188,7 @@ subcollection: openshift
 * [Lesson 3: Deploying an app to your OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
-[Tutorial: Scalable web application on OpenShift](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
+[Scalable web application on OpenShift](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
 
 [OpenShift interactive learning portal](https://learn.openshift.com/){: external}
 
@@ -618,10 +618,10 @@ subcollection: openshift
 [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
 
 [Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
-* [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
+* [Public app networking](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
 
 [Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
-* [Choosing an app exposure method](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
+* [Private app networking](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
 
 
 ## Exposing apps with routes

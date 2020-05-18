@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-05-17"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -186,7 +186,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
 
 1.  Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key.
 2.  From the [Clusters](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} console, select the cluster that you want to enable encryption for.
-3.  From the **Overview** tab, in the **Summary > Key management service (beta)** section, click **Enable**. If you already enabled the KMS provider, click **Update**.
+3.  From the **Overview** tab, in the **Summary > Key management service** section, click **Enable**. If you already enabled the KMS provider, click **Update**.
 4.  Select the **Key management service instance** and **Root key** that you want to use for the encryption.<p class="important">During the enablement, you might not be able to access the Kubernetes master such as to update YAML configurations for deployments.</p>
 5.  Click **Enable** (or **Update**).
 6.  Verify that the KMS enablement process is finished. From the **Summary > Master status** section, you can check the progress.

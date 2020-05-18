@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-05-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -127,10 +127,10 @@ subcollection: openshift
   <a href = "/docs/openshift?topic=openshift-openshift_tutorial">
   <div class = "solutionBox">
       <div class = "solutionBoxContent">
-        {{site.data.keyword.openshiftshort}} cluster
+        {{site.data.keyword.openshiftlong_notm}} cluster
         <div class="solutionBoxDescription">
               <div class="descriptionContainer">
-                </br><p>Create an {{site.data.keyword.openshiftlong_notm}} cluster with worker nodes that come installed with the {{site.data.keyword.openshiftshort}} container orchestration platform software. </p></br>
+                </br><p>Create an {{site.data.keyword.openshiftshort}} cluster with worker nodes that come installed with the {{site.data.keyword.openshiftshort}} container orchestration platform software.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/roks_tutorial.png" alt="OpenShift tutorial diagram flow" /></br>

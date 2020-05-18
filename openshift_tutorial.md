@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-05-17"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -33,10 +33,10 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Tutorial: Creating a Red Hat OpenShift on IBM Cloud cluster
+# Creating Red Hat OpenShift on IBM Cloud clusters
 {: #openshift_tutorial}
 
-With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog](https://docs.openshift.com/container-platform/4.2/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
+With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog](https://docs.openshift.com/container-platform/4.3/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 {: shortdesc}
 
 OpenShift worker nodes are available for paid accounts and standard clusters only. You can create OpenShift clusters that run version 4.3 or 3.11. The operating system is Red Hat Enterprise Linux 7.
@@ -134,7 +134,7 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
     <table class="simple-tab-table" id="console1" tab-title="OCP 4" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
       <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> OpenShift console overview<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, anthe description of the console area in the third column. You can change between OpenShift console versions by toggling the tabs at the beginning of the table.</span>
+      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between OpenShift console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
     <tr>
@@ -188,6 +188,7 @@ Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to 
     </table><p></p>
 3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.
 
+
 <br />
 
 
@@ -220,7 +221,7 @@ If you took a break from the last lesson and started a new terminal, make sure t
         Example output:
         ```
         NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
-        hello-world   ClusterIP   172.21.xxx.xxx   <nones>       8080/TCP   31m
+        hello-world   ClusterIP   172.21.xxx.xxx   <none>       8080/TCP   31m
         ```
         {: screen}
     2.  List the pods. Pods with `build` in the name are jobs that **Completed** as part of the new app build process. Make sure that the **hello-world** pod status is **Running**.
@@ -298,6 +299,6 @@ If you took a break from the last lesson and started a new terminal, make sure t
 ## What's next?
 {: #openshift_next}
 
-For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.2/welcome/index.html#developer-activities){: external} documentation.
+For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.
 
 Install two popular Red Hat OpenShift on IBM Cloud add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig).
