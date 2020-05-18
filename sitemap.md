@@ -1090,6 +1090,7 @@ subcollection: openshift
   * [`ibmcloud oc alb cert ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_certs)
   * [Beta: `ibmcloud oc alb cert rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_cert_rm)
   * [`ibmcloud oc alb configure classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure)
+  * [`ibmcloud oc alb create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_create)
   * [`ibmcloud oc alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get)
   * [`ibmcloud oc alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_albs)
   * [`ibmcloud oc alb rollback`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_rollback)

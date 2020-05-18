@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-17"
+lastupdated: "2020-05-18"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2288,6 +2288,48 @@ ibmcloud oc alb configure classic --alb-id private-cr18a61a63a6a94b658596aa93a08
 Example for disabling an ALB:
 ```
 ibmcloud oc alb configure classic --alb-id public-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --disable
+```
+{: pre}
+
+</br>
+
+### `ibmcloud oc alb create classic`
+{: #cs_alb_create}
+
+Version 3.11 clusters only: Create a public or private ALB in a classic cluster. The ALB that you create is enabled by default.
+{: shortdesc}
+
+```
+ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZONE --vlan VLAN_ID [--user-ip IP] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster.</dd>
+
+<dt><code>--type<em> PUBLIC|PRIVATE</em></code></dt>
+<dd>The type of ALB: <code>public</code> or <code>private</code>.</dd>
+
+<dt><code>--zone <em>ZONE</em></code></dt>
+<dd>The zone to create the ALB in.</dd>
+
+<dt><code>--vlan <em>VLAN_ID</em></code></dt>
+<dd>The ID of the VLAN to create the ALB on. This VLAN must match the ALB <code>type</code> and must be in the same <code>zone</code> as the ALB that you want to create.</dd>
+
+<dt><code>--user-ip <em>IP</em></code></dt>
+<dd>Optional: An IP address to assign to the ALB. This IP must be on the <code>vlan</code> that you specified and must be in the same <code>zone</code> as the ALB that you want to create. This IP address must not be in use by another load balancer or ALB in the cluster.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc alb create classic --cluster mycluster --type public --zone dal10 --vlan 2234945 --user-ip 1.1.1.1
 ```
 {: pre}
 
