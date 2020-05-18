@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-17"
+lastupdated: "2020-05-18"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -119,7 +119,7 @@ Choose from the following options.
 ## Accessing clusters through the private service endpoint
 {: #access_private_se}
 
-This information is applicable for version 3.11 clusters. The private service endpoint can not be enabled on version 4.3 clusters.
+This information is applicable for version 3.11 clusters. The private service endpoint cannot be enabled on version 4.3 clusters.
 {: note}
 
 
