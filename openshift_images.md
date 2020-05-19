@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -81,7 +81,7 @@ You can deploy containers to your cluster from an IBM-provided public image or a
 {:shortdesc}
 
 Before you begin:
-1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=registry-getting-started#gs_registry_namespace_add).
+1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
 2. [Create an OpenShift cluster](/docs/openshift?topic=openshift-clusters).
 3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -238,10 +238,10 @@ Steps:
 ## Pushing images to {{site.data.keyword.registrylong_notm}}
 {: #push-images}
 
-After the cluster administrator [sets up an image registry with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-getting-started#getting-started), you can securely store and share Docker images with other users by adding images to your namespace.
+After the cluster administrator [sets up an image registry with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started), you can securely store and share Docker images with other users by adding images to your namespace.
 {: shortdesc}
 
-For example, you might pull an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}. Or, you might push a Docker image that you work with to your namespace so that other users can access the image. To get started, see [Adding images to your namespace](/docs/Registry?topic=registry-registry_images_).
+For example, you might pull an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}. Or, you might push a Docker image that you work with to your namespace so that other users can access the image. To get started, see [Adding images to your namespace](/docs/Registry?topic=Registry-registry_images_).
 
 <br />
 

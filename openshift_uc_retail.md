@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -139,7 +139,7 @@ Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Insights to market trends with Watson Discovery](https://www.ibm.com/cloud/watson-discovery)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
-* [Inventory management with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=eventstreams-about#about)
+* [Inventory management with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-about#about)
 
 **Context: Traditional grocer increases customer traffic and sales with digital insights**
 

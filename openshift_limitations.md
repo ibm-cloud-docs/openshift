@@ -54,7 +54,7 @@ Red Hat OpenShift on IBM Cloud comes with the following service limitations and 
 | API rate limits | 200 requests per 10 seconds to the Red Hat OpenShift on IBM Cloud API from each unique source IP address. |
 | App deployment | The apps that you deploy to and services that you integrate with your cluster must be able to run on the operating system of the worker nodes. |
 | Cluster quota | You cannot exceed 100 clusters per region. If you need more than 100 clusters, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support). In the support case, include the new cluster quota limit for the region that you want. |
-| Container images | You cannot use the [Container Image Security Enforcement (CISE) Helm chart](/docs/Registry?topic=registry-security_enforce) with OpenShift clusters. |
+| Container images | You cannot use the [Container Image Security Enforcement (CISE) Helm chart](/docs/Registry?topic=Registry-security_enforce) with OpenShift clusters. |
 | Free clusters | You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then redeploy the apps that you try out in the Kubernetes cluster to your OpenShift cluster. |
 | Kubernetes | Make sure to review the [Kubernetes project limitations](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external}. |
 | OpenShift | Make sure to review the [OpenShift Container Platform limitations](https://docs.openshift.com/container-platform/4.3/scalability_and_performance/planning-your-environment-according-to-object-maximums.html){: external} for your version.|

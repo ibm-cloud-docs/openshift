@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -73,13 +73,13 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>Deployments in other projects can refer to the image stream so that you do not need to copy pull secrets to each project.</li>
         <li>Sharing images across multiple clusters without needing to push images to multiple registries.</li>
         <li>[Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.</li>
-        <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=registry-user) and [separate regional registries](/docs/Registry?topic=registry-registry_overview#registry_regions).</li>
-        <li>[Retaining images](/docs/Registry?topic=registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
+        <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=Registry-user) and [separate regional registries](/docs/Registry?topic=Registry-registry_overview#registry_regions).</li>
+        <li>[Retaining images](/docs/Registry?topic=Registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
         <li>Using the private service endpoint so that clusters on only the private network can still access the registry.</li>
-        <li>[Setting storage and image pull traffic quotas](/docs/Registry?topic=registry-registry_quota) to better control image storage, usage, and billing.</li>
+        <li>[Setting storage and image pull traffic quotas](/docs/Registry?topic=Registry-registry_quota) to better control image storage, usage, and billing.</li>
         <li>Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li></ul>
         <br>To get started, see the following topics:<ul>
-        <li>[Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-getting-started).</li>
+        <li>[Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started).</li>
         <li>[Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](#imagestream_registry)</li>
         <li>[Using {{site.data.keyword.registrylong_notm}}](#openshift_iccr).</li></ul></td>
     </tr>
@@ -516,7 +516,7 @@ Generally, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images 
 {: shortdesc}
 
 **How is my cluster set up to pull images from the `default` OpenShift project?**<br>
-When you create a cluster, the cluster has an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM **Reader** service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are impersonated in a non-expiring API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and the list of secrets in the `default` service account for this OpenShift project. By using image pull secrets, your deployments can pull images (read-only access) from the [global and regional {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_overview#registry_regions) to deploy containers in the `default` OpenShift project.
+When you create a cluster, the cluster has an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM **Reader** service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are impersonated in a non-expiring API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and the list of secrets in the `default` service account for this OpenShift project. By using image pull secrets, your deployments can pull images (read-only access) from the [global and regional {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_overview#registry_regions) to deploy containers in the `default` OpenShift project.
 
 * The global registry securely stores public images that are provided by IBM. You can refer to these public images across your deployments instead of having different references for images that are stored in each regional registry. 
 * The regional registry securely stores your own private Docker images.
@@ -525,7 +525,7 @@ When you create a cluster, the cluster has an {{site.data.keyword.cloud_notm}} I
 You can check the image pull secrets by [logging in to your cluster](/docs/openshift?topic=openshift-access_cluster) and running `oc get secrets -n default | grep "icr-io"`. If no `icr` secrets are listed, the person who created the cluster might not have had the required permissions to {{site.data.keyword.registrylong_notm}} in IAM. See [Updating existing clusters to use the API key image pull secret](#imagePullSecret_migrate_api_key).
 
 **Can I restrict pull access to a certain regional registry?**<br>
-Yes, you can [edit the existing IAM policy of the service ID](/docs/iam?topic=iam-serviceidpolicy#access_edit) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-user#existing_users).
+Yes, you can [edit the existing IAM policy of the service ID](/docs/iam?topic=iam-serviceidpolicy#access_edit) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#existing_users).
 
   Want to make your registry credentials even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt Kubernetes secrets in your cluster, such as the image pull secret that stores your registry credentials.
   {: tip}
@@ -556,7 +556,7 @@ Not quite. Your containers must be authorized to pull images by using the secret
 ### Private network connection to `icr.io` registries
 {: #cluster_registry_auth_private}
 
-When you set up your {{site.data.keyword.cloud_notm}} account to use service endpoints, you can use a private network connection to push images to and to pull images from {{site.data.keyword.registrylong_notm}}. When you use the private network to pull images, your image pull traffic is not charged as [public bandwidth](/docs/containers?topic=containers-faqs#bandwidth), because the traffic is on the private network. For more information, see the [{{site.data.keyword.registrylong_notm}} private network documentation](/docs/Registry?topic=registry-registry_private).
+When you set up your {{site.data.keyword.cloud_notm}} account to use service endpoints, you can use a private network connection to push images to and to pull images from {{site.data.keyword.registrylong_notm}}. When you use the private network to pull images, your image pull traffic is not charged as [public bandwidth](/docs/containers?topic=containers-faqs#bandwidth), because the traffic is on the private network. For more information, see the [{{site.data.keyword.registrylong_notm}} private network documentation](/docs/Registry?topic=Registry-registry_private).
 {: shortdesc}
 
 **What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**<br>
@@ -566,7 +566,7 @@ When you set up your {{site.data.keyword.cloud_notm}} account to use service end
 Now, {{site.data.keyword.registrylong_notm}} automatically uses the private service endpoint. You do not need to enable the private service endpoint for your Red Hat OpenShift on IBM Cloud clusters.
 
 **Do I have to use the private `icr.io` registry addresses for anything else?**<br>
-Yes, if you [sign your images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent), the signatures contain the registry domain name. If you want to use the private `icr.io` domain for your signed images, resign your images with the private `icr.io` domains.
+Yes, if you [sign your images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent), the signatures contain the registry domain name. If you want to use the private `icr.io` domain for your signed images, resign your images with the private `icr.io` domains.
 
 <br />
 
@@ -626,7 +626,7 @@ New Red Hat OpenShift on IBM Cloud clusters store an API key in [image pull secr
 **What's next?**
 *   To pull images in OpenShift projects other than `default` or from other {{site.data.keyword.cloud_notm}} accounts, [copy or create another image pull secret](#other).
 *   To restrict the image pull secret access to particular registry resources such as namespaces or regions:
-    1.  Make sure that [{{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}} are enabled](/docs/Registry?topic=registry-user#existing_users).
+    1.  Make sure that [{{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}} are enabled](/docs/Registry?topic=Registry-user#existing_users).
     2.  [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/iam?topic=iam-serviceidpolicy#access_edit) for the service ID, or [create another image pull secret](#other_registry_accounts).
 
 <br />
@@ -645,7 +645,7 @@ Image pull secrets are valid only for the OpenShift projects that they were crea
 
 Before you begin:
 
-1.  [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=registry-getting-started#gs_registry_namespace_add).
+1.  [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
 2.  [Create an OpenShift cluster](/docs/openshift?topic=openshift-clusters).
 3.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -765,15 +765,15 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tr>
     <tr>
     <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-    <td>Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`.</td>
+    <td>Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`.</td>
     </tr>
     <tr>
     <td><code>--region <em>&lt;IAM_region&gt;</em></code></td>
-    <td>Optional. If you want to scope the access policy to certain IAM regions, enter the regions in a comma-separated list. Possible values are `global` and the [local registry regions](/docs/Registry?topic=registry-registry_overview#registry_regions_local).</td>
+    <td>Optional. If you want to scope the access policy to certain IAM regions, enter the regions in a comma-separated list. Possible values are `global` and the [local registry regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).</td>
     </tr>
     <tr>
     <td><code>--resource-type <em>namespace</em> --resource <em>&lt;registry_namespace&gt;</em></code></td>
-    <td>Optional. If you want to limit access to only images in certain [{{site.data.keyword.registrylong_notm}} namespaces](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan), enter `namespace` for the resource type and specify the `<registry_namespace>`. To list registry namespaces, run `ibmcloud cr namespaces`.</td>
+    <td>Optional. If you want to limit access to only images in certain [{{site.data.keyword.registrylong_notm}} namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan), enter `namespace` for the resource type and specify the `<registry_namespace>`. To list registry namespaces, run `ibmcloud cr namespaces`.</td>
     </tr>
     </tbody></table>
 4.  Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, ``<cluster_name>-<kube_namespace>-id`. Be sure to give the API key a description that helps you retrieve the key later.
@@ -816,7 +816,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tr>
     <tr>
     <td><code>--docker-server <em>&lt;registry_URL&gt;</em></code></td>
-    <td>Required. Set the URL to the image registry where your registry namespace is set up. For available domains, see [Local regions](/docs/Registry?topic=registry-registry_overview#registry_regions).</td>
+    <td>Required. Set the URL to the image registry where your registry namespace is set up. For available domains, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).</td>
     </tr>
     <tr>
     <td><code>--docker-username iamapikey</code></td>

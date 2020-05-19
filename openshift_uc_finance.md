@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -53,7 +53,7 @@ Red Hat OpenShift on IBM Cloud and key technologies:
 * [Multiple regions for high availability](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Container security and isolation](/docs/openshift?topic=openshift-security#security)
-* [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/Cloudant?topic=cloudant-getting-started-with-cloudant)
+* [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
 * [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime)
 
 **The solution**
