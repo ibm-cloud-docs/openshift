@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-17"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -51,7 +51,7 @@ Red Hat OpenShift on IBM Cloud comes with the following service limitations and 
 
 | Category | Description |
 | -------- | ----------- |
-| API rate limits | 100 requests per 10 seconds to the Red Hat OpenShift on IBM Cloud API for each unique source IP address. |
+| API rate limits | 200 requests per 10 seconds to the Red Hat OpenShift on IBM Cloud API from each unique source IP address. |
 | App deployment | The apps that you deploy to and services that you integrate with your cluster must be able to run on the operating system of the worker nodes. |
 | Cluster quota | You cannot exceed 100 clusters per region. If you need more than 100 clusters, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support). In the support case, include the new cluster quota limit for the region that you want. |
 | Container images | You cannot use the [Container Image Security Enforcement (CISE) Helm chart](/docs/Registry?topic=registry-security_enforce) with OpenShift clusters. |
