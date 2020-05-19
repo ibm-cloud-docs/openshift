@@ -136,7 +136,7 @@ Key technologies:
 * [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
 * [Vulnerability scanning  and isolation for workloads](/docs/Registry?topic=va-va_index#va_index)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
-* [{{site.data.keyword.openwhisk}} to sanitize data and notify researchers about data structure changes](/docs/openwhisk?topic=cloud-functions-pkg_cloudant)
+* [{{site.data.keyword.openwhisk}} to sanitize data and notify researchers about data structure changes](/docs/openwhisk?topic=openwhisk-pkg_cloudant)
 
 **Context: Securely hosting and sharing disease data for Research Nonprofit**
 

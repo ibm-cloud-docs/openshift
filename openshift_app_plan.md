@@ -90,7 +90,7 @@ You can take some general steps to containerize your app as follows.
 2.  Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=Registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registrylong_notm}}.
 3.  Add to your Docker image only what is necessary to run the app.
 
-    Don't want to make a Dockerfile yourself? Try out the [`ibmcloud dev enable` command](/docs/cli?topic=cloud-cli-idt-cli#enable), which detects your app's programming language and builds a Dockerfile and containerization components for you.
+    Don't want to make a Dockerfile yourself? Try out the [`ibmcloud dev enable` command](/docs/cli?topic=cli-idt-cli#enable), which detects your app's programming language and builds a Dockerfile and containerization components for you.
     {: tip}
 4.  Review the [common app modification scenarios](#openshift_move_apps_scenarios).
 4.  Instead of relying on local storage, plan to use persistent storage or cloud database-as-a-service solutions to back up your app's data.
