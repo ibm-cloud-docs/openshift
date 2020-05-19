@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-11"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -56,14 +56,14 @@ If you want to use the {{site.data.keyword.cloud_notm}} console instead, you can
 <br>
 To install the CLIs:
 
-1.  Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started#idt-prereq){: external}. This installation includes:
+1.  Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started#idt-prereq){: external}. This installation includes:
     -   The base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`).
     -   The Red Hat OpenShift on IBM Cloud plug-in (`ibmcloud oc`).
     -   {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by IBM, and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
     -   The Kubernetes CLI (`kubectl`) that matches the default version: 1.16.9.<p class="note">After you install the {{site.data.keyword.cloud_notm}} CLI, you must [also install the `oc` CLI and the `kubectl` version that matches your cluster](#cli_oc).</p>
     -   The Helm CLI (`helm`). You might use Helm as a package manager to install {{site.data.keyword.cloud_notm}} services and complex apps to your cluster via Helm charts. You must still [set up Helm](/docs/openshift?topic=openshift-helm) in each cluster where you want to use Helm.
 
-    Plan to use the CLI often? Try [Enabling shell autocompletion for {{site.data.keyword.cloud_notm}} CLI (Linux/MacOS only)](/docs/cli/reference/ibmcloud?topic=cloud-cli-shell-autocomplete#shell-autocomplete-linux).
+    Plan to use the CLI often? Try [Enabling shell autocompletion for {{site.data.keyword.cloud_notm}} CLI (Linux/MacOS only)](/docs/cli/reference/ibmcloud?topic=cli-shell-autocomplete#shell-autocomplete-linux).
     {: tip}
 
 2.  Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
@@ -93,7 +93,7 @@ To install the CLIs:
 
 For reference information about these CLIs, see the documentation for those tools.
 
--   [`ibmcloud` commands](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
+-   [`ibmcloud` commands](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_cli)
 -   [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli)
 -   [`ibmcloud cr` commands](/docs/Registry?topic=container-registry-cli-plugin-containerregcli)
 
@@ -186,7 +186,7 @@ This task includes the information for updating the following CLIs:
 <br>
 To update the CLIs:
 
-1.  Update the {{site.data.keyword.cloud_notm}} CLI. Download the [latest version](/docs/cli?topic=cloud-cli-getting-started){: external} and run the installer.
+1.  Update the {{site.data.keyword.cloud_notm}} CLI. Download the [latest version](/docs/cli?topic=cli-getting-started){: external} and run the installer.
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
 
@@ -281,7 +281,7 @@ To uninstall the CLIs:
 
     The `kubernetes-service` and the `container-registry` plug-in are not displayed in the results.
 
-5.  [Uninstall the {{site.data.keyword.cloud_notm}} CLI.](/docs/cli?topic=cloud-cli-uninstall-ibmcloud-cli)
+5.  [Uninstall the {{site.data.keyword.cloud_notm}} CLI.](/docs/cli?topic=cli-uninstall-ibmcloud-cli)
 
 6.  Uninstall the Kubernetes CLI.
     ```

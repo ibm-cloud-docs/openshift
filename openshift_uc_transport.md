@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -54,7 +54,7 @@ Key technologies:
 * [Horizontal scaling](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
 * [Open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [Cloud services for innovation](https://www.ibm.com/cloud/products#analytics)
-* [{{site.data.keyword.messagehub_full}} to feed event data to apps](/docs/EventStreams?topic=eventstreams-about#about)
+* [{{site.data.keyword.messagehub_full}} to feed event data to apps](/docs/EventStreams?topic=EventStreams-about#about)
 
 **Context: Shipping company increases availability of worldwide systems for business partner ecosystem**
 

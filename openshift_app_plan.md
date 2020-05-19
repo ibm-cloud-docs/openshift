@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-17"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -87,10 +87,10 @@ You can take some general steps to containerize your app as follows.
 {: support}
 
 1.  Use the [Twelve-Factor App](https://12factor.net/){: external} as a guide for isolating dependencies, separating processes into separate services, and reducing the statefulness of your app as much as possible.
-2.  Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registrylong_notm}}.
+2.  Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=Registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registrylong_notm}}.
 3.  Add to your Docker image only what is necessary to run the app.
 
-    Don't want to make a Dockerfile yourself? Try out the [`ibmcloud dev enable` command](/docs/cli?topic=cloud-cli-idt-cli#enable), which detects your app's programming language and builds a Dockerfile and containerization components for you.
+    Don't want to make a Dockerfile yourself? Try out the [`ibmcloud dev enable` command](/docs/cli?topic=cli-idt-cli#enable), which detects your app's programming language and builds a Dockerfile and containerization components for you.
     {: tip}
 4.  Review the [common app modification scenarios](#openshift_move_apps_scenarios).
 4.  Instead of relying on local storage, plan to use persistent storage or cloud database-as-a-service solutions to back up your app's data.
@@ -379,7 +379,7 @@ Consider the following options to increase availability of your app.
   <p>**Tip**: In multizone clusters, try to keep your worker node capacity at 50% per zone so that enough capacity is left to protect your cluster against a zonal failure.</p>
   <p>**What if I want to spread my app across regions?**</br>To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/) for your app.</p>
   <p>**What if my apps need persistent storage?**</p>
-  <p>Use a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started).</p></dd>
+  <p>Use a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started).</p></dd>
 </dl>
 
 ### How can I scale my app?

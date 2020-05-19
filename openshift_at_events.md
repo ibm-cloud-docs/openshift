@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-21"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -39,7 +39,7 @@ subcollection: openshift
 You can view, manage, and audit user-initiated activities in your {{site.data.keyword.openshiftlong}} community Kubernetes or OpenShift cluster by using the {{site.data.keyword.at_full}} service.
 {: shortdesc}
 
-Red Hat OpenShift on IBM Cloud automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
+Red Hat OpenShift on IBM Cloud automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
 
 ## Tracking cluster management events
 {: #cluster-events}
@@ -91,7 +91,7 @@ The following list of the cluster management events are sent to {{site.data.keyw
 ## Viewing your cluster events
 {: #at-ui}
 
-To [view events](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events) that are sent to {{site.data.keyword.at_full_notm}}, you select the {{site.data.keyword.at_short}} instance that matches with the location of your Red Hat OpenShift on IBM Cloud cluster.
+To [view events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-view_events) that are sent to {{site.data.keyword.at_full_notm}}, you select the {{site.data.keyword.at_short}} instance that matches with the location of your Red Hat OpenShift on IBM Cloud cluster.
 {: shortdesc}
 
 The following table shows the {{site.data.keyword.at_short}} location where your events are sent to. To view your events, make sure that you have an {{site.data.keyword.at_short}} instance in the location that matches your cluster location. Note that clusters in the Montreal, Toronto, and Washington, D.C. locations forward all events to the Dallas {{site.data.keyword.at_short}} location.

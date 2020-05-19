@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-16"
+lastupdated: "2020-05-19"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -149,7 +149,7 @@ The following image shows the default cluster security settings that address aut
       <li>`MutatingAdmissionWebhook`</li>
       <li>`ValidatingAdmissionWebhook`</li></ul>
 </br>
-      You can [install your own admission controllers in the cluster ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks) or choose from the optional admission controllers that Red Hat OpenShift on IBM Cloud provides: <ul><li><strong>[Container image security enforcer](/docs/Registry?topic=registry-security_enforce#security_enforce):</strong> Use this admission controller to enforce Vulnerability Advisor policies in your cluster to block deployments from vulnerable images.</li></ul></br><p class="note">If you manually installed admission controllers and you do not want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.</p></td>
+      You can [install your own admission controllers in the cluster ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks) or choose from the optional admission controllers that Red Hat OpenShift on IBM Cloud provides: <ul><li><strong>[Container image security enforcer](/docs/Registry?topic=Registry-security_enforce#security_enforce):</strong> Use this admission controller to enforce Vulnerability Advisor policies in your cluster to block deployments from vulnerable images.</li></ul></br><p class="note">If you manually installed admission controllers and you do not want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.</p></td>
     </tr>
   </tbody>
 </table>
@@ -324,7 +324,7 @@ Depending on the type of storage that you choose, you can set up additional encr
 - [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-encryption)
 - [Portworx](/docs/openshift?topic=openshift-portworx#encrypt_volumes)</br>
 
-You can also use an {{site.data.keyword.cloud_notm}} database service, such as [{{site.data.keyword.cloudant}} NoSQL DB](/docs/Cloudant?topic=cloudant-getting-started-with-cloudant), to persist data in a managed database outside the cluster. Data that is stored with a cloud database service can be accessed across clusters, zones, and regions. For security-related information, see the database service-specific {{site.data.keyword.cloud_notm}} documentation.
+You can also use an {{site.data.keyword.cloud_notm}} database service, such as [{{site.data.keyword.cloudant}} NoSQL DB](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant), to persist data in a managed database outside the cluster. Data that is stored with a cloud database service can be accessed across clusters, zones, and regions. For security-related information, see the database service-specific {{site.data.keyword.cloud_notm}} documentation.
 
 <br />
 
@@ -344,7 +344,7 @@ By default, Red Hat OpenShift on IBM Cloud automatically collects logs for the f
 - **Containers**: Logs that are written to `STDOUT` or `STDERR`.
 - **Apps**: Logs that are written to a specific path inside your app.
 - **Workers**: Logs from the Red Hat Enterprise Linux operating system that are sent to `/var/log/syslog` and `/var/log/auth.log`.
-- **OpenShift API server**: Every cluster-related action that is sent to the OpenShift API server is logged for auditing reasons, including the time, the user, and the affected resource. For more information, see [Kubernetes audit logs](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/){: external}. You can access these logs by using {{site.data.keyword.at_full_notm}}. For more information, see the [getting started tutorial](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started). 
+- **OpenShift API server**: Every cluster-related action that is sent to the OpenShift API server is logged for auditing reasons, including the time, the user, and the affected resource. For more information, see [Kubernetes audit logs](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/){: external}. You can access these logs by using {{site.data.keyword.at_full_notm}}. For more information, see the [getting started tutorial](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started). 
 - **Routers**: Logs inbound network traffic on routes. 
 - **Kubernetes system components**: Logs from the `kubelet`, the `kube-proxy`, and other components that run in the `kube-system` namespace.
 
@@ -353,19 +353,19 @@ To access the logs of your cluster components, set up [{{site.data.keyword.la_fu
 **How can I monitor the health and performance of my cluster?**</br>
 You can verify the health, capacity, and performance of your apps, services, and worker nodes by monitoring your cluster components and compute resources from the Red Hat OpenShift on IBM Cloud console or CLI, such as the CPU and memory usage. To view more in-depth metrics for your cluster, you can use the built-in monitoring capabilities that are based on open source technologies, such as [Prometheus and Grafana](http://docs.openshift.com/container-platform/4.3/monitoring/cluster_monitoring/about-cluster-monitoring.html){: external}. Prometheus is automatically installed when you create the cluster and you can use the tool to access real-time cluster and app metrics. Prometheus metrics are not stored persistently. To access historic metrics and to compare metrics across multiple clusters, use [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig) instead.
 
-To set up a host-based intrusion detection system (HIDS) and security event log monitoring (SELM), install third-party tools that are designed to monitor your cluster and containerized apps to detect intrusion or misuse, such as [Twistlock](https://www.twistlock.com/){: external} or the [Sysdig Falco project](https://sysdig.com/opensource/falco/){: external}. Sysdig Falco is a separate tool and is not included if you choose to install the IBM-provided [Sysdig add-on](/docs/Monitoring-with-Sysdig/tutorials?topic=Sysdig-kubernetes_cluster#kubernetes_cluster){: external} in your cluster.  
+To set up a host-based intrusion detection system (HIDS) and security event log monitoring (SELM), install third-party tools that are designed to monitor your cluster and containerized apps to detect intrusion or misuse, such as [Twistlock](https://www.twistlock.com/){: external} or the [Sysdig Falco project](https://sysdig.com/opensource/falco/){: external}. Sysdig Falco is a separate tool and is not included if you choose to install the IBM-provided [Sysdig add-on](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster){: external} in your cluster.  
 
 **How can I audit events that happen in my cluster?**</br>
-You can [set up {{site.data.keyword.cloudaccesstraillong}} in your Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-at_events#at_events). For more information, view the [{{site.data.keyword.cloudaccesstrailshort}} documentation](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
+You can [set up {{site.data.keyword.cloudaccesstraillong}} in your Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-at_events#at_events). For more information, view the [{{site.data.keyword.cloudaccesstrailshort}} documentation](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
 
 **What are my options to enable trust in my cluster?** </br>
 By default, Red Hat OpenShift on IBM Cloud provides many features for your cluster components so that you can deploy your containerized apps in a security-rich environment. Extend your level of trust in your cluster to better ensure that what happens within your cluster is what you intended to happen. You can implement trust in your cluster in various ways, as shown in the following diagram.
 
 <img src="images/trusted_story.png" width="700" alt="Deploying containers with trusted content" style="width:700px; border-style: none"/>
 
-1.  **Content Trust for your images**: Ensure the integrity of your images by enabling content trust in your {{site.data.keyword.registrylong_notm}}. With trusted content, you can control who can sign images as trusted. After trusted signers push an image to your registry, users can pull the signed content so that they can verify the source of the image. For more information, see [Signing images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent).
+1.  **Content Trust for your images**: Ensure the integrity of your images by enabling content trust in your {{site.data.keyword.registrylong_notm}}. With trusted content, you can control who can sign images as trusted. After trusted signers push an image to your registry, users can pull the signed content so that they can verify the source of the image. For more information, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
-2.  **Container Image Security Enforcement**: Create an admission controller with custom policies so that you can verify container images before you deploy them. With Container Image Security Enforcement, you control where the images are deployed from and ensure that they meet [Vulnerability Advisor](/docs/va?topic=va-va_index) policies or [content trust](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent) requirements. If a deployment does not meet the policies that you set, security enforcement prevents modifications to your cluster. For more information, see [Enforcing container image security](/docs/Registry?topic=registry-security_enforce#security_enforce).
+2.  **Container Image Security Enforcement**: Create an admission controller with custom policies so that you can verify container images before you deploy them. With Container Image Security Enforcement, you control where the images are deployed from and ensure that they meet [Vulnerability Advisor](/docs/va?topic=va-va_index) policies or [content trust](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent) requirements. If a deployment does not meet the policies that you set, security enforcement prevents modifications to your cluster. For more information, see [Enforcing container image security](/docs/Registry?topic=Registry-security_enforce#security_enforce).
 
 3.  **Image Vulnerability Scanner**: By default, Vulnerability Advisor scans images that are stored in {{site.data.keyword.registrylong_notm}} to find potential security vulnerabilities. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
@@ -395,7 +395,7 @@ To protect your apps, consider to address the following areas:
 Automate the process to build your container image from your source code to eliminate source code variations and defects. By integrating the build process into your CI/CD pipeline, you can ensure that your image is scanned and built only if the image passes the security checks that you specified. To avoid that developers apply hot fixes to sensitive images, limit the number of people in your organization who have access to the build process.
 
 2. **Scan images before they deploy into production:** </br>
-Make sure to scan every image before you deploy a container from it. For example, if you use {{site.data.keyword.registrylong_notm}}, all images are automatically scanned for vulnerabilities when you push the image to your namespace. If vulnerabilities are found, consider eliminating the vulnerabilities or block deployment for those images. Find a person or team in your organization who is responsible for monitoring and removing vulnerabilities. Depending on your organizational structure, this person might be part of a security, operations, or deployment team. Use admission controllers, such as the [Container Image Security Enforcement](/docs/Registry?topic=registry-security_enforce#security_enforce) to block deployments from images that did not pass vulnerability checks and enable [content trust](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent) so that images must be approved by a trusted signer before they can be pushed to the container registry.
+Make sure to scan every image before you deploy a container from it. For example, if you use {{site.data.keyword.registrylong_notm}}, all images are automatically scanned for vulnerabilities when you push the image to your namespace. If vulnerabilities are found, consider eliminating the vulnerabilities or block deployment for those images. Find a person or team in your organization who is responsible for monitoring and removing vulnerabilities. Depending on your organizational structure, this person might be part of a security, operations, or deployment team. Use admission controllers, such as the [Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#security_enforce) to block deployments from images that did not pass vulnerability checks and enable [content trust](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent) so that images must be approved by a trusted signer before they can be pushed to the container registry.
 
 3. **Regularly scan running containers:** </br>
 Even if you deployed a container from an image that passes the vulnerability check, the operating system or binaries that run in the container might get vulnerable over time. To protect your app, you must ensure that running containers are regularly scanned so that you can detect and remediate vulnerabilities. Depending on the app, to add extra security, you can establish a process that takes down vulnerable containers after they are detected.
@@ -417,11 +417,11 @@ You can use the built-in container registry to automate the container image buil
   <tbody>
     <tr>
       <td>Secured Docker private image repository in {{site.data.keyword.registrylong_notm}}</td>
-      <td>Set up your own Docker [image repository](/docs/Registry?topic=registry-getting-started#getting-started) in a multi-tenant, highly available, and scalable private image registry that is hosted and managed by IBM. By using the registry, you can build, securely store, and share Docker images across cluster users. </br></br>Learn more about [securing your personal information](/docs/openshift?topic=openshift-security#pi) when you work with container images.</td>
+      <td>Set up your own Docker [image repository](/docs/Registry?topic=Registry-getting-started#getting-started) in a multi-tenant, highly available, and scalable private image registry that is hosted and managed by IBM. By using the registry, you can build, securely store, and share Docker images across cluster users. </br></br>Learn more about [securing your personal information](/docs/openshift?topic=openshift-security#pi) when you work with container images.</td>
     </tr>
     <tr>
       <td>Push images with trusted content only</td>
-      <td>Ensure the integrity of your images by enabling [content trust](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent) in your image repository. With trusted content, you can control who can sign images as trusted and push images to a specific registry namespace. After trusted signers push an image to a registry namespace, users can pull the signed content so that they can verify the publisher and the integrity of the image.</td>
+      <td>Ensure the integrity of your images by enabling [content trust](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent) in your image repository. With trusted content, you can control who can sign images as trusted and push images to a specific registry namespace. After trusted signers push an image to a registry namespace, users can pull the signed content so that they can verify the publisher and the integrity of the image.</td>
     </tr>
     <tr>
       <td>Automatic vulnerability scans</td>
@@ -429,7 +429,7 @@ You can use the built-in container registry to automate the container image buil
     </tr>
     <tr>
       <td>Block deployments from vulnerable images or untrusted users</td>
-      <td>Create an admission controller with custom policies so that you can verify container images before you deploy them. With [Container Image Security Enforcement](/docs/Registry?topic=registry-security_enforce#security_enforce), you control where the images are deployed from and ensure that they meet Vulnerability Advisor policies or content trust requirements. If a deployment does not meet the policies that you set, the admission controller blocks the deployment in your cluster.</td>
+      <td>Create an admission controller with custom policies so that you can verify container images before you deploy them. With [Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#security_enforce), you control where the images are deployed from and ensure that they meet Vulnerability Advisor policies or content trust requirements. If a deployment does not meet the policies that you set, the admission controller blocks the deployment in your cluster.</td>
     </tr>
   </tbody>
   </table>
