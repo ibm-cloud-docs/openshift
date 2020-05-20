@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-20"
 
 keywords: openshift
 subcollection: openshift
@@ -269,6 +269,7 @@ subcollection: openshift
 * [Sample commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
 * [Prepare to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 * [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
+* [Creating a standard classic cluster](/docs/openshift?topic=openshift-clusters#clusters_standard)
 * [Creating a standard classic cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_ui)
 * [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps)
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
@@ -502,8 +503,7 @@ subcollection: openshift
 
 [Setting up an image registry](/docs/openshift?topic=openshift-registry)
 * [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
-* [Using the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
-* [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#storage_internal_registry)
+* [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
 * [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
 * [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)

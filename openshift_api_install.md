@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-05-20"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -42,10 +42,10 @@ subcollection: openshift
 ## About the API
 {: #api_about}
 
-
 The Red Hat OpenShift on IBM Cloud API automates the provisioning and management of {{site.data.keyword.cloud_notm}} infrastructure resources for your OpenShift clusters so that your apps have the compute, networking, and storage resources that they need to serve your users. The API endpoint is `https://containers.cloud.ibm.com/global/v1`. For more information, see the [API reference documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}.
 {:shortdesc}
 
+<br />
 
 
 ## Automating cluster deployments with the API

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-20"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -35,11 +35,6 @@ subcollection: openshift
 
 # Setting up VPN connectivity
 {: #vpn}
-
-
-
-With VPN connectivity, you can securely connect apps in a OpenShift cluster on {{site.data.keyword.openshiftlong}} to an on-premises network. You can also connect apps that are external to your cluster to an app that runs inside your cluster.
-{:shortdesc}
 
 To connect your worker nodes and apps to an on-premises data center, you can configure one of the following options.
 
