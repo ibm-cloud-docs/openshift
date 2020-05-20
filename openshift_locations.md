@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-20"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -80,7 +80,9 @@ The following tables list the available single and multizone locations in Red Ha
 * **[Multizone](#zones-mz)**: If you create a cluster in a multizone metro location, the replicas of your highly available Kubernetes master are automatically spread across zones. You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a zone is multizone-capable, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
 * **[Single zone](#zones-sz)**: If you create a cluster in a single zone (data center) location, you can create multiple worker nodes but you cannot spread them across zones. The highly available master includes three replicas on separate hosts, but is not spread across zones.
 
+#### Classic multizone metro locations
 {: #zones-mz}
+
 | Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
@@ -94,7 +96,9 @@ The following tables list the available single and multizone locations in Red Ha
 
 
 
+#### Classic single zone data center locations
 {: #zones-sz}
+
 | Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Melbourne | mel01 | AP South (`ap-south`, `au-syd`) |
@@ -122,6 +126,8 @@ The following tables list the available single and multizone locations in Red Ha
 {: summary="The rows are read from left to right. The first column is the IBM Cloud geography of the location. The second column is where the country of the location. The third column is the metro that the location is in. The fourth column is the data center of the location. The fifth column is the name of the IBM Cloud region that the location is in."}
 
 <p class="note">`*` hou02 supports free clusters that are created in US South, and is not available for standard, production clusters.</p>
+
+
 
 
 
