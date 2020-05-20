@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-20"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -94,22 +94,13 @@ Your app's images must be stored in a container registry that your cluster can a
     </tbody>
 </table>
 
-
-
-## Using the internal registry
+## Storing images in the internal registry
 {: #openshift_internal_registry}
 
-OpenShift clusters are set up by default with an internal registry. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster.
+OpenShift clusters are set up by default with an internal registry. By default, the images in the internal registry are backed up. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster.
 {: shortdesc}
 
-Want to learn more about how builds, image streams, and the internal registry work together? Read the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}. 
-{: tip}
 
-For more information, see the following topics.
-* [Storing images in the internal registry](#storage_internal_registry)
-* [Setting up a secure external route for the internal registry](#route_internal_registry)
-* [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](#imagestream_registry)
-* [Setting up builds in the internal to push images to {{site.data.keyword.registrylong_notm}}](#builds_registry)
 
 ## Storing images in the internal registry
 {: #storage_internal_registry}
@@ -324,6 +315,9 @@ By default, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images
 
 If you update your image in {{site.data.keyword.registrylong_notm}}, the image is not pulled automatically into the internal registry of your OpenShift cluster. Instead, [configure periodic importing](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}, or repeat these steps to tag the image. Depending on the image pull policy that you use in your deployment, you might also need to restart your deployment.
 {: note}
+
+Want to learn more about how builds, image streams, and the internal registry work together? Read the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}. 
+{: tip}
 
 1.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 2.  Switch to the `default` project to pull your image into the image stream. The `default` project is already set up with credentials to access the `icr.io` registries.
