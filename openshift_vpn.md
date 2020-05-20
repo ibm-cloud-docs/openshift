@@ -36,12 +36,6 @@ subcollection: openshift
 # Setting up VPN connectivity
 {: #vpn}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This VPN information is specific to classic clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
-{: note}
-
-With VPN connectivity, you can securely connect apps in a OpenShift cluster on {{site.data.keyword.openshiftlong}} to an on-premises network. You can also connect apps that are external to your cluster to an app that runs inside your cluster.
-{:shortdesc}
-
 To connect your worker nodes and apps to an on-premises data center, you can configure one of the following options.
 
 - **strongSwan IPSec VPN Service**: You can set up a [strongSwan IPSec VPN service](https://www.strongswan.org/about.html){: external} that securely connects your OpenShift cluster with an on-premises network. The strongSwan IPSec VPN service provides a secure end-to-end communication channel over the internet that is based on the industry-standard Internet Protocol Security (IPSec) protocol suite. To set up a secure connection between your cluster and an on-premises network, [configure and deploy the strongSwan IPSec VPN service](#vpn-setup) directly in a pod in your cluster.

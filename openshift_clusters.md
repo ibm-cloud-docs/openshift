@@ -146,6 +146,11 @@ After you set up your account to create clusters, decide on the setup for your c
 <br />
 
 
+## Creating a standard classic cluster
+{: #clusters_standard}
+
+Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a fully-customizable standard cluster with your choice of hardware isolation and access to features like multiple worker nodes for a highly available environment.
+{: shortdesc}
 
 
 
