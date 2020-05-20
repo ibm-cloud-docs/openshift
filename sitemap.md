@@ -503,7 +503,6 @@ subcollection: openshift
 [Setting up an image registry](/docs/openshift?topic=openshift-registry)
 * [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
 * [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
-* [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#storage_internal_registry)
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
 * [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
 * [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)

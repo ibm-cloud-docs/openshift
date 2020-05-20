@@ -102,12 +102,6 @@ OpenShift clusters are set up by default with an internal registry. By default, 
 
 
 
-## Storing images in the internal registry
-{: #storage_internal_registry}
-
-By default, your OpenShift cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
-{: shortdesc}
-
 To view volume details including the storage class and size, you can describe the persistent volume claim. 
 
 *   **Version 4**:
