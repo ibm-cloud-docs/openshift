@@ -452,7 +452,7 @@ subcollection: openshift
 * [Setting up the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
 
-[Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn)
+[Classic: Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn)
 * [Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
 * [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations)
 * [Configuring the strongSwan VPN in a multizone cluster](/docs/openshift?topic=openshift-vpn#vpn_multizone)
