@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-21"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -84,6 +84,9 @@ subcollection: openshift
         flex-grow: 1 !important;
         display: flex !important;
         flex-direction: column !important;
+    }
+    .bx--type-caption {
+        text-decoration: none;
     }
 -->
 </style>
