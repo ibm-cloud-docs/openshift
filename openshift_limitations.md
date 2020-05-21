@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-21"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -83,7 +83,7 @@ Review limitations that are specific to OpenShift version 4.3 clusters. Keep in 
 | Cluster updates | You must [update your cluster](/docs/openshift?topic=openshift-update) by using the Red Hat OpenShift on IBM Cloud API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the OpenShift web console. |
 | Container logs | If you use a container logging operator such as Fluentd to send logs to an Elasticsearch stack, you must [update the cluster logging deployment to use the `/var/data` path to container logs](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Key management service (KMS) provider | You cannot use a KMS provider such as {{site.data.keyword.keymanagementservicelong}} to encrypt secrets in your cluster. |
-| Private clusters | You cannot create OpenShift clusters with a private service endpoint. Version 4.3 clusters must have only the public service endpoint enabled. Also, as with version 3.11, you cannot create clusters with only private VLAN connectivity. |
+| Private clusters | You cannot create classic OpenShift clusters with a private service endpoint. Version 4.3 clusters must have only the public service endpoint enabled. Also, as with version 3.11, you cannot create clusters with only private VLAN connectivity. |
 | Logging | To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Service catalog | The service catalog is not supported. Use [Operators](/docs/openshift?topic=openshift-operators#operators_4) instead. |
 | Serverless | The Knative managed add-on is not supported. Instead, try out the tech preview for the [OpenShift Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}. |
