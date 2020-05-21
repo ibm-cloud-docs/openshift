@@ -1017,7 +1017,9 @@ subcollection: openshift
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
 
 
-## [OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
+## OpenShift Container Platform documentation
+
+[OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
 
 
 ## API reference
