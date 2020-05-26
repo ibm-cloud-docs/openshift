@@ -1098,6 +1098,8 @@ subcollection: openshift
   * [`ibmcloud oc alb rollback`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_rollback)
   * [`ibmcloud oc alb types`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_types)
   * [`ibmcloud oc alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
+* [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-commands)
+  * [`ibmcloud oc ingress status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
 * [`logging` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#logging_commands)
   * [`ibmcloud oc logging autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_disable)
   * [`ibmcloud oc logging autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_enable)
@@ -1403,6 +1405,7 @@ subcollection: openshift
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_lb#getting_help_lb)
 
 [Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress)
+* [Checking the status of Ingress components](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-status)
 * [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)
 * [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_rate_limit)
 * [Cannot connect to an app via Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_fails)

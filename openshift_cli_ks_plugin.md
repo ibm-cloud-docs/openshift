@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2494,6 +2494,48 @@ ibmcloud oc alb update --cluster CLUSTER [--alb-id ALB1_ID --alb-id ALB2_ID ...]
 </dl>
 
 
+
+<br />
+
+
+## `ingress` commands
+{: #ingress-commands}
+
+View and modify Ingress services and settings.
+{: shortdesc}
+
+### `ibmcloud oc ingress status`
+{: #cs_ingress_status}
+
+Get the status of the health of Ingress resources for a cluster.
+{: shortdesc}
+
+```
+ibmcloud oc ingress status --cluster CLUSTER [--json] [-s]
+```
+{: pre}
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>The name or ID of the cluster. This value is required.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc ingress status --cluster mycluster
+```
+{: pre}
+
+</br>
 
 <br />
 

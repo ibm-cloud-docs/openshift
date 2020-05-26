@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-14"
+lastupdated: "2020-05-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -316,6 +316,8 @@ http://<subdomain2>.<domain>/<app1_path>
 {: codeblock}
 
 
+<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
+
 <br />
 
 
@@ -627,6 +629,8 @@ http://<subdomain2>.<domain>/<app1_path>
 ```
 {: codeblock}
 
+
+<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
 
 <br />
 
