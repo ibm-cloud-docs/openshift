@@ -605,7 +605,7 @@ New Red Hat OpenShift on IBM Cloud clusters store an API key in [image pull secr
     ```
     {: screen}
 
-    To maintain backwards compatibility, your OpenShift 3.11 cluster has a separate image pull secret for each {{site.data.keyword.registrylong_notm}} region. However, you can copy and refer to only the `all-icr-io` image pull secret, which has credentials to the public and private `icr.io` registry domains for all regions.
+    To maintain backwards compatibility, your OpenShift 3.11 clusters have a separate image pull secret for each {{site.data.keyword.registrylong_notm}} region. However, you can copy and refer to only the `all-icr-io` image pull secret, which has credentials to the public and private `icr.io` registry domains for all regions.
     {: note}
 
 4.  Update your [container deployments](/docs/openshift?topic=openshift-openshift_apps#image) to pull images from the `icr.io` domain name.
