@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-05-26"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -512,8 +512,8 @@ The following instructions require public network access in your cluster to conn
    ```
    {
     "major": "1",
-    "minor": "1.16.9",
-    "gitVersion": "v1.16.9+IKS",
+    "minor": "1.16.10",
+    "gitVersion": "v1.16.10+IKS",
     "gitCommit": "c35166bd86eaa91d17af1c08289ffeab3e71e11e",
     "gitTreeState": "clean",
     "buildDate": "2019-03-21T10:08:03Z",

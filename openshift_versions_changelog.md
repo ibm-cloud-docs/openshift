@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-26"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -50,6 +50,25 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 4.3 patch updates.
 {: shortdesc}
+
+### Changelog for master fix pack 4.3.19_1523_openshift, released 26 May 2020
+{: #4319_1523}
+
+The following table shows the changes that are included in the master fix pack update `4.3.19_1523_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.12.0 | v3.13.3 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico Operator | v1.1.1 | v1.3.4 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.3.4){: external}. |
+| Cluster health image | v1.1.4 | v1.1.5 | Cluster health state now includes Ingress health. |
+| IBM Calico extension | 349 | 353 | Skips creating a Calico host endpoint when no endpoint is needed.|
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.5-1 | v1.17.6-1 | Updated to support the Kubernetes 1.17.6 release. Updated network load balancer (NLB) events to use the latest {{site.data.keyword.cloud_notm}} troubleshooting documentation. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 371 | 373 | Image updated for [CVE-2020-11655](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11655){: external}. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 206 | 208 | Version 2.0 network load balancers (NLB) were updated to cleanup unnecessary IPVS rules. |
+| OpenShift | 4.3.18 | 4.3.19 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-19){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.18_1522_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 4.3.18_1522_openshift, released 12 May 2020
 {: #4318_1522}
@@ -129,6 +148,24 @@ The following table shows the changes that are included in the master fix pack u
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}
+
+### Changelog for master fix pack 3.11.216_1551_openshift, released 26 May 2020
+{: #311216_1551}
+
+The following table shows the changes that are included in the master fix pack update `3.11.216_1551_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.1.1 | v1.1.5 | When cluster add-ons do not support the current cluster version, a warning is now returned in the cluster health state. |
+| etcd | v3.3.18 | v3.3.20 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.3.20){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.11-274 | v1.15.12-316 | Updated to support the Kubernetes 1.15.12 release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and montior | 358 | 373 | Updated image for [CVE-2020-1967](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1967){: external} and [CVE-2020-11655](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11655){: external}. |
+| {{site.data.keyword.cloud_notm}} Paks | N/A | N/A | Removed duplicate repositories in `ClusterImagePolicies` resources that are installed by {{site.data.keyword.cloud_notm}} Paks. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 169 | 203 | Version 2.0 network load balancers (NLB) were updated to fix problems with long-lived network connections to endpoints that failed readiness probes. Updated image for [CVE-2020-1967](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1967){: external}. |
+| OpenShift Control Plane | 3.11.200 | 3.11.216 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-216){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.216_1550_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.216_1550_openshift, released 11 May 2020
 {: #311216_1550}
