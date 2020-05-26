@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-05-26"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -479,7 +479,7 @@ By default, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images
 
 **To pull images directly from the external {{site.data.keyword.registrylong_notm}}**: See the following topics.
 * [Understanding how to authorize your cluster to pull images from a registry](#cluster_registry_auth).
-* [Copying the `default-<region>-icr-io` secrets](#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.
+* [Copying the `all-icr-io` secret](#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.
 * [Creating your own image pull secret](#other_registry_accounts).
 * [Adding the image pull secret](#use_imagePullSecret) to your deployment configuration or to the project service account.
 
@@ -535,8 +535,6 @@ The default cluster setup creates a service ID to store {{site.data.keyword.clou
 Previously, Red Hat OpenShift on IBM Cloud created separate image pull secrets for each regional, public `icr.io` registry domain. Now, all the public and private `icr.io` registry domains for all regions are stored in a single `all-icr-io` image pull secret that is automatically created in the `default` project of your cluster.
 
 To let your workloads pull container images from other projects, you can now copy only the `all-icr-io` image pull secret to that project, and specify the `all-icr-io` secret in your service account or deployment. You do not need to copy the image pull secret that matches the regional registry of your image anymore.
-
-The `all-icr-io` image pull secret is added in clusters that run the following versions: `4.3.12_1520_openshift`.
 
 
 
@@ -607,7 +605,7 @@ New Red Hat OpenShift on IBM Cloud clusters store an API key in [image pull secr
     ```
     {: screen}
 
-    To maintain backwards compatibility, your cluster has a separate image pull secret for each {{site.data.keyword.registrylong_notm}} region. However, you can copy and refer to only the `all-icr-io` image pull secret, which has credentials to the public and private `icr.io` registry domains for all regions.
+    To maintain backwards compatibility, your OpenShift 3.11 cluster has a separate image pull secret for each {{site.data.keyword.registrylong_notm}} region. However, you can copy and refer to only the `all-icr-io` image pull secret, which has credentials to the public and private `icr.io` registry domains for all regions.
     {: note}
 
 4.  Update your [container deployments](/docs/openshift?topic=openshift-openshift_apps#image) to pull images from the `icr.io` domain name.
@@ -685,7 +683,7 @@ You can copy an image pull secret, such as the one that is automatically created
     all-icr-io          kubernetes.io/dockerconfigjson        1         16d
     ```
     {: screen}
-3.  Copy each image pull secret from the `default` project to the project of your choice. The new image pull secrets are named `<project_name>-icr-<region>-io`. If you pull images from only a certain region, you can copy only that region's image pull secret.
+3.  Copy the `all-icr-io` image pull secret from the `default` project to the project of your choice. The new image pull secrets are named `<project_name>-icr-<region>-io`.
     ```
     oc get secret all-icr-io -n default -o yaml | sed 's/default/<new-project>/g' | oc create -n <new-project> -f -   
     ```
