@@ -67,6 +67,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_worker_add.md
         openshift_cluster_scaling.md
         openshift_cluster_update.md
+        openshift_performance.md
         openshift_cluster_remove.md
 
     {: .topicgroup}

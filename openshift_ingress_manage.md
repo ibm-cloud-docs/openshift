@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-28"
+lastupdated: "2020-05-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -47,6 +47,11 @@ Looking to change your ALBs' basic behavior or tune ALB performance? See [Modify
 
 ## Updating ALBs
 {: #alb-update}
+
+
+To see the changes that are included in each version of Ingress, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).
+{: tip}
+
 
 
 Manage automatic updates of all Ingress ALB pods in a cluster.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -42,6 +42,59 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for ge
 While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](#debug-tool-ingress) to run tests and gather pertinent Ingress information from your cluster.
 {: tip}
 
+## Checking the status of Ingress components
+{: #ingress-status}
+
+Check the overall health and status of your cluster's Ingress components by running the `ibmcloud oc ingress status` command.
+{: shortdesc}
+
+The state of the Ingress components are reported in an **Ingress Status** and **Ingress Message**. Example output:
+```
+Ingress Status:   healthy
+Message:          All Ingress components are healthy
+
+Component                                        Status    Type
+public-crdf253b6025d64944ab99ed63bb4567b6-alb1   healthy   alb
+public-crdf253b6025d64944ab99ed63bb4567b6-alb2   healthy   alb
+```
+{: screen}
+
+The **Ingress Status** and **Ingress Message** fields are also returned in the output of the `ibmcloud oc cluster get` command. The health of your Ingress components might impact the health of your cluster master. For example,  if your Ingress components are unhealthy, your cluster master might show a `warning` state. However, the health of your Ingress components does not cause your master health to become `critical`.
+{: tip}
+
+The **Ingress Status** reflects the overall health of the Ingress components. The **Ingress Message** provides details of what operation is in progress or information about any components that are unhealthy. Each status and message is described in the following tables.
+
+|Ingress status|Description|
+|--- |--- |
+|`healthy`|The Ingress components are healthy. Check the **Ingress Message** field to verify that all operations for the Ingress components are complete.|
+|`warning`|The Ingress components might not function properly due to errors. Check the **Ingress Message** field for more information and troubleshooting.|
+{: caption="Ingress statuses"}
+{: summary="Table rows read from left to right, with the Ingress status in column one and a description in column two."}
+
+</br>
+
+|Ingress message|Description|
+|--- |--- |
+|`ALB is disabled`|3.11 clusters: Your public ALBs were manually disabled. For more information, see the [`ibmcloud oc alb configure` CLI command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).|
+|`ALB is unhealthy or unreachable`|3.11 clusters: One or more ALB IP addresses cannot be reached. For troubleshooting information, see [Ping the ALB subdomain and public IP addresses](#ping).|
+|`ALBs are not health checked in clusters created with no subnets`|Ingress health reporting is not supported for clusters that were created with the `--no-subnet` flag.|
+|`ALBs cannot be created because no portable subnet is available`|Each ALB is created with a portable public or private IP address from the public or private subnet on the VLANs that your cluster is connected to. If no portable IP address is available, the ALB is not created. You might need to add a new subnet to your cluster or order a new VLAN. For troubleshooting information, see [Classic clusters: ALB does not deploy in a zone](#cs_subnet_limit).|
+|`All Ingress components are healthy`|The Ingress components are successfully deployed and are healthy.|
+|`Creating Ingress ALBs`|3.11 clusters: Your ALBs are currently deploying. Wait until your ALBs are fully deployed to review the health of your Ingress components. Note that ALB creation can take up to 15 minutes to complete. |
+|`Creating TLS certificate for Ingress subdomain`|The default Ingress subdomain for your cluster is created with a default TLS certificate, which is stored in the **Ingress Secret**. The certificate is currently being created. If you specify the default TLS secret in your Ingress resources, you cannot use HTTPS to access your apps through your ALBs until the secret is fully deployed. |
+|`Deploying router for Ingress controller`|4.3 clusters: The router and router service that expose your Ingress controller are currently deploying to the cluster. |
+|`Ingress status is not supported for cluster type`|Ingress health reporting is currently not supported for OpenShift clusters.|
+|`Load balancer service for ALB or router is not ready`|<ul><li>4.3 clusters: The router and router service that expose your Ingress controller did not correctly deploy to your cluster. For troubleshooting information, see [4.3 clusters: Router for Ingress controller does not deploy in a zone](#cs_subnet_limit_43).</li><li>3.11 clusters: The load balancer service that exposes your ALB did not correctly deploy to your cluster. For troubleshooting information, see [3.11 clusters: ALB does not deploy in a zone](#cs_subnet_limit).</li></ul>|
+|`One or more ALBs are unhealthy`|3.11 clusters: The external IP address for one or more of your ALBs was reported as unhealthy. For troubleshooting information, see [Ping the ALB subdomain and public IP addresses](#ping).|
+|`One or more routers are unhealthy`|4.3 clusters: The external IP address for one or more routers was reported as unhealthy. For troubleshooting information, see [Check the health of the Ingress controller's router](#errors-43).|
+|`Pending update or enable operation for ALB in progress`|3.11 clusters: Your ALB is currently updating to a new version, or your ALB that was previously disabled is enabling. For information about updating ALBs, see [Updating ALBs](/docs/openshift?topic=openshift-ingress-manage#alb-update). For information about enabling ALBs, see the [`ibmcloud oc alb configure` CLI command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).|
+|`Registering Ingress subdomain`|The default **Ingress Subdomain** for your cluster is currently being created. The Ingress subdomain and secret creation follows a process that might take more than 15 minutes to complete. For troubleshooting information, see [No Ingress subdomain exists after cluster creation](#ingress_subdomain).|
+|`Router service is unhealthy or unreachable`|4.3 clusters: The external IP address for one or more router services that expose Ingress controllers was reported as unhealthy, or one or more router services did not correctly deploy to your cluster. For troubleshooting information, see [Ping the Ingress subdomain and router public IP address](#ping-43).|
+{: caption="Ingress messages"}
+{: summary="Table rows read from left to right, with the Ingress message in column one and a description in column two."}
+
+<br />
+
 
 
 ## No Ingress subdomain exists after cluster creation
@@ -76,7 +129,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
    Example output:
    ```
    ID                                                     Public IP         Private IP      Flavor              State     Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.16.9
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.16.10
    ```
    {: screen}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-05-26"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -76,12 +76,13 @@ Version 1.0 of the CLI plug-in was released on 16 March 2020. This version conta
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.84 | 26 May 2020 | <ul><li>Fixes bugs for credentials in Kubernetes configuration contexts:<ul><li>When you download the contexts for clusters that run Kubernetes version 1.17 or later, those contexts are merged into your `kubeconfig` file. The tokens from the version 1.17 or later contexts now do not overwrite tokens for any version 1.16 or later contexts.</li><li>Credentials are now correctly added to your `kubeconfig` file when you download the context for a cluster.</li><li>Fixes credential issues for CLI plug-in installations on MacOS that do not use `cgo`.</li></ul></li><li>Adds the **Ingress Status** and **Ingress Message** fields to the output of the `ibmcloud oc cluster get` command. For more information about these fields, see [Checking the status of Ingress components](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-status).</li><li>Adds the ALB ID to the output of the `ibmcloud oc alb create` command.</li><li>Adds the supported `Auth version` to the output of the `ibmcloud oc alb versions` command.</li><li>Adds the supported range of Kubernetes versions that your cluster must run to the output of the `ibmcloud oc addon versions` command.</li><li>Updates the help text in various languages.</li></ul>|
 | 1.0.57 | 07 May 2020 | <ul><li>Adds a check for deprecated positional arguments.</li><li>Updates the MacOS DNS resolver to fix network issues when you use the CLI plug-in with a VPN connection.</li><li>Help documentation updates:<ul><li>Adds instructions for enabling or disabling an add-on to the help text for the `ibmcloud oc addon-versions` command.</li><li>Clarifies optional and required flags in flag help text.</li><li>Updates the help text in various languages.</li></ul></li></ul>|
 | 1.0.28 | 06 Apr 2020 | <ul><li>Adds the optional `--alb-id` flag to `ibmcloud oc alb update` so that you can specify IDs of individual ALBs to update.</li><li>Adds the optional `--show-storage` flag to `ibmcloud oc flavors` to show additional raw disks that are available for [SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds).</li><li>Adds a message to the output of `ibmcloud oc pull-secret apply` about the amount of time it takes for the pull secrets to be applied to your cluster.</li></ul>|
 | 1.0.15 | 24 Mar 2020 | <ul><li>Adds the [`ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate) and [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm) commands to help you manage secrets for NLB subdomains.</li><li>Adds the optional `--pool WORKER_POOL` flag to `ibmcloud oc zone rm`.</li><li>Deprecates the option to specify a YAML file in the `--file` flag of the `ibmcloud oc cluster create` and `ibmcloud oc worker add` commands. Instead, specify values for your cluster in the supported flags for these commands.</li><li>Fixes the following bugs:<ul><li>For `ibmcloud oc cluster rm`, the `--force-delete-storage` flag no longer sets the `-f` flag.</li></ul></li><li>Updates the help text in various languages.</li></ul>|
 | 1.0.0 | 16 Mar 2020 | Introduces permanent behavior and syntax changes that are not backwards compatible. For a summary of the changes in version 1.0, see [Using version 1.0 of the plug-in](#changelog_beta).|
 {: caption="Overview of version changes for version 1.0 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
-{: summary="Overview of version changes for version 1.0 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
+{: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
 
 <br />
 
@@ -107,7 +108,7 @@ Review the following changes for 0.4 versions of the CLI plug-in.
 | 0.4.3 | 04 Sep 2019 | Adds deprecation warnings for legacy commands to error messages that are sent to `stderr`. |
 | 0.4.1 | 03 Sep 2019 |<ul><li>Sets the Red Hat OpenShift on IBM Cloud plug-in to the redesigned format by default. This redesigned version includes changes such as categorical lists instead of an alphabetical list of commands in the output of `ibmcloud oc help`, spaced-structured commands instead of hyphenated-structure commands, repeated flags instead of multiple values in comma-separated lists, and more. For a full list of the changes between version `0.3` and `0.4`, see the comparison table in [Using the beta Red Hat OpenShift on IBM Cloud plug-in](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta).</li><li>Adds the [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) command to rewrite scripts that call `ibmcloud oc` commands.</li><li>Improves error handling for `ibmcloud oc cluster ls`.</li><li>Updates help text.</li></ul>|
 {: caption="Overview of version changes for version 0.4 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
-{: summary="Overview of version changes for version 0.4 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
+{: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
 
 <br />
 
@@ -135,7 +136,7 @@ Version 0.3 of the CLI plug-in is deprecated. Ensure that your Red Hat OpenShift
 | 0.3.28 | 23 May 2019 | <ul><li>Adds the [`ibmcloud oc infra-permissions get`](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) command to check whether the credentials that allow [access to the IBM Cloud infrastructure portfolio](/docs/openshift?topic=openshift-users#api_key) for the targeted resource group and region are missing suggested or required infrastructure permissions.</li><li>Removes the `--force-update` flag from the `worker update` command.</li><li>Adds the **VLAN ID** column to the output of the `alb ls` and `alb get` commands.</li><li>Adds the **Multizone Metro** column to the output of the `locations` command to designate zones that are multizone-capable.</li><li>Adds the **Master State** and **Master Health** fields to the output of the `cluster get` command. For more information, see [Master states](/docs/containers?topic=containers-health#states_master).</li><li>Updates the help text in various languages.</li></ul> |
 | 0.3.8 | 30 Apr 2019 | Adds support for [global endpoint functionality](/docs/openshift?topic=openshift-regions-and-zones#endpoint) in version `0.3`. By default, you can now view and manage all of your {{site.data.keyword.containerlong_notm}} resources in all locations. You are not required to target a region to work with resources.<ul><li>Adds the [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations) command to list all locations that {{site.data.keyword.containerlong_notm}} supports.</li><li>Adds the `--location` flag to the `cluster ls` and `zone ls` commands to filter resources by one or more locations.</li><li>Adds the `--region` flag to the `credential set/unset/get`, `api-key reset`, and `vlan spanning get` commands. To run these commands, you must specify a region in the `--region` flag.</li></ul> |
 {: caption="Overview of version changes for version 0.3 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
-{: summary="Overview of version changes for version 0.3 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
+{: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
 
 <br />
 
@@ -163,7 +164,7 @@ Version 0.2 of the CLI plug-in is deprecated. Ensure that your Red Hat OpenShift
 | 0.2.30 | 31 Jan 2019 | Increases the default timeout value for `ibmcloud oc cluster config` to `500s`. |
 | 0.2.19 | 16 Jan 2019 | <ul><li>Adds the `IKS_BETA_VERSION` environment variable to enable the redesigned beta version of the Red Hat OpenShift on IBM Cloud plug-in CLI. To try out the redesigned version, see [Using the beta command structure](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta).</li><li>Increases the default timeout value for `ibmcloud oc subnets` to `60s`.</li><li>Fixes a minor bug and updates the help text in various languages.</li></ul> |
 {: caption="Overview of version changes for version 0.2 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
-{: summary="Overview of version changes for version 0.2 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
+{: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
 
 <br />
 
@@ -188,7 +189,7 @@ Version 0.1 of the CLI plug-in is deprecated. Ensure that your Red Hat OpenShift
 | 0.1.591 | 02 Oct 2018 | Adds support for [resource groups](/docs/openshift?topic=openshift-clusters#cluster_prepare). |
 | 0.1.590 | 01 Oct 2018 | <ul><li>Adds the [`ibmcloud oc logging collect`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_collect) and [`ibmcloud oc logging collect-status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_collect_status) commands for collecting API server logs in your cluster.</li><li>Adds the [`ibmcloud oc key-protect-enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms) to enable {{site.data.keyword.keymanagementserviceshort}} as a key management service (KMS) provider in your cluster.</li><li>Adds the `--skip-master-health` flag to the [ibmcloud oc worker reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) and [ibmcloud oc worker reload](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) commands to skip the master health check before initiating the reboot or reload.</li><li>Renames `Owner Email` to `Owner` in the output of `ibmcloud oc cluster get`.</li></ul> |
 {: caption="Overview of version changes for version 0.1 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
-{: summary="Overview of version changes for version 0.1 of the {{site.data.keyword.containerlong_notm}} CLI plug-in"}
+{: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
  
 
 
