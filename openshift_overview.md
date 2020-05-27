@@ -36,7 +36,7 @@ subcollection: openshift
 # Overview
 {: #overview}
 
-Learn more about [Red Hat OpenShift on IBM Cloud](https://www.ibm.com/cloud/openshift){: external}, its capabilities and the options that are available to you to customize the cluster to your needs.
+Learn more about [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/cloud/openshift){: external}, its capabilities and the options that are available to you to customize the cluster to your needs.
 {: shortdesc}
 
 ## Understanding Red Hat OpenShift on IBM Cloud
