@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-05-27"
 
 keywords: openshift
 subcollection: openshift
@@ -360,6 +360,14 @@ subcollection: openshift
   * [Managing automatic updates for Fluentd](/docs/openshift?topic=openshift-update#logging-up)
   * [Managing automatic updates for Ingress ALBs](/docs/openshift?topic=openshift-update#alb)
 * [Updating managed add-ons](/docs/openshift?topic=openshift-update#addons)
+
+[Tuning performance](/docs/openshift?topic=openshift-kernel)
+* [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
+  * [Changing the Calico MTU for 4.3 or later clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
+  * [Changing the Calico MTU for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-311)
+* [Disabling the portmap plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
+  * [Disabling the portmap plug-in for 4.3 or later clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
+  * [Disabling the portmap plug-in for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-311)
 
 [Removing clusters](/docs/openshift?topic=openshift-remove)
 
