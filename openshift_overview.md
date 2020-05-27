@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-05-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -36,7 +36,7 @@ subcollection: openshift
 # Overview
 {: #overview}
 
-Learn more about {{site.data.keyword.openshiftlong}}, its capabilities and the options that are available to you to customize the cluster to your needs.
+Learn more about [Red Hat OpenShift on IBM Cloud](https://www.ibm.com/cloud/openshift){: external}, its capabilities and the options that are available to you to customize the cluster to your needs.
 {: shortdesc}
 
 ## Understanding Red Hat OpenShift on IBM Cloud
