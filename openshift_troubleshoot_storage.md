@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-05-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1706,11 +1706,10 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 If you entered the correct information on the {{site.data.keyword.cloud_notm}} catalog page, verify that your cluster is correctly set up for Portworx.
 {: shortdesc}
 
-
-2. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}.
-3. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.
-4. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics).
-5. Verify that Helm version 2.14.3 or higher is correctly installed in your cluster. For more information, see [Setting up Helm in a cluster with public access](/docs/openshift?topic=openshift-helm#public_helm_install).
+1. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}.
+2. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.
+3. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics).
+4. Verify that Helm version 2.14.3 or higher is correctly installed in your cluster. For more information, see [Setting up Helm in a cluster with public access](/docs/openshift?topic=openshift-helm#public_helm_install).
 
 
 
