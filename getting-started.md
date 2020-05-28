@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-05-28"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -187,14 +187,10 @@ From the OpenShift console, you can deploy one of the built-in service catalog a
 ## What's next?
 {: #whats-next}
 
-Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=openshift-openshift_tutorial) to:
-* Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
-* Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
-
-<br>
-For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.
+* Complete the [Red Hat OpenShift on IBM Cloud classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) or the [Red Hat OpenShift on IBM Cloud VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_roks_tutorial) to:
+  * Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
+  * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
+* For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.
 
 Looking for an overview of all your options in Red Hat OpenShift on IBM Cloud? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 {: tip}
-
-
