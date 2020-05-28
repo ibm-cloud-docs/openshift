@@ -267,7 +267,7 @@ subcollection: openshift
 
 [Creating OpenShift clusters](/docs/openshift?topic=openshift-clusters)
 * [Sample commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
-* [Prepare to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
+* [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 * [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
 * [Creating a standard classic cluster](/docs/openshift?topic=openshift-clusters#clusters_standard)
 * [Creating a standard classic cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_ui)
