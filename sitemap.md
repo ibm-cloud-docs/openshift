@@ -492,13 +492,11 @@ subcollection: openshift
 
 [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
-[Setting up LogDNA and Sysdig add-ons to monitor cluster health](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig)
-* [Setting up logging with LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna)
-* [Setting up API audit log forwarding to LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
-* [Setting up monitoring with Sysdig](/docs/openshift?topic=openshift-health#openshift_sysdig)
-* [Optional: Cleaning up](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig_cleanup)
+[Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
 
-[Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools](/docs/openshift?topic=openshift-health#openshift_other_logmet)
+[Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
+
+[Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig)
 
 [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 * [Installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_install)
