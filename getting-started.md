@@ -112,8 +112,8 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
   <div class="solutionBox">
    <a href = "#deploy-app">
     <div>
-         <h2><img src="images/icon-containers-bw.svg" alt="Container icon" width="15" style="width:15px; border-style: none"/> Deploy and expose an app</h2>
-         <p class="bx--type-caption">Deploy a sample `websphere-liberty` app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
+         <h2><img src="images/icon-containers-bw.svg" alt="OpenShift Container icon" width="15" style="width:15px; border-style: none"/> Deploy and expose an app</h2>
+         <p class="bx--type-caption">In your OpenShift cluster, deploy a sample `websphere-liberty` app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
     </div>
   </a>
   </div>
@@ -196,3 +196,4 @@ From the OpenShift console, you can deploy one of the built-in service catalog a
 
 Looking for an overview of all your options in Red Hat OpenShift on IBM Cloud? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 {: tip}
+

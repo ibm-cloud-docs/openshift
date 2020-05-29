@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-28"
+lastupdated: "2020-05-29"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs
 
@@ -36,7 +36,7 @@ subcollection: openshift
 # FAQs
 {: #faqs}
 
-Review frequently asked questions for using {{site.data.keyword.openshiftlong}}.
+Review frequently asked questions (FAQs) for using {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
 
@@ -115,7 +115,7 @@ For more information about how to achieve high availability for your cluster, se
 
 You can use built-in security features in Red Hat OpenShift on IBM Cloud to protect the components in your cluster, your data, and app deployments to ensure security compliance and data integrity. Use these features to secure your OpenShift API server, etcd data store, worker node, network, storage, images, and deployments against malicious attacks. You can also leverage built-in logging and monitoring tools to detect malicious attacks and suspicious usage patterns.
 
-For more information about the components of your cluster and how you can secure each component, see [Security for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-security#security).
+For more information about the components of your cluster and how you can meet security standards for each component, see [Security for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-security#security).
 
 ## What access policies do I give my cluster users?
 {: #faq_access}
@@ -186,7 +186,7 @@ Yes. By default, Red Hat OpenShift on IBM Cloud sets up many components such as 
 
 For the latest HA service level agreement terms, refer to the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview/terms-of-use?topic=overview-terms#terms). Generally, the SLA availability terms require that when you configure your infrastructure resources in an HA architecture, you must distribute them evenly across three different availability zones. For example, to receive full HA coverage under the SLA terms, you must [set up a multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) with a total of at least 9 worker nodes, three worker nodes per zone that are evenly spread across three zones.
 
-## What standards does the service comply to?
+## What compliance standards does the service meet?
 {: #standards}
 {: faq}
 
@@ -194,7 +194,7 @@ For the latest HA service level agreement terms, refer to the [{{site.data.keywo
 
 To view detailed system requirements, you can run a [software product compatibility report for Red Hat OpenShift on IBM Cloud](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=4440E450C2C811E6A98AAE81A233E762){: external}. 
 
-Red Hat OpenShift on IBM Cloud implements controls commensurate with the following standards:
+Red Hat OpenShift on IBM Cloud implements controls commensurate with the following security standards:
 - EU-US Privacy Shield and Swiss-US Privacy Shield Framework
 - Health Insurance Portability and Accountability Act (HIPAA)
 - Service Organization Control standards (SOC 1 Type 2, SOC 2 Type 2)

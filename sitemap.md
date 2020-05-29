@@ -1324,7 +1324,7 @@ subcollection: openshift
 
 [Is the service highly available?](/docs/openshift?topic=openshift-faqs#ha_sla)
 
-[What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards)
+[What compliance standards does the service meet?](/docs/openshift?topic=openshift-faqs#standards)
 
 [Can I use IBM Cloud and other services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
 
