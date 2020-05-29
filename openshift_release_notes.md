@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-05-29"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -38,6 +38,15 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
+
+## June 2020
+{: #june20}
+
+| Date | Description |
+| ---- | ----------- |
+| 0X June 2020 | |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in June 2020"}
 
 ## May 2020
 {: #may20}
