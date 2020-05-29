@@ -410,7 +410,7 @@ To set up a monitoring configuration for your cluster:
         {: screen}
 
 3. Optional: Verify that the Sysdig agent was set up successfully.
-   1. If you used the console to create the Sysdig monitoring configuration, log in to your cluster. For more information, see [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster)..
+   1. If you used the console to create the Sysdig monitoring configuration, log in to your cluster. For more information, see [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
    2. Verify that the daemonset for the Sysdig agent was created and all instances are listed as `AVAILABLE`.
       ```
       oc get daemonsets -n ibm-observe
