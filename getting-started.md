@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-06-01"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -112,12 +112,14 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
   <div class="solutionBox">
    <a href = "#deploy-app">
     <div>
-         <h2><img src="images/icon-containers-bw.svg" alt="Container icon" width="15" style="width:15px; border-style: none"/> Deploy and expose an app</h2>
-         <p class="bx--type-caption">Deploy a sample `websphere-liberty` app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
+         <h2><img src="images/icon-containers-bw.svg" alt="OpenShift Container icon" width="15" style="width:15px; border-style: none"/> Deploy and expose an app</h2>
+         <p class="bx--type-caption">In your OpenShift cluster, deploy a sample `websphere-liberty` app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
     </div>
   </a>
   </div>
 </div>
+
+
 
 ## Creating an OpenShift cluster
 {: #clusters_gs}
@@ -187,12 +189,10 @@ From the OpenShift console, you can deploy one of the built-in service catalog a
 ## What's next?
 {: #whats-next}
 
-Complete the [Red Hat OpenShift on IBM Cloud tutorial](/docs/openshift?topic=openshift-openshift_tutorial) to:
-* Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
-* Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
-
-<br>
-For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.
+* Complete the [Red Hat OpenShift on IBM Cloud classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) to:
+  * Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
+  * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
+* For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.
 
 Looking for an overview of all your options in Red Hat OpenShift on IBM Cloud? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 {: tip}

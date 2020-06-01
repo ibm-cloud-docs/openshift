@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-05-29"
 
-keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
+keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, annotations
 
 subcollection: openshift
 

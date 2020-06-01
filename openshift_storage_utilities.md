@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -694,7 +694,7 @@ Create and configure an {{site.data.keyword.cos_full_notm}} service instance to 
    2. In the navigation on the service details page, click **Buckets** > **Configuration**.
    3. Note the public URL that you can use to access the data in your bucket.
 
-For more information about configuring your service instance, see the [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started) documentation.
+For more information about configuring your service instance, see the [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) documentation.
 
 ### Using {{site.data.keyword.cos_full_notm}} to back up and restore PVC data
 {: #backup-restore-pvc}

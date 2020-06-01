@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-27"
+lastupdated: "2020-06-01"
 
 keywords: openshift
 subcollection: openshift
@@ -267,7 +267,7 @@ subcollection: openshift
 
 [Creating OpenShift clusters](/docs/openshift?topic=openshift-clusters)
 * [Sample commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
-* [Prepare to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
+* [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 * [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
 * [Creating a standard classic cluster](/docs/openshift?topic=openshift-clusters#clusters_standard)
 * [Creating a standard classic cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_ui)
@@ -494,7 +494,8 @@ subcollection: openshift
 
 [Setting up LogDNA and Sysdig add-ons to monitor cluster health](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig)
 * [Setting up logging with LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna)
-* [Setting up API audit log forwarding to LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
+
+[Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
 * [Setting up monitoring with Sysdig](/docs/openshift?topic=openshift-health#openshift_sysdig)
 * [Optional: Cleaning up](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig_cleanup)
 
@@ -696,7 +697,7 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_ingress_in_openshift_4.3_and_later_clusters}
 
 
-[Quick start for Ingress in OpenShift version 4.3 and later](/docs/openshift?topic=openshift-ingress-qs-roks4)
+[Quick start for Ingress in OpenShift 4.3 and later](/docs/openshift?topic=openshift-ingress-qs-roks4)
 
 [About Ingress in OpenShift version 4.3](/docs/openshift?topic=openshift-ingress-about-roks4)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#ingress_roks4_components)
@@ -734,9 +735,9 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_ingress_in_openshift_3.11_clusters}
 
 
-[Quick start for Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-qs)
+[Quick start for Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress-qs)
 
-[About Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-about)
+[About Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress-about)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about#ingress_components)
   * [Ingress resource](/docs/openshift?topic=openshift-ingress-about#ingress-resource)
   * [Application load balancer (ALB)](/docs/openshift?topic=openshift-ingress-about#alb-about)
@@ -745,7 +746,7 @@ subcollection: openshift
   * [Single-zone cluster](/docs/openshift?topic=openshift-ingress-about#classic-single)
   * [Multizone cluster](/docs/openshift?topic=openshift-ingress-about#classic-multi)
 
-[Setting up Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress)
+[Setting up Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress#config_prereqs)
 * [Planning networking for single or multiple namespaces](/docs/openshift?topic=openshift-ingress#multiple_namespaces)
   * [All apps are in one namespace](/docs/openshift?topic=openshift-ingress#one-ns)
@@ -1326,7 +1327,7 @@ subcollection: openshift
 
 [Is the service highly available?](/docs/openshift?topic=openshift-faqs#ha_sla)
 
-[What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards)
+[What compliance standards does the service meet?](/docs/openshift?topic=openshift-faqs#standards)
 
 [Can I use IBM Cloud and other services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
 
@@ -1473,6 +1474,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[June 2020](/docs/openshift?topic=openshift-iks-release#june20)
 
 [May 2020](/docs/openshift?topic=openshift-iks-release#may20)
 

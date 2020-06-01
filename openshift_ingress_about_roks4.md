@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -42,7 +42,7 @@ subcollection: openshift
 Ingress is a service that balances network traffic workloads in your cluster by forwarding public or private requests to your apps. You can use Ingress to expose multiple app services to the public or to a private network by using a unique public or private domain.
 {: shortdesc}
 
-In your cluster, the OpenShift router is a layer 7 load balancer which implements an HAProxy Ingress controller. A layer 4 `LoadBalancer` service exposes the router so that the router can receive external requests that come into your cluster. The router then forwards requests to app pods in your cluster based on distinguishing layr 7 protocol characteristics, such as headers.
+In your cluster, the OpenShift router is a layer 7 load balancer which implements an HAProxy Ingress controller. A layer 4 `LoadBalancer` service exposes the router so that the router can receive external requests that come into your cluster. The router then forwards requests to app pods in your cluster based on distinguishing layer 7 protocol characteristics, such as headers.
 
 ## What are the components of Ingress?
 {: #ingress_roks4_components}
@@ -142,7 +142,7 @@ If you want to customize routing rules for your app, you can use [HAProxy annota
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 
-{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are **not** supported for the router or the Ingress resource in OpenShift version 4.3 and later.
+{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are **not** supported for the router, Ingress controller, or the Ingress resource in OpenShift version 4.3 and later.
 
 To get started, see [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4).
 
@@ -158,6 +158,6 @@ When you configure the public router, you choose the domain that your apps will 
 To load balance incoming HTTPS connections to your subdomain, you can configure the Ingress controller for your router to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.
 
 * If you use the IBM-provided Ingress subdomain, the Ingress controller for your app is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. The certificates expire every 90 days and are automatically renewed 37 days before they expire.
-* If you use a custom domain, you must create a new Ingress controller, and you can use your own TLS certificate to manage TLS termination. For example, you can import a secret from {{site.data.keyword.cloudcerts_long_notm}}, which adds the secret to the `ibm-cert-store` project. If your Ingress resources are deployed in projects other than `ibm-cert-store`, you must copy the secret to those projects.
+* If you use a custom domain, you can use your own TLS certificate to manage TLS termination. For example, you can import a secret from {{site.data.keyword.cloudcerts_long_notm}}, which adds the secret to the `ibm-cert-store` project. If your Ingress resources are deployed in projects other than `ibm-cert-store`, you must copy the secret to those projects.
 
 To get started, see [Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-2).

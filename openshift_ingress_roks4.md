@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -33,6 +33,8 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
+
+
 # Setting up Ingress in OpenShift version 4.3 or later
 {: #ingress-roks4}
 
@@ -53,7 +55,7 @@ Before you get started with Ingress, review the following prerequisites.
     - **Manager** service role in all projects
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller and router in that zone.
 - To ensure high availability, at least two worker nodes per zone are recommended.
-* Enable a [Virtual Router Function (VRF)](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
+* Enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
 <br />
 
@@ -243,6 +245,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
     <table>
     <thead>
+    <col width="15%">
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
     <tbody>
@@ -369,6 +372,7 @@ To expose apps that are outside of your cluster to the public:
 
     <table>
     <thead>
+    <col width="15%">
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
     <tbody>
@@ -554,6 +558,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
     <table>
     <thead>
+    <col width="15%">
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
     <tbody>
@@ -662,3 +667,6 @@ To add annotations to the router:
   {: pre}
 
 4. Save and close the file. Your changes are automatically applied.
+
+
+

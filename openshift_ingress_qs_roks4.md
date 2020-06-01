@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -33,14 +33,11 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Quick start for Ingress in OpenShift version 4.3 and later
+# Quick start for Ingress in OpenShift 4.3 and later
 {: #ingress-qs-roks4}
 
 Quickly expose your app to the Internet by creating an Ingress resource.
 {: shortdesc}
-
-First time setting up Ingress? Check out [Setting up Ingress in OpenShift version 4.3 or later](/docs/openshift?topic=openshift-ingress-roks4) for prerequisite steps and more details. Come back to these quick start steps for a brief refresher the next time you set up an Ingress resource.
-{: tip}
 
 <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run OpenShift version 4.3 or later only. For clusters that run OpenShift version 3.11, see [Quick start for Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-qs).
 {: note}

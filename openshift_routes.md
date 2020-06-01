@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-29"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -31,6 +31,9 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
+
+
 
 
 # Exposing apps with routes
@@ -682,3 +685,5 @@ Move router services across VLANs in version 3.11 clusters.
     {: pre}
 
 8. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
+
+

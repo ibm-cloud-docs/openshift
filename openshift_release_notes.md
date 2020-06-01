@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -38,6 +38,15 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
+
+## June 2020
+{: #june20}
+
+| Date | Description |
+| ---- | ----------- |
+| 01 June 2020 | <ul><li>**Version 3.11 is deprecated**: Clusters that run OpenShift version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history).</li></ul>|
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in June 2020"}
 
 ## May 2020
 {: #may20}

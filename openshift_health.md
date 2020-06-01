@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-29"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -108,6 +108,8 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
 <br />
 
 
+
+
 ## Setting up LogDNA and Sysdig add-ons to monitor cluster health
 {: #openshift_logdna_sysdig}
 
@@ -140,8 +142,7 @@ For more information about how to use {{site.data.keyword.la_short}}, see the [N
 
 <br />
 
-
-### Setting up API audit log forwarding to LogDNA
+## Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}
 {: #openshift_logdna_audit}
 
 Collect and forward any events that are passed through your Kubernetes API server to {{site.data.keyword.la_full_notm}}.
@@ -289,7 +290,7 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 
 <br />
 
-
+  
 ### Setting up monitoring with Sysdig
 {: #openshift_sysdig}
 

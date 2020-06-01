@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs
 
@@ -36,7 +36,7 @@ subcollection: openshift
 # FAQs
 {: #faqs}
 
-Review frequently asked questions for using {{site.data.keyword.openshiftlong}}.
+Review frequently asked questions (FAQs) for using {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
 
@@ -115,7 +115,7 @@ For more information about how to achieve high availability for your cluster, se
 
 You can use built-in security features in Red Hat OpenShift on IBM Cloud to protect the components in your cluster, your data, and app deployments to ensure security compliance and data integrity. Use these features to secure your OpenShift API server, etcd data store, worker node, network, storage, images, and deployments against malicious attacks. You can also leverage built-in logging and monitoring tools to detect malicious attacks and suspicious usage patterns.
 
-For more information about the components of your cluster and how you can secure each component, see [Security for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-security#security).
+For more information about the components of your cluster and how you can meet security standards for each component, see [Security for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-security#security).
 
 ## What access policies do I give my cluster users?
 {: #faq_access}
@@ -132,10 +132,11 @@ The access policies that you assign users vary depending on what you want your u
 | App auditor | [Viewer platform role for a cluster, region, or resource group](/docs/openshift?topic=openshift-access_reference#iam_platform), [Reader service role for a cluster, region, or resource group](/docs/openshift?topic=openshift-access_reference#service). |
 | App developers | [Editor platform role for a cluster](/docs/openshift?topic=openshift-access_reference#iam_platform), [Writer service role scoped to a namespace](/docs/openshift?topic=openshift-access_reference#service), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-access_reference#cloud-foundry). |
 | Billing | [Viewer platform role for a cluster, region, or resource group](/docs/openshift?topic=openshift-access_reference#iam_platform). |
-| Create a cluster | Account-level permissions set by the API key with Super User infrastructure credentials for classic clusters, or the Administrator platform role to VPC Infrastructure for VPC clusters. Individual user permissions for Administrator platform role to {{site.data.keyword.containerlong_notm}}, and Administrator platform role to {{site.data.keyword.registrylong_notm}}. For more information, see [Preparing to create clusters](/docs/openshift?topic=openshift-clusters#cluster_prepare).|
+| Create a cluster |  Account-level permissions set by the API key with Super User infrastructure credentials for classic clusters, or the Administrator platform role to VPC Infrastructure for VPC clusters. Individual user permissions for Administrator platform role to {{site.data.keyword.containerlong_notm}}, and Administrator platform role to {{site.data.keyword.registrylong_notm}}. For more information, see [Preparing to create clusters](/docs/openshift?topic=openshift-clusters#cluster_prepare).|
 | Cluster administrator | [Administrator platform role for a cluster](/docs/openshift?topic=openshift-access_reference#iam_platform), [Manager service role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-access_reference#service).|
 | DevOps operator | [Operator platform role for a cluster](/docs/openshift?topic=openshift-access_reference#iam_platform), [Writer service role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-access_reference#service), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-access_reference#cloud-foundry).  |
 | Operator or site reliability engineer | [Administrator platform role for a cluster, region, or resource group](/docs/openshift?topic=openshift-access_reference#iam_platform), [Reader service role for a cluster or region](/docs/openshift?topic=openshift-access_reference#service) or [Manager service role for all cluster namespaces](/docs/openshift?topic=openshift-access_reference#service) to be able to use `kubectl top nodes,pods` commands. |
+{: summary="The first column contains the use case, which is typically the role of a user. The second column is the example role and scope of the role that you assign the user in {{site.data.keyword.cloud_notm}} IAM."}
 {: caption="Types of roles you might assign to meet different use cases." caption-side="top"}
 
 ## Where can I find a list of security bulletins that affect my cluster?
@@ -166,7 +167,7 @@ Red Hat OpenShift on IBM Cloud supports the following versions of OpenShift. The
 
 
 * **Default and Latest**: 4.3, which includes Kubernetes 1.16
-* **Other**: 3.11, which includes Kubernetes 1.11
+* **Deprecated**: 3.11, which includes Kubernetes 1.11
 
 
 ## Where is the service available?
@@ -185,7 +186,7 @@ Yes. By default, Red Hat OpenShift on IBM Cloud sets up many components such as 
 
 For the latest HA service level agreement terms, refer to the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview/terms-of-use?topic=overview-terms#terms). Generally, the SLA availability terms require that when you configure your infrastructure resources in an HA architecture, you must distribute them evenly across three different availability zones. For example, to receive full HA coverage under the SLA terms, you must [set up a multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) with a total of at least 9 worker nodes, three worker nodes per zone that are evenly spread across three zones.
 
-## What standards does the service comply to?
+## What compliance standards does the service meet?
 {: #standards}
 {: faq}
 
@@ -193,13 +194,16 @@ For the latest HA service level agreement terms, refer to the [{{site.data.keywo
 
 To view detailed system requirements, you can run a [software product compatibility report for Red Hat OpenShift on IBM Cloud](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=4440E450C2C811E6A98AAE81A233E762){: external}. 
 
-Red Hat OpenShift on IBM Cloud implements controls commensurate with the following standards:
+Red Hat OpenShift on IBM Cloud implements controls commensurate with the following security standards:
 - EU-US Privacy Shield and Swiss-US Privacy Shield Framework
 - Health Insurance Portability and Accountability Act (HIPAA)
 - Service Organization Control standards (SOC 1 Type 2, SOC 2 Type 2)
 - International Standard on Assurance Engagements 3402 (ISAE 3402), Assurance Reports on Controls at a Service Organization
 - International Organization for Standardization (ISO 27001, ISO 27017, ISO 27018)
 - Payment Card Industry Data Security Standard (PCI DSS)
+
+To achieve HIPAA and PCI compliance for your environment, make sure to use [bare metal machines](/docs/openshift?topic=openshift-planning_worker_nodes#bm) for your worker nodes. With bare metal machines, all compute resources are dedicated exclusively to you, and you can control the isolation and resource consumption of your workloads. 
+{: important}
 
 
 

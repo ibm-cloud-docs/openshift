@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -33,7 +33,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# About Ingress in OpenShift version 3.11
+# About Ingress in OpenShift 3.11
 {: #ingress-about}
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 3.11 only. To learn about Ingress for OpenShift version 4.3 or later, see [About Ingress in OpenShift version 4.3 or later](/openshift?topic=openshift-ingress-about-roks4).
