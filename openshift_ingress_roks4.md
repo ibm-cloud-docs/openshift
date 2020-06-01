@@ -245,6 +245,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
     <table>
     <thead>
+    <col width="15%">
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
     <tbody>
@@ -371,6 +372,7 @@ To expose apps that are outside of your cluster to the public:
 
     <table>
     <thead>
+    <col width="15%">
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
     <tbody>
@@ -556,6 +558,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
     <table>
     <thead>
+    <col width="15%">
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
     <tbody>
