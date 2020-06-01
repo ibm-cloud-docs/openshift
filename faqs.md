@@ -167,7 +167,7 @@ Red Hat OpenShift on IBM Cloud supports the following versions of OpenShift. The
 
 
 * **Default and Latest**: 4.3, which includes Kubernetes 1.16
-* **Other**: 3.11, which includes Kubernetes 1.11
+* **Deprecated**: 3.11, which includes Kubernetes 1.11
 
 
 ## Where is the service available?

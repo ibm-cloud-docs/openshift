@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-05"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -79,7 +79,7 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 Red Hat OpenShift on IBM Cloud supports the following versions of OpenShift. The worker node operating system is Red Hat Enterprise Linux 7.
 
 * **Default and latest**: 4.3, which includes Kubernetes 1.16
-* **Other**: 3.11, which includes Kubernetes 1.11
+* **Deprecated**: 3.11, which includes Kubernetes 1.11
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
 
@@ -99,8 +99,17 @@ Kubernetes Version: v1.16.2
 ## Release history
 {: #openshift_release_history}
 
-The following table records Red Hat OpenShift on IBM Cloud version release history. You can use this information for planning purposes, such as to estimate general time frames when a certain release might become unsupported. After the Red Hat OpenShift community releases a version update, the IBM team begins a process of hardening and testing the release for {{site.data.keyword.containerlong_notm}} environments. Availability and unsupported release dates depend on the results of these tests, community updates, security patches, and technology changes between versions. Plan to keep your cluster master and worker node version up-to-date.
+The following table records Red Hat OpenShift on IBM Cloud version release history. You can use this information for planning purposes, such as to estimate general time frames when a certain release might become unsupported. 
 {: shortdesc}
+
+**How soon after an OCP release is the version available in {{site.data.keyword.cloud_notm}}?**<br>
+After the Red Hat OpenShift Container Platform community releases a version update, the IBM team begins a process of hardening and testing the release for Red Hat OpenShift on IBM Cloud environments. Availability and unsupported release dates depend on the results of these tests, community updates, security patches, and technology changes between versions. Plan to keep your cluster master and worker node version up-to-date.
+
+**Why is the deprecated version 3.11 supported longer than more recent versions like 4.3?**<br>
+In general, the last minor version of a major version is supported longer than other minor versions. Because you cannot update a cluster from one major version to another (such as version 3 to 4), this longer support period gives you time to create clusters at a more recent version. Minor versions of a more recent major version might become unsupported before the last minor version of a deprecated major version because the more recent major version has subsequent minor releases that are supported. For example, version 4.3 becomes unsupported before the deprecated version 3.11 because version 4 has future minor releases, but 3.11 is the last minor version of version 3.
+
+**What is different for deprecated versions?**<br>
+Your apps still run, and you can log in to the cluster to manage your OpenShift resources. You can still manage your cluster lifecycle, such as by adding and reloading worker nodes. However, security patch updates might not be provided, and eventually, you cannot create clusters that run a deprecated version. To continue receiving important security updates and the latest functionality, create a cluster at a supported version.
 
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: important}
@@ -124,17 +133,16 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported as a beta."/></td>
   <td>4.3 / 1.16</td>
   <td>20 Apr 2020 at 12:00 UTC</td>
-  <td>`†`</td>
+  <td>April 2021 `†`</td>
 </tr>
 <tr>
-  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
+  <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>3.11 / 1.11</td>
   <td>1 Aug 2019 at 0:00 UTC</td>
-  <td>`†`</td>
+  <td>June 2022 `†`</td>
 </tr>
 </tbody>
 </table>
-
 
 <br />
 

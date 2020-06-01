@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-27"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -102,11 +102,15 @@ Both OpenShift and community Kubernetes clusters are production-ready container 
 Review the following characteristics to decide which Red Hat OpenShift on IBM Cloud cluster version to create. In both Red Hat OpenShift on IBM Cloud versions, you get the same overall [benefits](#benefits), such as the IBM-managed master, version and security patch updates, and IBM Support according to your [terms of service](/docs/overview/terms-of-use?topic=overview-terms#terms).
 {: shortdesc}
 
-You cannot update from an OpenShift 3.11 to 4.3 cluster. Instead, [create a 4.3 cluster](/docs/openshift?topic=openshift-clusters).
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change).
+{: deprecated}
+
+You cannot update from an OpenShift 3.11 to 4 cluster. Instead, [create a version 4 cluster](/docs/openshift?topic=openshift-clusters).
 {: note}
 
-|Characteristics|OpenShift 3.11|OpenShift 4.3|
+|Characteristics|OpenShift 3.11|OpenShift 4|
 |---------------|-------------|-----------------|
+| Supported version? | Deprecated | Supported |
 | RHEL version | 7 | 7 |
 | Kubernetes version | 1.11 | 1.16 |
 | CRI-O runtime version | 1.11 | 1.16 |
