@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-29"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs
 
@@ -201,6 +201,9 @@ Red Hat OpenShift on IBM Cloud implements controls commensurate with the followi
 - International Standard on Assurance Engagements 3402 (ISAE 3402), Assurance Reports on Controls at a Service Organization
 - International Organization for Standardization (ISO 27001, ISO 27017, ISO 27018)
 - Payment Card Industry Data Security Standard (PCI DSS)
+
+To achieve HIPAA and PCI compliance for your environment, make sure to use [bare metal machines](/docs/openshift?topic=openshift-planning_worker_nodes#bm) for your worker nodes. With bare metal machines, all compute resources are dedicated exclusively to you, and you can control the isolation and resource consumption of your workloads. 
+{: important}
 
 
 
