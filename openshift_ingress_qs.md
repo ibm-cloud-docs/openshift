@@ -41,8 +41,6 @@ subcollection: openshift
 Quickly expose your app to the Internet by creating an Ingress resource.
 {: shortdesc}
 
-First time setting up Ingress? Check out [Setting up Ingress](/docs/openshift?topic=openshift-ingress) for prerequisite steps and more details. Come back to these quick start steps for a brief refresher the next time you set up an Ingress resource.
-{: tip}
 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run OpenShift version 3.11 only. For clusters that run OpenShift version 4.3 or later, see [Quick start for Ingress in OpenShift version 4.3 or later](/docs/openshift?topic=openshift-ingress-qs-roks4).
