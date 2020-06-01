@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -33,7 +33,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Quick start for Ingress in OpenShift version 4.3 and later
+# Quick start for Ingress in OpenShift 4.3 and later
 {: #ingress-qs-roks4}
 
 Quickly expose your app to the Internet by creating an Ingress resource.

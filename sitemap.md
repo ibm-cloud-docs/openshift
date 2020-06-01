@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-29"
+lastupdated: "2020-06-01"
 
 keywords: openshift
 subcollection: openshift
@@ -697,7 +697,7 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_ingress_in_openshift_4.3_and_later_clusters}
 
 
-[Quick start for Ingress in OpenShift version 4.3 and later](/docs/openshift?topic=openshift-ingress-qs-roks4)
+[Quick start for Ingress in OpenShift 4.3 and later](/docs/openshift?topic=openshift-ingress-qs-roks4)
 
 [About Ingress in OpenShift version 4.3](/docs/openshift?topic=openshift-ingress-about-roks4)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#ingress_roks4_components)
@@ -735,9 +735,9 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_ingress_in_openshift_3.11_clusters}
 
 
-[Quick start for Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-qs)
+[Quick start for Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress-qs)
 
-[About Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-about)
+[About Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress-about)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about#ingress_components)
   * [Ingress resource](/docs/openshift?topic=openshift-ingress-about#ingress-resource)
   * [Application load balancer (ALB)](/docs/openshift?topic=openshift-ingress-about#alb-about)
@@ -746,7 +746,7 @@ subcollection: openshift
   * [Single-zone cluster](/docs/openshift?topic=openshift-ingress-about#classic-single)
   * [Multizone cluster](/docs/openshift?topic=openshift-ingress-about#classic-multi)
 
-[Setting up Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress)
+[Setting up Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress#config_prereqs)
 * [Planning networking for single or multiple namespaces](/docs/openshift?topic=openshift-ingress#multiple_namespaces)
   * [All apps are in one namespace](/docs/openshift?topic=openshift-ingress#one-ns)

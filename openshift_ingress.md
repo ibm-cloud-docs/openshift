@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -33,7 +33,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Setting up Ingress in OpenShift version 3.11
+# Setting up Ingress in OpenShift 3.11
 {: #ingress}
 
 Expose multiple apps in your OpenShift cluster by creating Ingress resources that are managed by the IBM-provided application load balancer in {{site.data.keyword.openshiftlong}}.

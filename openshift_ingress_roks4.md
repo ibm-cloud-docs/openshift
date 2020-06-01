@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -31,6 +31,8 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
+
 
 
 # Setting up Ingress in OpenShift version 4.3 or later
@@ -662,3 +664,6 @@ To add annotations to the router:
   {: pre}
 
 4. Save and close the file. Your changes are automatically applied.
+
+
+

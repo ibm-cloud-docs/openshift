@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-06-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -33,7 +33,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
-# Quick start for Ingress in OpenShift version 3.11
+# Quick start for Ingress in OpenShift 3.11
 {: #ingress-qs}
 {: help}
 {: support}
