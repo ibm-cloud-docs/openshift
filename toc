@@ -50,25 +50,25 @@ Red Hat OpenShift on IBM Cloud
         openshift_api_install.md
 
     {: .topicgroup}
-    Setting up clusters
-        {: .topicgroup}
-        Planning your cluster environment
-            openshift_kube_strategy.md
-            openshift_cluster_plan_network.md
-            openshift_cluster_plan_ha.md
-            openshift_worker_plan.md
-        {: .topicgroup}
-        Creating and accessing clusters
-            openshift_clusters.md
-            openshift_cluster_access.md
-            openshift_users.md
-        {: .topicgroup}
-        Managing the cluster lifecycle
-            openshift_worker_add.md
-            openshift_cluster_scaling.md
-            openshift_cluster_update.md
-            openshift_performance.md
-            openshift_cluster_remove.md
+    Planning your cluster
+        openshift_kube_strategy.md
+        openshift_cluster_plan_network.md
+        openshift_cluster_plan_ha.md
+        openshift_worker_plan.md
+
+    {: .topicgroup}
+    Creating and accessing clusters
+        openshift_clusters.md
+        openshift_cluster_access.md
+        openshift_users.md
+
+    {: .topicgroup}
+    Managing the cluster lifecycle
+        openshift_worker_add.md
+        openshift_cluster_scaling.md
+        openshift_cluster_update.md
+        openshift_performance.md
+        openshift_cluster_remove.md
 
     {: .topicgroup}
     Securing cluster workloads
@@ -104,34 +104,33 @@ Red Hat OpenShift on IBM Cloud
         openshift_nodeport.md
         openshift_app_update.md
 
+    openshift_app_networking.md
+    openshift_routes.md
+
     {: .topicgroup}
-    Exposing apps
-        openshift_app_networking.md
-        openshift_routes.md
-        {: .topicgroup}
-        Exposing apps with load balancers
-            openshift_loadbalancer_qs.md
-            openshift_loadbalancer_about.md
-            openshift_loadbalancer.md
-            openshift_loadbalancer_v2.md
-            openshift_loadbalancer_dns.md
-        {: .topicgroup}
-        Exposing apps with Ingress
-            {: .topicgroup}
-            Exposing apps with Ingress in OpenShift 4.3 and later clusters
-                openshift_ingress_qs_roks4.md
-                openshift_ingress_about_roks4.md
-                openshift_ingress_roks4.md
-            {: .topicgroup}
-            Exposing apps with Ingress in OpenShift 3.11 clusters
-                openshift_ingress_qs.md
-                openshift_ingress_about.md
-                openshift_ingress.md
-                openshift_annotations.md
-                openshift_ingress_settings.md
-                openshift_ingress_manage.md
-                openshift_ingress_health.md
-                openshift_ingress_user_managed.md
+    Exposing apps with load balancers
+        openshift_loadbalancer_qs.md
+        openshift_loadbalancer_about.md
+        openshift_loadbalancer.md
+        openshift_loadbalancer_v2.md
+        openshift_loadbalancer_dns.md
+
+    {: .topicgroup}
+    Exposing apps with Ingress in OpenShift 4.3 and later clusters
+        openshift_ingress_qs_roks4.md
+        openshift_ingress_about_roks4.md
+        openshift_ingress_roks4.md
+
+    {: .topicgroup}
+    Exposing apps with Ingress in OpenShift 3.11 clusters
+        openshift_ingress_qs.md
+        openshift_ingress_about.md
+        openshift_ingress.md
+        openshift_annotations.md
+        openshift_ingress_settings.md
+        openshift_ingress_manage.md
+        openshift_ingress_health.md
+        openshift_ingress_user_managed.md
 
     {: .topicgroup}
     Storing data on persistent storage
