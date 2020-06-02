@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-21"
+lastupdated: "2020-06-02"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -63,6 +63,7 @@ Red Hat OpenShift on IBM Cloud comes with the following service limitations and 
 | Monitoring | The [built-in Prometheus](/docs/openshift?topic=openshift-deploy_app#openshift_access_oc_services) alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are part of the IBM-managed cluster master, so you can ignore these alerts.</br></br>Example alert:</br>`alert: KubeControllerManagerDown`</br>`expr: absent(up{job="kube-controllers"}`</br>`  == 1)</br>for: 15m</br>labels:`</br>  `severity: critical`</br>`annotations:`</br>` message: KubeControllerManager has disappeared from Prometheus target discovery.`|
 | Multifactor authentication | If your account uses [multifactor authentication (MFA)](/docs/iam?topic=iam-types), the OpenShift web console cannot authenticate and does not work. |
 | Worker node quota | You cannot exceed 500 worker nodes across all clusters in a region. If you need more than 500 worker nodes in a region, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support). In the support case, include the new worker node quota limit for the region that you want.|
+| Worker pool size | You must have a minimum of 2 worker nodes per zone in your worker pool at all times. You cannot scale worker pools down to zero. |
 {: summary="This table contains information on general Red Hat OpenShift on IBM Cloud limitations. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Red Hat OpenShift on IBM Cloud limitations"}
 
