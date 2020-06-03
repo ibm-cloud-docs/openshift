@@ -220,6 +220,11 @@ subcollection: openshift
 {: #sitemap_setting_up_clusters}
 
 
+
+## Planning your cluster environment
+{: #sitemap_planning_your_cluster_environment}
+
+
 [Moving your environment to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-strategy)
 * [Moving your workloads to the {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-strategy#cloud_workloads)
   * [Can I automate my infrastructure deployments?](/docs/openshift?topic=openshift-strategy#infra_packaging)
@@ -259,6 +264,11 @@ subcollection: openshift
 * [Physical machines (bare metal)](/docs/openshift?topic=openshift-planning_worker_nodes#bm)
 * [Software-defined storage (SDS) machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds)
 * [Worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node)
+
+
+## Creating and accessing clusters
+{: #sitemap_creating_and_accessing_clusters}
+
 
 [Creating OpenShift clusters](/docs/openshift?topic=openshift-clusters)
 * [Sample commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
@@ -307,6 +317,11 @@ subcollection: openshift
   * [Checking if the user's credentials are used for infrastructure permissions](/docs/openshift?topic=openshift-users#removing_check_infra)
   * [Removing a user from your account](/docs/openshift?topic=openshift-users#remove_user)
   * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
+
+
+## Managing the cluster lifecycle
+{: #sitemap_managing_the_cluster_lifecycle}
+
 
 [Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add_workers)
 * [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool)
@@ -631,6 +646,11 @@ subcollection: openshift
   * [Moving router services across VLANs in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-43)
   * [Moving router services across VLANs in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-311)
 
+
+## Exposing apps with load balancers
+{: #sitemap_exposing_apps_with_load_balancers}
+
+
 [Quick start for load balancers](/docs/openshift?topic=openshift-loadbalancer-qs)
 
 [About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
@@ -662,6 +682,16 @@ subcollection: openshift
 * [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format)
 * [Enable health checks on a subdomain by creating a health monitor](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor)
   * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
+
+
+## Exposing apps with Ingress
+{: #sitemap_exposing_apps_with_ingress}
+
+
+
+## Exposing apps with Ingress in OpenShift 4.3 and later clusters
+{: #sitemap_exposing_apps_with_ingress_in_openshift_4.3_and_later_clusters}
+
 
 [Quick start for Ingress in OpenShift 4.3 and later](/docs/openshift?topic=openshift-ingress-qs-roks4)
 

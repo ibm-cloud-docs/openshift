@@ -51,17 +51,20 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     Setting up clusters
+
         {: .topicgroup}
         Planning your cluster environment
             openshift_kube_strategy.md
             openshift_cluster_plan_network.md
             openshift_cluster_plan_ha.md
             openshift_worker_plan.md
+
         {: .topicgroup}
         Creating and accessing clusters
             openshift_clusters.md
             openshift_cluster_access.md
             openshift_users.md
+
         {: .topicgroup}
         Managing the cluster lifecycle
             openshift_worker_add.md
@@ -108,6 +111,7 @@ Red Hat OpenShift on IBM Cloud
     Exposing apps
         openshift_app_networking.md
         openshift_routes.md
+
         {: .topicgroup}
         Exposing apps with load balancers
             openshift_loadbalancer_qs.md
@@ -115,13 +119,16 @@ Red Hat OpenShift on IBM Cloud
             openshift_loadbalancer.md
             openshift_loadbalancer_v2.md
             openshift_loadbalancer_dns.md
+
         {: .topicgroup}
         Exposing apps with Ingress
+
             {: .topicgroup}
             Exposing apps with Ingress in OpenShift 4.3 and later clusters
                 openshift_ingress_qs_roks4.md
                 openshift_ingress_about_roks4.md
                 openshift_ingress_roks4.md
+                
             {: .topicgroup}
             Exposing apps with Ingress in OpenShift 3.11 clusters
                 openshift_ingress_qs.md
