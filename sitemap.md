@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-02"
+lastupdated: "2020-06-03"
 
 keywords: openshift
 subcollection: openshift
@@ -427,8 +427,8 @@ subcollection: openshift
 * [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
 * [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers)
 * [Controlling traffic between pods](/docs/openshift?topic=openshift-network_policies#isolate_services)
-  * [Isolate app services within a namespace](/docs/openshift?topic=openshift-network_policies#services_one_ns)
-  * [Isolate app services between namespaces](/docs/openshift?topic=openshift-network_policies#services_across_ns)
+  * [Isolating app services within a namespace](/docs/openshift?topic=openshift-network_policies#vpc-services_one_ns)
+  * [Isolate app services between namespaces](/docs/openshift?topic=openshift-network_policies#vpc-services_across_ns)
 * [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
 
 

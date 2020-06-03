@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-05"
+lastupdated: "2020-06-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -520,8 +520,8 @@ Kubernetes policies protect pods from internal network traffic. You can create s
 For more information about how Kubernetes network policies control pod-to-pod traffic and for more example policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.
 {: tip}
 
-### Isolate app services within a namespace
-{: #services_one_ns}
+### Isolating app services within a namespace
+{: #vpc-services_one_ns}
 
 The following scenario demonstrates how to manage traffic between app microservices within one namespace.
 
@@ -580,7 +580,7 @@ The `spec.podSelector.matchLabels` section lists the labels for the Srv1 databas
 Traffic can now flow from the front end to the back end, and from the back end to the database. The database can respond to the back end, and the back end can respond to the front end, but no reverse traffic connections can be established.
 
 ### Isolate app services between namespaces
-{: #services_across_ns}
+{: #vpc-services_across_ns}
 
 The following scenario demonstrates how to manage traffic between app microservices across multiple namespaces.
 
@@ -616,6 +616,7 @@ The `spec.podSelector.matchLabels` section lists the labels for the Srv1 back-en
 Traffic can now flow from finance microservices to the accounts Srv1 back end. The accounts Srv1 back end can respond to finance microservices, but can't establish a reverse traffic connection.
 
 In this example, all traffic from all microservices in the finance namespace is permitted. You can't allow traffic from specific app pods in another namespace because `podSelector` and `namespaceSelector` can't be combined.
+
 
 <br />
 
