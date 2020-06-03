@@ -194,7 +194,7 @@ subcollection: openshift
 
 [Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: external}
 
-[IBM Developer OpenShift tutorials](https://ibmdev1.rtp.raleigh.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
+[IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/){: external}
 
 
 ## Installing the CLI and API
