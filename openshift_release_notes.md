@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-02"
+lastupdated: "2020-06-04"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,7 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 03 June 2020 | |
+| 04 June 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 637](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul>|
 | 01 June 2020 | <ul><li>**Version 3.11 is deprecated**: Clusters that run OpenShift version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history).</li></ul>|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in June 2020"}

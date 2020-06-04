@@ -432,8 +432,8 @@ subcollection: openshift
 * [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
 * [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers)
 * [Controlling traffic between pods](/docs/openshift?topic=openshift-network_policies#isolate_services)
-  * [Isolating app services within a namespace](/docs/openshift?topic=openshift-network_policies#vpc-services_one_ns)
-  * [Isolate app services between namespaces](/docs/openshift?topic=openshift-network_policies#vpc-services_across_ns)
+  * [Isolate app services within a namespace](/docs/openshift?topic=openshift-network_policies#services_one_ns)
+  * [Isolate app services between namespaces](/docs/openshift?topic=openshift-network_policies#services_across_ns)
 * [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
 
 
@@ -684,11 +684,6 @@ subcollection: openshift
   * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
 
 
-## Exposing apps with Ingress
-{: #sitemap_exposing_apps_with_ingress}
-
-
-
 ## Exposing apps with Ingress in OpenShift 4.3 and later clusters
 {: #sitemap_exposing_apps_with_ingress_in_openshift_4.3_and_later_clusters}
 
@@ -725,6 +720,11 @@ subcollection: openshift
   * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4)
   * [Step 5: Access your app from your private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-5)
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
+
+
+## Exposing apps with Ingress in OpenShift 3.11 clusters
+{: #sitemap_exposing_apps_with_ingress_in_openshift_3.11_clusters}
+
 
 [Quick start for Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress-qs)
 
