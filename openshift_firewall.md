@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -362,7 +362,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 5. Optional: Allow outgoing network traffic from the worker nodes to Sysdig and LogDNA services:
     *   **{{site.data.keyword.mon_full_notm}}**:
         <pre class="screen">TCP port 443, port 6443 FROM &lt;each_worker_node_public_IP&gt; TO &lt;sysdig_public_IP&gt;</pre>
-        Replace <em>&lt;sysdig_public_IP&gt;</em> with the [Sysdig IP addresses](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-network#network_outgoing_traffic).
+        Replace <em>&lt;sysdig_public_IP&gt;</em> with the [Sysdig IP addresses](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-endpoints#endpoints_sysdig).
     *   **{{site.data.keyword.la_full_notm}}**:
         <pre class="screen">TCP port 443, port 80 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logDNA_public_IP&gt;</pre>
         Replace &gt;<em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service-connection#network_outgoing_traffic).
@@ -404,7 +404,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 5. Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEncap traffic between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for private load balancers and the IPEncap protocol to permit pod to pod traffic across subnets.
 8. Optional: To send logging and metric data, set up firewall rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
    *  [{{site.data.keyword.la_short}} private endpoints](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service-connection#ips_api)
-   *  [{{site.data.keyword.mon_short}} private endpoints](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-network#network_outgoing_traffic)
+   *  [{{site.data.keyword.mon_short}} private endpoints](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-endpoints#endpoints_sysdig)
 
 </br>
 

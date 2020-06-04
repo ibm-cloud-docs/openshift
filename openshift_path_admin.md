@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-21"
+lastupdated: "2020-06-04"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -314,7 +314,7 @@ Enhance cluster capabilities by integrating various external services and catalo
   * [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
 2. **Add services to your cluster**:
   * [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
-  * [Adding services by using Operators](https://test.cloud.ibm.com/docs/openshift?topic=openshift-operators)
+  * [Adding services by using Operators](/docs/openshift?topic=openshift-operators)
   * [Adding services by using {{site.data.keyword.cloud_notm}} service binding](/docs/openshift?topic=openshift-service-binding)
 
 </br>Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_clusters).
