@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-21"
+lastupdated: "2020-06-03"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -62,7 +62,9 @@ Red Hat OpenShift on IBM Cloud comes with the following service limitations and 
 | Logging | <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11 only**: <ul><li>You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you cannot modify the default configuration of the Red Hat OpenShift on IBM Cloud cluster.</li><li>Collecting and forwarding API audit logs to {{site.data.keyword.la_full_notm}} is not supported.</li></ul> |
 | Monitoring | The [built-in Prometheus](/docs/openshift?topic=openshift-deploy_app#openshift_access_oc_services) alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are part of the IBM-managed cluster master, so you can ignore these alerts.</br></br>Example alert:</br>`alert: KubeControllerManagerDown`</br>`expr: absent(up{job="kube-controllers"}`</br>`  == 1)</br>for: 15m</br>labels:`</br>  `severity: critical`</br>`annotations:`</br>` message: KubeControllerManager has disappeared from Prometheus target discovery.`|
 | Multifactor authentication | If your account uses [multifactor authentication (MFA)](/docs/iam?topic=iam-types), the OpenShift web console cannot authenticate and does not work. |
+| Pod instances | You can run 110 pods per worker node. If you have worker nodes with 11 CPU cores or more, you can support 10 pods per core, up to a limit of 250 pods per worker node. The number of pods includes `kube-system` and `ibm-system` pods that run on the worker node. For improved performance, consider limiting the number of pods that you run per compute core so that you do not overuse the worker node. For example, on a worker node with a `b3c.4x16` flavor, you might run 10 pods per core that use no more than 75% of the worker node total capacity. |
 | Worker node quota | You cannot exceed 500 worker nodes across all clusters in a region. If you need more than 500 worker nodes in a region, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support). In the support case, include the new worker node quota limit for the region that you want.|
+| Worker pool size | You must have a minimum of 2 worker nodes per zone in your worker pool at all times. You cannot scale worker pools down to zero. Because of the worker node quota, you are limited in the number of worker pools per cluster and number of worker nodes per worker pool. For example, with the default worker node quota of 500 per region, you might have up to 500 worker pools of 1 worker node each in a region with only 1 cluster. Or, you might have 1 worker pool with up to 500 worker nodes in a region with only 1 cluster. |
 {: summary="This table contains information on general Red Hat OpenShift on IBM Cloud limitations. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Red Hat OpenShift on IBM Cloud limitations"}
 
@@ -108,7 +110,6 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Category | Description |
 | -------- | ----------- |
 | Operating system | You cannot create a cluster with worker nodes that run multiple operating systems, such as OpenShift on Red Hat Enterprise Linux and community Kubernetes on Ubuntu. |
-| Pod instances | You can run 110 pods per worker node. If you have worker nodes that run Kubernetes 1.14.3_1524 or later, and are provisioned with 11 CPU cores or more, you can support 10 pods per core, up to a limit of 250 pods per worker node. The number of pods includes `kube-system` and `ibm-system` pods that run on the worker node. For improved performance, consider limiting the number of pods that you run per compute core so that you do not overuse the worker node. For example, on a worker node with a `b3c.4x16` flavor, you might run 10 pods per core that use no more than 75% of the worker node total capacity. |
 | Worker node flavors | Worker nodes are available in [select flavors](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node) of compute resources. |
 | Worker node host access | For security, you cannot SSH into the worker node compute host. |
 | Worker node instances | You cannot exceed 500 worker nodes across all clusters in a region. If you see an IBM Cloud infrastructure capacity limit on the number of instances per data center or that are ordered each month, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support).  |

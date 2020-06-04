@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-04"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -174,7 +174,7 @@ The following table shows the changes that are included in the master and worker
 | Component | Location | Previous | Current | Description |
 | --------- | -------- | ------- | -------- | ----------- |
 | Cluster health image | Master | v1.1.1 | v1.1.5 | When cluster add-ons do not support the current cluster version, a warning is now returned in the cluster health state. |
-| etcd | Master | v3.3.18 | v3.3.20 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.3.20){: external}. |
+| etcd | Master | v3.3.18 | v3.3.20 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.3.20){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | Master | v1.15.11-274 | v1.15.12-316 | Updated to support the Kubernetes 1.15.12 release. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and montior | Master | 358 | 373 | Updated image for [CVE-2020-1967](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1967){: external} and [CVE-2020-11655](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11655){: external}. |
 | {{site.data.keyword.cloud_notm}} Paks | Master | N/A | N/A | Removed duplicate repositories in `ClusterImagePolicies` resources that are installed by {{site.data.keyword.cloud_notm}} Paks. |

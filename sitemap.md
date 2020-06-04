@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-04"
 
 keywords: openshift
 subcollection: openshift
@@ -194,7 +194,7 @@ subcollection: openshift
 
 [Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: external}
 
-[IBM Developer OpenShift tutorials](https://ibmdev1.rtp.raleigh.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
+[IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/){: external}
 
 
 ## Installing the CLI and API
@@ -216,8 +216,13 @@ subcollection: openshift
 * [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI](/docs/openshift?topic=openshift-cs_api_install#cs_cli_refresh)
 
 
-## Planning your cluster
-{: #sitemap_planning_your_cluster}
+## Setting up clusters
+{: #sitemap_setting_up_clusters}
+
+
+
+## Planning your cluster environment
+{: #sitemap_planning_your_cluster_environment}
 
 
 [Moving your environment to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-strategy)
@@ -616,44 +621,30 @@ subcollection: openshift
 * [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster)
 
 
-## Choosing an app exposure service
-{: #sitemap_choosing_an_app_exposure_service}
+## Exposing apps
+{: #sitemap_exposing_apps}
 
 
 [Choosing an app exposure service](/docs/openshift?topic=openshift-cs_network_planning)
-
-[Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
-
-[Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
-
-[Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
-* [Public app networking](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
-
-[Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
-* [Private app networking](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
-
-
-## Exposing apps with routes
-{: #sitemap_exposing_apps_with_routes}
-
+* [Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
+* [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
+* [Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
+  * [Public app networking](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
+* [Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
+  * [Private app networking](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
 
 [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes)
-
-[Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
-* [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
-* [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
-
-[Route types](/docs/openshift?topic=openshift-openshift_routes#route-types)
-
-[Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
-
-[Setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes)
-* [Setting up private routes in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
-* [Setting up private routes in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
-
-[Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
-* [Moving router services across VLANs in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-43)
-* [Moving router services across VLANs in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-311)
+* [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
+  * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
+  * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
+* [Route types](/docs/openshift?topic=openshift-openshift_routes#route-types)
+* [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
+* [Setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes)
+  * [Setting up private routes in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
+  * [Setting up private routes in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
+* [Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
+  * [Moving router services across VLANs in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-43)
+  * [Moving router services across VLANs in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-311)
 
 
 ## Exposing apps with load balancers

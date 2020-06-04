@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-05"
+lastupdated: "2020-06-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -616,6 +616,7 @@ The `spec.podSelector.matchLabels` section lists the labels for the Srv1 back-en
 Traffic can now flow from finance microservices to the accounts Srv1 back end. The accounts Srv1 back end can respond to finance microservices, but can't establish a reverse traffic connection.
 
 In this example, all traffic from all microservices in the finance namespace is permitted. You can't allow traffic from specific app pods in another namespace because `podSelector` and `namespaceSelector` can't be combined.
+
 
 <br />
 
