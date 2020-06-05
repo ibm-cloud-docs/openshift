@@ -111,13 +111,11 @@ Review the key benefits of using containers to run your workloads in the cloud.
 <dt>Containers are small</dt>
 <dd>You can fit many containers in the amount of space that a single virtual machine requires.</dd>
 <dt>Containers are portable</dt>
-<dd>
-<ul>
+<dd><ul>
   <li>Reuse pieces of images to build containers. </li>
   <li>Move app code quickly from staging to production environments.</li>
-  <li>Automate your processes with continuous delivery tools.</li>
-  </ul>
-  </dd>
+  <li>Automate your processes with continuous delivery tools.</li></ul>
+</dd>
 </dl>
 
 Ready to gain deeper knowledge of Docker? [Learn how Docker and Red Hat OpenShift on IBM Cloud work together by completing this course.](https://cognitiveclass.ai/courses/docker-essentials){:external}
@@ -144,22 +142,14 @@ Learn more about the key concepts of Kubernetes as illustrated in the following 
 <dl>
 <dt>Account</dt>
 <dd>Your account refers to your {{site.data.keyword.cloud_notm}} account.</dd>
-
 <dt>Cluster</dt>
 <dd>A Kubernetes cluster consists of one or more compute hosts that are called worker nodes. Worker nodes are managed by a Kubernetes master that centrally controls and monitors all Kubernetes resources in the cluster. So when you deploy the resources for a containerized app, the Kubernetes master decides which worker node to deploy those resources on, accounting for the deployment requirements and available capacity in the cluster. Kubernetes resources include services, deployments, and pods.</dd>
-
 <dt>Service</dt>
-<dd>A service is a Kubernetes resource that groups a set of pods and provides network connectivity to these pods without exposing the actual private IP address of each pod. You can use a service to make your app available within your cluster or to the public internet.
-</dd>
-
+<dd>A service is a Kubernetes resource that groups a set of pods and provides network connectivity to these pods without exposing the actual private IP address of each pod. You can use a service to make your app available within your cluster or to the public internet.</dd>
 <dt>Deployment</dt>
-<dd>A deployment is a Kubernetes resource where you might specify information about other resources or capabilities that are required to run your app, such as services, persistent storage, or annotations. You document a deployment in a configuration YAML file, and then apply it to the cluster. The Kubernetes master configures the resources and deploys containers into pods on the worker nodes with available capacity.
-</br></br>
-Define update strategies for your app, including the number of pods that you want to add during a rolling update and the number of pods that can be unavailable at a time. When you perform a rolling update, the deployment checks whether the update is working and stops the rollout when failures are detected.</dd>
-
+<dd>A deployment is a Kubernetes resource where you might specify information about other resources or capabilities that are required to run your app, such as services, persistent storage, or annotations. You document a deployment in a configuration YAML file, and then apply it to the cluster. The Kubernetes master configures the resources and deploys containers into pods on the worker nodes with available capacity.</br></br>Define update strategies for your app, including the number of pods that you want to add during a rolling update and the number of pods that can be unavailable at a time. When you perform a rolling update, the deployment checks whether the update is working and stops the rollout when failures are detected.</dd>
 <dt>Pod</dt>
 <dd>Every containerized app that is deployed into a cluster is deployed, run, and managed by a Kubernetes resource that is called a pod. Pods represent small deployable units in a Kubernetes cluster and are used to group the containers that must be treated as a single unit. In most cases, each container is deployed in its own pod. However, an app might require a container and other helper containers to be deployed into one pod so that those containers can be addressed by using the same private IP address.</dd>
-
 <dt>App</dt>
 <dd>An app might refer to a complete app or a component of an app. You might deploy components of an app in separate pods or separate worker nodes.</dd></dl>
 
