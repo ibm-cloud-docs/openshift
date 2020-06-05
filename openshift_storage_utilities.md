@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -254,8 +254,11 @@ To add different block storage configurations, add block storage to a subset of 
 
    <table>
    <caption>Understanding the YAML file components</caption>
-   <thead>
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+   <col style="width:30%">
+	<col style="width:70%">
+      <thead>
+	      <th>Parameter</th>
+	      <th>Description</th>
    </thead>
    <tbody>
    <tr>
@@ -554,8 +557,11 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 
         <table>
         <caption>Understanding the YAML file components</caption>
+         <col style="width:30%">
+	      <col style="width:70%">
         <thead>
-        <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+	      <th>Parameter</th>
+	      <th>Description</th>
         </thead>
         <tbody>
       	<tr>
@@ -756,8 +762,11 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
   <table>
     <caption>Understanding the <code>values.yaml</code> file</caption>
-    <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the `values.yaml` file components</th>
+    <col style="width:30%">
+	 <col style="width:70%">
+      <thead>
+	      <th>Parameter</th>
+	      <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -932,8 +941,11 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
             <table>
             <caption>Understanding the <code>deployment.yaml</code> file components</caption>
-            <thead>
-            <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+            <col style="width:30%">
+	         <col style="width:70%">
+             <thead>
+	           <th>Parameter</th>
+	           <th>Description</th>
             </thead>
             <tbody>
             <tr>
