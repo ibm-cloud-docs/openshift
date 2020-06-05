@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-04"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -181,7 +181,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
 <td>11 November 2019</td>
 <td><ul>
-<li><strong>OpenShift overview</strong>: Added an [OpenShift overview page](/docs/openshift?topic=openshift-overview).</li>
+<li><strong>OpenShift overview</strong>: Added an [OpenShift overview page](/docs/openshift?topic=openshift-roks-overview).</li>
 <li><strong>Setting pod priority</strong>: Added a [pod priority page](/docs/openshift?topic=openshift-pod_priority).</li>
 <li><strong>Using {{site.data.keyword.registrylong_notm}}</strong>: Added the following topics about using {{site.data.keyword.registrylong_notm}}:
 <ul><li>[Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth).</li>
