@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -115,6 +115,7 @@ To deploy a container into the **default** project of your cluster:
     <caption>Understanding the YAML file components</caption>
     <thead>
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <col width="20%">
     </thead>
     <tbody>
     <tr>
@@ -199,6 +200,7 @@ Steps:
 
     <table>
     <caption>Understanding the YAML file components</caption>
+    <col width="20%">
     <thead>
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>

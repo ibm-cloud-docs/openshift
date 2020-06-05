@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -141,6 +141,7 @@ You can also use these steps to create more ALBs across zones in your cluster. W
 
   <table>
   <caption>Understanding this command's components</caption>
+  <col width="25%">
   <thead>
   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
   </thead>
@@ -228,6 +229,7 @@ Note that all public ALBs in your cluster share the same IBM-assigned Ingress su
 
   <table>
   <caption>Understanding this command's components</caption>
+  <col width="25%">
   <thead>
   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
   </thead>

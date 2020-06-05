@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -270,14 +270,11 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
    <table>
    <caption>`cluster create classic` command components</caption>
+   <col width="25%">
    <thead>
    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
    </thead>
    <tbody>
-   <tr>
-   <td><code>cluster-create</code></td>
-   <td>The command to create a cluster in your {{site.data.keyword.cloud_notm}} organization.</td>
-   </tr>
    <tr>
    <td><code>--zone <em>&lt;zone&gt;</em></code></td>
    <td>Specify the {{site.data.keyword.cloud_notm}} zone ID that you chose earlier and that you want to use to create your cluster.</td>
