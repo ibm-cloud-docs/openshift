@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-27"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -118,10 +118,9 @@ Review the key benefits of using containers to run your workloads in the cloud.
   <li>Automate your processes with continuous delivery tools.</li>
   </ul>
   </dd>
-
-<p>Ready to gain deeper knowledge of Docker? <a href="https://cognitiveclass.ai/courses/docker-essentials" target="_blank">Learn how Docker and Red Hat OpenShift on IBM Cloud work together by completing this course.</a></p>
-
 </dl>
+
+Ready to gain deeper knowledge of Docker? [Learn how Docker and Red Hat OpenShift on IBM Cloud work together by completing this course.](https://cognitiveclass.ai/courses/docker-essentials){:external}
 
 <br />
 
@@ -132,7 +131,7 @@ Review the key benefits of using containers to run your workloads in the cloud.
 <img src="images/certified-kubernetes-resized.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes certification for IBM Cloud Container Service."/>The open source project that is named Kubernetes combines running a containerized infrastructure with production workloads, open source contributions, and Docker container management tools. The Kubernetes infrastructure provides an isolated and secure app platform for managing containers that is portable, extensible, and self-healing in case of failovers. For more information, check out the [Kubernetes](https://www.ibm.com/cloud/learn/kubernetes) blog post.
 {:shortdesc}
 
-</br></br>
+</br>
 
 ### Key concepts
 {: #kubernetes-concepts}
