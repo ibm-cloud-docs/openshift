@@ -34,7 +34,7 @@ subcollection: openshift
 
 
 # Overview
-{: #overview}
+{: #roks-overview}
 
 Learn more about [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/cloud/openshift){: external}, its capabilities, and the options that are available to you to customize the cluster to your needs.
 {: shortdesc}
