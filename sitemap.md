@@ -1038,7 +1038,7 @@ subcollection: openshift
 {: #sitemap_cli_plug-in_reference}
 
 
-[Red Hat OpenShift on IBM Cloud CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
+[Red Hat OpenShift on IBM Cloud CLI 1](/docs/openshift?topic=openshift-kubernetes-service-cli)
 * [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta)
 * [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#map)
 * [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
