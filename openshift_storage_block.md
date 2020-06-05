@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -327,8 +327,10 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
 
     <table>
     <caption>Understanding the <code>iam service-policy-create</code> command</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the iam service-policy-create command</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -350,8 +352,10 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     
     <table>
     <caption>Understanding the <code>iam service-policy-create</code> command</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the iam service-policy-create command</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -404,8 +408,10 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
 
     <table>
     <caption>Understanding the YAML file components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -484,24 +490,25 @@ The following steps explain how to create a custom, encrypted storage class that
     <table>
     <caption>Understanding the YAML file components</caption>
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
-    <td><code>metadata.name</code></td>
+    <td><code>name</code></td>
     <td>Enter the name of the storage class.</td>
     </tr>
     <tr>
-    <td><code>metadata.labels.encrypted</code></td>
-    <td>Enter "true" to enable encryption.</td>
+    <td><code>encrypted</code></td>
+    <td>In the parameters, enter "true" to enable encryption.</td>
     </tr>
     <tr>
-    <td><code>metadata.labels.encryptionKeyNamespace</code></td>
-    <td>Enter the namespace where you created your secret. Example: <code>default</code>.</td>
+    <td><code>encryptionKeyNamespace</code></td>
+    <td>In the parameters, enter the namespace where you created your secret. Example: <code>default</code>.</td>
     </tr>
     <tr>
-    <td><code>metadata.labels.encryptionKeySecret</code></td>
-    <td>Enter the name of the secret that you created earlier. Example: <code>my_secret</code>.</td>
+    <td><code>encryptionKeySecret</code></td>
+    <td>In the parameters, enter the name of the secret that you created earlier. Example: <code>my_secret</code>.</td>
     </tr>
     </tbody>
     </table>
@@ -549,24 +556,25 @@ The following steps show how you can reference your {{site.data.keyword.keymanag
     <table>
     <caption>Understanding the YAML file components</caption>
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
-    <td><code>metadata.name</code></td>
+    <td><code>name</code></td>
     <td>Enter the name of the PVC.</td>
     </tr>
     <tr>
-    <td><code>metadata.labels.encrypted</code></td>
-    <td>Enter "true" to enable encryption.</td>
+    <td><code>encrypted</code></td>
+    <td>In the metadata labels section, enter "true" to enable encryption.</td>
     </tr>
     <tr>
-    <td><code>metadata.labels.encryptionKeyNamespace</code></td>
-    <td>Enter the namespace where you created your secret. Example: <code>default</code>.</td>
+    <td><code>encryptionKeyNamespace</code></td>
+    <td>In the metadata labels section, enter the namespace where you created your secret. Example: <code>default</code>.</td>
     </tr>
     <tr>
-    <td><code>metadata.labels.encryptionKeySecret</code></td>
-    <td>Enter the name of the secret that you created earlier. Example: <code>my_secret</code>.</td>
+    <td><code>encryptionKeySecret</code></td>
+    <td>In the metadata labels section, enter the name of the secret that you created earlier. Example: <code>my_secret</code>.</td>
     </tr>
     </tbody>
     </table>
@@ -699,37 +707,38 @@ To add block storage:
        <table>
        <caption>Understanding the YAML file components</caption>
        <thead>
-       <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+       <th>Component</th>
+       <th>Description</th>
        </thead>
        <tbody>
        <tr>
-       <td><code>metadata.name</code></td>
+       <td><code>name</code></td>
        <td>Enter the name of the PVC.</td>
        </tr>
        <tr>
-         <td><code>metadata.labels.billingType</code></td>
-         <td>Specify the frequency for which your storage bill is calculated, "monthly" or "hourly". The default is "hourly".</td>
+         <td><code>billingType</code></td>
+         <td>In the metadata labels section, specify the frequency for which your storage bill is calculated, "monthly" or "hourly". The default is "hourly".</td>
        </tr>
        <tr>
-       <td><code>metadata.labels.region</code></td>
-       <td>Specify the region where you want to provision your block storage. If you specify the region, you must also specify a zone. If you do not specify a region, or the specified region is not found, the storage is created in the same region as your cluster. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.</p></td>
+       <td><code>region</code></td>
+       <td>In the metadata labels section, specify the region where you want to provision your block storage. If you specify the region, you must also specify a zone. If you do not specify a region, or the specified region is not found, the storage is created in the same region as your cluster. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.</p></td>
        </tr>
        <tr>
-       <td><code>metadata.labels.zone</code></td>
-	<td>Specify the zone where you want to provision your block storage. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.</p></td>
-	</tr>
+       <td><code>zone</code></td>
+	     <td>In the metadata labels section, specify the zone where you want to provision your block storage. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.</p></td>
+	     </tr>
         <tr>
-        <td><code>spec.resources.requests.storage</code></td>
-        <td>Enter the size of the block storage, in gigabytes (Gi). After your storage is provisioned, you cannot change the size of your block storage. Make sure to specify a size that matches the amount of data that you want to store. </td>
+        <td><code>storage</code></td>
+        <td>In the spec resources requests section, enter the size of the block storage, in gigabytes (Gi). After your storage is provisioned, you cannot change the size of your block storage. Make sure to specify a size that matches the amount of data that you want to store. </td>
         </tr>
         <tr>
-        <td><code>spec.resources.requests.iops</code></td>
-        <td>This option is available for the custom storage classes only (`ibmc-block-custom / ibmc-block-retain-custom`). Specify the total IOPS for the storage, selecting a multiple of 100 within the allowable range. If you choose an IOPS other than one that is listed, the IOPS is rounded up.</td>
+        <td><code>iops</code></td>
+        <td>This option is available for the custom storage classes only (`ibmc-block-custom / ibmc-block-retain-custom`). In the spec resources requests section, specify the total IOPS for the storage, selecting a multiple of 100 within the allowable range. If you choose an IOPS other than one that is listed, the IOPS is rounded up.</td>
         </tr>
-	<tr>
-	<td><code>spec.storageClassName</code></td>
-	<td>The name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code><p>**Tip:** Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).</p></td>
-	</tr>
+        <tr>
+        <td><code>storageClassName</code></td>
+        <td>In the spec section, enter the name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code><p>**Tip:** Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).</p></td>
+        </tr>
         </tbody></table>
 
     If you want to use a customized storage class, create your PVC with the corresponding storage class name, a valid IOPS, and size.   
@@ -803,45 +812,43 @@ To add block storage:
 
     <table>
     <caption>Understanding the YAML file components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
-        <tr>
-    <td><code>metadata.labels.app</code></td>
-    <td>A label for the deployment.</td>
+    <tr>
+    <td><code>app</code></td>
+    <td>In the metadata, enter a label for the deployment.</td>
       </tr>
       <tr>
-        <td><code>spec.selector.matchLabels.app</code> <br/> <code>spec.template.metadata.labels.app</code></td>
-        <td>A label for your app.</td>
+      <td><code>matchLabels.app</code> <br/> <code>labels.app</code></td>
+      <td>In the spec selector and in the template metadata, enter a label for your app.</td>
       </tr>
     <tr>
-    <td><code>template.metadata.labels.app</code></td>
-    <td>A label for the deployment.</td>
-      </tr>
-    <tr>
-    <td><code>spec.containers.image</code></td>
-    <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.</td>
+    <td><code>image</code></td>
+    <td>The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.</td>
     </tr>
     <tr>
-    <td><code>spec.containers.name</code></td>
+    <td><code>name</code></td>
     <td>The name of the container that you want to deploy to your cluster.</td>
     </tr>
     <tr>
-    <td><code>spec.containers.volumeMounts.mountPath</code></td>
-    <td>The absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps. </td>
+    <td><code>mountPath</code></td>
+    <td>In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps. </td>
     </tr>
     <tr>
-    <td><code>spec.containers.volumeMounts.name</code></td>
-    <td>The name of the volume to mount to your pod.</td>
+    <td><code>name</code></td>
+    <td>In the container volume mounts section, enter the name of the volume to mount to your pod.</td>
     </tr>
     <tr>
-    <td><code>volumes.name</code></td>
-    <td>The name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
+    <td><code>name</code></td>
+    <td>In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
     </tr>
     <tr>
-    <td><code>volumes.persistentVolumeClaim.claimName</code></td>
-    <td>The name of the PVC that binds the PV that you want to use. </td>
+    <td><code>claimName</code></td>
+    <td>In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use. </td>
     </tr>
     </tbody></table>
 
@@ -973,40 +980,41 @@ Before you can start to mount your existing storage to an app, you must retrieve
     <table>
     <caption>Understanding the YAML file components</caption>
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
-    <td><code>metadata.name</code></td>
+    <td><code>name</code></td>
     <td>Enter the name of the PV that you want to create.</td>
     </tr>
     <tr>
-    <td><code>metadata.labels</code></td>
+    <td><code>labels</code></td>
     <td>Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster.
     </tr>
     <tr>
-    <td><code>spec.flexVolume.fsType</code></td>
-    <td>Enter the file system type that is configured for your existing block storage. Choose between <code>ext4</code> or <code>xfs</code>. If you do not specify this option, the PV defaults to <code>ext4</code>. When the wrong `fsType` is defined, then the PV creation succeeds, but the mounting of the PV to a pod fails. </td></tr>	    
-    <tr>
-    <td><code>spec.capacity.storage</code></td>
-    <td>Enter the storage size of the existing block storage that you retrieved in the previous step as <code>capacity-gb</code>. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB).</td>
+    <td><code>storage</code></td>
+    <td>In the spec capacity section, enter the storage size of the existing block storage that you retrieved in the previous step as <code>capacity-gb</code>. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB).</td>
     </tr>
     <tr>
-    <td><code>flexVolume.options.Lun</code></td>
-    <td>Enter the lun ID for your block storage that you retrieved earlier as <code>lunId</code>.</td>
+    <td><code>fsType</code></td>
+    <td>In the spec flex volume section, enter the file system type that is configured for your existing block storage. Choose between <code>ext4</code> or <code>xfs</code>. If you do not specify this option, the PV defaults to <code>ext4</code>. When the wrong `fsType` is defined, then the PV creation succeeds, but the mounting of the PV to a pod fails. </td></tr>	    
+    <tr>
+    <td><code>Lun</code></td>
+    <td>In the spec flex volume options section, enter the lun ID for your block storage that you retrieved earlier as <code>lunId</code>.</td>
     </tr>
     <tr>
-    <td><code>flexVolume.options.TargetPortal</code></td>
-    <td>Enter the IP address of your block storage that you retrieved earlier as <code>ip_addr</code>. </td>
+    <td><code>TargetPortal</code></td>
+    <td>In the spec flex volume options section, enter the IP address of your block storage that you retrieved earlier as <code>ip_addr</code>. </td>
     </tr>
     <tr>
-	    <td><code>flexVolume.options.VolumeId</code></td>
-	    <td>Enter the ID of your block storage that you retrieved earlier as <code>id</code>.</td>
-	    </tr>
-	    <tr>
-		    <td><code>flexVolume.options.volumeName</code></td>
-		    <td>Enter a name for your volume.</td>
-	    </tr>
+	  <td><code>VolumeId</code></td>
+	  <td>In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as <code>id</code>.</td>
+	  </tr>
+	  <tr>
+		<td><code>volumeName</code></td>
+		<td>In the spec flex volume options section, enter a name for your volume.</td>
+	  </tr>
     </tbody></table>
 
 3.  Create the PV in your cluster.
@@ -1313,52 +1321,53 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
      <table>
      <caption>Understanding the stateful set YAML file components</caption>
      <thead>
-     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the stateful set YAML file components</th>
-     </thead>
+      <th>Component</th>
+      <th>Description</th>
+    </thead>
      <tbody>
      <tr>
-     <td style="text-align:left"><code>metadata.name</code></td>
+     <td style="text-align:left"><code>name</code></td>
      <td style="text-align:left">Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.serviceName</code></td>
+     <td style="text-align:left"><code>serviceName</code></td>
      <td style="text-align:left">Enter the name of the service that you want to use to expose your stateful set. </td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.replicas</code></td>
+     <td style="text-align:left"><code>replicas</code></td>
      <td style="text-align:left">Enter the number of replicas for your stateful set. </td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.podManagementPolicy</code></td>
+     <td style="text-align:left"><code>podManagementPolicy</code></td>
      <td style="text-align:left">Enter the pod management policy that you want to use for your stateful set. Choose between the following options: <ul><li><strong>`OrderedReady`: </strong>With this option, stateful set replicas are deployed one after another. For example, if you specified three replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see [`OrderedReady` Pod Management ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management).</li><li><strong>Parallel: </strong>With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. </li></ul></td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.selector.matchLabels</code></td>
-     <td style="text-align:left">Enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the <code>volumeClaimTemplates</code> of your stateful set are not recognized by Kubernetes. Sample labels that you might want to include are: <ul><li><code><strong>region</strong></code> and <code><strong>zone</strong></code>: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you do not specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.</li><li><code><strong>billingType</strong></code>: Enter the billing type that you want to use for your PVCs. Choose between <code>hourly</code> or <code>monthly</code>. If you do not specify this label, all PVCs are created with an hourly billing type. </li></ul></td>
+     <td style="text-align:left"><code>matchLabels</code></td>
+     <td style="text-align:left">In the spec selector section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the <code>volumeClaimTemplates</code> of your stateful set are not recognized by Kubernetes. Sample labels that you might want to include are: <ul><li><code><strong>region</strong></code> and <code><strong>zone</strong></code>: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you do not specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.</li><li><code><strong>billingType</strong></code>: Enter the billing type that you want to use for your PVCs. Choose between <code>hourly</code> or <code>monthly</code>. If you do not specify this label, all PVCs are created with an hourly billing type. </li></ul></td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.template.metadata.labels</code></td>
-     <td style="text-align:left">Enter the same labels that you added to the <code>spec.selector.matchLabels</code> section. </td>
+     <td style="text-align:left"><code>labels</code></td>
+     <td style="text-align:left">In the spec template metadata section, enter the same labels that you added to the <code>spec.selector.matchLabels</code> section. </td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.template.spec.affinity</code></td>
-     <td style="text-align:left">Specify your anti-affinity rule to ensure that your stateful set pods are distributed across worker nodes and zones. The example shows an anti-affinity rule where the stateful set pod prefers not to be scheduled on a worker node where a pod runs that has the `app: nginx` label. The `topologykey: failure-domain.beta.kubernetes.io/zone` restricts this anti-affinity rule even more and prevents the pod to be scheduled on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. By using this anti-affinity rule, you can achieve anti-affinity across worker nodes and zones. </td>
+     <td style="text-align:left"><code>affinity</code></td>
+     <td style="text-align:left">In the spec template spec section, specify your anti-affinity rule to ensure that your stateful set pods are distributed across worker nodes and zones. The example shows an anti-affinity rule where the stateful set pod prefers not to be scheduled on a worker node where a pod runs that has the `app: nginx` label. The `topologykey: failure-domain.beta.kubernetes.io/zone` restricts this anti-affinity rule even more and prevents the pod to be scheduled on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. By using this anti-affinity rule, you can achieve anti-affinity across worker nodes and zones. </td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.volumeClaimTemplates.metadata.name</code></td>
-     <td style="text-align:left">Enter a name for your volume. Use the same name that you defined in the <code>spec.containers.volumeMount.name</code> section. The name that you enter here is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
+     <td style="text-align:left"><code>name</code></td>
+     <td style="text-align:left">In the spec volume claim templates metadata section, enter a name for your volume. Use the same name that you defined in the <code>spec.containers.volumeMount.name</code> section. The name that you enter here is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.volumeClaimTemplates.spec.resources.</code></br><code>requests.storage</code></td>
-     <td style="text-align:left">Enter the size of the block storage in gigabytes (Gi).</td>
+     <td style="text-align:left"><code>storage</code></td>
+     <td style="text-align:left">In the spec volume claim templates spec resources requests section, enter the size of the block storage in gigabytes (Gi).</td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.volumeClaimTemplates.spec.resources.</code></br><code>requests.iops</code></td>
-     <td style="text-align:left">If you want to provision [performance storage](#block_predefined_storageclass), enter the number of IOPS. If you use an endurance storage class and specify a number of IOPS, the number of IOPS is ignored. Instead, the IOPS that is specified in your storage class is used.  </td>
+     <td style="text-align:left"><code>iops</code></td>
+     <td style="text-align:left">In the spec volume claim templates spec resources requests section, if you want to provision [performance storage](#block_predefined_storageclass), enter the number of IOPS. If you use an endurance storage class and specify a number of IOPS, the number of IOPS is ignored. Instead, the IOPS that is specified in your storage class is used.  </td>
      </tr>
      <tr>
-     <td style="text-align:left"><code>spec.volumeClaimTemplates.</code></br><code>spec.storageClassName</code></td>
-     <td style="text-align:left">Enter the storage class that you want to use. To list existing storage classes, run <code>oc get storageclasses | grep block</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-block</code> provisioner so that your stateful set is provisioned with block storage.</td>
+     <td style="text-align:left"><code>storageClassName</code></td>
+     <td style="text-align:left">In the spec volume claim templates spec section, enter the storage class that you want to use. To list existing storage classes, run <code>oc get storageclasses | grep block</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-block</code> provisioner so that your stateful set is provisioned with block storage.</td>
      </tr>
      </tbody></table>
 

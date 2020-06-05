@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -105,28 +105,30 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
 
     <table>
     <caption>Understanding the NodePort service components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the NodePort service section components</th>
+      <th>Component</th>
+      <th>Description</th>
     </thead>
     <tbody>
     <tr>
-    <td><code>metadata.name</code></td>
+    <td><code>name</code></td>
     <td>Replace <code><em>&lt;my-nodeport-service&gt;</em></code> with a name for your NodePort service.<p>Learn more about [securing your personal information](/docs/openshift?topic=openshift-security#pi) when you work with Kubernetes resources.</p></td>
     </tr>
     <tr>
-    <td><code>metadata.labels</code></td>
+    <td><code>labels</code></td>
     <td>Replace <code><em>&lt;my-label-key&gt;</em></code> and <code><em>&lt;my-label-value&gt;</em></code> with the label that you want to use for your service.</td>
     </tr>
     <tr>
-      <td><code>spec.selector</code></td>
+      <td><code>selector</code></td>
       <td>Replace <code><em>&lt;my-selector-key&gt;</em></code> and <code><em>&lt;my-selector-value&gt;</em></code> with the key/value pair that you used in the <code>spec.template.metadata.labels</code> section of your deployment YAML. To associate the service with the deployment, the selector must match the deployment labels.
       </tr>
     <tr>
-    <td><code>ports.port</code></td>
+    <td><code>port</code></td>
     <td>Replace <code><em>&lt;8081&gt;</em></code> with the port that your service listens on. </td>
      </tr>
      <tr>
-     <td><code>ports.nodePort</code></td>
+     <td><code>nodePort</code></td>
      <td>Optional: Replace <code><em>&lt;31514&gt;</em></code> with a NodePort in the 30000 - 32767 range. Do not specify a NodePort that is already in use by another service. If no NodePort is assigned, a random one is assigned for you.<br><br>To specify a NodePort and see which NodePorts are already in use, run the following command: <pre class="pre"><code>oc get svc</code></pre><p>Any NodePorts in use appear under the **Ports** field.</p></td>
      </tr>
      </tbody></table>

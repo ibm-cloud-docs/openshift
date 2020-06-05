@@ -741,8 +741,10 @@ The following steps create an API key that stores the credentials of an {{site.d
     {: pre}
     <table>
     <caption>Understanding this command's components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -792,8 +794,10 @@ The following steps create an API key that stores the credentials of an {{site.d
 
     <table>
     <caption>Understanding this command's components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -851,8 +855,10 @@ To create an image pull secret:
 
     <table>
     <caption>Understanding this command's components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -1039,8 +1045,10 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
     {: pre}
     <table>
     <caption>Understanding this command's components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-04"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -715,8 +715,10 @@ This section shows you how to log traffic that is denied by a Kubernetes network
 
   <table>
   <caption>Understanding the log policy YAML components</caption>
+  <col width="25%">
   <thead>
-  <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the log policy YAML components</th>
+    <th>Component</th>
+    <th>Description</th>
   </thead>
   <tbody>
   <tr>
