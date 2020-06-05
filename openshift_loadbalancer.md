@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -79,6 +79,7 @@ To set up an NLB 1.0 service in a multizone cluster:
 
       <table>
       <caption>Understanding the YAML file components</caption>
+      <col width="50%">
       <thead>
       <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
       </thead>
@@ -225,6 +226,7 @@ To create an NLB 1.0 service in a single-zone cluster:
 
         <table>
         <caption>Understanding the YAML file components</caption>
+        <col width="50%">
         <thead>
         <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
         </thead>

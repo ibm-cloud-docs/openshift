@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-06-05"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -265,6 +265,7 @@ When you mount the secret as a volume to your pod, a file that is named `binding
 
     <table>
     <caption>Understanding the YAML file components</caption>
+    <col width="25%">
     <thead>
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
@@ -418,6 +419,7 @@ You can add the service credentials and other key value pairs from your Kubernet
 
      <table>
      <caption>Understanding the YAML file components</caption>
+     <col width="25%">
      <thead>
      <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
      </thead>

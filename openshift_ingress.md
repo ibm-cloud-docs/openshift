@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -315,6 +315,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
 
     <table>
     <thead>
+    <col width="20%">
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
     <tbody>
@@ -459,6 +460,7 @@ To expose apps that are outside of your cluster to the public:
     {: codeblock}
 
     <table>
+    <col width="20%">
     <thead>
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
@@ -513,6 +515,7 @@ To expose apps that are outside of your cluster to the public:
 
   <table>
   <caption>Understanding the YAML file components</caption>
+  <col width="20%">
   <thead>
   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the annotation components</th>
   </thead>
@@ -709,6 +712,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     {: codeblock}
 
     <table>
+    <col width="25%">
     <thead>
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
     </thead>
