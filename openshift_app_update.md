@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-06-05"
 
-keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks
+keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
 subcollection: openshift
 
