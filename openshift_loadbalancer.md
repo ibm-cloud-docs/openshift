@@ -81,7 +81,8 @@ To set up an NLB 1.0 service in a multizone cluster:
       <caption>Understanding the YAML file components</caption>
       <col width="50%">
       <thead>
-      <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+      <th>Parameter</th>
+      <th>Description</th>
       </thead>
       <tbody>
       <tr>

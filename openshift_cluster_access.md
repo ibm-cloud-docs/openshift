@@ -362,7 +362,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     <caption>Understanding this command's components</caption>
     <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>

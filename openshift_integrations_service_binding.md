@@ -267,7 +267,8 @@ When you mount the secret as a volume to your pod, a file that is named `binding
     <caption>Understanding the YAML file components</caption>
     <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -421,7 +422,8 @@ You can add the service credentials and other key value pairs from your Kubernet
      <caption>Understanding the YAML file components</caption>
      <col width="25%">
      <thead>
-     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+     <th>Parameter</th>
+     <th>Description</th>
      </thead>
      <tbody>
      <tr>

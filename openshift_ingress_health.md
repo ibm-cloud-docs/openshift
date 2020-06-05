@@ -121,10 +121,11 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
     {: codeblock}
 
     <table>
-    <caption>YAML file components</caption>
+    <caption>Understanding the log-format configuration</caption>
     <col width="25%">
     <thead>
-    <th>Understanding the log-format configuration</th>
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>

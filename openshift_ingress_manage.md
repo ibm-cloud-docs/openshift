@@ -143,7 +143,8 @@ You can also use these steps to create more ALBs across zones in your cluster. W
   <caption>Understanding this command's components</caption>
   <col width="25%">
   <thead>
-  <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+  <th>Parameter</th>
+  <th>Description</th>
   </thead>
   <tbody>
   <tr>
@@ -231,7 +232,8 @@ Note that all public ALBs in your cluster share the same IBM-assigned Ingress su
   <caption>Understanding this command's components</caption>
   <col width="25%">
   <thead>
-  <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+  <th>Parameter</th>
+  <th>Description</th>
   </thead>
   <tbody>
   <tr>
