@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -120,7 +120,6 @@ In OpenShift Container Platform 4, many components are configured by a correspon
 | `openshift-network-operator` | The [cluster network operator (CNO)](https://docs.openshift.com/container-platform/4.3/networking/cluster-network-operator.html){: external} manages the cluster network components that are set up by default, such as the CNI pod network provider plug-in and DNS operator.|
 | `openshift-operator-lifecycle-manager` | The [operator lifecycle manager (OLM)](https://docs.openshift.com/container-platform/4.3/operators/understanding_olm/olm-understanding-olm.html){: external} manages the lifecycle of all operators and the catalog that run in the cluster, including the operators for the default components and any custom operators that you add.|
 | `openshift-service-ca`, `openshift-service-ca-operator` | The certificate authority (CA) operator runs certificate signing and injects certificates into API server resources and configmaps in the cluster. For more information, see the [GitHub project](https://github.com/openshift/service-ca-operator){: external}.|
-| **Deprecated**:  `openshift-service-catalog-apiserver-operator`, `openshift-service-catalog-controller-manager-operator` | The [service catalog](http://docs.openshift.com/container-platform/4.3/applications/service_brokers/installing-service-catalog.html){: external} is not supported in OCP 4. Instead, use operators.|
 {: summary="The rows are read from left to right. The first column is the worker node component. The second column is a description of the component."}
 {: caption="OpenShift 4 worker node components." caption-side="top"}
 

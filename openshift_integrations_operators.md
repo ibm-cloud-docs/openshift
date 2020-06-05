@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-06-05"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -174,7 +174,7 @@ Try out the following tutorial.
 ## Using the service catalog in 3.11 clusters
 {: #service_catalog}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> The service catalog is not supported in clusters that run version 4.3 and later. Use [Operators](#operators_4) instead.
+<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> The service catalog is not supported in clusters that run version 4.3 and later. Use [Operators](#operators_4) instead. Do not use the OperatorHub to install the service catalog.
 {: important}
 
 You can extend your app's capabilities by binding a service from the [OpenShift service catalog](https://docs.openshift.com/container-platform/3.11/architecture/service_catalog/index.html){: external}. The service catalog is enabled in your 3.11 cluster by default. For an example of how to use the service catalog, see [Deploying an app with the OpenShift service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app).
