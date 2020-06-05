@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-28"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -833,38 +833,40 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
         <table>
         <caption>Understanding the YAML components</caption>
+          <col width="25%">
           <thead>
-            <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML components</th>
+          <th>Parameter</th>
+          <th>Description</th>
           </thead>
           <tbody>
-            <tr>
-              <td><code>kind</code></td>
-              <td>Use `Role` to grant access to resources within a specific namespace. Use `ClusterRole` to grant access to cluster-wide resources such as worker nodes, or to namespace-scoped resources such as pods in all namespaces.</td>
-            </tr>
-            <tr>
-              <td><code>apiVersion</code></td>
-              <td><ul><li>For clusters that run Kubernetes 1.8 or later, use `rbac.authorization.k8s.io/v1`. </li><li>For earlier versions, use `apiVersion: rbac.authorization.k8s.io/v1beta1`.</li></ul></td>
-            </tr>
-            <tr>
-              <td><code>metadata.namespace</code></td>
-              <td>For kind `Role` only: Specify the Kubernetes namespace to which access is granted.</td>
-            </tr>
-            <tr>
-              <td><code>metadata.name</code></td>
-              <td>Name the role or cluster role.</td>
-            </tr>
-            <tr>
-              <td><code>rules.apiGroups</code></td>
-              <td>Specify the Kubernetes [API groups ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/using-api/api-overview/#api-groups) that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`.</td>
-            </tr>
-            <tr>
-              <td><code>rules.resources</code></td>
-              <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. If you specify `"nodes"`, then the kind must be `ClusterRole`.</td>
-            </tr>
-            <tr>
-              <td><code>rules.verbs</code></td>
-              <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/) that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`.</td>
-            </tr>
+          <tr>
+          <td><code>kind</code></td>
+          <td>Use `Role` to grant access to resources within a specific namespace. Use `ClusterRole` to grant access to cluster-wide resources such as worker nodes, or to namespace-scoped resources such as pods in all namespaces.</td>
+          </tr>
+          <tr>
+          <td><code>apiVersion</code></td>
+          <td><ul><li>For clusters that run Kubernetes 1.8 or later, use `rbac.authorization.k8s.io/v1`. </li><li>For earlier versions, use `apiVersion: rbac.authorization.k8s.io/v1beta1`.</li></ul></td>
+          </tr>
+          <tr>
+          <td><code>metadata.namespace</code></td>
+          <td>For kind `Role` only: Specify the Kubernetes namespace to which access is granted.</td>
+          </tr>
+          <tr>
+          <td><code>metadata.name</code></td>
+          <td>Name the role or cluster role.</td>
+          </tr>
+          <tr>
+          <td><code>rules.apiGroups</code></td>
+          <td>Specify the Kubernetes [API groups ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/using-api/api-overview/#api-groups) that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`.</td>
+          </tr>
+          <tr>
+          <td><code>rules.resources</code></td>
+          <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. If you specify `"nodes"`, then the kind must be `ClusterRole`.</td>
+          </tr>
+          <tr>
+          <td><code>rules.verbs</code></td>
+          <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/) that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`.</td>
+          </tr>
           </tbody>
         </table>
 
@@ -917,60 +919,62 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
         <table>
         <caption>Understanding the YAML components</caption>
+          <col width="25%">
           <thead>
-            <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML components</th>
+          <th>Parameter</th>
+          <th>Description</th>
           </thead>
           <tbody>
-            <tr>
-              <td><code>kind</code></td>
-              <td><ul><li>Specify `RoleBinding` for a namespace-specific `Role` or `ClusterRole`.</li><li>Specify `ClusterRoleBinding` for a cluster-wide `ClusterRole`.</li></ul></td>
-            </tr>
-            <tr>
-              <td><code>apiVersion</code></td>
-              <td><ul><li>For clusters that run Kubernetes 1.8 or later, use `rbac.authorization.k8s.io/v1`. </li><li>For earlier versions, use `apiVersion: rbac.authorization.k8s.io/v1beta1`.</li></ul></td>
-            </tr>
-            <tr>
-              <td><code>metadata.namespace</code></td>
-              <td><ul><li>For kind `RoleBinding`: Specify the Kubernetes namespace to which access is granted.</li><li>For kind `ClusterRoleBinding`: don't use the `namespace` field.</li></ul></td>
-            </tr>
-            <tr>
-              <td><code>metadata.name</code></td>
-              <td>Name the role binding or cluster role binding.</td>
-            </tr>
-            <tr>
-              <td><code>subjects.kind</code></td>
-              <td>Specify the kind as one of the following:
-              <ul><li>`User`: Bind the RBAC role or cluster role to an individual user in your account.</li>
-              <li>`Group`: Bind the RBAC role or cluster role to an [{{site.data.keyword.cloud_notm}} IAM access group](/docs/iam?topic=iam-groups#groups) in your account.</li>
-              <li>`ServiceAccount`: Bind the RBAC role or cluster role to a service account in a namespace in your cluster.</li></ul></td>
-            </tr>
-            <tr>
-              <td><code>subjects.name</code></td>
-              <td><ul><li>For `User`: Append the individual user's email address to `IAM#` as follows: <code>IAM#user@email.com</code>.</li>
-              <li>For `Group`: Specify the name of the [{{site.data.keyword.cloud_notm}} IAM access group](/docs/iam?topic=iam-groups#groups) in your account.</li>
-              <li>For `ServiceAccount`: Specify the service account name.</li></ul></td>
-            </tr>
-            <tr>
-              <td><code>subjects.apiGroup</code></td>
-              <td><ul><li>For `User` or `Group`: use `rbac.authorization.k8s.io`.</li>
-              <li>For `ServiceAccount`: don't include this field.</li></ul></td>
-            </tr>
-            <tr>
-              <td><code>subjects.namespace</code></td>
-              <td>For `ServiceAccount` only: Specify the name of the Kubernetes namespace that the service account is deployed to.</td>
-            </tr>
-            <tr>
-              <td><code>roleRef.kind</code></td>
-              <td>Enter the same value as the `kind` in the role `.yaml` file: `Role` or `ClusterRole`.</td>
-            </tr>
-            <tr>
-              <td><code>roleRef.name</code></td>
-              <td>Enter the name of the role `.yaml` file.</td>
-            </tr>
-            <tr>
-              <td><code>roleRef.apiGroup</code></td>
-              <td>Use `rbac.authorization.k8s.io`.</td>
-            </tr>
+          <tr>
+          <td><code>kind</code></td>
+          <td><ul><li>Specify `RoleBinding` for a namespace-specific `Role` or `ClusterRole`.</li><li>Specify `ClusterRoleBinding` for a cluster-wide `ClusterRole`.</li></ul></td>
+          </tr>
+          <tr>
+          <td><code>apiVersion</code></td>
+          <td><ul><li>For clusters that run Kubernetes 1.8 or later, use `rbac.authorization.k8s.io/v1`. </li><li>For earlier versions, use `apiVersion: rbac.authorization.k8s.io/v1beta1`.</li></ul></td>
+          </tr>
+          <tr>
+          <td><code>metadata.namespace</code></td>
+          <td><ul><li>For kind `RoleBinding`: Specify the Kubernetes namespace to which access is granted.</li><li>For kind `ClusterRoleBinding`: don't use the `namespace` field.</li></ul></td>
+          </tr>
+          <tr>
+          <td><code>metadata.name</code></td>
+          <td>Name the role binding or cluster role binding.</td>
+          </tr>
+          <tr>
+          <td><code>subjects.kind</code></td>
+          <td>Specify the kind as one of the following:
+          <ul><li>`User`: Bind the RBAC role or cluster role to an individual user in your account.</li>
+          <li>`Group`: Bind the RBAC role or cluster role to an [{{site.data.keyword.cloud_notm}} IAM access group](/docs/iam?topic=iam-groups#groups) in your account.</li>
+          <li>`ServiceAccount`: Bind the RBAC role or cluster role to a service account in a namespace in your cluster.</li></ul></td>
+          </tr>
+          <tr>
+          <td><code>subjects.name</code></td>
+          <td><ul><li>For `User`: Append the individual user's email address to `IAM#` as follows: <code>IAM#user@email.com</code>.</li>
+          <li>For `Group`: Specify the name of the [{{site.data.keyword.cloud_notm}} IAM access group](/docs/iam?topic=iam-groups#groups) in your account.</li>
+          <li>For `ServiceAccount`: Specify the service account name.</li></ul></td>
+          </tr>
+          <tr>
+          <td><code>subjects.apiGroup</code></td>
+          <td><ul><li>For `User` or `Group`: use `rbac.authorization.k8s.io`.</li>
+          <li>For `ServiceAccount`: don't include this field.</li></ul></td>
+          </tr>
+          <tr>
+          <td><code>subjects.namespace</code></td>
+          <td>For `ServiceAccount` only: Specify the name of the Kubernetes namespace that the service account is deployed to.</td>
+          </tr>
+          <tr>
+          <td><code>roleRef.kind</code></td>
+          <td>Enter the same value as the `kind` in the role `.yaml` file: `Role` or `ClusterRole`.</td>
+          </tr>
+          <tr>
+          <td><code>roleRef.name</code></td>
+          <td>Enter the name of the role `.yaml` file.</td>
+          </tr>
+          <tr>
+          <td><code>roleRef.apiGroup</code></td>
+          <td>Use `rbac.authorization.k8s.io`.</td>
+          </tr>
           </tbody>
         </table>
 
@@ -1051,33 +1055,35 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
     <table>
     <caption>Understanding the YAML components</caption>
+      <col width="25%">
       <thead>
-        <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML components</th>
+      <th>Parameter</th>
+      <th>Description</th>
       </thead>
       <tbody>
-        <tr>
-          <td><code>metadata.name</code></td>
-          <td>Enter a name for the cluster role. **Do not** use the predefined cluster role names: `view`, `edit`, `admin`, and `cluster-admin`.</td>
-        </tr>
-        <tr>
-          <td><code>metadata.labels</code></td>
-          <td>Add a label that matches the cluster role that you want to aggregate to in the format `rbac.authorization.k8s.io/aggregate-to-<cluster_role>: "true"`. The labels for the predefined cluster roles are as follows.<ul>
-          <li>IAM **Manager** service role, scoped to a namespace: `rbac.authorization.k8s.io/aggregate-to-admin: "true"`</li>
-          <li>IAM **Writer** service role: `rbac.authorization.k8s.io/aggregate-to-edit: "true"`</li>
-          <li>IAM **Reader** service role: `rbac.authorization.k8s.io/aggregate-to-view: "true"`</li></ul></td>
-        </tr>
-        <tr>
-          <td><code>rules.apiGroups</code></td>
-          <td>Specify the Kubernetes [API groups ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/using-api/api-overview/#api-groups) that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`.</td>
-        </tr>
-        <tr>
-          <td><code>rules.resources</code></td>
-          <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`.</td>
-        </tr>
-        <tr>
-          <td><code>rules.verbs</code></td>
-          <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/) that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`.</td>
-        </tr>
+      <tr>
+      <td><code>metadata.name</code></td>
+      <td>Enter a name for the cluster role. **Do not** use the predefined cluster role names: `view`, `edit`, `admin`, and `cluster-admin`.</td>
+      </tr>
+      <tr>
+      <td><code>metadata.labels</code></td>
+      <td>Add a label that matches the cluster role that you want to aggregate to in the format `rbac.authorization.k8s.io/aggregate-to-<cluster_role>: "true"`. The labels for the predefined cluster roles are as follows.<ul>
+      <li>IAM **Manager** service role, scoped to a namespace: `rbac.authorization.k8s.io/aggregate-to-admin: "true"`</li>
+      <li>IAM **Writer** service role: `rbac.authorization.k8s.io/aggregate-to-edit: "true"`</li>
+      <li>IAM **Reader** service role: `rbac.authorization.k8s.io/aggregate-to-view: "true"`</li></ul></td>
+      </tr>
+      <tr>
+      <td><code>rules.apiGroups</code></td>
+      <td>Specify the Kubernetes [API groups ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/using-api/api-overview/#api-groups) that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`.</td>
+      </tr>
+      <tr>
+      <td><code>rules.resources</code></td>
+      <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`.</td>
+      </tr>
+      <tr>
+      <td><code>rules.verbs</code></td>
+      <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/) that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`.</td>
+      </tr>
       </tbody>
     </table>
 2.  Create the cluster role in your cluster. Any users that have a role binding to the `admin` cluster role now have the additional permissions from the `view-pod-metrics` cluster role.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -433,8 +433,10 @@ After you deploy your Helm chart, test the VPN connectivity.
     {: #vpn_tests_table}
     <table>
     <caption>Understanding the Helm VPN connectivity tests</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the Helm VPN connectivity tests</th>
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>

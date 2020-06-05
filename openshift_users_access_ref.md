@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-28"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -224,6 +224,7 @@ The following table shows the Kubernetes resource permissions that are granted b
 
 <table>
 <caption>Kubernetes resource permissions by service and corresponding RBAC roles</caption>
+<col width="25%">
 <thead>
     <th id="service-role">Service role</th>
     <th id="rbac-role">Corresponding RBAC role, binding, and scope</th>
@@ -290,6 +291,7 @@ The following table shows the permissions that are granted by each RBAC role to 
 
 <table>
  <caption>Kubernetes resource permissions granted by each predefined RBAC role</caption>
+ <col width="25%">
  <thead>
   <th>Kubernetes resource</th>
   <th><code>view</code></th>
@@ -590,6 +592,7 @@ The following table shows the Cloud Foundry roles that are required for cluster 
 
 <table>
   <caption>Cluster management permissions by Cloud Foundry role</caption>
+  <col width="25%">
   <thead>
     <th>Cloud Foundry role</th>
     <th>Cluster management permissions</th>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -244,9 +244,11 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     {: codeblock}
 
     <table>
+    <caption>Understanding the YAML file components</caption>
     <thead>
-    <col width="15%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <col width="25%">
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -371,9 +373,11 @@ To expose apps that are outside of your cluster to the public:
     {: codeblock}
 
     <table>
+    <caption>Understanding the YAML file components</caption>
     <thead>
-    <col width="15%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <col width="25%">
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -557,9 +561,11 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     {: codeblock}
 
     <table>
+    <caption>Understanding the YAML file components</caption>
     <thead>
-    <col width="15%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <col width="25%">
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>

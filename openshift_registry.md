@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -334,8 +334,10 @@ Want to learn more about how builds, image streams, and the internal registry wo
 
     <table>
     <caption>Understanding this command's components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-05"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -216,7 +216,8 @@ Update the Helm chart values to reflect the worker node changes:
     If you added a worker node:
 
     <table>
-    <caption>Worker node settings</caption?
+    <caption>Worker node settings</caption>
+     <col width="25%">
      <thead>
      <th>Setting</th>
      <th>Description</th>
@@ -244,6 +245,7 @@ Update the Helm chart values to reflect the worker node changes:
 
     <table>
     <caption>Worker node settings</caption>
+     <col width="25%">
      <thead>
      <th>Setting</th>
      <th>Description</th>

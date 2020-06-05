@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -145,6 +145,7 @@ Review common error messages and learn how to resolve them. Messages might begin
 
   <table>
   <caption>Common error messages</caption>
+    <col width="25%">
     <thead>
     <th>Error message</th>
     <th>Description and resolution
