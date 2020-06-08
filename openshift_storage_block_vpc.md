@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-08"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -922,7 +922,7 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
       </tr>
       <tr>
       <td><code>sizeRange</code></td>
-      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range musmatch the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>To find supported storage sizes for a specific profile, see [Tiered IOPs profiles](/docs/vptopic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is withithis range. </td>
+      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range musmatch the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>To find supported storage sizes for a specific profile, see [Tiered IOPs profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is withithis range. </td>
       </tr>
       <tr>
       <td><code>csi.storage.k8s.io/fstype</code></td>
@@ -938,7 +938,7 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
       </tr>
       <tr>
       <td><code>zone</code></td>
-      <td>In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make surthat you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <codibmcloud oc cluster get --cluster <cluster_name_or_ID></code> and look at the <strong>Worker Zones</strong> field iyour CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your{site.data.keyword.block_storage_is_short}} instance.</td>
+      <td>In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make surthat you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> and look at the <strong>Worker Zones</strong> field iyour CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your{site.data.keyword.block_storage_is_short}} instance.</td>
       </tr>
       <tr>
       <td><code>tags</code></td>
