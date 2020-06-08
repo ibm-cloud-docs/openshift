@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -34,7 +34,7 @@ subcollection: openshift
 
 
 # Overview
-{: #roks-overview}
+{: #overview}
 
 Learn more about [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/cloud/openshift){: external}, its capabilities, and the options that are available to you to customize the cluster to your needs.
 {: shortdesc}

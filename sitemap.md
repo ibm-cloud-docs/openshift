@@ -56,14 +56,14 @@ subcollection: openshift
 {: #sitemap_about}
 
 
-[Overview](/docs/openshift?topic=openshift-roks-overview)
-* [Understanding Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-roks-overview#service-concepts)
-* [Docker containers](/docs/openshift?topic=openshift-roks-overview#docker_containers)
-  * [Key concepts](/docs/openshift?topic=openshift-roks-overview#docker-concepts)
-  * [Benefits](/docs/openshift?topic=openshift-roks-overview#docker-benefits)
-* [Kubernetes clusters](/docs/openshift?topic=openshift-roks-overview#kubernetes_basics)
-  * [Key concepts](/docs/openshift?topic=openshift-roks-overview#kubernetes-concepts)
-  * [Related resources](/docs/openshift?topic=openshift-roks-overview#kubernetes-resources)
+[Overview](/docs/openshift?topic=openshift-overview)
+* [Understanding Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-overview#service-concepts)
+* [Docker containers](/docs/openshift?topic=openshift-overview#docker_containers)
+  * [Key concepts](/docs/openshift?topic=openshift-overview#docker-concepts)
+  * [Benefits](/docs/openshift?topic=openshift-overview#docker-benefits)
+* [Kubernetes clusters](/docs/openshift?topic=openshift-overview#kubernetes_basics)
+  * [Key concepts](/docs/openshift?topic=openshift-overview#kubernetes-concepts)
+  * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
 
 [Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov)
 * [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits)
