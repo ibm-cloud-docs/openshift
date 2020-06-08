@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-04"
+lastupdated: "2020-06-08"
 
 keywords: openshift
 subcollection: openshift
@@ -665,7 +665,7 @@ subcollection: openshift
 [Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
 * [Setting up an NLB 1.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config)
 * [Setting up an NLB 1.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config)
-* [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#node_affinity_tolerations)
+* [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip)
   * [Adding edge node affinity rules and tolerations](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes)
   * [Adding affinity rules for multiple public or private VLANs](/docs/openshift?topic=openshift-loadbalancer#edge_nodes_multiple_vlans)
 
@@ -936,6 +936,7 @@ subcollection: openshift
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
+* [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-portworx#px-dr)
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
 * [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
   * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc)
@@ -1046,7 +1047,6 @@ subcollection: openshift
   * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
   * [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config)
   * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
-  * [`ibmcloud oc cluster feature disable public-service-endpoint`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_disable)
   * [`ibmcloud oc cluster feature enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_enable)
   * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get)
   * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
@@ -1183,12 +1183,14 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+  * [Changelog for worker node fix pack 4.3.23_1524_openshift, released 8 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1524)
   * [Changelog for worker node fix pack 4.3.21_1523_openshift, released 26 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4321_1523)
   * [Changelog for master fix pack 4.3.19_1523_openshift, released 26 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4319_1523)
   * [Changelog for master fix pack 4.3.18_1522_openshift, released 12 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4318_1522)
   * [Changelog for worker node fix pack 4.3.14_1522_openshift, released 11 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4314_1522)
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
+  * [Changelog for worker node fix pack 3.11.219_1552_openshift, released 8 June 2020](/docs/openshift?topic=openshift-openshift_changelog#311219_1552)
   * [Changelog for 3.11.216_1551_openshift, released 26 May 2020](/docs/openshift?topic=openshift-openshift_changelog#311216_1551)
   * [Changelog for worker node fix pack 3.11.216_1550_openshift, released 11 May 2020](/docs/openshift?topic=openshift-openshift_changelog#311216_1550)
   * [Changelog for worker node fix pack 3.11.200_1549_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#311200_1549)

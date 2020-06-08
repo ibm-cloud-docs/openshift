@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-14"
+lastupdated: "2020-06-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -210,7 +210,7 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <thead>
 <th style="text-align:left">Characteristics</th>
 <th style="text-align:left">Classic File Storage</th>
-<th style="text-align:left">Classic Block Storage</th>
+<th style="text-align:left">Classic Block Storage </th>
 </thead>
 <tbody>
 <tr>
@@ -276,7 +276,7 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <tr>
 <td style="text-align:left">Encryption</td>
 <td style="text-align:left">At rest</td>
-<td style="text-align:left"><strong>Classic Block Storage</strong>: Encryption at rest.</br><strong>VPC Block Storage</strong>: Encryption in transit with Key Protect.</td>
+<td style="text-align:left"><strong>Classic Block Storage</strong>: Encryption at rest.</td>
 </tr>
 <tr>
 <td style="text-align:left">Backup and recovery</td>
@@ -357,6 +357,7 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <tr>
 <td style="text-align:left">Supported Kubernetes access writes</td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">ReadWriteMany (RWX)</li><li style="margin:0px; padding:0px"> ReadOnlyMany (ROX)</li><li style="margin:0px; padding:0px">ReadWriteOnce (RWO)</li></ul></td>
+   <td style="text-align:left">All</td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">N/A as accessed from the app directly</li></ul></td>
 </tr>
 <tr>

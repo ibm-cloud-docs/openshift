@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -179,6 +179,7 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 {: #bm-table}
 <table>
 <caption>Available bare metal flavors in Red Hat OpenShift on IBM Cloud.</caption>
+<col width="25%">
 <thead>
 <th>Name and use case</th>
 <th>Cores / Memory</th>
@@ -250,6 +251,7 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 {: #sds-table}
 <table>
 <caption>Available SDS flavors in Red Hat OpenShift on IBM Cloud.</caption>
+<col width="25%">
 <thead>
 <th>Name and use case</th>
 <th>Cores / Memory</th>

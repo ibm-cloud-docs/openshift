@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-05"
 
-keywords: openshift, roks, rhos, rhoks, clusters, worker nodes, worker pools, delete
+keywords: openshift, roks, rhos, rhoks, clusters, delete, remove
 
 subcollection: openshift
 

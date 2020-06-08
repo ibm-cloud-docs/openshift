@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -172,11 +172,11 @@ The Ingress controller for your app is already registered with the IBM-provided 
 
 **To use a custom domain and TLS secret:**
 
-1.  Get your custom domain ready.
+1.  Prepare your custom domain.
     1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer.
     2.  Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
-2.  If you want to configure TLS termination, get your custom TLS secret ready.
+2.  If you want to configure TLS termination, prepare your custom TLS secret.
   * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}:
       1. Import the certificate to your cluster. When you import a certificate, a secret that holds the TLS certificate and key is automatically created in the `ibm-cert-store` project. <p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
         ```
@@ -244,9 +244,11 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     {: codeblock}
 
     <table>
+    <caption>Understanding the YAML file components</caption>
     <thead>
-    <col width="15%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <col width="25%">
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -371,9 +373,11 @@ To expose apps that are outside of your cluster to the public:
     {: codeblock}
 
     <table>
+    <caption>Understanding the YAML file components</caption>
     <thead>
-    <col width="15%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <col width="25%">
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -439,7 +443,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
 
 1.  Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer.
 
-2.  If you want to configure TLS termination, get your custom TLS secret ready.
+2.  If you want to configure TLS termination, prepare your custom TLS secret.
   * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}:
       1. Import the certificate to your cluster. When you import a certificate, a secret that holds the TLS certificate and key is automatically created in the `ibm-cert-store` project.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
         ```
@@ -451,7 +455,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
         oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/ibm-cert-store/<new-project>/g' | oc -n <new-project> create -f -
         ```
         {: pre}
-  * To create TLS certificate:
+  * To create a TLS certificate:
       1. Generate a certificate authority (CA) cert and key from your certificate provider.
           * If you have your own domain, purchase an official TLS certificate for your domain.
           * Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
@@ -469,12 +473,13 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
             ```
             {: pre}
       3. Create a Kubernetes secret for your certificate in the project where your app services are deployed.
+
+          <p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
+
            ```
            oc create secret tls <secret_name> -n <project> --cert=<tls.crt> --key=<tls.key>
            ```
            {: pre}
-           Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
-           {: note}
 
 ### Step 3: Create and configure a private Ingress controller
 {: #ingress-roks4-private-3}
@@ -493,9 +498,9 @@ After you register your custom domain and TLS certificate, you must create a pri
       replicas: 2
       domain: <custom_domain>
       endpointPublishingStrategy:
-        type: LoadBalancerService
         loadBalancer:
           scope: Internal
+        type: LoadBalancerService
     ```
     {: codeblock}
 
@@ -557,9 +562,11 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     {: codeblock}
 
     <table>
+    <caption>Understanding the YAML file components</caption>
     <thead>
-    <col width="15%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <col width="25%">
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -358,8 +358,11 @@ To order a subnet:
 
     <table>
     <caption>Understanding this command's components</caption>
-    <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    <col style="width:30%">
+	  <col style="width:70%">
+      <thead>
+	      <th>Parameter</th>
+	      <th>Description</th>
     </thead>
     <tbody>
     <tr>

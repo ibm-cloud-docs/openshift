@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -115,8 +115,9 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
    <table>
    <caption>Understanding the command components</caption>
    <thead>
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the command components</th>
-   </thead>
+      <th>Component</th>
+      <th>Description</th>
+    </thead>
    <tbody>
    <tr>
    <td><code>api-key</code></td>
@@ -667,7 +668,8 @@ Red Hat OpenShift on IBM Cloud provides pre-defined storage classes that you can
    <table>
    <caption>Understanding the storage class details</caption>
    <thead>
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Component</th>
+    <th>Description</th>
    </thead>
    <tbody>
    <tr>
@@ -780,15 +782,16 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
    <table>
    <caption>Understanding the YAML file components</caption>
    <thead>
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Component</th>
+    <th>Description</th>
    </thead>
    <tbody>
    <tr>
-   <td><code>metadata.name</code></td>
+   <td><code>name</code></td>
    <td>Enter the name of the PVC.</td>
    </tr>
    <tr>
-   <td><code>metadata.namespace</code></td>
+   <td><code>namespace</code></td>
    <td>Enter the namespace where you want to create the PVC. The PVC must be created in the same namespace where you created the Kubernetes secret for your {{site.data.keyword.cos_full_notm}} service credentials and where you want to run your pod. </td>
    </tr>
    <tr>
@@ -815,11 +818,11 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
   <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the <code>ibmc</code> Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private service endpoint that matches your cluster location. If the cluster is in one of the metro city zones, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private service endpoint for the metro city, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass <storageclassname>`. Make sure that you enter your service endpoint in the format `https://<s3fs_private_service_endpoint>` for private service endpoints, or `http://<s3fs_public_service_endpoint>` for public service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the <code>ibm.io/endpoint</code> option in your PVC YAML file. </td>
   </tr>
    <tr>
-   <td><code>resources.requests.storage</code></td>
-   <td>A fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api). </td>
+   <td><code>storage</code></td>
+   <td>In the spec resources requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api). </td>
    </tr>
    <tr>
-   <td><code>spec.storageClassName</code></td>
+   <td><code>storageClassName</code></td>
    <td>Choose between the following options: <ul><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>true</strong>: Enter the storage class that you want to use for your new bucket. </li><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>false</strong>: Enter the storage class that you used to create your existing bucket. </br></br>If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the <strong>Class</strong> and <strong>Location</strong> of your existing bucket. Then, use the appropriate [storage class](#cos_storageclass_reference).<p class="note">The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.</p></li></ul>  </td>
    </tr>
    </tbody>
@@ -882,48 +885,45 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     <table>
     <caption>Understanding the YAML file components</caption>
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+      <th>Component</th>
+      <th>Description</th>
     </thead>
     <tbody>
-        <tr>
-    <td><code>metadata.labels.app</code></td>
-    <td>A label for the deployment.</td>
+    <tr>
+    <td><code>app</code></td>
+    <td>In the metadata section, enter label for the deployment.</td>
       </tr>
       <tr>
-        <td><code>spec.selector.matchLabels.app</code> <br/> <code>spec.template.metadata.labels.app</code></td>
-        <td>A label for your app.</td>
+      <td><code>matchLabels.app</code> <br/> <code>labels.app</code></td>
+      <td>In the spec selector and in the spec template metadata sections, enter a label for your app.</td>
       </tr>
     <tr>
-    <td><code>template.metadata.labels.app</code></td>
-    <td>A label for the deployment.</td>
-      </tr>
-    <tr>
-    <td><code>spec.containers.image</code></td>
-    <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.</td>
+    <td><code>image</code></td>
+    <td>The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.</td>
     </tr>
     <tr>
-    <td><code>spec.containers.name</code></td>
+    <td><code>name</code></td>
     <td>The name of the container that you want to deploy to your cluster.</td>
     </tr>
     <tr>
-    <td><code>spec.containers.securityContext.runAsUser</code></td>
-    <td>Optional: To run the app with a non-root user in a cluster that runs Kubernetes version 1.12 or earlier, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod by defining the non-root user.</td>
+    <td><code>runAsUser</code></td>
+    <td>In the spec containers security context section, you can optionally set the run as user value. To run the app with a non-root user in a cluster that runs Kubernetes version 1.12 or earlier, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod by defining the non-root user.</td>
     </tr>
     <tr>
-    <td><code>spec.containers.volumeMounts.mountPath</code></td>
-    <td>The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.</td>
+    <td><code>mountPath</code></td>
+    <td>In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.</td>
     </tr>
     <tr>
-    <td><code>spec.containers.volumeMounts.name</code></td>
-    <td>The name of the volume to mount to your pod.</td>
+    <td><code>name</code></td>
+    <td>In the spec containers volume mounts section, enter the name of the volume to mount to your pod.</td>
     </tr>
     <tr>
-    <td><code>volumes.name</code></td>
-    <td>The name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
+    <td><code>name</code></td>
+    <td>In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
     </tr>
     <tr>
-    <td><code>volumes.persistentVolumeClaim.claimName</code></td>
-    <td>The name of the PVC that binds the PV that you want to use. </td>
+    <td><code>claimName</code></td>
+    <td>In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use. </td>
     </tr>
     </tbody></table>
 
@@ -1119,64 +1119,65 @@ To deploy a stateful set that uses object storage:
    <table>
     <caption>Understanding the stateful set YAML file components</caption>
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the stateful set YAML file components</th>
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
-    <td style="text-align:left"><code>metadata.name</code></td>
+    <td style="text-align:left"><code>name</code></td>
     <td style="text-align:left">Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
     </tr>
     <tr>
-    <td style="text-align:left"><code>spec.serviceName</code></td>
+    <td style="text-align:left"><code>serviceName</code></td>
     <td style="text-align:left">Enter the name of the service that you want to use to expose your stateful set. </td>
     </tr>
     <tr>
-    <td style="text-align:left"><code>spec.replicas</code></td>
+    <td style="text-align:left"><code>replicas</code></td>
     <td style="text-align:left">Enter the number of replicas for your stateful set. </td>
     </tr>
     <tr>
-    <td style="text-align:left"><code>spec.selector.matchLabels</code></td>
-    <td style="text-align:left">Enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the <code>volumeClaimTemplates</code> of your stateful set are not recognized by Kubernetes. Instead, you must define these labels in the <code>spec.selector.matchLabels</code> and <code>spec.template.metadata.labels</code> section of your stateful set YAML. To make sure that all your stateful set replicas are included into the load balancing of your service, include the same label that you used in the <code>spec.selector</code> section of your service YAML. </td>
+    <td style="text-align:left"><code>matchLabels</code></td>
+    <td style="text-align:left">In the spec selector match labels section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the <code>volumeClaimTemplates</code> of your stateful set are not recognized by Kubernetes. Instead, you must define these labels in the <code>spec.selector.matchLabels</code> and <code>spec.template.metadata.labels</code> section of your stateful set YAML. To make sure that all your stateful set replicas are included into the load balancing of your service, include the same label that you used in the <code>spec.selector</code> section of your service YAML. </td>
     </tr>
     <tr>
-    <td style="text-align:left"><code>spec.template.metadata.labels</code></td>
-    <td style="text-align:left">Enter the same labels that you added to the <code>spec.selector.matchLabels</code> section of your stateful set YAML. </td>
+    <td style="text-align:left"><code>labels</code></td>
+    <td style="text-align:left">In the spec metadata labels section, enter the same labels that you added to the <code>spec.selector.matchLabels</code> section of your stateful set YAML. </td>
     </tr>
     <tr>
-    <td><code>spec.template.spec.</code></br><code>terminationGracePeriodSeconds</code></td>
+    <td><code>terminationGracePeriodSeconds</code></td>
     <td>Enter the number of seconds to give the <code>kubelet</code> to gracefully terminate the pod that runs your stateful set replica. For more information, see [Delete Pods ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/run-application/force-delete-stateful-set-pod/#delete-pods). </td>
     </tr>
     <tr>
-    <td style="text-align:left"><code>spec.volumeClaimTemplates.</code></br><code>metadata.name</code></td>
-    <td style="text-align:left">Enter a name for your volume. Use the same name that you defined in the <code>spec.containers.volumeMount.name</code> section. The name that you enter here is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
+    <td style="text-align:left"><code>name</code></td>
+    <td style="text-align:left">In the spec volume claim templates metadata section, enter a name for your volume. Use the same name that you defined in the <code>spec.containers.volumeMount.name</code> section. The name that you enter here is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
     </tr>
     <tr>
-    <td><code>spec.volumeClaimTemplates.metadata</code></br><code>annotions.ibm.io/auto-create-bucket</code></td>
-    <td>Choose between the following options: <ul><li><strong>true: </strong>Choose this option to automatically create a bucket for each stateful set replica. </li><li><strong>false: </strong>Choose this option if you want to share an existing bucket across your stateful set replicas. Make sure to define the name of the bucket in the <code>spec.volumeClaimTemplates.metadata.annotions.ibm.io/bucket</code> section of your stateful set YAML.</li></ul></td>
+    <td><code>ibm.io/auto-create-bucket</code></td>
+    <td>In the spec volume claim templates metadata section, set an annotation to configure how buckets are created. Choose between the following options: <ul><li><strong>true: </strong>Choose this option to automatically create a bucket for each stateful set replica. </li><li><strong>false: </strong>Choose this option if you want to share an existing bucket across your stateful set replicas. Make sure to define the name of the bucket in the <code>spec.volumeClaimTemplates.metadata.annotions.ibm.io/bucket</code> section of your stateful set YAML.</li></ul></td>
     </tr>
     <tr>
-    <td><code>spec.volumeClaimTemplates.metadata</code></br><code>annotions.ibm.io/auto-delete-bucket</code></td>
-    <td>Choose between the following options: <ul><li><strong>true: </strong>Your data, the bucket, and the PV is automatically removed when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance remains and is not deleted. If you choose to set this option to true, then you must set <code>ibm.io/auto-create-bucket: true</code> and <code>ibm.io/bucket: ""</code> so that your bucket is automatically created with a name with the format <code>tmp-s3fs-xxxx</code>. </li><li><strong>false: </strong>When you delete the PVC, the PV is deleted automatically, but your data and the bucket in your {{site.data.keyword.cos_full_notm}} service instance remain. To access your data, you must create a new PVC with the name of your existing bucket.</li></ul></td>
+    <td><code>ibm.io/auto-delete-bucket</code></td>
+    <td>In the spec volume claim templates metadata section, set an annotation to configure how buckets are deleted. Choose between the following options: <ul><li><strong>true: </strong>Your data, the bucket, and the PV is automatically removed when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance remains and is not deleted. If you choose to set this option to true, then you must set <code>ibm.io/auto-create-bucket: true</code> and <code>ibm.io/bucket: ""</code> so that your bucket is automatically created with a name with the format <code>tmp-s3fs-xxxx</code>. </li><li><strong>false: </strong>When you delete the PVC, the PV is deleted automatically, but your data and the bucket in your {{site.data.keyword.cos_full_notm}} service instance remain. To access your data, you must create a new PVC with the name of your existing bucket.</li></ul></td>
     </tr>
     <tr>
-    <td><code>spec.volumeClaimTemplates.metadata</code></br><code>annotions.ibm.io/bucket</code></td>
-    <td>Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition <code>ibm.io/auto-delete-bucket</code> is set to <strong>true</strong>, you must leave this field blank to automatically assign your bucket a name with the format tmp-s3fs-xxxx. The name must be unique in {{site.data.keyword.cos_full_notm}}.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the name of the existing bucket that you want to access in the cluster.</li></ul></td>
+    <td><code>ibm.io/bucket</code></td>
+    <td>In the spec volume claim templates metadata section, set an annotation for the bucket details. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition <code>ibm.io/auto-delete-bucket</code> is set to <strong>true</strong>, you must leave this field blank to automatically assign your bucket a name with the format tmp-s3fs-xxxx. The name must be unique in {{site.data.keyword.cos_full_notm}}.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the name of the existing bucket that you want to access in the cluster.</li></ul></td>
     </tr>
     <tr>
-    <td><code>spec.volumeClaimTemplates.metadata</code></br><code>annotions.ibm.io/secret-name</code></td>
-    <td>Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier.</td>
+    <td><code>ibm.io/secret-name</code></td>
+    <td>In the spec volume claim templates metadata annotations section, enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier.</td>
     </tr>
     <tr>
-    <td style="text-align:left"><code>spec.volumeClaimTemplates.metadata.</code></br><code>annotations.volume.beta.</code></br><code>kubernetes.io/storage-class</code></td>
-    <td style="text-align:left">Enter the storage class that you want to use. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the storage class that you want to use for your new bucket.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the storage class that you used to create your existing bucket.</li></ul></br>  To list existing storage classes, run <code>oc get storageclasses | grep s3</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-s3fs</code> provisioner so that your stateful set is provisioned with object storage.</td>
+    <td style="text-align:left"><code>kubernetes.io/storage-class</code></td>
+    <td style="text-align:left">In the spec volume claim templates metadata annotations section, enter the storage class that you want to use. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the storage class that you want to use for your new bucket.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the storage class that you used to create your existing bucket.</li></ul></br>  To list existing storage classes, run <code>oc get storageclasses | grep s3</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-s3fs</code> provisioner so that your stateful set is provisioned with object storage.</td>
     </tr>
     <tr>
-    <td style="text-align:left"><code>spec.volumeClaimTemplates.</code></br><code>spec.storageClassName</code></td>
-    <td>Enter the same storage class that you entered in the <code>spec.volumeClaimTemplates.metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your stateful set YAML.  </td>
+    <td style="text-align:left"><code>storageClassName</code></td>
+    <td>In the spec volume claim templates spec section, enter the same storage class that you entered in the <code>spec.volumeClaimTemplates.metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your stateful set YAML.  </td>
     </tr>
     <tr>
-    <td style="text-align:left"><code>spec.volumeClaimTemplates.spec.</code></br><code>resource.requests.storage</code></td>
-    <td>Enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api).</td>
+    <td style="text-align:left"><code>storage</code></td>
+    <td>In the spec volume claim templates spec resource requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api).</td>
     </tr>
     </tbody></table>
 

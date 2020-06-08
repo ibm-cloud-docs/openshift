@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -164,8 +164,10 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
 
   <table>
   <caption>Understanding this command's components</caption>
+  <col width="25%">
   <thead>
-  <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+  <th>Parameter</th>
+  <th>Description</th>
   </thead>
   <tbody>
   <tr>

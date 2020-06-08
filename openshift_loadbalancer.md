@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-08"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -79,8 +79,10 @@ To set up an NLB 1.0 service in a multizone cluster:
 
       <table>
       <caption>Understanding the YAML file components</caption>
+      <col width="50%">
       <thead>
-      <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+      <th>Parameter</th>
+      <th>Description</th>
       </thead>
       <tbody>
       <tr>
@@ -181,7 +183,7 @@ To set up an NLB 1.0 service in a multizone cluster:
 
 5. Repeat the steps 2 - 4 to add a version 1.0 NLB in each zone.
 
-6. If you choose to [enable source IP preservation for an NLB 1.0](#node_affinity_tolerations), ensure that app pods are scheduled onto the edge worker nodes by [adding edge node affinity to app pods](#lb_edge_nodes). App pods must be scheduled onto edge nodes to receive incoming requests.
+6. If you choose to [enable source IP preservation for an NLB 1.0](#lb_source_ip), ensure that app pods are scheduled onto the edge worker nodes by [adding edge node affinity to app pods](#lb_edge_nodes). App pods must be scheduled onto edge nodes to receive incoming requests.
 
 7. Optional: A load balancer service also makes your app available over the service's NodePorts. [NodePorts](/docs/openshift?topic=openshift-nodeport) are accessible on every public and private IP address for every node within the cluster. To block traffic to NodePorts while you are using an NLB service, see [Controlling inbound traffic to network load balancer (NLB) or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
 
@@ -225,6 +227,7 @@ To create an NLB 1.0 service in a single-zone cluster:
 
         <table>
         <caption>Understanding the YAML file components</caption>
+        <col width="50%">
         <thead>
         <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
         </thead>
@@ -322,7 +325,7 @@ To create an NLB 1.0 service in a single-zone cluster:
         ```
         {: codeblock}
 
-5. If you choose to [enable source IP preservation for an NLB 1.0](#node_affinity_tolerations), ensure that app pods are scheduled onto the edge worker nodes by [adding edge node affinity to app pods](#lb_edge_nodes). App pods must be scheduled onto edge nodes to receive incoming requests.
+5. If you choose to [enable source IP preservation for an NLB 1.0](#lb_source_ip), ensure that app pods are scheduled onto the edge worker nodes by [adding edge node affinity to app pods](#lb_edge_nodes). App pods must be scheduled onto edge nodes to receive incoming requests.
 
 6. Optional: A load balancer service also makes your app available over the service's NodePorts. [NodePorts](/docs/openshift?topic=openshift-nodeport) are accessible on every public and private IP address for every node within the cluster. To block traffic to NodePorts while you are using an NLB service, see [Controlling inbound traffic to network load balancer (NLB) or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
 
@@ -332,7 +335,7 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 
 
 ## Enabling source IP preservation
-{: #node_affinity_tolerations}
+{: #lb_source_ip}
 
 This feature is for version 1.0 network load balancers (NLBs) only. The source IP address of client requests is preserved by default in version 2.0 NLBs.
 {: note}

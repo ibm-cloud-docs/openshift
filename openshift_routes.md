@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -59,7 +59,7 @@ If you have a multizone cluster, one router is deployed to your cluster, and a r
 ### Traffic flow in a single-zone cluster
 {: #route_single}
 
-The following diagram shows how a router directs communication from the internet to an app in a single-zone cluster.
+The following diagram shows how a router directs network traffic from the internet to an app in a single-zone cluster.
 {: shortdesc}
 
 <img src="images/roks-router.png" alt="Expose an app in a single-zone OpenShift cluster by using a router" width="550" style="width:550px; border-style: none"/>
@@ -73,7 +73,7 @@ The following diagram shows how a router directs communication from the internet
 ### Traffic flow in a multizone cluster
 {: #route_multi}
 
-The following diagram shows how a router directs communication from the internet to an app in a multizone cluster.
+The following diagram shows how a router directs network traffic from the internet to an app in a multizone cluster.
 {: shortdesc}
 
 <img src="images/roks-router-multi.png" alt="Expose an app in a multizone OpenShift cluster by using a router" width="700" style="width:700px; border-style: none"/>
@@ -116,9 +116,9 @@ To set up routes to publicly expose apps in version 4.3 and 3.11 clusters:
   {: pre}
 
 2. Choose a domain for your app.
-  * IBM-provided domain: If you do not need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
-  * Custom domain: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
-    1. Get the public IP address for the default public router service in each zone in the **EXTERNAL-IP** column. Note that the router service in the first zone where you have workers nodes is always named `router-default` in 4.3 clusters or `router` in 3.11 clusters, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
+  * **IBM-provided domain**: If you do not need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+  * **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
+    1. Get the public IP address for the public router service in each zone in the **EXTERNAL-IP** column. Note that the router service in the first zone where you have workers nodes is always named `router-default` in 4.3 clusters or `router` in 3.11 clusters, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
       * Version 4.3 and later clusters:
         ```
         oc get svc -n openshift-ingress
@@ -188,13 +188,14 @@ To use routes to privately expose your apps in version 4.3 clusters, you must cr
     kind: IngressController
     metadata:
       name: private
+      namespace: openshift-ingress-operator
     spec:
       replicas: 2
       domain: <custom_domain>
       endpointPublishingStrategy:
-        type: LoadBalancerService
         loadBalancer:
           scope: Internal
+        type: LoadBalancerService
     ```
     {: codeblock}
 

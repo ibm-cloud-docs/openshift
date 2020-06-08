@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -140,12 +140,14 @@ To use a priority class:
 
     <table>
     <caption>Understanding the YAML file components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+      <th>Component</th>
+      <th>Description</th>
     </thead>
     <tbody>
     <tr>
-    <td><code>metadata.name</code></td>
+    <td><code>name</code></td>
     <td>Required: The name of the priority class that you want to create.</td>
     </tr>
     <tr>

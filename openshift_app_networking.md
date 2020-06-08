@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-16"
+lastupdated: "2020-06-06"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -57,11 +57,11 @@ To securely expose your apps to external traffic, you can use choose from the fo
 
 <dt>Ingress</dt>
 <dd>The Ingress service type is implemented differently depending on your cluster's OpenShift version.<ul>
-<li><img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> OpenShift version 4.3 and later clusters: Expose multiple apps in a cluster by setting up routing with the [OpenShift Ingress controller](/docs/openshift?topic=openshift-ingress-roks4). The Ingress controller uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
+<li><img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 and later clusters**: Expose multiple apps in a cluster by setting up routing with the [OpenShift Ingress controller](/docs/openshift?topic=openshift-ingress-roks4). The Ingress controller uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
   <li>The Ingress controller is a HAProxy-based Kubernetes service that manages all incoming traffic for the apps in your cluster by implementing routing rules for the apps. This controller is managed by the Ingress operator.</li>
   <li>The router listens for incoming HTTP, HTTPS, or TCP service requests, and then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.</li>
   <li>The Ingress resource defines the rules for how to route and load balance incoming requests for an app.</li></ul></li>
-<li><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift version 3.11 clusters: Expose multiple apps in a cluster by setting up routing with the [Red Hat OpenShift on IBM Cloud Ingress application load balancer (ALB)](/docs/openshift?topic=openshift-ingress). The ALB uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
+<li><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 3.11 clusters**: Expose multiple apps in a cluster by setting up routing with the [Red Hat OpenShift on IBM Cloud Ingress application load balancer (ALB)](/docs/openshift?topic=openshift-ingress). The ALB uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
   <li>The Ingress resource defines the rules for how to route and load balance incoming requests for an app.</li>
   <li>The ALB listens for incoming HTTP, HTTPS, or TCP service requests. It forwards requests across the apps' pods based on the rules that you defined in the Ingress resource, including custom routing rules defined by annotations.</li>
   <li>The multizone load balancer (MZLB) handles all incoming requests to your apps and load balances the requests among the ALBs in the various zones. It also enables health checks for the public Ingress IP addresses.</li></ul>Note that the Ingress system does not use the router that is deployed by default to your cluster, and that any routes you create do not use the Ingress subdomain.</li>

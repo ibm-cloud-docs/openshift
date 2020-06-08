@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-04"
+lastupdated: "2020-06-08"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 08 June 2020 | **Version changelogs**: Worker node changelog documentation is available for OpenShift [`4.3.23_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1524) and [`3.11.219_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311219_1552). |
 | 04 June 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 637](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul>|
 | 01 June 2020 | <ul><li>**Version 3.11 is deprecated**: Clusters that run OpenShift version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history).</li></ul>|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
@@ -181,7 +182,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
 <td>11 November 2019</td>
 <td><ul>
-<li><strong>OpenShift overview</strong>: Added an [OpenShift overview page](/docs/openshift?topic=openshift-overview).</li>
+<li><strong>OpenShift overview</strong>: Added an [OpenShift overview page](/docs/openshift?topic=openshift-roks-overview).</li>
 <li><strong>Setting pod priority</strong>: Added a [pod priority page](/docs/openshift?topic=openshift-pod_priority).</li>
 <li><strong>Using {{site.data.keyword.registrylong_notm}}</strong>: Added the following topics about using {{site.data.keyword.registrylong_notm}}:
 <ul><li>[Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth).</li>

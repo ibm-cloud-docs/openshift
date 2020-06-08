@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-05"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -314,8 +314,11 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     {: codeblock}
 
     <table>
+    <caption>Ingress resource YAML file components</caption>
+    <col width="20%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -329,7 +332,6 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     <tr>
     <td><code>host</code></td>
     <td>Replace <em>&lt;domain&gt;</em> with the IBM-provided Ingress subdomain or your custom domain.
-
     </br></br>
     <strong>Note:</strong><ul><li>If your apps are exposed by services in different namespaces in one cluster, add a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. Use a unique subdomain for each resource that you create in the cluster.</li><li>Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li></ul></td>
     </tr>
@@ -459,8 +461,11 @@ To expose apps that are outside of your cluster to the public:
     {: codeblock}
 
     <table>
+    <caption>Ingress resource YAML file components</caption>
+    <col width="20%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -512,9 +517,11 @@ To expose apps that are outside of your cluster to the public:
   {: codeblock}
 
   <table>
-  <caption>Understanding the YAML file components</caption>
+  <caption>Ingress resource YAML file components</caption>
+  <col width="20%">
   <thead>
-  <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the annotation components</th>
+  <th>Parameter</th>
+  <th>Description</th>
   </thead>
   <tbody>
   <tr>
@@ -709,8 +716,11 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     {: codeblock}
 
     <table>
+    <caption>Ingress resource YAML file components</caption>
+    <col width="25%">
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <th>Parameter</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>

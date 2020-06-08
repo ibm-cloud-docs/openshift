@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-02"
+lastupdated: "2020-06-08"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -415,51 +415,11 @@ ibmcloud oc cluster create classic --zone dal10 --public-vlan my_public_VLAN_ID 
 
 </br>
 
-### `ibmcloud oc cluster feature disable public-service-endpoint`
-{: #cs_cluster_feature_disable}
-
-Disable the public service endpoint for a cluster.
-{: shortdesc}
-
-**Important**: Before you disable the public endpoint, you first must complete the following steps to enable the private service endpoint:
-1. Enable the private service endpoint by running `ibmcloud oc cluster feature enable private-service-endpoint --cluster <cluster_name>`.
-2. Follow the prompt in the CLI to refresh the Kubernetes master API server.
-3. [Reload all the worker nodes in your cluster to pick up the private endpoint configuration.](#cs_worker_reload)
-
-```
-ibmcloud oc cluster feature disable public-service-endpoint --cluster CLUSTER [-s] [-f]
-```
-{: pre}
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster. This value is required.</dd>
-
-<dt><code>-f</code></dt>
-<dd>Force the command to run with no user prompts. This value is optional.</dd>
-
-<dt><code>-y</code></dt>
-<dd>Optional: Refresh the cluster master and reload worker nodes with no user prompts.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc cluster feature disable public-service-endpoint --cluster my_cluster
-```
-{: pre}
-
-</br>
-
 ### `ibmcloud oc cluster feature enable`
 {: #cs_cluster_feature_enable}
 
 Enable a feature on an existing cluster. This command must be combined with one of the following subcommands for the feature that you want to enable.
 {: shortdesc}
-
-
 
 #### `ibmcloud oc cluster feature enable private-service-endpoint`
 {: #cs_cluster_feature_enable_private_service_endpoint}
