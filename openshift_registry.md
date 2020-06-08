@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-08"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -75,7 +75,6 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>[Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.</li>
         <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=Registry-user) and [separate regional registries](/docs/Registry?topic=Registry-registry_overview#registry_regions).</li>
         <li>[Retaining images](/docs/Registry?topic=Registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
-        <li>Using the private service endpoint so that clusters on only the private network can still access the registry.</li>
         <li>[Setting storage and image pull traffic quotas](/docs/Registry?topic=Registry-registry_quota) to better control image storage, usage, and billing.</li>
         <li>Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li></ul>
         <br>To get started, see the following topics:<ul>
@@ -104,7 +103,7 @@ OpenShift clusters are set up by default with an internal registry. By default, 
 By default, your OpenShift cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}
 
-To view volume details including the storage class and size, you can describe the persistent volume claim. 
+To view volume details including the storage class and size, you can describe the persistent volume claim.
 
 *   **Version 4**:
     ```
@@ -306,13 +305,13 @@ Now that you set up the internal registry with an accessible route, you can log 
 ## Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream
 {: #imagestream_registry}
 
-By default, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images from the remote, private {{site.data.keyword.registrylong_notm}} `icr.io` domains in the `default` project. You can import an image from {{site.data.keyword.registrylong_notm}} into the internal registry of your OpenShift cluster by tagging the image as an [image stream](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html){: external}. With this setup, you can deploy apps from the image by using the local cache of the internal registry, which can make your app deployments build faster. Also, deployments in other projects can refer to the image stream so that you do not have to create image pull secret credentials to {{site.data.keyword.registrylong_notm}} in each project. 
+By default, your Red Hat OpenShift on IBM Cloud cluster is set up to pull images from the remote, private {{site.data.keyword.registrylong_notm}} `icr.io` domains in the `default` project. You can import an image from {{site.data.keyword.registrylong_notm}} into the internal registry of your OpenShift cluster by tagging the image as an [image stream](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html){: external}. With this setup, you can deploy apps from the image by using the local cache of the internal registry, which can make your app deployments build faster. Also, deployments in other projects can refer to the image stream so that you do not have to create image pull secret credentials to {{site.data.keyword.registrylong_notm}} in each project.
 {: shortdesc}
 
 If you update your image in {{site.data.keyword.registrylong_notm}}, the image is not pulled automatically into the internal registry of your OpenShift cluster. Instead, [configure periodic importing](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}, or repeat these steps to tag the image. Depending on the image pull policy that you use in your deployment, you might also need to restart your deployment.
 {: note}
 
-Want to learn more about how builds, image streams, and the internal registry work together? Read the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}. 
+Want to learn more about how builds, image streams, and the internal registry work together? Read the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}.
 {: tip}
 
 1.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -357,7 +356,7 @@ Want to learn more about how builds, image streams, and the internal registry wo
     <td>Set this optional flag to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}.</td>
     </tr>
     </tbody></table>
-5.  Verify that your image stream is created. 
+5.  Verify that your image stream is created.
     ```
     oc get imagestreams
     ```
@@ -379,10 +378,10 @@ Want to learn more about how builds, image streams, and the internal registry wo
     Image Lookup:		local=false
     Unique Images:		1
     Tags:			    1
-    
+
     latest
         tagged from <region>.icr.io/<namespace>/<image>:<tag>
-    
+
         * <region>.icr.io/<namespace>/<image>@<digest>
             2 days ago
     ```

@@ -1054,7 +1054,7 @@ subcollection: openshift
 {: #sitemap_cli_plug-in_reference}
 
 
-[Red Hat OpenShift on IBM Cloud CLI 1](/docs/openshift?topic=openshift-kubernetes-service-cli)
+[Red Hat OpenShift on IBM Cloud CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
 * [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta)
 * [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#map)
 * [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
@@ -1063,7 +1063,6 @@ subcollection: openshift
   * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
   * [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config)
   * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
-  * [`ibmcloud oc cluster feature disable public-service-endpoint`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_disable)
   * [`ibmcloud oc cluster feature enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_enable)
   * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get)
   * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
