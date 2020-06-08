@@ -41,7 +41,7 @@ subcollection: openshift
 {: #choose_storage_solution}
 
 
-Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand the {{site.data.keyword.cloud_notm}} infrastructure provider, your app requirements, the type of data that you want to store, and how often you want to access this data.
+Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
 
 1. Decide whether your data must be permanently stored, or if your data can be removed at any time.
    - **Persistent storage:** Your data must still be available, even if the container, the worker node, or the cluster is removed. Use persistent storage in the following scenarios:
