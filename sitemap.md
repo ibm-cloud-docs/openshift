@@ -665,7 +665,7 @@ subcollection: openshift
 [Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
 * [Setting up an NLB 1.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config)
 * [Setting up an NLB 1.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config)
-* [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#node_affinity_tolerations)
+* [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip)
   * [Adding edge node affinity rules and tolerations](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes)
   * [Adding affinity rules for multiple public or private VLANs](/docs/openshift?topic=openshift-loadbalancer#edge_nodes_multiple_vlans)
 
