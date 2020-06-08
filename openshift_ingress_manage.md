@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-08"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -49,15 +49,10 @@ Looking to change your ALBs' basic behavior or tune ALB performance? See [Modify
 {: #alb-update}
 
 
-To see the changes that are included in each version of Ingress, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).
-{: tip}
-
-
-
 Manage automatic updates of all Ingress ALB pods in a cluster.
 {: shortdesc}
 
-By default, automatic updates to Ingress ALBs are enabled. ALB pods are automatically updated when a new image version is available. When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the image version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
+By default, automatic updates to Ingress ALBs are enabled. ALB pods are automatically updated when a new image version is available.
 
 You can disable or enable the automatic updates for all Ingress ALBs in your cluster.
 * To disable automatic updates:
@@ -95,28 +90,41 @@ When you create a standard cluster, one public and one private ALB is created in
 By default, each ALB has 2 replicas. Scale up your ALB processing capabilities by increasing the number of ALB pods.
 {: shortdesc}
 
-1. Edit the YAML file for the `ibm-ingress-deploy-config` configmap.
+1. Get the IDs for your ALBs.
   ```
-  oc edit cm ibm-ingress-deploy-config -n kube-system
+  ibmcloud oc alb ls -c <cluster_name_or_ID>
   ```
   {: pre}
 
-2. For each ALB that is listed in the `data` section, add `'{"replicas":<number_of_replicas>}'`. Example for increasing the number of ALB pods to 4 replicas:
+2. Create a YAML file for a `ibm-ingress-deploy-config` configmap. For each ALB, add `'{"replicas":<number_of_replicas>}'`. Example for increasing the number of ALB pods to 4 replicas:
    ```yaml
    apiVersion: v1
-   data:
-     <alb1-id>: '{"replicas":4}'
-     <alb2-id>: '{"replicas":4}'
    kind: ConfigMap
    metadata:
      name: ibm-ingress-deploy-config
      namespace: kube-system
+   data:
+     <alb1-id>: |
+       replicas=<number_of_replicas>
+     <alb2-id>: |
+       replicas=<number_of_replicas>
+     ...
    ```
    {: screen}
 
-3. Save and close the file. Your changes are applied automatically.
+3. Create the `ibm-ingress-deploy-config` configmap in your cluster.
+  ```
+  oc create -f ibm-ingress-deploy-config.yaml
+  ```
+  {: pre}
 
-4. Verify that the number of ALB pods that are `Ready` are increased to the number of replicas that you specified.
+4. To pick up the changes, update your ALBs.
+  ```
+  ibmcloud oc alb update -c <cluster_name_or_ID>
+  ```
+  {: pre}
+
+5. Verify that the number of ALB pods that are `Ready` are increased to the number of replicas that you specified.
   ```
   oc get pods -n kube-system | grep alb
   ```
