@@ -90,6 +90,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_subnets.md
         openshift_network_cluster.md
         openshift_vpn.md
+        openshift_static_routes.md
 
     openshift_health.md
 

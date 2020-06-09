@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-04"
+lastupdated: "2020-06-09"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 <style>
@@ -232,6 +234,7 @@ Review the following optional topics to manage the network connectivity of your 
 {: shortdesc}
 
 * **Connections to other networks and workloads**: Set up VPN connectivity between your [classic cluster](/docs/openshift?topic=openshift-vpn) and remote network environments.
+  * To route responses from your cluster back to your on-premises network in VPN solutions that preserve the request source IP address, add [custom static routes](/docs/openshift?topic=openshift-static-routes) to worker nodes for on-premises subnets.
 * **Subnets and VLANs**:
   * Add or change the available subnets and IP addresses for your [classic cluster](/docs/openshift?topic=openshift-subnets).
   * Change the [VLAN connections for your worker nodes](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).

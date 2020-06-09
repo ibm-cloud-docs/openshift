@@ -2,13 +2,14 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-08"
+lastupdated: "2020-06-09"
 
 keywords: openshift
 subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -30,6 +31,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Site map
@@ -56,14 +58,14 @@ subcollection: openshift
 {: #sitemap_about}
 
 
-[Overview](/docs/openshift?topic=openshift-overview)
-* [Understanding Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-overview#service-concepts)
-* [Docker containers](/docs/openshift?topic=openshift-overview#docker_containers)
-  * [Key concepts](/docs/openshift?topic=openshift-overview#docker-concepts)
-  * [Benefits](/docs/openshift?topic=openshift-overview#docker-benefits)
-* [Kubernetes clusters](/docs/openshift?topic=openshift-overview#kubernetes_basics)
-  * [Key concepts](/docs/openshift?topic=openshift-overview#kubernetes-concepts)
-  * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
+[Overview](/docs/openshift?topic=openshift-roks-overview)
+* [Understanding Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-roks-overview#service-concepts)
+* [Docker containers](/docs/openshift?topic=openshift-roks-overview#docker_containers)
+  * [Key concepts](/docs/openshift?topic=openshift-roks-overview#docker-concepts)
+  * [Benefits](/docs/openshift?topic=openshift-roks-overview#docker-benefits)
+* [Kubernetes clusters](/docs/openshift?topic=openshift-roks-overview#kubernetes_basics)
+  * [Key concepts](/docs/openshift?topic=openshift-roks-overview#kubernetes-concepts)
+  * [Related resources](/docs/openshift?topic=openshift-roks-overview#kubernetes-resources)
 
 [Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov)
 * [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits)
@@ -487,6 +489,11 @@ subcollection: openshift
   * [Limiting strongSwan VPN traffic by worker node](/docs/openshift?topic=openshift-vpn#limit_worker)
 * [Upgrading or disabling the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade)
 * [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
+
+[Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes)
+* [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
+* [Enabling the static route add-on](/docs/openshift?topic=openshift-static-routes#enable-add-on)
+* [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
 
 
 ## Logging and monitoring cluster health
@@ -1077,6 +1084,7 @@ subcollection: openshift
   * [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance)
   * [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize)
   * [`ibmcloud oc worker-pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm)
+  * [`ibmcloud oc worker-pool taint`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint)
   * [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_zones)
 * [`zone` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#zone)
   * [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add)
@@ -1155,6 +1163,13 @@ subcollection: openshift
 * [`init` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init)
 * [`script` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script)
   * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
+* [Beta: `storage` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage)
+  * [`ibmcloud oc storage attachment create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr)
+  * [`ibmcloud oc storage attachment get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_get)
+  * [`ibmcloud oc storage attachment ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls)
+  * [`ibmcloud oc storage attachment rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_rm)
+  * [`ibmcloud oc storage volume get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_c)
+  * [`ibmcloud oc storage volume ls `](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
 
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog)
 * [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta)
@@ -1254,6 +1269,8 @@ subcollection: openshift
 
 
 [User access permissions](/docs/openshift?topic=openshift-access_reference)
+
+[Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
 
 [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
 

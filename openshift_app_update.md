@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-09"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Managing the app lifecycle
@@ -89,7 +91,9 @@ Steps:
     <table summary="A table that describes in Column 1 the oc command options and in Column 2 how to fill out those options.">
     <caption>Command components for `oc autoscale`</caption>
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command&apos;s components</th>
+    <col width="25%">
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -153,7 +157,9 @@ To manage rolling updates to your apps:
     <table summary="A table that describes in Column 1 the YAML file fields and in Column 2 how to fill out those fields.">
     <caption>YAML components</caption>
     <thead>
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+    <col width="25%">
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
     <tr>

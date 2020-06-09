@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-08"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Restricting network traffic to edge worker nodes
@@ -205,11 +207,20 @@ Before you begin:
 
 </br>To prevent other workloads from running on edge worker nodes:
 
-1. Apply a taint to all worker nodes with the `dedicated=edge` label. The taint prevents pods from running on the worker node and removes pods that do not have the `dedicated=edge` label from the worker node. The pods that are removed are redeployed to other worker nodes with capacity.
+1. Apply a taint to the worker nodes with the `dedicated=edge` label. The taint prevents pods from running on the worker node and removes pods that do not have the `dedicated=edge` label from the worker node. The pods that are removed are redeployed to other worker nodes with capacity.
+  
+  To apply a taint to all existing and future worker nodes in a worker pool:
+  ```
+  ibmcloud oc worker-pool taint set -c <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --taint dedicated=edge:NoSchedule --taint dedicated=edge:NoExecute
+  ```
+  {: pre}
+
+  To apply a taint to individual worker nodes:
   ```
   oc adm taint node -l dedicated=edge dedicated=edge:NoSchedule dedicated=edge:NoExecute
   ```
   {: pre}
+
   Now, only pods with the `dedicated=edge` toleration are deployed to your edge worker nodes.
 
 2. Verify that your edge nodes are tainted.
@@ -229,7 +240,15 @@ Before you begin:
 
 3. If you choose to [enable source IP preservation for an NLB 1.0 service](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip), ensure that app pods are scheduled onto the edge worker nodes by [adding edge node affinity to app pods](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes). App pods must be scheduled onto edge nodes to receive incoming requests.
 
-4. To remove a taint, run the following command.
+4.  Optional: You can remove a taint from the worker nodes.
+    
+    To remove all taints from all worker nodes in a worker pool:
+    ```
+    ibmcloud oc worker-pool taint rm -c <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+    ```
+    {: pre}
+    
+    To remove individual taints from individual worker nodes:
     ```
     oc adm taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-
     ```

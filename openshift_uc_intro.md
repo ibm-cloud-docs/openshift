@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -33,6 +34,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
+
 # Overview of use cases
 {: #cs_uc_intro}
 
@@ -46,7 +48,9 @@ Various use cases show the strengths of {{site.data.keyword.openshiftlong}} and 
 <table summary="The table shows the use cases. Rows are to be read from the left to right, with icons representing each industry in column one the description in column two.">
 <caption>Use cases</caption>
   <thead>
-  <th colspan=2>Use cases by industry</th>
+  <col width="25%">
+  <th>Industry</th>
+  <th>Use case</th>
   </thead>
   <tbody>
     <tr>

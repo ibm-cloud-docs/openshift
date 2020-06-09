@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Understanding Kubernetes storage basics
@@ -237,7 +239,7 @@ You can change the default storage class that a persistent volume (PV) uses if n
 
 To change the default storage class for a cluster:
 
-1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
 2.  List available storage classes. Note the name of the storage class that you want to make the default, and the current default storage class that has `(default)` in the **Name**.
     ```
     oc get storageclasses

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Updating clusters, worker nodes, and cluster components
@@ -210,9 +212,11 @@ Set up a configmap to perform a rolling update of your worker nodes.
    {: codeblock}
 
    <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the parameter in column one and the description that matches in column two.">
-   <caption>ConfigMap components</caption>
+   <caption>Configmap components</caption>
     <thead>
-      <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the components </th>
+    <col width="25%">
+    <th>Component</th>
+    <th>Description</th>
     </thead>
     <tbody>
       <tr>

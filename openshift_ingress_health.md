@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Logging and monitoring Ingress
@@ -222,7 +224,7 @@ The ALB metrics exporter uses the NGINX directive, `vhost_traffic_status_zone`, 
 Install the metrics exporter Helm chart to monitor an ALB in your cluster.
 {: shortdesc}
 
-The ALB metrics exporter pods must deploy to the same worker nodes that your ALBs are deployed to. If your ALBs run on edge worker nodes, and those edge nodes are tainted to prevent other workload deployments, the metrics exporter pods cannot be scheduled. You must remove the taints by running `oc adm taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-`.
+The ALB metrics exporter pods must deploy to the same worker nodes that your ALBs are deployed to. If your ALBs run on edge worker nodes, and those edge nodes are tainted to prevent other workload deployments, the metrics exporter pods cannot be scheduled. You must remove the taints by running `oc adm taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-` or using the `ibmcloud oc worker-pool taint rm` command.
 {: note}
 
 1.  **Important**: [Follow the instructions](/docs/openshift?topic=openshift-helm#public_helm_install) to install the Helm client on your local machine, install the Helm server (Tiller) with a service account, and add the {{site.data.keyword.cloud_notm}} Helm repositories.

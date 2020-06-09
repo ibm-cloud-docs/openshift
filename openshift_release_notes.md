@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-08"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -33,6 +34,7 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
+
 # Release notes
 {: #iks-release}
 
@@ -44,6 +46,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 09 June 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.94](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**Permissions**: Added a [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions) reference topic, and restructured cluster creation and user access topics to refer to this reference topic.</li><li>**New! Static routes add-on**: Added information about creating static routes on your worker nodes by enabling the [static routes cluster add-on](/docs/openshift?topic=openshift-static-routes).</li></ul> |
 | 08 June 2020 | **Version changelogs**: Worker node changelog documentation is available for OpenShift [`4.3.23_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1524) and [`3.11.219_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311219_1552). |
 | 04 June 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 637](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul>|
 | 01 June 2020 | <ul><li>**Version 3.11 is deprecated**: Clusters that run OpenShift version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history).</li></ul>|

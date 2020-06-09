@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -33,13 +34,44 @@ subcollection: openshift
 {:tsSymptoms: .tsSymptoms}
 
 
+
 # User access permissions
 {: #access_reference}
 
 When you [assign cluster permissions](/docs/openshift?topic=openshift-users), it can be hard to judge which role you need to assign to a user. Use the tables in the following sections to determine the minimum level of permissions that are required to perform common tasks in {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
+## Permissions to create a cluster
+{: #cluster_create_permissions}
 
+Review the minimum permissions in {{site.data.keyword.cloud_notm}} IAM that the account owner must set up so that users can create clusters in Red Hat OpenShift on IBM Cloud.
+{: shortdesc}
+
+<dl>
+<dt>API key for each region and resource group</dt>
+<dd>The API key is used to provide the underlying access to infrastructure and other account resources. For more information, see [Setting up the API key to enable access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#api_key).
+<ul><li>**IAM Services**</li><ul>
+  <li>**Administrator** platform role for **Kubernetes Service** in the console (**containers-kubernetes** in the API or CLI) in **All resource groups**.</li>
+  <li>**Writer** or **Manager** service role for **Kubernetes Service** in the console (**containers-kubernetes** in the API or CLI) in **All resource groups**.</li>
+  <li>**Administrator** platform role for **Container Registry** in the console (**container-registry** in the API or CLI) at the **Account** level. Do not limit policies for {{site.data.keyword.registrylong_notm}} to the resource group level.</li>
+  <li>If you plan to [encrypt your cluster](/docs/openshift?topic=openshift-encryption#keyprotect), assign the user the appropriate permission to the key management service provider, such as the **Administrator** platform role for {{site.data.keyword.keymanagementserviceshort}}.</li>
+  <li>**Viewer** platform role for the resource group access.</li></ul>
+<li>**Infrastructure**</li><ul>
+  <li>**Super User** role or the [minimum required permissions](#infra) for classic infrastructure.</li></ul></dd>
+
+<dt>User that creates the cluster</dt>
+<dd>In addition to the API key, each individual user must have the following permissions to create a cluster.<ul>
+<li>**Administrator** platform role for **Kubernetes Service** in the console (**containers-kubernetes** in the API or CLI). If your access is scoped to a resource group or region, you must also have the **Viewer** platform role at the **Account** level to view the account's VLANs.</li>
+<li>**Administrator** platform role for **Container Registry** in the console (**container-registry** in the API or CLI) at the **Account** level.</li>
+<li>**Viewer** platform role for the resource group access.</li></ul></dd>
+</dl>
+
+<br>
+
+**More information about assigning permissions**:
+* To understand how access works and how to assign users roles in {{site.data.keyword.cloud_notm}} IAM, see [Setting up access to your cluster](/docs/openshift?topic=openshift-users#access-checklist).
+* To create clusters, see [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare).
+* For permissions that you might set up for different types of users such as auditors, see [Example use cases and roles](/docs/openshift?topic=openshift-users#example-iam).
 
 ## {{site.data.keyword.cloud_notm}} IAM platform roles
 {: #iam_platform}
@@ -625,7 +657,7 @@ Need to check that the API key or manually-set credentials have the required and
 {: tip}
 
 The following table shows the classic infrastructure permissions that the credentials for a region and resource group can have for creating clusters and other common use cases. The description includes how you can assign the permission in the {{site.data.keyword.cloud_notm}} IAM Classic infrastructure console or the `ibmcloud sl` command. For more information, see the instructions for the [console](/docs/openshift?topic=openshift-users#infra_console) or [CLI](/docs/openshift?topic=openshift-users#infra_cli).
-*   **Create clusters**: Classic infrastructure permissions that you must have to create a cluster. When you run `ibmcloud oc infra-permissions get`, these permissions are listed as **Required**.
+*   **Create clusters**: Classic infrastructure permissions that you must have to create a cluster. When you run `ibmcloud oc infra-permissions get`, these permissions are listed as **Required**. For other service permissions that you must have in {{site.data.keyword.cloud_notm}} IAM to create clusters, see [Permissions to create a cluster](#cluster_create_permissions).
 *   **Other common use cases**: Classic infrastructure permissions that you must have for other common scenarios. Even if you have permission to create a cluster, some limitations might apply. For example, you might not be able to create or work with a cluster with bare metal worker nodes or a public IP address. After cluster creation, further steps to add networking or storage resources might fail. When you run `ibmcloud oc infra-permissions get`, these permissions are listed as **Suggested**.
 
 | Permission | Description | IAM Assign Policy Console | CLI |
