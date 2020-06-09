@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-08"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -96,7 +96,7 @@ By default, each ALB has 2 replicas. Scale up your ALB processing capabilities b
   ```
   {: pre}
 
-2. Create a YAML file for a `ibm-ingress-deploy-config` configmap. For each ALB, add `'{"replicas":<number_of_replicas>}'`. Example for increasing the number of ALB pods to 4 replicas:
+2. Create a YAML file for an `ibm-ingress-deploy-config` configmap. For each ALB, add `'{"replicas":<number_of_replicas>}'`. Example for increasing the number of ALB pods to 4 replicas:
    ```yaml
    apiVersion: v1
    kind: ConfigMap
