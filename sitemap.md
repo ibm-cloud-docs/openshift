@@ -1256,6 +1256,8 @@ subcollection: openshift
 
 [User access permissions](/docs/openshift?topic=openshift-access_reference)
 
+[Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
+
 [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
 
 [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
