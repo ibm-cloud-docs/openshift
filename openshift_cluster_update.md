@@ -212,7 +212,7 @@ Set up a configmap to perform a rolling update of your worker nodes.
    {: codeblock}
 
    <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the parameter in column one and the description that matches in column two.">
-   <caption>ConfigMap components</caption>
+   <caption>Configmap components</caption>
     <thead>
     <col width="25%">
     <th>Component</th>
