@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Adding static routes to worker nodes

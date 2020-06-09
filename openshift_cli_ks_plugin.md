@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Red Hat OpenShift on IBM Cloud CLI
@@ -4680,5 +4682,242 @@ To use this command to prepare your automation scripts for the release of versio
 <br />
 
 
+
+## Beta: `storage` commands
+{: #cs_storage}
+
+Create, get, list, or remove storage volume attachments.
+{: shortdesc}
+
+The `storage` commands are available in beta.
+{: beta}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+
+### `ibmcloud oc storage attachment create`
+{: #cs_storage_att_cr}
+
+Attach a storage volume to a worker node in your cluster.
+{: shortdesc}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+```
+ibmcloud oc storage attachment create --cluster CLUSTER --volume-id VOLUME_ID --worker WORKER [--json]
+```
+{: pre}
+
+**Command options**:
+
+<dl>
+<dt><code>--cluster <em>CLUSTER</em></code></dt>
+<dd>Required: Specify the cluster ID. To list available clusters, run <code>ibmcloud oc cluster ls</code>.</dd>
+
+<dt><code>--volume-id <em>VOLUME_ID</em></code></dt>
+<dd>Required: Specify the volume ID. To list available workers, run <code>ibmcloud oc storage volume ls</code>.</dd>
+
+<dt><code>--worker <em>WORKER</em></code></dt>
+<dd>Required: Specify the worker ID. To list available workers, run <code>ibmcloud oc worker ls</code>.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+</dl>
+
+**Example**:
+
+```
+ibmcloud oc storage attachment create --cluster my_cluster --volume-id 111111111 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--json]
+```
+{: pre}
+
+
+### `ibmcloud oc storage attachment get`
+{: #cs_storage_att_get}
+
+Get the details of a storage volume attachment in your cluster.
+{: shortdesc}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+```
+ibmcloud oc storage attachment get --cluster CLUSTER --volume-attachment-id ID --worker WORKER [--json]
+```
+{: pre}
+
+<dl>
+<dt><code>--cluster <em>CLUSTER</em></code></dt>
+<dd>Required: Specify the cluster ID. To list available clusters, run <code>ibmcloud oc cluster ls</code>.</dd>
+
+<dt><code>--volume-attachment-id <em>ID</em></code></dt>
+<dd>Required: Specify the volume attachment ID. To list available attachments, run <code>ibmcloud oc storage attachment ls</code>.</dd>
+
+<dt><code>--worker <em>WORKER</em></code></dt>
+<dd>Required: Specify the worker ID. To list available workers, run <code>ibmcloud oc worker ls</code>.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+</dl>
+
+**Example**:
+
+```
+ibmcloud oc storage attachment get --cluster my_cluster --volume-attachment-id 0111-1a111aaa-1111-1111-111a-aaa1a1a11a11 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--json]
+```
+{: pre}
+
+### `ibmcloud oc storage attachment ls`
+{: #cs_storage_att_ls}
+
+List the storage volume attachments for a worker node in your cluster.
+{: shortdesc}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+```
+ibmcloud oc storage attachment ls --cluster CLUSTER --worker WORKER [--json]
+```
+{: pre}
+
+<dl>
+<dt><code>--cluster <em>CLUSTER</em></code></dt>
+<dd>Required: Specify the cluster ID. To list available clusters, run <code>ibmcloud oc cluster ls</code>.</dd>
+
+<dt><code>--worker <em>WORKER</em></code></dt>
+<dd>Required: Specify the worker ID. To list available workers, run <code>ibmcloud oc worker ls</code>.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+</dl>
+
+**Example**:
+
+```
+ibmcloud oc storage attachment ls --cluster my_cluster --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--json]
+```
+{: pre}
+
+
+### `ibmcloud oc storage attachment rm`
+{: #cs_storage_att_rm}
+
+Remove a storage volume from a worker node in your cluster.
+{: shortdesc}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+```
+ibmcloud oc storage attachment rm --cluster CLUSTER --volume-attachment-id VOLUME_ATTACHMENT_ID --worker WORKER [--json]
+```
+{: pre}
+
+**Command options**:
+
+<dl>
+<dt><code>--cluster <em>CLUSTER</em></code></dt>
+<dd>Required: Specify the cluster ID. To list available clusters, run <code>ibmcloud oc cluster ls</code>.</dd>
+
+<dt><code>--volume-attachment-id <em>ID</em></code></dt>
+<dd>Required: Specify the volume attachment ID. To list available attachments, run <code>ibmcloud oc storage attachment ls</code>.</dd>
+
+<dt><code>--worker <em>WORKER</em></code></dt>
+<dd>Required: Specify the worker ID. To list available workers, run <code>ibmcloud oc worker ls</code>.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+</dl>
+
+**Example**:
+
+```
+ibmcloud oc storage attachment rm --cluster my_cluster --volume-attachment-id 0111-1a111aaa-1111-1111-111a-aaa1a1a11a11 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--json]
+```
+{: pre}
+
+### `ibmcloud oc storage volume get`
+{: #cs_storage_att_ls_c}
+
+List storage volumes for your classic clusters.
+{: shortdesc}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+```
+ibmcloud oc storage volume get --volume_ID VOLUME_ID
+```
+{: pre}
+
+**Command options**:
+
+<dl>
+<dt><code>--volume_ID <em>VOLUME_ID</em></code></dt>
+<dd>Required: Specify the volume ID. To list available volumes, run <code>ibmcloud ks storage volume ls</code>.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+</dl>
+
+**Example**:
+
+```
+ibmcloud oc storage volume get --volume_ID 111111111 
+```
+{: pre}
+
+### `ibmcloud oc storage volume ls `
+{: #cs_storage_att_ls_2}
+
+Get a list of storage volumes.
+{: shortdesc}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+```
+ibmcloud oc storage volume ls [--cluster CLUSTER]
+```
+{: pre}
+
+**Command options**:
+
+<dl>
+<dt><code>--cluster <em>CLUSTER</em></code></dt>
+<dd>Optional: Specify the cluster ID. To list available clusters, run <code>ibmcloud oc cluster ls</code>.</dd>
+
+<dt><code>--json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+</dl>
+
+**Example**:
+
+```
+ibmcloud oc storage volume ls --cluster my_cluster
+```
+{: pre}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # High availability for {{site.data.keyword.openshiftshort}} clusters

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-09"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -31,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Adding Cloud Paks

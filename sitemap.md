@@ -9,6 +9,7 @@ subcollection: openshift
 
 ---
 
+{:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
 {:download: .download}
@@ -30,6 +31,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
 
 
 # Site map
@@ -56,14 +58,14 @@ subcollection: openshift
 {: #sitemap_about}
 
 
-[Overview](/docs/openshift?topic=openshift-overview)
-* [Understanding Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-overview#service-concepts)
-* [Docker containers](/docs/openshift?topic=openshift-overview#docker_containers)
-  * [Key concepts](/docs/openshift?topic=openshift-overview#docker-concepts)
-  * [Benefits](/docs/openshift?topic=openshift-overview#docker-benefits)
-* [Kubernetes clusters](/docs/openshift?topic=openshift-overview#kubernetes_basics)
-  * [Key concepts](/docs/openshift?topic=openshift-overview#kubernetes-concepts)
-  * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
+[Overview](/docs/openshift?topic=openshift-roks-overview)
+* [Understanding Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-roks-overview#service-concepts)
+* [Docker containers](/docs/openshift?topic=openshift-roks-overview#docker_containers)
+  * [Key concepts](/docs/openshift?topic=openshift-roks-overview#docker-concepts)
+  * [Benefits](/docs/openshift?topic=openshift-roks-overview#docker-benefits)
+* [Kubernetes clusters](/docs/openshift?topic=openshift-roks-overview#kubernetes_basics)
+  * [Key concepts](/docs/openshift?topic=openshift-roks-overview#kubernetes-concepts)
+  * [Related resources](/docs/openshift?topic=openshift-roks-overview#kubernetes-resources)
 
 [Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov)
 * [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits)
@@ -1156,6 +1158,13 @@ subcollection: openshift
 * [`init` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init)
 * [`script` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script)
   * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
+* [Beta: `storage` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage)
+  * [`ibmcloud oc storage attachment create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr)
+  * [`ibmcloud oc storage attachment get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_get)
+  * [`ibmcloud oc storage attachment ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls)
+  * [`ibmcloud oc storage attachment rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_rm)
+  * [`ibmcloud oc storage volume get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_c)
+  * [`ibmcloud oc storage volume ls `](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
 
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog)
 * [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta)
