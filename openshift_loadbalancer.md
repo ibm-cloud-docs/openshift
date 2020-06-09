@@ -231,7 +231,9 @@ To create an NLB 1.0 service in a single-zone cluster:
         <caption>Understanding the YAML file components</caption>
         <col width="50%">
         <thead>
-        <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding the YAML file components</th>
+        <col width="25%">
+        <th>Component</th>
+        <th>Description</th>
         </thead>
         <tbody>
         <tr>

@@ -646,7 +646,9 @@ Grant users access to your Red Hat OpenShift on IBM Cloud clusters by assigning 
     <table summary="The table describes the fields to fill in for the JSON file. Rows are to be read from the left to right, with the scope in column one, the CLI flag in column two, and the description in column three.">
     <caption>Understanding the JSON file components</caption>
       <thead>
-      <th colspan=2><img src="images/idea.png" alt="Idea icon"/>Understanding the JSON file components</th>
+      <col width="25%">
+      <th>Component</th>
+      <th>Description</th>
       </thead>
       <tbody>
         <tr>

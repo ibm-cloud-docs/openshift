@@ -48,7 +48,9 @@ Various use cases show the strengths of {{site.data.keyword.openshiftlong}} and 
 <table summary="The table shows the use cases. Rows are to be read from the left to right, with icons representing each industry in column one the description in column two.">
 <caption>Use cases</caption>
   <thead>
-  <th colspan=2>Use cases by industry</th>
+  <col width="25%">
+  <th>Industry</th>
+  <th>Use case</th>
   </thead>
   <tbody>
     <tr>
