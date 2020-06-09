@@ -490,6 +490,11 @@ subcollection: openshift
 * [Upgrading or disabling the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade)
 * [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
 
+[Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes)
+* [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
+* [Enabling the static route add-on](/docs/openshift?topic=openshift-static-routes#enable-add-on)
+* [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
+
 
 ## Logging and monitoring cluster health
 {: #sitemap_logging_and_monitoring_cluster_health}
