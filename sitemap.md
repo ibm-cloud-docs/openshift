@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-08"
+lastupdated: "2020-06-09"
 
 keywords: openshift
 subcollection: openshift
@@ -1077,6 +1077,7 @@ subcollection: openshift
   * [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance)
   * [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize)
   * [`ibmcloud oc worker-pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm)
+  * [`ibmcloud oc worker-pool taint`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint)
   * [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_zones)
 * [`zone` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#zone)
   * [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add)
