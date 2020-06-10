@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-10"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -87,6 +87,24 @@ The following list of the cluster management events are sent to {{site.data.keyw
 | `containers-kubernetes.workerpool.update` | A worker pool is updated. |
 | `containers-kubernetes.zone.update` | The networking attributes for a zone that a worker pool uses are updated. |
 {: caption="Cluster management events" caption-side="top"}
+
+
+## Tracking storage resource events
+{: #storage-events}
+
+The following table lists the actions related to storage resources and the generation of events.
+
+| Action  | Description  |
+|---------|--------------|
+| `containers-kubernetes.storage.volume.create` | A volume is created. |
+| `containers-kubernetes.storage.volume.update` | A volume is updated. |
+| `containers-kubernetes.storage.volume.delete` | A volume is deleted. |
+| `containers-kubernetes.storage.volume.read` | One or more volumes are retrieved. |
+| `containers-kubernetes.storage.attachment.create` | An instance volume attachment is created. |
+| `containers-kubernetes.storage.attachment.update` | An instance volume attachment is deleted. |
+| `containers-kubernetes.storage.attachment.delete` | An instance volume attachment is updated. |
+| `containers-kubernetes.storage.attachment.read` | One or more instance volume attachments are retrieved. |
+{: caption="Storage resource events" caption-side="top"}
 
 
 
