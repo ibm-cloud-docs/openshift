@@ -62,7 +62,7 @@ You can change the MTU on the tunnel interface `tunl0`, which is used for pod to
 ### Changing the Calico MTU for 4.3 or later clusters
 {: #calico-mtu-43}
 
-Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an OpenShift version 4.3 or later cluster.
+Increase or decrease the Calico plug-in MTU to meet the network throughput requirements of your environment in an OpenShift version 4.3 or later cluster. MTU can't be less than `1450`.
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
