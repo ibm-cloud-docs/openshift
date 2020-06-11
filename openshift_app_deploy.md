@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-11"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -66,7 +66,7 @@ You can create apps through various methods in the OpenShift console by using th
 ### Deploying apps through the CLI
 {: #deploy_apps_cli}
 
-To create an app in your Red Hat OpenShift on IBM Cloud cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [OpenShift documentation](http://docs.openshift.com/container-platform/4.2/applications/application_life_cycle_management/creating-applications-using-cli.html){: external}.
+To create an app in your Red Hat OpenShift on IBM Cloud cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For example, you might refer to a public GitHub repo, a public GitLab repo with a URL that ends in `.git`, or another local or remote repo. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [OpenShift documentation](http://docs.openshift.com/container-platform/4.2/applications/application_life_cycle_management/creating-applications-using-cli.html){: external}.
 {: shortdesc}
 
 ```
