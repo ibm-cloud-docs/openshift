@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -677,6 +677,8 @@ Classic clusters only: The {{site.data.keyword.cloud_notm}} account owner or an 
 5. To ensure that existing clusters use the updated infrastructure API credentials, run `ibmcloud oc api-key reset --region <region>` in each region where you have clusters.
 
 <br />
+
+
 
 
 

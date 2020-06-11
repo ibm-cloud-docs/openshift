@@ -1293,8 +1293,6 @@ subcollection: openshift
 
 [Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
 
-[Tracking storage resource events](/docs/openshift?topic=openshift-at_events#storage-events)
-
 [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
 
 
