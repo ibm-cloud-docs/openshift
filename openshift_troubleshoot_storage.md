@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -81,8 +81,10 @@ Review the options to debug persistent storage and find the root causes for fail
    2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-cs_cli_install#kubectl).
 
 
+3. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
 
-4. For block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
+
+4. For classic block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
 
    **Block and object storage**:
 
@@ -93,7 +95,7 @@ Review the options to debug persistent storage and find the root causes for fail
       {: pre}
 
    2. List the Helm charts in the repository.
-      **For block storage**:
+      **For classic block storage**:
         ```
         helm search repo iks-charts | grep block-storage-plugin
         ```
@@ -154,6 +156,14 @@ Review the options to debug persistent storage and find the root causes for fail
          {: pre}
 
          
+         Example output for {{site.data.keyword.block_storage_is_short}} with three containers:
+         ```
+         csi-provisioner 
+         csi-attacher 
+         iks-vpc-block-driver
+         ```
+         {: screen}
+         
 
          Example output for {{site.data.keyword.blockstorageshort}}:
          ```
@@ -192,7 +202,7 @@ Review the options to debug persistent storage and find the root causes for fail
       {: pre}
 
    3. Review common errors that can occur during the PVC creation.
-      - [File storage and block storage: PVC remains in a pending state](#file_pvc_pending)
+      - [File storage and classic block storage: PVC remains in a pending state](#file_pvc_pending)
       - [Object storage: PVC remains in a pending state](#cos_pvc_pending)
 
 7. Check whether the pod that mounts your storage instance is successfully deployed.

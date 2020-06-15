@@ -11,6 +11,7 @@ Red Hat OpenShift on IBM Cloud
     About
         openshift_overview.md
         openshift_why.md
+        openshift_providers.md
         openshift_tech.md
 
     {: .topicgroup}
@@ -37,6 +38,7 @@ Red Hat OpenShift on IBM Cloud
     Tutorials
         openshift_tutorial_ov.md
         openshift_tutorial.md
+        openshift_tutorial_vpc.md
         [Scalable web application on OpenShift](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift)
         [OpenShift interactive learning portal](https://learn.openshift.com/)
         [Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift)
@@ -81,16 +83,33 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     Securing the cluster network
-        openshift_firewall.md
-        openshift_edge.md
-        openshift_network_policy.md
+
+        {: .topicgroup}
+        Classic clusters
+            openshift_firewall.md
+            openshift_edge.md
+            openshift_network_policy.md
+
+        {: .topicgroup}
+        VPC clusters
+            openshift_vpc_firewall.md
+            openshift_vpc_network_policy.md
 
     {: .topicgroup}
     Managing the cluster network
-        openshift_subnets.md
-        openshift_network_cluster.md
-        openshift_vpn.md
-        openshift_static_routes.md
+
+        {: .topicgroup}
+        Classic clusters
+            openshift_subnets.md
+            openshift_network_cluster.md
+            openshift_vpn.md
+            openshift_static_routes.md
+
+        {: .topicgroup}
+        VPC clusters
+            openshift_vpc_subnets.md
+            openshift_vpc_vpn.md
+            openshift_static_routes.md
 
     openshift_health.md
 
@@ -111,11 +130,16 @@ Red Hat OpenShift on IBM Cloud
     {: .topicgroup}
     Exposing apps
         openshift_app_networking.md
-        openshift_routes.md
+
+        {: .topicgroup}
+        Exposing apps with routes
+            openshift_routes.md
+            openshift_routes_311.md
 
         {: .topicgroup}
         Exposing apps with load balancers
             openshift_loadbalancer_qs.md
+            openshift_vpc_lbaas.md
             openshift_loadbalancer_about.md
             openshift_loadbalancer.md
             openshift_loadbalancer_v2.md
@@ -144,6 +168,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_basics.md
         openshift_storage_file.md
         openshift_storage_block.md
+        openshift_storage_block_vpc.md
         openshift_storage_object.md
         openshift_storage_portworx.md
         openshift_storage_utilities.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs
 
@@ -194,9 +194,9 @@ For the latest HA service level agreement terms, refer to the [{{site.data.keywo
 
 {{site.data.keyword.cloud_notm}} is built by following many data, finance, health, insurance, privacy, security, technology, and other international compliance standards. For more information, see [{{site.data.keyword.cloud_notm}} compliance](/docs/overview?topic=overview-compliance).
 
-To view detailed system requirements, you can run a [software product compatibility report for Red Hat OpenShift on IBM Cloud](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=4440E450C2C811E6A98AAE81A233E762){: external}. 
+To view detailed system requirements, you can run a [software product compatibility report for Red Hat OpenShift on IBM Cloud](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=4440E450C2C811E6A98AAE81A233E762){: external}. Note that compliance depends on the underlying [infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers) for the cluster worker nodes, networking, and storage resources.
 
-Red Hat OpenShift on IBM Cloud implements controls commensurate with the following security standards:
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic infrastructure**: Red Hat OpenShift on IBM Cloud implements controls commensurate with the following security standards:
 - EU-US Privacy Shield and Swiss-US Privacy Shield Framework
 - Health Insurance Portability and Accountability Act (HIPAA)
 - Service Organization Control standards (SOC 1 Type 2, SOC 2 Type 2)
@@ -207,6 +207,9 @@ Red Hat OpenShift on IBM Cloud implements controls commensurate with the followi
 To achieve HIPAA and PCI compliance for your environment, make sure to use [bare metal machines](/docs/openshift?topic=openshift-planning_worker_nodes#bm) for your worker nodes. With bare metal machines, all compute resources are dedicated exclusively to you, and you can control the isolation and resource consumption of your workloads. 
 {: important}
 
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC infrastructure**: Red Hat OpenShift on IBM Cloud implements controls commensurate with the following security standards:
+- EU-US Privacy Shield and Swiss-US Privacy Shield Framework
+- International Standard on Assurance Engagements 3402 (ISAE 3402), Assurance Reports on Controls at a Service Organization
 
 
 ## Can I use IBM Cloud and other services with my cluster?
@@ -250,6 +253,7 @@ With Red Hat OpenShift on IBM Cloud clusters, you can use IBM Cloud infrastructu
     <p><strong>Physical machines, or bare metal, (not available for VPC clusters)</strong> yield high-performance benefits for workloads such as data and AI. Additionally, all the hardware resources are dedicated to your workloads, so you don't have "noisy neighbors". Keep in mind these factors that impact your bare metal costs:</p>
     <ul><li><strong>Monthly billing only</strong>: All bare metals are charged monthly.</li>
     <li><strong>Longer ordering process</strong>:  After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.</li></ul>
+    <p class="important"><img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <strong>VPC Generation 2 compute only</strong>: Prices vary by region where the underlying worker node infrastructure resides. For more information, see [What are the regional uplift charges for VPC Generation 2 compute worker nodes?](#charges_vpc_gen2).
     <p>For more information about the machine specifications, see [Available hardware for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).</p></dd>
   <dt id="licenses">Compute licenses</dt>
     <dd><p>Your worker nodes are installed with the Red Hat Enterprise Linux operating system, which includes a license for each worker node. To use Red Hat OpenShift Container Platform, an OpenShift license is also included, which incurs monthly costs in addition to the costs of your worker nodes.</p>
@@ -263,16 +267,16 @@ With Red Hat OpenShift on IBM Cloud clusters, you can use IBM Cloud infrastructu
     <ul><li><strong>Location</strong>: As with worker nodes, charges vary depending on the zone that your resources are deployed in.</li>
     <li><strong>Pay-As-You-Go for VM</strong>: Because VMs are billed hourly, your VM worker node machines have a Pay-As-You-Go allocation of outbound networking based on GB usage.</li>
     <li><strong>Included bandwidth and tiered packages for BM</strong>: Bare metal worker nodes might come with a certain allocation of outbound networking per month that varies by geography: 20 TB for North America and Europe, or 5 TB for Asia Pacific and South America. After you exceed your included bandwidth, you are charged according to a tiered usage scheme for your geography. If you exceed a tier allotment, you might also be charged a standard data transfer fee. For more information, see [Bandwidth packages ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/bandwidth).</li></ul>
-    </dd>
+    <p>**VPC clusters**: For more information about how internet data transfer works in your Virtual Private Cloud, see [Pricing for VPC ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/vpc/pricing).</p></dd>
   <dt id="subnet_ips">Subnet IP addresses</dt>
-    <dd><p>When you create a standard cluster, a portable public subnet with 8 public IP addresses is ordered and charged to your account monthly. For pricing information, see the [Subnets and IPs](/docs/subnets?topic=subnets-getting-started) documentation or estimate your costs in the [classic subnets console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/classic/network/subnet/provision).</p><p>If you already have available portable public subnets in your infrastructure account, you can use these subnets instead. Create the cluster with the `--no-subnets` [flag](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create), and then [reuse your subnets](/docs/openshift?topic=openshift-subnets#subnets_custom).
-    </dd>
+    <dd><p>**Classic clusters**: When you create a standard cluster, a portable public subnet with 8 public IP addresses is ordered and charged to your account monthly. For pricing information, see the [Subnets and IPs](/docs/subnets?topic=subnets-getting-started) documentation or estimate your costs in the [classic subnets console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/classic/network/subnet/provision).</p><p>If you already have available portable public subnets in your infrastructure account, you can use these subnets instead. Create the cluster with the `--no-subnets` [flag](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create), and then [reuse your subnets](/docs/openshift?topic=openshift-subnets#subnets_custom).
+    <p>**VPC clusters**: For more information about charges for floating IPs and other networking costs, see [Pricing for VPC ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/vpc/pricing).</p></dd>
   <dt id="mzlb_pricing">Multizone load balancer</dt>
-    <dd>When you create a multizone cluster or add zones to a single zone cluster, you must have a load balancer to health check Ingress and load balancer IP addresses in each zone, and forward requests to your apps across zones in the region. For more information, see [Multizone load balancer (MZLB) or Load Balancer for VPC](/docs/openshift?topic=openshift-ingress-about#mzlb). A Cloudflare MZLB is automatically created for each multizone cluster. You can view the hourly cost in the pricing summary when you create the cluster.</dd>
+    <dd>When you create a multizone cluster or add zones to a single zone cluster, you must have a load balancer to health check Ingress and load balancer IP addresses in each zone, and forward requests to your apps across zones in the region. The type of load balancer that is automatically created varies depending on the type of cluster. For more information, see [Multizone load balancer (MZLB) or Load Balancer for VPC](/docs/openshift?topic=openshift-ingress-about#mzlb).<ul><li>**Classic clusters**: A Cloudflare MZLB is automatically created for each multizone cluster. You can view the hourly cost in the pricing summary when you create the cluster.</li><li>**VPC clusters**: A Load Balancer for VPC is automatically created in your VPC for your cluster. For cost information, see [Pricing for Load Balancer for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.</li></ul></dd>
   <dt id="storage_images">Default storage for images</dt>
     <dd>To store images in the internal registry, a classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost. For more information, see [Billing](/docs/FileStorage?topic=FileStorage-about).</dd>
   <dt id="persistent_storage">Storage for apps</dt>
-    <dd>When you provision storage, you can choose the storage type and storage class that is right for your use case. Charges vary depending on the type of storage, the location, and the specs of the storage instance. Some storage solutions, such as file and block storage offer hourly and monthly plans that you can choose from. To choose the right storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).For more information, see:
+    <dd>When you provision storage, you can choose the storage type and storage class that is right for your use case. Charges vary depending on the type of storage, the location, and the specs of the storage instance. Some storage solutions, such as file and block storage offer hourly and monthly plans that you can choose from. To choose the right storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).<p class="note">For VPC, only block storage is available.</p>For more information, see:
     <ul><li>[NFS file storage pricing![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/file-storage/pricing)</li>
     <li>[Block storage pricing![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing)</li>
     <li>[Object storage plans![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</li></ul></dd>
@@ -284,6 +288,15 @@ With Red Hat OpenShift on IBM Cloud clusters, you can use IBM Cloud infrastructu
 Monthly resources are billed based on the first of the month for usage in the preceding month. If you order a monthly resource in the middle of the month, you are charged a prorated amount for that month. However, if you cancel a resource in the middle of the month, you are still charged the full amount for the monthly resource.
 {: note}
 
+
+## What are the regional uplift charges for VPC Generation 2 compute worker nodes?
+{: #charges_vpc_gen2}
+{: faq}
+
+When you create a cluster on VPC generation 2 compute infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [OpenShift cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
+{: shortdesc}
+
+For a table that describes the pricing uplift by region, see [Regional pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
 
 
 ## Are my platform and infrastructure resources consolidated in one bill?

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -71,6 +71,22 @@ To secure your cluster network or connect to an on-prem data center, you can con
 - [{{site.data.keyword.BluDirectLink}}](/docs/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link)
 - [Virtual Router Appliance (VRA)](/docs/openshift?topic=openshift-vpn#vyatta)
 - [Fortigate Security Appliance (FSA)](/docs/vmwaresolutions/services?topic=vmwaresolutions-fsa_considerations)
+
+
+
+### IBM Cloud VPC infrastructure services
+{: #vpc-infrastructure-services}
+
+With Red Hat OpenShift on IBM Cloud, you can create a standard cluster in a [Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). A VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
+{: shortdesc}
+
+Before you can create a VPC cluster, you must have a VPC and at least one VPC subnet that you provision by using the {{site.data.keyword.cloud_notm}} console, CLI, or API. You manage these resources in the VPC dashboard directly. When you create your cluster, worker nodes are automatically provisioned as [{{site.data.keyword.vsi_is_short}}](/docs/vpc?topic=vpc-about-advanced-virtual-servers) instances and you can view and manage these instances in Red Hat OpenShift on IBM Cloud only.
+
+To add persistent storage to your VPC cluster, you can enable the [{{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block). The add-on sets up pre-defined Kubernetes storage classes, the storage provider, and the storage driver in your cluster so that you can provision {{site.data.keyword.block_storage_is_short}} by using Kubernetes persistent volume claims (PVCs). To use the add-on, all your VPC subnets must be configured with a public network gateway.
+
+To secure your cluster network traffic, you can create access control lists (ACLs) for your VPC subnet. For more information, see [Security in your {{site.data.keyword.vpc_short}}](/docs/vpc?topic=vpc-security-in-your-vpc).
+
+To connect to a different VPC or to an on-prem data center, use the [VPN for VPC](/docs/vpc?topic=vpc-vpn-onprem-example) service.  
 
 
 

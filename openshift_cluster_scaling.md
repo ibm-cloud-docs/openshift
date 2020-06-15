@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -751,10 +751,17 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 **To limit pods to run on certain autoscaled worker pools**:
 
 1.  Create the worker pool with the label that you want to use. For example, your label might be `app: nginx`.
+  * Classic clusters:
     ```
     ibmcloud oc worker-pool create classic --name <name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_worker_nodes> --label <key>=<value>
     ```
     {: pre}
+  * VPC Generation 2 clusters:
+    ```
+    ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_worker_nodes> --label <key>=<value>
+    ```
+    {: pre}
+    
 2.  [Add the worker pool to the cluster autoscaler configuration](#ca_cm).
 3.  In your pod spec template, match the `nodeSelector` or `nodeAffinity` to the label that you used in your worker pool.
 

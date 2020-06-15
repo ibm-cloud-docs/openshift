@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -54,8 +54,11 @@ To securely expose your apps to external traffic, you can use choose from the fo
 <dt>[NodePort](/docs/openshift?topic=openshift-nodeport)</dt>
 <dd>When you expose apps with a NodePort service, a NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to the service. To access the service from outside the cluster, you use the public or private IP address of any worker node and the NodePort in the format <code>&lt;IP_address&gt;:&lt;nodeport&gt;</code>. However, the public and private IP addresses of the worker node are not permanent. When a worker node is removed or re-created, a new public and a new private IP address are assigned to the worker node. NodePorts are ideal for testing public or private access or providing access for only a short amount of time.</dd>
 
-<dt>[Network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer)</dt>
-<dd>Every standard cluster is provisioned with four portable public and four portable private IP addresses that you can use to create a layer 4 TCP/UDP network load balancer (NLB) for your app. You can customize your NLB by exposing any port that your app requires. The portable public and private IP addresses that are assigned to the NLB are permanent and do not change when a worker node is re-created in the cluster. If you create public NLBs, you can create a subdomain for your app that registers the public NLB IP addresses with a DNS entry. You can also enable health check monitors on the NLB IPs for each subdomain.</dd>
+<dt>LoadBalancer</dt>
+<dd>The LoadBalancer service type is implemented differently depending on your cluster's infrastructure provider.<ul>
+<li>**Classic clusters**: [Network load balancer (NLB)](/docs/openshift?topic=openshift-loadbalancer). Every standard cluster is provisioned with four portable public and four portable private IP addresses that you can use to create a layer 4 TCP/UDP network load balancer (NLB) for your app. You can customize your NLB by exposing any port that your app requires. The portable public and private IP addresses that are assigned to the NLB are permanent and do not change when a worker node is re-created in the cluster. If you create public NLBs, you can create a subdomain for your app that registers the public NLB IP addresses with a DNS entry. You can also enable health check monitors on the NLB IPs for each subdomain.</li>
+<li>**VPC clusters**: [Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas). When you create a Kubernetes LoadBalancer service for an app in your cluster, a layer 7 VPC load balancer is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. By default, the load balancer is also created with a hostname that you can use to access your app, but you can also create a subdomain for your app that creates a DNS entry.</li>
+</ul></dd>
 
 <dt>Ingress</dt>
 <dd>The Ingress service type is implemented differently depending on your cluster's OpenShift version.<ul>
@@ -83,15 +86,16 @@ Because routes and Ingress offer similar capabilities, both load balancing solut
 
 The following table compares the features of each app exposure method.
 
-|Characteristics|NodePort|NLB|Ingress controller|Route|
-|---------------|--------|---|------------------|-----|
-|Stable external IP| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|External hostname| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|HTTP(S) load balancing| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />*|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|TLS termination| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Custom routing rules| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Multiple apps per route or service| | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Consistent hybrid multicloud deployment| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Characteristics|NodePort|LoadBalancer (Classic - NLB)|LoadBalancer (VPC load balancer)|Ingress controller|Route|
+|---------------|------|--------|---|-----------|
+|Stable external IP| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|External hostname| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|SSL termination| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />*|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />*|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|HTTP(S) load balancing| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Custom routing rules| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Multiple apps per route or service| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|{{site.data.keyword.cloud_notm}} extensions like {{site.data.keyword.appid_short}}| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
+|Consistent hybrid multicloud deployment| | | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 {: class="simple-tab-table"}
 {: caption="Comparison of external networking for apps in OpenShift version 4.3 clusters." caption-side="top"}
 {: #roks-net-compare-43}
@@ -114,9 +118,8 @@ The following table compares the features of each app exposure method.
 {: tab-title="OpenShift 3.11"}
 {: tab-group="openshift-network-compare"}
 
-`*` An SSL certificate for HTTPS load balancing is provided by `ibmcloud oc nlb-dns` commands. In classic clusters, these commands are supported for public NLBs only.
+`*` SSL termination is provided by `ibmcloud oc nlb-dns` commands. In classic clusters, these commands are supported for public NLBs only.
 {: note}
-
 
 <br />
 
@@ -127,13 +130,15 @@ The following table compares the features of each app exposure method.
 Publicly expose an app in your cluster to the internet.
 {: shortdesc}
 
-Your worker nodes are connected to a public VLAN. The public VLAN determines the public IP address that is assigned to each worker node, which provides each worker node with a public network interface. Public networking services connect to this public network interface by providing your app with a public IP address and, optionally, a public URL.
+In **classic** clusters, your worker nodes are connected to a public VLAN. The public VLAN determines the public IP address that is assigned to each worker node, which provides each worker node with a public network interface. Public networking services connect to this public network interface by providing your app with a public IP address and, optionally, a public URL.
+
+In **VPC** clusters, your worker nodes are connected to private VPC subnets only. However, when you create public networking services, a VPC load balancer is automatically created. The VPC load balancer can route public requests to your app by providing your app a public URL. When an app is publicly exposed, anyone that has the public URL can send a request to your app.
 
 When an app is publicly exposed, anyone that has the public service IP address or the URL that you set up for your app can send a request to your app. For this reason, expose as few apps as possible. Expose an app to the public only when your app is ready to accept traffic from external web clients or users.
 
 The public network interface for worker nodes is protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked except for a few ports. These ports are opened so that IBM can monitor network traffic and automatically install security updates for the Kubernetes master, and so that connections can be established to public networking services. For more information about these policies, including how to modify them, see [Network policies](/docs/openshift?topic=openshift-network_policies#network_policies).
 
-### Public app networking
+### Public app networking for classic clusters
 {: #pattern_public}
 
 To make an app publicly available to the internet in a classic cluster, choose an app exposure method that uses routes, NodePorts, NLBs, or setting up Ingress. The following table describes each possible method, why you might use it, and how to set it up. For basic information about the networking services that are listed, see [Understanding Kubernetes service types](#external).
@@ -193,6 +198,48 @@ You cannot use multiple app exposure methods for one app.
 </tbody>
 </table>
 
+### Public app networking for VPC clusters
+{: #pattern_public_vpc}
+
+To make an app publicly available to the internet in a VPC cluster, choose an app exposure method that uses routes, VPC load balancers, or setting up Ingress. The following table describes each possible method, why you might use it, and how to set it up. For basic information about the networking services that are listed, see [Understanding Kubernetes service types](#external).
+{: shortdesc}
+
+You cannot use multiple app exposure methods for one app.
+{: note}
+
+<table summary="This table reads left to right about the name, characteristics, use cases, and deployment steps of public network deployment patterns.">
+<caption>Characteristics of public app exposure methods in Red Hat OpenShift on IBM Cloud</caption>
+<col width="10%">
+<col width="25%">
+<col width="25%">
+<thead>
+<th>Name</th>
+<th>Load-balancing method</th>
+<th>Use case</th>
+<th>Implementation</th>
+</thead>
+<tbody>
+<tr>
+<td>Route</td>
+<td>HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules</td>
+<td>Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain OpenShift-native; for example, you can use the OpenShift web console to create and manage routes.</td>
+<td>[Create a route by using the default public router in clusters with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#routes-public-classic), or [create a route by using a custom public router in clusters with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-public-vpc-privse).</td>
+</tr>
+<tr>
+<td>VPC load balancer</td>
+<td>Basic load balancing that exposes the app with a hostname</td>
+<td>Quickly expose one app to the public with a VPC load balancer-assigned hostname.</td>
+<td>[Create a public `LoadBalancer` service](/docs/openshift?topic=openshift-vpc-lbaas) in your cluster. A multizonal VPC load balancer is automatically created in your VPC that assigns a hostname to your `LoadBalancer` service for your app.</td>
+</tr>
+<tr>
+<td>OpenShift version 4.3 or later clusters: Ingress controller</td>
+<td>HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules</td>
+<td>Implement custom routing rules and SSL termination for multiple apps.</td>
+<td>[Create an Ingress resource for the default public Ingress controller in clusters with a public service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public), or [create an Ingress resource for a custom public Ingress controller in clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#privse-public).</td>
+</tr>
+</tbody>
+</table>
+
 <br />
 
 
@@ -209,9 +256,12 @@ As an example, say that you create a private load balancer for your app. This pr
 * Any pod in any cluster in the same {{site.data.keyword.cloud_notm}} account.
 * If you're not in the {{site.data.keyword.cloud_notm}} account but still behind the company firewall, any system through a VPN connection to the subnet that the load balancer IP is on.
 * If you're in a different {{site.data.keyword.cloud_notm}} account, any system through a VPN connection to the subnet that the load balancer IP is on.
-* If you have [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation) enabled, any system that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account.
+* In classic clusters, if you have [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation) enabled, any system that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account.
+* In VPC clusters:
+  * If traffic is permitted between VPC subnets, any system in the same VPC.
+  * If traffic is permitted between VPCs, any system that has access to the VPC that the cluster is in.
 
-### Private app networking
+### Private app networking for classic clusters
 {: #private_both_vlans}
 
 When your worker nodes are connected to both a public and a private VLAN, you can make your app accessible from a private network only by creating private routes, NodePorts, NLBs, or setting up Ingress. Then, you can create Calico policies to block public traffic to the services.
@@ -236,4 +286,21 @@ Check out the following methods for private app networking:
 <br />
 
 
+
+
+### Private app networking for VPC clusters
+{: #private_vpc}
+
+To make an app available over a private network only in a VPC cluster, choose a load-balancing deployment pattern based on your cluster's service endpoint setup: public and private service endpoint, or private service endpoint only. For each service endpoint setup, the following table describes each possible app exposure method, why you might use it, and how to set it up.
+{: shortdesc}
+
+<p class="note"> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Only version 4.3 and later clusters can be created on VPC infrastructure. The following methods do not apply to version 3.11 clusters, which can be created on classic infrastructure only.</br></br>You cannot use multiple app exposure methods for one app.</p>
+
+|Name|Load-balancing method|Use case|Implementation|
+|----|---------------------|--------|--------------|
+|Route|HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain OpenShift-native; for example, you can use the OpenShift web console to create and manage routes.|[Create a route by using the default private router in clusters with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43), or [create a route by using a custom private router in clusters with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#routes-private-vpc-privse).|
+|NodePort|Port on a worker node that exposes the app on the worker's private IP address|Test private access to one app or provide access for only a short amount of time.|[Create a private NodePort service](/docs/openshift?topic=openshift-nodeport).|
+|VPC load balancer|Basic load balancing that exposes the app with a private hostname|Quickly expose one app to a private network with a VPC load balancer-assigned private hostname.|[Create a private `LoadBalancer` service](/docs/openshift?topic=openshift-vpc-lbaas) in your cluster. A multizonal VPC load balancer is automatically created in your VPC that assigns a hostname to your `LoadBalancer` service for your app.|
+|Ingress controller|HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps.|[Create an Ingress resource for the default private Ingress controller in clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#privse-private), or [create an Ingress resource for a custom private Ingress controller in clusters with a public service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private).|
+{: caption="Private network deployment patterns for a VPC cluster" caption-side="top"}
 

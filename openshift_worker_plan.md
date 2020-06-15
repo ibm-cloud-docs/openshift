@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -48,7 +48,7 @@ Trying to plan how many worker nodes your need in your cluster? Check out [Sizin
 
 ## Available hardware for worker nodes
 {: #shared_dedicated_node}
-The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, and the Red Hat OpenShift on IBM Cloud location where you want to create your cluster.
+The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, the infrastructure provider that you want to use, and the Red Hat OpenShift on IBM Cloud location where you want to create your cluster.
 {: shortdesc}
 
 <img src="images/cs_clusters_hardware.png" width="700" alt="Hardware options for worker nodes in a standard cluster" style="width:700px; border-style: none"/>
@@ -56,7 +56,7 @@ The worker node flavors and isolation levels that are available to you depend on
 **What flavors are available to me?** </br>
 Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes. If you create a free classic cluster, your cluster is provisioned with the smallest virtual worker node flavor on shared infrastructure.
 
-
+VPC clusters can be provisioned as standard clusters on shared [virtual](#vm) worker nodes only, and must be created in one of the supported [multizone-capable metro cities](/docs/openshift?topic=openshift-regions-and-zones#zones). Free VPC clusters are not supported.
 
 **Can I combine different flavors in a cluster?** </br>
 Yes. To add different flavors to your cluster, you must [create another worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create). You cannot resize existing worker pools to have different compute resources such as CPU or memory.
@@ -70,7 +70,7 @@ The secondary disk of the worker node is encrypted. For more information, see [O
 **How do I manage my worker nodes?** </br>
 Worker nodes in classic clusters are provisioned into your {{site.data.keyword.cloud_notm}} account. You can manage your worker nodes by using Red Hat OpenShift on IBM Cloud, but you can also use the [classic infrastructure dashboard](https://cloud.ibm.com/classic/) in the {{site.data.keyword.cloud_notm}} console to work with your worker node directly.  
 
-
+Unlike classic clusters, the worker nodes of your VPC cluster are not listed in the [VPC infrastructure dashboard](https://cloud.ibm.com/vpc/overview). Instead, you manage your worker nodes with Red Hat OpenShift on IBM Cloud only. However, your worker nodes might be connected to other VPC infrastructure resources, such as VPC subnets or VPC Block Storage. These resources are included in the VPC infrastructure dashboard and can be managed separately from there. 
 
 **What limitations do I need to be aware of?** </br>
 Kubernetes limits the maximum number of worker nodes that you can have in a cluster. Review [worker node and pod quotas](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external} for more information.
@@ -93,7 +93,7 @@ With VMs, you get greater flexibility, quicker provisioning times, and more auto
 {: shortdesc}
 
 **Do I want to use shared or dedicated hardware?**</br>
-When you create a standard classic cluster, you must choose whether you want the underlying hardware to be shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or to be dedicated to you only (single tenancy). 
+When you create a standard classic cluster, you must choose whether you want the underlying hardware to be shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or to be dedicated to you only (single tenancy). VPC standard clusters can be provisioned on shared infrastructure (multi tenancy) only.
 
 To achieve HIPAA and PCI compliance for your environment, make sure to use [bare metal machines](/docs/openshift?topic=openshift-planning_worker_nodes#bm) for your worker nodes. With bare metal machines, all compute resources are dedicated exclusively to you, and you can control the isolation and resource consumption of your workloads. 
 {: important}
@@ -103,18 +103,21 @@ To achieve HIPAA and PCI compliance for your environment, make sure to use [bare
 
 Shared nodes are usually less costly than dedicated nodes because the costs for the underlying hardware are shared among multiple customers. However, when you decide between shared and dedicated nodes, you might want to check with your legal department to discuss the level of infrastructure isolation and compliance that your app environment requires.
 
-Some classic worker node flavors are available for only one type of tenancy setup. For example, `m3c` VMs can be provisioned in a shared tenancy setup only.
+Some classic worker node flavors are available for only one type of tenancy setup. For example, `m3c` VMs can be provisioned in a shared tenancy setup only. Additionally, VPC clusters are available as only shared virtual machines.
 {: note}
 
 **How does storage work for VMs?**</br>
 Every VM comes with an attached disk for storage of information that the VM needs to run, such as OS file system, container runtime, and the `kubelet`.  Local storage on the worker node is for short-term processing only, and the storage disks are wiped when you delete, reload, replace, or update the worker node. For persistent storage solutions for your apps, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
-Classic VMs have two attached disks. The primary storage disk has 25 GB for the OS file system, and the secondary storage disk has 100 GB for data such as the container runtime and the `kubelet`. For reliability, the primary and secondary storage volumes are local disks instead of storage area networking (SAN). Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. The secondary disk is encrypted by default.
+ Additionally, classic and VPC infrastructure differ in the disk setup.
+
+* **Classic VMs**: Classic VMs have two attached disks. The primary storage disk has 25 GB for the OS file system, and the secondary storage disk has 100 GB for data such as the container runtime and the `kubelet`. For reliability, the primary and secondary storage volumes are local disks instead of storage area networking (SAN). Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. The secondary disk is encrypted by default.
+* **VPC compute VMs**: VPC VMs have one primary disk that is a block storage volume that is attached via the network. The storage layer is not separated from the other networking layers, and both network and storage traffic are routed on the same network. To account for network latency, the storage disks have a maximum of up to 3000 IOPS. The primary storage disk is used for storing data such as the OS file system, container runtime, and `kubelet`, and is [encrypted by default](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
 
 **What virtual machine flavors are available?**</br>
 {: #vm-table}
 
-The following table shows available worker node flavors for classic clusters. Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`.
+The following table shows available worker node flavors for classic and VPC clusters. Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`.
 
 If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker node flavors, you can [update your cluster to have Ubuntu 18 `x3c` worker nodes](/docs/openshift?topic=openshift-update#machine_type).
 {: tip}
@@ -139,6 +142,32 @@ If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker nod
 {: tab-group="vm-worker-flavors"}
 
 
+| Name and use case | Cores / Memory | Primary disk | Network speed `*` |
+|:-----------------|:-----------------|:------------------|:-------------|
+| **Virtual, b1.8x32**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 8 / 32 GB | 100 GB | 1000 Mbps |
+| **Virtual, b2.4x16**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for testing, development, and other light workloads. | 4 / 16 GB | 100 GB | 1000 Mbps |
+| **Virtual, b2.8x32**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 8 / 32 GB | 100 GB | 1000 Mbps |
+| **Virtual, b2.16x64**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for mid-sized workloads.  | 16 / 64 GB | 100 GB | 1000 Mbps |
+| **Virtual, b2.32x128**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for large-sized workloads.| 32 / 128 GB | 100 GB | 1000 Mbps |
+| **Virtual, b2.48x192**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for large-sized workloads.| 48 / 192 GB | 100 GB | 1000 Mbps |
+| **Virtual, c2.4x8**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for light-sized workloads. | 4 / 8 GB | 100 GB | 1000 Mbps |
+| **Virtual, c2.8x16**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 8 / 16 GB | 100 GB | 1000 Mbps |
+| **Virtual, c2.16x32**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid-sized workloads. | 16 / 32 GB | 100 GB | 1000 Mbps |
+| **Virtual, c2.32x64**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid to large-sized workloads. | 32 / 64 GB | 100 GB | 1000 Mbps |
+| **Virtual, m2.4x32**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for light to mid-sized workloads that require more memory. | 4 / 32 GB | 100 GB | 1000 Mbps |
+| **Virtual, m2.8x64**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for mid-sized workloads that require more memory. | 8 / 64 GB | 100 GB | 1000 Mbps |
+| **Virtual, m2.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for mid to large-sized workloads that require more memory. | 16 / 128 GB | 100 GB | 1000 Mbps |
+| **Virtual, m2.32x256**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 32 / 256 GB | 100 GB | 1000 Mbps |
+{: class="simple-tab-table"}
+{: caption="Available worker node flavors for VPC Gen 2 compute clusters" caption-side="top"}
+{: #vpc-gen2-worker-vm-flavors}
+{: tab-title="VPC Gen 2 compute"}
+{: tab-group="vm-worker-flavors"}
+
+`*` VPC Gen 2: For more information about network performance caps for virtual machines, see [VPC Gen 2 compute profiles](/docs/vpc?topic=vpc-profiles). The network speeds refer to the speeds of the worker node interfaces. The maximum speed available to your worker nodes is `16Gbps`. Because IP in IP encapsulation is required for traffic between pods that are on different VPC Gen 2 worker nodes, data transfer speeds between pods on different worker nodes might be slower, about half the compute profile network speed. Overall network speeds for apps that you deploy to your cluster depend on the worker node size and application's architecture.
+
+
+
 
 ## Physical machines (bare metal)
 {: #bm}
@@ -146,6 +175,9 @@ If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker nod
 You can provision your worker node as a single-tenant physical server, also referred to as bare metal.
 {: shortdesc}
 
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Physical machines are available for classic clusters only and are not supported in VPC clusters.
+{: note}
 
 
 **How is bare metal different than VMs?**</br>
@@ -160,7 +192,7 @@ Yes, with bare metal worker nodes, you can use {{site.data.keyword.datashield_fu
 For supported flavors, see the [{{site.data.keyword.datashield_short}} documentation](/docs/data-shield?topic=data-shield-getting-started).
 
 **Bare metal sounds awesome! What's stopping me from ordering one right now?**</br>
-Bare metal servers are more expensive than virtual servers, and are best suited for high-performance apps that need more resources and host control.
+Bare metal servers are more expensive than virtual servers, and are best suited for high-performance apps that need more resources and host control. Bare metal worker nodes are also not available for VPC clusters.
 
 Bare metal servers are billed monthly. If you cancel a bare metal server before the end of the month, you are charged through the end of that month. After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.
 {: important}
@@ -229,6 +261,12 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 Software-defined storage (SDS) flavors are physical machines that are provisioned with additional raw disks for physical local storage. Unlike the primary and secondary local disk, these raw disks are not wiped during a worker node update or reload. Because data is co-located with the compute node, SDS machines are suited for high-performance workloads.
 {: shortdesc}
 
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Software-defined storage flavor are available for classic clusters only and are not supported in VPC clusters.
+{: note}
+  
+Because you have full control over the isolation and resource consumption for your workloads, you can use SDS machines to achieve HIPAA and PCI compliance for your environment.
+{: important}
 
 
 **When do I use SDS flavors?**</br>

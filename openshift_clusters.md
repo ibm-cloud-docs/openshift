@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -45,7 +45,7 @@ After [getting started](/docs/containers?topic=containers-getting-started), you 
 
 1.  [Prepare your account to create clusters](/docs/openshift?topic=openshift-clusters#cluster_prepare). This step includes creating a billable account, setting up an API key with infrastructure permissions, making sure that you have Administrator access in {{site.data.keyword.cloud_notm}} IAM, planning resource groups, and setting up account networking.
 2.  [Decide on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level). This step includes planning cluster network and HA setup, estimating costs, and if applicable, allowing network traffic through a firewall.
-3.  Create your [classic cluster](#clusters_standard) by following the steps in the {{site.data.keyword.cloud_notm}} console or CLI.
+3.  Create your [VPC Gen2](#clusters_vpcg2) or [classic](#clusters_standard) cluster by following the steps in the {{site.data.keyword.cloud_notm}} console or CLI.
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change). Instead, you can create a version 4 cluster.
 {: deprecated}
@@ -61,7 +61,7 @@ Have you created a cluster before and are just looking for quick example command
 
 
 
-
+**Classic clusters**:
 * Classic cluster, shared virtual machine:
    ```
    ibmcloud oc cluster create classic --name my_cluster --version 4.3_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
@@ -83,6 +83,19 @@ Have you created a cluster before and are just looking for quick example command
    ```
    {: pre}
 
+
+
+**VPC clusters**:
+*  <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Generation 2 compute cluster:
+    ```
+    ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.3_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_ID>--flavor b2.4x16 --workers 3
+    ```
+    {: pre}
+*  For a VPC multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones), [add zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone):
+   ```
+   ibmcloud oc zone add vpc-gen2 --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <VPC_SUBNET_ID>
+   ```
+   {: pre}
 
 
 <br />
@@ -110,6 +123,11 @@ Prepare your {{site.data.keyword.cloud_notm}} account for {{site.data.keyword.co
   * You cannot change a cluster's resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` [command](/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_service_bind) to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that do not use resource groups like {{site.data.keyword.registrylong_notm}} or that do not need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group.
   * Consider giving clusters unique names across resource groups and regions in your account to avoid naming conflicts. You cannot rename a cluster.
 
+5. **VPC clusters only**: Set up your IBM Cloud infrastructure networking to allow worker-to-master and user-to-master communication. Your VPC clusters are created with a public and a private service endpoint by default.
+    1. Enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) in your IBM Cloud account.
+    2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
+    3. Optional: If you want your VPC clusters to communicate with classic clusters over the private network interface, you can choose to set up classic infrastructure access from the VPC that your cluster is in. Note that you can set up classic infrastructure access for only one VPC per region and [Virtual Routing and Forwarding (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) is required in your {{site.data.keyword.cloud_notm}} account. For more information, see [Setting up access to your Classic Infrastructure from VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure).
+
 <br />
 
 
@@ -124,7 +142,7 @@ After you set up your account to create clusters, decide on the setup for your c
 <p class="note">OpenShift clusters are available only as standard clusters. You cannot get a [free](/docs/openshift?topic=openshift-faqs#faq_free) OpenShift cluster.</p>
 
 
-<img usemap="#cluster-plan-map" border="0" class="image" src="images/cluster-plan-dt.png" alt="This image walks you through choosing the setup that you want for your cluster."/>
+<img usemap="#cluster-plan-map" border="0" class="image" src="images/cluster-plan-dt-vpc.png" alt="This image walks you through choosing the setup that you want for your cluster."/>
 <map name="cluster-plan-map">
     <area target="" alt="Free and standard cluster comparison" title="Free and standard cluster comparison" href="/docs/containers?topic=containers-cs_ov#cluster_types" coords="43,9,361,106" shape="rect">
     <area target="" alt="OpenShift and Kubernetes comparison" title="OpenShift and Kubernetes comparison" href="/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes" coords="110,128,467,224" shape="rect">
@@ -139,7 +157,6 @@ After you set up your account to create clusters, decide on the setup for your c
     <area target="" alt="Estimate costs (cluster create page)" title="Estimate costs (cluster create page)" href="https://cloud.ibm.com/kubernetes/catalog/create" coords="248,732,426,776" shape="rect">
 </map>
 
-
 <br />
 
 
@@ -151,7 +168,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 
 
 
-## Creating a standard classic cluster in the console
+### Creating a standard classic cluster in the console
 {: #clusters_ui}
 
 Create your single zone or multizone classic OpenShift cluster by using the {{site.data.keyword.cloud_notm}} console.
@@ -190,7 +207,7 @@ Create your single zone or multizone classic OpenShift cluster by using the {{si
 <br />
 
 
-## Creating a standard classic cluster in the CLI
+### Creating a standard classic cluster in the CLI
 {: #clusters_cli_steps}
 
 Create your single zone or multizone classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
@@ -367,6 +384,223 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 <br />
 
 
+## Creating a standard VPC Gen 2 compute cluster
+{: #clusters_vpcg2}
+
+Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC Generation 2 compute cluster, and customize your cluster to meet the high availability and security requirements of your apps.
+{: shortdesc}
+
+
+
+### Creating a standard VPC Gen 2 compute cluster in the console
+{: #clusters_vpcg2_ui}
+
+Create your single zone or multizone VPC Generation 2 compute cluster by using the {{site.data.keyword.cloud_notm}} console.
+{: shortdesc}
+
+Your VPC cluster is created with both a public and a private service endpoint. Want to create a VPC cluster with no public service endpoint and only a private service endpoint? Create the cluster [in the CLI](#clusters_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag.
+{: tip}
+
+1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
+2. [Create a Virtual Private Cloud (VPC) on generation 2 compute](https://cloud.ibm.com/vpc/provision/vpc){: external} with a subnet that is located in the VPC zone where you want to create the cluster.
+  * Verify that the banner at the beginning of the new VPC page is set to **Gen 2 compute**. If **Gen 1 compute** is set, click **Switch to Gen 2 compute**.
+  * During the VPC creation, you can create one subnet only. Subnets are specific to a zone. If you want to create a multizone cluster, create the subnet in one of the multizone-capable zones that you want to use. Later, you manually create the subnets for the remaining zones that you want to include in your cluster.<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
+  * To run default OpenShift components such as the web console or OperatorHub, attach a public gateway to one or more subnets.
+  * For more information, see [Creating a VPC using the IBM Cloud console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) and [Overview of VPC networking in Red Hat OpenShift on IBM Cloud: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
+3. If you want to create a multizone cluster, create the subnets for all of the remaining zones that you want to include in your cluster. You must have one VPC subnet in all of the zones where you want to create your multizone cluster.
+   1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets){: external}, click **New subnet**.
+   2. Verify that the banner at the beginning of the new subnet page is set to **Gen 2 compute**. If **Gen 1 compute** is set, click **Switch to Gen 2 compute**.
+   3. Enter a name for your subnet and select the name of the VPC that you created.
+   4. Select the location and zone where you want to create the subnet.
+   5. Specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later. If you enter a specific IP range, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+   6. Attach a public network gateway to your subnet. A public network gateway is required when you want your cluster to access public endpoints, such as default OpenShift components like the web console and OperatorHub. Make sure to review the [VPC networking basics](/docs/openshift?topic=openshift-plan_clusters#plan_vpc_basics) to understand when a public network gateway is required and how you can set up your cluster to limit public access to one or more subnets only.
+   7. Click **Create subnet**.
+4. To allow any traffic requests to apps that you deploy on your worker nodes, modify the VPC's default security group.
+    1. From the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}, click the name of the **Default Security Group** for the VPC that you created.
+    2. In the **Inbound rules** section, click **New rule**.
+    3. Choose the **TCP** protocol, enter `30000` for the **Port min** and `32767` for the **Port max**, and leave the **Any** source type selected.
+    4. Click **Save**.
+    5. If you require VPC VPN access or classic infrastructure access into this cluster, repeat these steps to add a rule that uses the **UDP** protocol, `30000` for the **Port min**, `32767` for the **Port max**, and the **Any** source type.
+5. From the [{{site.data.keyword.cloud_notm}} Red Hat OpenShift on IBM Cloud Clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
+6. Configure your cluster environment.
+   3. Select **VPC** infrastructure.
+   4. From the **Virtual private cloud** drop-down menu, select the Gen 2 VPC that you created earlier.
+   5. From the **Cloud Object Storage** drop-down menu, select the standard instance where you want to create a bucket to back up the images from your cluster's internal registry.
+   5. Give your cluster a unique name. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
+ **Note**: Changing the unique ID or domain name that is assigned during cluster creation blocks the OpenShift master from managing your cluster.
+   6. **Optional**: Add a [tag](/docs/resources?topic=resources-tag) to your cluster to help manage {{site.data.keyword.cloud_notm}} resources, such as the team or billing department that uses the cluster.
+   7. Select a resource group in which to create your cluster.
+      * A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group.
+      * To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#platform) for the resource group.
+      * The cluster can be in a different resource group than the VPC.
+7. Select the location to deploy your cluster and set up your cluster for high availability.
+   1. Select the worker node zones where you want to create worker nodes. To create a [single zone cluster](/docs/openshift?topic=openshift-ha_clusters#single_zone), select one zone only. To create a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone), select multiple zones.
+   2. For each of the selected zones, choose the VPC subnet that you want to use for your worker nodes. The VPC subnets that you created earlier are automatically loaded for the selected worker node zones.
+9. Configure your default worker pool. Worker pools are groups of worker nodes that share the same configuration. You can always add more worker pools to your cluster later.
+   1. Select **OpenShift version 4.3** or later.
+   1. Use the filter options to limit the number of shared virtual server flavors that are displayed to you.
+   2. Select a flavor. The flavor determines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to your apps. VPC Gen 2 worker nodes can be created as virtual machines on shared infrastructure only. Bare metal or software-defined storage machines are not supported. For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). After you create your cluster, you can add different flavors by adding a worker node or worker pool to the cluster.
+   3. Specify the number of worker nodes that you need in the cluster. The number of workers that you enter is replicated across the number of zones that you selected. For example, if you selected two zones and want to create three worker nodes, a total of six worker nodes are provisioned in your cluster with three worker nodes in each zone.
+10. Click **Create cluster**. A worker pool is created with the number of workers that you specified. You can see the progress of the worker node deployment in the **Worker nodes** tab.
+   - When the deployment is done, you can see that your cluster is ready in the **Overview** tab. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
+   - Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the OpenShift master from managing your cluster.<p class="tip">Is your cluster not in a **deployed** state? Check out the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).</p>
+11. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster). For more possibilities, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
+
+
+### Creating standard VPC Gen 2 compute clusters from the CLI
+{: #cluster_vpcg2_cli}
+
+Create your single zone or multizone VPC Generation 1 compute cluster by using the {{site.data.keyword.cloud_notm}} CLI.
+{: shortdesc}
+
+**Before you begin**:
+* Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
+* Install the {{site.data.keyword.cloud_notm}} CLI and the [Red Hat OpenShift on IBM Cloud plug-in](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_install).
+* Install the [VPC CLI plug-in](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#cli-ref-prereqs).
+
+<br>
+
+**To create a VPC cluster from the CLI**:
+
+1. In your terminal, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the --sso flag to log in.
+   ```
+   ibmcloud login -r <region> [--sso]
+   ```
+   {: pre}
+
+2. Target the {{site.data.keyword.cloud_notm}} infrastructure generation **2** for VPC.
+   ```
+   ibmcloud is target --gen 2
+   ```
+   {: pre}
+
+3. [Create a Gen 2 VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-vpc-cli) in the same region where you want to create the cluster.
+4. [Create a Gen 2 subnet for your VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli).
+  * If you want to create a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone), repeat this step to create additional subnets in all of the zones that you want to include in your cluster.
+  * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
+  * Do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+  * To run default OpenShift components such as the web console or OperatorHub, [attach a public gateway](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#attach-public-gateway-cli) to one or more subnets.
+  * **Important**: Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
+  * For more information, see [Overview of VPC networking in Red Hat OpenShift on IBM Cloud: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
+5. To allow any traffic requests to apps that you deploy on your worker nodes, modify the VPC's default security group.
+    1. List your security groups. For the **VPC** that you created, note the ID of the default security group.
+      ```
+      ibmcloud is security-groups
+      ```
+      {: pre}
+      Example output with only the default security group of a randomly generated name, `preppy-swimmer-island-green-refreshment`:
+      ```
+      ID                                     Name                                       Rules   Network interfaces         Created                     VPC                      Resource group
+      1a111a1a-a111-11a1-a111-111111111111   preppy-swimmer-island-green-refreshment    4       -                          2019-08-12T13:24:45-04:00   <vpc_name>(bbbb222b-.)   c3c33cccc33c333ccc3c33cc3c333cc3
+      ```
+      {: screen}
+
+    2. Add a security group rule to allow inbound TCP traffic on ports 30000-32767.
+      ```
+      ibmcloud is security-group-rule-add <security_group_ID> inbound tcp --port-min 30000 --port-max 32767
+      ```
+      {: pre}
+
+    3. If you require VPC VPN access or classic infrastructure access into this cluster, add a security group rule to allow inbound UDP traffic on ports 30000-32767.
+      ```
+      ibmcloud is security-group-rule-add <security_group_ID> inbound udp --port-min 30000 --port-max 32767
+      ```
+      {: pre}
+6. Create the cluster in your VPC. You can use the `cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
+    ```
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.3_openshift --provider vpc-gen2 --cos-instance <cos_ID> [--workers <number_workers_per_zone>] [--disable-public-service-endpoint]
+    ```
+    {: pre}
+
+    <table>
+    <caption>Cluster create components</caption>
+    <col width="25%">
+    <thead>
+    <th>Parameter</th>
+    <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>--name <em>&lt;cluster_name&gt;</em></code></td>
+    <td>Specify a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
+</td>
+    </tr>
+    <tr>
+    <td><code>--zone <em>&lt;zone&gt;</em></code></td>
+    <td>Specify the {{site.data.keyword.cloud_notm}} zone where you want to create your cluster. Make sure that you use a zone that matches the metro city location that you selected when you created your VPC and that you have an existing VPC subnet for that zone. For example, if you created your VPC in the Dallas metro city, your zone must be set to <code>us-south-1</code>, <code>us-south-2</code>, or <code>us-south-3</code>. To list available VPC cluster zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>. Note that when you select a zone outside of your country, you might require legal authorization before data can be physically stored in a foreign country.</td>
+    </tr>
+    <tr>
+    <td><code>--vpc-id <em>&lt;vpc_ID&gt;</em></code></td>
+    <td>Enter the ID of the VPC that you created earlier. To retrieve the ID of your VPC, run <code>ibmcloud oc vpcs</code>. </td>
+    </tr>
+    <tr>
+    <td><code>--subnet-id <em>&lt;subnet_ID&gt;</em></code></td>
+    <td>Enter the ID of the VPC subnet that you created earlier. When you create a VPC cluster from the CLI, you can initially create your cluster in one zone with one subnet only. To create a multizone cluster, [add more zones](/docs/openshift?topic=openshift-add_workers) with the subnets that you created earlier to your cluster after the cluster is created. To list the IDs of your subnets, run <code> ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt,VPC_ID&gt; --zone &lt;subnet_zone&gt; </code>.  </td>
+    </tr>
+    <tr>
+    <td><code>--flavor <em>&lt;worker_flavor&gt;</em></code></td>
+    <td>Enter the worker node flavor that you want to use. The flavor determines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to your apps. VPC Gen 2 worker nodes can be created as virtual machines on shared infrastructure only. Bare metal or software-defined storage machines are not supported.  For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). To view available flavors, first list available VPC zones with <code>ibmcloud oc zone ls --provider vpc-gen2</code>, and then use the zone to list supported flavors by running <code>ibmcloud oc flavors --zone &lt;VPC_zone&gt; --provider vpc-gen2</code>. After you create your cluster, you can add different flavors by adding a worker node or worker pool to the cluster.</td>
+    </tr>
+    <tr>
+    <td><code>--version 4.3_openshift</code></td>
+    <td>VPC Gen 2 clusters are supported for OpenShift version 4.3 only.</td>
+    </tr>  
+    <tr>
+    <td><code>--provider <em>&lt;vpc-gen2&gt;</em></code></td>
+    <td>Enter the generation of {{site.data.keyword.cloud_notm}} infrastructure that you want to use. To create a VPC Generation 2 compute cluster, you must enter <strong>vpc-gen2</strong>.</td>
+    </tr>
+    <tr>
+    <td><code>--cos-instance <em>&lt;cos_ID&gt;</em></code></td>
+    <td>Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run <code>ibmcloud resource service-instances --long</code> and find the **ID** of your object storage instance. To create a standard object storage instance, run <code>ibmcloud resource service-instance-create <name> cloud-object-storage standard global</code> and note its **ID**.</td>
+    </tr>
+    <tr>
+    <td><code>--workers <em>&lt;number&gt;</em></code></td>
+    <td>Specify the number of worker nodes to include in the cluster. Note that you must have at least 2 worker nodes per zone to run the default OpenShift components.</td>
+    </tr>
+    <tr>
+    <td><code>--disable-public-service-endpoint</code></td>
+    <td>Include this option in your command to create your VPC cluster with a private service endpoint only. If you do not include this option, your cluster is set up with a public and a private service endpoint. The service endpoint determines how your OpenShift master and the worker nodes communicate, how your cluster access other {{site.data.keyword.cloud_notm}} services and apps outside the cluster, and how your users connect to your cluster. For more information, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters#vpc-pgw).<p class="important">If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</p></td>
+    </tr>
+    </tbody></table>
+7. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.
+    ```
+    ibmcloud oc cluster ls
+    ```
+    {: pre}
+
+    When the provisioning of your OpenShift master is completed, the status of your cluster changes to **deployed**. After the OpenShift master is ready, your worker nodes are set up.
+    ```
+    Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
+    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          mil01     1.17.6      Default               vpc-classic
+    ```
+    {: screen}
+
+    Is your cluster not in a **deployed** state? Check out the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
+    {: tip}
+
+8. Check the status of the worker nodes.
+   ```
+   ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+   ```
+   {: pre}
+
+   When the worker nodes are ready, the worker node **State** changes to `deployed` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
+   ```
+   ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.17.6
+   ```
+   {: screen}
+
+   Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the OpenShift master from managing your cluster.
+   {: important}
+
+9. **Optional**: If you created your cluster in a [multizone metro location](/docs/openshift?topic=openshift-regions-and-zones#zones), you can [spread the default worker pool across zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to increase the cluster's availability.
+
+10. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster).
+
+Your cluster is ready for your workloads! You might also want to [add a tag to your cluster](/docs/openshift?topic=openshift-add_workers#cluster_tags), such as the team or billing department that uses the cluster, to help manage {{site.data.keyword.cloud_notm}} resources. For more ideas of what to do with your cluster, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
+
+<br />
 
 
 
@@ -382,10 +616,16 @@ When the cluster is up and running, you can check out the following cluster admi
 - Control who can create pods in your cluster with [pod security policies](/docs/containers?topic=containers-psp).
 
 Then, you can check out the following network configuration steps for your cluster setup:
+* Classic clusters:
   * Isolate networking workloads to edge worker nodes [in classic clusters without a gateway](/docs/openshift?topic=openshift-edge).
   * Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access).
   * Connect your cluster with services in private networks outside of your {{site.data.keyword.cloud_notm}} account by setting up [{{site.data.keyword.cloud_notm}} Direct Link](/docs/direct-link?topic=direct-link-get-started-with-ibm-cloud-direct-link) or the [strongSwan IPSec VPN service](/docs/openshift?topic=openshift-vpn).
   * Create Calico host network policies to isolate your cluster on the [public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public) and on the [private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
+* VPC clusters:
+  * [Back up your internal image registry to {{site.data.keyword.cos_full_notm}}.](/docs/openshift?topic=openshift-registry#cos_image_registry)
+  * Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access).
+  * Connect your cluster with services in private networks outside of your {{site.data.keyword.cloud_notm}} account or with resources in other VPCs by [setting up the {{site.data.keyword.vpc_short}} VPN](/docs/openshift?topic=openshift-vpc-vpnaas).
+  * [Create access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy) to control ingress and egress traffic to your VPC subnets.
 
 
 

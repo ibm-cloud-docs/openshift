@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -35,10 +35,11 @@ subcollection: openshift
 
 
 
-# About network load balancers (NLBs)
+# Classic: About network load balancers (NLBs)
 {: #loadbalancer-about}
 
-
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Network load balancers can be created in classic clusters only. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas).
+{: note}
 
 When you create a standard cluster, {{site.data.keyword.openshiftlong}} automatically provisions a portable public subnet and a portable private subnet.
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -43,7 +43,7 @@ subcollection: openshift
 {: #choose_storage_solution}
 
 
-Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand your app requirements, the type of data that you want to store, and how often you want to access this data.
+Before you can decide what type of storage is the right solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand the {{site.data.keyword.cloud_notm}} infrastructure provider, your app requirements, the type of data that you want to store, and how often you want to access this data.
 
 1. Decide whether your data must be permanently stored, or if your data can be removed at any time.
    - **Persistent storage:** Your data must still be available, even if the container, the worker node, or the cluster is removed. Use persistent storage in the following scenarios:
@@ -122,6 +122,11 @@ The following image shows available non-persistent data storage options in Red H
 <td style="text-align:left">Multizone capable</td>
 <td style="text-align:left">No</td>
 <td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Supported in VPC clusters</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
 <td style="text-align:left">Supported OpenShift versions</td>
@@ -212,13 +217,18 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <thead>
 <th style="text-align:left">Characteristics</th>
 <th style="text-align:left">Classic File Storage</th>
-<th style="text-align:left">Classic Block Storage </th>
+<th style="text-align:left">Classic Block Storage / VPC Block Storage</th>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">Multizone-capable</td>
 <td style="text-align:left">No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication.</td>
 <td style="text-align:left">No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication.</td>
+</tr>
+<tr>
+<td style="text-align:left">Supported in VPC clusters</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
 </tr>
 <tr>
 <td style="text-align:left">Supported OpenShift versions</td>
@@ -278,12 +288,13 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <tr>
 <td style="text-align:left">Encryption</td>
 <td style="text-align:left">At rest</td>
-<td style="text-align:left"><strong>Classic Block Storage</strong>: Encryption at rest.</td>
+<td style="text-align:left"><strong>Classic Block Storage</strong>: Encryption at rest.</br><strong>VPC Block Storage</strong>: Encryption in transit with Key Protect.</td>
 </tr>
 <tr>
 <td style="text-align:left">Backup and recovery</td>
 <td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([oc cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
-   <td style="text-align:left"><strong>Classic Block Storage</strong>: <ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([oc cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
+   <td style="text-align:left"><strong>Classic Block Storage</strong>: <ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([oc cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul>
+<p><strong>VPC Block Storage</strong>: Kubernetes [`oc cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command</p></td>
 </tr>
 <tr>
 <td style="text-align:left">Common use cases</td>
@@ -330,6 +341,12 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <td style="text-align:left">Multizone-capable</td>
 <td style="text-align:left">Yes</td>
 <td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Supported in VPC clusters</td>
+<td style="text-align:left">Yes</td>
+   <td style="text-align:left">No</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>

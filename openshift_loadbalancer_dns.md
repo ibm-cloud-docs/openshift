@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -35,8 +35,11 @@ subcollection: openshift
 
 
 
-# Registering a DNS subdomain for an NLB
+# Classic: Registering a DNS subdomain for an NLB
 {: #loadbalancer_hostname}
+
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This content is specific to NLBs in classic clusters. For VPC clusters, see [Registering a VPC load balancer hostname with a DNS subdomain](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns).
+{: note}
 
 After you set up network load balancers (NLBs), you can create DNS entries for the NLB IPs by creating subdomains. You can also set up TCP/HTTP(S) monitors to health check the NLB IP addresses behind each subdomain.
 {: shortdesc}

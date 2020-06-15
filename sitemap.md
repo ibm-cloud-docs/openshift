@@ -47,7 +47,9 @@ subcollection: openshift
 
 [Getting started with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-getting-started)
 
-[Creating an OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+[Creating a classic OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+
+[Creating a VPC Gen 2 compute cluster](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
 
 [Deploying an app with the OpenShift service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
 
@@ -72,10 +74,13 @@ subcollection: openshift
 * [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes)
 * [Comparison between OpenShift 3.11 and 4.3 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
 
+[Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
+
 [Service architecture and dependencies](/docs/openshift?topic=openshift-service-arch)
-* [Service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
+* [Classic cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
   * [OpenShift version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
   * [OpenShift version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
+* [VPC cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc)
 * [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-arch#ibm-data)
   * [What information is stored with IBM when using Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-service-arch#pi-info)
   * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-arch#pi-storage)
@@ -159,6 +164,7 @@ subcollection: openshift
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 * [Network](/docs/openshift?topic=openshift-security#network)
   * [Network segmentation and privacy](/docs/openshift?topic=openshift-security#network_segmentation)
+  * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
   * [Expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
   * [Expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
 * [Persistent storage](/docs/openshift?topic=openshift-security#storage)
@@ -189,6 +195,16 @@ subcollection: openshift
 * [Lesson 2: Navigating the OpenShift console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 * [Lesson 3: Deploying an app to your OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
+
+[Creating an OpenShift cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_roks_tutorial)
+* [Objectives](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_objectives)
+* [Time required](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_time)
+* [Audience](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_audience)
+* [Prerequisites](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_prereqs)
+* [Lesson 1: Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_create_vpc_cluster)
+* [Lesson 2: Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_app)
+* [Lesson 3: Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_vpc_lb)
+* [What's next?](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_next)
 
 [Scalable web application on OpenShift](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
 
@@ -246,14 +262,22 @@ subcollection: openshift
 * [Making your resources highly available](/docs/openshift?topic=openshift-strategy#kube_ha)
 
 [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters)
-* [Understanding network basics of clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics)
-  * [Worker-to-worker communication: VLANs and subnets](/docs/openshift?topic=openshift-plan_clusters#worker-worker)
+* [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_clusters#plan_vpc_basics)
+  * [Worker-to-worker communication: VPC subnets](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-worker)
+  * [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master)
+  * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-services-onprem)
+  * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#vpc-external-workers)
+* [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_clusters#vpc-scenarios)
+  * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-no-pgw)
+  * [Scenario: Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-vpn)
+* [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics)
+  * [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_clusters#worker-worker)
   * [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_clusters#workeruser-master)
   * [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem)
   * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#external-workers)
-* [Example scenarios for cluster network setups](/docs/openshift?topic=openshift-plan_clusters#classic-scenarios)
-  * [Scenario: Run internet-facing app workloads in a cluster](/docs/openshift?topic=openshift-plan_clusters#internet-facing)
-  * [Scenario: Extend your on-premises data center to a cluster and add limited public access](/docs/openshift?topic=openshift-plan_clusters#limited-public)
+* [Example scenarios for classic cluster network setups](/docs/openshift?topic=openshift-plan_clusters#classic-scenarios)
+  * [Scenario: Run internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_clusters#internet-facing)
+  * [Scenario: Extend your on-premises data center to a classic cluster and add limited public access](/docs/openshift?topic=openshift-plan_clusters#limited-public)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters)
 * [Single zone cluster](/docs/openshift?topic=openshift-ha_clusters#single_zone)
@@ -277,8 +301,11 @@ subcollection: openshift
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 * [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
 * [Creating a standard classic cluster](/docs/openshift?topic=openshift-clusters#clusters_standard)
-* [Creating a standard classic cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_ui)
-* [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps)
+  * [Creating a standard classic cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_ui)
+  * [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps)
+* [Creating a standard VPC Gen 2 compute cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2)
+  * [Creating a standard VPC Gen 2 compute cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui)
+  * [Creating standard VPC Gen 2 compute clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
 [Accessing OpenShift clusters](/docs/openshift?topic=openshift-access_cluster)
@@ -287,6 +314,8 @@ subcollection: openshift
   * [Connecting to the cluster from the console](/docs/openshift?topic=openshift-access_cluster#access_oc_console)
   * [Connecting to the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli)
 * [Accessing clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se)
+  * [Accessing classic clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
+  * [Accessing VPC clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#vpc_private_se)
 * [Accessing OpenShift clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
   * [Using an API key to log in to OpenShift clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
   * [Using a service ID to log in to OpenShift clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
@@ -327,8 +356,12 @@ subcollection: openshift
 
 [Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add_workers)
 * [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool)
-* [Adding worker nodes by creating a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool)
-* [Adding worker nodes by adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#add_zone)
+* [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add_workers#vpc_pools)
+  * [Creating a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool)
+  * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone)
+* [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools)
+  * [Creating a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool)
+  * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#add_zone)
 * [Deprecated: Adding stand-alone worker nodes](/docs/openshift?topic=openshift-add_workers#standalone)
 * [Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-add_workers#install-sgx)
   * [Installing with a script](/docs/openshift?topic=openshift-add_workers#intel-sgx-script)
@@ -358,10 +391,14 @@ subcollection: openshift
 
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update)
 * [Updating the master](/docs/openshift?topic=openshift-update#master)
-* [Updating worker nodes](/docs/openshift?topic=openshift-update#worker_node)
+* [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node)
   * [Prerequisites](/docs/openshift?topic=openshift-update#worker-up-prereqs)
-  * [Updating worker nodes in the CLI with a configmap](/docs/openshift?topic=openshift-update#worker-up-configmap)
-  * [Updating worker nodes in the console](/docs/openshift?topic=openshift-update#worker_up_console)
+  * [Updating classic worker nodes in the CLI with a configmap](/docs/openshift?topic=openshift-update#worker-up-configmap)
+  * [Updating classic worker nodes in the console](/docs/openshift?topic=openshift-update#worker_up_console)
+* [Updating VPC worker nodes](/docs/openshift?topic=openshift-update#vpc_worker_node)
+  * [Prerequisites](/docs/openshift?topic=openshift-update#vpc_worker_prereqs)
+  * [Updating VPC worker nodes in the CLI](/docs/openshift?topic=openshift-update#vpc_worker_cli)
+  * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update#vpc_worker_ui)
 * [Updating flavors (machine types)](/docs/openshift?topic=openshift-update#machine_type)
 * [Updating cluster components](/docs/openshift?topic=openshift-update#components)
   * [Managing automatic updates for Fluentd](/docs/openshift?topic=openshift-update#logging-up)
@@ -408,7 +445,12 @@ subcollection: openshift
 {: #sitemap_securing_the_cluster_network}
 
 
-[Opening required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall)
+
+## Classic clusters
+{: #sitemap_classic_clusters}
+
+
+[Classic: Opening required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall)
 * [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-firewall#corporate)
   * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-firewall#firewall_bx)
   * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
@@ -421,11 +463,11 @@ subcollection: openshift
 * [Whitelisting your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#whitelist_workers)
 * [Updating IAM whitelists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_whitelist)
 
-[Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge)
+[Classic: Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge)
 * [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
 
-[Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies)
+[Classic: Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies)
 * [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
 * [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
 * [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
@@ -439,11 +481,40 @@ subcollection: openshift
 * [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
 
 
+## VPC clusters
+{: #sitemap_vpc_clusters}
+
+
+[VPC: Opening required ports and IP addresses in other network firewalls](/docs/openshift?topic=openshift-vpc-firewall)
+* [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
+  * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
+  * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
+  * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
+* [Whitelisting your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-whitelist_workers)
+
+[VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
+* [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#overview)
+* [Step 1: Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
+  * [Creating ACLs in the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
+  * [Creating ACLs from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
+* [Step 2: Opening required ports in the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
+  * [Opening required ports in the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
+  * [Opening required ports from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
+* [Step 3: Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
+  * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-network-policy#services_one_ns)
+  * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-network-policy#services_across_ns)
+
+
 ## Managing the cluster network
 {: #sitemap_managing_the_cluster_network}
 
 
-[Configuring subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
+
+## Classic clusters
+{: #sitemap_classic_clusters}
+
+
+[Classic: Configuring subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
 * [Overview of classic networking in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-subnets#basics)
   * [VLANs](/docs/openshift?topic=openshift-subnets#basics_vlans)
   * [Subnets and IP addresses](/docs/openshift?topic=openshift-subnets#basics_subnets)
@@ -463,12 +534,12 @@ subcollection: openshift
   * [Removing a subnet in an IBM Cloud infrastructure account from a cluster](/docs/openshift?topic=openshift-subnets#remove-sl-subnets)
   * [Removing a subnet in an on-premises network from a cluster](/docs/openshift?topic=openshift-subnets#remove-user-subnets)
 
-[Changing service endpoints or VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster)
+[Classic: Changing service endpoints or VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster)
 * [3.11 clusters only: Setting up the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
 * [Setting up the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
 
-[Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn)
+[Classic: Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn)
 * [Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
 * [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations)
 * [Configuring the strongSwan VPN in a multizone cluster](/docs/openshift?topic=openshift-vpn#vpn_multizone)
@@ -489,6 +560,32 @@ subcollection: openshift
   * [Limiting strongSwan VPN traffic by worker node](/docs/openshift?topic=openshift-vpn#limit_worker)
 * [Upgrading or disabling the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade)
 * [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
+
+[Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes)
+* [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
+* [Enabling the static route add-on](/docs/openshift?topic=openshift-static-routes#enable-add-on)
+* [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
+
+
+## VPC clusters
+{: #sitemap_vpc_clusters}
+
+
+[VPC: Configuring subnets and IP addresses](/docs/openshift?topic=openshift-vpc-subnets)
+* [Overview of VPC networking in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics)
+  * [Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets)
+  * [Public gateways](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw)
+  * [Network segmentation](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_segmentation)
+  * [VPC networking limitations](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_limitations)
+* [Creating a VPC subnet and attaching a public gateway](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet)
+  * [Creating a VPC subnet in the console](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_ui)
+  * [Creating a VPC subnet in the CLI](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_cli)
+
+[VPC: Setting up VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas)
+* [Choosing a VPN solution](/docs/openshift?topic=openshift-vpc-vpnaas#options)
+  * [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-vpc-vpnaas#onprem)
+  * [Communication with resources in other VPCs](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpc)
+  * [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-classic)
 
 [Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes)
 * [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
@@ -525,6 +622,8 @@ subcollection: openshift
 [Setting up an image registry](/docs/openshift?topic=openshift-registry)
 * [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
 * [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
+  * [VPC: Backing up your OpenShift internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
+  * [Classic: Storing images in the internal registry](/docs/openshift?topic=openshift-registry#storage_internal_registry)
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
 * [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
 * [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)
@@ -636,22 +735,39 @@ subcollection: openshift
 * [Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
 * [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
 * [Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
-  * [Public app networking](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
+  * [Public app networking for classic clusters](/docs/openshift?topic=openshift-cs_network_planning#pattern_public)
+  * [Public app networking for VPC clusters](/docs/openshift?topic=openshift-cs_network_planning#pattern_public_vpc)
 * [Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access)
-  * [Private app networking](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
+  * [Private app networking for classic clusters](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
+  * [Private app networking for VPC clusters](/docs/openshift?topic=openshift-cs_network_planning#private_vpc)
 
-[Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes)
+
+## Exposing apps with routes
+{: #sitemap_exposing_apps_with_routes}
+
+
+[Exposing apps with routes in OpenShift 4.3 or later](/docs/openshift?topic=openshift-openshift_routes)
 * [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
-  * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
-  * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
+  * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
+  * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
+  * [Traffic flow in a multizone VPC cluster](/docs/openshift?topic=openshift-openshift_routes#route_vpc)
 * [Route types](/docs/openshift?topic=openshift-openshift_routes#route-types)
 * [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
+  * [Setting up public routes in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#routes-public-classic)
+  * [Setting up public routes in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-public-vpc-privse)
 * [Setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes)
-  * [Setting up private routes in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
-  * [Setting up private routes in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup)
-* [Moving router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
-  * [Moving router services across VLANs in 4.3 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-43)
-  * [Moving router services across VLANs in 3.11 clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-311)
+  * [Setting up private routes in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
+  * [Setting up private routes in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-private-vpc-privse)
+* [Moving router services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
+
+[Exposing apps with routes in OpenShift 3.11](/docs/openshift?topic=openshift-routes-311)
+* [Overview](/docs/openshift?topic=openshift-routes-311#routes-overview)
+  * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-routes-311#route_single)
+  * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-routes-311#route_multi)
+* [Route types](/docs/openshift?topic=openshift-routes-311#route-types)
+* [Setting up public routes](/docs/openshift?topic=openshift-routes-311#routes-setup)
+* [Setting up private routes](/docs/openshift?topic=openshift-routes-311#private-routes)
+* [Moving router services across VLANs](/docs/openshift?topic=openshift-routes-311#migrate-router-vlan)
 
 
 ## Exposing apps with load balancers
@@ -659,8 +775,16 @@ subcollection: openshift
 
 
 [Quick start for load balancers](/docs/openshift?topic=openshift-loadbalancer-qs)
+* [Exposing an app by using an NLB in a classic cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_classic)
+* [Exposing an app by using a VPC load balancer in a VPC cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_vpc)
 
-[About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
+[VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas)
+* [About VPC load balancing in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
+* [Setting up a Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
+* [Registering a VPC load balancer hostname with a DNS subdomain](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+* [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
+
+[Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
 * [Comparison of basic and DSR load balancing in version 1.0 and 2.0 NLBs](/docs/openshift?topic=openshift-loadbalancer-about#comparison)
 * [Components and architecture of an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer-about#v1_planning)
   * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_single)
@@ -669,14 +793,14 @@ subcollection: openshift
   * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_single)
   * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_multi)
 
-[Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
+[Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
 * [Setting up an NLB 1.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config)
 * [Setting up an NLB 1.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config)
 * [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip)
   * [Adding edge node affinity rules and tolerations](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes)
   * [Adding affinity rules for multiple public or private VLANs](/docs/openshift?topic=openshift-loadbalancer#edge_nodes_multiple_vlans)
 
-[Setting up DSR load balancing with an NLB 2.0 (beta)](/docs/openshift?topic=openshift-loadbalancer-v2)
+[Classic: Setting up DSR load balancing with an NLB 2.0 (beta)](/docs/openshift?topic=openshift-loadbalancer-v2)
 * [Prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision)
 * [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
 * [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
@@ -684,7 +808,7 @@ subcollection: openshift
   * [Supported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_supported)
   * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
 
-[Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname)
+[Classic: Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname)
 * [Registering NLB IPs with a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)
 * [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format)
 * [Enable health checks on a subdomain by creating a health monitor](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor)
@@ -702,30 +826,42 @@ subcollection: openshift
   * [Ingress controller](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-controller)
   * [Router](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-router)
   * [Ingress resource](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-resource-about)
-* [How does a request get to my app with Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#roks4-flow)
+* [How does a request get to my app with Ingress in a classic cluster?](/docs/openshift?topic=openshift-ingress-about-roks4#roks4-flow)
   * [Single-zone cluster](/docs/openshift?topic=openshift-ingress-about-roks4#classic-single-roks4)
   * [Multizone cluster](/docs/openshift?topic=openshift-ingress-about-roks4#classic-multi-roks4)
+* [How does a request get to my app with Ingress in a VPC cluster?](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc)
 * [How can I customize routing for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#custom-routing)
 * [How can I enable TLS certificates for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#certs)
 
-[Setting up Ingress in OpenShift version 4.3 or later](/docs/openshift?topic=openshift-ingress-roks4)
+[Setting up Ingress in OpenShift 4.3 or later](/docs/openshift?topic=openshift-ingress-roks4)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-prereqs)
 * [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects)
   * [All apps are in one project](/docs/openshift?topic=openshift-ingress-roks4#one-project)
   * [Apps are in multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multi-project)
   * [Multiple domains within a project](/docs/openshift?topic=openshift-ingress-roks4#multi-domains-project)
-* [Exposing apps that are inside your cluster to the public](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public)
+* [Exposing apps to the public in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public)
   * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-1)
   * [Step 2: Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-2)
   * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3)
   * [Step 4: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-4)
+* [Exposing apps to the public in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller)
+  * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-1)
+  * [Step 2: Register a subdomain and TLS certificate](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-2)
+  * [Step 3: Create and configure a public Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-3)
+  * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-4)
+  * [Step 5: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-5)
 * [Exposing apps that are outside your cluster to the public](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-external)
-* [Exposing apps to a private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private)
+* [Exposing apps to a private network in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private)
   * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-1)
-  * [Step 2: Register your custom domain and TLS certificate](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-2)
+  * [Step 2: Register a subdomain and TLS certificate](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-2)
   * [Step 3: Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-3)
   * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4)
   * [Step 5: Access your app from your private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-5)
+* [Exposing apps to a private network VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller)
+  * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-1)
+  * [Step 2: Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-2)
+  * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-3)
+  * [Step 4: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-4)
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 
@@ -912,6 +1048,22 @@ subcollection: openshift
   * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options)
   * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove)
 
+[Storing data on {{site.data.keyword.block_storage_is_short}} (Gen 1 and Gen 2 compute)](/docs/openshift?topic=openshift-vpc-block)
+* [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
+* [Adding {{site.data.keyword.block_storage_is_short}} to your apps](/docs/openshift?topic=openshift-vpc-block#vpc-block-add)
+* [Using an existing {{site.data.keyword.block_storage_is_short}} instance](/docs/openshift?topic=openshift-vpc-block#vpc-block-static)
+* [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
+* [Creating {{site.data.keyword.block_storage_is_short}} with a different file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-xfs)
+* [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
+* [Customizing the default storage settings](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default)
+  * [Customizing a storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
+  * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
+* [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
+* [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
+* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup)
+  * [Understanding your storage removal options](/docs/openshift?topic=openshift-vpc-block#storage_delete_options)
+  * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove)
+
 [Storing data on IBM Cloud Object Storage](/docs/openshift?topic=openshift-object_storage)
 * [Creating your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service)
 * [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret)
@@ -951,12 +1103,15 @@ subcollection: openshift
 * [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities)
-* [Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
+* [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
   * [Updating the IBM Cloud Block Storage Attacher plug-in](/docs/openshift?topic=openshift-utilities#update_block_attacher)
   * [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
-* [Automatically provisioning unformatted block storage and authorizing your worker nodes to access the storage](/docs/openshift?topic=openshift-utilities#automatic_block)
-* [Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
-* [Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
+* [Classic: Automatically provisioning unformatted block storage and authorizing your worker nodes to access the storage](/docs/openshift?topic=openshift-utilities#automatic_block)
+* [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
+* [Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
+* [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
+  * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
+  * [Reviewing volume attachment details for a VPC worker node](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
 * [Backing up and restoring PVC data for file and block storage](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore)
   * [Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-utilities#backup_restore_setup_object_storage)
   * [Using {{site.data.keyword.cos_full_notm}} to back up and restore PVC data](/docs/openshift?topic=openshift-utilities#backup-restore-pvc)
@@ -984,6 +1139,7 @@ subcollection: openshift
 * [IBM Cloud services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#ibm-cloud-services)
   * [IBM Cloud platform services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#platform-services)
   * [IBM Cloud classic infrastructure services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#infrastructure-services)
+  * [IBM Cloud VPC infrastructure services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#vpc-infrastructure-services)
 * [Kubernetes community and open source integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-tools)
   * [Integrations operated in partnership](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#open-source-partners)
   * [Managed add-ons](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#cluster-add-ons)
@@ -1047,6 +1203,7 @@ subcollection: openshift
 
 [Red Hat OpenShift on IBM Cloud CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
 * [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta)
+* [Comparison of Classic and VPC commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about)
 * [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#map)
 * [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
   * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
@@ -1054,6 +1211,7 @@ subcollection: openshift
   * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
   * [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config)
   * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
+  * [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2)
   * [`ibmcloud oc cluster feature enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_enable)
   * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get)
   * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
@@ -1079,6 +1237,7 @@ subcollection: openshift
   * [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update)
 * [`worker-pool` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool)
   * [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create)
+  * [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
   * [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
   * [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pools)
   * [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance)
@@ -1088,6 +1247,7 @@ subcollection: openshift
   * [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_zones)
 * [`zone` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#zone)
   * [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add)
+  * [`ibmcloud oc zone add vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_zone-add-vpc-gen2)
   * [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters)
   * [`ibmcloud oc zone network-set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set)
   * [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm)
@@ -1126,6 +1286,7 @@ subcollection: openshift
 * [`nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns)
   * [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add)
   * [`ibmcloud oc nlb-dns create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-create)
+  * [`ibmcloud oc nlb-dns create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-create-vpc-gen2)
   * [`ibmcloud oc nlb-dns ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-ls)
   * [`ibmcloud oc nlb-dns monitor configure`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-configure)
   * [`ibmcloud oc nlb-dns monitor disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-disable)
@@ -1133,7 +1294,9 @@ subcollection: openshift
   * [`ibmcloud oc nlb-dns monitor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-get)
   * [`ibmcloud oc nlb-dns monitor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-ls)
   * [`ibmcloud oc nlb-dns monitor status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-status)
+  * [`ibmcloud oc nlb-dns replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-replace)
   * [`ibmcloud oc nlb-dns rm classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm)
+  * [`ibmcloud oc nlb-dns rm vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm-vpc-gen2)
   * [Experimental: `ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate)
   * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
 * [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
@@ -1154,6 +1317,7 @@ subcollection: openshift
 * [`vlan` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan)
   * [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlans)
   * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
+* [`vpcs` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs)
 * [`addon-versions` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions)
 * [`flavors` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
 * [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
@@ -1345,6 +1509,8 @@ subcollection: openshift
 
 [What am I charged for when I use Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-faqs#charges)
 
+[What are the regional uplift charges for VPC Generation 2 compute worker nodes?](/docs/openshift?topic=openshift-faqs#charges_vpc_gen2)
+
 [Are my platform and infrastructure resources consolidated in one bill?](/docs/openshift?topic=openshift-faqs#bill)
 
 [Can I estimate my costs?](/docs/openshift?topic=openshift-faqs#cost_estimate)
@@ -1370,6 +1536,8 @@ subcollection: openshift
   * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_admin_config)
 * [Unable to create a cluster or manage worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot#cs_credentials)
 * [Unable to create a cluster or manage worker nodes due to paid account error](/docs/openshift?topic=openshift-cs_troubleshoot#cs_totp)
+* [Unable to create a cluster in the console due to `No VPC is available` error](/docs/openshift?topic=openshift-cs_troubleshoot#ts_no_vpc)
+* [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create)
 * [Cluster create error cannot pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-cs_troubleshoot#ts_image_pull_create)
 * [Cluster remains in a pending State](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_pending)
 * [Unable to view or work with a cluster](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_access)
@@ -1419,10 +1587,12 @@ subcollection: openshift
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_app#getting_help_app)
 
 [Load balancers](/docs/openshift?topic=openshift-cs_troubleshoot_lb)
-* [Cannot connect to an app via a network load balancer (NLB) service](/docs/openshift?topic=openshift-cs_troubleshoot_lb#cs_loadbalancer_fails)
-* [Cannot deploy a load balancer](/docs/openshift?topic=openshift-cs_troubleshoot_lb#cs_subnet_limit_lb)
-* [Source IP preservation fails when using tainted nodes](/docs/openshift?topic=openshift-cs_troubleshoot_lb#cs_source_ip_fails_lb)
-* [OpenVPN server error due to ingress IP address for NLB](/docs/openshift?topic=openshift-cs_troubleshoot_lb#rhoks_ts_openvpn_subnet)
+* [Classic clusters: Cannot connect to an app via a network load balancer (NLB) service](/docs/openshift?topic=openshift-cs_troubleshoot_lb#cs_loadbalancer_fails)
+* [Classic clusters: Cannot deploy a load balancer](/docs/openshift?topic=openshift-cs_troubleshoot_lb#cs_subnet_limit_lb)
+* [Classic clusters: Source IP preservation fails when using tainted nodes](/docs/openshift?topic=openshift-cs_troubleshoot_lb#cs_source_ip_fails_lb)
+* [VPC clusters: Cannot connect to an app via load balancer](/docs/openshift?topic=openshift-cs_troubleshoot_lb#vpc_ts_lb)
+* [VPC clusters: Kubernetes `LoadBalancer` service fails because no IPs are available](/docs/openshift?topic=openshift-cs_troubleshoot_lb#vpc_no_lb)
+* [Classic clusters: OpenVPN server error due to ingress IP address for NLB](/docs/openshift?topic=openshift-cs_troubleshoot_lb#rhoks_ts_openvpn_subnet)
 * [OpenVPN server error due to NLB DNS](/docs/openshift?topic=openshift-cs_troubleshoot_lb#rhoks_ts_openvpn_dns)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_lb#getting_help_lb)
 
@@ -1430,7 +1600,7 @@ subcollection: openshift
 * [Checking the status of Ingress components](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-status)
 * [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)
 * [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_rate_limit)
-* [Cannot connect to an app via Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_fails)
+* [Classic clusters: Cannot connect to an app via Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_fails)
 * [4.3 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4)
   * [Step 1: Check your app deployment and Ingress resource configuration](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress-43)
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-43)
@@ -1525,3 +1695,8 @@ subcollection: openshift
 * [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)
 * [Networking](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit)
 * [Storage](/docs/openshift?topic=openshift-openshift_limitations#classic_storage_limit)
+
+[VPC Gen 2 compute cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
+* [Compute](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_compute_limit)
+* [Networking](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_networking_limit)
+* [Storage](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_storage_limit)

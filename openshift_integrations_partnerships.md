@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -68,7 +68,7 @@ Review the following table to find a list of key benefits that you can get by us
 LogDNA is provided by {{site.data.keyword.la_full_notm}}, an {{site.data.keyword.cloud_notm}} platform service that you can use with your cluster. {{site.data.keyword.la_full_notm}} is operated by LogDNA in partnership with IBM.
 {: shortdesc}
 
-To use LogDNA in your cluster, you must provision an instance of {{site.data.keyword.la_full_notm}} in your {{site.data.keyword.cloud_notm}} account and configure your Kubernetes clusters as a log source. After the cluster is configured, logs are automatically collected and forwarded to your {{site.data.keyword.la_full_notm}} service instance. You can use the {{site.data.keyword.la_full_notm}} dashboard to access your logs.
+To use LogDNA in your classic or VPC cluster, you must provision an instance of {{site.data.keyword.la_full_notm}} in your {{site.data.keyword.cloud_notm}} account and configure your Kubernetes clusters as a log source. After the cluster is configured, logs are automatically collected and forwarded to your {{site.data.keyword.la_full_notm}} service instance. You can use the {{site.data.keyword.la_full_notm}} dashboard to access your logs.
 
 For more information, see [Managing Kubernetes cluster logs with {{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube).
 
@@ -103,7 +103,7 @@ Review the following table to find a list of key benefits that you can get by us
 Sysdig Monitor is provided by {{site.data.keyword.mon_full_notm}}, an {{site.data.keyword.cloud_notm}} platform service that you can use with your cluster. {{site.data.keyword.mon_full_notm}} is operated by Sysdig in partnership with IBM.
 {: shortdesc}
 
-To use Sysdig Monitor in your cluster, you must provision an instance of {{site.data.keyword.mon_full_notm}} in your {{site.data.keyword.cloud_notm}} account and configure your cluster as a metrics source. After the cluster is configured, metrics are automatically collected and forwarded to your {{site.data.keyword.mon_full_notm}} service instance. You can use the {{site.data.keyword.mon_full_notm}} dashboard to access your metrics.
+To use Sysdig Monitor in your classic or VPC cluster, you must provision an instance of {{site.data.keyword.mon_full_notm}} in your {{site.data.keyword.cloud_notm}} account and configure your cluster as a metrics source. After the cluster is configured, metrics are automatically collected and forwarded to your {{site.data.keyword.mon_full_notm}} service instance. You can use the {{site.data.keyword.mon_full_notm}} dashboard to access your metrics.
 
 For more information, see [Analyze metrics for an app that is deployed in a Kubernetes cluster](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster).
 

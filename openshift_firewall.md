@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,9 +35,12 @@ subcollection: openshift
 
 
 
-# Opening required ports and IP addresses in your firewall
+# Classic: Opening required ports and IP addresses in your firewall
 {: #firewall}
 
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This firewall information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your firewall for VPC clusters](/docs/openshift?topic=openshift-vpc-firewall).
+{: note}
 
 
 <br>

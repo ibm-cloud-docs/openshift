@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-11"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -38,11 +38,14 @@ subcollection: openshift
 # IBM Cloud storage utilities
 {: #utilities}
 
-## Installing the IBM Cloud Block Storage Attacher plug-in (beta)
+## Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)
 {: #block_storage_attacher}
 
 Use the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in to attach raw, unformatted, and unmounted block storage to a classic worker node in your cluster.  
 {: shortdesc}
+
+The {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in is available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
+{: note}
 
 For example, you want to store your data with a software-defined storage solution (SDS), such as [Portworx](/docs/openshift?topic=openshift-portworx), but you do not want to use classic bare metal worker nodes that are optimized for SDS usage and that come with extra local disks. To add local disks to your classic non-SDS worker node, you must manually create your block storage devices in your {{site.data.keyword.cloud_notm}} infrastructure account and use the {{site.data.keyword.cloud_notm}} Block Volume Attacher to attach the storage to your non-SDS worker node.
 
@@ -207,11 +210,14 @@ If you do not want to provision and use the {{site.data.keyword.cloud_notm}} Blo
    <br />
 
 
-## Automatically provisioning unformatted block storage and authorizing your worker nodes to access the storage
+## Classic: Automatically provisioning unformatted block storage and authorizing your worker nodes to access the storage
 {: #automatic_block}
 
 You can use the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in to automatically add raw, unformatted, and unmounted block storage with the same configuration to all classic worker nodes in your cluster.
 {: shortdesc}
+
+The {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in is available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
+{: note}
 
 The `mkpvyaml` container that is included in the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in is configured to run a script that finds all worker nodes in your cluster, creates raw block storage in the {{site.data.keyword.cloud_notm}} infrastructure portal, and then authorizes the worker nodes to access the storage.
 
@@ -407,11 +413,14 @@ To add different block storage configurations, add block storage to a subset of 
 <br />
 
 
-## Manually adding block storage to specific worker nodes
+## Classic: Manually adding block storage to specific worker nodes
 {: #manual_block}
 
 Use this option if you want to add different block storage configurations, add block storage to a subset of worker nodes only, or to have more control over the provisioning process.
 {: shortdesc}
+
+The instructions in this topic are available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
+{: note}
 
 1. List the worker nodes in your cluster and note the private IP address and the zone of the non-SDS worker nodes where you want to add a block storage device.
    ```
@@ -504,11 +513,14 @@ Use this option if you want to add different block storage configurations, add b
 
 
 
-## Attaching raw block storage to non-SDS worker nodes
+## Classic: Attaching raw block storage to non-SDS worker nodes
 {: #attach_block}
 
 To attach the block storage device to a non-SDS worker node, you must create a persistent volume (PV) with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class and the details of your block storage device.
 {: shortdesc}
+
+The instructions in this topic are available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
+{: note}
 
 **Before you begin**:
 - Make sure that you [automatically](#automatic_block) or [manually](#manual_block) created raw, unformatted, and unmounted block storage to your non-SDS worker nodes.
@@ -661,6 +673,280 @@ If you want to detach a volume, delete the PV. Detached volumes are still author
 
 <br />
 
+
+
+
+## VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes
+{: #vpc_api_attach}
+
+You can use the {{site.data.keyword.containershort_notm}} API to attach and detach raw, unformatted [{{site.data.keyword.blockstorageshort}}](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/GetClassicVolume) to a worker node in your VPC cluster.
+{: shortdesc}
+
+You can attach a volume to one worker node only. Make sure that the volume is in the same zone as the worker node for the attachment to succeed.
+{: note}
+
+The instructions in this topic are available for VPC worker nodes only. If you want to attach raw, unformatted block storage to a classic worker node, you must install the [{{site.data.keyword.cloud_notm}} Block Storage attacher plug-in](#block_storage_attacher).
+{: note}
+
+Before you begin:
+
+[Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. Check which region and zone your VPC worker node is in.
+  ```
+  ibmcloud oc worker ls <cluster_name>
+  ```
+  {: pre}
+
+2. Decide on the [{{site.data.keyword.blockstorageshort}} profile](/docs/vpc?topic=vpc-creating-block-storage#determine-storage-requirements) that best meets the capacity and performance requirements that you have.
+
+2. [Provision a {{site.data.keyword.blockstorageshort}} volume](/docs/vpc?topic=vpc-creating-block-storage){: new_window}. The volume that you provision must be in the same resource group, region, and zone as the worker node.
+
+3. Retrieve your IAM token.
+
+  ```
+  ibmcloud iam oauth-tokens
+  ```
+  {: pre}
+
+5. Retrieve the ID of the worker node that you want to attach to the {{site.data.keyword.blockstorageshort}} instance. Make sure to select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} volume.
+  ```
+  ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+  ```
+  {: pre}
+
+6. Use a `POST` request to attach your {{site.data.keyword.blockstorageshort}} volume to the worker node.
+
+    Example request:
+    ```sh
+    curl -X POST -H "Authorization: <IAM_token>" "https://<region>.containers.cloud.ibm.com/v2/storage/vpc/createAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeID=<volume_ID>"
+    ```
+    {: codeblock}
+  <br>
+  <table>
+      <caption>Understanding the POST request</caption>
+      <col style="width:30%">
+	   <col style="width:70%">
+      <thead>
+	      <th>Parameter</th>
+	      <th>Description</th>
+      </thead>
+      <tbody>
+      <tr>
+      <td><code>IAM_token</code></td>
+      <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
+      </tr>
+      <tr>
+      <td><code>region</code></td>
+      <td>The region that your cluster is in. You can retrieve this value by running <code>ibmcloud oc cluster get <cluster_name></code>. Example value: <code>eu-de</code>. </td>
+      </tr>
+      <tr>
+      <td><code>cluster_ID</code></td>
+      <td>The unique ID that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
+      </tr>
+      <tr>
+      <td><code>worker_ID</code></td>
+      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c <cluster_name></code>. </td>
+      </tr>
+      <tr>
+      <td><code>volume_ID</code></td>
+      <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
+      </tr>
+    </tbody>
+  </table>
+
+7. Verify the attachment by [reviewing existing volume attachments for a VPC worker node](#vpc_api_get_worker).
+
+
+### Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster
+{: #vpc_api_detach}
+
+You can use a `DELETE` request to detach storage from a VPC worker node.
+{: shortdesc}
+
+Detaching storage from your VPC cluster does not remove your {{site.data.keyword.blockstorageshort}} volume or the data that is stored in the volume. You continue to get billed until [you manually delete the volume](/docs/vpc?topic=vpc-managing-block-storage).
+{: important}
+
+1. Identify the storage volume that you want to remove and note the volume ID.
+  ```sh
+  ibmcloud is volumes
+  ```
+  {: pre}
+
+3. Get details about the volume. This command returns the worker node ID and attachment ID. Note the worker node ID. In the following command this ID is returned as "Instance name".
+  ```sh
+  ibmcloud is volume <volume_ID>
+  ```
+  {: pre}
+
+4. Retrieve a list of your PVs. This command returns a list of your PVs that you can then you use to determine which PVC uses the volume that you want to remove.
+  ```sh
+  oc get pv
+  ```
+  {: pre}
+
+4. Describe the PV that uses the volume. If you do not know which PV uses the volume that you want to remove, you can run the `describe pv` command on each PV in your cluster. Note the PVC that uses the PV.
+  ```sh
+  oc describe pv <pv_name>
+  ```
+  {: pre}
+
+5. Check to see if your storage volume is in use by a pod. The following command shows the pods that mount the volume and the associated PVC. If no pod is returned, the storage is not in use.
+
+  ```sh
+  oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+  ```
+  {: pre}
+
+6. If the pod your volume is using is part of a deployment, delete the deployment. If your pod does not belong to a deployment, delete the pod.
+  ```sh
+  oc delete deployment <deployment_name>
+  ```
+  {: pre}
+
+  ```sh
+  oc delete pod <pod_name>
+  ```
+  {: pre}
+
+7. Delete the PVC and PV.
+  ```sh
+  oc delete pvc <pvc_name>
+  ```
+  {: pre}
+
+  ```sh
+  oc delete pv <pv_name>
+  ```
+  {: pre}
+
+8. Retrieve your IAM token.
+  ```sh
+  ibmcloud iam oauth-tokens
+  ```
+  {: pre}
+
+9. Detach storage by using a `DELETE` request.
+
+    Example request:
+
+      ```sh
+      curl -X DELETE -H "Authorization: <IAM_token>" "https://<region>containers.cloud.ibm.com/v2/storage/vpc/deleteAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeAttachmentID=<volume_attachment_ID>"
+      ```
+      {: codeblock}
+
+  <br>
+    <table>
+      <caption>Understanding the DELETE request</caption>
+      <col style="width:30%">
+	   <col style="width:70%">
+      <thead>
+	      <th>Parameter</th>
+	      <th>Description</th>
+      </thead>
+      <tbody>
+      <tr>
+      <td><code>IAM_token</code></td>
+      <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
+      </tr>
+      <tr>
+      <td><code>region</code></td>
+      <td>The region that your cluster is in. You can retrieve this value by running <code>ibmcloud oc cluster get <cluster_name></code>. Example value: <code>eu-de</code>. </td>
+      </tr>
+      <tr>
+      <td><code>cluster_ID</code></td>
+      <td>The unique ID that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
+      </tr>
+      <tr>
+      <td><code>worker_ID</code></td>
+      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c <cluster_name></code>. </td>
+      </tr>
+      <tr>
+      <td><code>volume_ID</code></td>
+      <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
+      </tr>
+      <td><code>volume_attachment_ID</code></td>
+      <td>The unique ID that is assigned to your volume attachment. You can retrieve this ID by running <code>ibmcloud is volume <volume_ID></code>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+### Reviewing volume attachment details for a VPC worker node
+{: #vpc_api_get_worker}
+
+You can use a `GET` request to retrieve volume attachment details for a VPC worker node.
+{: shortdesc}
+
+1. Retrieve your IAM token.
+
+  ```sh
+  ibmcloud iam oauth-tokens
+  ```
+  {: pre}
+
+2. Retrieve the ID of the resource group where your cluster is deployed.
+
+  ```sh
+  ibmcloud oc cluster get <cluster_name_or_ID> | grep "Resource Group ID"
+  ```
+  {: pre}
+
+3. Retrieve the ID of the worker node for which you want to see volume attachment details. Make sure to select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} instance.
+  ```sh
+  ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+  ```
+  {: pre}
+
+4. Review a list of existing volume attachments on a worker node.
+
+  Example request:
+
+  ```sh
+  curl -X GET -H "Authorization: <IAM_token>" -H "Content-Type: application/json" -H "X-Auth-Resource-Group-ID: <resource_group_ID>" "https://<region>.containers.cloud.ibm.com/v2/storage/clusters/<cluster_ID>/workers/<worker_ID>/volume_attachments"
+  ```
+  {: codeblock}
+
+5. Retrieve the details for a specific attachment.
+      ```sh
+      curl -X GET -H "Authorization: <IAM_token>" -H "Content-Type: application/json" -H "X-Auth-Resource-Group-ID: <resource_group_ID>" "https://<region>.containers.cloud.ibm.com/v2/storage/vpc/getAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeAttachmentID=<volume_attachment_ID>"
+      ```
+      {: codeblock}
+
+  <br>
+    <table>
+      <caption>Understanding the GET request</caption>
+      <col style="width:30%">
+	   <col style="width:70%">
+      <thead>
+	      <th>Parameter</th>
+	      <th>Description</th>
+      </thead>
+      <tbody>
+      <tr>
+      <td><code>IAM_token</code></td>
+      <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
+      </tr>
+      <tr>
+      <td><code>region</code></td>
+      <td>The region that your cluster is in. You can retrieve this value by running <code>ibmcloud oc cluster get <cluster_name></code>. Example value: <code>eu-de</code>. </td>
+      </tr>
+      <tr>
+      <td><code>cluster_ID</code></td>
+      <td>The unique ID that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
+      </tr>
+      <tr>
+      <td><code>worker_ID</code></td>
+      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c <cluster_name></code>. </td>
+      </tr>
+      <tr>
+      <td><code>volume_ID</code></td>
+      <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
+      </tr>
+      <td><code>volume_attachment_ID</code></td>
+      <td>The unique ID that is assigned to your volume attachment. You can retrieve this ID by running <code>ibmcloud is volume <volume_ID></code>.</td>
+      </tr>
+    </tbody>
+  </table>
 
 
 
