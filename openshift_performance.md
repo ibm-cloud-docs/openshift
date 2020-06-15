@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-11"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -53,7 +53,10 @@ Increase or decrease the Calico plug-in maximum transmission unit (MTU) to meet 
 By default, the Calico network plug-in in your Red Hat OpenShift on IBM Cloud cluster has an MTU of 1480 bytes. For most cases, this default MTU value provides sufficient throughput for packets that are sent and received in your network workloads. Review the following cases in which you might need to modify the default Calico MTU:
 
 * If your cluster uses bare metal worker nodes, and you use jumbo frames on the bare metal worker nodes, the jumbo frames have an MTU value in the range of 1500 to 9000. To ensure that Calico can handle this throughput, you can increase the Calico MTU to match the MTU of the jumbo frames. Note that all worker nodes in the cluster must use the same Calico MTU, so to increase the Calico MTU, all worker nodes in the cluster must be bare metal and use jumbo frames.
-* If you have a VPN connection set up for your cluster, some VPN connections require a smaller Calico MTU than the default. Check with the VPN service to determine whether a smaller Calico MTU is required.
+* If you have a VPN connection set up for your cluster, some VPN connections require a smaller Calico MTU than the default. Check with the VPN service to determine whether a smaller Calico MTU is required. 
+    
+To run your OpenShift cluster, make sure that the MTU is equal to or greater than 1450 bytes. 
+{: important} 
 
 You can change the MTU on the tunnel interface `tunl0`, which is used for pod to pod communication, and the MTU on the `caliXXXXXXXX` `veth` interface of each worker node.
 
@@ -91,6 +94,9 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
      variant: Calico
    ```
    {: screen}
+    
+   To run your OpenShift cluster, make sure that the MTU is equal to or greater than 1450 bytes. 
+   {: important}
 
 3. Save and close the file.
 
@@ -162,7 +168,10 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     ...
     ```
     {: codeblock}
-
+    
+    To run your OpenShift cluster, make sure that the MTU is equal to or greater than 1450 bytes.
+    {: important} 
+    
 3. Apply the MTU changes to your cluster master by refreshing the master API server. It might take several minutes for the master to refresh.
   ```
   ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>

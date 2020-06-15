@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-11"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -87,6 +87,8 @@ The following list of the cluster management events are sent to {{site.data.keyw
 | `containers-kubernetes.workerpool.update` | A worker pool is updated. |
 | `containers-kubernetes.zone.update` | The networking attributes for a zone that a worker pool uses are updated. |
 {: caption="Cluster management events" caption-side="top"}
+
+
 
 
 

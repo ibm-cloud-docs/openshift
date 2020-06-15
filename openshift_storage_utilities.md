@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -816,7 +816,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
 
 4. Save and close the `values.yaml` file.
 
-5.  Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<release_name>` with a name for your Helm chart. Be sure to install the backup and restore pods in the same zone as the PVC that you want to backup or restore.
+5.  Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<release_name>` with a name for your Helm chart. Be sure to install the backup and restore pods in the same zone as the PVC that you want to back up or restore.
 
     *   Install the Helm chart by using the `helm install` command.
         ```
