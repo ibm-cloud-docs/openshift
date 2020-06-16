@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,11 +35,14 @@ subcollection: openshift
 
 
 
-# Configuring subnets and IP addresses
+# Classic: Configuring subnets and IP addresses
 {: #subnets}
 
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
 {:shortdesc}
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to classic clusters. For information about VPC clusters, see [Configuring subnets and IP addresses for VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
+{: note}
 
 ## Overview of classic networking in Red Hat OpenShift on IBM Cloud
 {: #basics}
@@ -90,7 +93,7 @@ In Red Hat OpenShift on IBM Cloud, VLANs have a limit of 40 subnets. If you reac
 {: note}
 
 **Do the IP address for my worker nodes change?**</br>
-Your worker node is assigned an IP address on the public or private VLANs that your cluster uses. Additionally, the private IP address of the worker node is used for the worker node identity in most `oc` commands. If you change the VLANs that the worker pool uses, new worker nodes that are provisioned in that pool use the new VLANs for their IP addresses. Existing worker node IP addresses do not change, but you can choose to remove the worker nodes that use the old VLANs.
+Your worker node is assigned an IP address on the public or private VLANs that your cluster uses. After the worker node is provisioned, the worker node IP address persists across `reboot` and `update` operations, but the worker node IP address changes after a `replace` operation. Additionally, the private IP address of the worker node is used for the worker node identity in most `oc` commands. If you change the VLANs that the worker pool uses, new worker nodes that are provisioned in that pool use the new VLANs for their IP addresses. Existing worker node IP addresses do not change, but you can choose to remove the worker nodes that use the old VLANs.
 
 ### Network segmentation
 {: #basics_segmentation}

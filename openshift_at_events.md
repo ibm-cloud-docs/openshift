@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-11"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -100,7 +100,7 @@ To [view events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-
 
 The following table shows the {{site.data.keyword.at_short}} location where your events are sent to. To view your events, make sure that you have an {{site.data.keyword.at_short}} instance in the location that matches your cluster location. Note that clusters in the Montreal, Toronto, and Washington, D.C. locations forward all events to the Dallas {{site.data.keyword.at_short}} location.
 
-| Red Hat OpenShift on IBM Cloud location | {{site.data.keyword.at_short}} event location |
+| Red Hat OpenShift on IBM Cloud classic location | {{site.data.keyword.at_short}} event location |
 |-----|-----|-----|
 | Dallas (dal10, dal12, dal13) | Dallas |
 | Mexico City (mex01) | Dallas |
@@ -123,6 +123,24 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Singapore (sng01) | Tokyo |
 | Tokyo (tok02, tok04, tok05) | Tokyo |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and Red Hat OpenShift on IBM Cloud cluster locations." caption-side="top"}
+{: class="simple-tab-table"}
+{: #atlocationclassic}
+{: tab-title="Locations for classic clusters"}
+{: tab-group="at-locations"}
+
+| Red Hat OpenShift on IBM Cloud VPC location | {{site.data.keyword.at_short}} event location |
+|-----|-----|-----|
+| Dallas (us-south-1, us-south-2, us-south-3) | Dallas |
+| Washington, D.C. (us-east-1, us-east-2, us-east-3) | Dallas |
+| Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
+| London (eu-gb-1, eu-gb-2, eu-gb-3) | London |
+| Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney |
+| Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
+{: class="simple-tab-table"}
+{: caption="Corresponding {{site.data.keyword.at_short}} instance and Red Hat OpenShift on IBM Cloud cluster locations." caption-side="top"}
+{: #atlocationvpc}
+{: tab-title="Locations for VPC clusters"}
+{: tab-group="at-locations"}
 
 
 

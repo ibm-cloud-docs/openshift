@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -307,8 +307,10 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
   2. [Choose an app exposure service](//docs/openshift?topic=openshift-cs_network_planning) that fits your requirements for incoming traffic to the app.
 2. **Expose your app**:
   * Load balancers:
+    * Classic clusters:
         1. Create an [NLB 1.0](/docs/openshift?topic=openshift-loadbalancer) or [NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2).
         2. [Register a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname) for the NLB.
+    * VPC clusters: Set up a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas).
 
   * Ingress:
       * Version 4.3 and later clusters: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public) or the [private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private).

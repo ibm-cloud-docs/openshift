@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,7 +35,7 @@ subcollection: openshift
 
 
 
-# Restricting network traffic to edge worker nodes
+# Classic: Restricting network traffic to edge worker nodes
 {: #edge}
 
 Edge worker nodes can improve the security of your {{site.data.keyword.openshiftlong}} cluster by allowing fewer worker nodes to be accessed externally and by isolating the networking workload.

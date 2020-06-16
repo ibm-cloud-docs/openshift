@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -111,8 +111,8 @@ Even if the cluster is in a `normal` state, the Ingress subdomain and secret mig
 1. When worker nodes are fully deployed and ready on the VLANs, a portable public and a portable private subnet for the VLANs are ordered.
 2. After the portable subnet orders are successfully fulfilled, the `ibm-cloud-provider-vlan-ip-config` config map is updated with the portable public and portable private IP addresses.
 3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the public ALB (version 3.11 clusters) or router for the Ingress controller (version 4.3 or later clusters) is triggered for creation.
-4. A load balancer service that exposes the ALB or router is created and assigned an IP address.
-5. The load balancer IP address is used to register the Ingress subdomain in Cloudflare. Cloudflare might have latency during the registration process.
+4. A load balancer service that exposes the ALB or router is created and assigned an IP address (classic clusters) or a hostname (VPC clusters).
+5. The load balancer IP address or hostname is used to register the Ingress subdomain in Cloudflare. Cloudflare might have latency during the registration process.
 
 {: tsResolve}
 Typically, after the cluster is ready, the Ingress subdomain and secret are created after 15 minutes. If the Ingress subdomain and secret are still unavailable after your cluster is in a `normal` state for more than 15 minutes, you can check the progress of the creation process by following these steps:
@@ -222,8 +222,8 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
 4. Verify that the ALB (version 3.11 clusters) or router for the Ingress controller (version 4.3 or later clusters) is successfully created.
   * **Version 3.11 clusters:**
-    1. Check whether an ALB exists for your cluster and that the ALB has a public IP address assigned.
-      * If a public ALB is listed and is assigned an IP address, continue to the next step.
+    1. Check whether an ALB exists for your cluster and that the ALB has a public IP address (classic clusters) or a hostname (VPC clusters) assigned.
+      * If a public ALB is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
       * If no ALBs are created after several minutes, [review ways to get help](#getting_help_ingress).
 
         ```
@@ -239,8 +239,8 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-    2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address as the public ALB.
-      * If a `LoadBalancer` service is listed and is assigned an IP address, continue to the next step.
+    2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address (classic clusters) or a hostname (VPC clusters) as the public ALB.
+      * If a `LoadBalancer` service is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
       * If no `LoadBalancer` services are created after several minutes, [review ways to get help](#getting_help_ingress).
 
         ```
@@ -270,8 +270,8 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-    2. Check whether the router's load balancer service exists and is assigned a public external IP address.
-      * If a service that is named `router-default` is listed and is assigned an IP address, continue to the next step.
+    2. Check whether the router's load balancer service exists and is assigned a public external IP address (classic clusters) or a hostname (VPC clusters).
+      * If a service that is named `router-default` is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
       * If no `router-default` service is created after several minutes, [review ways to get help](#getting_help_ingress).
 
         ```
@@ -311,7 +311,7 @@ If you need to continue testing, you can change the name of the cluster so that 
 <br />
 
 
-## Cannot connect to an app via Ingress
+## Classic clusters: Cannot connect to an app via Ingress
 {: #cs_ingress_fails}
 
 {: tsSymptoms}
@@ -771,6 +771,15 @@ Start by checking for error messages in the Ingress resource deployment events a
         ibmcloud oc alb configure vpc-classic --alb-id <ALB_ID> --enable
         ```
         {: pre}
+      * VPC Gen 2 clusters:
+        ```
+        ibmcloud oc alb configure vpc-gen2 --alb-id <ALB_ID> --disable
+        ```
+        {: pre}
+        ```
+        ibmcloud oc alb configure vpc-gen2 --alb-id <ALB_ID> --enable
+        ```
+        {: pre}
 
 3. Check the logs for your ALB.
     1.  Get the IDs of the ALB pods that are running in your cluster.
@@ -1140,7 +1149,7 @@ Ingress requires at least two worker nodes per zone to ensure high availability 
 
 {: tsResolve}
 The method to increase the number of worker nodes per zone depends on whether you restrict network traffic to edge worker nodes.
-* **If you do not use edge nodes**: Ensure that at least two worker nodes exist in each zone by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) or [creating a new worker pool in a classic cluster](/docs/openshift?topic=openshift-add_workers#add_pool).
+* **If you do not use edge nodes**: Ensure that at least two worker nodes exist in each zone by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool), [creating a new worker pool in a VPC cluster](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [creating a new worker pool in a classic cluster](/docs/openshift?topic=openshift-add_workers#add_pool).
 * **If you use edge nodes**: Ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge) are enabled in each zone.
 
 After the new worker nodes deploy, the ALB pods are automatically scheduled to deploy to those worker nodes.

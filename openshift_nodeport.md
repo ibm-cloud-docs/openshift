@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-16"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -74,9 +74,14 @@ The public IP address of the worker node is not permanent. When a worker node is
 You can expose your app as a Kubernetes NodePort service for free or standard clusters.
 {:shortdesc}
 
+Because worker nodes in VPC clusters do not have a public IP address, you can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection or by using the [Kubernetes web terminal](/docs/openshift?topic=openshift-cs_cli_install#cli_web). To access an app from the internet, you must use a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas) or [Ingress](/docs/openshift?topic=openshift-ingress-about) service instead.
+{: note}
+
 If you do not already have an app ready, you can use a Kubernetes example app called [Guestbook](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml){: external}.
 
-**Before you begin**: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+**Before you begin**:
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* VPC clusters: [Allow traffic requests that are routed to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 
 **To use a NodePort**:
 
@@ -139,7 +144,7 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
 
 3. When the app is deployed, you can use the public IP address of any worker node and the NodePort to form the public URL to access the app in a browser. If your worker nodes are connected to a private VLAN only, then a private NodePort service was created and can be accessible through a worker node's private IP address.
 
-    1.  Get the public IP address for a worker node in the cluster. If you want to access the worker node on a private network, get the private IP address instead.
+    1.  Get the public IP address for a worker node in the cluster. If you want to access the worker node on a private network or have a VPC cluster, get the private IP address instead.
 
         ```
         ibmcloud oc worker ls --cluster <cluster_name>
@@ -185,5 +190,6 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
         {: note}
 
     3.  Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`.
-        
+        For VPC clusters, you must be connected to the private network through a VPN connection to access the worker node private IP address and NodePort.
+        {: note}
 

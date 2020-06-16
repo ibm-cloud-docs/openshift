@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-11"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -77,6 +77,7 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>[Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.</li>
         <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=Registry-user) and [separate regional registries](/docs/Registry?topic=Registry-registry_overview#registry_regions).</li>
         <li>[Retaining images](/docs/Registry?topic=Registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
+        <li>Version 4.3 clusters on VPC infrastructure: Using the private registry service endpoint so that clusters that use only a private service endpoint can still access the registry.</li>
         <li>[Setting storage and image pull traffic quotas](/docs/Registry?topic=Registry-registry_quota) to better control image storage, usage, and billing.</li>
         <li>Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li></ul>
         <br>To get started, see the following topics:<ul>
@@ -98,9 +99,27 @@ Your app's images must be stored in a container registry that your cluster can a
 ## Storing images in the internal registry
 {: #openshift_internal_registry}
 
-OpenShift clusters are set up by default with an internal registry. The images in the internal registry are backed up.
+OpenShift clusters are set up by default with an internal registry. The images in the internal registry are backed up, but vary depending on the infrastructure provider of your Red Hat OpenShift on IBM Cloud cluster.
 {: shortdesc}
 
+- <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **Classic clusters**: Your OpenShift cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} File Storage as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}.
+- <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **VPC clusters (version 4.3 only)**: The internal registry of your OpenShift cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster. 
+
+### VPC: Backing up your OpenShift internal image registry to {{site.data.keyword.cos_full_notm}}
+{: #cos_image_registry}
+
+Your images in your OpenShift cluster internal registry are automatically backed up to an {{site.data.keyword.cos_full_notm}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
+{: shortdesc}
+
+<img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for Red Hat OpenShift on IBM Cloud clusters that run version 4.3 or later on VPC generation 2 compute infrastructure.
+{: note}
+
+However, if the bucket fails to create when you create your cluster, you must manually create a bucket and set up your cluster to use the bucket. In the meantime, the internal registry uses an `emptyDir` Kubernetes volume that stores your container images on the secondary disk of your worker node. The `emptyDir` volumes are not considered persistent highly available storage, and if you delete the pods that use the image, the image is automatically deleted.
+
+To manually create a bucket for your internal registry, see [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create).
+
+### Classic: Storing images in the internal registry
+{: #storage_internal_registry}
 
 By default, your OpenShift cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}

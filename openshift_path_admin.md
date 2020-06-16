@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -194,6 +194,7 @@ Start by designing a cluster for maximum availability and capacity for your work
   2. Plan your [security strategy](/docs/openshift?topic=openshift-security#network_segmentation), such as ensuring network segmentation and workload isolation.
 
 2. **Cluster setup**: After you plan your environment, plan the setup for a specific cluster.
+  1. Choose a [supported infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers).
   2. Plan your [cluster network setup](/docs/openshift?topic=openshift-plan_clusters).
   3. Plan your cluster for [high availability](/docs/openshift?topic=openshift-ha_clusters).
   4. Plan your [worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes).
@@ -233,11 +234,11 @@ Create a cluster with infrastructure, network, and availability setups that are 
 Review the following optional topics to manage the network connectivity of your cluster components and connections to other networks. For example, you might need to connect the workloads in your cluster to workloads in another private network. Or, you might return to this section later if you need to make more portable IP addresses available for load balancer services that expose apps in your cluster.
 {: shortdesc}
 
-* **Connections to other networks and workloads**: Set up VPN connectivity between your [classic cluster](/docs/openshift?topic=openshift-vpn) and remote network environments.
+* **Connections to other networks and workloads**: Set up VPN connectivity between your [classic cluster](/docs/openshift?topic=openshift-vpn) or [VPC cluster](/docs/openshift?topic=openshift-vpc-vpnaas) and remote network environments, other VPCs, and more.
   * To route responses from your cluster back to your on-premises network in VPN solutions that preserve the request source IP address, add [custom static routes](/docs/openshift?topic=openshift-static-routes) to worker nodes for on-premises subnets.
 * **Subnets and VLANs**:
-  * Add or change the available subnets and IP addresses for your [classic cluster](/docs/openshift?topic=openshift-subnets).
-  * Change the [VLAN connections for your worker nodes](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
+  * Add or change the available subnets and IP addresses for your [classic cluster](/docs/openshift?topic=openshift-subnets) or [VPC cluster](/docs/openshift?topic=openshift-vpc-subnets).
+  * Classic clusters: Change the [VLAN connections for your worker nodes](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
 
 </br>Need help? Check out [Troubleshooting cluster networking](/docs/openshift?topic=openshift-cs_troubleshoot_network#cs_troubleshoot_network).
 
@@ -252,8 +253,10 @@ Use built-in security features to protect your cluster infrastructure and networ
 
 1. **Security strategy**: Start by reviewing all [security options](/docs/openshift?topic=openshift-security) that are available for your cluster.
 2. **Network security**:
+  * Classic clusters:
     1. To isolate networking workloads, you can restrict network traffic to [edge worker nodes](/docs/openshift?topic=openshift-edge).
     2. Set up a firewall by using a [gateway appliance](/docs/openshift?topic=openshift-firewall#vyatta_firewall) or [Calico network policies](/docs/openshift?topic=openshift-network_policies).
+  * VPC clusters: Control traffic to and from your cluster with [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy). If you create multiple clusters that use the same subnets in one VPC, use [Calico network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers) to isolate your clusters on the private network instead.
 3. **Workload security**:
   1. [Encrypt sensitive information](/docs/openshift?topic=openshift-encryption) in the cluster, such as the master's local disk and secrets.
   2. Set up a [private image registry](/docs/openshift?topic=openshift-security#images_registry) for your developers, such as the one provided by {{site.data.keyword.registryshort}}, to control access to the registry and the image content that can be pushed.

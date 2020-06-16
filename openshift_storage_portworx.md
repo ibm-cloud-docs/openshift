@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,6 +40,9 @@ subcollection: openshift
 
 [Portworx](https://portworx.com/products/portworx-enterprise//){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
 {: shortdesc}
+	
+You can use Portworx in classic Red Hat OpenShift on IBM Cloud clusters only and not in VPC clusters. 
+{: important}
 
 ## About Portworx
 
