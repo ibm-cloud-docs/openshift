@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -248,7 +248,6 @@ From the OpenShift console, you can deploy one of the built-in service catalog a
   * Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
   * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
 * For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.
-* **VPC clusters**: To set up the internal OpenShift Container Registry with a backing storage device for your images, see [Setting up the internal registry to use {{site.data.keyword.cloud_notm}} Object Storage](/docs/openshift?topic=openshift-images#vpc_setup_cos).
 
 Looking for an overview of all your options in Red Hat OpenShift on IBM Cloud? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 {: tip}

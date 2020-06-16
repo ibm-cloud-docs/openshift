@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -106,7 +106,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     ```
     {: pre}
 
-2.  Create a VPC for your cluster. For more information, see the docs for creating a VPC in the [console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) or [CLI](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-cli).
+2.  Create a VPC for your cluster. For more information, see the docs for creating a VPC in the [console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) or [CLI](/docs/vpc?topic=vpc-creating-a-vpc-using-cli).
     1.  Target the VPC infrastructure generation 2.
         ```
         ibmcloud is target --gen 2
@@ -435,7 +435,7 @@ Now that you have a VPC cluster, learn more about what you can do.
 
 * [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
 * [Overview of the differences between classic and VPC clusters](/docs/openshift?topic=openshift-infrastructure_providers)
-* [VPC Gen 2 compute cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
+* [VPC Gen 2 compute cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
 * [About the v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about)
 * [Comparison of Classic and VPC commands for the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about)
 
@@ -443,4 +443,3 @@ Need help, have questions, or want to give feedback on VPC clusters? Try posting
 
 If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.
 {: tip}
-

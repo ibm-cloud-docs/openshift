@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -48,7 +48,7 @@ If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud l
 ## Service and quota limitations
 {: #tech_limits}
 
-Red Hat OpenShift on IBM Cloud comes with the following service limitations and quotas that apply to all clusters, independent of what infrastructure provider you plan to use. Keep in mind that the [classic](#classic_limits) and [VPC](#vpc_ks_limits) cluster limitations also apply.
+Red Hat OpenShift on IBM Cloud comes with the following service limitations and quotas that apply to all clusters, independent of what infrastructure provider you plan to use. Keep in mind that the [classic](#classic_limits) and [VPC](#ks_vpc_gen2_limits) cluster limitations also apply.
 {: shortdesc}
 
 | Category | Description |
@@ -87,7 +87,7 @@ Review limitations that are specific to OpenShift version 4.3 clusters. Keep in 
 | Cluster updates | You must [update your cluster](/docs/openshift?topic=openshift-update) by using the Red Hat OpenShift on IBM Cloud API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the OpenShift web console. |
 | Container logs | If you use a container logging operator such as Fluentd to send logs to an Elasticsearch stack, you must [update the cluster logging deployment to use the `/var/data` path to container logs](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Key management service (KMS) provider | You cannot use a KMS provider such as {{site.data.keyword.keymanagementservicelong}} to encrypt secrets in your cluster. |
-| Private clusters | Depending on the infrastructure provider, your options for private clusters are limited.<ul><li>**VPC**: When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private service endpoint. If you want only a private service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</li><li>**Classic**:You cannot create classic OpenShift clusters with a private service endpoint. Version 4.3 clusters must have only the public service endpoint enabled. Also, as with version 3.11, you cannot create clusters with only private VLAN connectivity.</li></ul> |
+| Private clusters | Depending on the infrastructure provider, your options for private clusters are limited.<ul><li>**VPC**: When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private service endpoint. If you want only a private service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</li><li>**Classic**:You cannot create classic OpenShift clusters with a private service endpoint. Version 4.3 clusters must have only the public service endpoint enabled. Also, as with version 3.11, you cannot create clusters with only private VLAN connectivity.</li></ul> |
 | Logging | To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Service catalog | The service catalog is not supported. Use [Operators](/docs/openshift?topic=openshift-operators#operators_4) instead. Do not use the OperatorHub to install the service catalog. |
 | Serverless | The Knative managed add-on is not supported. Instead, try out the tech preview for the [OpenShift Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}. |
@@ -150,8 +150,6 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 <br />
 
 
-
-
 ## VPC Gen 2 compute cluster limitations
 {: #ks_vpc_gen2_limits}
 
@@ -189,7 +187,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | NodePort | You can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection. To access an app from the internet, you must use a VPC load balancer or Ingress service instead. |
 | Pod network | VPC access control lists (ACLs) filter incoming and outgoing traffic for your cluster at the subnet level, such as traffic through the VPC load balancer. To control traffic within the cluster at the pod-to-pod level, you cannot use VPC security groups or ACLs. Instead, use [Calico](/docs/openshift?topic=openshift-network_policies) and [Kubernetes network policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies), which can control the pod-level network traffic that uses IP in IP encapsulation. |
 | Public gateway | You must attach a public gateway to the VPC subnet so that the worker nodes have access to the public network, to run default OpenShift components such as the web console and OperatorHub.|
-| Service endpoints | When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private service endpoint. If you want only a private service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.|
+| Service endpoints | When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private service endpoint. If you want only a private service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.|
 | strongSwan VPN service | The strongSwan service is not supported. To connect your cluster to resources in an on-premises network or another VPC, see [Using VPN with your VPC](/docs/vpc?topic=vpc-vpn-onprem-example). |
 | Subnets | <ul><li>See [VPC networking limitations](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_limitations).</li><li>Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</li></ul> |
 | VPC load balancer | See [VPC load balancer limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations). |

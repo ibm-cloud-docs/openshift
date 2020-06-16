@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -398,7 +398,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 Create your single zone or multizone VPC Generation 2 compute cluster by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
-Your VPC cluster is created with both a public and a private service endpoint. Want to create a VPC cluster with no public service endpoint and only a private service endpoint? Create the cluster [in the CLI](#clusters_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag.
+Your VPC cluster is created with both a public and a private service endpoint. Want to create a VPC cluster with no public service endpoint and only a private service endpoint? Create the cluster [in the CLI](#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag.
 {: tip}
 
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
@@ -559,7 +559,7 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
     </tr>
     <tr>
     <td><code>--disable-public-service-endpoint</code></td>
-    <td>Include this option in your command to create your VPC cluster with a private service endpoint only. If you do not include this option, your cluster is set up with a public and a private service endpoint. The service endpoint determines how your OpenShift master and the worker nodes communicate, how your cluster access other {{site.data.keyword.cloud_notm}} services and apps outside the cluster, and how your users connect to your cluster. For more information, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters#vpc-pgw).<p class="important">If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</p></td>
+    <td>Include this option in your command to create your VPC cluster with a private service endpoint only. If you do not include this option, your cluster is set up with a public and a private service endpoint. The service endpoint determines how your OpenShift master and the worker nodes communicate, how your cluster access other {{site.data.keyword.cloud_notm}} services and apps outside the cluster, and how your users connect to your cluster. For more information, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters).<p class="important">If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</p></td>
     </tr>
     </tbody></table>
 7. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.

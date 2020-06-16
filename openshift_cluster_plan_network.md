@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -111,7 +111,7 @@ In VPC clusters in Red Hat OpenShift on IBM Cloud, you cannot disable the privat
 * Communication between worker nodes and master is established over the private network through the private service endpoint.
 * To access the master through the private service endpoint, authorized cluster users must either be in your VPC network or are connected through a [VPC VPN connection](/docs/openshift?topic=openshift-vpc-vpnaas).
 
-Your VPC cluster is created with both a public and a private service endpoint by default. To create a VPC cluster with only a private service endpoint, create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_cli) and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.
+Your VPC cluster is created with both a public and a private service endpoint by default. To create a VPC cluster with only a private service endpoint, create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli) and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.
 {: note}
 
 </br>

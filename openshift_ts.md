@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -297,7 +297,7 @@ If these components fail, review the following debug steps.
         ```
         {: pre}
 3.  [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the OpenShift web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
-4.  Check the health of the OpenShift component pods that do not work. 
+4.  Check the health of the OpenShift component pods that do not work.
     1.  Check the status of the pod.
         ```
         oc get pods -n <project>
@@ -354,7 +354,7 @@ If these components fail, review the following debug steps.
         {: pre}
     3.  If you see the worker IP error, check if worker-to-worker communication is broken. Log in to a `calico-node` pod in the `calico-system` project, and check for the same `WORKERIP:10250` error.
         ```
-        oc exec -n calico-system <calico-node_pod> -- date 
+        oc exec -n calico-system <calico-node_pod> -- date
         ```
         {: pre}
     4.  If the worker-to-worker communication is broken, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation).
@@ -794,7 +794,7 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
 
 6.  Verify that the internal registry images are backed up to {{site.data.keyword.cos_full_notm}}.
     1.  [Build an image for your app](/docs/openshift?topic=openshift-images) and [push it to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images).
-    2.  [Import the image into your internal OpenShift registry](#imagestream_registry).
+    2.  [Import the image into your internal OpenShift registry](/docs/openshift?topic=openshift-registry#imagestream_registry).
     3.  [Deploy an app](/docs/openshift?topic=openshift-images#pod_imagePullSecret) that references your image.
     4.  From the [{{site.data.keyword.cloud_notm}} console resource list](https://cloud.ibm.com/resources), select your **Cloud Object Storage** instance.
     5.  From the menu, click **Buckets**, then click the bucket that you used for your Red Hat OpenShift on IBM Cloud cluster.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -3890,7 +3890,7 @@ When you create a VPC load balancer, the load balancer is assigned a hostname in
 
 However, this VPC load balancer hostname does not support TLS termination. If you want an SSL certificate for your app domain, you can use the `ibmcloud oc nlb-dns create vpc-gen2` command to create a DNS subdomain for the VPC load balancer hostname. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you. Note that in VPC clusters, you can create subdomains for both public and private VPC load balancers.
 
-You can also use this command to create a DNS entry for the hostname for your private ALBs, which is a required step for setting up a private Ingress service in a VPC cluster. For more information, see the [private Ingress setup documentation](/docs/openshift?topic=openshift-ingress#vpc_private_3).</br>
+You can also use this command to create a DNS entry for the hostname for your private ALBs.</br>
 
 ```
 ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --lb-host VPC_LB_HOSTNAME [--secret-namespace NAMESPACE] [--type (public|private)] [--json] [-s]
@@ -5730,9 +5730,6 @@ ibmcloud oc storage volume ls [--cluster CLUSTER_ID]
 ibmcloud oc storage volume ls --cluster aa1111aa11aaaaa11aa1
 ```
 {: pre}
-
-
-
 
 
 
