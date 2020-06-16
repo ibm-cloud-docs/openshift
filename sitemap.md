@@ -1362,6 +1362,7 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+  * [Changelog for master fix pack 4.3.23_1525_openshift, released 16 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)
   * [Changelog for worker node fix pack 4.3.23_1524_openshift, released 8 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1524)
   * [Changelog for worker node fix pack 4.3.21_1523_openshift, released 26 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4321_1523)
   * [Changelog for master fix pack 4.3.19_1523_openshift, released 26 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4319_1523)

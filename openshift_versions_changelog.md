@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-16"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -52,6 +52,26 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 4.3 patch updates.
 {: shortdesc}
+
+### Changelog for master fix pack 4.3.23_1525_openshift, released 16 June 2020
+{: #4323_1525}
+
+The following table shows the changes that are included in the master fix pack update `4.3.23_1525_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico operator | N/A | N/A | The component deployment now uses the `Recreate` update strategy. |
+| Cluster health image | v1.1.5 | v1.1.7 | Additional status information is included when an add-on health state is `critical`. |
+| etcd | v3.4.7 | v3.4.9 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.9){: external}. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.16 | 1.17 | Added support for block storage encryption. Additionally, the plug-in now sets the container memory limit. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.6-1 | v1.17.6-4 | Calico global network policies are now created for version 2.0 private network load balancers (NLBs). Updated to use `calicoctl` verison 3.12.2. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 373 | 375 | Fixed a bug that might cause error handling to create additional persistent volumes. |
+| OpenShift | 4.3.19 | 4.3.23 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-23){: external}. Updated the {{site.data.keyword.cloud_notm}} command line tools documentation in the OpenShift web console. |
+| OpenShift HyperShift toolkit | bc493d4 | N/A | This component is replaced by the Red Hat OpenShift on IBM Cloud toolkit component. |
+| Red Hat OpenShift on IBM Cloud toolkit | N/A | 4.3.0+20200603 | **New!**: See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.3.0+20200603){: external}. This component replaces the OpenShift HyperShift toolkit component. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.23_1524_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.3.23_1524_openshift, released 8 June 2020
 {: #4323_1524}
