@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -79,9 +79,9 @@ Because worker nodes in VPC clusters do not have a public IP address, you can ac
 
 If you do not already have an app ready, you can use a Kubernetes example app called [Guestbook](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml){: external}.
 
-**Before you begin**: 
+**Before you begin**:
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* VPC clusters: If you use non-default VPC security groups, [allow traffic requests that are routed to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
+* VPC clusters: [Allow traffic requests that are routed to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 
 **To use a NodePort**:
 

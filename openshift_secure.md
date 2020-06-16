@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -333,9 +333,7 @@ You can use network load balancer (NLB) and Ingress application load balancer (A
 **Can I use security groups to manage my cluster's network traffic?** </br>
 Classic clusters: {{site.data.keyword.cloud_notm}} [security groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups) are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. If you want to manage traffic for each worker node, you can use security groups. When you create a security group, you must allow the VRRP protocol, which Red Hat OpenShift on IBM Cloud uses to manage NLB IP addresses. To uniformly manage traffic for your cluster across all of your worker nodes, use [Calico and Kubernetes policies](/docs/openshift?topic=openshift-network_policies).
 
-VPC clusters: Use [access control lists (ACLs) and Kubernetes network policies](/docs/openshift?topic=openshift-vpc-network-policy) to manage network traffic into and out of your cluster. [VPC security groups](/docs/vpc?topic=vpc-using-security-groups) are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. Because the worker nodes of your VPC cluster exist in a service account and are not listed in the VPC infrastructure dashboard, you cannot attach a security group to your individual worker nodes instances. However, you can use security groups at the level of the VPC.
-
-When you create a Generation 2 VPC, the VPC is created with a default security group that does not allow incoming traffic to your worker nodes. You must modify the security group for the VPC to allow incoming TCP traffic to ports `30000 - 32767`. Additionally, if you create a non-default security group, you must include an inbound rule that allows incoming TCP traffic to ports `30000 - 32767`. For more information, see the "Before you begin" section of the [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb) or [Ingress](/docs/openshift?topic=openshift-ingress#ingress_expose_public) setup topics.
+VPC clusters: Use [access control lists (ACLs) and Kubernetes network policies](/docs/openshift?topic=openshift-vpc-network-policy) to manage network traffic into and out of your cluster. When you create a VPC cluster, a default [VPC security group](/docs/vpc?topic=vpc-using-security-groups) is created automatically and applied to the network interface of your worker nodes to filter traffic at the hypervisor level. While the default security group in VPC Gen 1 allows all traffic to your worker nodes, the default security group in VPC Gen 2 clusters does not allow traffic to your worker nodes. You can make changes to the default security group, such as to allow incoming TCP traffic to ports `30000-32767` of your VPC Gen 2 worker nodes. However, because the worker nodes of your VPC cluster exist in a service account and are not listed in the VPC infrastructure dashboard, you cannot create more security groups and apply them to your individual worker nodes.
 
 
 
