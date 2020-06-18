@@ -42,7 +42,7 @@ Design a network setup for your {{site.data.keyword.openshiftlong}} cluster that
 {: shortdesc}
 
 Get started by planning your setup for a VPC or a classic cluster.
-* With [Red Hat OpenShift on IBM Cloud clusters in VPC](#plan_vpc_basics), you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc) for Generation 1 compute resources. VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
+* With [Red Hat OpenShift on IBM Cloud clusters in VPC](#plan_vpc_basics), you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc) for Generation 2 compute resources. VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
 * With [Red Hat OpenShift on IBM Cloud classic clusters](#plan_basics), you can create your cluster on classic infrastructure. Classic clusters include all of the Red Hat OpenShift on IBM Cloud mature and robust features for compute, networking, and storage.
 
 First time creating a cluster? First, try out the [tutorial for creating OpenShift clusters](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
