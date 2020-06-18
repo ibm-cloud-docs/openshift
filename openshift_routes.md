@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-17"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -35,8 +35,6 @@ subcollection: openshift
 
 
 
-
-
 # Exposing apps with routes in OpenShift 4.3 or later
 {: #openshift_routes}
 {: help}
@@ -63,7 +61,7 @@ The type of router that is created by default varies depending on your cluster's
 * **Classic clusters / VPC Gen 2 clusters with public service endpoint**: Your cluster is created with a public router by default. The router assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface. When a request is received, the router directs the request to the private IP address that the app listens on. If you want to privately expose your apps instead, you must first create a private router, and then create private routes.
 * **VPC Gen 2 clusters with private service endpoint only**: Your cluster is created with a private router by default. The router assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps exposed by a private route. If you want to publicly expose your apps instead, you must first create a public router, and then create public routes.
 
-If you have a multizone cluster, one router is deployed to your cluster, and a router service is created in each zone. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
+If you have a multizone cluster, one high-availability router is deployed to your cluster, and one router service is created in each zone. Two worker nodes are required per zone so that the two replicas of the router can be deployed and updated correctly. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
 * To see the router services in each zone of your cluster, run `oc get svc -n openshift-ingress`.
 * To see the router subdomain for your cluster and the IP addresses for the router service in each zone, run `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and look for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 
@@ -674,5 +672,3 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
     {: pre}
 
 8. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
-
-

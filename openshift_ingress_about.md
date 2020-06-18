@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-17"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -58,15 +58,21 @@ Ingress consists of three components: Ingress resources, application load balanc
 To expose an app by using Ingress, you must create a Kubernetes service for your app and register this service with Ingress by defining an Ingress resource. The Ingress resource is a Kubernetes resource that defines the rules for how to route incoming requests for apps.
 {: shortdesc}
 
-The Ingress resource also specifies the path to your app services. When you create a standard cluster, an Ingress subdomain is registered by default for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. The paths to your app services are appended to the public route to form a unique app URL such as `mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud/myapp1`.
+The Ingress resource also specifies the path to your app services. When you create a standard cluster, an Ingress subdomain is registered by default for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. The paths to your app services are appended to the public route to form a unique app URL such as `mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud/myapp1`. The following table describes each component of the subdomain.
+
+|Subdomain component|Description|
+|----|----|
+|`*`|The wildcard for the subdomain is registered by default for your cluster.|
+|`<cluster_name>`|The name of your cluster.<ul><li>If the cluster name is 26 characters or fewer and the cluster name is unique in this region, the entire cluster name is included and is not modified: `myclustername`.</li><li>If the cluster name is 26 characters or fewer and there is an existing cluster of the same name in this region, the entire cluster name is included and a dash with six random characters is added: `myclustername-ABC123`.</li><li>If the cluster name is 26 characters or greater and the cluster name is unique in this region, only the first 24 characters of the cluster name are used: `myveryverylongclusternam`.</li><li>If the cluster name is 26 characters or greater and there is an existing cluster of the same name in this region, only the first 17 characters of the cluster name are used and a dash with six random characters is added: `myveryverylongclu-ABC123`.</li></ul>|
+|`<globally_unique_account_HASH>`|A globally unique HASH is created for your {{site.data.keyword.cloud_notm}} account. All subdomains that you create for NLBs in clusters in your account use this globally unique HASH.|
+|`0000`|The first and second characters indicate a public or a private (internal) subdomain. `00` indicates a subdomain that has a public DNS entry. `i0` indicates a subdomain that has a private DNS entry. The third and fourth characters, such as `00` or another number, act as a counter for each subdomain that is created in your cluster.|
+|`<region>`|The region that the cluster is created in.|
+|`containers.appdomain.cloud`|The subdomain for Red Hat OpenShift on IBM Cloud subdomains.|
+{: caption="Understanding the Ingress subdomain format"}
 
 One Ingress resource is required per project where you have apps that you want to expose.
 * If the apps in your cluster are all in the same namespace, one Ingress resource is required to define routing rules for the apps that are exposed there. Note that if you want to use different domains for the apps within the same namespace, you can use a wildcard domain to specify multiple subdomain hosts within one resource.
 * If the apps in your cluster are in different namespaces, you must create one resource per project to define rules for the apps that are exposed there. You must use a wildcard domain and specify a different subdomain in each Ingress resource.
-
-For more information, see [Planning networking for single or multiple namespaces](/docs/openshift?topic=openshift-ingress#multiple_namespaces).
-
-<p class="important">As of 22 November 2019, the following changes are made to the Ingress subdomain:</br></br>All new clusters are assigned an Ingress subdomain in the format <code>&lt;cluster_name&gt;.&lt;globally_unique_account_HASH&gt;-0000.&lt;region&gt;.containers.appdomain.cloud</code> and an Ingress secret in the format <code>&lt;cluster_name&gt;.&lt;globally_unique_account_HASH&gt;-0000</code>. For more information about this format, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format). If you have pipeline dependencies on consistent app domain names, you can use your own custom domain instead of the IBM-provided Ingress subdomain.</p>
 
 ### Application load balancer (ALB)
 {: #alb-about}

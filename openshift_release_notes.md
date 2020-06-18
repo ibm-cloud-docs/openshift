@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-06-18"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -46,6 +46,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 18 June 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`ingress-auth` image build to 413](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul>|
 | 16 June 2020 | <ul><li>**New! Virtual Private Cloud Generation 2**: You can now create OpenShift clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC Gen 2 clusters are available for version 4.3 and later clusters only.<br><br>For more information, check out the following links:<ul><li>[Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)</li><li>[Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)</li><li>[New VPC Gen 2 commands for the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about)</li><li>[VPC Gen 2 compute cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)</li><li>[Changelog for master fix pack `4.3.23_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)</ul>Ready to get started? Try out the [Creating a cluster in your VPC on generation 2 compute tutorial](/docs/openshift?topic=openshift-vpc_roks_tutorial).</li><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.99](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li></ul>|
 | 09 June 2020 | <ul><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.94](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**Permissions**: Added a [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions) reference topic, and restructured cluster creation and user access topics to refer to this reference topic.</li><li>**New! Static routes add-on**: Added information about creating static routes on your worker nodes by enabling the [static routes cluster add-on](/docs/openshift?topic=openshift-static-routes).</li></ul> |
 | 08 June 2020 | **Version changelogs**: Worker node changelog documentation is available for OpenShift [`4.3.23_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1524) and [`3.11.219_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311219_1552). |
