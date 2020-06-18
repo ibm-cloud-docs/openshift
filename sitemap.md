@@ -1597,7 +1597,7 @@ subcollection: openshift
 * [OpenVPN server error due to NLB DNS](/docs/openshift?topic=openshift-cs_troubleshoot_lb#rhoks_ts_openvpn_dns)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_lb#getting_help_lb)
 
-[Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress)
+[Ingress and routers](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress)
 * [Checking the status of Ingress components](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-status)
 * [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)
 * [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_rate_limit)
