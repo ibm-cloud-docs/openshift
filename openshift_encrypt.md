@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-18"
+lastupdated: "2020-06-19"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -98,6 +98,10 @@ You cannot disable KMS provider encryption. Do not delete root keys in your KMS 
 
 **With a KMS provider, do I control the encryption in my cluster?**<br>
 Yes. When you enable a KMS provider in your cluster, your own KMS root key is used to encrypt data in etcd, including the LUKS secrets. Using your own encryption root key adds a layer of security to your etcd data and Kubernetes secrets and gives you more granular control of who can access sensitive cluster information. For more information, see the [overview](#encrypt_ov) and your KMS provider's documentation, such as [{{site.data.keyword.keymanagementserviceshort}} envelope encryption](/docs/key-protect?topic=key-protect-envelope-encryption).
+
+**Can I use all the features of the KMS provider with my cluster?**<br>
+Review the following known limitations:
+* Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementservicefull}} instance is not supported.
 
 <br />
 
