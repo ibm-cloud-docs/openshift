@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,7 +35,7 @@ subcollection: openshift
 
 
 
-# Ingress
+# Ingress and routers
 {: #cs_troubleshoot_debug_ingress}
 
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for general Ingress troubleshooting and debugging.
@@ -597,22 +597,21 @@ When you run `oc get svc -n openshift-ingress`, one or more zones has no public 
   router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
   ```
   {: screen}
-* If you have a multizone cluster, one zone has no router service. For example, in a multizone cluster that has worker nodes in `dal10` and `dal12`, you might see a `router-default` service for `dal10`, but no `router-dal12` for `dal12`. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
+* If you have a multizone cluster, one zone has no router service. For example, in a multizone cluster that has worker nodes in `dal10`, `dal12`, and `dal13`, you might see a `router-default` service for `dal10` and a `router-dal12` for `dal12`, but no `router-dal13` for `dal13`. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`. You might also see that one zone has no router service, but another zone has two or more router services.
   ```
   NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
   router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
+  router-dal12                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
   router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
   ```
   {: screen}
 
 {: tsCauses}
-In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. In that zone, 1 public portable subnet is requested on the public VLAN that you specify and 1 private portable subnet is requested on the private VLAN that you specify. For Red Hat OpenShift on IBM Cloud, VLANs have a limit of 40 subnets. If the cluster's VLAN in a zone already reached that limit, the **Ingress Subdomain** fails to provision and the default public router for the Ingress controller fails to provision.
-
-To view how many subnets a VLAN has:
-1.  From the [IBM Cloud infrastructure console](https://cloud.ibm.com/classic?), select **Network** > **IP Management** > **VLANs**.
-2.  Click the **VLAN Number** of the VLAN that you used to create your cluster. Review the **Subnets** section to see whether 40 or more subnets exist.
+* **If no router services are deployed or router services are not assigned an external IP address**: In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. In that zone, 1 public portable subnet is requested on the public VLAN that you specify and 1 private portable subnet is requested on the private VLAN that you specify. For Red Hat OpenShift on IBM Cloud, VLANs have a limit of 40 subnets. If the cluster's VLAN in a zone already reached that limit, the **Ingress Subdomain** fails to provision and the default public router for the Ingress controller fails to provision. To view how many subnets a VLAN has, from the [IBM Cloud infrastructure console](https://cloud.ibm.com/classic?), select **Network** > **IP Management** > **VLANs**. Click the **VLAN Number** of the VLAN that you used to create your cluster. Review the **Subnets** section to see whether 40 or more subnets exist.
+* **If one zone has no router service**: When your router services are created, they are automatically spread across the zones in your cluster. If the network for the first zone that your cluster was created with is not ready when the router services are created, the router service for that zone might be placed in a different zone. Two router services might be created in one zone, and no router service is created in the initial zone.
 
 {: tsResolve}
+**To resolve VLAN issues**:
 Option 1: If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) that uses this new VLAN.
 
 Option 2: If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Then, you can add new worker nodes to the cluster that use the other VLAN with available subnets. Create at least 2 worker nodes per zone. Now, IP addresses are available so that the routers can automatically deploy.
@@ -642,6 +641,60 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 4. Verify that the portable IP addresses from the subnet that you added are used for the router in your cluster. It might take several minutes for the services to use the portable IP addresses from the newly-added subnet.
   * **No Ingress subdomain**: Run `ibmcloud oc cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
   * **A router does not deploy in a zone**: Run `oc get svc -n openshift-ingress` to verify that the missing router is deployed with an external IP address.
+
+**To resolve multizone router service deployment issues**: Create a router service in the zone where a router service did not deploy. If a duplicate router service was initially created in a different zone, do **not** delete that router service.
+
+1. Create a YAML for a router service in the zone where a router service did not deploy. Name the router service `router-<zone>`.
+   ```
+   apiVersion: v1
+   kind: Service
+   metadata:
+     annotations:
+       service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
+     finalizers:
+     - service.kubernetes.io/load-balancer-cleanup
+     labels:
+       app: router
+       ingresscontroller.operator.openshift.io/owning-ingresscontroller: default
+       router: router-default
+     name: router-<zone>
+     namespace: openshift-ingress
+   spec:
+     externalTrafficPolicy: Cluster
+     selector:
+       ingresscontroller.operator.openshift.io/deployment-ingresscontroller: default
+     sessionAffinity: None
+     type: LoadBalancer
+   ```
+   {: codeblock}
+
+2. Create the router service in your cluster.
+  ```
+  oc create -f router-<zone>.yaml
+  ```
+  {: pre}
+3. Verify that the router service is created in the correct zone. In the output, get the **EXTERNAL IP** address.
+  ```
+  oc get svc router-<zone> -n openshift-ingress
+  ```
+  {: pre}
+
+  Example output:
+  ```
+  NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
+  router-dal12                 LoadBalancer   172.21.57.132    169.XX.XX.XX    80/TCP,443/TCP,1940/TCP      3m
+  ```
+  {: screen}
+4. Get the subdomain for your default router. In the output, look for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+  ```
+  ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
+  ```
+  {: pre}
+5. Register the router service's IP address with your router's subdomain.
+  ```
+  ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <router_svc_ip> --nlb-host <router_subdomain>
+  ```
+  {: pre}
 
 <br />
 
