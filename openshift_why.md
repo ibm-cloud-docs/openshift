@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-06-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -74,7 +74,7 @@ Ready to get started? Try out the [creating a Red Hat OpenShift on IBM Cloud clu
 ## Comparison between OpenShift and community Kubernetes clusters
 {: #openshift_kubernetes}
 
-Both OpenShift and community Kubernetes clusters are production-ready container platforms that are tailored for enterprise workloads. The following table compares and contrasts some common characteristics that can help you choose which container platform is right for your use case.
+Both Red Hat OpenShift on IBM Cloud and {{site.data.keyword.containerlong_notm}} clusters are production-ready container platforms that are tailored for enterprise workloads. The following table compares and contrasts some common characteristics that can help you choose which container platform is right for your use case.
 {: shortdesc}
 
 |Characteristics|Community Kubernetes clusters|OpenShift clusters|
