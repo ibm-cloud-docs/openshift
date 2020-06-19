@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-17"
+lastupdated: "2020-06-19"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -157,7 +157,7 @@ In classic clusters, bringing your own Ingress controller is supported only for 
 
       4. Add the IP address for your load balancer to the subdomain.
         ```
-        ibmcloud oc nlb-dns add classic --cluster <cluster> --ip <load_balancer_IP> --nlb-host <Ingress_subdomain>
+        ibmcloud oc nlb-dns add --cluster <cluster> --ip <load_balancer_IP> --nlb-host <Ingress_subdomain>
         ```
         {: pre}
 

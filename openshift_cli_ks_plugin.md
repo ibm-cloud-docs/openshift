@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-17"
+lastupdated: "2020-06-19"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1478,7 +1478,7 @@ Before you reboot your worker node, make sure that pods are rescheduled on other
 
 2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Replace `<worker_name>` with the private IP address of the worker node that you previously retrieved.
   ```
-  oc drain <worker_name>
+  oc adm drain <worker_name>
   ```
   {: pre}
   This process can take a few minutes.
@@ -1490,7 +1490,7 @@ Before you reboot your worker node, make sure that pods are rescheduled on other
 4. Wait about 5 minutes before you make your worker node available for pod scheduling to ensure that the reboot is finished. During the reboot, the state of your worker node does not change. The reboot of a worker node is usually completed in a few seconds.
 5. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
   ```
-  oc uncordon <worker_name>
+  oc adm uncordon <worker_name>
   ```
   {: pre}
 

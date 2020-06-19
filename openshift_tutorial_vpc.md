@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-06-19"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -297,7 +297,7 @@ Interested in using an OpenShift route to expose your app instead? Check out [Ho
 
 1.  Create a Kubernetes `LoadBalancer` service in your cluster to publicly expose the hello world app.
     ```
-    oc expose deployment/hello-world-deployment --type=LoadBalancer --name=hw-lb-svc  --port=8080 --target-port=8080
+    oc expose deployment/hello-world --type=LoadBalancer --name=hw-lb-svc  --port=8080 --target-port=8080
     ```
     {: pre}
 
