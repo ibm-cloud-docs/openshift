@@ -145,8 +145,8 @@ subcollection: openshift
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
 
-## Your cluster strategy
-{: #sitemap_your_cluster_strategy}
+## Cluster strategy
+{: #sitemap_cluster_strategy}
 
 
 [Your responsibilities with using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks)
