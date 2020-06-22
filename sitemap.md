@@ -319,6 +319,7 @@ subcollection: openshift
 * [Accessing OpenShift clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
   * [Using an API key to log in to OpenShift clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
   * [Using a service ID to log in to OpenShift clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
+* [Accessing the cluster master via admission controllers and webhooks](/docs/openshift?topic=openshift-access_cluster#access_webhooks)
 
 [Assigning cluster access](/docs/openshift?topic=openshift-users)
 * [Setting up access to your cluster](/docs/openshift?topic=openshift-users#access-checklist)
@@ -1541,6 +1542,7 @@ subcollection: openshift
 * [Unable to create a cluster in the console due to `No VPC is available` error](/docs/openshift?topic=openshift-cs_troubleshoot#ts_no_vpc)
 * [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create)
 * [Cluster create error cannot pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-cs_troubleshoot#ts_image_pull_create)
+* [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update)
 * [Cluster remains in a pending State](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_pending)
 * [Unable to view or work with a cluster](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_access)
 * [No resources found](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_not_found)

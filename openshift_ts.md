@@ -835,6 +835,114 @@ Steps:
 <br />
 
 
+## Cluster cannot update because of broken webhook
+{: #webhooks_update}
+
+{: tsSymptoms}
+During a master operation such as updating your cluster version, the cluster had a broken webhook application. Now, master operations cannot complete. You see an error seimilar to the following:
+
+```
+Cannot complete cluster master operations because the cluster has a broken webhook application. For more information, see the troubleshooting docs: 'https://ibm.biz/master_webhook'
+```
+{: screen}
+
+{: tsCauses}
+Your Kubernetes cluster has configurable webhook resources, validating or mutating admission webhooks, that can intercept and modify requests from various services in the cluster to the API server in the cluster master. Because webhooks can change or reject requests, broken webhooks can impact the functionality of the cluster in various ways, such as preventing you from updating the master version or other maintenance operations. For more information, see the [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} in the Kubernetes documentation.
+
+Potential causes for broken webhooks include:
+*   The underlying resource that issues the request is missing or unhealthy, such as a Kubernetes service, endpoint, or pod. 
+*   The webhook is part of an add-on or other plug-in application that did not install correctly or is unhealthy.
+*   Your cluster might have a networking connectivity issue that prevents the webhook from communicating with the Kubernetes API server in the cluster master.
+
+{: tsResolve}
+Identify and restore the resource that causes the broken webhook.
+
+1.  Create a test pod to get an error that identifies the broken webhook.
+    ```
+    oc run webhook-test --generator=run-pod/v1 --image pause:latest
+    ```
+    {: pre}
+2.  In the error, copy the broken webhook. In the following example, the webhook is `trust.hooks.securityenforcement.admission.cloud.ibm.com`.
+    ```
+    Error from server (InternalError): Internal error occurred: failed calling webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com": Post https://ibmcloud-image-enforcement.ibm-system.svc:443/mutating-pods?timeout=30s: dial tcp 172.21.xxx.xxx:443: connect: connection timed out
+    ```
+    {: screen}
+3.  Get the name of the broken webhook. Replace `trust.hooks.securityenforcement.admission.cloud.ibm.com` with the broken webhook that you previously identified.
+    ```
+    oc get mutatingwebhookconfigurations,validatingwebhookconfigurations -o jsonpath='{.items[?(@.webhooks[*].name=="trust.hooks.securityenforcement.admission.cloud.ibm.com")].metadata.name}{"\n"}'
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    image-admission-config
+    ```
+    {: pre}
+4.  Review the service and location details of the mutating or validating webhook configuration in the `clientConfig` section in the output of the following command. Replace `image-admission-config` with the name that you previously identified. If the webhook exists outside the cluster, contact the cluster owner to check the webhook status.
+    ```
+    oc get mutatingwebhookconfiguration image-admission-config -o yaml
+    ```
+    {: pre}
+
+    ```
+    oc get validatingwebhookconfigurations image-admission-config -o yaml
+    ```
+    {: pre}
+
+    Example output:
+    ```
+      clientConfig:
+        caBundle: <redacted>
+        service:
+            name: <name>
+            namespace: <namespace>
+            path: /inject
+            port: 443
+    ```
+    {: screen}
+5.  **Optional**: Back up the webhooks, especially if you do not know how to reinstall the webhoook.
+    ```
+    oc get mutatingwebhookconfiguration <name> -o yaml > mutatingwebhook-backup.yaml
+    ```
+    {: pre}
+
+    ```
+    oc get validatingwebhookconfiguration <name> -o yaml > validatingwebhook-backup.yaml
+    ```
+    {: pre}
+6.  Check the status of the related service and pods for the webhook.
+    1.  Check the service **Type**, **Selector**, and **Endpoint** fields.
+        ```
+        oc describe service -n <namespace> <service_name>
+        ```
+        {: pre}
+    2.  If the service type is **ClusterIP**, check that the OpenVPN pod is in a **Running** status so that the webhook can connect securely to the Kubernetes API in the cluster master. If the pod is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app).
+        ```
+        oc describe pods -n kube-system -l app=vpn
+        ```
+        {: pre}
+    3.  If the service does not have an endpoint, check the health of the backing resources, such as a deployment or pod. If the resource is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app).
+        ```
+        oc get all -n my-service-namespace -l <key=value>
+        ```
+        {: pre}
+    4.  If the service does not have any backing resources, or if troubleshooting the pods does not resolve the issue, remove the webhook.
+        *   If the webhook is managed by an add-on that you installed, uninstall the add-on. Common add-ons that cause webhook issues include the following:
+            *   [Container image security enforcement](/docs/Registry?topic=Registry-security_enforce).
+            *   [Istio](/docs/containers?topic=containers-istio#istio_uninstall).
+            *   [Knative](/docs/containers?topic=containers-serverless-apps-knative).
+        *   If the webhook is a custom webhook that you added, delete the webhook.
+            ```
+            oc delete mutatingwebhook <name>
+            ```
+            {: pre}
+7.  Retry the cluster master operation, such as updating the cluster.
+8.  If you still see the error, you might have worker node or network connectivity issues.
+    *   [Worker node troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot_clusters).
+    *   Make sure that the webhook can connect to the Kubernetes API server in the cluster master. For example, if you use Calico network policies, security groups, or some other type of firewall, set up your [classic](/docs/openshift?topic=openshift-firewall) or [VPC](/docs/openshift?topic=openshift-vpc-firewall) cluster with the appropriate access.
+9.  Re-create the webhook or reinstall the add-on.
+
+<br />
 
 
 ## Cluster remains in a pending State
