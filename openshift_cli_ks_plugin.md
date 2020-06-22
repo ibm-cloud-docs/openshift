@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-06-22"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -386,7 +386,7 @@ Red Hat OpenShift on IBM Cloud plug-in CLI versions 0.4 and earlier are deprecat
 {: deprecated}
 
 ```
-ibmcloud oc cluster config --cluster CLUSTER [--admin] [--export] [--network] [--powershell] [--skip-rbac] [-s] [--yaml]
+ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac] [-s] [--yaml]
 ```
 {: pre}
 
@@ -408,12 +408,6 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--export] [--network] [-
 
 <dt><code>--network</code></dt>
 <dd>Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. This value is optional. **Note**: This option cannot be used in conjunction with the <code>--yaml</code> option.</dd>
-
-<dt><code>--export</code></dt>
-<dd>Download Kubernetes configuration data and certificates without any messages other than the export command. Because no messages are displayed, you can use this flag when you create automated scripts. This value is optional.</dd>
-
-<dt><code>--powershell</code></dt>
-<dd>Retrieve environment variables in Windows PowerShell format.</dd>
 
 <dt><code>--skip-rbac</code></dt>
 <dd>Skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) to manage all your RBAC users, do not include this option.</dd>
