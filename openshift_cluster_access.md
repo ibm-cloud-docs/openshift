@@ -568,13 +568,9 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 
 Admission controllers intercept authorized API requests from various Kubernetes resources before the requests reach the API server that runs in your Red Hat OpenShift on IBM Cloud cluster master. Mutating admission webhooks might modify the request, and validating admission webhooks check the request. If either webhook rejects a request, the entire request fails. Advanced features, whether built-in or added on, often require admission controllers as a security precaution and to control what requests are sent to the API server. For more information, see [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} and [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} in the Kubernetes documentation.
 
-**What are the default admission controllers in my cluster?**<br>
-Review the order of default admission controllers by cluster version in the [`kube-apiserver` component reference information](/docs/openshift?topic=openshift-service-settings#kube-apiserver).
-
-<br>
 
 **Can I create my own admission controllers?**<br>
-Yes, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} for more information. 
+Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [OpenShift](https://docs.openshift.com/container-platform/4.3/architecture/admission-plug-ins.html){: external} documentation for more information. 
 
 As noted in the Kubernetes documentation, you can use admission controllers for operations that are otherwise handled by the control plane. As such, take great caution when you configure a custom admission controller. You are responsible for any changes that happen in your cluster because of a custom admission controller.
 {: important}
@@ -594,8 +590,6 @@ Keep in mind the following considerations when you configure a webhook.
 **What other types of apps use admission controllers?**<br>
 Many cluster add-ons, plug-ins, and other third-party extensions create custom admission controllers. Some common ones include:
 *   [Container image security enforcement](/docs/Registry?topic=Registry-security_enforce).
-*   [Istio](/docs/containers?topic=containers-istio-about).
-*   [Knative](/docs/containers?topic=containers-serverless-apps-knative).
 
 <br>
 
