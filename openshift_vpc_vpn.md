@@ -48,10 +48,10 @@ The following table compares the connection options that are available based on 
 
 | Destination | {{site.data.keyword.vpc_short}} VPN | {{site.data.keyword.tg_short}} | {{site.data.keyword.dl_short}} | Classic-access VPC |
 |---|---|---|---|---|
-| On-premises networks |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />||
-| Other VPCs |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|||
-| {{site.data.keyword.cloud_notm}} classic resources ||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-{: caption="Comparison of " caption-side="top"}
+| [On-premises networks](#onprem) |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />||
+| [Other VPCs](#vpc-vpc) |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|||
+| [Classic infrastructure resources](#vpc-classic) ||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+{: caption="Comparison of connection options based on destination type" caption-side="top"}
 
 ## Communication with resources in on-premises data centers
 {: #onprem}
@@ -73,6 +73,9 @@ With {{site.data.keyword.dl_short}}, you can create a direct, private connection
 
 To get started, see [Ordering {{site.data.keyword.dl_full_notm}} Dedicated](/docs/dl?topic=dl-how-to-order-ibm-cloud-dl-dedicated). In step 8, you can create a network connection to your VPC to be attached to the {{site.data.keyword.dl_short}} gateway.
 
+<br />
+
+
 ## Communication with resources in other VPCs
 {: #vpc-vpc}
 
@@ -86,6 +89,9 @@ Create a VPC gateway on a subnet in each VPC and create a VPN connection between
 **{{site.data.keyword.tg_full_notm}}**
 
 Use {{site.data.keyword.tg_full_notm}} to manage access between your VPCs. {{site.data.keyword.tg_short}} instances can be configured to route between VPCs that are in the same region (local routing) or VPCs that are in different regions (global routing). To get started, see the [{{site.data.keyword.tg_short}} documentation](/docs/transit-gateway?topic=transit-gateway-getting-started).
+
+<br />
+
 
 ## Communication with {{site.data.keyword.cloud_notm}} classic resources
 {: #vpc-classic}
