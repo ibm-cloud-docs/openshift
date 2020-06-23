@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-23"
 
 keywords: openshift
 subcollection: openshift
@@ -461,8 +461,8 @@ subcollection: openshift
   * [Opening required ports in a private firewall](/docs/openshift?topic=openshift-firewall#firewall_private)
   * [Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and OpenShift routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
-* [Whitelisting your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#whitelist_workers)
-* [Updating IAM whitelists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_whitelist)
+* [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#whitelist_workers)
+* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_whitelist)
 
 [Classic: Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge)
 * [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
@@ -491,7 +491,7 @@ subcollection: openshift
   * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
   * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
   * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
-* [Whitelisting your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-whitelist_workers)
+* [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-whitelist_workers)
 
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
 * [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#overview)
@@ -601,14 +601,11 @@ subcollection: openshift
 
 [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
-[Setting up LogDNA and Sysdig add-ons to monitor cluster health](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig)
-* [Setting up logging with LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna)
+[Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
 
 [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
-* [Setting up monitoring with Sysdig](/docs/openshift?topic=openshift-health#openshift_sysdig)
-* [Optional: Cleaning up](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig_cleanup)
 
-[Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools](/docs/openshift?topic=openshift-health#openshift_other_logmet)
+[Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig)
 
 [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 * [Installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_install)
@@ -1342,6 +1339,16 @@ subcollection: openshift
 * [Version 0.3](/docs/openshift?topic=openshift-cs_cli_changelog#03)
 * [Version 0.2](/docs/openshift?topic=openshift-cs_cli_changelog#02)
 * [Version 0.1](/docs/openshift?topic=openshift-cs_cli_changelog#01)
+
+[Observability plug-in CLI](/docs/openshift?topic=openshift-observability_cli)
+  * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
+  * [`ibmcloud ob logging config delete`](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
+  * [`ibmcloud ob logging config list`](/docs/openshift?topic=openshift-observability_cli#logging_config_list)
+  * [`ibmcloud ob logging config show`](/docs/openshift?topic=openshift-observability_cli#logging_config_show)
+  * [`ibmcloud ob monitoring config create`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_create)
+  * [`ibmcloud ob monitoring config delete`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
+  * [`ibmcloud ob monitoring config list`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_list)
+  * [`ibmcloud ob monitoring config show`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_show)
 
 
 ## Version history

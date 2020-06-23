@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-23"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -46,6 +46,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 23 June 2020 | **New! Red Hat OpenShift on IBM Cloud observability plug-in**: You can now use the Red Hat OpenShift on IBM Cloud observability plug-in to create a logging or monitoring configuration for your cluster so that you can forward cluster logs and metrics to an {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} service instance. For more information, see [Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna) and [Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig). You can also use the command line to create the logging and monitoring configuration. For more information, see the [Observability plug-in CLI](/docs/openshift?topic=openshift-observability_cli) reference.|
 | 22 June 2020 | **Version changelogs**: Changelog documentation is available for  OpenShift [`4.3.13_1522_openshift` master and `4.3.25_1527_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#4323_1527_master) and [`3.11.219_1554_openshift` master and `3.11.232_1554_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#311219_1554_master) fix pack patch updates.
 | 18 June 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`ingress-auth` image build to 413](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul>|
 | 16 June 2020 | <ul><li>**New! Virtual Private Cloud Generation 2**: You can now create OpenShift clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC Gen 2 clusters are available for version 4.3 and later clusters only.<br><br>For more information, check out the following links:<ul><li>[Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)</li><li>[Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)</li><li>[New VPC Gen 2 commands for the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about)</li><li>[VPC Gen 2 compute cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)</li><li>[Changelog for master fix pack `4.3.23_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)</ul>Ready to get started? Try out the [Creating a cluster in your VPC on generation 2 compute tutorial](/docs/openshift?topic=openshift-vpc_roks_tutorial).</li><li>**CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.99](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li></ul>|
@@ -375,7 +376,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>04 September 2019</td>
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.3](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-  <li><strong>IAM whitelisting</strong>: If you use an IAM whitelist, you must [whitelist the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/openshift?topic=openshift-firewall#iam_whitelist) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.</li>
+  <li><strong>IAM allowlists</strong>: If you use an IAM allowlist, you must [allow the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/openshift?topic=openshift-firewall#iam_whitelist) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.</li>
   <li><strong>New! Montreal, Canada `mon01` single zone location for OpenShift clusters</strong>: For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li></ul></td>
 </tr>
 <tr>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-23"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -274,7 +274,7 @@ Set up logging and monitoring to help you troubleshoot issues and improve the he
 
 
 1. **Understand options**: [Choose solutions for app and cluster logging, audit logging, and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options) based on your needs.
-2. **LogDNA and Sysdig**: [Set up the LogDNA and Sysdig add-ons](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig) to monitor cluster health.
+2. **LogDNA and Sysdig**: To monitor cluster health, forward logs to [LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna) and metrics to [Sysdig](/docs/openshift?topic=openshift-health#openshift_sysdig).
 
 
 <br />

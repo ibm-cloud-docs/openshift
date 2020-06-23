@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-23"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -263,7 +263,7 @@ In a test environment, deliberately create various non-ideal scenarios, such as 
 1. **Test access**: Test access to your app by creating a public or private [NodePort](/docs/openshift?topic=openshift-nodeport) on your worker nodes.
 2. **Understand logging and monitoring options**: [Choose solutions for app and cluster logging, audit logging, and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options) based on your needs.
 3. **Monitoring through the console**: Open the [OpenShift web console](/docs/openshift?topic=openshift-deploy_app#openshift_console) to view information about your app resources.
-4. **LogDNA and Sysdig**: [Set up the LogDNA and Sysdig add-ons](/docs/openshift?topic=openshift-health#openshift_logdna_sysdig) to monitor cluster health.
+4. **LogDNA and Sysdig**: To monitor cluster health, forward logs to [LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna) and metrics to [Sysdig](/docs/openshift?topic=openshift-health#openshift_sysdig).
 
 <br />
 
