@@ -196,6 +196,7 @@ Red Hat OpenShift on IBM Cloud
     CLI plug-in reference
         openshift_cli_ks_plugin.md
         openshift_cli_changelog.md
+        openshift_observability_reference.md
 
     {: .topicgroup}
     Version history
