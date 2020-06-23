@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-23"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -68,7 +68,7 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
           <li>Highly available, scalable, and compliant with industry security standards.</li>
           <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
           <li>Flexible plans, including a free `Lite` option.</li></ul>
-          <br>To get started, see [Setting up LogDNA](#openshift_logdna).</td>
+          <br>To get started, see [Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](#openshift_logdna).</td>
     </tr>
     <tr>
         <td>**API audit logging**</td>
@@ -102,7 +102,7 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
           <li>Highly available, scalable, and compliant with industry security standards.</li>
           <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
           <li>Free trial to try out the capabilities.</li></ul>
-          <br>To get started, see [Setting up Sysdig](#openshift_sysdig).</td>
+          <br>To get started, see [Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_sysdig).</td>
     </tr>
     </tbody>
 </table>
@@ -112,37 +112,96 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
 
 
 
-## Setting up LogDNA and Sysdig add-ons to monitor cluster health
-{: #openshift_logdna_sysdig}
-
-Because OpenShift sets up stricter [Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external} by default than community Kubernetes, you might find that some apps or cluster add-ons that you use on community Kubernetes cannot be deployed on OpenShift in the same way. In particular, many images must run as a `root` user or as a privileged container, which is prevented in OpenShift by default. You can modify the default SCCs by creating privileged security accounts and updating the `securityContext` in the pod specification to use two popular {{site.data.keyword.containerlong_notm}} add-ons: {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
-{: shortdesc}
-
-### Setting up logging with LogDNA
+## Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}
 {: #openshift_logdna}
 
-Set up logging in your OpenShift cluster with {{site.data.keyword.la_full_notm}}. When you deploy the LogDNA agent, it collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod. By default, logs are collected from all namespaces, including `kube-system`, and automatically forwarded to the {{site.data.keyword.la_short}} service.
+Use the Red Hat OpenShift on IBM Cloud observability plug-in to create a logging configuration for {{site.data.keyword.la_full_notm}} in your cluster, and use this logging configuration to automatically collect and forward pod logs to {{site.data.keyword.la_full_notm}}.
 {: shortdesc}
 
-In the following steps, you set up a project and privileged service account for {{site.data.keyword.la_full_notm}}. Then, create a {{site.data.keyword.la_short}} instance in your {{site.data.keyword.cloud_notm}} account. To integrate your {{site.data.keyword.la_short}} instance with your OpenShift cluster, you must modify the daemon set that is deployed to use the privileged service account to run as root.
+You can have only one logging configuration for {{site.data.keyword.la_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.la_full_notm}} service instance to send logs to, first remove any existing logging configuration and then follow the steps to create your new one.
+{: note}
 
-**Before you begin**:
 
-* You must have the following permissions:
-  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
-  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/iam?topic=iam-userroles) for {{site.data.keyword.la_full_notm}}.
-* For the cluster that you want to collect API server audit logs from: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
-**To set up {{site.data.keyword.la_full_notm}}:**
+Before you begin:
+- Verify that you are assigned the **Editor** platform role and **Manager** server access role for {{site.data.keyword.la_full_notm}}.
+- Verify that you are assigned the **Administrator** platform role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the logging configuration. To view a logging configuration or launch the LogDNA dashboard after the logging configuration is created, users must be assigned the **Administrator** platform role and the **Manager** service access for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
+- If you want to use the CLI to set up the logging configuration:
+  - [Install the Red Hat OpenShift on IBM Cloud observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+  - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1.  Follow the [{{site.data.keyword.la_full_notm}} documentation](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_agent_os_cluster) to set up the OpenShift project, the service account, and the LogDNA agent in your cluster.
-2.  Access your logs from the LogDNA dashboard.
-    1. From the [{{site.data.keyword.cloud_notm}} **Observability > Logging** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.la_short}} instance, click **View LogDNA**. The LogDNA dashboard opens.
-    2. Wait a few minutes for your logs to display.
+To set up a logging configuration for your cluster:
 
-For more information about how to use {{site.data.keyword.la_short}}, see the [Next steps docs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube#kube_next_steps).
+1. Create an [{{site.data.keyword.la_full_notm}} service instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
+2. Set up a logging configuration for your cluster. When you create the logging configuration, an OpenShift project `ibm-observe` is created and a LogDNA agent is deployed as a daemonset to all worker nodes in your cluster. This agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. The agent then forwards the logs to the {{site.data.keyword.la_full_notm}} service.
 
-<br />
+   - **From the console:**
+     1. From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a LogDNA logging configuration.
+     2. On the cluster **Overview** page, click **Connect**.
+     3. Select the region and the {{site.data.keyword.la_full_notm}} service instance that you created earlier, and click **Connect**.
+
+   - **From the CLI:**
+     1.  Create the LogDNA logging configuration. When you create the LogDNA logging configuration, the ingestion key that was last added is retrieved automatically. If you want to use a different ingestion key, add the `--logdna-ingestion-key <ingestion_key>` option to the command.
+
+         ```
+         ibmcloud ob logging config create --cluster <cluster_name_or_ID> --instance <LogDNA_instance_name_or_ID>
+         ```
+         {: pre}
+
+         Example output:
+         ```
+         Creating configuration...
+         OK
+         ```
+         {: screen}
+
+     2. Verify that the logging configuration was added to your cluster.
+        ```
+        ibmcloud ob logging config list --cluster <cluster_name_or_ID>
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        Listing configurations...
+
+        OK
+        Instance Name                            Instance ID                            CRN   
+        IBM Cloud Log Analysis with LogDNA-opm   1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:logdna:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
+        ```
+        {: screen}
+
+3. Optional: Verify that the LogDNA agent was set up successfully.
+   1. If you used the console to create the LogDNA logging configuration, log in to your cluster. For more information, see [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster)..
+
+   2. Verify that the daemonset for the LogDNA agent was created and all instances are listed as `AVAILABLE`.
+      ```
+      oc get daemonsets -n ibm-observe
+      ```
+      {: pre}
+
+      Example output:
+      ```
+      NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+      logdna-agent   9         9         9       9            9           <none>          14m
+      ```
+      {: screen}
+
+      The number of daemonset instances that are deployed equals the number of worker nodes in your cluster.
+
+   3. Review the configmap that was created for your LogDNA agent.
+      ```
+      oc describe configmap -n ibm-observe
+      ```
+      {: pre}
+
+4. Access the logs for your pods from the LogDNA dashboard.
+   1. From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.  
+   2. On the cluster **Overview** page, click **Launch**. The LogDNA dashboard opens.
+   3. Review the pod logs that the LogDNA agent collected from your cluster. It might take a few minutes for your first logs to show.
+
+5. Review how you can [search and filter logs in the LogDNA dashboard](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs). 
+
 
 ## Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}
 {: #openshift_logdna_audit}
@@ -292,159 +351,96 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 
 <br />
 
-  
-### Setting up monitoring with Sysdig
+
+## Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}} 
 {: #openshift_sysdig}
 
-Create an {{site.data.keyword.mon_full_notm}} instance in your {{site.data.keyword.cloud_notm}} account. To integrate your {{site.data.keyword.mon_short}} instance with your OpenShift cluster, you must run a script that creates a project and privileged service account for the Sysdig agent.
+Use the Red Hat OpenShift on IBM Cloud observability plug-in to create a monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster, and use this monitoring configuration to automatically collect and forward metrics to {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
-**Before you begin**:
+With {{site.data.keyword.mon_full_notm}}, you can collects cluster and pod metrics, such as the CPU and memory usage of your worker nodes, incoming and outgoing HTTP traffic for your pods, and data about several infrastructure components. In addition, the agent can collect custom application metrics by using either a Prometheus-compatible scraper or a StatsD facade.
 
-* You must have the following permissions:
-  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
-  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/iam?topic=iam-userroles) for {{site.data.keyword.mon_full_notm}}.
-* For the cluster that you want to collect API server audit logs from: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+You can have only one monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.mon_full_notm}} service instance to send metrics to, first remove any existing monitoring configuration and then follow the steps to create your new one.
+{: note}
 
-**To set up {{site.data.keyword.mon_full_notm}}:**
 
-1.  Create your {{site.data.keyword.mon_full_notm}} instance in the same resource group as your cluster. Select a pricing plan that determines the retention period for your logs, such as `lite`. The region does not have to match the region of your cluster. For more information, see [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision).
-    ```
-    ibmcloud resource service-instance-create <service_instance_name> sysdig-monitor (lite|graduated-tier) <region> [-g <resource_group>]
-    ```
-    {: pre}
+Before you begin:
+- Verify that you are assigned the **Editor** platform role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}.
+- Verify that you are assigned the **Administrator** platform role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the monitoring configuration. To view a monitoring configuration or launch the Sysdig dashboard after the monitoring configuration is created, users must be assigned the **Administrator** platform role and the **Manager** service access role for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
+- If you want to use the CLI to set up the monitoring configuration:
+  - [Install the Red Hat OpenShift on IBM Cloud observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+  - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
-    Example command:
-    ```
-    ibmcloud resource service-instance-create sysdig-openshift sysdig-monitor lite us-south
-    ```
-    {: pre}
+To set up a monitoring configuration for your cluster:
 
-    In the output, note the service instance **ID**, which is in the format `crn:v1:bluemix:public:logdna:<region>:<ID_string>::`.
-    ```
-    Service instance <name> was created.
+1. Create an [{{site.data.keyword.mon_full_notm}} service instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
+2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an OpenShift project `ibm-observe` is created and a Sysdig agent is deployed as a Kubernetes daemonset to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
 
-    Name:         <name>   
-    ID:           crn:v1:bluemix:public:sysdig-monitor:<region>:<ID_string>::   
-    GUID:         <guid>   
-    Location:     <region>   
-    ...
-    ```
-    {: screen}    
-2.  Get your {{site.data.keyword.mon_short}} instance access key. The Sysdig access key is used to open a secure web socket to the Sysdig ingestion server and to authenticate the monitoring agent with the {{site.data.keyword.mon_short}} service.
-    1.  Create a service key for your Sysdig instance.
+   - **From the console: **
+     1. From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a Sysdig monitoring configuration.
+     2. On the cluster **Overview** page, click **Connect**.
+     3. Select the region and the {{site.data.keyword.mon_full_notm}} service instance that you created earlier, and click **Connect**.
+
+   - **From the CLI: **
+     1. Create the Sysdig monitoring configuration. When you create the Sysdig monitoring configuration, the access key that was last added is retrieved automatically. If you want to use a different access key, add the `--sysdig-access-key <access_key>` option to the command.
+
         ```
-        ibmcloud resource service-key-create <key_name> Administrator --instance-id <sysdig_instance_ID>
-        ```
-        {: pre}
-    2.  Note the **Sysdig Access Key** and **Sysdig Collector Endpoint** of your service key.
-        ```
-        ibmcloud resource service-key <key_name>
+        ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Sysdig_instance_name_or_ID>
         ```
         {: pre}
 
         Example output:
         ```
-        Name:          <key_name>  
-        ID:            crn:v1:bluemix:public:sysdig-monitor:<region>:<ID_string>::    
-        Created At:    Thu Jun  6 21:31:25 UTC 2019   
-        State:         active   
-        Credentials:                                   
-                       Sysdig Access Key:           11a1aa11-aa1a-1a1a-a111-11a11aa1aa11      
-                       Sysdig Collector Endpoint:   ingest.<region>.monitoring.cloud.ibm.com      
-                       Sysdig Customer Id:          11111      
-                       Sysdig Endpoint:             https://<region>.monitoring.cloud.ibm.com  
-                       apikey:                   <api_key_value>      
-                       iam_apikey_description:   Auto-generated for key <ID>     
-                       iam_apikey_name:          <key_name>       
-                       iam_role_crn:             crn:v1:bluemix:public:iam::::role:Administrator      
-                       iam_serviceid_crn:        crn:v1:bluemix:public:iam-identity::<ID_string>       
+        Creating configuration...
+        OK
         ```
         {: screen}
-3.  Run the script to set up an `ibm-observe` project with a privileged service account and a Kubernetes daemon set to deploy the Sysdig agent on every worker node of your Kubernetes cluster. The Sysdig agent collects metrics such as the worker node CPU usage, worker node memory usage, HTTP traffic to and from your containers, and data about several infrastructure components.
 
-    In the following command, replace <code>&lt;sysdig_access_key&gt;</code> and <code>&lt;sysdig_collector_endpoint&gt;</code> with the values from the service key that you created earlier. For <code>&lt;tag&gt;</code>, you can associate tags with your Sysdig agent, such as `role:service,location:us-south` to help you identify the environment that the metrics come from.
+     2. Verify that the monitoring configuration was added to your cluster.
+        ```
+        ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>
+        ```
+        {: pre}
 
-    ```
-    curl -sL https://ibm.biz/install-sysdig-k8s-agent | bash -s -- -a <sysdig_access_key> -c <sysdig_collector_endpoint> -t <tag> -ac 'sysdig_capture_enabled: false' --openshift
-    ```
-    {: pre}
+        Example output:
+        ```
+        Listing configurations...
 
-    Example output:
-    ```
-    * Detecting operating system
-    * Downloading Sysdig cluster role yaml
-    * Downloading Sysdig config map yaml
-    * Downloading Sysdig daemonset v2 yaml
-    * Creating project: ibm-observe
-    * Creating sysdig-agent serviceaccount in project: ibm-observe
-    * Creating sysdig-agent access policies
-    * Creating sysdig-agent secret using the ACCESS_KEY provided
-    * Retreiving the IKS Cluster ID and Cluster Name
-    * Setting cluster name as <cluster_name>
-    * Setting ibm.containers-kubernetes.cluster.id 1fbd0c2ab7dd4c9bb1f2c2f7b36f5c47
-    * Updating agent configmap and applying to cluster
-    * Setting tags
-    * Setting collector endpoint
-    * Adding additional configuration to dragent.yaml
-    * Enabling Prometheus
-    configmap/sysdig-agent created
-    * Deploying the sysdig agent
-    daemonset.extensions/sysdig-agent created
-    ```
-    {: screen}
+        OK
+        Instance Name                            Instance ID                            CRN   
+        IBM Cloud Monitornig with Sysdig-aaa     1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:sysdig:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
+        ```
+        {: screen}
 
-4.  Verify that the `sydig-agent` pods on each node show that **1/1** pods are ready and that each pod has a **Running** status.
-    ```
-    oc get pods
-    ```
-    {: pre}
+3. Optional: Verify that the Sysdig agent was set up successfully.
+   1. If you used the console to create the Sysdig monitoring configuration, log in to your cluster. For more information, see [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+   2. Verify that the daemonset for the Sysdig agent was created and all instances are listed as `AVAILABLE`.
+      ```
+      oc get daemonsets -n ibm-observe
+      ```
+      {: pre}
 
-    Example output:
-    ```
-    NAME                 READY     STATUS    RESTARTS   AGE
-    sysdig-agent-qrbcq   1/1       Running   0          1m
-    sysdig-agent-rhrgz   1/1       Running   0          1m
-    ```
-    {: screen}
-5.  From the [{{site.data.keyword.cloud_notm}} **Observability > Monitoring** console](https://cloud.ibm.com/observe/logging), in the row for your {{site.data.keyword.mon_short}} instance, click **View Sysdig**. The Sysdig dashboard opens, and you can analyze your cluster metrics.
+      Example output:
+      ```
+      NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+      sysdig-agent   9         9         9       9            9           <none>          14m
+      ```
+      {: screen}
 
-For more information about how to use {{site.data.keyword.mon_short}}, see the [Next steps docs](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster_next_steps).
+      The number of daemonset instances that are deployed equals the number of worker nodes in your cluster.
 
-<br />
+   3. Review the configmap that was created for your Sysdig agent.
+      ```
+      oc describe configmap -n ibm-observe
+      ```
+      {: pre}
 
+4. Access the metrics for your pods and cluster from the Sysdig dashboard.
+   1. From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.
+   2. On the cluster **Overview** page, click **Launch**. The Sysdig dashboard opens.
+   3. Review the pod and cluster metrics that the Sysdig agent collected from your cluster. It might take a few minutes for your first metrics to show.
 
-### Optional: Cleaning up
-{: #openshift_logdna_sysdig_cleanup}
-
-Remove the {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} instances from your cluster and {{site.data.keyword.cloud_notm}} account. Note that unless you store the logs and metrics in [persistent storage](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-archiving), you cannot access this information after you delete the instances from your account.
-{: shortdesc}
-
-1.  Clean up the {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} instances in your cluster by removing the projects that you created for them. When you delete a project, its resources such as service accounts and daemon sets are also removed.
-    ```
-    oc delete project logdna-agent
-    ```
-    {: pre}
-    ```
-    oc delete project ibm-observe
-    ```
-    {: pre}
-2.  Remove the instances from your {{site.data.keyword.cloud_notm}} account.
-    *   [Removing a {{site.data.keyword.la_short}} instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-remove).
-    *   [Removing a {{site.data.keyword.mon_short}} instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-remove).
-
-<br />
-
-
-## Setting up {{site.data.keyword.cloud_notm}} logging and monitoring tools
-{: #openshift_other_logmet}
-
-For more information about other logging and monitoring tools that you can set up, including {{site.data.keyword.cloud_notm}} services, see the following topics in the {{site.data.keyword.containershort_notm}} docs.
-{: shortdesc}
-
-* [Choosing a logging solution](/docs/containers?topic=containers-health#logging_overview).
-* [Choosing a monitoring solution](/docs/containers?topic=containers-health#view_metrics).
-
+5. Review how you can work with the [Sysdig dashboard](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-dashboards#dashboards) to further analyze your metrics.
 
 
 ## Using the cluster logging operator
