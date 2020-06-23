@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-23"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -311,7 +311,7 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 {: caption="VPC network security options" caption-side="top"}
 
 **What if I want to connect my cluster to other networks, like other VPCs, an on-prem data center, or IBM Cloud classic resources?**</br>
-Depending on the network that you want to connect your worker nodes to, you can [choose a VPN solution](/docs/containers?topic=containers-vpc-vpnaas#options).
+Depending on the network that you want to connect your worker nodes to, you can [choose a VPN solution](/docs/openshift?topic=openshift-vpc-vpnaas).
 
 ### Expose apps with routes
 {: #expose-apps-with-routes}
