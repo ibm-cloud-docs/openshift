@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-23"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -76,6 +76,12 @@ To install the CLIs:
 
     If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
     {: tip}
+
+3.  To create a logging configuration for {{site.data.keyword.la_full_notm}} or a monitoring configuration for {{site.data.keyword.mon_full_notm}} for your cluster, install the {{site.data.keyword.containerlong_notm}} observability plug-in (`ibmcloud ob`).
+    ```
+    ibmcloud plugin install observe-service
+    ```
+    {: pre}
 
 4.  Verify that the Red Hat OpenShift on IBM Cloud plug-in and {{site.data.keyword.registrylong_notm}} plug-in are installed correctly.
     ```
