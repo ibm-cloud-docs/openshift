@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-06-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -224,7 +224,7 @@ The **Master Status** provides details of what operation from the master state i
 |`deleting`|The master is currently deleting because you deleted the cluster. You cannot undo a deletion. After the cluster is deleted, you can no longer check the master state because the cluster is completely removed.|
 |`delete_failed`|The master failed to delete. IBM Support is notified and works to resolve the issue. You cannot resolve the issue by trying to delete the cluster again. Instead, check the **Master Status** field for more information, or wait for the cluster to delete. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help).|
 |`updating`|The master is updating its Kubernetes version. The update might be a patch update that is automatically applied, or a minor or major version that you applied by updating the cluster. During the update, your highly available master can continue processing requests, and your app workloads and worker nodes continue to run. After the master update is complete, you can [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).</br></br>If the update is unsuccessful, the master returns to a `deployed` state and continues running the previous version. IBM Support is notified and works to resolve the issue. You can check if the update failed in the **Master Status** field.|
-|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.17.6`. To list available versions, run `ibmcloud oc versions`.|
+|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.17.7`. To list available versions, run `ibmcloud oc versions`.|
 |`update_failed`|The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, [open an {{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help). IBM Support might identify other issues in your cluster that you must fix before the master can be updated.|
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
@@ -831,6 +831,114 @@ Steps:
     ```
     {: pre}
 2.  [Use the `ibmcloud oc cluster pull-secret apply` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_pull_secret_apply) to re-create an image pull secret with the appropriate registry credentials.
+
+<br />
+
+
+## Cluster cannot update because of broken webhook
+{: #webhooks_update}
+
+{: tsSymptoms}
+During a master operation such as updating your cluster version, the cluster had a broken webhook application. Now, master operations cannot complete. You see an error similar to the following:
+
+```
+Cannot complete cluster master operations because the cluster has a broken webhook application. For more information, see the troubleshooting docs: 'https://ibm.biz/master_webhook'
+```
+{: screen}
+
+{: tsCauses}
+Your cluster has configurable Kubernetes webhook resources, validating or mutating admission webhooks, that can intercept and modify requests from various services in the cluster to the API server in the cluster master. Because webhooks can change or reject requests, broken webhooks can impact the functionality of the cluster in various ways, such as preventing you from updating the master version or other maintenance operations. For more information, see the [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} in the Kubernetes documentation.
+
+Potential causes for broken webhooks include:
+*   The underlying resource that issues the request is missing or unhealthy, such as a Kubernetes service, endpoint, or pod. 
+*   The webhook is part of an add-on or other plug-in application that did not install correctly or is unhealthy.
+*   Your cluster might have a networking connectivity issue that prevents the webhook from communicating with the Kubernetes API server in the cluster master.
+
+{: tsResolve}
+Identify and restore the resource that causes the broken webhook.
+
+1.  Create a test pod to get an error that identifies the broken webhook.
+    ```
+    oc run webhook-test --generator=run-pod/v1 --image pause:latest
+    ```
+    {: pre}
+2.  In the error, copy the broken webhook. In the following example, the webhook is `trust.hooks.securityenforcement.admission.cloud.ibm.com`.
+    ```
+    Error from server (InternalError): Internal error occurred: failed calling webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com": Post https://ibmcloud-image-enforcement.ibm-system.svc:443/mutating-pods?timeout=30s: dial tcp 172.21.xxx.xxx:443: connect: connection timed out
+    ```
+    {: screen}
+3.  Get the name of the broken webhook. Replace `trust.hooks.securityenforcement.admission.cloud.ibm.com` with the broken webhook that you previously identified.
+    ```
+    oc get mutatingwebhookconfigurations,validatingwebhookconfigurations -o jsonpath='{.items[?(@.webhooks[*].name=="trust.hooks.securityenforcement.admission.cloud.ibm.com")].metadata.name}{"\n"}'
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    image-admission-config
+    ```
+    {: pre}
+4.  Review the service and location details of the mutating or validating webhook configuration in the `clientConfig` section in the output of the following command. Replace `image-admission-config` with the name that you previously identified. If the webhook exists outside the cluster, contact the cluster owner to check the webhook status.
+    ```
+    oc get mutatingwebhookconfiguration image-admission-config -o yaml
+    ```
+    {: pre}
+
+    ```
+    oc get validatingwebhookconfigurations image-admission-config -o yaml
+    ```
+    {: pre}
+
+    Example output:
+    ```
+      clientConfig:
+        caBundle: <redacted>
+        service:
+            name: <name>
+            namespace: <namespace>
+            path: /inject
+            port: 443
+    ```
+    {: screen}
+5.  **Optional**: Back up the webhooks, especially if you do not know how to reinstall the webhoook.
+    ```
+    oc get mutatingwebhookconfiguration <name> -o yaml > mutatingwebhook-backup.yaml
+    ```
+    {: pre}
+
+    ```
+    oc get validatingwebhookconfiguration <name> -o yaml > validatingwebhook-backup.yaml
+    ```
+    {: pre}
+6.  Check the status of the related service and pods for the webhook.
+    1.  Check the service **Type**, **Selector**, and **Endpoint** fields.
+        ```
+        oc describe service -n <namespace> <service_name>
+        ```
+        {: pre}
+    2.  If the service type is **ClusterIP**, check that the OpenVPN pod is in a **Running** status so that the webhook can connect securely to the Kubernetes API in the cluster master. If the pod is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app).
+        ```
+        oc describe pods -n kube-system -l app=vpn
+        ```
+        {: pre}
+    3.  If the service does not have an endpoint, check the health of the backing resources, such as a deployment or pod. If the resource is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app).
+        ```
+        oc get all -n my-service-namespace -l <key=value>
+        ```
+        {: pre}
+    4.  If the service does not have any backing resources, or if troubleshooting the pods does not resolve the issue, remove the webhook.
+        *   If the webhook is managed by an add-on that you installed, uninstall the add-on. Common add-ons that cause webhook issues include the following:
+            *   [Container image security enforcement](/docs/Registry?topic=Registry-security_enforce).
+        *   If the webhook is a custom webhook that you added, delete the webhook.
+            ```
+            oc delete mutatingwebhook <name>
+            ```
+            {: pre}
+7.  Retry the cluster master operation, such as updating the cluster.
+8.  If you still see the error, you might have worker node or network connectivity issues.
+    *   [Worker node troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot_clusters).
+    *   Make sure that the webhook can connect to the Kubernetes API server in the cluster master. For example, if you use Calico network policies, security groups, or some other type of firewall, set up your [classic](/docs/openshift?topic=openshift-firewall) or [VPC](/docs/openshift?topic=openshift-vpc-firewall) cluster with the appropriate access.
+9.  Re-create the webhook or reinstall the add-on.
 
 <br />
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-06-22"
 
 keywords: openshift
 subcollection: openshift
@@ -145,8 +145,8 @@ subcollection: openshift
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
 
-## Your cluster strategy
-{: #sitemap_your_cluster_strategy}
+## Cluster strategy
+{: #sitemap_cluster_strategy}
 
 
 [Your responsibilities with using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks)
@@ -319,6 +319,7 @@ subcollection: openshift
 * [Accessing OpenShift clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
   * [Using an API key to log in to OpenShift clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
   * [Using a service ID to log in to OpenShift clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
+* [Accessing the cluster master via admission controllers and webhooks](/docs/openshift?topic=openshift-access_cluster#access_webhooks)
 
 [Assigning cluster access](/docs/openshift?topic=openshift-users)
 * [Setting up access to your cluster](/docs/openshift?topic=openshift-users#access-checklist)
@@ -571,7 +572,7 @@ subcollection: openshift
 {: #sitemap_vpc_clusters}
 
 
-[VPC: Configuring subnets and IP addresses](/docs/openshift?topic=openshift-vpc-subnets)
+[Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets)
 * [Overview of VPC networking in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics)
   * [Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets)
   * [Public gateways](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw)
@@ -581,11 +582,10 @@ subcollection: openshift
   * [Creating a VPC subnet in the console](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_ui)
   * [Creating a VPC subnet in the CLI](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_cli)
 
-[VPC: Setting up VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas)
-* [Choosing a VPN solution](/docs/openshift?topic=openshift-vpc-vpnaas#options)
-  * [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-vpc-vpnaas#onprem)
-  * [Communication with resources in other VPCs](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpc)
-  * [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-classic)
+[Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas)
+* [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-vpc-vpnaas#onprem)
+* [Communication with resources in other VPCs](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpc)
+* [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-classic)
 
 [Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes)
 * [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
@@ -1362,6 +1362,7 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+  * [Changelog for master fix pack 4.3.23_1527_openshift and worker node fix pack 4.3.25_1527_openshift, released 22 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1527_master)
   * [Changelog for master fix pack 4.3.23_1525_openshift, released 16 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)
   * [Changelog for worker node fix pack 4.3.23_1524_openshift, released 8 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1524)
   * [Changelog for worker node fix pack 4.3.21_1523_openshift, released 26 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4321_1523)
@@ -1370,6 +1371,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.14_1522_openshift, released 11 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4314_1522)
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
+  * [Changelog for master fix pack 3.11.219_1554_openshift and worker node fix pack 3.11.232_1554_openshift, released 22 June 2020](/docs/openshift?topic=openshift-openshift_changelog#311219_1554_master)
   * [Changelog for worker node fix pack 3.11.219_1552_openshift, released 8 June 2020](/docs/openshift?topic=openshift-openshift_changelog#311219_1552)
   * [Changelog for 3.11.216_1551_openshift, released 26 May 2020](/docs/openshift?topic=openshift-openshift_changelog#311216_1551)
   * [Changelog for worker node fix pack 3.11.216_1550_openshift, released 11 May 2020](/docs/openshift?topic=openshift-openshift_changelog#311216_1550)
@@ -1540,6 +1542,7 @@ subcollection: openshift
 * [Unable to create a cluster in the console due to `No VPC is available` error](/docs/openshift?topic=openshift-cs_troubleshoot#ts_no_vpc)
 * [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create)
 * [Cluster create error cannot pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-cs_troubleshoot#ts_image_pull_create)
+* [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update)
 * [Cluster remains in a pending State](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_pending)
 * [Unable to view or work with a cluster](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_access)
 * [No resources found](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_not_found)
