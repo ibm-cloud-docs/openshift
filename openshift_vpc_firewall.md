@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-23"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -230,15 +230,15 @@ Before you begin, allow access to run [`ibmcloud` commands](#vpc-firewall_bx) an
 <br />
 
 
-## Whitelisting your cluster in other services' firewalls or in on-premises firewalls
+## Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls
 {: #vpc-whitelist_workers}
 
 Allow your worker nodes to communicate with services that are protected by firewalls.
 {:shortdesc}
 
-For example, you might have services that run inside or outside {{site.data.keyword.cloud_notm}}, or services that run on-premises, that are protected by a firewall. You want to permit incoming network traffic to those services from your cluster. In your service's firewall, you must whitelist the external IP addresses of the public gateways on your cluster's VPC subnets.
+For example, you might have services that run inside or outside {{site.data.keyword.cloud_notm}}, or services that run on-premises, that are protected by a firewall. You want to permit incoming network traffic to those services from your cluster. In your service's firewall, you must add the external IP addresses of the public gateways on your cluster's VPC subnets.
 
-If you want to permit egress from your firewall-protected services to your cluster, you must whitelist your worker nodes' private IP addresses or your cluster's VPC subnet CIDRs in your service's firewall. Note that because worker nodes in VPC clusters have only private IP addresses, connections into the VPC cluster worker nodes can only originate from systems that are connected to your IBM Cloud private network.
+If you want to permit egress from your firewall-protected services to your cluster, you must add your worker nodes' private IP addresses or your cluster's VPC subnet CIDRs in your service's firewall. Note that because worker nodes in VPC clusters have only private IP addresses, connections into the VPC cluster worker nodes can only originate from systems that are connected to your IBM Cloud private network.
 
 Before you begin:
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -296,12 +296,12 @@ Before you begin:
   {: screen}
 
 4.  Add the public gateway IP addresses to your service's firewall or your on-premises firewall for inbound traffic.
-5.  Repeat these steps for each cluster that you want to whitelist.
+5.  Repeat these steps for each cluster that you want to allow traffic to or from.
 
 **To permit egress to a cluster from another service**:
 
 1. Get the worker node subnets or the worker node IP addresses.
-  * **Worker node subnet CIDRs**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-ca), you might not want to update your firewall for each new worker node. Instead, you can whitelist the VPC subnets that the cluster uses. Keep in mind that the VPC subnet might be shared by worker nodes in other clusters.
+  * **Worker node subnet CIDRs**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-ca), you might not want to update your firewall for each new worker node. Instead, you can add the VPC subnets that the cluster uses. Keep in mind that the VPC subnet might be shared by worker nodes in other clusters.
     1. Get the **Worker Zones** and **VPCs** that your cluster is created in.
       ```
       ibmcloud oc cluster get -c <cluster>
@@ -338,13 +338,13 @@ Before you begin:
       ```
       {: screen}
 
-  * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to whitelist only one worker node, list all the worker nodes in your cluster and note the **Primary IP** addresses. Only these worker nodes are whitelisted. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
+  * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Primary IP** addresses. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
     ```
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 2.  Add the subnet CIDRs or individual worker node IP addresses to your service's firewall or your on-premises firewall for outbound traffic.
-3.  Repeat these steps for each cluster that you want to whitelist.
+3.  Repeat these steps for each cluster that you want to allow traffic to or from.
 
 

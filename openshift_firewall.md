@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -360,7 +360,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
       </tbody>
     </table>
 
-4. Allow outgoing network traffic from your worker node to {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Your firewall must be Layer 7 to whitelist the IAM domain name. IAM does not have specific IP addresses that you can whitelist. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
+4. Allow outgoing network traffic from your worker node to {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
     - `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.bluemix.net`
     - `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.cloud.ibm.com`
 
@@ -392,7 +392,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
     ```
     {: pre}
 
-3.  To allow worker nodes to communicate with the cluster master over the private service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_privateIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443. With DNS-based private service endpoints, the IP addresses can change. Whitelist the following private IP address range.
+3.  To allow worker nodes to communicate with the cluster master over the private service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_privateIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443. With DNS-based private service endpoints, the IP addresses can change. Allow the following private IP address range.
     ```
     166.8.0.0/14
     ```
@@ -445,17 +445,17 @@ Instead of setting up a gateway firewall device, you can choose to use [Calico n
 <br />
 
 
-## Whitelisting your cluster in other services' firewalls or in on-premises firewalls
+## Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls
 {: #whitelist_workers}
 
-If you want to access services that run inside or outside {{site.data.keyword.cloud_notm}} or on-premises and that are protected by a firewall, you can add the IP addresses of your worker nodes in that firewall to allow outbound network traffic to your cluster. For example, you might want to read data from an {{site.data.keyword.cloud_notm}} database that is protected by a firewall, or whitelist your worker node subnets in an on-premises firewall to allow network traffic from your cluster.
+If you want to access services that run inside or outside {{site.data.keyword.cloud_notm}} or on-premises and that are protected by a firewall, you can add the IP addresses of your worker nodes in that firewall to allow outbound network traffic to your cluster. For example, you might want to read data from an {{site.data.keyword.cloud_notm}} database that is protected by a firewall, or specify your worker node subnets in an on-premises firewall to allow network traffic from your cluster.
 {:shortdesc}
 
 1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 2. Get the worker node subnets or the worker node IP addresses.
-  * **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca), you might not want to update your firewall for each new worker node. Instead, you can whitelist the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
-    <p class="note">The **primary public subnets** that Red Hat OpenShift on IBM Cloud provisions for your cluster come with 14 available IP addresses, and can be shared by other clusters on the same VLAN. When you have more than 14 worker nodes, another subnet is ordered, so the subnets that you need to whitelist can change. To reduce the frequency of change, create worker pools with worker node flavors of higher CPU and memory resources so that you don't need to add worker nodes as often.</p>
+  * **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca), you might not want to update your firewall for each new worker node. Instead, you can add the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
+    <p class="note">The **primary public subnets** that Red Hat OpenShift on IBM Cloud provisions for your cluster come with 14 available IP addresses, and can be shared by other clusters on the same VLAN. When you have more than 14 worker nodes, another subnet is ordered, so the subnets that you need to allow can change. To reduce the frequency of change, create worker pools with worker node flavors of higher CPU and memory resources so that you don't need to add worker nodes as often.</p>
     1. List the worker nodes in your cluster.
       ```
       ibmcloud oc worker ls --cluster <cluster_name_or_ID>
@@ -487,24 +487,24 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     4.  Retrieve the subnet address. In the output, find the number of **IPs**. Then, raise `2` to the power of `n` equal to the number of IPs. For example, if the number of IPs is `16`, then `2` is raised to the power of `4` (`n`) to equal `16`. Now get the subnet CIDR by subtracting the value of `n` from `32` bits. For example, when `n` equals `4`, then the CIDR is `28` (from the equation `32 - 4 = 28`). Combine the **identifier** mask with the CIDR value to get the full subnet address. In the previous output, the subnet addresses are:
         *   `169.xx.210.xxx/28`
         *   `169.xx.178.xxx/28`
-  * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to whitelist only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private service endpoint, note the **Private IP** addresses instead. Only these worker nodes are whitelisted. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
+  * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private service endpoint, note the **Private IP** addresses instead. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
     ```
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 4.  Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
-5.  Repeat these steps for each cluster that you want to whitelist.
+5.  Repeat these steps for each cluster that you want to allow traffic to or from.
 
 <br />
 
 
-## Updating IAM whitelists for {{site.data.keyword.containershort}} IP addresses
+## Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses
 {: #iam_whitelist}
 
-By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can [create a whitelist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted. If you use an IAM whitelist, you must whitelist the CIDRs of the Red Hat OpenShift on IBM Cloud control plane for the zones in the region where your cluster is located. You must whitelist these CIDRs so that Red Hat OpenShift on IBM Cloud can create Ingress ALBs and `LoadBalancers` in your cluster.
+By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted. If you use an IAM allowlist, you must allow the CIDRs of the Red Hat OpenShift on IBM Cloud control plane for the zones in the region where your cluster is located. You must allow these CIDRs so that Red Hat OpenShift on IBM Cloud can create Ingress ALBs and `LoadBalancers` in your cluster.
 {: shortdesc}
 
-**Before you begin**: The following steps require you to change the IAM whitelist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM whitelist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform role for the [User Management service](/docs/iam?topic=iam-account-services), you can update the restricted IP addresses for the credentials owner.
+**Before you begin**: The following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform role for the [User Management service](/docs/iam?topic=iam-account-services), you can update the restricted IP addresses for the credentials owner.
 
 1. Identify what user credentials are used for the cluster's region and resource group infrastructure permissions.
     1.  Check the API key for a region and resource group of the cluster.
@@ -544,9 +544,9 @@ By default, all IP addresses can be used to log in to the {{site.data.keyword.cl
 3. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
 4. Select the user that you found in step 1 from the list.
 5. From the **User details** page, go to the **IP address restrictions** section.
-6. For **Classic infrastructure**, enter the CIDRs of the zones in the region where your cluster is located.<p class="note">You must whitelist all of the zones within the region that your cluster is in.</p>
+6. For **Classic infrastructure**, enter the CIDRs of the zones in the region where your cluster is located.<p class="note">You must allow all of the zones within the region that your cluster is in.</p>
   <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one, the zone in column two, and IP addresses to match in column three.">
-  <caption>CIDRs to whitelist in IAM</caption>
+  <caption>CIDRs to allow in IAM</caption>
     <thead>
     <th>Region</th>
     <th>Zone</th>
