@@ -1340,6 +1340,16 @@ subcollection: openshift
 * [Version 0.2](/docs/openshift?topic=openshift-cs_cli_changelog#02)
 * [Version 0.1](/docs/openshift?topic=openshift-cs_cli_changelog#01)
 
+[Observability plug-in CLI](/docs/openshift?topic=openshift-observability_cli)
+  * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
+  * [`ibmcloud ob logging config delete`](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
+  * [`ibmcloud ob logging config list`](/docs/openshift?topic=openshift-observability_cli#logging_config_list)
+  * [`ibmcloud ob logging config show`](/docs/openshift?topic=openshift-observability_cli#logging_config_show)
+  * [`ibmcloud ob monitoring config create`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_create)
+  * [`ibmcloud ob monitoring config delete`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
+  * [`ibmcloud ob monitoring config list`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_list)
+  * [`ibmcloud ob monitoring config show`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_show)
+
 
 ## Version history
 {: #sitemap_version_history}
