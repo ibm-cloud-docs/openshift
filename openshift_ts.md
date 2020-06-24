@@ -868,7 +868,7 @@ Potential causes for broken webhooks include:
 {: tsResolve}
 Identify and restore the resource that causes the broken webhook.
 
-1.  Create a test pod to get an error that identifies the broken webhook. The error message might have the name the broken webhook.
+1.  Create a test pod to get an error that identifies the broken webhook. The error message might have the name of the broken webhook.
     ```
     oc run webhook-test --generator=run-pod/v1 --image pause:latest
     ```
