@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -857,28 +857,35 @@ Potential causes for broken webhooks include:
 {: tsResolve}
 Identify and restore the resource that causes the broken webhook.
 
-1.  Create a test pod to get an error that identifies the broken webhook.
+1.  Create a test pod to get an error that identifies the broken webhook. The error message might have the name the broken webhook.
     ```
     oc run webhook-test --generator=run-pod/v1 --image pause:latest
     ```
     {: pre}
-2.  In the error, copy the broken webhook. In the following example, the webhook is `trust.hooks.securityenforcement.admission.cloud.ibm.com`.
+
+    In the following example, the webhook is `trust.hooks.securityenforcement.admission.cloud.ibm.com`.
     ```
-    Error from server (InternalError): Internal error occurred: failed calling webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com": Post https://ibmcloud-image-enforcement.ibm-system.svc:443/mutating-pods?timeout=30s: dial tcp 172.21.xxx.xxx:443: connect: connection timed out
+    Error from server (InternalError): Internal error occurred: failed calling webhook "trust.hooks.securityenforcementadmission.cloud.ibm.com": Post https://ibmcloud-image-enforcement.ibm-system.svc:443/mutating-pods?timeout=30s: dialtcp 172.21.xxx.xxx:443: connect: connection timed out
     ```
     {: screen}
-3.  Get the name of the broken webhook. Replace `trust.hooks.securityenforcement.admission.cloud.ibm.com` with the broken webhook that you previously identified.
-    ```
-    oc get mutatingwebhookconfigurations,validatingwebhookconfigurations -o jsonpath='{.items[?(@.webhooks[*].name=="trust.hooks.securityenforcement.admission.cloud.ibm.com")].metadata.name}{"\n"}'
-    ```
-    {: pre}
+2.  Get the name of the broken webhook. 
+    *   If the error message has a broken webhook, replace `trust.hooks.securityenforcement.admission.cloud.ibm.com` with the broken webhook that you previously identified.
+        ```
+        oc get mutatingwebhookconfigurations,validatingwebhookconfigurations -o jsonpath='{.items[?(@.webhooks[*].name=="trust.hooks.securityenforcement.admission.cloud.ibm.com")].metadata.name}{"\n"}'
+        ```
+        {: pre}
 
-    Example output:
-    ```
-    image-admission-config
-    ```
-    {: pre}
-4.  Review the service and location details of the mutating or validating webhook configuration in the `clientConfig` section in the output of the following command. Replace `image-admission-config` with the name that you previously identified. If the webhook exists outside the cluster, contact the cluster owner to check the webhook status.
+        Example output:
+        ```
+        image-admission-config
+        ```
+        {: pre}
+    *   If the error does not have a broken webhook, list all the webhooks in your cluster and check their configurations in the following steps.
+        ```
+        oc get mutatingwebhookconfigurations,validatingwebhookconfigurations
+        ```
+        {: pre}   
+3.  Review the service and location details of the mutating or validating webhook configuration in the `clientConfig` section in the output of the following command. Replace `image-admission-config` with the name that you previously identified. If the webhook exists outside the cluster, contact the cluster owner to check the webhook status.
     ```
     oc get mutatingwebhookconfiguration image-admission-config -o yaml
     ```
@@ -900,7 +907,7 @@ Identify and restore the resource that causes the broken webhook.
             port: 443
     ```
     {: screen}
-5.  **Optional**: Back up the webhooks, especially if you do not know how to reinstall the webhoook.
+4.  **Optional**: Back up the webhooks, especially if you do not know how to reinstall the webhoook.
     ```
     oc get mutatingwebhookconfiguration <name> -o yaml > mutatingwebhook-backup.yaml
     ```
@@ -910,7 +917,7 @@ Identify and restore the resource that causes the broken webhook.
     oc get validatingwebhookconfiguration <name> -o yaml > validatingwebhook-backup.yaml
     ```
     {: pre}
-6.  Check the status of the related service and pods for the webhook.
+5.  Check the status of the related service and pods for the webhook.
     1.  Check the service **Type**, **Selector**, and **Endpoint** fields.
         ```
         oc describe service -n <namespace> <service_name>
@@ -927,18 +934,17 @@ Identify and restore the resource that causes the broken webhook.
         ```
         {: pre}
     4.  If the service does not have any backing resources, or if troubleshooting the pods does not resolve the issue, remove the webhook.
-        *   If the webhook is managed by an add-on that you installed, uninstall the add-on. Common add-ons that cause webhook issues include the following:
-            *   [Container image security enforcement](/docs/Registry?topic=Registry-security_enforce).
-        *   If the webhook is a custom webhook that you added, delete the webhook.
-            ```
-            oc delete mutatingwebhook <name>
-            ```
-            {: pre}
-7.  Retry the cluster master operation, such as updating the cluster.
-8.  If you still see the error, you might have worker node or network connectivity issues.
+        ```
+        oc delete mutatingwebhook <name>
+        ```
+        {: pre}
+6.  Retry the cluster master operation, such as updating the cluster.
+7.  If you still see the error, you might have worker node or network connectivity issues.
     *   [Worker node troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot_clusters).
     *   Make sure that the webhook can connect to the Kubernetes API server in the cluster master. For example, if you use Calico network policies, security groups, or some other type of firewall, set up your [classic](/docs/openshift?topic=openshift-firewall) or [VPC](/docs/openshift?topic=openshift-vpc-firewall) cluster with the appropriate access.
-9.  Re-create the webhook or reinstall the add-on.
+    *   If the webhook is managed by an add-on that you installed, uninstall the add-on. Common add-ons that cause webhook issues include the following:
+        * [Container image security enforcement](/docs/Registry?topic=Registry-security_enforce).
+8.  Re-create the webhook or reinstall the add-on.
 
 <br />
 
