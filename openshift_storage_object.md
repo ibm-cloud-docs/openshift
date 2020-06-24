@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-24"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -207,7 +207,7 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
    {: note}
 
    ```
-   helm repo add ibm-charts https://icr.io/helm/ibm-charts
+   helm repo add ibm-charts https://private.icr.io/helm/ibm-charts
    ```
    {: pre}
 
