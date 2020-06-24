@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-06-24"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -46,6 +46,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| XX June 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device.</li></ul> |
 | 23 June 2020 | **New! Red Hat OpenShift on IBM Cloud observability plug-in**: You can now use the Red Hat OpenShift on IBM Cloud observability plug-in to create a logging or monitoring configuration for your cluster so that you can forward cluster logs and metrics to an {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} service instance. For more information, see [Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna) and [Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig). You can also use the command line to create the logging and monitoring configuration. For more information, see the [Observability plug-in CLI](/docs/openshift?topic=openshift-observability_cli) reference.|
 | 22 June 2020 | **Version changelogs**: Changelog documentation is available for  OpenShift [`4.3.13_1522_openshift` master and `4.3.25_1527_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#4323_1527_master) and [`3.11.219_1554_openshift` master and `3.11.232_1554_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#311219_1554_master) fix pack patch updates.
 | 18 June 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`ingress-auth` image build to 413](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul>|
@@ -70,7 +71,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | 12 May 2020 | **Version changelogs**: Master patch update is available for OpenShift [`4.3.18_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4318_1522).</li> |
 | 11 May 2020 | **Version changelogs**: Worker node patch updates are available for OpenShift [`4.3.13_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4314_1522) and [`3.11.216_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311216_1550). |
 | 08 May 2020 | **CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.57](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
-| 04 May 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall for {{site.data.keyword.registrylong_notm}}.</li><li>**Ingress troubleshooting in version 3.11 clusters**:Added a [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#alb-pod-affinity) for when ALB pods do not deploy correctly to worker nodes.</li></ul> |
+| 04 May 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall.</li><li>**Ingress troubleshooting in version 3.11 clusters**:Added a [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#alb-pod-affinity) for when ALB pods do not deploy correctly to worker nodes.</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in May 2020"}
 
