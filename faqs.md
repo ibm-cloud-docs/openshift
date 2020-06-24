@@ -242,6 +242,7 @@ With Red Hat OpenShift on IBM Cloud clusters, you can use IBM Cloud infrastructu
 * [Storage for images](#storage_images)
 * [Storage for apps](#persistent_storage)
 * [{{site.data.keyword.cloud_notm}} services](#services)
+* [Operators and other third-party integrations](#operators_pricing)
 
 <dl>
   <dt id="nodes">Worker nodes</dt>
@@ -282,6 +283,8 @@ With Red Hat OpenShift on IBM Cloud clusters, you can use IBM Cloud infrastructu
     <li>[Object storage plans![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</li></ul></dd>
   <dt id="services">{{site.data.keyword.cloud_notm}} services</dt>
     <dd>Each service that you integrate with your cluster has its own pricing model. Review each product documentation and use the {{site.data.keyword.cloud_notm}} console to [estimate costs](/docs/billing-usage?topic=billing-usage-cost#cost).</dd>
+  <dt id="operators_pricing">Operators and other third-party integrations</dt>
+    <dd>[Operators](/docs/openshift?topic=openshift-operators) and other [third-party integrations](/docs/openshift?topic=openshift-supported_integrations) are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for additional charges and how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator or third-party integration, work with the appropriate provider to troubleshoot the issue.</dd>
 </dl>
 <br><br>
 
