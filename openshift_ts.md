@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -253,9 +253,20 @@ If these components fail, review the following debug steps.
 
 1.  Check that your {{site.data.keyword.cloud_notm}} account is set up properly. Some common scenarios that can prevent the default components from running properly include the following:
     * If you have a firewall, make sure that [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall) so that you do not block any ingress or egress traffic for the OperatorHub or other OpenShift components.
-    *   If your cluster has multiple zones, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation). To check if VRF is already enabled, run `ibmcloud account show`. To check if VLAN spanning is enabled, run `ibmcloud oc vlan-spanning get`.
+    * If your cluster has multiple zones, or if you have a VPC cluster, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation). To check if VRF is already enabled, run `ibmcloud account show`. To check if VLAN spanning is enabled, run `ibmcloud oc vlan-spanning get`.
     * Make sure that your account does not use multifactor authentication (MFA). For more information, see [Disabling required MFA for all users in your account](/docs/iam?topic=iam-enablemfa#disablemfa).
-2.  Check that your cluster is set up properly. If you just created your cluster, wait awhile for your cluster components to fully provision.
+2. VPC clusters: Check that a public gateway is enabled on each VPC subnet that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries.
+    1. Use the {{site.data.keyword.cloud_notm}} console or CLI to [ensure that a public gateway is enabled on each subnet](#create_vpc_subnet) that your cluster is attached to.
+    2. Restart the components for the **Developer catalog** in the web console.
+        1. Edit the configmap for the samples operator.
+          ```
+          oc edit configs.samples.operator.openshift.io/cluster
+          ```
+          {: pre}
+        2. Change the value of `managementState` from `Removed` to `Managed`.
+        3. Save and close the config map. Your changes are automatically applied.
+
+3.  Check that your cluster is set up properly. If you just created your cluster, wait awhile for your cluster components to fully provision.
     1.  Get the details of your cluster.
         ```
         ibmcloud oc cluster get -c <cluster_name_or_ID>
@@ -850,35 +861,42 @@ Cannot complete cluster master operations because the cluster has a broken webho
 Your cluster has configurable Kubernetes webhook resources, validating or mutating admission webhooks, that can intercept and modify requests from various services in the cluster to the API server in the cluster master. Because webhooks can change or reject requests, broken webhooks can impact the functionality of the cluster in various ways, such as preventing you from updating the master version or other maintenance operations. For more information, see the [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} in the Kubernetes documentation.
 
 Potential causes for broken webhooks include:
-*   The underlying resource that issues the request is missing or unhealthy, such as a Kubernetes service, endpoint, or pod. 
+*   The underlying resource that issues the request is missing or unhealthy, such as a Kubernetes service, endpoint, or pod.
 *   The webhook is part of an add-on or other plug-in application that did not install correctly or is unhealthy.
 *   Your cluster might have a networking connectivity issue that prevents the webhook from communicating with the Kubernetes API server in the cluster master.
 
 {: tsResolve}
 Identify and restore the resource that causes the broken webhook.
 
-1.  Create a test pod to get an error that identifies the broken webhook.
+1.  Create a test pod to get an error that identifies the broken webhook. The error message might have the name of the broken webhook.
     ```
     oc run webhook-test --generator=run-pod/v1 --image pause:latest
     ```
     {: pre}
-2.  In the error, copy the broken webhook. In the following example, the webhook is `trust.hooks.securityenforcement.admission.cloud.ibm.com`.
+
+    In the following example, the webhook is `trust.hooks.securityenforcement.admission.cloud.ibm.com`.
     ```
-    Error from server (InternalError): Internal error occurred: failed calling webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com": Post https://ibmcloud-image-enforcement.ibm-system.svc:443/mutating-pods?timeout=30s: dial tcp 172.21.xxx.xxx:443: connect: connection timed out
+    Error from server (InternalError): Internal error occurred: failed calling webhook "trust.hooks.securityenforcementadmission.cloud.ibm.com": Post https://ibmcloud-image-enforcement.ibm-system.svc:443/mutating-pods?timeout=30s: dialtcp 172.21.xxx.xxx:443: connect: connection timed out
     ```
     {: screen}
-3.  Get the name of the broken webhook. Replace `trust.hooks.securityenforcement.admission.cloud.ibm.com` with the broken webhook that you previously identified.
-    ```
-    oc get mutatingwebhookconfigurations,validatingwebhookconfigurations -o jsonpath='{.items[?(@.webhooks[*].name=="trust.hooks.securityenforcement.admission.cloud.ibm.com")].metadata.name}{"\n"}'
-    ```
-    {: pre}
+2.  Get the name of the broken webhook.
+    *   If the error message has a broken webhook, replace `trust.hooks.securityenforcement.admission.cloud.ibm.com` with the broken webhook that you previously identified.
+        ```
+        oc get mutatingwebhookconfigurations,validatingwebhookconfigurations -o jsonpath='{.items[?(@.webhooks[*].name=="trust.hooks.securityenforcement.admission.cloud.ibm.com")].metadata.name}{"\n"}'
+        ```
+        {: pre}
 
-    Example output:
-    ```
-    image-admission-config
-    ```
-    {: pre}
-4.  Review the service and location details of the mutating or validating webhook configuration in the `clientConfig` section in the output of the following command. Replace `image-admission-config` with the name that you previously identified. If the webhook exists outside the cluster, contact the cluster owner to check the webhook status.
+        Example output:
+        ```
+        image-admission-config
+        ```
+        {: pre}
+    *   If the error does not have a broken webhook, list all the webhooks in your cluster and check their configurations in the following steps.
+        ```
+        oc get mutatingwebhookconfigurations,validatingwebhookconfigurations
+        ```
+        {: pre}   
+3.  Review the service and location details of the mutating or validating webhook configuration in the `clientConfig` section in the output of the following command. Replace `image-admission-config` with the name that you previously identified. If the webhook exists outside the cluster, contact the cluster owner to check the webhook status.
     ```
     oc get mutatingwebhookconfiguration image-admission-config -o yaml
     ```
@@ -900,7 +918,7 @@ Identify and restore the resource that causes the broken webhook.
             port: 443
     ```
     {: screen}
-5.  **Optional**: Back up the webhooks, especially if you do not know how to reinstall the webhoook.
+4.  **Optional**: Back up the webhooks, especially if you do not know how to reinstall the webhoook.
     ```
     oc get mutatingwebhookconfiguration <name> -o yaml > mutatingwebhook-backup.yaml
     ```
@@ -910,7 +928,7 @@ Identify and restore the resource that causes the broken webhook.
     oc get validatingwebhookconfiguration <name> -o yaml > validatingwebhook-backup.yaml
     ```
     {: pre}
-6.  Check the status of the related service and pods for the webhook.
+5.  Check the status of the related service and pods for the webhook.
     1.  Check the service **Type**, **Selector**, and **Endpoint** fields.
         ```
         oc describe service -n <namespace> <service_name>
@@ -927,18 +945,17 @@ Identify and restore the resource that causes the broken webhook.
         ```
         {: pre}
     4.  If the service does not have any backing resources, or if troubleshooting the pods does not resolve the issue, remove the webhook.
-        *   If the webhook is managed by an add-on that you installed, uninstall the add-on. Common add-ons that cause webhook issues include the following:
-            *   [Container image security enforcement](/docs/Registry?topic=Registry-security_enforce).
-        *   If the webhook is a custom webhook that you added, delete the webhook.
-            ```
-            oc delete mutatingwebhook <name>
-            ```
-            {: pre}
-7.  Retry the cluster master operation, such as updating the cluster.
-8.  If you still see the error, you might have worker node or network connectivity issues.
+        ```
+        oc delete mutatingwebhook <name>
+        ```
+        {: pre}
+6.  Retry the cluster master operation, such as updating the cluster.
+7.  If you still see the error, you might have worker node or network connectivity issues.
     *   [Worker node troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot_clusters).
     *   Make sure that the webhook can connect to the Kubernetes API server in the cluster master. For example, if you use Calico network policies, security groups, or some other type of firewall, set up your [classic](/docs/openshift?topic=openshift-firewall) or [VPC](/docs/openshift?topic=openshift-vpc-firewall) cluster with the appropriate access.
-9.  Re-create the webhook or reinstall the add-on.
+    *   If the webhook is managed by an add-on that you installed, uninstall the add-on. Common add-ons that cause webhook issues include the following:
+        * [Container image security enforcement](/docs/Registry?topic=Registry-security_enforce).
+8.  Re-create the webhook or reinstall the add-on.
 
 <br />
 

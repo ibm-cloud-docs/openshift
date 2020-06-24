@@ -101,6 +101,7 @@ Delete a LogDNA logging configuration from your cluster.
 
 
 Existing logging configurations that you manually set up and that were not created with the Red Hat OpenShift on IBM Cloud observability plug-in are cannot be deleted with this command.
+{: note}
 
 
 

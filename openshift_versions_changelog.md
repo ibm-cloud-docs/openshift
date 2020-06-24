@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-06-24"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -62,7 +62,7 @@ The following table shows the changes that are included in the master fix pack u
 | Component | Location | Previous | Current | Description |
 | --------- | -------- | ------- | -------- | ----------- |
 | Cluster health image | Master | v1.1.7 | v1.1.8 | Improved performance when handling cluster status updates. |
-| CRI-O | Worker | 1.16.4 | 1.16.5 | See the [CRI-O release notes](https://github.com/cri-o/cri-o/releases/tag/v1.16.5){: external}. |
+| CRI-O | Worker | 1.16.5 | 1.16.6 | See [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.16.6){: external}. |
 | Gateway-enabled cluster controller | Master | N/A | N/A | Added missing Calico `deny-public-nodeport` global network policy for gateway-enabled clusters. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | Master | v1.17.6-4 | v1.17.7-1 | Updated to support the Kubernetes 1.17.7 release. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | Master | N/A | 08ce50e | **New!**: Added a control plane operator to synchronize [{{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) service roles](/docs/openshift?topic=openshift-access_reference#service) with Kubernetes role-based access control (RBAC) roles. |

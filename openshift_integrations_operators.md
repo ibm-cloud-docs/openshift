@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-24"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -123,7 +123,7 @@ subcollection: openshift
 With operators, you can manage the lifecycle of the apps in your cluster, including third-party software and services that you integrate into your cluster from the [OperatorHub](https://operatorhub.io/){: external}. You can consistently install, update, and monitor system components by using operators or by making operators available to developers that work in specific projects or across projects.
 {: shortdesc}
 
-Operators are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator, work with the appropriate provider to troubleshoot the issue.
+Operators are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for additional charges and how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator, work with the appropriate provider to troubleshoot the issue.
 {: note}
 
 ## Using Operators in 4.3 clusters
