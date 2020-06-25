@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-06-25"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -679,7 +679,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
     <td>60</td>
     </tr>
     <tr>
-    <td>`retryAttempts`</td
+    <td>`retryAttempts`</td>
     <td>Set the maximum number of attempts to retry after failing to connect to the service API. Use this parameter and the `maxRetryGap` parameter to adjust the retry window for the cluster autoscaler.</td>
     <td>32</td>
     </tr>
