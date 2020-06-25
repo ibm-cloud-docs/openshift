@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-06-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -51,7 +51,7 @@ Review these situations in which you might need to open specific ports and IP ad
 * [Corporate firewalls](#corporate): If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run `ibmcloud`, `ibmcloud oc`, `ibmcloud cr`, `oc`, and `calicoctl` commands from your local system.
 * [Gateway appliance firewalls](#vyatta_firewall): If you have firewalls set up on the public or private network in your IBM Cloud infrastructure account, such as a VRA, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services. You can also open ports to allow incoming traffic to services exposing apps in your cluster.
 * [Calico network policies](#firewall_calico_egress): If you use Calico network policies to act as a firewall to restrict all worker node egress, you must allow your worker nodes to access the resources that are required for the cluster to function.
-* [Other services or network firewalls](#whitelist_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by a firewall, you must add the IP addresses of your worker nodes in that firewall.
+* [Other services or network firewalls](#allowlist_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by a firewall, you must add the IP addresses of your worker nodes in that firewall.
 
 <br />
 
@@ -446,7 +446,7 @@ Instead of setting up a gateway firewall device, you can choose to use [Calico n
 
 
 ## Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls
-{: #whitelist_workers}
+{: #allowlist_workers}
 
 If you want to access services that run inside or outside {{site.data.keyword.cloud_notm}} or on-premises and that are protected by a firewall, you can add the IP addresses of your worker nodes in that firewall to allow outbound network traffic to your cluster. For example, you might want to read data from an {{site.data.keyword.cloud_notm}} database that is protected by a firewall, or specify your worker node subnets in an on-premises firewall to allow network traffic from your cluster.
 {:shortdesc}
@@ -499,7 +499,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 
 
 ## Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses
-{: #iam_whitelist}
+{: #iam_allowlist}
 
 By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted. If you use an IAM allowlist, you must allow the CIDRs of the Red Hat OpenShift on IBM Cloud control plane for the zones in the region where your cluster is located. You must allow these CIDRs so that Red Hat OpenShift on IBM Cloud can create Ingress ALBs and `LoadBalancers` in your cluster.
 {: shortdesc}

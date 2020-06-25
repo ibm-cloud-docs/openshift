@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-06-25"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -231,7 +231,7 @@ Before you begin, allow access to run [`ibmcloud` commands](#vpc-firewall_bx) an
 
 
 ## Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls
-{: #vpc-whitelist_workers}
+{: #vpc-allowlist_workers}
 
 Allow your worker nodes to communicate with services that are protected by firewalls.
 {:shortdesc}
