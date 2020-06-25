@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -59,7 +59,7 @@ Review the minimum permissions in {{site.data.keyword.cloud_notm}} IAM that the 
   <li>**Viewer** platform role for the resource group access.</li></ul>
 <li>**Infrastructure**</li><ul>
   <li>Classic clusters only: **Super User** role or the [minimum required permissions](#infra) for classic infrastructure.</li>
-  <li>VPC clusters only: **Administrator** platform role for [**VPC Infrastructure**](/docs/vpc?topic=vpc-iam-getting-started).</li></ul></dd>
+  <li>VPC clusters only: **Administrator** platform role for [**VPC Infrastructure**](/docs/vpc?topic=vpc-iam-getting-started).</li></ul></ul></dd>
 
 <dt>User that creates the cluster</dt>
 <dd>In addition to the API key, each individual user must have the following permissions to create a cluster.<ul>
