@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-06-25"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -203,8 +203,14 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
 
 3. Add the {{site.data.keyword.cloud_notm}} Helm repo to your cluster.
 
-   If you enabled [VRF](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public registry domain: `helm repo add ibm-charts https://icr.io/helm/ibm-charts`.
+   If you enabled [VRF](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository `helm repo add ibm-charts https://private.icr.io/helm/ibm-charts` to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public registry domain: `helm repo add ibm-charts https://icr.io/helm/ibm-charts`.
    {: note}
+
+   ```
+   helm repo add ibm-charts https://private.icr.io/helm/ibm-charts
+   ```
+   {: pre}
+
 
    ```
    helm repo add ibm-charts https://private.icr.io/helm/ibm-charts
