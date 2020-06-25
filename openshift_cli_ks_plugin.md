@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-06-25"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -5720,11 +5720,9 @@ ibmcloud oc storage volume ls [--cluster CLUSTER_ID] [--provider PROVIDER] [--zo
 <dt><code>--cluster <em>CLUSTER_ID</em></code></dt>
 <dd>Optional: Specify the cluster ID. To list available clusters, run <code>ibmcloud oc cluster ls</code>.</dd>
 
-<dl>
 <dt><code>--provider <em>PROVIDER</em></code></dt>
 <dd>Optional: Specify the provider. Supported values are <code>classic</code>, <code>vpc-classic</code>, and <code>vpc-gen2</code>.</dd>
 
-<dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>Optional: Specify the zone. To list available zones, run <code>ibmcloud oc locations</code>.</dd>
 
