@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-26"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -89,7 +89,7 @@ The following diagram shows how a router directs network traffic from the intern
 
 3. Based on the resolved IP address of the router service, the router receives the request.
 
-4. The router forwards the request to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router sends the requests between the app pods in the zone.
+4. The router forwards the request to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router alternates requests between app pods.
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the load balancer service to the client.
 

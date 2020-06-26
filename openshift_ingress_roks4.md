@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -32,8 +32,6 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
-
 
 
 
@@ -1181,4 +1179,3 @@ To add annotations to the router:
   {: pre}
 
 4. Save and close the file. Your changes are automatically applied.
-

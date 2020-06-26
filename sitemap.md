@@ -747,7 +747,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
-  * [Traffic flow in a multizone VPC cluster](/docs/openshift?topic=openshift-openshift_routes#route_vpc)
+  * [Traffic flow in a multizone VPC cluster with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#route_vpc)
+  * [Traffic flow in a multizone VPC cluster with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private)
 * [Route types](/docs/openshift?topic=openshift-openshift_routes#route-types)
 * [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
   * [Setting up public routes in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#routes-public-classic)
@@ -827,6 +828,8 @@ subcollection: openshift
   * [Single-zone cluster](/docs/openshift?topic=openshift-ingress-about-roks4#classic-single-roks4)
   * [Multizone cluster](/docs/openshift?topic=openshift-ingress-about-roks4#classic-multi-roks4)
 * [How does a request get to my app with Ingress in a VPC cluster?](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc)
+  * [VPC cluster with a public service endpoint](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_public)
+  * [VPC cluster with a private service endpoint only](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private)
 * [How can I customize routing for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#custom-routing)
 * [How can I enable TLS certificates for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#certs)
 

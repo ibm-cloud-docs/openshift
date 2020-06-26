@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-17"
+lastupdated: "2020-06-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -70,7 +70,7 @@ One HAProxy-based OpenShift router is created for each Ingress controller, and o
 
 The Ingress operator configures the router with the same domain that is specified in the Ingress controller. The router listens for incoming HTTP, HTTPS, or TCP service requests through that domain. The router's load balancer service component then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
 
-If you have a multizone cluster, one high-availability router is deployed to your cluster, and one router service is created in each zone. Two worker nodes are required per zone so that the two replicas of the router can be deployed and updated correctly. 
+If you have a multizone cluster, one high-availability router is deployed to your cluster, and one router service is created in each zone. Two worker nodes are required per zone so that the two replicas of the router can be deployed and updated correctly.
 
 **Classic clusters: Router IP addresses**
 
@@ -80,9 +80,9 @@ To find the IP addresses of the default Ingress controller router services, run 
 
 When you create a VPC cluster, one public VPC load balancer is automatically created outside of your cluster in your VPC. The public VPC load balancer puts the external IP addresses of your routers behind one hostname. In VPC clusters, a hostname is assigned to the routers because the router IP addresses are not static and might change over time. Note that this router hostname is different than the default Ingress subdomain for your cluster.
 
-When you create a VPC cluster, one public and one private VPC load balancer is automatically created outside of your cluster in your VPC. The public VPC load balancer puts the public IP addresses of your public router serices behind one hostname, and the private VPC load balancer puts the private IP addresses of your private router serices behind one hostname. In VPC clusters, a hostname is assigned to the router serices because the router service IP addresses are not static and might change over time.
+When you create a VPC cluster, one public and one private VPC load balancer are automatically created outside of your cluster in your VPC. The public VPC load balancer puts the public IP addresses of your public router services behind one hostname, and the private VPC load balancer puts the private IP addresses of your private router services behind one hostname. In VPC clusters, a hostname is assigned to the router services because the router service IP addresses are not static and might change over time.
 
-The Ingress subdomain for your cluster is automatically linked to the VPC load balancer hostname for your public router serices. Note that the Ingress subdomain for your cluster, which looks like `<cluster_name>.<hash>-0000.<region>.containers.appdomain.cloud`, is different than the VPC load balancer-assigned hostname for your public router serices, which looks like `01ab23cd-<region>.lb.appdomain.cloud`. The Ingress subdomain is the public route through which users access your app from the internet, and can be configured to use TLS termination. The assigned hostname for your public router serices is what the VPC load balancer uses to manages your router service IPs.
+The Ingress subdomain for your cluster is automatically linked to the VPC load balancer hostname for your public router services. Note that the Ingress subdomain for your cluster, which looks like `<cluster_name>.<hash>-0000.<region>.containers.appdomain.cloud`, is different than the VPC load balancer-assigned hostname for your public router services, which looks like `01ab23cd-<region>.lb.appdomain.cloud`. The Ingress subdomain is the public route through which users access your app from the internet, and can be configured to use TLS termination. The assigned hostname for your public router services is what the VPC load balancer uses to manages your router service IPs.
 
 You can find the hostname that is assigned to your public routers and the hostname that is assigned to your private routers by running `oc get svc -n openshift-ingress` and looking for the **EXTERNAL IP** field.
 
@@ -126,7 +126,7 @@ The following diagram shows how Ingress directs communication from the internet 
 
 3. Based on the resolved IP address, the client sends the request to the router service.
 
-4. The router checks the routing rules that are implemented by the Ingress controller for a routing rule for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods.
+4. The router checks the routing rules that are implemented by the Ingress controller for a routing rule for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods.
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the request exists. The router then sends the response packet to the client.
 
@@ -144,17 +144,20 @@ The following diagram shows how Ingress directs communication from the internet 
 
 3. The client sends the request to the IP address of the service that exposes the router.
 
-4. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router service sends the requests between the app pods across all zones.
+4. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router service sends the requests between the app pods across all zones.
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router service that forwarded the request exists. The router then sends the response packet to the client.
 
 ## How does a request get to my app with Ingress in a VPC cluster?
 {: #architecture-vpc}
 
-The following diagram shows how Ingress directs communication from the internet to an app in a VPC multizone cluster.
+### VPC cluster with a public service endpoint
+{: #architecture-vpc_public}
+
+When you create a multizone VPC cluster with the public service endpoint enabled, a public Ingress controller and router are created by default. The following diagram shows how Ingress directs communication from the internet to an app in a VPC multizone cluster.
 {: shortdesc}
 
-<img src="images/roks_router_ingress_vpc.png" width="850" alt="Expose an app in a VPC cluster by using Ingress" style="width:830px; border-style: none"/>
+<img src="images/roks_router_ingress_vpc.png" width="850" alt="Publicly expose an app in a multizone VPC cluster by using Ingress" style="width:830px; border-style: none"/>
 
 1. A user sends a request to your app by accessing your app's URL. This URL is the Ingress subdomain for your cluster for your exposed app appended with the Ingress resource path, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`.
 
@@ -164,11 +167,29 @@ The following diagram shows how Ingress directs communication from the internet 
 
 4. Based on the resolved IP address, the VPC load balancer sends the request to a router.
 
-5. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the package is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods across all zones.
+5. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods across all zones.
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the router service that forwarded the request exists. The VPC load balancer then sends the response packet to the client.
 
+### VPC cluster with a private service endpoint only
+{: #architecture-vpc_private}
 
+When you create a multizone VPC cluster with the private service endpoint only, a private Ingress controller and router are created by default. Only clients that are connected to your private VPC network can access apps that are exposed by a private Ingress controller. The following diagram shows how Ingress directs communication from private networks to an app in a VPC multizone cluster.
+{: shortdesc}
+
+<img src="images/roks_router_ingress_vpc_private.png" width="850" alt="Privately expose an app in a multizone VPC cluster by using Ingress" style="width:830px; border-style: none"/>
+
+1. A client that is connected to your private VPC network sends a request to your app by using your app's URL. This URL is the Ingress subdomain for your cluster for your exposed app appended with the Ingress resource path, such as `mycluster-<hash>-i000.us-south.containers.appdomain.cloud/myapp`. For example, you might use the {{site.data.keyword.vpc_full_notm}} VPN, {{site.data.keyword.tg_full_notm}}, or {{site.data.keyword.dl_full_notm}} to allow requests from an on-premises network, another VPC, or {{site.data.keyword.cloud_notm}} classic infrastructure to apps that run in your cluster.
+
+2. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the services for the router. In VPC clusters, your router services' private IP addresses are floating, and are kept behind a VPC-assigned hostname. Note that though the DNS record for the route subdomain is registered in the public DNS system, the DNS resolution servers are reachable from the VPC.
+
+3. The private VPC load balancer resolves the VPC hostname to an available private IP address of a router service that was reported as healthy. The VPC load balancer continuously checks the IP addresses of the services that expose the router in each zone in your cluster.
+
+4. Based on the resolved IP address, the VPC load balancer sends the request to a router service.
+
+5. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods across all zones.
+
+6. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the VPC load balancer to the client.
 
 <br />
 
