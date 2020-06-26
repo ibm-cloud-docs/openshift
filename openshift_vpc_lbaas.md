@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-06-26"
 
 keywords: openshift, roks, rhos, rhoks, vpc lbaas
 
@@ -84,13 +84,19 @@ Expose your app to the public or to the private network by setting up a Kubernet
     name: myloadbalancer
     annotations:
       service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: <public_or_private>
+      service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
   spec:
     type: LoadBalancer
     selector:
       <selector_key>: <selector_value>
     ports:
-     - protocol: TCP
+     - name: http
+       protocol: TCP
        port: 8080
+       targetPort: 8080
+     - name: https
+       protocol: TCP
+       port: 443
   ```
   {: codeblock}
 
@@ -107,12 +113,22 @@ Expose your app to the public or to the private network by setting up a Kubernet
   <td>Annotation to specify a service that accepts public or private requests. If you do not include this annotation, a public `LoadBalancer` is created.</td>
   </tr>
   <tr>
+    <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`</td>
+    <td>Annotation to specify a VPC zone that your cluster is attached to. When you specify a zone in this annotation, two processes occur:<ul>
+    <li>The VPC load balancer is deployed to the same subnet in that zone that your worker nodes are connected to.</li>
+    <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC load balancer.</li><ul>To see zones, run `ibmcloud oc zone ls --provider vpc-gen2`.</td>
+  </tr>
+  <tr>
   <td>`selector`</td>
   <td>The label key (&lt;selector_key&gt;) and value (&lt;selector_value&gt;) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.</td>
   </tr>
   <tr>
   <td>`port`</td>
   <td>The port that the service listens on.</td>
+  </tr>
+  <tr>
+  <td>`targetPort`</td>
+  <td>The port to which the service directs traffic.</td>
   </tr>
   </tbody></table>
 
@@ -206,7 +222,9 @@ The VPC load balancer provides a default HTTP hostname in the format `1234abcd-<
 After you create a DNS subdomain for a VPC load balancer hostname, you cannot use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC load balancer health check that is provided for the default VPC load balancer hostname is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-load-balancers#health-checks).
 {: note}
 
-Before you begin, [set up a Load Balancer for VPC](#setup_vpc_ks_vpc_lb).
+Before you begin:
+* [Set up a VPC load balancer](#setup_vpc_ks_vpc_lb). Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC load balancer.
+* To use the SSL certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
 
 1. Get the hostname for your VPC load balancer. In the output, look for the hostname in the **EXTERNAL-IP** column.
   ```
@@ -248,6 +266,9 @@ Before you begin, [set up a Load Balancer for VPC](#setup_vpc_ks_vpc_lb).
     2. Define an alias for your custom domain by specifying the VPC load balancer hostname as a Canonical Name record (CNAME).
 
 3. If you created a subdomain for a public VPC load balancer, open a web browser and enter the URL to access your app through the subdomain. If you created a subdomain for a private VPC load balancer, you must be [connected to your private VPC network](/docs/vpc?topic=vpc-vpn-onprem-example) to test access to your subdomain.
+
+To use the SSL certificate to access your app via HTTPS, ensure that you defined an HTTPS port in your [Kubernetes `LoadBalancer` service](#setup_vpc_ks_vpc_lb). You can verify that requests are correctly routing through the HTTPS port by running `curl -v --insecure https://<domain>`. A connection error indicates that no HTTPS port is open on the service. Also, ensure that TLS connections can be terminated by your app. You can verify that your app terminates TLS properly by running `curl -v https://<domain>`. A certificate error indicates that your app is not properly terminating TLS connections.
+{: tip}
 
 <br />
 
