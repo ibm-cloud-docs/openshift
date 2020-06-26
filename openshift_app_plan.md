@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-26"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -100,7 +100,7 @@ You can take some general steps to containerize your app as follows.
 
 For more, see the following tutorials:
 *  [Migrating an app from Cloud Foundry to a cluster](/docs/containers?topic=containers-cf_tutorial#cf_tutorial)
-*  [Moving a VM-based app to Kubernetes](/docs/tutorials?topic=solution-tutorials-vm-to-containers-and-kubernetes)
+*  [Moving a VM-based app to Kubernetes](/docs/solution-tutorials?topic=solution-tutorials-vm-to-containers-and-kubernetes)
 
 
 

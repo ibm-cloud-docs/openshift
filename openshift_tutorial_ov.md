@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-06-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -156,7 +156,7 @@ subcollection: openshift
         </div>
     </div>
     </a>
-  <a href = "/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift">
+  <a href = "/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift">
     <div class = "solutionBox">
         <div class = "solutionBoxContent">
           Scalable web app on {{site.data.keyword.openshiftshort}}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-26"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -57,7 +57,7 @@ Use the following checklist to configure user access in your cluster.
 
 </br>
 
-For more information about setting up your account and resources, try out this tutorial about the [best practices for organizing users, teams, and applications](/docs/tutorials?topic=solution-tutorials-users-teams-applications).
+For more information about setting up your account and resources, try out this tutorial about the [best practices for organizing users, teams, and applications](/docs/solution-tutorials?topic=solution-tutorials-users-teams-applications).
 {: tip}
 
 <br />
