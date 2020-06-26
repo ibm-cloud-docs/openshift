@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -141,6 +141,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | List all worker nodes in a cluster. | [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_workers) | <ul><li>Provider-agnostic: [`GET/v2/getWorkers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorkers)</li><li>Classic: [`GET /v2/classic/getWorkers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/classicGetWorkers)</li><li>VPC: [`GET /v2/vpc/getWorkers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetWorkers)</li></ul> |
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the action that you can take with Red Hat OpenShift on IBM Cloud service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
 {: #accessreftabtableview}
 {: tab-title="Viewer"}
 {: tab-group="access-ref-iam-platform"}
@@ -187,6 +188,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Create a webhook in a cluster. | [`ibmcloud oc webhook-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create) | [`POST /v1/clusters/{idOrName}/webhooks`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/AddClusterWebhooks) |
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the action that you can take with Red Hat OpenShift on IBM Cloud service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
 {: #accessreftabtableedit}
 {: tab-title="Editor"}
 {: tab-group="access-ref-iam-platform"}
@@ -219,6 +221,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Remove a zone a from worker pool. | [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm) | [`DELETE /v1/clusters/{idOrName}/workerpools/{poolidOrName}/zones/{zoneid}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/RemoveWorkerPoolZone) |
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the action that you can take with Red Hat OpenShift on IBM Cloud service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
 {: #accessreftabtableoper}
 {: tab-title="Operator"}
 {: tab-group="access-ref-iam-platform"}
@@ -247,6 +250,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | See the status of the API server logs snapshot request. | [`ibmcloud oc logging collect-status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_collect_status) | [`GET /v1/log-collector/{idOrName}/masterlogs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/log45collector/GetMasterLogCollectionStatus) |
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the action that you can take with Red Hat OpenShift on IBM Cloud service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
 {: #accessreftabtableadmin}
 {: tab-title="Administrator"}
 {: tab-group="access-ref-iam-platform"}
