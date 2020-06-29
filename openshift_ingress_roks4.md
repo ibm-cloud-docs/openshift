@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-26"
+lastupdated: "2020-06-29"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -156,7 +156,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
 
 **To use the IBM-provided Ingress domain and TLS secret:**
 
-Get the IBM-provided domain to use in subsequent steps.
+Get the IBM-provided domain and secret to use in subsequent steps. The IBM-provided TLS certificate is stored as the `Ingress secret` in the `openshift-ingress` project. IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. The certificates expire every 90 days and are automatically renewed 37 days before they expire.
 ```
 ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress
 ```
@@ -168,8 +168,6 @@ Ingress Subdomain:      mycluster-<hash>-0000.us-south.containers.appdomain.clou
 Ingress Secret:         mycluster-<hash>-0000
 ```
 {: screen}
-
-The Ingress controller for your app is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. The certificates expire every 90 days and are automatically renewed 37 days before they expire.
 
 **To use a custom domain and TLS secret:**
 
@@ -253,7 +251,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     <tbody>
     <tr>
     <td><code>tls</code></td>
-    <td><p class="note">If you use the IBM-provided Ingress subdomain, do not include a `spec.tls` section in your Ingress resource. The default Ingress controller is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. The Ingress controller can access and apply the default certificate in any project where you create this Ingress resource.</p>If you use a custom domain and want to use TLS, include this TLS section in your resource with the following fields:<ul><li>Replace <em>&lt;domain&gt;</em> with your custom domain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li><li>Replace <em>&lt;tls_secret_name&gt;</em> with the secret that you created earlier that holds your custom TLS certificate and key.</li></ul></td>
+    <td>If you want to use TLS, include this TLS section in your resource with the following fields:<ul><li>Replace <em>&lt;domain&gt;</em> with your subdomain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li><li>Replace <em>&lt;tls_secret_name&gt;</em> with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.</li></ul></td>
     </tr>
     <tr>
     <td><code>host</code></td>
@@ -980,7 +978,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
 
 **To use the IBM-provided Ingress domain and TLS secret:**
 
-Get the IBM-provided domain to use in subsequent steps.
+Get the IBM-provided domain and secret to use in subsequent steps. The IBM-provided TLS certificate is stored as the `Ingress secret` in the `openshift-ingress` project. IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. The certificates expire every 90 days and are automatically renewed 37 days before they expire.
 ```
 ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress
 ```
@@ -992,8 +990,6 @@ Ingress Subdomain:      mycluster-<hash>-i000.us-south.containers.appdomain.clou
 Ingress Secret:         mycluster-<hash>-i000
 ```
 {: screen}
-
-The Ingress controller for your app is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. The certificates expire every 90 days and are automatically renewed 37 days before they expire.
 
 **To use a custom domain and TLS secret:**
 
@@ -1077,7 +1073,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     <tbody>
     <tr>
     <td><code>tls</code></td>
-    <td><p class="note">If you use the IBM-provided Ingress subdomain, do not include a `spec.tls` section in your Ingress resource. The default Ingress controller is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. The Ingress controller can access and apply the default certificate in any project where you create this Ingress resource.</p>If you use a custom domain and want to use TLS, include this TLS section in your resource with the following fields:<ul><li>Replace <em>&lt;domain&gt;</em> with your custom domain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li><li>Replace <em>&lt;tls_secret_name&gt;</em> with the secret that you created earlier that holds your custom TLS certificate and key.</li></ul></td>
+    <td>If you want to use TLS, include this TLS section in your resource with the following fields:<ul><li>Replace <em>&lt;domain&gt;</em> with your subdomain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.</li><li>Replace <em>&lt;tls_secret_name&gt;</em> with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.</li></ul></td>
     </tr>
     <tr>
     <td><code>host</code></td>
