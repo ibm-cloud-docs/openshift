@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-06-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -778,20 +778,21 @@ Your cluster is still created, but the internal registry is not backed up to {{s
 Manually set up your cluster to back up the internal registry to an {{site.data.keyword.cos_full_notm}} bucket.
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
-2. [Create a standard {{site.data.keyword.cos_full_notm}} service, at least one bucket, and HMAC service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_service).
-3. [Create a Kubernetes secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret) in the `openshift-image-registry` namespace that uses your COS `access_key_id` and `secret_access_key`.
+2. If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, [allow access to the {{site.data.keyword.cos_full_notm}} subdomain](/docs/openshift?topic=openshift-registry#openshift-registry).
+3. [Create a standard {{site.data.keyword.cos_full_notm}} service, at least one bucket, and HMAC service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_service).
+4. [Create a Kubernetes secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret) in the `openshift-image-registry` namespace that uses your COS `access_key_id` and `secret_access_key`.
     ```
     oc create secret generic image-registry-private-configuration-user --from-literal=REGISTRY_STORAGE_S3_ACCESSKEY=<access_key_id> --from-literal=REGISTRY_STORAGE_S3_SECRETKEY=<secret_access_key> --namespace openshift-image-registry
     ```
     {: pre}
 
-4. Edit the OpenShift Registry Operator to use {{site.data.keyword.cos_full_notm}} as a backing store.
+5. Edit the OpenShift Registry Operator to use {{site.data.keyword.cos_full_notm}} as a backing store.
     ```
     oc edit configs.imageregistry.operator.openshift.io/cluster
     ```
     {: pre}
 
-5. Add the following parameters to the `spec` section of the configmap, then save and close the file. To pick up the configuration change, the `openshift-image-registry` pods automatically restart.
+6. Add the following parameters to the `spec` section of the configmap, then save and close the file. To pick up the configuration change, the `openshift-image-registry` pods automatically restart.
     ```yaml
       storage:
         s3:
@@ -803,7 +804,7 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
     ```
     {: codeblock}
 
-6.  Verify that the internal registry images are backed up to {{site.data.keyword.cos_full_notm}}.
+7.  Verify that the internal registry images are backed up to {{site.data.keyword.cos_full_notm}}.
     1.  [Build an image for your app](/docs/openshift?topic=openshift-images) and [push it to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images).
     2.  [Import the image into your internal OpenShift registry](/docs/openshift?topic=openshift-registry#imagestream_registry).
     3.  [Deploy an app](/docs/openshift?topic=openshift-images#pod_imagePullSecret) that references your image.
