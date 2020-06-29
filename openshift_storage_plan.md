@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -346,7 +346,7 @@ The following image shows the options that you have in Red Hat OpenShift on IBM 
 <tr>
 <td style="text-align:left">Supported in VPC clusters</td>
 <td style="text-align:left">Yes</td>
-   <td style="text-align:left">No</td>
+   <td style="text-align:left">Yes</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
