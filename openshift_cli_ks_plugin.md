@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-06-30"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -560,6 +560,11 @@ ibmcloud oc cluster create classic --zone dal10 --public-vlan my_public_VLAN_ID 
 {: pre}
 
 </br>
+
+
+
+
+
 
 ### `ibmcloud oc cluster create vpc-gen2`
 {: #cli_cluster-create-vpc-gen2}
