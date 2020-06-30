@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1728,10 +1728,7 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 ### Step 3: Reach out to Portworx and IBM
 {: #px-support}
 
-If you went through the troubleshooting guide and you still cannot find an issue for why the installation failed, reach out to the Portworx and IBM team.
-{: shortdesc}
-
-Post a question in the `portworx-on-iks` channel in the [{{site.data.keyword.containerlong_notm}} Slack](https://ibm-cloud-success.slack.com/){: external}. Make sure to include the cluster ID and the steps that you took to verify your installation. Log in to Slack by using your IBM ID. If you do not use an IBM ID for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
+If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an e-mail to `support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@portworx.com`.
 
 ## Feedback, questions, and support
 {: #getting_help_storage}
