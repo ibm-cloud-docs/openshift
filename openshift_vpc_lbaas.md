@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-26"
+lastupdated: "2020-06-30"
 
 keywords: openshift, roks, rhos, rhoks, vpc lbaas
 
@@ -83,6 +83,7 @@ Expose your app to the public or to the private network by setting up a Kubernet
   metadata:
     name: myloadbalancer
     annotations:
+      service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"
       service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: <public_or_private>
       service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
   spec:
@@ -109,26 +110,30 @@ Expose your app to the public or to the private network by setting up a Kubernet
   </thead>
   <tbody>
   <tr>
-  <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`</td>
-  <td>Annotation to specify a service that accepts public or private requests. If you do not include this annotation, a public `LoadBalancer` is created.</td>
+    <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`</td>
+    <td>Annotation to preserve the source IP address of requests to apps in your cluster.</td>
+  </tr>
+  <tr>
+    <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`</td>
+    <td>Annotation to specify a service that accepts public or private requests. If you do not include this annotation, a public `LoadBalancer` is created.</td>
   </tr>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`</td>
     <td>Annotation to specify a VPC zone that your cluster is attached to. When you specify a zone in this annotation, two processes occur:<ul>
     <li>The VPC load balancer is deployed to the same subnet in that zone that your worker nodes are connected to.</li>
-    <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC load balancer.</li><ul>To see zones, run `ibmcloud oc zone ls --provider vpc-gen2`.</td>
+    <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC load balancer.</li><ul>To see zones, run `ibmcloud oc zone ls --provider vpc-gen2`.<p class="note">To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</br></br>If you set the `dedicated: edge` label on worker nodes, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone do not receive traffic from the load balancer.</p></td>
   </tr>
   <tr>
-  <td>`selector`</td>
-  <td>The label key (&lt;selector_key&gt;) and value (&lt;selector_value&gt;) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.</td>
+    <td>`selector`</td>
+    <td>The label key (&lt;selector_key&gt;) and value (&lt;selector_value&gt;) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.</td>
   </tr>
   <tr>
-  <td>`port`</td>
-  <td>The port that the service listens on.</td>
+    <td>`port`</td>
+    <td>The port that the service listens on.</td>
   </tr>
   <tr>
-  <td>`targetPort`</td>
-  <td>The port to which the service directs traffic.</td>
+    <td>`targetPort`</td>
+    <td>The port to which the service directs traffic.</td>
   </tr>
   </tbody></table>
 
