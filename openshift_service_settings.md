@@ -60,7 +60,7 @@ Review the feature gates that are applied to all master and worker node componen
 ## Global settings
 {: #global-settings}
 
-Because Red Hat OpenShift on IBM Cloud is a managed service, many global settings are set up for you. If you edit these settings, the changes are overwritten. For more information, see [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#ocp_vs_roks). You can also review the control plane components in the [Red Hat OpenShift on IBM Cloud Toolkit](https://github.com/openshift/ibm-roks-toolkit){: external} project on GitHub.
+Because Red Hat OpenShift on IBM Cloud is a managed service, many OpenShift Container Platform global settings are set up for you. You can configure some of these global settings, but other global settings you can only review, and any changes are overwritten. For more information, see [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#ocp_vs_roks). You can also review the control plane components in the [Red Hat OpenShift on IBM Cloud Toolkit](https://github.com/openshift/ibm-roks-toolkit){: external} project on GitHub.
 {: shortdesc}
 
 **Configurable global settings**:
