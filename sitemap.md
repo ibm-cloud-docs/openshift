@@ -72,6 +72,7 @@ subcollection: openshift
 [Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov)
 * [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits)
 * [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes)
+* [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp)
 * [Comparison between OpenShift 3.11 and 4.3 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
@@ -1481,6 +1482,8 @@ subcollection: openshift
 [Default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings)
 
 [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
+
+[Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
 
 
 ## FAQs
