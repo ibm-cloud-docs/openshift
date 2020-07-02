@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-29"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -51,8 +51,8 @@ Before you get started with Ingress, review the following prerequisites.
 {:shortdesc}
 
 - Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
-    - **Administrator** platform role for the cluster in {{site.data.keywrod.containerlong_notm}}
-    - **Manager** service role in all {{site.data.keywrod.containerlong_notm}} namespaces (OpenShift projects)
+    - **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+    - **Manager** service role in all {{site.data.keyword.containerlong_notm}} namespaces (OpenShift projects)
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller and router in that zone.
 - To ensure high availability, at least two worker nodes per zone are recommended.
 * VPC Gen 2 clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups).
