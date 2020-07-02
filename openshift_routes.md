@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-17"
+lastupdated: "2020-07-01"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -59,7 +59,7 @@ You can use the OpenShift router to create routes for your apps. Routes are assi
 
 The type of router that is created by default varies depending on your cluster's infrastructure provider and your service endpoint setup.
 * **Classic clusters / VPC Gen 2 clusters with public service endpoint**: Your cluster is created with a public router by default. The router assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface. When a request is received, the router directs the request to the private IP address that the app listens on. If you want to privately expose your apps instead, you must first create a private router, and then create private routes.
-* **VPC Gen 2 clusters with private service endpoint only**: Your cluster is created with a private router by default. The router assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps exposed by a private route. If you want to publicly expose your apps instead, you must first create a public router, and then create public routes.
+* **VPC Gen 2 clusters with private service endpoint only**: Your cluster is created with a private router by default. The router assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps that are exposed by a private route. If you want to publicly expose your apps instead, you must first create a public router, and then create public routes.
 
 If you have a multizone cluster, one high-availability router is deployed to your cluster, and one router service is created in each zone. Two worker nodes are required per zone so that the two replicas of the router can be deployed and updated correctly. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
 * To see the router services in each zone of your cluster, run `oc get svc -n openshift-ingress`.
@@ -95,18 +95,20 @@ The following diagram shows how a router directs network traffic from the intern
 
 3. Based on the resolved IP address of the router service, the router receives the request.
 
-4. The router forwards the request to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router sends the requests between the app pods in the zone.
+4. The router forwards the request to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router alternates requests between app pods.
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the load balancer service to the client.
 
 
-### Traffic flow in a multizone VPC cluster
+### Traffic flow in a multizone VPC cluster with a public service endpoint
 {: #route_vpc}
 
-The following diagram shows how a router directs network traffic from the internet to an app in a multizone, VPC cluster.
+When you create a multizone VPC cluster with the public service endpoint enabled, a public router is created by default. The router assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface.
 {: shortdesc}
 
-<img src="images/roks_router_vpc.png" alt="Expose an app in a multizone, VPC OpenShift cluster by using a router" width="700" style="width:850px; border-style: none"/>
+The following diagram shows how a router directs network traffic from the internet to an app in a multizone, VPC cluster.
+
+<img src="images/roks_router_vpc.png" alt="Expose an app in a multizone VPC OpenShift cluster by using a router" width="700" style="width:850px; border-style: none"/>
 
 1. A request to your app uses the route hostname that you set up for your app.
 
@@ -116,9 +118,31 @@ The following diagram shows how a router directs network traffic from the intern
 
 4. Based on the resolved IP address, the VPC load balancer sends the request to a router service.
 
-5. The router forwards it to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router sends the requests between the app pods in the zone.
+5. The router forwards the request to the private IP address of the app pod over the private network. The source IP address of the request packet is changed to the IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router alternates requests between app pods.
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the VPC load balancer to the client.
+
+### Traffic flow in a multizone VPC cluster with a private service endpoint only
+{: #route_vpc_private}
+
+When you create a multizone VPC cluster with the private service endpoint only, a private router is created by default. The router assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps that are exposed by a private route.
+{: shortdesc}
+
+The following diagram shows how a router directs network traffic from private networks to an app in a multizone, VPC cluster.
+
+<img src="images/roks_router_vpc_private.png" alt="Expose an app in a private, multizone, VPC OpenShift cluster by using a router" width="700" style="width:850px; border-style: none"/>
+
+1. A client that is connected to your private VPC network sends a request to your app by using the app's private route. For example, you might use the {{site.data.keyword.vpc_full_notm}} VPN, {{site.data.keyword.tg_full_notm}}, or {{site.data.keyword.dl_full_notm}} to allow requests from an on-premises network, another VPC, or {{site.data.keyword.cloud_notm}} classic infrastructure to apps that run in your cluster.
+
+2. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the services for the router. In VPC clusters, your router services' IP addresses are floating, and are kept behind a VPC-assigned hostname. Note that though the DNS record for the route subdomain is registered in the public DNS system, the DNS resolution servers are reachable from the VPC.
+
+3. The private VPC load balancer resolves the VPC hostname to an available private IP address of a router service that was reported as healthy. The VPC load balancer continuously checks the IP addresses of the services that expose the router in each zone in your cluster.
+
+4. Based on the resolved IP address, the VPC load balancer sends the request to a router service.
+
+5. The router forwards the request to the private IP address of the app pod over the private network. The source IP address of the request packet is changed to the IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router alternates requests between app pods.
+
+6. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the VPC load balancer and through the {{site.data.keyword.vpc_short}} VPN, {{site.data.keyword.tg_short}}, or {{site.data.keyword.dl_short}} to the client.
 
 <br />
 
@@ -188,14 +212,14 @@ If your cluster is created on classic infrastructure, or if your cluster is crea
       ```
       {: pre}
       <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
-    * Edge: For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route edge --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
-    * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --dest-ca-cert <destca.crt> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
 
@@ -303,14 +327,14 @@ Note that even though you create an Ingress controller in the following steps, t
       ```
       {: pre}
       <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
-    * Edge: For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route edge --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
-    * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --dest-ca-cert <destca.crt> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
 
@@ -440,14 +464,14 @@ Note that even though you create an Ingress controller in the following steps, t
       ```
       {: pre}
       <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
-    * Edge: For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route edge --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
-    * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --dest-ca-cert <destca.crt> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
 
@@ -499,14 +523,14 @@ If your cluster is created on VPC Gen 2 infrastructure and you enabled the only 
       ```
       {: pre}
       <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
-    * Edge: For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route edge --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
-    * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --dest-ca-cert <destca.crt> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
 

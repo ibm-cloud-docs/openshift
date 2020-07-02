@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -40,6 +40,15 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
+
+## June 2020
+{: #june20}
+
+| Date | Description |
+| ---- | ----------- |
+| 02 July 2020 | <ul><li>**Comparison between {{site.data.keyword.cloud_notm}} and OCP clusters**: Added a [table of differences between standard OCP installations and Red Hat OpenShift on IBM Cloud clusters](/docs/openshift?topic=openshift-cs_ov#compare_ocp).</li><li>**Global settings**: Added information about the [`config.openshift.io` global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or cannot configure.</li><li>**Private-only VPC clusters**: Added diagrams for the [service architecture](/docs/openshift?topic=openshift-service-arch#architecture-vpc_private), [flow of app requests with routers](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private), and [flow of app requests with Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private) in VPC clusters that are created with the private service endpoint only.</li><li>**VPC load balancer**: Added support for specifying the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` and `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotations in the [configuration file for VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb).</li></ul> |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in July 2020"}
 
 ## June 2020
 {: #june20}
@@ -377,7 +386,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 <tr>
   <td>04 September 2019</td>
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.3](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
-  <li><strong>IAM allowlists</strong>: If you use an IAM allowlist, you must [allow the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/openshift?topic=openshift-firewall#iam_whitelist) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.</li>
+  <li><strong>IAM allowlists</strong>: If you use an IAM allowlist, you must [allow the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/openshift?topic=openshift-firewall#iam_allowlist) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.</li>
   <li><strong>New! Montreal, Canada `mon01` single zone location for OpenShift clusters</strong>: For more locations, see [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones).</li></ul></td>
 </tr>
 <tr>

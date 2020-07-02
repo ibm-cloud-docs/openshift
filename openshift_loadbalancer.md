@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-26"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -89,15 +89,15 @@ To set up an NLB 1.0 service in a multizone cluster:
       </thead>
       <tbody>
       <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type:</code>
+        <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`</td>
         <td>Annotation to specify a <code>private</code> or <code>public</code> load balancer.<p class="note">If you do not specify this annotation and your worker nodes are connected to public VLANs, a public `LoadBalancer` service is created. If your worker nodes are connected to private VLANs only, a private `LoadBalancer` service is created.</p></td>
       </tr>
       <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone:</code>
+        <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`</td>
         <td>Annotation to specify the zone that the load balancer service deploys to. To see zones, run <code>ibmcloud oc zone ls</code>.</td>
       </tr>
       <tr>
-        <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:`
+        <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan`</td>
         <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone <zone></code>.</td>
       </tr>
       <tr>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -54,3 +54,33 @@ Review the feature gates that are applied to all master and worker node componen
 | 4.3 | <ul><li><code>ExpandInUsePersistentVolumes=true</code></li><li><code>NodeDisruptionExclusion=false</code></li><li><code>ServiceNodeExclusion=false</code></li><li><code>SCTPSupport=false</code></li></ul>|
 {: caption="Overview of feature gates" caption-side="top"}
 {: summary="The rows are read from left to right. The version is in the first column, with the default feature gates in the second column."}
+
+
+
+## Global settings
+{: #global-settings}
+
+Because Red Hat OpenShift on IBM Cloud is a managed service, many OpenShift Container Platform global settings are set up for you. You can configure some of these global settings, but other global settings you can only review, and any changes are overwritten. For more information, see [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#ocp_vs_roks). You can also review the control plane components in the [Red Hat OpenShift on IBM Cloud Toolkit](https://github.com/openshift/ibm-roks-toolkit){: external} project on GitHub.
+{: shortdesc}
+
+**Configurable global settings**:
+*   `Image.InternalRegistryHostname`
+*   `Image.AllowedRegistriesForImport` (for an example, see [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret))
+*   `Build.BuildControllerConfig`
+*   `Project.RequestMessage`
+*   `Project.RequestTemplateName`
+
+**Read-only custom resource definitions in the `config.openshift.io` resource group**:
+*   `APIServer`
+*   `Authentication`
+*   `ClusterVersion`
+*   `DNS`
+*   `FeatureGate`
+*   `Image`
+*   `Infrastructure`
+*   `Ingress`
+*   `Network`
+*   `OAuth`
+*   `Proxy`
+*   `Scheduler`
+

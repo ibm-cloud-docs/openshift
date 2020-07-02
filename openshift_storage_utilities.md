@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -210,207 +210,6 @@ If you do not want to provision and use the {{site.data.keyword.cloud_notm}} Blo
    <br />
 
 
-## Classic: Automatically provisioning unformatted block storage and authorizing your worker nodes to access the storage
-{: #automatic_block}
-
-You can use the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in to automatically add raw, unformatted, and unmounted block storage with the same configuration to all classic worker nodes in your cluster.
-{: shortdesc}
-
-The {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in is available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
-{: note}
-
-The `mkpvyaml` container that is included in the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in is configured to run a script that finds all worker nodes in your cluster, creates raw block storage in the {{site.data.keyword.cloud_notm}} infrastructure portal, and then authorizes the worker nodes to access the storage.
-
-To add different block storage configurations, add block storage to a subset of worker nodes only, or to have more control over the provisioning process, choose to [manually add block storage](#manual_block).
-{: tip}
-
-
-1. Log in to {{site.data.keyword.cloud_notm}} and target the resource group that your cluster is in.
-   ```
-   ibmcloud login
-   ```
-   {: pre}
-
-2.  Clone the {{site.data.keyword.cloud_notm}} Storage Utilities repo.
-    ```
-    git clone https://github.com/IBM/ibmcloud-storage-utilities.git
-    ```
-    {: pre}
-
-3. Navigate in to the `block-storage-utilities` directory.
-   ```
-   cd ibmcloud-storage-utilities/block-storage-provisioner
-   ```
-   {: pre}
-
-4. Open the `yamlgen.yaml` file and specify the block storage configuration that you want to add to every worker node in the cluster.
-   ```yaml
-   #
-   # Can only specify 'performance' OR 'endurance' and associated clause
-   #
-   cluster:  <cluster_name>    #  Enter the name of your cluster
-   region:   <region>          #  Enter the IBM Cloud Kubernetes Service region where you created your cluster
-   type:  <storage_type>       #  Enter the type of storage that you want to provision. Choose between "performance" or "endurance"
-   offering: storage_as_a_service   
-   # performance:
-   #    - iops:  <iops>       
-   endurance:
-     - tier:  2                #   [0.25|2|4|10]
-   size:  [ 20 ]               #   Enter the size of your storage in gigabytes
-   ```
-   {: codeblock}
-
-   <table>
-   <caption>Understanding the YAML file components</caption>
-   <col style="width:30%">
-	<col style="width:70%">
-      <thead>
-	      <th>Parameter</th>
-	      <th>Description</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td><code>cluster</code></td>
-   <td>Enter the name of your cluster where you want to add raw block storage. </td>
-   </tr>
-   <tr>
-   <td><code>region</code></td>
-   <td>Enter the {{site.data.keyword.containerlong_notm}} region where you created your cluster. Run <code>ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;</code> to find the region of your cluster.  </td>
-   </tr>
-   <tr>
-   <td><code>type</code></td>
-   <td>Enter the type of storage that you want to provision. Choose between <code>performance</code> or <code>endurance</code>. For more information, see [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).  </td>
-   </tr>
-   <tr>
-   <td><code>performance.iops</code></td>
-   <td>If you want to provision `performance` storage, enter the number of IOPS. For more information, see [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass). If you want to provision `endurance` storage, remove this section or comment it out by adding `#` to the beginning of each line.
-   </tr>
-   <tr>
-   <td><code>endurance.tier</code></td>
-   <td>If you want to provision `endurance` storage, enter the number of IOPS per gigabyte. For example, if you want to provision block storage as it is defined in the `ibmc-block-bronze` storage class, enter 2. For more information, see [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass). If you want to provision `performance` storage, remove this section or comment it out by adding `#` to the beginning of each line. </td>
-   </tr>
-   <tr>
-   <td><code>size</code></td>
-   <td>Enter the size of your storage in gigabytes. See [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass) to find supported sizes for your storage tier. </td>
-   </tr>
-   </tbody>
-   </table>  
-
-5. Retrieve your classic IBM Cloud infrastructure username and API key. The username and API key are used by the `mkpvyaml` script to access the cluster.
-   1.  Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external}.
-   2.  From the menu bar, select **Manage > Access (IAM)**.
-   3.  Select the **Users** tab and then click on your username.
-   4.  In the **API keys** pane, find the entry **Classic infrastructure API key** and click the **Actions menu** ![Action menu icon](../icons/action-menu-icon.svg "Action menu icon") **> Details**.
-   5.  Copy the API username and API key.
-
-6. Store the credentials in an environment variable.
-   1. Add the environment variables.
-      ```
-      export SL_USERNAME=<infrastructure_username>
-      ```
-      {: pre}
-
-      ```
-      export SL_API_KEY=<infrastructure_api_key>
-      ```
-      {: pre}
-
-   2. Verify that your environment variables are created successfully.
-      ```
-      printenv
-      ```
-      {: pre}
-
-7.  Build and run the `mkpvyaml` container. When you run the container from the image, the `mkpvyaml.py` script is executed. The script adds a block storage device to every worker node in the cluster and authorizes each worker node to access the block storage device. At the end of the script, a `pv-<cluster_name>.yaml` YAML file is generated for you that you can later use to create the persistent volumes in the cluster.
-    1.  Build the `mkpvyaml` container.
-        ```
-        docker build -t mkpvyaml .
-        ```
-        {: pre}
-        Example output:
-        ```
-        Sending build context to Docker daemon   29.7kB
-        Step 1/16 : FROM ubuntu:18.10
-        18.10: Pulling from library/ubuntu
-        5940862bcfcd: Pull complete
-        a496d03c4a24: Pull complete
-        5d5e0ccd5d0c: Pull complete
-        ba24b170ddf1: Pull complete
-        Digest: sha256:20b5d52b03712e2ba8819eb53be07612c67bb87560f121cc195af27208da10e0
-        Status: Downloaded newer image for ubuntu:18.10
-         ---> 0bfd76efee03
-        Step 2/16 : RUN apt-get update
-         ---> Running in 85cedae315ce
-        Get:1 http://security.ubuntu.com/ubuntu cosmic-security InRelease [83.2 kB]
-        Get:2 http://archive.ubuntu.com/ubuntu cosmic InRelease [242 kB]
-        ...
-        Step 16/16 : ENTRYPOINT [ "/docker-entrypoint.sh" ]
-         ---> Running in 9a6842f3dbe3
-        Removing intermediate container 9a6842f3dbe3
-         ---> 7926f5384fc7
-        Successfully built 7926f5384fc7
-        Successfully tagged mkpvyaml:latest
-        ```
-        {: screen}
-    2.  Run the container to execute the `mkpvyaml.py` script.
-        ```
-        docker run --rm -v `pwd`:/data -v ~/.bluemix:/config -e SL_API_KEY=$SL_API_KEY -e SL_USERNAME=$SL_USERNAME mkpvyaml
-        ```
-        {: pre}
-
-        Example output:
-        ```
-        Unable to find image 'portworx/iks-mkpvyaml:latest' locally
-        latest: Pulling from portworx/iks-mkpvyaml
-        72f45ff89b78: Already exists
-        9f034a33b165: Already exists
-        386fee7ab4d3: Already exists
-        f941b4ac6aa8: Already exists
-        fe93e194fcda: Pull complete
-        f29a13da1c0a: Pull complete
-        41d6e46c1515: Pull complete
-        e89af7a21257: Pull complete
-        b8a7a212d72e: Pull complete
-        5e07391a6f39: Pull complete
-        51539879626c: Pull complete
-        cdbc4e813dcb: Pull complete
-        6cc28f4142cf: Pull complete
-        45bbaad87b7c: Pull complete
-        05b0c8595749: Pull complete
-        Digest: sha256:43ac58a8e951994e65f89ed997c173ede1fa26fb41e5e764edfd3fc12daf0120
-        Status: Downloaded newer image for portworx/iks-mkpvyaml:latest
-
-        kube-dal10-abc1d23e123456ac8b12a3c1e12b123a4 10.XXX.XX.XX
-        Creating Vol of size 20 with type:  endurance
-                  Ordering block storage of size: 20 for host: kube-dal10-abc1d23e123456ac8b12a3c1e12b123a4
-                  ORDER ID =  30087291
-        kube-dal10-abc1d23e123456ac8b12a3c1e12b123a4 10.XXX.XX.XX
-        Creating Vol of size 20 with type:  endurance
-                  Ordering block storage of size: 20 for host: kube-dal10-abc1d23e123456ac8b12a3c1e12b123a4
-                  ORDER ID =  30087293
-        kube-dal12-abc1d23e123456ac8b12a3c1e12b456v1 10.XXX.XX.XX
-        Creating Vol of size 20 with type:  endurance
-                  Ordering block storage of size: 20 for host: kube-dal12-abc1d23e123456ac8b12a3c1e12b456v1
-                  ORDER ID =  30085655
-                  No volume yet ... for orderID :  30087291
-                  No volume yet ... for orderID :  30087291
-                  No volume yet ... for orderID :  30087291
-                  No volume yet ... for orderID :  30087291
-                  Order ID =  30087291 has created VolId =  12345678
-                  Granting access to volume: 12345678 for HostIP: 10.XXX.XX.XX
-                  Order ID =  30087293 has created VolId =  87654321
-                  Granting access to volume: 87654321 for HostIP: 10.XXX.XX.XX
-                  Vol 53002831 is not yet ready ...
-                  Granting access to volume: 87654321 for HostIP: 10.XXX.XX.XX
-                  Order ID =  30085655 has created VolId =  98712345
-                  Granting access to volume: 98712345 for HostIP: 10.XXX.XX.XX
-        Output file created as :  pv-<cluster_name>.yaml
-        ```
-        {: screen}
-
-7. [Attach the block storage devices to your worker nodes](#attach_block).
-
-<br />
 
 
 ## Classic: Manually adding block storage to specific worker nodes
@@ -523,7 +322,7 @@ The instructions in this topic are available for classic worker nodes only. If y
 {: note}
 
 **Before you begin**:
-- Make sure that you [automatically](#automatic_block) or [manually](#manual_block) created raw, unformatted, and unmounted block storage to your non-SDS worker nodes.
+- Make sure that you [manually](#manual_block) added raw, unformatted, and unmounted block storage to your non-SDS worker nodes.
 - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **To attach raw block storage to non-SDS worker nodes**:
@@ -698,7 +497,7 @@ Before you begin:
   ```
   {: pre}
 
-2. Decide on the [{{site.data.keyword.blockstorageshort}} profile](/docs/vpc?topic=vpc-creating-block-storage#determine-storage-requirements) that best meets the capacity and performance requirements that you have.
+2. Decide on the [{{site.data.keyword.blockstorageshort}} profile](/docs/vpc?topic=vpc-block-storage-profiles) that best meets the capacity and performance requirements that you have.
 
 2. [Provision a {{site.data.keyword.blockstorageshort}} volume](/docs/vpc?topic=vpc-creating-block-storage){: new_window}. The volume that you provision must be in the same resource group, region, and zone as the worker node.
 

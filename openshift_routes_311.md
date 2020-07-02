@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-07-01"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -89,7 +89,7 @@ The following diagram shows how a router directs network traffic from the intern
 
 3. Based on the resolved IP address of the router service, the router receives the request.
 
-4. The router forwards the request to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router sends the requests between the app pods in the zone.
+4. The router forwards the request to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router alternates requests between app pods.
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the load balancer service to the client.
 
@@ -152,14 +152,14 @@ To set up routes to publicly expose apps:
       ```
       {: pre}
       <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
-    * Edge: For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift edge route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route edge --service <app_service_name> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
-    * Re-encrypt: For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [OpenShift re-encrypt route documentation](https://docs.openshift.com/container-platform/4.3/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
       ```
-      oc create route reencrypt --service <app_service_name> --cert <tls.crt> --key <tls.key> --dest-ca-cert <destca.crt> --ca-cert <ca.crt> [--hostname <subdomain>]
+      oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
       ```
       {: pre}
 
@@ -436,4 +436,3 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
     {: pre}
 
 8. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
-

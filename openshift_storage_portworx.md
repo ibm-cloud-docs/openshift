@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,9 +40,14 @@ subcollection: openshift
 
 [Portworx](https://portworx.com/products/portworx-enterprise//){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
 {: shortdesc}
-	
-You can use Portworx in classic Red Hat OpenShift on IBM Cloud clusters only and not in VPC clusters. 
-{: important}
+
+Portworx is available for standard clusters that are set up with public network connectivity. If your cluster cannot access the public network, such as a private cluster behind a firewall or a cluster with only the private service endpoint enabled, you cannot use Portworx unless you open up all egress network traffic on TCP port 443, or enable the public service endpoint.
+{: note}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
 
 ## About Portworx
 
@@ -57,11 +62,12 @@ Portworx aggregates available storage that is attached to your worker nodes and 
 
 Portworx also comes with additional features that you can use for your stateful apps, such as volume snapshots, volume encryption, isolation, and an integrated Storage Orchestrator for Kubernetes (Stork) to ensure optimal placement of volumes in the cluster. For more information, see the [Portworx documentation](https://docs.portworx.com/){: external}.
 
-**What worker node flavor in Red Hat OpenShift on IBM Cloud is the right one for Portworx?** </br>Red Hat OpenShift on IBM Cloud provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/openshift?topic=openshift-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. Portworx offers the best performance when you use SDS Ubuntu 18 worker node machines that come with 10 Gbps network speed.
+**What worker node flavor in Red Hat OpenShift on IBM Cloud is the right one for Portworx?** </br>
+The worker node flavor that you need depends on the infrastructure provider that you use. If you have a classic cluster, Red Hat OpenShift on IBM Cloud provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/openshift?topic=openshift-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. In classic clusters, Portworx offers the best performance when you use SDS Ubuntu 18 worker node machines that come with 10 Gbps network speed.
 
+In VPC clusters, make sure to select a [virtual server flavor](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-profiles) that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}. The flavor that you choose must have a network speed of 10 Gpbs or more for optimal performance. None of the VPC flavors are set up with raw and unformatted block storage devices. To successfully install and run Portworx, you must [manually attach block storage devices](/docs/openshift?topic=openshift-utilities#vpc_api_attach) to each of your worker nodes first.
 
-
-**What if I want to run Portworx with non-SDS worker nodes?** </br>
+**What if I want to run Portworx in a classic cluster with non-SDS worker nodes?** </br>
 You can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Non-SDS worker nodes can be virtual or bare metal. If you want to use virtual machines, use a worker node flavor of `b3c.16x64` or better. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` do not provide the required resources for Portworx to work properly. Keep in mind that virtual machines come with 1000 Mbps that is not sufficient for ideal performance of Portworx. Bare metal machines come with sufficient compute resources and network speed for Portworx, but you must [add raw, unformatted, and unmounted block storage](#create_block_storage) before you can use these machines.
 
 If your classic cluster has deprecated x1c or older Ubuntu 16 x2c worker node flavors, update your cluster to have [Ubuntu 18 x3c worker nodes](/docs/openshift?topic=openshift-update#machine_type).
@@ -75,36 +81,37 @@ One of the biggest challenges when you run stateful apps in a cluster is to make
 
 You can also choose to use only a subset of worker nodes for your Portworx storage layer. For example, you might have a worker pool with SDS worker nodes that come with local raw block storage, and another worker pool with virtual worker nodes that do not come with local storage. When you install Portworx, a Portworx pod is scheduled onto every worker node in your cluster as part of a daemon set. Because your SDS worker nodes have local storage, these worker nodes are included into the Portworx storage layer only. Your virtual worker nodes are not included as a storage node because of the missing local storage. However, when you deploy an app pod to your virtual worker node, this pod can still access data that is physically stored on an SDS worker node by using the Portworx daemon set pod. This setup is referred to as `storage-heavy` and offers slightly slower performance than the `hyper-converged` setup because the virtual worker node must talk to the SDS worker node over the private network to access the data.
 
-**What limitations must I plan for?** </br>
-Portworx is available for standard clusters that are set up with public network connectivity.
+
 
 All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.
 
 <br />
 
 
-## Creating raw, unformatted, and unmounted block storage for non-SDS classic worker nodes
+## Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes
 {: #create_block_storage}
 
-If you want to build your Portworx storage layer on non-SDS worker nodes, you must add raw, unformatted, and unmounted block storage to your worker nodes first.
+If you want to build your Portworx storage layer on non-SDS worker nodes in your classic cluster or VPC worker nodes, you must add raw, unformatted, and unmounted block storage to your worker nodes first.
 {: shortdesc}
 
-Raw block storage cannot be provisioned by using Kubernetes persistent volume claims (PVCs) as the block storage device is automatically formatted by Red Hat OpenShift on IBM Cloud. Instead, you can use the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in to add block storage to your worker nodes.
+Raw block storage cannot be provisioned by using Kubernetes persistent volume claims (PVCs) as the block storage device is automatically formatted by Red Hat OpenShift on IBM Cloud. Instead, you can use the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in in classic clusters or the VPC console, CLI, or API in VPC clusters to add block storage to your worker nodes.
 
 Portworx supports block storage only. Worker nodes that mount file or object storage cannot be used for the Portworx storage layer.
 {: note}
 
-Keep in mind that the networking of non-SDS worker nodes is not optimized for Portworx and might not offer the performance benefits that your app requires.
+Keep in mind that the networking of non-SDS worker nodes in classic clusters is not optimized for Portworx and might not offer the performance benefits that your app requires.
 {: note}
 
 **Classic clusters:**
 
 1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#block_storage_attacher).
-2. If you want to add block storage with the same configuration to all your worker nodes, [automatically add block storage](/docs/openshift?topic=openshift-utilities#automatic_block) with the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. To add block storage with a different configuration, add block storage to a subset of worker nodes only, or to have more control over the provisioning process, [manually add block storage](/docs/openshift?topic=openshift-utilities#manual_block). For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
+2. To add block storage with a different configuration, add block storage to a subset of worker nodes only, or to have more control over the provisioning process, [manually add block storage](/docs/openshift?topic=openshift-utilities#manual_block). For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 3. [Attach the block storage](/docs/openshift?topic=openshift-utilities#attach_block) to your worker nodes.
 4. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).</br>
 
-
+**VPC clusters:**
+1. Follow the [steps](/docs/openshift?topic=openshift-utilities#vpc_api_attach) to create the {{site.data.keyword.block_storage_is_short}} instances and attach these to each worker node that you want to add to the Portworx storage layer. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.  
+2. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
 <br />
 
@@ -503,7 +510,7 @@ Looking for instructions about how to update or remove Portworx? See [Updating P
 Before you begin:
 - Make sure that you have the right [permissions](/docs/openshift?topic=openshift-clusters#cluster_prepare) to create Red Hat OpenShift on IBM Cloud clusters.
 - [Create or use an existing cluster](/docs/openshift?topic=openshift-clusters).
-- If you want to use non-SDS worker nodes for your Portworx storage layer, [add an unformatted block storage device to your worker node](#create_block_storage).
+- If you want to use non-SDS worker nodes in a classic cluster, or VPC worker nodes for your Portworx storage layer, [add an unformatted block storage device to your worker node](#create_block_storage).
 - Choose if you want to [use the internal Portworx key-value database (KVDB)](#portworx-kvdb) or [create a Databases for etcd service instance](#databases-for-etcd) to store the Portworx configuration and metadata.
 - Decide whether you want to encrypt your Portworx volumes with {{site.data.keyword.keymanagementservicelong_notm}}. To encrypt your volumes, you must [set up an {{site.data.keyword.keymanagementservicelong_notm}} service instance and store your service information in a Kubernetes secret](#encrypt_volumes).
 - Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/containers?topic=containers-registry#store_imagePullSecret) of the `kube-system` project. 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -103,7 +103,7 @@ OpenShift clusters are set up by default with an internal registry. The images i
 {: shortdesc}
 
 - <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **Classic clusters**: Your OpenShift cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} File Storage as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone OpenShift container registry (OCR) cluster. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}.
-- <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **VPC clusters (version 4.3 only)**: The internal registry of your OpenShift cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster. 
+- <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **VPC clusters (version 4.3 only)**: The internal registry of your OpenShift cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 
 ### VPC: Backing up your OpenShift internal image registry to {{site.data.keyword.cos_full_notm}}
 {: #cos_image_registry}
@@ -111,7 +111,7 @@ OpenShift clusters are set up by default with an internal registry. The images i
 Your images in your OpenShift cluster internal registry are automatically backed up to an {{site.data.keyword.cos_full_notm}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 {: shortdesc}
 
-<img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for Red Hat OpenShift on IBM Cloud clusters that run version 4.3 or later on VPC generation 2 compute infrastructure.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for Red Hat OpenShift on IBM Cloud clusters that run version 4.3 or later on VPC generation 2 compute infrastructure.
 {: note}
 
 However, if the bucket fails to create when you create your cluster, you must manually create a bucket and set up your cluster to use the bucket. In the meantime, the internal registry uses an `emptyDir` Kubernetes volume that stores your container images on the secondary disk of your worker node. The `emptyDir` volumes are not considered persistent highly available storage, and if you delete the pods that use the image, the image is automatically deleted.
@@ -229,12 +229,15 @@ To use the internal registry, set up a public route to access the registry. Then
     ...
     ```
     {: screen}
-5.  Log in to the internal registry by using the route as the hostname.
+
+5.  If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, [allow access to the route subdomain](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry) that you create for the internal registry in the following steps.
+
+6.  Log in to the internal registry by using the route as the hostname.
     ```
     docker login -u $(oc whoami) -p $(oc whoami -t) image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud
     ```
     {: pre}
-6.  Now that you are logged in, try pushing a sample `hello-world` app to the internal registry.
+7.  Now that you are logged in, try pushing a sample `hello-world` app to the internal registry.
     1.  Pull the `hello-world` image from DockerHub, or build an image on your local machine.
         ```
         docker pull hello-world
@@ -262,7 +265,7 @@ To use the internal registry, set up a public route to access the registry. Then
         hello-world   image-registry-openshift-image-registry.svc:5000/default/hello-world   latest    7 hours ago
         ```
         {: screen}
-7.  To enable deployments in your project to pull images from the internal registry, create an image pull secret in your project that holds the credentials to access your internal registry. Then, add the image pull secret to the default service account for each project.
+8.  To enable deployments in your project to pull images from the internal registry, create an image pull secret in your project that holds the credentials to access your internal registry. Then, add the image pull secret to the default service account for each project.
     1.  List the image pull secrets that the default service account uses, and note the secret that begins with `default-dockercfg`.
         ```
         oc describe sa default
@@ -300,7 +303,7 @@ To use the internal registry, set up a public route to access the registry. Then
         ```
         {: screen}
     4.  Create a new image pull secret for the internal registry.
-        * **<secret_name>**: Give your image pull secret a name, such as `internal-registry`.
+        * **secret_name**: Give your image pull secret a name, such as `internal-registry`.
         * **--namespace**: Enter the project to create the image pull secret in, such as `default`.
         * **--docker-server**: Instead of the internal service IP address (`172.21.xxx.xxx:5000`), enter the hostname of the `image-registry` route with the port (`image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud:5000`).
         * **--docker-username**: Copy the `"username"` from the previous image pull secret, such as `serviceaccount`.

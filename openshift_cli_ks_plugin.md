@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-02"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -561,6 +561,11 @@ ibmcloud oc cluster create classic --zone dal10 --public-vlan my_public_VLAN_ID 
 
 </br>
 
+
+
+
+
+
 ### `ibmcloud oc cluster create vpc-gen2`
 {: #cli_cluster-create-vpc-gen2}
 
@@ -612,7 +617,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <dd>Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run <code>ibmcloud resource service-instances --long</code> and find the **ID** of your object storage instance. To create a standard object storage instance, run <code>ibmcloud resource service-instance-create <name> cloud-object-storage standard global</code> and note its **ID**.</dd>
 
 <dt><code>--workers <em>NUMBER_WORKERS_PER_ZONE</em></code></dt>
-<dd>The number of worker nodes that you want to deploy in your cluster. Note that you must have at least 2 worker nodes per zone to run the default OpenShift components.
+<dd>The number of worker nodes that you want to deploy in your cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.
 <p class="important">Every worker node is assigned a unique worker node ID and domain name that must not be manually changed after the cluster is created. Changing the ID or domain name prevents the Kubernetes master from managing your cluster.</p></dd>
 
 <dt><code>--disable-public-service-endpoint</code></dt>
@@ -908,7 +913,7 @@ Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create 
 
 This API key method replaces the previous method of authorizing a cluster to access {{site.data.keyword.registrylong_notm}} by automatically creating a [token](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external} and storing the token in an image pull secret. Now, by using IAM API keys to access {{site.data.keyword.registrylong_notm}}, you can customize IAM policies for the service ID to restrict access to your namespaces or specific images. For example, you can change the service ID policies in the cluster's image pull secret to pull images from only a certain registry region or namespace. Before you can customize IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#existing_users).
 
-For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](docs/openshift?topic=openshift-registry#cluster_registry_auth).
+For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
 
 <p class="important">When you run this command, the creation of IAM credentials and image pull secrets is initiated and can take some time to complete. You cannot deploy containers that pull an image from the {{site.data.keyword.registrylong_notm}} `icr.io` domains until the image pull secrets are created. To check the image pull secrets, run `oc get secrets | grep icr-io`.</br></br>If you added IAM policies to an existing service ID, such as to restrict access to a regional registry, the service ID, IAM policies, and API key for the image pull secret are reset by this command.</p>
 
@@ -1344,7 +1349,7 @@ ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR -
 <dd>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
 
 <dt><code>--workers <em>NUMBER</em></code></dt>
-<dd>An integer that represents the number of worker nodes to create in the cluster. Note that you must have at least 2 worker nodes per zone to run the default OpenShift components.</dd>
+<dd>An integer that represents the number of worker nodes to create in the cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.</dd>
 
 <dt><code>--private-vlan <em>PRIVATE_VLAN</em></code></dt>
 <dd>The private VLAN that was specified when the cluster was created. This value is required. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.</dd>
@@ -5720,11 +5725,9 @@ ibmcloud oc storage volume ls [--cluster CLUSTER_ID] [--provider PROVIDER] [--zo
 <dt><code>--cluster <em>CLUSTER_ID</em></code></dt>
 <dd>Optional: Specify the cluster ID. To list available clusters, run <code>ibmcloud oc cluster ls</code>.</dd>
 
-<dl>
 <dt><code>--provider <em>PROVIDER</em></code></dt>
 <dd>Optional: Specify the provider. Supported values are <code>classic</code>, <code>vpc-classic</code>, and <code>vpc-gen2</code>.</dd>
 
-<dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>Optional: Specify the zone. To list available zones, run <code>ibmcloud oc locations</code>.</dd>
 

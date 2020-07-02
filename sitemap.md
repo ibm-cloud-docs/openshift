@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-02"
 
 keywords: openshift
 subcollection: openshift
@@ -72,6 +72,7 @@ subcollection: openshift
 [Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov)
 * [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits)
 * [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes)
+* [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp)
 * [Comparison between OpenShift 3.11 and 4.3 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
@@ -206,7 +207,7 @@ subcollection: openshift
 * [Lesson 3: Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_vpc_lb)
 * [What's next?](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_next)
 
-[Scalable web application on OpenShift](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
+[Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
 
 [OpenShift interactive learning portal](https://learn.openshift.com/){: external}
 
@@ -461,8 +462,8 @@ subcollection: openshift
   * [Opening required ports in a private firewall](/docs/openshift?topic=openshift-firewall#firewall_private)
   * [Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and OpenShift routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
-* [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#whitelist_workers)
-* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_whitelist)
+* [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#allowlist_workers)
+* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_allowlist)
 
 [Classic: Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge)
 * [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
@@ -491,7 +492,8 @@ subcollection: openshift
   * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
   * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
   * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
-* [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-whitelist_workers)
+  * [Allowing access to the OpenShift image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
+* [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
 
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
 * [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#overview)
@@ -747,7 +749,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
-  * [Traffic flow in a multizone VPC cluster](/docs/openshift?topic=openshift-openshift_routes#route_vpc)
+  * [Traffic flow in a multizone VPC cluster with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#route_vpc)
+  * [Traffic flow in a multizone VPC cluster with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private)
 * [Route types](/docs/openshift?topic=openshift-openshift_routes#route-types)
 * [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
   * [Setting up public routes in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#routes-public-classic)
@@ -827,6 +830,8 @@ subcollection: openshift
   * [Single-zone cluster](/docs/openshift?topic=openshift-ingress-about-roks4#classic-single-roks4)
   * [Multizone cluster](/docs/openshift?topic=openshift-ingress-about-roks4#classic-multi-roks4)
 * [How does a request get to my app with Ingress in a VPC cluster?](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc)
+  * [VPC cluster with a public service endpoint](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_public)
+  * [VPC cluster with a private service endpoint only](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private)
 * [How can I customize routing for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#custom-routing)
 * [How can I enable TLS certificates for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#certs)
 
@@ -1079,7 +1084,7 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-object_storage#cos_limitations)
 
 [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx)
-* [Creating raw, unformatted, and unmounted block storage for non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
+* [Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
   * [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb)
   * [Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-portworx#databases-for-etcd)
@@ -1103,7 +1108,6 @@ subcollection: openshift
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
   * [Updating the IBM Cloud Block Storage Attacher plug-in](/docs/openshift?topic=openshift-utilities#update_block_attacher)
   * [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
-* [Classic: Automatically provisioning unformatted block storage and authorizing your worker nodes to access the storage](/docs/openshift?topic=openshift-utilities#automatic_block)
 * [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
 * [Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
 * [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
@@ -1478,6 +1482,8 @@ subcollection: openshift
 
 [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
+[Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
+
 
 ## FAQs
 {: #sitemap_faqs}
@@ -1665,6 +1671,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[June 2020](/docs/openshift?topic=openshift-iks-release#june20)
 
 [June 2020](/docs/openshift?topic=openshift-iks-release#june20)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -128,7 +128,6 @@ To allow access for a specific cluster:
    {: pre}
 
 5. Retrieve the service endpoint URLs for your cluster.
- * If only the **Public Service Endpoint URL** is populated, get this URL. Your authorized cluster users can access the master through this endpoint on the public network.
  * If only the **Private Service Endpoint URL** is populated, get this URL. Your authorized cluster users can access the master through this endpoint on the private network.
  * If both the **Public Service Endpoint URL** and **Private Service Endpoint URL** are populated, get both URLs. Your authorized cluster users can access the master through the public endpoint on the public network or the private endpoint on the private network.
 
@@ -176,7 +175,7 @@ To allow access for a specific cluster:
     }
     ```
     {: screen}
-  * If the private service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
+  * If only the private service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
     ```
     curl --insecure <private_service_endpoint_URL>/version
     ```
@@ -227,11 +226,23 @@ Before you begin, allow access to run [`ibmcloud` commands](#vpc-firewall_bx) an
 
 3. Allow access for the Calico policies via the master URL IP address and the etcd port.
 
+### Allowing access to the OpenShift image registry in a firewall
+{: #openshift-registry}
+
+If you [set up a secure external route for the internal image registry](/docs/openshift?topic=openshift-registry#route_internal_registry), or to [access an {{site.data.keyword.cos_full_notm}} bucket that backs up your internal image registry in a VPC cluster](/docs/openshift?topic=openshift-registry#cos_image_registry), you must allow access for the internal registry and {{site.data.keyword.cos_full_notm}} endpoints in your corporate firewall.
+{:shortdesc}
+
+1. If you create an external route for the internal OpenShift image registry, allow access to the `*.containers.appdomain.cloud` domain so that you can access the `image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud` route from your corporate network.
+
+2. VPC clusters: If you must access an {{site.data.keyword.cos_full_notm}} bucket that backs up the internal OpenShift image registry, or if you must otherwise access {{site.data.keyword.cos_full_notm}} from your corporate network, allow access to the `*.cloud-object-storage.appdomain.cloud` domain.
+
+
+
 <br />
 
 
 ## Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls
-{: #vpc-whitelist_workers}
+{: #vpc-allowlist_workers}
 
 Allow your worker nodes to communicate with services that are protected by firewalls.
 {:shortdesc}

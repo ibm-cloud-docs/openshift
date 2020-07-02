@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-06-26"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -43,8 +43,6 @@ With **{{site.data.keyword.openshiftlong}} clusters on VPC Generation 2 compute*
 
 * Red Hat OpenShift on IBM Cloud gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [OpenShift tooling and catalog](https://docs.openshift.com/container-platform/4.3/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 * VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of Red Hat OpenShift on IBM Cloud [infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers), with a select group of v2 API, CLI, and console functionality.
-
-<p class="preview"><img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> Red Hat OpenShift on IBM Cloud on VPC generation 2 compute is released as a closed technical preview. Early access releases have limited features and might experience intermittent errors. To request access, post in the [internal #armada-vpc-users Slack channel](https://test.cloud.ibm.com/docs/containers?topic=containers-cs_internal#internal_help).<br><br>The staging documentation (`test.cloud.ibm.com/docs/openshift`) URLs are updated with VPC generation 2 compute information to help you get started. Working with an external customer? You can request access to allow their account. A <a href="https://ibm.box.com/s/cld54rlpvn3epe7mnnelmvc6b1glj6ly" target="blank">PDF version <img src="../icons/launch-glyph.svg" alt="External link icon"></a> of the VPC Gen 2 compute cluster guide is also available.</p>
 
 OpenShift worker nodes are available for paid accounts and standard clusters only. You can create OpenShift clusters that run version 4.3 or later only. The operating system is Red Hat Enterprise Linux 7.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -179,21 +179,40 @@ In OpenShift Container Platform 4, many components are configured by a correspon
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> The following architectural overviews are specific to the VPC infrastructure provider, which is available for clusters that run version 4.3 and later only. For an architectural overview for the classic infrastructure provider, see [Classic cluster service architecture](#service-architecture).
 {: note}
 
-Review the architecture diagram and then scroll through the following table for a description of master and worker node components in Red Hat OpenShift on IBM Cloud clusters that run version 4 on virtual private cloud (VPC) compute infrastructure. [Masters](#service-architecture-4-master) and [worker nodes](#service-architecture-4-workers) include the same components as described in the Classic cluster architecture for version 4 clusters. For more information about the OpenShift Container Platform architecture, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/architecture/architecture.html){: external}.
+Review the architecture diagrams and then scroll through the following table for a description of master and worker node components in Red Hat OpenShift on IBM Cloud clusters that run version 4 on virtual private cloud (VPC) compute infrastructure.
 {: shortdesc}
 
-When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and do not include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
-{: note}
+**Cluster with public and private service endpoints**:
 
-![Red Hat OpenShift on IBM Cloud on VPC cluster architecture](/images/arch_roks_vpc.png)
+The following diagram shows the components of your cluster and how they interact when both the [public and private service endpoints are enabled](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master). Because both service endpoints are enabled, your VPC creates a public load balancer for each service for inbound traffic.
+
+<p>
+<figure>
+ <img src="/images/arch_roks_vpc.png" alt="Red Hat OpenShift on IBM Cloud on VPC cluster architecture with public and private service endpoints">
+ <figcaption>Red Hat OpenShift on IBM Cloud on VPC cluster architecture when public and private public service endpoints are enabled</figcaption>
+</figure>
+</p>
+
+**Cluster with private service endpoint only**:
+
+The following diagram shows the components of your cluster and how they interact when only the [private service endpoint is enabled](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master). Because only the private service endpoint is enabled, your VPC creates a private load balancer for each service for inbound traffic.
+
+<p>
+<figure>
+ <img src="/images/arch_roks_vpc_private.png" alt="Red Hat OpenShift on IBM Cloud on VPC cluster architecture with the private service endpoint only">
+ <figcaption>Red Hat OpenShift on IBM Cloud on VPC cluster architecture when only the private public service endpoint is enabled</figcaption>
+</figure>
+</p>
+
+[Masters](#service-architecture-4-master) and [worker nodes](#service-architecture-4-workers) include the same components as described in the Classic cluster architecture for version 4 clusters. For more information about the OpenShift Container Platform architecture, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/architecture/architecture.html){: external}.
 
 | Component | Description |
 |:-----------------|:-----------------|
 | Master | [Master components](#service-architecture-4-master), including the API server and etcd, have three replicas and are spread across zones for even higher availability. Masters include the same components as described in the Classic cluster architecture for version 4 clusters. The master and all the master components are dedicated only to you, and are not shared with other IBM customers. |
-| Worker node | With Red Hat OpenShift on IBM Cloud, the virtual machines that your cluster manages are instances that are called worker nodes. These worker nodes virtual machines and all the worker node components are dedicated to you only and are not shared with other IBM customers. However, the underlying hardware is shared with other IBM customers. For more information, see [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm). </br></br> You manage the worker nodes through the automation tools that are provided by Red Hat OpenShift on IBM Cloud, such as the API, CLI, or console. Unlike classic clusters, you do not see VPC compute worker nodes in your infrastructure portal or separate infrastructure bill, but instead manage all maintenance and billing activity for the worker nodes from Red Hat OpenShift on IBM Cloud.<br><br>Worker nodes include the same [components](#service-architecture-4-workers) as described in the Classic cluster architecture for version 4 clusters. Red Hat OpenShift on IBM Cloud worker nodes run on the Red Hat Enterprise Linux 7 operating system. |
-| Cluster networking | Your worker nodes are created in a VPC subnet in the zone that you specify. By default, the public and private service endpoints for your cluster are enabled. Communication between the master and worker nodes is over the private network. Authenticated external users can communicate with the master over the public network, such as to run `oc` commands. You can optionally set up your cluster to communicate with on-prem services by setting up a VPC VPN on the private network. |
-| App networking | VPC load balancers are automatically created in your VPC outside the cluster for any networking services that you create in your cluster. For example, a VPC load balancer exposes the router services in your cluster by default. Or, you can create a Kubernetes `LoadBalancer` service for your apps, and a VPC load balancer is automatically generated. VPC load balancers are multizonal and route requests for your app through the private NodePorts that are automatically opened on your worker nodes. For more information, see [Public](/docs/openshift?topic=openshift-cs_network_planning#pattern_public_vpc) or [Private app networking for VPC clusters](/docs/openshift?topic=openshift-cs_network_planning#private_vpc).<br><br>Calico is used as the cluster networking policy fabric. |
-| Storage | You can set up {{site.data.keyword.cos_full_notm}} and Cloud Databases only. |
+| Worker node | With Red Hat OpenShift on IBM Cloud, the virtual machines that your cluster manages are instances that are called worker nodes. These worker nodes virtual machines and all the worker node components are dedicated to you only and are not shared with other IBM customers. However, the underlying hardware is shared with other IBM customers. For more information, see [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm). </br></br> You manage the worker nodes through the automation tools that are provided by Red Hat OpenShift on IBM Cloud, such as the API, CLI, or console. Unlike classic clusters, you do not see VPC compute worker nodes in your infrastructure portal or separate infrastructure bill, but instead manage all maintenance and billing activity for the worker nodes from Red Hat OpenShift on IBM Cloud.<br><br>Worker nodes include the same [components](#service-architecture-4-workers) as described in the Classic cluster architecture for version 4 clusters. Red Hat OpenShift on IBM Cloud worker nodes run on the Red Hat Enterprise Linux 7 operating system.<p class="note>When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and do not include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.</p> |
+| Cluster networking | Your worker nodes are created in a VPC subnet in the zone that you specify. Communication between the master and worker nodes is over the private network. If you create a cluster with the public and private service endpoints enabled, authenticated external users can communicate with the master over the public network, such as to run `oc` commands. If you create a cluster with only the private service endpoints enabled, authenticated external users can communicate with the master over the private network only. You can set up your cluster to communicate with resources in on-premises networks, other VPCs, or classic infrastructure by setting up a VPC VPN, {{site.data.keyword.dl_full_notm}}, or {{site.data.keyword.tg_full_notm}} on the private network. |
+| App networking | VPC load balancers are automatically created in your VPC outside the cluster for any networking services that you create in your cluster. For example, a VPC load balancer exposes the router services in your cluster by default. Or, you can create a Kubernetes `LoadBalancer` service for your apps, and a VPC load balancer is automatically generated. VPC load balancers are multizonal and route requests for your app through the private NodePorts that are automatically opened on your worker nodes. If the public and private service endpoints are enabled, the routers and VPC load balancers are created as public by default. If the only the private service endpoint is enabled, the routers and VPC load balancers are created as private by default. For more information, see [Public](/docs/openshift?topic=openshift-cs_network_planning#pattern_public_vpc) or [Private app networking for VPC clusters](/docs/openshift?topic=openshift-cs_network_planning#private_vpc).<br><br>Calico is used as the cluster networking policy fabric. |
+| Storage | You can set up {{site.data.keyword.cos_full_notm}} and {{site.data.keyword.databases-for}} only. |
 
 <br />
 
