@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, annotations
 
@@ -163,10 +163,10 @@ metadata:
   annotations:
     ingress.bluemix.net/custom-errors: "serviceName=<app1> httpError=<401> errorActionName=</errorAction401>;serviceName=<app2> httpError=<403> errorActionName=</errorPath>"
     ingress.bluemix.net/custom-error-actions: |
-         errorActionName=</errorAction401>
-         #Example custom error snippet
-         proxy_pass http://example.com/forbidden.html;
-         <EOS>
+      errorActionName=</errorAction401>
+      #Example custom error snippet
+      proxy_pass http://example.com/forbidden.html;
+      <EOS>
   spec:
     tls:
     - hosts:
