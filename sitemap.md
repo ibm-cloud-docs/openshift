@@ -1672,6 +1672,8 @@ subcollection: openshift
 
 [June 2020](/docs/openshift?topic=openshift-iks-release#june20)
 
+[June 2020](/docs/openshift?topic=openshift-iks-release#june20)
+
 [May 2020](/docs/openshift?topic=openshift-iks-release#may20)
 
 [April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
