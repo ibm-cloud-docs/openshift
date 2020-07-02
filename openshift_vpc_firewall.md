@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-29"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -226,7 +226,7 @@ Before you begin, allow access to run [`ibmcloud` commands](#vpc-firewall_bx) an
 
 3. Allow access for the Calico policies via the master URL IP address and the etcd port.
 
-### Allow access to the OpenShift image registry in a firewall
+### Allowing access to the OpenShift image registry in a firewall
 {: #openshift-registry}
 
 If you [set up a secure external route for the internal image registry](/docs/openshift?topic=openshift-registry#route_internal_registry), or to [access an {{site.data.keyword.cos_full_notm}} bucket that backs up your internal image registry in a VPC cluster](/docs/openshift?topic=openshift-registry#cos_image_registry), you must allow access for the internal registry and {{site.data.keyword.cos_full_notm}} endpoints in your corporate firewall.

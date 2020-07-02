@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -56,7 +56,7 @@ Red Hat OpenShift on IBM Cloud and key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Container security and isolation](/docs/openshift?topic=openshift-security#security)
 * [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
-* [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime)
+* [SDK for Node.js](/docs/cloud-foundry?topic=cloud-foundry-nodejs_runtime)
 
 **The solution**
 
@@ -127,7 +127,7 @@ Key technologies:
 * [IBM Cloud Pak for Applications](https://www.ibm.com/cloud/cloud-pak-for-applications)
 * [Fraud prevention with {{site.data.keyword.watson}} AI](https://www.ibm.com/cloud/watson-studio)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
-* [SDK for Node.js](/docs/runtimes/nodejs?topic=Nodejs-nodejs_runtime)
+* [SDK for Node.js](/docs/cloud-foundry?topic=cloud-foundry-nodejs_runtime)
 * [Sign-on capability without changing app code by using {{site.data.keyword.appid_short_notm}}](/docs/appid?topic=appid-getting-started)
 
 **Context: Streamlining developer productivity and deploying AI tools to partners 4 times faster**

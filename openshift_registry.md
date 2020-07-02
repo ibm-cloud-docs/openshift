@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-29"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -230,7 +230,7 @@ To use the internal registry, set up a public route to access the registry. Then
     ```
     {: screen}
 
-5.  If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, [allow access to the route subdomain](/docs/openshift?topic=openshift-registry#openshift-registry) that you create for the internal registry in the following steps.
+5.  If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, [allow access to the route subdomain](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry) that you create for the internal registry in the following steps.
 
 6.  Log in to the internal registry by using the route as the hostname.
     ```

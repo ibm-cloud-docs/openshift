@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-02"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -352,8 +352,8 @@ Review supported options for encrypting and protecting your data on persistent s
 {: shortdesc}
 
 By default, all {{site.data.keyword.cloud_notm}} storage solutions automatically encrypt your data at rest with an IBM-managed encryption key at no additional cost. For more information, see the following links.
-- [Classic NFS File Storage](/docs/FileStorage?topic=FileStorage-encryption#encryption)
-- [Classic Block Storage](/docs/BlockStorage?topic=BlockStorage-encryption#block-storage-encryption-at-rest)
+- [Classic NFS File Storage](/docs/FileStorage?topic=FileStorage-mng-data#provisioning-storage-with-encryption)
+- [Classic Block Storage](/docs/BlockStorage?topic=BlockStorage-mng-data#encryption-at-rest-for-snapshots-or-replicated-storage)
 - [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-encryption)
 
 

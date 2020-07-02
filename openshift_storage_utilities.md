@@ -497,7 +497,7 @@ Before you begin:
   ```
   {: pre}
 
-2. Decide on the [{{site.data.keyword.blockstorageshort}} profile](/docs/vpc?topic=vpc-creating-block-storage#determine-storage-requirements) that best meets the capacity and performance requirements that you have.
+2. Decide on the [{{site.data.keyword.blockstorageshort}} profile](/docs/vpc?topic=vpc-block-storage-profiles) that best meets the capacity and performance requirements that you have.
 
 2. [Provision a {{site.data.keyword.blockstorageshort}} volume](/docs/vpc?topic=vpc-creating-block-storage){: new_window}. The volume that you provision must be in the same resource group, region, and zone as the worker node.
 

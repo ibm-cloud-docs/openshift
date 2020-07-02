@@ -492,7 +492,7 @@ subcollection: openshift
   * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
   * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
   * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
-  * [Allow access to the OpenShift image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
+  * [Allowing access to the OpenShift image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
 * [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
 
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
