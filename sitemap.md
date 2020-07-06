@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-06"
 
 keywords: openshift
 subcollection: openshift
@@ -859,7 +859,7 @@ subcollection: openshift
   * [Step 3: Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-3)
   * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4)
   * [Step 5: Access your app from your private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-5)
-* [Exposing apps to a private network VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller)
+* [Exposing apps to a private network in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller)
   * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-1)
   * [Step 2: Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-2)
   * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-3)
@@ -1373,6 +1373,7 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+  * [Changelog for worker node fix pack 4.3.27_1528_openshift, released 6 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4327_1528)
   * [Changelog for master fix pack 4.3.23_1527_openshift and worker node fix pack 4.3.25_1527_openshift, released 22 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1527_master)
   * [Changelog for master fix pack 4.3.23_1525_openshift, released 16 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)
   * [Changelog for worker node fix pack 4.3.23_1524_openshift, released 8 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1524)
@@ -1382,6 +1383,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.14_1522_openshift, released 11 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4314_1522)
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
+  * [Changelog for worker node fix pack 3.11.232_1555_openshift, released 6 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1555)
   * [Changelog for master fix pack 3.11.219_1554_openshift and worker node fix pack 3.11.232_1554_openshift, released 22 June 2020](/docs/openshift?topic=openshift-openshift_changelog#311219_1554_master)
   * [Changelog for worker node fix pack 3.11.219_1552_openshift, released 8 June 2020](/docs/openshift?topic=openshift-openshift_changelog#311219_1552)
   * [Changelog for 3.11.216_1551_openshift, released 26 May 2020](/docs/openshift?topic=openshift-openshift_changelog#311216_1551)
@@ -1672,7 +1674,7 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
 
-[June 2020](/docs/openshift?topic=openshift-iks-release#june20)
+[July 2020](/docs/openshift?topic=openshift-iks-release#july20)
 
 [June 2020](/docs/openshift?topic=openshift-iks-release#june20)
 

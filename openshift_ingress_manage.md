@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-07-06"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -38,7 +38,7 @@ subcollection: openshift
 # Managing the Ingress ALB lifecycle
 {: #ingress-manage}
 
-Manage the lifecyle of your Ingress application load balancers (ALBs).
+Manage the lifecycle of your Ingress application load balancers (ALBs).
 {: shortdesc}
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is applicable for clusters that run OpenShift version 3.11 only.
@@ -366,4 +366,5 @@ If you have very large Ingress resource files, it might take longer than 5 minut
    oc get cm ibm-cloud-provider-ingress-cm -n kube-system -o yaml
    ```
    {: pre}
+
 

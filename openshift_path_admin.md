@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-06"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -32,6 +32,9 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
+
+
 
 
 
@@ -92,6 +95,8 @@ subcollection: openshift
     }
 -->
 </style>
+
+
 
 # Learning path for administrators
 {: #learning-path-admin}

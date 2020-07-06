@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-06"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs
 
@@ -308,7 +308,7 @@ For a table that describes the pricing uplift by region, see [Regional pricing f
 
 When you use a billable {{site.data.keyword.cloud_notm}} account, platform and infrastructure resources are summarized in one bill.
 
-If you linked your {{site.data.keyword.cloud_notm}} and classic IBM Cloud infrastructure accounts, you receive a [consolidated bill](/docs/billing-usage?topic=billing-usage-managing-invoices#unifybillaccounts) for your {{site.data.keyword.cloud_notm}} platform and infrastructure resources.
+If you linked your {{site.data.keyword.cloud_notm}} and classic IBM Cloud infrastructure accounts, you receive a consolidated bill for your {{site.data.keyword.cloud_notm}} platform and infrastructure resources.
 
 ## Can I estimate my costs?
 {: #cost_estimate}

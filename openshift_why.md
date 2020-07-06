@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -102,7 +102,7 @@ Both Red Hat OpenShift on IBM Cloud and {{site.data.keyword.containerlong_notm}}
 ## Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP
 {: #compare_ocp}
 
-Because Red Hat OpenShift on IBM Cloud is a managed service, many of the {{site.data.keyword.openshiftlong}} components and global settings that you manually set up in OpenShift Container Platform are set up for you by default in Red Hat OpenShift on IBM Cloud. Review the following differences between Red Hat OpenShift on IBM Cloud clusters and a standard installation of OpenShift Container Platform on your own infrastructure. You can also review the [service architecture](/docs/openshift?topic=openshift-service-arch) for an overview of how OpenShift components are set up in the cluster master and worker nodes, or the [global settings](/docs/openshift?topic=openshift-service-settings#global-setting) that you can or cannot configure.
+Because Red Hat OpenShift on IBM Cloud is a managed service, many of the {{site.data.keyword.openshiftlong}} components and global settings that you manually set up in OpenShift Container Platform are set up for you by default in Red Hat OpenShift on IBM Cloud. Review the following differences between Red Hat OpenShift on IBM Cloud clusters and a standard installation of OpenShift Container Platform on your own infrastructure. You can also review the [service architecture](/docs/openshift?topic=openshift-service-arch) for an overview of how OpenShift components are set up in the cluster master and worker nodes, or the [global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or cannot configure.
 {: shortdesc}
 
 <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> The following comparison applies to clusters that run OpenShift version 4.3. For version 3.11 clusters, the general principles are similar, such as that IBM provides a managed master, but the implementation details differ due to the changes in the underlying OCP version. For more information, see [Comparison between OpenShift 3.11 and 4.3 clusters](#3.11_vs_4.3).
@@ -130,7 +130,7 @@ Because Red Hat OpenShift on IBM Cloud is a managed service, many of the {{site.
 | Serverless workloads | You can set up [OpenShift Serverless](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}. | You can also set up OpenShift Serverless. |
 | Service mesh | You can set up the [Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.3/service_mesh/service_mesh_install/preparing-ossm-installation.html){: external}. | You can also set up the Red Hat OpenShift Service Mesh, but you must [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external} for the service mesh ingress to work.|
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and OpenShift API resources. You can also install command line tools such as `oc` and `odo`. | Red Hat OpenShift on IBM Cloud clusters come with the same capabilities to use the Kubernetes and OpenShift API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-openshift-cli) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
-{: caption="Supported features in OpenShift 3.11 and 4.3 clusters" caption-side="top"}
+{: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="top"}
 {: summary="The rows are read from left to right. In the first column is the characteristic that differs between standard OpenShift Container Platform installations in the second column and Red Hat OpenShift on IBM Cloud clusters in the third column."}
 
 

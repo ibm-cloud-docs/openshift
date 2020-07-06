@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-07-03"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -126,7 +126,7 @@ Before you begin:
   * The IAM **Administrator** platform role for {{site.data.keyword.containershort}}.
   * The IAM **Administrator** platform role for {{site.data.keyword.registryshort}}.
   * The IAM **Viewer** platform role for the resource group if you create the cluster in a resource group other than `default`.
-  * The appropriate infrastructure permissions, such as an API key with the **Super User** role for classic infrastructure. 
+  * The appropriate infrastructure permissions, such as an API key with the **Super User** role for classic infrastructure.
 
 To add a Cloud Pak from the {{site.data.keyword.cloud_notm}} catalog:
 
@@ -154,9 +154,9 @@ To deploy a Cloud Pak to your Red Hat OpenShift on IBM Cloud cluster, your entit
 {: shortdesc}
 
 1.  Verify that your {{site.data.keyword.cloud_notm}} account ID matches your IBM Passport Advantage ID.
-    1.  Get your {{site.data.keyword.cloud_notm}} account ID. 
-        1.  Log in to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external}. 
-        2.  From the menu bar, click **Manage > Account**. 
+    1.  Get your {{site.data.keyword.cloud_notm}} account ID.
+        1.  Log in to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external}.
+        2.  From the menu bar, click **Manage > Account**.
         3.  From the navigation pane, click **Account Settings**, and note your **ID**, such as `1aa111aa1a11111aaa1a1111aa1aa111`.
     2.  Log in to [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} and check your account ID.
     3.  Compare the IDs. If the IDs do not match, try using a different {{site.data.keyword.cloud_notm}} or IBM Passport Advantage account that match. If you cannot find matching IDs, contact [eCustomer care](https://www-112.ibm.com/software/howtobuy/passportadvantage/homepage/ecarec){: external}.
@@ -178,7 +178,7 @@ To deploy a Cloud Pak to your Red Hat OpenShift on IBM Cloud cluster, your entit
 ## FAQs for Cloud Pak on Red Hat OpenShift on IBM Cloud
 {: #faq_cloud_paks}
 
-Review frequently asked questions for [IBM Cloud Paks](https://www.ibm.com/cloud/paks/){: external} on Red Hat OpenShift on IBM Cloud clusters. For questions about Cloud Paks that run on other distributions such as on-premises, OpenShift Dedicated, or OpenShift Container Platform on different cloud providers, consult those cloud providers' documentation.
+Review frequently asked questions for IBM Cloud Paks on Red Hat OpenShift on IBM Cloud clusters. For questions about Cloud Paks that run on other distributions such as on-premises, OpenShift Dedicated, or OpenShift Container Platform on different cloud providers, consult those cloud providers' documentation.
 {: shortdesc}
 
 ### How do I install a Cloud Pak in my Red Hat OpenShift on IBM Cloud cluster? How do I access it later?

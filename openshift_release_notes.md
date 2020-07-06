@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-06"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -41,12 +41,13 @@ subcollection: openshift
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
 
-## June 2020
-{: #june20}
+## July 2020
+{: #july20}
 
 | Date | Description |
 | ---- | ----------- |
-| 02 July 2020 | <ul><li>**Comparison between {{site.data.keyword.cloud_notm}} and OCP clusters**: Added a [table of differences between standard OCP installations and Red Hat OpenShift on IBM Cloud clusters](/docs/openshift?topic=openshift-cs_ov#compare_ocp).</li><li>**Global settings**: Added information about the [`config.openshift.io` global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or cannot configure.</li><li>**Private-only VPC clusters**: Added diagrams for the [service architecture](/docs/openshift?topic=openshift-service-arch#architecture-vpc_private), [flow of app requests with routers](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private), and [flow of app requests with Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private) in VPC clusters that are created with the private service endpoint only.</li><li>**VPC load balancer**: Added support for specifying the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` and `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotations in the [configuration file for VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb).</li></ul> |
+| 06 July 2020 | **Version changelogs**: Worker node fix pack update changelog documentation is available for  OpenShift [`4.3.27_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4327_1528) and [`3.11.232_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1555). |
+| 02 July 2020 | <ul><li>**Comparison between {{site.data.keyword.cloud_notm}} and OCP clusters**: Added a [table of differences between standard OCP installations and Red Hat OpenShift on IBM Cloud clusters](/docs/openshift?topic=openshift-cs_ov#compare_ocp).</li><li>**Global settings**: Added information about the [`config.openshift.io` global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or cannot configure.</li><li>**Private-only VPC clusters**: Added diagrams for the [service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc), [flow of app requests with routers](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private), and [flow of app requests with Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private) in VPC clusters that are created with the private service endpoint only.</li><li>**VPC load balancer**: Added support for specifying the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation in the [configuration file for VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in July 2020"}
 

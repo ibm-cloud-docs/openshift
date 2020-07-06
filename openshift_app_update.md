@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-07-06"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
@@ -62,7 +62,7 @@ To update your app, you can choose from various strategies such as the following
 With Kubernetes, you can enable [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external} to automatically increase or decrease the number of instances of your apps based on CPU.
 {:shortdesc}
 
-Looking for information about scaling Cloud Foundry applications? Check out [IBM Auto-Scaling for {{site.data.keyword.cloud_notm}}](/docs/Auto-Scaling?topic=Auto-Scaling-get-started). Want to scale your worker nodes instead of your pods? Check out the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca).
+Want to scale your worker nodes instead of your pods? Check out the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca).
 {: tip}
 
 Before you begin:

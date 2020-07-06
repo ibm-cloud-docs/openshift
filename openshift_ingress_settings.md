@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-07-06"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -418,6 +418,7 @@ In the `ibm-cloud-provider-ingress-cm` Ingress configmap, the `backlog` field se
    oc get cm ibm-cloud-provider-ingress-cm -n kube-system -o yaml
    ```
    {: pre}
+
 
 
 
