@@ -925,23 +925,23 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
       </tr>
       <tr>
       <td><code>sizeRange</code></td>
-      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>To find supported storage sizes for a specific profile, see [Tiered IOPs profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is withithis range. </td>
+      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPs profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is withithis range. </td>
       </tr>
       <tr>
       <td><code>csi.storage.k8s.io/fstype</code></td>
-      <td>In the parameters, enter the file system for your {{site.data.keyword.blockstorageshort}} instance. Choos`xfs`, `ext3`, or `ext4`. The default value is `ext4` and is used if you do not specify a file system.</td>
+      <td>In the parameters, enter the file system for your {{site.data.keyword.blockstorageshort}} instance. Choose `xfs`, `ext3`, or `ext4`. The default value is `ext4` and is used if you do not specify a file system.</td>
       </tr>
       <tr>
       <td><code>encrypted</code></td>
-      <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyworblockstorageshort}} volume. If you set this option to <strong>true</strong>, you must provide the root key CRN oyour {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameterencryptionKey</code>. For more information about encrypting your data, see [Setting up encryption for your {{sitdata.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+      <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyworblockstorageshort}} volume. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameterencryptionKey</code>. For more information about encrypting your data, see [Setting up encryption for your {{sitdata.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
       </tr>
       <tr>
       <td><code>encryptionKey</code></td>
-      <td>If you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.datkeyword.blockstorageshort}} volume. For more information about encrypting your data, see [Setting up encryption foyour {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+      <td>If you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.datkeyword.blockstorageshort}} volume. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
       </tr>
       <tr>
       <td><code>zone</code></td>
-      <td>In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make surthat you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> and look at the <strong>Worker Zones</strong> field iyour CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your{site.data.keyword.block_storage_is_short}} instance.</td>
+      <td>In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make surthat you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your{site.data.keyword.block_storage_is_short}} instance.</td>
       </tr>
       <tr>
       <td><code>tags</code></td>
@@ -953,7 +953,7 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
       </tr>
       <tr>
       <td><code>volumeBindingMode</code></td>
-      <td>Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until thfirst pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. Tcreate the instance when you create the PVC, enter `Immediate`.</td>
+      <td>Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until thfirst pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.</td>
       </tr>
    </tbody>
    </table>
