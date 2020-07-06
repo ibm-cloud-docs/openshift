@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-06"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -941,7 +941,7 @@ http://<subdomain2>.<domain>/<app1_path>
 <br />
 
 
-## Exposing apps to a private network VPC clusters with a private service endpoint only
+## Exposing apps to a private network in VPC clusters with a private service endpoint only
 {: #priv-se-priv-controller}
 
 If your cluster is created on VPC Gen 2 infrastructure and you enabled the private service endpoint only during cluster creation, you can use the default private Ingress controller to expose apps in your cluster to requests that are from the private network.

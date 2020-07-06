@@ -859,7 +859,7 @@ subcollection: openshift
   * [Step 3: Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-3)
   * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4)
   * [Step 5: Access your app from your private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-5)
-* [Exposing apps to a private network VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller)
+* [Exposing apps to a private network in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller)
   * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-1)
   * [Step 2: Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-2)
   * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-3)
