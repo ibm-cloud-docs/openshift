@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -102,7 +102,7 @@ Both Red Hat OpenShift on IBM Cloud and {{site.data.keyword.containerlong_notm}}
 ## Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP
 {: #compare_ocp}
 
-Because Red Hat OpenShift on IBM Cloud is a managed service, many of the {{site.data.keyword.openshiftlong}} components and global settings that you manually set up in OpenShift Container Platform are set up for you by default in Red Hat OpenShift on IBM Cloud. Review the following differences between Red Hat OpenShift on IBM Cloud clusters and a standard installation of OpenShift Container Platform on your own infrastructure. You can also review the [service architecture](/docs/openshift?topic=openshift-service-arch) for an overview of how OpenShift components are set up in the cluster master and worker nodes, or the [global settings](/docs/openshift?topic=openshift-service-settings#global-setting) that you can or cannot configure.
+Because Red Hat OpenShift on IBM Cloud is a managed service, many of the {{site.data.keyword.openshiftlong}} components and global settings that you manually set up in OpenShift Container Platform are set up for you by default in Red Hat OpenShift on IBM Cloud. Review the following differences between Red Hat OpenShift on IBM Cloud clusters and a standard installation of OpenShift Container Platform on your own infrastructure. You can also review the [service architecture](/docs/openshift?topic=openshift-service-arch) for an overview of how OpenShift components are set up in the cluster master and worker nodes, or the [global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or cannot configure.
 {: shortdesc}
 
 <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> The following comparison applies to clusters that run OpenShift version 4.3. For version 3.11 clusters, the general principles are similar, such as that IBM provides a managed master, but the implementation details differ due to the changes in the underlying OCP version. For more information, see [Comparison between OpenShift 3.11 and 4.3 clusters](#3.11_vs_4.3).
