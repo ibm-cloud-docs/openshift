@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-06"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -925,7 +925,7 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
       </tr>
       <tr>
       <td><code>sizeRange</code></td>
-      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range musmatch the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>To find supported storage sizes for a specific profile, see [Tiered IOPs profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is withithis range. </td>
+      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>To find supported storage sizes for a specific profile, see [Tiered IOPs profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is withithis range. </td>
       </tr>
       <tr>
       <td><code>csi.storage.k8s.io/fstype</code></td>
