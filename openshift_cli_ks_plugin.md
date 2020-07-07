@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-07"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -121,8 +121,6 @@ With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API]
    <li>[`cluster subnet add`](#cs_cluster_subnet_add)</li>
    <li>[`cluster subnet create`](#cs_cluster_subnet_create)</li>
    <li>[`cluster subnet detach`](#cs_cluster_subnet_detach)</li>
-   <li>[`cluster user-subnet add`](#cs_cluster_user_subnet_add)</li>
-   <li>[`cluster user-subnet rm`](#cs_cluster_user_subnet_rm)</li>
    <li>[`credential set`](#cs_credentials_set)</li>
    <li>[`credential unset`](#cs_credentials_unset)</li>
    <li>[`vlan ls`](#cs_vlans)</li>
@@ -1235,13 +1233,14 @@ ibmcloud oc cluster subnet detach --cluster my_cluster --subnet-id 1602829
 
 </br>
 
-### `ibmcloud oc cluster user-subnet add`
+### Deprecated: `ibmcloud oc cluster user-subnet add`
 {: #cs_cluster_user_subnet_add}
 
-Bring your own private subnet to your {{site.data.keyword.containerlong_notm}} clusters.
+Bring your own private subnet to your {{site.data.keyword.containerlong_notm}} clusters. This private subnet is not one provided by IBM Cloud infrastructure. As such, you must configure any inbound and outbound network traffic routing for the subnet.
 {: shortdesc}
 
-This private subnet is not one provided by IBM Cloud infrastructure. As such, you must configure any inbound and outbound network traffic routing for the subnet. To add an IBM Cloud infrastructure subnet, use the `ibmcloud oc cluster subnet add` [command](#cs_cluster_subnet_add).
+This command is deprecated. Add an existing IBM Cloud infrastructure subnet to your cluster by running [`ibmcloud oc cluster subnet add`](#cs_cluster_subnet_add).
+{: deprecated}
 
 <p class="important">When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
 </br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
@@ -1275,11 +1274,14 @@ ibmcloud oc cluster user-subnet add --cluster my_cluster --subnet-cidr 169.xx.xx
 
 </br>
 
-### `ibmcloud oc cluster user-subnet rm`
+### Deprecated: `ibmcloud oc cluster user-subnet rm`
 {: #cs_cluster_user_subnet_rm}
 
 Remove your own private subnet from a specified cluster. Any service that was deployed with an IP address from your own private subnet remains active after the subnet is removed.
 {: shortdesc}
+
+This command is deprecated. To remove a IBM Cloud infrastructure subnet from your cluster instead, run [`ibmcloud oc cluster subnet detach`](#cs_cluster_subnet_detach).
+{: deprecated}
 
 ```
 ibmcloud oc cluster user-subnet rm --cluster CLUSTER --subnet-cidr SUBNET_CIDR --private-vlan PRIVATE_VLAN

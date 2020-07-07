@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-07"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -46,6 +46,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 07 July 2020 | **CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.118](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
 | 06 July 2020 | **Version changelogs**: Worker node fix pack update changelog documentation is available for  OpenShift [`4.3.27_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4327_1528) and [`3.11.232_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1555). |
 | 02 July 2020 | <ul><li>**Comparison between {{site.data.keyword.cloud_notm}} and OCP clusters**: Added a [table of differences between standard OCP installations and Red Hat OpenShift on IBM Cloud clusters](/docs/openshift?topic=openshift-cs_ov#compare_ocp).</li><li>**Global settings**: Added information about the [`config.openshift.io` global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or cannot configure.</li><li>**Private-only VPC clusters**: Added diagrams for the [service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc), [flow of app requests with routers](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private), and [flow of app requests with Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private) in VPC clusters that are created with the private service endpoint only.</li><li>**VPC load balancer**: Added support for specifying the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation in the [configuration file for VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
@@ -489,7 +490,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul>
   <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.95](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB `nginx-ingress` image to build 515 for the [ALB pod readiness check](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>Removing subnets from a cluster</strong>: Added steps for removing subnets [in an IBM Cloud infrastructure account](/docs/openshift?topic=openshift-subnets#remove-sl-subnets) or [in an on-premises network](/docs/openshift?topic=openshift-subnets#remove-user-subnets) from a cluster. </li>
+  <li><strong>Removing subnets from a cluster</strong>: Added steps for removing subnets [in an IBM Cloud infrastructure account](/docs/containers?topic=containers-subnets#remove-sl-subnets) or [in an on-premises network](/docs/containers?topic=containers-subnets#remove-user-subnets) from a cluster. </li>
   </ul></td>
 </tr>
 <tr>
