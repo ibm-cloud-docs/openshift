@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-07-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -128,7 +128,7 @@ When you create a standard cluster, subnets are automatically created for you. H
 
 Use this option to retain stable static IP addresses across cluster removals and creations, or to order larger blocks of IP addresses. If instead you want to get more portable public or private IP addresses to create network load balancer (NLB) or Ingress application load balancer (ALB) services, see [Adding portable IP addresses](#adding_ips).
 
-All subnets that were automatically ordered during cluster creation are immediately deleted after you delete a cluster, and you cannot reuse the subnets to create a new cluster. However, if you [manually added your own subnets to the cluster](#subnet_user_managed), the subnets are not deleted when you delete the cluster. You can reuse the subnets to create a new cluster.
+All subnets that were automatically ordered during cluster creation are immediately deleted after you delete a cluster, and you cannot reuse the subnets to create a new cluster.
 {: note}
 
 Before you begin:
@@ -198,17 +198,10 @@ Before you begin:
     {: screen}
 
 5.  Add the subnet to your cluster by specifying the subnet ID. When you make a subnet available to a cluster, a Kubernetes configmap is created for you that includes all available portable public IP addresses that you can use. If no Ingress ALBs exist in the zone where the subnet's VLAN is located, one portable public and one portable private IP address is automatically used to create the public and private ALBs for that zone. You can use all other portable public and private IP addresses from the subnet to create NLB services for your apps.
-  * To add a subnet that exists in your IBM Cloud infrastructure account:
-      ```
-      ibmcloud oc cluster subnet add --cluster <cluster_name_or_id> --subnet-id <subnet_ID>
-      ```
-      {: pre}
-
-  * To add a user-managed private subnet from an on-premises network:
-      ```
-      ibmcloud oc cluster user-subnet add --cluster <cluster_name> --subnet-cidr <subnet_CIDR> --private-vlan <private_VLAN>
-      ```
-      {: pre}
+  ```
+  ibmcloud oc cluster subnet add --cluster <cluster_name_or_id> --subnet-id <subnet_ID>
+  ```
+  {: pre}
 
 6. Verify that the subnet is added to your cluster.
 
@@ -473,83 +466,6 @@ To make a subnet available to your cluster:
 <br />
 
 
-
-### Adding portable private IPs by adding user-managed subnets to private VLANs
-{: #subnet_user_managed}
-
-You can get more portable private IPs for network load balancer (NLB) services by making a subnet from an on-premises network available to your cluster.
-{:shortdesc}
-
-Want to reuse existing portable subnets in your IBM Cloud infrastructure account instead? See [Using custom or existing IBM Cloud infrastructure subnets to create a cluster](#subnets_custom).
-{: tip}
-
-Requirements:
-- User-managed subnets can be added to private VLANs only.
-- The subnet prefix length limit is /24 to /30. For example, `169.xx.xxx.xxx/24` specifies 253 usable private IP addresses, while `169.xx.xxx.xxx/30` specifies 1 usable private IP address.
-- The first IP address in the subnet must be used as the gateway for the subnet.
-
-Before you begin:
-- Configure the routing of network traffic into and out of the external subnet.
-- Confirm that you have VPN connectivity between the on-premises data center network gateway and either the private network Virtual Router Appliance or the strongSwan VPN service that runs in your cluster. Alternatively, ensure that you have a DirectLink connection set up between your cluster and the on-premises data center network. For more information, see [Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn).
--  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-
-To add a subnet from an on-premises network:
-
-1. View the ID of your cluster's private VLAN. Locate the **Subnet VLANs** section. In the field **User-managed**, identify the VLAN ID with _false_.
-
-    ```
-    ibmcloud oc cluster get --cluster <cluster_name> --show-resources <cluster_name>
-    ```
-    {: pre}
-
-    ```
-    Subnet VLANs
-    VLAN ID   Subnet CIDR       Public   User-managed
-    2234947   10.xxx.xx.xxx/29  false    false
-    2234945   169.xx.xxx.xxx/29 true     false
-    ```
-    {: screen}
-
-2. Add the external subnet to your private VLAN. The portable private IP addresses are added to the cluster's configmap.
-
-    ```
-    ibmcloud oc cluster user-subnet add --cluster <cluster_name> --subnet-cidr <subnet_CIDR> --private-vlan <private_VLAN>
-    ```
-    {: pre}
-
-    Example:
-
-    ```
-    ibmcloud oc cluster user-subnet add --cluster mycluster --subnet-cidr 10.xxx.xx.xxx/24 --private-vlan 2234947
-    ```
-    {: pre}
-
-3. Verify that the user-provided subnet is added. The field **User-managed** is _true_.
-
-    ```
-    ibmcloud oc cluster get --show-resources <cluster_name>
-    ```
-    {: pre}
-
-    In this example output, a second subnet was added to the `2234947` private VLAN:
-    ```
-    Subnet VLANs
-    VLAN ID   Subnet CIDR       Public   User-managed
-    2234947   10.xxx.xx.xxx/29  false    false
-    2234945   169.xx.xxx.xxx/29 true     false
-    2234947   10.xxx.xx.xxx/24  false    true
-    ```
-    {: screen}
-
-4. [Enable routing between subnets on the same VLAN](#subnet-routing).
-
-5. Add a [private network load balancer (NLB) service](/docs/openshift?topic=openshift-loadbalancer) or enable a [private Ingress ALB](/docs/openshift?topic=openshift-ingress#private_ingress) to access your app over the private network. To use a private IP address from the subnet that you added, you must specify an IP address from the subnet CIDR. Otherwise, an IP address is chosen at random from the IBM Cloud infrastructure subnets or user-provided subnets on the private VLAN.
-
-<br />
-
-
 ## Managing subnet routing
 {: #subnet-routing}
 
@@ -591,13 +507,7 @@ To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning
 ## Removing subnets from a cluster
 {: #remove-subnets}
 
-If you no longer need subnets, you can remove them from your cluster. Subnets can only be detached from a cluster if none of the IP addresses derived from that subnet range are in use in your cluster.
-{: shortdesc}
-
-### Removing a subnet in an IBM Cloud infrastructure account from a cluster
-{: #remove-sl-subnets}
-
-Remove a subnet that is in your IBM Cloud infrastructure account from a cluster. After you remove the subnet, it is no longer available to your cluster, but it still exists in your IBM Cloud infrastructure account.
+If you no longer need subnets, you can remove them from your cluster. After you remove the subnet, it is no longer available to your cluster, but it still exists in your IBM Cloud infrastructure account.
 {: shortdesc}
 
 <p class="note">Subnets can only be detached from a cluster if none of the IP addresses derived from that subnet range are in use in your cluster.</br></br>Portable public IP addresses are charged monthly. If you remove the subnet, you still must pay the monthly charge for the IP addresses, even if you used them only for a short amount of time.</p>
@@ -645,49 +555,6 @@ Remove a subnet that is in your IBM Cloud infrastructure account from a cluster.
   {: pre}
 
   In this example output, the subnet with the `169.1.1.1/29` CIDR is removed.
-  ```
-  Subnet VLANs
-  VLAN ID   Subnet CIDR          Public   User-managed
-  2234947   10.xxx.xx.xxx/29     false    false
-  2234945   169.xx.xxx.xxx/29    true     false
-  ```
-  {: screen}
-
-### Removing a subnet in an on-premises network from a cluster
-{: #remove-user-subnets}
-
-Remove a private subnet that is in an on-premises network from a cluster. After you remove the subnet, it is no longer available to your cluster, but it still exists in your on-premises network.
-{: shortdesc}
-
-1. Find the CIDR and the VLAN ID for the subnet that you want to remove.
-  ```
-  ibmcloud oc cluster get --cluster <cluster_name> --show-resources
-  ```
-  {: pre}
-
-  In this example output, the CIDR of the subnet to be removed is `10.1.1.1/24` and the VLAN ID is `2234947`.
-  ```
-  Subnet VLANs
-  VLAN ID   Subnet CIDR       Public   User-managed
-  2234947   10.xxx.xx.xxx/29  false    false
-  2234945   169.xx.xxx.xxx/29 true     false
-  2234947   10.1.1.1/24       false    true
-  ```
-  {: screen}
-
-2. Using the CIDR and VLAN ID that you found in the previous step, remove the subnet from your cluster.
-  ```
-  ibmcloud oc cluster user-subnet rm --cluster <cluster_name_or_ID> --subnet-cidr <subnet_CIDR> --private-vlan <private_VLAN_ID>
-  ```
-  {: pre}
-
-3. Verify that the subnet is no longer bound to your cluster.
-  ```
-  ibmcloud oc cluster get --show-resources <cluster_name>
-  ```
-  {: pre}
-
-  In this example output, the subnet with the `10.1.1.1/24` CIDR is removed.
   ```
   Subnet VLANs
   VLAN ID   Subnet CIDR          Public   User-managed

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-26"
+lastupdated: "2020-07-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -79,6 +79,13 @@ Adopt a DevOps approach by using {{site.data.keyword.deliverypipelinelong}}, whi
 
 Want a more detailed walkthrough? Check out the [Set up a DevOps delivery pipeline for your app](/docs/containers?topic=containers-tutorial-byoc-kube) tutorial. This tutorial shows you how to create a DevOps toolchain in IBM Cloud, integrate it with your GitHub repository and configure delivery pipeline stages that automatically build a container image from your Dockerfile, push it to IBM Cloud Container Registry, and deploy your app to a cluster.
 {: tip}
+
+Before you begin, make sure that you have at least the following permissions in {{site.data.keyword.cloud_notm}} IAM:
+*  **Editor** platform role and **Writer** service role to the **Kubernetes Service** cluster. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference).
+*  **Viewer** platform role to the resource group of the cluster where you want to create the toolchain.
+*  **Editor** platform role to the **Toolchain** service (note that this service is separate than **Continuous Delivery**).
+
+To add a continuous delivery pipeline to your cluster:
 
 1. From the [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), select the cluster for which you want to set up a continuous delivery pipeline.
 2. Select the **DevOps** tab.
