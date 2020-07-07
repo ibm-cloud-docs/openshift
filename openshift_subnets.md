@@ -128,7 +128,7 @@ When you create a standard cluster, subnets are automatically created for you. H
 
 Use this option to retain stable static IP addresses across cluster removals and creations, or to order larger blocks of IP addresses. If instead you want to get more portable public or private IP addresses to create network load balancer (NLB) or Ingress application load balancer (ALB) services, see [Adding portable IP addresses](#adding_ips).
 
-All subnets that were automatically ordered during cluster creation are immediately deleted after you delete a cluster, and you cannot reuse the subnets to create a new cluster. However, if you [manually added your own subnets to the cluster](#subnet_user_managed), the subnets are not deleted when you delete the cluster. You can reuse the subnets to create a new cluster.
+All subnets that were automatically ordered during cluster creation are immediately deleted after you delete a cluster, and you cannot reuse the subnets to create a new cluster.
 {: note}
 
 Before you begin:
