@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-07-08"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -221,7 +221,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
   </tr>
   <tr>
   <td><code>--header &lt;header&gt;</code></td>
-  <td>Required when <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden.</td>
+  <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden. To add more than one header to the requests, specify this flag multiple times. This flag accepts values in the following format: <code>--header Header-Name=value</code>. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the flag with an empty value (<code>--header ""</code>).</td>
   </tr>
   <tr>
   <td><code>--expected-body &lt;expected-body&gt;</code></td>
@@ -244,7 +244,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
 
   Example command:
   ```
-  ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --description "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60 --header "Host":["example.com"] --expected-body "healthy" --expected-codes 2xx --follows-redirects true
+  ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --description "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60 --header Host=example.com --header Origin=https://cloudflare.com --expected-body "healthy" --expected-codes 2xx --follows-redirects true
   ```
   {: pre}
 
@@ -256,20 +256,25 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
 
   Example output:
   ```
-  Created On:                               2019-04-24 09:01:59.781392 +0000 UTC
-  Modified On:                              2020-02-26 15:39:05.273217 +0000 UTC
-  Type:                                     https
-  Description:                              Health check monitor for ingress public hostname
-  Method:                                   GET
-  Path:                                     /alive
-  Expected Body:                            -
-  Expected Codes:                           2xx
-  Follow Redirects:                         false
-  Allow Insecure:                           true
-  Port:                                     443
-  Timeout:                                  5
-  Retries:                                  2
-  Interval:                                 15
+  Created On:         2019-04-24 09:01:59.781392 +0000 UTC
+  Modified On:        2020-02-26 15:39:05.273217 +0000 UTC
+  Type:               https
+  Description:        Health check monitor for ingress public hostname
+  Method:             GET
+  Path:               /alive
+  Expected Body:      -
+  Expected Codes:     2xx
+  Follow Redirects:   false
+  Allow Insecure:     true
+  Port:               443
+  Timeout:            5
+  Retries:            2
+  Interval:           15
+
+  Headers:
+  Origin:    https://cloudflare.com
+  Host:      example.com
+
   Health Monitor Apply Properties Status:   success
   ```
   {: screen}
