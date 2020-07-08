@@ -221,7 +221,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
   </tr>
   <tr>
   <td><code>--header &lt;header&gt;</code></td>
-  <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden. To add more than one header to the requests, specify this flag multiple times. This flag accepts values in the following format: <code>--header Header-Name=value</code>. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the flag with an empty value (<code>--header ""</code>).</td>
+  <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden. To add more than one header to the requests, specify this flag multiple times. This flag accepts values in the following format: <code>--header Header-Name=value</code>. When updating a monitor, the existing headers are replaced by the ones that you specify. To delete all existing headers, specify the flag with an empty value (<code>--header ""</code>).</td>
   </tr>
   <tr>
   <td><code>--expected-body &lt;expected-body&gt;</code></td>
