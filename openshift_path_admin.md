@@ -104,8 +104,6 @@ subcollection: openshift
 Following a curated learning path through {{site.data.keyword.openshiftlong}} to create an OpenShift cluster, manage the cluster's resources and lifecycle, and use the powerful tools of Red Hat OpenShift on IBM Cloud to secure, manage, and monitor your cluster workloads.
 {: shortdesc}
 
-
-
 <div class=solutionBoxContainer>
   <div class="solutionBox">
     <a href = "#admin_plan">
