@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-09"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -110,9 +110,7 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
 <br />
 
 
-
-
-## Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}
+## Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}
 {: #openshift_logdna}
 
 Use the Red Hat OpenShift on IBM Cloud observability plug-in to create a logging configuration for {{site.data.keyword.la_full_notm}} in your cluster, and use this logging configuration to automatically collect and forward pod logs to {{site.data.keyword.la_full_notm}}.
@@ -352,7 +350,7 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 <br />
 
 
-## Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}} 
+## Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_sysdig}
 
 Use the Red Hat OpenShift on IBM Cloud observability plug-in to create a monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster, and use this monitoring configuration to automatically collect and forward metrics to {{site.data.keyword.mon_full_notm}}.

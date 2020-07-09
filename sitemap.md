@@ -600,7 +600,7 @@ subcollection: openshift
 
 [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
-[Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
+[Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
 
 [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
 
