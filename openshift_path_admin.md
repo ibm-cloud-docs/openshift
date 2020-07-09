@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-09"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -103,6 +103,8 @@ subcollection: openshift
 
 Following a curated learning path through {{site.data.keyword.openshiftlong}} to create an OpenShift cluster, manage the cluster's resources and lifecycle, and use the powerful tools of Red Hat OpenShift on IBM Cloud to secure, manage, and monitor your cluster workloads.
 {: shortdesc}
+
+
 
 <div class=solutionBoxContainer>
   <div class="solutionBox">
