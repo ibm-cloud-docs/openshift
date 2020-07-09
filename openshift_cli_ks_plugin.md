@@ -3977,7 +3977,7 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 Configure and optionally enable a health check monitor for an existing NLB subdomain in a cluster. When you enable a monitor for your subdomain, the monitor health checks the NLB IP in each zone and keeps the DNS lookup results updated based on these health checks.
 {: shortdesc}
 
-You can use this command to create and enable a new health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` flag and the flags for all settings that you want to configure.
+You can use this command to create and enable a health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` flag and the flags for all settings that you want to configure.
 
 To update an existing monitor, you must include all the flags for the settings that you want, including exsting settings.
 {: note}
