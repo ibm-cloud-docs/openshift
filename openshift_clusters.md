@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-01"
+lastupdated: "2020-07-09"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -275,7 +275,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 6. Create your standard cluster.
     ```
-    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--disable-disk-encrypt]
+    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt]
     ```
     {: pre}
 
@@ -328,6 +328,25 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    <tr>
    <td><code>--private-service-endpoint</code></td>
    <td>**For OpenShift 3.11 clusters only, in [VRF-enabled](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoint-enabled](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) accounts**: Enable the private service endpoint so that your OpenShift master and the worker nodes can communicate over the private VLAN. In addition, enable the public service endpoint by using the `--public-service-endpoint` flag to access your cluster over the internet. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</td>   
+   </tr>
+   <tr>
+   <td><code>--pod-subnet</code></td>
+   <td>All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+   <p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pod IP addresses for eight worker nodes, <code>/21</code> to have enough pod IP addresses for 16 worker nodes, and so on.</p>
+   <p>The subnet that you choose must be within one of the following ranges:
+   <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+   <li><code>172.21.0.0 - 172.31.255.255</code></li>
+   <li><code>192.168.0.0 - 192.168.254.255</code></li>
+   <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The service subnet is in the 172.21.0.0/16 range by default.</p></td>
+   </tr>
+   <tr>
+   <td><code>--service-subnet</code></td>
+   <td>All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
+   <p>The subnet must be specified in CIDR format with a size of at least <code>/24</code>, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
+   <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+   <li><code>172.21.0.0 - 172.31.255.255</code></li>
+   <li><code>192.168.0.0 - 192.168.254.255</code></li>
+   <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The pod subnet is in the 172.30.0.0/16 range by default.</p></td>
    </tr>
    <tr>
    <td><code>--disable-disk-encrypt</code></td>
@@ -508,7 +527,7 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
       {: pre}
 6. Create the cluster in your VPC. You can use the `cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.3_openshift --provider vpc-gen2 --cos-instance <cos_ID> [--workers <number_workers_per_zone>] [--disable-public-service-endpoint]
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.3_openshift --provider vpc-gen2 --cos-instance <cos_ID> [--workers <number_workers_per_zone>] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint]
     ```
     {: pre}
 
@@ -556,6 +575,25 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
     <tr>
     <td><code>--workers <em>&lt;number&gt;</em></code></td>
     <td>Specify the number of worker nodes to include in the cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.</td>
+    </tr>
+    <tr>
+    <td><code>--pod-subnet</code></td>
+    <td>In the first cluster that you create in a Gen 2 VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+    <p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pod IP addresses for eight worker nodes, <code>/21</code> to have enough pod IP addresses for 16 worker nodes, and so on.</p>
+    <p>The subnet that you choose must be within one of the following ranges:
+    <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+    <li><code>172.21.0.0 - 172.31.255.255</code></li>
+    <li><code>192.168.0.0 - 192.168.254.255</code></li>
+    <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets do not overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range).</p></td>
+    </tr>
+    <tr>
+    <td><code>--service-subnet</code></td>
+    <td>All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
+    <p>The subnet must be specified in CIDR format with a size of at least <code>/24</code>, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
+    <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+    <li><code>172.21.0.0 - 172.31.255.255</code></li>
+    <li><code>192.168.0.0 - 192.168.254.255</code></li>
+    <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap.</p></td>
     </tr>
     <tr>
     <td><code>--disable-public-service-endpoint</code></td>
