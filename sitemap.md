@@ -633,6 +633,7 @@ subcollection: openshift
   * [Creating an image pull secret with different IAM API key credentials for more control or access to images in other {{site.data.keyword.cloud_notm}} accounts](/docs/openshift?topic=openshift-registry#other_registry_accounts)
   * [Accessing images that are stored in other private registries](/docs/openshift?topic=openshift-registry#private_images)
 * [Using the image pull secret to deploy containers](/docs/openshift?topic=openshift-registry#use_imagePullSecret)
+  * [Storing the image pull secret in the Kubernetes service account for the selected project](/docs/openshift?topic=openshift-registry#store_imagePullSecret)
 * [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software)
 * [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-10"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -933,7 +933,7 @@ To plan how image pull secrets are used in your cluster, choose between the foll
 * Storing the image pull secret in the Kubernetes service account: Use this option to grant access to images in your registry for all deployments in the selected OpenShift projects. To store an image pull secret in the Kubernetes service account, use the [following steps](#store_imagePullSecret).
 
 ### Storing the image pull secret in the Kubernetes service account for the selected project
-{:#store_imagePullSecret}
+{: #store_imagePullSecret}
 
 Every OpenShift project has a Kubernetes service account that is named `default`. Within the project, you can add the image pull secret to this service account to grant access for pods to pull images from your registry. Deployments that do not specify a service account automatically use the `default` service account for this OpenShift project.
 {:shortdesc}
