@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-07-10"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -446,7 +446,7 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: pre}
 
-4. Delete the default rules that allow all inbound and outbound traffic. After, your ACL still exists, but does not container any networking rules.
+4. Delete the default rules that allow all inbound and outbound traffic. After, your ACL still exists, but does not contain any networking rules.
   ```
   ibmcloud is network-acl-rule-delete $acl_id <default_inbound_rule_ID> -f
   ```
