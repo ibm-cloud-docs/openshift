@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-10"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -485,7 +485,7 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
    10. **Optional: Resource groups only**: In the **Assign access to a resource group** field, select at least the **Viewer** platform role so that users can work with clusters in a resource group other than the default.
    11.  In the side panel, review the **Access summary** of your changes, and click **Assign**.
 
-4.  For the user to be added, the RBAC permissions must be synced to the cluster. The user who is granted access must [launch the Kubernetes dashboard](/docs/openshift?topic=openshift-deploy_app#db_gui) to initiate the sync. RBAC permissions are cached, so the sync might not be instantaneous.
+4.  For the user to be added, the RBAC permissions must be synced to the cluster. The user who is granted access must [launch the Kubernetes dashboard](/docs/containers?topic=containers-deploy_app#db_gui) to initiate the sync. RBAC permissions are cached, so the sync might not be instantaneous.
 
 ### Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI
 {: #add_users_cli}
@@ -822,7 +822,7 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
 **Before you begin**:
 
-- Target the [Kubernetes CLI](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure) to your cluster.
+- Target the [Kubernetes CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_configure) to your cluster.
 - Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for all namespaces.
 - To assign access to individual users or users in an access group, ensure that the user or group has been assigned at least one [{{site.data.keyword.cloud_notm}} IAM platform role](#platform) at the Red Hat OpenShift on IBM Cloud service level.
 
@@ -1108,7 +1108,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     oc apply -f <cluster_role_file.yaml>
     ```
     {: pre}
-3.  Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure) and test the action, such as `oc top pods`.
+3.  Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/openshift?topic=openshift-openshift-cli#cs_cli_configure) and test the action, such as `oc top pods`.
 
 
 <br />
@@ -1381,6 +1381,7 @@ Classic infrastructure permissions apply only to classic clusters. For VPC clust
 3. Click the **Classic infrastructure** tab, then click the **Permissions, Devices, or VPN subnets** tabs.
 4. In each tab, deselect specific permissions.
 5. To save your changes, click **Set** and **Save**. Permissions are downgraded after a few minutes.
+
 
 
 
