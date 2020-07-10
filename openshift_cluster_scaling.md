@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-07-10"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -628,7 +628,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
     </tr>
     <tr>
     <td>`image.repository` parameter</td>
-    <td>Specify the cluster autoscaler Docker image to use.</td>
+    <td>Specify the cluster autoscaler Docker image to use. To get a list of cluster autoscaler images, target the global {{site.data.keyword.registrylong_notm}} API by running <code>ibmcloud cr region-set global</code>. Then, list the available cluster autoscaler images by running <code>ibmcloud cr images --include-ibm | grep cluster-autoscaler</code>. Refer to the [release notes](https://github.ibm.com/alchemy-containers/armada-iks-cluster-autoscaler/blob/1.14/deployment/public-helm-charts/ibm-iks-cluster-autoscaler/RELEASENOTES.md#version-history) for a list of the supported Kubernetes versions for each cluster autoscaler image version.</td>
     <td>`icr.io/iks-charts/ibm-iks-cluster-autoscaler`</td>
     </tr>
     <tr>
