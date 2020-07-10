@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-07-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -787,59 +787,59 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     apiVersion: v1
     kind: Service
     metadata:
-     name: nginx
-     labels:
-       app: nginx
+      name: nginx
+      labels:
+        app: nginx
     spec:
-     ports:
-     - port: 80
-       name: web
-     clusterIP: None
-     selector:
-       app: nginx
+      ports:
+      - port: 80
+        name: web
+      clusterIP: None
+      selector:
+        app: nginx
     ---
     apiVersion: apps/v1
     kind: StatefulSet
     metadata:
      name: nginx
     spec:
-     serviceName: "nginx"
-     replicas: 3
-     podManagementPolicy: Parallel
-     selector:
-       matchLabels:
-         app: nginx
-         billingType: "hourly"
-         region: "us-south"
-         zone: "dal10"
-     template:
-       metadata:
-         labels:
-           app: nginx
-           billingType: "hourly"
-           region: "us-south"
-           zone: "dal10"
-       spec:
-         containers:
-         - name: nginx
-           image: k8s.gcr.io/nginx-slim:0.8
-           ports:
-           - containerPort: 80
-             name: web
-           volumeMounts:
-           - name: myvol
-             mountPath: /usr/share/nginx/html
-     volumeClaimTemplates:
-     - metadata:
-         name: myvol
-       spec:
-         accessModes:
-         - ReadWriteOnce
-         resources:
-           requests:
-             storage: 20Gi
-             iops: "300" #required only for performance storage
-         storageClassName: ibmc-file-retain-bronze
+      serviceName: "nginx"
+      replicas: 3
+      podManagementPolicy: Parallel
+      selector:
+        matchLabels:
+          app: nginx
+          billingType: "hourly"
+          region: "us-south"
+          zone: "dal10"
+      template:
+        metadata:
+          labels:
+            app: nginx
+            billingType: "hourly"
+            region: "us-south"
+            zone: "dal10"
+        spec:
+          containers:
+          - name: nginx
+            image: k8s.gcr.io/nginx-slim:0.8
+            ports:
+            - containerPort: 80
+              name: web
+            volumeMounts:
+            - name: myvol
+              mountPath: /usr/share/nginx/html
+       volumeClaimTemplates:
+       - metadata:
+           name: myvol
+         spec:
+           accessModes:
+           - ReadWriteOnce
+           resources:
+             requests:
+               storage: 20Gi
+               iops: "300" #required only for performance storage
+           storageClassName: ibmc-file-retain-bronze
     ```
     {: codeblock}
 
