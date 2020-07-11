@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-11"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -32,6 +32,8 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+
+
 
 
 
@@ -116,6 +118,7 @@ subcollection: openshift
     }
 -->
 </style>
+
 
 # Adding services by using Operators
 {: #operators}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-26"
+lastupdated: "2020-07-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -38,6 +38,8 @@ subcollection: openshift
 
 # Tutorial overview
 {: #tutorials-ov}
+
+
 
 <style>
 <!--
