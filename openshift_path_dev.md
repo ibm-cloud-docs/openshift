@@ -159,7 +159,7 @@ Following a curated learning path to deploy highly available containerized apps 
       <div>
         <img src="images/lock--alt.svg" alt="Security icon" style="height:50px; border-style: none"/>
         <h2>Secure your app</h2>
-        <p class="bx--type-caption">Encrypt your app data and store confidential information in Kubernetes secrets.</p>
+        <p class="bx--type-caption">Encrypt data and store confidential information in Kubernetes secrets.</p>
       </div>
     </a>
   </div>
