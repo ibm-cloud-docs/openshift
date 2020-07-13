@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-07-13"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -109,7 +109,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_plan">
       <div>
         <img src="images/icon-plan.png" alt="Planning icon" style="height:50px; border-style: none"/>
-        <h2>Plan your environment</h2>
+        <p><strong>Plan your environment</strong></p>
         <p class="bx--type-caption">Start by designing a highly available cluster with capacity for app workloads.</p>
       </div>
     </a>
@@ -118,7 +118,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_cluster">
       <div>
         <img src="images/icon-containers-bw.svg" alt="Cluster icon" style="height:50px; border-style: none"/>
-        <h2>Create a cluster</h2>
+        <p><strong>Create a cluster</strong></p>
         <p class="bx--type-caption">Create a cluster according to your planned setup.</p>
       </div>
     </a>
