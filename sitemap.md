@@ -197,15 +197,15 @@ subcollection: openshift
 * [Lesson 3: Deploying an app to your OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
-[Creating an OpenShift cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_roks_tutorial)
-* [Objectives](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_objectives)
-* [Time required](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_time)
-* [Audience](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_audience)
-* [Prerequisites](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_prereqs)
-* [Lesson 1: Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_create_vpc_cluster)
-* [Lesson 2: Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_app)
-* [Lesson 3: Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_vpc_lb)
-* [What's next?](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_next)
+[Creating an OpenShift cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial)
+* [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
+* [Time required](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_time)
+* [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
+* [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
+* [Lesson 1: Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
+* [Lesson 2: Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
+* [Lesson 3: Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
+* [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 [Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
 
