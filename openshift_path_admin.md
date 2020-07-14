@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-14"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -127,7 +127,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_network">
       <div>
         <img src="images/network--services.svg" alt="Network icon" style="height:50px; border-style: none"/>
-        <h2>Manage the network</h2>
+        <p><strong>Manage the network</strong></p>
         <p class="bx--type-caption">Configure cluster connectivity to other networks or manage cluster subnets.</p>
       </div>
     </a>
@@ -136,7 +136,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_secure">
       <div>
         <img src="images/lock--alt.svg" alt="Security icon" style="height:50px; border-style: none"/>
-        <h2>Secure your cluster</h2>
+        <p><strong>Secure your cluster</strong></p>
         <p class="bx--type-caption">Protect the cluster infrastructure and network and isolate compute resources.</p>
       </div>
     </a>
@@ -145,7 +145,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_health">
       <div>
         <img src="images/chart--line.svg" alt="Health icon" style="height:50px; border-style: none"/>
-        <h2>Log and monitor</h2>
+        <p><strong>Log and monitor</strong></p>
         <p class="bx--type-caption">Improve your cluster's health and performance with logging and monitoring.</p>
       </div>
     </a>
@@ -154,7 +154,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_registry">
       <div>
         <img src="images/path.svg" alt="Health icon" style="height:50px; border-style: none"/>
-        <h2>Add a registry and CI/CD</h2>
+        <p><strong>Add a registry and CI/CD</strong></p>
         <p class="bx--type-caption">Set up an image registry and a continuous integration and delivery pipeline.</p>
       </div>
     </a>
@@ -163,7 +163,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_storage">
       <div>
         <img src="images/data--storage.svg" alt="Storage icon" style="height:50px; border-style: none"/>
-        <h2>Add storage</h2>
+        <p><strong>Add storage</strong></p>
         <p class="bx--type-caption">Plan and add highly available persistent storage for your app data.</p>
       </div>
     </a>
@@ -172,7 +172,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_integrate">
       <div>
         <img src="images/connect.svg" alt="Integrations icon" style="height:50px; border-style: none"/>
-        <h2>Add integrations</h2>
+        <p><strong>Add integrations</strong></p>
         <p class="bx--type-caption">Enhance cluster capabilities by integrating external and catalog services.</p>
       </div>
     </a>
@@ -181,7 +181,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_lifecycle">
       <div>
         <img src="images/renew.svg" alt="Lifecycle icon" style="height:50px; border-style: none"/>
-        <h2>Manage the lifecycle</h2>
+        <p><strong>Manage the lifecycle</strong></p>
         <p class="bx--type-caption">Manage your cluster and components through all cluster lifecycle phases.</p>
       </div>
     </a>
