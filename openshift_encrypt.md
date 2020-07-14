@@ -270,9 +270,9 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: screen}
 
-6. Get the name of any secret in the `default` namespace in your cluster.
+6. Get the name of a secret in your cluster.
     ```
-    oc get secrets
+    oc get secrets [-n <namespace>]
     ```
     {: pre}
 
