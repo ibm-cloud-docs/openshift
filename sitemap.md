@@ -497,13 +497,13 @@ subcollection: openshift
 
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
 * [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#overview)
-* [Step 1: Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
+* [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
   * [Creating ACLs in the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
   * [Creating ACLs from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
-* [Step 2: Opening required ports in the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
+* [Opening required ports in the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
   * [Opening required ports in the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
   * [Opening required ports from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
-* [Step 3: Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
+* [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
   * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-network-policy#services_one_ns)
   * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-network-policy#services_across_ns)
 
