@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-14"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -278,7 +278,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 7.  Confirm that the Kubernetes secrets for the cluster are encrypted. Replace the `secret_name`, `master_url`, and `etcd_port` fields with the values that you previously retrieved, and replace `<cluster_name_or_ID>` with the name of the cluster in your compressed folder file path.
     ```
-    etcdctl get /kubernetes.io/secrets/default/<secret_name> --endpoints https://<master_url>:<etcd_port> --key="./<cluster_name_or_ID>/admin-key.pem" --cert="./<cluster_name_or_ID>/admin.pem" --cacert="./<cluster_name_or_ID>/ca.pem"
+    etcdctl get /kubernetes.io/secrets/<secret_namespace>/<secret_name> --endpoints https://<master_url>:<etcd_port> --key="./<cluster_name_or_ID>/admin-key.pem" --cert="./<cluster_name_or_ID>/admin.pem" --cacert="./<cluster_name_or_ID>/ca.pem"
     ```
     {: pre}
 
