@@ -115,13 +115,12 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     </a>
   </div>
   <div class="solutionBox">
-      <div class = "solutionBox">
-        <a href = "#admin_cluster">
-        <div class = "solutionBoxContent">
+      <a href = "#admin_cluster">
+      <div>
         <img src="images/icon-containers-bw.svg" alt="Cluster icon" style="height:50px; border-style: none"/>
         <p><strong>Create a cluster</strong></p>
         <p class="bx--type-caption">Create a cluster according to your planned setup.</p>
-      </div></div>
+      </div>
     </a>
   </div>
   <div class="solutionBox">
