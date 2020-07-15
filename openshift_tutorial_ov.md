@@ -35,10 +35,6 @@ subcollection: openshift
 
 
 
-
-# Tutorial overview
-{: #tutorials-ov}
-
 <style>
     <!--
         #tutorials { /* hide the page header */
@@ -151,6 +147,12 @@ subcollection: openshift
     -->
     </style>
 
+# Tutorial overview
+{: #tutorials-ov}
+
+Check out the following tutorials to learn how to make the most of your {{site.data.keyword.openshiftlong}} clusters.
+{: shortdesc}
+
 ## Create a cluster and deploy apps
 {: #tutorials-create-cluster-deploy-app}
 
@@ -161,7 +163,7 @@ subcollection: openshift
         <p><strong>{{site.data.keyword.openshiftlong_notm}} cluster</strong></p>
         <div class="solutionBoxDescription">
               <div class="descriptionContainer">
-                </br><p>Create an {{site.data.keyword.openshiftshort}} cluster with worker nodes that come installed with the {{site.data.keyword.openshiftshort}} container orchestration platform software.</p></br>
+                </br><p>Create a cluster with worker nodes that come installed with {{site.data.keyword.openshiftshort}} container orchestration platform.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/roks_tutorial.png" alt="OpenShift tutorial diagram flow" /></br>
@@ -176,7 +178,7 @@ subcollection: openshift
           <p><strong>{{site.data.keyword.openshiftshort}} cluster on VPC Gen 2</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
-                  </br><p>Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cloud with worker nodes on the next generation of compute infrastructure.</p></br>
+                  </br><p>Create an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud with worker nodes on the next generation of compute infrastructure.</p></br>
                   </div>
                   <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/vpc_roks_tutorial_lesson4_lb.png" alt="OpenShift tutorial diagram flow" /></br>
@@ -206,7 +208,7 @@ subcollection: openshift
             <p><strong>Automate version 3.11 cluster creation with Terraform</strong></p>
           <div class="solutionBoxDescription">
               <div class="descriptionContainer">
-                </br><p>Use Terraform to automate the deployment of an {{site.data.keyword.openshiftlong_notm}} cluster that runs {{site.data.keyword.openshiftshort}} version 3.11.</p></br>
+                </br><p>Use Terraform to automate the deployment of an {{site.data.keyword.openshiftshort}} 3.11 cluster.</p></br>
               </div>
               <div class="architectureDiagramContainer">
                   <img class="architectureDiagram" src="images/terraform_roks_tutorial_ov.png" alt="Terraform deployment automation architecture" />
@@ -228,7 +230,7 @@ subcollection: openshift
             <p><strong>Security certificates for domains</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
-                  </br> <p>Renew security certificates automatically for web domains by using a DNS provider and IBM Cloud Certificate Manager with your Red Hat OpenShift on IBM Cloud cluster.</p></br>
+                  </br> <p>Renew security certificates automatically for web domains with a DNS provider,Certificate Manager, and {{site.data.keyword.openshiftshort}} cluster.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/dev_guides_certs.png" alt="Domain certifcate flowchart" />
@@ -243,7 +245,7 @@ subcollection: openshift
             <p><strong>App lifecycle management with {{site.data.keyword.cloud_notm}} Operator</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
-                  </br> <p>Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}} Operator to simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.openshiftshort}} cluster.</p></br>
+                  </br> <p>Simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.openshiftshort}} cluster.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/dev_guides_operators.png" alt="IBM Cloud operator flowchart" />
@@ -258,7 +260,7 @@ subcollection: openshift
             <p><strong>Red Hat OpenShift interactive learning portal</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
-                  </br> <p>Complete the courses and test out OpenShift concepts with a pre-configured OpenShift instance that is accessible from your browser.</p></br>
+                  </br> <p>Test out OpenShift concepts with a pre-configured OpenShift instance that is accessible from your browser.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/logo_openshift.svg" alt="Red Hat OpenShift logo for learning portal" />
