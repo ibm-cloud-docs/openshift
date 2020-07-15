@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-11"
+lastupdated: "2020-07-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -39,99 +39,126 @@ subcollection: openshift
 # Tutorial overview
 {: #tutorials-ov}
 
-
-
 <style>
-<!--
-    #tutorials { /* hide the page header */
-        display: none !important
-    }
-    .allCategories {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-    }
-    .solutionBoxContainer {}
-    .solutionBoxContainer a {
-        text-decoration: none !important;
-        border: none !important;
-    }
-    .solutionBox {
-        display: inline-block !important;
-        width: 600px !important;
-        margin: 0 10px 20px 0 !important;
-        padding: 10px !important;
-        border: 1px #dfe6eb solid !important;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-    }
-    @media screen and (min-width: 960px) {
+    <!--
+        #tutorials { /* hide the page header */
+            display: none !important;
+        }
+        .allCategories {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+        }
+        .categoryBox {
+            flex-grow: 1 !important;
+            width: calc(33% - 20px) !important;
+            text-decoration: none !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            border: 1px #dfe6eb solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+            text-align: center !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+        }
+        .solutionBoxContainer {}
+        .solutionBoxContainer a {
+            text-decoration: none !important;
+            border: none !important;
+        }
         .solutionBox {
-        width: 27% !important;
+            display: inline-block !important;
+            width: 100% !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            background-color: #f4f4f4 !important;
+        }
+        @media screen and (min-width: 960px) {
+            .solutionBox {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBox.solutionBoxFeatured {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBoxContent {
+            height: 350px !important;
+            }
+        }
+        @media screen and (min-width: 1298px) {
+            .solutionBox {
+            width: calc(33% - 2%) !important;
+            }
+            .solutionBoxContent {
+            min-height: 350px !important;
+            }
+        }
+        .solutionBox:hover {
+            border: 1px rgb(136, 151, 162)solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
         }
         .solutionBoxContent {
-        height: 320px !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
-    }
-    @media screen and (min-width: 1298px) {
-        .solutionBox {
-        width: calc(33% - 2%) !important;
+        .solutionBoxTitle {
+            margin: 0rem !important;
+            margin-bottom: 5px !important;
+            font-size: 14px !important;
+            font-weight: 900 !important;
+            line-height: 16px !important;
+            height: 37px !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            -webkit-box-align: inherit !important;
         }
-        .solutionBoxContent {
-        min-height: 320px !important;
+        .solutionBoxDescription {
+            flex-grow: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
-    }
-    .solutionBox:hover {
-        border-color: rgb(136, 151, 162) !important;
-    }
-    .solutionBoxContent {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .solutionBoxDescription {
-        flex-grow: 1 !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .descriptionContainer {
-    }
-    .descriptionContainer p {
-        margin: 2px !important;
-        overflow: hidden !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 4 !important;
-        -webkit-box-orient: vertical !important;
-        font-size: 12px !important;
-        font-weight: 400 !important;
-        line-height: 1.5 !important;
-        letter-spacing: 0 !important;
-        max-height: 70px !important;
-    }
-    .architectureDiagramContainer {
-        flex-grow: 1 !important;
-        min-width: 200px !important;
-        padding: 0 10px !important;
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-    }
-    .architectureDiagram {
-        max-height: 170px !important;
-        padding: 5px !important;
-        margin: 0 auto !important;
-    }
--->
-</style>
-
+        .descriptionContainer {
+        }
+        .descriptionContainer p {
+            margin: 0 !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 4 !important;
+            -webkit-box-orient: vertical !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            line-height: 1.5 !important;
+            letter-spacing: 0 !important;
+            max-height: 70px !important;
+        }
+        .architectureDiagramContainer {
+            flex-grow: 1 !important;
+            min-width: calc(33% - 2%) !important;
+            padding: 0 16px !important;
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            background-color: #f4f4f4;
+        }
+        .architectureDiagram {
+            max-height: 175px !important;
+            padding: 5px !important;
+            margin: 0 auto !important;
+        }
+    -->
+    </style>
 
 ## Create a cluster and deploy apps
 {: #tutorials-create-cluster-deploy-app}
 
 <div class = "solutionBoxContainer">
-  <a href = "/docs/openshift?topic=openshift-openshift_tutorial">
   <div class = "solutionBox">
+  <a href = "/docs/openshift?topic=openshift-openshift_tutorial">
       <div class = "solutionBoxContent">
-        {{site.data.keyword.openshiftlong_notm}} cluster
+        <p><strong>{{site.data.keyword.openshiftlong_notm}} cluster</strong></p>
         <div class="solutionBoxDescription">
               <div class="descriptionContainer">
                 </br><p>Create an {{site.data.keyword.openshiftshort}} cluster with worker nodes that come installed with the {{site.data.keyword.openshiftshort}} container orchestration platform software.</p></br>
@@ -141,12 +168,12 @@ subcollection: openshift
               </div>
           </div>
       </div>
-  </div>
   </a>
-    <a href = "/docs/openshift?topic=openshift-vpc_roks_tutorial">
+  </div>
     <div class = "solutionBox">
+    <a href = "/docs/openshift?topic=openshift-vpc_roks_tutorial">
         <div class = "solutionBoxContent">
-          {{site.data.keyword.openshiftshort}} cluster on VPC Gen 2
+          <p><strong>{{site.data.keyword.openshiftshort}} cluster on VPC Gen 2</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
                   </br><p>Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cloud with worker nodes on the next generation of compute infrastructure.</p></br>
@@ -156,12 +183,12 @@ subcollection: openshift
                 </div>
             </div>
         </div>
-    </div>
     </a>
-  <a href = "/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift">
+    </div>
     <div class = "solutionBox">
+    <a href = "/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift">
         <div class = "solutionBoxContent">
-          Scalable web app on {{site.data.keyword.openshiftshort}}
+          <p><strong>Scalable web app on {{site.data.keyword.openshiftshort}}</strong></p>
             <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
                   </br> <p>Scaffold a web app, deploy it to a cluster, and learn how to scale your app and monitor its health. </p></br>
@@ -171,12 +198,12 @@ subcollection: openshift
                 </div>
             </div>
         </div>
+    </a>
     </div>
-  </a>
-  <a href = "/docs/terraform?topic=terraform-redhat">
   <div class = "solutionBox">
+  <a href = "/docs/terraform?topic=terraform-redhat">
       <div class = "solutionBoxContent">
-              Automate version 3.11 cluster creation with Terraform
+            <p><strong>Automate version 3.11 cluster creation with Terraform</strong></p>
           <div class="solutionBoxDescription">
               <div class="descriptionContainer">
                 </br><p>Use Terraform to automate the deployment of an {{site.data.keyword.openshiftlong_notm}} cluster that runs {{site.data.keyword.openshiftshort}} version 3.11.</p></br>
@@ -186,8 +213,8 @@ subcollection: openshift
               </div>
           </div>
       </div>
-  </div>
   </a>
+  </div>
 </div>
 
 
@@ -195,10 +222,10 @@ subcollection: openshift
 {: #tutorials-deep-dive}
 
 <div class = "solutionBoxContainer">
-    <a href = "https://developer.ibm.com/tutorials/automatic-security-certificate-renewal-OpenShift/">
     <div class = "solutionBox">
+    <a href = "https://developer.ibm.com/tutorials/automatic-security-certificate-renewal-OpenShift/">
         <div class = "solutionBoxContent">
-                Security certificates for domains
+            <p><strong>Security certificates for domains</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
                   </br> <p>Renew security certificates automatically for web domains by using a DNS provider and IBM Cloud Certificate Manager with your Red Hat OpenShift on IBM Cloud cluster.</p></br>
@@ -208,12 +235,12 @@ subcollection: openshift
                 </div>
             </div>
         </div>
-    </div>
     </a>
-    <a href = "https://developer.ibm.com/tutorials/simplify-lifecycle-management-kubernetes-OpenShift-ibm-cloud-operator/">
+    </div>
     <div class = "solutionBox">
+    <a href = "https://developer.ibm.com/tutorials/simplify-lifecycle-management-kubernetes-OpenShift-ibm-cloud-operator/">
         <div class = "solutionBoxContent">
-                App lifecycle management with {{site.data.keyword.cloud_notm}} Operator
+            <p><strong>App lifecycle management with {{site.data.keyword.cloud_notm}} Operator</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
                   </br> <p>Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}} Operator to simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.openshiftshort}} cluster.</p></br>
@@ -223,12 +250,12 @@ subcollection: openshift
                 </div>
             </div>
         </div>
-    </div>
     </a>
-    <a href = "https://learn.openshift.com">
+    </div>
     <div class = "solutionBox">
+    <a href = "https://learn.openshift.com">
         <div class = "solutionBoxContent">
-                Red Hat OpenShift interactive learning portal
+            <p><strong>Red Hat OpenShift interactive learning portal</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
                   </br> <p>Complete the courses and test out OpenShift concepts with a pre-configured OpenShift instance that is accessible from your browser.</p></br>
@@ -238,12 +265,12 @@ subcollection: openshift
                 </div>
             </div>
         </div>
-    </div>
     </a>
-    <a href = "https://www.katacoda.com/openshift">
+    </div>
     <div class = "solutionBox">
+    <a href = "https://www.katacoda.com/openshift">
         <div class = "solutionBoxContent">
-                Katacoda site for learning OpenShift
+            <p><strong>Katacoda site for learning OpenShift</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
                   </br> <p>Learn how to use OpenShift to build, run, and scale your apps in the cloud so that you can focus on writing code.</p></br>
@@ -253,6 +280,6 @@ subcollection: openshift
                 </div>
             </div>
         </div>
-    </div>
     </a>
+    </div>
 </div>
