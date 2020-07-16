@@ -41,7 +41,7 @@ subcollection: openshift
 Refer to these commands to create and manage **both community Kubernetes or OpenShift clusters** in {{site.data.keyword.openshiftlong}}.
 {:shortdesc}
 
-* **Community Kubernetes**: [Install the CLI plug-in](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps), which uses the `ibmcloud ks` alias.
+* **Community Kubernetes**: [Install the CLI plug-in](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps), which uses the `ibmcloud ks` alias.
 * **OpenShift**: [Install the CLI plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
 
 In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
@@ -65,7 +65,7 @@ Check out the following syntax and behavior changes between each version of the 
 | Positional arguments<ul><li>Legacy: Arguments specified by position (`cluster-get mycluster`)</li><li>Beta: Arguments specified by flags (`cluster get --cluster mycluster`)</li></ul> | Legacy and beta | Legacy and beta | Legacy and beta | Beta |
 | Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
 | Flag format<ul><li>Legacy: Camel-case (`--showResources`)</li><li>Beta: Dashed (`--show-resources`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
-| Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [last file that is set by the `KUBECONFIG` environment variable](/docs/openshift?topic=openshift-openshift-cli#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/openshift?topic=openshift-openshift-cli#cli_config_multiple).</li></ul> | Legacy | Legacy | Legacy | Beta |
+| Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [last file that is set by the `KUBECONFIG` environment variable](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).</li></ul> | Legacy | Legacy | Legacy | Beta |
 {: caption="Beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in" caption-side="top"}
 {: summary="The rows are read from left to right, with the functionality in column one, version 0.2 of the CLI in column two, version 0.3 in column three, version 0.4 in column four, and version 1.0 in column five."}
 
@@ -75,7 +75,7 @@ Check out the following syntax and behavior changes between each version of the 
 ## Comparison of Classic and VPC commands
 {: #cli_classic_vpc_about}
 
-With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API](/docs/openshift?topic=openshift-cs_api_install#api_about), the {{site.data.keyword.cloud_notm}} CLI `kubernetes-service` plug-in supports both classic and VPC infrastructure providers. Some `ibmcloud oc` commands support only one type of infrastructure, whereas other commands include additional names or options as described in the following table.
+With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API](/docs/containers?topic=containers-cs_api_install#api_about), the {{site.data.keyword.cloud_notm}} CLI `kubernetes-service` plug-in supports both classic and VPC infrastructure providers. Some `ibmcloud oc` commands support only one type of infrastructure, whereas other commands include additional names or options as described in the following table.
 {: shortdesc}
 
 <table summary="The rows are read from left to right, with the area of comparison in column one, classic clusters CLI in column two, and VPC clusters CLI in column three.">
@@ -255,7 +255,7 @@ Enable a managed add-on in an existing cluster. This command must be combined wi
 #### `ibmcloud oc cluster addon enable debug-tool`
 {: #cs_cluster_addon_enable_debug}
 
-Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) in a cluster.
+Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) in a cluster.
 {: shortdesc}
 
 ```
@@ -374,9 +374,9 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 After logging in to {{site.data.keyword.cloud_notm}}, download the Kubernetes configuration data and certificates as a `kubeconfig` file to your local machine so that you can connect to your cluster and run `oc` commands.
 {: shortdesc}
 
-The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your terminal session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/openshift?topic=openshift-openshift-cli#cli_config_multiple).
+The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your terminal session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).
 
-Red Hat OpenShift on IBM Cloud plug-in CLI versions 0.4 and earlier are deprecated or unsupported. In these earlier versions, the `cluster config` command downloaded the `kubeconfig` file to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`. With the relase of version 1.0 on 16 March 2020, the `cluster config` behavior changes permanently and is not backwards compatible. To maintain CLI functionality, update and test any automation that you built with earlier CLI versions now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in. If you still need a separate `kubeconfig` file per cluster instead of the new merged `kubeconfig` file behavior, see [Creating a temporary `kubeconfig` file](/docs/openshift?topic=openshift-openshift-cli#cli_temp_kubeconfig).
+Red Hat OpenShift on IBM Cloud plug-in CLI versions 0.4 and earlier are deprecated or unsupported. In these earlier versions, the `cluster config` command downloaded the `kubeconfig` file to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`. With the relase of version 1.0 on 16 March 2020, the `cluster config` behavior changes permanently and is not backwards compatible. To maintain CLI functionality, update and test any automation that you built with earlier CLI versions now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in. If you still need a separate `kubeconfig` file per cluster instead of the new merged `kubeconfig` file behavior, see [Creating a temporary `kubeconfig` file](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig).
 {: deprecated}
 
 ```
@@ -389,7 +389,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac]
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**: **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform role or only a service role, additional constraints apply.
-* **Platform**: If you have only a platform role, you can perform this command, but you need a [service role](/docs/openshift?topic=openshift-users#platform) or a [custom RBAC policy](/docs/openshift?topic=openshift-users#role-binding) to perform Kubernetes actions in the cluster.
+* **Platform**: If you have only a platform role, you can perform this command, but you need a [service role](/docs/containers?topic=containers-users#platform) or a [custom RBAC policy](/docs/containers?topic=containers-users#role-binding) to perform Kubernetes actions in the cluster.
 * **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name, ID, and master URL because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can launch the OpenShift web console by opening your browser to `<master_URL>/console`.
 
 **Command options**:
@@ -404,7 +404,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac]
 <dd>Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. This value is optional. **Note**: This option cannot be used in conjunction with the <code>--yaml</code> option.</dd>
 
 <dt><code>--skip-rbac</code></dt>
-<dd>Skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) to manage all your RBAC users, do not include this option.</dd>
+<dd>Skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/containers?topic=containers-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/containers?topic=containers-access_reference#service) to manage all your RBAC users, do not include this option.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -449,7 +449,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>The zone where you want to create the cluster. This value is required for standard clusters. Free clusters can be created in the region that you target with the <code>ibmcloud oc init</code> command, but you cannot specify the zone.
 
-<p>Review [available zones](/docs/openshift?topic=openshift-regions-and-zones#zones). To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones).</p>
+<p>Review [available zones](/docs/containers?topic=containers-regions-and-zones#zones). To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/containers?topic=containers-regions-and-zones#zones).</p>
 
 <p class="note">When you select a zone that is located outside your country, keep in mind that you might require legal authorization before data can be physically stored in a foreign country.</p>
 </dd>
@@ -488,10 +488,10 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 
 <dt><code>--private-service-endpoint</code></dt>
 
-<dd><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11 clusters only in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11 clusters only in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private service endpoint](/docs/containers?topic=containers-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--public-service-endpoint</code></dt>
-<dd>Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. For 3.11 clusters only, i you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd>Enable the [public service endpoint](/docs/containers?topic=containers-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. For 3.11 clusters only, i you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 
 <dt><code>--workers WORKER</code></dt>
@@ -500,7 +500,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 </br>Every worker node is assigned a unique worker node ID and domain name that must not be manually changed after the cluster is created. Changing the ID or domain name prevents the Kubernetes master from managing your cluster.</p></dd>
 
 <dt><code><strong>--disable-disk-encrypt</strong></code></br></dt>
-<dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/openshift?topic=openshift-security#encrypted_disk). To disable encryption, include this option.</dd>
+<dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.</dd>
 
 <dt id="pod-subnet"><code><strong>--pod-subnet <em>SUBNET</em></strong></code></br></dt>
 <dd>**Standard clusters that run Kubernetes 1.15 or later**: All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
@@ -580,9 +580,9 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 **Minimum required permissions**:
 * [**Administrator** platform role for VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
-* [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}} at the account level.
-* [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}.
-* [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.registrylong_notm}} at the account level.
+* [**Administrator** platform role](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.containerlong_notm}} at the account level.
+* [**Writer** or **Manager** service role](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.containerlong_notm}}.
+* [**Administrator** platform role](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.registrylong_notm}} at the account level.
 
 **Command options**
 
@@ -613,7 +613,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <dd>Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run <code>ibmcloud resource service-instances --long</code> and find the **ID** of your object storage instance. To create a standard object storage instance, run <code>ibmcloud resource service-instance-create <name> cloud-object-storage standard global</code> and note its **ID**.</dd>
 
 <dt><code>--workers <em>NUMBER_WORKERS_PER_ZONE</em></code></dt>
-<dd>The number of worker nodes that you want to deploy in your cluster. Note that you must have at least 2 worker nodes per cluster to run the default OpenShift components.
+<dd>The number of worker nodes that you want to deploy in your cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.
 <p class="important">Every worker node is assigned a unique worker node ID and domain name that must not be manually changed after the cluster is created. Changing the ID or domain name prevents the Kubernetes master from managing your cluster.</p></dd>
 
 <dt><code>--disable-public-service-endpoint</code></dt>
@@ -626,7 +626,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
 <li><code>172.21.0.0 - 172.31.255.255</code></li>
 <li><code>192.168.0.0 - 192.168.254.255</code></li>
-<li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets do not overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range).</p></dd>
+<li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets do not overlap with your cluster's pod subnet](/docs/containers?topic=containers-vpc-subnets#vpc-ip-range).</p></dd>
 
 <dt><code>--service-subnet <em>SUBNET</em></code></dt>
 <dd>All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
@@ -664,7 +664,7 @@ Enable a feature on an existing cluster. This command must be combined with one 
 #### `ibmcloud oc cluster feature enable private-service-endpoint`
 {: #cs_cluster_feature_enable_private_service_endpoint}
 
-Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to make your cluster master privately accessible.
+Enable the [private service endpoint](/docs/containers?topic=containers-plan_clusters#workeruser-master) to make your cluster master privately accessible.
 {: shortdesc}
 
 To run this command:
@@ -704,7 +704,7 @@ ibmcloud oc cluster feature enable private-service-endpoint --cluster my_cluster
 #### `ibmcloud oc cluster feature enable public-service-endpoint`
 {: #cs_cluster_feature_enable_public_service_endpoint}
 
-Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to make your cluster master publicly accessible.
+Enable the [public service endpoint](/docs/containers?topic=containers-plan_clusters#workeruser-master) to make your cluster master publicly accessible.
 {: shortdesc}
 
 After you run this command, you must refresh the API server to use the service endpoint by following the prompt in the CLI.
@@ -909,7 +909,7 @@ Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create 
 
 This API key method replaces the previous method of authorizing a cluster to access {{site.data.keyword.registrylong_notm}} by automatically creating a [token](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external} and storing the token in an image pull secret. Now, by using IAM API keys to access {{site.data.keyword.registrylong_notm}}, you can customize IAM policies for the service ID to restrict access to your namespaces or specific images. For example, you can change the service ID policies in the cluster's image pull secret to pull images from only a certain registry region or namespace. Before you can customize IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#existing_users).
 
-For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
+For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-registry#cluster_registry_auth).
 
 <p class="important">When you run this command, the creation of IAM credentials and image pull secrets is initiated and can take some time to complete. You cannot deploy containers that pull an image from the {{site.data.keyword.registrylong_notm}} `icr.io` domains until the image pull secrets are created. To check the image pull secrets, run `oc get secrets | grep icr-io`.</br></br>If you added IAM policies to an existing service ID, such as to restrict access to a regional registry, the service ID, IAM policies, and API key for the image pull secret are reset by this command.</p>
 
@@ -1120,7 +1120,7 @@ Make an existing portable public or private classic subnet in your IBM Cloud inf
 {: shortdesc}
 
 <p class="important">When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
-</br>To enable communication between workers that are on different subnets on the same VLAN in non-VRF accounts, you must [enable routing between subnets on the same VLAN](/docs/openshift?topic=openshift-subnets#subnet-routing).</p>
+</br>To enable communication between workers that are on different subnets on the same VLAN in non-VRF accounts, you must [enable routing between subnets on the same VLAN](/docs/containers?topic=containers-subnets#subnet-routing).</p>
 
 ```
 ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id SUBNET [-s]
@@ -1159,7 +1159,7 @@ Create a portable classic subnet in an IBM Cloud infrastructure account on your 
 
 <p class="important">Portable public IP addresses are charged monthly. If you remove portable public IP addresses after your cluster is provisioned, you still must pay the monthly charge, even if you used them only for a short amount of time.</br>
 </br>When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
-</br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
+</br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
 
 ```
 ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN_ID [-s]
@@ -1241,7 +1241,7 @@ This command is deprecated. Add an existing IBM Cloud infrastructure subnet to y
 {: deprecated}
 
 <p class="important">When you make a subnet available to a cluster, IP addresses of this subnet are used for cluster networking purposes. To avoid IP address conflicts, make sure that you use a subnet with one cluster only. Do not use a subnet for multiple clusters or for other purposes outside of {{site.data.keyword.containerlong_notm}} at the same time.</br>
-</br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
+</br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
 
 ```
 ibmcloud oc cluster user-subnet add --cluster CLUSTER --subnet-cidr SUBNET_CIDR --private-vlan PRIVATE_VLAN
@@ -1349,16 +1349,16 @@ ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR -
 <dd>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
 
 <dt><code>--workers <em>NUMBER</em></code></dt>
-<dd>An integer that represents the number of worker nodes to create in the cluster. Note that you must have at least 2 worker nodes per cluster to run the default OpenShift components.</dd>
+<dd>An integer that represents the number of worker nodes to create in the cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.</dd>
 
 <dt><code>--private-vlan <em>PRIVATE_VLAN</em></code></dt>
 <dd>The private VLAN that was specified when the cluster was created. This value is required. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.</dd>
 
 <dt><code>--public-vlan <em>PUBLIC_VLAN</em></code></dt>
-<dd>The public VLAN that was specified when the cluster was created. This value is optional. If you want your worker nodes to exist on a private VLAN only, do not provide a public VLAN ID. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.<p class="note">If worker nodes are set up with a private VLAN only, you must allow worker nodes and the cluster master to communicate by [enabling the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se) or [configuring a gateway appliance](/docs/openshift?topic=openshift-plan_clusters#workeruser-master).</p></dd>
+<dd>The public VLAN that was specified when the cluster was created. This value is optional. If you want your worker nodes to exist on a private VLAN only, do not provide a public VLAN ID. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.<p class="note">If worker nodes are set up with a private VLAN only, you must allow worker nodes and the cluster master to communicate by [enabling the private service endpoint](/docs/containers?topic=containers-cs_network_cluster#set-up-private-se) or [configuring a gateway appliance](/docs/containers?topic=containers-plan_clusters#workeruser-master).</p></dd>
 
 <dt><code>--disable-disk-encrypt</code></dt>
-<dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/openshift?topic=openshift-security#encrypted_disk). To disable encryption, include this option.</dd>
+<dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/containers?topic=containers-security#encrypted_disk). To disable encryption, include this option.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -1544,7 +1544,7 @@ ibmcloud oc worker reboot --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658
 Reload the configurations for a worker node.
 {: shortdesc}
 
-A reload can be useful if your worker node experiences problems, such as slow performance or if your worker node is stuck in an unhealthy state. During the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). The worker node public and private IP address remain the same after the reload operation.
+A reload can be useful if your worker node experiences problems, such as slow performance or if your worker node is stuck in an unhealthy state. During the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage_planning#persistent_storage_overview). The worker node public and private IP address remain the same after the reload operation.
 
 Reloading a worker node applies patch version updates to your worker node, but not major or minor updates. To see the changes from one patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 {: tip}
@@ -1718,7 +1718,7 @@ ibmcloud oc worker rm --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658596a
 Update worker nodes to apply the latest security updates and patches to the operating system, and to update the Kubernetes version to match the version of the Kubernetes master. You can update the master Kubernetes version with the `ibmcloud oc cluster master update` [command](#cs_cluster_update). The worker node IP address remains the same after the update operation.
 {: shortdesc}
 
-Running `ibmcloud oc worker update` can cause downtime for your apps and services. During the update, all pods are rescheduled onto other worker nodes, the worker node is reimaged, and data is deleted if not stored outside the pod. To avoid downtime, [ensure that you have enough worker nodes to handle your workload while the selected worker nodes are updating](/docs/openshift?topic=openshift-update#worker_node).
+Running `ibmcloud oc worker update` can cause downtime for your apps and services. During the update, all pods are rescheduled onto other worker nodes, the worker node is reimaged, and data is deleted if not stored outside the pod. To avoid downtime, [ensure that you have enough worker nodes to handle your workload while the selected worker nodes are updating](/docs/containers?topic=containers-update#worker_node).
 {: important}
 
 You might need to change your YAML files for deployments before you update. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
@@ -1789,7 +1789,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 <dd>Choose a machine type, or flavor. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (macine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
 
 <dt><code>--size-per-zone <em>WORKERS_PER_ZONE</em></code></dt>
-<dd>The number of workers to create in each zone. This value is required, and must be 1 or greater. Keep in mind that you must have a minimum of 1 worker node in your worker pool at all times, and at least 2 worker nodes per cluster.</dd>
+<dd>The number of workers to create in each zone. This value is required, and must be 2 or greater.</dd>
 
 <dt><code>--hardware <em>ISOLATION</em></code></dt>
 <dd>The level of hardware isolation for your worker node. Use `dedicated` if you want to have available physical resources that are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. For bare metal flavors, specify `dedicated`. This value is required.</dd>
@@ -1843,7 +1843,7 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker pool name> --cluster <clu
 <dd>Specify the name or ID of the cluster. To list VPC clusters, run `ibmcloud oc cluster ls --provider vpc-gen2`. This value is required.</dd>
 
 <dt><code>--size-per-zone <em>NUMBER_WORKERS_PER_ZONE</em></code></dt>
-<dd>Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool. This value is required, and must be 1 or greater. Keep in mind that you must have a minimum of 1 worker node in your worker pool at all times, and at least 2 worker nodes per cluster.</dd>
+<dd>Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool. This value is required, and must be 2 or greater.</dd>
 
 <dt><code>--flavor <em>FLAVOR</em></code></dt>
 <dd>Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a VPC zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.</dd>
@@ -2012,7 +2012,7 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --siz
 <dd>The name of the worker node pool that you want to update. This value is required.</dd>
 
 <dt><code>--size-per-zone <em>WORKERS_PER_ZONE</em></code></dt>
-<dd>The number of workers that you want to have in each zone. This value is required, and must be 1 or greater. Keep in mind that you must have a minimum of 1 worker node in your worker pool at all times, and at least 2 worker nodes per cluster.</dd>
+<dd>The number of workers that you want to have in each zone. This value is required, and must be 1 or greater.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -2217,7 +2217,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 **Command options**:
 <dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>The zone that you want to add. It must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones) within the cluster's region. This value is required.</dd>
+<dd>The zone that you want to add. It must be a [multizone-capable zone](/docs/containers?topic=containers-regions-and-zones#zones) within the cluster's region. This value is required.</dd>
 
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
@@ -2229,12 +2229,12 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 <dd><p>The ID of the private VLAN. This value is conditional.</p>
     <p>If you have a private VLAN in the zone, this value must match the private VLAN ID of one or more of the worker nodes in the cluster. To see the VLANs that you have available, run <code>ibmcloud oc cluster get --cluster &lt;cluster&gt; --show-resources</code>. New worker nodes are added to the VLAN that you specify, but the VLANs for any existing worker nodes are not changed.</p>
     <p>If you do not have a private or public VLAN in that zone, do not specify this option. A private and a public VLAN are automatically created for you when you initially add a zone to your worker pool.</p>
-    <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd>
+    <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd>
 
 <dt><code>--public-vlan <em>PUBLIC_VLAN</em></code></dt>
 <dd><p>The ID of the public VLAN. This value is required if you want to expose workloads on the nodes to the public after you create the cluster. It must match the public VLAN ID of one or more of the worker nodes in the cluster for the zone. To see the VLANs that you have available, run <code>ibmcloud oc cluster get --cluster &lt;cluster&gt; --show-resources</code>. New worker nodes are added to the VLAN that you specify, but the VLANs for any existing worker nodes are not changed.</p>
     <p>If you do not have a private or public VLAN in that zone, do not specify this option. A private and a public VLAN are automatically created for you when you initially add a zone to your worker pool.</p>
-    <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd></p></dd></containers priv-lim>
+    <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd></p></dd></containers priv-lim>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -2274,7 +2274,7 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CL
 <dd>The zone that you want to add. It must be a VPC zone within the cluster's region. To see available VPC zones, run `ibmcloud oc zone ls --provider vpc-gen2`. This value is required.</dd>
 
 <dt><code>--subnet-id <em>SUBNET_ID</em></code></dt>
-<dd>The ID of the subnet that you want to add. The VPC subnet must be within the `zone` that you specify. To see available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <vpc_zone>`. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so use a [VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. This value is required.</dd>
+<dd>The ID of the subnet that you want to add. The VPC subnet must be within the `zone` that you specify. To see available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <vpc_zone>`. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so use a [VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. This value is required.</dd>
 
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. To list VPC clusters, run `ibmcloud oc cluster ls --provider vpc-gen2`. This value is required.</dd>
@@ -2362,7 +2362,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 **Command options**:
 <dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>The zone that you want to add. It must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones) within the cluster's region. This value is required.</dd>
+<dd>The zone that you want to add. It must be a [multizone-capable zone](/docs/containers?topic=containers-regions-and-zones#zones) within the cluster's region. This value is required.</dd>
 
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
@@ -2787,7 +2787,7 @@ Enable or disable an ALB in your standard cluster.
 You can use this command to:
 * Enable a default private ALB. When you create a cluster, a default private ALB is created for you in each zone where you have workers and an available private subnet, but the default private ALBs are not enabled. However, all default public ALBs are automatically enabled, and any public or private ALBs that you create with the `ibmcloud oc alb create classic` command are enabled by default too.
 * Enable an ALB that you previously disabled.
-* Disable an ALB. For example, disable an ALB on an old VLAN after you create an ALB on a new VLAN. For more information, see [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress-manage#migrate-alb-vlan).
+* Disable an ALB. For example, disable an ALB on an old VLAN after you create an ALB on a new VLAN. For more information, see [Moving ALBs across VLANs](/docs/containers?topic=containers-ingress-manage#migrate-alb-vlan).
 * Disable the IBM-provided ALB deployment so that you can deploy your own Ingress controller and leverage the DNS registration for the IBM-provided Ingress subdomain or the load balancer service that is used to expose the Ingress controller.
 
 ```
@@ -4516,7 +4516,7 @@ View the name and email address for the owner of the {{site.data.keyword.cloud_n
 
 The {{site.data.keyword.cloud_notm}} API key is automatically set for a resource group and region when the first action that requires the {{site.data.keyword.containerlong_notm}} admin access policy is performed. For example, one of your admin users creates the first cluster in the `default` resource group in the `us-south` region. By doing that, the {{site.data.keyword.cloud_notm}} IAM API key for this user is stored in the account for this resource group and region. The API key is used to order resources in IBM Cloud infrastructure, such as new worker nodes or VLANs. A different API key can be set for each region within a resource group.
 
-When a different user performs an action in this resource group and region that requires interaction with the IBM Cloud infrastructure portfolio, such as creating a new cluster or reloading a worker node, the stored API key is used to determine whether sufficient permissions exist to perform that action. To make sure that infrastructure-related actions in your cluster can be successfully performed, assign your {{site.data.keyword.containerlong_notm}} admin users the **Super user** classic infrastructure access policy  and **Administrator** platform role to VPC infrastructure in {{site.data.keyword.cloud_notm}} IAM. For more information, see [Managing user access](/docs/openshift?topic=openshift-users#infra_access).
+When a different user performs an action in this resource group and region that requires interaction with the IBM Cloud infrastructure portfolio, such as creating a new cluster or reloading a worker node, the stored API key is used to determine whether sufficient permissions exist to perform that action. To make sure that infrastructure-related actions in your cluster can be successfully performed, assign your {{site.data.keyword.containerlong_notm}} admin users the **Super user** classic infrastructure access policy  and **Administrator** platform role to VPC infrastructure in {{site.data.keyword.cloud_notm}} IAM. For more information, see [Managing user access](/docs/containers?topic=containers-users#infra_access).
 
 If you find that you need to update the API key that is stored for a resource group and region, you can do so by running the [ibmcloud oc api-key reset](#cs_api_key_reset) command. This command requires the {{site.data.keyword.containerlong_notm}} admin access policy and stores the API key of the user that executes this command in the account.
 
@@ -4562,7 +4562,7 @@ Replace the current {{site.data.keyword.cloud_notm}} IAM API key in an {{site.da
 
 This command requires the {{site.data.keyword.containerlong_notm}} admin access policy and stores the API key of the user that executes this command in the account. The {{site.data.keyword.cloud_notm}} IAM API key is required to order infrastructure from the IBM Cloud infrastructure portfolio. Once stored, the API key is used for every action in a region that requires infrastructure permissions independent of the user that executes this command. For more information about how {{site.data.keyword.cloud_notm}} IAM API keys work, see the [`ibmcloud oc api-key info` command](#cs_api_key_info).
 
-Before you use this command, make sure that the user who executes this command has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/openshift?topic=openshift-users#users). Target the resource group and region that you want to set the API key for.
+Before you use this command, make sure that the user who executes this command has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/containers?topic=containers-users#users). Target the resource group and region that you want to set the API key for.
 {: important}
 
 
@@ -4651,7 +4651,7 @@ If IBM Cloud infrastructure credentials are manually set for a region and a reso
 
 You cannot set multiple credentials for the same {{site.data.keyword.containerlong_notm}} resource group and region.
 
-Before you use this command, make sure that the user whose credentials are used has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/openshift?topic=openshift-users#users).
+Before you use this command, make sure that the user whose credentials are used has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/containers?topic=containers-users#users).
 {: important}
 
 ```
@@ -4724,13 +4724,13 @@ ibmcloud oc credential unset --region us-south
 ## `kms` commands
 {: #ks_kms}
 
-Enable a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control.
+Enable a [key management service (KMS) provider](/docs/containers?topic=containers-encryption#kms) in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control.
 {: shortdesc}
 
 ### `ibmcloud oc kms crk ls`
 {: #ks_kms_crk_ls}
 
-List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data encryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms).
+List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data encryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/containers?topic=containers-encryption#kms).
 {: shortdesc}
 
 Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
@@ -4768,7 +4768,7 @@ ibmcloud oc kms crk ls --instance-id 1aa1a111-1111-1111-a111-a1aaaa1a1a1a
 ### `ibmcloud oc kms enable`
 {: #ks_kms_enable}
 
-Encrypt your Kubernetes secrets by [enabling a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster. To rotate a key in a cluster with existing key encryption, rerun this command with a new root key ID.
+Encrypt your Kubernetes secrets by [enabling a key management service (KMS) provider](/docs/containers?topic=containers-encryption#keyprotect) in your cluster. To rotate a key in a cluster with existing key encryption, rerun this command with a new root key ID.
 {: shortdesc}
 
 Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
@@ -4812,7 +4812,7 @@ ibmcloud oc kms enable -c mycluster --instance-id a11aa11a-bbb2-3333-d444-e5e555
 ### `ibmcloud oc kms instance ls`
 {: #ks_kms_instance_ls}
 
-List available [key management service (KMS) instances](/docs/openshift?topic=openshift-encryption#kms) in your {{site.data.keyword.cloud_notm}} account that you can choose to enable in your cluster.
+List available [key management service (KMS) instances](/docs/containers?topic=containers-encryption#kms) in your {{site.data.keyword.cloud_notm}} account that you can choose to enable in your cluster.
 {: shortdesc}
 
 ```
@@ -4857,7 +4857,7 @@ The `ibmcloud oc infra-permissions` commands check only classic IBM Cloud infras
 ### `ibmcloud oc infra-permissions get`
 {: #infra_permissions_get}
 
-Check whether the credentials that allow [access to the IBM Cloud infrastructure portfolio](/docs/openshift?topic=openshift-users#api_key) for the targeted resource group and region are missing suggested or required infrastructure permissions.
+Check whether the credentials that allow [access to the IBM Cloud infrastructure portfolio](/docs/containers?topic=containers-users#api_key) for the targeted resource group and region are missing suggested or required infrastructure permissions.
 {: shortdesc}
 
 **What do `required` and `suggested` infrastructure permissions mean?**<br>
@@ -4865,18 +4865,18 @@ If the infrastructure credentials for the region and resource group are missing 
 *   **Required**: These permissions are needed to successfully order and manage infrastructure resources such as worker nodes. If the infrastructure credentials are missing one of these permissions, common actions such as `worker reload` can fail for all clusters in the region and resource group.
 *   **Suggested**: These permissions are helpful to include in your infrastructure permissions, and might be necessary in certain use cases. For example, the `Add Compute with Public Network Port` infrastructure permission is suggested because if you want public networking, you need this permission. However, if your use case is a cluster on the private VLAN only, the permission is not needed so it is not considered `required`.
 
-For a list of common use cases by permission, see [Infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
+For a list of common use cases by permission, see [Infrastructure roles](/docs/containers?topic=containers-access_reference#infra).
 
-**What if I see an infrastructure permission that I can't find in the console or [Infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) table?**<br>
-`Support Case` permissions are managed in a different part of the console than infrastructure permissions. See step 8 of [Customizing infrastructure permissions](/docs/openshift?topic=openshift-users#infra_access).
+**What if I see an infrastructure permission that I can't find in the console or [Infrastructure roles](/docs/containers?topic=containers-access_reference#infra) table?**<br>
+`Support Case` permissions are managed in a different part of the console than infrastructure permissions. See step 8 of [Customizing infrastructure permissions](/docs/containers?topic=containers-users#infra_access).
 
 **Which infrastructure permissions do I assign?**<br>
 If your company's policies for permissions are strict, you might need to limit the `suggested` permissions for your cluster's use case. Otherwise, make sure that your infrastructure credentials for the region and resource group include all the `required` and `suggested` permissions.
 
-For most use cases, [set up the API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group with the appropriate infrastructure permissions. If you need to use another infrastructure account that differs from your current account, [set up manual credentials](/docs/openshift?topic=openshift-users#credentials).
+For most use cases, [set up the API key](/docs/containers?topic=containers-users#api_key) for the region and resource group with the appropriate infrastructure permissions. If you need to use another infrastructure account that differs from your current account, [set up manual credentials](/docs/containers?topic=containers-users#credentials).
 
 **How do I control what actions the users can perform?**<br>
-After infrastructure credentials are set up, you can control what actions your users can perform by assigning them [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform).
+After infrastructure credentials are set up, you can control what actions your users can perform by assigning them [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/containers?topic=containers-access_reference#iam_platform).
 
 ```
 ibmcloud oc infra-permissions get --region REGION [--json] [-s]
@@ -5031,7 +5031,7 @@ ibmcloud oc vlan ls --zone dal10
 View the VLAN spanning status for an IBM Cloud infrastructure account. VLAN spanning enables all devices on an account to communicate with each other through the private network, regardless of its assigned VLAN.
 {: shortdesc}
 
-The VLAN spanning option is disabled for clusters that are created in a VRF-enabled account. When VRF is enabled, all VLANs in the account can automatically communicate with each other over the private network. To check whether a VRF is enabled, use the `ibmcloud account show` command. For more information, see [Planning your cluster network setup: Worker-to-worker communication](/docs/openshift?topic=openshift-plan_clusters#worker-worker).
+The VLAN spanning option is disabled for clusters that are created in a VRF-enabled account. When VRF is enabled, all VLANs in the account can automatically communicate with each other over the private network. To check whether a VRF is enabled, use the `ibmcloud account show` command. For more information, see [Planning your cluster network setup: Worker-to-worker communication](/docs/containers?topic=containers-plan_clusters#worker-worker).
 {: note}
 
 ```
@@ -5153,9 +5153,9 @@ View a list of available worker node flavors. Flavors vary by zone.
 The `machine-types` alias for this command is deprecated.
 {: deprecated}
 
-Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/openshift?topic=openshift-security#encrypted_disk).
+Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/containers?topic=containers-security#encrypted_disk).
 
-You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal. [Learn more about your flavor options](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
+You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal. [Learn more about your flavor options](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
 
 ```
 ibmcloud oc flavors --zone ZONE --provider (classic | vpc-gen2) [--show-storage] [--json] [-s]
@@ -5177,7 +5177,7 @@ ibmcloud oc flavors --zone ZONE --provider (classic | vpc-gen2) [--show-storage]
 <dd>The infrastructure provider for which you want to list available flavors.</dd>
 
 <dt><code>--show-storage</code></dt>
-<dd>Optional: Show additional raw disks that are available for SDS worker node flavors. For more information, see [Software-defined storage (SDS) machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds).</dd>
+<dd>Optional: Show additional raw disks that are available for SDS worker node flavors. For more information, see [Software-defined storage (SDS) machines](/docs/containers?topic=containers-planning_worker_nodes#sds).</dd>
 
 <dt><code>--json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -5227,7 +5227,7 @@ ibmcloud oc messages
 ## locations command
 {: #cs_supported-locations}
 
-List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations).
+List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/containers?topic=containers-regions-and-zones#locations).
 {: shortdesc}
 
 In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the `locations` command. Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
@@ -5300,7 +5300,7 @@ ibmcloud oc versions
 Target the API endpoint for {{site.data.keyword.containerlong_notm}}. If you do not specify an endpoint, you can view information about the current endpoint that is targeted.
 {: shortdesc}
 
-Region-specific endpoints are deprecated. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
+Region-specific endpoints are deprecated. Use the [global endpoint](/docs/containers?topic=containers-regions-and-zones#endpoint) instead.
 {: deprecated}
 
 If you need to list and work with resources from one region only, you can use the `ibmcloud oc api` command to target a regional endpoint instead of the global endpoint.
@@ -5367,7 +5367,7 @@ Region:                us-south
 Initialize the Red Hat OpenShift on IBM Cloud plug-in or specify the region where you want to create or access OpenShift clusters.
 {: shortdesc}
 
-Region-specific endpoints are deprecated. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
+Region-specific endpoints are deprecated. Use the [global endpoint](/docs/containers?topic=containers-regions-and-zones#endpoint) instead.
 {: deprecated}
 
 If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` command to target a regional endpoint instead of the global endpoint.
