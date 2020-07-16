@@ -515,7 +515,7 @@ To uninstall the drivers and platform software, you can follow the same steps, b
 ## Adding tags to existing clusters
 {: #cluster_tags}
 
-You can assign a tag to Red Hat OpenShift on IBM Cloud clusters to help manage your {{site.data.keyword.cloud_notm}} resources. For example, you might add `key:value` tags to your cluster and other cloud resources so that your billing department track resources, such as `costctr:1234`. Tags are visible account-wide. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
+You can assign a tag to Red Hat OpenShift on IBM Cloud clusters to help manage your {{site.data.keyword.cloud_notm}} resources. For example, you might add `key:value` tags to your cluster and other cloud resources so that your billing department track resources, such as `costctr:1234`. Tags are visible account-wide. For more information, see [Working with tags](/docs/account?topic=account-tag).
 {: shortdesc}
 
 Tags are not the same thing as Kubernetes labels. [Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){: external} are `key:value` pairs that can be used as selectors for the resources that are in your cluster, such as [adding a label to worker pool](#worker_pool_labels) to [deploy an app to only certain worker nodes](/docs/openshift?topic=openshift-deploy_app#node_affinity). Tags are an {{site.data.keyword.cloud_notm}} tool that you can use to filter your {{site.data.keyword.cloud_notm}} resources, such as clusters, storage devices, or {{site.data.keyword.watson}} services.
@@ -531,7 +531,7 @@ Choose among the following options:
 
 | Adding tags to clusters with the console. |
 |:-----------------|
-| <p><ol><li>Log in to the [**{{site.data.keyword.cloud_notm}} clusters** console](https://cloud.ibm.com/kubernetes/clusters){: external}.</li><li>Select a cluster with existing tags.</li><li>Next to the cluster name and status, click the **Edit tags** pencil icon.<p class="note">If your cluster does not have any existing tags, you do not have an **Edit tags** pencil icon. Instead, use the [resource list](/docs/resources?topic=resources-tag#add-remove) or CLI.</p></li><li>Enter the tag that you want to add to your cluster. To assign a key-value pair, use a colon such as `costctr:1234`.</li></ol></p> |
+| <p><ol><li>Log in to the [**{{site.data.keyword.cloud_notm}} clusters** console](https://cloud.ibm.com/kubernetes/clusters){: external}.</li><li>Select a cluster with existing tags.</li><li>Next to the cluster name and status, click the **Edit tags** pencil icon.<p class="note">If your cluster does not have any existing tags, you do not have an **Edit tags** pencil icon. Instead, use the [resource list](/docs/account?topic=account-tag#add-remove) or CLI.</p></li><li>Enter the tag that you want to add to your cluster. To assign a key-value pair, use a colon such as `costctr:1234`.</li></ol></p> |
 {: caption="Adding tags to clusters with the console." caption-side="top"}
 {: #tags-1}
 {: tab-title="Console"}

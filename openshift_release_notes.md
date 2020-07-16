@@ -564,7 +564,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td><ul>
   <li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of versions 0.3.47 and 0.3.49](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `nginx-ingress` image to build 473 and `ingress-auth` image to build 331](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>Removing persistent storage</strong>: Updated the information for how you are billed when you [delete persistent storage](/docs/containers?topic=containers-cleanup).</li>
+  <li><strong>Removing persistent storage</strong>: Updated the information for how you are billed when you delete persistent storage.</li>
   <li><strong>Service bindings with private endpoint</strong>: [Added steps](/docs/openshift?topic=openshift-service-binding) for how to manually create service credentials with the private service endpoint when you bind the service to your cluster.</li>
   </ul></td>
 </tr>
