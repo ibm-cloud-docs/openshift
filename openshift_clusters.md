@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -574,7 +574,7 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
     </tr>
     <tr>
     <td><code>--workers <em>&lt;number&gt;</em></code></td>
-    <td>Specify the number of worker nodes to include in the cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.</td>
+    <td>Specify the number of worker nodes to include in the cluster. Note that you must have at least 2 worker nodes per cluster to run the default OpenShift components.</td>
     </tr>
     <tr>
     <td><code>--pod-subnet</code></td>

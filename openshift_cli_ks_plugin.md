@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-16"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -611,7 +611,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <dd>Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run <code>ibmcloud resource service-instances --long</code> and find the **ID** of your object storage instance. To create a standard object storage instance, run <code>ibmcloud resource service-instance-create <name> cloud-object-storage standard global</code> and note its **ID**.</dd>
 
 <dt><code>--workers <em>NUMBER_WORKERS_PER_ZONE</em></code></dt>
-<dd>The number of worker nodes that you want to deploy in your cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.
+<dd>The number of worker nodes that you want to deploy in your cluster. Note that you must have at least 2 worker nodes per cluster to run the default OpenShift components.
 <p class="important">Every worker node is assigned a unique worker node ID and domain name that must not be manually changed after the cluster is created. Changing the ID or domain name prevents the Kubernetes master from managing your cluster.</p></dd>
 
 <dt><code>--disable-public-service-endpoint</code></dt>
@@ -1347,7 +1347,7 @@ ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR -
 <dd>Choose a machine type, or flavor, for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
 
 <dt><code>--workers <em>NUMBER</em></code></dt>
-<dd>An integer that represents the number of worker nodes to create in the cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.</dd>
+<dd>An integer that represents the number of worker nodes to create in the cluster. Note that you must have at least 2 worker nodes per cluster to run the default OpenShift components.</dd>
 
 <dt><code>--private-vlan <em>PRIVATE_VLAN</em></code></dt>
 <dd>The private VLAN that was specified when the cluster was created. This value is required. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.</dd>
@@ -1787,7 +1787,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 <dd>Choose a machine type, or flavor. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (macine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.</dd>
 
 <dt><code>--size-per-zone <em>WORKERS_PER_ZONE</em></code></dt>
-<dd>The number of workers to create in each zone. This value is required, and must be 2 or greater.</dd>
+<dd>The number of workers to create in each zone. This value is required, and must be 1 or greater. Keep in mind that you must have a minimum of 1 worker node in your worker pool at all times, and at least 2 worker nodes per cluster.</dd>
 
 <dt><code>--hardware <em>ISOLATION</em></code></dt>
 <dd>The level of hardware isolation for your worker node. Use `dedicated` if you want to have available physical resources that are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. For bare metal flavors, specify `dedicated`. This value is required.</dd>
@@ -1841,7 +1841,7 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker pool name> --cluster <clu
 <dd>Specify the name or ID of the cluster. To list VPC clusters, run `ibmcloud oc cluster ls --provider vpc-gen2`. This value is required.</dd>
 
 <dt><code>--size-per-zone <em>NUMBER_WORKERS_PER_ZONE</em></code></dt>
-<dd>Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool. This value is required, and must be 2 or greater.</dd>
+<dd>Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool. This value is required, and must be 1 or greater. Keep in mind that you must have a minimum of 1 worker node in your worker pool at all times, and at least 2 worker nodes per cluster.</dd>
 
 <dt><code>--flavor <em>FLAVOR</em></code></dt>
 <dd>Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a VPC zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.</dd>
@@ -2010,7 +2010,7 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --siz
 <dd>The name of the worker node pool that you want to update. This value is required.</dd>
 
 <dt><code>--size-per-zone <em>WORKERS_PER_ZONE</em></code></dt>
-<dd>The number of workers that you want to have in each zone. This value is required, and must be 1 or greater.</dd>
+<dd>The number of workers that you want to have in each zone. This value is required, and must be 1 or greater. Keep in mind that you must have a minimum of 1 worker node in your worker pool at all times, and at least 2 worker nodes per cluster.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
