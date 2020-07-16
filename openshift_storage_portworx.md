@@ -149,7 +149,7 @@ If you want to use an external database service for your Portworx cluster metada
 
 Databases for etcd is a managed etcd service that securely stores and replicates your data across three storage instances to provide high availability and resiliency for your data. For more information, see the [Databases for etcd getting started tutorial](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started#getting-started). Your Databases for etcd storage automatically scales in size if required and you are charged for the amount storage that you use.
 
-1. Make sure that you have the [`Administrator` platform access role in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/account?topic=account-iammanidaccser#iammanidaccser) for the Databases for etcd service.  
+1. Make sure that you have the [**Administrator** platform access role in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/account?topic=account-assign-access-resources#assign_new_access) for the Databases for etcd service.  
 
 2. Provision your Databases for etcd service instance.
    1. Open the [Databases for etcd catalog page](https://cloud.ibm.com/catalog/services/databases-for-etcd)
@@ -330,7 +330,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
 
 5. [Create a service ID for your account](/docs/account?topic=account-serviceids#serviceids).  
 
-6. [Assign your service ID permissions](/docs/account?topic=account-serviceidpolicy#serviceidpolicy) to your {{site.data.keyword.keymanagementservicelong_notm}} service instance.
+6. [Assign your service ID permissions](/docs/account?topic=account-serviceids) to your {{site.data.keyword.keymanagementservicelong_notm}} service instance.
 
 7. [Create an API key for your service ID](/docs/account?topic=account-serviceidapikeys#serviceidapikeys). This API key is used by Portworx to access the {{site.data.keyword.keymanagementservicelong_notm}} API.
 

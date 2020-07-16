@@ -207,7 +207,7 @@ subcollection: openshift
 * [Lesson 3: Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
-[Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
+[Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
 
 [OpenShift interactive learning portal](https://learn.openshift.com/){: external}
 

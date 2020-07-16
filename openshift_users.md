@@ -1317,7 +1317,7 @@ If you want to remove specific permissions for a user, you can remove individual
 {: shortdesc}
 
 Before you begin, [check that the user's infrastructure credentials are not used](#removing_check_infra) for any Red Hat OpenShift on IBM Cloud resources. After checking, you can remove:
-* [a user from an access group](/docs/account?topic=account-iammanidaccser#removing_access)
+* [a user from an access group](/docs/account?topic=account-assign-access-resources#removing_access)
 * [a user's {{site.data.keyword.cloud_notm}} IAM platform and associated RBAC permissions](#remove_iam_rbac)
 * [a user's custom RBAC permissions](#remove_custom_rbac)
 * [a user's Cloud Foundry permissions](#remove_cloud_foundry)

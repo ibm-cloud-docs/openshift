@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-16"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -361,7 +361,7 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
 
 1. **Plan service discovery**:
   1. Understand the [basics of Kubernetes service discovery](/docs/openshift?topic=openshift-plan_deploy#service_discovery).
-  2. [Choose an app exposure service](//docs/openshift?topic=openshift-cs_network_planning) that fits your requirements for incoming traffic to the app.
+  2. [Choose an app exposure service](/docs/openshift?topic=openshift-cs_network_planning) that fits your requirements for incoming traffic to the app.
 2. **Expose your app**:
   * Load balancers:
     * Classic clusters:
