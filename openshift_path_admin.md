@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-16"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -166,7 +166,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
   <div class="solutionBox">
       <a href = "#admin_cluster">
       <div>
-        <img src="images/icon-containers-new.svg" alt="Cluster icon" style="height:50px; border-style: none"/>
+        <img src="images/icon-pictogram-containers.svg" alt="Cluster icon" style="height:50px; border-style: none"/>
         <p><strong>Create a cluster</strong></p>
         <p class="bx--type-caption">Create a cluster according to your planned setup.</p>
       </div>
