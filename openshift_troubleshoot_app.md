@@ -409,7 +409,7 @@ The following steps assume that the API key stores the credentials of a service 
     ServiceId-bb22...   <service_ID_name>  2019-02-01T19:01+0000   2019-02-01T19:01+0000   Service ID for IBM Cloud Container Registry in Kubernetes cluster <cluster_name> namespace <project>                                                                                                                                         false
     ```
     {: screen}
-2.  Verify that the service ID is assigned at least an {{site.data.keyword.cloud_notm}} IAM **Reader** [service access role policy for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#create). If the service ID does not have the **Reader** service role, [edit the IAM policies](/docs/iam?topic=iam-serviceidpolicy#access_edit). If the policies are correct, continue with the next step to see if the credentials are valid.
+2.  Verify that the service ID is assigned at least an {{site.data.keyword.cloud_notm}} IAM **Reader** [service access role policy for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#create). If the service ID does not have the **Reader** service role, [edit the IAM policies](/docs/account?topic=account-serviceidpolicy#access_edit). If the policies are correct, continue with the next step to see if the credentials are valid.
     ```
     ibmcloud iam service-policies <service_ID_name>
     ```
@@ -735,9 +735,9 @@ To bind services to a cluster, you must have the Cloud Foundry developer user ro
 
 **As the account admin:**
 
-1. Verify that the user who experiences this problem has [Editor permissions for {{site.data.keyword.containerlong_notm}}](/docs/iam?topic=iam-iammanidaccser#edit_existing).
+1. Verify that the user who experiences this problem has [Editor permissions for {{site.data.keyword.containerlong_notm}}](/docs/account?topic=account-iammanidaccser#edit_existing).
 
-2. Verify that the user who experiences this problem has the [Cloud Foundry developer role for the space](/docs/iam?topic=iam-mngcf#update_cf_access) where the service is provisioned.
+2. Verify that the user who experiences this problem has the [Cloud Foundry developer role for the space](/docs/account?topic=account-mngcf#update_cf_access) where the service is provisioned.
 
 3. If the correct permissions exists, try assigning a different permission and then re-assigning the required permission.
 
@@ -772,7 +772,9 @@ This service doesn't support creation of keys
 {: screen}
 
 {: tsCauses}
+
 Some services in {{site.data.keyword.cloud_notm}}, such as {{site.data.keyword.keymanagementservicelong}} do not support the creation of service credentials, also referred to as service keys. Without the support of service keys, the service is not bindable to a cluster. To find a list of services that support the creation of service keys, see [Enabling external apps to use {{site.data.keyword.cloud_notm}} services](/docs/account?topic=account-externalapp#externalapp).
+
 
 {: tsResolve}
 To integrate services that do not support service keys, check if the service provides an API that you can use to access the service directly from your app. For example, if you want to use {{site.data.keyword.keymanagementservicelong}}, see the [API reference](https://cloud.ibm.com/apidocs/key-protect){: external}.

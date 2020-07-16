@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -50,7 +50,7 @@ Use the following checklist to configure user access in your cluster.
 1. [Understand how roles, users, and resources in your account](#access_policies) can be managed.
 1. [Set the API key](#api_key) for all the regions and resource groups that you want to create clusters in.
 2. Invite users to your account and [assign them {{site.data.keyword.cloud_notm}} IAM roles](#platform) for the service (**containers-kubernetes** in the API or CLI, and **Kubernetes Service** in the console).<p class="note">Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.</p>
-3. To allow users to bind services to the cluster or to view logs that are forwarded from cluster logging configurations, [grant users Cloud Foundry roles](/docs/iam?topic=iam-mngcf) for the org and space that the services are deployed to or where logs are collected.
+3. To allow users to bind services to the cluster or to view logs that are forwarded from cluster logging configurations, [grant users Cloud Foundry roles](/docs/account?topic=account-mngcf) for the org and space that the services are deployed to or where logs are collected.
 4. If you use Kubernetes namespaces to isolate resources within the cluster, grant access to namespaces by [assigning users {{site.data.keyword.cloud_notm}} IAM service roles for the namespaces](#platform).
 5. For any automation tooling such as in your CI/CD pipeline, set up service accounts and [assign the service accounts Kubernetes RBAC permissions](#rbac).
 6. For other advanced configurations to control access to your cluster resources at the pod level, see [Configuring security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs).
@@ -97,7 +97,7 @@ Example actions that are permitted by RBAC roles are creating objects such as po
 Example actions that are permitted by infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.<p class="note">VPC clusters do not need classic infrastructure permissions. Instead, you assign **Administrator** platform access to the **VPC Infrastructure** service in {{site.data.keyword.cloud_notm}}. Then, these credentials are stored in the API key for each region and resource group that you create clusters in.</p></dd>
 <dt>Cloud Foundry</dt>
 <dd>Not all services can be managed with {{site.data.keyword.cloud_notm}} IAM. If you're using one of these services, you can continue to use Cloud Foundry user roles to control access to those services. Cloud Foundry roles grant access to organizations and spaces within the account. To see the list of Cloud Foundry-based services in {{site.data.keyword.cloud_notm}}, run <code>ibmcloud service list</code>.</br></br>
-Example actions that are permitted by Cloud Foundry roles are creating a new Cloud Foundry service instance or binding a Cloud Foundry service instance to a cluster. To learn more, see the available [org and space roles](/docs/iam?topic=iam-cfaccess) or the steps for [managing Cloud Foundry access](/docs/iam?topic=iam-mngcf) in the {{site.data.keyword.cloud_notm}} IAM documentation.</dd>
+Example actions that are permitted by Cloud Foundry roles are creating a new Cloud Foundry service instance or binding a Cloud Foundry service instance to a cluster. To learn more, see the available [org and space roles](/docs/account?topic=account-cfaccess) or the steps for [managing Cloud Foundry access](/docs/account?topic=account-mngcf) in the {{site.data.keyword.cloud_notm}} IAM documentation.</dd>
 </dl>
 </br>
 
@@ -126,7 +126,7 @@ You must also specify whether users have access to one cluster in a resource gro
 In {{site.data.keyword.cloud_notm}} IAM, you can assign user access roles to resource instances, Kubernetes namespaces (projects in OpenShift), or resource groups.
 {: shortdesc}
 
-When you create your {{site.data.keyword.cloud_notm}} account, the default resource group is created automatically. If you do not specify a resource group when you create the resource, resource instances (clusters) automatically belong to the default resource group. In {{site.data.keyword.cloud_notm}} IAM, a Kubernetes namespace is a resource type of a resource instance (cluster). If you want to add a resource group in your account, see [Best practices for setting up your account](/docs/account?topic=account-account_setup) and [Setting up your resource groups](/docs/resources?topic=resources-bp_resourcegroups#setuprgs).
+When you create your {{site.data.keyword.cloud_notm}} account, the default resource group is created automatically. If you do not specify a resource group when you create the resource, resource instances (clusters) automatically belong to the default resource group. In {{site.data.keyword.cloud_notm}} IAM, a Kubernetes namespace is a resource type of a resource instance (cluster). If you want to add a resource group in your account, see [Best practices for setting up your account](/docs/account?topic=account-account_setup) and [Setting up your resource groups](/docs/account?topic=resources-bp_resourcegroups#setuprgs).
 
 <dl>
 <dt>Resource instance</dt>
@@ -169,7 +169,7 @@ Your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account is a
 The quickest way to set up the API key is to ask the account owner, who already has the required infrastructure permissions. However, the account owner might want to create a functional ID with all the required infrastructure permissions. Then, if the account owner is unavailable or changes, the API key owner remains the functional ID.
 {: tip}
 
-1.  As the account owner, [invite a functional ID](/docs/iam?topic=iam-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user.
+1.  As the account owner, [invite a functional ID](/docs/account?topic=account-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user.
 2.  [Assign the functional ID the the correct permissions](#owner_permissions).
 3.  Log in as the functional ID.
     ```
@@ -253,7 +253,7 @@ To access the IBM Cloud infrastructure portfolio, you use an {{site.data.keyword
 **Now that my infrastructure portfolio is set up, how does Red Hat OpenShift on IBM Cloud access the portfolio?**</br>
 {: #api_key_about}
 
-Red Hat OpenShift on IBM Cloud accesses the IBM Cloud infrastructure portfolio by using an [API key](/docs/iam?topic=iam-manapikey). The API key impersonates, or stores the credentials of, a user with access to an IBM Cloud infrastructure account. API keys are set by region within a resource group, and are shared by users in that region. To check if an API key is already set for the region and resource group, you can use the following command.
+Red Hat OpenShift on IBM Cloud accesses the IBM Cloud infrastructure portfolio by using an [API key](/docs/account?topic=account-manapikey). The API key impersonates, or stores the credentials of, a user with access to an IBM Cloud infrastructure account. API keys are set by region within a resource group, and are shared by users in that region. To check if an API key is already set for the region and resource group, you can use the following command.
 
 ```
 ibmcloud oc api-key info --cluster <cluster_name_or_ID>
@@ -294,7 +294,7 @@ If the user is leaving your organization, the {{site.data.keyword.cloud_notm}} a
 
 **How can I lock down my cluster if my API key becomes compromised?**
 
-If an API key that is set for a region and resource group in your cluster is compromised, [delete it](/docs/iam?topic=iam-userapikey#delete_user_key) so that no further calls can be made by using the API key as authentication. For more information about securing access to the Kubernetes API server, see the [Kubernetes API server and etcd](/docs/openshift?topic=openshift-security#apiserver) security topic.
+If an API key that is set for a region and resource group in your cluster is compromised, [delete it](/docs/account?topic=account-userapikey#delete_user_key) so that no further calls can be made by using the API key as authentication. For more information about securing access to the Kubernetes API server, see the [Kubernetes API server and etcd](/docs/openshift?topic=openshift-security#apiserver) security topic.
 
 **How do I set up the API key for my cluster?**</br>
 
@@ -319,7 +319,7 @@ To ensure that all infrastructure-related actions can be successfully completed 
   1. From the menu bar, select **Manage > Access (IAM)**.
   2. Select the **Users** tab, click on the user. The required infrastructure permissions vary depending on what type of [cluster infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers) you use, classic or VPC.
     * **For classic clusters**:
-      1. In the **API keys** pane, verify that the user has a **Classic infrastructure API key**, or click **Create an IBM Cloud API key**. For more information, see [Managing classic infrastructure API keys](/docs/iam?topic=iam-classic_keys#classic_keys).
+      1. In the **API keys** pane, verify that the user has a **Classic infrastructure API key**, or click **Create an IBM Cloud API key**. For more information, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys#classic_keys).
       2. Click the **Classic infrastructure** tab and then click the **Permissions** tab.
       3. If the user doesn't have each category checked, you can use the **Permission sets** drop-down list to assign the **Super User** role. Or you can expand each category and give the user the required [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
     * **For VPC clusters**: Assign the user the [**Administrator** platform role for VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
@@ -962,13 +962,13 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
           <td><code>subjects.kind</code></td>
           <td>Specify the kind as one of the following:
           <ul><li>`User`: Bind the RBAC role or cluster role to an individual user in your account.</li>
-          <li>`Group`: Bind the RBAC role or cluster role to an [{{site.data.keyword.cloud_notm}} IAM access group](/docs/iam?topic=iam-groups#groups) in your account.</li>
+          <li>`Group`: Bind the RBAC role or cluster role to an [{{site.data.keyword.cloud_notm}} IAM access group](/docs/account?topic=account-groups#groups) in your account.</li>
           <li>`ServiceAccount`: Bind the RBAC role or cluster role to a service account in a namespace in your cluster.</li></ul></td>
           </tr>
           <tr>
           <td><code>subjects.name</code></td>
           <td><ul><li>For `User`: Append the individual user's email address to `IAM#` as follows: <code>IAM#user@email.com</code>.</li>
-          <li>For `Group`: Specify the name of the [{{site.data.keyword.cloud_notm}} IAM access group](/docs/iam?topic=iam-groups#groups) in your account.</li>
+          <li>For `Group`: Specify the name of the [{{site.data.keyword.cloud_notm}} IAM access group](/docs/account?topic=account-groups#groups) in your account.</li>
           <li>For `ServiceAccount`: Specify the service account name.</li></ul></td>
           </tr>
           <tr>
@@ -1270,7 +1270,7 @@ To avoid this issue for future users, consider using a functional ID user for th
         {: pre}
 
 3.  **API key**: If the user's username is returned, use another user's credentials to set the API key.
-    1.  [Invite a functional ID user](/docs/iam?topic=iam-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user. In case a person leaves the team, the functional ID user remains the API key owner.
+    1.  [Invite a functional ID user](/docs/account?topic=account-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user. In case a person leaves the team, the functional ID user remains the API key owner.
     2.  [Ensure that the functional ID user who sets the API key has the correct permissions](#owner_permissions).
     3.  Log in as the functional ID.
         ```
@@ -1307,7 +1307,7 @@ If a user in your account is leaving your organization, you must remove permissi
 
 1.  [Check that the user's infrastructure credentials are not used](#removing_check_infra) for any Red Hat OpenShift on IBM Cloud resources.
 2.  If you have other service instances in your {{site.data.keyword.cloud_notm}} account that the user might have provisioned, check the documentation for those services for any steps that you must complete before you remove the user from the account.
-3.  [Remove the user from the {{site.data.keyword.cloud_notm}} account](/docs/iam?topic=iam-remove). When you remove a user, the user's assigned {{site.data.keyword.cloud_notm}} IAM platform roles, Cloud Foundry roles, and IBM Cloud infrastructure roles are automatically removed.
+3.  [Remove the user from the {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-remove). When you remove a user, the user's assigned {{site.data.keyword.cloud_notm}} IAM platform roles, Cloud Foundry roles, and IBM Cloud infrastructure roles are automatically removed.
 4.  When {{site.data.keyword.cloud_notm}} IAM platform permissions are removed, the user's permissions are also automatically removed from the associated predefined RBAC roles. However, if you created custom RBAC roles or cluster roles, [remove the user from those RBAC role bindings or cluster role bindings](#remove_custom_rbac).<p class="note">The {{site.data.keyword.cloud_notm}} IAM permission removal process is asynchronous and can take some time to complete.</p>
 
 ### Removing specific permissions
@@ -1317,7 +1317,7 @@ If you want to remove specific permissions for a user, you can remove individual
 {: shortdesc}
 
 Before you begin, [check that the user's infrastructure credentials are not used](#removing_check_infra) for any Red Hat OpenShift on IBM Cloud resources. After checking, you can remove:
-* [a user from an access group](/docs/iam?topic=iam-iammanidaccser#removing_access)
+* [a user from an access group](/docs/account?topic=account-iammanidaccser#removing_access)
 * [a user's {{site.data.keyword.cloud_notm}} IAM platform and associated RBAC permissions](#remove_iam_rbac)
 * [a user's custom RBAC permissions](#remove_custom_rbac)
 * [a user's Cloud Foundry permissions](#remove_cloud_foundry)

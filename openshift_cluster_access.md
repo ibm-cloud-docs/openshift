@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -381,7 +381,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
 ### Using an API key to log in to OpenShift clusters
 {: #access_api_key}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an OpenShift cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/iam?topic=iam-manapikey).
+You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an OpenShift cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/account?topic=account-manapikey).
 {: shortdesc}
 
 1.  Create an {{site.data.keyword.cloud_notm}} API key.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
@@ -451,7 +451,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 ### Using a service ID to log in to OpenShift clusters
 {: #access_service_id}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an OpenShift cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids).
+You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an OpenShift cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
 {: shortdesc}
 
 1.  Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.

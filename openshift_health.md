@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-07-16"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -221,7 +221,7 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 
 * You must have the following permissions:
   * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
-  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/iam?topic=iam-userroles) for {{site.data.keyword.la_full_notm}}.
+  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/account?topic=account-userroles) for {{site.data.keyword.la_full_notm}}.
 * For the cluster that you want to collect API server audit logs from: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 * Keep in mind that only one audit webhook can be created in a cluster.
 

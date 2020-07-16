@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -540,7 +540,7 @@ When you create a cluster, the cluster has an {{site.data.keyword.cloud_notm}} I
 You can check the image pull secrets by [logging in to your cluster](/docs/openshift?topic=openshift-access_cluster) and running `oc get secrets -n default | grep "icr-io"`. If no `icr` secrets are listed, the person who created the cluster might not have had the required permissions to {{site.data.keyword.registrylong_notm}} in IAM. See [Updating existing clusters to use the API key image pull secret](#imagePullSecret_migrate_api_key).
 
 **Can I restrict pull access to a certain regional registry?**<br>
-Yes, you can [edit the existing IAM policy of the service ID](/docs/iam?topic=iam-serviceidpolicy#access_edit) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#existing_users).
+Yes, you can [edit the existing IAM policy of the service ID](/docs/account?topic=account-serviceidpolicy#access_edit) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#existing_users).
 
   Want to make your registry credentials even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt Kubernetes secrets in your cluster, such as the image pull secret that stores your registry credentials.
   {: tip}
@@ -554,7 +554,7 @@ Yes, create an API key in the {{site.data.keyword.cloud_notm}} account that you 
 To use a non-{{site.data.keyword.cloud_notm}} registry such as Docker, see [Accessing images that are stored in other private registries](#private_images).
 
 **Does the API key need to be for a service ID? What happens if I reach the limit of service IDs for my account?**<br>
-The default cluster setup creates a service ID to store {{site.data.keyword.cloud_notm}} IAM API key credentials in the image pull secret. However, you can also create an API key for an individual user and store those credentials in an image pull secret. If you reach the [IAM limit for service IDs](/docs/iam?topic=iam-iam_limits#iam_limits), your cluster is created without the service ID and image pull secret and cannot pull images from the `icr.io` registry domains by default. You must [create your own image pull secret](#other_registry_accounts), but by using an API key for an individual user such as a functional ID, not an {{site.data.keyword.cloud_notm}} IAM service ID.
+The default cluster setup creates a service ID to store {{site.data.keyword.cloud_notm}} IAM API key credentials in the image pull secret. However, you can also create an API key for an individual user and store those credentials in an image pull secret. If you reach the [IAM limit for service IDs](/docs/account?topic=account-iam_limits#iam_limits), your cluster is created without the service ID and image pull secret and cannot pull images from the `icr.io` registry domains by default. You must [create your own image pull secret](#other_registry_accounts), but by using an API key for an individual user such as a functional ID, not an {{site.data.keyword.cloud_notm}} IAM service ID.
 
 **I see image pull secrets for the regional registry domains and all registry domains. Which one do I use?**<br>
 Previously, Red Hat OpenShift on IBM Cloud created separate image pull secrets for each regional, public `icr.io` registry domain. Now, all the public and private `icr.io` registry domains for all regions are stored in a single `all-icr-io` image pull secret that is automatically created in the `default` project of your cluster.
@@ -640,7 +640,7 @@ New Red Hat OpenShift on IBM Cloud clusters store an API key in [image pull secr
 *   To pull images in OpenShift projects other than `default` or from other {{site.data.keyword.cloud_notm}} accounts, [copy or create another image pull secret](#other).
 *   To restrict the image pull secret access to particular registry resources such as namespaces or regions:
     1.  Make sure that [{{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}} are enabled](/docs/Registry?topic=Registry-user#existing_users).
-    2.  [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/iam?topic=iam-serviceidpolicy#access_edit) for the service ID, or [create another image pull secret](#other_registry_accounts).
+    2.  [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/account?topic=account-serviceidpolicy#access_edit) for the service ID, or [create another image pull secret](#other_registry_accounts).
 
 <br />
 

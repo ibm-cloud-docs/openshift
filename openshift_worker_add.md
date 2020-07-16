@@ -515,6 +515,7 @@ To uninstall the drivers and platform software, you can follow the same steps, b
 ## Adding tags to existing clusters
 {: #cluster_tags}
 
+
 You can assign a tag to Red Hat OpenShift on IBM Cloud clusters to help manage your {{site.data.keyword.cloud_notm}} resources. For example, you might add `key:value` tags to your cluster and other cloud resources so that your billing department track resources, such as `costctr:1234`. Tags are visible account-wide. For more information, see [Working with tags](/docs/account?topic=account-tag).
 {: shortdesc}
 
