@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-16"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -35,68 +35,117 @@ subcollection: openshift
 
 
 
-
-
-
 <style>
-<!--
-    #tutorials { /* hide the page header */
-        display: none !important
-    }
-    .allCategories {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-    }
-    .icon {
-        width: 5rem;
-        height: 5rem;
-    }
-    .bx--tile-content {
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
-        background-color: #fff;
-        border: 1px solid #dfe3e6;
-    }
-    .solutionBoxContainer {}
-    .solutionBox {
-        display: inline-block !important;
-        width: 600px !important;
-        margin: 0 10px 20px 0 !important;
-        padding: 10px !important;
-        border: 1px #dfe6eb solid !important;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-    }
-    @media screen and (min-width: 960px) {
+    <!--
+        #tutorials { /* hide the page header */
+            display: none !important;
+        }
+        .allCategories {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+        }
+        .categoryBox {
+            flex-grow: 1 !important;
+            width: calc(33% - 20px) !important;
+            text-decoration: none !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            border: 1px #dfe6eb solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+            text-align: center !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+        }
+        .solutionBoxContainer {}
+        .solutionBoxContainer a {
+            text-decoration: none !important;
+            border: none !important;
+        }
         .solutionBox {
-        width: 27% !important;
+            display: inline-block !important;
+            width: 100% !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            background-color: #f4f4f4 !important;
+        }
+        @media screen and (min-width: 960px) {
+            .solutionBox {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBox.solutionBoxFeatured {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBoxContent {
+            height: 350px !important;
+            }
+        }
+        @media screen and (min-width: 1298px) {
+            .solutionBox {
+            width: calc(33% - 2%) !important;
+            }
+            .solutionBoxContent {
+            min-height: 350px !important;
+            }
+        }
+        .solutionBox:hover {
+            border: 1px rgb(136, 151, 162)solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
         }
         .solutionBoxContent {
-        height: 300px !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
-    }
-    @media screen and (min-width: 1298px) {
-        .solutionBox {
-        width: calc(33% - 2%) !important;
+        .solutionBoxTitle {
+            margin: 0rem !important;
+            margin-bottom: 5px !important;
+            font-size: 14px !important;
+            font-weight: 900 !important;
+            line-height: 16px !important;
+            height: 37px !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            -webkit-box-align: inherit !important;
         }
-        .solutionBoxContent {
-        min-height: 300px !important;
+        .solutionBoxDescription {
+            flex-grow: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
-    }
-    .solutionBox:hover {
-        border-color: rgb(136, 151, 162) !important;
-    }
-    .solutionBoxDescription {
-        flex-grow: 1 !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .bx--type-caption {
-        text-decoration: none;
-    }
--->
-</style>
-
-
+        .descriptionContainer {
+        }
+        .descriptionContainer p {
+            margin: 0 !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 4 !important;
+            -webkit-box-orient: vertical !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            line-height: 1.5 !important;
+            letter-spacing: 0 !important;
+            max-height: 70px !important;
+        }
+        .architectureDiagramContainer {
+            flex-grow: 1 !important;
+            min-width: calc(33% - 2%) !important;
+            padding: 0 16px !important;
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            background-color: #f4f4f4;
+        }
+        .architectureDiagram {
+            max-height: 175px !important;
+            padding: 5px !important;
+            margin: 0 auto !important;
+        }
+    -->
+    </style>
 
 # Learning path for administrators
 {: #learning-path-admin}
@@ -109,16 +158,16 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_plan">
       <div>
         <img src="images/icon-plan.png" alt="Planning icon" style="height:50px; border-style: none"/>
-        <h2>Plan your environment</h2>
+        <p><strong>Plan your environment</strong></p>
         <p class="bx--type-caption">Start by designing a highly available cluster with capacity for app workloads.</p>
       </div>
     </a>
   </div>
   <div class="solutionBox">
-    <a href = "#admin_cluster">
+      <a href = "#admin_cluster">
       <div>
-        <img src="images/icon-containers-bw.svg" alt="Cluster icon" style="height:50px; border-style: none"/>
-        <h2>Create a cluster</h2>
+        <img src="images/icon-pictogram-containers.svg" alt="Cluster icon" style="height:50px; border-style: none"/>
+        <p><strong>Create a cluster</strong></p>
         <p class="bx--type-caption">Create a cluster according to your planned setup.</p>
       </div>
     </a>
@@ -127,7 +176,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_network">
       <div>
         <img src="images/network--services.svg" alt="Network icon" style="height:50px; border-style: none"/>
-        <h2>Manage the network</h2>
+        <p><strong>Manage the network</strong></p>
         <p class="bx--type-caption">Configure cluster connectivity to other networks or manage cluster subnets.</p>
       </div>
     </a>
@@ -136,7 +185,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_secure">
       <div>
         <img src="images/lock--alt.svg" alt="Security icon" style="height:50px; border-style: none"/>
-        <h2>Secure your cluster</h2>
+        <p><strong>Secure your cluster</strong></p>
         <p class="bx--type-caption">Protect the cluster infrastructure and network and isolate compute resources.</p>
       </div>
     </a>
@@ -145,7 +194,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_health">
       <div>
         <img src="images/chart--line.svg" alt="Health icon" style="height:50px; border-style: none"/>
-        <h2>Log and monitor</h2>
+        <p><strong>Log and monitor</strong></p>
         <p class="bx--type-caption">Improve your cluster's health and performance with logging and monitoring.</p>
       </div>
     </a>
@@ -154,7 +203,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_registry">
       <div>
         <img src="images/path.svg" alt="Health icon" style="height:50px; border-style: none"/>
-        <h2>Add a registry and CI/CD</h2>
+        <p><strong>Add a registry and CI/CD</strong></p>
         <p class="bx--type-caption">Set up an image registry and a continuous integration and delivery pipeline.</p>
       </div>
     </a>
@@ -163,7 +212,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_storage">
       <div>
         <img src="images/data--storage.svg" alt="Storage icon" style="height:50px; border-style: none"/>
-        <h2>Add storage</h2>
+        <p><strong>Add storage</strong></p>
         <p class="bx--type-caption">Plan and add highly available persistent storage for your app data.</p>
       </div>
     </a>
@@ -172,7 +221,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_integrate">
       <div>
         <img src="images/connect.svg" alt="Integrations icon" style="height:50px; border-style: none"/>
-        <h2>Add integrations</h2>
+        <p><strong>Add integrations</strong></p>
         <p class="bx--type-caption">Enhance cluster capabilities by integrating external and catalog services.</p>
       </div>
     </a>
@@ -181,7 +230,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
     <a href = "#admin_lifecycle">
       <div>
         <img src="images/renew.svg" alt="Lifecycle icon" style="height:50px; border-style: none"/>
-        <h2>Manage the lifecycle</h2>
+        <p><strong>Manage the lifecycle</strong></p>
         <p class="bx--type-caption">Manage your cluster and components through all cluster lifecycle phases.</p>
       </div>
     </a>

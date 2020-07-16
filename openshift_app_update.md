@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-16"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
@@ -66,12 +66,12 @@ Want to scale your worker nodes instead of your pods? Check out the [cluster aut
 {: tip}
 
 Before you begin:
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - Make sure that you are assigned a [service role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 Steps:
 
-1.  Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/openshift?topic=openshift-deploy_app#app_cli).
+1.  Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/containers?topic=containers-deploy_app#app_cli).
     ```
     oc create deployment <app_name> --image=<image>
     ```
@@ -124,8 +124,8 @@ Want to prevent downtime during your rolling update? Be sure to specify a [readi
 {: tip}
 
 Before you begin:
-*   [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
-*   Create a [deployment](/docs/openshift?topic=openshift-deploy_app#app_cli).
+*   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+*   Create a [deployment](/docs/containers?topic=containers-deploy_app#app_cli).
 *   Make sure that you have a [service role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 To manage rolling updates to your apps:
@@ -326,5 +326,6 @@ Before you begin, you need two clusters and the **Manager** [service role](/docs
     oc get all
     ```
     {: pre}
+
 
 

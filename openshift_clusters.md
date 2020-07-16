@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-01"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -147,11 +147,11 @@ After you set up your account to create clusters, decide on the setup for your c
     <area target="" alt="Free and standard cluster comparison" title="Free and standard cluster comparison" href="/docs/containers?topic=containers-cs_ov#cluster_types" coords="43,9,361,106" shape="rect">
     <area target="" alt="OpenShift and Kubernetes comparison" title="OpenShift and Kubernetes comparison" href="/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes" coords="110,128,467,224" shape="rect">
     <area target="" alt="VPC and classic infrastructure comparison" title="VPC and classic infrastructure comparison" href="/docs/containers?topic=containers-infrastructure_providers" coords="60,252,398,352" shape="rect">
-    <area target="" alt="Locations" title="Locations" href="/docs/containers?topic=containers-regions-and-zones#zones" coords="101,377,564,456" shape="rect">
-    <area target="" alt="Virtual Machines" title="Virtual Machines" href="/docs/containers?topic=containers-planning_worker_nodes#vm" coords="105,488,564,538" shape="rect">
-    <area target="" alt="Bare metal machines" title="Bare metal machines" href="/docs/containers?topic=containers-planning_worker_nodes#bm" coords="566,569,372,546" shape="rect">
-    <area target="" alt="VPC scenarios" title="VPC scenarios" href="/docs/containers?topic=containers-plan_clusters#vpc-scenarios" coords="104,597,298,675" shape="rect">
-    <area target="" alt="Classic scenarios" title="Classic scenarios" href="/docs/containers?topic=containers-plan_clusters#classic-scenarios" coords="369,596,566,674" shape="rect">
+    <area target="" alt="Locations" title="Locations" href="/docs/openshift?topic=openshift-regions-and-zones#zones" coords="101,377,564,456" shape="rect">
+    <area target="" alt="Virtual Machines" title="Virtual Machines" href="/docs/openshift?topic=openshift-planning_worker_nodes#vm" coords="105,488,564,538" shape="rect">
+    <area target="" alt="Bare metal machines" title="Bare metal machines" href="/docs/openshift?topic=openshift-planning_worker_nodes#bm" coords="566,569,372,546" shape="rect">
+    <area target="" alt="VPC scenarios" title="VPC scenarios" href="/docs/openshift?topic=openshift-plan_clusters#vpc-scenarios" coords="104,597,298,675" shape="rect">
+    <area target="" alt="Classic scenarios" title="Classic scenarios" href="/docs/openshift?topic=openshift-plan_clusters#classic-scenarios" coords="369,596,566,674" shape="rect">
     <area target="" alt="Classic firewall" title="Classic firewall" href="/docs/containers?topic=containers-firewall" coords="369,681,564,704" shape="rect">
     <area target="" alt="VPC ACLs and firewall" title="VPC ACLs and firewall" href="/docs/containers?topic=containers-firewall" coords="103,680,298,704" shape="rect">
     <area target="" alt="Estimate costs (cluster create page)" title="Estimate costs (cluster create page)" href="https://cloud.ibm.com/kubernetes/catalog/create" coords="248,732,426,776" shape="rect">
@@ -179,7 +179,7 @@ Create your single zone or multizone classic OpenShift cluster by using the {{si
 3. Configure your cluster environment.
    4. Give your cluster a unique name. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
  **Note**: Changing the unique ID or domain name that is assigned during cluster creation blocks the OpenShift master from managing your cluster.
-   5. **Optional**: Add a [tag](/docs/resources?topic=resources-tag) to your cluster to help manage {{site.data.keyword.cloud_notm}} resources, such as the team or billing department that uses the cluster.
+   5. **Optional**: Add a [tag](/docs/account?topic=account-tag) to your cluster to help manage {{site.data.keyword.cloud_notm}} resources, such as the team or billing department that uses the cluster.
    6. Select a resource group in which to create your cluster.
       * A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group.
       * To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#platform) for the resource group.
@@ -275,7 +275,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 6. Create your standard cluster.
     ```
-    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--disable-disk-encrypt]
+    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt]
     ```
     {: pre}
 
@@ -330,8 +330,27 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    <td>**For OpenShift 3.11 clusters only, in [VRF-enabled](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoint-enabled](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) accounts**: Enable the private service endpoint so that your OpenShift master and the worker nodes can communicate over the private VLAN. In addition, enable the public service endpoint by using the `--public-service-endpoint` flag to access your cluster over the internet. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</td>   
    </tr>
    <tr>
+   <td><code>--pod-subnet</code></td>
+   <td>All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+   <p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pod IP addresses for eight worker nodes, <code>/21</code> to have enough pod IP addresses for 16 worker nodes, and so on.</p>
+   <p>The subnet that you choose must be within one of the following ranges:
+   <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+   <li><code>172.21.0.0 - 172.31.255.255</code></li>
+   <li><code>192.168.0.0 - 192.168.254.255</code></li>
+   <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The service subnet is in the 172.21.0.0/16 range by default.</p></td>
+   </tr>
+   <tr>
+   <td><code>--service-subnet</code></td>
+   <td>All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
+   <p>The subnet must be specified in CIDR format with a size of at least <code>/24</code>, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
+   <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+   <li><code>172.21.0.0 - 172.31.255.255</code></li>
+   <li><code>192.168.0.0 - 192.168.254.255</code></li>
+   <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The pod subnet is in the 172.30.0.0/16 range by default.</p></td>
+   </tr>
+   <tr>
    <td><code>--disable-disk-encrypt</code></td>
-   <td>Worker nodes feature AES 256-bit [disk encryption](/docs/containers?topic=containers-security#encrypted_disk) by default. If you want to disable encryption, include this option.</td>
+   <td>Worker nodes feature AES 256-bit [disk encryption](/docs/openshift?topic=openshift-security#encrypted_disk) by default. If you want to disable encryption, include this option.</td>
    </tr>
    <tr>
    <td><code><strong>--entitlement cloud_pak</strong></code></td>
@@ -428,7 +447,9 @@ Your VPC cluster is created with both a public and a private service endpoint. W
    5. From the **Cloud Object Storage** drop-down menu, select the standard instance where you want to create a bucket to back up the images from your cluster's internal registry.
    5. Give your cluster a unique name. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
  **Note**: Changing the unique ID or domain name that is assigned during cluster creation blocks the OpenShift master from managing your cluster.
-   6. **Optional**: Add a [tag](/docs/resources?topic=resources-tag) to your cluster to help manage {{site.data.keyword.cloud_notm}} resources, such as the team or billing department that uses the cluster.
+
+   6. **Optional**: Add a [tag](/docs/account?topic=account-tag) to your cluster to help manage {{site.data.keyword.cloud_notm}} resources, such as the team or billing department that uses the cluster.
+
    7. Select a resource group in which to create your cluster.
       * A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group.
       * To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#platform) for the resource group.
@@ -455,7 +476,7 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
 
 **Before you begin**:
 * Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
-* Install the {{site.data.keyword.cloud_notm}} CLI and the [Red Hat OpenShift on IBM Cloud plug-in](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_install).
+* Install the {{site.data.keyword.cloud_notm}} CLI and the [Red Hat OpenShift on IBM Cloud plug-in](/docs/containers?topic=containers-cs_cli_install#cs_cli_install).
 * Install the [VPC CLI plug-in](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#cli-ref-prereqs).
 
 <br>
@@ -508,7 +529,7 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
       {: pre}
 6. Create the cluster in your VPC. You can use the `cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.3_openshift --provider vpc-gen2 --cos-instance <cos_ID> [--workers <number_workers_per_zone>] [--disable-public-service-endpoint]
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.3_openshift --provider vpc-gen2 --cos-instance <cos_ID> [--workers <number_workers_per_zone>] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint]
     ```
     {: pre}
 
@@ -556,6 +577,25 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
     <tr>
     <td><code>--workers <em>&lt;number&gt;</em></code></td>
     <td>Specify the number of worker nodes to include in the cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.</td>
+    </tr>
+    <tr>
+    <td><code>--pod-subnet</code></td>
+    <td>In the first cluster that you create in a Gen 2 VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+    <p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pod IP addresses for eight worker nodes, <code>/21</code> to have enough pod IP addresses for 16 worker nodes, and so on.</p>
+    <p>The subnet that you choose must be within one of the following ranges:
+    <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+    <li><code>172.21.0.0 - 172.31.255.255</code></li>
+    <li><code>192.168.0.0 - 192.168.254.255</code></li>
+    <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets do not overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range).</p></td>
+    </tr>
+    <tr>
+    <td><code>--service-subnet</code></td>
+    <td>All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
+    <p>The subnet must be specified in CIDR format with a size of at least <code>/24</code>, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
+    <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+    <li><code>172.21.0.0 - 172.31.255.255</code></li>
+    <li><code>192.168.0.0 - 192.168.254.255</code></li>
+    <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap.</p></td>
     </tr>
     <tr>
     <td><code>--disable-public-service-endpoint</code></td>
@@ -610,7 +650,7 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 
 When the cluster is up and running, you can check out the following cluster administration tasks:
 - If you created the cluster in a multizone capable zone, [spread worker nodes by adding a zone to your cluster](/docs/openshift?topic=openshift-add_workers).
-- [Deploy an app in your cluster.](/docs/openshift?topic=openshift-deploy_app#app_cli)
+- [Deploy an app in your cluster.](/docs/containers?topic=containers-deploy_app#app_cli)
 - [Set up your own private registry in {{site.data.keyword.cloud_notm}} to store and share Docker images with other users.](/docs/Registry?topic=Registry-getting-started)
 - [Set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
 - Control who can create pods in your cluster with [pod security policies](/docs/containers?topic=containers-psp).
@@ -626,6 +666,9 @@ Then, you can check out the following network configuration steps for your clust
   * Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access).
   * Connect your cluster with services in private networks outside of your {{site.data.keyword.cloud_notm}} account or with resources in other VPCs by [setting up the {{site.data.keyword.vpc_short}} VPN](/docs/openshift?topic=openshift-vpc-vpnaas).
   * [Create access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy) to control ingress and egress traffic to your VPC subnets.
+
+
+
 
 
 

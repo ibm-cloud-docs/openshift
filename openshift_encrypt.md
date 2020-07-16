@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-14"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -220,7 +220,7 @@ After the KMS provider is enabled in the cluster, data in `etcd`, existing secre
 After you enable a KMS provider in your cluster, you can verify that your cluster secrets are encrypted by querying information that is in `etcd` in the master. If the returned information is encrypted, you know that the KMS provider works in your cluster.
 {: shortdesc}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Install the etcd CLI (`etcdctl`) version 3 or higher.
     1.  Download the release package for your operating system from the [etcd project](https://github.com/etcd-io/etcd/releases){: external}.
@@ -239,49 +239,50 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     export ETCDCTL_API=3
     ```
     {: pre}
-3.  Download the Calico configuration file that contains information about the etcd component of the cluster. The **Network Config** output includes the path to the downloaded Calico configuration file.
+3.  Run the `ibmcloud oc cluster config` command and include the `--admin` option, which downloads the `etcd` certificates and keys for your cluster, and the `--output zip > <cluster_name_or_ID>.zip` option, which saves your cluster configuration files to a compressed folder.
     ```
-    ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --network
+    ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --output zip > <cluster_name_or_ID>.zip
     ```
     {: pre}
+4. Unzip the compressed folder.
+
+5. Get the `server` field for your cluster. In the output, copy only the master URL, without the `https://` and node port. For example, in the following output, copy the `c2.us-south.containers.cloud.ibm.com` master URL only.
+    ```
+    cat ./<cluster_name_or_ID>/kube-config.yaml | grep server
+    ```
+    {: pre}
+
     Example output:
     ```
-    The configuration for <cluster_name> was downloaded successfully.
-
-    Network Config:
-
-    /Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/calicoctl.cfg
+        server: https://c2.us-south.containers.cloud.ibm.com:30426
     ```
     {: screen}
-4.  From the Calico configuration file, note the values of the `etcdEndpoints`, `etcdCACertFile`, `etcdKeyFile`, and `etcdCertFile` fields.
+
+5. Get the `etcdPort` for your cluster.
     ```
-    cat /Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/calicoctl.cfg
+    ibmcloud oc cluster get -c <cluster_name_or_ID> --json | grep etcdPort
     ```
     {: pre}
+
     Example output:
     ```
-    apiVersion: projectcalico.org/v3
-    kind: CalicoAPIConfig
-    spec:
-      datastoreType: etcdv3
-      etcdEndpoints: https://<master_URL>:31773
-      etcdKeyFile: '/Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/admin-key.pem'
-      etcdCertFile: '/Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/admin.pem'
-      etcdCACertFile: '/Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/ca-<location>-<cluster_name>.pem'
+        "etcdPort": "31593",
     ```
     {: screen}
-5. Get the name of any secret in the `default` namespace in your cluster.
+
+6. Get the name of a secret in your cluster.
     ```
-    {[kubectl get secrets]}
-    ```
-    {: pre}
-6.  Confirm that the Kubernetes secrets for the cluster are encrypted. Replace the `secret_name`, `etcdEndpoints`, `etcdKeyFile`, `etcdCertFile`, and `etcdCACertFile` fields with the values that you previously retrieved. The output is unreadable and scrambled, indicating that the secrets are encrypted.
-    ```
-    etcdctl get /kubernetes.io/secrets/default/<secret_name> --endpoints <etcdEndpoints> --key="<etcdKeyFile>" --cert="<etcdCertFile>" --cacert="<etcdCACertFile>"
+    oc get secrets [-n <namespace>]
     ```
     {: pre}
 
-    Example output of encrypted secrets:
+7.  Confirm that the Kubernetes secrets for the cluster are encrypted. Replace the `secret_name`, `master_url`, and `etcd_port` fields with the values that you previously retrieved, and replace `<cluster_name_or_ID>` with the name of the cluster in your compressed folder file path.
+    ```
+    etcdctl get /kubernetes.io/secrets/<secret_namespace>/<secret_name> --endpoints https://<master_url>:<etcd_port> --key="./<cluster_name_or_ID>/admin-key.pem" --cert="./<cluster_name_or_ID>/admin.pem" --cacert="./<cluster_name_or_ID>/ca.pem"
+    ```
+    {: pre}
+
+    The output is unreadable and scrambled, indicating that the secrets are encrypted. Example output of encrypted secrets:
     ```
     k8s:enc:kms:v1:ibm:...=a?u???T?fE?pC?/?f|???'?z
     ?nI?a,)?
@@ -291,7 +292,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     ```
     {: screen}
 
-    If you see a `context deadline exceeded` error, you might have a temporary connectivity issue. Verify that you downloaded the Calico configuration file with the `ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --network` command. Check that your local `etcdctl` version matches the remote `etcd` version. Run the `etcdctl get` commmand with the `--debug=true` flag to see any additional information. Then wait a few minutes and try again.
+    If you see a `context deadline exceeded` error, you might have a temporary connectivity issue. Check that your local `etcdctl` version matches the remote `etcd` version. Run the `etcdctl get` commmand with the `--debug=true` flag to see any additional information. Then wait a few minutes and try again.
     {: tip}
 
 ## Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)

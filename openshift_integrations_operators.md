@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -36,86 +36,116 @@ subcollection: openshift
 
 
 <style>
-<!--
-    #tutorials { /* hide the page header */
-        display: none !important
-    }
-    .allCategories {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-    }
-    .solutionBoxContainer {}
-    .solutionBoxContainer a {
-        text-decoration: none !important;
-        border: none !important;
-    }
-    .solutionBox {
-        display: inline-block !important;
-        width: 600px !important;
-        margin: 0 10px 20px 0 !important;
-        padding: 10px !important;
-        border: 1px #dfe6eb solid !important;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-    }
-    @media screen and (min-width: 960px) {
+    <!--
+        #tutorials { /* hide the page header */
+            display: none !important;
+        }
+        .allCategories {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+        }
+        .categoryBox {
+            flex-grow: 1 !important;
+            width: calc(33% - 20px) !important;
+            text-decoration: none !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            border: 1px #dfe6eb solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+            text-align: center !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+        }
+        .solutionBoxContainer {}
+        .solutionBoxContainer a {
+            text-decoration: none !important;
+            border: none !important;
+        }
         .solutionBox {
-        width: 27% !important;
+            display: inline-block !important;
+            width: 100% !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            background-color: #f4f4f4 !important;
+        }
+        @media screen and (min-width: 960px) {
+            .solutionBox {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBox.solutionBoxFeatured {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBoxContent {
+            height: 350px !important;
+            }
+        }
+        @media screen and (min-width: 1298px) {
+            .solutionBox {
+            width: calc(33% - 2%) !important;
+            }
+            .solutionBoxContent {
+            min-height: 350px !important;
+            }
+        }
+        .solutionBox:hover {
+            border: 1px rgb(136, 151, 162)solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
         }
         .solutionBoxContent {
-        height: 320px !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
-    }
-    @media screen and (min-width: 1298px) {
-        .solutionBox {
-        width: calc(33% - 2%) !important;
+        .solutionBoxTitle {
+            margin: 0rem !important;
+            margin-bottom: 5px !important;
+            font-size: 14px !important;
+            font-weight: 900 !important;
+            line-height: 16px !important;
+            height: 37px !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            -webkit-box-align: inherit !important;
         }
-        .solutionBoxContent {
-        min-height: 320px !important;
+        .solutionBoxDescription {
+            flex-grow: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
-    }
-    .solutionBox:hover {
-        border-color: rgb(136, 151, 162) !important;
-    }
-    .solutionBoxContent {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .solutionBoxDescription {
-        flex-grow: 1 !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .descriptionContainer {
-    }
-    .descriptionContainer p {
-        margin: 2px !important;
-        overflow: hidden !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 4 !important;
-        -webkit-box-orient: vertical !important;
-        font-size: 12px !important;
-        font-weight: 400 !important;
-        line-height: 1.5 !important;
-        letter-spacing: 0 !important;
-        max-height: 70px !important;
-    }
-    .architectureDiagramContainer {
-        flex-grow: 1 !important;
-        min-width: 200px !important;
-        padding: 0 10px !important;
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-    }
-    .architectureDiagram {
-        max-height: 170px !important;
-        padding: 5px !important;
-        margin: 0 auto !important;
-    }
--->
-</style>
+        .descriptionContainer {
+        }
+        .descriptionContainer p {
+            margin: 0 !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 4 !important;
+            -webkit-box-orient: vertical !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            line-height: 1.5 !important;
+            letter-spacing: 0 !important;
+            max-height: 70px !important;
+        }
+        .architectureDiagramContainer {
+            flex-grow: 1 !important;
+            min-width: calc(33% - 2%) !important;
+            padding: 0 16px !important;
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            background-color: #f4f4f4;
+        }
+        .architectureDiagram {
+            max-height: 175px !important;
+            padding: 5px !important;
+            margin: 0 auto !important;
+        }
+    -->
+    </style>
 
 # Adding services by using Operators
 {: #operators}
@@ -153,10 +183,10 @@ Try out the following tutorial.
 {: note}
 
 <div class = "solutionBoxContainer">
-    <a href = "https://developer.ibm.com/tutorials/simplify-lifecycle-management-kubernetes-OpenShift-ibm-cloud-operator/">
     <div class = "solutionBox">
+    <a href = "https://developer.ibm.com/tutorials/simplify-lifecycle-management-kubernetes-OpenShift-ibm-cloud-operator/">
         <div class = "solutionBoxContent">
-                App lifecycle management with {{site.data.keyword.cloud_notm}} Operator
+                <p><strong>App lifecycle management with {{site.data.keyword.cloud_notm}} Operator</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
                   </br> <p>Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}} Operator to simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your OpenShift cluster.</p></br>
@@ -166,8 +196,8 @@ Try out the following tutorial.
                 </div>
             </div>
         </div>
-    </div>
     </a>
+    </div>
 </div>
 
 <br />

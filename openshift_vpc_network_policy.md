@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -62,7 +62,7 @@ The following table describes the basic characteristics of each network security
 <br />
 
 
-## Step 1: Controlling traffic with ACLs
+## Controlling traffic with ACLs
 {: #acls}
 {: help}
 {: support}
@@ -78,7 +78,7 @@ Control inbound and outbound traffic to your cluster by creating and applying ac
 
 **Limitations**: If you create multiple clusters that use the same subnets in one VPC, you cannot use ACLs to control traffic between the clusters because they share the same subnets. You can use [Calico network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers) to isolate your clusters on the private network.
 
-When you use the following steps to create custom ACLs, only network traffic that is specified in the ACL rules is permitted to and from your VPC subnets. All other traffic that is not specified in the ACLs is blocked for the subnets, such as cluster integrations with third party services. If you must allow other traffic to or from your worker nodes, be sure to specify those rules where noted in the following steps. For more information about ACL rule requirements and limitations, see [Setting up network ACLs](/docs/vpc?topic=vpc-using-acls).
+When you use the following steps to create custom ACLs, only network traffic that is specified in the ACL rules is permitted to and from your VPC subnets. All other traffic that is not specified in the ACLs is blocked for the subnets, such as cluster integrations with third party services. If you must allow other traffic to or from your worker nodes, be sure to specify those rules where noted in the following steps.
 {: important}
 
 For more information, see the [VPC documentation](/docs/vpc?topic=vpc-using-acls){: external}.
@@ -95,7 +95,7 @@ For each subnet that your cluster is attached to, use the {{site.data.keyword.cl
 4. In the **Rules** section, delete the default inbound rule and outbound rule that allow all inbound and outbound traffic.
 5. In the **Inbound rules** section, create the following rules by clicking **New rule**.
 
-   <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
+   <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
 
    <table>
    <caption>Inbound rule</caption>
@@ -231,7 +231,7 @@ For each subnet that your cluster is attached to, use the {{site.data.keyword.cl
    </table>
 6. In the **Outbound rules** section, create the following rules by clicking **New rule**.
 
-   <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
+   <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
 
    <table>
    <caption>Inbound rule</caption>
@@ -446,7 +446,7 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: pre}
 
-4. Delete the default rules that allow all inbound and outbound traffic. After, your ACL still exists, but does not container any networking rules.
+4. Delete the default rules that allow all inbound and outbound traffic. After, your ACL still exists, but does not contain any networking rules.
   ```
   ibmcloud is network-acl-rule-delete $acl_id <default_inbound_rule_ID> -f
   ```
@@ -494,7 +494,7 @@ To create an ACL for each subnet that your cluster is attached to:
 
 8. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
 
-  <p class="note">When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#network-acl-rule-add).</p>
+  <p class="note">When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#network-acl-rule-add-nlb).</p>
 
   ```
   ibmcloud is network-acl-rule-add $acl_id <allow|deny> <inbound|outbound> <protocol> <source_CIDR> <destination_CIDR> --name <new_rule_name>
@@ -547,7 +547,7 @@ ACL rules are applied to traffic in a specific order. If you want to add a rule 
 <br />
 
 
-## Step 2: Opening required ports in the default security group
+## Opening required ports in the default security group
 {: #security_groups}
 
 After you use ACLs to control traffic for VPC subnets, modify your VPC's default security group to allow incoming traffic to the `30000 - 32767` node port range on your worker nodes.
@@ -634,7 +634,7 @@ To open required ports in your security group:
 <br />
 
 
-## Step 3: Controlling traffic between pods with Kubernetes policies
+## Controlling traffic between pods with Kubernetes policies
 {: #kubernetes_policies}
 
 You can use Kubernetes policies to control network traffic between pods in your cluster and to isolate app microservices from each other within a namespace or across namespaces.

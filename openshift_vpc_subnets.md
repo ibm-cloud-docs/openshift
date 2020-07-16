@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-07-09"
 
 keywords: openshift, roks, rhoks, rhos, vpc subnets, ips, vlans, networking, public gateway
 
@@ -78,6 +78,30 @@ The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. For
 If you need to create your cluster by using custom-range subnets, see the guidance for [custom address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes). However, if you use custom-range subnets for your worker nodes, you must ensure that the IP range for the worker node subnets do not overlap with your cluster's pod subnet.
 * If you specified your own pod subnet in the `--pod-subnet` flag during cluster creation, your pods are assigned IP addresses from this range.
 * If you did not specify a custom pod subnet during cluster creation, your cluster uses the default pod subnet. In the first cluster that you create in a Gen 2 VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet.
+
+**Can I specify subnets for pods and services in my cluster?**
+
+If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods, and a custom subnet CIDR to provide the private IP addresses for services.
+
+To specify custom pod and service subnets during cluster creation, use the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` CLI command.
+
+**Pods**:
+* Default range: In the first cluster that you create in a Gen 2 VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet.
+* Size requirements: When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
+* Range requirements: The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the VPC subnets for your worker nodes. The subnet that you choose must be within one of the following ranges:
+    * `172.17.0.0 - 172.17.255.255`
+    * `172.21.0.0 - 172.31.255.255`
+    * `192.168.0.0 - 192.168.254.255`
+    * `198.18.0.0 - 198.19.255.255`
+
+**Services**:
+* Default range: All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
+* Size requirements: When you specify a custom subnet, the subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger.
+* Range requirements: The pod and service subnets cannot overlap each other. The subnet that you choose must be within one of the following ranges:
+    * `172.17.0.0 - 172.17.255.255`
+    * `172.21.0.0 - 172.31.255.255`
+    * `192.168.0.0 - 192.168.254.255`
+    * `198.18.0.0 - 198.19.255.255`
 
 ### Public gateways
 {: #vpc_basics_pgw}

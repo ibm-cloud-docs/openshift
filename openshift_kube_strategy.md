@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-26"
+lastupdated: "2020-07-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -162,7 +162,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
         {: screen}
     3.  Add the CPU and memory usage amounts to the [worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node) that are set for each worker node by default.
     4.  Subtract the worker node reserved and default app usage amounts from the total worker node size. This amount represents the total compute resources of your worker nodes before you deploy any apps or other workloads.
-3.  [Deploy your apps](/docs/openshift?topic=openshift-deploy_app) to the cluster, and make sure to [set resource requests and limits](/docs/openshift?topic=openshift-app#resourcereq) based on the [app size that you previously estimated](#sizing_resources) for your apps, to limit the amount of compute resources the apps can consume.
+3.  [Deploy your apps](/docs/openshift?topic=openshift-deploy_app) to the cluster, and make sure to [set resource requests and limits](/docs/openshift?topic=openshift-openshift_apps#resourcereq) based on the [app size that you previously estimated](#sizing_resources) for your apps, to limit the amount of compute resources the apps can consume.
 4.  Deploy any add-ons, plug-ins, or other cloud services that you want to use.
 5.  Review what compute resources your workloads consume and calculate the remaining cluster capacity to deploy additional apps or scale existing apps.
     1.  With at least the {{site.data.keyword.cloud_notm}} IAM **Reader** service role for the cluster in all namespaces: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -260,5 +260,6 @@ Review more information about making resources highly available.
 * [Run containers that are based on images in a cloud-based public registry](/docs/openshift?topic=openshift-images).
 * [Plan data storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). Especially for multizone clusters, consider using a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 * For multizone clusters, enable a [load balancer service](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config) or the Ingress [multizone load balancer](/docs/openshift?topic=openshift-ingress#ingress) to expose your apps publicly.
+
 
 

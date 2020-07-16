@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-16"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -36,59 +36,116 @@ subcollection: openshift
 
 
 <style>
-<!--
-    #tutorials { /* hide the page header */
-        display: none !important
-    }
-    .allCategories {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-    }
-    .icon {
-        width: 5rem;
-        height: 5rem;
-    }
-    .bx--tile-content {
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
-        background-color: #fff;
-        border: 1px solid #dfe3e6;
-    }
-    .solutionBoxContainer {}
-    .solutionBox {
-        display: inline-block !important;
-        width: 600px !important;
-        margin: 0 10px 20px 0 !important;
-        padding: 10px !important;
-        border: 1px #dfe6eb solid !important;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-    }
-    @media screen and (min-width: 960px) {
+    <!--
+        #tutorials { /* hide the page header */
+            display: none !important;
+        }
+        .allCategories {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+        }
+        .categoryBox {
+            flex-grow: 1 !important;
+            width: calc(33% - 20px) !important;
+            text-decoration: none !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            border: 1px #dfe6eb solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+            text-align: center !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+        }
+        .solutionBoxContainer {}
+        .solutionBoxContainer a {
+            text-decoration: none !important;
+            border: none !important;
+        }
         .solutionBox {
-        width: 27% !important;
+            display: inline-block !important;
+            width: 100% !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            background-color: #f4f4f4 !important;
+        }
+        @media screen and (min-width: 960px) {
+            .solutionBox {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBox.solutionBoxFeatured {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBoxContent {
+            height: 350px !important;
+            }
+        }
+        @media screen and (min-width: 1298px) {
+            .solutionBox {
+            width: calc(33% - 2%) !important;
+            }
+            .solutionBoxContent {
+            min-height: 350px !important;
+            }
+        }
+        .solutionBox:hover {
+            border: 1px rgb(136, 151, 162)solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
         }
         .solutionBoxContent {
-        height: 300px !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
-    }
-    @media screen and (min-width: 1298px) {
-        .solutionBox {
-        width: calc(33% - 2%) !important;
+        .solutionBoxTitle {
+            margin: 0rem !important;
+            margin-bottom: 5px !important;
+            font-size: 14px !important;
+            font-weight: 900 !important;
+            line-height: 16px !important;
+            height: 37px !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            -webkit-box-align: inherit !important;
         }
-        .solutionBoxContent {
-        min-height: 300px !important;
+        .solutionBoxDescription {
+            flex-grow: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
-    }
-    .solutionBox:hover {
-        border-color: rgb(136, 151, 162) !important;
-    }
-    .solutionBoxDescription {
-        flex-grow: 1 !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
--->
-</style>
+        .descriptionContainer {
+        }
+        .descriptionContainer p {
+            margin: 0 !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 4 !important;
+            -webkit-box-orient: vertical !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            line-height: 1.5 !important;
+            letter-spacing: 0 !important;
+            max-height: 70px !important;
+        }
+        .architectureDiagramContainer {
+            flex-grow: 1 !important;
+            min-width: calc(33% - 2%) !important;
+            padding: 0 16px !important;
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            background-color: #f4f4f4;
+        }
+        .architectureDiagram {
+            max-height: 175px !important;
+            padding: 5px !important;
+            margin: 0 auto !important;
+        }
+    -->
+    </style>
 
 # Learning path for developers
 {: #learning-path-dev}
@@ -156,7 +213,7 @@ Following a curated learning path to deploy highly available containerized apps 
       <div>
         <img src="images/lock--alt.svg" alt="Security icon" style="height:50px; border-style: none"/>
         <h2>Secure your app</h2>
-        <p class="bx--type-caption">Encrypt your app data and store confidential information in Kubernetes secrets.</p>
+        <p class="bx--type-caption">Encrypt data and store confidential information in Kubernetes secrets.</p>
       </div>
     </a>
   </div>
@@ -304,7 +361,7 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
 
 1. **Plan service discovery**:
   1. Understand the [basics of Kubernetes service discovery](/docs/openshift?topic=openshift-plan_deploy#service_discovery).
-  2. [Choose an app exposure service](//docs/openshift?topic=openshift-cs_network_planning) that fits your requirements for incoming traffic to the app.
+  2. [Choose an app exposure service](/docs/openshift?topic=openshift-cs_network_planning) that fits your requirements for incoming traffic to the app.
 2. **Expose your app**:
   * Load balancers:
     * Classic clusters:

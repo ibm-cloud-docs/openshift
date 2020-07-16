@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -372,7 +372,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
         <pre class="screen">TCP port 443, port 80 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logDNA_public_IP&gt;</pre>
         Replace &gt;<em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service-connection#network_outgoing_traffic).
 
-6. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for public and private load balancers.
+7. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. Red Hat OpenShift on IBM Cloud uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
 </br>
 
@@ -501,10 +501,10 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 ## Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses
 {: #iam_allowlist}
 
-By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted. If you use an IAM allowlist, you must allow the CIDRs of the Red Hat OpenShift on IBM Cloud control plane for the zones in the region where your cluster is located. You must allow these CIDRs so that Red Hat OpenShift on IBM Cloud can create Ingress ALBs and `LoadBalancers` in your cluster.
+By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted. If you use an IAM allowlist, you must allow the CIDRs of the Red Hat OpenShift on IBM Cloud control plane for the zones in the region where your cluster is located. You must allow these CIDRs so that Red Hat OpenShift on IBM Cloud can create Ingress ALBs and `LoadBalancers` in your cluster.
 {: shortdesc}
 
-**Before you begin**: The following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform role for the [User Management service](/docs/iam?topic=iam-account-services), you can update the restricted IP addresses for the credentials owner.
+**Before you begin**: The following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform role for the [User Management service](/docs/account?topic=account-account-services), you can update the restricted IP addresses for the credentials owner.
 
 1. Identify what user credentials are used for the cluster's region and resource group infrastructure permissions.
     1.  Check the API key for a region and resource group of the cluster.

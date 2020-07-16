@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-07-16"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -42,7 +42,9 @@ Add {{site.data.keyword.cloud_notm}} services to enhance your OpenShift cluster 
 {:shortdesc}
 
 **What types of services can I bind to my cluster?** </br>
-When you add {{site.data.keyword.cloud_notm}} services to your cluster, you can choose between services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) and services that are based on Cloud Foundry. IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. Cloud Foundry services must be added to a Cloud Foundry organization and space, and cannot be added to a resource group. To control access to your Cloud Foundry service instance, you use Cloud Foundry roles. For more information about IAM-enabled services and Cloud Foundry services, see [What is a resource?](/docs/resources?topic=resources-resource#resource).
+
+When you add {{site.data.keyword.cloud_notm}} services to your cluster, you can choose between services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) and services that are based on Cloud Foundry. IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. Cloud Foundry services must be added to a Cloud Foundry organization and space, and cannot be added to a resource group. To control access to your Cloud Foundry service instance, you use Cloud Foundry roles. For more information about IAM-enabled services and Cloud Foundry services, see [What is a resource?](/docs/account?topic=account-manage_resource#resource).
+
 
 To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
 
@@ -68,7 +70,9 @@ By default, the `ibmcloud oc cluster service bind` command creates service crede
 Your service might not yet support private service endpoints.
 
 **Can I use all {{site.data.keyword.cloud_notm}} services in my cluster?**</br>
-You can use service binding only for services that support service keys so that the service credentials can automatically be created and stored in a Kubernetes secret. To find a list of services that support service keys, see [Enabling external apps to use {{site.data.keyword.cloud_notm}} services](/docs/resources?topic=resources-externalapp#externalapp).
+
+You can use service binding only for services that support service keys so that the service credentials can automatically be created and stored in a Kubernetes secret. To find a list of services that support service keys, see [Enabling external apps to use {{site.data.keyword.cloud_notm}} services](/docs/account?topic=account-externalapp#externalapp).
+
 
 Services that do not support service keys usually provide an API that you can use in your app. The service binding method does not automatically set up API access for your app. Make sure to review the API documentation of your service and implement the API interface in your app.
 
@@ -82,12 +86,14 @@ Before you begin:
 - Ensure you have the following roles:
     - [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform) for the cluster where you want to bind a service
     - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the OpenShift project where you want to bind the service
-    - For Cloud Foundry services: [**Developer** Cloud Foundry role](/docs/iam?topic=iam-mngcf#mngcf) for the space where you want to provision the service
+    - For Cloud Foundry services: [**Developer** Cloud Foundry role](/docs/account?topic=account-mngcf#mngcf) for the space where you want to provision the service
 - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To add an {{site.data.keyword.cloud_notm}} service to your cluster:
 
-1. [Create an instance of the {{site.data.keyword.cloud_notm}} service](/docs/resources?topic=resources-externalapp#externalapp).
+
+1. [Create an instance of the {{site.data.keyword.cloud_notm}} service](/docs/account?topic=account-externalapp#externalapp).
+
     * Some {{site.data.keyword.cloud_notm}} services are available only in select regions. You can bind a service to your cluster only if the service is available in the same region as your cluster. In addition, if you want to create a service instance in the Washington DC zone, you must use the CLI.
     * **For IAM-enabled services**: You must create the service instance in the same resource group as your cluster. A service can be created in only one resource group that you can't change afterward.
     * Make sure that the service name is in the following regex format. Example permitted names are `myservice` or `example.com`. Unallowed characters include spaces and underscores.

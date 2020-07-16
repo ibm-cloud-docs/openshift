@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-26"
+lastupdated: "2020-07-13"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -36,7 +36,7 @@ subcollection: openshift
 
 
 # Creating an OpenShift cluster in your Virtual Private Cloud (VPC)
-{: #vpc_roks_tutorial}
+{: #vpc_rh_tutorial}
 
 With **{{site.data.keyword.openshiftlong}} clusters on VPC Generation 2 compute**, you can create your cluster on VPC infrastructure in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
 {: shortdesc}
@@ -48,22 +48,22 @@ OpenShift worker nodes are available for paid accounts and standard clusters onl
 {: note}
 
 ## Objectives
-{: #vpc_roks_objectives}
+{: #vpc_rh_objectives}
 
 In the tutorial lessons, you create a Red Hat OpenShift on IBM Cloud cluster in a Gen 2 Virtual Private Cloud (VPC). Then, you access built-in OpenShift components, deploy an app in an OpenShift project, and expose the app on with a VPC load balancer so that external users can access the service.
 
 ## Time required
-{: #vpc_roks_time}
+{: #vpc_rh_time}
 45 minutes
 
 ## Audience
-{: #vpc_roks_audience}
+{: #vpc_rh_audience}
 
 This tutorial is for administrators who are creating a cluster in Red Hat OpenShift on IBM Cloud in VPC Generation 2 compute for the first time.
 {: shortdesc}
 
 ## Prerequisites
-{: #vpc_roks_prereqs}
+{: #vpc_rh_prereqs}
 
 Ensure that you have the following {{site.data.keyword.cloud_notm}} IAM access policies.
 * The [**Administrator** platform role for VPC Infrastructure](/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
@@ -93,7 +93,7 @@ Install the command-line tools.
 
 
 ## Lesson 1: Creating a cluster in a VPC
-{: #vpc_roks_create_vpc_cluster}
+{: #vpc_rh_create_vpc_cluster}
 
 Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environment. Then, create a Red Hat OpenShift on IBM Cloud cluster on the VPC infrastructure. For more information about VPC, see [Getting Started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
 {:shortdesc}
@@ -224,7 +224,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
 
 ## Lesson 2: Deploying an app to your cluster
-{: #vpc_roks_app}
+{: #vpc_rh_app}
 
 Quickly deploy a new sample app that is available to requests from inside the cluster only.
 {: shortdesc}
@@ -279,7 +279,7 @@ The components that you deploy by completing this lesson are shown in the follow
 
 
 ## Lesson 3: Setting up a VPC load balancer to expose your app publicly
-{: #vpc_roks_vpc_lb}
+{: #vpc_rh_vpc_lb}
 
 Set up a VPC load balancer to expose your app to external requests on the public network.
 {: shortdesc}
@@ -426,7 +426,7 @@ Interested in using an OpenShift route to expose your app instead? Check out [Ho
 
 
 ## What's next?
-{: #vpc_roks_next}
+{: #vpc_rh_next}
 
 Now that you have a VPC cluster, learn more about what you can do.
 {: shortdesc}
@@ -437,7 +437,7 @@ Now that you have a VPC cluster, learn more about what you can do.
 * [About the v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about)
 * [Comparison of Classic and VPC commands for the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about)
 
-Need help, have questions, or want to give feedback on VPC clusters? Try posting in the [internal](https://test.cloud.ibm.com/docs/openshift?topic=openshift-cs_internal#internal_help) or [external](https://ibm-cloud-success.slack.com/messages/C4G6362ER) Slack channels.
+Need help, have questions, or want to give feedback on VPC clusters? Try posting in the [internal](https://test.cloud.ibm.com/docs/containers?topic=containers-cs_internal#internal_help) or [external](https://ibm-cloud-success.slack.com/messages/C4G6362ER) Slack channels.
 
 If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack) to this Slack.
 {: tip}

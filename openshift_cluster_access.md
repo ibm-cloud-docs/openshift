@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-26"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -381,7 +381,7 @@ Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm
 ### Using an API key to log in to OpenShift clusters
 {: #access_api_key}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an OpenShift cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/iam?topic=iam-manapikey).
+You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an OpenShift cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/account?topic=account-manapikey).
 {: shortdesc}
 
 1.  Create an {{site.data.keyword.cloud_notm}} API key.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
@@ -451,7 +451,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 ### Using a service ID to log in to OpenShift clusters
 {: #access_service_id}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an OpenShift cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids).
+You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an OpenShift cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
 {: shortdesc}
 
 1.  Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.
@@ -577,10 +577,10 @@ As noted in the Kubernetes documentation, you can use admission controllers for 
 
 Keep in mind the following considerations when you configure a webhook.
 
-* Create [replica pods](/docs/openshift?topic=openshift-app#replicaset) for the webhook so that if one pod goes down, the webhook can still process requests from your resources. Spread the replica pods across zones, if possible.
-* Set appropriate CPU and memory [resource requests and limits](/docs/openshift?topic=openshift-app#resourcereq) for your webhook.
-* Add [liveness and readiness probes](/docs/openshift?topic=openshift-app#probe) to help make sure your webhook container is running and ready to serve requests.
-* Set pod [anti-affinity scheduling rules](/docs/openshift?topic=openshift-app#affinity) to prefer that your webhook pods run on different worker nodes and zones when possible.
+* Create [replica pods](/docs/openshift?topic=openshift-openshift_apps#replicaset) for the webhook so that if one pod goes down, the webhook can still process requests from your resources. Spread the replica pods across zones, if possible.
+* Set appropriate CPU and memory [resource requests and limits](/docs/openshift?topic=openshift-openshift_apps#resourcereq) for your webhook.
+* Add [liveness and readiness probes](/docs/openshift?topic=openshift-openshift_apps#probe) to help make sure your webhook container is running and ready to serve requests.
+* Set pod [anti-affinity scheduling rules](/docs/openshift?topic=openshift-openshift_apps#affinity) to prefer that your webhook pods run on different worker nodes and zones when possible.
 * [Set pod priority](/docs/openshift?topic=openshift-pod_priority) to `system-cluster-critical` for the webhook pods so that other pods cannot take resources from your webhook pods.
 * Scope your webhook to the appropriate project. Avoid webhooks that process resources that run in system-critical projects that are set up in your cluster by default, such as `kube-system`, `ibm-system`, `ibm-operators`, `calico-system`, `tigera-operator` and `openshift-*` projects.
 * Make sure that the worker nodes in your cluster are [the right size for running your webhook applications](/docs/openshift?topic=openshift-strategy#sizing). For example, if your pods request more CPU or memory than the worker node can provide, the pods are not scheduled.
@@ -595,6 +595,7 @@ Many cluster add-ons, plug-ins, and other third-party extensions create custom a
 
 **I need help with a broken webhook. What can I do?**<br>
 See [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update).
+
 
 
 

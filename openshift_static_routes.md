@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhos, rhoks, vpn, on-prem, gateway, static
 
@@ -87,7 +87,7 @@ To get started with static routes in Red Hat OpenShift on IBM Cloud, enable the 
 </br>
 **To use the CLI:**
 
-1. [Target the CLI to your cluster](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure).
+1. [Target the CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
 
 2. Enable the `static-route` add-on.
   ```
@@ -239,5 +239,7 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
         subnet: 10.94.227.46/24
   ```
   {: screen}
+
+
 
 

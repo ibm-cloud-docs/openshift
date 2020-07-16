@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -95,6 +95,30 @@ In Red Hat OpenShift on IBM Cloud, VLANs have a limit of 40 subnets. If you reac
 **Do the IP address for my worker nodes change?**</br>
 Your worker node is assigned an IP address on the public or private VLANs that your cluster uses. After the worker node is provisioned, the worker node IP address persists across `reboot` and `update` operations, but the worker node IP address changes after a `replace` operation. Additionally, the private IP address of the worker node is used for the worker node identity in most `oc` commands. If you change the VLANs that the worker pool uses, new worker nodes that are provisioned in that pool use the new VLANs for their IP addresses. Existing worker node IP addresses do not change, but you can choose to remove the worker nodes that use the old VLANs.
 
+**Can I specify subnets for pods and services in my cluster?**
+
+If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods, and a custom subnet CIDR to provide the private IP addresses for services.
+
+To specify custom pod and service subnets during cluster creation, use the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` CLI command.
+
+**Pods**:
+* Default range: All services that are deployed to the cluster are assigned a private IP address in the `172.30.0.0/16` range by default.
+* Size requirements: When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
+* Range requirements: The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the VPC subnets for your worker nodes. The subnet that you choose must be within one of the following ranges:
+    * `172.17.0.0 - 172.17.255.255`
+    * `172.21.0.0 - 172.31.255.255`
+    * `192.168.0.0 - 192.168.254.255`
+    * `198.18.0.0 - 198.19.255.255`
+
+**Services**:
+* Default range: All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
+* Size requirements: When you specify a custom subnet, the subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger.
+* Range requirements: The pod and service subnets cannot overlap each other. The subnet that you choose must be within one of the following ranges:
+    * `172.17.0.0 - 172.17.255.255`
+    * `172.21.0.0 - 172.31.255.255`
+    * `192.168.0.0 - 192.168.254.255`
+    * `198.18.0.0 - 198.19.255.255`
+
 ### Network segmentation
 {: #basics_segmentation}
 
@@ -106,10 +130,10 @@ However, in several situations, components in your cluster must be permitted to 
 **What are Virtual Router Functions (VRF) and VLAN spanning?**</br>
 
 <dl>
-<dt>[Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)</dt>
+<dt>Virtual Router Function (VRF)</dt>
 <dd>A VRF enables all the VLANs and subnets in your infrastructure account to communicate with each other. Additionally, a VRF is required to allow your workers and master to communicate over the private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. Note that VRF eliminates the VLAN spanning option for your account, because all VLANs are able to communicate unless you configure a gateway appliance to manage traffic.</dd>
-<dt>[VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning)</dt>
-<dd>If you cannot or do not want to enable VRF, enable VLAN spanning. To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Note that you cannot enable the private service endpoint if you choose to enable VLAN spanning instead of a VRF.</dd>
+<dt>VLAN spanning</dt>
+<dd>If you cannot or do not want to enable VRF, [enable VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Note that you cannot enable the private service endpoint if you choose to enable VLAN spanning instead of a VRF.</dd>
 </dl>
 
 **How does VRF or VLAN spanning affect network segmentation?**</br>

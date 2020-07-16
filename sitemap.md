@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-08"
+lastupdated: "2020-07-16"
 
 keywords: openshift
 subcollection: openshift
@@ -197,17 +197,17 @@ subcollection: openshift
 * [Lesson 3: Deploying an app to your OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
-[Creating an OpenShift cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_roks_tutorial)
-* [Objectives](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_objectives)
-* [Time required](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_time)
-* [Audience](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_audience)
-* [Prerequisites](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_prereqs)
-* [Lesson 1: Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_create_vpc_cluster)
-* [Lesson 2: Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_app)
-* [Lesson 3: Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_vpc_lb)
-* [What's next?](/docs/openshift?topic=openshift-vpc_roks_tutorial#vpc_roks_next)
+[Creating an OpenShift cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial)
+* [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
+* [Time required](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_time)
+* [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
+* [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
+* [Lesson 1: Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
+* [Lesson 2: Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
+* [Lesson 3: Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
+* [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
-[Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
+[Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
 
 [OpenShift interactive learning portal](https://learn.openshift.com/){: external}
 
@@ -497,13 +497,13 @@ subcollection: openshift
 
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
 * [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#overview)
-* [Step 1: Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
+* [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
   * [Creating ACLs in the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
   * [Creating ACLs from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
-* [Step 2: Opening required ports in the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
+* [Opening required ports in the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
   * [Opening required ports in the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
   * [Opening required ports from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
-* [Step 3: Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
+* [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
   * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-network-policy#services_one_ns)
   * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-network-policy#services_across_ns)
 
@@ -600,7 +600,7 @@ subcollection: openshift
 
 [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
-[Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
+[Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
 
 [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
 
@@ -633,6 +633,7 @@ subcollection: openshift
   * [Creating an image pull secret with different IAM API key credentials for more control or access to images in other {{site.data.keyword.cloud_notm}} accounts](/docs/openshift?topic=openshift-registry#other_registry_accounts)
   * [Accessing images that are stored in other private registries](/docs/openshift?topic=openshift-registry#private_images)
 * [Using the image pull secret to deploy containers](/docs/openshift?topic=openshift-registry#use_imagePullSecret)
+  * [Storing the image pull secret in the Kubernetes service account for the selected project](/docs/openshift?topic=openshift-registry#store_imagePullSecret)
 * [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software)
 * [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret)
 

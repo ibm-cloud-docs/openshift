@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-16"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -288,7 +288,9 @@ To protect your network and limit the range of damage that a user can do when ac
 **What network traffic is allowed for my cluster by default?**</br>
 By default, worker nodes are connected to [VPC subnets](/docs/openshift?topic=openshift-vpc-subnets) on the private network only and do not have a public network interface. All public ingress to and egress from your worker nodes is blocked.
 
+
 To run default OpenShift components such as the web console or OperatorHub, you must attach a [public gateway](/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity) to the VPC subnets that the worker nodes are deployed to. All egress is permitted for worker nodes on a subnet with an attached public gateway, but all ingress is still blocked.
+
 
 If you deploy apps in your cluster that must receive traffic requests from the internet, you can [create a VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas) to expose your apps. To allow ingress network traffic to your apps, you must configure your VPC load balancer for the ingress network traffic that you want to receive.
 
@@ -543,7 +545,7 @@ You are responsible for ensuring the security of your personal information in Ku
   <dd>Store personal information only in Kubernetes resources that are designed to hold personal information. For example, do not use your name in the name of an OpenShift project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets](https://docs.openshift.com/container-platform/3.11/dev_guide/secrets.html){: external} instead.</dd>
 
   <dt>Use a Kubernetes `imagePullSecret` to store image registry credentials</dt>
-  <dd>Do not store personal information in container images or registry namespaces. For proper protection and encryption, store registry credentials in <a href="/docs/containers?topic=containers-registry#other">Kubernetes `imagePullSecrets`</a> and other personal information in [secrets](https://docs.openshift.com/container-platform/3.11/dev_guide/secrets.html){: external} instead. Remember that if personal information is stored in a previous layer of an image, deleting an image might not be sufficient to delete this personal information.</dd>
+  <dd>Do not store personal information in container images or registry namespaces. For proper protection and encryption, store registry credentials in <a href="/docs/openshift?topic=openshift-registry#other">Kubernetes `imagePullSecrets`</a> and other personal information in [secrets](https://docs.openshift.com/container-platform/3.11/dev_guide/secrets.html){: external} instead. Remember that if personal information is stored in a previous layer of an image, deleting an image might not be sufficient to delete this personal information.</dd>
   </dl>
 
 
