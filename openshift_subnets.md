@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -43,6 +43,7 @@ Change the pool of available portable public or private IP addresses by adding s
 
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to classic clusters. For information about VPC clusters, see [Configuring subnets and IP addresses for VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
+
 
 ## Overview of classic networking in Red Hat OpenShift on IBM Cloud
 {: #basics}
