@@ -301,7 +301,7 @@ From the OpenShift console, you can deploy one of the built-in service catalog a
 ## What's next?
 {: #whats-next}
 
-* Complete the [Red Hat OpenShift on IBM Cloud classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) or the [Red Hat OpenShift on IBM Cloud VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_roks_tutorial) to:
+* Complete the [Red Hat OpenShift on IBM Cloud classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) or the [Red Hat OpenShift on IBM Cloud VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial) to:
   * Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
   * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
 * For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-01"
+lastupdated: "2020-07-17"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -132,7 +132,7 @@ The following diagram shows how a router directs network traffic from private ne
 
 <img src="images/roks_router_vpc_private.png" alt="Expose an app in a private, multizone, VPC OpenShift cluster by using a router" width="700" style="width:850px; border-style: none"/>
 
-1. A client that is connected to your private VPC network sends a request to your app by using the app's private route. For example, you might use the {{site.data.keyword.vpc_full_notm}} VPN, {{site.data.keyword.tg_full_notm}}, or {{site.data.keyword.dl_full_notm}} to allow requests from an on-premises network, another VPC, or {{site.data.keyword.cloud_notm}} classic infrastructure to apps that run in your cluster.
+1. A client that is connected to your private VPC network sends a request to your app by using the app's private route. For example, you might use the Virtual Private Cloud VPN, {{site.data.keyword.tg_full_notm}}, or {{site.data.keyword.dl_full_notm}} to allow requests from an on-premises network, another VPC, or {{site.data.keyword.cloud_notm}} classic infrastructure to apps that run in your cluster.
 
 2. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the services for the router. In VPC clusters, your router services' IP addresses are floating, and are kept behind a VPC-assigned hostname. Note that though the DNS record for the route subdomain is registered in the public DNS system, the DNS resolution servers are reachable from the VPC.
 
