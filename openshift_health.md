@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-17"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -522,13 +522,12 @@ If you remove the cluster logging operator, the `openshift-logging` project and 
 
 1.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 2.  Uninstall the cluster logging operator from the cluster. For instructions, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/operators/olm-deleting-operators-from-cluster.html){: external}.
-3.  Uninstall the cluster logging operator from the cluster. For instructions, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/operators/olm-deleting-operators-from-cluster.html){: external}.
-4.  Delete the `openshift-logging` project.
+3.  Delete the `openshift-logging` project.
     ```
     oc delete ns openshift-logging
     ```
     {: pre}
-5.  Delete the cluster logging and Elasticsearch CRDs.
+4.  Delete the cluster logging and Elasticsearch CRDs.
     ```
     oc delete crd clusterloggings.logging.openshift.io
     ```
