@@ -514,7 +514,7 @@ subcollection: openshift
 
 
 ## Classic clusters
-{: #sitemap_classic_clusters}
+{: #sitemap_classic_clusters_}
 
 
 [Classic: Configuring subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
@@ -568,7 +568,7 @@ subcollection: openshift
 
 
 ## VPC clusters
-{: #sitemap_vpc_clusters}
+{: #sitemap_vpc_clusters_}
 
 
 [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets)
