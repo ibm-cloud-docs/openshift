@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-17"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -448,7 +448,7 @@ When you create a [build](https://docs.openshift.com/container-platform/4.3/buil
         oc set build-secret --push bc/<build_config_name> <secret_name>
         ```
         {: pre}
-    4.  Set the image pull secret for the build configuration to pull from the registry that you want to pull the initial build image from. For example, you can use the secret that you just created with `Reader` service access to {{site.data.keyword.registrylong_notm}} if the source image is in a {{site.data.keyword.registrylong_notm}} repository.
+    4.  Set the image pull secret for the build configuration to pull from the registry that you want to pull the initial build image from. For example, you can use the secret that you just created with `Reader` service access to {{site.data.keyword.registrylong_notm}} if the source image is in an {{site.data.keyword.registrylong_notm}} repository.
         ```
         oc set build-secret --pull bc/<build_config_name> <secret_name>
         ```

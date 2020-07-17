@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-17"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -164,7 +164,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
    <a href = "#clusters_gs">
     <div>
          <p><strong><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a classic cluster</strong></p>
-         <p class="bx--type-caption">Create an OpenShift cluster on {{site.data.keyword.cloud_notm}} classicworkers nodes, subnets, and VLAN networking. Choose from a variety of virtual, bare metal, or software-defined storage flavors.</p>
+         <p class="bx--type-caption">Create an OpenShift cluster on {{site.data.keyword.cloud_notm}} classic workers nodes, subnets, and VLAN networking. Choose from a variety of virtual, bare metal, or software-defined storage flavors.</p>
     </div>
    </a>
   </div>
@@ -172,7 +172,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
     <a href = "#vpc-gen2-gs">
       <div>
          <p><strong><img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a VPC cluster</strong></p>
-         <p class="bx--type-caption">Create your cluster on the second generation of compute resources in a Virtual Private Cloud (VPC) that gives you the security of a private cloud with the dynamic scalability of a public cloud.</p>
+         <p class="bx--type-caption">Create your cluster on the second generation of compute resources in a Virtual Private Cloud (VPC) that gives you the security of a private cloud with the scalability of a public cloud.</p>
       </div>
     </a>
   </div>
@@ -180,7 +180,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
    <a href = "#deploy-app">
     <div>
          <p><strong><img src="images/icon-containers-bw.svg" alt="OpenShift Container icon" width="15" style="width:15px; border-style: none"/> Deploy and expose an app</strong></p>
-         <p class="bx--type-caption">In your OpenShift cluster, deploy a sample `websphere-liberty` app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
+         <p class="bx--type-caption">In your OpenShift cluster, deploy a sample app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
     </div>
   </a>
   </div>
