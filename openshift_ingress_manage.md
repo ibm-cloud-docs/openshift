@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -106,10 +106,8 @@ By default, each ALB has 2 replicas. Scale up your ALB processing capabilities b
      name: ibm-ingress-deploy-config
      namespace: kube-system
    data:
-     <alb1-id>: |
-       replicas=<number_of_replicas>
-     <alb2-id>: |
-       replicas=<number_of_replicas>
+     <alb1-id>: '{"replicas":<number_of_replicas>}'
+     <alb2-id>: '{"replicas":<number_of_replicas>}'
      ...
    ```
    {: screen}
