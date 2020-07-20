@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1956,9 +1956,6 @@ To clean up persistent data:
    oc get pv
    ```
    {: pre}
-
-   
-
 8. {: #sl_delete_storage}List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance.
 
     ```
