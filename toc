@@ -223,6 +223,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_troubleshoot_lb.md
         openshift_troubleshoot_ingress.md
         openshift_troubleshoot_storage.md
+        get_help.md
 
     openshift_release_notes.md
     openshift_limitations.md

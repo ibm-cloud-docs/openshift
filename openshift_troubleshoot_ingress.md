@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -131,7 +131,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
    Example output:
    ```
    ID                                                     Public IP         Private IP      Flavor              State     Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.17.7
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.17.9
    ```
    {: screen}
 
@@ -224,7 +224,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
   * **Version 3.11 clusters:**
     1. Check whether an ALB exists for your cluster and that the ALB has a public IP address (classic clusters) or a hostname (VPC clusters) assigned.
       * If a public ALB is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no ALBs are created after several minutes, [review ways to get help](#getting_help_ingress).
+      * If no ALBs are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         ibmcloud oc alb ls -c <cluster_name_or_ID>
@@ -241,7 +241,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address (classic clusters) or a hostname (VPC clusters) as the public ALB.
       * If a `LoadBalancer` service is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](#getting_help_ingress).
+      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         kubectl get svc -n kube-system | grep LoadBalancer
@@ -256,7 +256,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
   * **Version 4.3 and later clusters:**
     1. Check whether a router deployment exists for your cluster.
       * If a router deployment is listed, continue to the next step.
-      * If no router deployment is created after several minutes, [review ways to get help](#getting_help_ingress).
+      * If no router deployment is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         oc get deployment -n openshift-ingress
@@ -272,7 +272,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the router's load balancer service exists and is assigned a public external IP address (classic clusters) or a hostname (VPC clusters).
       * If a service that is named `router-default` is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no `router-default` service is created after several minutes, [review ways to get help](#getting_help_ingress).
+      * If no `router-default` service is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         oc get svc -n openshift-ingress
@@ -287,7 +287,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](#getting_help_ingress).
+5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](/docs/openshift?topic=openshift-get-help).
   ```
   ibmcloud oc cluster get -c <cluster_name_or_ID>
   ```
@@ -485,6 +485,28 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
         oc logs <pod> -n openshift-ingress
         ```
         {: pre}
+
+3. Check for events and errors on each router service.
+    1. List the services in the `openshift-ingress` namespace.
+      ```
+      oc get svc -n openshift-ingress
+      ```
+      {: pre}
+
+      Example output for a multizone cluster with worker nodes in `dal10` and `dal13`:
+      ```
+      NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+      router-dal13                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32318/TCP,443:30915/TCP   26d
+      router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26d
+      router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26d
+      ```
+      {: screen}
+    2. Describe each router service and check for messages in the `Events` section of the output.
+      ```
+      oc describe svc router-default -n openshift-ingress
+      ```
+      {: pre}
+      * For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes `LoadBalancer` service is offline`. For more information, see [Cannot connect to an app via load balancer](/docs/openshift?topic=openshift-cs_troubleshoot_lb#vpc_ts_lb).
 
 ### Step 4: Ping the Ingress subdomain and router public IP address
 {: #ping-43}
@@ -1366,61 +1388,5 @@ To prevent the connection from closing after 60 seconds of inactivity:
 <dd>If you don't want to change the ALB's default read timeout value, set up a heartbeat in your WebSocket app. When you set up a heartbeat protocol by using a framework like [WAMP ![External link icon](../icons/launch-glyph.svg "External link icon")](https://wamp-proto.org/), the app's upstream server periodically sends a "ping" message on a timed interval and the client responds with a "pong" message. Set the heartbeat interval to 58 seconds or less so that the "ping/pong" traffic keeps the connection open before the 60-second timeout is enforced.</dd></dl>
 
 <br />
-
-
-## Feedback, questions, and support
-{: #getting_help_ingress}
-
-Still having issues with your cluster? Review different ways to get help and support for your Red Hat OpenShift on IBM Cloud clusters. For any questions or feedback, post in Slack.
-{: shortdesc}
-
-**General ways to resolve issues**<br>
-1. Keep your cluster environment up to date.
-   * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
-   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/openshift?topic=openshift-openshift_versions).
-2. Make sure that your command line tools are up to date.
-   * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
-   * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
-<br>
-
-**Reviewing issues and status**<br>
-1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
-2. Filter for the **Kubernetes Service** component.
-<br>
-
-**Feedback and questions**<br>
-1. Post in the {{site.data.keyword.containershort}} Slack.
-   * If you are an external user, post in the [#openshift](https://ibm-cloud-success.slack.com/messages/CKCJLJCH4){: external} channel. <p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack){: external} to this Slack.</p>
-2. Review forums such as OpenShift help or Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
-   * If you have technical questions about developing or deploying clusters or apps with Red Hat OpenShift on IBM Cloud, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`,  and `containers`.
-   * See [Getting help](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
-<br>
-
-**Getting help**<br>
-1. Before you open a support case, gather relevant information about your cluster environment.
-   1. Get your cluster details.
-      ```
-      ibmcloud oc cluster get -c <cluster_name_or_ID>
-      ```
-      {: pre}
-   2. If your issue involves worker nodes, get the worker node details.
-      1. List all worker nodes in the cluster, and note the **ID** of any worker nodes with an unhealthy **State** or **Status**.
-         ```
-         ibmcloud oc worker ls -c <cluster_name_or_ID>
-         ```
-         {: pre}
-      2. Get the details of the unhealthy worker node.
-         ```
-         ibmcloud oc worker get -w <worker_ID> -c <cluster_name_or_ID>
-         ```
-         {: pre}
-   3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them.
-
-   You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
-   {: tip}
-
-2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
-3.  In your support case, for **Category**, select **Containers**.
-4.  For the **Offering**, select your OpenShift cluster. Include the relevant information that you previously gathered.
 
 

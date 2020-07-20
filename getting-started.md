@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-20"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -164,7 +164,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
    <a href = "#clusters_gs">
     <div>
          <p><strong><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a classic cluster</strong></p>
-         <p class="bx--type-caption">Create an OpenShift cluster on {{site.data.keyword.cloud_notm}} classicworkers nodes, subnets, and VLAN networking. Choose from a variety of virtual, bare metal, or software-defined storage flavors.</p>
+         <p class="bx--type-caption">Create an OpenShift cluster on {{site.data.keyword.cloud_notm}} classic workers nodes, subnets, and VLAN networking. Choose from a variety of virtual, bare metal, or software-defined storage flavors.</p>
     </div>
    </a>
   </div>
@@ -172,7 +172,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
     <a href = "#vpc-gen2-gs">
       <div>
          <p><strong><img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a VPC cluster</strong></p>
-         <p class="bx--type-caption">Create your cluster on the second generation of compute resources in a Virtual Private Cloud (VPC) that gives you the security of a private cloud with the dynamic scalability of a public cloud.</p>
+         <p class="bx--type-caption">Create your cluster on the second generation of compute resources in a Virtual Private Cloud (VPC) that gives you the security of a private cloud with the scalability of a public cloud.</p>
       </div>
     </a>
   </div>
@@ -180,7 +180,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
    <a href = "#deploy-app">
     <div>
          <p><strong><img src="images/icon-containers-bw.svg" alt="OpenShift Container icon" width="15" style="width:15px; border-style: none"/> Deploy and expose an app</strong></p>
-         <p class="bx--type-caption">In your OpenShift cluster, deploy a sample `websphere-liberty` app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
+         <p class="bx--type-caption">In your OpenShift cluster, deploy a sample app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
     </div>
   </a>
   </div>
@@ -199,7 +199,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 
 1.  Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
 2.  From the **Catalog**, click [**Red Hat OpenShift on IBM Cloud**](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}.
-3.  Review the platform version details, **OpenShift 4.3.23**.
+3.  Review the platform version details, **OpenShift 4.3.28**.
 4.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
 5.  For the **Infrastructure**, select **Classic**.
 6.  Configure the **Location** details for your cluster.
@@ -245,7 +245,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
     5. If you require VPC VPN access or classic infrastructure access into this cluster, repeat these steps to add a rule that uses the **UDP** protocol, `30000` for the **Port min**, `32767` for the **Port max**, and the **Any** source type.
 3. From the [Red Hat OpenShift on IBM Cloud dashboard](https://cloud.ibm.com/kubernetes/landing?platformType=openshift){: external}, click **Create cluster**.
 4. Configure your cluster's VPC environment.
-  1.  Review the platform version details, **OpenShift 4.3.23**.
+  1.  Review the platform version details, **OpenShift 4.3.28**.
   2.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
   3.  For the **Infrastructure**, select **VPC**.
   4.  From the **Virtual private cloud** drop-down menu, select the VPC that you created earlier.
@@ -301,7 +301,7 @@ From the OpenShift console, you can deploy one of the built-in service catalog a
 ## What's next?
 {: #whats-next}
 
-* Complete the [Red Hat OpenShift on IBM Cloud classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) or the [Red Hat OpenShift on IBM Cloud VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_roks_tutorial) to:
+* Complete the [Red Hat OpenShift on IBM Cloud classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) or the [Red Hat OpenShift on IBM Cloud VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial) to:
   * Set up your {{site.data.keyword.cloud_notm}} and OpenShift CLI.
   * Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
 * For more information about working with your apps, see the [OpenShift developer activities](https://docs.openshift.com/container-platform/4.3/welcome/index.html#developer-activities){: external} documentation.

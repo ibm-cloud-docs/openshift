@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -173,7 +173,7 @@ Check out the following tutorials to learn how to make the most of your {{site.d
   </a>
   </div>
     <div class = "solutionBox">
-    <a href = "/docs/openshift?topic=openshift-vpc_roks_tutorial">
+    <a href = "/docs/openshift?topic=openshift-vpc_rh_tutorial">
         <div class = "solutionBoxContent">
           <p><strong>{{site.data.keyword.openshiftshort}} cluster on VPC Gen 2</strong></p>
           <div class="solutionBoxDescription">

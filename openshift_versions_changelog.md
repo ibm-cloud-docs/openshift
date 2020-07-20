@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -48,10 +48,62 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [OpenShift versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
+## Version 4.4 changelog
+
+Review the changelogs for Red Hat OpenShift on IBM Cloud version 4.4 patch updates.
+{: shortdesc}
+
+### Changelog for worker node fix pack 4.4.11_1511_openshift, released 20 July 2020
+{: #4411_1511}
+
+The following table shows the changes that are included in the worker node fix pack update `4.4.11_1511_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| CRI-O | 1.16.6 | 1.17.4 | See the [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.17.4){: external}. |
+| HAProxy | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
+| RHEL 7 Packages |  N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}.|
+| OpenShift | 4.3.29 | 4.4.11 | See the [OpenShift changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-11){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.29_1532_openshift" caption-side="top"}
+
 ## Version 4.3 changelog
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 4.3 patch updates.
 {: shortdesc}
+
+### Changelog for master fix pack 4.3.28_1532_openshift, released 20 July 2020
+{: #4328_1532}
+
+The following table shows the changes that are included in the master fix pack update `4.3.28_1532_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Block Storage driver configuration | N/A | N/A | Updated the pod CPU and memory requests and limits. |
+| IBM Calico extension | 353 | 378 | Updated to handle any `ens` network interface. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.7-1 | v1.17.9-1 | Updated to support the Kubernetes 1.17.9 release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor configuration | N/A | N/A | Added a pod memory limit. |
+| {{site.data.keyword.cloud_notm}} RBAC operator | 08ce50e | 8882606 | Updated image for [CVE-2020-13777](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-13777){: external} and to use `Go` verison 1.13.12. |
+| Kubernetes configuration | N/A | N/A | The Kubernetes API server audit policy configuration is updated to include auditing the `apiextensions.k8s.io`, `operator.tigera.io` and `scheduling.k8s.io` API groups and the `crd.projectcalico.org`, `persistentvolumeclaims`, `persistentvolumes` and `tokenreviews` resources. |
+| OpenShift | 4.3.23 | 4.3.28 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-28){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.27_1528_openshift" caption-side="top"}
+
+### Changelog for worker node fix pack 4.3.29_1532_openshift, released 20 July 2020
+{: #4329_1532}
+
+The following table shows the changes that are included in the worker node fix pack update `4.3.29_1532_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| HAProxy | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
+| RHEL 7 Packages |  N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}.|
+| OpenShift | 4.3.27 | 4.3.29 | See the [OpenShift changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-29){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.27_1528_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.3.27_1528_openshift, released 6 July 2020
 {: #4327_1528}
@@ -234,6 +286,33 @@ Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch upda
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change).
 {: deprecated}
+
+### Changelog for master fix pack 3.11.232_1559_openshift, released 20 July 2020
+{: #311232_1559}
+
+The following table shows the changes that are included in the master fix pack update `3.11.232_1559_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Block Storage driver configuration | N/A | N/A | Added a pod memory limit. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor configuration | N/A | N/A | Added a pod memory limit. |
+| OpenShift | 3.11.219 | 3.11.232 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-232){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.232_1555_openshift" caption-side="top"}
+
+### Changelog for worker node fix pack 3.11.232_1558_openshift, released 20 July 2020
+{: #311232_1558}
+
+The following table shows the changes that are included in the worker node fix pack update `3.11.232_1558_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| HAProxy | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
+| RHEL 7 Packages |  N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.232_1555_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.232_1555_openshift, released 6 July 2020
 {: #311232_1555}

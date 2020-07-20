@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1278,7 +1278,7 @@ ibmcloud oc cluster user-subnet add --cluster my_cluster --subnet-cidr 169.xx.xx
 Remove your own private subnet from a specified cluster. Any service that was deployed with an IP address from your own private subnet remains active after the subnet is removed.
 {: shortdesc}
 
-This command is deprecated. To remove a IBM Cloud infrastructure subnet from your cluster instead, run [`ibmcloud oc cluster subnet detach`](#cs_cluster_subnet_detach).
+This command is deprecated. To remove an IBM Cloud infrastructure subnet from your cluster instead, run [`ibmcloud oc cluster subnet detach`](#cs_cluster_subnet_detach).
 {: deprecated}
 
 ```

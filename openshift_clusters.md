@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -366,7 +366,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    When the provisioning of your OpenShift master is completed, the **State** of your cluster changes to `deployed`. After your OpenShift master is ready, the provisioning of your worker nodes is initiated.
    ```
    Name         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     4.3.23_xxxx_openshift      Default             classic
+   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     4.3.28_xxxx_openshift      Default             classic
    ```
    {: screen}
 
@@ -382,7 +382,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    When the worker nodes are ready, the worker node state changes to **normal** and the status changes to **Ready**. When the node status is **Ready**, you can then access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process. Note that if you created your cluster with a private VLAN only, no **Public IP** addresses are assigned to your worker nodes.
    ```
    ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.17.7
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.17.9
    ```
    {: screen}
 
@@ -422,7 +422,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
 
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
 2. [Create a Virtual Private Cloud (VPC) on generation 2 compute](https://cloud.ibm.com/vpc/provision/vpc){: external} with a subnet that is located in the VPC zone where you want to create the cluster.
-  * Verify that the banner at the beginning of the new VPC page is set to **Gen 2 compute**. If **Gen 1 compute** is set, click **Switch to Gen 2 compute**.
+  * Verify that the banner at the beginning of the VPC page is set to **Gen 2 compute**. If **Gen 1 compute** is set, click **Switch to Gen 2 compute**.
   * During the VPC creation, you can create one subnet only. Subnets are specific to a zone. If you want to create a multizone cluster, create the subnet in one of the multizone-capable zones that you want to use. Later, you manually create the subnets for the remaining zones that you want to include in your cluster.<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
   * To run default OpenShift components such as the web console or OperatorHub, attach a public gateway to one or more subnets.
   * For more information, see [Creating a VPC using the IBM Cloud console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) and [Overview of VPC networking in Red Hat OpenShift on IBM Cloud: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
@@ -611,7 +611,7 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
     When the provisioning of your OpenShift master is completed, the status of your cluster changes to **deployed**. After the OpenShift master is ready, your worker nodes are set up.
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          mil01     1.17.7      Default               vpc-classic
+    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          mil01     1.17.9      Default               vpc-classic
     ```
     {: screen}
 
@@ -627,7 +627,7 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
    When the worker nodes are ready, the worker node **State** changes to `deployed` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
    ```
    ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.17.7
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.17.9
    ```
    {: screen}
 

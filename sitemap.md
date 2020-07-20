@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-20"
 
 keywords: openshift
 subcollection: openshift
@@ -514,7 +514,7 @@ subcollection: openshift
 
 
 ## Classic clusters
-{: #sitemap_classic_clusters}
+{: #sitemap_classic_clusters_}
 
 
 [Classic: Configuring subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
@@ -568,7 +568,7 @@ subcollection: openshift
 
 
 ## VPC clusters
-{: #sitemap_vpc_clusters}
+{: #sitemap_vpc_clusters_}
 
 
 [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets)
@@ -1371,6 +1371,9 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+  * [Changelog for worker node fix pack 4.4.11_1511_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
+  * [Changelog for master fix pack 4.3.28_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4328_1532)
+  * [Changelog for worker node fix pack 4.3.29_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4329_1532)
   * [Changelog for worker node fix pack 4.3.27_1528_openshift, released 6 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4327_1528)
   * [Changelog for master fix pack 4.3.23_1527_openshift and worker node fix pack 4.3.25_1527_openshift, released 22 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1527_master)
   * [Changelog for master fix pack 4.3.23_1525_openshift, released 16 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)
@@ -1381,6 +1384,8 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.14_1522_openshift, released 11 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4314_1522)
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
+  * [Changelog for master fix pack 3.11.232_1559_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1559)
+  * [Changelog for worker node fix pack 3.11.232_1558_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1558)
   * [Changelog for worker node fix pack 3.11.232_1555_openshift, released 6 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1555)
   * [Changelog for master fix pack 3.11.219_1554_openshift and worker node fix pack 3.11.232_1554_openshift, released 22 June 2020](/docs/openshift?topic=openshift-openshift_changelog#311219_1554_master)
   * [Changelog for worker node fix pack 3.11.219_1552_openshift, released 8 June 2020](/docs/openshift?topic=openshift-openshift_changelog#311219_1552)
@@ -1521,6 +1526,8 @@ subcollection: openshift
 
 [Can I use IBM Cloud and other services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
 
+[Does IBM support third-party and open source tools that I use with my cluster?](/docs/openshift?topic=openshift-faqs#faq_thirdparty_oss)
+
 [Where can I find more information about Red Hat OpenShift on IBM Cloud pricing models?](/docs/openshift?topic=openshift-faqs#pricing)
 
 [What am I charged for when I use Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-faqs#charges)
@@ -1560,7 +1567,6 @@ subcollection: openshift
 * [Unable to view or work with a cluster](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_access)
 * [No resources found](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_not_found)
 * [VPN server error due to infrastructure credentials](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_openvpn_login)
-* [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help)
 
 [Worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters)
 * [Debugging worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes)
@@ -1573,11 +1579,9 @@ subcollection: openshift
 * [Bare metal instance ID is inconsistent with worker records](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#bm_machine_id)
 * [After a worker node updates or reloads, duplicate nodes and pods appear](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_duplicate_nodes)
 * [Accessing a pod on a new worker node fails with a timeout](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_nodes_duplicate_ip)
-* [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#getting_help_workers)
 
 [Cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler)
 * [Debugging the cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler#debug_cluster_autoscaler)
-* [Feedback, questions, and support](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler#getting_help_ca)
 
 [Cluster networking](/docs/openshift?topic=openshift-cs_troubleshoot_network)
 * [Missing the public `containers.appdomain.cloud` subdomain](/docs/openshift?topic=openshift-cs_troubleshoot_network#roks_ts_subdomain)
@@ -1585,7 +1589,6 @@ subcollection: openshift
 * [Cannot install a new strongSwan Helm chart release](/docs/openshift?topic=openshift-cs_troubleshoot_network#cs_strongswan_release)
 * [strongSwan VPN connectivity fails after you add or delete worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_network#cs_vpn_fails_worker_add)
 * [Cannot retrieve Calico network policies](/docs/openshift?topic=openshift-cs_troubleshoot_network#cs_calico_fails)
-* [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_network#getting_help_network)
 
 [Apps and services](/docs/openshift?topic=openshift-cs_troubleshoot_app)
 * [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app#debug_apps)
@@ -1601,7 +1604,6 @@ subcollection: openshift
 * [Binding a service to a cluster results in service not found error](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_not_found_services)
 * [Binding a service to a cluster results in service does not support service keys error](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_service_keys)
 * [Cannot install a Helm chart with updated configuration values](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_helm_install)
-* [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_app#getting_help_app)
 
 [Load balancers](/docs/openshift?topic=openshift-cs_troubleshoot_lb)
 * [Classic clusters: Cannot connect to an app via a network load balancer (NLB) service](/docs/openshift?topic=openshift-cs_troubleshoot_lb#cs_loadbalancer_fails)
@@ -1611,7 +1613,6 @@ subcollection: openshift
 * [VPC clusters: Kubernetes `LoadBalancer` service fails because no IPs are available](/docs/openshift?topic=openshift-cs_troubleshoot_lb#vpc_no_lb)
 * [Classic clusters: OpenVPN server error due to ingress IP address for NLB](/docs/openshift?topic=openshift-cs_troubleshoot_lb#rhoks_ts_openvpn_subnet)
 * [OpenVPN server error due to NLB DNS](/docs/openshift?topic=openshift-cs_troubleshoot_lb#rhoks_ts_openvpn_dns)
-* [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_lb#getting_help_lb)
 
 [Ingress and routers](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress)
 * [Checking the status of Ingress components](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-status)
@@ -1637,7 +1638,6 @@ subcollection: openshift
 * [3.11 clusters: Ingress ALB cannot be enabled due to subnet errors](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_alb_subnet)
 * [3.11 clusters: Source IP preservation fails when using tainted nodes](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_source_ip_fails)
 * [Connection via WebSocket closes after 60 seconds](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_websocket)
-* [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#getting_help_ingress)
 
 [Persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)
 * [Debugging persistent storage failures](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug_storage)
@@ -1664,6 +1664,12 @@ subcollection: openshift
   * [Step 2: Verifying the cluster setup](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-cluster)
   * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-support)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help_storage)
+
+[Getting help](/docs/openshift?topic=openshift-get-help)
+* [General ways to resolve cluster issues](/docs/openshift?topic=openshift-get-help#help-general)
+* [Reviewing issues and status](/docs/openshift?topic=openshift-get-help#help-cloud-status)
+* [Feedback and questions](/docs/openshift?topic=openshift-get-help#feedback-qs)
+* [Contacting support](/docs/openshift?topic=openshift-get-help#help-support)
 
 
 ## Release notes

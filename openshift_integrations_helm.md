@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-20"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -64,7 +64,7 @@ For an overview of available Helm charts, see the [Helm charts catalog](https://
 - **kubernetes-incubator**: Helm charts that are provided by the Kubernetes community and considered `incubator` by the community governance. These charts are not verified to work in Red Hat OpenShift on IBM Cloud or {{site.data.keyword.cloud_notm}} Private clusters.
 - **entitled**: Helm charts of licensed software that you must purchase and for which you must set up cluster access with an entitlement key. For more information, see [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software).
 
-Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitled** repositories are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using these Helm charts, you can use one of the Red Hat OpenShift on IBM Cloud support channels. For more information, see [Getting help and support](/docs/openshift?topic=openshift-cs_troubleshoot#getting_help).
+Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitled** repositories are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using these Helm charts, you can use one of the Red Hat OpenShift on IBM Cloud support channels. For more information, see [Getting help and support](/docs/openshift?topic=openshift-get-help).
 
 ### Do I install Helm v2 or v3?
 {: #helm-v2-v3}

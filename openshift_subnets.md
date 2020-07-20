@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,11 +44,13 @@ Change the pool of available portable public or private IP addresses by adding s
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to classic clusters. For information about VPC clusters, see [Configuring subnets and IP addresses for VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
 
+
 ## Overview of classic networking in Red Hat OpenShift on IBM Cloud
 {: #basics}
 
 Understand the basic concepts of classic networking in Red Hat OpenShift on IBM Cloud clusters. Red Hat OpenShift on IBM Cloud uses VLANs, subnets, and IP addresses to give cluster components network connectivity.
 {: shortdesc}
+
 
 ### VLANs
 {: #basics_vlans}
@@ -202,7 +204,7 @@ Before you begin:
 
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          dal10     1.17.7      Default             classic
+    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          dal10     1.17.9      Default             classic
     ```
     {: screen}
 
@@ -217,7 +219,7 @@ Before you begin:
 
     ```
     ID                                                  Public IP        Private IP     Machine Type   State      Status   Zone     Version
-    prod-dal10-pa8dfcc5223804439c87489886dbbc9c07-w1    169.xx.xxx.xxx   10.xxx.xx.xxx  free           normal     Ready    dal10      1.17.7
+    prod-dal10-pa8dfcc5223804439c87489886dbbc9c07-w1    169.xx.xxx.xxx   10.xxx.xx.xxx  free           normal     Ready    dal10      1.17.9
     ```
     {: screen}
 

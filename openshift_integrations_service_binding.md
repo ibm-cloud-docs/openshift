@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-17"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -43,7 +43,7 @@ Add {{site.data.keyword.cloud_notm}} services to enhance your OpenShift cluster 
 
 **What types of services can I bind to my cluster?** </br>
 
-When you add {{site.data.keyword.cloud_notm}} services to your cluster, you can choose between services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) and services that are based on Cloud Foundry. IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. Cloud Foundry services must be added to a Cloud Foundry organization and space, and cannot be added to a resource group. To control access to your Cloud Foundry service instance, you use Cloud Foundry roles. For more information about IAM-enabled services and Cloud Foundry services, see [What is a resource?](/docs/account?topic=account-manage_resource#resource).
+When you add {{site.data.keyword.cloud_notm}} services to your cluster, you can choose between services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) and services that are based on Cloud Foundry. IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. Cloud Foundry services must be added to a Cloud Foundry organization and space, and cannot be added to a resource group. To control access to your Cloud Foundry service instance, you use Cloud Foundry roles. For more information about IAM-enabled services and Cloud Foundry services, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 
 To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).

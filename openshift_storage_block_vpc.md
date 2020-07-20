@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos, vpc
 
@@ -1378,9 +1378,6 @@ To clean up persistent data:
    oc get pv
    ```
    {: pre}
-
-   
-
 
 
 

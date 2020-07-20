@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs
 
@@ -221,6 +221,13 @@ You can add {{site.data.keyword.cloud_notm}} platform and infrastructure service
 For a list of supported services, see [Integrating services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations).
 
 
+## Does IBM support third-party and open source tools that I use with my cluster?
+{: #faq_thirdparty_oss}
+{: faq}
+
+See the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+
+
 
 ## Where can I find more information about Red Hat OpenShift on IBM Cloud pricing models?
 {: #pricing}
@@ -320,7 +327,7 @@ Yes, see [Estimating your costs](/docs/billing-usage?topic=billing-usage-cost#co
 {: #usage}
 {: faq}
 
-You can check your current usage and estimated monthly totals for your {{site.data.keyword.cloud_notm}} platform and infrastructure resources. For more information, see [Viewing your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage). To organize your billing, you can group your resources with [resource groups](/docs/account?topic=resources-bp_resourcegroups#bp_resourcegroups).
+You can check your current usage and estimated monthly totals for your {{site.data.keyword.cloud_notm}} platform and infrastructure resources. For more information, see [Viewing your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage). To organize your billing, you can group your resources with [resource groups](/docs/account?topic=account-rgs).
 
 ## Can I add tags to my cluster?
 {: #faq_tags}
