@@ -1371,6 +1371,9 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+  * [Changelog for worker node fix pack 4.4.11_1511_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
+  * [Changelog for master fix pack 4.3.28_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4328_1532)
+  * [Changelog for worker node fix pack 4.3.29_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4329_1532)
   * [Changelog for worker node fix pack 4.3.27_1528_openshift, released 6 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4327_1528)
   * [Changelog for master fix pack 4.3.23_1527_openshift and worker node fix pack 4.3.25_1527_openshift, released 22 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1527_master)
   * [Changelog for master fix pack 4.3.23_1525_openshift, released 16 June 2020](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)
@@ -1381,6 +1384,8 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.14_1522_openshift, released 11 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4314_1522)
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
+  * [Changelog for master fix pack 3.11.232_1559_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1559)
+  * [Changelog for worker node fix pack 3.11.232_1558_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1558)
   * [Changelog for worker node fix pack 3.11.232_1555_openshift, released 6 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1555)
   * [Changelog for master fix pack 3.11.219_1554_openshift and worker node fix pack 3.11.232_1554_openshift, released 22 June 2020](/docs/openshift?topic=openshift-openshift_changelog#311219_1554_master)
   * [Changelog for worker node fix pack 3.11.219_1552_openshift, released 8 June 2020](/docs/openshift?topic=openshift-openshift_changelog#311219_1552)

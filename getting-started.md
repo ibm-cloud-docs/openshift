@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-20"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -199,7 +199,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 
 1.  Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
 2.  From the **Catalog**, click [**Red Hat OpenShift on IBM Cloud**](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}.
-3.  Review the platform version details, **OpenShift 4.3.23**.
+3.  Review the platform version details, **OpenShift 4.3.28**.
 4.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
 5.  For the **Infrastructure**, select **Classic**.
 6.  Configure the **Location** details for your cluster.
@@ -245,7 +245,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
     5. If you require VPC VPN access or classic infrastructure access into this cluster, repeat these steps to add a rule that uses the **UDP** protocol, `30000` for the **Port min**, `32767` for the **Port max**, and the **Any** source type.
 3. From the [Red Hat OpenShift on IBM Cloud dashboard](https://cloud.ibm.com/kubernetes/landing?platformType=openshift){: external}, click **Create cluster**.
 4. Configure your cluster's VPC environment.
-  1.  Review the platform version details, **OpenShift 4.3.23**.
+  1.  Review the platform version details, **OpenShift 4.3.28**.
   2.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
   3.  For the **Infrastructure**, select **VPC**.
   4.  From the **Virtual private cloud** drop-down menu, select the VPC that you created earlier.
