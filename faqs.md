@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs
 
@@ -219,6 +219,13 @@ To achieve HIPAA and PCI compliance for your environment, make sure to use [dedi
 You can add {{site.data.keyword.cloud_notm}} platform and infrastructure services as well as services from third-party vendors to your Red Hat OpenShift on IBM Cloud cluster to enable automation, improve security, or enhance your monitoring and logging capabilities in the cluster.
 
 For a list of supported services, see [Integrating services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations).
+
+
+## Does IBM support third-party and open source tools that I use with my cluster?
+{: #faq_thirdparty_oss}
+{: faq}
+
+See the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 
 
 
