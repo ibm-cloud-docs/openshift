@@ -217,7 +217,7 @@ Before you begin, [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
     5. Edit the `minSize` or `maxSize` parameters and save your changes.
 
-8.  Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](#getting_help_ca).
+8.  Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
 
 
 

@@ -159,7 +159,7 @@ Review common error messages and learn how to resolve them. Messages might begin
     <tbody>
       <tr>
         <td>Your account is currently prohibited from ordering 'Computing Instances'.</td>
-        <td>Your IBM Cloud infrastructure account might be restricted from ordering compute resources. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](#getting_help_workers).</td>
+        <td>Your IBM Cloud infrastructure account might be restricted from ordering compute resources. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).</td>
       </tr>
       <tr>
       <td>Could not place order.<br><br>
@@ -169,7 +169,7 @@ Review common error messages and learn how to resolve them. Messages might begin
       <li>For a single zone cluster, create the cluster in a different zone. For a multizone cluster, add a zone to the cluster.</li>
       <li>Specify a different pair of public and private VLANs for your worker nodes in your IBM Cloud infrastructure account. For worker nodes that are in a worker pool, you can use the <code>ibmcloud oc zone network-set</code> [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set).</li>
       <li>Contact your IBM Cloud infrastructure account manager to verify that you do not exceed an account limit, such as a global quota.</li>
-      <li>Open an [IBM Cloud infrastructure support case](#getting_help_workers)</li></ul></td>
+      <li>Open an [IBM Cloud infrastructure support case](/docs/openshift?topic=openshift-get-help)</li></ul></td>
       </tr>
       <tr>
         <td>Could not obtain network VLAN with ID: <code>&lt;vlan id&gt;</code>.</td>
@@ -177,7 +177,7 @@ Review common error messages and learn how to resolve them. Messages might begin
       </tr>
       <tr>
         <td>The location provided for this order is invalid.</td>
-        <td>Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](#getting_help_workers) to verify that you account is set up correctly.</td>
+        <td>Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](/docs/openshift?topic=openshift-get-help) to verify that you account is set up correctly.</td>
        </tr>
        <tr>
         <td>The user does not have the necessary {{site.data.keyword.cloud_notm}} classic infrastructure permissions to add servers

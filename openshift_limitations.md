@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-20"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -114,7 +114,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | -------- | ----------- |
 | Operating system | You cannot create a cluster with worker nodes that run multiple operating systems, such as OpenShift on Red Hat Enterprise Linux and community Kubernetes on Ubuntu. |
 | Reserved instances | [Reserved capacity and reserved instances](/docs/virtual-servers?topic=virtual-servers-provisioning-reserved-capacity-and-instances) are not supported. |
-| Worker node flavors | Worker nodes are available in [select flavors](/docs/containers?topic=containers-planning_worker_nodes#shared_dedicated_node) of compute resources. |
+| Worker node flavors | Worker nodes are available in [select flavors](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node) of compute resources. |
 | Worker node host access | For security, you cannot SSH into the worker node compute host. |
 | Worker node instances | You cannot exceed 500 worker nodes across all clusters in a region. If you see an IBM Cloud infrastructure capacity limit on the number of instances per data center or that are ordered each month, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support).  |
 {: summary="This table contains information on compute limitations for classic clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
@@ -127,7 +127,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 
 | Category | Description |
 | -------- | ----------- |
-| Ingress ALBs | <ul><li>The Ingress application load balancer (ALB) can process 32,768 connections per second. If your Ingress traffic exceeds this number, [scale up the number of ALB replicas](/docs/containers?topic=containers-ingress-manage#scale_albs) in your cluster to handle the increased workload.</li><li>HTTP/2 is not supported.</li><li>The names of the `ClusterIP` services that expose your apps must be unique across all namespaces in your cluster.</li></ul> |
+| Ingress ALBs | <ul><li>The Ingress application load balancer (ALB) can process 32,768 connections per second. If your Ingress traffic exceeds this number, [scale up the number of ALB replicas](/docs/openshift?topic=openshift-ingress-manage#scale_albs) in your cluster to handle the increased workload.</li><li>HTTP/2 is not supported.</li><li>The names of the `ClusterIP` services that expose your apps must be unique across all namespaces in your cluster.</li></ul> |
 | Network load balancers (NLB)| <ul><li>You cannot create version 2.0 network load balancers (NLB 2.0) to expose your apps.</li><li>You cannot create subdomains for private NLBs.</li><li>You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-getting-customer-support).</li></ul> | 
 | Private VLANs only | Private network load balancers (NLBs) cannot be registered with the domain name server (DNS), so the cluster cannot be created with only a private network interface. Worker nodes must be connected to both public and private VLANs. You can still create a private service to expose your apps on only the private network. |
 | Service endpoints | When you create a cluster, you must enable the public service endpoint, and can optionally enable the private service endpoint in version 3.11. | 
@@ -165,13 +165,13 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 
 | Category | Description |
 | -------- | ----------- |
-| Encryption | The secondary disks of your worker nodes are encrypted at rest by default by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#about-vpc-provider-managed-encryption). However, you cannot [bring your own encryption to the underlying virtual server instances](/docs/vpc?topic=vpc-creating-instances-byok).|
-| Location | VPC Gen 2 clusters are available only in [select multizone metro locations](/docs/containers?topic=containers-regions-and-zones#zones-vpc-gen2). |
+| Encryption | The secondary disks of your worker nodes are encrypted at rest by default by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption). However, you cannot [bring your own encryption to the underlying virtual server instances](/docs/vpc?topic=vpc-creating-instances-byok).|
+| Location | VPC Gen 2 clusters are available only in [select multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc-gen2). |
 | Operating system | You cannot create a cluster with worker nodes that run multiple operating systems, such as OpenShift on Red Hat Enterprise Linux and community Kubernetes on Ubuntu. |
 | Versions | VPC Gen 2 clusters must run OpenShift version 4.3 or later. |
 | Virtual Private Cloud | See [Known limitations](/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations) and [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas). |
-| v2 API | VPC clusters use the [Red Hat OpenShift on IBM Cloud v2 API](/docs/containers?topic=containers-cs_api_install#api_about). The v2 API is currently under development, with only a limited number of API operations currently available. You can run certain v1 API operations against the VPC cluster, such as `GET /v1/clusters` or `ibmcloud oc cluster ls`, but not all the information that a Classic cluster has is returned or you might experience unexpected results. For supported VPC v2 operations, see the [CLI reference topic for VPC commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about). |
-| Worker node flavors | Only certain flavors are available for worker node [virtual machines](/docs/containers?topic=containers-planning_worker_nodes#vm). Bare metal machines are not supported.|
+| v2 API | VPC clusters use the [Red Hat OpenShift on IBM Cloud v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about). The v2 API is currently under development, with only a limited number of API operations currently available. You can run certain v1 API operations against the VPC cluster, such as `GET /v1/clusters` or `ibmcloud oc cluster ls`, but not all the information that a Classic cluster has is returned or you might experience unexpected results. For supported VPC v2 operations, see the [CLI reference topic for VPC commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about). |
+| Worker node flavors | Only certain flavors are available for worker node [virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm). Bare metal machines are not supported.|
 | Worker node host access | For security, you cannot SSH into the worker node compute host. |
 | Worker node instances | You can have up to 100 worker nodes per VPC cluster. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-getting-customer-support).|
 | Worker node updates | You cannot update or reload worker nodes. Instead, you can delete the worker node and rebalance the worker pool with the `ibmcloud oc worker replace` command. |
@@ -187,13 +187,13 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | -------- | ----------- |
 | Network speeds | [VPC Gen 2 compute profile network speeds](/docs/vpc?topic=vpc-profiles) refer to the speeds of the worker node interfaces. The maximum speed available to your worker nodes is `16Gbps`. Because IP in IP encapsulation is required for traffic between pods that are on different VPC Gen 2 worker nodes, data transfer speeds between pods on different worker nodes might be slower, about half the compute profile network speed. Overall network speeds for apps that you deploy to your cluster depend on the worker node size and application's architecture. |
 | NodePort | You can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection. To access an app from the internet, you must use a VPC load balancer or Ingress service instead. |
-| Pod network | VPC access control lists (ACLs) filter incoming and outgoing traffic for your cluster at the subnet level, such as traffic through the VPC load balancer. To control traffic within the cluster at the pod-to-pod level, you cannot use VPC security groups or ACLs. Instead, use [Calico](/docs/openshift?topic=openshift-network_policies) and [Kubernetes network policies](/docs/containers?topic=containers-vpc-network-policy#kubernetes_policies), which can control the pod-level network traffic that uses IP in IP encapsulation. |
+| Pod network | VPC access control lists (ACLs) filter incoming and outgoing traffic for your cluster at the subnet level, such as traffic through the VPC load balancer. To control traffic within the cluster at the pod-to-pod level, you cannot use VPC security groups or ACLs. Instead, use [Calico](/docs/openshift?topic=openshift-network_policies) and [Kubernetes network policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies), which can control the pod-level network traffic that uses IP in IP encapsulation. |
 | Public gateway | You must attach a public gateway to the VPC subnet so that the worker nodes have access to the public network, to run default OpenShift components such as the web console and OperatorHub.|
 | Service endpoints | When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private service endpoint. If you want only a private service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.|
 | strongSwan VPN service | The strongSwan service is not supported. To connect your cluster to resources in an on-premises network or another VPC, see [Using VPN with your VPC](/docs/vpc?topic=vpc-vpn-onprem-example). |
-| Subnets | <ul><li>See [VPC networking limitations](/docs/containers?topic=containers-vpc-subnets#vpc_basics_limitations).</li><li>Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</li></ul> |
-| VPC load balancer | See [VPC load balancer limitations](/docs/containers?topic=containers-vpc-lbaas#lbaas_limitations). |
-| VPC security groups | You must [allow inbound traffic requests to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups). |
+| Subnets | <ul><li>See [VPC networking limitations](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_limitations).</li><li>Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</li></ul> |
+| VPC load balancer | See [VPC load balancer limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations). |
+| VPC security groups | You must [allow inbound traffic requests to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups). |
 {: summary="This table contains information on networking limitations for VPC Gen 2 clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="VPC Gen 2 cluster networking limitations"}
 

@@ -224,7 +224,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
   * **Version 3.11 clusters:**
     1. Check whether an ALB exists for your cluster and that the ALB has a public IP address (classic clusters) or a hostname (VPC clusters) assigned.
       * If a public ALB is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no ALBs are created after several minutes, [review ways to get help](#getting_help_ingress).
+      * If no ALBs are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         ibmcloud oc alb ls -c <cluster_name_or_ID>
@@ -241,7 +241,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address (classic clusters) or a hostname (VPC clusters) as the public ALB.
       * If a `LoadBalancer` service is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](#getting_help_ingress).
+      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         kubectl get svc -n kube-system | grep LoadBalancer
@@ -256,7 +256,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
   * **Version 4.3 and later clusters:**
     1. Check whether a router deployment exists for your cluster.
       * If a router deployment is listed, continue to the next step.
-      * If no router deployment is created after several minutes, [review ways to get help](#getting_help_ingress).
+      * If no router deployment is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         oc get deployment -n openshift-ingress
@@ -272,7 +272,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the router's load balancer service exists and is assigned a public external IP address (classic clusters) or a hostname (VPC clusters).
       * If a service that is named `router-default` is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no `router-default` service is created after several minutes, [review ways to get help](#getting_help_ingress).
+      * If no `router-default` service is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         oc get svc -n openshift-ingress
@@ -287,7 +287,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](#getting_help_ingress).
+5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](/docs/openshift?topic=openshift-get-help).
   ```
   ibmcloud oc cluster get -c <cluster_name_or_ID>
   ```
@@ -485,6 +485,28 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
         oc logs <pod> -n openshift-ingress
         ```
         {: pre}
+
+3. Check for events and errors on each router service.
+    1. List the services in the `openshift-ingress` namespace.
+      ```
+      oc get svc -n openshift-ingress
+      ```
+      {: pre}
+
+      Example output for a multizone cluster with worker nodes in `dal10` and `dal13`:
+      ```
+      NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+      router-dal13                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32318/TCP,443:30915/TCP   26d
+      router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26d
+      router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26d
+      ```
+      {: screen}
+    2. Describe each router service and check for messages in the `Events` section of the output.
+      ```
+      oc describe svc router-default -n openshift-ingress
+      ```
+      {: pre}
+      * For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes `LoadBalancer` service is offline`. For more information, see [Cannot connect to an app via load balancer](/docs/openshift?topic=openshift-cs_troubleshoot_lb#vpc_ts_lb).
 
 ### Step 4: Ping the Ingress subdomain and router public IP address
 {: #ping-43}
