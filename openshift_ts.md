@@ -400,7 +400,7 @@ If these components fail, review the following debug steps.
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
     ```
     {: pre}
-7.  Try to use the OpenShift component again. If the error still exists, see [Feedback, questions, and support](#getting_help).
+7.  Try to use the OpenShift component again. If the error still exists, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
 
 <br />
 
