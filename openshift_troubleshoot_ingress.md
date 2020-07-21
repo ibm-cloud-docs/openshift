@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -110,7 +110,7 @@ Even if the cluster is in a `normal` state, the Ingress subdomain and secret mig
 
 1. When worker nodes are fully deployed and ready on the VLANs, a portable public and a portable private subnet for the VLANs are ordered.
 2. After the portable subnet orders are successfully fulfilled, the `ibm-cloud-provider-vlan-ip-config` config map is updated with the portable public and portable private IP addresses.
-3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the public ALB (version 3.11 clusters) or router for the Ingress controller (version 4.3 or later clusters) is triggered for creation.
+3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the public ALB (version 3.11 clusters) or router for the Ingress controller (version 4 clusters) is triggered for creation.
 4. A load balancer service that exposes the ALB or router is created and assigned an IP address (classic clusters) or a hostname (VPC clusters).
 5. The load balancer IP address or hostname is used to register the Ingress subdomain in Cloudflare. Cloudflare might have latency during the registration process.
 
@@ -220,7 +220,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     ```
     {: screen}
 
-4. Verify that the ALB (version 3.11 clusters) or router for the Ingress controller (version 4.3 or later clusters) is successfully created.
+4. Verify that the ALB (version 3.11 clusters) or router for the Ingress controller (version 4 clusters) is successfully created.
   * **Version 3.11 clusters:**
     1. Check whether an ALB exists for your cluster and that the ALB has a public IP address (classic clusters) or a hostname (VPC clusters) assigned.
       * If a public ALB is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
@@ -253,7 +253,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         public-crbmnj1b1d09lpvv3oof0g-alb1   LoadBalancer   172.21.XXX.XXX   169.XX.XXX.XX   80:30723/TCP,443:31241/TCP   1d
         ```
         {: screen}
-  * **Version 4.3 and later clusters:**
+  * **Version 4 clusters:**
     1. Check whether a router deployment exists for your cluster.
       * If a router deployment is listed, continue to the next step.
       * If no router deployment is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
@@ -318,7 +318,7 @@ If you need to continue testing, you can change the name of the cluster so that 
 You publicly exposed your app by creating an Ingress resource for your app in your classic cluster. When you tried to connect to your app by using the public IP address or Ingress subdomain, the connection failed or timed out.
 
 {: tsResolve}
-First, check that your cluster is fully deployed and has at least 2 worker nodes available per zone to ensure high availability for your ALB (version 3.11 clusters) or router for the Ingress controller (version 4.3 or later clusters).
+First, check that your cluster is fully deployed and has at least 2 worker nodes available per zone to ensure high availability for your ALB (version 3.11 clusters) or router for the Ingress controller (version 4 clusters).
 ```
 ibmcloud oc worker ls --cluster <cluster_name_or_ID>
 ```
@@ -335,12 +335,12 @@ Version 3.11 clusters: If you recently restarted your ALB pods or enabled an ALB
 <br />
 
 
-## 4.3 clusters: Debugging Ingress
+## Version 4 clusters: Debugging Ingress
 {: #ingress-debug-roks4}
 {: troubleshoot}
 {: support}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 4.3. For 3.11 clusters, see [3.11 clusters: Debugging Ingress](#ingress-debug).
+<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 4. For 3.11 clusters, see [3.11 clusters: Debugging Ingress](#ingress-debug).
 {: note}
 
 {: tsSymptoms}
@@ -370,7 +370,7 @@ Start by checking for errors in your app deployment and the Ingress resource dep
     ```
     {: pre}
 
-    In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. Check the [Ingress resource configuration documentation](/docs/openshift?topic=openshift-ingress#public_inside_4). For annotations, note that the {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later. If you want to customize routing rules for apps in a cluster that runs OpenShift version 4.3 or later, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. To add annotations to the router, run `oc edit svc router-default -n openshift-ingress`.
+    In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. Check the [Ingress resource configuration documentation](/docs/openshift?topic=openshift-ingress#public_inside_4). For annotations, note that the {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4. If you want to customize routing rules for apps in a cluster that runs OpenShift version 4, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. To add annotations to the router, run `oc edit svc router-default -n openshift-ingress`.
 
     ```
     Name:             myingress
@@ -604,10 +604,10 @@ Check the availability of the public IP addresses of the Ingress controller's ro
 <br />
 
 
-## 4.3 clusters: Router for Ingress controller does not deploy in a zone
+## Version 4 clusters: Router for Ingress controller does not deploy in a zone
 {: #cs_subnet_limit_43}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 4.3.
+<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 4.
 {: note}
 
 {: tsSymptoms}
@@ -721,13 +721,13 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 <br />
 
 
-## 3.11 clusters: Debugging Ingress
+## Version 3.11 clusters: Debugging Ingress
 {: #ingress-debug}
 {: troubleshoot}
 {: support}
 
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11. For 4.3 clusters, see [4.3 clusters: Debugging Ingress](#ingress-debug-roks4).
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11. For version 4 clusters, see [Version 4 clusters: Debugging Ingress](#ingress-debug-roks4).
 {: note}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-21"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -244,7 +244,7 @@ For more information about the console, see the [OpenShift documentation](http:/
 
     <table class="simple-tab-table" id="console1" tab-title="OCP 4" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
-      <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> OpenShift console overview<br>
+      <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> OpenShift console overview<br>
       <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between OpenShift console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>

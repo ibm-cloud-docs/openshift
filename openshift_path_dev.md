@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-21"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -284,7 +284,7 @@ Configure your app in a YAML file that declares the configuration of the Kuberne
   2. Build app containers from [images in the internal, public, or private registries](/docs/openshift?topic=openshift-images).
   3. Specify your [app requirements in a YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), which declares the configuration of the Kubernetes object.
 2. **Version your app**:
-  1. <ff-roks>Version 4.3 and later clusters: </ff-roks>To plan customized configurations for more than one environment, such as development, testing, and production environments, [use the Kustomize tool](/docs/openshift?topic=openshift-openshift_apps#kustomize) to manage your configuration YAML file.
+  1. Version 4: To plan customized configurations for more than one environment, such as development, testing, and production environments, [use the Kustomize tool](/docs/openshift?topic=openshift-openshift_apps#kustomize) to manage your configuration YAML file.
   2. If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, [package your application to help automate deployments](/docs/openshift?topic=openshift-plan_deploy#packaging).
 
 </br>Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_app).
@@ -370,7 +370,7 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
     * VPC clusters: Set up a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas).
 
   * Ingress:
-      * Version 4.3 and later clusters: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public) or the [private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private).
+      * Version 4: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public) or the [private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private).
       * Version 3.11 clusters: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress#ingress_expose_public) or the [private network](/docs/openshift?topic=openshift-ingress#ingress_expose_private).
 
   * Routes: [Create a route to expose your app on a subdomain.](/docs/openshift?topic=openshift-openshift_routes)

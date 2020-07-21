@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-11"
+lastupdated: "2020-07-21"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -62,10 +62,10 @@ You can change the MTU on the tunnel interface `tunl0`, which is used for pod to
 
 
 
-### Changing the Calico MTU for 4.3 or later clusters
+### Changing the Calico MTU for version 4 clusters
 {: #calico-mtu-43}
 
-Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an OpenShift version 4.3 or later cluster.
+Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an OpenShift version 4 cluster.
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
@@ -222,10 +222,10 @@ When you have a large number of services in your cluster, such as more than 500 
 If you must use `hostPorts`, do not disable the portmap plug-in.
 {: note}
 
-### Disabling the portmap plug-in for 4.3 or later clusters
+### Disabling the portmap plug-in for version 4 clusters
 {: #calico-portmap-43}
 
-Disable the portmap plug-in by disabling `hostPorts` for Calico in an OpenShift version 4.3 or later cluster.
+Disable the portmap plug-in by disabling `hostPorts` for Calico in an OpenShift version 4 cluster.
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.

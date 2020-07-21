@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -58,7 +58,7 @@ You can use Calico and Kubernetes to create network policies for a cluster. With
 
 Calico enforces these policies, including any Kubernetes network policies that are automatically converted to Calico policies, by setting up Linux Iptables rules on the Kubernetes worker nodes. Iptables rules serve as a firewall for the worker node to define the characteristics that the network traffic must meet to be forwarded to the targeted resource.
 
-In OpenShift Container Platform version 4.3, Calico is based on the Kubernetes data-store driver. For more information, see the [Calico documentation](https://docs.projectcalico.org/getting-started/kubernetes/hardway/the-calico-datastore){: external}.
+In OpenShift Container Platform version 4, Calico is based on the Kubernetes data-store driver. For more information, see the [Calico documentation](https://docs.projectcalico.org/getting-started/kubernetes/hardway/the-calico-datastore){: external}.
 
 <br />
 

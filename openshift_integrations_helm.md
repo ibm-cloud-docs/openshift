@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-21"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -41,7 +41,7 @@ subcollection: openshift
 You can add complex OpenShift apps to your cluster by using Helm charts.
 {: shortdesc}
 
-In OpenShift clusters that run version 4.3 or later, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.2/operators/operator_sdk/osdk-helm.html) instead.
+In OpenShift clusters that run version 4, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.2/operators/operator_sdk/osdk-helm.html) instead.
 {: tip}
 
 ## About Helm in Red Hat OpenShift on IBM Cloud

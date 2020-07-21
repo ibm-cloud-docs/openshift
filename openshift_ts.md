@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -248,7 +248,7 @@ Commonly used components include the following:
 
 If these components fail, review the following debug steps.
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Some components, such as the OperatorHub, are available only in clusters that run OpenShift version 4.3 or later, or run in different projects in version 3.11. You can still troubleshoot OpenShift components in 3.11 clusters, but the project and resource names might vary.
+<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Some components, such as the OperatorHub, are available only in clusters that run OpenShift version 4, or run in different projects in version 3.11. You can still troubleshoot OpenShift components in 3.11 clusters, but the project and resource names might vary.
 {: note}
 
 1.  Check that your {{site.data.keyword.cloud_notm}} account is set up properly. Some common scenarios that can prevent the default components from running properly include the following:
@@ -277,6 +277,12 @@ If these components fail, review the following debug steps.
         *  If your cluster does have a subdomain, continue to the next step.
     3.  Verify that your cluster runs the latest **Version**. If your cluster does not run the latest version, update the cluster and worker nodes.
         1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version.
+
+            **4.4**:
+            ```
+            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.4_openshift -f
+            ```
+            {: pre}
 
             **4.3**:
             ```
@@ -394,7 +400,7 @@ If these components fail, review the following debug steps.
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
     ```
     {: pre}
-7.  Try to use the OpenShift component again. If the error still exists, see [Feedback, questions, and support](#getting_help).
+7.  Try to use the OpenShift component again. If the error still exists, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
 
 <br />
 

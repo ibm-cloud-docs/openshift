@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -74,7 +74,7 @@ You can quickly access your Red Hat OpenShift on IBM Cloud cluster from the cons
 2.  Click **OpenShift web console**.
 3.  To continue working in the terminal, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the terminal as follows.
     *  **Version 3.11**: Paste the copied `oc login` command into your terminal.
-    *  **Version 4.3**: Click **Display Token**, copy the `oc login` command, and paste the command into your terminal.
+    *  **Version 4**: Click **Display Token**, copy the `oc login` command, and paste the command into your terminal.
 
 **What's next?** Try [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui).
 
@@ -121,7 +121,7 @@ Choose from the following options.
 ## Accessing clusters through the private service endpoint
 {: #access_private_se}
 
-This information is applicable for version 3.11 clusters or version 4.3 clusters on VPC compute infrastucture. The private service endpoint cannot be enabled on version 4.3 clusters on classic infrastucture.
+This information is applicable for version 3.11 clusters or version 4 clusters on VPC compute infrastucture. The private service endpoint cannot be enabled on version 4 clusters on classic infrastucture.
 {: note}
 
 
@@ -428,7 +428,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 
         ```
         {: screen}
-    2.  <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later only**: Get the token endpoint of the OpenShift `oauth` server.
+    2.  <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4 only**: Get the token endpoint of the OpenShift `oauth` server.
         ```
         curl https://<master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
         ```
@@ -439,7 +439,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         https://<token_endpoint>/oauth/token
         ```
     3.  Log in to the cluster with the endpoint that you previously retrieved.
-        * <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 or later**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
+        * <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
         * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 3.11**: Replace `<URL>` with the master URL.
 
         Example curl request:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -49,26 +49,31 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 ## Version 4.4 changelog
+{: #version-44}
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 4.4 patch updates.
 {: shortdesc}
 
-### Changelog for worker node fix pack 4.4.11_1511_openshift, released 20 July 2020
-{: #4411_1511}
+### Changelog for 4.4.11_1511_openshift, released 21 July 2020
+{: #311232_1559}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.11_1511_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the `4.4.11_1511_openshift` version update.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| CRI-O | 1.16.6 | 1.17.4 | See the [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.17.4){: external}. |
-| HAProxy | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
-| RHEL 7 Packages |  N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}.|
-| OpenShift | 4.3.29 | 4.4.11 | See the [OpenShift changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-11){: external}. |
-{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
-{: caption="Changes since version 4.3.29_1532_openshift" caption-side="top"}
+| Component | Location | Previous | Current | Description |
+| --- | --- | --- | --- | --- |
+| CRI-O | Worker | 1.16.6 | 1.17.4 | See the [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.17.4){: external}. |
+| HAProxy | Worker | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
+| Key Management Service provider | Master | N/A | v1.0.0 | **New!**: Red Hat OpenShift on IBM Cloud version 4.4 clusters now support [Key Management Service (KMS) providers](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption#kms). |
+| OpenShift Control Plane Operator | Master | v4.3.0+20200615 | v4.4.0+20200615 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200615){: external}. |
+| OpenShift | Both | Master 4.3.28<br>Worker 4.3.29 | 4.4.11 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-11){: external}. |
+| RHEL 7 Packages | Worker | N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}.|
+| Red Hat OpenShift on IBM Cloud toolkit | Master | 4.3.0+20200615 | 4.4.0+20200615 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200615){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the location of the component, in the master, worker node, or both. The third column is the previous version number of the component. The fourth column is the current version number of the component. The fifth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.28_1532_openshift" caption-side="top"}
 
 ## Version 4.3 changelog
+{: #version-43}
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 4.3 patch updates.
 {: shortdesc}
@@ -280,6 +285,7 @@ The following table shows the changes that are included in the master fix pack u
 {: caption="Changes since version 3.11.170" caption-side="top"}
 
 ## Deprecated: Version 3.11 changelog
+{: #version-311}
 
 Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch updates.
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -45,7 +45,7 @@ Quickly expose your app to the Internet by creating an Ingress resource.
 
 
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run OpenShift version 3.11 only. For clusters that run OpenShift version 4.3 or later, see [Quick start for Ingress in OpenShift version 4.3 or later](/docs/openshift?topic=openshift-ingress-qs-roks4).
+This quick start is for clusters that run OpenShift version 3.11 only. For clusters that run OpenShift version 4, see [Quick start for Ingress in OpenShift version 4](/docs/openshift?topic=openshift-ingress-qs-roks4).
 {: important}
 
 1. Create a Kubernetes ClusterIP service for your app so that it can be included in the Ingress application load balancing.

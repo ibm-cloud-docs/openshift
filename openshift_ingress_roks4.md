@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -35,13 +35,13 @@ subcollection: openshift
 
 
 
-# Setting up Ingress in OpenShift 4.3 or later
+# Setting up Ingress in OpenShift 4
 {: #ingress-roks4}
 
 Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by creating Ingress resources that are managed by the Ingress controller.
 {:shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 4.3 or later only. To set up Ingress for clusters that run OpenShift version 3.11, see [Setting up Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress).
+<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 4 only. To set up Ingress for clusters that run OpenShift version 3.11, see [Setting up Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress).
 {: note}
 
 ## Prerequisites
@@ -1153,7 +1153,7 @@ http://<subdomain2>.<domain>/<app1_path>
 
 If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
 
-These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.</br></br>{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
+These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.</br></br>{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.
 {: important}
 
 To add annotations to the router:
