@@ -284,7 +284,7 @@ Configure your app in a YAML file that declares the configuration of the Kuberne
   2. Build app containers from [images in the internal, public, or private registries](/docs/openshift?topic=openshift-images).
   3. Specify your [app requirements in a YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), which declares the configuration of the Kubernetes object.
 2. **Version your app**:
-  1. <ff-roks>Version 4: </ff-roks>To plan customized configurations for more than one environment, such as development, testing, and production environments, [use the Kustomize tool](/docs/openshift?topic=openshift-openshift_apps#kustomize) to manage your configuration YAML file.
+  1. Version 4: To plan customized configurations for more than one environment, such as development, testing, and production environments, [use the Kustomize tool](/docs/openshift?topic=openshift-openshift_apps#kustomize) to manage your configuration YAML file.
   2. If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, [package your application to help automate deployments](/docs/openshift?topic=openshift-plan_deploy#packaging).
 
 </br>Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_app).
