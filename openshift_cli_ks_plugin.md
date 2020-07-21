@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-21"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -604,7 +604,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <dd>The VPC subnet to assign the cluster. This value is required. To list available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2`.</dd>
 
 <dt><code>--version 4.3_openshift</code></dt>
-<dd>VPC Gen 2 clusters are supported for OpenShift version 4.3 only.</dd>
+<dd>VPC Gen 2 clusters are supported for OpenShift version 4 only.</dd>
 
 <dt><code>--flavor <em>FLAVOR</em></code></dt>
 <dd>Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.</dd>

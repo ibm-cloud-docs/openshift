@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -786,7 +786,7 @@ If you want users to be able to interact with Kubernetes resources from within a
 
 To learn more about the actions permitted by each RBAC role, check out the [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service) reference topic. To see the permissions that are granted by each RBAC role to individual Kubernetes resources, check out [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref).
 
-All users of an OpenShift cluster are added to the following OpenShift RBAC groups by cluster version. <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`. <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.
+All users of an OpenShift cluster are added to the following OpenShift RBAC groups by cluster version. <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`. <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.
 {: note}
 
 **Can I create custom roles or cluster roles?**</br>

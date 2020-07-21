@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -35,7 +35,7 @@ subcollection: openshift
 
 
 
-# Exposing apps with routes in OpenShift 4.3 or later
+# Exposing apps with routes in OpenShift version 4
 {: #openshift_routes}
 {: help}
 {: support}
@@ -43,7 +43,7 @@ subcollection: openshift
 Expose the services in your {{site.data.keyword.openshiftlong}} cluster on the router's external IP address by using a route.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 4.3 or later. To set up routes for OpenShift version 3.11, see [Exposing apps with routes in OpenShift 3.11](/docs/openshift?topic=openshift-routes-311).
+<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 4. To set up routes for OpenShift version 3.11, see [Exposing apps with routes in OpenShift 3.11](/docs/openshift?topic=openshift-routes-311).
 {: important}
 
 Not sure whether to use OpenShift routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).

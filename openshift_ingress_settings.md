@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -41,7 +41,7 @@ subcollection: openshift
 After you expose your apps by creating an Ingress resource, you can further configure the Ingress ALBs in your cluster by setting the following options.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is applicable for clusters that run OpenShift version 3.11 only. To learn about Ingress for OpenShift version 4.3 or later, see [About Ingress in OpenShift version 4.3 or later](/docs/openshift?topic=openshift-ingress-about-roks4).
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is applicable for clusters that run OpenShift version 3.11 only. To learn about Ingress for OpenShift version 4, see [About Ingress in OpenShift version 4](/docs/openshift?topic=openshift-ingress-about-roks4).
 {: important}
 
 ## Opening non-default ports in the Ingress ALB

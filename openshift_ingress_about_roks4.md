@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -35,10 +35,10 @@ subcollection: openshift
 
 
 
-# About Ingress in OpenShift version 4.3
+# About Ingress in OpenShift version 4
 {: #ingress-about-roks4}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 4.3 or later only. To learn about Ingress for OpenShift version 3.11 clusters, see [About Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-about).
+<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 4 only. To learn about Ingress for OpenShift version 3.11 clusters, see [About Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-about).
 {: note}
 
 Ingress is a service that balances network traffic workloads in your cluster by forwarding public or private requests to your apps. You can use Ingress to expose multiple app services to the public or to a private network by using a unique public or private domain.
@@ -49,7 +49,7 @@ In your cluster, the OpenShift router is a layer 7 load balancer which implement
 ## What are the components of Ingress?
 {: #ingress_roks4_components}
 
-In clusters that run OpenShift version 4.3 or later, Ingress consists of three components: an Ingress controller, a router, and Ingress resources.
+In clusters that run OpenShift version 4, Ingress consists of three components: an Ingress controller, a router, and Ingress resources.
 {: shortdesc}
 
 ### Ingress controller
@@ -103,7 +103,7 @@ One Ingress resource is required for each project where you have apps that you w
 
 For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects).
 
-If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.3 and later.
+If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.
 {: important}
 
 <br />
@@ -201,7 +201,7 @@ If you want to customize routing rules for your app, you can use [HAProxy annota
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 
-{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are **not** supported for the router, Ingress controller, or the Ingress resource in OpenShift version 4.3 and later.
+{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are **not** supported for the router, Ingress controller, or the Ingress resource in OpenShift version 4.
 
 To get started, see [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-21"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -156,10 +156,10 @@ With operators, you can manage the lifecycle of the apps in your cluster, includ
 Operators are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for additional charges and how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator, work with the appropriate provider to troubleshoot the issue.
 {: note}
 
-## Using Operators in 4.3 clusters
+## Using Operators in version 4 clusters
 {: #operators_4}
 
-In OpenShift clusters that run version 4.3 or later, operators are available in your cluster by default. Use [Operators](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html){: external} to package, deploy, and update the apps in your Red Hat OpenShift on IBM Cloud clusters.
+In OpenShift clusters that run version 4, operators are available in your cluster by default. Use [Operators](https://docs.openshift.com/container-platform/4.1/applications/operators/olm-what-operators-are.html){: external} to package, deploy, and update the apps in your Red Hat OpenShift on IBM Cloud clusters.
 {: shortdesc}
 
 1.  To use operators, follow the OpenShift documentation.
@@ -206,7 +206,7 @@ Try out the following tutorial.
 ## Using the service catalog in 3.11 clusters
 {: #service_catalog}
 
-<img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> The service catalog is not supported in clusters that run version 4.3 and later. Use [Operators](#operators_4) instead. Do not use the OperatorHub to install the service catalog.
+<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> The service catalog is not supported in clusters that run version 4. Use [Operators](#operators_4) instead. Do not use the OperatorHub to install the service catalog.
 {: important}
 
 You can extend your app's capabilities by binding a service from the [OpenShift service catalog](https://docs.openshift.com/container-platform/3.11/architecture/service_catalog/index.html){: external}. The service catalog is enabled in your 3.11 cluster by default. For an example of how to use the service catalog, see [Deploying an app with the OpenShift service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app).

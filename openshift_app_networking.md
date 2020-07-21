@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -62,7 +62,7 @@ To securely expose your apps to external traffic, you can use choose from the fo
 
 <dt>Ingress</dt>
 <dd>The Ingress service type is implemented differently depending on your cluster's OpenShift version.<ul>
-<li><img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4.3 and later clusters**: Expose multiple apps in a cluster by setting up routing with the [OpenShift Ingress controller](/docs/openshift?topic=openshift-ingress-roks4). The Ingress controller uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
+<li><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4 clusters**: Expose multiple apps in a cluster by setting up routing with the [OpenShift Ingress controller](/docs/openshift?topic=openshift-ingress-roks4). The Ingress controller uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
   <li>The Ingress controller is a HAProxy-based Kubernetes service that manages all incoming traffic for the apps in your cluster by implementing routing rules for the apps. This controller is managed by the Ingress operator.</li>
   <li>The router listens for incoming HTTP, HTTPS, or TCP service requests, and then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.</li>
   <li>The Ingress resource defines the rules for how to route and load balance incoming requests for an app.</li></ul></li>
@@ -97,9 +97,9 @@ The following table compares the features of each app exposure method.
 |{{site.data.keyword.cloud_notm}} extensions like {{site.data.keyword.appid_short}}| | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Consistent hybrid multicloud deployment| | | | |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 {: class="simple-tab-table"}
-{: caption="Comparison of external networking for apps in OpenShift version 4.3 clusters." caption-side="top"}
+{: caption="Comparison of external networking for apps in OpenShift version 4 clusters." caption-side="top"}
 {: #roks-net-compare-43}
-{: tab-title="OpenShift 4.3"}
+{: tab-title="OpenShift 4"}
 {: tab-group="openshift-network-compare"}
 
 |Characteristics|NodePort|NLB|Ingress ALB|Route|
@@ -190,7 +190,7 @@ You cannot use multiple app exposure methods for one app.
 <td><ol><li>Create an [Ingress resource](/docs/openshift?topic=openshift-ingress#ingress_expose_public) for the public ALB.</li><li>Customize ALB routing rules with [annotations](/docs/openshift?topic=openshift-ingress_annotation).</li></ol></td>
 </tr>
 <tr>
-<td>OpenShift version 4.3 or later clusters: Ingress controller</td>
+<td>OpenShift version 4 clusters: Ingress controller</td>
 <td>HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules</td>
 <td>Implement custom routing rules and SSL termination for multiple apps.</td>
 <td>Create an [Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public) for the default public Ingress controller.</td>
@@ -232,7 +232,7 @@ You cannot use multiple app exposure methods for one app.
 <td>[Create a public `LoadBalancer` service](/docs/openshift?topic=openshift-vpc-lbaas) in your cluster. A multizonal VPC load balancer is automatically created in your VPC that assigns a hostname to your `LoadBalancer` service for your app.</td>
 </tr>
 <tr>
-<td>OpenShift version 4.3 or later clusters: Ingress controller</td>
+<td>OpenShift version 4 clusters: Ingress controller</td>
 <td>HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules</td>
 <td>Implement custom routing rules and SSL termination for multiple apps.</td>
 <td>[Create an Ingress resource for the default public Ingress controller in clusters with a public service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public), or [create an Ingress resource for a custom public Ingress controller in clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller).</td>
@@ -280,7 +280,7 @@ Check out the following methods for private app networking:
 |NLB 1.0|Basic load balancing that exposes the app with a private IP address|Quickly expose one app to a private network with a private IP address.|<ol><li>[Create a private NLB service](/docs/openshift?topic=openshift-loadbalancer).</li><li>An NLB with a portable private IP address still has a public node port open on every worker node. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts.</li></ol>|
 |NLB v2.0|DSR load balancing that exposes the app with a private IP address|Expose an app that might receive high levels of traffic to a private network with an IP address.|<ol><li>Complete the [prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).</li><li>Create a private NLB 2.0 in a [single-](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config) cluster.</li><li>An NLB with a portable private IP address still has a public node port open on every worker node. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts.</li></ol>|
 |OpenShift version 3.11 clusters: Ingress ALB|HTTPS load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps. Choose this method only if you have specific requirements to use Ingress instead of routes, such as migrating an app that already uses Ingress from a community Kubernetes cluster.|<ol><li>[Disable the public ALB](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).</li><li>[Enable the private ALB and create an Ingress resource](/docs/openshift?topic=openshift-ingress#ingress_expose_private).</li><li>Customize ALB routing rules with [annotations](/docs/openshift?topic=openshift-ingress_annotation).</li></ol>|
-|OpenShift version 4.3 or later clusters: Ingress controller|HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps.|<ol><li>[Register your custom domain](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-2).</li><li>[Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-3).</li><li>Create an [Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4) for the private Ingress controller.</li></ol>|
+|OpenShift version 4 clusters: Ingress controller|HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps.|<ol><li>[Register your custom domain](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-2).</li><li>[Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-3).</li><li>Create an [Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4) for the private Ingress controller.</li></ol>|
 {: caption="Characteristics of network deployment patterns for a public and a private VLAN setup" caption-side="top"}
 
 <br />
@@ -294,7 +294,7 @@ Check out the following methods for private app networking:
 To make an app available over a private network only in a VPC cluster, choose a load-balancing deployment pattern based on your cluster's service endpoint setup: public and private service endpoint, or private service endpoint only. For each service endpoint setup, the following table describes each possible app exposure method, why you might use it, and how to set it up.
 {: shortdesc}
 
-<p class="note"> <img src="images/icon-version-43.png" alt="Version 4.3 icon" width="30" style="width:30px; border-style: none"/> Only version 4.3 and later clusters can be created on VPC infrastructure. The following methods do not apply to version 3.11 clusters, which can be created on classic infrastructure only.</br></br>You cannot use multiple app exposure methods for one app.</p>
+<p class="note"> <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Only version 4 clusters can be created on VPC infrastructure. The following methods do not apply to version 3.11 clusters, which can be created on classic infrastructure only.</br></br>You cannot use multiple app exposure methods for one app.</p>
 
 |Name|Load-balancing method|Use case|Implementation|
 |----|---------------------|--------|--------------|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-21"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -67,7 +67,7 @@ _Figure: Overview of data encryption in a cluster_
 6.  **Persistent storage encryption**: You can choose to store data by [setting up file, block, object, or software-defined Portworx persistent storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). If you store your data on file or block storage, your data is automatically encrypted at rest. If you use object storage, your data is also encrypted during transit. With Portworx, you can choose to [set up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes) to protect your data during transit and at rest. The IBM Cloud infrastructure storage instances save the data on encrypted disks, so your data at rest is encrypted.
 7.  **Data-in-use encryption**: For select, SGX-enabled classic worker node flavors, you can use [{{site.data.keyword.datashield_short}}](#datashield) to encrypt data-in-use within the worker node.
 
-`*` <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 3.11 clusters only**: You can encrypt secrets in your cluster by using a key management service (KMS) provider only in version 3.11 clusters. KMS is not available for version 4.3 clusters.
+`*` **OpenShift version 3.11 or version 4.4 clusters only**: You can encrypt secrets in your cluster by using a key management service (KMS) provider only in version 3.11 or 4.4 clusters. KMS is not available for version 4.3 clusters.
 {: note}
 
 
@@ -80,7 +80,7 @@ _Figure: Overview of data encryption in a cluster_
 You can protect the etcd component in your Kubernetes master and Kubernetes secrets by using a Kubernetes [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} that encrypts secrets with encryption keys that you control.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> KMS provider integration is available only in version 3.11 clusters, not for version 4.3 clusters.
+KMS provider integration is available only in version 3.11 or 4.4 clusters, not for version 4.3 clusters.
 {: important}
 
 **What KMS providers are available by default? Can I add other providers?**<br>
@@ -115,7 +115,7 @@ Enable a Kubernetes [key management service (KMS) provider](https://kubernetes.i
 To rotate your encryption key, repeat the [CLI](#kms_cli) or [console](#kms_ui) steps to enable KMS provider encryption with a new root key ID. The new root key is added to the cluster configuration along with the previous root key so that existing encrypted data is still protected.
 {: note}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> KMS provider integration is available only in version 3.11 clusters, not for version 4.3 clusters.
+KMS provider integration is available only in version 3.11 or 4.4 clusters, not for version 4.3 clusters.
 {: important}
 
 ### Prerequisites

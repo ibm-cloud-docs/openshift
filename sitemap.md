@@ -73,7 +73,7 @@ subcollection: openshift
 * [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits)
 * [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes)
 * [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp)
-* [Comparison between OpenShift 3.11 and 4.3 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
+* [Comparison between OpenShift 3.11 and 4 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
 
@@ -409,10 +409,10 @@ subcollection: openshift
 
 [Tuning performance](/docs/openshift?topic=openshift-kernel)
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
-  * [Changing the Calico MTU for 4.3 or later clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
+  * [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
   * [Changing the Calico MTU for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-311)
 * [Disabling the portmap plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
-  * [Disabling the portmap plug-in for 4.3 or later clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
+  * [Disabling the portmap plug-in for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
   * [Disabling the portmap plug-in for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-311)
 
 [Removing clusters](/docs/openshift?topic=openshift-remove)
@@ -703,7 +703,7 @@ subcollection: openshift
   * [Secrets for container environment variables](/docs/openshift?topic=openshift-openshift_apps#secret)
   * [Persistent volumes for container storage](/docs/openshift?topic=openshift-openshift_apps#pv)
 * [Complete example deployment YAML](/docs/openshift?topic=openshift-openshift_apps#yaml-example)
-* [Packaging apps in 4.3 clusters for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize)
+* [Packaging apps in version 4 clusters for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize)
 * [Packaging apps in OpenShift 3.11 clusters by using Helm charts](/docs/openshift?topic=openshift-openshift_apps#roks_helm)
 
 [Deploying apps in OpenShift clusters](/docs/openshift?topic=openshift-deploy_app)
@@ -748,7 +748,7 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_routes}
 
 
-[Exposing apps with routes in OpenShift 4.3 or later](/docs/openshift?topic=openshift-openshift_routes)
+[Exposing apps with routes in OpenShift version 4](/docs/openshift?topic=openshift-openshift_routes)
 * [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
@@ -818,13 +818,13 @@ subcollection: openshift
   * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
 
 
-## Exposing apps with Ingress in OpenShift 4.3 and later clusters
-{: #sitemap_exposing_apps_with_ingress_in_openshift_4.3_and_later_clusters}
+## Exposing apps with Ingress in OpenShift version 4
+{: #sitemap_exposing_apps_with_ingress_in_openshift_version_4}
 
 
-[Quick start for Ingress in OpenShift 4.3 and later](/docs/openshift?topic=openshift-ingress-qs-roks4)
+[Quick start for Ingress in OpenShift 4](/docs/openshift?topic=openshift-ingress-qs-roks4)
 
-[About Ingress in OpenShift version 4.3](/docs/openshift?topic=openshift-ingress-about-roks4)
+[About Ingress in OpenShift version 4](/docs/openshift?topic=openshift-ingress-about-roks4)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#ingress_roks4_components)
   * [Ingress controller](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-controller)
   * [Router](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-router)
@@ -838,7 +838,7 @@ subcollection: openshift
 * [How can I customize routing for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#custom-routing)
 * [How can I enable TLS certificates for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#certs)
 
-[Setting up Ingress in OpenShift 4.3 or later](/docs/openshift?topic=openshift-ingress-roks4)
+[Setting up Ingress in OpenShift 4](/docs/openshift?topic=openshift-ingress-roks4)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-prereqs)
 * [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects)
   * [All apps are in one project](/docs/openshift?topic=openshift-ingress-roks4#one-project)
@@ -870,8 +870,8 @@ subcollection: openshift
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 
-## Exposing apps with Ingress in OpenShift 3.11 clusters
-{: #sitemap_exposing_apps_with_ingress_in_openshift_3.11_clusters}
+## Exposing apps with Ingress in OpenShift version 3.11 clusters
+{: #sitemap_exposing_apps_with_ingress_in_openshift_version_3.11_clusters}
 
 
 [Quick start for Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress-qs)
@@ -1161,7 +1161,7 @@ subcollection: openshift
   * [What else do I need to know to use Cloud Paks?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_paks_other)
 
 [Adding services by using Operators](/docs/openshift?topic=openshift-operators)
-* [Using Operators in 4.3 clusters](/docs/openshift?topic=openshift-operators#operators_4)
+* [Using Operators in version 4 clusters](/docs/openshift?topic=openshift-operators#operators_4)
 * [Using Operators in 3.11 clusters](/docs/openshift?topic=openshift-operators#operators_311)
 * [Using the service catalog in 3.11 clusters](/docs/openshift?topic=openshift-operators#service_catalog)
 
@@ -1366,8 +1366,10 @@ subcollection: openshift
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
 * [OpenShift versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
+* [OpenShift 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
+  * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
 * [OpenShift 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
-* [Migrating from version 3.11 to 4.3 clusters](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration)
+* [Migrating from version 3.11 to 4 clusters](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration)
   * [Prerequisites](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-prereqs)
   * [Step 1: Deploy the migration operator to the source cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-source)
   * [Step 2: Deploy the migration operator to the destination cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-destination)
@@ -1376,7 +1378,9 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
-  * [Changelog for worker node fix pack 4.4.11_1511_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
+* [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1559)
+* [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
   * [Changelog for master fix pack 4.3.28_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4328_1532)
   * [Changelog for worker node fix pack 4.3.29_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4329_1532)
   * [Changelog for worker node fix pack 4.3.27_1528_openshift, released 6 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4327_1528)
@@ -1389,6 +1393,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.14_1522_openshift, released 11 May 2020](/docs/openshift?topic=openshift-openshift_changelog#4314_1522)
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
+* [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
   * [Changelog for master fix pack 3.11.232_1559_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1559)
   * [Changelog for worker node fix pack 3.11.232_1558_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1558)
   * [Changelog for worker node fix pack 3.11.232_1555_openshift, released 6 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1555)
@@ -1624,13 +1629,13 @@ subcollection: openshift
 * [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)
 * [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_rate_limit)
 * [Classic clusters: Cannot connect to an app via Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_fails)
-* [4.3 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4)
+* [Version 4 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4)
   * [Step 1: Check your app deployment and Ingress resource configuration](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress-43)
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-43)
   * [Step 3: Check the health of the Ingress controller's router](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#errors-43)
   * [Step 4: Ping the Ingress subdomain and router public IP address](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43)
-* [4.3 clusters: Router for Ingress controller does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43)
-* [3.11 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug)
+* [Version 4 clusters: Router for Ingress controller does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43)
+* [Version 3.11 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug)
   * [Step 1: Check your app deployment](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress)
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-ingress)
   * [Step 3: Check for error messages in your Ingress deployment and the ALB pod logs](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#errors)
@@ -1719,7 +1724,7 @@ subcollection: openshift
 [Service limitations](/docs/openshift?topic=openshift-openshift_limitations)
 
 [Service and quota limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
-* [Version 4.3 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
+* [Version 4 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
 
 [Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
 * [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)

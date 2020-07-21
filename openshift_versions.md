@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-11"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -80,7 +80,8 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 
 Red Hat OpenShift on IBM Cloud supports the following versions of OpenShift. The worker node operating system is Red Hat Enterprise Linux 7.
 
-* **Default and latest**: 4.3, which includes Kubernetes 1.16
+* **Latest**: 4.4, which includes 1.17
+* **Default**: 4.3, which includes Kubernetes 1.16
 * **Deprecated**: 3.11, which includes Kubernetes 1.11
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
@@ -132,7 +133,13 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 </thead>
 <tbody>
 <tr>
-  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported as a beta."/></td>
+  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
+  <td>4.4 / 1.17</td>
+  <td>21 Jul 2020 at 12:00 UTC</td>
+  <td>July 2021 `†`</td>
+</tr>
+<tr>
+  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
   <td>4.3 / 1.16</td>
   <td>20 Apr 2020 at 12:00 UTC</td>
   <td>April 2021 `†`</td>
@@ -149,6 +156,31 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 <br />
 
 
+## OpenShift 4.4
+{: #ocp44}
+
+Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs OpenShift 4.3 to OpenShift 4.4.
+{: shortdesc}
+
+With OpenShift 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration.
+
+You cannot update a cluster that runs 3.11 to a version 4 cluster. For more information, see [Migrating from version 3.11 to 4 clusters](#ocp-3-to-4-migration).
+{: note}
+
+### Update before master
+{: #44_before}
+
+The following table shows the actions that you must take before you [update the your cluster master](/docs/openshift?topic=openshift-update#master).
+{: shortdesc}
+
+| Type | Description |
+| ---- | ----------- |
+| **Unsupported:** Deprecated Kubernetes APIs are removed | Although Kubernetes version 1.16 removed several common, deprecated Kubernetes APIs, OpenShift version 4.3, which is based on Kubernetes version 1.16, kept these APIs enabled. Now, OpenShift version 4.4, which is based on Kubernetes version 1.17, removes these Kubernetes APIs that were removed in Kubernetes 1.16 project. You can take the following steps to mitigate impact to your Kubernetes resources. Note that the blog was written specifically for {{site.data.keyword.containerlong_notm}} clusters, but the tips apply to Red Hat OpenShift on IBM Cloud, too.<ol><li>Follow the [blog update tips](https://www.ibm.com/cloud/blog/announcements/kubernetes-version-1-16-removes-deprecated-apis){: external}.</li><li>Update the configuration files for any impacted Kubernetes resources, such as daemon sets, deployments, replica sets, stateful sets, and network policies.</li><li>If you [add services to your cluster by using Helm charts](https://cloud.ibm.com/docs/openshift?topic=openshift-helm), update to Helm version 2.15.2 or later.</li></ol>|
+| **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShit version 4.4 deprecated and removed features](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-deprecated-removed-features). |
+| Kubernetes API server checks client certificates before tokens | Fore more information, review [`kube-apiserver` checks client certificates before tokens](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-kube-apiserver-check-certs-before-tokens). |
+{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort} 4.4" caption-side="top"}
+{: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
+
 ## OpenShift 4.3
 {: #ocp43}
 
@@ -157,7 +189,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 With the release of OpenShift Container Platform 4.3, you get a new experience and capabilities for managing your cluster and its workloads. For more information, see the [OpenShift blog](https://www.openshift.com/blog/introducing-red-hat-openshift-4-3-to-enhance-kubernetes-security/){: external}.
 {: shortdesc}
 
-To create a 4.3 cluster, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial). You cannot update an existing version 3.11 cluster to a 4.3 cluster, but you can [migrate workloads to 4.3 clusters](#ocp-3-to-4-migration).
+To create a 4.3 cluster, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial). You cannot update an existing version 3.11 cluster to a 4.3 cluster, but you can [migrate workloads to version 4 clusters](#ocp-3-to-4-migration).
 
 Review the following benefit highlights when you use version 4.3 clusters.
 *   Ability to use your own [Operators](/docs/openshift?topic=openshift-operators) or operators that are provided by the OperatorHub to package and deploy services for your cluster.
@@ -165,15 +197,15 @@ Review the following benefit highlights when you use version 4.3 clusters.
 *   Update of the underlying Kubernetes API to 1.16 so that you can use new capabilities such as extensibility for core Kubernetes APIs, an updated `kubectl` experience, cluster lifecycle stability enhancements, support for projects such as `kustomize`, persistent local volumes, and custom resource and operator support.
 *   [Ingress controllers are integrated into the Ingress Operator](/docs/openshift?topic=openshift-ingress-about-roks4) so that you can use routers to proxy app requests instead of application load balancers (ALBs).
 
-For more information, check out the [comparison table between supported features of 3.11 and 4.3](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3) or review the [service limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations).
+For more information, check out the [comparison table between supported features of 3.11 and 4](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3) or review the [service limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations).
 
 <br />
 
 
-## Migrating from version 3.11 to 4.3 clusters
+## Migrating from version 3.11 to 4 clusters
 {: #ocp-3-to-4-migration}
 
-You cannot update your Red Hat OpenShift on IBM Cloud cluster from version 3.11 to 4.3. Instead, you can use the [OpenShift Migration Operator](https://github.com/konveyor/mig-operator){: external} to migrate your workloads from a 3.11 source cluster to a 4.3 destination cluster.
+You cannot update your Red Hat OpenShift on IBM Cloud cluster from version 3.11 to version 4, such as version 4.3. Instead, you can use the [OpenShift Migration Operator](https://github.com/konveyor/mig-operator){: external} to migrate your workloads from a version 3.11 source cluster to a version 4 destination cluster.
 {: shortdesc}
 
 <p class="important">Keep in mind the following limitations to the migration operator.<ul><li>The OpenShift Migration Operator is a community tool that you choose to use, and is not supported by IBM or Red Hat.</li><li>You must [complete the prerequisites](#ocp3to4-migrate-prereqs) to prepare the resources in your {{site.data.keyword.cloud_notm}} account.</li><li>The instructions are intended for version 1.0.1 of the migration operator and for 3.11 source and 4.3 destination clusters. The instructions might not work with other versions.</li><li>The migration operator console does not work with Red Hat OpenShift on IBM Cloud. Instead, you can use the CLI to apply configuration files.</li><li>The migration operator is scoped to resources within a project or multiple projects. You cannot migrate resources that reside outside a project, such as cluster role bindings.</li><li>You cannot configure cross-origin resource sharing for 3.11 clusters.</li></ul></p>
