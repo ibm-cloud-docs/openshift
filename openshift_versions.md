@@ -80,7 +80,7 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 
 Red Hat OpenShift on IBM Cloud supports the following versions of OpenShift. The worker node operating system is Red Hat Enterprise Linux 7.
 
-* **Latest**: 4.4, which includes 1.17
+* **Latest**: 4.4, which includes Kubernetes 1.17
 * **Default**: 4.3, which includes Kubernetes 1.16
 * **Deprecated**: 3.11, which includes Kubernetes 1.11
 
@@ -147,7 +147,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 <tr>
   <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>3.11 / 1.11</td>
-  <td>1 Aug 2019 at 0:00 UTC</td>
+  <td>01 Aug 2019 at 0:00 UTC</td>
   <td>June 2022 `†`</td>
 </tr>
 </tbody>
@@ -175,10 +175,10 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | ---- | ----------- |
-| **Unsupported:** Deprecated Kubernetes APIs are removed | Although Kubernetes version 1.16 removed several common, deprecated Kubernetes APIs, OpenShift version 4.3, which is based on Kubernetes version 1.16, kept these APIs enabled. Now, OpenShift version 4.4, which is based on Kubernetes version 1.17, removes these Kubernetes APIs that were removed in Kubernetes 1.16 project. You can take the following steps to mitigate impact to your Kubernetes resources. Note that the blog was written specifically for {{site.data.keyword.containerlong_notm}} clusters, but the tips apply to Red Hat OpenShift on IBM Cloud, too.<ol><li>Follow the [blog update tips](https://www.ibm.com/cloud/blog/announcements/kubernetes-version-1-16-removes-deprecated-apis){: external}.</li><li>Update the configuration files for any impacted Kubernetes resources, such as daemon sets, deployments, replica sets, stateful sets, and network policies.</li><li>If you [add services to your cluster by using Helm charts](https://cloud.ibm.com/docs/openshift?topic=openshift-helm), update to Helm version 2.15.2 or later.</li></ol>|
-| **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShit version 4.4 deprecated and removed features](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-deprecated-removed-features). |
-| Kubernetes API server checks client certificates before tokens | Fore more information, review [`kube-apiserver` checks client certificates before tokens](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-kube-apiserver-check-certs-before-tokens). |
-{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort} 4.4" caption-side="top"}
+| **Unsupported:** Deprecated Kubernetes APIs are removed | Although Kubernetes version 1.16 removed several common, deprecated Kubernetes APIs, OpenShift version 4.3, which is based on Kubernetes version 1.16, kept these APIs enabled. Now, OpenShift version 4.4, which is based on Kubernetes version 1.17, removes these Kubernetes APIs that were removed in the Kubernetes 1.16 project. You can take the following steps to mitigate impact to your Kubernetes resources. Note that the blog was written specifically for {{site.data.keyword.containerlong_notm}} clusters, but the tips apply to Red Hat OpenShift on IBM Cloud, too.<ol><li>Follow the [blog update tips](https://www.ibm.com/cloud/blog/announcements/kubernetes-version-1-16-removes-deprecated-apis){: external}.</li><li>Update the configuration files for any impacted Kubernetes resources, such as daemon sets, deployments, replica sets, stateful sets, and network policies.</li><li>If you [add services to your cluster by using Helm charts](https://cloud.ibm.com/docs/openshift?topic=openshift-helm), update to Helm version 2.15.2 or later.</li></ol>|
+| **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.4 deprecated and removed features](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-deprecated-removed-features). |
+| Kubernetes API server checks client certificates before tokens | For more information, review [`kube-apiserver` checks client certificates before tokens](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-kube-apiserver-check-certs-before-tokens). |
+{: caption="Changes to make before you update the master to OpenShift 4.4" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
 ## OpenShift 4.3
