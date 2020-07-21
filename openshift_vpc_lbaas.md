@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhos, rhoks, vpc lbaas
 
@@ -143,7 +143,7 @@ Expose your app to the public or to the private network by setting up a Kubernet
   **The VPC load balancer takes a few minutes to provision in your VPC.** You cannot access your app by using the hostname of your Kubernetes `LoadBalancer` service until the VPC load balancer is fully provisioned.
   {: note}
   ```
-  oc describe svc myloadbalancer
+  oc describe svc myloadbalancer -n <namespace>
   ```
   {: pre}
 
