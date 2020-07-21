@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1305,8 +1305,8 @@ Review the following backup and restore options for your {{site.data.keyword.fil
  <dt>Duplicate storage</dt>
  <dd><p>You can [duplicate your {{site.data.keyword.filestorage_short}} instance](/docs/FileStorage?topic=FileStorage-duplicatevolume#duplicatevolume) in the same zone as the original storage instance. A duplicate has the same data as the original storage instance at the point in time that you create the duplicate. Unlike replicas, use the duplicate as an independent storage instance from the original. To duplicate, first [set up snapshots for the volume](/docs/FileStorage?topic=FileStorage-snapshots).</p></dd>
   <dt>Back up data to {{site.data.keyword.cos_full}}</dt>
-  <dd><p>You can use the [**ibm-backup-restore image**](/docs/RegistryImages/ibm-backup-restore?topic=RegistryImages-ibmbackup_restore_starter#ibmbackup_restore_starter) to spin up a backup and restore pod in your cluster. This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.</p>
-  <p>To make your data even more highly available and protect your app from a zone failure, set up a second {{site.data.keyword.cos_full}} instance and replicate data across zones. If you need to restore data from your {{site.data.keyword.cos_full}} instance, use the restore script that is provided with the image.</p></dd>
+  <dd><p>You can use the [<code>ibm-backup-restore</code> Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore) to spin up a backup and restore pod in your cluster. This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.</p>
+  <p>To make your data even more highly available and protect your app from a zone failure, set up a second {{site.data.keyword.cos_full}} instance and replicate data across zones. If you need to restore data from your {{site.data.keyword.cos_full}} instance, use the restore script that is provided with the Helm chart.</p></dd>
 <dt>Copy data to and from pods and containers</dt>
 <dd><p>You can use the `oc cp` [command![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) to copy files and directories to and from pods or specific containers in your cluster.</p>
 <p>Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster). If you do not specify a container with <code>-c</code>, the command uses the first available container in the pod.</p>
