@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-21"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -214,6 +214,20 @@ For each subnet that your cluster is attached to, use the {{site.data.keyword.cl
    <td>After 6</td>
    </tr>
    <tr>
+   <td>To access the OpenShift web console, allow traffic to port 443. To further restrict access to this port, you can optionally specify the source IP addresses that you can connect to the web console in the **Source IP or CIDR** field.</td>
+   <td>Allow</td>
+   <td>TCP</td>
+   <td>Any</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>Any</td>
+   <td>-</td>
+   <td>443</td>
+   <td>443</td>
+   <td>After 7</td>
+   </tr>
+   <tr>
    <td>Deny all other traffic that does not match the previous rules.</td>
    <td>Deny</td>
    <td>ALL</td>
@@ -348,6 +362,20 @@ For each subnet that your cluster is attached to, use the {{site.data.keyword.cl
    <td>10514</td>
    <td>10514</td>
    <td>After 6</td>
+   </tr>
+   <tr>
+   <td>To access the OpenShift web console, allow traffic from port 443. To further restrict access to this port, you can optionally specify the IP addresses that you can connect to the web console in the **Destination IP or CIDR** field.</td>
+   <td>Allow</td>
+   <td>TCP</td>
+   <td>Any</td>
+   <td>-</td>
+   <td>443</td>
+   <td>443</td>
+   <td>Any</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>After 7</td>
    </tr>
    <tr>
    <td>Deny all other traffic that does not match the previous rules.</td>
