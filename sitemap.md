@@ -606,6 +606,11 @@ subcollection: openshift
 
 [Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig)
 
+[Viewing cluster states](/docs/openshift?topic=openshift-health#states)
+* [Cluster states](/docs/openshift?topic=openshift-health#states_cluster)
+* [Master states](/docs/openshift?topic=openshift-health#states_master)
+* [Worker node states](/docs/openshift?topic=openshift-health#states_workers)
+
 [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 * [Installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_install)
 * [Uninstalling the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator_remove)
