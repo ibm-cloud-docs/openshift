@@ -164,7 +164,7 @@ For more information about available bare metal flavors and how bare metal is di
 
 Your cluster must have at least 2 worker nodes to run default Kubernetes and OpenShift Container Platform components. You cannot have a cluster with 0 worker nodes, and you cannot power off or suspend billing for your worker nodes. Additionally, the type of cluster and the number of worker pools that you have can impact the size of your cluster.
 
-* **Single zone clusters**: You can [create a cluster](/docs/openshift?topic=openshift-clusters) with 2 worker node in the default worker pool.
+* **Single zone clusters**: You can [create a cluster](/docs/openshift?topic=openshift-clusters) with 2 worker nodes in the default worker pool.
 * **Multizone clusters**: You must [create a cluster](/docs/openshift?topic=openshift-clusters) with 2 worker nodes per zone in the worker pool. Later, you can [remove zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm) from the worker pool or [remove individual worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) so that your cluster size reduces to the minimum size of 2.
 * **Worker pools**: For any type of cluster, each worker pool must have at least 1 worker node at all times. For the smallest size cluster possible, you can have only 1 worker pool.
 
