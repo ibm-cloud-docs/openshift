@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-22"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -314,7 +314,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
    </tr>
    <tr>
    <td><code>--workers <em>&lt;number&gt;</em></code></td>
-   <td>Specify the number of worker nodes to include in the cluster. If the <code>--workers</code> option is not specified, one worker node is created.</td>
+   <td>Specify the number of worker nodes to include in the cluster. If you do not specify this option, a cluster with the minimum value of 2 is created. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).</td>
    </tr>
    <tr>
    <td><code>--version <em>&lt;major.minor.patch&gt;</em></code></td>
@@ -576,7 +576,7 @@ Create your single zone or multizone VPC Generation 1 compute cluster by using t
     </tr>
     <tr>
     <td><code>--workers <em>&lt;number&gt;</em></code></td>
-    <td>Specify the number of worker nodes to include in the cluster. Note that you must have at least 2 worker nodes per zone in each worker pool to run the default OpenShift components.</td>
+    <td>Specify the number of worker nodes to include in the cluster. If you do not specify this option, a cluster with the minimum value of 2 is created. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.</td>
     </tr>
     <tr>
     <td><code>--pod-subnet</code></td>

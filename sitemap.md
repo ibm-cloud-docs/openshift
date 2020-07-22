@@ -1526,6 +1526,8 @@ subcollection: openshift
 
 [Does the service offer support for bare metal?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
 
+[What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
+
 [Which Kubernetes versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
 
 [Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
