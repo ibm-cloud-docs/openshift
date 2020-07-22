@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-22"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -55,7 +55,7 @@ Review the changelogs for Red Hat OpenShift on IBM Cloud version 4.4 patch updat
 {: shortdesc}
 
 ### Changelog for 4.4.11_1511_openshift, released 21 July 2020
-{: #311232_1559}
+{: #4411_1511}
 
 The following table shows the changes that are included in the `4.4.11_1511_openshift` version update.
 {: shortdesc}
