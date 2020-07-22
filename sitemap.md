@@ -1586,6 +1586,7 @@ subcollection: openshift
 * [Unable to create a cluster or manage worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_credentials)
 * [Unable to create a cluster or manage worker nodes due to paid account error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_totp)
 * [Cannot add worker nodes due to an invalid VLAN ID](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#suspended)
+* [Replacing a worker node does not create a worker node](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off)
 * [Unable to modify or delete infrastructure in an orphaned cluster](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned)
 * [Accessing your worker node with SSH fails](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_ssh_worker)
 * [Bare metal instance ID is inconsistent with worker records](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#bm_machine_id)

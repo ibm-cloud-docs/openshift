@@ -1610,10 +1610,10 @@ The replacement worker node is created in the same zone and has the same flavor 
 
 You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` flag. If you do not include the `--update` flag, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 
-Any custom labels that you applied at the individual worker node level are not applied to the replacement worker node. However, any labels that you applied at the worker pool level are applied to the replacement worker node.
+A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).
 {: note}
 
-Before you replace your worker node, make sure that pods are rescheduled on other worker nodes to help avoid downtime for your app.
+Before you replace your worker node, make sure that pods are rescheduled on other worker nodes to help avoid downtime for your app. Keep in mind that any custom labels or taints that you applied at the individual worker node level are not applied to the replacement worker node. However, any labels or taints that you applied at the worker pool level are applied to the replacement worker node.
 {: tip}
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to replace.
@@ -1675,7 +1675,7 @@ ibmcloud oc worker replace --cluster my_cluster --worker kube-dal10-cr18a61a63a6
 ### `ibmcloud oc worker rm`
 {: #cs_worker_rm}
 
-Remove one or more worker nodes from a cluster. If you remove a worker node, your cluster becomes unbalanced. You can automatically rebalance your worker pool by running the `ibmcloud oc worker-pool rebalance` [command](#cs_rebalance).
+Remove one or more worker nodes from a cluster. If you remove a worker node, your cluster becomes unbalanced, and [replacing a worker node](#cli_worker_replace) no longer creates a replacement worker node. You can automatically rebalance your worker pool by running the `ibmcloud oc worker-pool rebalance` [command](#cs_rebalance) after you remove a worker node.
 {: shortdesc}
 
 ```

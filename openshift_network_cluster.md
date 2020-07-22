@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-22"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -203,6 +203,11 @@ To change the VLANs that a worker pool uses to provision worker nodes:
   3. Verify that the worker node is removed.
      ```
      ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
+     ```
+     {: pre}
+  4. Rebalance the worker pool.
+     ```
+     ibmcloud oc worker-pool rebalance --cluster <cluster_name_or_ID> --worker-pool <pool_name>
      ```
      {: pre}
 
