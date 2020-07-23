@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-23"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -46,7 +46,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 21 July 2020 | **New! OpenShift version 4.4 clusters**: You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_versions#ocp44) existing version 4.3 clusters to version `4.4.11_1511_openshift`. With OpenShift 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [Version 4.4 changelogs](/docs/openshift?topic=openshift-openshift_changelog#version-44)). |
+| 21 July 2020 | **New! OpenShift version 4.4 clusters**: You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_versions#ocp44) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-openshift_changelog#version-44). With OpenShift 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: external}. |
 | 20 July 2020 | <ul><li>**Master versions**: Master fix pack update changelog documentation is available for OpenShift [`4.3.28_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4328_1532) and [`3.11.232_1559_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1559).</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for OpenShift [`4.3.29_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4329_1532) and [`3.11.232_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1558).</li></ul> |
 | 16 July 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 645 and the `ingress-auth` image build to 420](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li><li>**Pod and service subnets**: Added information about bringing your own pod and service subnets in [classic](/docs/openshift?topic=openshift-subnets#basics_subnets) or [VPC clusters](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).</li></ul> |
 | 07 July 2020 | **CLI changelog**: Updated the Red Hat OpenShift on IBM Cloud CLI plug-in changelog page for the [release of version 1.0.118](/docs/openshift?topic=openshift-cs_cli_changelog#10). |

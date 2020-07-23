@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-23"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -163,7 +163,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs OpenShift 4.3 to OpenShift 4.4.
 {: shortdesc}
 
-With OpenShift 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration.
+With OpenShift 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
 You cannot update a cluster that runs 3.11 to a version 4 cluster. For more information, see [Migrating from version 3.11 to 4 clusters](#ocp-3-to-4-migration).
 {: note}
