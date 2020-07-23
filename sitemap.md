@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-23"
 
 keywords: openshift
 subcollection: openshift
@@ -380,10 +380,11 @@ subcollection: openshift
   * [Can I use taints and tolerations with autoscaled worker pools?](/docs/openshift?topic=openshift-ca#scalable-practices-taints)
   * [Why are my autoscaled worker pools unbalanced?](/docs/openshift?topic=openshift-ca#scalable-practices-unbalanced)
   * [Why can't I resize or rebalance my worker pool?](/docs/openshift?topic=openshift-ca#scalable-practices-resize)
-* [Deploying the cluster autoscaler Helm chart to your cluster](/docs/openshift?topic=openshift-ca#ca_helm)
+* [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-ca#ca_prepare_cluster)
+* [Installing the cluster autoscaler Helm chart to your cluster](/docs/openshift?topic=openshift-ca#ca_helm)
 * [Updating the cluster autoscaler configmap to enable scaling](/docs/openshift?topic=openshift-ca#ca_cm)
 * [Customizing the cluster autoscaler Helm chart configuration values](/docs/openshift?topic=openshift-ca#ca_chart_values)
-* [Limiting apps to run on only certain autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
+* [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
 * [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-ca#ca_scaleup)
 * [Upgrading a cluster autoscaler release](/docs/openshift?topic=openshift-ca#ca_helm_up)
   * [Prerequisites](/docs/openshift?topic=openshift-ca#ca_helm_up_prereqs)
