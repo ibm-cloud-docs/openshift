@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -84,7 +84,7 @@ The **Ingress Status** reflects the overall health of the Ingress components. Th
 |`All Ingress components are healthy`|The Ingress components are successfully deployed and are healthy.|
 |`Creating Ingress ALBs`|3.11 clusters: Your ALBs are currently deploying. Wait until your ALBs are fully deployed to review the health of your Ingress components. Note that ALB creation can take up to 15 minutes to complete. |
 |`Creating TLS certificate for Ingress subdomain`|The default Ingress subdomain for your cluster is created with a default TLS certificate, which is stored in the **Ingress Secret**. The certificate is currently being created. If you specify the default TLS secret in your Ingress resources, you cannot use HTTPS to access your apps through your ALBs until the secret is fully deployed. |
-|`Deploying router for Ingress controller`|4.3 clusters: The router and router service that expose your Ingress controller are currently deploying to the cluster. |
+|`Deploying router for Ingress controller`|4.3 clusters: The router and router service that expose your Ingress controller are currently deploying to the cluster. If this message continues to be displayed, a router pod might be unable to deploy because only 1 worker node exists in the zone. Two worker nodes are required per zone so that the 2 replicas of the router can be deployed and updated correctly. For more information, see [Adding worker nodes to clusters](/docs/openshift?topic=openshift-add_workers). |
 |`Ingress status is not supported for cluster type`|Ingress health reporting is currently not supported for OpenShift clusters.|
 |`Load balancer service for ALB or router is not ready`|<ul><li>4.3 clusters: The router and router service that expose your Ingress controller did not correctly deploy to your cluster. For troubleshooting information, see [4.3 clusters: Router for Ingress controller does not deploy in a zone](#cs_subnet_limit_43).</li><li>3.11 clusters: The load balancer service that exposes your ALB did not correctly deploy to your cluster. For troubleshooting information, see [3.11 clusters: ALB does not deploy in a zone](#cs_subnet_limit).</li></ul>|
 |`One or more ALBs are unhealthy`|3.11 clusters: The external IP address for one or more of your ALBs was reported as unhealthy. For troubleshooting information, see [Ping the ALB subdomain and public IP addresses](#ping).|
