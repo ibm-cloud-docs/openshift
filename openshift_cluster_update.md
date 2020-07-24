@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-22"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -324,6 +324,9 @@ If you run apps as part of a deployment on worker nodes that you update, the app
 
 **What happens to my worker node during an update?**<br>
 You VPC worker node is replaced by removing the old worker node and provisioning a new worker node that runs at the updated patch or `major.minor` version. The replacement worker node is created in the same zone, same worker pool, and with the same flavor as the deleted worker node. However, the replacement worker node is assigned a new private IP address, and loses any custom labels that you applied to the old worker node (worker pool labels are still applied to the replacement worker node).
+
+**What if a replacement worker node is not created?**<br>
+A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).
 
 ### Prerequisites
 {: #vpc_worker_prereqs}

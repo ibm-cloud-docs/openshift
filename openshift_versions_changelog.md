@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-24"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -55,7 +55,7 @@ Review the changelogs for Red Hat OpenShift on IBM Cloud version 4.4 patch updat
 {: shortdesc}
 
 ### Changelog for 4.4.11_1511_openshift, released 21 July 2020
-{: #311232_1559}
+{: #4411_1511}
 
 The following table shows the changes that are included in the `4.4.11_1511_openshift` version update.
 {: shortdesc}
@@ -92,7 +92,7 @@ The following table shows the changes that are included in the master fix pack u
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor configuration | N/A | N/A | Added a pod memory limit. |
 | {{site.data.keyword.cloud_notm}} RBAC operator | 08ce50e | 8882606 | Updated image for [CVE-2020-13777](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-13777){: external} and to use `Go` verison 1.13.12. |
 | Kubernetes configuration | N/A | N/A | The Kubernetes API server audit policy configuration is updated to include auditing the `apiextensions.k8s.io`, `operator.tigera.io` and `scheduling.k8s.io` API groups and the `crd.projectcalico.org`, `persistentvolumeclaims`, `persistentvolumes` and `tokenreviews` resources. |
-| OpenShift | 4.3.23 | 4.3.28 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-28){: external}. |
+| OpenShift | 4.3.23 | 4.3.28 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-28){: external}. The update resolves CVE-2020-8555 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6249891){: external}). |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.27_1528_openshift" caption-side="top"}
 
@@ -293,6 +293,20 @@ Review the changelogs for Red Hat OpenShift on IBM Cloud version 3.11 patch upda
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> OpenShift version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change).
 {: deprecated}
 
+### Changelog for master fix pack 3.11.232_1560_openshift, released 24 July 2020
+{: #311232_1560}
+
+The following table shows the changes that are included in the master fix pack update `3.11.232_1560_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Heapster configuration | N/A | N/A | Configuration changes now properly trigger a restart of the `heapster` pod in `kube-system` namespace. |
+| Cluster master operations | N/A | N/A | Fixed a problem that might cause pods to fail authentication to the Kubernetes API server after a cluster master operation. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 375 | 376 | Updated to use `Go` version 1.13.8. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.232_1559_openshift" caption-side="top"}
+
 ### Changelog for master fix pack 3.11.232_1559_openshift, released 20 July 2020
 {: #311232_1559}
 
@@ -303,7 +317,7 @@ The following table shows the changes that are included in the master fix pack u
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Block Storage driver configuration | N/A | N/A | Added a pod memory limit. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor configuration | N/A | N/A | Added a pod memory limit. |
-| OpenShift | 3.11.219 | 3.11.232 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-232){: external}. |
+| OpenShift | 3.11.219 | 3.11.232 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-232){: external}. The update resolves CVE-2019-11254 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6249873){: external}) and CVE-2020-8555 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6249891){: external}). |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.232_1555_openshift" caption-side="top"}
 

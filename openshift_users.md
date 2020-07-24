@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-22"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -482,10 +482,17 @@ Before you begin, verify that you're assigned the **Administrator** platform rol
       * **Service access role**: Grants access to the Kubernetes API from within a cluster so that users can manage Kubernetes resources such as pods, deployments, services, and namespaces. To find a list of supported actions per role, see [service roles reference page](/docs/openshift?topic=openshift-access_reference#service).<p class="note">Do not assign a platform role at the same time as you assign a service role. If you also want the user to have a platform role, repeat these steps but leave the namespace field blank and assign only a platform role (do not assign a service access role again).</p>
    8. Click **Add**.
    9.  If you assigned only service roles to users, the users must be given the cluster master URL to open the OpenShift web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
-   10. **Optional: Resource groups only**: In the **Assign access to a resource group** field, select at least the **Viewer** platform role so that users can work with clusters in a resource group other than the default.
-   11.  In the side panel, review the **Access summary** of your changes, and click **Assign**.
+   
+4.  Assign the users **Viewer** access to the resource group so that they can work with clusters in resource groups other than default. Note that users must have access to the resource group to create clusters.
+    1.  Click the **IAM services** tile.
+    2.  In the services drop-down list, select **No service access**.
+    3.  In the next drop-down list, scope the policy to **All resource groups** or to particular resource groups.
+    4.  Select **Viewer**.
+    5.  Click **Add**.
 
-4.  For the user to be added, the RBAC permissions must be synced to the cluster. The user who is granted access must [launch the Kubernetes dashboard](/docs/containers?topic=containers-deploy_app#db_gui) to initiate the sync. RBAC permissions are cached, so the sync might not be instantaneous.
+5.  In the side panel, review the **Access summary** of your changes, and click **Assign**.
+
+6.  For the user to be added, the RBAC permissions must be synced to the cluster. The user who is granted access must [launch the Kubernetes dashboard](/docs/containers?topic=containers-deploy_app#db_gui) to initiate the sync. RBAC permissions are cached, so the sync might not be instantaneous.
 
 ### Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI
 {: #add_users_cli}
@@ -567,7 +574,7 @@ Grant users access to your Red Hat OpenShift on IBM Cloud clusters by assigning 
        ```
        {: pre}
 
-2. If you want users to be able to work with clusters in a resource group other than the default, these users need additional access to the resource groups that clusters are in. You can assign these users at least the **Viewer** role for resource groups. You can find the resource group ID by running `ibmcloud resource group <resource_group_name> --id`.
+2. Assign the users **Viewer** access to the resource group so that they can work with clusters in resource groups other than default. Note that users must have access to the resource group to create clusters. You can find the resource group ID by running `ibmcloud resource group <resource_group_name> --id`.
     *   For individual users:
         ```
         ibmcloud iam user-policy-create <user@email.com> --resource-type resource-group --resource <resource_group_ID> --roles Viewer

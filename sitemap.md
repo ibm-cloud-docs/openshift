@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-24"
 
 keywords: openshift
 subcollection: openshift
@@ -380,10 +380,11 @@ subcollection: openshift
   * [Can I use taints and tolerations with autoscaled worker pools?](/docs/openshift?topic=openshift-ca#scalable-practices-taints)
   * [Why are my autoscaled worker pools unbalanced?](/docs/openshift?topic=openshift-ca#scalable-practices-unbalanced)
   * [Why can't I resize or rebalance my worker pool?](/docs/openshift?topic=openshift-ca#scalable-practices-resize)
-* [Deploying the cluster autoscaler Helm chart to your cluster](/docs/openshift?topic=openshift-ca#ca_helm)
+* [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-ca#ca_prepare_cluster)
+* [Installing the cluster autoscaler Helm chart to your cluster](/docs/openshift?topic=openshift-ca#ca_helm)
 * [Updating the cluster autoscaler configmap to enable scaling](/docs/openshift?topic=openshift-ca#ca_cm)
 * [Customizing the cluster autoscaler Helm chart configuration values](/docs/openshift?topic=openshift-ca#ca_chart_values)
-* [Limiting apps to run on only certain autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
+* [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
 * [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-ca#ca_scaleup)
 * [Upgrading a cluster autoscaler release](/docs/openshift?topic=openshift-ca#ca_helm_up)
   * [Prerequisites](/docs/openshift?topic=openshift-ca#ca_helm_up_prereqs)
@@ -1379,7 +1380,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
-  * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1559)
+  * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
   * [Changelog for master fix pack 4.3.28_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4328_1532)
   * [Changelog for worker node fix pack 4.3.29_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4329_1532)
@@ -1394,6 +1395,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.232_1560_openshift, released 24 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1560)
   * [Changelog for master fix pack 3.11.232_1559_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1559)
   * [Changelog for worker node fix pack 3.11.232_1558_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1558)
   * [Changelog for worker node fix pack 3.11.232_1555_openshift, released 6 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1555)
@@ -1526,6 +1528,8 @@ subcollection: openshift
 
 [Does the service offer support for bare metal?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
 
+[What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
+
 [Which Kubernetes versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
 
 [Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
@@ -1584,6 +1588,7 @@ subcollection: openshift
 * [Unable to create a cluster or manage worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_credentials)
 * [Unable to create a cluster or manage worker nodes due to paid account error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_totp)
 * [Cannot add worker nodes due to an invalid VLAN ID](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#suspended)
+* [Replacing a worker node does not create a worker node](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off)
 * [Unable to modify or delete infrastructure in an orphaned cluster](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned)
 * [Accessing your worker node with SSH fails](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_ssh_worker)
 * [Bare metal instance ID is inconsistent with worker records](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#bm_machine_id)
