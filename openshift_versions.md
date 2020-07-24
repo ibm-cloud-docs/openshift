@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-07-24"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -265,13 +265,13 @@ Deploy the migration operator to the source Red Hat OpenShift on IBM Cloud versi
     {: pre}
 4.  Deploy the migration operator to your source cluster. The configuration includes setting up an `openshift-migration` project; creating a custom resource definition for the migration operator; creating a service account, roles, and rolebindings for the resources; and creating the migration operator deployment.
     ```
-    oc create -f https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/v1.0.1/operator.yml
+    oc create -f https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/latest/operator.yml
     ```
     {: pre}
 5.  Deploy the migration controller to your source cluster.
     1.  Get the migration controller configuration file from GitHub.
         ```
-        curl https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/v1.0.1/controller-3.yml > migration-controller3.yaml
+        curl https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/latest/controller-3.yml > migration-controller3.yaml
         ```
         {: pre}
     2.  Uncomment and replace the `mig_ui_cluster_api_endpoint` value with the cluster master URL that you previously retrieved.
@@ -302,13 +302,13 @@ Deploy the migration operator to the destination Red Hat OpenShift on IBM Cloud 
 1.  For your version 4.3 cluster: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 2.  Deploy the migration operator to your destination cluster. The configuration includes setting up an `openshift-migration` project; creating a custom resource definition for the migration operator; creating a service account, roles, and rolebindings for the resources; and creating the migration operator deployment.
     ```
-    oc create -f https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/v1.0.1/operator.yml
+    oc create -f https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/latest/operator.yml
     ```
     {: pre}
 3.  Deploy the migration controller to your destination cluster. You must deploy the controller to both clusters due to the limitation of the migration operator console not being supported in Red Hat OpenShift on IBM Cloud.
     1.  Get the migration controller configuration file from GitHub.
         ```
-        curl https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/v1.0.1/controller-4.yml > migration-controller4.yaml
+        curl https://raw.githubusercontent.com/konveyor/mig-operator/master/deploy/non-olm/latest/controller-4.yml > migration-controller4.yaml
         ```
         {: pre}
     2.  Change the `migration_ui` value to `false` and save the file.
