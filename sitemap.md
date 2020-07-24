@@ -1271,6 +1271,7 @@ subcollection: openshift
   * [`ibmcloud oc alb rollback`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_rollback)
   * [`ibmcloud oc alb types`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_types)
   * [`ibmcloud oc alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
+  * [`ibmcloud oc alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
 * [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-commands)
   * [`ibmcloud oc ingress status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
 * [`logging` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#logging_commands)
