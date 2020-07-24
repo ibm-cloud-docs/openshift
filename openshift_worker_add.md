@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -545,7 +545,7 @@ Choose among the following options:
 
 | Adding tags to clusters with the CLI. |
 |:-----------------|
-| <p><ol><li>Log in to the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_login).<pre class="pre"><code>ibmcloud login [--sso]</code></pre></li><li>[Tag your cluster](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_tag_attach). Replace the `--resource-name` wit the name of your cluster. To list available clusters, run `ibmcloud oc cluster ls`. If you want to check your existing tags so as not to duplicate any, run `ibmcloud resource tags`.<pre class="pre"><code>ibmcloud resource tag-attach --resource-name <cluster_name> --tag-names <tag1,tag2></code></pre><p class="note">If you have more than one resource of the same name in your {{site.data.keyword.cloud_notm}} account, the error message lists the resource CRNs and details, and instructs you to try again with the `--resource-id` flag.</p></li></ol></p> |
+| <p><ol><li>Log in to the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_login).<pre class="pre"><code>ibmcloud login [--sso]</code></pre></li><li>[Tag your cluster](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_tag_attach). Replace the `--resource-name` with the name of your cluster. To list available clusters, run `ibmcloud oc cluster ls`. If you want to check your existing tags so as not to duplicate any, run `ibmcloud resource tags`.<pre class="pre"><code>ibmcloud resource tag-attach --resource-name <cluster_name> --tag-names <tag1,tag2></code></pre><p class="note">If you have more than one resource of the same name in your {{site.data.keyword.cloud_notm}} account, the error message lists the resource CRNs and details, and instructs you to try again with the `--resource-id` flag.</p></li></ol></p> |
 {: caption="Adding tags to clusters with the CLI." caption-side="top"}
 {: #tags-2}
 {: tab-title="CLI"}
