@@ -1825,7 +1825,7 @@ Add a worker pool to a VPC Generation 2 compute cluster. No worker nodes are cre
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool create vpc-gen2 --name <worker pool name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [-s] [--json]
+ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [-s] [--json]
 ```
 {: pre}
 
