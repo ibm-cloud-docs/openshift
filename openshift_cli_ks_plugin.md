@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-07-25"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -5701,6 +5701,7 @@ ibmcloud oc storage volume get --volume VOLUME
 ibmcloud oc storage volume get --volume 111111111
 ```
 {: pre}
+
 
 ### `ibmcloud oc storage volume ls `
 {: #cs_storage_att_ls_2}
