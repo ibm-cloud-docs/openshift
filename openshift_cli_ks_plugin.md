@@ -35,7 +35,7 @@ subcollection: openshift
 
 
 
-# Red Hat OpenShift on IBM Cloud CLI
+# Red Hat OpenShift on IBM Cloud CLI 1
 {: #kubernetes-service-cli}
 
 Refer to these commands to create and manage **both community Kubernetes or OpenShift clusters** in {{site.data.keyword.openshiftlong}}.
