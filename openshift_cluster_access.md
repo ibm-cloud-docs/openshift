@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-27"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -400,15 +400,17 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```
         {: pre}
-3.  Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an OpenShift token. You can log in from the CLI or API. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
+3.  Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an OpenShift access token. You can log in from the CLI or API. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
 
-    **From the CLI**: Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value.
+    **Log in by using the `oc` CLI**: 
+    Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value.
     ```
     oc login -u apikey -p <API_key>
     ```
     {: pre}
 
-    **From the API**: Log in to your cluster with the API such as via a curl request.
+    **Log in by running OpenShift API requests directly against your cluster**: 
+    Log in to your cluster with the API such as via a curl request.
 
     1.  Get the **Master URL** of your cluster.
         ```
@@ -430,13 +432,13 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         {: screen}
     2.  <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4 only**: Get the token endpoint of the OpenShift `oauth` server.
         ```
-        curl https://<master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
+        curl <master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
         ```
         {: pre}
 
         Example output:
         ```
-        https://<token_endpoint>/oauth/token
+        <token_endpoint>/oauth/token
         ```
     3.  Log in to the cluster with the endpoint that you previously retrieved.
         * <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
@@ -444,7 +446,25 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 
         Example curl request:
         ```
-        curl -u 'apikey:<API_key>' -H "X-CSRF-Token: a" 'https://<URL>/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
+        curl -u 'apikey:<API_key>' -H "X-CSRF-Token: a" '<URL>/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
+        ```
+        {: pre}
+    4.  In the **Location** response, find the `access_token`, such as in the following example.
+        ```
+        < HTTP/1.1 302 Found
+        < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+        < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+        < Expires: 0
+        < Expires: Fri, 01 Jan 1990 00:00:00 GMT
+        < Location: <token_endpoint>/oauth/token/implicit#access_token=<access_token>&expires_in=86400&scope=user%3Afull&token_type=Bearer
+        ...
+        ```
+        {: screen}
+    5.  Use your cluster master URL and the access token to access the OpenShift API, such as to list all the pods in your cluster.
+        
+        Example curl request:
+        ```
+        curl -H "Authorization: Bearer <access_token>" '<master_URL>/api/v1/pods'
         ```
         {: pre}
 
