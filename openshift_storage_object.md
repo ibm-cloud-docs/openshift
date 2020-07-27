@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-27"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -48,6 +48,9 @@ With version 1.0.5, the {{site.data.keyword.cos_full_notm}} plug-in is renamed f
 {: note}
 
 With version 1.0.8, the {{site.data.keyword.cos_full_notm}} plug-in Helm chart is now available in the `ibm-charts` Helm repository. Make sure to fetch the latest version of the Helm chart from this repository. To add the repository, run `helm repo add ibm-charts https://private.icr.io/helm/ibm-charts`.
+{: note}
+
+With version 2.0.0, the {{site.data.keyword.cos_full_notm}} Helm chart is now available in the `ibm-helm` repository. To add the repository, run `helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm`.
 {: note}
 
 <br />
@@ -173,7 +176,7 @@ Looking for instructions for how to update or remove the {{site.data.keyword.cos
 
 Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
+To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
 1. Make sure that your worker node applies the latest patch for your minor version to run your worker node with the latest security settings. The patch version also ensures that the root password on the worker node is renewed. 
    
@@ -201,15 +204,15 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
 
 2. [Follow the instructions](/docs/openshift?topic=openshift-openshift_apps#roks_helm) to install the version 3 Helm client on your local machine.
 
+  If you enabled [VRF](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the [private {{site.data.keyword.cloud_notm}} Helm repository](#cos_plugin_private) to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public Helm repository.
+  {: note}
+
 3. Add the {{site.data.keyword.cloud_notm}} Helm repo to your cluster.
 
-   If you enabled [VRF](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository, `https://private.icr.io/helm/ibm-charts`, to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public registry domain: `helm repo add ibm-charts https://icr.io/helm/ibm-charts`.
-   {: note}
-
-   ```
-   helm repo add ibm-charts https://private.icr.io/helm/ibm-charts
-   ```
-   {: pre}
+  ```
+  helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
+  ```
+  {: pre}
 
 4. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
   ```
@@ -224,8 +227,9 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
   {: pre}
 
 6. Download the Helm charts and unpack the charts in your current directory.
+
   ```
-  helm pull --untar ibm-charts/ibm-object-storage-plugin
+  helm fetch --untar ibm-helm/ibm-object-storage-plugin && cd ibm-object-storage-plugin
   ```
   {: pre}
 
@@ -250,24 +254,19 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
 
     Example output:
     ```
-    Helm version: v3.1.2+gd878d4d
+    Helm version: v3.2.4+g0ad800e
     Install or upgrade Helm charts in IBM K8S Service(IKS) and IBM Cloud Private(ICP)
-
     Usage:
-    Helm ibmc [command]
-
+      helm ibmc [command]
     Available Commands:
       install           Install a Helm chart
       upgrade           Upgrade the release to a new version of the Helm chart
-
     Available Flags:
       -h, --help        (Optional) This text.
       -u, --update      (Optional) Update this plugin to the latest version
-
     Example Usage:
-        Install: helm ibmc install ibm-object-storage-plugin ibm-charts/ibm-object-storage-plugin
-        Upgrade: helm ibmc upgrade [RELEASE] ibm-charts/ibm-object-storage-plugin
-
+        Install: helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin
+        Upgrade: helm ibmc upgrade [RELEASE] ibm-helm/ibm-object-storage-plugin
     Note:
         1. It is always recommended to install latest version of ibm-object-storage-plugin chart.
         2. It is always recommended to have 'kubectl' client up-to-date.
@@ -304,14 +303,14 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
   - **For OS X and Linux:**
     - If you skipped the previous step, install without a limitation to specific Kubernetes secrets.</br>
       ```
-      helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin
+      helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true
       ```
       {: pre}
 
     - If you completed the previous step, install with a limitation to specific Kubernetes secrets. If you are still targeting the `templates` directory, change directories.</br>
       ```
       cd ../..
-      helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin
+      helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin --set license=true
       ```
       {: pre}
 
@@ -350,14 +349,14 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
         ```
         {: pre}
 
-      b. Store the infrastructure provider in an environment variable. If the output contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"CLASSIC"`. If the output contains `gc`, then set the `CLUSTER_PROVIDER` to `"VPC-CLASSIC"`.
+      b. Store the infrastructure provider in an environment variable. If the output from the previous step contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"IBMC"`. If the output contains `gc`, `ng`, or `g2`, then set the `CLUSTER_PROVIDER` to `"IBM-VPC"`.
         ```
-        SET CLUSTER_PROVIDER="CLASSIC"
+        SET CLUSTER_PROVIDER="IBMC"
         ```
         {: pre}
 
         ```
-        SET CLUSTER_PROVIDER="VPC-CLASSIC"
+        SET CLUSTER_PROVIDER="IBM-VPC"
         ```
         {: pre}
 
@@ -371,31 +370,33 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
 
       b. Store the operating system of the worker nodes in an environment variable.
 
-        * If the output contains `REDHAT`, then set the `WORKER_OS` to `"redhat"`.
+        * If the output from the previous step contains `REDHAT`, then set the `WORKER_OS` to `"redhat"` and set the `PLATFORM` to `"openshift"`.
 
             ```
             SET WORKER_OS="redhat"
+            SET PLATFORM="openshift"
             ```
             {: pre}
 
-        * If the output contains `UBUNTU`, then set the `WORKER_OS` to `"debian"`.
+        * If the output from the previous contains `UBUNTU`, then set the `WORKER_OS` to `"debian"` and set the `PLATFORM` to `"k8s"`.
 
             ```
             SET WORKER_OS="debian"
+            SET PLATFORM="k8s"
             ```
             {: pre}
 
     4. Install the plug-in.       
       - Install without a limitation to specific Kubernetes secrets.</br>
         ```
-        helm install ibm-object-storage-plugin ibm-charts/ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}"
+        helm install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --set platform="${PLATFORM}" --set license=true
         ```
         {: pre}
 
       - Install the plug-in with a limitation to specific Kubernetes secrets.</br>
         ```
         cd ../..
-        helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}"
+        helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --set platform="${PLATFORM}" --set license=true
         ```
         {: pre}
 
@@ -445,7 +446,6 @@ To install the `ibmc` Helm plug-in and `ibm-object-storage-plugin`:
 If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_helm_fails) and [Object storage: Installing the Object storage plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_plugin_fails).
 {: tip}
 
-
 ### Updating the IBM Cloud Object Storage plug-in
 {: #update_cos_plugin}
 
@@ -455,7 +455,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
   1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
     ```
-    helm ls -A
+    helm ls -A | grep ibm-object-storage-plugin
     ```
     {: pre}
 
@@ -488,13 +488,13 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 
 4. Download the latest {{site.data.keyword.cos_full_notm}} Helm chart to your local machine and extract the package to review the `release.md` file to find the latest release information.
   ```
-  helm pull --untar ibm-charts/ibm-object-storage-plugin
+  helm pull --untar ibm-helm/ibm-object-storage-plugin
   ```
   {: pre}
 
 5. Install the latest version of the plug-in. </br>
   ```
-  helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin
+  helm ibmc upgrade <release_name> ibm-helm/ibm-object-storage-plugin --force --set license=true
   ```
   {: pre}
 
@@ -523,7 +523,6 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_helm_fails) and [Object storage: Installing the Object storage plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_plugin_fails).
 {: tip}
 
-
 ### Removing the IBM Cloud Object Storage plug-in
 {: #remove_cos_plugin}
 
@@ -542,7 +541,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
 
 1. Get the name of your `ibm-object-storage-plugin` Helm installation.
   ```
-  helm ls -A
+  helm ls -A | grep ibm-object-storage-plugin
   ```
   {: pre}
 
@@ -1356,7 +1355,8 @@ To deploy a stateful set that uses object storage:
 ## Limitations
 {: #cos_limitations}
 
-{{site.data.keyword.cos_full_notm}} is based on the `s3fs-fuse` file system. You can review a list of limitations in the [`s3fs-fuse` repository](https://github.com/s3fs-fuse/s3fs-fuse#limitations).
+* {{site.data.keyword.cos_full_notm}} is based on the `s3fs-fuse` file system. You can review a list of limitations in the [`s3fs-fuse` repository](https://github.com/s3fs-fuse/s3fs-fuse#limitations).
+* To access a file in {{site.data.keyword.cos_full_notm}} with a non-root user, you must set the `runAsUser` and `fsGroup` values in your deployment to the same value.
 
 
 
