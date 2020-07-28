@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-25"
+lastupdated: "2020-07-28"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -35,7 +35,7 @@ subcollection: openshift
 
 
 
-# Red Hat OpenShift on IBM Cloud CLI 1
+# Red Hat OpenShift on IBM Cloud CLI
 {: #kubernetes-service-cli}
 
 Refer to these commands to create and manage **both community Kubernetes or OpenShift clusters** in {{site.data.keyword.openshiftlong}}.
@@ -2791,7 +2791,7 @@ You can use this command to:
 * Disable the IBM-provided ALB deployment so that you can deploy your own Ingress controller and leverage the DNS registration for the IBM-provided Ingress subdomain or the load balancer service that is used to expose the Ingress controller.
 
 ```
-ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip USER_IP]|--disable-deployment) [-s]
+ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip USER_IP]|--disable-deployment) [--version IMAGE_VERSION] [-s]
 ```
 {: pre}
 
@@ -2815,6 +2815,9 @@ ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip
 
 <dt><code>--disable-deployment</code></dt>
 <dd>Include this flag to disable the IBM-provided ALB deployment. This flag doesn't remove the DNS registration for the IBM-provided Ingress subdomain or the load balancer service that is used to expose the Ingress controller.</dd>
+
+<dt><code>--version <em>IMAGE_VERSION</em></code></dt>
+<dd>Optional: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc alb versions`.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -2842,7 +2845,7 @@ Version 3.11 clusters only: Create a public or private ALB in a classic cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZONE --vlan VLAN_ID [--user-ip IP] [-s]
+ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZONE --vlan VLAN_ID [--version IMAGE_VERSION] [--user-ip IP] [-s]
 ```
 {: pre}
 
@@ -2866,6 +2869,9 @@ ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZO
 
 <dt><code>--user-ip <em>IP</em></code></dt>
 <dd>Optional: An IP address to assign to the ALB. This IP must be on the <code>vlan</code> that you specified and must be in the same <code>zone</code> as the ALB that you want to create. This IP address must not be in use by another load balancer or ALB in the cluster.</dd>
+
+<dt><code>--version <em>IMAGE_VERSION</em></code></dt>
+<dd>Optional for enabling an ALB: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc alb versions`.</dd>
 
 <dt><code>-s</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -2959,7 +2965,8 @@ ibmcloud oc alb ls --cluster my_cluster
 ### `ibmcloud oc alb rollback`
 {: #cs_alb_rollback}
 
-
+This command is deprecated. If you need to roll back an update of your ALB pods, you can specify one of the supported image versions in the [`ibmcloud oc alb update` command](#cs_alb_update).
+{: deprecated}
 
 Version 3.11 clusters only: If your ALB pods were recently updated, but a custom configuration for your ALBs is affected by the latest build, you can roll back the update to the build that your ALB pods were previously running. All ALB pods in your cluster revert to their previously running state.
 {: shortdesc}
@@ -3022,17 +3029,16 @@ ibmcloud oc alb types [--json] [-s]
 ### `ibmcloud oc alb update`
 {: #cs_alb_update}
 
-
-
 Version 3.11 clusters only: Force an update of the pods for individual or all Ingress ALBs in the cluster to the latest or a specific version.
 {: shortdesc}
 
-If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. When you choose to manually update the add-on, all ALB pods in the cluster are updated to the latest build. You cannot update an individual ALB or choose which build to update the add-on to. Automatic updates remain disabled.
+If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. If your ALB pods were recently updated, but a custom configuration for your ALBs is affected by the latest build, you can also use this command to roll back ALB pods to an earlier, supported version. After you force a one-time update, automatic updates remain disabled.
 
 When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the image version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
+{: note}
 
 ```
-ibmcloud oc alb update --cluster CLUSTER [--alb-id ALB1_ID --alb-id ALB2_ID ...] [--json] [-s]
+ibmcloud oc alb update --cluster CLUSTER [--version IMAGE_VERSION] [--alb-id ALB1_ID --alb-id ALB2_ID ...] [--json] [-s]
 ```
 {: pre}
 
@@ -3045,7 +3051,10 @@ ibmcloud oc alb update --cluster CLUSTER [--alb-id ALB1_ID --alb-id ALB2_ID ...]
 **Command options**:
 <dl>
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster where you want to roll back the ALB builds. This value is required.</dd>
+<dd>The name or ID of the cluster where you want to update the ALBs. This value is required.</dd>
+
+<dt><code>--version <em>IMAGE_VERSION</em></code></dt>
+<dd>Optional: The version of the image that you want to update ALBs to. To list available versions, run `ibmcloud oc alb versions`. If you omit this flag, ALBs are updated to the latest version of the image type.</dd>
 
 <dt><code>--alb-id <em>CLUSTER</em></code></dt>
 <dd>Optional: The ID of the individual ALB to update. To list ALB IDs, run `ibmcloud oc alb ls -c <cluster>`. To update multiple ALBs, use multiple flags, such as `--alb-id ALB1_ID --alb-id ALB2_ID`. If you omit this flag, all ALBs in the cluster are updated.</dd>
@@ -3057,6 +3066,44 @@ ibmcloud oc alb update --cluster CLUSTER [--alb-id ALB1_ID --alb-id ALB2_ID ...]
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
+**Example commands:**
+* To update all ALB pods in the cluster:
+  ```
+  ibmcloud oc alb update -c mycluster --version 626
+  ```
+  {: pre}
+* To update the ALB pods for one or more specific ALBs:
+  ```
+  ibmcloud oc alb update -c mycluster --version 626 --alb-id public-crdf253b6025d64944ab99ed63bb4567b6-alb1
+  ```
+  {: pre}
+
+### `ibmcloud oc alb versions`
+{: #cs_alb_versions}
+
+Version 3.11 clusters only: View the available image versions for Ingress ALBs in your cluster.
+{: shortdesc}
+
+
+```
+ibmcloud oc alb versions [--json] [-s]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-s</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
 
 
 <br />
@@ -5742,7 +5789,6 @@ ibmcloud oc storage volume ls [--cluster CLUSTER_ID] [--provider PROVIDER] [--zo
 ibmcloud oc storage volume ls --cluster aa1111aa11aaaaa11aa1
 ```
 {: pre}
-
 
 
 

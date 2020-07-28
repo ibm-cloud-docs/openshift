@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-27"
+lastupdated: "2020-07-28"
 
 keywords: openshift
 subcollection: openshift
@@ -1206,7 +1206,7 @@ subcollection: openshift
 {: #sitemap_cli_plug-in_reference}
 
 
-[Red Hat OpenShift on IBM Cloud CLI 1](/docs/openshift?topic=openshift-kubernetes-service-cli)
+[Red Hat OpenShift on IBM Cloud CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
 * [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta)
 * [Comparison of Classic and VPC commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about)
 * [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#map)
@@ -1271,6 +1271,7 @@ subcollection: openshift
   * [`ibmcloud oc alb rollback`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_rollback)
   * [`ibmcloud oc alb types`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_types)
   * [`ibmcloud oc alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
+  * [`ibmcloud oc alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
 * [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-commands)
   * [`ibmcloud oc ingress status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
 * [`logging` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#logging_commands)
