@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-27"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -882,6 +882,11 @@ To set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in 
    ```
    {: pre}
 
+   ```
+   helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
+   ```
+   {: pre}
+
 3. Update the repos to retrieve the latest versions of all Helm charts.
    ```
    helm repo update
@@ -903,6 +908,11 @@ To set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in 
    {: pre}
    ```
    helm search repo entitled
+   ```
+   {: pre}
+
+   ```
+   helm search repo ibm-helm
    ```
    {: pre}
 

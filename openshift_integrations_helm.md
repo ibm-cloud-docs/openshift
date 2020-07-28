@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-27"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -111,6 +111,11 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
    ```
    {: pre}
 
+   ```
+   helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
+   ```
+   {: pre}
+
 3. Update the repos to retrieve the latest versions of all Helm charts.
    ```
    helm repo update
@@ -135,6 +140,11 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
    ```
    helm search repo entitled
+   ```
+   {: pre}
+
+   ```
+   helm search repo ibm-helm
    ```
    {: pre}
 
@@ -296,6 +306,11 @@ To install Helm in a cluster with public network access:
    ```
    {: pre}
 
+   ```
+   helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
+   ```
+   {: pre}
+
 5. Update the repos to retrieve the latest versions of all Helm charts.
    ```
    helm repo update
@@ -320,6 +335,11 @@ To install Helm in a cluster with public network access:
 
    ```
    helm search repo entitled
+   ```
+   {: pre}
+
+   ```
+   helm search repo ibm-helm
    ```
    {: pre}
 

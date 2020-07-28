@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -635,7 +635,7 @@ Your containers might exceed their resource limits, or your pods might be replac
 To see if a container is being killed because of a resource limit:
 <ol><li>Get the name of your pod. If you used a label, you can include it to filter your results.<pre class="pre"><code>oc get pods --selector='app=wasliberty'</code></pre></li>
 <li>Describe the pod and look for the **Restart Count**.<pre class="pre"><code>oc describe pod</code></pre></li>
-<li>If the pod restarted many times in a short period of time, fetch its status. <pre class="pre"><code>oc get pod -o go-template={{range.status.containerStatuses}}{{"Container Name: "}}{{.name}}{{"\r\nLastState: "}}{{.lastState}}{{end}}</code></pre></li>
+<li>If the pod restarted many times in a short period of time, fetch its status. <pre class="pre"><code>oc get pod <pod_name> -n <namespace> -o go-template='{{range.status.containerStatuses}}{{"Container Name: "}}{{.name}}{{"\r\nLastState: "}}{{.lastState}}{{end}}'</code></pre></li>
 <li>Review the reason. For example, `OOM Killed` means "out of memory," indicating that the container is crashing because of a resource limit.</li>
 <li>Add capacity to your cluster so that the resources can be fulfilled.</li></ol>
 

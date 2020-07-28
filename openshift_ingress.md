@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -331,7 +331,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     </tr>
     <tr>
     <td><code>tls.secretName</code></td>
-    <td><ul><li>If you use the IBM-provided Ingress domain, replace <em>&lt;tls_secret_name&gt;</em> with the name of the IBM-provided Ingress secret.</li><li>If you use a custom domain, replace <em>&lt;tls_secret_name&gt;</em> with the secret that you created earlier that holds your custom TLS certificate and key. If you imported a certificate from {{site.data.keyword.cloudcerts_short}}, you can run <code>ibmcloud oc alb cert get --cluster <cluster_name_or_ID> --cert-crn <certificate_crn></code> to see the secrets that are associated with a TLS certificate.</li><ul><td>
+    <td><ul><li>If you use the IBM-provided Ingress domain, replace <em>&lt;tls_secret_name&gt;</em> with the name of the IBM-provided Ingress secret.</li><li>If you use a custom domain, replace <em>&lt;tls_secret_name&gt;</em> with the secret that you created earlier that holds your custom TLS certificate and key. If you imported a certificate from {{site.data.keyword.cloudcerts_short}}, you can run <code>ibmcloud oc alb cert get --cluster <cluster_name_or_ID> --cert-crn &lt;certificate_crn&gt;</code> to see the secrets that are associated with a TLS certificate.</li><ul><td>
     </tr>
     <tr>
     <td><code>host</code></td>
@@ -729,7 +729,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     <tbody>
     <tr>
     <td><code>ingress.bluemix.net/ALB-ID</code></td>
-    <td>Replace <em>&lt;private_ALB_ID&gt;</em> with the ID for your private ALB. If you have a multizone cluster and enabled multiple private ALBs, include the ID of each ALB. Run <code>ibmcloud oc alb ls --cluster <my_cluster></code> to find the ALB IDs. For more information about this Ingress annotation, see [Private application load balancer routing](/docs/openshift?topic=openshift-ingress_annotation#alb-id).</td>
+    <td>Replace <em>&lt;private_ALB_ID&gt;</em> with the ID for your private ALB. If you have a multizone cluster and enabled multiple private ALBs, include the ID of each ALB. Run <code>ibmcloud oc alb ls --cluster &lt;my_cluster&gt;</code> to find the ALB IDs. For more information about this Ingress annotation, see [Private application load balancer routing](/docs/openshift?topic=openshift-ingress_annotation#alb-id).</td>
     </tr>
     <tr>
     <td><code>tls.hosts</code></td>
@@ -737,7 +737,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
     </tr>
     <tr>
     <td><code>tls.secretName</code></td>
-    <td>Replace <em>&lt;tls_secret_name&gt;</em> with the name of the secret that you created earlier and that holds your custom TLS certificate and key. If you imported a certificate from {{site.data.keyword.cloudcerts_short}}, you can run <code>ibmcloud oc alb cert get --cluster <cluster_name_or_ID> --cert-crn <certificate_crn></code> to see the secrets that are associated with a TLS certificate.
+    <td>Replace <em>&lt;tls_secret_name&gt;</em> with the name of the secret that you created earlier and that holds your custom TLS certificate and key. If you imported a certificate from {{site.data.keyword.cloudcerts_short}}, you can run <code>ibmcloud oc alb cert get --cluster <cluster_name_or_ID> --cert-crn &lt;certificate_crn&gt;</code> to see the secrets that are associated with a TLS certificate.
     </tr>
     <tr>
     <td><code>host</code></td>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-07-28"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -46,6 +46,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 28 July 2020 | <ul><li>**Ingress ALB versions**: Added the `ibmcloud oc alb versions` CLI command to show the available versions for the ALBs in your cluster and the `ibmcloud oc alb update` CLI command to update or rollback ALBs to a specific version.</li><li>**UI for creating clusters**: Updated getting started and task topics for the updated process for the [OpenShift cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}.</li></ul> |
 | 24 July 2020 | <ul><li>**Minimum cluster size**: Added an FAQ about [the smallest size cluster that you can make](/docs/openshift?topic=openshift-faqs#smallest_cluster).</li><li>**Versions**: Master fix pack update changelog documentation is available for OpenShift [`3.11.232_1560_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1560).</li><li>**Worker node replacement**: Added a troubleshooting topic for when [replacing a worker node does not create a worker node](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).</li></ul>|
 | 21 July 2020 | **New! OpenShift version 4.4 clusters**: You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_versions#ocp44) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-openshift_changelog#version-44). With OpenShift 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: external}. |
 | 20 July 2020 | <ul><li>**Master versions**: Master fix pack update changelog documentation is available for OpenShift [`4.3.28_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4328_1532) and [`3.11.232_1559_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1559).</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for OpenShift [`4.3.29_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4329_1532) and [`3.11.232_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1558).</li></ul> |
