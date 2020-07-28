@@ -451,7 +451,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
    3. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an OpenShift entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
    3. Select **VPC** infrastructure.
    4. From the **Virtual private cloud** drop-down menu, select the **Gen 2** VPC that you created earlier.
-   5.  From the **Cloud Object Storage** drop-down menu, select a standard {{site.data.keyword.cos_full_notm}} instance to use for the internal OpenShift container registry, or create a standard {{site.data.keyword.cos_full_notm}} to use.
+   5.  From the **Cloud Object Storage** drop-down menu, select a standard {{site.data.keyword.cos_full_notm}} instance to use for the internal OpenShift container registry, or [create a standard {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage/basics?topic=cloud-object-storage-provision#provision-instance) to use.
 7. Configure the **Location** details for your cluster.
    1. Select the **Resource group** that you want to create your cluster in.
       * A cluster can be created in only one resource group, and after the cluster is created, you cannot change its resource group.

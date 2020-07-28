@@ -249,7 +249,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
   2.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
   3.  For the **Infrastructure**, select **VPC**.
   4.  From the **Virtual private cloud** drop-down menu, select the **Gen 2** VPC that you created earlier.
-  5.  From the **Cloud Object Storage** drop-down menu, select a standard {{site.data.keyword.cos_full_notm}} instance to use for the internal OpenShift container registry, or create a standard {{site.data.keyword.cos_full_notm}} to use.
+  5.  From the **Cloud Object Storage** drop-down menu, select a standard {{site.data.keyword.cos_full_notm}} instance to use for the internal OpenShift container registry, or [create a standard {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage/basics?topic=cloud-object-storage-provision#provision-instance) to use.
 5.  Configure the **Location** details for your cluster.
     1. Select the **Resource group** that you want to create your cluster in. You cannot change the resource group later. If you do not select a resource group, your cluster is created in the default resource group.
     2. Select the zones to create your cluster in. The zones are filtered based on the VPC that you selected, and include the subnets that you previously created.
