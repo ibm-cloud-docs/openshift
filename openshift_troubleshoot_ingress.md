@@ -514,13 +514,13 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
 Check the availability of the public IP addresses of the Ingress controller's routers and verify your subdomain mappings.
 {: shortdesc}
 
-1. Get the external IP addresses that the router services are listening on. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
+1. Get the external IP addresses that the router services are listening on. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`. In VPC clusters, the external IP addresses are behind a hostname that is assigned by the VPC load balancer, such as `aabb1122-us-south.lb.appdomain.cloud`.
     ```
     oc get svc -n openshift-ingress
     ```
     {: pre}
 
-    Example output for a multizone cluster with worker nodes in `dal10` and `dal13`:
+    Example output for a classic multizone cluster with worker nodes in `dal10` and `dal13`:
     ```
     NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
     router-dal13                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32318/TCP,443:30915/TCP   26d
@@ -529,20 +529,20 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     ```
     {: screen}
 
-    If a router has no external IP address, see [4.3 clusters: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43).
+    If a router has no external IP address (classic) or hostname (VPC), see [4.3 clusters: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43).
     {: note}
 
-2. Check the health of your router by pinging its IP address.
+2. Check the health of your router by pinging its IP address (classic) or hostname (VPC).
   * Single-zone clusters:
     ```
-    ping <router_svc_external_IP>
+    ping <router_svc_IP_or_hostname>
     ```
     {: pre}
     * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your firewall.
     * If you don't have a firewall or your firewall does not block the pings and the pings still timeout, [check the status of your router pods](#errors-43).
   * Multizone clusters: Router services in multizone clusters are created with a `/healthz` path so that you can check the health of each service IP address. The following HTTP cURL command uses the `/healthz` path, which is configured to return the `ok` status for a healthy IP.
     ```
-    curl -X GET http://<router_svc_external_IP>/healthz -H "Host:router-default.<ingress_subdomain>"
+    curl -X GET http://<router_svc_IP_or_hostname>/healthz -H "Host:router-default.<ingress_subdomain>"
     ```
     {: pre}
     If one or more of the IP addresses does not return `ok`, [check the status of your router pods](#errors-43).
