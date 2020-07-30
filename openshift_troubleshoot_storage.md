@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-27"
+lastupdated: "2020-07-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -51,7 +51,40 @@ If you have a more general issue, try out [Troubleshooting OpenShift clusters](/
 Review the options to debug persistent storage and find the root causes for failures.
 {: shortdesc}
 
-1. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
+1. Check whether the pod that mounts your storage instance is successfully deployed.
+   1. List the pods in your cluster. A pod is successfully deployed if the pod shows a status of **Running**.
+      ```
+      oc get pods
+      ```
+      {: pre}
+
+   2. Get the details of your pod and check whether errors are displayed in the **Events** section of your CLI output.
+      ```
+      oc describe pod <pod_name>
+      ```
+      {: pre}
+
+
+   3. Retrieve the logs for your app and check whether you can see any error messages.
+      ```
+      oc logs <pod_name>
+      ```
+      {: pre}
+
+2. Restart your pod. If your pod is part of a deployment, delete the pod and let the deployment rebuild it. If your pod is not part of a deployment, delete the pod and reapply your pod configuration file.
+  ```
+  oc delete pod <pod_name>
+  ```
+  {: pre}
+
+  ```
+  oc apply -f <app.yaml>
+  ```
+  {: pre}
+
+3. If restarting your pod does not resolve the issue, [reload your worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+
+4. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
    ```
    ibmcloud update
    ```
@@ -62,85 +95,6 @@ Review the options to debug persistent storage and find the root causes for fail
    ```
    {: pre}
 
-
-2. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
-   1. Show the `kubectl` CLI version that is installed in your cluster and your local machine.
-      ```
-      oc version
-      ```
-      {: pre}
-
-      Example output:
-      ```
-      Client Version: version.Info{Major:"1", Minor:"1.17", GitVersion:"v1.17.9", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
-      Server Version: version.Info{Major:"1", Minor:"1.17", GitVersion:"v1.17.9+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
-      ```
-      {: screen}
-
-      The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
-   2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
-
-
-3. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
-
-
-4. For classic block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
-
-   **Block and object storage**:
-
-   1. Update your Helm chart repositories.
-      ```
-      helm repo update
-      ```
-      {: pre}
-
-   2. List the Helm charts in the repository.
-      **For classic block storage**:
-        ```
-        helm search repo iks-charts | grep block-storage-plugin
-        ```
-        {: pre}
-
-        Example output:
-        ```
-        iks-charts-stage/ibmcloud-block-storage-plugin	1.5.0        	                                        	A Helm chart for installing ibmcloud block storage plugin   
-        iks-charts/ibmcloud-block-storage-plugin      	1.5.0        	                                        	A Helm chart for installing ibmcloud block storage plugin   
-        ```
-        {: screen}
-
-      **For object storage**:
-        ```
-        helm search repo ibm-helm | grep object-storage-plugin
-        ```
-        {: pre}
-
-        Example output:
-        ```
-        ibm-helm/ibm-object-storage-plugin	2.0.1        	2.0.1        Chart for deploying ibmcloud object storage plu...
-        ```
-        {: screen}
-
-   3. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
-      ```
-      helm ls -A
-      ```
-      {: pre}
-
-   4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/containers?topic=containers-block_storage#updating-the-ibm-cloud-block-storage-plug-in) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
-
-   **Portworx**:
-
-   1. Find the [latest Helm chart version](https://github.com/IBM/charts/tree/master/community/portworx){: external} that is available.
-
-   2. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
-      ```
-      helm list --all-namespaces
-      ```
-      {: pre}
-
-   3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
-
-
 5. Verify that the storage driver and plug-in pods show a status of **Running**.
    1. List the pods in the `kube-system` project.
       ```
@@ -148,7 +102,7 @@ Review the options to debug persistent storage and find the root causes for fail
       ```
       {: pre}
 
-   2. If the pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all of the following commands.
+   2. If the storage driver and plug-in pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all of the following commands.
       1. Get the names of the containers that run in the driver pod.
          ```
          kubectl get pod <pod_name> -n kube-system -o jsonpath="{.spec['containers','initContainers'][*].name}" | tr -s '[[:space:]]' '\n'
@@ -201,29 +155,89 @@ Review the options to debug persistent storage and find the root causes for fail
       - [File storage and classic block storage: PVC remains in a pending state](#file_pvc_pending)
       - [Object storage: PVC remains in a pending state](#cos_pvc_pending)
 
-7. Check whether the pod that mounts your storage instance is successfully deployed.
-   1. List the pods in your cluster. A pod is successfully deployed if the pod shows a status of **Running**.
-      ```
-      oc get pods
-      ```
-      {: pre}
-
-   2. Get the details of your pod and check whether errors are displayed in the **Events** section of your CLI output.
-      ```
-      oc describe pod <pod_name>
-      ```
-      {: pre}
-
-   3. Retrieve the logs for your app and check whether you can see any error messages.
-      ```
-      oc logs <pod_name>
-      ```
-      {: pre}
-
    4. Review common errors that can occur when you mount a PVC to your app.
       - [File storage: App cannot access or write to PVC](#file_app_failures)
       - [Classic Block storage: App cannot access or write to PVC](#block_app_failures)
       - [Object storage: Accessing files with a non-root user fails](#cos_nonroot_access)
+
+
+7. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/docs/setup/release/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
+   1. Show the `kubectl` CLI version that is installed in your cluster and your local machine.
+      ```
+      oc version
+      ```
+      {: pre}
+
+      Example output:
+      ```
+      Client Version: version.Info{Major:"1", Minor:"1.17", GitVersion:"v1.17.9", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
+      Server Version: version.Info{Major:"1", Minor:"1.17", GitVersion:"v1.17.9+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+      ```
+      {: screen}
+
+      The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
+   2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
+
+
+8. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
+
+
+9. For classic block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
+
+   **Block and object storage**:
+
+   1. Update your Helm chart repositories.
+      ```
+      helm repo update
+      ```
+      {: pre}
+
+   2. List the Helm charts in the repository.
+      **For classic block storage**:
+        ```
+        helm search repo iks-charts | grep block-storage-plugin
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        iks-charts-stage/ibmcloud-block-storage-plugin	1.5.0        	                                        	A Helm chart for installing ibmcloud block storage plugin   
+        iks-charts/ibmcloud-block-storage-plugin      	1.5.0        	                                        	A Helm chart for installing ibmcloud block storage plugin   
+        ```
+        {: screen}
+
+      **For object storage**:
+        ```
+        helm search repo ibm-charts | grep object-storage-plugin
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        ibm-charts/ibm-object-storage-plugin         	1.0.9        	1.0.9                         	A Helm chart for installing ibmcloud object storage plugin  
+        ```
+        {: screen}
+
+   3. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
+      ```
+      helm list --all-namespaces
+      ```
+      {: pre}
+
+   4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/containers?topic=containers-block_storage#updating-the-ibm-cloud-block-storage-plug-in) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
+
+   **Portworx**:
+
+   1. Find the [latest Helm chart version](https://github.com/IBM/charts/tree/master/community/portworx){: external} that is available.
+
+   2. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
+      ```
+      helm list --all-namespaces
+      ```
+      {: pre}
+
+   3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
+
 
 
 ## File storage and block storage: PVC remains in a pending state
