@@ -511,7 +511,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
 ### Step 4: Ping the Ingress subdomain and router public IP address
 {: #ping-43}
 
-Check the availability of the public IP addresses of the Ingress controller's routers and verify your subdomain mappings.
+Check the availability of the public IP addresses of the Ingress controller's routers and verify your subdomain mappings. Additionally, ensure that the OpenShift control plane can access your routers to health check them.
 {: shortdesc}
 
 1. Get the external IP addresses that the router services are listening on. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`. In VPC clusters, the external IP addresses are behind a hostname that is assigned by the VPC load balancer, such as `aabb1122-us-south.lb.appdomain.cloud`.
@@ -532,13 +532,15 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     If a router has no external IP address (classic) or hostname (VPC), see [4.3 clusters: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43).
     {: note}
 
-2. Check the health of your router by pinging its IP address (classic) or hostname (VPC).
+2. If you use Calico pre-DNAT network policies, VPC access control lists (ACLs), or another custom firewall to block incoming traffic to router or Ingress services, you must allow inbound access from the OpenShift control plane to the IP addresses of your router services so that the OpenShift control plane can check the health of your routers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your routers from [the ports and IP addresses in step 2 of this section](/docs/openshift?topic=openshift-firewall#firewall_outbound).
+
+3. Check the health of your router by pinging its IP address (classic) or hostname (VPC).
   * Single-zone clusters:
     ```
     ping <router_svc_IP_or_hostname>
     ```
     {: pre}
-    * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your firewall.
+    * If the CLI returns a timeout and you use a custom firewall to protect your worker nodes, make sure that you allow ICMP in your firewall.
     * If you don't have a firewall or your firewall does not block the pings and the pings still timeout, [check the status of your router pods](#errors-43).
   * Multizone clusters: Router services in multizone clusters are created with a `/healthz` path so that you can check the health of each service IP address. The following HTTP cURL command uses the `/healthz` path, which is configured to return the `ok` status for a healthy IP.
     ```
@@ -547,7 +549,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     {: pre}
     If one or more of the IP addresses does not return `ok`, [check the status of your router pods](#errors-43).
 
-3. Get the IBM-provided Ingress subdomain.
+4. Get the IBM-provided Ingress subdomain.
     ```
     ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress
     ```
@@ -560,7 +562,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     ```
     {: screen}
 
-4. Ensure that the router IP address is registered with your cluster's IBM-provided Ingress subdomain. For example, in a multizone cluster, the public router IP in each zone where you have worker nodes must be registered under the same subdomain.
+5. Ensure that the router IP address is registered with your cluster's IBM-provided Ingress subdomain. For example, in a multizone cluster, the public router IP in each zone where you have worker nodes must be registered under the same subdomain.
     ```
     host <ingress_subdomain>
     ```
@@ -573,7 +575,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     ```
     {: screen}
 
-5. If you use a custom domain, verify that you used your DNS provider to map the custom domain to the IBM-provided subdomain or the router's public IP address.
+6. If you use a custom domain, verify that you used your DNS provider to map the custom domain to the IBM-provided subdomain or the router's public IP address.
     * **IBM-provided subdomain CNAME**: Check that your custom domain is mapped to the cluster's IBM-provided subdomain in the Canonical Name record (CNAME).
         ```
         host www.my-domain.com
@@ -874,16 +876,16 @@ Start by checking for error messages in the Ingress resource deployment events a
 ### Step 4: Ping the ALB subdomain and public IP addresses
 {: #ping}
 
-Check the availability of your Ingress subdomain and ALBs' public IP addresses.
+Check the availability of your Ingress subdomain and ALBs' public IP addresses. Additionally, ensure that the OpenShift control plane and the Cloudflare multizone load balancer can access your ALBs to health check them.
 {: shortdesc}
 
-1. Get the IP addresses that your public ALBs are listening on.
+1. Get the IP addresses  that your public ALBs are listening on.
     ```
     ibmcloud oc alb ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output for a multizone cluster with worker nodes in `dal10` and `dal13`:
+    Example output for a classic multizone cluster with worker nodes in `dal10` and `dal13`:
 
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
@@ -896,7 +898,9 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses.
 
     * If a public ALB has no IP address, see [Ingress ALB does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit).
 
-2. Check the health of your ALB IPs.
+2. If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to Ingress ALBs, you must allow inbound access from the OpenShift control plane and Cloudflare's IPv4 IPs to the IP addresses of your ALBs so that your ALBs can be health checked. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your ALBs from [the ports and IP addresses in step 2 of this section](/docs/openshift?topic=openshift-firewall#firewall_outbound) and [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} that are used to check the health of your ALBs.
+
+3. Check the health of your ALB IPs.
 
     * For single zone cluster and multizone clusters: Ping the IP address of each public ALB to ensure that each ALB is able to successfully receive packets. If you are using private ALBs, you can ping their IP addresses only from the private network.
         ```
@@ -907,9 +911,7 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses.
         * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your firewall.
         * If you don't have a firewall or your firewall does not block the pings and the pings still timeout, [check the status of your ALB pods](#check_pods).
 
-    * Multizone clusters only: You can use the MZLB health check to determine the status of your ALB IPs. For more information about the MZLB, see [Multizone load balancer (MZLB)](/docs/openshift?topic=openshift-ingress-about#ingress_components). The MZLB health check is available only for clusters that have the new Ingress subdomain in the format `<cluster_name>.<region_or_zone>.containers.appdomain.cloud`. If your cluster still uses the older format of `<cluster_name>.<region>.containers.mybluemix.net`, [convert your single zone cluster to multizone](/docs/openshift?topic=openshift-add_workers#add_zone). Your cluster is assigned a subdomain with the new format, but can also continue to use the older subdomain format. Alternatively, you can order a new cluster that is automatically assigned the new subdomain format.
-
-    The following HTTP cURL command uses the `albhealth` host, which is configured by Red Hat OpenShift on IBM Cloud to return the `healthy` or `unhealthy` status for an ALB IP.
+    * Multizone clusters only: You can use the MZLB health check to determine the status of your ALB IPs. For more information about the MZLB, see [Multizone load balancer (MZLB)](/docs/openshift?topic=openshift-ingress-about#ingress_components). The following HTTP cURL command uses the `albhealth` host, which is configured by Red Hat OpenShift on IBM Cloud to return the `healthy` or `unhealthy` status for an ALB IP.
         ```
         curl -X GET http://169.62.196.238/ -H "Host: albhealth.mycluster-<hash>-0000.us-south.containers.appdomain.cloud"
         ```
@@ -922,7 +924,7 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses.
         {: screen}
         If one or more of the IPs returns `unhealthy`, [check the status of your ALB pods](#check_pods).
 
-3. Get the IBM-provided Ingress subdomain.
+4. Get the IBM-provided Ingress subdomain.
     ```
     ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress
     ```
@@ -935,7 +937,7 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses.
     ```
     {: screen}
 
-4. Ensure that the IPs for each public ALB that you got in step 2 of this section are registered with your cluster's IBM-provided Ingress subdomain. For example, in a multizone cluster, the public ALB IP in each zone where you have worker nodes must be registered under the same subdomain.
+5. Ensure that the IPs for each public ALB that you got in step 1 of this section are registered with your cluster's IBM-provided Ingress subdomain. For example, in a classic multizone cluster, the public ALB IP in each zone where you have worker nodes must be registered under the same subdomain.
 
     ```
     oc get ingress -o wide
