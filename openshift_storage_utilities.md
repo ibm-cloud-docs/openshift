@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -467,7 +467,7 @@ The instructions in this topic are available for classic worker nodes only. If y
 
    The block storage device is successfully attached when the **ibm.io/dm** is set to a device ID, such as `/dev/dm/1`, and you can see **ibm.io/attachstatus=attached** in the **Annotations** section of your CLI output.
 
-If you want to detach a volume, delete the PV. Detached volumes are still authorized to be accessed by a specific worker node and are attached again when you create a new PV with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class to attach a different volume to the same worker node. To avoid attaching the old detached volume again, unauthorize the worker node to access the detached volume by using the `ibmcloud sl block access-revoke` command. Detaching the volume does not remove the volume from your IBM Cloud infrastructure account. To cancel the billing for your volume, you must manually [remove the storage from your IBM Cloud infrastructure account](/docs/openshift?topic=openshift-block_storage#cleanup).
+If you want to detach a volume, delete the PV. Detached volumes are still authorized to be accessed by a specific worker node and are attached again when you create a new PV with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class to attach a different volume to the same worker node. To avoid attaching the old detached volume again, unauthorize the worker node to access the detached volume by using the `ibmcloud sl block access-revoke` command. Detaching the volume does not remove the volume from your IBM Cloud infrastructure account. To cancel the billing for your volume, you must manually [remove the storage from your IBM Cloud infrastructure account](/docs/containers?topic=containers-block_storage#cleanup).
 {: note}
 
 <br />
@@ -1108,5 +1108,70 @@ To back up or restore a PVC by editing the `values.yaml` file:
             {: pre}
 
       8.  You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot).
+
+
+## Setting up {{site.data.keyword.mon_full_notm}} for storage volumes
+{: #monitor_storage}
+
+Set up alerts in {{site.data.keyword.mon_full_notm}} for your workloads that are using storage volumes. For more information see, [Alerts](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-monitoring#monitoring_alerts).
+{: shortdesc}
+
+When a storage volume is down, your app pods that are using storage have a low file system I/O, have network errors, or crash which causes the replica count to go down. You can set up alerts in {{site.data.keyword.mon_full_notm}} to get notified if the file system operations for your app drop below a specific threshold, if network errors occur, or if your app pods do not reach a `Ready` state. 
+
+1. From the [Red Hat OpenShift on IBM Cloud cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), select the cluster where you want to set up alerts for your storage volumes.
+
+2. In the **Monitoring** section, click **Connect** to connect an existing {{site.data.keyword.mon_full_notm}} instance to your cluster. If you do not have an instance, click **Create an instance** to create one. For more information about how to set up an {{site.data.keyword.mon_full_notm}} instance, see [Provisioning an instance](https://cloud.ibm.com/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision).
+
+3. Click the **Launch** button to open the {{site.data.keyword.mon_full_notm}} dashboard.
+
+4. Create file system utilization alerts for an app that runs in your cluster.
+  1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**. 
+  2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
+  3. In the **File System Utilization** section, review the **File I/O Bandwidth by Pod** tile.
+  4. Review the file I/O bandwidth from the last day or week time window to determine the average bandwidth. You can use the average bandwidth as a threshold to set an alert for when the file I/O bandwidth is lower than the average for a certain amount of time. For example, if the average file I/O bandwith for your app is 300B/s, you can create an alert for when the network utilization remains below 300B/s for a certain amount of time.
+  5. In the **File I/O Bandwidth by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**. 
+  6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
+  7. Save your alert.
+  8. Repeat these steps for all of the apps that are deployed in your cluster.
+  9. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a file system utilization alert to trigger when the utilization is less than 300B/s for 5 minutes, increase the threshold to be greater than the current utilization of your app for 5 minutes and select the `at least once` option. 
+  10. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
+
+5. Create a network utilization alert for an app that runs in your cluster.
+  1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**. 
+  2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
+  3. In the **Network Utilization** section, review the **Network Request Count by Pod** tile.
+  4. Review the average network request count by pod from the last 1 day or 1 week time window to determine the threshold.
+  5. In the **Network Request Count by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed. For example, if the network utilization remains below the threshold for a certain amount of time, then the alert is triggered.
+  6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
+  7. Save your alert.
+  8. Repeat these steps for all of the apps that are deployed in your cluster.
+  9. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set an alert for when the number of network requests by pod is less than 3/s for 5 minutes, edit your alert threshold to be less than the threshold that you observed for 5 minutes and select the `at least once` option. 
+  10. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
+
+6. Create a pod availability alert for an app that runs in your cluster.
+  1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**. 
+  2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
+  3. In the **Pod Health** section, review the **Pod Availability** tile.
+  4. Review the average pod availability from the last 1 day or 1 week time window to determine the threshold. 
+  5. Review your app configuration file for the number of requested replicas. You can use this number as a threshold for sending alerts when the number of available pods is fewer than your requested number of replicas for your app. If you requested 3 replicas of your app, you can set an alert for when the number of available pods stays fewer than the requested replica count for a certain time duration, for example, a 30 minute duration. In this example, when the pod availability remains fewer than the 3 requested replicas, the alert is triggered.
+  6. In the **Pod Availability** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed and your requested app replicas.
+  7. Open the **Notification** section of the alert menu and create or select an alert notification channel.
+  8. Save your alert.
+  9. Repeat these steps for all of the apps that are deployed in your cluster.
+  10. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a pod availability alert for when the number of available pods is less than 3 for 5 minutes, edit your alert threshold to be less than 4 pods for 5 minutes and select the `at least once` option. 
+  11. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
+
+### Troubleshooting persistant storage when a {{site.data.keyword.mon_full_notm}} alert is triggered
+{: #monitor_storage_ts}
+When an alert is triggered, review the alert details in {{site.data.keyword.mon_full_notm}} and review troubleshooting guides for persistent storage, apps, worker nodes, and clusters to find the root cause of the alert. The alerts that you set up might not be related to a storage volume issue, but to issues that occurred within your app, on the worker node, or in the cluster.
+{: shortdesc}
+
+
+* [Troubleshooting persistant storage volumes](https://cloud.ibm.com/docs/containers?topic=containers-cs_troubleshoot_storage).
+* [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+* [Troubleshooting apps](/docs/openshift?topic=openshift-cs_troubleshoot_app).
+* [Troubleshooting clusters](https://cloud.ibm.com/docs/containers?topic=containers-cs_troubleshoot).
+* [Open a support case](/docs/get-support?topic=get-support-getting-customer-support).
+
 
 

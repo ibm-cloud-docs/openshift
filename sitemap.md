@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-07-30"
 
 keywords: openshift
 subcollection: openshift
@@ -1120,6 +1120,8 @@ subcollection: openshift
 * [Backing up and restoring PVC data for file and block storage](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore)
   * [Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-utilities#backup_restore_setup_object_storage)
   * [Using {{site.data.keyword.cos_full_notm}} to back up and restore PVC data](/docs/openshift?topic=openshift-utilities#backup-restore-pvc)
+* [Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
+  * [Troubleshooting persistant storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
 
 
 ## Enhancing your cluster with Cloud Paks, Operators, and integrations
