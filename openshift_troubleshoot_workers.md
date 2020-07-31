@@ -67,7 +67,7 @@ Review the options to debug your worker nodes and find the root causes for failu
     ```
     {: pre}
 2. Review the **State** and **Status** field for every worker node in your CLI output.
-    You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID` command and locating the **State** and **Status** fields.
+    You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
     <table summary="Every table row should be read left to right, with the cluster state in column one and a description in column two.">
     <caption>Worker node states</caption>

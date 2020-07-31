@@ -555,7 +555,7 @@ The **Master Status** provides details of what operation from the master state i
 ### Worker node states
 {: #states_workers}
 
-You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID` command and locating the **State** and **Status** fields.
+You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
     <table summary="Every table row should be read left to right, with the cluster state in column one and a description in column two.">
     <caption>Worker node states</caption>
