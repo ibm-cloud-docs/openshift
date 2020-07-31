@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-07-31"
 
 keywords: openshift
 subcollection: openshift
@@ -31,7 +31,6 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
 
 
 # Site map

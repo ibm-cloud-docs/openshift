@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-31"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -32,7 +32,6 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
 
 
 # Installing the OpenShift CLI
