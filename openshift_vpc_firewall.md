@@ -32,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:step: data-tutorial-type='step'}
 
 
 # VPC: Opening required ports and IP addresses in other network firewalls

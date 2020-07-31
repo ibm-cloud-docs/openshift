@@ -32,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:step: data-tutorial-type='step'}
 
 
 # Classic: Setting up DSR load balancing with an NLB 2.0 (beta)

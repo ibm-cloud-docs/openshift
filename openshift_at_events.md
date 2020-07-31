@@ -32,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:step: data-tutorial-type='step'}
 
 
 # {{site.data.keyword.at_full_notm}} events

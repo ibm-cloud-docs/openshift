@@ -32,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:step: data-tutorial-type='step'}
 
 
 # Exposing apps with routes in OpenShift version 4

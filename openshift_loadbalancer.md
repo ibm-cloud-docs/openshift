@@ -32,6 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:step: data-tutorial-type='step'}
 
 
 # Classic: Setting up basic load balancing with an NLB 1.0
