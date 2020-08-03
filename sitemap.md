@@ -307,6 +307,12 @@ subcollection: openshift
   * [Creating standard VPC Gen 2 compute clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
+[Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters)
+* [Creating {{site.data.keyword.satelliteshort}} clusters from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
+* [Creating {{site.data.keyword.satelliteshort}} clusters from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli)
+* [Accessing and working with your {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
+* [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
+
 [Accessing OpenShift clusters](/docs/openshift?topic=openshift-access_cluster)
 * [Prerequisites](/docs/openshift?topic=openshift-access_cluster#prereqs)
 * [Accessing OpenShift clusters through the public service endpoint](/docs/openshift?topic=openshift-access_cluster#access_public_se)
