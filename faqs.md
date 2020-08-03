@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs
 
@@ -274,7 +274,7 @@ With Red Hat OpenShift on IBM Cloud clusters, you can use IBM Cloud infrastructu
     <p><strong>Physical machines, or bare metal, (not available for VPC clusters)</strong> yield high-performance benefits for workloads such as data and AI. Additionally, all the hardware resources are dedicated to your workloads, so you don't have "noisy neighbors". Keep in mind these factors that impact your bare metal costs:</p>
     <ul><li><strong>Monthly billing only</strong>: All bare metals are charged monthly.</li>
     <li><strong>Longer ordering process</strong>:  After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.</li></ul>
-    <p class="important"><img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <strong>VPC Generation 2 compute only</strong>: Prices vary by region where the underlying worker node infrastructure resides. For more information, see [What are the regional uplift charges for VPC Generation 2 compute worker nodes?](#charges_vpc_gen2).
+    <p class="important"><img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <strong>VPC Generation 2 only</strong>: Prices vary by region where the underlying worker node infrastructure resides, and you can get sustained usage discounts. For more information, see [What are the regional uplift charges and sustained usage discounts for VPC Generation 2 compute worker nodes?](#charges_vpc_gen2).</p>
     <p>For more information about the machine specifications, see [Available hardware for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).</p></dd>
   <dt id="licenses">Compute licenses</dt>
     <dd><p>Your worker nodes are installed with the Red Hat Enterprise Linux operating system, which includes a license for each worker node. To use Red Hat OpenShift Container Platform, an OpenShift license is also included, which incurs monthly costs in addition to the costs of your worker nodes.</p>
@@ -312,14 +312,23 @@ Monthly resources are billed based on the first of the month for usage in the pr
 {: note}
 
 
-## What are the regional uplift charges for VPC Generation 2 compute worker nodes?
+## What are the regional uplift charges and sustained usage discounts for VPC Generation 2 compute worker nodes?
 {: #charges_vpc_gen2}
 {: faq}
 
-When you create a cluster on VPC generation 2 compute infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [OpenShift cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
+Pricing for VPC generation 2 compute infrastructure varies based on regional location and sustained usage.
 {: shortdesc}
 
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> This information applies to VPC Generation 2 compute worker nodes only.
+{: note}
+
+**Regional uplift charges**<br>
+When you create a cluster on VPC generation 2 compute infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [OpenShift cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
+
 For a table that describes the pricing uplift by region, see [Regional pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
+
+**Sustained usage discounts**<br>
+For virtual server instances that are billed hourly, discounted prices depend on how long the instance runs during the billing month. For more information, expand the **Sustained usage discounts on {{site.data.keyword.cloud_notm} {{site.data.keyword.vsi_is_short}}** section on the [Pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external} page.
 
 
 ## Are my platform and infrastructure resources consolidated in one bill?
@@ -347,4 +356,3 @@ You can check your current usage and estimated monthly totals for your {{site.da
 {: faq}
 
 Yes, you can add tags to your cluster to help organize your {{site.data.keyword.cloud_notm}} resources such as for billing purposes. For more information, see [Adding tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags).
-

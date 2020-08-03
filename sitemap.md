@@ -1547,7 +1547,7 @@ subcollection: openshift
 
 [What am I charged for when I use Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-faqs#charges)
 
-[What are the regional uplift charges for VPC Generation 2 compute worker nodes?](/docs/openshift?topic=openshift-faqs#charges_vpc_gen2)
+[What are the regional uplift charges and sustained usage discounts for VPC Generation 2 compute worker nodes?](/docs/openshift?topic=openshift-faqs#charges_vpc_gen2)
 
 [Are my platform and infrastructure resources consolidated in one bill?](/docs/openshift?topic=openshift-faqs#bill)
 
