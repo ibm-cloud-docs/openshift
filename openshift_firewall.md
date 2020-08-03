@@ -415,7 +415,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
           </tr>
           <tr>
              <td>EU Central</td>
-             <td>ams03<br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
+             <td>ams03<br><br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
              <td><code>166.9.28.17, 166.9.28.95, 166.9.30.11, 166.9.32.26</code><br><code>166.9.28.20, 166.9.30.12, 166.9.32.27</code><br><code>166.9.32.8, 166.9.32.28</code><br><code>166.9.28.19, 166.9.28.22, 166.9.28.24</code><br><br><code>166.9.28.23, 166.9.28.43, 166.9.28.59, 166.9.28.92, 166.9.28.94, 166.9.30.13, 166.9.30.22, 166.9.30.43, 166.9.30.55, 166.9.30.56, 166.9.32.20, 166.9.32.45, 166.9.32.53, 166.9.32.56, 166.9.32.9</code></td>
           </tr>
           <tr>
