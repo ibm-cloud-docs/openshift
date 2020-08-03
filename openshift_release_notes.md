@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -40,6 +40,15 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {:shortdesc}
+
+## August 2020
+{: #aug20}
+
+| Date | Description |
+| ---- | ----------- |
+| 03 August 2020 | **Versions**: Worker node fix pack update changelog documentation is available for OpenShift [`4.4.14_1512_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4414_1512), [`4.3.29_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4329_1533), and [`3.11.248_1561_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1561). |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in August 2020"}
 
 ## July 2020
 {: #july20}
