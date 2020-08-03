@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -392,11 +392,49 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
     ```
     {: pre}
 
-3.  To allow worker nodes to communicate with the cluster master over the private service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_privateIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443. With DNS-based private service endpoints, the IP addresses can change. Allow the following private IP address range.
-    ```
-    166.8.0.0/14
-    ```
-    {: codeblock}
+3.  To allow worker nodes to communicate with the cluster master over the private service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_privateIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
+    - `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
+    -  Replace <em>&lt;private_IPs&gt;</em> with the private IP addresses of the zones in the region where your cluster is located.<p class="important">You must allow outgoing traffic to port 443 for **all of the zones within the region** to balance the load during the bootstrapping process.</p>
+    <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one, the zone in column two, and IP addresses to match in column three.">
+      <caption>IP addresses to open for outgoing traffic</caption>
+          <thead>
+          <th>Region</th>
+          <th>Zone</th>
+          <th>Private IP address</th>
+          </thead>
+        <tbody>
+          <tr>
+            <td>AP North</td>
+            <td>che01<br>hkg02<br>seo01<br>sng01<br><br>tok02, tok04, tok05</td>
+            <td><code>166.9.40.7, 166.9.60.2</code><br><code>166.9.40.36, 166.9.42.7, 166.9.44.3</code><br><code>166.9.44.5, 166.9.46.4</code><br><code>166.9.40.8, 166.9.42.28</code><br><br><code>166.9.40.21, 166.9.40.39, 166.9.40.6, 166.9.42.23, 166.9.42.55, 166.9.42.6, 166.9.44.15, 166.9.44.4, 166.9.44.47</code></td>
+          </tr>
+          <tr>
+            <td>AP South</td>
+            <td>mel01<br><br>syd01, syd04, syd05</td>
+            <td><code>166.9.54.3, 166.9.54.10</code><br><br><code>166.9.52.14, 166.9.52.15, 166.9.52.23, 166.9.52.30, 166.9.52.31, 166.9.54.11, 166.9.54.12, 166.9.54.13, 166.9.54.21, 166.9.54.32, 166.9.54.33, 166.9.56.16, 166.9.56.24, 166.9.56.36</code></td>
+          </tr>
+          <tr>
+             <td>EU Central</td>
+             <td>ams03<br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
+             <td><code>166.9.28.17, 166.9.28.95, 166.9.30.11, 166.9.32.26</code><br><code>166.9.28.20, 166.9.30.12, 166.9.32.27</code><br><code>166.9.32.8, 166.9.32.28</code><br><code>166.9.28.19, 166.9.28.22, 166.9.28.24</code><br><br><code>166.9.28.23, 166.9.28.43, 166.9.28.59, 166.9.28.92, 166.9.28.94, 166.9.30.13, 166.9.30.22, 166.9.30.43, 166.9.30.55, 166.9.30.56, 166.9.32.20, 166.9.32.45, 166.9.32.53, 166.9.32.56, 166.9.32.9</code></td>
+          </tr>
+          <tr>
+            <td>UK South</td>
+            <td>lon02, lon04, lon05, lon06</td>
+            <td><code>166.9.34.5, 166.9.34.6, 166.9.34.17, 166.9.34.42, 166.9.36.10, 166.9.36.11, 166.9.36.12, 166.9.36.13, 166.9.36.23, 166.9.36.54, 166.9.38.6, 166.9.38.7, 166.9.38.18, 166.9.38.47</code></td>
+          </tr>
+          <tr>
+            <td>US East</td>
+             <td>mon01<br>tor01<br><br>wdc04, wdc06, wdc07</td>
+             <td><code>166.9.20.11, 166.9.24.22</code><br><code>166.9.22.8, 166.9.24.19</code><br><br><code>166.9.20.116, 166.9.20.117, 166.9.20.12, 166.9.20.13, 166.9.20.38, 166.9.20.80, 166.9.22.10, 166.9.22.26, 166.9.22.43, 166.9.22.52, 166.9.22.54, 166.9.22.9, 166.9.24.19, 166.9.24.35, 166.9.24.4, 166.9.24.46, 166.9.24.47, 166.9.24.5</code></td>
+          </tr>
+          <tr>
+            <td>US South</td>
+            <td>hou02<br>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
+            <td><code>166.9.15.74</code><br><code>166.9.15.76, 166.9.16.38</code><br><code>166.9.12.143, 166.9.16.5</code><br><code>166.9.12.144, 166.9.16.39</code><br><code>166.9.15.75, 166.9.12.26</code><br><br><code>166.9.12.140, 166.9.12.141, 166.9.12.142, 166.9.12.151, 166.9.12.193, 166.9.12.196, 166.9.12.99, 166.9.13.31, 166.9.13.93, 166.9.13.94, 166.9.14.122, 166.9.14.125, 166.9.14.202, 166.9.14.204, 166.9.14.205, 166.9.14.95, 166.9.15.130, 166.9.15.69, 166.9.15.70, 166.9.15.71, 166.9.15.72, 166.9.15.73, 166.9.16.113, 166.9.16.137, 166.9.16.149, 166.9.16.183, 166.9.16.184, 166.9.16.185, 166.9.17.2, 166.9.17.35, 166.9.17.37, 166.9.17.39</code></td>
+          </tr>
+          </tbody>
+        </table>
 
 4. Open the following ports that are necessary for worker nodes to function properly.
   - Allow outbound TCP and UDP connections from the workers to ports 80 and 443 to allow worker node updates and reloads.
