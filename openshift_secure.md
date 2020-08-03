@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
-keywords: openshift, roks, rhoks, rhos, vpc
+keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
