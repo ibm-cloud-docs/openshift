@@ -77,7 +77,7 @@ The following table shows the changes that are included in the `4.4.11_1511_open
 | --- | --- | --- | --- | --- |
 | CRI-O | Worker | 1.16.6 | 1.17.4 | See the [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.17.4){: external}. |
 | HAProxy | Worker | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
-| Key Management Service provider | Master | N/A | v1.0.0 | **New!**: Red Hat OpenShift on IBM Cloud version 4.4 clusters now support [Key Management Service (KMS) providers](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption#kms). |
+| Key Management Service provider | Master | N/A | v1.0.0 | **New!**: Red Hat OpenShift on IBM Cloud version 4.4 clusters now support [Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms). |
 | OpenShift Control Plane Operator | Master | v4.3.0+20200615 | v4.4.0+20200615 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200615){: external}. |
 | OpenShift | Both | Master 4.3.28<br>Worker 4.3.29 | 4.4.11 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-11){: external}. |
 | RHEL 7 Packages | Worker | N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}.|
