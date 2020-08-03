@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -72,6 +72,9 @@ The Ingress operator configures the router with the same domain that is specifie
 
 If you have a multizone cluster, one high-availability router is deployed to your cluster, and one router service is created in each zone. Two worker nodes are required per zone so that the two replicas of the router can be deployed and updated correctly.
 
+If you manually create a router, the router is not managed by the Ingress operator and is not automatically registered with the Ingress subdomain or an app in your cluster.
+{: note}
+
 **Classic clusters: Router IP addresses**
 
 To find the IP addresses of the default Ingress controller router services, run `oc get svc -n openshift-ingress` and look for the **EXTERNAL IP** field. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
@@ -86,7 +89,7 @@ The Ingress subdomain for your cluster is automatically linked to the VPC load b
 
 You can find the hostname that is assigned to your public routers and the hostname that is assigned to your private routers by running `oc get svc -n openshift-ingress` and looking for the **EXTERNAL IP** field.
 
-If you manually create a router, the router is not managed by the Ingress operator and is not automatically registered with the Ingress subdomain or an app in your cluster.
+In your VPC infrastructure dashboard, the VPC load balancer reports as healthy only the two worker nodes that run the router replica pods, because these worker nodes are configured as the listeners for the VPC load balancer. Even though only the listener worker nodes are reported as healthy, the listeners' backend pool of worker nodes is kept up-to-date by Red Hat OpenShift on IBM Cloud so that all worker nodes in your cluster can still receive requests from the VPC load balancer.
 {: note}
 
 ### Ingress resource
