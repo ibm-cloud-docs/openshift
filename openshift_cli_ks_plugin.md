@@ -39,7 +39,7 @@ subcollection: openshift
 {: #kubernetes-service-cli}
 
 Refer to these commands to create and manage **both community Kubernetes or OpenShift clusters** in {{site.data.keyword.openshiftlong}}.
-{:shortdesc}
+{: shortdesc}
 
 * **Community Kubernetes**: [Install the CLI plug-in](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps), which uses the `ibmcloud ks` alias.
 * **OpenShift**: [Install the CLI plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
@@ -5195,7 +5195,7 @@ ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--json] [-s]
 {: #cs_machine_types}
 
 View a list of available worker node flavors. Flavors vary by zone.
-{:shortdesc}
+{: shortdesc}
 
 The `machine-types` alias for this command is deprecated.
 {: deprecated}

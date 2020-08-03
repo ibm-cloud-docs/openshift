@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -39,7 +39,7 @@ subcollection: openshift
 {: #ingress-roks4}
 
 Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by creating Ingress resources that are managed by the Ingress controller.
-{:shortdesc}
+{: shortdesc}
 
 <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 4 only. To set up Ingress for clusters that run OpenShift version 3.11, see [Setting up Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress).
 {: note}
@@ -48,7 +48,7 @@ Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by crea
 {: #ingress-roks4-prereqs}
 
 Before you get started with Ingress, review the following prerequisites.
-{:shortdesc}
+{: shortdesc}
 
 - Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
     - **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
@@ -65,7 +65,7 @@ Before you get started with Ingress, review the following prerequisites.
 {: #multiple_projects}
 
 One Ingress resource is required per project where you have apps that you want to expose.
-{:shortdesc}
+{: shortdesc}
 
 ### All apps are in one project
 {: #one-project}
@@ -425,7 +425,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
 {: #priv-se-pub-controller-3}
 
 After you get your domain and TLS certificate ready, you must create a public Ingress controller and configure the controller with your domain.
-{:shortdesc}
+{: shortdesc}
 
 1.  Create a configuration file for a public Ingress controller.
     ```yaml
@@ -768,7 +768,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
 {: #ingress-roks4-private-3}
 
 After you get your domain and TLS certificate ready, you must create a private Ingress controller and configure the controller with your domain.
-{:shortdesc}
+{: shortdesc}
 
 1.  Create a configuration file for a private Ingress controller.
     ```yaml

@@ -46,7 +46,7 @@ subcollection: openshift
 <br>
 
 Review these situations in which you might need to open specific ports and IP addresses in your firewalls for your {{site.data.keyword.openshiftlong}} clusters.
-{:shortdesc}
+{: shortdesc}
 
 * [Corporate firewalls](#corporate): If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run `ibmcloud`, `ibmcloud oc`, `ibmcloud cr`, `oc`, and `calicoctl` commands from your local system.
 * [Gateway appliance firewalls](#vyatta_firewall): If you have firewalls set up on the public or private network in your IBM Cloud infrastructure account, such as a VRA, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services. You can also open ports to allow incoming traffic to services exposing apps in your cluster.
@@ -66,7 +66,7 @@ If corporate network policies prevent access from your local system to public en
 {: #firewall_bx}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `ibmcloud`, `ibmcloud oc` and `ibmcloud cr` commands, you must allow TCP access for {{site.data.keyword.cloud_notm}}, Red Hat OpenShift on IBM Cloud, and {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 1. Allow access to `cloud.ibm.com` on port 443 in your firewall.
 2. Verify your connection by logging in to {{site.data.keyword.cloud_notm}} through this API endpoint.
@@ -114,7 +114,7 @@ If corporate network policies prevent access from your local system to public en
 {: #firewall_kubectl}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `oc` commands, you must allow TCP access for the cluster.
-{:shortdesc}
+{: shortdesc}
 
 When a cluster is created, the port in the service endpoint URLs is randomly assigned from within 20000-32767. You can either choose to open port range 20000-32767 for any cluster that might get created or you can choose to allow access for a specific existing cluster.
 
@@ -228,7 +228,7 @@ To allow access for a specific cluster:
 {: #firewall_calicoctl}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `calicoctl` commands, you must allow TCP access for the Calico commands.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`oc` commands](#firewall_kubectl).
 
@@ -258,7 +258,7 @@ If you have firewalls set up on the [public network](#firewall_outbound) or [pri
 {: #firewall_outbound}
 
 If you have a firewall on the public network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
-{:shortdesc}
+{: shortdesc}
 
 1.  Note the public IP address for each worker node in the cluster.
     ```
@@ -380,7 +380,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 {: #firewall_private}
 
 If you have a firewall on the private network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with each other, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
-{:shortdesc}
+{: shortdesc}
 
 1. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
   1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#backend-private-network).
@@ -455,7 +455,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 {: #firewall_inbound}
 
 You can allow incoming access to NodePort, load balancer, and Ingress services, and OpenShift routes.
-{:shortdesc}
+{: shortdesc}
 
 <dl>
   <dt>NodePort service</dt>
@@ -487,7 +487,7 @@ Instead of setting up a gateway firewall device, you can choose to use [Calico n
 {: #allowlist_workers}
 
 If you want to access services that run inside or outside {{site.data.keyword.cloud_notm}} or on-premises and that are protected by a firewall, you can add the IP addresses of your worker nodes in that firewall to allow outbound network traffic to your cluster. For example, you might want to read data from an {{site.data.keyword.cloud_notm}} database that is protected by a firewall, or specify your worker node subnets in an on-premises firewall to allow network traffic from your cluster.
-{:shortdesc}
+{: shortdesc}
 
 1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 

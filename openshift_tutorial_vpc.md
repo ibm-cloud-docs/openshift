@@ -101,7 +101,7 @@ Install the command-line tools.
 {: step}
 
 Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environment. Then, create a Red Hat OpenShift on IBM Cloud cluster on the VPC infrastructure. For more information about VPC, see [Getting Started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
-{:shortdesc}
+{: shortdesc}
 
 1.  Log in to the account, resource group, and {{site.data.keyword.cloud_notm}} region where you want to create your VPC environment. The VPC must be set up in the same multizone metro location where you want to create your cluster. In this tutorial you create a VPC in `us-south`. For other supported regions, see [Multizone metros for VPC clusters](/docs/openshift?topic=openshift-regions-and-zones#zones). The VPC can be in a separate resource group than the resource group of your cluster. If you have a federated ID, include the `--sso` flag.
     ```

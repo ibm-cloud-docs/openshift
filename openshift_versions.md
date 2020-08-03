@@ -51,7 +51,7 @@ For more information about the OpenShift and Kubernetes project versions, review
 {: #openshift_update_types}
 
 Your Red Hat OpenShift on IBM Cloud cluster has three types of updates: major, minor, and patch. As updates become available, you are notified when you view information about the cluster master or worker nodes, such as with the `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get` commands.
-{:shortdesc}
+{: shortdesc}
 
 You must [update your cluster](/docs/openshift?topic=openshift-update) by using the Red Hat OpenShift on IBM Cloud API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the OpenShift web console.
 {: note}

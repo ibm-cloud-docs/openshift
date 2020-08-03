@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -42,7 +42,7 @@ subcollection: openshift
 
 
 A Docker image is the basis for every container that you create with {{site.data.keyword.openshiftlong}}.
-{:shortdesc}
+{: shortdesc}
 
 An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
 
@@ -80,7 +80,7 @@ You can deploy an app from an existing [image stream](https://docs.openshift.com
 {: #namespace}
 
 You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registrylong_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
-{:shortdesc}
+{: shortdesc}
 
 Before you begin:
 1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).

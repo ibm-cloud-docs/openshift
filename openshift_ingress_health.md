@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -95,7 +95,7 @@ Logs are automatically collected for your Ingress ALBs. To view the ALB logs, ch
 {: #ingress_log_format}
 
 You can customize the content and format of logs that are collected for the Ingress ALB.
-{:shortdesc}
+{: shortdesc}
 
 By default, Ingress logs are formatted in JSON and display common log fields. However, you can also create a custom log format by choosing which log components are forwarded and how the components are arranged in the log output
 
@@ -466,7 +466,7 @@ The following table lists the supported upstream type 2 metric names.
 {: #vts_zone_size}
 
 Shared memory zones are defined so that worker processes can share information such as cache, session persistence, and rate limits. A shared memory zone, called the virtual host traffic status zone, is set up for Ingress to collect metrics data for an ALB.
-{:shortdesc}
+{: shortdesc}
 
 In the `ibm-cloud-provider-ingress-cm` Ingress configmap, the `vts-status-zone-size` field sets the size of the shared memory zone for metrics data collection. By default, `vts-status-zone-size` is set to `10m`. If you have a large environment that requires more memory for metrics collection, you can override the default to instead use a larger value by following these steps.
 

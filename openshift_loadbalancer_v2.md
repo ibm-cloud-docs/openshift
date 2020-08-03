@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -42,7 +42,7 @@ subcollection: openshift
 {: note}
 
 Expose a port and use a portable IP address for a Layer 4 network load balancer (NLB) to expose a containerized app. For more information about version 2.0 NLBs, see [Components and architecture of an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs).
-{:shortdesc}
+{: shortdesc}
 
 ## Prerequisites
 {: #ipvs_provision}

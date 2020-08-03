@@ -39,7 +39,7 @@ subcollection: openshift
 {: #vpc-subnets}
 
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} VPC cluster.
-{:shortdesc}
+{: shortdesc}
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to VPC clusters. For information about classic clusters, see [Configuring subnets and IP addresses for classic clusters](/docs/openshift?topic=openshift-subnets).
 {: note}

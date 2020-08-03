@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhos, rhoks, clusters, delete, remove
 
@@ -39,7 +39,7 @@ subcollection: openshift
 {: #remove}
 
 Clusters that are created with a billable account must be removed manually when they are not needed anymore so that those clusters are no longer consuming resources.
-{:shortdesc}
+{: shortdesc}
 
 <p class="important">
 No backups are created of your cluster or your data in your persistent storage. When you delete a cluster, you can choose to delete your persistent storage. Persistent storage that you provisioned by using a `delete` storage class is permanently deleted in IBM Cloud infrastructure if you choose to delete your persistent storage. If you provisioned your persistent storage by using a `retain` storage class and you choose to delete your storage, the cluster, the PV, and PVC are deleted, but the persistent storage instance in your IBM Cloud infrastructure account remains.</br>

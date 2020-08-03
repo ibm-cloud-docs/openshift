@@ -83,7 +83,7 @@ This tutorial is for cluster administrators who want to learn how to create a Re
 {: step}
 
 Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture). OpenShift is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
-{:shortdesc}
+{: shortdesc}
 
 1.  Install the command-line tools.
     *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
@@ -134,7 +134,7 @@ Create a Red Hat OpenShift on IBM Cloud cluster. To learn about what components 
 {: step}
 
 Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to help operate your cluster, such as the OpenShift console.
-{:shortdesc}
+{: shortdesc}
 
 1.  From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your OpenShift cluster, then click **OpenShift web console**.
 2.  Explore the different areas of the OpenShift web console, as described in the following tabbed table.

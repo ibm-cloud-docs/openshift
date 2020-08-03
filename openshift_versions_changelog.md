@@ -39,7 +39,7 @@ subcollection: openshift
 {: #openshift_changelog}
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters. Changes include updates to OpenShift, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
-{:shortdesc}
+{: shortdesc}
 
 Unless otherwise noted in the changelogs, the {{site.data.keyword.cloud_notm}} provider version enables OpenShift APIs and features that are at beta. OpenShift alpha features, which are subject to change, are disabled.
 
