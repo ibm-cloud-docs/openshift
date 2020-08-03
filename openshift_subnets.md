@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -32,14 +32,14 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Classic: Configuring subnets and IP addresses
 {: #subnets}
 
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
-{:shortdesc}
+{: shortdesc}
 
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to classic clusters. For information about VPC clusters, see [Configuring subnets and IP addresses for VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
@@ -150,7 +150,7 @@ When VRF or VLAN spanning is enabled, any system that is connected to any of the
 {: #subnets_custom}
 
 When you create a standard cluster, subnets are automatically created for you. However, instead of using the automatically provisioned subnets, you can use existing portable subnets from your IBM Cloud infrastructure account or reuse subnets from a deleted cluster.
-{:shortdesc}
+{: shortdesc}
 
 Use this option to retain stable static IP addresses across cluster removals and creations, or to order larger blocks of IP addresses. If instead you want to get more portable public or private IP addresses to create network load balancer (NLB) or Ingress application load balancer (ALB) services, see [Adding portable IP addresses](#adding_ips).
 
@@ -320,7 +320,7 @@ To list available portable public IP addresses:
 {: #free}
 
 You can free up a used portable IP address by deleting the network load balancer (NLB) service or disabling the Ingress application load balancer (ALB) that is using the portable IP address.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin:
 -  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
@@ -362,7 +362,7 @@ When you make a subnet available to a cluster, IP addresses of this subnet are u
 {: #request}
 
 You can get more portable IPs for NLB services by creating a new subnet in an IBM Cloud infrastructure account and making it available to your specified cluster.
-{:shortdesc}
+{: shortdesc}
 
 Portable public IP addresses are charged monthly. If you remove portable public IP addresses after your subnet is provisioned, you still must pay the monthly charge, even if you used them only for a short amount of time.
 {: note}
@@ -426,7 +426,7 @@ To order a subnet:
 {: #add-existing}
 
 You can get more portable IPs for NLB services by making an existing subnet in an IBM Cloud infrastructure account available to your cluster.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin:
 -  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
@@ -506,7 +506,7 @@ The VLAN spanning option is disabled for clusters that are created in a VRF-enab
 {: #vlan-spanning}
 
 When you create a cluster, primary public and private subnets are provisioned on the public and private VLANs. The primary public subnet ends in `/28` and provides 14 public IPs for worker nodes. The primary private subnet ends in `/26` and provides private IPs for up to 62 worker nodes.
-{:shortdesc}
+{: shortdesc}
 
 You might exceed the initial 14 public and 62 private IPs for worker nodes by having a large cluster or several smaller clusters in the same location on the same VLAN. When a public or private subnet reaches the limit of worker nodes, another primary subnet in the same VLAN is ordered.
 

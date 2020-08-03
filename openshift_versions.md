@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Version information and update actions
@@ -51,7 +51,7 @@ For more information about the OpenShift and Kubernetes project versions, review
 {: #openshift_update_types}
 
 Your Red Hat OpenShift on IBM Cloud cluster has three types of updates: major, minor, and patch. As updates become available, you are notified when you view information about the cluster master or worker nodes, such as with the `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get` commands.
-{:shortdesc}
+{: shortdesc}
 
 You must [update your cluster](/docs/openshift?topic=openshift-update) by using the Red Hat OpenShift on IBM Cloud API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the OpenShift web console.
 {: note}
@@ -176,7 +176,7 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | ---- | ----------- |
-| **Unsupported:** Deprecated Kubernetes APIs are removed | Although Kubernetes version 1.16 removed several common, deprecated Kubernetes APIs, OpenShift version 4.3, which is based on Kubernetes version 1.16, kept these APIs enabled. Now, OpenShift version 4.4, which is based on Kubernetes version 1.17, removes these Kubernetes APIs that were removed in the Kubernetes 1.16 project. You can take the following steps to mitigate impact to your Kubernetes resources. Note that the blog was written specifically for {{site.data.keyword.containerlong_notm}} clusters, but the tips apply to Red Hat OpenShift on IBM Cloud, too.<ol><li>Follow the [blog update tips](https://www.ibm.com/cloud/blog/announcements/kubernetes-version-1-16-removes-deprecated-apis){: external}.</li><li>Update the configuration files for any impacted Kubernetes resources, such as daemon sets, deployments, replica sets, stateful sets, and network policies.</li><li>If you [add services to your cluster by using Helm charts](https://cloud.ibm.com/docs/openshift?topic=openshift-helm), update to Helm version 2.15.2 or later.</li></ol>|
+| **Unsupported:** Deprecated Kubernetes APIs are removed | Although Kubernetes version 1.16 removed several common, deprecated Kubernetes APIs, OpenShift version 4.3, which is based on Kubernetes version 1.16, kept these APIs enabled. Now, OpenShift version 4.4, which is based on Kubernetes version 1.17, removes these Kubernetes APIs that were removed in the Kubernetes 1.16 project. You can take the following steps to mitigate impact to your Kubernetes resources. Note that the blog was written specifically for {{site.data.keyword.containerlong_notm}} clusters, but the tips apply to Red Hat OpenShift on IBM Cloud, too.<ol><li>Follow the [blog update tips](https://www.ibm.com/cloud/blog/announcements/kubernetes-version-1-16-removes-deprecated-apis){: external}.</li><li>Update the configuration files for any impacted Kubernetes resources, such as daemon sets, deployments, replica sets, stateful sets, and network policies.</li><li>If you [add services to your cluster by using Helm charts](/docs/openshift?topic=openshift-helm), update to Helm version 2.15.2 or later.</li></ol>|
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.4 deprecated and removed features](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-deprecated-removed-features). |
 | Kubernetes API server checks client certificates before tokens | For more information, review [`kube-apiserver` checks client certificates before tokens](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-kube-apiserver-check-certs-before-tokens). |
 {: caption="Changes to make before you update the master to OpenShift 4.4" caption-side="top"}

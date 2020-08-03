@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Overview
@@ -88,7 +88,7 @@ Review the following links to find out more about the benefits and responsibilit
 {: #docker_containers}
 
 Built on existing Linux container technology (LXC), the open source project that is named Docker defined templates for how to package software into standardized units, called containers, that include all of the elements that an app needs to run. Red Hat OpenShift on IBM Cloud uses `cri-o` as the container runtime to deploy containers from Docker container images into your cluster.
-{:shortdesc}
+{: shortdesc}
 
 ### Key concepts
 {: #docker-concepts}
@@ -134,7 +134,7 @@ Ready to gain deeper knowledge of Docker? [Learn how Docker and Red Hat OpenShif
 {: #kubernetes_basics}
 
 <img src="images/certified-kubernetes-resized.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes certification for IBM Cloud Container Service."/>The open source project that is named Kubernetes combines running a containerized infrastructure with production workloads, open source contributions, and Docker container management tools. The Kubernetes infrastructure provides an isolated and secure app platform for managing containers that is portable, extensible, and self-healing in case of failovers. For more information, check out the [Kubernetes](https://www.ibm.com/cloud/learn/kubernetes) blog post.
-{:shortdesc}
+{: shortdesc}
 
 </br>
 

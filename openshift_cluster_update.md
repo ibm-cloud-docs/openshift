@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -32,14 +32,14 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Updating clusters, worker nodes, and cluster components
 {: #update}
 
 You can install updates to keep your {{site.data.keyword.openshiftlong}} clusters up-to-date.
-{:shortdesc}
+{: shortdesc}
 
 You must update your cluster by using the Red Hat OpenShift on IBM Cloud API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the OpenShift web console.
 {: note}
@@ -48,7 +48,7 @@ You must update your cluster by using the Red Hat OpenShift on IBM Cloud API, CL
 {: #master}
 
 Periodically, OpenShift releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
-{:shortdesc}
+{: shortdesc}
 
 **How do I know when to update the master?**</br>
 You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when updates are available, and can also check the [supported versions](/docs/openshift?topic=openshift-openshift_versions) page.

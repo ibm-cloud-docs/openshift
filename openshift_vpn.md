@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Classic: Setting up VPN connectivity
@@ -42,7 +42,7 @@ subcollection: openshift
 {: note}
 
 With VPN connectivity, you can securely connect apps in a OpenShift cluster on {{site.data.keyword.openshiftlong}} to an on-premises network. You can also connect apps that are external to your cluster to an app that runs inside your cluster.
-{:shortdesc}
+{: shortdesc}
 
 To connect your worker nodes and apps to an on-premises data center, you can configure one of the following options.
 
@@ -58,7 +58,7 @@ To connect your worker nodes and apps to an on-premises data center, you can con
 {: #vpn-setup}
 
 Use a Helm chart to configure and deploy the strongSwan IPSec VPN service inside of a Kubernetes pod.
-{:shortdesc}
+{: shortdesc}
 
 Because strongSwan is integrated within your cluster, you don't need an external gateway appliance. When VPN connectivity is established, routes are automatically configured on all of the worker nodes in the cluster. These routes allow two-way connectivity through the VPN tunnel between pods on any worker node and the remote system. For example, the following diagram shows how an app in Red Hat OpenShift on IBM Cloud can communicate with an on-premises server via a strongSwan VPN connection:
 
@@ -378,7 +378,7 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
 {: #vpn_test}
 
 After you deploy your Helm chart, test the VPN connectivity.
-{:shortdesc}
+{: shortdesc}
 
 1. If the VPN on the on-premises gateway is not active, start the VPN.
 
@@ -656,7 +656,7 @@ To limit VPN traffic to tainted nodes for each tenant:
 {: #vpn_upgrade}
 
 Make sure your strongSwan Helm chart is up-to-date by upgrading it.
-{:shortdesc}
+{: shortdesc}
 
 To upgrade your strongSwan Helm chart to the latest version:
 
@@ -679,7 +679,7 @@ You can disable the VPN connection by deleting the Helm chart.
 {: #vyatta}
 
 The [Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) provides the latest Vyatta 5600 operating system for x86 bare metal servers. You can use a VRA as VPN gateway to securely connect to an on-premises network.
-{:shortdesc}
+{: shortdesc}
 
 All public and private network traffic that enters or exits the cluster VLANs is routed through a VRA. You can use the VRA as a VPN endpoint to create an encrypted IPSec tunnel between servers in IBM Cloud infrastructure and on-premises resources. For example, the following diagram shows how an app on a worker node in Red Hat OpenShift on IBM Cloud can communicate with an on-premises server via a VRA VPN connection on the private VLAN:
 

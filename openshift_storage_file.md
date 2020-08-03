@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}
@@ -267,7 +267,7 @@ To decide on a storage configuration:
 {: #add_file}
 
 Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the physical storage device in your IBM Cloud infrastructure account.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin:
 - [Decide on a pre-defined storage class](#file_predefined_storageclass) or create a [customized storage class](#file_custom_storageclass).
@@ -1594,7 +1594,7 @@ The following customized storage class lets you define the NFS version that you 
 {: #cleanup}
 
 When you set up persistent storage in your cluster, you have three main components: the Kubernetes persistent volume claim (PVC) that requests storage, the Kubernetes persistent volume (PV) that is mounted to a pod and described in the PVC, and the IBM Cloud infrastructure instance, such as classic file or block storage. Depending on how you created your storage, you might need to delete all three components separately. 
-{:shortdesc}
+{: shortdesc}
 
 ### Understanding your storage removal options
 {: #storage_delete_options}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-26"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -32,14 +32,14 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Planning app deployments
 {: #plan_deploy}
 
 Before you deploy an app to an {{site.data.keyword.openshiftlong}} cluster, decide how you want to set up your app so that your app can be accessed properly and be integrated with other services in {{site.data.keyword.cloud_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 ## Moving workloads to Red Hat OpenShift on IBM Cloud
 {: #moving}
@@ -465,7 +465,7 @@ If you want to run your app in multiple clusters, public and private environment
 {: #service_discovery}
 
 Each of your pods in your OpenShift cluster has an IP address. But when you deploy an app to your cluster, you don't want to rely on the pod IP address for service discovery and networking. Pods are removed and replaced frequently and dynamically. Instead, use a Kubernetes service, which represents a group of pods and provides a stable entry point through the service's virtual IP address, called its `cluster IP`. For more information, see the Kubernetes documentation on [Services](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services){: external}.
-{:shortdesc}
+{: shortdesc}
 
 ### How can I make sure that my services are connected to the right deployments and ready to go?
 {: #services_connected}

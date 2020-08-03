@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-08-03"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Managing the app lifecycle
@@ -60,7 +60,7 @@ To update your app, you can choose from various strategies such as the following
 {: #app_scaling}
 
 With Kubernetes, you can enable [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external} to automatically increase or decrease the number of instances of your apps based on CPU.
-{:shortdesc}
+{: shortdesc}
 
 Want to scale your worker nodes instead of your pods? Check out the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca).
 {: tip}
@@ -118,7 +118,7 @@ Steps:
 {: #app_rolling}
 
 You can manage the rollout of your app changes in an automated and controlled fashion for workloads with a pod template such as deployments. If your rollout isn't going according to plan, you can roll back your deployment to the previous revision.
-{:shortdesc}
+{: shortdesc}
 
 Want to prevent downtime during your rolling update? Be sure to specify a [readiness probe in your deployment](/docs/openshift?topic=openshift-openshift_apps#probe) so that the rollout proceeds to the next app pod after the most recently updated pod is ready.
 {: tip}

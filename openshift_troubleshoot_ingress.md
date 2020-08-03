@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-07-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Ingress and routers
@@ -91,7 +91,7 @@ The **Ingress Status** reflects the overall health of the Ingress components. Th
 |`One or more routers are unhealthy`|4.3 clusters: The external IP address for one or more routers was reported as unhealthy. For troubleshooting information, see [Check the health of the Ingress controller's router](#errors-43).|
 |`Pending update or enable operation for ALB in progress`|3.11 clusters: Your ALB is currently updating to a new version, or your ALB that was previously disabled is enabling. For information about updating ALBs, see [Updating ALBs](/docs/openshift?topic=openshift-ingress-manage#alb-update). For information about enabling ALBs, see the [`ibmcloud oc alb configure` CLI command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).|
 |`Registering Ingress subdomain`|The default **Ingress Subdomain** for your cluster is currently being created. The Ingress subdomain and secret creation follows a process that might take more than 15 minutes to complete. For troubleshooting information, see [No Ingress subdomain exists after cluster creation](#ingress_subdomain).|
-|`Router service is unhealthy or unreachable`|4.3 clusters: The external IP address for one or more router services that expose Ingress controllers was reported as unhealthy, or one or more router services did not correctly deploy to your cluster. For troubleshooting information, see [Ping the Ingress subdomain and router public IP address](#ping-43).|
+|`Router service is unhealthy or unreachable`|4.3 clusters: The external IP address for one or more router services that expose Ingress controllers was reported as unhealthy or was unreachable, or one or more router services did not correctly deploy to your cluster. For troubleshooting information, see [Ping the Ingress subdomain and router public IP address](#ping-43).|
 {: caption="Ingress messages"}
 {: summary="Table rows read from left to right, with the Ingress message in column one and a description in column two."}
 

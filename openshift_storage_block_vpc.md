@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-08-03"
 
-keywords: openshift, roks, rhoks, rhos, vpc
+keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 
@@ -1250,7 +1250,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 {: #cleanup}
 
 When you set up persistent storage in your cluster, you have three main components: the Kubernetes persistent volume claim (PVC) that requests storage, the Kubernetes persistent volume (PV) that is mounted to a pod and described in the PVC, and the IBM Cloud infrastructure instance, such as classic file or block storage. Depending on how you created your storage, you might need to delete all three components separately. 
-{:shortdesc}
+{: shortdesc}
 
 ### Understanding your storage removal options
 {: #storage_delete_options}

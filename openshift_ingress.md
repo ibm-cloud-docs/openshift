@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -32,14 +32,14 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Setting up Ingress in OpenShift 3.11
 {: #ingress}
 
 Expose multiple apps in your OpenShift cluster by creating Ingress resources that are managed by the IBM-provided application load balancer in {{site.data.keyword.openshiftlong}}.
-{:shortdesc}
+{: shortdesc}
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 3.11 only. To set up Ingress for OpenShift version 4, see [Setting up Ingress in OpenShift version 4](/docs/openshift?topic=openshift-ingress-roks4).
 {: important}
@@ -50,7 +50,7 @@ Expose multiple apps in your OpenShift cluster by creating Ingress resources tha
 {: #config_prereqs}
 
 Before you get started with Ingress, review the following prerequisites.
-{:shortdesc}
+{: shortdesc}
 
 - Enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the ALB can route packets to various subnets in the account.
 - Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
@@ -68,7 +68,7 @@ Before you get started with Ingress, review the following prerequisites.
 {: #multiple_namespaces}
 
 One Ingress resource is required per namespace where you have apps that you want to expose.
-{:shortdesc}
+{: shortdesc}
 
 ### All apps are in one namespace
 {: #one-ns}
@@ -124,7 +124,7 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 {: #ingress_expose_public}
 
 Expose apps that are inside your cluster to the public by using the public Ingress ALB.
-{:shortdesc}
+{: shortdesc}
 
 **Before you begin:**
 
@@ -572,7 +572,7 @@ To expose apps that are outside of your cluster to the public:
 {: #ingress_expose_private}
 
 Expose apps to a private network by using the private Ingress ALBs.
-{:shortdesc}
+{: shortdesc}
 
 To use a private ALB, you must first enable the private ALB. Because private VLAN-only clusters are not assigned an IBM-provided Ingress subdomain, no Ingress secret is created during cluster setup. To expose your apps to the private network, you must register your ALB with a custom domain and, optionally, import your own TLS certificate.
 
@@ -600,7 +600,7 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 {: #private_ingress}
 
 When you create a standard cluster, a private ALB is created in each zone that you have worker nodes and assigned a private IP address. However, the default private ALB in each zone is not automatically enabled. You must first enable each private ALB.
-{:shortdesc}
+{: shortdesc}
 
 1. Get the private ALB IDs for your cluster.
     ```

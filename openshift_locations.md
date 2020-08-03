@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -32,14 +32,14 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Locations
 {: #regions-and-zones}
 
 You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you create a cluster, its resources remain in the location that you deploy the cluster to. To work with your cluster, you can access the service via a global API endpoint.
-{:shortdesc}
+{: shortdesc}
 
 ![Red Hat OpenShift on IBM Cloud locations](images/locations-roks.png)
 
@@ -185,7 +185,7 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
 {: #endpoint}
 
 You can organize your resources across {{site.data.keyword.cloud_notm}} services by using {{site.data.keyword.cloud_notm}} locations (formerly called regions). For example, you can deploy an app to a cluster by using a private Docker image that is stored in your {{site.data.keyword.registrylong_notm}} of the same location. To access these resources, you can use the global endpoints and filter by location.
-{:shortdesc}
+{: shortdesc}
 
 ### Logging in to {{site.data.keyword.cloud_notm}}
 {: #login-ic}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # VPC: Opening required ports and IP addresses in other network firewalls
@@ -51,7 +51,7 @@ If corporate network policies prevent access from your local system to public en
 {: #vpc-firewall_bx}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `ibmcloud`, `ibmcloud oc` and `ibmcloud cr` commands, you must allow TCP access for {{site.data.keyword.cloud_notm}}, Red Hat OpenShift on IBM Cloud, and {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 1. Allow access to `cloud.ibm.com` on port 443 in your firewall.
 2. Verify your connection by logging in to {{site.data.keyword.cloud_notm}} through this API endpoint.
@@ -99,7 +99,7 @@ If corporate network policies prevent access from your local system to public en
 {: #vpc-firewall_kubectl}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `oc` commands, you must allow TCP access for the cluster.
-{:shortdesc}
+{: shortdesc}
 
 When a cluster is created, the port in the service endpoint URLs is randomly assigned from within 20000-32767. You can either choose to open port range 20000-32767 for any cluster that might get created or you can choose to allow access for a specific existing cluster.
 
@@ -211,7 +211,7 @@ To allow access for a specific cluster:
 {: #vpc-firewall_calicoctl}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `calicoctl` commands, you must allow TCP access for the Calico commands.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin, allow access to run [`ibmcloud` commands](#vpc-firewall_bx) and [`oc` commands](#vpc-firewall_kubectl).
 
@@ -230,7 +230,7 @@ Before you begin, allow access to run [`ibmcloud` commands](#vpc-firewall_bx) an
 {: #openshift-registry}
 
 If you [set up a secure external route for the internal image registry](/docs/openshift?topic=openshift-registry#route_internal_registry), or to [access an {{site.data.keyword.cos_full_notm}} bucket that backs up your internal image registry in a VPC cluster](/docs/openshift?topic=openshift-registry#cos_image_registry), you must allow access for the internal registry and {{site.data.keyword.cos_full_notm}} endpoints in your corporate firewall.
-{:shortdesc}
+{: shortdesc}
 
 1. If you create an external route for the internal OpenShift image registry, allow access to the `*.containers.appdomain.cloud` domain so that you can access the `image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud` route from your corporate network.
 
@@ -245,7 +245,7 @@ If you [set up a secure external route for the internal image registry](/docs/op
 {: #vpc-allowlist_workers}
 
 Allow your worker nodes to communicate with services that are protected by firewalls.
-{:shortdesc}
+{: shortdesc}
 
 For example, you might have services that run inside or outside {{site.data.keyword.cloud_notm}}, or services that run on-premises, that are protected by a firewall. You want to permit incoming network traffic to those services from your cluster. In your service's firewall, you must add the external IP addresses of the public gateways on your cluster's VPC subnets.
 

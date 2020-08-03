@@ -2,11 +2,16 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-08-03"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
 subcollection: openshift
+
+content-type: tutorial
+services: openshift, vpc
+account-plan:
+completion-time: 45m
 
 ---
 
@@ -32,11 +37,14 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Creating an OpenShift cluster in your Virtual Private Cloud (VPC)
 {: #vpc_rh_tutorial}
+{: toc-content-type="tutorial"}
+{: toc-services="openshift, vpc"}
+{: toc-completion-time="45m"}
 
 With **{{site.data.keyword.openshiftlong}} clusters on VPC Generation 2 compute**, you can create your cluster on VPC infrastructure in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
 {: shortdesc}
@@ -51,10 +59,6 @@ OpenShift worker nodes are available for paid accounts and standard clusters onl
 {: #vpc_rh_objectives}
 
 In the tutorial lessons, you create a Red Hat OpenShift on IBM Cloud cluster in a Gen 2 Virtual Private Cloud (VPC). Then, you access built-in OpenShift components, deploy an app in an OpenShift project, and expose the app on with a VPC load balancer so that external users can access the service.
-
-## Time required
-{: #vpc_rh_time}
-45 minutes
 
 ## Audience
 {: #vpc_rh_audience}
@@ -92,11 +96,12 @@ Install the command-line tools.
 <br />
 
 
-## Lesson 1: Creating a cluster in a VPC
+## Creating a cluster in a VPC
 {: #vpc_rh_create_vpc_cluster}
+{: step}
 
 Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environment. Then, create a Red Hat OpenShift on IBM Cloud cluster on the VPC infrastructure. For more information about VPC, see [Getting Started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
-{:shortdesc}
+{: shortdesc}
 
 1.  Log in to the account, resource group, and {{site.data.keyword.cloud_notm}} region where you want to create your VPC environment. The VPC must be set up in the same multizone metro location where you want to create your cluster. In this tutorial you create a VPC in `us-south`. For other supported regions, see [Multizone metros for VPC clusters](/docs/openshift?topic=openshift-regions-and-zones#zones). The VPC can be in a separate resource group than the resource group of your cluster. If you have a federated ID, include the `--sso` flag.
     ```
@@ -223,8 +228,9 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 <br />
 
 
-## Lesson 2: Deploying an app to your cluster
+## Deploying an app to your cluster
 {: #vpc_rh_app}
+{: step}
 
 Quickly deploy a new sample app that is available to requests from inside the cluster only.
 {: shortdesc}
@@ -278,8 +284,9 @@ The components that you deploy by completing this lesson are shown in the follow
 <br />
 
 
-## Lesson 3: Setting up a VPC load balancer to expose your app publicly
+## Setting up a VPC load balancer to expose your app publicly
 {: #vpc_rh_vpc_lb}
+{: step}
 
 Set up a VPC load balancer to expose your app to external requests on the public network.
 {: shortdesc}

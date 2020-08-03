@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-08-03"
 
-keywords: openshift, roks, rhoks, rhos, vpc
+keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Security for Red Hat OpenShift on IBM Cloud

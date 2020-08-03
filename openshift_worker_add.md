@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -32,14 +32,14 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Adding worker nodes and zones to clusters
 {: #add_workers}
 
 To increase the availability of your apps, you can add worker nodes to an existing zone or multiple existing zones in your cluster. To help protect your apps from zone failures, you can add zones to your cluster.
-{:shortdesc}
+{: shortdesc}
 
 When you create a cluster, the worker nodes are provisioned in a worker pool. After cluster creation, you can add more worker nodes to a pool by resizing it or by adding more worker pools. By default, the worker pool exists in one zone. Clusters that have a worker pool in only one zone are called single zone clusters. When you add more zones to the cluster, the worker pool exists across the zones. Clusters that have a worker pool that is spread across more than one zone are called multizone clusters.
 
@@ -106,7 +106,7 @@ Add worker nodes to your VPC cluster.
 {: #vpc_add_pool}
 
 You can add worker nodes to your VPC cluster by creating a new worker pool.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
@@ -174,7 +174,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 {: #vpc_add_zone}
 
 You can span your VPC cluster across multiple zones within one region by adding a zone to your existing worker pool.
-{:shortdesc}
+{: shortdesc}
 
 When you add a zone to a worker pool, the worker nodes that are defined in your worker pool are provisioned in the new zone and considered for future workload scheduling. Red Hat OpenShift on IBM Cloud automatically adds the `failure-domain.beta.kubernetes.io/region` label for the region and the `failure-domain.beta.kubernetes.io/zone` label for the zone to each worker node. The Kubernetes scheduler uses these labels to spread pods across zones within the same region.
 
@@ -252,7 +252,7 @@ Add worker nodes to your classic cluster.
 {: #add_pool}
 
 You can add worker nodes to your classic cluster by creating a new worker pool.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
@@ -325,7 +325,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 {: #add_zone}
 
 You can span your classic cluster across multiple zones within one region by adding a zone to your existing worker pool.
-{:shortdesc}
+{: shortdesc}
 
 When you add a zone to a worker pool, the worker nodes that are defined in your worker pool are provisioned in the new zone and considered for future workload scheduling. Red Hat OpenShift on IBM Cloud automatically adds the `failure-domain.beta.kubernetes.io/region` label for the region and the `failure-domain.beta.kubernetes.io/zone` label for the zone to each worker node. The Kubernetes scheduler uses these labels to spread pods across zones within the same region.
 

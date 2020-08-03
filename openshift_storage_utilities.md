@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-07-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # IBM Cloud storage utilities
@@ -1120,7 +1120,7 @@ When a storage volume is down, your app pods that are using storage have a low f
 
 1. From the [Red Hat OpenShift on IBM Cloud cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), select the cluster where you want to set up alerts for your storage volumes.
 
-2. In the **Monitoring** section, click **Connect** to connect an existing {{site.data.keyword.mon_full_notm}} instance to your cluster. If you do not have an instance, click **Create an instance** to create one. For more information about how to set up an {{site.data.keyword.mon_full_notm}} instance, see [Provisioning an instance](https://cloud.ibm.com/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision).
+2. In the **Monitoring** section, click **Connect** to connect an existing {{site.data.keyword.mon_full_notm}} instance to your cluster. If you do not have an instance, click **Create an instance** to create one. For more information about how to set up an {{site.data.keyword.mon_full_notm}} instance, see [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision).
 
 3. Click the **Launch** button to open the {{site.data.keyword.mon_full_notm}} dashboard.
 
@@ -1167,10 +1167,10 @@ When an alert is triggered, review the alert details in {{site.data.keyword.mon_
 {: shortdesc}
 
 
-* [Troubleshooting persistant storage volumes](https://cloud.ibm.com/docs/containers?topic=containers-cs_troubleshoot_storage).
+* [Troubleshooting persistant storage volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage).
 * [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 * [Troubleshooting apps](/docs/openshift?topic=openshift-cs_troubleshoot_app).
-* [Troubleshooting clusters](https://cloud.ibm.com/docs/containers?topic=containers-cs_troubleshoot).
+* [Troubleshooting clusters](/docs/openshift?topic=openshift-cs_troubleshoot).
 * [Open a support case](/docs/get-support?topic=get-support-getting-customer-support).
 
 

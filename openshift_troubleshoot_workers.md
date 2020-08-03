@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Worker nodes
@@ -67,7 +67,7 @@ Review the options to debug your worker nodes and find the root causes for failu
     ```
     {: pre}
 2. Review the **State** and **Status** field for every worker node in your CLI output.
-    You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID` command and locating the **State** and **Status** fields.
+    You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
     <table summary="Every table row should be read left to right, with the cluster state in column one and a description in column two.">
     <caption>Worker node states</caption>
@@ -205,8 +205,8 @@ Review common error messages and learn how to resolve them. Messages might begin
   <li>Contact the owner of the {{site.data.keyword.cloud_notm}} account and report that the API key owner has insufficient permissions in IBM Cloud infrastructure or might be pending to be deleted. </li></ol>
   </br><strong>As the account owner</strong>, follow these steps:
   <ol><li>Review the [required classic permissions in IBM Cloud infrastructure](/docs/openshift?topic=openshift-users#infra_access) to perform the action that previously failed. For the VPC infrastructure provider, the API key owner must have the **Administrator** platform role.</li>
-  <li>Fix the permissions of the API key owner or create a new API key by using the [<code>ibmcloud oc api-key reset --region <region></code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command. </li>
-  <li>If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [<code>ibmcloud oc credential unset --region <region></code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to remove the credentials from your account.</li></ol></td>
+  <li>Fix the permissions of the API key owner or create a new API key by using the [<code>ibmcloud oc api-key reset --region &lt;region&gt;</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command. </li>
+  <li>If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [<code>ibmcloud oc credential unset --region &lt;region&gt;</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to remove the credentials from your account.</li></ol></td>
   </tr>
     </tbody>
   </table>

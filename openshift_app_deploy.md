@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-08-03"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Deploying apps in OpenShift clusters
@@ -84,7 +84,7 @@ The `new-app` command creates a build configuration and app image from the sourc
 {: #node_affinity}
 
 When you deploy an app, the app pods indiscriminately deploy to various worker nodes in your cluster. In some cases, you might want to restrict the worker nodes that the app pods to deploy to. For example, you might want app pods to deploy to only worker nodes in a certain worker pool because those worker nodes are on bare metal machines. To designate the worker nodes that app pods must deploy to, add an affinity rule to your app deployment.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin:
 *   [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -307,7 +307,7 @@ For more information about the console, see the [OpenShift documentation](http:/
 {: #openshift_access_oc_services}
 
 Red Hat OpenShift on IBM Cloud comes with built-in services that you can use to help operate your cluster, such as the OpenShift console, Prometheus, and Grafana. You can access these services by using the local host of a [route](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external}. The default route domain names follow a cluster-specific pattern of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.
-{:shortdesc}
+{: shortdesc}
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This topic is specific to OpenShift version 3.11.
 {: note}

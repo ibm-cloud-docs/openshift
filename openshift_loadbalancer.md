@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-06-26"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Classic: Setting up basic load balancing with an NLB 1.0
@@ -42,7 +42,7 @@ subcollection: openshift
 {: note}
 
 Expose a port and use a portable IP address for a Layer 4 network load balancer (NLB) to expose a containerized app. For information about version 1.0 NLBs, see [Components and architecture of an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer-about#v1_planning).
-{:shortdesc}
+{: shortdesc}
 
 ## Setting up an NLB 1.0 in a multizone cluster
 {: #multi_zone_config}
@@ -361,7 +361,7 @@ To force your app to deploy to specific worker nodes where load balancer service
 {: #lb_edge_nodes}
 
 When you [label worker nodes as edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes) and also [taint the edge nodes](/docs/openshift?topic=openshift-edge#edge_workloads), load balancer service pods deploy only to those edge nodes, and app pods cannot deploy to edge nodes. When source IP is enabled for the NLB service, the load balancer pods on the edge nodes cannot forward incoming requests to your app pods on other worker nodes.
-{:shortdesc}
+{: shortdesc}
 
 To force your app pods to deploy to edge nodes, add an edge node [affinity rule](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} and [toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to the app deployment.
 
@@ -400,7 +400,7 @@ Both the **affinity** and **tolerations** sections have `dedicated` as the `key`
 {: #edge_nodes_multiple_vlans}
 
 When your cluster is connected to multiple public or private VLANs, your app pods might deploy to worker nodes that are connected only to one VLAN. If the NLB IP address is connected to a different VLAN than these worker nodes, load balancer service pods won't deploy to those worker nodes.
-{:shortdesc}
+{: shortdesc}
 
 When source IP is enabled, schedule app pods on worker nodes that are the same VLAN as the NLB's IP address by adding an affinity rule to the app deployment.
 

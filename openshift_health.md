@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-08-03"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Logging and monitoring cluster health
@@ -446,7 +446,7 @@ To set up a monitoring configuration for your cluster:
 {: #states}
 
 Review the state of an OpenShift cluster to get information about the availability and capacity of the cluster, and potential problems that might occur.
-{:shortdesc}
+{: shortdesc}
 
 To view information about a specific cluster, such as its zones, service endpoint URLs, Ingress subdomain, version, and owner, use the `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_get). Include the `--show-resources` flag to view more cluster resources such as add-ons for storage pods or subnet VLANs for public and private IPs.
 
@@ -555,7 +555,7 @@ The **Master Status** provides details of what operation from the master state i
 ### Worker node states
 {: #states_workers}
 
-You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID` command and locating the **State** and **Status** fields.
+You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
     <table summary="Every table row should be read left to right, with the cluster state in column one and a description in column two.">
     <caption>Worker node states</caption>

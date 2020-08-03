@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-27"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Accessing OpenShift clusters
@@ -376,7 +376,7 @@ The OpenShift master is accessible through the private service endpoint if autho
 {: #access_automation}
 
 Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). With IAM, you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the OpenShift console, your IAM identity is used to generate an OpenShift login token that you can use to log in to the terminal. You can automate logging in to your cluster by creating an IAM API key or service ID to use for the `oc login` command.
-{:shortdesc}
+{: shortdesc}
 
 ### Using an API key to log in to OpenShift clusters
 {: #access_api_key}

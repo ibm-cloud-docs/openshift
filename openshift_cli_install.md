@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 # Installing the OpenShift CLI
@@ -44,7 +44,7 @@ You can use the {{site.data.keyword.openshiftlong}} command line interface (CLI)
 {: #cs_cli_install_steps}
 
 Install the required CLIs to create and manage your OpenShift clusters in Red Hat OpenShift on IBM Cloud, and to deploy containerized apps to your cluster.
-{:shortdesc}
+{: shortdesc}
 
 This task includes the information for installing these CLIs and plug-ins:
 
@@ -178,7 +178,7 @@ For more information about the `oc` CLI, see the [OpenShift documentation](https
 {: #cs_cli_upgrade}
 
 Update the CLIs regularly to use new features.
-{:shortdesc}
+{: shortdesc}
 
 This task includes the information for updating the following CLIs:
 -   {{site.data.keyword.cloud_notm}} CLI version 0.8.0 or later
@@ -256,7 +256,7 @@ To update the CLIs:
 {: #cs_cli_uninstall}
 
 If you no longer need the CLI, you can uninstall it.
-{:shortdesc}
+{: shortdesc}
 
 This task includes the information for removing these CLIs:
 

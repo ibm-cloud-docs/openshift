@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -32,7 +32,7 @@ subcollection: openshift
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-
+{:step: data-tutorial-type='step'}
 
 
 
@@ -649,7 +649,7 @@ New Red Hat OpenShift on IBM Cloud clusters store an API key in [image pull secr
 {: #other}
 
 Set up your own image pull secret in your cluster to deploy containers to OpenShift projects other than `default`, use images that are stored in other {{site.data.keyword.cloud_notm}} accounts, or use images that are stored in external private registries. Further, you might create your own image pull secret to apply IAM access policies that restrict permissions to specific registry image namespaces, or actions (such as `push` or `pull`).
-{:shortdesc}
+{: shortdesc}
 
 After you create the image pull secret, your containers must use the secret to be authorized to pull an image from the registry. You can add the image pull secret to the service account for the project, or refer to the secret in each deployment. For instructions, see [Using the image pull secret to deploy containers](#use_imagePullSecret).
 
@@ -860,7 +860,7 @@ The following steps create an API key that stores the credentials of an {{site.d
 {: #private_images}
 
 If you already have a private registry, you must store the registry credentials in a Kubernetes image pull secret and reference this secret from your configuration file.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin:
 
@@ -936,7 +936,7 @@ To plan how image pull secrets are used in your cluster, choose between the foll
 {: #store_imagePullSecret}
 
 Every OpenShift project has a Kubernetes service account that is named `default`. Within the project, you can add the image pull secret to this service account to grant access for pods to pull images from your registry. Deployments that do not specify a service account automatically use the `default` service account for this OpenShift project.
-{:shortdesc}
+{: shortdesc}
 
 1. Check if an image pull secret already exists for your default service account.
    ```
