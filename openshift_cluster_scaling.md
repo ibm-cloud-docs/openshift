@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -33,6 +33,9 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:step: data-tutorial-type='step'}
+
+
+
 
 
 # Autoscaling clusters
@@ -1028,6 +1031,9 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     helm uninstall ibm-ks-cluster-autoscaler -n <namespace>
     ```
     {: pre}
+
+
+
 
 
 
