@@ -308,6 +308,7 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
 [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters)
+* [Prerequisites](/docs/openshift?topic=openshift-satellite-clusters#satcluster-prereqs)
 * [Creating {{site.data.keyword.satelliteshort}} clusters from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
 * [Accessing and working with your {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)

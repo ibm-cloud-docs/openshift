@@ -38,8 +38,24 @@ subcollection: openshift
 # Creating {{site.data.keyword.satelliteshort}} clusters
 {: #satellite-clusters}
 
+{{site.data.keyword.satellitelong}} is available as a tech preview and subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}. For more information, see the [{{site.data.keyword.satellitelong_notm}} documentation](/docs/satellite?topic=satellite-getting-started).
+{: preview}
+
 You can create {{site.data.keyword.openshiftlong}} clusters in an {{site.data.keyword.satellitelong}} location, and use the hosts of your own infrastructure that you added to your location as the worker nodes for the cluster.
 {: shortdesc}
+
+## Prerequisites
+{: #satcluster-prereqs}
+
+Before you can create clusters on your own infrastructure, you must set up an {{site.data.keyword.satellitelong_notm}} location.
+{: shortdesc}
+
+1. [Create an {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-locations#location-create).
+2. [Set up the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+3. [Add at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to use as the worker nodes for your {{site.data.keyword.satelliteshort}} cluster.
+
+<br />
+
 
 ## Creating {{site.data.keyword.satelliteshort}} clusters from the console
 {: #satcluster-create-console}
@@ -47,19 +63,18 @@ You can create {{site.data.keyword.openshiftlong}} clusters in an {{site.data.ke
 Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
-Before you begin, make sure that you [added at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts-console) to use for your {{site.data.keyword.satelliteshort}} cluster.
+Before you begin, make sure that you 
 
-1. From the [Red Hat OpenShift on IBM Cloud clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click **Create**.
-2. In the **Infrastructure** section, select **{{site.data.keyword.satelliteshort}}**.
-3. Select the {{site.data.keyword.satelliteshort}} location where you want to create the cluster. Make sure that the location that you select is in a **Normal** state.
-4. Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer.
-5. Click **Create**. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet.
-6. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
-7. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-ui). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run OpenShift workloads.
-8. From the [Red Hat OpenShift on IBM Cloud clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
+1. [Complete the prerequisite steps](#satcluster-prereqs).
+2. From the [Red Hat OpenShift on IBM Cloud clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click **Create**.
+3. In the **Infrastructure** section, select **{{site.data.keyword.satelliteshort}}**.
+4. Select the {{site.data.keyword.satelliteshort}} location where you want to create the cluster. Make sure that the location that you select is in a **Normal** state.
+5. Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer.
+6. Click **Create**. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet.
+7. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
+8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-ui). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run OpenShift workloads.
+9. From the [Red Hat OpenShift on IBM Cloud clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
 
-{{site.data.keyword.satelliteshort}} clusters currently do not show in the {{site.data.keyword.satelliteshort}} cluster console as Razee is not yet automatically installed in these clusters. You must follow the [{{site.data.keyword.satelliteshort documentation](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters) to attach the cluster to the {{site.data.keyword.satelliteshort}} Configuration.
-{: important}
 
 
 
