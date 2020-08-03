@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: openshift
 subcollection: openshift
@@ -189,22 +189,20 @@ subcollection: openshift
 
 [Creating Red Hat OpenShift on IBM Cloud clusters](/docs/openshift?topic=openshift-openshift_tutorial)
 * [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
-* [Time required](/docs/openshift?topic=openshift-openshift_tutorial#openshift_time)
 * [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
 * [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
-* [Lesson 1: Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
-* [Lesson 2: Navigating the OpenShift console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
-* [Lesson 3: Deploying an app to your OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
+* [Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
+* [Navigating the OpenShift console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+* [Deploying an app to your OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
 [Creating an OpenShift cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial)
 * [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
-* [Time required](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_time)
 * [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
 * [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
-* [Lesson 1: Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
-* [Lesson 2: Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
-* [Lesson 3: Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
+* [Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
+* [Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
+* [Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 [Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
