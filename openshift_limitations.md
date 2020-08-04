@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-04"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -203,8 +203,10 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 
 | Category | Description |
 | -------- | ----------- |
+| Storage class for profile sizes | The [available volume profiles](/docs/vpc?topic=vpc-block-storage-profiles) are limited to 2TB in size and 20,000 IOPS in capacity. |
 | Supported types | You can set up {{site.data.keyword.cos_full_notm}} and {{site.data.keyword.databases-for}} only. |
 | Unsupported types | NFS File Storage and {{site.data.keyword.block_storage_is_short}} are not supported. |
+| Volume attachments | See [Volume attachment limits](/docs/vpc?topic=vpc-attaching-block-storage#vol-attach-limits).|
 {: summary="This table contains information on storage limitations for VPC Gen 2 clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="VPC Gen 2 cluster storage limitations"}
 
