@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-04"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -116,7 +116,7 @@ Expose your app to the public or to the private network by setting up a Kubernet
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`</td>
     <td>Annotation to specify a VPC zone that your cluster is attached to. When you specify a zone in this annotation, two processes occur:<ul>
     <li>The VPC load balancer is deployed to the same subnet in that zone that your worker nodes are connected to.</li>
-    <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC load balancer.</li><ul>
+    <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC load balancer.</li></ul>
     To see zones, run `ibmcloud oc zone ls --provider vpc-gen2`.<p class="note">To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</br></br>If you set the `dedicated: edge` label on worker nodes, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone do not receive traffic from the load balancer.</p></td>
   </tr>
   <tr>

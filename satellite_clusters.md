@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-04"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -72,7 +72,7 @@ Before you begin, make sure that you
 5. Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer.
 6. Click **Create**. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet.
 7. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
-8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-ui). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run OpenShift workloads.
+8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run OpenShift workloads.
 9. From the [Red Hat OpenShift on IBM Cloud clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
 
 
