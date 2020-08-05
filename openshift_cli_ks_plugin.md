@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-05"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1610,11 +1610,9 @@ The replacement worker node is created in the same zone and has the same flavor 
 
 You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` flag. If you do not include the `--update` flag, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 
-A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).
-{: note}
+<p class="important">When you replace a worker node, keep in mind the following considerations.<ul><li>If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes.</li>Any custom labels or taints that you applied at the individual worker node level are not applied to the replacement worker node. Instead, apply [labels](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) or [taints](#worker_pool_taint) at the worker pool level so that the replacement worker node gets these attributes.</li><li>A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).</li></ul></p>
 
-Before you replace your worker node, make sure that pods are rescheduled on other worker nodes to help avoid downtime for your app. Keep in mind that any custom labels or taints that you applied at the individual worker node level are not applied to the replacement worker node. However, any labels or taints that you applied at the worker pool level are applied to the replacement worker node.
-{: tip}
+Before you begin, make sure that your cluster has enough other worker nodes so that your pods can be rescheduled and continue to run.
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to replace.
    ```

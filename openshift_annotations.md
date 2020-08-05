@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-05"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, annotations
 
@@ -1362,7 +1362,7 @@ To handle regular expression (regex) paths, this annotation is required.
 |--------|-----------|
 | `=` | The equal sign modifier causes the ALB to select exact matches only. When an exact match is found, the search stops and the matching path is selected.<br>For example, if your app listens on `/tea`, the ALB selects only exact `/tea` paths when matching a request to your app. |
 | `~` | The tilde modifier causes the ALB to process paths as case-sensitive regex paths during matching.<br>For example, if your app listens on `/coffee`, the ALB can select `/ab/coffee` or `/123/coffee` paths when matching a request to your app even though the paths are not explicitly set for your app. |
-| `~\*` | The tilde modifier that is followed by an asterisk modifier causes the ALB to process paths as case-insensitive regex paths during matching.<br>For example, if your app listens on `/coffee`, the ALB can select `/ab/Coffee` or `/123/COFFEE` paths when matching a request to your app even though the paths are not explicitly set for your app. |
+| `~*` | The tilde modifier that is followed by an asterisk modifier causes the ALB to process paths as case-insensitive regex paths during matching.<br>For example, if your app listens on `/coffee`, the ALB can select `/ab/Coffee` or `/123/COFFEE` paths when matching a request to your app even though the paths are not explicitly set for your app. |
 | `^~` | The carat followed by a tilde modifier causes the ALB to select the best non-regex match instead of a regex path. |
 {: caption="Supported modifiers" caption-side="top"}
 
