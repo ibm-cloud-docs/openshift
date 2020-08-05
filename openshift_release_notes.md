@@ -46,6 +46,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 05 August 2020 | **Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 647 and the `ingress-auth` image build to 421](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog). |
 | 03 August 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_private) that you must open in a private gateway device firewall.</li><li>**Versions**: Worker node fix pack update changelog documentation is available for OpenShift [`4.4.14_1512_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4414_1512), [`4.3.29_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4329_1533), and [`3.11.248_1561_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1561).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in August 2020"}
