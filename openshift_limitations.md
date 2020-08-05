@@ -51,6 +51,9 @@ If you anticipate reaching any of the following Red Hat OpenShift on IBM Cloud l
 Red Hat OpenShift on IBM Cloud comes with the following service limitations and quotas that apply to all clusters, independent of what infrastructure provider you plan to use. Keep in mind that the [classic](#classic_limits) and [VPC](#ks_vpc_gen2_limits) cluster limitations also apply.
 {: shortdesc}
 
+To view quota limits on cluster-related resources in your {{site.data.keyword.cloud_notm}} account, use the `ibmcloud oc quota ls` command.
+{: tip}
+
 | Category | Description |
 | -------- | ----------- |
 | API rate limits | 200 requests per 10 seconds to the Red Hat OpenShift on IBM Cloud API from each unique source IP address. |

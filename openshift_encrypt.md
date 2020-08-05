@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-05"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -260,7 +260,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 5. Get the `etcdPort` for your cluster.
     ```
-    ibmcloud oc cluster get -c <cluster_name_or_ID> --json | grep etcdPort
+    ibmcloud oc cluster get -c <cluster_name_or_ID> --output json | grep etcdPort
     ```
     {: pre}
 
