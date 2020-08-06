@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -532,7 +532,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     If a router has no external IP address (classic) or hostname (VPC), see [4.3 clusters: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43).
     {: note}
 
-2. If you use Calico pre-DNAT network policies, VPC access control lists (ACLs), or another custom firewall to block incoming traffic to router or Ingress services, you must allow inbound access from the OpenShift control plane to the IP addresses of your router services so that the OpenShift control plane can check the health of your routers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your routers from [the ports and IP addresses in step 2 of this section](/docs/openshift?topic=openshift-firewall#firewall_outbound).
+2. If you use Calico pre-DNAT network policies, VPC access control lists (ACLs), or another custom firewall to block incoming traffic to router or Ingress services, you must allow inbound access from the OpenShift control plane and Cloudflare's IPv4 IPs to the IP addresses of your router services so that the OpenShift control plane can check the health of your routers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your routers from [the ports and IP addresses in step 2 of this section](/docs/openshift?topic=openshift-firewall#firewall_outbound) and [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} that are used to check the health of your routers.
 
 3. Check the health of your router by pinging its IP address (classic) or hostname (VPC).
   * Single-zone clusters:
