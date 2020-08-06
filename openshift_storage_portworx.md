@@ -679,23 +679,30 @@ To install Portworx:
 You can upgrade Portworx to the latest version.
 {: shortdesc}
 
-1. Find the installation name of your Portworx Helm chart.
+1. Update your Helm repos.
+   ```
+   helm repo update
+   ```
+   {: pre}
+
+2. Find release name of your Portworx Helm chart.
    ```
    helm list -A | grep portworx
    ```
    {: pre}
 
-   Example output:
+   **Example output**
    ```
-   <helm_chart_name>            1       	Mon Sep 17 16:33:01 2018	DEPLOYED	portworx-1.0.0     default     
+   <release_name>      default  	1    2020-06-10 16:05:31.86058777 +0000 UTC	deployed	portworx-1.0.18         2.5.1    
    ```
    {: screen}
 
-2. Update your Portworx Helm chart.
+3. Update your Portworx release with the latest version of the Helm chart.
    ```
-   helm upgrade <helm_chart_name> ./charts/community/portworx/
+   helm upgrade <release_name> ibm-community/portworx/
    ```
    {: pre}
+
 
 ### Removing Portworx from your cluster
 {: #remove_portworx}
