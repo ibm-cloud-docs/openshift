@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-05"
+lastupdated: "2020-08-06"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -10,29 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-{:step: data-tutorial-type='step'}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 # Red Hat OpenShift on IBM Cloud CLI
@@ -360,7 +415,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 </dl>
 
@@ -380,7 +435,7 @@ Red Hat OpenShift on IBM Cloud plug-in CLI versions 0.4 and earlier are deprecat
 {: deprecated}
 
 ```
-ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac] [-s] [--yaml]
+ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac] [-q] [--yaml]
 ```
 {: pre}
 
@@ -406,7 +461,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac]
 <dt><code>--skip-rbac</code></dt>
 <dd>Skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) to manage all your RBAC users, do not include this option.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 <dt><code>--yaml</code></dt>
@@ -428,7 +483,7 @@ Create a cluster with worker nodes on classic infrastructure. For free clusters,
 {: shortdesc}
 
 ```
-ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement cloud_pak][-s]
+ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] [--workers WORKER] [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement cloud_pak][-q]
 ```
 {: pre}
 
@@ -525,7 +580,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
 <dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the OpenShift license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
@@ -572,7 +627,7 @@ Free clusters are not available in VPC.
 {: note}
 
 ```
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--version 4.3_openshift] --cos-instance COS_ID [--workers NUMBER_WORKERS_PER_ZONE] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--skip-advance-permissions-check] [-s]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--version 4.3_openshift] --cos-instance COS_ID [--workers NUMBER_WORKERS_PER_ZONE] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--skip-advance-permissions-check] [-q]
 ```
 {: pre}
 
@@ -642,7 +697,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
 <dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
@@ -675,7 +730,7 @@ To run this command:
 5. [Reload all the worker nodes](#cs_worker_reload) in your cluster to pick up the private endpoint configuration.
 
 ```
-ibmcloud oc cluster feature enable private-service-endpoint --cluster CLUSTER [-s]
+ibmcloud oc cluster feature enable private-service-endpoint --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -688,7 +743,7 @@ ibmcloud oc cluster feature enable private-service-endpoint --cluster CLUSTER [-
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 <dt><code>-y</code></dt>
@@ -710,7 +765,7 @@ Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_cluste
 After you run this command, you must refresh the API server to use the service endpoint by following the prompt in the CLI.
 
 ```
-ibmcloud oc cluster feature enable public-service-endpoint --cluster CLUSTER [-s]
+ibmcloud oc cluster feature enable public-service-endpoint --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -725,7 +780,7 @@ ibmcloud oc cluster feature enable public-service-endpoint --cluster CLUSTER [-s
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 <dt><code>-y</code></dt>
@@ -747,7 +802,7 @@ View the details of a cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc cluster get --cluster CLUSTER [--show-resources] [--json] [-s]
+ibmcloud oc cluster get --cluster CLUSTER [--show-resources] [--output json] [-q]
 ```
 {: pre}
 
@@ -765,10 +820,10 @@ ibmcloud oc cluster get --cluster CLUSTER [--show-resources] [--json] [-s]
 <dt><code><em>--show-resources</em></code></dt>
 <dd>Show more cluster resources such as add-ons, VLANs, subnets, and storage.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -789,7 +844,7 @@ List all clusters in your {{site.data.keyword.cloud_notm}} account.
 Clusters in all locations are returned. To filter clusters by a specific location, include the `--location` flag. For example, if you filter clusters for the `dal` metro, multizone clusters in that metro and single-zone clusters in data centers (zones) within that metro are returned. If you filter clusters for the `dal10` data center (zone), multizone clusters that have a worker node in that zone and single-zone clusters in that zone are returned. You can pass one location or a comma-separated list of locations.
 
 ```
-ibmcloud oc cluster ls [--provider (classic | vpc-gen2)] [--location LOCATION] [--json] [-s]
+ibmcloud oc cluster ls [--provider (classic | vpc-gen2)] [--location LOCATION] [--output json] [-q]
 ```
 {: pre}
 
@@ -807,10 +862,10 @@ ibmcloud oc cluster ls [--provider (classic | vpc-gen2)] [--location LOCATION] [
 <dt><code>-l, --location <em>LOCATION</em></code></dt>
 <dd>Filter output by a specific location. To see supported locations, run <code>ibmcloud oc locations</code>. To specify multiple locations, use one flag for each location, such as `-l dal -l seo`.</dd>
 
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional. **Note**: To use this flag, you must also specify the provider type in the `--provider` flag.</dd>
+<dt><code>--output json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional. **Note**: If you do not include the `--provider` flag, only classic clusters are returned.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -832,7 +887,7 @@ The `apiserver-refresh` and `cluster-refresh` aliases for this command are depre
 {: deprecated}
 
 ```
-ibmcloud oc cluster master refresh --cluster CLUSTER [-s]
+ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -847,7 +902,7 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -865,7 +920,7 @@ The `cluster-update` alias for this command is deprecated.
 {: deprecated}
 
 ```
-ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH] [--force-update] [-f] [-s]
+ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH] [--force-update] [-f] [-q]
 ```
 {: pre}
 
@@ -889,7 +944,7 @@ ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH
 <dt><code>-f</code></dt>
 <dd>Force the command to run without user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -942,7 +997,7 @@ Delete a cluster. All worker nodes, apps, and containers are permanently deleted
 {: shortdesc}
 
 ```
-ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [--skip-advance-permissions-check] [-f] [-s]
+ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [--skip-advance-permissions-check] [-f] [-q]
 ```
 {: pre}
 
@@ -966,7 +1021,7 @@ ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [--skip-advanc
 <dt><code>-f</code></dt>
 <dd>Use this option to force the removal of a cluster without user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -987,7 +1042,7 @@ Add an IBM Cloud service to a cluster by binding the service instance to a OpenS
 To view available {{site.data.keyword.cloud_notm}} services from the {{site.data.keyword.cloud_notm}} catalog, run `ibmcloud service offerings`. **Note**: You can add only {{site.data.keyword.cloud_notm}} services that support service keys. For more information about service binding and what services you can add to your cluster, see [Adding services by using IBM Cloud service binding](/docs/openshift?topic=openshift-service-binding).
 
 ```
-ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE [--key SERVICE_INSTANCE_KEY] [--role IAM_SERVICE_ROLE] --service SERVICE_INSTANCE [-s]
+ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE [--key SERVICE_INSTANCE_KEY] [--role IAM_SERVICE_ROLE] --service SERVICE_INSTANCE [-q]
 ```
 {: pre}
 
@@ -1015,7 +1070,7 @@ To list available roles for the service, run `ibmcloud iam roles --service <serv
 <dt><code>--service <em>SERVICE_INSTANCE</em></code></dt>
 <dd>The name of the {{site.data.keyword.cloud_notm}} service instance that you want to bind. To find the name, run <code>ibmcloud service list</code> for Cloud Foundry services, and <code>ibmcloud resource service-instances</code> for IAM-enabled services. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1034,7 +1089,7 @@ List the services that are bound to one or all of the OpenShift project in a clu
 {: shortdesc}
 
 ```
-ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPACE] [--all-namespaces] [--json] [-s]
+ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPACE] [--all-namespaces] [--output json] [-q]
 ```
 {: pre}
 
@@ -1055,10 +1110,10 @@ ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPA
 <dt><code>--all-namespaces</code></dt>
 <dd>Include the services that are bound to all of the projects in a cluster. This value is optional.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1080,7 +1135,7 @@ When you remove an {{site.data.keyword.cloud_notm}} service, the service credent
 {: tip}
 
 ```
-ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE --service SERVICE_INSTANCE [-s]
+ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE --service SERVICE_INSTANCE [-q]
 ```
 {: pre}
 
@@ -1101,7 +1156,7 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAME
 <dt><code>--service <em>SERVICE_INSTANCE</em></code></dt>
 <dd>The name of the {{site.data.keyword.cloud_notm}} service instance that you want to remove. To find the name of the service instance, run `ibmcloud oc cluster service ls --cluster <cluster_name_or_ID>`. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1123,7 +1178,7 @@ Make an existing portable public or private classic subnet in your IBM Cloud inf
 </br>To enable communication between workers that are on different subnets on the same VLAN in non-VRF accounts, you must [enable routing between subnets on the same VLAN](/docs/openshift?topic=openshift-subnets#subnet-routing).</p>
 
 ```
-ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id SUBNET [-s]
+ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id SUBNET [-q]
 ```
 {: pre}
 
@@ -1139,7 +1194,7 @@ ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id SUBNET [-s]
 <dt><code>--subnet-id <em>SUBNET</em></code></dt>
 <dd>The ID of the subnet. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1162,7 +1217,7 @@ Create a portable classic subnet in an IBM Cloud infrastructure account on your 
 </br>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p>
 
 ```
-ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN_ID [-s]
+ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN_ID [-q]
 ```
 {: pre}
 
@@ -1181,7 +1236,7 @@ ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN_ID [
 <dt><code>--vlan <em>VLAN_ID</em></code></dt>
 <dd>The ID of the public or private VLAN on which you want to create the subnet. You must select a public or private VLAN that an existing worker node is connected to. To review the public or private VLANs that your worker nodes are connected to, run <code>ibmcloud oc cluster get --cluster &lt;cluster&gt; --show-resources</code> and look for the <strong>Subnet VLANs</strong> section in the output. The subnet is provisioned in the same zone that the VLAN is in.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1200,7 +1255,7 @@ Detach a public or private portable classic subnet in an IBM Cloud infrastructur
 {: shortdesc}
 
 ```
-ibmcloud oc cluster subnet detach --cluster CLUSTER --subent-id SUBNET_ID [-f] [-s]
+ibmcloud oc cluster subnet detach --cluster CLUSTER --subent-id SUBNET_ID [-f] [-q]
 ```
 {: pre}
 
@@ -1219,7 +1274,7 @@ ibmcloud oc cluster subnet detach --cluster CLUSTER --subent-id SUBNET_ID [-f] [
 <dt><code>-f</code></dt>
 <dd>Force the command to run with no user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1327,7 +1382,7 @@ This command is deprecated. Create a worker pool by running [`ibmcloud oc worker
 {: deprecated}
 
 ```
-ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR --workers NUMBER --private-vlan PRIVATE_VLAN --public-vlan PUBLIC_VLAN [--disable-disk-encrypt] [-s]
+ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR --workers NUMBER --private-vlan PRIVATE_VLAN --public-vlan PUBLIC_VLAN [--disable-disk-encrypt] [-q]
 ```
 {: pre}
 
@@ -1360,7 +1415,7 @@ ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR -
 <dt><code>--disable-disk-encrypt</code></dt>
 <dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/openshift?topic=openshift-security#encrypted_disk). To disable encryption, include this option.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
@@ -1379,7 +1434,7 @@ View the details of a worker node.
 {: shortdesc}
 
 ```
-ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID [--json] [-s]
+ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID [--output json] [-q]
 ```
 {: pre}
 
@@ -1397,10 +1452,10 @@ ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID [--j
 <dt><code>--worker <em>WORKER_NODE_ID</em></code></dt>
 <dd>The name of your worker node. Run <code>ibmcloud oc worker ls --cluster <em>CLUSTER</em></code> to view the IDs for the worker nodes in a cluster. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1419,7 +1474,7 @@ List all worker nodes in a cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc worker ls --cluster CLUSTER [--worker-pool POOL] [--show-pools] [--show-deleted] [--json] [-s]
+ibmcloud oc worker ls --cluster CLUSTER [--worker-pool POOL] [--show-pools] [--show-deleted] [--output json] [-q]
 ```
 {: pre}
 
@@ -1443,10 +1498,10 @@ ibmcloud oc worker ls --cluster CLUSTER [--worker-pool POOL] [--show-pools] [--s
 <dt><code>--show-deleted</code></dt>
 <dd>View worker nodes that were deleted from the cluster, including the reason for deletion. This value is optional.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1499,7 +1554,7 @@ Before you reboot your worker node, make sure that pods are rescheduled on other
   </br>
 
 ```
-ibmcloud oc worker reboot [--hard] --cluster CLUSTER --worker WORKER_ID [--skip-master-healthcheck] [-f] [-s]
+ibmcloud oc worker reboot [--hard] --cluster CLUSTER --worker WORKER_ID [--skip-master-healthcheck] [-f] [-q]
 ```
 {: pre}
 
@@ -1526,7 +1581,7 @@ ibmcloud oc worker reboot [--hard] --cluster CLUSTER --worker WORKER_ID [--skip-
 <dt><code>-f</code></dt>
 <dd>Force the command to run with no user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1566,7 +1621,7 @@ Before you reload your worker node, make sure that pods are rescheduled on other
 </br>
 
 ```
-ibmcloud oc worker reload --cluster CLUSTER --worker WORKER_ID [--skip-master-healthcheck] [-f] [-s]
+ibmcloud oc worker reload --cluster CLUSTER --worker WORKER_ID [--skip-master-healthcheck] [-f] [-q]
 ```
 {: pre}
 
@@ -1588,7 +1643,7 @@ ibmcloud oc worker reload --cluster CLUSTER --worker WORKER_ID [--skip-master-he
 <dt><code>-f</code></dt>
 <dd>Use this option to force the reload of a worker node without user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1610,7 +1665,11 @@ The replacement worker node is created in the same zone and has the same flavor 
 
 You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` flag. If you do not include the `--update` flag, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 
-<p class="important">When you replace a worker node, keep in mind the following considerations.<ul><li>If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes.</li>Any custom labels or taints that you applied at the individual worker node level are not applied to the replacement worker node. Instead, apply [labels](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) or [taints](#worker_pool_taint) at the worker pool level so that the replacement worker node gets these attributes.</li><li>A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).</li></ul></p>
+<p class="important">When you replace a worker node, keep in mind the following considerations.</p>
+
+* **Multiple worker nodes are replaced concurrently**: If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes.
+* **Node-level customizations are not preserved**: Any custom labels or taints that you applied at the individual worker node level are not applied to the replacement worker node. Instead, apply [labels](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) or [taints](#worker_pool_taint) at the worker pool level so that the replacement worker node gets these attributes.
+* **Automatic rebalancing**: A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).</li></ul>
 
 Before you begin, make sure that your cluster has enough other worker nodes so that your pods can be rescheduled and continue to run.
 
@@ -1634,7 +1693,7 @@ Before you begin, make sure that your cluster has enough other worker nodes so t
 
 </br>
 ```
-ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--update] [-f] [-s]
+ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--update] [-f] [-q]
 ```
 {: pre}
 
@@ -1658,7 +1717,7 @@ ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--up
 <dt><code>-f</code></dt>
 <dd>Force the command to run with no user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1677,7 +1736,7 @@ Remove one or more worker nodes from a cluster. If you remove a worker node, you
 {: shortdesc}
 
 ```
-ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-s]
+ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-q]
 ```
 {: pre}
 
@@ -1698,7 +1757,7 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-s]
 <dt><code>-f</code></dt>
 <dd>Use this option to force the removal of a worker node without user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1722,7 +1781,7 @@ Running `ibmcloud oc worker update` can cause downtime for your apps and service
 You might need to change your YAML files for deployments before you update. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
 
 ```
-ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-s]
+ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-q]
 ```
 {: pre}
 
@@ -1741,7 +1800,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-s]
 <dt><code>-f</code></dt>
 <dd>Use this option to force the update of the worker node without user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1767,7 +1826,7 @@ You can create a worker pool in your cluster. When you add a worker pool, it is 
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [--entitlement cloud_pak] [-s] [--json]
+ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [--entitlement cloud_pak] [-q] [--output json]
 ```
 {: pre}
 
@@ -1801,10 +1860,10 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
 <dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the OpenShift license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 </dl>
 
@@ -1823,7 +1882,7 @@ Add a worker pool to a VPC Generation 2 compute cluster. No worker nodes are cre
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [-s] [--json]
+ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [-q] [--output json]
 ```
 {: pre}
 
@@ -1855,10 +1914,10 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
 <dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the OpenShift license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
-<dt><code>-s</code>
+<dt><code>-q</code>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
-<dt><code>--json</code>
+<dt><code>--output json</code>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
 </dl>
@@ -1878,7 +1937,7 @@ View the details of a worker pool.
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--json] [-s]
+ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -1896,10 +1955,10 @@ ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--json]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster where the worker pool is located. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1918,7 +1977,7 @@ List all worker pools in a cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool ls --cluster CLUSTER [--json] [-s]
+ibmcloud oc worker-pool ls --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -1933,10 +1992,10 @@ ibmcloud oc worker-pool ls --cluster CLUSTER [--json] [-s]
 <dt><code>-c, --cluster <em>CLUSTER_NAME_OR_ID</em></code></dt>
 <dd>The name or ID of the cluster for which you want to list worker pools. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1955,7 +2014,7 @@ Rebalance a worker pool in a cluster after you delete a worker node. When you ru
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool WORKER_POOL [-s]
+ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool WORKER_POOL [-q]
 ```
 {: pre}
 
@@ -1973,7 +2032,7 @@ ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool WORKER_POOL [-
 <dt><code><em>-p, --worker-pool WORKER_POOL</em></code></dt>
 <dd>The worker pool that you want to rebalance. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -1991,7 +2050,7 @@ Resize your worker pool to increase or decrease the number of worker nodes that 
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --size-per-zone WORKERS_PER_ZONE [-s]
+ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --size-per-zone WORKERS_PER_ZONE [-q]
 ```
 {: pre}
 
@@ -2012,7 +2071,7 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --siz
 <dt><code>--size-per-zone <em>WORKERS_PER_ZONE</em></code></dt>
 <dd>The number of workers that you want to have in each zone. This value is required, and must be 1 or greater. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
@@ -2032,7 +2091,7 @@ Remove a worker pool from your cluster. All worker nodes in the pool are deleted
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-s] [-f]
+ibmcloud oc worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
 ```
 {: pre}
 
@@ -2050,7 +2109,7 @@ ibmcloud oc worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-s] [-f]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster that you want to remove the worker pool from. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 <dt><code>-f</code></dt>
@@ -2160,7 +2219,7 @@ View the zones that are attached to a worker pool.
 {: shortdesc}
 
 ```
-ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-s] [-f]
+ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
 ```
 {: pre}
 
@@ -2178,10 +2237,10 @@ ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-s] [
 <dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
 <dd>The name of the worker node pool that you want to see zones for. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2204,7 +2263,7 @@ After you create a classic cluster or worker pool, you can add a zone. When you 
 {: shortdesc}
 
 ```
-ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--json] [-s]
+ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [--output json] [-q]
 ```
 {: pre}
 
@@ -2234,10 +2293,10 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
     <p>If you do not have a private or public VLAN in that zone, do not specify this option. A private and a public VLAN are automatically created for you when you initially add a zone to your worker pool.</p>
     <p>In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).</p></dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2258,7 +2317,7 @@ After you create a Generation 2 VPC cluster or worker pool, you can add a zone. 
 {: shortdesc}
 
 ```
-ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CLUSTER --worker-pool WORKER_POOL [--json] [-s]
+ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CLUSTER --worker-pool WORKER_POOL [--output json] [-q]
 ```
 {: pre}
 
@@ -2280,10 +2339,10 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CL
 <dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
 <dd>The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2310,7 +2369,7 @@ The `locations` alias for this command is deprecated.
 {: deprecated}
 
 ```
-ibmcloud oc zone ls --provider classic [--location LOCATION] [--region-only] [--json] [-s]
+ibmcloud oc zone ls --provider classic [--location LOCATION] [--region-only] [--output json] [-q]
 ```
 {: pre}
 
@@ -2327,10 +2386,10 @@ ibmcloud oc zone ls --provider classic [--location LOCATION] [--region-only] [--
 <dt><code>--region-only</code></dt>
 <dd>List multizones only within the region that you are logged in to. This value is optional.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2349,7 +2408,7 @@ ibmcloud oc zone ls -l ap
 {: shortdesc}
 
 ```
-ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [-f] [-s]
+ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN [--public-vlan PUBLIC_VLAN] [-f] [-q]
 ```
 {: pre}
 
@@ -2377,7 +2436,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 <dt><code>-f</code></dt>
 <dd>Force the command to run without user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2432,7 +2491,7 @@ Before you remove a zone, make sure that you have enough worker nodes in other z
 {: tip}
 
 ```
-ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--pool WORKER_POOL] [-f] [-s]
+ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--pool WORKER_POOL] [-f] [-q]
 ```
 {: pre}
 
@@ -2456,7 +2515,7 @@ ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--pool WORKER_POOL] [-f] [-s]
 <dt><code>-f</code></dt>
 <dd>Force the update without user prompts. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2486,7 +2545,7 @@ By default, automatic updates to Ingress application load balancers (ALBs) are e
 When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Ingress deployment, but does not change the image version of your Ingress ALB add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your Ingress ALB add-on images.
 
 ```
-ibmcloud oc alb autoupdate disable --cluster CLUSTER [-s]
+ibmcloud oc alb autoupdate disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -2501,7 +2560,7 @@ ibmcloud oc alb autoupdate disable --cluster CLUSTER [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2522,7 +2581,7 @@ Enable automatic updates of all Ingress ALB pods in a cluster.
 If automatic updates for the Ingress ALB add-on are disabled, you can re-enable automatic updates. Whenever the next image version becomes available, the ALBs are automatically updated to the latest build.
 
 ```
-ibmcloud oc alb autoupdate enable --cluster CLUSTER [-s]
+ibmcloud oc alb autoupdate enable --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -2537,7 +2596,7 @@ ibmcloud oc alb autoupdate enable --cluster CLUSTER [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2550,7 +2609,7 @@ Check whether automatic updates for the Ingress ALB add-on are enabled and wheth
 {: shortdesc}
 
 ```
-ibmcloud oc alb autoupdate get --cluster CLUSTER [--json] [-s]
+ibmcloud oc alb autoupdate get --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -2565,10 +2624,10 @@ ibmcloud oc alb autoupdate get --cluster CLUSTER [--json] [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2588,7 +2647,7 @@ To stay within the [rate limits](https://cloud.ibm.com/apidocs/certificate-manag
 {: note}
 
 ```
-ibmcloud oc alb cert deploy [--update] --cluster CLUSTER --secret-name SECRET_NAME --cert-crn CERTIFICATE_CRN [--update] [-s]
+ibmcloud oc alb cert deploy [--update] --cluster CLUSTER --secret-name SECRET_NAME --cert-crn CERTIFICATE_CRN [--update] [-q]
 ```
 {: pre}
 
@@ -2613,7 +2672,7 @@ ibmcloud oc alb cert deploy [--update] --cluster CLUSTER --secret-name SECRET_NA
 <dt><code>--cert-crn <em>CERTIFICATE_CRN</em></code></dt>
 <dd>The certificate CRN. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2640,7 +2699,7 @@ If you imported a certificate from {{site.data.keyword.cloudcerts_short}} to the
 {: shortdesc}
 
 ```
-ibmcloud oc alb cert get --cluster CLUSTER [--secret-name SECRET_NAME] [--cert-crn CERTIFICATE_CRN] [--json] [-s]
+ibmcloud oc alb cert get --cluster CLUSTER [--secret-name SECRET_NAME] [--cert-crn CERTIFICATE_CRN] [--output json] [-q]
 ```
 {: pre}
 
@@ -2662,10 +2721,10 @@ ibmcloud oc alb cert get --cluster CLUSTER [--secret-name SECRET_NAME] [--cert-c
 <dt><code>--cert-crn <em>CERTIFICATE_CRN</em></code></dt>
 <dd>The certificate CRN. This value is required to get information on all ALB secrets that match a specific certificate CRN in the cluster. This flag is mutually exclusive with the `--secret-name` flag.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2692,7 +2751,7 @@ List the certificates that you imported from your {{site.data.keyword.cloudcerts
 {: shortdesc}
 
 ```
-ibmcloud oc alb cert ls --cluster CLUSTER [--json] [-s]
+ibmcloud oc alb cert ls --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -2708,10 +2767,10 @@ ibmcloud oc alb cert ls --cluster CLUSTER [--json] [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2733,7 +2792,7 @@ To stay within the [rate limits](https://cloud.ibm.com/apidocs/certificate-manag
 {: note}
 
 ```
-ibmcloud oc alb cert rm --cluster CLUSTER [--secret-name SECRET_NAME] [--cert-crn CERTIFICATE_CRN] [-s]
+ibmcloud oc alb cert rm --cluster CLUSTER [--secret-name SECRET_NAME] [--cert-crn CERTIFICATE_CRN] [-q]
 ```
 {: pre}
 
@@ -2755,7 +2814,7 @@ ibmcloud oc alb cert rm --cluster CLUSTER [--secret-name SECRET_NAME] [--cert-cr
 <dt><code>--cert-crn <em>CERTIFICATE_CRN</em></code></dt>
 <dd>The certificate CRN. This value is required to remove all ALB secrets that match a specific certificate CRN in the cluster. This flag is mutually exclusive with the `--secret-name` flag.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
@@ -2789,7 +2848,7 @@ You can use this command to:
 * Disable the IBM-provided ALB deployment so that you can deploy your own Ingress controller and leverage the DNS registration for the IBM-provided Ingress subdomain or the load balancer service that is used to expose the Ingress controller.
 
 ```
-ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip USER_IP]|--disable-deployment) [--version IMAGE_VERSION] [-s]
+ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip USER_IP]|--disable-deployment) [--version IMAGE_VERSION] [-q]
 ```
 {: pre}
 
@@ -2817,7 +2876,7 @@ ibmcloud oc alb configure classic --alb-id ALB_ID (--disable|--enable [--user-ip
 <dt><code>--version <em>IMAGE_VERSION</em></code></dt>
 <dd>Optional: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc alb versions`.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2843,7 +2902,7 @@ Version 3.11 clusters only: Create a public or private ALB in a classic cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZONE --vlan VLAN_ID [--version IMAGE_VERSION] [--user-ip IP] [-s]
+ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZONE --vlan VLAN_ID [--version IMAGE_VERSION] [--user-ip IP] [-q]
 ```
 {: pre}
 
@@ -2871,7 +2930,7 @@ ibmcloud oc alb create classic --cluster CLUSTER --type PUBLIC|PRIVATE --zone ZO
 <dt><code>--version <em>IMAGE_VERSION</em></code></dt>
 <dd>Optional for enabling an ALB: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc alb versions`.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2890,7 +2949,7 @@ Version 3.11 clusters only: View the details of an Ingress ALB in a cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc alb get --alb-id ALB_ID [--json] [-s]
+ibmcloud oc alb get --alb-id ALB_ID [--output json] [-q]
 ```
 {: pre}
 
@@ -2905,10 +2964,10 @@ ibmcloud oc alb get --alb-id ALB_ID [--json] [-s]
 <dt><code>--alb-id <em>ALB_ID</em></code></dt>
 <dd>The ID for an ALB. To view the IDs for the ALBs in a cluster, run <code>ibmcloud oc alb ls --cluster <em>CLUSTER</em></code>. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2930,7 +2989,7 @@ If no ALB IDs are returned, then the cluster does not have a portable subnet. Yo
 {: tip}
 
 ```
-ibmcloud oc alb ls --cluster CLUSTER [--json] [-s]
+ibmcloud oc alb ls --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -2945,10 +3004,10 @@ ibmcloud oc alb ls --cluster CLUSTER [--json] [-s]
 <dt><code><em>-c, --cluster </em>CLUSTER</code></dt>
 <dd>The name or ID of the cluster where you list available ALBs. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -2972,7 +3031,7 @@ Version 3.11 clusters only: If your ALB pods were recently updated, but a custom
 After you roll back an update, automatic updates for ALB pods are disabled. To re-enable automatic updates, use the [`alb autoupdate enable` command](#cs_alb_autoupdate_enable).
 
 ```
-ibmcloud oc alb rollback --cluster CLUSTER [--json] [-s]
+ibmcloud oc alb rollback --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -2987,10 +3046,10 @@ ibmcloud oc alb rollback --cluster CLUSTER [--json] [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster where you want to roll back the ALB builds. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3003,7 +3062,7 @@ Version 3.11 clusters only: List Ingress ALB types that are supported.
 {: shortdesc}
 
 ```
-ibmcloud oc alb types [--json] [-s]
+ibmcloud oc alb types [--output json] [-q]
 ```
 {: pre}
 
@@ -3015,10 +3074,10 @@ ibmcloud oc alb types [--json] [-s]
 
 **Command options**:
 <dl>
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3036,7 +3095,7 @@ When you update the major or minor Kubernetes version of your cluster, IBM autom
 {: note}
 
 ```
-ibmcloud oc alb update --cluster CLUSTER [--version IMAGE_VERSION] [--alb-id ALB1_ID --alb-id ALB2_ID ...] [--json] [-s]
+ibmcloud oc alb update --cluster CLUSTER [--version IMAGE_VERSION] [--alb-id ALB1_ID --alb-id ALB2_ID ...] [--output json] [-q]
 ```
 {: pre}
 
@@ -3057,10 +3116,10 @@ ibmcloud oc alb update --cluster CLUSTER [--version IMAGE_VERSION] [--alb-id ALB
 <dt><code>--alb-id <em>CLUSTER</em></code></dt>
 <dd>Optional: The ID of the individual ALB to update. To list ALB IDs, run `ibmcloud oc alb ls -c <cluster>`. To update multiple ALBs, use multiple flags, such as `--alb-id ALB1_ID --alb-id ALB2_ID`. If you omit this flag, all ALBs in the cluster are updated.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3084,7 +3143,7 @@ Version 3.11 clusters only: View the available image versions for Ingress ALBs i
 
 
 ```
-ibmcloud oc alb versions [--json] [-s]
+ibmcloud oc alb versions [--output json] [-q]
 ```
 {: pre}
 
@@ -3096,10 +3155,10 @@ ibmcloud oc alb versions [--json] [-s]
 
 **Command options**:
 <dl>
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3120,7 +3179,7 @@ Get the status of the health of Ingress resources for a cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc ingress status --cluster CLUSTER [--json] [-s]
+ibmcloud oc ingress status --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -3135,10 +3194,10 @@ ibmcloud oc ingress status --cluster CLUSTER [--json] [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3170,7 +3229,7 @@ Disable automatic updates of all Fluentd pods in a cluster.
 Disable automatic updates of your Fluentd pods in a specific cluster. When you update the major or minor Kubernetes version of your cluster, IBM automatically makes necessary changes to the Fluentd configmap, but does not change the image version of your Fluentd for logging add-on. You are responsible for checking the compatibility of the latest Kubernetes versions and your add-on images.
 
 ```
-ibmcloud oc logging autoupdate disable --cluster CLUSTER [-s]
+ibmcloud oc logging autoupdate disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -3179,7 +3238,7 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster where you want to disable automatic updates for the Fluentd add-on. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3194,7 +3253,7 @@ Enable automatic updates for your Fluentd pods in a specific cluster. Fluentd po
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This command works for both classic and VPC clusters.
 
 ```
-ibmcloud oc logging autoupdate enable --cluster CLUSTER [-s]
+ibmcloud oc logging autoupdate enable --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -3203,7 +3262,7 @@ ibmcloud oc logging autoupdate enable --cluster CLUSTER [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster where you want to enable automatic updates for the Fluentd add-on. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3218,7 +3277,7 @@ View whether your Fluentd pods are set to automatically update in a cluster.
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This command works for both classic and VPC clusters.
 
 ```
-ibmcloud oc logging autoupdate get --cluster CLUSTER [--json] [-s]
+ibmcloud oc logging autoupdate get --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -3227,10 +3286,10 @@ ibmcloud oc logging autoupdate get --cluster CLUSTER [--json] [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster where you want to check whether automatic updates for the Fluentd add-on are enabled. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3243,7 +3302,7 @@ Make a request for a snapshot of your logs at a specific point in time and then 
 {: shortdesc}
 
 ```
-ibmcloud oc logging collect --cluster CLUSTER --cos-bucket BUCKET_NAME --cos-endpoint ENDPOINT --hmac-key-id HMAC_KEY_ID --hmac-key HMAC_KEY --type LOG_TYPE [-s]
+ibmcloud oc logging collect --cluster CLUSTER --cos-bucket BUCKET_NAME --cos-endpoint ENDPOINT --hmac-key-id HMAC_KEY_ID --hmac-key HMAC_KEY --type LOG_TYPE [-q]
 ```
 {: pre}
 
@@ -3273,7 +3332,7 @@ ibmcloud oc logging collect --cluster CLUSTER --cos-bucket BUCKET_NAME --cos-end
 <dt><code>--type <em>LOG_TYPE</em></code></dt>
 <dd>Optional: The type of logs that you want to create a snapshot of. Currently, `master` is the only option, as well as the default.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3292,7 +3351,7 @@ Check the status of the log collection snapshot request for your cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc logging collect-status --cluster CLUSTER [--json]
+ibmcloud oc logging collect-status --cluster CLUSTER [--output json]
 ```
 {: pre}
 
@@ -3307,7 +3366,7 @@ ibmcloud oc logging collect-status --cluster CLUSTER [--json]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster that you want to create a snapshot for. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 </dl>
 
@@ -3325,7 +3384,7 @@ ibmcloud oc logging collect-status --cluster mycluster
 Create a logging configuration. You can use this command to forward logs for containers, applications, worker nodes, OpenShift clusters, and Ingress application load balancers to an external syslog server.
 {: shortdesc}
 ```
-ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --type syslog [--namespace KUBERNETES_NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-containers CONTAINERS] [--app-paths PATHS_TO_LOGS] [--syslog-protocol PROTOCOL] [--skip-validation] [--force-update] [--json] [-s]
+ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --type syslog [--namespace KUBERNETES_NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-containers CONTAINERS] [--app-paths PATHS_TO_LOGS] [--syslog-protocol PROTOCOL] [--skip-validation] [--force-update] [--output json] [-q]
 ```
 {: pre}
 
@@ -3376,10 +3435,10 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --typ
 <dt><code>--force-update</code></dt>
 <dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3406,7 +3465,7 @@ View all log forwarding configurations for a cluster, or filter logging configur
 {: shortdesc}
 
 ```
-ibmcloud oc logging config get --cluster CLUSTER [--logsource LOG_SOURCE] [--json] [-s]
+ibmcloud oc logging config get --cluster CLUSTER [--logsource LOG_SOURCE] [--output json] [-q]
 ```
 {: pre}
 
@@ -3427,10 +3486,10 @@ ibmcloud oc logging config get --cluster CLUSTER [--logsource LOG_SOURCE] [--jso
 <dt><code>--show-covering-filters</code></dt>
 <dd>Shows the logging filters that render previous filters obsolete.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3449,7 +3508,7 @@ Delete one log forwarding configuration or all logging configurations for a clus
 {: shortdesc}
 
 ```
-ibmcloud oc logging config rm --cluster CLUSTER (--namespace NAMESPACE --id LOG_CONFIG_ID] [--all] [--force-update] [-s]
+ibmcloud oc logging config rm --cluster CLUSTER (--namespace NAMESPACE --id LOG_CONFIG_ID] [--all] [--force-update] [-q]
 ```
 {: pre}
 
@@ -3476,7 +3535,7 @@ ibmcloud oc logging config rm --cluster CLUSTER (--namespace NAMESPACE --id LOG_
 <dt><code>--force-update</code></dt>
 <dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3495,7 +3554,7 @@ Update the details of a log forwarding configuration.
 {: shortdesc}
 
 ```
-ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LOG_TYPE  [--namespace NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-paths PATH] [--app-containers PATH] [--json] [--skipValidation] [--force-update] [-s]
+ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LOG_TYPE  [--namespace NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-paths PATH] [--app-containers PATH] [--output json] [--skipValidation] [--force-update] [-q]
 ```
 {: pre}
 
@@ -3537,7 +3596,7 @@ ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LO
 <dt><code>-C, --app-container</code></dt>
 <dd>To forward logs from apps, you can specify the name of the container that contains your app. To specify more than one container, use multiple flags, such as `-C /var/log/myApp1/&ast; -C /var/log/myApp2/&ast;`. If no containers are specified, logs are forwarded from all of the containers that contain the paths that you provided. This option is only valid for log source <code>application</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
 <dt><code>--skipValidation</code></dt>
@@ -3546,7 +3605,7 @@ ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LO
 <dt><code>--force-update</code></dt>
 <dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3573,7 +3632,7 @@ Filter out logs that are forwarded by your logging configuration.
 {: shortdesc}
 
 ```
-ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-config CONFIG] [--namespace KUBERNETES_NAMESPACE] [--container CONTAINER_NAME] [--level LOGGING_LEVEL] [--message MESSAGE] [--regex-message MESSAGE] [--force-update] [--json] [-s]
+ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-config CONFIG] [--namespace KUBERNETES_NAMESPACE] [--container CONTAINER_NAME] [--level LOGGING_LEVEL] [--message MESSAGE] [--regex-message MESSAGE] [--force-update] [--output json] [-q]
 ```
 {: pre}
 
@@ -3612,10 +3671,10 @@ ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-c
 <dt><code>--force-update</code></dt>
 <dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3629,7 +3688,7 @@ ibmcloud oc logging filter create --cluster example-cluster --type container --n
 
 This example filters out all of the logs that are forwarded, at an <code>info</code> level or less, from a specific cluster. The output is returned as JSON.
 ```
-ibmcloud oc logging filter create --cluster example-cluster --type all --level info --json
+ibmcloud oc logging filter create --cluster example-cluster --type all --level info --output json
 ```
 {: pre}
 
@@ -3642,7 +3701,7 @@ View a logging filter configuration.
 {: shortdesc}
 
 ```
-ibmcloud oc logging filter get --cluster CLUSTER [--id FILTER_ID] [--show-matching-configs] [--show-covering-filters] [--json] [-s]
+ibmcloud oc logging filter get --cluster CLUSTER [--id FILTER_ID] [--show-matching-configs] [--show-covering-filters] [--output json] [-q]
 ```
 {: pre}
 
@@ -3666,10 +3725,10 @@ ibmcloud oc logging filter get --cluster CLUSTER [--id FILTER_ID] [--show-matchi
 <dt><code>--show-covering-filters</code></dt>
 <dd>Show the logging filters that render previous filters obsolete. This value is optional.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3688,7 +3747,7 @@ Delete a logging filter.
 {: shortdesc}
 
 ```
-ibmcloud oc logging filter rm --cluster CLUSTER [--id FILTER_ID] [--all] [--force-update] [-s]
+ibmcloud oc logging filter rm --cluster CLUSTER [--id FILTER_ID] [--all] [--force-update] [-q]
 ```
 {: pre}
 
@@ -3712,7 +3771,7 @@ ibmcloud oc logging filter rm --cluster CLUSTER [--id FILTER_ID] [--all] [--forc
 <dt><code>--force-update</code></dt>
 <dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3731,7 +3790,7 @@ Update a logging filter.
 {: shortdesc}
 
 ```
-ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TYPE [--logging-config CONFIG] [--namespace KUBERNETES_NAMESPACE] [--container CONTAINER_NAME] [--level LOGGING_LEVEL] [--message MESSAGE] [--regex-message MESSAGE] [--force-update] [--json] [-s]
+ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TYPE [--logging-config CONFIG] [--namespace KUBERNETES_NAMESPACE] [--container CONTAINER_NAME] [--level LOGGING_LEVEL] [--message MESSAGE] [--regex-message MESSAGE] [--force-update] [--output json] [-q]
 ```
 {: pre}
 
@@ -3773,10 +3832,10 @@ ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TY
 <dt><code>--force-update</code></dt>
 <dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3790,7 +3849,7 @@ ibmcloud oc logging filter update --cluster example-cluster --id 885274 --type c
 
 This example filters out all of the logs that are forwarded, at an <code>info</code> level or less, from a specific cluster. The output is returned as JSON.
 ```
-ibmcloud oc logging filter update --cluster example-cluster --id 274885 --type all --level info --json
+ibmcloud oc logging filter update --cluster example-cluster --id 274885 --type all --level info --output json
 ```
 {: pre}
 
@@ -3806,7 +3865,7 @@ The `logging config refresh` alias for this command is deprecated.
 {: deprecated}
 
 ```
-ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-s]
+ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-q]
 ```
 {: pre}
 
@@ -3824,7 +3883,7 @@ ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-s]
 <dt><code>--force-update</code></dt>
 <dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3852,7 +3911,7 @@ Add one or more network load balancer (NLB) IP addresses to an existing subdomai
 For example, in a multizone cluster, you might create an NLB in each zone to expose an app. You register the NLB IPs with a subdomain by running `ibmcloud oc nlb-dns create classic`. Later, you add another zone to your cluster and another NLB for that zone. You can use this command to add the new NLB IP to this existing subdomain. When a user accesses your app subdomain, the client accesses one of these IPs at random, and the request is sent to that NLB.
 
 ```
-ibmcloud oc nlb-dns add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_IP ...] --nlb-host SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_IP ...] --nlb-host SUBDOMAIN [--output json] [-q]
 ```
 {: pre}
 
@@ -3871,10 +3930,10 @@ ibmcloud oc nlb-dns add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_I
 <dt><code>--nlb-host <em>SUBDOMAIN</em></code></dt>
 <dd>The subdomain that you want to add IPs to. To see existing subdomains, run <code>ibmcloud oc nlb-dns ls</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3893,7 +3952,7 @@ Publicly expose your app by creating a DNS subdomain to register a network load 
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] [--type public] [--json] [-s]
+ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] [--type public] [--output json] [-q]
 ```
 {: pre}
 
@@ -3915,10 +3974,10 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 <dt><code>--type public</code></dt>
 <dd>The subdomain type. Currently only `public` is supported.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3943,7 +4002,7 @@ However, this VPC load balancer hostname does not support TLS termination. If yo
 You can also use this command to create a DNS entry for the hostname for your private ALBs.</br>
 
 ```
-ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --lb-host VPC_LB_HOSTNAME [--secret-namespace NAMESPACE] [--type (public|private)] [--json] [-s]
+ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --lb-host VPC_LB_HOSTNAME [--secret-namespace NAMESPACE] [--type (public|private)] [--output json] [-q]
 ```
 {: pre}
 
@@ -3965,10 +4024,10 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --lb-host VPC_LB_HOSTNAME 
 <dt><code>--type <em>(public|private)</em></code></dt>
 <dd>The subdomain type: public or private.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -3988,7 +4047,7 @@ In a classic cluster, list the network load balancer (NLB) IP addresses that are
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns ls --cluster CLUSTER [--json] [-s]
+ibmcloud oc nlb-dns ls --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -4003,10 +4062,10 @@ ibmcloud oc nlb-dns ls --cluster CLUSTER [--json] [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4030,7 +4089,7 @@ To update an existing monitor, you must include all the flags for the settings t
 {: note}
 
 ```
-ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--enable] [--description DESCRIPTION] [--type TYPE] [--method METHOD] [--path PATH] [--timeout TIMEOUT] [--retries RETRIES] [--interval INTERVAL] [--port PORT] [--header HEADER] [--expected-body BODY STRING] [--expected-codes HTTP CODES] [--follows-redirects TRUE] [--allows-insecure TRUE] [--json] [-s]
+ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--enable] [--description DESCRIPTION] [--type TYPE] [--method METHOD] [--path PATH] [--timeout TIMEOUT] [--retries RETRIES] [--interval INTERVAL] [--port PORT] [--header HEADER] [--expected-body BODY STRING] [--expected-codes HTTP CODES] [--follows-redirects TRUE] [--allows-insecure TRUE] [--output json] [-q]
 ```
 {: pre}
 
@@ -4088,10 +4147,10 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--
 <dt><code>--follows-redirects <em>TRUE</em></code></dt>
 <dd>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: Set to <code>true</code> to follow any redirects that are returned by the IP.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4109,7 +4168,7 @@ Disable an existing health check monitor for a subdomain in a cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN [--output json] [-q]
 ```
 {: pre}
 
@@ -4125,10 +4184,10 @@ ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN [--js
 <dt><code>--nlb-host <em>SUBDOMAIN</em></code></dt>
 <dd>The subdomain that the monitor health checks. To list subdomains, run <code>ibmcloud oc nlb-dns ls --cluster CLUSTER</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4148,7 +4207,7 @@ Enable a health check monitor that you configured.
 The first time that you create a health check monitor, you must configure and enable it with the `ibmcloud oc nlb-dns monitor configure` command. Use the `ibmcloud oc nlb-dns monitor enable` command only to enable a monitor that you configured but did not yet enable, or to re-enable a monitor that you previously disabled.
 
 ```
-ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host SUBDOMAIN [--output json] [-q]
 ```
 {: pre}
 
@@ -4164,10 +4223,10 @@ ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host SUBDOMAIN [--jso
 <dt><code>--nlb-host <em>SUBDOMAIN</em></code></dt>
 <dd>The subdomain that the monitor health checks. To list subdomains, run <code>ibmcloud oc nlb-dns ls --cluster CLUSTER</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4186,7 +4245,7 @@ View the settings for an existing health check monitor.
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host SUBDOMAIN [--output json] [-q]
 ```
 {: pre}
 
@@ -4202,10 +4261,10 @@ ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host SUBDOMAIN [--json] 
 <dt><code>--nlb-host <em>SUBDOMAIN</em></code></dt>
 <dd>The subdomain that the monitor health checks. To list subdomains, run <code>ibmcloud oc nlb-dns ls --cluster CLUSTER</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4223,7 +4282,7 @@ List the health check monitor settings for each NLB subdomain in a cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--json] [-s]
+ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -4236,10 +4295,10 @@ ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--json] [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4258,7 +4317,7 @@ List the health check status for the IPs behind NLB subdomains in a cluster.
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns monitor status --cluster CLUSTER [--nlb-host SUBDOMAIN] [--json] [-s]
+ibmcloud oc nlb-dns monitor status --cluster CLUSTER [--nlb-host SUBDOMAIN] [--output json] [-q]
 ```
 {: pre}
 
@@ -4274,10 +4333,10 @@ ibmcloud oc nlb-dns monitor status --cluster CLUSTER [--nlb-host SUBDOMAIN] [--j
 <dt><code>--nlb-host <em>SUBDOMAIN</em></code></dt>
 <dd>Include this flag to view the status for only one subdomain. To list subdomains, run <code>ibmcloud oc nlb-dns ls --cluster CLUSTER</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4296,7 +4355,7 @@ Replace the load balancer hostname that is registered with a DNS subdomain. For 
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host NEW_LB_HOSTNAME --nlb-subdomain SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host NEW_LB_HOSTNAME --nlb-subdomain SUBDOMAIN [--output json] [-q]
 ```
 {: pre}
 
@@ -4315,10 +4374,10 @@ ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host NEW_LB_HOSTNAME --nlb-su
 <dt><code>nlb-subdomain <em>SUBDOMAIN</em></code></dt>
 <dd>The DNS subdomain that you want to replace the load balancer hostname for. To see existing subdomains, run `ibmcloud oc nlb-dns ls --cluster <cluster>`.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4337,7 +4396,7 @@ Remove a network load balancer (NLB) IP address from a subdomain. If you remove 
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--output json] [-q]
 ```
 {: pre}
 
@@ -4356,10 +4415,10 @@ ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [-
 <dt><code>--nlb-host <em>SUBDOMAIN</em></code></dt>
 <dd>The subdomain that you want to remove an IP from. To see existing subdomains, run <code>ibmcloud oc nlb-dns ls</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4378,7 +4437,7 @@ Remove the VPC Gen 2 load balancer hostname that is registered with a DNS subdom
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output json] [-q]
 ```
 {: pre}
 
@@ -4394,10 +4453,10 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--j
 <dt><code>--nlb-subdomain <em>SUBDOMAIN</em></code></dt>
 <dd>The subdomain that you want to disassociate from the VPC load balancer hostname. To see existing subdomains, run `ibmcloud oc nlb-dns ls --cluster <cluster>`.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4422,7 +4481,7 @@ To avoid the Let’s Encrypt rate limit, do not regenerate a secret more than 5 
 {: note}
 
 ```
-ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--json] [-s]
+ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output json] [-q]
 ```
 {: pre}
 
@@ -4440,10 +4499,10 @@ ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAI
 <dt><code>--nlb-subdomain <em>SUBDOMAIN</em></code></dt>
 <dd>The subdomain to regenerate the secret for. To list subdomains, run <code>ibmcloud oc nlb-dns ls --cluster CLUSTER</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4464,7 +4523,7 @@ Delete a secret from an NLB subdomain and prevent future renewal of the certific
 You might delete the secret for an NLB subdomain if you no longer use the subdomain, or if the owner of the secret leaves your organization.
 
 ```
-ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [--json] [-s]
+ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [--output json] [-q]
 ```
 {: pre}
 
@@ -4485,10 +4544,10 @@ ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [
 <dt><code>-f</code></dt>
 <dd>Force the command to run with no user prompts. This value is optional.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4510,7 +4569,7 @@ Register a webhook.
 {: shortdesc}
 
 ```
-ibmcloud oc webhook-create --cluster CLUSTER --level LEVEL --type slack --url URL  [-s]
+ibmcloud oc webhook-create --cluster CLUSTER --level LEVEL --type slack --url URL  [-q]
 ```
 {: pre}
 
@@ -4534,7 +4593,7 @@ ibmcloud oc webhook-create --cluster CLUSTER --level LEVEL --type slack --url UR
 <dt><code>--url <em>URL</em></code></dt>
 <dd>The URL for the webhook. This value is required.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4568,7 +4627,7 @@ If you find that you need to update the API key that is stored for a resource gr
 **Tip:** The API key that is returned in this command might not be used if IBM Cloud infrastructure credentials were manually set by using the [ibmcloud oc credential set](#cs_credentials_set) command.
 
 ```
-ibmcloud oc api-key info --cluster CLUSTER [--json] [-s]
+ibmcloud oc api-key info --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
@@ -4583,10 +4642,10 @@ ibmcloud oc api-key info --cluster CLUSTER [--json] [-s]
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
@@ -4613,7 +4672,7 @@ Before you use this command, make sure that the user who executes this command h
 
 
 ```
-ibmcloud oc api-key reset --region REGION [-s]
+ibmcloud oc api-key reset --region REGION [-q]
 ```
 {: pre}
 
@@ -4628,7 +4687,7 @@ ibmcloud oc api-key reset --region REGION [-s]
 <dt><code>--region <em>REGION</em></code></dt>
 <dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4656,7 +4715,7 @@ If you set up your {{site.data.keyword.cloud_notm}} account to use different cre
 {: shortdesc}
 
 ```
-ibmcloud oc credential get --region REGION [-s] [--json]
+ibmcloud oc credential get --region REGION [-q] [--output json]
 ```
 {: pre}
 
@@ -4669,10 +4728,10 @@ ibmcloud oc credential get --region REGION [-s] [--json]
 <dt><code>--region <em>REGION</em></code></dt>
 <dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4700,7 +4759,7 @@ Before you use this command, make sure that the user whose credentials are used 
 {: important}
 
 ```
-ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastructure-username USERNAME [--region REGION] [-s]
+ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastructure-username USERNAME [--region REGION] [-q]
 ```
 {: pre}
 
@@ -4719,7 +4778,7 @@ ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastruc
 <dt><code>--region <em>REGION</em></code></dt>
 <dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4740,7 +4799,7 @@ Remove the credentials for a resource group and region to remove access to the I
 After you remove the credentials, the [{{site.data.keyword.cloud_notm}} IAM API key](#cs_api_key_info) is used to order resources in IBM Cloud infrastructure.
 
 ```
-ibmcloud oc credential unset --region REGION [-s]
+ibmcloud oc credential unset --region REGION [-q]
 ```
 {: pre}
 
@@ -4753,137 +4812,13 @@ ibmcloud oc credential unset --region REGION [-s]
 <dt><code>--region <em>REGION</em></code></dt>
 <dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
 **Example**:
 ```
 ibmcloud oc credential unset --region us-south
-```
-{: pre}
-
-<br />
-
-
-## `kms` commands
-{: #ks_kms}
-
-Enable a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control.
-{: shortdesc}
-
-### `ibmcloud oc kms crk ls`
-{: #ks_kms_crk_ls}
-
-List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data encryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms).
-{: shortdesc}
-
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
-{: important}
-
-```
-ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--json] [-s]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
-
-**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
-<dd>The ID of the key management service instance that you want to list root keys for. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc kms crk ls --instance-id 1aa1a111-1111-1111-a111-a1aaaa1a1a1a
-```
-{: pre}
-
-### `ibmcloud oc kms enable`
-{: #ks_kms_enable}
-
-Encrypt your Kubernetes secrets by [enabling a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster. To rotate a key in a cluster with existing key encryption, rerun this command with a new root key ID.
-{: shortdesc}
-
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
-{: important}
-
-```
-ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [--public-endpoint] [-s]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>--container, -c <em>CLUSTER_NAME_OR_ID</em></code></dt>
-<dd>The name or ID of the cluster.</dd>
-
-<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
-<dd>The ID of the KMS instance that you want to use to encrypt the secrets in your cluster. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
-
-<dt><code>--crk <em>ROOT_KEY_ID</em></code></dt>
-<dd>The ID of the customer root key (CRK) in your KMS instance that you want to use to wrap the data encryption keys (DEK) that are stored locally in your cluster. To list available root keys, run `ibmcloud oc kms crk ls --instance-id <kms_instance_id>`.</dd>
-
-<dt><code>--public-endpoint</code></dt>
-<dd>Optional: Specify this option to use the KMS public service endpoint. If you do not include this flag, the private service endpoint is used by default.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc kms enable -c mycluster --instance-id a11aa11a-bbb2-3333-d444-e5e555e5ee5 --crk 1a111a1a-bb22-3c3c-4d44-55e555e55e55
-```
-{: pre}
-
-### `ibmcloud oc kms instance ls`
-{: #ks_kms_instance_ls}
-
-List available [key management service (KMS) instances](/docs/openshift?topic=openshift-encryption#kms) in your {{site.data.keyword.cloud_notm}} account that you can choose to enable in your cluster.
-{: shortdesc}
-
-```
-ibmcloud oc kms instance ls [--json] [-s]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
-
-**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-
-<dt><code>--json</code></dt>
-<dd>Prints the command output in JSON format. This value is optional.</dd>
-
-<dt><code>-s</code></dt>
-<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc kms instance ls
 ```
 {: pre}
 
@@ -4924,7 +4859,7 @@ For most use cases, [set up the API key](/docs/openshift?topic=openshift-users#a
 After infrastructure credentials are set up, you can control what actions your users can perform by assigning them [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform).
 
 ```
-ibmcloud oc infra-permissions get --region REGION [--json] [-s]
+ibmcloud oc infra-permissions get --region REGION [--output json] [-q]
 ```
 {: pre}
 
@@ -4937,10 +4872,10 @@ ibmcloud oc infra-permissions get --region REGION [--json] [-s]
 <dt><code>--region <em>REGION</em></code></dt>
 <dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`. This value is required.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -4976,6 +4911,170 @@ Manage Storage    required
 <br />
 
 
+## `kms` commands
+{: #ks_kms}
+
+Enable a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control.
+{: shortdesc}
+
+### `ibmcloud oc kms crk ls`
+{: #ks_kms_crk_ls}
+
+List available customer root keys (CRKs) in a key management service instance. Root keys wrap and unwrap the local data encryption keys (DEKs) that the cluster uses to encrypt its secrets. For more information, see [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms).
+{: shortdesc}
+
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
+{: important}
+
+```
+ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--output json] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
+<dd>The ID of the key management service instance that you want to list root keys for. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
+
+<dt><code>--output json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc kms crk ls --instance-id 1aa1a111-1111-1111-a111-a1aaaa1a1a1a
+```
+{: pre}
+
+### `ibmcloud oc kms enable`
+{: #ks_kms_enable}
+
+Encrypt your Kubernetes secrets by [enabling a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster. To rotate a key in a cluster with existing key encryption, rerun this command with a new root key ID.
+{: shortdesc}
+
+Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.
+{: important}
+
+```
+ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [--public-endpoint] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--container, -c <em>CLUSTER_NAME_OR_ID</em></code></dt>
+<dd>The name or ID of the cluster.</dd>
+
+<dt><code>--instance-id <em>KMS_INSTANCE_ID</em></code></dt>
+<dd>The ID of the KMS instance that you want to use to encrypt the secrets in your cluster. To list available KMS instances, run `ibmcloud oc kms instance ls`.</dd>
+
+<dt><code>--crk <em>ROOT_KEY_ID</em></code></dt>
+<dd>The ID of the customer root key (CRK) in your KMS instance that you want to use to wrap the data encryption keys (DEK) that are stored locally in your cluster. To list available root keys, run `ibmcloud oc kms crk ls --instance-id <kms_instance_id>`.</dd>
+
+<dt><code>--public-endpoint</code></dt>
+<dd>Optional: Specify this option to use the KMS public service endpoint. If you do not include this flag, the private service endpoint is used by default.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc kms enable -c mycluster --instance-id a11aa11a-bbb2-3333-d444-e5e555e5ee5 --crk 1a111a1a-bb22-3c3c-4d44-55e555e55e55
+```
+{: pre}
+
+### `ibmcloud oc kms instance ls`
+{: #ks_kms_instance_ls}
+
+List available [key management service (KMS) instances](/docs/openshift?topic=openshift-encryption#kms) in your {{site.data.keyword.cloud_notm}} account that you can choose to enable in your cluster.
+{: shortdesc}
+
+```
+ibmcloud oc kms instance ls [--output json] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Viewer** platform role in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+
+<dt><code>--output json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Do not show the message of the day or update reminders. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc kms instance ls
+```
+{: pre}
+
+<br />
+
+
+## `quota` commands
+{: #cs_quota}
+
+### `ibmcloud oc quota ls`
+{: #cs_quota_ls}
+
+List all quota and limits for cluster-related resources in your {{site.data.keyword.cloud_notm}} account.
+{: shortdesc}
+
+```
+ibmcloud oc quota ls [--provider PROVIDER] [--output json]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--provider <em>(classic | vpc-gen2)</em></code></dt>
+<dd>The infrastructure provider type to list quota and limits for.</dd>
+
+<dt><code>--output json</code></dt>
+<dd>Prints the command output in JSON format. This value is optional.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc quota ls
+```
+{: pre}
+
+</br>
+
+<br />
+
+
 ## `subnets` command
 {: #cs_subnets}
 
@@ -4983,7 +5082,7 @@ List available subnets in your IBM Cloud infrastructure account.
 {: shortdesc}
 
 ```
-ibmcloud oc subnets [--provider (classic | vpc-gen2)] [--vpc-id <VPC_ID> --zone <VPC_ZONE>] [--location LOCATION] [--json] [-s]
+ibmcloud oc subnets [--provider (classic | vpc-gen2)] [--vpc-id <VPC_ID> --zone <VPC_ZONE>] [--location LOCATION] [--output json] [-q]
 ```
 {: pre}
 
@@ -5007,10 +5106,10 @@ ibmcloud oc subnets [--provider (classic | vpc-gen2)] [--vpc-id <VPC_ID> --zone 
 <dt><code>-l, --location <em>LOCATION</em></code></dt>
 <dd>Filter output by a specific location. To see supported locations, run <code>ibmcloud oc locations</code>. To specify multiple locations, use one flag for each location, such as `-l dal -l seo`.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -5037,7 +5136,7 @@ List the public and private VLANs that are available for a zone in your classic 
 {: shortdesc}
 
 ```
-ibmcloud oc vlan ls --zone ZONE [--all] [--json] [-s]
+ibmcloud oc vlan ls --zone ZONE [--all] [--output json] [-q]
 ```
 {: pre}
 
@@ -5055,10 +5154,10 @@ ibmcloud oc vlan ls --zone ZONE [--all] [--json] [-s]
 <dt><code>--all</code></dt>
 <dd>Lists all available VLANs. By default VLANs are filtered to show only those VLANs that are valid. To be valid, a VLAN must be associated with infrastructure that can host a worker with local disk storage.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -5080,7 +5179,7 @@ The VLAN spanning option is disabled for clusters that are created in a VRF-enab
 {: note}
 
 ```
-ibmcloud oc vlan spanning get --region REGION [--json] [-s]
+ibmcloud oc vlan spanning get --region REGION [--output json] [-q]
 ```
 {: pre}
 
@@ -5093,10 +5192,10 @@ ibmcloud oc vlan spanning get --region REGION [--json] [-s]
 <dt><code>--region <em>REGION</em></code></dt>
 <dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -5117,7 +5216,7 @@ List all VPCs in the targeted resource group. If no resource group is targeted, 
 {: shortdesc}
 
 ```
-ibmcloud oc vpcs [--provider vpc-gen2] [--json] [-s]
+ibmcloud oc vpcs [--provider vpc-gen2] [--output json] [-q]
 ```
 {: pre}
 
@@ -5133,10 +5232,10 @@ ibmcloud oc vpcs [--provider vpc-gen2] [--json] [-s]
 <dt><code>--provider <em>vpc-gen2</em></code></dt>
 <dd>The infrastructure provider type ID for the VPC worker node machine. `vpc-gen2` for VPC Generation 2 compute is supported.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -5157,7 +5256,7 @@ View a list of supported versions for managed add-ons in {{site.data.keyword.con
 {: shortdesc}
 
 ```
-ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--json] [-s]
+ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--output json] [-q]
 ```
 {: pre}
 
@@ -5172,10 +5271,10 @@ ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--json] [-s]
 <dt><code>--addon <em>ADD-ON_NAME</em></code></dt>
 <dd>Optional: Specify an add-on name, such as <code>istio</code> or <code>knative</code>, to filter versions for.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -5203,7 +5302,7 @@ Each flavor includes the amount of virtual CPU, memory, and disk space for each 
 You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal. [Learn more about your flavor options](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 
 ```
-ibmcloud oc flavors --zone ZONE --provider (classic | vpc-gen2) [--show-storage] [--json] [-s]
+ibmcloud oc flavors --zone ZONE --provider (classic | vpc-gen2) [--show-storage] [--output json] [-q]
 ```
 {: pre}
 
@@ -5224,10 +5323,10 @@ ibmcloud oc flavors --zone ZONE --provider (classic | vpc-gen2) [--show-storage]
 <dt><code>--show-storage</code></dt>
 <dd>Optional: Show additional raw disks that are available for SDS worker node flavors. For more information, see [Software-defined storage (SDS) machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds).</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -5279,7 +5378,7 @@ In [CLI plug-in version 1.0](#cs_beta), `supported-locations` is replaced by the
 {: important}
 
 ```
-ibmcloud oc locations [--json]
+ibmcloud oc locations [--output json]
 ```
 {: pre}
 
@@ -5291,7 +5390,7 @@ ibmcloud oc locations [--json]
 
 **Command options**:
 <dl>
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 </dl>
 
@@ -5308,7 +5407,7 @@ The `kube-versions` alias for this command is deprecated.
 {: deprecated}
 
 ```
-ibmcloud oc versions [--show-version (KUBERNETES|OPENSHIFT)] [--json] [-s]
+ibmcloud oc versions [--show-version (KUBERNETES|OPENSHIFT)] [--output json] [-q]
 ```
 {: pre}
 
@@ -5323,10 +5422,10 @@ ibmcloud oc versions [--show-version (KUBERNETES|OPENSHIFT)] [--json] [-s]
 <dt><code>--show-version <em>(KUBERNETES|OPENSHIFT)</em></code></dt>
 <dd>Show only the versions for the specified container platform. Supported values are <code>kubernetes</code> or <code>openshift</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 </dl>
 
@@ -5359,7 +5458,7 @@ If you need to list and work with resources from one region only, you can use th
 To use the global functionality, you can use the `ibmcloud oc api` command again to target the global endpoint: `https://containers.cloud.ibm.com`
 
 ```
-ibmcloud oc api --endpoint ENDPOINT [--insecure] [--skip-ssl-validation] [--api-version VALUE] [-s]
+ibmcloud oc api --endpoint ENDPOINT [--insecure] [--skip-ssl-validation] [--api-version VALUE] [-q]
 ```
 {: pre}
 
@@ -5384,7 +5483,7 @@ ibmcloud oc api --endpoint ENDPOINT [--insecure] [--skip-ssl-validation] [--api-
 <dt><code>--api-version VALUE</code></dt>
 <dd>Specify the API version of the service that you want to use. This value is optional.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
@@ -5427,7 +5526,7 @@ If you need to list and work with resources from one region only, you can use th
 To use the global functionality, you can use the `ibmcloud oc init` command again to target the global endpoint: `https://containers.cloud.ibm.com`
 
 ```
-ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-s]
+ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-q]
 ```
 {: pre}
 
@@ -5451,7 +5550,7 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-s]
 <dt><code>-u</code></dt>
 <dd>Your IBM Cloud username.</dd>
 
-<dt><code>-s</code></dt>
+<dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
 
 </dl>
@@ -5519,12 +5618,12 @@ To use this command to prepare your automation scripts for the release of versio
     -ibmcloud ks logging-config-get --cluster mycluster
     -ibmcloud ks logging-config-update --cluster mycluster --id myconfig --logsource application --type ibm --app-containers app1,app2,app3 --app-paths /var/log/path/
     -ibmcloud ks logging-config-update --cluster mycluster --id myconfig --logsource application --type ibm --app-paths=/var/log/path/,/var/log/other/path/
-    -ibmcloud ks clusters -s --locations dal09,dal12 --json
+    -ibmcloud ks clusters -s --locations dal09,dal12 --output json
     -ibmcloud ks subnets --locations sao01
     +ibmcloud ks logging config get --cluster mycluster
     +ibmcloud ks logging config update --cluster mycluster --id myconfig --logsource application --type ibm -C app1 -C app2 -C app3 -p /var/log/path/
     +ibmcloud ks logging config update --cluster mycluster --id myconfig --logsource application --type ibm -p /var/log/path/ -p /var/log/other/path/
-    +ibmcloud ks clusters -s -l dal09 -l dal12 --json
+    +ibmcloud ks clusters -s -l dal09 -l dal12 --output json
     +ibmcloud ks subnets -l sao01
     ```
     {: screen}
@@ -5575,7 +5674,7 @@ Attach a storage volume to a worker node in your cluster.
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```
-ibmcloud oc storage attachment create --cluster CLUSTER_ID --volume VOLUME --worker WORKER [--json]
+ibmcloud oc storage attachment create --cluster CLUSTER_ID --volume VOLUME --worker WORKER [--output json]
 ```
 {: pre}
 
@@ -5591,14 +5690,14 @@ ibmcloud oc storage attachment create --cluster CLUSTER_ID --volume VOLUME --wor
 <dt><code>--worker <em>WORKER</em></code></dt>
 <dd>Required: Specify the worker ID. To list available workers, run <code>ibmcloud oc worker ls</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
 
 **Example**:
 
 ```
-ibmcloud oc storage attachment create --cluster aa1111aa11aaaaa11aa1 --volume 111111111 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--json]
+ibmcloud oc storage attachment create --cluster aa1111aa11aaaaa11aa1 --volume 111111111 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--output json]
 ```
 {: pre}
 
@@ -5614,7 +5713,7 @@ Get the details of a storage volume attachment in your cluster.
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```
-ibmcloud oc storage attachment get --cluster CLUSTER_ID --attachment ATTACHMENT --worker WORKER [--json]
+ibmcloud oc storage attachment get --cluster CLUSTER_ID --attachment ATTACHMENT --worker WORKER [--output json]
 ```
 {: pre}
 
@@ -5628,14 +5727,14 @@ ibmcloud oc storage attachment get --cluster CLUSTER_ID --attachment ATTACHMENT 
 <dt><code>--worker <em>WORKER</em></code></dt>
 <dd>Required: Specify the worker ID. To list available workers, run <code>ibmcloud oc worker ls</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
 
 **Example**:
 
 ```
-ibmcloud oc storage attachment get --cluster aa1111aa11aaaaa11aa1 --attachment 0111-1a111aaa-1111-1111-111a-aaa1a1a11a11 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--json]
+ibmcloud oc storage attachment get --cluster aa1111aa11aaaaa11aa1 --attachment 0111-1a111aaa-1111-1111-111a-aaa1a1a11a11 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--output json]
 ```
 {: pre}
 
@@ -5651,7 +5750,7 @@ List the storage volume attachments for a worker node in your cluster.
 **Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```
-ibmcloud oc storage attachment ls --cluster CLUSTER_ID --worker WORKER [--json]
+ibmcloud oc storage attachment ls --cluster CLUSTER_ID --worker WORKER [--output json]
 ```
 {: pre}
 
@@ -5662,14 +5761,14 @@ ibmcloud oc storage attachment ls --cluster CLUSTER_ID --worker WORKER [--json]
 <dt><code>--worker <em>WORKER</em></code></dt>
 <dd>Required: Specify the worker ID. To list available workers, run <code>ibmcloud oc worker ls</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
 
 **Example**:
 
 ```
-ibmcloud oc storage attachment ls --cluster aa1111aa11aaaaa11aa1 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--json]
+ibmcloud oc storage attachment ls --cluster aa1111aa11aaaaa11aa1 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--output json]
 ```
 {: pre}
 
@@ -5686,7 +5785,7 @@ Remove a storage volume from a worker node in your cluster.
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```
-ibmcloud oc storage attachment rm --cluster CLUSTER_ID --attachment ATTACHMENT --worker WORKER [--json]
+ibmcloud oc storage attachment rm --cluster CLUSTER_ID --attachment ATTACHMENT --worker WORKER [--output json]
 ```
 {: pre}
 
@@ -5702,14 +5801,14 @@ ibmcloud oc storage attachment rm --cluster CLUSTER_ID --attachment ATTACHMENT -
 <dt><code>--worker <em>WORKER</em></code></dt>
 <dd>Required: Specify the worker ID. To list available workers, run <code>ibmcloud oc worker ls</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
 
 **Example**:
 
 ```
-ibmcloud oc storage attachment rm --cluster aa1111aa11aaaaa11aa1 --attachment 0111-1a111aaa-1111-1111-111a-aaa1a1a11a11 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--json]
+ibmcloud oc storage attachment rm --cluster aa1111aa11aaaaa11aa1 --attachment 0111-1a111aaa-1111-1111-111a-aaa1a1a11a11 --worker kube-aa1111aa11aaaaa11aa1-my_cluster-default-00000110 [--output json]
 ```
 {: pre}
 
@@ -5736,7 +5835,7 @@ ibmcloud oc storage volume get --volume VOLUME
 <dt><code>--volume <em>VOLUME</em></code></dt>
 <dd>Required: Specify the volume ID. To list available volumes, run <code>ibmcloud ks storage volume ls</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
 
@@ -5761,7 +5860,7 @@ Get a list of storage volumes.
 **Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```
-ibmcloud oc storage volume ls [--cluster CLUSTER_ID] [--provider PROVIDER] [--zone ZONE] [--json]
+ibmcloud oc storage volume ls [--cluster CLUSTER_ID] [--provider PROVIDER] [--zone ZONE] [--output json]
 ```
 {: pre}
 
@@ -5777,7 +5876,7 @@ ibmcloud oc storage volume ls [--cluster CLUSTER_ID] [--provider PROVIDER] [--zo
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>Optional: Specify the zone. To list available zones, run <code>ibmcloud oc locations</code>.</dd>
 
-<dt><code>--json</code></dt>
+<dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
 
