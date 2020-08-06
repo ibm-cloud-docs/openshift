@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,142 +10,87 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-{:step: data-tutorial-type='step'}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
-<style>
-    <!--
-        #tutorials { /* hide the page header */
-            display: none !important;
-        }
-        .allCategories {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: wrap !important;
-        }
-        .categoryBox {
-            flex-grow: 1 !important;
-            width: calc(33% - 20px) !important;
-            text-decoration: none !important;
-            margin: 0 10px 20px 0 !important;
-            padding: 16px !important;
-            border: 1px #dfe6eb solid !important;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-            text-align: center !important;
-            text-overflow: ellipsis !important;
-            overflow: hidden !important;
-        }
-        .solutionBoxContainer {}
-        .solutionBoxContainer a {
-            text-decoration: none !important;
-            border: none !important;
-        }
-        .solutionBox {
-            display: inline-block !important;
-            width: 100% !important;
-            margin: 0 10px 20px 0 !important;
-            padding: 16px !important;
-            background-color: #f4f4f4 !important;
-        }
-        @media screen and (min-width: 960px) {
-            .solutionBox {
-            width: calc(50% - 3%) !important;
-            }
-            .solutionBox.solutionBoxFeatured {
-            width: calc(50% - 3%) !important;
-            }
-            .solutionBoxContent {
-            height: 350px !important;
-            }
-        }
-        @media screen and (min-width: 1298px) {
-            .solutionBox {
-            width: calc(33% - 2%) !important;
-            }
-            .solutionBoxContent {
-            min-height: 350px !important;
-            }
-        }
-        .solutionBox:hover {
-            border: 1px rgb(136, 151, 162)solid !important;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-        }
-        .solutionBoxContent {
-            display: flex !important;
-            flex-direction: column !important;
-        }
-        .solutionBoxTitle {
-            margin: 0rem !important;
-            margin-bottom: 5px !important;
-            font-size: 14px !important;
-            font-weight: 900 !important;
-            line-height: 16px !important;
-            height: 37px !important;
-            text-overflow: ellipsis !important;
-            overflow: hidden !important;
-            display: -webkit-box !important;
-            -webkit-line-clamp: 2 !important;
-            -webkit-box-orient: vertical !important;
-            -webkit-box-align: inherit !important;
-        }
-        .solutionBoxDescription {
-            flex-grow: 1 !important;
-            display: flex !important;
-            flex-direction: column !important;
-        }
-        .descriptionContainer {
-        }
-        .descriptionContainer p {
-            margin: 0 !important;
-            overflow: hidden !important;
-            display: -webkit-box !important;
-            -webkit-line-clamp: 4 !important;
-            -webkit-box-orient: vertical !important;
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            line-height: 1.5 !important;
-            letter-spacing: 0 !important;
-            max-height: 70px !important;
-        }
-        .architectureDiagramContainer {
-            flex-grow: 1 !important;
-            min-width: calc(33% - 2%) !important;
-            padding: 0 16px !important;
-            text-align: center !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
-            background-color: #f4f4f4;
-        }
-        .architectureDiagram {
-            max-height: 175px !important;
-            padding: 5px !important;
-            margin: 0 auto !important;
-        }
-    -->
-    </style>
+{[css-tiles.html]}
 
 # Tutorial overview
 {: #tutorials-ov}
@@ -160,10 +105,10 @@ Check out the following tutorials to learn how to make the most of your {{site.d
   <div class = "solutionBox">
   <a href = "/docs/openshift?topic=openshift-openshift_tutorial">
       <div class = "solutionBoxContent">
-        <p><strong>{{site.data.keyword.openshiftlong_notm}} cluster</strong></p>
+        <p><strong>Red Hat OpenShift on IBM Cloud cluster</strong></p>
         <div class="solutionBoxDescription">
               <div class="descriptionContainer">
-                </br><p>Create a cluster with worker nodes that come installed with {{site.data.keyword.openshiftshort}} container orchestration platform.</p></br>
+                </br><p>Create a cluster with worker nodes that come installed with OpenShift container orchestration platform.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/roks_tutorial.png" alt="OpenShift tutorial diagram flow" /></br>
@@ -175,10 +120,10 @@ Check out the following tutorials to learn how to make the most of your {{site.d
     <div class = "solutionBox">
     <a href = "/docs/openshift?topic=openshift-vpc_rh_tutorial">
         <div class = "solutionBoxContent">
-          <p><strong>{{site.data.keyword.openshiftshort}} cluster on VPC Gen 2</strong></p>
+          <p><strong>OpenShift cluster on VPC Gen 2</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
-                  </br><p>Create an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud with worker nodes on the next generation of compute infrastructure.</p></br>
+                  </br><p>Create an OpenShift cluster in your Virtual Private Cloud with worker nodes on the next generation of compute infrastructure.</p></br>
                   </div>
                   <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/vpc_roks_tutorial_lesson4_lb.png" alt="OpenShift tutorial diagram flow" /></br>
@@ -190,13 +135,13 @@ Check out the following tutorials to learn how to make the most of your {{site.d
     <div class = "solutionBox">
     <a href = "/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift">
         <div class = "solutionBoxContent">
-          <p><strong>Scalable web app on {{site.data.keyword.openshiftshort}}</strong></p>
+          <p><strong>Scalable web app on OpenShift</strong></p>
             <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
                   </br> <p>Scaffold a web app, deploy it to a cluster, and learn how to scale your app and monitor its health. </p></br>
                 </div>
                 <div class="architectureDiagramContainer">
-                    <img class="architectureDiagram" src="https://raw.githubusercontent.com/ibm-cloud-docs/tutorials/master/images/solution50-scalable-webapp-openshift/Architecture.png" alt="Architecture diagram for deploying web apps with {{site.data.keyword.openshiftlong_notm}}" />
+                    <img class="architectureDiagram" src="https://raw.githubusercontent.com/ibm-cloud-docs/tutorials/master/images/solution50-scalable-webapp-openshift/Architecture.png" alt="Architecture diagram for deploying web apps with Red Hat OpenShift on IBM Cloud" />
                 </div>
             </div>
         </div>
@@ -208,7 +153,7 @@ Check out the following tutorials to learn how to make the most of your {{site.d
             <p><strong>Automate version 3.11 cluster creation with Terraform</strong></p>
           <div class="solutionBoxDescription">
               <div class="descriptionContainer">
-                </br><p>Use Terraform to automate the deployment of an {{site.data.keyword.openshiftshort}} 3.11 cluster.</p></br>
+                </br><p>Use Terraform to automate the deployment of an OpenShift 3.11 cluster.</p></br>
               </div>
               <div class="architectureDiagramContainer">
                   <img class="architectureDiagram" src="images/terraform_roks_tutorial_ov.png" alt="Terraform deployment automation architecture" />
@@ -220,7 +165,7 @@ Check out the following tutorials to learn how to make the most of your {{site.d
 </div>
 
 
-## Dive deeper into {{site.data.keyword.openshiftshort}} technology
+## Dive deeper into OpenShift technology
 {: #tutorials-deep-dive}
 
 <div class = "solutionBoxContainer">
@@ -230,7 +175,7 @@ Check out the following tutorials to learn how to make the most of your {{site.d
             <p><strong>Security certificates for domains</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
-                  </br> <p>Renew security certificates automatically for web domains with a DNS provider,Certificate Manager, and {{site.data.keyword.openshiftshort}} cluster.</p></br>
+                  </br> <p>Renew security certificates automatically for web domains with a DNS provider,Certificate Manager, and OpenShift cluster.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/dev_guides_certs.png" alt="Domain certifcate flowchart" />
@@ -245,7 +190,7 @@ Check out the following tutorials to learn how to make the most of your {{site.d
             <p><strong>App lifecycle management with {{site.data.keyword.cloud_notm}} Operator</strong></p>
           <div class="solutionBoxDescription">
                 <div class="descriptionContainer">
-                  </br> <p>Simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.openshiftshort}} cluster.</p></br>
+                  </br> <p>Simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your OpenShift cluster.</p></br>
                 </div>
                 <div class="architectureDiagramContainer">
                     <img class="architectureDiagram" src="images/dev_guides_operators.png" alt="IBM Cloud operator flowchart" />
