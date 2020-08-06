@@ -170,7 +170,7 @@ Now let's add some other features that you might use.
 
 1.  Keep in mind that the [worker nodes reserve certain amounts of CPU and memory resources](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node) to run required components, such as the operating system or container runtime.
 2.  Consider whether your app pulls large or many images, which can take up local storage on the worker node.
-3.  Decide whether you want to [integrate services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations) into your cluster, such as [Helm](/docs/openshift?topic=openshift-helm#public_helm_install) or [Prometheus](https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus){: external}. These integrated services and add-ons spin up pods that consume cluster resources.
+3.  Decide whether you want to [integrate services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations) into your cluster, such as [Helm](/docs/openshift?topic=openshift-helm#public_helm_install) or [Prometheus](https://github.com/prometheus-operator/kube-prometheus){: external}. These integrated services and add-ons spin up pods that consume cluster resources.
 
 ### What type of availability do I want my workload to have?
 {: #sizing_availability}
