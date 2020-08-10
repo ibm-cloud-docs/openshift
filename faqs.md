@@ -98,6 +98,7 @@ Review frequently asked questions (FAQs) for using {{site.data.keyword.openshift
 
 
 
+
 ## How does Red Hat OpenShift on IBM Cloud work?
 {: #kubernetes_service}
 {: faq}
