@@ -90,7 +90,6 @@ subcollection: openshift
 {:video: .video}
 
 
-
 <style>
     <!--
         #tutorials { /* hide the page header */

@@ -90,7 +90,6 @@ subcollection: openshift
 {:video: .video}
 
 
-
 # Creating {{site.data.keyword.satelliteshort}} clusters
 {: #satellite-clusters}
 
