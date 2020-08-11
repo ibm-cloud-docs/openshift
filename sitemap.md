@@ -89,7 +89,6 @@ subcollection: openshift
 {:video: .video}
 
 
-
 # Site map
 {: #sitemap}
 
