@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,84 +10,31 @@ subcollection: openshift
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:authenticated-content: .authenticated-content}
 {:beta: .beta}
-{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
-{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
 {:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
-{:term: .term}
 {:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+
 
 
 # Persistent storage
@@ -163,15 +110,15 @@ Review the options to debug persistent storage and find the root causes for fail
          kubectl get pod <pod_name> -n kube-system -o jsonpath="{.spec['containers','initContainers'][*].name}" | tr -s '[[:space:]]' '\n'
          ```
          {: pre}
-         
+
          Example output for {{site.data.keyword.block_storage_is_short}} with three containers:
          ```
-         csi-provisioner 
-         csi-attacher 
+         csi-provisioner
+         csi-attacher
          iks-vpc-block-driver
          ```
          {: screen}
-         
+
          Example output for {{site.data.keyword.blockstorageshort}}:
          ```
          ibmcloud-block-storage-driver-container
@@ -298,6 +245,10 @@ Review the options to debug persistent storage and find the root causes for fail
 ## File storage and block storage: PVC remains in a pending state
 {: #file_pvc_pending}
 
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
 {: tsSymptoms}
 When you create a PVC and you run `oc get pvc <pvc_name>`, your PVC remains in a **Pending** state, even after waiting for some time.
 
@@ -362,6 +313,8 @@ During the PVC creation and binding, many different tasks are executed by the fi
 ## File storage: App cannot access or write to PVC
 {: #file_app_failures}
 
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
 When you mount a PVC to your pod, you might experience errors when accessing or writing to the PVC.
 {: shortdesc}
 
@@ -411,6 +364,8 @@ When you mount a PVC to your pod, you might experience errors when accessing or 
 ### File storage: File systems for worker nodes change to read-only
 {: #readonly_nodes}
 
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
 {: tsSymptoms}
 {: #stuck_creating_state}
 You might see one of the following symptoms:
@@ -433,6 +388,8 @@ For a long-term fix, [update the flavor of your worker pool](/docs/openshift?top
 
 ### File storage: App fails when a non-root user owns the NFS file storage mount path
 {: #nonroot}
+
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 {: tsSymptoms}
 After you [add NFS storage](/docs/openshift?topic=openshift-file_storage#file_app_volume_mount) to your deployment, the deployment of your container fails. When you retrieve the logs for your container, you might see errors such as the following. The pod fails and is stuck in a reload cycle.
@@ -654,6 +611,8 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
 ### File storage: Adding non-root user access to persistent storage fails
 {: #cs_storage_nonroot}
 
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
 {: tsSymptoms}
 After you [add non-root user access to persistent storage](#nonroot) or deploy a Helm chart with a non-root user ID specified, the user cannot write to the mounted storage.
 
@@ -663,7 +622,7 @@ Your app deployment or Helm chart configuration specifies the [security context]
 {: tsResolve}
 To allow a non-root user read and write access to a file storage device, you must allocate a [supplemental group ID](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#users-and-groups){: external} in a storage class, refer to this storage class in the PVC, and set the pod's security context with a `runAsUser` value that is automatically added to the supplemental group ID. When you grant the supplemental group ID read and write access to the file storage, any non-root user that belongs to the group ID, including your pod, is granted access to the file storage.
 
-You can use one of the provided [`gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) or create a custom storage class to define your own supplemental group ID. 
+You can use one of the provided [`gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) or create a custom storage class to define your own supplemental group ID.
 
 Allocating a supplemental group ID for a non-root user of a file storage device is supported for single zone clusters only, and cannot be used in multizone clusters.
 {: note}
@@ -696,8 +655,8 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
      gidFixed: "65165"
    ```
    {: codeblock}
-   
-   To create the storage class in your cluster, run `kubectl apply -f storageclass.yaml`. 
+
+   To create the storage class in your cluster, run `kubectl apply -f storageclass.yaml`.
 
 3. Create a YAML file for your PVC that uses the storage class that you created.
 
@@ -869,6 +828,10 @@ If you need to change the ownership of the mount path from `nobody`, see [App fa
 ## Block Storage: App cannot access or write to PVC
 {: #block_app_failures}
 
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
 When you mount a PVC to your pod, you might experience errors when accessing or writing to the PVC.
 {: shortdesc}
 
@@ -912,6 +875,10 @@ When you mount a PVC to your pod, you might experience errors when accessing or 
 
 ### Block storage: Block storage changes to read-only
 {: #readonly_block}
+
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 {: tsSymptoms}
 You might see the following symptoms:
@@ -963,6 +930,10 @@ If a network error occurs while a pod writes to a volume, IBM Cloud infrastructu
 
 ### Block storage: Mounting existing block storage to a pod fails due to the wrong file system
 {: #block_filesystem}
+
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 {: tsSymptoms}
 When you run `oc describe pod <pod_name>`, you see the following error:
@@ -1021,6 +992,9 @@ Update the file system in the existing PV from `ext4` to `XFS`.
 
 ## Object storage: Installing the Object storage `ibmc` Helm plug-in fails
 {: #cos_helm_fails}
+
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
@@ -1087,6 +1061,10 @@ If you see a `permission denied` error, you do not have the required `read`, `wr
 ## Object storage: Installing the Object storage plug-in fails
 {: #cos_plugin_fails}
 
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 1 compute
+
 {: tsSymptoms}
 When you install the `ibm-object-storage-plugin`, the installation fails with an error similar to the following:
 ```
@@ -1119,18 +1097,18 @@ During the installation, many different tasks are executed by the {{site.data.ke
       ```
       oc get StorageClass --all-namespaces \
           -l app=ibmcloud-object-storage-plugin \
-          -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' 
+          -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
       ```
       {: pre}
-   
+
    2. Get a list of cluster role bindings that are created by the `ibmcloud-object-storage-plugin`.
       ```
       oc get ClusterRoleBinding --all-namespaces \
           -l app=ibmcloud-object-storage-plugin \
-          -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' 
+          -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
       ```
       {: pre}
-   
+
    3. Get a list of role bindings that are created by the `ibmcloud-object-storage-driver`.
       ```
       oc get RoleBinding --all-namespaces \
@@ -1178,7 +1156,7 @@ During the installation, many different tasks are executed by the {{site.data.ke
          -o jsonpath='{range .items[*]}{.metadata.namespace}{"\t"}{.metadata.name}{"\n"}{end}'
       ```
       {: pre }
-   
+
    9. Get a list of the service accounts that are created by the `ibmcloud-object-storage-plugin`.
       ```
       oc get ServiceAccount --all-namespaces \
@@ -1188,7 +1166,7 @@ During the installation, many different tasks are executed by the {{site.data.ke
       {: pre}
 
 4. Delete the conflicting resources.
-   
+
 5. After you delete the conflicting resources, [retry the installation](/docs/openshift?topic=openshift-object_storage#install_cos).
 
 
@@ -1198,6 +1176,9 @@ During the installation, many different tasks are executed by the {{site.data.ke
 
 ## Object storage: PVC remains in a pending state
 {: #cos_pvc_pending}
+
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
@@ -1324,6 +1305,9 @@ During the PVC creation and binding, many different tasks are executed by the {{
 ### Object storage: PVC or pod creation fails due to not finding the Kubernetes secret
 {: #cos_secret_access_fails}
 
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
 {: note}
@@ -1363,6 +1347,9 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
 
 ### Object storage: PVC creation fails due to wrong credentials or access denied
 {: #cred_failure}
+
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
@@ -1415,6 +1402,9 @@ The {{site.data.keyword.cos_full_notm}} service credentials that you use to acce
 ### Object storage: PVC creation fails due to wrong s3fs or IAM API endpoint
 {: #cos_api_endpoint_failure}
 
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
 {: note}
@@ -1457,6 +1447,9 @@ The s3fs API endpoint for the bucket that you want to use might have the wrong f
 ### Object storage: Cannot access an existing bucket
 {: #cos_access_bucket_fails}
 
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
 {: note}
@@ -1486,6 +1479,9 @@ You might have used the wrong storage class to access your existing bucket, or y
 ## Object storage: Changing the ownership of the mount path fails
 {: #cos_mountpath_error}
 
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
 {: note}
@@ -1509,6 +1505,10 @@ You cannot change the ownership of the volume mount path. However, you can chang
 
 ## Object storage: Accessing files with a non-root user fails
 {: #cos_nonroot_access}
+
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 {: tsSymptoms}
 You uploaded files to your {{site.data.keyword.cos_full_notm}} service instance by using the console or the REST API. When you try to access these files with a non-root user that you defined with `runAsUser` in your app deployment, access to the files is denied.
@@ -1666,6 +1666,10 @@ After you set the correct file permissions in your {{site.data.keyword.cos_full_
 ## PVC creation fails because of missing permissions
 {: #missing_permissions}
 
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
 {: tsSymptoms}
 When you create a PVC, the PVC remains pending. When you run `oc describe pvc <pvc_name>`, you see an error message similar to the following:
 
@@ -1738,6 +1742,9 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
 ## Portworx: Debugging your Portworx installation
 {: #debug-portworx}
 
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to OpenShift clusters that run version 3.11.
 {: note}
@@ -1808,11 +1815,10 @@ If you run into an issue with using Portworx, you can open an issue in the [Port
 ## Feedback, questions, and support
 {: #getting_help_storage}
 
-If you still experience issues with persistent storage in your cluster, review the following options to receive further support or ask questions. 
+If you still experience issues with persistent storage in your cluster, review the following options to receive further support or ask questions.
 
-- For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/openshift?topic=openshift-get-help) to find information about how to contact the IBM team on Slack or open an {{site.data.keyword.cloud_notm}} support case. 
+- For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/openshift?topic=openshift-get-help) to find information about how to contact the IBM team on Slack or open an {{site.data.keyword.cloud_notm}} support case.
 - For issues with Portworx, open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an e-mail to `support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@portworx.com`.
-
 
 
 
