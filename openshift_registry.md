@@ -78,7 +78,6 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>Sharing images across multiple clusters without needing to push images to multiple registries.</li>
         <li>[Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.</li>
         <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=Registry-user) and [separate regional registries](/docs/Registry?topic=Registry-registry_overview#registry_regions).</li>
-        <li>[Setting up trusted content](/docs/openshift?topic=openshift-registry#trusted_images) through image signing and the Container Image Security Enforcement admission controller.</li>
         <li>[Retaining images](/docs/Registry?topic=Registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
         <li>Version 4 clusters on VPC infrastructure: Using the private registry service endpoint so that clusters that use only a private service endpoint can still access the registry.</li>
         <li>[Setting storage and image pull traffic quotas](/docs/Registry?topic=Registry-registry_quota) to better control image storage, usage, and billing.</li>
