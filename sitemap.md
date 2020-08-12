@@ -1633,6 +1633,10 @@ subcollection: openshift
 * [Binding a service to a cluster results in service not found error](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_not_found_services)
 * [Binding a service to a cluster results in service does not support service keys error](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_service_keys)
 * [Cannot install a Helm chart with updated configuration values](/docs/openshift?topic=openshift-cs_troubleshoot_app#cs_helm_install)
+* [General ways to resolve cluster issues](/docs/openshift?topic=openshift-cs_troubleshoot_app#help-general)
+* [Reviewing issues and status](/docs/openshift?topic=openshift-cs_troubleshoot_app#help-cloud-status)
+* [Feedback and questions](/docs/openshift?topic=openshift-cs_troubleshoot_app#feedback-qs)
+* [Contacting support](/docs/openshift?topic=openshift-cs_troubleshoot_app#help-support)
 
 [Load balancers](/docs/openshift?topic=openshift-cs_troubleshoot_lb)
 * [Classic clusters: Cannot connect to an app via a network load balancer (NLB) service](/docs/openshift?topic=openshift-cs_troubleshoot_lb#cs_loadbalancer_fails)
