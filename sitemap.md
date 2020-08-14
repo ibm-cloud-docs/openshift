@@ -843,7 +843,7 @@ subcollection: openshift
 * [Exposing an app by using a VPC load balancer in a VPC cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_vpc)
 
 [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas)
-* [About VPC load balancing in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
+* [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
 * [Setting up a Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
 * [Registering a VPC load balancer hostname with a DNS subdomain](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
