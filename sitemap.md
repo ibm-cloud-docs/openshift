@@ -216,7 +216,7 @@ subcollection: openshift
   * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery)
   * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
 
-[Security for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-security)
+[Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security)
 * [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 * [Network](/docs/openshift?topic=openshift-security#network)
