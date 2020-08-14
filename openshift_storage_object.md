@@ -335,9 +335,9 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 8. Optional: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in is authorized to access all Kubernetes secrets in your cluster.
    1. [Create your {{site.data.keyword.cos_full_notm}} service instance](#create_cos_service).
    2. [Store your {{site.data.keyword.cos_full_notm}} service credentials in a Kubernetes secret](#create_cos_secret).
-   3. Navigate to the `templates` directory and list available files.  
+   3. From the `ibm-object-storage-plugin`, navigate to the `templates` directory and list available files.  
       ```
-      cd ibm-object-storage-plugin/templates && ls
+      cd templates && ls
       ```
       {: pre}
 
