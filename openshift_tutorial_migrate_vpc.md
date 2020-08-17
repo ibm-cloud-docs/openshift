@@ -131,7 +131,7 @@ This tutorial is for administrators who want to migrate cluster workloads off of
   * [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}.
   * [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for Container Registry.
   * [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.cos_full_notm}}.
-* Make sure that the API key for the region and resource group that you plan to create the VPC gen 2 cluster in is set up with the correct [infrastructure permissions](/docs/openshift?topic=openshift-users#api_key).
+* Make sure that the API key for the region and resource group that you plan to create the VPC Gen 2 cluster in is set up with the correct [infrastructure permissions](/docs/openshift?topic=openshift-users#api_key).
 
 <br>
 **Command-line tools**
