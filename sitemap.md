@@ -2,37 +2,91 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-17"
 
 keywords: openshift
 subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -43,17 +97,17 @@ subcollection: openshift
 
 
 
-## Getting started with Red Hat OpenShift on IBM Cloud
-{: #sitemap_getting_started_with_red_hat_openshift_on_ibm_cloud}
+## Getting started with {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_getting_started_with_}
 
 
-[Getting started with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-getting-started)
+[Getting started with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-getting-started)
 
-[Creating a classic OpenShift cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+[Creating a classic {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
 
 [Creating a VPC Gen 2 compute cluster](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
 
-[Deploying an app with the OpenShift service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
+[Deploying an app with the {{site.data.keyword.openshiftshort}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
 
 [What's next?](/docs/openshift?topic=openshift-getting-started#whats-next)
 
@@ -162,7 +216,7 @@ subcollection: openshift
   * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery)
   * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
 
-[Security for Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-security)
+[Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security)
 * [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 * [Network](/docs/openshift?topic=openshift-security#network)
@@ -297,7 +351,7 @@ subcollection: openshift
 {: #sitemap_creating_and_accessing_clusters}
 
 
-[Creating OpenShift clusters](/docs/openshift?topic=openshift-clusters)
+[Creating {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-clusters)
 * [Sample commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 * [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
@@ -309,23 +363,23 @@ subcollection: openshift
   * [Creating standard VPC Gen 2 compute clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
-[Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters)
+[Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters)
 * [Prerequisites](/docs/openshift?topic=openshift-satellite-clusters#satcluster-prereqs)
-* [Creating {{site.data.keyword.satelliteshort}} clusters from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
-* [Accessing and working with your {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
+* [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
+* [Accessing and working with your {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
 
-[Accessing OpenShift clusters](/docs/openshift?topic=openshift-access_cluster)
+[Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster)
 * [Prerequisites](/docs/openshift?topic=openshift-access_cluster#prereqs)
-* [Accessing OpenShift clusters through the public service endpoint](/docs/openshift?topic=openshift-access_cluster#access_public_se)
+* [Accessing {{site.data.keyword.openshiftshort}} clusters through the public service endpoint](/docs/openshift?topic=openshift-access_cluster#access_public_se)
   * [Connecting to the cluster from the console](/docs/openshift?topic=openshift-access_cluster#access_oc_console)
   * [Connecting to the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli)
 * [Accessing clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se)
   * [Accessing classic clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
   * [Accessing VPC clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#vpc_private_se)
-* [Accessing OpenShift clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
-  * [Using an API key to log in to OpenShift clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
-  * [Using a service ID to log in to OpenShift clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
+* [Accessing {{site.data.keyword.openshiftshort}} clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
+  * [Using an API key to log in to {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
+  * [Using a service ID to log in to {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
 * [Accessing the cluster master via admission controllers and webhooks](/docs/openshift?topic=openshift-access_cluster#access_webhooks)
 
 [Assigning cluster access](/docs/openshift?topic=openshift-users)
@@ -467,7 +521,7 @@ subcollection: openshift
 * [Opening ports in gateway appliance firewalls](/docs/openshift?topic=openshift-firewall#vyatta_firewall)
   * [Opening required ports in a public firewall](/docs/openshift?topic=openshift-firewall#firewall_outbound)
   * [Opening required ports in a private firewall](/docs/openshift?topic=openshift-firewall#firewall_private)
-  * [Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and OpenShift routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
+  * [Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.openshiftshort}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
 * [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#allowlist_workers)
 * [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_allowlist)
@@ -525,7 +579,7 @@ subcollection: openshift
 
 
 [Classic: Configuring subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
-* [Overview of classic networking in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-subnets#basics)
+* [Overview of classic networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-subnets#basics)
   * [VLANs](/docs/openshift?topic=openshift-subnets#basics_vlans)
   * [Subnets and IP addresses](/docs/openshift?topic=openshift-subnets#basics_subnets)
   * [Network segmentation](/docs/openshift?topic=openshift-subnets#basics_segmentation)
@@ -714,12 +768,12 @@ subcollection: openshift
 * [Packaging apps in OpenShift 3.11 clusters by using Helm charts](/docs/openshift?topic=openshift-openshift_apps#roks_helm)
 
 [Deploying apps in OpenShift clusters](/docs/openshift?topic=openshift-deploy_app)
-* [Moving your apps to OpenShift](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps)
+* [Moving your apps to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps)
   * [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui)
   * [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli)
 * [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity)
 * [Deploying Cloud Paks, licensed software, and other integrations](/docs/openshift?topic=openshift-deploy_app#openshift_app_cloud_paks)
-* [Accessing the OpenShift web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
+* [Accessing the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
 * [Accessing built-in OpenShift services](/docs/openshift?topic=openshift-deploy_app#openshift_access_oc_services)
   * [Accessing built-in OpenShift services from the console](/docs/openshift?topic=openshift-deploy_app#openshift_services_console)
   * [Accessing built-in OpenShift services from the CLI](/docs/openshift?topic=openshift-deploy_app#openshift_services_cli)
@@ -789,7 +843,7 @@ subcollection: openshift
 * [Exposing an app by using a VPC load balancer in a VPC cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_vpc)
 
 [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas)
-* [About VPC load balancing in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
+* [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
 * [Setting up a Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
 * [Registering a VPC load balancer hostname with a DNS subdomain](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
@@ -1214,7 +1268,7 @@ subcollection: openshift
 {: #sitemap_cli_plug-in_reference}
 
 
-[Red Hat OpenShift on IBM Cloud CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
+[{{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
 * [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_beta)
 * [Comparison of Classic and VPC commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about)
 * [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#map)
@@ -1391,9 +1445,11 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.16_1513_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4416_1513)
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.31_1534_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4331_1534)
   * [Changelog for worker node fix pack 4.3.29_1533_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4329_1533)
   * [Changelog for master fix pack 4.3.28_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4328_1532)
   * [Changelog for worker node fix pack 4.3.29_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4329_1532)
@@ -1408,6 +1464,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.248_1564_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1564)
   * [Changelog for worker node fix pack 3.11.248_1561_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561)
   * [Changelog for master fix pack 3.11.232_1560_openshift, released 24 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1560)
   * [Changelog for master fix pack 3.11.232_1559_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1559)
@@ -1455,15 +1512,15 @@ subcollection: openshift
 
 [Locations](/docs/openshift?topic=openshift-regions-and-zones)
 
-[Red Hat OpenShift on IBM Cloud locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
+[{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
 * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
-* [Single and multizone locations in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#zones)
+* [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones)
 * [Single zone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
 * [Multizone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
 [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 * [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
-* [Logging in to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
+* [Logging in to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
 
 
 ## Supported IBM Cloud and third-party integrations
@@ -1522,15 +1579,15 @@ subcollection: openshift
 
 [FAQs](/docs/openshift?topic=openshift-faqs)
 
-[How does Red Hat OpenShift on IBM Cloud work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
+[How does {{site.data.keyword.openshiftlong_notm}} work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
 
-[Why should I use Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-faqs#faq_benefits)
+[Why should I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#faq_benefits)
 
 [Can I get a free cluster?](/docs/openshift?topic=openshift-faqs#faq_free)
 
 [What container platforms are available for my cluster?](/docs/openshift?topic=openshift-faqs#container_platforms)
 
-[Does the service come with a managed OpenShift master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)
+[Does the service come with a managed {{site.data.keyword.openshiftshort}} master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)
 
 [Are the master and worker nodes highly available?](/docs/openshift?topic=openshift-faqs#faq_ha)
 
@@ -1556,9 +1613,9 @@ subcollection: openshift
 
 [Does IBM support third-party and open source tools that I use with my cluster?](/docs/openshift?topic=openshift-faqs#faq_thirdparty_oss)
 
-[Where can I find more information about Red Hat OpenShift on IBM Cloud pricing models?](/docs/openshift?topic=openshift-faqs#pricing)
+[Where can I find more information about {{site.data.keyword.openshiftlong_notm}} pricing models?](/docs/openshift?topic=openshift-faqs#pricing)
 
-[What am I charged for when I use Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-faqs#charges)
+[What am I charged for when I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#charges)
 
 [What are the regional uplift charges and sustained usage discounts for VPC Generation 2 compute worker nodes?](/docs/openshift?topic=openshift-faqs#charges_vpc_gen2)
 
@@ -1579,7 +1636,7 @@ subcollection: openshift
 * [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
 * [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot#debug_clusters)
 * [Reviewing master health](/docs/openshift?topic=openshift-cs_troubleshoot#debug_master)
-* [Debugging OpenShift web console, OperatorHub, internal registry, and other components](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails)
+* [Debugging {{site.data.keyword.openshiftshort}} web console, OperatorHub, internal registry, and other components](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails)
 * [Common CLI issues](/docs/openshift?topic=openshift-cs_troubleshoot#ts_clis)
   * [Firewall prevents running CLI commands](/docs/openshift?topic=openshift-cs_troubleshoot#ts_firewall_clis)
   * [`kubectl` or `oc` commands do not work](/docs/openshift?topic=openshift-cs_troubleshoot#kubectl_fails)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-17"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -10,34 +10,88 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
-# Accessing OpenShift clusters
+# Accessing {{site.data.keyword.openshiftshort}} clusters
 {: #access_cluster}
 {: help}
 {: support}
@@ -48,32 +102,32 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 ## Prerequisites
 {: #prereqs}
 
-1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for OpenShift (`ibmcloud oc`), and OpenShift CLI (`oc`).
-2. [Create your OpenShift cluster](/docs/openshift?topic=openshift-clusters).
-3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall) to the {{site.data.keyword.cloud_notm}} and Red Hat OpenShift on IBM Cloud API endpoints and ports. If you created a VPC cluster and enabled only the private service endpoint, you cannot test the connection to your cluster until you expose the private service endpoint of the master to the cluster by using a [private NLB](#access_private_se).
+1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for {{site.data.keyword.openshiftshort}} (`ibmcloud oc`), and {{site.data.keyword.openshiftshort}} CLI (`oc`).
+2. [Create your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
+3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall) to the {{site.data.keyword.cloud_notm}} and {{site.data.keyword.openshiftlong_notm}} API endpoints and ports. If you created a VPC cluster and enabled only the private service endpoint, you cannot test the connection to your cluster until you expose the private service endpoint of the master to the cluster by using a [private NLB](#access_private_se).
 4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 5.  In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
-    *  **Public Service Endpoint URL**: Continue with [Accessing OpenShift clusters through the public service endpoint](#access_public_se).
+    *  **Public Service Endpoint URL**: Continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the public service endpoint](#access_public_se).
     *  **Private Service Endpoint URL only**: If your cluster has only a private service endpoint enabled, continue with [Accessing clusters through the private service endpoint](#access_private_se). Note that this step requires a private network connection to your cluster.
 
 <br />
 
 
-## Accessing OpenShift clusters through the public service endpoint
+## Accessing {{site.data.keyword.openshiftshort}} clusters through the public service endpoint
 {: #access_public_se}
 
 
-For OpenShift clusters with a public service endpoint, you can log in to your cluster from the console or CLI.
+For {{site.data.keyword.openshiftshort}} clusters with a public service endpoint, you can log in to your cluster from the console or CLI.
 {: shortdesc}
 
 ### Connecting to the cluster from the console
 {: #access_oc_console}
 
-You can quickly access your Red Hat OpenShift on IBM Cloud cluster from the console.
+You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster from the console.
 {: shortdesc}
 
-1.  In the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
-2.  Click **OpenShift web console**.
+1.  In the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
+2.  Click **{{site.data.keyword.openshiftshort}} web console**.
 3.  To continue working in the terminal, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the terminal as follows.
     *  **Version 3.11**: Paste the copied `oc login` command into your terminal.
     *  **Version 4**: Click **Display Token**, copy the `oc login` command, and paste the command into your terminal.
@@ -83,7 +137,7 @@ You can quickly access your Red Hat OpenShift on IBM Cloud cluster from the cons
 ### Connecting to the cluster from the CLI
 {: #access_oc_cli}
 
-In most cases, you can use the OpenShift web console to get the `oc login` token to access your cluster. If you cannot or do not want to open the OpenShift console, choose among the following options to log in to your Red Hat OpenShift on IBM Cloud cluster by using the CLI.
+In most cases, you can use the {{site.data.keyword.openshiftshort}} web console to get the `oc login` token to access your cluster. If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 {: shortdesc}
 
 Choose from the following options.
@@ -94,7 +148,7 @@ Choose from the following options.
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
         ```
         {: pre}
-*   **Log in with an API key**: See [Using an API key to log in to OpenShift](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+*   **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 *   **Log in with {{site.data.keyword.cloud_notm}} passcode**:
     1.  Get the **Master URL** of your cluster in the output of the following command.
         ```
@@ -127,7 +181,7 @@ This information is applicable for version 3.11 clusters or version 4 clusters o
 {: note}
 
 
-The OpenShift master is accessible through the private service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example) for VPC infrastructure, or for classic infrastructure, a [VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl). However, communication with the Kubernetes master over the private service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection or through {{site.data.keyword.dl_full_notm}}. You can expose the private service endpoint of the master for your cluster users by using a private network load balancer (NLB). The private NLB exposes the private service endpoint of the master as an internal <code>10.X.X.X</code> IP address range that users can access with the VPN or {{site.data.keyword.dl_full_notm}} connection. If you enable only the private service endpoint, you can use the OpenShift web console to create the private NLB.
+The {{site.data.keyword.openshiftshort}} master is accessible through the private service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example) for VPC infrastructure, or for classic infrastructure, a [VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl). However, communication with the Kubernetes master over the private service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection or through {{site.data.keyword.dl_full_notm}}. You can expose the private service endpoint of the master for your cluster users by using a private network load balancer (NLB). The private NLB exposes the private service endpoint of the master as an internal <code>10.X.X.X</code> IP address range that users can access with the VPN or {{site.data.keyword.dl_full_notm}} connection. If you enable only the private service endpoint, you can use the {{site.data.keyword.openshiftshort}} web console to create the private NLB.
 {: shortdesc}
 
 ### Accessing classic clusters through the private service endpoint
@@ -135,7 +189,7 @@ The OpenShift master is accessible through the private service endpoint if autho
 
 
 
-1. Log in to your [OpenShift cluster](#access_public_se).
+1. Log in to your [{{site.data.keyword.openshiftshort}} cluster](#access_public_se).
 
 3. Get the private service endpoint URL and port for your cluster.
   ```
@@ -263,15 +317,13 @@ The OpenShift master is accessible through the private service endpoint if autho
 
 
 
-1. Log in to your [OpenShift cluster](#access_public_se).
+1. Log in to your [{{site.data.keyword.openshiftshort}} cluster](#access_public_se).
 
-2. If you created a VPC cluster with only the private service endpoint, [temporarily enable the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se) to create the `LoadBalancer` service for the private service endpoint.
-
-3. Set up your {{site.data.keyword.vpc_short}} VPN.
+2. Set up your {{site.data.keyword.vpc_short}} VPN.
   1. [Configure a VPN gateway on your local machine](/docs/vpc?topic=vpc-vpn-onprem-example#configuring-onprem-gateway). For example, you might choose to set up StrongSwan on your machine.
   2. [Create a VPN gateway in your VPC, and create the connection between the VPC VPN gateway and your local VPN gateway](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console#vpn-ui). If you have a multizone cluster, you must create a VPC gateway on a subnet in each zone where you have worker nodes.
 
-4. Get the private service endpoint URL and port for your cluster.
+3. Get the private service endpoint URL and port for your cluster.
   ```
   ibmcloud oc cluster get -c <cluster_name_or_ID>
   ```
@@ -292,7 +344,7 @@ The OpenShift master is accessible through the private service endpoint if autho
   ```
   {: screen}
 
-5. Create a YAML file that is named `oc-api-via-nlb.yaml`. This YAML creates a private `LoadBalancer` service and exposes the private service endpoint through that NLB. Replace `<private_service_endpoint_port>` with the port you found in the previous step.
+4. Create a YAML file that is named `oc-api-via-nlb.yaml`. This YAML creates a private `LoadBalancer` service and exposes the private service endpoint through that NLB. Replace `<private_service_endpoint_port>` with the port you found in the previous step.
    ```yaml
    apiVersion: v1
    kind: Service
@@ -321,14 +373,14 @@ The OpenShift master is accessible through the private service endpoint if autho
    ```
    {: codeblock}
 
-6. To create the private NLB, you must be connected to the cluster master. Because you cannot yet connect through the private service endpoint from a VPN or {{site.data.keyword.dl_full_notm}}, you must connect to the cluster master and create the NLB by using the public service endpoint or OpenShift web console.
- * Public service endpoint enabled: You already have access to the master.
-   1. Apply the configuration file that you previously created.
+6. To create the private NLB, you must be connected to the cluster master. Because you cannot yet connect through the private service endpoint from a VPN or {{site.data.keyword.dl_full_notm}}, you must connect to the cluster master and create the NLB by using the public service endpoint or {{site.data.keyword.openshiftshort}} web console.
+  * Public service endpoint enabled: You already have access to the master.
+    1. Apply the configuration file that you previously created.
       ```
       oc apply -f oc-api-via-nlb.yaml
       ```
       {: pre}
-   2. Verify that the `oc-api-via-nlb` NLB is created. In the output, note the `10.x.x.x` **EXTERNAL-IP** address. This IP address exposes the private service endpoint for the cluster master on the port that you specified in your YAML file.
+    2. Verify that the `oc-api-via-nlb` NLB is created. In the output, note the `10.x.x.x` **EXTERNAL-IP** address. This IP address exposes the private service endpoint for the cluster master on the port that you specified in your YAML file.
       ```
       oc get svc -o wide
       ```
@@ -341,8 +393,8 @@ The OpenShift master is accessible through the private service endpoint if autho
       ...
       ```
       {: screen}
-  * Private service endpoint enabled only: Use the OpenShift web console dashboard to create the NLB. The web console automatically routes all requests to the private service endpoint of the master.
-    1. From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your OpenShift cluster, then click **OpenShift web console**.
+  * Private service endpoint enabled only: Use the {{site.data.keyword.openshiftshort}} web console dashboard to create the NLB. The web console automatically routes all requests to the private service endpoint of the master.
+    1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **{{site.data.keyword.openshiftshort}} web console**.
     2. In the **Networking** tab, click **Services**
     3. Click **Create Service**.
     4. Paste the contents of the `kube-api-via-nlb.yaml` file, and click **Create**.
@@ -381,16 +433,16 @@ The OpenShift master is accessible through the private service endpoint if autho
 
 
 
-## Accessing OpenShift clusters from automation tools by using an API key
+## Accessing {{site.data.keyword.openshiftshort}} clusters from automation tools by using an API key
 {: #access_automation}
 
-Red Hat OpenShift on IBM Cloud is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). With IAM, you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the OpenShift console, your IAM identity is used to generate an OpenShift login token that you can use to log in to the terminal. You can automate logging in to your cluster by creating an IAM API key or service ID to use for the `oc login` command.
+{{site.data.keyword.openshiftlong_notm}} is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). With IAM, you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the {{site.data.keyword.openshiftshort}} console, your IAM identity is used to generate an {{site.data.keyword.openshiftshort}} login token that you can use to log in to the terminal. You can automate logging in to your cluster by creating an IAM API key or service ID to use for the `oc login` command.
 {: shortdesc}
 
-### Using an API key to log in to OpenShift clusters
+### Using an API key to log in to {{site.data.keyword.openshiftshort}} clusters
 {: #access_api_key}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an OpenShift cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/account?topic=account-manapikey).
+You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an {{site.data.keyword.openshiftshort}} cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/account?topic=account-manapikey).
 {: shortdesc}
 
 1.  Create an {{site.data.keyword.cloud_notm}} API key.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
@@ -409,7 +461,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```
         {: pre}
-3.  Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an OpenShift access token. You can log in from the CLI or API. For more information, see the [OpenShift docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
+3.  Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an {{site.data.keyword.openshiftshort}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
 
     **Log in by using the `oc` CLI**:
     Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value.
@@ -418,7 +470,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
     ```
     {: pre}
 
-    **Log in by running OpenShift API requests directly against your cluster**:
+    **Log in by running {{site.data.keyword.openshiftshort}} API requests directly against your cluster**:
     Log in to your cluster with the API such as via a curl request.
 
     1.  Get the **Master URL** of your cluster.
@@ -439,7 +491,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 
         ```
         {: screen}
-    2.  <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4 only**: Get the token endpoint of the OpenShift `oauth` server.
+    2.  <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4 only**: Get the token endpoint of the {{site.data.keyword.openshiftshort}} `oauth` server.
         ```
         curl <master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
         ```
@@ -450,8 +502,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         <token_endpoint>/oauth/token
         ```
     3.  Log in to the cluster with the endpoint that you previously retrieved.
-        * <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
-        * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift version 3.11**: Replace `<URL>` with the master URL.
+        * <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
+        * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 3.11**: Replace `<URL>` with the master URL.
 
         Example curl request:
         ```
@@ -469,7 +521,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ...
         ```
         {: screen}
-    5.  Use your cluster master URL and the access token to access the OpenShift API, such as to list all the pods in your cluster.
+    5.  Use your cluster master URL and the access token to access the {{site.data.keyword.openshiftshort}} API, such as to list all the pods in your cluster.
 
         Example curl request:
         ```
@@ -477,22 +529,22 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```
         {: pre}
 
-### Using a service ID to log in to OpenShift clusters
+### Using a service ID to log in to {{site.data.keyword.openshiftshort}} clusters
 {: #access_service_id}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an OpenShift cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
+You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an {{site.data.keyword.openshiftshort}} cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
 {: shortdesc}
 
 1.  Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.
     ```
-    ibmcloud iam service-id-create <cluster_name>-id --description "Service ID for Red Hat OpenShift on IBM Cloud cluster <cluster_name>"
+    ibmcloud iam service-id-create <cluster_name>-id --description "Service ID for {{site.data.keyword.openshiftlong_notm}} cluster <cluster_name>"
     ```
     {: pre}
 
     Example output:
     ```
     Name          <cluster_name>-id   
-    Description   Service ID for Red Hat OpenShift on IBM Cloud cluster <cluster_name>  
+    Description   Service ID for {{site.data.keyword.openshiftlong_notm}} cluster <cluster_name>  
     CRN           crn:v1:bluemix:public:iam-identity::a/1aa111aa1a11111aaa1a1111aa1aa111::serviceid:ServiceId-bbb2b2b2-2bb2-2222-b222-b2b2b2222b22   
     Bound To      crn:v1:bluemix:public:::a/1aa111aa1a11111aaa1a1111aa1aa111:::   
     Version       1-c3c333333333ccccc33333c33cc3cc33   
@@ -500,7 +552,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     UUID          ServiceId-bbb2b2b2-2bb2-2222-b222-b2b2b2222b22
     ```
     {: screen}
-2.  Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to Red Hat OpenShift on IBM Cloud.
+2.  Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to {{site.data.keyword.openshiftlong_notm}}.
     ```
     ibmcloud iam service-policy-create <cluster_service_ID> --service-name containers-kubernetes --roles <service_access_role> --service-instance <cluster_ID>
     ```
@@ -515,24 +567,24 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     <tbody>
     <tr>
     <td><code><em>&lt;cluster_service_ID&gt;</em></code></td>
-    <td>Required. Enter the service ID that you previously created for your OpenShift cluster.</td>
+    <td>Required. Enter the service ID that you previously created for your {{site.data.keyword.openshiftshort}} cluster.</td>
     </tr>
     <tr>
     <td><code>--service-name <em>containers-kubernetes</em></code></td>
-    <td>Required. Enter `containers-kubernetes` so that the IAM policy is for Red Hat OpenShift on IBM Cloud clusters.</td>
+    <td>Required. Enter `containers-kubernetes` so that the IAM policy is for {{site.data.keyword.openshiftlong_notm}} clusters.</td>
     </tr>
     <tr>
     <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-    <td>Required. Enter the access role that you want the service ID to have to your OpenShift cluster. [Platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform) permit cluster management activities such as creating worker nodes. [Service roles](/docs/openshift?topic=openshift-access_reference#service) correspond to RBAC roles that permit OpenShift management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform roles); and `Reader`, `Writer`, and `Manager` (service roles).</td>
+    <td>Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.openshiftshort}} cluster. [Platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform) permit cluster management activities such as creating worker nodes. [Service roles](/docs/openshift?topic=openshift-access_reference#service) correspond to RBAC roles that permit {{site.data.keyword.openshiftshort}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform roles); and `Reader`, `Writer`, and `Manager` (service roles).</td>
     </tr>
     <tr>
       <td><code>--service-instance <em>&lt;cluster_ID&gt;</em></code></td>
-      <td>To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run `ibmcloud oc clusters`.<p class="note">If you do not include the service instance, the access policy grants the service ID access to to all your {{site.data.keyword.containerlong_notm}} clusters, Kubernetes and OpenShift. You can also scope the access policy to a region (`--region`) or resource group (`--resource-group-name`).</td>
+      <td>To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run `ibmcloud oc clusters`.<p class="note">If you do not include the service instance, the access policy grants the service ID access to to all your {{site.data.keyword.containerlong_notm}} clusters, Kubernetes and {{site.data.keyword.openshiftshort}}. You can also scope the access policy to a region (`--region`) or resource group (`--resource-group-name`).</td>
     </tr>
     </tbody></table>
 3.  Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
     ```
-    ibmcloud iam service-api-key-create <cluster_name>-key <service_ID> --description "API key for service ID <service_ID> in OpenShift cluster <cluster_name>"
+    ibmcloud iam service-api-key-create <cluster_name>-key <service_ID> --description "API key for service ID <service_ID> in {{site.data.keyword.openshiftshort}} cluster <cluster_name>"
     ```
     {: pre}
 
@@ -541,7 +593,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     Please preserve the API key! It cannot be retrieved after it's created.
 
     Name          <cluster_name>-key   
-    Description   API key for service ID <service_ID> in OpenShift cluster <cluster_name>
+    Description   API key for service ID <service_ID> in {{site.data.keyword.openshiftshort}} cluster <cluster_name>
     Bound To      crn:v1:bluemix:public:iam-identity::a/1bb222bb2b33333ddd3d3333ee4ee444::serviceid:ServiceId-ff55555f-5fff-6666-g6g6-777777h7h7hh   
     Created At    2019-02-01T19:06+0000   
     API Key       i-8i88ii8jjjj9jjj99kkkkkkkkk_k9-llllll11mmm1   
@@ -560,20 +612,20 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
         ibmcloud oc cluster config -c <cluster_name_or_ID>
         ```
         {: pre}
-5.  [Use the service ID's API key to log in to your OpenShift cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
+5.  [Use the service ID's API key to log in to your {{site.data.keyword.openshiftshort}} cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
     ```
     oc login -u apikey -p <API_key>
     ```
     {: pre}
 6.  Verify that the service ID can perform the actions that you authorized.
 
-    Example: If you assigned a `Reader` service role, the service ID can list pods in your OpenShift project.
+    Example: If you assigned a `Reader` service role, the service ID can list pods in your {{site.data.keyword.openshiftshort}} project.
     ```
     oc get pods
     ```
     {: pre}
 
-    Example: If you assigned a `Manager` service role, the service ID can list the users in your OpenShift cluster. The ID of your IAM service ID is in the **Identities** output. Other individual users might be identified by their email address and IBMid.
+    Example: If you assigned a `Manager` service role, the service ID can list the users in your {{site.data.keyword.openshiftshort}} cluster. The ID of your IAM service ID is in the **Identities** output. Other individual users might be identified by their email address and IBMid.
     ```
     oc get users
     ```
@@ -595,11 +647,11 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 ## Accessing the cluster master via admission controllers and webhooks
 {: #access_webhooks}
 
-Admission controllers intercept authorized API requests from various Kubernetes resources before the requests reach the API server that runs in your Red Hat OpenShift on IBM Cloud cluster master. Mutating admission webhooks might modify the request, and validating admission webhooks check the request. If either webhook rejects a request, the entire request fails. Advanced features, whether built-in or added on, often require admission controllers as a security precaution and to control what requests are sent to the API server. For more information, see [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} and [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} in the Kubernetes documentation.
+Admission controllers intercept authorized API requests from various Kubernetes resources before the requests reach the API server that runs in your {{site.data.keyword.openshiftlong_notm}} cluster master. Mutating admission webhooks might modify the request, and validating admission webhooks check the request. If either webhook rejects a request, the entire request fails. Advanced features, whether built-in or added on, often require admission controllers as a security precaution and to control what requests are sent to the API server. For more information, see [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} and [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} in the Kubernetes documentation.
 
 
 **Can I create my own admission controllers?**<br>
-Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [OpenShift](https://docs.openshift.com/container-platform/4.3/architecture/admission-plug-ins.html){: external} documentation for more information.
+Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.openshiftshort}}](https://docs.openshift.com/container-platform/4.3/architecture/admission-plug-ins.html){: external} documentation for more information.
 
 As noted in the Kubernetes documentation, you can use admission controllers for operations that are otherwise handled by the control plane. As such, take great caution when you configure a custom admission controller. You are responsible for any changes that happen in your cluster because of a custom admission controller.
 {: important}

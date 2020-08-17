@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -10,37 +10,91 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
-# Red Hat OpenShift on IBM Cloud CLI
+# {{site.data.keyword.openshiftlong_notm}} CLI
 {: #kubernetes-service-cli}
 
-Refer to these commands to create and manage **both community Kubernetes or OpenShift clusters** in {{site.data.keyword.openshiftlong}}.
+Refer to these commands to create and manage **both community Kubernetes or {{site.data.keyword.openshiftshort}} clusters** in {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
 * **Community Kubernetes**: [Install the CLI plug-in](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps), which uses the `ibmcloud ks` alias.
@@ -50,6 +104,8 @@ In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-in
 
 Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_notm}} CLI reference](/docs/Registry?topic=container-registry-cli-plugin-containerregcli). Looking for `kubectl` commands? See the [Kubernetes documentation](https://kubectl.docs.kubernetes.io/){: external}.
 {:tip}
+
+
 
 ## Using version 1.0 of the plug-in
 {: #cs_beta}
@@ -68,7 +124,7 @@ Check out the following syntax and behavior changes between each version of the 
 | Repeated arguments<ul><li>Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)</li><li>Beta: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
 | Flag format<ul><li>Legacy: Camel-case (`--showResources`)</li><li>Beta: Dashed (`--show-resources`)</li></ul> | Legacy | Legacy | Legacy and beta | Beta |
 | Cluster context provided by `ibmcloud oc cluster-config`<ul><li>Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.</li><li>Beta: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [last file that is set by the `KUBECONFIG` environment variable](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).</li></ul> | Legacy | Legacy | Legacy | Beta |
-{: caption="Beta versions of the redesigned Red Hat OpenShift on IBM Cloud plug-in" caption-side="top"}
+{: caption="Beta versions of the redesigned {{site.data.keyword.openshiftlong_notm}} plug-in" caption-side="top"}
 {: summary="The rows are read from left to right, with the functionality in column one, version 0.2 of the CLI in column two, version 0.3 in column three, version 0.4 in column four, and version 1.0 in column five."}
 
 <br />
@@ -161,7 +217,7 @@ With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API]
 The following image depicts the structure and grouping of the `ibmcloud oc` commands.
 {: shortdesc}
 
-![Image of the structure and groupings of commands in Red Hat OpenShift on IBM Cloud plug-in](images/cs_cli_ref_imagemap.png)
+![Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in](images/cs_cli_ref_imagemap.png)
 
 ## `cluster` commands
 {: #cluster}
@@ -378,7 +434,7 @@ After logging in to {{site.data.keyword.cloud_notm}}, download the Kubernetes co
 
 The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your terminal session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).
 
-Red Hat OpenShift on IBM Cloud plug-in CLI versions 0.4 and earlier are deprecated or unsupported. In these earlier versions, the `cluster config` command downloaded the `kubeconfig` file to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`. With the relase of version 1.0 on 16 March 2020, the `cluster config` behavior changes permanently and is not backwards compatible. To maintain CLI functionality, update and test any automation that you built with earlier CLI versions now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in. If you still need a separate `kubeconfig` file per cluster instead of the new merged `kubeconfig` file behavior, see [Creating a temporary `kubeconfig` file](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig).
+{{site.data.keyword.openshiftlong_notm}} plug-in CLI versions 0.4 and earlier are deprecated or unsupported. In these earlier versions, the `cluster config` command downloaded the `kubeconfig` file to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`. With the relase of version 1.0 on 16 March 2020, the `cluster config` behavior changes permanently and is not backwards compatible. To maintain CLI functionality, update and test any automation that you built with earlier CLI versions now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in. If you still need a separate `kubeconfig` file per cluster instead of the new merged `kubeconfig` file behavior, see [Creating a temporary `kubeconfig` file](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig).
 {: deprecated}
 
 ```
@@ -392,7 +448,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac]
 
 **Minimum required permissions**: **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform role or only a service role, additional constraints apply.
 * **Platform**: If you have only a platform role, you can perform this command, but you need a [service role](/docs/openshift?topic=openshift-users#platform) or a [custom RBAC policy](/docs/openshift?topic=openshift-users#role-binding) to perform Kubernetes actions in the cluster.
-* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name, ID, and master URL because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can launch the OpenShift web console by opening your browser to `<master_URL>/console`.
+* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name, ID, and master URL because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can launch the {{site.data.keyword.openshiftshort}} web console by opening your browser to `<master_URL>/console`.
 
 **Command options**:
 <dl>
@@ -490,7 +546,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 
 <dt><code>--private-service-endpoint</code></dt>
 
-<dd><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11 clusters only in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11 clusters only in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--public-service-endpoint</code></dt>
 <dd>Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. For 3.11 clusters only, i you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
@@ -525,7 +581,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 <dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the OpenShift license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
 <dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -606,7 +662,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <dd>The VPC subnet to assign the cluster. This value is required. To list available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2`.</dd>
 
 <dt><code>--version 4.3_openshift</code></dt>
-<dd>VPC Gen 2 clusters are supported for OpenShift version 4 only.</dd>
+<dd>VPC Gen 2 clusters are supported for {{site.data.keyword.openshiftshort}} version 4 only.</dd>
 
 <dt><code>--flavor <em>FLAVOR</em></code></dt>
 <dd>Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.</dd>
@@ -639,7 +695,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap.</p></dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the OpenShift license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
 <dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
 <dd>Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. This value is optional. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
@@ -906,7 +962,7 @@ ibmcloud oc cluster master update --cluster my_cluster
 ### `ibmcloud oc cluster pull-secret apply`
 {: #cs_cluster_pull_secret_apply}
 
-Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create a policy for the service ID that assigns the **Reader** service access role in {{site.data.keyword.registrylong_notm}}, and then create an API key for the service ID. The API key is then stored in a Kubernetes image pull secret so that you can pull images from your {{site.data.keyword.registrylong_notm}} namespaces for containers that are in the `default` OpenShift project. This process happens automatically when you create a cluster. If you got an error during the cluster creation process or have an existing cluster, you can use this command to apply the process again.
+Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create a policy for the service ID that assigns the **Reader** service access role in {{site.data.keyword.registrylong_notm}}, and then create an API key for the service ID. The API key is then stored in a Kubernetes image pull secret so that you can pull images from your {{site.data.keyword.registrylong_notm}} namespaces for containers that are in the `default` {{site.data.keyword.openshiftshort}} project. This process happens automatically when you create a cluster. If you got an error during the cluster creation process or have an existing cluster, you can use this command to apply the process again.
 {: shortdesc}
 
 This API key method replaces the previous method of authorizing a cluster to access {{site.data.keyword.registrylong_notm}} by automatically creating a [token](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external} and storing the token in an image pull secret. Now, by using IAM API keys to access {{site.data.keyword.registrylong_notm}}, you can customize IAM policies for the service ID to restrict access to your namespaces or specific images. For example, you can change the service ID policies in the cluster's image pull secret to pull images from only a certain registry region or namespace. Before you can customize IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#existing_users).
@@ -983,7 +1039,7 @@ ibmcloud oc cluster rm --cluster my_cluster
 ### `ibmcloud oc cluster service bind`
 {: #cs_cluster_service_bind}
 
-Add an IBM Cloud service to a cluster by binding the service instance to a OpenShift project. This command creates service credentials of an {{site.data.keyword.cloud_notm}} service and stores these credentials in a Kubernetes secret in your cluster.
+Add an IBM Cloud service to a cluster by binding the service instance to a {{site.data.keyword.openshiftshort}} project. This command creates service credentials of an {{site.data.keyword.cloud_notm}} service and stores these credentials in a Kubernetes secret in your cluster.
 {: shortdesc}
 
 To view available {{site.data.keyword.cloud_notm}} services from the {{site.data.keyword.cloud_notm}} catalog, run `ibmcloud service offerings`. **Note**: You can add only {{site.data.keyword.cloud_notm}} services that support service keys. For more information about service binding and what services you can add to your cluster, see [Adding services by using IBM Cloud service binding](/docs/openshift?topic=openshift-service-binding).
@@ -1005,7 +1061,7 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESP
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The name of the OpenShift project where you want to create the Kubernetes secret for your service credentials. This value is required.</dd>
+<dd>The name of the {{site.data.keyword.openshiftshort}} project where you want to create the Kubernetes secret for your service credentials. This value is required.</dd>
 
 <dt><code>--key <em>SERVICE_INSTANCE_KEY</em></code></dt>
 <dd>The name or GUID of an existing service key. This value is optional. When you use the `service-binding` command, new service credentials are automatically created for your service instance and assigned the IAM **Writer** service access role for IAM-enabled services. If you want to use an existing service key that you created earlier, use this option. If you define a service key, you cannot set the `--role` option at the same time because your service keys are already created with a specific IAM service access role. </dd>
@@ -1032,7 +1088,7 @@ ibmcloud oc cluster service bind --cluster my_cluster --namespace my_namespace -
 ### `ibmcloud oc cluster service ls`
 {: #cs_cluster_services}
 
-List the services that are bound to one or all of the OpenShift project in a cluster. If no options are specified, the services for the default project are displayed.
+List the services that are bound to one or all of the {{site.data.keyword.openshiftshort}} project in a cluster. If no options are specified, the services for the default project are displayed.
 {: shortdesc}
 
 ```
@@ -1075,7 +1131,7 @@ ibmcloud oc cluster service ls --cluster my_cluster --namespace my_namespace
 ### `ibmcloud oc cluster service unbind`
 {: #cs_cluster_service_unbind}
 
-Remove an {{site.data.keyword.cloud_notm}} service from a cluster by unbinding it from a OpenShift project.
+Remove an {{site.data.keyword.cloud_notm}} service from a cluster by unbinding it from a {{site.data.keyword.openshiftshort}} project.
 {: shortdesc}
 
 When you remove an {{site.data.keyword.cloud_notm}} service, the service credentials are removed from the cluster. If a pod is still using the service, it fails because the service credentials cannot be found.
@@ -1098,7 +1154,7 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAME
 <dd>The name or ID of the cluster. This value is required.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The name of the OpenShift project. This value is required.</dd>
+<dd>The name of the {{site.data.keyword.openshiftshort}} project. This value is required.</dd>
 
 <dt><code>--service <em>SERVICE_INSTANCE</em></code></dt>
 <dd>The name of the {{site.data.keyword.cloud_notm}} service instance that you want to remove. To find the name of the service instance, run `ibmcloud oc cluster service ls --cluster <cluster_name_or_ID>`. This value is required.</dd>
@@ -1805,7 +1861,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 <dd>Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`. This value is optional.</ul></dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the OpenShift license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
 <dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -1859,7 +1915,7 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 <dd>Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`. This value is optional.</ul></dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an OpenShift entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the OpenShift license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
 <dt><code>-q</code>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -3328,7 +3384,7 @@ ibmcloud oc logging collect-status --cluster mycluster
 ### `ibmcloud oc logging config create`
 {: #cs_logging_create}
 
-Create a logging configuration. You can use this command to forward logs for containers, applications, worker nodes, OpenShift clusters, and Ingress application load balancers to an external syslog server.
+Create a logging configuration. You can use this command to forward logs for containers, applications, worker nodes, {{site.data.keyword.openshiftshort}} clusters, and Ingress application load balancers to an external syslog server.
 {: shortdesc}
 ```
 ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --type syslog [--namespace KUBERNETES_NAMESPACE] [--hostname LOG_SERVER_HOSTNAME_OR_IP] [--port LOG_SERVER_PORT] [--space CLUSTER_SPACE] [--org CLUSTER_ORG] [--app-containers CONTAINERS] [--app-paths PATHS_TO_LOGS] [--syslog-protocol PROTOCOL] [--skip-validation] [--force-update] [--output json] [-q]
@@ -3353,7 +3409,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --typ
 <dd>Enter <code>syslog</code> to forward logs to an external server.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The OpenShift project that you want to forward logs from. Log forwarding is not supported for the <code>ibm-system</code> and <code>kube-system</code> OpenShift projects. This value is valid only for the container log source and is optional. If you do not specify a project, then all projects in the cluster use this configuration.</dd>
+<dd>The {{site.data.keyword.openshiftshort}} project that you want to forward logs from. Log forwarding is not supported for the <code>ibm-system</code> and <code>kube-system</code> {{site.data.keyword.openshiftshort}} projects. This value is valid only for the container log source and is optional. If you do not specify a project, then all projects in the cluster use this configuration.</dd>
 
 <dt><code>--hostname <em>LOG_SERVER_HOSTNAME</em></code></dt>
 <dd>The hostname or IP address of the log collector server.</dd>
@@ -3523,7 +3579,7 @@ ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LO
 <dd>The log forwarding protocol that you want to use. Currently, <code>syslog</code> and <code>ibm</code> are supported. This value is required.</dd>
 
 <dt><code>-n, --namespace <em>NAMESPACE</em></code>
-<dd>The OpenShift project that you want to forward logs from. Log forwarding is not supported for the <code>ibm-system</code> and <code>kube-system</code> OpenShift projects. This value is valid only for the <code>container</code> log source. If you do not specify a project, then all projects in the cluster use this configuration.</dd>
+<dd>The {{site.data.keyword.openshiftshort}} project that you want to forward logs from. Log forwarding is not supported for the <code>ibm-system</code> and <code>kube-system</code> {{site.data.keyword.openshiftshort}} projects. This value is valid only for the <code>container</code> log source. If you do not specify a project, then all projects in the cluster use this configuration.</dd>
 
 <dt><code>--hostname <em>LOG_SERVER_HOSTNAME</em></code></dt>
 <dd>The hostname or IP address of the log collector server.</dd>
@@ -3601,7 +3657,7 @@ ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-c
 <dd>The logging configuration ID. If not provided, the filter is applied to all of the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the <code>--show-matching-configs</code> flag with the command. To specify multiple IDs, use multiple flags, such as `-lc id1 -lc id2`. This value is optional.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The OpenShift project from which you want to filter logs. This value is optional.</dd>
+<dd>The {{site.data.keyword.openshiftshort}} project from which you want to filter logs. This value is optional.</dd>
 
 <dt><code>--container <em>CONTAINER_NAME</em></code></dt>
 <dd>The name of the container from which you want to filter out logs. This flag applies only when you are using log type <code>container</code>. This value is optional.</dd>
@@ -3762,7 +3818,7 @@ ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TY
 <dd>The logging configuration ID. If not provided, the filter is applied to all of the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the <code>--show-matching-configs</code> flag with the command. To specify multiple IDs, use multiple flags, such as `-lc id1 -lc id2`. This value is optional.</dd>
 
 <dt><code>-n, --namespace <em>KUBERNETES_NAMESPACE</em></code></dt>
-<dd>The OpenShift project from which you want to filter logs. This value is optional.</dd>
+<dd>The {{site.data.keyword.openshiftshort}} project from which you want to filter logs. This value is optional.</dd>
 
 <dt><code>--container <em>CONTAINER_NAME</em></code></dt>
 <dd>The name of the container from which you want to filter out logs. This flag applies only when you are using log type <code>container</code>. This value is optional.</dd>
@@ -3916,7 +3972,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 <dd>The network load balancer IP address that you want to register. To see your NLB IP addresses, run <code>oc get svc</code>. To specify multiple IP addresses, use multiple `--ip` flags.</dd>
 
 <dt><code>--secret-namespace <em>NAMESPACE</em></code></dt>
-<dd>The OpenShift project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
+<dd>The {{site.data.keyword.openshiftshort}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
 
 <dt><code>--type public</code></dt>
 <dd>The subdomain type. Currently only `public` is supported.</dd>
@@ -3966,7 +4022,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --lb-host VPC_LB_HOSTNAME 
 <dd>The VPC load balancer hostname. To see VPC load balancer hostnames, run `oc get svc -o wide`.</dd>
 
 <dt><code>--secret-namespace <em>NAMESPACE</em></code></dt>
-<dd>The OpenShift project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
+<dd>The {{site.data.keyword.openshiftshort}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
 
 <dt><code>--type <em>(public|private)</em></code></dt>
 <dd>The subdomain type: public or private.</dd>
@@ -4632,7 +4688,7 @@ ibmcloud oc api-key reset --region REGION [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -4673,7 +4729,7 @@ ibmcloud oc credential get --region REGION [-q] [--output json]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -4723,7 +4779,7 @@ ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastruc
 <dd>IBM Cloud infrastructure account API key. This value is required. To view or generate an infrastructure API key, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).</dd>
 
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -4757,7 +4813,7 @@ ibmcloud oc credential unset --region REGION [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Do not show the message of the day or update reminders. This value is optional.</dd>
@@ -4775,7 +4831,7 @@ ibmcloud oc credential unset --region us-south
 ## `infra-permissions` commands
 {: #infra-commands}
 
-Check classic IBM Cloud infrastructure permissions that are used in Red Hat OpenShift on IBM Cloud.
+Check classic IBM Cloud infrastructure permissions that are used in {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
 The `ibmcloud oc infra-permissions` commands check only classic IBM Cloud infrastructure, not VPC permissions.
@@ -4817,7 +4873,7 @@ ibmcloud oc infra-permissions get --region REGION [--output json] [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`. This value is required.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`. This value is required.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -5137,7 +5193,7 @@ ibmcloud oc vlan spanning get --region REGION [--output json] [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in Red Hat OpenShift on IBM Cloud: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Prints the command output in JSON format. This value is optional.</dd>
@@ -5455,7 +5511,7 @@ Region:                us-south
 ## `init` command
 {: #cs_init}
 
-Initialize the Red Hat OpenShift on IBM Cloud plug-in or specify the region where you want to create or access OpenShift clusters.
+Initialize the {{site.data.keyword.openshiftlong_notm}} plug-in or specify the region where you want to create or access {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
 Region-specific endpoints are deprecated. Use the [global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint) instead.
@@ -5523,7 +5579,7 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-q]
 ### `ibmcloud oc script update`
 {: #script_update}
 
-Rewrite scripts that call kubernetes-service commands. Legacy-structured commands are replaced with beta-structured commands. For a list of all changes between the legacy and beta formats, see the comparison table in [Using the beta Red Hat OpenShift on IBM Cloud plug-in](#cs_beta).
+Rewrite scripts that call kubernetes-service commands. Legacy-structured commands are replaced with beta-structured commands. For a list of all changes between the legacy and beta formats, see the comparison table in [Using the beta {{site.data.keyword.openshiftlong_notm}} plug-in](#cs_beta).
 {: shortdesc}
 
 <p class="important">Most command behavior and syntax changes in version 1.0. These changes are not backwards compatible. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run. Do not change the `IKS_BETA_VERSION` environment variable to a different version.</p>
@@ -5551,7 +5607,7 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 
 </br>
 
-To use this command to prepare your automation scripts for the release of version 1.0 of the Red Hat OpenShift on IBM Cloud plug-in:
+To use this command to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.openshiftlong_notm}} plug-in:
 1. Run the command on a test script without the `--in-place` flag.
     ```
     ibmcloud oc script update ./mytestscript.sh
