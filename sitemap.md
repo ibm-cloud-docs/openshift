@@ -261,6 +261,17 @@ subcollection: openshift
 * [Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
+[Migrating cluster resources from VPC Gen 1 to VPC Gen 2](/docs/openshift?topic=openshift-vpc_migrate_tutorial)
+* [Objectives](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_ks_objectives)
+* [Audience](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_ks_audience)
+* [Prerequisites](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_ks_prereqs)
+* [Plan your migration to VPC Gen 2](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_plan)
+* [Create your Gen 2 VPC, resources, and cluster](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_create_gen2)
+* [Set up an {{site.data.keyword.cos_short}} bucket](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_cos)
+* [Create a Velero backup of your Gen 1 cluster](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_velero_gen1)
+* [Restore a Velero backup to your Gen 2 cluster](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_velero_gen2)
+* [What's next?](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_whats-next)
+
 [Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
 
 [OpenShift interactive learning portal](https://learn.openshift.com/){: external}
