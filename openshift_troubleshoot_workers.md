@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,43 +10,97 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
 # Worker nodes
 {: #cs_troubleshoot_clusters}
 
-As you use Red Hat OpenShift on IBM Cloud, consider these techniques for general troubleshooting and debugging your cluster and cluster master.
+As you use {{site.data.keyword.openshiftlong_notm}}, consider these techniques for general troubleshooting and debugging your cluster and cluster master.
 {: shortdesc}
 
 **General ways to resolve issues**<br>
 1. Keep your cluster environment up to date.
    * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
-   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/containers?topic=containers-cs_versions).
+   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [{{site.data.keyword.openshiftshort}}](/docs/containers?topic=containers-cs_versions).
 2. Make sure that your command line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
    * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
@@ -96,7 +150,7 @@ Review the options to debug your worker nodes and find the root causes for failu
        </tr>
        <tr>
        <td>`Deployed`</td>
-       <td>Updates are successfully deployed to your worker node. After updates are deployed, Red Hat OpenShift on IBM Cloud starts a health check on the worker node. After the health check is successful, the worker node goes into a <code>Normal</code> state. Worker nodes in a <code>Deployed</code> state usually are ready to receive workloads, which you can check by running <code>oc get nodes</code> and confirming that the state shows <code>Normal</code>. </td>
+       <td>Updates are successfully deployed to your worker node. After updates are deployed, {{site.data.keyword.openshiftlong_notm}} starts a health check on the worker node. After the health check is successful, the worker node goes into a <code>Normal</code> state. Worker nodes in a <code>Deployed</code> state usually are ready to receive workloads, which you can check by running <code>oc get nodes</code> and confirming that the state shows <code>Normal</code>. </td>
        </tr>
         <tr>
           <td>`Deploying`</td>
@@ -132,7 +186,7 @@ Review the options to debug your worker nodes and find the root causes for failu
         </tr>
         <tr>
          <td>`Unknown`</td>
-         <td>The Kubernetes master is not reachable for one of the following reasons:<ul><li>You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) the worker node.</li><li>You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. Red Hat OpenShift on IBM Cloud requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/openshift?topic=openshift-firewall#vyatta_firewall).</li><li>The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).</li></ul></td>
+         <td>The Kubernetes master is not reachable for one of the following reasons:<ul><li>You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) the worker node.</li><li>You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. {{site.data.keyword.openshiftlong_notm}} requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/openshift?topic=openshift-firewall#vyatta_firewall).</li><li>The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</li></ul></td>
     </tr>
        <tr>
           <td>`Warning`</td>
@@ -170,7 +224,7 @@ Review common error messages and learn how to resolve them. Messages might begin
     <tbody>
       <tr>
         <td>Your account is currently prohibited from ordering 'Computing Instances'.</td>
-        <td>Your IBM Cloud infrastructure account might be restricted from ordering compute resources. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).</td>
+        <td>Your IBM Cloud infrastructure account might be restricted from ordering compute resources. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</td>
       </tr>
       <tr>
       <td>Could not place order.<br><br>
@@ -180,7 +234,7 @@ Review common error messages and learn how to resolve them. Messages might begin
       <li>For a single zone cluster, create the cluster in a different zone. For a multizone cluster, add a zone to the cluster.</li>
       <li>Specify a different pair of public and private VLANs for your worker nodes in your IBM Cloud infrastructure account. For worker nodes that are in a worker pool, you can use the <code>ibmcloud oc zone network-set</code> [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set).</li>
       <li>Contact your IBM Cloud infrastructure account manager to verify that you do not exceed an account limit, such as a global quota.</li>
-      <li>Open an [IBM Cloud infrastructure support case](/docs/openshift?topic=openshift-get-help)</li></ul></td>
+      <li>Open an [IBM Cloud infrastructure support case](/docs/containers?topic=containers-get-help)</li></ul></td>
       </tr>
       <tr>
         <td>Could not obtain network VLAN with ID: <code>&lt;vlan id&gt;</code>.</td>
@@ -188,7 +242,7 @@ Review common error messages and learn how to resolve them. Messages might begin
       </tr>
       <tr>
         <td>The location provided for this order is invalid.</td>
-        <td>Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](/docs/openshift?topic=openshift-get-help) to verify that you account is set up correctly.</td>
+        <td>Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](/docs/containers?topic=containers-get-help) to verify that you account is set up correctly.</td>
        </tr>
        <tr>
         <td>The user does not have the necessary {{site.data.keyword.cloud_notm}} classic infrastructure permissions to add servers
@@ -210,7 +264,7 @@ Review common error messages and learn how to resolve them. Messages might begin
       <tr>
   <td>Cannot create IMS portal token, as no IMS account is linked to the selected BSS account</br></br>Provided user not found or active</br></br>User account is currently cancel_pending.</br></br>The worker node instance '&lt;ID&gt;' cannot be found. Review '&lt;provider&gt;' infrastructure user permissions.<br><br>The worker node instance cannot be found. Review '&lt;provider&gt;' infrastructure user permissions.<br><br>The worker node instance cannot be identified. Review '&lt;provider&gt;' infrastructure user permissions.</td>
   <td>The owner of the API key that is used to access the IBM Cloud infrastructure portfolio does not have the required permissions to perform the action, or might be pending deletion.</br></br><strong>As the user</strong>, follow these steps:
-  <ol><li>If you have access to multiple accounts, make sure that you are logged in to the account where you want to work with Red Hat OpenShift on IBM Cloud. </li>
+  <ol><li>If you have access to multiple accounts, make sure that you are logged in to the account where you want to work with {{site.data.keyword.openshiftlong_notm}}. </li>
   <li>Run <code>ibmcloud oc api-key info --cluster &lt;cluster_name_or_ID&gt;</code> to view the current API key owner that is used to access the IBM Cloud infrastructure portfolio. </li>
   <li>Run <code>ibmcloud account list</code> to view the owner of the {{site.data.keyword.cloud_notm}} account that you currently use. </li>
   <li>Contact the owner of the {{site.data.keyword.cloud_notm}} account and report that the API key owner has insufficient permissions in IBM Cloud infrastructure or might be pending to be deleted. </li></ol>
@@ -519,7 +573,7 @@ You cannot view the cluster worker nodes in your classic IBM Cloud infrastructur
 Further, you verified that you have the [proper infrastructure credentials](#cs_credentials).
 
 {: tsCauses}
-The cluster might be provisioned in a classic IBM Cloud infrastructure account that is no longer linked to your Red Hat OpenShift on IBM Cloud account. The cluster is orphaned. Because the resources are in a different account, you do not have the infrastructure credentials to modify the resources.
+The cluster might be provisioned in a classic IBM Cloud infrastructure account that is no longer linked to your {{site.data.keyword.openshiftlong_notm}} account. The cluster is orphaned. Because the resources are in a different account, you do not have the infrastructure credentials to modify the resources.
 
 Consider the following scenario to understand how clusters might become orphaned.
 1.  You have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account.
@@ -534,9 +588,9 @@ Consider the following scenario to understand how clusters might become orphaned
 
 {: tsResolve}
 1.  Check which infrastructure account the region that your cluster is in currently uses to provision clusters.
-    1.  Log in to the [Red Hat OpenShift on IBM Cloud clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+    1.  Log in to the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
     2.  From the table, select your cluster.
-    3.  In the **Overview** tab, check for an **Infrastructure User** field. This field helps you determine if your Red Hat OpenShift on IBM Cloud account uses a different infrastructure account than the default.
+    3.  In the **Overview** tab, check for an **Infrastructure User** field. This field helps you determine if your {{site.data.keyword.openshiftlong_notm}} account uses a different infrastructure account than the default.
         * If you do not see the **Infrastructure User** field, you have a linked Pay-As-You-Go account that uses the same credentials for your infrastructure and platform accounts. The cluster that cannot be modified might be provisioned in a different infrastructure account.
         * If you see an **Infrastructure User** field, you use a different infrastructure account than the one that came with your Pay-As-You-Go account. These different credentials apply to all clusters within the region. The cluster that cannot be modified might be provisioned in your Pay-As-You-Go or a different infrastructure account.
 2.  Check which infrastructure account was used to provision the cluster.
@@ -589,10 +643,10 @@ The worker node instance ID changed. Reload the worker node if bare metal hardwa
 {: screen}
 
 {: tsCauses}
-The machine ID can become inconsistent with the Red Hat OpenShift on IBM Cloud worker record when the machine experiences hardware issues. When IBM Cloud infrastructure resolves this issue, a component can change within the system that the service does not identify.
+The machine ID can become inconsistent with the {{site.data.keyword.openshiftlong_notm}} worker record when the machine experiences hardware issues. When IBM Cloud infrastructure resolves this issue, a component can change within the system that the service does not identify.
 
 {: tsResolve}
-For Red Hat OpenShift on IBM Cloud to re-identify the machine, [reload the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). **Note**: Reloading also updates the machine's [patch version](/docs/containers?topic=containers-changelog).
+For {{site.data.keyword.openshiftlong_notm}} to re-identify the machine, [reload the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). **Note**: Reloading also updates the machine's [patch version](/docs/containers?topic=containers-changelog).
 
 You can also [delete the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_rm). **Note**: Bare metal instances are billed monthly.
 
@@ -646,8 +700,8 @@ Manually update the reference of the private IP address to point to the correct 
 
   ```
   ID                                                 Public IP       Private IP       Machine Type   State     Status   Zone   Version
-  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w1   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       normal    Ready    dal10      1.17.9
-  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w2   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       deleted    -       dal10      1.17.9
+  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w1   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       normal    Ready    dal10      1.17.11
+  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w2   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       deleted    -       dal10      1.17.11
   ```
   {: screen}
 

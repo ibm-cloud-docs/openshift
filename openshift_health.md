@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-17"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -46,22 +100,22 @@ For cluster metrics and app logging and monitoring, {{site.data.keyword.openshif
 ## Understanding options for logging and monitoring
 {: #oc_logmet_options}
 
-To help understand when to use the built-in OpenShift tools or {{site.data.keyword.cloud_notm}} integrations, review the following table.
+To help understand when to use the built-in {{site.data.keyword.openshiftshort}} tools or {{site.data.keyword.cloud_notm}} integrations, review the following table.
 
-<table summary="The rows are read left to right, with the type of solution in column one, the description of the built-in OpenShift tooling in column two, and the description of the {{site.data.keyword.cloud_notm}} integration in column three.">
-    <caption>Comparing OpenShift and {{site.data.keyword.cloud_notm}} logging and monitoring solutions</caption>
+<table summary="The rows are read left to right, with the type of solution in column one, the description of the built-in {{site.data.keyword.openshiftshort}} tooling in column two, and the description of the {{site.data.keyword.cloud_notm}} integration in column three.">
+    <caption>Comparing {{site.data.keyword.openshiftshort}} and {{site.data.keyword.cloud_notm}} logging and monitoring solutions</caption>
     <thead>
       <th>Type</th>
-      <th>OpenShift tools</th>
+      <th>{{site.data.keyword.openshiftshort}} tools</th>
       <th>{{site.data.keyword.cloud_notm}} integrations</th>
     </thead>
     <tbody>
     <tr>
         <td>**Cluster and app logging**</td>
-        <td>**Built-in OpenShift logging tools**:<ul>
-          <li>Built-in view of pod logs in the OpenShift web console.</li>
+        <td>**Built-in {{site.data.keyword.openshiftshort}} logging tools**:<ul>
+          <li>Built-in view of pod logs in the {{site.data.keyword.openshiftshort}} web console.</li>
           <li>Built-in pod logs are not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available, and manage the logs yourself.</li></ul>
-          <p class="note"><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **OpenShift 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html) because you cannot modify the default configuration of the Red Hat OpenShift on IBM Cloud cluster.</p><p class="note"><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **OpenShift 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html), see [installing the cluster logging operator](#oc_logging_operator).</p></td>
+          <p class="note"><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html) because you cannot modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.</p><p class="note"><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html), see [installing the cluster logging operator](#oc_logging_operator).</p></td>
         <td>**{{site.data.keyword.la_full_notm}}**:<ul>
           <li>Customizable user interface for live streaming of log tailing, real-time troubleshooting, issue alerts, and log archiving.</li>
           <li>Quick integration with the cluster via a script.</li>
@@ -74,7 +128,7 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
     </tr>
     <tr>
         <td>**API audit logging**</td>
-        <td>**Built-in OpenShift audit logging tools**:<br>
+        <td>**Built-in {{site.data.keyword.openshiftshort}} audit logging tools**:<br>
         API audit logging to monitor user-initiated activities is currently not supported.</td>
         <td>**{{site.data.keyword.la_full_notm}}**:<ul>
           <li>Customizable user interface for live streaming of log tailing, real-time troubleshooting, issue alerts, and log archiving.</li>
@@ -86,16 +140,16 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
           <li>Flexible plans, including a free `Lite` option.</li></ul>
           <br>To get started, see [Forwarding Kubernetes API audit logs to LogDNA](#openshift_logdna_audit).<p class="note">Forwarding Kubernetes API audit logs to LogDNA is not supported for version 3.11 clusters.</p><br>
           **{{site.data.keyword.at_full_notm}}**:<br>
-          Use {{site.data.keyword.at_full_notm}} to view cluster management events that are generated by the Red Hat OpenShift on IBM Cloud API. To access these logs, [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started). For more information about the types of {{site.data.keyword.containerlong_notm}} events that you can track, see [Activity Tracker events](/docs/openshift?topic=openshift-at_events).</td>
+          Use {{site.data.keyword.at_full_notm}} to view cluster management events that are generated by the {{site.data.keyword.openshiftlong_notm}} API. To access these logs, [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started). For more information about the types of {{site.data.keyword.containerlong_notm}} events that you can track, see [Activity Tracker events](/docs/openshift?topic=openshift-at_events).</td>
     </tr>
     <tr>
         <td>**Monitoring**</td>
-        <td>**Built-in OpenShift monitoring tools**:<ul>
+        <td>**Built-in {{site.data.keyword.openshiftshort}} monitoring tools**:<ul>
           <li>Built-in Prometheus and Grafana deployments in `openshift-monitoring` project for cluster metrics.</li>
-          <li>At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the OpenShift **Cluster Console**.</li>
+          <li>At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.openshiftshort}} **Cluster Console**.</li>
           <li>Monitoring is on a per-cluster basis.</li>
           <li>The `openshift-monitoring` project stack is set up in a single zone only. No persistent storage is available to back up or view metric history.</li></ul>
-          <br>For more information, see [the OpenShift documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.openshift.com/container-platform/4.3/monitoring/cluster_monitoring/about-cluster-monitoring.html).</td>
+          <br>For more information, see [the {{site.data.keyword.openshiftshort}} documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.openshift.com/container-platform/4.3/monitoring/cluster_monitoring/about-cluster-monitoring.html).</td>
         <td>**{{site.data.keyword.mon_full_notm}}**:<ul>
           <li>Customizable user interface for a unified look at your cluster metrics, container security, resource usage, alerts, and custom events.</li>
           <li>Quick integration with the cluster via a script.</li>
@@ -115,7 +169,7 @@ To help understand when to use the built-in OpenShift tools or {{site.data.keywo
 ## Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}
 {: #openshift_logdna}
 
-Use the Red Hat OpenShift on IBM Cloud observability plug-in to create a logging configuration for {{site.data.keyword.la_full_notm}} in your cluster, and use this logging configuration to automatically collect and forward pod logs to {{site.data.keyword.la_full_notm}}.
+Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a logging configuration for {{site.data.keyword.la_full_notm}} in your cluster, and use this logging configuration to automatically collect and forward pod logs to {{site.data.keyword.la_full_notm}}.
 {: shortdesc}
 
 You can have only one logging configuration for {{site.data.keyword.la_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.la_full_notm}} service instance to send logs to, first remove any existing logging configuration and then follow the steps to create your new one.
@@ -127,16 +181,16 @@ Before you begin:
 - Verify that you are assigned the **Editor** platform role and **Manager** server access role for {{site.data.keyword.la_full_notm}}.
 - Verify that you are assigned the **Administrator** platform role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the logging configuration. To view a logging configuration or launch the LogDNA dashboard after the logging configuration is created, users must be assigned the **Administrator** platform role and the **Manager** service access for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
 - If you want to use the CLI to set up the logging configuration:
-  - [Install the Red Hat OpenShift on IBM Cloud observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
-  - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+  - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+  - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up a logging configuration for your cluster:
 
 1. Create an [{{site.data.keyword.la_full_notm}} service instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
-2. Set up a logging configuration for your cluster. When you create the logging configuration, an OpenShift project `ibm-observe` is created and a LogDNA agent is deployed as a daemonset to all worker nodes in your cluster. This agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. The agent then forwards the logs to the {{site.data.keyword.la_full_notm}} service.
+2. Set up a logging configuration for your cluster. When you create the logging configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a LogDNA agent is deployed as a daemonset to all worker nodes in your cluster. This agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. The agent then forwards the logs to the {{site.data.keyword.la_full_notm}} service.
 
    - **From the console:**
-     1. From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a LogDNA logging configuration.
+     1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a LogDNA logging configuration.
      2. On the cluster **Overview** page, click **Connect**.
      3. Select the region and the {{site.data.keyword.la_full_notm}} service instance that you created earlier, and click **Connect**.
 
@@ -172,7 +226,7 @@ To set up a logging configuration for your cluster:
         {: screen}
 
 3. Optional: Verify that the LogDNA agent was set up successfully.
-   1. If you used the console to create the LogDNA logging configuration, log in to your cluster. For more information, see [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster)..
+   1. If you used the console to create the LogDNA logging configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster)..
 
    2. Verify that the daemonset for the LogDNA agent was created and all instances are listed as `AVAILABLE`.
       ```
@@ -196,7 +250,7 @@ To set up a logging configuration for your cluster:
       {: pre}
 
 4. Access the logs for your pods from the LogDNA dashboard.
-   1. From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.  
+   1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.  
    2. On the cluster **Overview** page, click **Launch**. The LogDNA dashboard opens.
    3. Review the pod logs that the LogDNA agent collected from your cluster. It might take a few minutes for your first logs to show.
 
@@ -224,7 +278,7 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 * You must have the following permissions:
   * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
   * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/account?topic=account-userroles) for {{site.data.keyword.la_full_notm}}.
-* For the cluster that you want to collect API server audit logs from: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+* For the cluster that you want to collect API server audit logs from: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * Keep in mind that only one audit webhook can be created in a cluster.
 
 **To forward Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}:**
@@ -355,7 +409,7 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 ## Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_sysdig}
 
-Use the Red Hat OpenShift on IBM Cloud observability plug-in to create a monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster, and use this monitoring configuration to automatically collect and forward metrics to {{site.data.keyword.mon_full_notm}}.
+Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster, and use this monitoring configuration to automatically collect and forward metrics to {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
 With {{site.data.keyword.mon_full_notm}}, you can collects cluster and pod metrics, such as the CPU and memory usage of your worker nodes, incoming and outgoing HTTP traffic for your pods, and data about several infrastructure components. In addition, the agent can collect custom application metrics by using either a Prometheus-compatible scraper or a StatsD facade.
@@ -368,16 +422,16 @@ Before you begin:
 - Verify that you are assigned the **Editor** platform role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}.
 - Verify that you are assigned the **Administrator** platform role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the monitoring configuration. To view a monitoring configuration or launch the Sysdig dashboard after the monitoring configuration is created, users must be assigned the **Administrator** platform role and the **Manager** service access role for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
 - If you want to use the CLI to set up the monitoring configuration:
-  - [Install the Red Hat OpenShift on IBM Cloud observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
-  - [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+  - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+  - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up a monitoring configuration for your cluster:
 
 1. Create an [{{site.data.keyword.mon_full_notm}} service instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
-2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an OpenShift project `ibm-observe` is created and a Sysdig agent is deployed as a Kubernetes daemonset to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
+2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a Sysdig agent is deployed as a Kubernetes daemonset to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
 
    - **From the console: **
-     1. From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a Sysdig monitoring configuration.
+     1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a Sysdig monitoring configuration.
      2. On the cluster **Overview** page, click **Connect**.
      3. Select the region and the {{site.data.keyword.mon_full_notm}} service instance that you created earlier, and click **Connect**.
 
@@ -413,7 +467,7 @@ To set up a monitoring configuration for your cluster:
         {: screen}
 
 3. Optional: Verify that the Sysdig agent was set up successfully.
-   1. If you used the console to create the Sysdig monitoring configuration, log in to your cluster. For more information, see [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+   1. If you used the console to create the Sysdig monitoring configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
    2. Verify that the daemonset for the Sysdig agent was created and all instances are listed as `AVAILABLE`.
       ```
       oc get daemonsets -n ibm-observe
@@ -436,7 +490,7 @@ To set up a monitoring configuration for your cluster:
       {: pre}
 
 4. Access the metrics for your pods and cluster from the Sysdig dashboard.
-   1. From the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.
+   1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.
    2. On the cluster **Overview** page, click **Launch**. The Sysdig dashboard opens.
    3. Review the pod and cluster metrics that the Sysdig agent collected from your cluster. It might take a few minutes for your first metrics to show.
 
@@ -447,7 +501,7 @@ To set up a monitoring configuration for your cluster:
 ## Viewing cluster states
 {: #states}
 
-Review the state of an OpenShift cluster to get information about the availability and capacity of the cluster, and potential problems that might occur.
+Review the state of an {{site.data.keyword.openshiftshort}} cluster to get information about the availability and capacity of the cluster, and potential problems that might occur.
 {: shortdesc}
 
 To view information about a specific cluster, such as its zones, service endpoint URLs, Ingress subdomain, version, and owner, use the `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_get). Include the `--show-resources` flag to view more cluster resources such as add-ons for storage pods or subnet VLANs for public and private IPs.
@@ -527,7 +581,7 @@ You can view the current cluster state by running the `ibmcloud oc cluster ls` c
 ### Master states
 {: #states_master}
 
-Your Red Hat OpenShift on IBM Cloud includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
+Your {{site.data.keyword.openshiftlong_notm}} includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
 **Master Health**<br>
@@ -548,7 +602,7 @@ The **Master Status** provides details of what operation from the master state i
 |`deleting`|The master is currently deleting because you deleted the cluster. You cannot undo a deletion. After the cluster is deleted, you can no longer check the master state because the cluster is completely removed.|
 |`delete_failed`|The master failed to delete. IBM Support is notified and works to resolve the issue. You cannot resolve the issue by trying to delete the cluster again. Instead, check the **Master Status** field for more information, or wait for the cluster to delete. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).|
 |`updating`|The master is updating its Kubernetes version. The update might be a patch update that is automatically applied, or a minor or major version that you applied by updating the cluster. During the update, your highly available master can continue processing requests, and your app workloads and worker nodes continue to run. After the master update is complete, you can [update your worker nodes](/docs/containers?topic=containers-update#worker_node).</br></br>If the update is unsuccessful, the master returns to a `deployed` state and continues running the previous version. IBM Support is notified and works to resolve the issue. You can check if the update failed in the **Master Status** field.|
-|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update).If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.17.9`. To list available versions, run `ibmcloud oc versions`.|
+|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_update).If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.17.11`. To list available versions, run `ibmcloud oc versions`.|
 |`update_failed`|The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). IBM Support might identify other issues in your cluster that you must fix before the master can be updated.|
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
@@ -579,7 +633,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
        </tr>
        <tr>
        <td>`Deployed`</td>
-       <td>Updates are successfully deployed to your worker node. After updates are deployed, Red Hat OpenShift on IBM Cloud starts a health check on the worker node. After the health check is successful, the worker node goes into a <code>Normal</code> state. Worker nodes in a <code>Deployed</code> state usually are ready to receive workloads, which you can check by running <code>oc get nodes</code> and confirming that the state shows <code>Normal</code>. </td>
+       <td>Updates are successfully deployed to your worker node. After updates are deployed, {{site.data.keyword.openshiftlong_notm}} starts a health check on the worker node. After the health check is successful, the worker node goes into a <code>Normal</code> state. Worker nodes in a <code>Deployed</code> state usually are ready to receive workloads, which you can check by running <code>oc get nodes</code> and confirming that the state shows <code>Normal</code>. </td>
        </tr>
         <tr>
           <td>`Deploying`</td>
@@ -615,7 +669,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
         </tr>
         <tr>
          <td>`Unknown`</td>
-         <td>The Kubernetes master is not reachable for one of the following reasons:<ul><li>You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_reload) the worker node.</li><li>You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. Red Hat OpenShift on IBM Cloud requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/containers?topic=containers-firewall#vyatta_firewall).</li><li>The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</li></ul></td>
+         <td>The Kubernetes master is not reachable for one of the following reasons:<ul><li>You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_reload) the worker node.</li><li>You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. {{site.data.keyword.openshiftlong_notm}} requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/containers?topic=containers-firewall#vyatta_firewall).</li><li>The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</li></ul></td>
     </tr>
        <tr>
           <td>`Warning`</td>
@@ -631,13 +685,13 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 ## Using the cluster logging operator
 {: #oc_logging_operator}
 
-To deploy the [OpenShift Container Platform cluster logging operator](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external} on your Red Hat OpenShift on IBM Cloud cluster, you must modify the default path to collect container logs. Container logs in Red Hat OpenShift on IBM Cloud clusters are located in the `/var/data` directory.
+To deploy the [OpenShift Container Platform cluster logging operator](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external} on your {{site.data.keyword.openshiftlong_notm}} cluster, you must modify the default path to collect container logs. Container logs in {{site.data.keyword.openshiftlong_notm}} clusters are located in the `/var/data` directory.
 {: shortdesc}
 
 ### Installing the cluster logging operator
 {: #oc_logging_operator_install}
 
-1.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2.  Create the `openshift-logging` project that is used by the cluster logging operator.
     ```
     oc create ns openshift-logging
@@ -649,19 +703,19 @@ To deploy the [OpenShift Container Platform cluster logging operator](https://do
     ```
     {: pre}
 4.  [Install the **Elasticsearch Operator** operator from the OperatorHub in your cluster](https://docs.openshift.com/container-platform/4.3/operators/olm-adding-operators-to-cluster.html){: external}.
-    1.  From the OpenShift web console **Administrator** perspective, click **Operators > OperatorHub**.
+    1.  From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > OperatorHub**.
     2.  In the **Filter by keyword** field, enter `Elasticsearch Operator`, click **Elasticsearch Operator**, then click **Install**.
     3.  Confirm the **Update Channel** matches your cluster version, then click **Subscribe**.
     4.  Wait until the Elasticsearch Operator status is successfully installed.
 5.  Install the **Cluster logging** operator from the OperatorHub in your cluster.
-    1.  From the OpenShift web console **Administrator** perspective, click **Operators > OperatorHub**.
+    1.  From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > OperatorHub**.
     2.  In the **Filter by keyword** field, enter `Cluster Logging`, click **Cluster Logging**, then click **Install**.
     3.  For **Installation Mode**, click **A specific namespace on the cluster**.
     4.  From the project dropdown list, select **openshift-logging**.
     5.  Confirm the **Update Channel** matches your cluster version, then click **Subscribe**.
     6.  Wait until the Cluster Logging Operator status is successfully installed.
 6.  Create an instance of cluster logging.
-    1.  From the OpenShift web console **Installed Operators** page, click **Cluster Logging**.
+    1.  From the {{site.data.keyword.openshiftshort}} web console **Installed Operators** page, click **Cluster Logging**.
     2.  In the **Provided APIs** section, **Cluster Logging** tile, click **Create Instance**.
     3.  Modify the configuration YAML to change the storage class for the Elasticsearch log storage from `gp2` to `ibmc-block-gold`.
         ```
@@ -678,8 +732,8 @@ To deploy the [OpenShift Container Platform cluster logging operator](https://do
     4.  Click **Create**.
     5.  Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.
 7.  Update the default value of the container logs in the Fluentd daemon set.
-    1.  Change your cluster logging instance management state to `unmanaged` by following the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/logging/config/cluster-logging-management.html#cluster-logging-management-state-changing_cluster-logging-curator){: external}. By making the cluster logging instance unmanaged, you are able to update component configurations so that they are not overwritten. Do **not** change the Elasticsearch management state.
-    2.  From the OpenShift console `openshift-logging` project, click **Workloads > Daemon Sets**, and click the **Fluentd** daemon set.
+    1.  Change your cluster logging instance management state to `unmanaged` by following the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/logging/config/cluster-logging-management.html#cluster-logging-management-state-changing_cluster-logging-curator){: external}. By making the cluster logging instance unmanaged, you are able to update component configurations so that they are not overwritten. Do **not** change the Elasticsearch management state.
+    2.  From the {{site.data.keyword.openshiftshort}} console `openshift-logging` project, click **Workloads > Daemon Sets**, and click the **Fluentd** daemon set.
     3.  In the `volumeMounts` section, add the `/var/data` container log path to the mount path.
         ```
         volumeMounts:
@@ -698,7 +752,7 @@ To deploy the [OpenShift Container Platform cluster logging operator](https://do
         {: codeblock}
     5.  Apply your changes and wait for the Fluentd pods to re-create.
 8.  Verify that container logs are sent to Elasticsearch by checking the Kibana console.
-    1.  From the OpenShift console `openshift-logging` project, click **Networking > Routers**, and click the **Kibana** route.
+    1.  From the {{site.data.keyword.openshiftshort}} console `openshift-logging` project, click **Networking > Routers**, and click the **Kibana** route.
     2.  In the Kibana console that opens, confirm that you see logs for containers.
 
 ### Uninstalling the cluster logging operator
@@ -707,8 +761,8 @@ To deploy the [OpenShift Container Platform cluster logging operator](https://do
 If you remove the cluster logging operator, the `openshift-logging` project and custom resource definitions (CRDs) still exist. You must delete the project and CRDs.
 {: shortdesc}
 
-1.  [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
-2.  Uninstall the cluster logging operator from the cluster. For instructions, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/operators/olm-deleting-operators-from-cluster.html){: external}.
+1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2.  Uninstall the cluster logging operator from the cluster. For instructions, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/operators/olm-deleting-operators-from-cluster.html){: external}.
 3.  Delete the `openshift-logging` project.
     ```
     oc delete ns openshift-logging

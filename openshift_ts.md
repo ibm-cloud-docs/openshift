@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -46,7 +100,7 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for ge
 **General ways to resolve issues**<br>
 1. Keep your cluster environment up to date.
    * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
-   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [OpenShift](/docs/containers?topic=containers-cs_versions).
+   * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [{{site.data.keyword.openshiftshort}}](/docs/containers?topic=containers-cs_versions).
 2. Make sure that your command line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
    * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
@@ -146,7 +200,7 @@ Review the options to debug your clusters and find the root causes for failures.
        <tbody>
     <tr>
        <td>`Aborted`</td>
-       <td>The deletion of the cluster is requested by the user before the Kubernetes master is deployed. After the deletion of the cluster is completed, the cluster is removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).</td>
+       <td>The deletion of the cluster is requested by the user before the Kubernetes master is deployed. After the deletion of the cluster is completed, the cluster is removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</td>
        </tr>
      <tr>
          <td>`Critical`</td>
@@ -158,7 +212,7 @@ Review the options to debug your clusters and find the root causes for failures.
        </tr>
        <tr>
          <td>`Deleted`</td>
-         <td>The cluster is deleted but not yet removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help). </td>
+         <td>The cluster is deleted but not yet removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). </td>
        </tr>
        <tr>
        <td>`Deleting`</td>
@@ -166,7 +220,7 @@ Review the options to debug your clusters and find the root causes for failures.
        </tr>
        <tr>
          <td>`Deploy failed`</td>
-         <td>The deployment of the Kubernetes master could not be completed. You cannot resolve this state. Contact IBM Cloud support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).</td>
+         <td>The deployment of the Kubernetes master could not be completed. You cannot resolve this state. Contact IBM Cloud support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</td>
        </tr>
          <tr>
            <td>`Deploying`</td>
@@ -182,7 +236,7 @@ Review the options to debug your clusters and find the root causes for failures.
          </tr>
        <tr>
          <td>`Requested`</td>
-         <td>A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to <code>Deploying</code>. If your cluster is stuck in the <code>Requested</code> state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help). </td>
+         <td>A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to <code>Deploying</code>. If your cluster is stuck in the <code>Requested</code> state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). </td>
        </tr>
        <tr>
          <td>`Updating`</td>
@@ -202,7 +256,7 @@ Review the options to debug your clusters and find the root causes for failures.
      </table>
 
 
-<p>The [OpenShift master](/docs/openshift?topic=openshift-service-arch) is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The OpenShift API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources.<br><br>If a master failure occurs, your workloads continue to run on the worker nodes, but you cannot use `oc` commands to work with your cluster resources or view the cluster health until the OpenShift API server in the master is back up. If a pod goes down during the master outage, the pod cannot be rescheduled until the worker node can reach the OpenShift API server again.<br><br>During a master outage, you can still run `ibmcloud oc` commands against the {{site.data.keyword.containerlong_notm}} API to work with your infrastructure resources, such as worker nodes or VLANs. If you change the current cluster configuration by adding or removing worker nodes to the cluster, your changes do not happen until the master is back up.</p>
+<p>The [{{site.data.keyword.openshiftshort}} master](/docs/openshift?topic=openshift-service-arch) is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The {{site.data.keyword.openshiftshort}} API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources.<br><br>If a master failure occurs, your workloads continue to run on the worker nodes, but you cannot use `oc` commands to work with your cluster resources or view the cluster health until the {{site.data.keyword.openshiftshort}} API server in the master is back up. If a pod goes down during the master outage, the pod cannot be rescheduled until the worker node can reach the {{site.data.keyword.openshiftshort}} API server again.<br><br>During a master outage, you can still run `ibmcloud oc` commands against the {{site.data.keyword.containerlong_notm}} API to work with your infrastructure resources, such as worker nodes or VLANs. If you change the current cluster configuration by adding or removing worker nodes to the cluster, your changes do not happen until the master is back up.</p>
 <p class="important">Do not restart or reboot a worker node during a master outage. This action removes the pods from your worker node. Because the Kubernetes API server is unavailable, the pods cannot be rescheduled onto other worker nodes in the cluster.</p>
 
 
@@ -218,12 +272,12 @@ Review the options to debug your clusters and find the root causes for failures.
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
-Your Red Hat OpenShift on IBM Cloud includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
+Your {{site.data.keyword.openshiftlong_notm}} includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
 **Master Health**<br>
 The **Master Health** reflects the state of master components and notifies you if something needs your attention. The health might be one of the following:
-*   `error`: The master is not operational. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).
+*   `error`: The master is not operational. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
 *   `normal`: The master is operational and healthy. No action is required.
 *   `unavailable`: The master might not be accessible, which means some actions such as resizing a worker pool are temporarily unavailable. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`.
 *   `unsupported`: The master runs an unsupported version of Kubernetes. You must [update your cluster](/docs/openshift?topic=openshift-update) to return the master to `normal` health.
@@ -237,10 +291,10 @@ The **Master Status** provides details of what operation from the master state i
 |`deploying`|The master is currently deploying. Wait for the state to become `deployed` before working with your cluster, such as adding worker nodes.|
 |`deploy_failed`|The master failed to deploy. IBM Support is notified and works to resolve the issue. Check the **Master Status** field for more information, or wait for the state to become `deployed`.|
 |`deleting`|The master is currently deleting because you deleted the cluster. You cannot undo a deletion. After the cluster is deleted, you can no longer check the master state because the cluster is completely removed.|
-|`delete_failed`|The master failed to delete. IBM Support is notified and works to resolve the issue. You cannot resolve the issue by trying to delete the cluster again. Instead, check the **Master Status** field for more information, or wait for the cluster to delete. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).|
+|`delete_failed`|The master failed to delete. IBM Support is notified and works to resolve the issue. You cannot resolve the issue by trying to delete the cluster again. Instead, check the **Master Status** field for more information, or wait for the cluster to delete. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).|
 |`updating`|The master is updating its Kubernetes version. The update might be a patch update that is automatically applied, or a minor or major version that you applied by updating the cluster. During the update, your highly available master can continue processing requests, and your app workloads and worker nodes continue to run. After the master update is complete, you can [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).</br></br>If the update is unsuccessful, the master returns to a `deployed` state and continues running the previous version. IBM Support is notified and works to resolve the issue. You can check if the update failed in the **Master Status** field.|
-|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.17.9`. To list available versions, run `ibmcloud oc versions`.|
-|`update_failed`|The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, [open an {{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help). IBM Support might identify other issues in your cluster that you must fix before the master can be updated.|
+|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.17.11`. To list available versions, run `ibmcloud oc versions`.|
+|`update_failed`|The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). IBM Support might identify other issues in your cluster that you must fix before the master can be updated.|
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
 
@@ -250,28 +304,28 @@ The **Master Status** provides details of what operation from the master state i
 
 
 
-## Debugging OpenShift web console, OperatorHub, internal registry, and other components
+## Debugging {{site.data.keyword.openshiftshort}} web console, OperatorHub, internal registry, and other components
 {: #oc_console_fails}
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
-OpenShift clusters have many built-in components that work together to simplify the developer experience. For example, you can use the OpenShift web console to manage and deploy your cluster workloads, or enable 3rd-party operators from the OperatorHub to enhance your cluster with a service mesh and other capabilities.  
+{{site.data.keyword.openshiftshort}} clusters have many built-in components that work together to simplify the developer experience. For example, you can use the {{site.data.keyword.openshiftshort}} web console to manage and deploy your cluster workloads, or enable 3rd-party operators from the OperatorHub to enhance your cluster with a service mesh and other capabilities.  
 {: shortdesc}
 
 Commonly used components include the following:
-* **OpenShift web console** in the `openshift-console` project
+* **{{site.data.keyword.openshiftshort}} web console** in the `openshift-console` project
 * **OperatorHub** in the `openshift-marketplace` project
 * **Internal registry** in the `openshift-image-registry` project
 
 If these components fail, review the following debug steps.
 
-<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Some components, such as the OperatorHub, are available only in clusters that run OpenShift version 4, or run in different projects in version 3.11. You can still troubleshoot OpenShift components in 3.11 clusters, but the project and resource names might vary.
+<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Some components, such as the OperatorHub, are available only in clusters that run {{site.data.keyword.openshiftshort}} version 4, or run in different projects in version 3.11. You can still troubleshoot {{site.data.keyword.openshiftshort}} components in 3.11 clusters, but the project and resource names might vary.
 {: note}
 
 1.  Check that your {{site.data.keyword.cloud_notm}} account is set up properly. Some common scenarios that can prevent the default components from running properly include the following:
-    * If you have a firewall, make sure that [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall) so that you do not block any ingress or egress traffic for the OperatorHub or other OpenShift components.
+    * If you have a firewall, make sure that [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall) so that you do not block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.openshiftshort}} components.
     * If your cluster has multiple zones, or if you have a VPC cluster, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation). To check if VRF is already enabled, run `ibmcloud account show`. To check if VLAN spanning is enabled, run `ibmcloud oc vlan-spanning get`.
     * Make sure that your account does not use multifactor authentication (MFA). For more information, see [Disabling required MFA for all users in your account](/docs/account?topic=account-enablemfa#disablemfa).
 2. VPC clusters: Check that a public gateway is enabled on each VPC subnet that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries.
@@ -327,13 +381,13 @@ If these components fail, review the following debug steps.
             {: pre}
     4.  Check the cluster **State**. If the state is not **normal**, see [Debugging clusters](#debug_clusters).
     5.  Check the **Master health**. If the state is not **normal**, see [Reviewing master health](#debug_master).
-    6.  Check the worker nodes that the OpenShift components might run on. If the state is not **normal**, see [Debugging worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes).
+    6.  Check the worker nodes that the {{site.data.keyword.openshiftshort}} components might run on. If the state is not **normal**, see [Debugging worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes).
         ```
         ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
-3.  [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the OpenShift web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
-4.  Check the health of the OpenShift component pods that do not work.
+3.  [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the {{site.data.keyword.openshiftshort}} web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
+4.  Check the health of the {{site.data.keyword.openshiftshort}} component pods that do not work.
     1.  Check the status of the pod.
         ```
         oc get pods -n <project>
@@ -355,7 +409,7 @@ If these components fail, review the following debug steps.
         oc delete pod -n <project> <pod>
         ```
         {: pre}
-5.  If the pods are healthy, check if other system pods are experiencing issues. Oftentimes to function properly, one component depends on another component to be healthy. For example, the OperatorHub has a set of images that are stored in external registries such as `quay.io`. These images are pulled into the internal registry to use across the projects in your OpenShift cluster. If any of the OperatorHub or internal registry components are not set up properly, such as due to lack of permissions or compute resources, the OperatorHub and catalog do not display.
+5.  If the pods are healthy, check if other system pods are experiencing issues. Oftentimes to function properly, one component depends on another component to be healthy. For example, the OperatorHub has a set of images that are stored in external registries such as `quay.io`. These images are pulled into the internal registry to use across the projects in your {{site.data.keyword.openshiftshort}} cluster. If any of the OperatorHub or internal registry components are not set up properly, such as due to lack of permissions or compute resources, the OperatorHub and catalog do not display.
     1.  Check for pending pods.
         ```
         oc get pods --all-namespaces | grep Pending
@@ -368,7 +422,7 @@ If these components fail, review the following debug steps.
         {: pre}
 
         For example, some common messages that you might see from `openshift-image-registry` pods include:
-        * A `Volume could not be created` error message because you created the cluster without the correct storage permission. Red Hat OpenShift on IBM Cloud clusters come with a file storage device by default to store images for the system and other pods. Revise your [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) and restart the pod.
+        * A `Volume could not be created` error message because you created the cluster without the correct storage permission. {{site.data.keyword.openshiftlong_notm}} clusters come with a file storage device by default to store images for the system and other pods. Revise your [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) and restart the pod.
         * An `order will exceed maximum number of storage volumes allowed` error message because you have exceeded the combined quota of file and block storage devices that are allowed per account. [Remove unused storage devices](/docs/containers?topic=containers-file_storage#cleanup) or [increase your storage quota](/docs/FileStorage?topic=FileStorage-managinglimits), and restart the pod.
         * A message that images cannot be stored because the file storage device is full. [Resize the storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration) and restart the pod.
         * A `Pull image still failed due to error: unauthorized: authentication required` error message because the internal registry cannot pull images from an external registry. Check that [the image pull secrets](/docs/openshift?topic=openshift-registry#cluster_registry_auth) are set for the project and restart the pod.
@@ -414,12 +468,12 @@ If these components fail, review the following debug steps.
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
         ```
         {: pre}
-7.  Refresh the cluster master to set up the default OpenShift components. After you refresh the cluster, wait a few minutes to allow the operation to complete.
+7.  Refresh the cluster master to set up the default {{site.data.keyword.openshiftshort}} components. After you refresh the cluster, wait a few minutes to allow the operation to complete.
     ```
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
     ```
     {: pre}
-7.  Try to use the OpenShift component again. If the error still exists, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
+7.  Try to use the {{site.data.keyword.openshiftshort}} component again. If the error still exists, see [Feedback, questions, and support](/docs/containers?topic=containers-get-help).
 
 <br />
 
@@ -476,14 +530,14 @@ error: No Auth Provider found for name "oidc"
 {: screen}
 
 {: tsCauses}
-You have a different version of `kubectl` than your cluster version. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2). If you use a community Kubernetes cluster, you might also have the OpenShift version of `kubectl`, which does not work with community Kubernetes clusters.
+You have a different version of `kubectl` than your cluster version. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2). If you use a community Kubernetes cluster, you might also have the {{site.data.keyword.openshiftshort}} version of `kubectl`, which does not work with community Kubernetes clusters.
 
 To check your client `kubectl` version against the cluster server version, run `oc version --short`.
 
 {: tsResolve}
 [Install the version of `kubectl`](/docs/openshift?topic=openshift-openshift-cli#cli_oc) that matches the Kubernetes version of your cluster.
 
-If you have multiple clusters at different Kubernetes versions or different container platforms such as OpenShift, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local terminal profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
+If you have multiple clusters at different Kubernetes versions or different container platforms such as {{site.data.keyword.openshiftshort}}, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local terminal profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
 
 <br />
 
@@ -503,7 +557,7 @@ Error from server: Get https://<10.xxx.xx.xxx>:<port>/<address>: dial tcp <10.xx
 The OpenVPN server is experiencing configuration issues that prevent accessing the pod from its internal address.
 
 {: tsResolve}
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Check if a cluster and worker node updates are available by viewing your cluster and worker node details in the console or a `cluster ls` or `worker ls` command. If so, [update your cluster and worker nodes to the latest version](/docs/openshift?topic=openshift-update).
 2.  Restart the OpenVPN pod by deleting it. Another VPN pod is scheduled. When its **STATUS** is **Running**, try to connect the pod that you previously could not connect to.
@@ -734,17 +788,17 @@ Your {{site.data.keyword.cloud_notm}} account uses its own automatically linked 
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 {: tsSymptoms}
-You try to create a VPC cluster by using the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/catalog/create){: external}. You have an existing [VPC for Generation 1 compute](https://cloud.ibm.com/vpc){: external} in your account, but when you try to select an existing **Virtual Private Cloud** to create the cluster in, you see the following error message:
+You try to create a VPC cluster by using the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/catalog/create){: external}. You have an existing [VPC for Generation 1 compute](https://cloud.ibm.com/vpc){: external} in your account, but when you try to select an existing **Virtual Private Cloud** to create the cluster in, you see the following error message:
 ```
 No VPC is available. Create a VPC.
 ```
 {: screen}
 
 {: tsCauses}
-During cluster creation, the Red Hat OpenShift on IBM Cloud console uses the API key that is set for the `default` resource group to list the VPCs that are available in your {{site.data.keyword.cloud_notm}} account. If no API key is set for the `default` resource group, no VPCs are listed in the Red Hat OpenShift on IBM Cloud console, even if your VPC exists in a different resource group and an API key is set for that resource group.
+During cluster creation, the {{site.data.keyword.openshiftlong_notm}} console uses the API key that is set for the `default` resource group to list the VPCs that are available in your {{site.data.keyword.cloud_notm}} account. If no API key is set for the `default` resource group, no VPCs are listed in the {{site.data.keyword.openshiftlong_notm}} console, even if your VPC exists in a different resource group and an API key is set for that resource group.
 
 {: tsResolve}
-To set an API key for the `default` resource group, use the Red Hat OpenShift on IBM Cloud CLI.
+To set an API key for the `default` resource group, use the {{site.data.keyword.openshiftlong_notm}} CLI.
 1. Log in to the terminal as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions).
     ```
     ibmcloud login [--sso]
@@ -763,7 +817,7 @@ To set an API key for the `default` resource group, use the Red Hat OpenShift on
     ```
     {: pre}
 
-4. In the [Red Hat OpenShift on IBM Cloud console](https://cloud.ibm.com/kubernetes/catalog/create){: external}, click **Refresh VPCs**. Your available VPCs are now listed in a drop-down menu.
+4. In the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/catalog/create){: external}, click **Refresh VPCs**. Your available VPCs are now listed in a drop-down menu.
 
 <br />
 
@@ -804,7 +858,7 @@ Your cluster is created, but the internal registry is not backed up to cloud obj
 {: screen}
 
 {: tsCauses}
-When you create a Red Hat OpenShift on IBM Cloud version 4 cluster on VPC generation 2 compute infrastructure, a bucket is automatically created in a standard {{site.data.keyword.cos_full_notm}} instance that you select in your account. However, the bucket might not create for several reasons such as:
+When you create a {{site.data.keyword.openshiftlong_notm}} version 4 cluster on VPC generation 2 compute infrastructure, a bucket is automatically created in a standard {{site.data.keyword.cos_full_notm}} instance that you select in your account. However, the bucket might not create for several reasons such as:
 * {{site.data.keyword.cos_full_notm}} is temporarily unavailable.
 * No standard {{site.data.keyword.cos_full_notm}} instance exists in your account.
 * The person who created your cluster did not have the **Administrator** platform role to {{site.data.keyword.cos_full_notm}} in IAM.
@@ -825,7 +879,7 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
     ```
     {: pre}
 
-5. Edit the OpenShift Registry Operator to use {{site.data.keyword.cos_full_notm}} as a backing store.
+5. Edit the {{site.data.keyword.openshiftshort}} Registry Operator to use {{site.data.keyword.cos_full_notm}} as a backing store.
     ```
     oc edit configs.imageregistry.operator.openshift.io/cluster
     ```
@@ -845,11 +899,11 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
 
 7.  Verify that the internal registry images are backed up to {{site.data.keyword.cos_full_notm}}.
     1.  [Build an image for your app](/docs/openshift?topic=openshift-images) and [push it to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images).
-    2.  [Import the image into your internal OpenShift registry](/docs/openshift?topic=openshift-registry#imagestream_registry).
+    2.  [Import the image into your internal {{site.data.keyword.openshiftshort}} registry](/docs/openshift?topic=openshift-registry#imagestream_registry).
     3.  [Deploy an app](/docs/openshift?topic=openshift-images#pod_imagePullSecret) that references your image.
     4.  From the [{{site.data.keyword.cloud_notm}} console resource list](https://cloud.ibm.com/resources), select your **Cloud Object Storage** instance.
-    5.  From the menu, click **Buckets**, then click the bucket that you used for your Red Hat OpenShift on IBM Cloud cluster.
-    6.  Review the recent **Objects** to see your backed up images from the internal registry of your Red Hat OpenShift on IBM Cloud cluster.
+    5.  From the menu, click **Buckets**, then click the bucket that you used for your {{site.data.keyword.openshiftlong_notm}} cluster.
+    6.  Review the recent **Objects** to see your backed up images from the internal registry of your {{site.data.keyword.openshiftlong_notm}} cluster.
 
 <br />
 
@@ -982,12 +1036,12 @@ Identify and restore the resource that causes the broken webhook.
         oc describe service -n <namespace> <service_name>
         ```
         {: pre}
-    2.  If the service type is **ClusterIP**, check that the OpenVPN pod is in a **Running** status so that the webhook can connect securely to the Kubernetes API in the cluster master. If the pod is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app).
+    2.  If the service type is **ClusterIP**, check that the OpenVPN pod is in a **Running** status so that the webhook can connect securely to the Kubernetes API in the cluster master. If the pod is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-get-help).
         ```
         oc describe pods -n kube-system -l app=vpn
         ```
         {: pre}
-    3.  If the service does not have an endpoint, check the health of the backing resources, such as a deployment or pod. If the resource is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app).
+    3.  If the service does not have an endpoint, check the health of the backing resources, such as a deployment or pod. If the resource is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-get-help).
         ```
         oc get all -n my-service-namespace -l <key=value>
         ```
@@ -1179,10 +1233,10 @@ No resources found.
 {: screen}
 
 {: tsCauses}
-Your OpenShift token is expired. OpenShift token that are generated by using your {{site.data.keyword.cloud_notm}} IAM credentials expire in 24 hours.
+Your {{site.data.keyword.openshiftshort}} token is expired. {{site.data.keyword.openshiftshort}} token that are generated by using your {{site.data.keyword.cloud_notm}} IAM credentials expire in 24 hours.
 
 {: tsResolve}
-Re-authenticate with the OpenShift token by [copying the `oc login` command from the web console](/docs/openshift?topic=openshift-access_cluster#access_public_se) or [creating an API key](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+Re-authenticate with the {{site.data.keyword.openshiftshort}} token by [copying the `oc login` command from the web console](/docs/openshift?topic=openshift-access_cluster#access_public_se) or [creating an API key](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 
 <br />
 
