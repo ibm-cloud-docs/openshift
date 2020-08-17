@@ -115,6 +115,8 @@ In this tutorial, you complete the following objectives:
 * Use the [Velero](https://velero.io/){: external} and [Restic](https://restic.net/){: external} open source projects to back up your VPC Gen 1 resources, including app workloads and persistent data, to an {{site.data.keyword.cos_full}} bucket.
 * Restore the resources from the VPC Gen 1 cluster to the VPC Gen 2 cluster.
 
+![Migrating app resources from a VPC Gen 1 cluster to a VPC Gen 2 cluster](images/iks_migrate_vpc.png)
+
 ## Audience
 {: #vpc_ks_audience}
 
