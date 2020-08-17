@@ -288,7 +288,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
   * **Version 3.11 clusters:**
     1. Check whether an ALB exists for your cluster and that the ALB has a public IP address (classic clusters) or a hostname (VPC clusters) assigned.
       * If a public ALB is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no ALBs are created after several minutes, [review ways to get help](/docs/containers?topic=containers-get-help).
+      * If no ALBs are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         ibmcloud oc alb ls -c <cluster_name_or_ID>
@@ -305,7 +305,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address (classic clusters) or a hostname (VPC clusters) as the public ALB.
       * If a `LoadBalancer` service is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](/docs/containers?topic=containers-get-help).
+      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         kubectl get svc -n kube-system | grep LoadBalancer
@@ -320,7 +320,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
   * **Version 4 clusters:**
     1. Check whether a router deployment exists for your cluster.
       * If a router deployment is listed, continue to the next step.
-      * If no router deployment is created after several minutes, [review ways to get help](/docs/containers?topic=containers-get-help).
+      * If no router deployment is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         oc get deployment -n openshift-ingress
@@ -336,7 +336,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the router's load balancer service exists and is assigned a public external IP address (classic clusters) or a hostname (VPC clusters).
       * If a service that is named `router-default` is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no `router-default` service is created after several minutes, [review ways to get help](/docs/containers?topic=containers-get-help).
+      * If no `router-default` service is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         oc get svc -n openshift-ingress
@@ -351,7 +351,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](/docs/containers?topic=containers-get-help).
+5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](/docs/openshift?topic=openshift-get-help).
   ```
   ibmcloud oc cluster get -c <cluster_name_or_ID>
   ```
@@ -436,7 +436,7 @@ Seeing an **Application is not available** page when you try to access your app'
 Start by checking for errors in your app deployment and the Ingress resource deployment. Error messages in your deployments can help you find the root causes for failures and further debug your Ingress setup in the next sections.
 {: shortdesc}
 
-1. Before you debug Ingress, first check out [Debugging app deployments](/docs/openshift?topic=openshift-get-help#debug_apps). Ingress issues are often caused by underlying issues in your app deployment or in the `ClusterIP` service that exposes your app. For example, your app label and service selector might not match, or your app and service target ports might not match.
+1. Before you debug Ingress, first check out [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app#debug_apps). Ingress issues are often caused by underlying issues in your app deployment or in the `ClusterIP` service that exposes your app. For example, your app label and service selector might not match, or your app and service target ports might not match.
 
 2. Check your Ingress resource deployment and look for warnings or error messages.
     ```
@@ -826,7 +826,7 @@ Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}
 ### Step 1: Check your app deployment
 {: #app-debug-ingress}
 
-Before you debug Ingress, first check out [Debugging app deployments](/docs/openshift?topic=openshift-get-help#debug_apps).
+Before you debug Ingress, first check out [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app#debug_apps).
 {: shortdesc}
 
 Ingress issues are often caused by underlying issues in your app deployment or in the `ClusterIP` service that exposes your app. For example, your app label and service selector might not match, or your app and service target ports might not match.
@@ -1487,7 +1487,4 @@ To prevent the connection from closing after 60 seconds of inactivity:
 <dd>Increase the value of the `proxy-read-timeout` in your ALB configuration. For example, to change the timeout from `60s` to a larger value like `300s`, add this [annotation](/docs/openshift?topic=openshift-ingress_annotation#connection) to your Ingress resource file: `ingress.bluemix.net/proxy-read-timeout: "serviceName=<service_name> timeout=300s"`. The timeout is changed for all public ALBs in your cluster.</dd>
 <dt>Set up a heartbeat</dt>
 <dd>If you don't want to change the ALB's default read timeout value, set up a heartbeat in your WebSocket app. When you set up a heartbeat protocol by using a framework like [WAMP ![External link icon](../icons/launch-glyph.svg "External link icon")](https://wamp-proto.org/), the app's upstream server periodically sends a "ping" message on a timed interval and the client responds with a "pong" message. Set the heartbeat interval to 58 seconds or less so that the "ping/pong" traffic keeps the connection open before the 60-second timeout is enforced.</dd></dl>
-
-<br />
-
 
