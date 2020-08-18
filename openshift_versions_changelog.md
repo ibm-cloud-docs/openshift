@@ -123,7 +123,7 @@ The following table shows the changes that are included in the master fix pack p
 | etcd | v3.4.9 | v3.4.10 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.10){: external}.|
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.17 | 1.17.1 | Updated to use `Go` version 1.13.8. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 375 | 377 | Fixed a bug that prevents persistent volume claim (PVC) creation failures from being retried. Updated to use `Go` version 1.13.8. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 8882606 | d80b738 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external and to use `Go` version 1.13.14. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 8882606 | d80b738 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external} and to use `Go` version 1.13.14. |
 | Key Management Service provider | v1.0.0 | v2.0.2 | Updated image for [CVE-2020-15586](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15586){: external}. |
 | Kubernetes configuration | N/A | N/A | The Kubernetes API server audit policy configuration is updated to include auditing of all API groups except `apiregistration.k8s.io` and `coordination.k8s.io`. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.4.0+20200615 | v4.4.0+20200805 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200805){: external}. |
@@ -196,7 +196,7 @@ The following table shows the changes that are included in the master fix pack p
 | etcd | v3.4.9 | v3.4.10 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.10){: external}.|
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.17 | 1.17.1 | Updated to use `Go` version 1.13.8. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 375 | 377 | Fixed a bug that prevents persistent volume claim (PVC) creation failures from being retried. Updated to use `Go` version 1.13.8. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 8882606 | d80b738 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external and to use `Go` version 1.13.14. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 8882606 | d80b738 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external} and to use `Go` version 1.13.14. |
 | Kubernetes configuration | N/A | N/A | The Kubernetes API server audit policy configuration is updated to include auditing of all API groups except `apiregistration.k8s.io` and `coordination.k8s.io`. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.3.0+20200615 | v4.3.0+20200709 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.3.0+20200709){: external}. |
 | {{site.data.keyword.openshiftshort}} | 4.3.28 | 4.3.31 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-31){: external}. |
