@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-18"
 
 keywords: openshift
 subcollection: openshift
@@ -260,6 +260,17 @@ subcollection: openshift
 * [Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
 * [Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
+
+[Migrating cluster resources from VPC Gen 1 to VPC Gen 2](/docs/openshift?topic=openshift-vpc_migrate_tutorial)
+* [Objectives](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_ks_objectives)
+* [Audience](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_ks_audience)
+* [Prerequisites](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_ks_prereqs)
+* [Plan your migration to VPC Gen 2](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_plan)
+* [Create your Gen 2 VPC, resources, and cluster](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_create_gen2)
+* [Set up an {{site.data.keyword.cos_short}} bucket](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_cos)
+* [Create a Velero backup of your Gen 1 cluster](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_velero_gen1)
+* [Restore a Velero backup to your Gen 2 cluster](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_velero_gen2)
+* [What's next?](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_whats-next)
 
 [Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
 
@@ -1445,10 +1456,12 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for master fix pack 4.4.16_1513_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4416_1513_master)
   * [Changelog for worker node fix pack 4.4.16_1513_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4416_1513)
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for master fix pack 4.3.31_1534_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4331_1534_master)
   * [Changelog for worker node fix pack 4.3.31_1534_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4331_1534)
   * [Changelog for worker node fix pack 4.3.29_1533_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4329_1533)
   * [Changelog for master fix pack 4.3.28_1532_openshift, released 20 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4328_1532)
@@ -1464,6 +1477,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.248_1564_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561_master)
   * [Changelog for worker node fix pack 3.11.248_1564_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1564)
   * [Changelog for worker node fix pack 3.11.248_1561_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561)
   * [Changelog for master fix pack 3.11.232_1560_openshift, released 24 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1560)

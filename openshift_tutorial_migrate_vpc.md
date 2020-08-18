@@ -115,6 +115,8 @@ In this tutorial, you complete the following objectives:
 * Use the [Velero](https://velero.io/){: external} and [Restic](https://restic.net/){: external} open source projects to back up your VPC Gen 1 resources, including app workloads and persistent data, to an {{site.data.keyword.cos_full}} bucket.
 * Restore the resources from the VPC Gen 1 cluster to the VPC Gen 2 cluster.
 
+![Migrating app resources from a VPC Gen 1 cluster to a VPC Gen 2 cluster](images/iks_migrate_vpc.png)
+
 ## Audience
 {: #vpc_ks_audience}
 
@@ -131,7 +133,7 @@ This tutorial is for administrators who want to migrate cluster workloads off of
   * [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}.
   * [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for Container Registry.
   * [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.cos_full_notm}}.
-* Make sure that the API key for the region and resource group that you plan to create the VPC gen 2 cluster in is set up with the correct [infrastructure permissions](/docs/openshift?topic=openshift-users#api_key).
+* Make sure that the API key for the region and resource group that you plan to create the VPC Gen 2 cluster in is set up with the correct [infrastructure permissions](/docs/openshift?topic=openshift-users#api_key).
 
 <br>
 **Command-line tools**
