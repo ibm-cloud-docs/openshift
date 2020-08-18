@@ -120,7 +120,7 @@ The following table shows the changes that are included in the master fix pack p
 | --------- | -------- | ------- | ----------- |
 | Cluster health image | v1.1.8 | v1.1.9 | Updated to use `Go` version 1.13.13. |
 | Cluster master operations | N/A | N/A | Cluster master update operations are now canceled if a broken [Kubernetes admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} is detected. |
-| etcd | v3.4.9 | v3.4.10 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.10){: external}.|
+| etcd | v3.4.9 | v3.4.10 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.10){: external}.|
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.17 | 1.17.1 | Updated to use `Go` version 1.13.8. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 375 | 377 | Fixed a bug that prevents persistent volume claim (PVC) creation failures from being retried. Updated to use `Go` version 1.13.8. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 8882606 | d80b738 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external} and to use `Go` version 1.13.14. |
@@ -193,7 +193,7 @@ The following table shows the changes that are included in the master fix pack p
 | --------- | -------- | ------- | ----------- |
 | Cluster health image | v1.1.8 | v1.1.9 | Updated to use `Go` version 1.13.13. |
 | Cluster master operations | N/A | N/A | Cluster master update operations are now canceled if a broken [Kubernetes admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} is detected. |
-| etcd | v3.4.9 | v3.4.10 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.10){: external}.|
+| etcd | v3.4.9 | v3.4.10 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.10){: external}.|
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.17 | 1.17.1 | Updated to use `Go` version 1.13.8. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 375 | 377 | Fixed a bug that prevents persistent volume claim (PVC) creation failures from being retried. Updated to use `Go` version 1.13.8. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 8882606 | d80b738 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external} and to use `Go` version 1.13.14. |
