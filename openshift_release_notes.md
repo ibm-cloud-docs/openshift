@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-18"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -102,6 +102,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 18 August 2020 | **Versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4416_1513_master), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4331_1534_master), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1564_master). |
 | 17 August 2020 | <ul><li>**Locations**: You can create [clusters on VPC generation 2 compute infrastructure](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc-gen2) in the Tokyo multizone region.</li><li>**Versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4416_1513), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4331_1534), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1564).</li><li>**VPC Gen 2**: Added a [tutorial](/docs/openshift?topic=openshift-vpc_migrate_tutorial) for migrating VPC Gen 1 cluster resources to VPC Gen 2.</li></ul>|
 | 06 August 2020 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.143](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
 | 05 August 2020 | **Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 647 and the `ingress-auth` image build to 421](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog). |

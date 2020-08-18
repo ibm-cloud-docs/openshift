@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-18"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -110,6 +110,29 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.4 patch updates.
 {: shortdesc}
 
+### Changelog for master fix pack 4.4.16_1513_openshift, released 18 August 2020
+{: #4416_1513_master}
+
+The following table shows the changes that are included in the master fix pack patch update `4.4.16_1513_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| Cluster health image | v1.1.8 | v1.1.9 | Updated to use `Go` version 1.13.13. |
+| Cluster master operations | N/A | N/A | Cluster master update operations are now canceled if a broken [Kubernetes admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} is detected. |
+| etcd | v3.4.9 | v3.4.10 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.10){: external}.|
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.17 | 1.17.1 | Updated to use `Go` version 1.13.8. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 375 | 377 | Fixed a bug that prevents persistent volume claim (PVC) creation failures from being retried. Updated to use `Go` version 1.13.8. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 8882606 | d80b738 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external and to use `Go` version 1.13.14. |
+| Key Management Service provider | v1.0.0 | v2.0.2 | Updated image for [CVE-2020-15586](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15586){: external}. |
+| Kubernetes configuration | N/A | N/A | The Kubernetes API server audit policy configuration is updated to include auditing of all API groups except `apiregistration.k8s.io` and `coordination.k8s.io`. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.4.0+20200615 | v4.4.0+20200805 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200805){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.4.11 | 4.4.16 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-16){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit |  v4.4.0+20200615 | v4.4.0+20200805| See the [{{site.data.keyword.openshiftlong_notm}}toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200805){: external}. |
+| OpenVPN Operator image | v1.0.6 | v1.0.7 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.4.11_1511_openshift" caption-side="top"}
+
 ### Changelog for worker node fix pack 4.4.16_1513_openshift, released 17 August 2020
 {: #4416_1513}
 
@@ -159,6 +182,28 @@ The following table shows the changes that are included in the `4.4.11_1511_open
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.3 patch updates.
 {: shortdesc}
+
+### Changelog for master fix pack 4.3.31_1534_openshift, released 18 August 2020
+{: #4331_1534_master}
+
+The following table shows the changes that are included in the master fix pack patch update `4.3.31_1534_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| Cluster health image | v1.1.8 | v1.1.9 | Updated to use `Go` version 1.13.13. |
+| Cluster master operations | N/A | N/A | Cluster master update operations are now canceled if a broken [Kubernetes admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} is detected. |
+| etcd | v3.4.9 | v3.4.10 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.10){: external}.|
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.17 | 1.17.1 | Updated to use `Go` version 1.13.8. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 375 | 377 | Fixed a bug that prevents persistent volume claim (PVC) creation failures from being retried. Updated to use `Go` version 1.13.8. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 8882606 | d80b738 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external and to use `Go` version 1.13.14. |
+| Kubernetes configuration | N/A | N/A | The Kubernetes API server audit policy configuration is updated to include auditing of all API groups except `apiregistration.k8s.io` and `coordination.k8s.io`. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.3.0+20200615 | v4.3.0+20200709 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.3.0+20200709){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.3.28 | 4.3.31 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-31){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | v4.3.0+20200615 | v4.3.0+20200709 | See the [{{site.data.keyword.openshiftlong_notm}}toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.3.0+20200709){: external}. |
+| OpenVPN Operator image | v1.0.6 | v1.0.7 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.29_1533_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.3.31_1534_openshift, released 17 August 2020
 {: #4331_1534}
@@ -399,6 +444,22 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change).
 {: deprecated}
+
+### Changelog for master fix pack 3.11.248_1564_openshift, released 18 August 2020
+{: #311248_1561_master}
+
+The following table shows the changes that are included in the master fix pack patch update `3.11.248_1564_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| Calico node configuration | N/A | N/A | Disabled the pod readiness probe and removed the `felix` check from the pod liveness probe. |
+| Cluster health image | v1.1.8 | v1.1.9 | Updated to use `Go` version 1.13.13. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 376 | 377 | Fixed a bug that prevents persistent volume claim (PVC) creation failures from being retried. |
+| Key Management Service provider | v1.0.0 | v1.0.1 | Updated image for [CVE-2020-15586](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15586){: external}. |
+| {{site.data.keyword.openshiftshort}} | 3.11.232 | 3.11.248 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-248){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.232_1561_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.248_1564_openshift, released 17 August 2020
 {: #311248_1564}
