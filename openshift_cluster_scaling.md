@@ -888,7 +888,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 
 <dl>
   <dt><strong>Pause pods</strong></dt>
-  <dd>You can create a deployment that deploys [pause containers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/questions/48651269/what-are-the-pause-containers) in pods with specific resource requests, and assign the deployment a low pod priority. When these resources are needed by higher priority workloads, the pause pod is preempted and becomes a pending pod. This event triggers the cluster autoscaler to scale up.<br><br>For more information about setting up a pause pod deployment, see the [Kubernetes FAQ ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-configure-overprovisioning-with-cluster-autoscaler). You can use [this example overprovisioning configuration file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/blob/master/ibm-ks-cluster-autoscaler/overprovisioning-autoscaler.yaml) to create the priority class, service account, and deployments.<p class="note">If you use this method, make sure that you understand how [pod priority](/docs/openshift?topic=openshift-pod_priority) works and how to set pod priority for your deployments. For example, if the pause pod does not have enough resources for a higher priority pod, the pod is not preempted. The higher priority workload remains in pending, so the cluster autoscaler is triggered to scale up. However, in this case, the scale-up action is not early because the workload that you want to run cannot be scheduled because of insufficient resources.</p></dd>
+  <dd>You can create a deployment that deploys [pause containers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/questions/48651269/what-are-the-pause-containers) in pods with specific resource requests, and assign the deployment a low pod priority. When these resources are needed by higher priority workloads, the pause pod is preempted and becomes a pending pod. This event triggers the cluster autoscaler to scale up.<br><br>For more information about setting up a pause pod deployment, see the [Kubernetes FAQ ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-configure-overprovisioning-with-cluster-autoscaler). You can use [this example overprovisioning configuration file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/kube-samples/blob/master/ibm-iks-cluster-autoscaler/overprovisioning-autoscaler.yaml) to create the priority class, service account, and deployments.<p class="note">If you use this method, make sure that you understand how [pod priority](/docs/openshift?topic=openshift-pod_priority) works and how to set pod priority for your deployments. For example, if the pause pod does not have enough resources for a higher priority pod, the pod is not preempted. The higher priority workload remains in pending, so the cluster autoscaler is triggered to scale up. However, in this case, the scale-up action is not early because the workload that you want to run cannot be scheduled because of insufficient resources.</p></dd>
 
   <dt><strong>Horizontal pod autoscaling (HPA)</strong></dt>
   <dd>Because horizontal pod autoscaling is based on the average CPU usage of the pods, the CPU usage limit that you set is reached before the worker pool runs out of resources. More pods are requested, which then triggers the cluster autoscaler to scale up the worker pool.<br><br>For more information about setting up HPA, see the [Kubernetes docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/).</dd>
@@ -939,7 +939,7 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
 
     Example output:
     ```
-    myhelmchart 	1       	Mon Jan  7 14:47:44 2019	DEPLOYED	ibm-ks-cluster-autoscaler-1.0.0  	kube-system
+    myhelmchart 	1       	Mon Jan  7 14:47:44 2019	DEPLOYED	ibm-iks-cluster-autoscaler-1.0.0  	kube-system
     ```
     {: screen}
 
@@ -997,12 +997,12 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
     {: pre}
 4.  If you applied custom settings to the Helm chart, note your custom settings.
     ```
-    helm get values ibm-ks-cluster-autoscaler -a
+    helm get values ibm-iks-cluster-autoscaler -a
     ```
     {: pre}
 5.  Uninstall your current Helm chart.
     ```
-    helm uninstall ibm-ks-cluster-autoscaler -n <namespace>
+    helm uninstall ibm-iks-cluster-autoscaler -n <namespace>
     ```
     {: pre}
 6.  Update the Helm chart repo to get the latest cluster autoscaler Helm chart version.
@@ -1084,7 +1084,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: pre}
 3.  Remove the existing Helm chart from your cluster.
     ```
-    helm uninstall ibm-ks-cluster-autoscaler -n <namespace>
+    helm uninstall ibm-iks-cluster-autoscaler -n <namespace>
     ```
     {: pre}
 
