@@ -2,48 +2,102 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-19"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logdna commands, sysdig commands, logging config, monitoring config
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
 # Observability plug-in CLI
 {: #observability_cli}
 
-Refer to these commands to create and manage logging and monitoring configurations for your Red Hat OpenShift on IBM Cloud cluster.
+Refer to these commands to create and manage logging and monitoring configurations for your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
-Looking for `ibmcloud oc` commands? See the [Red Hat OpenShift on IBM Cloud CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli).
+Looking for `ibmcloud oc` commands? See the [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli).
 {:tip}
 
 ## Logging commands
@@ -84,7 +138,7 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGDNA_INSTANCE [
 <dd>The LogDNA ingestion key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest ingestion key is automatically retrieved.   </dd>
 
 <dt><code>--private-endpoint</code><dt>
-<dd>When you add this option to your command, the private service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private service endpoint, your cluster must be enabled for using private service endpoints. Red Hat OpenShift on IBM Cloud clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in [clusters](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem). </dd>
+<dd>When you add this option to your command, the private service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private service endpoint, your cluster must be enabled for using private service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in [clusters](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem). </dd>
 
 </dl>
 
@@ -102,7 +156,7 @@ Delete a LogDNA logging configuration from your cluster.
 
 
 
-Existing logging configurations that you manually set up and that were not created with the Red Hat OpenShift on IBM Cloud observability plug-in are cannot be deleted with this command.
+Existing logging configurations that you manually set up and that were not created with the {{site.data.keyword.openshiftlong_notm}} observability plug-in are cannot be deleted with this command.
 {: note}
 
 
@@ -143,11 +197,11 @@ ibmcloud ob logging config delete --cluster mycluster --instance mylogdna
 ### `ibmcloud ob logging config list`
 {: #logging_config_list}
 
-List all LogDNA logging configurations that were created for your cluster with the Red Hat OpenShift on IBM Cloud observability plug-in.
+List all LogDNA logging configurations that were created for your cluster with the {{site.data.keyword.openshiftlong_notm}} observability plug-in.
 {: shortdesc}
 
 
-Existing logging configurations that you manually set up and that were not created with the Red Hat OpenShift on IBM Cloud observability plug-in are not listed with this command.
+Existing logging configurations that you manually set up and that were not created with the {{site.data.keyword.openshiftlong_notm}} observability plug-in are not listed with this command.
 {: note}
 
 ```
@@ -177,7 +231,7 @@ ibmcloud ob logging config list --cluster CLUSTER
 Show the details of a LogDNA logging configuration.
 {: shortdesc}
 
-You cannot use this command to show the details of an existing logging configuration that you manually set up without the Red Hat OpenShift on IBM Cloud observability plug-in.
+You cannot use this command to show the details of an existing logging configuration that you manually set up without the {{site.data.keyword.openshiftlong_notm}} observability plug-in.
 {: note}
 
 ```
@@ -239,7 +293,7 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance SYSDIG_INSTANC
 <dd>The Sysdig access key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest access key is used for your configuration. </dd>
 
 <dt><code>--private-endpoint</code><dt>
-<dd>When you add this option to your command, the private service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private service endpoint, your cluster must be enabled for using private service endpoints. Red Hat OpenShift on IBM Cloud clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option. </dd>
+<dd>When you add this option to your command, the private service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private service endpoint, your cluster must be enabled for using private service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option. </dd>
 
 </dl>
 
@@ -256,7 +310,7 @@ Delete a Sysdig monitoring configuration from your cluster.
 {: shortdesc}
 
 
-Existing monitoring configurations that you manually set up and that were not created with the Red Hat OpenShift on IBM Cloud observability plug-in cannot be deleted with this command.
+Existing monitoring configurations that you manually set up and that were not created with the {{site.data.keyword.openshiftlong_notm}} observability plug-in cannot be deleted with this command.
 {: note}
 
 
@@ -295,11 +349,11 @@ ibmcloud ob monitoring config delete --cluster mycluster --instance mysysdig
 ### `ibmcloud ob monitoring config list`
 {: #monitoring_config_list}
 
-List all Sysdig monitoring configurations that were created for your cluster with the Red Hat OpenShift on IBM Cloud observability plug-in.
+List all Sysdig monitoring configurations that were created for your cluster with the {{site.data.keyword.openshiftlong_notm}} observability plug-in.
 {: shortdesc}
 
 
-Existing monitoring configurations that you manually set up and that were not created with the Red Hat OpenShift on IBM Cloud observability plug-in are not listed with this command.
+Existing monitoring configurations that you manually set up and that were not created with the {{site.data.keyword.openshiftlong_notm}} observability plug-in are not listed with this command.
 {: note}
 
 ```
@@ -331,7 +385,7 @@ Show the details of a Sysdig monitoring configuration.
 {: shortdesc}
 
 
-You cannot use this command to show the details of an existing monitoring configuration that you manually set up without the Red Hat OpenShift on IBM Cloud observability plug-in. 
+You cannot use this command to show the details of an existing monitoring configuration that you manually set up without the {{site.data.keyword.openshiftlong_notm}} observability plug-in. 
 
 ```
 ibmcloud ob monitoring config show --cluster CLUSTER --instance SYSDIG_INSTANCE
