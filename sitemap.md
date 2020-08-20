@@ -377,6 +377,7 @@ subcollection: openshift
 [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters)
 * [Prerequisites](/docs/openshift?topic=openshift-satellite-clusters#satcluster-prereqs)
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
+* [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli)
 * [Accessing and working with your {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
 

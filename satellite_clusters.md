@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-20"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -130,8 +130,101 @@ Before you begin, make sure that you
 7. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
 8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads.
 9. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
+10.   If the hosts that you assigned to the cluster are from an Amazon Web Services or Google Cloud Platform cloud provider, you must manually register the cluster DNS. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics in the {{site.data.keyword.satelliteshort}} documentation.
 
+## Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI
+{: #satcluster-create-cli}
 
+Use the {{site.data.keyword.satelliteshort}} CLI to create your {{site.data.keyword.openshiftshort}} clusters on your {{site.data.keyword.satelliteshort}} infrastructure.
+{: shortdesc}
+
+Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in](/docs/satellite?topic=satellite-setup-cli).
+
+1. [Complete the prerequisite steps](#satcluster-prereqs).
+2. Verify that your location is in a **Normal** state. The location is in a **Normal** state when you successfully created the {{site.data.keyword.satelliteshort}} control plane and all hosts that you use for the control plane are in a healthy state.
+   ```
+   ibmcloud sat location ls
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   Retrieving locations...
+   OK
+   Name         ID                     Status            Ready   Created      Hosts (used/total)   Managed From   
+   mylcoation   brhtfum2015a6mgqj16g   normal            yes     4 days ago   3 / 6                Dallas   
+   ```
+   {: screen}
+
+3. Create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet. To add worker nodes, you must later assign compute hosts from your location to your {{site.data.keyword.openshiftshort}} cluster.
+   ```
+   ibmcloud oc cluster create satellite --name <cluster_name> --location <location_name_or_ID> --version 4.3_openshift
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   Creating cluster...
+   OK
+   Cluster created with ID brkhsd220b6ktv7sjl50
+   ```
+   {: screen}
+
+   <table summary="This table is read from left to right. The first column has the command component. The second column has the description of the component.">
+    <caption>Understanding this command's components</caption>
+      <thead>
+      <th>Component</th>
+      <th>Description</th>
+      </thead>
+      <tbody>
+      <tr>
+      <td><code>--name &lt;cluster_name&gt;</code></td>
+      <td>Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. </td>
+      </tr>
+      <tr>
+      <td><code>--location &lt;location_name_or_ID&gt;</code></td>
+      <td>Enter the name or ID of the location where you want to create the cluster. To retrieve the location name or ID, run <code>ibmcloud sat location ls</code>.</td>
+      </tr>
+      <tr>
+      <td><code>--version</code></td>
+      <td>Enter the {{site.data.keyword.openshiftlong_notm}} version that you want to run in your cluster. For a list of supported versions, run <code>ibmcloud oc versions</code>. </td>
+      </tr>
+      </tbody>
+    </table>
+
+4. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
+   ```
+   ibmcloud oc cluster ls
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   OK
+   Name                ID                     State     Created          Workers   Location           Version                 Resource Group Name   Provider   
+   satcluster          brkhsd220b6ktv7sjl50   warning   12 minutes ago   0         mylocation.        4.3.23_1525_openshift   Default               satellite  
+   ```
+   {: screen}
+
+5. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads.
+
+6. Verify that your cluster reaches a **normal** state.
+   ```
+   ibmcloud oc cluster ls
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   OK
+   Name         ID                     State    Created        Workers   Location     Version                 Resource Group Name   Provider   
+   satcluster   brkhsd220b6ktv7sjl50   normal   2 hours ago    3         mylocation   4.3.23_1525_openshift   Default               satellite   
+   ```
+   {: screen}
+
+7. If the hosts that you assigned to the cluster are from an Amazon Web Services or Google Cloud Platform cloud provider, you must manually register the cluster DNS. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics in the {{site.data.keyword.satelliteshort}} documentation.
+
+<br />
 
 
 ## Accessing and working with your {{site.data.keyword.openshiftshort}} clusters
