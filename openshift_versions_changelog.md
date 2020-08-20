@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-18"
+lastupdated: "2020-08-20"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -625,7 +625,7 @@ The following table shows the changes that are included in the master fix pack u
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico configuration | N/A | N/A | Updated to allow egress from the worker nodes via the the `allow-vrrp` `GlobalNetworkPolicy`. |
+| Calico configuration | N/A | N/A | Updated to allow egress from the worker nodes via the `allow-vrrp` `GlobalNetworkPolicy`. |
 | Cluster health | N/A | v1.1.1 | Cluster health now includes more add-on status information. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.10-252 | v1.15.11-274 | Updated to support the Kubernetes 1.15.11 release and to use `Go` version 1.12.17. |
 | {{site.data.keyword.cloud_notm}} Paks | N/A | N/A | Fixed `ClusterImagePolicies` resources that are installed by {{site.data.keyword.cloud_notm}} Paks which prevent cluster master operations from succeeding. |
