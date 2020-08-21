@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-20"
+lastupdated: "2020-08-21"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -10,92 +10,38 @@ subcollection: openshift
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:authenticated-content: .authenticated-content}
 {:beta: .beta}
-{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
-{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
 {:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
-{:term: .term}
 {:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
-{:video: .video}
 
 
 
 # Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}
 {: #satellite-clusters}
 
-{{site.data.keyword.satellitelong}} is available as a tech preview and subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}. For more information, see the [{{site.data.keyword.satellitelong_notm}} documentation](/docs/satellite?topic=satellite-getting-started).
-{: preview}
+{{site.data.keyword.satellitelong}} is available as a closed beta and subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}. For more information, see the [{{site.data.keyword.satellitelong_notm}} documentation](/docs/satellite?topic=satellite-getting-started).
+{: beta}
 
 You can create {{site.data.keyword.openshiftlong}} clusters in an {{site.data.keyword.satellitelong}} location, and use the hosts of your own infrastructure that you added to your location as the worker nodes for the cluster.
 {: shortdesc}
@@ -118,8 +64,6 @@ Before you can create clusters on your own infrastructure, you must set up an {{
 
 Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyword.openshiftshort}} clusters on your {{site.data.keyword.satelliteshort}} infrastructure.
 {: shortdesc}
-
-Before you begin, make sure that you 
 
 1. [Complete the prerequisite steps](#satcluster-prereqs).
 2. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click **Create**.
@@ -238,10 +182,35 @@ Review common tasks that you might be interested in:
 - [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster)
 - [Assigning cluster access](/docs/openshift?topic=openshift-users)
 
+<br />
+
+
+## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
+{: #satcluster-access}
+
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
+{: shortdesc}
+
+<br />
+
+
+## Storing application data in persistent storage
+{: #satcluster-storage}
+
+Unlike standard {{site.data.keyword.openshift}} clusters that are created on {{site.data.keyword.cloud_notm}} infrastructure, your {{site.data.keyword.satelliteshort}} clusters do not come installed with a storage driver that provides Kubernetes storage classes that are ready to use with Kubernetes persistent volumes for your apps. However, you can install your own storage driver to set up your apps to save their data in a backing storage device. Review the following common options.
+{: shortdesc} 
+
+*  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage) in your cluster.
+*  Manually set up a storage operator that uses a backing storage provider in your cluster.
+*  Use local storage on the host, such as the local storage operator.
+
+<br />
+
+
 ## Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters
 {: #satcluster-rm}
 
-When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in a cluster, the hosts the provide the compute capacity for your worker nodes are not automatically deleted. Instead, the hosts remain attached to your {{site.data.keyword.satelliteshort}} location, but require you to reload the host to be able to reassign the hosts to other {{site.data.keyword.satelliteshort}} resources. 
+When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in a cluster, the hosts the provide the compute capacity for your worker nodes are not automatically deleted. Instead, the hosts remain attached to your {{site.data.keyword.satelliteshort}} location, but require you to reload the host to be able to reassign the hosts to other {{site.data.keyword.satelliteshort}} resources.
 {: shortdesc}
 
 1. Back up any data that runs in the worker node or cluster that you want to save. For example, you might save a copy of all the data in your cluster and upload these files to a persistent storage solution, such as {{site.data.keyword.cos_full_notm}}.
@@ -255,15 +224,15 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
    ```
    {: pre}
 
-   Example output:	
-   ```	
-   Retrieving hosts...	
-   OK	
+   Example output:
+   ```
+   Retrieving hosts...
+   OK
    Name              ID                     State      Status   Cluster          Worker ID                                                 Worker IP   	
    machine-name-1    aaaaa1a11aaaaaa111aa   assigned   Ready    infrastructure   sat-virtualser-4d7fa07cd3446b1f9d8131420f7011e60d372ca2   169.xx.xxx.xxx   	
    machine-name-2    bbbbbbb22bb2bbb222b2   assigned   Ready    infrastructure   sat-virtualser-9826f0927254b12b4018a95327bd0b45d0513f59   169.xx.xxx.xxx   	
    machine-name-3    ccccc3c33ccccc3333cc   assigned   Ready    mycluster12345   sat-virtualser-948b454ea091bd9aeb8f0542c2e8c19b82c5bf7a   169.xx.xxx.xxx   	
-   ```	
+   ```
    {: screen}
 3. Remove the worker nodes or clusters by referring to the following options. The corresponding hosts in your {{site.data.keyword.satelliteshort}} location become unassigned and require a reload before you can use them for other {{site.data.keyword.satelliteshort}} resources.
    *  [Resize worker pools](/docs/openshift?topic=openshift-add_workers#resize_pool) to reduce the number of worker nodes in the cluster.
@@ -272,4 +241,3 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
 4. For each worker node that you removed, decide what to do with the corresponding host in your {{site.data.keyword.satelliteshort}} location.
    *  [Reload the host operating system](/docs/satellite?topic=satellite-hosts#host-update) so that you can assign the host to other {{site.data.keyword.satelliteshort}} resources such as the location control plane or other clusters.
    *  Delete the hosts from your underlying infrastructure provider. For more information, refer to the infrastructure provider documentation.
-
