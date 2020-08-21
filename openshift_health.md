@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-21"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -10,84 +10,30 @@ subcollection: openshift
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:authenticated-content: .authenticated-content}
 {:beta: .beta}
-{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
-{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
 {:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
-{:term: .term}
 {:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
-{:video: .video}
 
 
 
@@ -685,96 +631,25 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 ## Using the cluster logging operator
 {: #oc_logging_operator}
 
-To deploy the [OpenShift Container Platform cluster logging operator](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external} on your {{site.data.keyword.openshiftlong_notm}} cluster, you must modify the default path to collect container logs. Container logs in {{site.data.keyword.openshiftlong_notm}} clusters are located in the `/var/data` directory.
+To deploy the OpenShift Container Platform cluster logging operator on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}. Additionally, you must update the cluster logging instance to use the {{site.data.keyword.cloud_notm}} Block Storage `ibmc-block-gold` storage class.
 {: shortdesc}
 
-### Installing the cluster logging operator
-{: #oc_logging_operator_install}
-
+To create a cluster logging instance with the `ibmc-block-gold` storage class:
 1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2.  Create the `openshift-logging` project that is used by the cluster logging operator.
+2.  From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > Installed Operators**.
+3.  Click **Cluster Logging**.
+3.  In the **Provided APIs** section, **Cluster Logging** tile, click **Create Instance**.
+4.  Modify the configuration YAML to change the storage class for the Elasticsearch log storage from `gp2` to `ibmc-block-gold`.
     ```
-    oc create ns openshift-logging
+    ...
+        elasticsearch:
+          nodeCount: 3
+          redundancyPolicy: SingleRedundancy
+          storage:
+            storageClassName: ibmc-block-gold
+            size: 200G
+    ...
     ```
-    {: pre}
-3.  Label the project with the tag that the cluster logging operator uses.
-    ```
-    oc label ns openshift-logging openshift.io/cluster-monitoring="true"
-    ```
-    {: pre}
-4.  [Install the **Elasticsearch Operator** operator from the OperatorHub in your cluster](https://docs.openshift.com/container-platform/4.3/operators/olm-adding-operators-to-cluster.html){: external}.
-    1.  From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > OperatorHub**.
-    2.  In the **Filter by keyword** field, enter `Elasticsearch Operator`, click **Elasticsearch Operator**, then click **Install**.
-    3.  Confirm the **Update Channel** matches your cluster version, then click **Subscribe**.
-    4.  Wait until the Elasticsearch Operator status is successfully installed.
-5.  Install the **Cluster logging** operator from the OperatorHub in your cluster.
-    1.  From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > OperatorHub**.
-    2.  In the **Filter by keyword** field, enter `Cluster Logging`, click **Cluster Logging**, then click **Install**.
-    3.  For **Installation Mode**, click **A specific namespace on the cluster**.
-    4.  From the project dropdown list, select **openshift-logging**.
-    5.  Confirm the **Update Channel** matches your cluster version, then click **Subscribe**.
-    6.  Wait until the Cluster Logging Operator status is successfully installed.
-6.  Create an instance of cluster logging.
-    1.  From the {{site.data.keyword.openshiftshort}} web console **Installed Operators** page, click **Cluster Logging**.
-    2.  In the **Provided APIs** section, **Cluster Logging** tile, click **Create Instance**.
-    3.  Modify the configuration YAML to change the storage class for the Elasticsearch log storage from `gp2` to `ibmc-block-gold`.
-        ```
-        ...
-            elasticsearch:
-              nodeCount: 3
-              redundancyPolicy: SingleRedundancy
-              storage:
-                storageClassName: ibmc-block-gold
-                size: 200G
-        ...
-        ```
-        {: copyblock}
-    4.  Click **Create**.
-    5.  Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.
-7.  Update the default value of the container logs in the Fluentd daemon set.
-    1.  Change your cluster logging instance management state to `unmanaged` by following the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/logging/config/cluster-logging-management.html#cluster-logging-management-state-changing_cluster-logging-curator){: external}. By making the cluster logging instance unmanaged, you are able to update component configurations so that they are not overwritten. Do **not** change the Elasticsearch management state.
-    2.  From the {{site.data.keyword.openshiftshort}} console `openshift-logging` project, click **Workloads > Daemon Sets**, and click the **Fluentd** daemon set.
-    3.  In the `volumeMounts` section, add the `/var/data` container log path to the mount path.
-        ```
-        volumeMounts:
-        - mountPath: /var/data
-          name: vardata
-        ```
-        {: codeblock}
-    4.  In the `volumes` section, add the `/var/data` container log path to the host path.
-        ```
-        volumes:
-        - hostPath:
-            path: /var/data/
-            type: ""
-          name: vardata
-        ```
-        {: codeblock}
-    5.  Apply your changes and wait for the Fluentd pods to re-create.
-8.  Verify that container logs are sent to Elasticsearch by checking the Kibana console.
-    1.  From the {{site.data.keyword.openshiftshort}} console `openshift-logging` project, click **Networking > Routers**, and click the **Kibana** route.
-    2.  In the Kibana console that opens, confirm that you see logs for containers.
-
-### Uninstalling the cluster logging operator
-{: #oc_logging_operator_remove}
-
-If you remove the cluster logging operator, the `openshift-logging` project and custom resource definitions (CRDs) still exist. You must delete the project and CRDs.
-{: shortdesc}
-
-1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2.  Uninstall the cluster logging operator from the cluster. For instructions, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/operators/olm-deleting-operators-from-cluster.html){: external}.
-3.  Delete the `openshift-logging` project.
-    ```
-    oc delete ns openshift-logging
-    ```
-    {: pre}
-4.  Delete the cluster logging and Elasticsearch CRDs.
-    ```
-    oc delete crd clusterloggings.logging.openshift.io
-    ```
-    {: pre}
-
-    ```
-    oc delete crd elasticsearches.logging.openshift.io 
-    ```
-    {: pre}
+    {: copyblock}
+5.  Click **Create**.
+6.  Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.
