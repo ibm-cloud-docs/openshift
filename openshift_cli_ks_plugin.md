@@ -909,7 +909,7 @@ Apply configuration changes for the Kubernetes master that are requested with th
 {: shortdesc}
 
 The `apiserver-refresh` and `cluster-refresh` aliases for this command are deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
@@ -942,7 +942,7 @@ Update the Kubernetes master to the default API version. During the update, you 
 You might need to change your YAML files for future deployments. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
 
 The `cluster-update` alias for this command is deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH] [--force-update] [-f] [-q]
@@ -2383,9 +2383,6 @@ ibmcloud oc zone add vpc-gen2 --zone us-south-3 --cluster my_cluster -w pool1 -w
 
 </br>
 
-
-
-
 ### `ibmcloud oc zone ls`
 {: #cs_datacenters}
 
@@ -2395,7 +2392,7 @@ View a list of available zones that you can create a cluster in.
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This command works for both classic and VPC clusters.
 
 The `locations` alias for this command is deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc zone ls --provider classic [--location LOCATION] [--region-only] [--output json] [-q]
@@ -2719,7 +2716,7 @@ Disable an ALB in your cluster. The ALB and its pods still exist, but stop routi
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb configure`, is deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc ingress alb disable --alb ALB_ID --cluster CLUSTER [-q]
@@ -2759,7 +2756,7 @@ Enable an ALB in your classic cluster.
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb configure classic`, is deprecated.
-{: deprecated}
+{: note}
 
 You can use this command to:
 * Enable a default private ALB. When you create a cluster, a default private ALB is created for you in each zone where you have workers and an available private subnet, but the default private ALBs are not enabled. However, all default public ALBs are automatically enabled, and any public or private ALBs that you create with the `ibmcloud oc ingress alb create classic` command are enabled by default too.
@@ -3112,7 +3109,7 @@ Create an Ingress secret in a cluster for a certificate stored in {{site.data.ke
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME [--namespace NAMESPACE] [--persist] [-q]
@@ -3162,7 +3159,7 @@ View information about Ingress secrets in your cluster, including secrets that y
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert get`, is deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc ingress secret get --cluster CLUSTER --name SECRET_NAME --namespace NAMESPACE [--output json] [-q]
@@ -3209,7 +3206,7 @@ List Ingress secrets in your cluster, including secrets that you imported for a 
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert ls`, is deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc ingress secret ls --cluster CLUSTER [--show-deleted] [--output json] [-q]
@@ -3253,7 +3250,7 @@ Delete an Ingress secret from your cluster. If you created a secret for a certif
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert rm`, is deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc ingress secret rm --cluster CLUSTER --name SECRET_NAME --namespace NAMESPACE [-q]
@@ -4028,7 +4025,7 @@ Refresh the logging configuration for the cluster. This action refreshes the log
 {: shortdesc}
 
 The `logging config refresh` alias for this command is deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-q]
@@ -5461,7 +5458,7 @@ View a list of available worker node flavors. Flavors vary by zone.
 {: shortdesc}
 
 The `machine-types` alias for this command is deprecated.
-{: deprecated}
+{: note}
 
 Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/openshift?topic=openshift-security#encrypted_disk).
 
@@ -5570,7 +5567,7 @@ List all the container platform versions that are available for {{site.data.keyw
 {: shortdesc}
 
 The `kube-versions` alias for this command is deprecated.
-{: deprecated}
+{: note}
 
 ```
 ibmcloud oc versions [--show-version (KUBERNETES|OPENSHIFT)] [--output json] [-q]
