@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-08-24"
 
 keywords: openshift
 subcollection: openshift
@@ -455,16 +455,21 @@ subcollection: openshift
   * [Why are my autoscaled worker pools unbalanced?](/docs/openshift?topic=openshift-ca#scalable-practices-unbalanced)
   * [Why can't I resize or rebalance my worker pool?](/docs/openshift?topic=openshift-ca#scalable-practices-resize)
 * [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-ca#ca_prepare_cluster)
-* [Installing the cluster autoscaler Helm chart to your cluster](/docs/openshift?topic=openshift-ca#ca_helm)
+* [Installing the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-ca#ca_addon)
+* [Installing the cluster autoscaler Helm chart in your cluster](/docs/openshift?topic=openshift-ca#ca_helm)
 * [Updating the cluster autoscaler configmap to enable scaling](/docs/openshift?topic=openshift-ca#ca_cm)
-* [Customizing the cluster autoscaler Helm chart configuration values](/docs/openshift?topic=openshift-ca#ca_chart_values)
+* [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-ca#ca_customize)
+  * [Customizing the cluster autoscaler add-on configmap](/docs/openshift?topic=openshift-ca#ca_addon_values)
+  * [Customizing the cluster autoscaler Helm chart values](/docs/openshift?topic=openshift-ca#ca_chart_values)
 * [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
 * [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-ca#ca_scaleup)
-* [Upgrading a cluster autoscaler release](/docs/openshift?topic=openshift-ca#ca_helm_up)
+* [Upgrading the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up)
+* [Upgrading a cluster autoscaler Helm chart release](/docs/openshift?topic=openshift-ca#ca_helm_up)
   * [Prerequisites](/docs/openshift?topic=openshift-ca#ca_helm_up_prereqs)
   * [Upgrading the cluster autoscaler release version](/docs/openshift?topic=openshift-ca#ca_helm_up_general)
   * [Upgrading a release from Helm v2 to v3](/docs/openshift?topic=openshift-ca#ca_helm_up_2to3)
 * [Removing the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm)
+* [Cluster autoscaler add-on parameter reference](/docs/openshift?topic=openshift-ca#ca_addon_ref)
 
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update)
 * [Updating the master](/docs/openshift?topic=openshift-update#master)
