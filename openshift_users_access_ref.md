@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -46,7 +100,7 @@ When you [assign cluster permissions](/docs/openshift?topic=openshift-users)(/do
 ## Permissions to create a cluster
 {: #cluster_create_permissions}
 
-Review the minimum permissions in {{site.data.keyword.cloud_notm}} IAM that the account owner must set up so that users can create clusters in Red Hat OpenShift on IBM Cloud.
+Review the minimum permissions in {{site.data.keyword.cloud_notm}} IAM that the account owner must set up so that users can create clusters in {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
 <dl>
@@ -81,7 +135,7 @@ Review the minimum permissions in {{site.data.keyword.cloud_notm}} IAM that the 
 ## {{site.data.keyword.cloud_notm}} IAM platform roles
 {: #iam_platform}
 
-Red Hat OpenShift on IBM Cloud is configured to use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles. {{site.data.keyword.cloud_notm}} IAM platform roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform roles also automatically set basic infrastructure permissions for users. To assign platform access roles, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#platform).
+{{site.data.keyword.openshiftlong_notm}} is configured to use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) roles. {{site.data.keyword.cloud_notm}} IAM platform roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform roles also automatically set basic infrastructure permissions for users. To assign platform access roles, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#platform).
 {: shortdesc}
 
 <p class="tip">Do not assign {{site.data.keyword.cloud_notm}} IAM platform roles at the same time as a service role. You must assign platform and service roles separately.</p>
@@ -96,18 +150,18 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 
 | Action | CLI command | API call |
 |----|----|----|
-| View a list of supported versions for managed add-ons in Red Hat OpenShift on IBM Cloud. | [`ibmcloud oc addon-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions) | [`GET /v1/addon`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetAddons) |
-| Target or view the API endpoint for Red Hat OpenShift on IBM Cloud. | [`ibmcloud oc api`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api) | - |
+| View a list of supported versions for managed add-ons in {{site.data.keyword.openshiftlong_notm}}. | [`ibmcloud oc addon-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions) | [`GET /v1/addon`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetAddons) |
+| Target or view the API endpoint for {{site.data.keyword.openshiftlong_notm}}. | [`ibmcloud oc api`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api) | - |
 | View a list of supported commands and parameters. | `ibmcloud oc help` | - |
-| Initialize the Red Hat OpenShift on IBM Cloud plug-in or specify the region where you want to create or access OpenShift clusters. | [`ibmcloud oc init`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init) | - |
-| Deprecated: View a list of Kubernetes versions supported in Red Hat OpenShift on IBM Cloud. | `ibmcloud oc kube-versions`| [`GET /v1/kube-versions`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetKubeVersions) |
+| Initialize the {{site.data.keyword.openshiftlong_notm}} plug-in or specify the region where you want to create or access {{site.data.keyword.openshiftshort}} clusters. | [`ibmcloud oc init`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init) | - |
+| Deprecated: View a list of Kubernetes versions supported in {{site.data.keyword.openshiftlong_notm}}. | `ibmcloud oc kube-versions`| [`GET /v1/kube-versions`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetKubeVersions) |
 | View a list of available flavors for your worker nodes. | [`ibmcloud oc flavors`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types) (machine-types) | [`GET /v2​/getFlavors`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2GetFlavors) |
 | View current messages for the IBMid user. | [`ibmcloud oc messages`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages) | [`GET /v1/messages`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetMessages) |
-| View a list of supported locations in Red Hat OpenShift on IBM Cloud. | [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations) | [`GET /v1/locations`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/ListLocations) |
-| View a list of supported versions in Red Hat OpenShift on IBM Cloud. | [`ibmcloud oc versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command) | - |
+| View a list of supported locations in {{site.data.keyword.openshiftlong_notm}}. | [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations) | [`GET /v1/locations`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/ListLocations) |
+| View a list of supported versions in {{site.data.keyword.openshiftlong_notm}}. | [`ibmcloud oc versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command) | - |
 | View a list of available zones that you can create a cluster in. | [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters) | <ul><li>Classic: [`GET /v1/zones`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetZones)</li><li>VPC: [`GET ​/v2​/vpc​/getZones`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetZones)</li></ul> |
 {: class="simple-tab-table"}
-{: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
+{: caption="Overview of permissions required for CLI commands and API calls in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: #accessreftabtablenone}
 {: tab-title="None"}
 {: tab-group="access-ref-iam-platform"}
@@ -142,8 +196,8 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | List all worker pools in a cluster. | [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pools) | <ul><li>Classic: [`GET /v1/clusters/{idOrName}/workerpools`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetWorkerPools)</li><li>VPC: [`GET /v2/getWorkerPools`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorkerPools)</li></ul> |
 | List all worker nodes in a cluster. | [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_workers) | <ul><li>Provider-agnostic: [`GET/v2/getWorkers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorkers)</li><li>Classic: [`GET /v2/classic/getWorkers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/classicGetWorkers)</li><li>VPC: [`GET /v2/vpc/getWorkers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetWorkers)</li></ul> |
 {: class="simple-tab-table"}
-{: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the action that you can take with Red Hat OpenShift on IBM Cloud service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
+{: caption="Overview of permissions required for CLI commands and API calls in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the action that you can take with {{site.data.keyword.openshiftlong_notm}} service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
 {: #accessreftabtableview}
 {: tab-title="Viewer"}
 {: tab-group="access-ref-iam-platform"}
@@ -171,7 +225,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Update a log forwarding configuration. | [`ibmcloud oc logging config update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_update) | [`PUT /v1/logging/{idOrName}/loggingconfig/{logSource}/{id}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/logging/UpdateLoggingConfig) |
 | Create a log filtering configuration. | [`ibmcloud oc logging filter create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_create) | [`POST /v1/logging/{idOrName}/filterconfigs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/filter/CreateFilterConfig) |
 | Delete a log filtering configuration. | [`ibmcloud oc logging filter rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_delete) | [`DELETE /v1/logging/{idOrName}/filterconfigs/{id}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/filter/DeleteFilterConfig) |
-| Delete all logging filter configurations for the OpenShift cluster. | - | [`DELETE /v1/logging/{idOrName}/filterconfigs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/filter/DeleteFilterConfigs) |
+| Delete all logging filter configurations for the {{site.data.keyword.openshiftshort}} cluster. | - | [`DELETE /v1/logging/{idOrName}/filterconfigs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/filter/DeleteFilterConfigs) |
 | Update a log filtering configuration. | [`ibmcloud oc logging filter update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_update) | [`PUT /v1/logging/{idOrName}/filterconfigs/{id}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/filter/UpdateFilterConfig) |
 | Configure and optionally enable a health check monitor for an existing NLB subdomain in a cluster. | [`ibmcloud oc nlb-dns monitor configure`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-configure) | [`POST /v1/health/clusters/{idOrName}/config`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-health-monitor/AddNlbDNSHealthMonitor) |
 | View the settings for an existing health check monitor. | [`ibmcloud oc nlb-dns monitor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-get) | [`GET /v1/health/clusters/{idOrName}/host/{nlbHost}/config`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-health-monitor/GetNlbDNSHealthMonitor) |
@@ -190,8 +244,8 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Delete a secret from an NLB subdomain and prevent future renewal of the certificate. | [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm) | [`POST ​/v2​/nlb-dns​/deleteSecret`](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/DeleteSecret) |
 | Create a webhook in a cluster. | [`ibmcloud oc webhook-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create) | [`POST /v1/clusters/{idOrName}/webhooks`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/AddClusterWebhooks) |
 {: class="simple-tab-table"}
-{: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the action that you can take with Red Hat OpenShift on IBM Cloud service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
+{: caption="Overview of permissions required for CLI commands and API calls in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the action that you can take with {{site.data.keyword.openshiftlong_notm}} service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
 {: #accessreftabtableedit}
 {: tab-title="Editor"}
 {: tab-group="access-ref-iam-platform"}
@@ -222,8 +276,8 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Update the network configuration for a given zone in a worker pool. | [`ibmcloud oc zone network-set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set) | [`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}/zones/{zoneid}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/AddWorkerPoolZoneNetwork) |
 | Remove a zone a from worker pool. | [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm) | [`DELETE /v1/clusters/{idOrName}/workerpools/{poolidOrName}/zones/{zoneid}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/RemoveWorkerPoolZone) |
 {: class="simple-tab-table"}
-{: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the action that you can take with Red Hat OpenShift on IBM Cloud service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
+{: caption="Overview of permissions required for CLI commands and API calls in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the action that you can take with {{site.data.keyword.openshiftlong_notm}} service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
 {: #accessreftabtableoper}
 {: tab-title="Operator"}
 {: tab-group="access-ref-iam-platform"}
@@ -240,7 +294,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | List managed add-ons, such as the Kubernetes web terminal, that are enabled in a cluster. | [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons) | [`GET /v1/clusters/{idOrName}/addons`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterAddons) |
 | Create a free or standard cluster on classic infrastructure. **Note**: The Administrator platform role for {{site.data.keyword.registrylong_notm}} and the Super User infrastructure role are also required. | [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) | [`POST /v1/clusters`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/CreateCluster) |
 | Create a classic cluster in your Virtual Private Cloud (VPC). **Note**: The Administrator platform role for VPC Infrastructure, the Administrator platform role for {{site.data.keyword.registrylong_notm}} at the account level, and the Writer or Manager service role for {{site.data.keyword.containerlong_notm}} are also required. | [`ibmcloud oc cluster create vpc-classic`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cli_cluster-create-vpc-classic) | [`POST /v2/vpc/createCluster`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcCreateCluster) |
-| Disable a specified feature for a cluster, such as the public service endpoint for the cluster master. | [`ibmcloud oc cluster feature disable`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_feature_disable) | - |
+| Disable a specified feature for a cluster, such as the public service endpoint for the cluster master. | [`ibmcloud oc cluster feature disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_disable) | - |
 | Enable a specified feature for a cluster, such as the private service endpoint for the cluster master. | [`ibmcloud oc cluster feature enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_enable) | - |
 | Delete a cluster. | [`ibmcloud oc cluster rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_rm) | [`DELETE /v1/clusters/{idOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/RemoveCluster) |
 | Set infrastructure credentials for the {{site.data.keyword.cloud_notm}} account to access a different classic infrastructure portfolio. | [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) | [`POST /v1/credentials`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/accounts/StoreUserCredentials) |
@@ -251,8 +305,8 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Collect a snapshot of API server logs in an {{site.data.keyword.cos_full_notm}} bucket. | [`ibmcloud oc logging collect`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_collect) | [`POST /v1/log-collector/{idOrName}/masterlogs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/log45collector/CreateMasterLogCollection) |
 | See the status of the API server logs snapshot request. | [`ibmcloud oc logging collect-status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_collect_status) | [`GET /v1/log-collector/{idOrName}/masterlogs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/log45collector/GetMasterLogCollectionStatus) |
 {: class="simple-tab-table"}
-{: caption="Overview of permissions required for CLI commands and API calls in Red Hat OpenShift on IBM Cloud." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the action that you can take with Red Hat OpenShift on IBM Cloud service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
+{: caption="Overview of permissions required for CLI commands and API calls in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the action that you can take with {{site.data.keyword.openshiftlong_notm}} service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
 {: #accessreftabtableadmin}
 {: tab-title="Administrator"}
 {: tab-group="access-ref-iam-platform"}
@@ -271,7 +325,7 @@ Looking for which Kubernetes actions each service role grants through RBAC? See 
 
 The following table shows the Kubernetes resource permissions that are granted by each service role and its corresponding RBAC role.
 
-<table>
+<table summary="The columns are read from left to right. The first column has the service role. The second column has the RBAC role, binding, and scope for the service role. The third column describes the permissions that the service role gives.">
 <caption>Kubernetes resource permissions by service and corresponding RBAC roles</caption>
 <col width="25%">
 <thead>
@@ -286,7 +340,7 @@ The following table shows the Kubernetes resource permissions that are granted b
     <td headers="service-role-reader kube-perm"><ul>
       <li>Read access to resources in a namespace</li>
       <li>No read access to roles and role bindings or to Kubernetes secrets</li>
-      <li>Access the OpenShift dashboard to view resources in a namespace</li></ul>
+      <li>Access the {{site.data.keyword.openshiftshort}} dashboard to view resources in a namespace</li></ul>
     </td>
   </tr>
   <tr>
@@ -314,11 +368,11 @@ The following table shows the Kubernetes resource permissions that are granted b
   </tr>
     <tr>
     <td>Any service role</td>
-    <td>All users of an OpenShift cluster are given the following roles that vary by cluster version.<ul><li><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`.</li><li><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.</li></ul></td>
+    <td>All users of an {{site.data.keyword.openshiftshort}} cluster are given the following roles that vary by cluster version.<ul><li><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`.</li><li><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.</li></ul></td>
     <td><ul>
       <li>Get basic information about projects that the user has access to.</li>
       <li>Create authorized resources in the projects that the user has access to.</li>
-      <li>For more information, see the [OpenShift docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).</li></ul></td>
+      <li>For more information, see the [{{site.data.keyword.openshiftshort}} docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).</li></ul></td>
   </tr>
 </tbody>
 </table>
@@ -338,7 +392,7 @@ Wondering if you have the correct permissions to run a certain `oc` command on a
 
 The following table shows the permissions that are granted by each RBAC role to individual Kubernetes resources. Permissions are shown as which verbs a user with that role can complete against the resource, such as "get", "list", "describe", "create", or "delete".
 
-<table>
+<table summary="The columns are read from left to right. The first column has the Kubernetes resource that an RBAC role authorizes actions to. The second column describes the actions that the view role authorizes actions to for the resource. The third column describes the actions that the edit role authorizes actions to for the resource. The second column describes the actions that the admin and cluster admin roles authorize actions to for the resource.">
  <caption>Kubernetes resource permissions granted by each predefined RBAC role</caption>
  <col width="25%">
  <thead>
@@ -614,15 +668,15 @@ The following table shows the permissions that are granted by each RBAC role to 
 ## {{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users
 {: #iam_issuer_users}
 
-Users with a service role to Red Hat OpenShift on IBM Cloud in IAM are given [corresponding user roles in RBAC](#rbac_ref). The RBAC user details include a unique issuer ID, subject identifier claim, and OpenShift username. These details vary with the OpenShift version of the cluster. When you update a cluster from a previous version, the details are automatically updated. RBAC usernames are prefixed by `IAM#`, such as in the output of `oc get users`. For more information about how OpenID authentication works, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/authentication/identity_providers/configuring-oidc-identity-provider.html){: external}.
+Users with a service role to {{site.data.keyword.openshiftlong_notm}} in IAM are given [corresponding user roles in RBAC](#rbac_ref). The RBAC user details include a unique issuer ID, subject identifier claim, and {{site.data.keyword.openshiftshort}} username. These details vary with the {{site.data.keyword.openshiftshort}} version of the cluster. When you update a cluster from a previous version, the details are automatically updated. RBAC usernames are prefixed by `IAM#`, such as in the output of `oc get users`. For more information about how OpenID authentication works, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/authentication/identity_providers/configuring-oidc-identity-provider.html){: external}.
 {: shortdesc}
 
-You might use this information if you build automation tooling within the cluster that relies on the user details to authenticate with the OpenShift API server.
+You might use this information if you build automation tooling within the cluster that relies on the user details to authenticate with the {{site.data.keyword.openshiftshort}} API server.
 
 | Version | Issuer | Claim | Casing`*` |
 | --- | --- | --- | --- |
 | 3.11 or later | `https://iam.cloud.ibm.com/identity` | `sub_<account_ID>` | lowercase |
-{: summary="The rows are read from left to right. The first column is the OpenShift version of the cluster. The second column is the {{site.data.keyword.cloud_notm}} IAM Issuer ID. The third column is the subject identifier claim. The fourth column is the casing style of the username."}
+{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.openshiftshort}} version of the cluster. The second column is the {{site.data.keyword.cloud_notm}} IAM Issuer ID. The third column is the subject identifier claim. The fourth column is the casing style of the username."}
 {: caption="{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users" caption-side="top"}
 
 `*`: An example of lowercase is `user.name@company.com`. An example of camel case is `User.Name@company.com`.
@@ -639,7 +693,7 @@ Cloud Foundry roles grant access to organizations and spaces within the account.
 
 The following table shows the Cloud Foundry roles that are required for cluster action permissions.
 
-<table>
+<table summary="The columns are read from left to right. The first column has the Cloud Foundry role. The second column describes permissions for the role.">
   <caption>Cluster management permissions by Cloud Foundry role</caption>
   <col width="25%">
   <thead>

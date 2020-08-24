@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-08-24"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -107,7 +107,7 @@ Before you can create clusters on your own infrastructure, you must set up an {{
 
 1. [Create an {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-locations#location-create).
 2. [Set up the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
-3. [Add at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to use as the worker nodes for your {{site.data.keyword.openhiftlong_notm}} cluster.
+3. [Add at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
 
 <br />
 
@@ -239,7 +239,7 @@ Review common tasks that you might be interested in:
 
 
 ## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
-{: #satcluster-access}
+{: #satcluster-limitations}
 
 See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
 {: shortdesc}
@@ -250,12 +250,12 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 ## Storing application data in persistent storage
 {: #satcluster-storage}
 
-Unlike standard {{site.data.keyword.openshift}} clusters that are created on {{site.data.keyword.cloud_notm}} infrastructure, your {{site.data.keyword.satelliteshort}} clusters do not come installed with a storage driver that provides Kubernetes storage classes that are ready to use with Kubernetes persistent volumes for your apps. However, you can install your own storage driver to set up your apps to save their data in a backing storage device. Review the following common options.
+Unlike standard {{site.data.keyword.openshiftshort}} clusters that are created on {{site.data.keyword.cloud_notm}} infrastructure, your {{site.data.keyword.satelliteshort}} clusters do not come installed with a storage driver that provides Kubernetes storage classes that are ready to use with Kubernetes persistent volumes for your apps. However, you can install your own storage driver to set up your apps to save their data in a backing storage device. Review the following common options.
 {: shortdesc} 
 
 *  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage) in your cluster.
-*  Manually set up a storage operator that uses a backing storage provider in your cluster.
-*  Use local storage on the host, such as the local storage operator.
+*  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
+*  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.4/storage/persistent_storage/persistent-storage-local.html){: external}.
 
 <br />
 

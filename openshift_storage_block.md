@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -233,7 +233,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
 
 4. Choose the size and IOPS for your block storage. The size and the number of IOPS define the total number of IOPS (input/ output operations per second) that serves as an indicator for how fast your storage is. The more total IOPS your storage has, the faster it processes read and write operations.
    - **Bronze, silver, and gold storage classes:** These storage classes come with a fixed number of IOPS per gigabyte and are provisioned on SSD hard disks. The total number of IOPS depends on the size of the storage that you choose. You can select any whole number of gigabyte within the allowed size range, such as 20 Gi, 256 Gi, or 11854 Gi. To determine the total number of IOPS, you must multiply the IOPS with the selected size. For example, if you select a 1000Gi block storage size in the silver storage class that comes with 4 IOPS per GB, your storage has a total of 4000 IOPS.  
-     <table>
+     <table summary="The columns are read from left to right. The first column has the storage class. The second column has the IOPS per gigabyte that the storage class supports. The third column has the size range in gigabytes that the storage class supports">
          <caption>Table of storage class size ranges and IOPS per gigabyte</caption>
          <thead>
          <th>Storage class</th>
@@ -258,7 +258,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
          </tr>
          </tbody></table>
    - **Custom storage class:** When you choose this storage class, you have more control over the size and IOPS that you want. For the size, you can select any whole number of gigabyte within the allowed size range. The size that you choose determines the IOPS range that is available to you. You can choose an IOPS that is a multiple of 100 that is in the specified range. The IOPS that you choose is static and does not scale with the size of the storage. For example, if you choose 40Gi with 100 IOPS, your total IOPS remains 100. </br></br>The IOPS to gigabyte ratio also determines the type of hard disk that is provisioned for you. For example, if you have 500Gi at 100 IOPS, your IOPS to gigabyte ratio is 0.2. Storage with a ratio of less than or equal to 0.3 is provisioned on SATA hard disks. If your ratio is greater than 0.3, then your storage is provisioned on SSD hard disks.
-     <table>
+     <table summary="The columns are read from left to right. The first column has the size range in gigabytes that you can make for a custom storage class. The second column has the IOPS range in multiples of 100 that you can make for the size range in a custom storage class.">
          <caption>Table of custom storage class size ranges and IOPS</caption>
          <thead>
          <th>Size range in gigabytes</th>
@@ -383,7 +383,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ```
     {: pre}  
 
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Understanding the <code>iam service-policy-create</code> command</caption>
     <col width="25%">
     <thead>
@@ -408,7 +408,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ```
     {: pre}
     
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Understanding the <code>iam service-policy-create</code> command</caption>
     <col width="25%">
     <thead>
@@ -464,7 +464,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ```
     {: codeblock}
 
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
     <caption>Understanding the YAML file components</caption>
     <col width="25%">
     <thead>
@@ -545,7 +545,7 @@ The following steps explain how to create a custom, encrypted storage class that
     ```
     {: codeblock}
     
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
     <caption>Understanding the YAML file components</caption>
     <thead>
     <th>Component</th>
@@ -611,7 +611,7 @@ The following steps show how you can reference your {{site.data.keyword.keymanag
     ```
     {: codeblock}
 
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
     <caption>Understanding the YAML file components</caption>
     <thead>
     <th>Component</th>
@@ -762,7 +762,7 @@ To add block storage:
        ```
        {: codeblock}
 
-       <table>
+       <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
        <caption>Understanding the YAML file components</caption>
        <thead>
        <th>Component</th>
@@ -868,7 +868,7 @@ To add block storage:
     ```
     {: codeblock}
 
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
     <caption>Understanding the YAML file components</caption>
     <col width="25%">
     <thead>
@@ -1032,10 +1032,10 @@ Before you can start to mount your existing storage to an app, you must retrieve
           "TargetPortal": "<IP_address>"
           "VolumeID": "<volume_ID>"
           "volumeName": "<volume_name>"
-      ```
-      {: codeblock}
+    ```
+    {: codeblock}
 
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
     <caption>Understanding the YAML file components</caption>
     <thead>
     <th>Component</th>
@@ -1066,13 +1066,13 @@ Before you can start to mount your existing storage to an app, you must retrieve
     <td>In the spec flex volume options section, enter the IP address of your block storage that you retrieved earlier as <code>ip_addr</code>. </td>
     </tr>
     <tr>
-	  <td><code>VolumeId</code></td>
-	  <td>In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as <code>id</code>.</td>
-	  </tr>
-	  <tr>
-		<td><code>volumeName</code></td>
-		<td>In the spec flex volume options section, enter a name for your volume.</td>
-	  </tr>
+    <td><code>VolumeId</code></td>
+    <td>In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as <code>id</code>.</td>
+    </tr>
+    <tr>
+    <td><code>volumeName</code></td>
+    <td>In the spec flex volume options section, enter a name for your volume.</td>
+    </tr>
     </tbody></table>
 
 3.  Create the PV in your cluster.
@@ -1376,7 +1376,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
      ```
      {: codeblock}
 
-     <table>
+     <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
      <caption>Understanding the stateful set YAML file components</caption>
      <thead>
       <th>Component</th>
@@ -1846,6 +1846,7 @@ The following examples create a storage class that provisions block storage with
     fsType: "xfs"
   reclaimPolicy: "Delete"
   ```
+  {: codeblock}
 
 - **Example for Performance block storage:**
   ```yaml

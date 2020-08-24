@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -379,18 +379,18 @@ By default, the Ingress ALB logs each request as it arrives. If you have an envi
         * Buffer size: Add the `buffer-size` field and set it to how much log memory can be held in the buffer before the ALB writes the buffer contents to the log. For example, if the default value of `100KB` is used, the ALB writes buffer contents to the log every time the buffer reaches 100kb of log content.
         * Time interval or buffer size: When both `flush-interval` and `buffer-size` are set, the ALB writes buffer content to the log based on whichever threshold parameter is met first.
 
-    ```yaml
-    apiVersion: v1
-    kind: ConfigMap
-    data:
-      access-log-buffering: "true"
-      flush-interval: "5m"
-      buffer-size: "100KB"
-    metadata:
-      name: ibm-cloud-provider-ingress-cm
-      ...
-    ```
-   {: codeblock}
+      ```yaml
+      apiVersion: v1
+      kind: ConfigMap
+      data:
+        access-log-buffering: "true"
+        flush-interval: "5m"
+        buffer-size: "100KB"
+      metadata:
+        name: ibm-cloud-provider-ingress-cm
+        ...
+      ```
+      {: codeblock}
 
 3. Save the configuration file.
 

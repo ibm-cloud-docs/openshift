@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -319,7 +319,7 @@ During the PVC creation and binding, many different tasks are executed by the fi
 
 2. Review common error message descriptions and resolutions.
 
-   <table>
+   <table summary="The columns are read from left to right. The first column has the error message. The second column describes the error message. The third column provides steps to resolve the error.">
    <thead>
      <th>Error message</th>
      <th>Description</th>
@@ -390,7 +390,7 @@ When you mount a PVC to your pod, you might experience errors when accessing or 
    {: pre}
 
 3. Review common errors that can occur when you mount a PVC to a pod.
-   <table>
+   <table summary="The columns are read from left to right. The first column has the symptom or error message. The second column describes the message. The third column provides steps to resolve the error.">
    <thead>
      <th>Symptom or error message</th>
      <th>Description</th>
@@ -907,7 +907,7 @@ When you mount a PVC to your pod, you might experience errors when accessing or 
    {: pre}
 
 3. Review common errors that can occur when you mount a PVC to a pod.
-   <table>
+   <table summary="The columns are read from left to right. The first column has the symptom or error message. The second column describes the message. The third column provides steps to resolve the error.">
    <thead>
      <th>Symptom or error message</th>
      <th>Description</th>
@@ -1255,7 +1255,7 @@ During the PVC creation and binding, many different tasks are executed by the {{
 
 2. Review common error message descriptions and resolutions.
 
-   <table>
+   <table summary="The columns are read from left to right. The first column has the symptom or error message. The second column describes the message. The third column provides steps to resolve the error.">
    <thead>
    <th>Error message</th>
    <th>Description</th>
@@ -1871,7 +1871,7 @@ If you run into an issue with using Portworx, you can open an issue in the [Port
 
 If you still experience issues with persistent storage in your cluster, review the following options to receive further support or ask questions.
 
-- For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/containers?topic=containers-get-help) to find information about how to contact the IBM team on Slack or open an {{site.data.keyword.cloud_notm}} support case.
+- For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/openshift?topic=openshift-get-help) to find information about how to contact the IBM team on Slack or open an {{site.data.keyword.cloud_notm}} support case.
 - For issues with Portworx, open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an e-mail to `support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@portworx.com`.
 
 

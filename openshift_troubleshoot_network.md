@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -285,7 +285,7 @@ Update the Helm chart values to reflect the worker node changes:
 
     If you added a worker node:
 
-    <table>
+    <table summary="The columns are read from left to right. The first column has the worker node setting. The second column describes the setting.">
     <caption>Worker node settings</caption>
      <col width="25%">
      <thead>
@@ -313,7 +313,7 @@ Update the Helm chart values to reflect the worker node changes:
 
     If you deleted a worker node:
 
-    <table>
+    <table summary="The columns are read from left to right. The first column has the worker node setting. The second column describes the setting.">
     <caption>Worker node settings</caption>
      <col width="25%">
      <thead>

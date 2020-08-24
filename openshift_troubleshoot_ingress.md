@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1248,7 +1248,7 @@ List the ALB secret details (`ibmcloud ks alb cert get`) and view the ALB secret
 {: tsResolve}
 Review the following reasons why the ALB secret might fail and the corresponding troubleshooting steps:
 
-<table>
+<table summary="The columns are read from left to right. The first column describes why the issue happens. The second column provides steps to resolve the error.">
 <caption>Troubleshooting Ingress application load balancer secrets</caption>
  <col width="25%">
  <thead>

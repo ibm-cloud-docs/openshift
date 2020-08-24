@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -52,7 +106,7 @@ Control traffic to and from your cluster and traffic between pods in your cluste
 Control traffic to and from your cluster with VPC access control lists (ACLs) and VPC security groups, and control traffic between pods in your cluster with Kubernetes network policies.
 {: shortdesc}
 
-The following table describes the basic characteristics of each network security option in Red Hat OpenShift on IBM Cloud.
+The following table describes the basic characteristics of each network security option in {{site.data.keyword.openshiftlong_notm}}.
 
 |Policy type|Application level|Default behavior|Use case|Limitations|
 |-----------|-----------------|----------------|--------|-----------|
@@ -99,7 +153,7 @@ For each subnet that your cluster is attached to, use the {{site.data.keyword.cl
 
    <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
 
-   <table>
+   <table summary="The columns are read from left to right. The first column describes the purpose of the inbound rule. The second column states whether to allow or deny. The third column is the source type of the source IP or CIDR. The fourth column is the source IP or CIDR to set for the inbound rule. The fifth column is the source port minimum. The sixth column is the source port maximum. The seventh column is the destination type of the destination IP or CIDR. The eigth column is the destination IP or CIDR to set for the inbound rule. The ninth column is the destination port minimum. The tenth column is the destination port maximum. The eleventh column is the priority for the inbound rule.">
    <caption>Inbound rule</caption>
    <col width="25%">
    <thead>
@@ -216,7 +270,7 @@ For each subnet that your cluster is attached to, use the {{site.data.keyword.cl
    <td>After 6</td>
    </tr>
    <tr>
-   <td>To access the OpenShift web console, allow traffic to port 443. To further restrict access to this port, you can optionally specify the source IP addresses that you can connect to the web console in the **Source IP or CIDR** field.</td>
+   <td>To access the {{site.data.keyword.openshiftshort}} web console, allow traffic to port 443. To further restrict access to this port, you can optionally specify the source IP addresses that you can connect to the web console in the **Source IP or CIDR** field.</td>
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
@@ -249,7 +303,7 @@ For each subnet that your cluster is attached to, use the {{site.data.keyword.cl
 
    <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
 
-   <table>
+   <table summary="The columns are read from left to right. The first column describes the purpose of the inbound rule. The second column states whether to allow or deny. The third column is the source type of the source IP or CIDR. The fourth column is the source IP or CIDR to set for the inbound rule. The fifth column is the source port minimum. The sixth column is the source port maximum. The seventh column is the destination type of the destination IP or CIDR. The eigth column is the destination IP or CIDR to set for the inbound rule. The ninth column is the destination port minimum. The tenth column is the destination port maximum. The eleventh column is the priority for the inbound rule.">
    <caption>Inbound rule</caption>
    <col width="25%">
    <thead>
@@ -366,7 +420,7 @@ For each subnet that your cluster is attached to, use the {{site.data.keyword.cl
    <td>After 6</td>
    </tr>
    <tr>
-   <td>To access the OpenShift web console, allow traffic from port 443. To further restrict access to this port, you can optionally specify the IP addresses that you can connect to the web console in the **Destination IP or CIDR** field.</td>
+   <td>To access the {{site.data.keyword.openshiftshort}} web console, allow traffic from port 443. To further restrict access to this port, you can optionally specify the IP addresses that you can connect to the web console in the **Destination IP or CIDR** field.</td>
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
