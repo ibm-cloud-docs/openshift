@@ -239,7 +239,7 @@ If your worker pool has zero (0) worker nodes, the worker pool cannot be scaled.
 
 Yes, you can add several Kubernetes features to your deployment to adjust how the cluster autoscaler considers your resource requests for scaling.
 {: shortdesc}
-* [Taint your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) to allow only the deployments or pods with the matching toleration to be deployed to your worker pool. 
+* [Taint your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) to allow only the deployments or pods with the matching toleration to be deployed to your worker pool.
 * [Add a label](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) to your worker pool other than the default worker pool. This label is used in your deployment configuration to specify `nodeAffinity` or `nodeSelector` which limits the workloads that can be deployed on the worker nodes in the labeled worker pool.
 * Use [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external} to prevent abrupt rescheduling or deletions of your pods.
 * If you're using pod priority, you can [edit the priority cutoff](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-cluster-autoscaler-work-with-pod-priority-and-preemption){: external} to change what types of priority trigger scaling up. By default, the priority cutoff is zero (`0`).
@@ -287,7 +287,7 @@ Before you install the {{site.data.keyword.cloud_notm}} cluster autoscaler add-o
     ```
     {: pre}
 5.  Plan to autoscale a worker pool other than the `default` worker pool, because the `default` worker pool has system components that can prevent automatically scaling down. Include a label for the worker pool so that you can set [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity){: external} for the workloads that you want to deploy to the worker pool that has autoscaling enabled. For example, your label might be `app: nginx`. Choose from the following options:
-    * Create a [VPC](/docs/openshift?topic=openshift-add_workers#vpc_pools) or [classic](/docs/openshift?topic=openshift-add_workers#classic_pools) worker pool other than the `default` worker pool with the label that you want to use with the workloads to run on the autoscaled worker pool. 
+    * Create a [VPC](/docs/openshift?topic=openshift-add_workers#vpc_pools) or [classic](/docs/openshift?topic=openshift-add_workers#classic_pools) worker pool other than the `default` worker pool with the label that you want to use with the workloads to run on the autoscaled worker pool.
     * [Add the label to an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) other than the `default` worker pool.
 6.  Confirm that your worker pool has the necessary labels for autoscaling. In the output, you see the required `ibm-cloud.kubernetes.io/worker-pool-id` label and the label that you previously created for node affinity. If you do not see these labels, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool), and then [add your label for node affinity](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
   ```
@@ -304,7 +304,7 @@ Before you install the {{site.data.keyword.cloud_notm}} cluster autoscaler add-o
 7. [Taint the worker pools](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) that you want to autoscale so that the worker pool does not accept workloads except the ones that you want to run on the autoscaled worker pool. You can learn more about taints and tolerations in the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/). As an example, you might set a taint of `use=autoscale:NoExecute`. In this example, the `NoExecute` toleration evicts and pods that do not have the matching the toleration.
 
 8. [Install the cluster autoscaler add-on](#ca_addon).
-    
+
     You might also install the cluster autoscaler Helm chart, but the Helm chart is deprecated and becomes unsupported tentatively 15 September 2020. You cannot install the add-on and the Helm chart in the same cluster at the same time.
     {: deprecated}
 
@@ -321,13 +321,13 @@ Before you install the {{site.data.keyword.cloud_notm}} cluster autoscaler add-o
     The cluster autoscaler add-on configmap contains different parameters than the cluster autoscaler Helm chart configmap. You can make a backup of your Helm chart configmap to use as reference, but do not apply the backup directly to your cluster with the add-on. Instead, you can update the cluster autoscaler add-on confimap with the values from your Helm chart backup.
     {: note}
 
-  3. Install the cluster autoscaler add-on to your cluster. 
+  3. Install the cluster autoscaler add-on to your cluster.
 
     **In the console**
       1. From the [{{site.data.keyword.openshiftlong_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters), select the cluster where you want to enable autoscaling.
       2. On the **Overview** page, click **Add-ons**.
-      3. On the **Add-ons** page, locate the Cluster Autoscaler add-on and click **Install** 
-    
+      3. On the **Add-ons** page, locate the Cluster Autoscaler add-on and click **Install**
+
     **In the CLI**
       1. Install the `cluster-autoscaler` add-on.
         ```
@@ -599,7 +599,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 
 **Before you begin**:
 *  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-*  [Install the `ibm-iks-cluster-autoscaler` add-on](#ca_addon). You can also install the autoscaler via Helm chart for [public](#ca_helm) or [private](#ca_private_cluster) clusters, but the Helm chart is deprecated.
+*  [Install the `ibm-iks-cluster-autoscaler` add-on](#ca_addon).
 
 ### Customizing the cluster autoscaler add-on configmap
 {: #ca_addon_values}
@@ -708,7 +708,7 @@ To limit a pod deployment to a specific worker pool that is managed by the clust
 {: shortdesc}
 
 For more information, see the following Kubernetes docs:
-* [Assigning pods to nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} 
+* [Assigning pods to nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}
 * [Taints and tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external}
 
 **Before you begin**:
@@ -754,7 +754,7 @@ For more information, see the following Kubernetes docs:
     {: codeblock}
 
 3.  In your pod spec template, match the `toleration` to the taint you set on your worker pool.
-    
+
     Example `NoExecute` toleration:
     ```yaml
     tolerations:
@@ -1019,7 +1019,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: pre}
 
     **Example output**
-    
+
     ```yaml
     apiVersion: v1
     data:
@@ -1223,7 +1223,7 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 </table>
 
 ## Cluster autoscaler Helm chart parameter reference
-{: ca_helm_ref}
+{: #ca_helm_ref}
 
 This table refers to the cluster autoscaler Helm chart parameters. For add-on values, see [Cluster autoscaler add-on parameter reference](#ca_addon_ref)
 {: note}
@@ -1390,9 +1390,6 @@ Understanding the `--set workerpools` options:
   <br><br>By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.</td><td>Disabled</td>
 </tbody>
 </table>
-
-
-
 
 
 
