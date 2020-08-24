@@ -264,7 +264,7 @@ Previous {{site.data.keyword.openshiftlong_notm}} Ingress fields:
     ingress.bluemix.net/custom-port: "protocol=http port=8080;protocol=https port=8443"
     ```
     {: screen}
-* `ibm-k8s-controller-config` configmap [field](/docs/containers?topic=containers-ingress_annotation#open_ports_iks):
+* `ibm-k8s-controller-config` configmap [field](/docs/openshift?topic=openshift-ingress_annotation#custom-port):
     ```
     public-ports: "80;443;9443"
     ```
@@ -277,7 +277,7 @@ Kubernetes Ingress fields:
     httpsPort=8443
     ```
     {: screen}
-* [Modify each ALB service](/docs/containers?topic=containers-ingress_annotation#open_ports_kube)</li></ul>
+* [Modify each ALB service](#comm-customize-deploy)</li></ul>
 
 
 ### Custom request header
@@ -418,7 +418,7 @@ keep-alive: 75
 Set the maximum number and size of buffers that read large client request headers.
 {: shortdesc}
 
-Previous {{site.data.keyword.openshiftlong_notm}} Ingress resource [annotation](/docs/containers?topic=containers-ingress_annotation#large-client-header-buffersh):
+Previous {{site.data.keyword.openshiftlong_notm}} Ingress resource [annotation](/docs/openshift?topic=openshift-ingress_annotation#large-client-header-buffers):
 
 ```
 ingress.bluemix.net/large-client-header-buffers: "number=4 size=8k"
@@ -1252,16 +1252,16 @@ By default, the Ingress ALB logs each request as it arrives. If you have an envi
     * Time interval: Add the `flush` field and set it to how often the ALB should write to the log file. For example, if the default value of `5m` is used, the ALB writes buffer contents to the log file once every 5 minutes.
     * Time interval or buffer size: When both `flush` and `buffer` are set, the ALB writes buffer content to the log file based on whichever threshold parameter is met first.
 
-    ```yaml
-    apiVersion: v1
-    kind: ConfigMap
-    data:
-      access-log-params: "buffer=100KB, flush=5m"
-    metadata:
-      name: ibm-k8s-controller-config
-      ...
-    ```
-    {: codeblock}
+  ```yaml
+  apiVersion: v1
+  kind: ConfigMap
+  data:
+    access-log-params: "buffer=100KB, flush=5m"
+  metadata:
+    name: ibm-k8s-controller-config
+    ...
+  ```
+  {: codeblock}
 
 3. Save and close the configuration file. The changes are applied to your ALBs automatically.
 

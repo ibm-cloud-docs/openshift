@@ -286,7 +286,7 @@ Depending on which image type you choose, the ALB behaves according to that impl
 
 **ALBs that run the custom {{site.data.keyword.openshiftlong_notm}} image**:
 * To manage how requests are routed to your app, specify [custom {{site.data.keyword.openshiftlong_notm}} annotations](/docs/openshift?topic=openshift-ingress_annotation) (`ingress.bluemix.net/<annotation>`) in your Ingress resources.
-* To modify default Ingress settings, such as to enable source IP preservation or configure SSL protocols, [change the `ibm-cloud-provider-ingress-cm` configmap resource](/docs/containers?topic=containers-ingress#preserve_source_ip) for your Ingress ALBs.
+* To modify default Ingress settings, such as to enable source IP preservation or configure SSL protocols, [change the `ibm-cloud-provider-ingress-cm` configmap resource](/docs/containers?topic=containers-ingress_annotation#preserve_source_ip) for your Ingress ALBs.
 
 **ALBs that run the Kubernetes image**:
 * To manage how requests are routed to your app, specify [Kubernetes NGINX annotations](/docs/openshift?topic=openshift-comm-ingress-annotations#annotations) (`nginx.ingress.kubernetes.io/<annotation>`) in your Ingress resources.
@@ -300,7 +300,6 @@ Depending on which image type you choose, the ALB behaves according to that impl
 
 Ingress ALBs are managed by {{site.data.keyword.openshiftlong_notm}}. To further modify and manage your ALBs, such as to manage version updates for your ALBs or to scale up ALB replicas, you can use `ibmcloud oc ingress alb` commands. For more information, see [Updating ALBs](/docs/containers?topic=containers-ingress#alb-update).
 {: shortdesc}
-
 
 
 

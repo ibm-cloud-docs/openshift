@@ -205,6 +205,7 @@ Red Hat OpenShift on IBM Cloud
     Version history
         openshift_versions.md
         openshift_versions_changelog.md
+        openshift_versions_autoscaler.md
 
     openshift_locations.md
     openshift_integrations_overview.md

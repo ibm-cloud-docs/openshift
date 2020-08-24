@@ -1577,6 +1577,9 @@ subcollection: openshift
   * [Changelog for worker node patch 3.11.129_1518_openshift, released 5 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1518_worker)
   * [Changelog for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1517)
 
+[Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog)
+* [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101)
+
 
 ## Locations
 {: #sitemap_locations}
