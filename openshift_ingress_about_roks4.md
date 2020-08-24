@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -10,37 +10,91 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
-# About Ingress in OpenShift version 4
+# About Ingress in {{site.data.keyword.openshiftshort}} version 4
 {: #ingress-about-roks4}
 
-<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run OpenShift version 4 only. To learn about Ingress for OpenShift version 3.11 clusters, see [About Ingress in OpenShift version 3.11](/docs/openshift?topic=openshift-ingress-about).
+<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 3.11 clusters, see [About Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress-about).
 {: note}
 
 Ingress is a service that balances network traffic workloads in your cluster by forwarding public or private requests to your apps. You can use Ingress to expose multiple app services to the public or to a private network by using a unique public or private domain.
@@ -51,13 +105,13 @@ In your cluster, the OpenShift router is a layer 7 load balancer which implement
 ## What are the components of Ingress?
 {: #ingress_roks4_components}
 
-In clusters that run OpenShift version 4, Ingress consists of three components: an Ingress controller, a router, and Ingress resources.
+In clusters that run {{site.data.keyword.openshiftshort}} version 4, Ingress consists of three components: an Ingress controller, a router, and Ingress resources.
 {: shortdesc}
 
 ### Ingress controller
 {: #ingress-controller}
 
-The [OpenShift Ingress controller](https://docs.openshift.com/container-platform/4.2/networking/ingress-operator.html){: external} implements routing rules that are applied to all incoming traffic for the apps in your cluster.
+The [{{site.data.keyword.openshiftshort}} Ingress controller](https://docs.openshift.com/container-platform/4.2/networking/ingress-operator.html){: external} implements routing rules that are applied to all incoming traffic for the apps in your cluster.
 {: shortdesc}
 
 Ingress controllers are managed by the Ingress operator. During cluster creation, the default Ingress controller is registered with the default Ingress subdomain for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. When you register your app with this subdomain by creating an Ingress resource, the Ingress controller ensures that requests to your app through this subdomain are properly proxied to your app pods. To see the default Ingress controller in your cluster, run `oc describe ingresscontroller/default -n openshift-ingress-operator`.
@@ -67,7 +121,7 @@ If you want to register your app with a different domain, you can [create a cust
 ### Router
 {: #ingress-router}
 
-One HAProxy-based OpenShift router is created for each Ingress controller, and one router service is created in each zone where you have worker nodes.
+One HAProxy-based {{site.data.keyword.openshiftshort}} router is created for each Ingress controller, and one router service is created in each zone where you have worker nodes.
 {: shortdesc}
 
 The Ingress operator configures the router with the same domain that is specified in the Ingress controller. The router listens for incoming HTTP, HTTPS, or TCP service requests through that domain. The router's load balancer service component then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
@@ -91,7 +145,7 @@ The Ingress subdomain for your cluster is automatically linked to the VPC load b
 
 You can find the hostname that is assigned to your public routers and the hostname that is assigned to your private routers by running `oc get svc -n openshift-ingress` and looking for the **EXTERNAL IP** field.
 
-In your VPC infrastructure dashboard, the VPC load balancer reports as healthy only the two worker nodes that run the router replica pods, because these worker nodes are configured as the listeners for the VPC load balancer. Even though only the listener worker nodes are reported as healthy, the listeners' backend pool of worker nodes is kept up-to-date by Red Hat OpenShift on IBM Cloud so that all worker nodes in your cluster can still receive requests from the VPC load balancer.
+In your VPC infrastructure dashboard, the VPC load balancer reports as healthy only the two worker nodes that run the router replica pods, because these worker nodes are configured as the listeners for the VPC load balancer. Even though only the listener worker nodes are reported as healthy, the listeners' backend pool of worker nodes is kept up-to-date by {{site.data.keyword.openshiftlong_notm}} so that all worker nodes in your cluster can still receive requests from the VPC load balancer.
 {: note}
 
 ### Ingress resource
@@ -108,13 +162,13 @@ One Ingress resource is required for each project where you have apps that you w
 
 For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects).
 
-If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in OpenShift version 4.
+If you want to customize routing rules for your app, you can use [HAProxy annotations for the {{site.data.keyword.openshiftshort}} router](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4.
 {: important}
 
 <br />
 
 
-## How does a request get to my app with Ingress in a classic cluster?
+## How does a request get to my app in a classic cluster?
 {: #roks4-flow}
 
 ### Single-zone cluster
@@ -153,7 +207,7 @@ If you want to customize routing rules for your app, you can use [HAProxy annota
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router service that forwarded the request exists. The router then sends the response packet to the client.
 
-## How does a request get to my app with Ingress in a VPC cluster?
+## How does a request get to my app in a VPC cluster?
 {: #architecture-vpc}
 
 ### VPC cluster with a public service endpoint
@@ -199,29 +253,28 @@ If you want to customize routing rules for your app, you can use [HAProxy annota
 <br />
 
 
-## How can I customize routing for Ingress?
+## How can I customize routing?
 {: #custom-routing}
 
-If you want to customize routing rules for your app, you can use [HAProxy annotations for the OpenShift router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
+If you want to customize routing rules for your app, you can use [HAProxy annotations for the {{site.data.keyword.openshiftshort}} router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 
-{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are **not** supported for the router, Ingress controller, or the Ingress resource in OpenShift version 4.
+{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are **not** supported for the router, Ingress controller, or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4.
 
 To get started, see [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4).
 
 <br />
 
 
-## How can I enable TLS certificates for Ingress?
+## How can I enable TLS certificates?
 {: #certs}
 
-When you configure the public router, you choose the domain that your apps will be accessible through. You can use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, or you can set up a CNAME record to map a custom domain to the IBM-provided domain.
+To load balance incoming HTTPS connections to your subdomain, you can configure the Ingress controller for your router to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.
 {: shortdesc}
 
-To load balance incoming HTTPS connections to your subdomain, you can configure the Ingress controller for your router to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.
+When you configure the public router, you choose the domain that your apps are accessible through.
+* If you use the IBM-provided Ingress subdomain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, the Ingress controller for your app is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. The certificates expire every 90 days and are automatically renewed 37 days before they expire.
+* If you set up a CNAME record to map a custom domain to the IBM-provided domain, you can use your own TLS certificate to manage TLS termination. For example, you can import a secret from {{site.data.keyword.cloudcerts_long_notm}}, which adds the secret to the `ibm-cert-store` project. If your Ingress resources are deployed in projects other than `ibm-cert-store`, you must copy the secret to those projects.
 
-* If you use the IBM-provided Ingress subdomain, the Ingress controller for your app is already registered with the IBM-provided TLS certificate, which is stored as the `Ingress secret` in the `openshift-ingress` project. IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. The certificates expire every 90 days and are automatically renewed 37 days before they expire.
-* If you use a custom domain, you can use your own TLS certificate to manage TLS termination. For example, you can import a secret from {{site.data.keyword.cloudcerts_long_notm}}, which adds the secret to the `ibm-cert-store` project. If your Ingress resources are deployed in projects other than `ibm-cert-store`, you must copy the secret to those projects.
-
-To get started, see [Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-2).
+For more information about TLS certificates, see [Managing TLS certificates and secrets](#manage_certs).

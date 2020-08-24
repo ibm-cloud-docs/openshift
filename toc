@@ -157,12 +157,13 @@ Red Hat OpenShift on IBM Cloud
         Exposing apps with Ingress in OpenShift version 3.11 clusters
             openshift_ingress_qs.md
             openshift_ingress_about.md
+            openshift_ingress_types.md
+            openshift_ingress_comm_annotations.md
             openshift_ingress.md
             openshift_annotations.md
-            openshift_ingress_settings.md
-            openshift_ingress_manage.md
             openshift_ingress_health.md
             openshift_ingress_user_managed.md
+            openshift_troubleshoot_debug_ingress.md
 
     {: .topicgroup}
     Storing data on persistent storage

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -46,7 +100,7 @@ After you initially set up your network when you [create a cluster](/docs/opensh
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
 
-<p class="important">Your options for service endpoints vary with the OpenShift version.<br><br><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **Version 3.11**: You must enable the public service endpoint during cluster creation, and you cannot later disable it. If no public service endpoint for the cluster exists, a subdomain for the router is not generated. You can optionally enable a private service endpoint.<br><br><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **Version 4**: You must enable the public service endpoint during cluster creation, and you cannot later disable it. Also, you cannot use the private service endpoint. If your cluster does have a private service endpoint, you must delete the cluster and re-create it without a private service endpoint. For information about service endpoints for version 4 clusters VPC Gen 2 compute, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).</p>
+<p class="important">Your options for service endpoints vary with the {{site.data.keyword.openshiftshort}} version.<br><br><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **Version 3.11**: You must enable the public service endpoint during cluster creation, and you cannot later disable it. If no public service endpoint for the cluster exists, a subdomain for the router is not generated. You can optionally enable a private service endpoint.<br><br><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **Version 4**: You must enable the public service endpoint during cluster creation, and you cannot later disable it. Also, you cannot use the private service endpoint. If your cluster does have a private service endpoint, you must delete the cluster and re-create it without a private service endpoint. For information about service endpoints for version 4 clusters VPC Gen 2 compute, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).</p>
 
 ## 3.11 clusters only: Setting up the private service endpoint
 {: #set-up-private-se}
@@ -54,7 +108,7 @@ After you initially set up your network when you [create a cluster](/docs/opensh
 Enable the private service endpoint for your cluster.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> You can set up the private service endpoint for clusters that run OpenShift version 3.11 only. You cannot use the private service endpoint with version 4 clusters.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> You can set up the private service endpoint for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. You cannot use the private service endpoint with version 4 clusters.
 {: note}
 
 The private service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private service endpoint, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#workeruser-master). Note that you cannot disable the private service endpoint after you enable it.
@@ -217,7 +271,7 @@ To change the VLANs that a worker pool uses to provision worker nodes:
 
 9. Move networking services to the new VLANs. The networking services in your cluster are still bound to the old VLAN because their IP addresses are from a subnet on that VLAN.
   * Routers: Because routers cannot be moved across VLANs, you can instead [create router services on the new VLANs and delete router services on the old VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan).
-  * Ingress ALBs (OpenShift version 3.11 only): Because ALBs cannot be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/openshift?topic=openshift-ingress-manage#migrate-alb-vlan).
+  * Ingress ALBs ({{site.data.keyword.openshiftshort}} version 3.11 only): Because ALBs cannot be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress#migrate-alb-vlan).
 
 10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
 

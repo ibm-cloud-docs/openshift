@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -185,7 +185,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 
 | Category | Description |
 | -------- | ----------- |
-| Ingress ALBs | <ul><li>The Ingress application load balancer (ALB) can process 32,768 connections per second. If your Ingress traffic exceeds this number, [scale up the number of ALB replicas](/docs/openshift?topic=openshift-ingress-manage#scale_albs) in your cluster to handle the increased workload.</li><li>HTTP/2 is not supported.</li><li>The names of the `ClusterIP` services that expose your apps must be unique across all namespaces in your cluster.</li></ul> |
+| Ingress ALBs | <ul><li>The Ingress application load balancer (ALB) can process 32,768 connections per second. If your Ingress traffic exceeds this number, [scale up the number of ALB replicas](/docs/containers?topic=containers-ingress#scale_albs) in your cluster to handle the increased workload.</li><li>ALBs that run the [{{site.data.keyword.openshiftlong_notm}} custom Ingress image](/docs/openshift?topic=openshift-ingress-types) only: HTTP/2 is not supported.</li><li>ALBs that run the [{{site.data.keyword.openshiftlong_notm}} custom Ingress image](/docs/openshift?topic=openshift-ingress-types) only: The names of the `ClusterIP` services that expose your apps must be unique across all namespaces in your cluster.</li></ul> |
 | Network load balancers (NLB)| <ul><li>You cannot create version 2.0 network load balancers (NLB 2.0) to expose your apps.</li><li>You cannot create subdomains for private NLBs.</li><li>You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-getting-customer-support).</li></ul> | 
 | Private VLANs only | Private network load balancers (NLBs) cannot be registered with the domain name server (DNS), so the cluster cannot be created with only a private network interface. Worker nodes must be connected to both public and private VLANs. You can still create a private service to expose your apps on only the private network. |
 | Service endpoints | When you create a cluster, you must enable the public service endpoint, and can optionally enable the private service endpoint in version 3.11. | 

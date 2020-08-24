@@ -301,7 +301,7 @@ Before you begin:
 ## Managing existing portable IP addresses
 {: #managing_ips}
 
-By default, 4 portable public and 4 portable private IP addresses can be used to expose single apps to the public or private network by [creating a network load balancer (NLB) service](/docs/openshift?topic=openshift-loadbalancer) or by [creating additional Ingress application load balancers (ALBs)](/docs/openshift?topic=openshift-ingress-manage#scale_albs). To create an NLB or ALB service, you must have at least 1 portable IP address of the correct type available. You can view portable IP addresses that are available or free up a used portable IP address.
+By default, 4 portable public and 4 portable private IP addresses can be used to expose single apps to the public or private network by [creating a network load balancer (NLB) service](/docs/openshift?topic=openshift-loadbalancer) or by [creating additional Ingress application load balancers (ALBs)](/docs/containers?topic=containers-ingress#scale_albs). To create an NLB or ALB service, you must have at least 1 portable IP address of the correct type available. You can view portable IP addresses that are available or free up a used portable IP address.
 {: shortdesc}
 
 ### Viewing available portable public IP addresses
@@ -398,7 +398,7 @@ To delete an NLB or disable an ALB:
     {: pre}
   * Disable an ALB:
     ```
-    ibmcloud oc alb-configure --alb-id <ALB_ID> --disable
+    ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
     ```
     {: pre}
 
