@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -339,7 +339,7 @@ After you set up your account to create clusters, decide on the setup for your c
     ```
     {: pre}
 
-   <table>
+   <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
    <caption>`cluster create classic` command components</caption>
    <col width="25%">
    <thead>
@@ -599,7 +599,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
     ```
     {: pre}
 
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Cluster create components</caption>
     <col width="25%">
     <thead>

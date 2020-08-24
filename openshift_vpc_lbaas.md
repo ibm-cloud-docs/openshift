@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -161,7 +161,7 @@ Expose your app to the public or to the private network by setting up a Kubernet
   ```
   {: codeblock}
 
-  <table>
+  <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
   <caption>Understanding the YAML file components</caption>
   <col width="25%">
   <thead>

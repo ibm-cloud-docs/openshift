@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -557,7 +557,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     ibmcloud iam service-policy-create <cluster_service_ID> --service-name containers-kubernetes --roles <service_access_role> --service-instance <cluster_ID>
     ```
     {: pre}
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Understanding this command's components</caption>
     <col width="25%">
     <thead>

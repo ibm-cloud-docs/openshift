@@ -530,7 +530,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     {: screen}
 
 2.  Edit the configmap with the parameters to define how the cluster autoscaler scales your cluster worker pool. **Note:** Unless you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your standard cluster, you must change the `minSize` to `2` per zone so that the ALB pods can be spread for high availability.
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the configmap. The second column describes the parameter.">
     <caption>Cluster autoscaler configmap parameters</caption>
     <col width="20%">
     <thead>
@@ -1078,7 +1078,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 This table refers to the cluster autoscaler add-on parameters. For Helm chart values, see [Cluster autoscaler Helm chart parameter reference](#ca_helm_ref)
 {: note}
 
-<table>
+<table summary="The columns are read from left to right. The first column has the parameter of the configuration values. The second column describes the parameter. The third column includes the default value of the parameter.">
 <caption>Cluster autoscaler configuration values</caption>
 <col width="25%">
 <thead>
@@ -1228,7 +1228,7 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 This table refers to the cluster autoscaler Helm chart parameters. For add-on values, see [Cluster autoscaler add-on parameter reference](#ca_addon_ref)
 {: note}
 
-<table>
+<table summary="The columns are read from left to right. The first column has the parameter of the configuration. The second column describes the parameter. The third column has the default vale of the parameter.">
 <caption>Cluster autoscaler configuration values</caption>
 <col width="25%">
 <thead>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-08-24"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -239,7 +239,7 @@ Review common tasks that you might be interested in:
 
 
 ## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
-{: #satcluster-access}
+{: #satcluster-limitations}
 
 See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
 {: shortdesc}

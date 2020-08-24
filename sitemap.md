@@ -127,9 +127,9 @@ subcollection: openshift
 
 [Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov)
 * [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits)
-* [Comparison between OpenShift and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes)
+* [Comparison between {{site.data.keyword.openshiftshort}} and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes)
 * [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp)
-* [Comparison between OpenShift 3.11 and 4 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
+* [Comparison between {{site.data.keyword.openshiftshort}} 3.11 and 4 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
 
@@ -379,7 +379,7 @@ subcollection: openshift
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli)
 * [Accessing and working with your {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
-* [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
+* [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
 * [Storing application data in persistent storage](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage)
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
 
@@ -701,7 +701,7 @@ subcollection: openshift
 [Setting up an image registry](/docs/openshift?topic=openshift-registry)
 * [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
 * [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
-  * [VPC: Backing up your OpenShift internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
+  * [VPC: Backing up your {{site.data.keyword.openshiftshort}} internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
   * [Classic: Storing images in the internal registry](/docs/openshift?topic=openshift-registry#storage_internal_registry)
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
 * [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
@@ -711,7 +711,7 @@ subcollection: openshift
   * [Default image pull secret setup](/docs/openshift?topic=openshift-registry#cluster_registry_auth_default)
   * [Private network connection to `icr.io` registries](/docs/openshift?topic=openshift-registry#cluster_registry_auth_private)
 * [Updating existing clusters to use the API key image pull secret](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key)
-* [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default OpenShift projects](/docs/openshift?topic=openshift-registry#other)
+* [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default {{site.data.keyword.openshiftshort}} projects](/docs/openshift?topic=openshift-registry#other)
   * [Copying an existing image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret)
   * [Creating an image pull secret with different IAM API key credentials for more control or access to images in other {{site.data.keyword.cloud_notm}} accounts](/docs/openshift?topic=openshift-registry#other_registry_accounts)
   * [Accessing images that are stored in other private registries](/docs/openshift?topic=openshift-registry#private_images)
@@ -760,7 +760,7 @@ subcollection: openshift
 
 [Building images for your apps](/docs/openshift?topic=openshift-images)
 * [Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy)
-* [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` OpenShift project](/docs/openshift?topic=openshift-images#namespace)
+* [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.openshiftshort}} project](/docs/openshift?topic=openshift-images#namespace)
 * [Referring to the image pull secret in your pod deployment](/docs/openshift?topic=openshift-images#pod_imagePullSecret)
 * [Pushing images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images)
 * [Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor](/docs/openshift?topic=openshift-images#va-images)
@@ -916,7 +916,7 @@ subcollection: openshift
 * [How can I customize routing for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#custom-routing)
 * [How can I enable TLS certificates for Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#certs)
 
-[Setting up Ingress in OpenShift 4](/docs/openshift?topic=openshift-ingress-roks4)
+[Setting up Ingress in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-ingress-roks4)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-prereqs)
 * [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects)
   * [All apps are in one project](/docs/openshift?topic=openshift-ingress-roks4#one-project)
@@ -963,7 +963,7 @@ subcollection: openshift
   * [Single-zone cluster](/docs/openshift?topic=openshift-ingress-about#classic-single)
   * [Multizone cluster](/docs/openshift?topic=openshift-ingress-about#classic-multi)
 
-[Setting up Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress)
+[Setting up Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress#config_prereqs)
 * [Planning networking for single or multiple namespaces](/docs/openshift?topic=openshift-ingress#multiple_namespaces)
   * [All apps are in one namespace](/docs/openshift?topic=openshift-ingress#one-ns)

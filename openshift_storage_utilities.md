@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -325,7 +379,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 
 **Before you begin**:
 - Make sure that you [manually](#manual_block) added raw, unformatted, and unmounted block storage to your non-SDS worker nodes.
-- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **To attach raw block storage to non-SDS worker nodes**:
 1. Prepare the PV creation.  
@@ -370,7 +424,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
         ```
         {: codeblock}
 
-        <table>
+        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
         <caption>Understanding the YAML file components</caption>
          <col style="width:30%">
 	      <col style="width:70%">
@@ -491,7 +545,7 @@ The instructions in this topic are available for VPC worker nodes only. If you w
 
 Before you begin:
 
-[Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Check which region and zone your VPC worker node is in.
   ```
@@ -524,7 +578,7 @@ Before you begin:
     ```
     {: codeblock}
   <br>
-  <table>
+  <table summary="The columns are read from left to right. The first column has the parameter of the POST request. The second column describes the parameter.">
       <caption>Understanding the POST request</caption>
       <col style="width:30%">
 	   <col style="width:70%">
@@ -637,7 +691,7 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
       {: codeblock}
 
   <br>
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the DELETE request. The second column describes the parameter.">
       <caption>Understanding the DELETE request</caption>
       <col style="width:30%">
 	   <col style="width:70%">
@@ -714,7 +768,7 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
       {: codeblock}
 
   <br>
-    <table>
+    <table summary="The columns are read from left to right. The first column has the parameter of the GET request. The second column describes the parameter.">
       <caption>Understanding the GET request</caption>
       <col style="width:30%">
 	   <col style="width:70%">
@@ -806,7 +860,7 @@ Before you begin:
   {: pre}
 - [Retrieve your {{site.data.keyword.cos_full_notm}} service credentials, the bucket name, and the bucket hostname](#backup_restore_setup_object_storage).
 - [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm client on your local machine and set up the {{site.data.keyword.cloud_notm}} Helm chart repositories.
-- [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 You can deploy the `ibm-storage-backup` pod or the `ibm-storage-restore` pod by either editing and applying the `values.yaml` file of the Helm chart, or by running the `helm install` command from the CLI.
 {: note}
@@ -849,7 +903,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
   ```
   {: codeblock}
 
-  <table>
+  <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
     <caption>Understanding the <code>values.yaml</code> file</caption>
     <col style="width:30%">
 	 <col style="width:70%">
@@ -1028,7 +1082,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
             ```
             {: codeblock}
 
-            <table>
+            <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
             <caption>Understanding the <code>deployment.yaml</code> file components</caption>
             <col style="width:30%">
 	         <col style="width:70%">
@@ -1120,7 +1174,7 @@ Set up alerts in {{site.data.keyword.mon_full_notm}} for your workloads that are
 
 When a storage volume is down, your app pods that are using storage have a low file system I/O, have network errors, or crash which causes the replica count to go down. You can set up alerts in {{site.data.keyword.mon_full_notm}} to get notified if the file system operations for your app drop below a specific threshold, if network errors occur, or if your app pods do not reach a `Ready` state.
 
-1. From the [Red Hat OpenShift on IBM Cloud cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), select the cluster where you want to set up alerts for your storage volumes.
+1. From the [{{site.data.keyword.openshiftlong_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), select the cluster where you want to set up alerts for your storage volumes.
 
 2. In the **Monitoring** section, click **Connect** to connect an existing {{site.data.keyword.mon_full_notm}} instance to your cluster. If you do not have an instance, click **Create an instance** to create one. For more information about how to set up an {{site.data.keyword.mon_full_notm}} instance, see [Provisioning an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision).
 
