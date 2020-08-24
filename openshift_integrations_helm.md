@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-24"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -10,43 +10,97 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
 # Adding services by using Helm charts
 {: #helm}
 
-You can add complex OpenShift apps to your cluster by using Helm charts.
+You can add complex {{site.data.keyword.openshiftshort}} apps to your cluster by using Helm charts.
 {: shortdesc}
 
-In OpenShift clusters that run version 4, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.2/operators/operator_sdk/osdk-helm.html) instead.
+In {{site.data.keyword.openshiftshort}} clusters that run version 4, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.2/operators/operator_sdk/osdk-helm.html) instead.
 {: tip}
 
-## About Helm in Red Hat OpenShift on IBM Cloud
+## About Helm in {{site.data.keyword.openshiftlong_notm}}
 {: #about-helm}
 
 ### What is Helm and how do I use it?
@@ -54,19 +108,19 @@ In OpenShift clusters that run version 4, use [Operators](/docs/openshift?topic=
 
 [Helm](https://helm.sh){: external} is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
 
-### What Helm charts are supported in Red Hat OpenShift on IBM Cloud?
+### What Helm charts are supported in {{site.data.keyword.openshiftlong_notm}}?
 {: #supported-charts}
 
 For an overview of available Helm charts, see the [Helm charts catalog](https://cloud.ibm.com/kubernetes/helm){: external}. The Helm charts that are listed in this catalog are grouped as follows:
 
-- **iks-charts**: Helm charts that are approved for Red Hat OpenShift on IBM Cloud. The name of this repo was changed from `ibm` to `iks-charts`.
-- **ibm-charts**: Helm charts that are approved for Red Hat OpenShift on IBM Cloud and {{site.data.keyword.cloud_notm}} Private clusters.
-- **ibm-community**: Helm charts that originated outside IBM, such as from [Red Hat OpenShift on IBM Cloud partners](/docs/openshift?topic=openshift-service-partners). These charts are supported and maintained by the community partners.
-- **kubernetes**: Helm charts that are provided by the Kubernetes community and considered `stable` by the community governance. These charts are not verified to work in Red Hat OpenShift on IBM Cloud or {{site.data.keyword.cloud_notm}} Private clusters.
-- **kubernetes-incubator**: Helm charts that are provided by the Kubernetes community and considered `incubator` by the community governance. These charts are not verified to work in Red Hat OpenShift on IBM Cloud or {{site.data.keyword.cloud_notm}} Private clusters.
+- **iks-charts**: Helm charts that are approved for {{site.data.keyword.openshiftlong_notm}}. The name of this repo was changed from `ibm` to `iks-charts`.
+- **ibm-charts**: Helm charts that are approved for {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.cloud_notm}} Private clusters.
+- **ibm-community**: Helm charts that originated outside IBM, such as from [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners). These charts are supported and maintained by the community partners.
+- **kubernetes**: Helm charts that are provided by the Kubernetes community and considered `stable` by the community governance. These charts are not verified to work in {{site.data.keyword.openshiftlong_notm}} or {{site.data.keyword.cloud_notm}} Private clusters.
+- **kubernetes-incubator**: Helm charts that are provided by the Kubernetes community and considered `incubator` by the community governance. These charts are not verified to work in {{site.data.keyword.openshiftlong_notm}} or {{site.data.keyword.cloud_notm}} Private clusters.
 - **entitled**: Helm charts of licensed software that you must purchase and for which you must set up cluster access with an entitlement key. For more information, see [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software).
 
-Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitled** repositories are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using these Helm charts, you can use one of the Red Hat OpenShift on IBM Cloud support channels. For more information, see [Getting help and support](/docs/openshift?topic=openshift-get-help).
+Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitled** repositories are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using these Helm charts, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/openshift?topic=openshift-get-help).
 
 ### Do I install Helm v2 or v3?
 {: #helm-v2-v3}
@@ -181,7 +235,7 @@ As you work with Helm charts, keep in mind the Helm v3 changes, such as the fact
 ### Setting up Helm v2 in a cluster with public access
 {: #public_helm_install}
 
-If you have a classic cluster that is connected to a public VLAN, or a VPC cluster with a subnet that is configured with a public gateway, you can install the Helm server Tiller by using the public image in the Google Container Registry.
+If you have a classic cluster that is connected to a public VLAN, or a VPC cluster with a subnet that is configured with a public gateway, you can install the Helm server Tiller by using the public image in the Google Container Registry. For more information, see the [{{site.data.keyword.openshiftshort}} blog](https://www.openshift.com/blog/getting-started-helm-openshift){: external}.
 {: shortdesc}
 
 Before you begin:
@@ -204,7 +258,7 @@ To install Helm in a cluster with public network access:
    ```
    {: screen}
 
-   The example output includes the OpenShift project and name of the service account for Tiller. If Tiller is not installed with a service account in your cluster, no CLI output is returned.
+   The example output includes the {{site.data.keyword.openshiftshort}} project and name of the service account for Tiller. If Tiller is not installed with a service account in your cluster, no CLI output is returned.
 
 3. **Important**: To maintain cluster security, set up Tiller with a service account and cluster role binding in your cluster.
    - **If Tiller is already installed with a service account:**
@@ -216,7 +270,7 @@ To install Helm in a cluster with public network access:
 
      2. Update Tiller. Replace `<tiller_service_account_name>` with the name of the Kubernetes service account for Tiller that you retrieved in the previous step.
         ```
-        helm init --upgrade --service-account <tiller_service_account_name>
+        helm init --upgrade --tiller-namespace <tiller_project> --tiller-service-account <tiller_service_account_name>
         ```
         {: pre}
 
@@ -266,7 +320,7 @@ To install Helm in a cluster with public network access:
 
      3. Initialize the Helm CLI and install Tiller in your cluster with the service account that you created.
         ```
-        helm init --service-account tiller
+        helm init --tiller-namespace tiller --tiller-service-account tiller
         ```
         {: pre}
 
@@ -282,6 +336,24 @@ To install Helm in a cluster with public network access:
         tiller-deploy-352283156-nzbcm   1/1       Running   0          2m
         ```
         {: screen}
+4. Add the `TILLER_NAMESPACE=tiller` variable to your CLI environment. If you do not set this environment variable, you must include the `--tiller-namespace tiller` flag with each `helm` CLI command that you run.
+
+   1. Set the environment variable.
+      ```
+      export TILLER_NAMESPACE=tiller
+      ```
+      {: pre}
+   2. Verify that the environment variable is set.
+      ```
+      echo $TILLER_NAMESPACE
+      ```
+      {: pre}
+      
+      Example output:
+      ```
+      tiller
+      ```
+      {: screen}
 
 4. Add the {{site.data.keyword.cloud_notm}} Helm repositories to your Helm instance.
    
@@ -392,7 +464,7 @@ To change your version of Tiller:
 Review the following links to find additional Helm information.
 {: shortdesc}
 
-* View the available Helm charts that you can use in Red Hat OpenShift on IBM Cloud in the [Helm Charts Catalog](https://cloud.ibm.com/kubernetes/helm){: external}.
+* View the available Helm charts that you can use in {{site.data.keyword.openshiftlong_notm}} in the [Helm Charts Catalog](https://cloud.ibm.com/kubernetes/helm){: external}.
 * Review the [list of changes between Helm v2 and v3](https://helm.sh/docs/topics/v2_v3_migration/){: external} and the [v3 FAQs](https://helm.sh/docs/faq/){: external}.
 * Learn more about how you can [increase deployment velocity with Kubernetes Helm Charts](https://developer.ibm.com/recipes/tutorials/increase-deployment-velocity-with-kubernetes-helm-charts/){: external}.
 

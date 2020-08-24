@@ -1246,9 +1246,9 @@ subcollection: openshift
 * [Using the service catalog in 3.11 clusters](/docs/openshift?topic=openshift-operators#service_catalog)
 
 [Adding services by using Helm charts](/docs/openshift?topic=openshift-helm)
-* [About Helm in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-helm#about-helm)
+* [About Helm in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-helm#about-helm)
   * [What is Helm and how do I use it?](/docs/openshift?topic=openshift-helm#what-is-helm)
-  * [What Helm charts are supported in Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-helm#supported-charts)
+  * [What Helm charts are supported in {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-helm#supported-charts)
   * [Do I install Helm v2 or v3?](/docs/openshift?topic=openshift-helm#helm-v2-v3)
 * [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3)
 * [Migrating from Helm v2 to v3](/docs/openshift?topic=openshift-helm#migrate_v3)
