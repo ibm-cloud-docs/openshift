@@ -241,7 +241,7 @@ Review the following similarities between the {{site.data.keyword.openshiftlong_
 |Characteristic|Comparison|
 |--------------|----------|
 |Ingress components| Regardless of which image type your ALBs use, [Ingress still consists of the same three components](/docs/openshift?topic=openshift-ingress-about#ingress_components) in your cluster: Ingress resources, application load balancers (ALBs), and the multizone load balancer (MZLB).|
-|Traffic flow| Both ALB images implement the NGINX Ingress controller. In that sense, [the way that ALBs function in your cluster to route traffic to your apps](#architecture-classic) is similar for both image types.|
+|Traffic flow| Both ALB images implement the NGINX Ingress controller. In that sense, [the way that ALBs function in your cluster to route traffic to your apps](/docs/openshift?topic=openshift-ingress-about#architecture-classic) is similar for both image types.|
 |ALB management| The image type does not affect how you manage the lifecycle of ALBs in your cluster. All ALBs can be managed by using `ibmcloud oc ingress alb` CLI commands. Additionally, IBM manages the [automatic updates of ALB versions](/docs/containers?topic=containers-ingress-types#alb-update). |
 {: caption="Similarities between Ingress images"}
 

@@ -470,6 +470,7 @@ subcollection: openshift
   * [Upgrading a release from Helm v2 to v3](/docs/openshift?topic=openshift-ca#ca_helm_up_2to3)
 * [Removing the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm)
 * [Cluster autoscaler add-on parameter reference](/docs/openshift?topic=openshift-ca#ca_addon_ref)
+* [Cluster autoscaler Helm chart parameter reference](/docs/openshift?topic=openshift-ca#ca_helm_ref)
 
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update)
 * [Updating the master](/docs/openshift?topic=openshift-update#master)
