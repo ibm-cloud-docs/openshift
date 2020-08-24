@@ -457,6 +457,7 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
         ```
         ibmcloud oc credential get --region <region>
         ```
+        {: pre}
         Example output:
         ```
         Infrastructure credentials for user name user@email.com set for resource group default.

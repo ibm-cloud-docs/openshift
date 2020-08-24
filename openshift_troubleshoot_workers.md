@@ -454,6 +454,7 @@ Your {{site.data.keyword.cloud_notm}} account uses its own automatically linked 
     ```
     ibmcloud oc credential get --region <region>
     ```
+    {: pre}
     Example output:
     ```
     Infrastructure credentials for user name user@email.com set for resource group default.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -768,6 +768,7 @@ Your {{site.data.keyword.cloud_notm}} account uses its own automatically linked 
     ```
     ibmcloud oc credential get --region <region>
     ```
+    {: pre}
     Example output:
     ```
     Infrastructure credentials for user name user@email.com set for resource group default.

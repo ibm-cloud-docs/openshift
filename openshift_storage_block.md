@@ -1032,8 +1032,8 @@ Before you can start to mount your existing storage to an app, you must retrieve
           "TargetPortal": "<IP_address>"
           "VolumeID": "<volume_ID>"
           "volumeName": "<volume_name>"
-      ```
-      {: codeblock}
+    ```
+    {: codeblock}
 
     <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
     <caption>Understanding the YAML file components</caption>
@@ -1066,13 +1066,13 @@ Before you can start to mount your existing storage to an app, you must retrieve
     <td>In the spec flex volume options section, enter the IP address of your block storage that you retrieved earlier as <code>ip_addr</code>. </td>
     </tr>
     <tr>
-	  <td><code>VolumeId</code></td>
-	  <td>In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as <code>id</code>.</td>
-	  </tr>
-	  <tr>
-		<td><code>volumeName</code></td>
-		<td>In the spec flex volume options section, enter a name for your volume.</td>
-	  </tr>
+    <td><code>VolumeId</code></td>
+    <td>In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as <code>id</code>.</td>
+    </tr>
+    <tr>
+    <td><code>volumeName</code></td>
+    <td>In the spec flex volume options section, enter a name for your volume.</td>
+    </tr>
     </tbody></table>
 
 3.  Create the PV in your cluster.
@@ -1846,6 +1846,7 @@ The following examples create a storage class that provisions block storage with
     fsType: "xfs"
   reclaimPolicy: "Delete"
   ```
+  {: codeblock}
 
 - **Example for Performance block storage:**
   ```yaml
