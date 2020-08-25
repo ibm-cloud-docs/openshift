@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-25"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -618,7 +618,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 <dl>
 
 <dt><code>--location <em>LOCATION</em></code></dt>
-<dd>Required. Enter the ID or name of the location that you want to remove. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.</dd>
+<dd>Required. Enter the ID or name of the location where you want to create the cluster. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Required. Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer.</dd>
@@ -2560,7 +2560,7 @@ ibmcloud oc zone rm --zone dal10 --cluster my_cluster
 View and configure Ingress application load balancers (ALBs).
 {: shortdesc}
 
-Previously, the following commands were listed in the `ibmcloud oc alb` category. In CLI version 1.0.154 and later, the `ibmcloud oc alb` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress alb` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+Previously, the following commands were listed in the `ibmcloud oc alb` category. In CLI version 1.0.157 and later, the `ibmcloud oc alb` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress alb` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: important}
 
 ### `ibmcloud oc ingress alb autoupdate disable`
@@ -3099,7 +3099,7 @@ ibmcloud oc ingress alb versions [--output json] [-q]
 View and modify TLS secrets for Ingress services in your cluster.
 {: shortdesc}
 
-Previously, the following commands were listed in the `ibmcloud oc ingress alb cert` subcategory. In CLI version 1.0.154 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+Previously, the following commands were listed in the `ibmcloud oc ingress alb cert` subcategory. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: important}
 
 ### `ibmcloud oc ingress secret create`
