@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-25"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -151,6 +151,9 @@ Want to be sure that you always have enough worker nodes to cover your workload?
 With VMs, you get greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price. You can use VMs for most general-purpose use cases such as testing and development environments, staging, and prod environments, microservices, and business apps. However, there is a trade-off in performance. If you need high-performance computing for data- or RAM-intensive workloads, consider creating classic clusters with [bare metal](#bm) worker nodes.
 {: shortdesc}
 
+### Planning considerations for VMs
+{: #vm-planning}
+
 **Do I want to use shared or dedicated hardware?**</br>
 When you create a standard classic cluster, you must choose whether you want the underlying hardware to be shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or to be dedicated to you only (single tenancy). VPC standard clusters can be provisioned on shared infrastructure (multi tenancy) only.
 
@@ -173,7 +176,7 @@ Every VM comes with an attached disk for storage of information that the VM need
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic VMs**: Classic VMs have two attached disks. The primary storage disk has 25 GB for the OS file system, and the secondary storage disk has 100 GB for data such as the container runtime and the `kubelet`. For reliability, the primary and secondary storage volumes are local disks instead of storage area networking (SAN). Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. The secondary disk is encrypted by default.
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC compute VMs**: VPC VMs have one primary disk that is a block storage volume that is attached via the network. The storage layer is not separated from the other networking layers, and both network and storage traffic are routed on the same network. To account for network latency, the storage disks have a maximum of up to 3000 IOPS. The primary storage disk is used for storing data such as the OS file system, container runtime, and `kubelet`, and is [encrypted by default](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
 
-**What virtual machine flavors are available?**</br>
+### Available flavors for VMs
 {: #vm-table}
 
 The following table shows available worker node flavors for classic and VPC clusters. Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`.
@@ -225,7 +228,7 @@ If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker nod
 
 `*` VPC Gen 2: For more information about network performance caps for virtual machines, see [VPC Gen 2 compute profiles](/docs/vpc?topic=vpc-profiles). The network speeds refer to the speeds of the worker node interfaces. The maximum speed available to your worker nodes is `16Gbps`. Because IP in IP encapsulation is required for traffic between pods that are on different VPC Gen 2 worker nodes, data transfer speeds between pods on different worker nodes might be slower, about half the compute profile network speed. Overall network speeds for apps that you deploy to your cluster depend on the worker node size and application's architecture.
 
-
+<br />
 
 
 ## Physical machines (bare metal)
@@ -234,10 +237,11 @@ If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker nod
 You can provision your worker node as a single-tenant physical server, also referred to as bare metal.
 {: shortdesc}
 
-
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Physical machines are available for classic clusters only and are not supported in VPC clusters.
 {: note}
 
+### Planning considerations for bare metal
+{: #bm-planning}
 
 **How is bare metal different than VMs?**</br>
 Bare metal gives you direct access to the physical resources on the machine, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all of a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Physical flavors have more local storage than virtual, and some have RAID to increase data availability. Local storage on the worker node is for short-term processing only, and the primary and secondary disks are wiped when you update or reload the worker node. For persistent storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
@@ -256,10 +260,12 @@ Bare metal servers are more expensive than virtual servers, and are best suited 
 Bare metal servers are billed monthly. If you cancel a bare metal server before the end of the month, you are charged through the end of that month. After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.
 {: important}
 
-**What bare metal flavors can I order?**</br>
+### Available flavors for bare metal
+{: #bm-table}
+
 Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [VM](#vm) or [SDS](#sds) flavors.
 
-Bare metal machines are optimized for different use cases such as data- or RAM-intensive workloads.
+Bare metal machines are optimized for different use cases such as data- or RAM-intensive workloads. GPU bare metal machines are not available for {{site.data.keyword.openshiftlong_notm}} clusters, but you can order GPU bare metal for {{site.data.keyword.containerlong_notm}} clusters.
 
 Choose a flavor, or machine type, with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
 
@@ -269,7 +275,6 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
 
-{: #bm-table}
 <table summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and secondary disk that are attached to the worker nodes for the flavor. The fourth column has the network speed for the worker nodes of the flavor.">
 <caption>Available bare metal flavors in {{site.data.keyword.openshiftlong_notm}}.</caption>
 <col width="25%">
@@ -314,21 +319,24 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 </tbody>
 </table>
 
+<br />
+
+
 ## Software-defined storage (SDS) machines
 {: #sds}
 
 Software-defined storage (SDS) flavors are physical machines that are provisioned with additional raw disks for physical local storage. Unlike the primary and secondary local disk, these raw disks are not wiped during a worker node update or reload. Because data is co-located with the compute node, SDS machines are suited for high-performance workloads.
 {: shortdesc}
 
-
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Software-defined storage flavor are available for classic clusters only and are not supported in VPC clusters.
 {: note}
+
+### Planning considerations for SDS
+{: #sds-planning}
 
 Because you have full control over the isolation and resource consumption for your workloads, you can use SDS machines to achieve HIPAA and PCI compliance for your environment.
 {: important}
 
-
-**When do I use SDS flavors?**</br>
 You typically use SDS machines in the following cases:
 *  If you use an SDS add-on such as [Portworx](/docs/openshift?topic=openshift-portworx#portworx), use an SDS machine.
 *  If your app is a [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){: external} that requires local storage, you can use SDS machines and provision [Kubernetes local persistent volumes (beta)](https://kubernetes.io/blog/2018/04/13/local-persistent-volumes-beta/){: external}.
@@ -336,7 +344,9 @@ You typically use SDS machines in the following cases:
 
 For more storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
-**What SDS flavors can I order?**</br>
+### Available flavors for SDS
+{: #sds-table}
+
 Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [bare metal](#bm) or [VM](#vm) flavors.
 
 Choose a flavor, or machine type, with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
@@ -347,7 +357,6 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
 
-{: #sds-table}
 <table summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and secondary disk that are attached to the worker nodes for the flavor. The fourth column has the network speed for the worker nodes of the flavor.">
 <caption>Available SDS flavors in {{site.data.keyword.openshiftlong_notm}}.</caption>
 <col width="25%">
@@ -389,6 +398,9 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 </tr>
 </tbody>
 </table>
+
+<br />
+
 
 ## Worker node resource reserves
 {: #resource_limit_node}

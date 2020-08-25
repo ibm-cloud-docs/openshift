@@ -353,8 +353,14 @@ subcollection: openshift
 [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes)
 * [Available hardware for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node)
 * [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
+  * [Planning considerations for VMs](/docs/openshift?topic=openshift-planning_worker_nodes#vm-planning)
+  * [Available flavors for VMs](/docs/openshift?topic=openshift-planning_worker_nodes#vm-table)
 * [Physical machines (bare metal)](/docs/openshift?topic=openshift-planning_worker_nodes#bm)
+  * [Planning considerations for bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm-planning)
+  * [Available flavors for bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm-table)
 * [Software-defined storage (SDS) machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds)
+  * [Planning considerations for SDS](/docs/openshift?topic=openshift-planning_worker_nodes#sds-planning)
+  * [Available flavors for SDS](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table)
 * [Worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node)
 
 
