@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-25"
+lastupdated: "2020-08-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2877,7 +2877,7 @@ ibmcloud oc ingress alb ls --cluster my_cluster
 
 </br>
 
-### `ibmcloud oc ingress alb migrate clean`
+### Beta: `ibmcloud oc ingress alb migrate clean`
 {: #cs_alb_migrate_clean}
 
 Version 3.11 clusters only: Clean up any Ingress resources and configmaps that you no longer need, such as after an Ingress migration.
@@ -2932,7 +2932,7 @@ ibmcloud oc ingress alb migrate clean -c my_cluster --reset-kube-controller-conf
 
 </br>
 
-### `ibmcloud oc ingress alb migrate start`
+### Beta: `ibmcloud oc ingress alb migrate start`
 {: #cs_alb_migrate_start}
 
 Version 3.11 clusters only: Start a migration of your Ingress configmap and resources that are formatted for use with ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress to instead use with ALBs that run the Kubernetes Ingress image. Note that this command helps you create all the resources for ALBs that run Kubernetes Ingress, but afterwards you must still manually change your ALB from one type of image to another. For more information about how to prepare for a migration, see [Changing the image of existing ALBs](/docs/openshift?topic=openshift-ingress-types#alb-type-migration).
@@ -2972,7 +2972,7 @@ ibmcloud oc ingress alb migrate start --type test --cluster my_cluster
 
 </br>
 
-### `ibmcloud oc ingress alb migrate status`
+### Beta: `ibmcloud oc ingress alb migrate status`
 {: #cs_alb_migrate_status}
 
 Version 3.11 clusters only: Check the status of a [migration of your Ingress configmap and resources](#cs_alb_migrate_start).
@@ -3093,7 +3093,7 @@ ibmcloud oc ingress alb versions [--output json] [-q]
 <br />
 
 
-## `ingress secret` commands
+## Beta: `ingress secret` commands
 {: #ingress-commands}
 
 View and modify TLS secrets for Ingress services in your cluster.
@@ -3102,7 +3102,7 @@ View and modify TLS secrets for Ingress services in your cluster.
 Previously, the following commands were listed in the `ibmcloud oc ingress alb cert` subcategory. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: important}
 
-### `ibmcloud oc ingress secret create`
+### Beta: `ibmcloud oc ingress secret create`
 {: #cs_ingress_secret_create}
 
 Create an Ingress secret in a cluster for a certificate stored in {{site.data.keyword.cloudcerts_long}}.
@@ -3152,7 +3152,7 @@ ibmcloud oc ingress secret create --cert-crn crn:v1:staging:public:cloudcerts:us
 
 </br>
 
-### `ibmcloud oc ingress secret get`
+### Beta: `ibmcloud oc ingress secret get`
 {: #cs_ingress_secret_get}
 
 View information about Ingress secrets in your cluster, including secrets that you imported for a certificate from {{site.data.keyword.cloudcerts_long_notm}}.
@@ -3199,7 +3199,7 @@ ibmcloud oc ingress secret get --cluster my_cluster --name my_alb_secret --names
 
 </br>
 
-### `ibmcloud oc ingress secret ls`
+### Beta: `ibmcloud oc ingress secret ls`
 {: #cs_ingress_secret_ls}
 
 List Ingress secrets in your cluster, including secrets that you imported for a certificate from {{site.data.keyword.cloudcerts_long_notm}}.
@@ -3243,7 +3243,7 @@ ibmcloud oc ingress secret ls --cluster my_cluster
 
 </br>
 
-### `ibmcloud oc ingress secret rm`
+### Beta: `ibmcloud oc ingress secret rm`
 {: #cs_ingress_secret_rm}
 
 Delete an Ingress secret from your cluster. If you created a secret for a certificate from {{site.data.keyword.cloudcerts_long_notm}}, only the secret in the cluster is deleted and the certificate remains in your {{site.data.keyword.cloudcerts_long_notm}} instance.
@@ -3288,7 +3288,7 @@ ibmcloud oc ingress secret rm --cluster my_cluster --name my_alb_secret --namesp
 
 </br>
 
-### `ibmcloud oc ingress secret update`
+### Beta: `ibmcloud oc ingress secret update`
 {: #cs_ingress_secret_update}
 
 Update an Ingress secret for a certificate that is not hosted in the default {{site.data.keyword.cloudcerts_short}} instance that was created for your cluster.
