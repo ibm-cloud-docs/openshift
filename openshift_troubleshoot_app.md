@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -302,7 +302,7 @@ error: build error: Failed to push image: error copying layers and metadata
 {: screen}
 
 {: tsCauses}
-The pod might use an SCC or belong to a system group that uses an SCC without the correct permission. You might have added a system group to anSCC by running `oc adm policy add-scc-to-group <scc> system:<group>`. If the pod mounts a volume, the pod's permissions that are authorized by the SCC might no longer allow the pod to read or write data to the volume.
+The pod might use an SCC or belong to a system group that uses an SCC without the correct permission. You might have added a system group to an SCC by running `oc adm policy add-scc-to-group <scc> system:<group>`. If the pod mounts a volume, the pod's permissions that are authorized by the SCC might no longer allow the pod to read or write data to the volume.
 
 For example, the internal registry mounts a volume to read and write image data to a file storage instance. If the `system:authenticated` group that the internal registry belongs to changes the SCC from `restricted` to `anyuid`, then the pod runs with a different UID. The different UID prevents the internal registry pod from pushing or pulling images from the storage device.
 

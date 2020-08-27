@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-27"
 
 keywords: openshift
 subcollection: openshift
@@ -243,16 +243,16 @@ subcollection: openshift
 * [Create a cluster and deploy apps](/docs/openshift?topic=openshift-tutorials-ov#tutorials-create-cluster-deploy-app)
 * [Dive deeper into OpenShift technology](/docs/openshift?topic=openshift-tutorials-ov#tutorials-deep-dive)
 
-[Creating Red Hat OpenShift on IBM Cloud clusters](/docs/openshift?topic=openshift-openshift_tutorial)
+[Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial)
 * [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 * [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
 * [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
-* [Creating a Red Hat OpenShift on IBM Cloud cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
-* [Navigating the OpenShift console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
-* [Deploying an app to your OpenShift cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
+* [Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
+* [Navigating the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+* [Deploying an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
-[Creating an OpenShift cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial)
+[Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial)
 * [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
 * [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
 * [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
@@ -260,17 +260,6 @@ subcollection: openshift
 * [Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
 * [Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
-
-[Migrating cluster resources from VPC Gen 1 to VPC Gen 2](/docs/openshift?topic=openshift-vpc_migrate_tutorial)
-* [Objectives](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_ks_objectives)
-* [Audience](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_ks_audience)
-* [Prerequisites](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_ks_prereqs)
-* [Plan your migration to VPC Gen 2](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_plan)
-* [Create your Gen 2 VPC, resources, and cluster](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_create_gen2)
-* [Set up an {{site.data.keyword.cos_short}} bucket](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_cos)
-* [Create a Velero backup of your Gen 1 cluster](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_velero_gen1)
-* [Restore a Velero backup to your Gen 2 cluster](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_velero_gen2)
-* [What's next?](/docs/openshift?topic=openshift-vpc_migrate_tutorial#vpc_migrate_whats-next)
 
 [Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
 
@@ -309,18 +298,18 @@ subcollection: openshift
 {: #sitemap_planning_your_cluster_environment}
 
 
-[Moving your environment to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-strategy)
+[Moving your environment to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-strategy)
 * [Moving your workloads to the {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-strategy#cloud_workloads)
   * [Can I automate my infrastructure deployments?](/docs/openshift?topic=openshift-strategy#infra_packaging)
   * [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-strategy#app_kinds)
-  * [What knowledge and technical skills are good to have before I move my apps to Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-strategy#knowledge)
-* [Sizing your OpenShift cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing)
+  * [What knowledge and technical skills are good to have before I move my apps to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-strategy#knowledge)
+* [Sizing your {{site.data.keyword.openshiftshort}} cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing)
   * [How many resources does my app require?](/docs/openshift?topic=openshift-strategy#sizing_resources)
   * [What else besides my app might use resources in the cluster?](/docs/openshift?topic=openshift-strategy#sizing_other)
   * [What type of availability do I want my workload to have?](/docs/openshift?topic=openshift-strategy#sizing_availability)
   * [How many worker nodes do I need to handle my workload?](/docs/openshift?topic=openshift-strategy#sizing_workers)
   * [How do I monitor resource usage and capacity in my cluster?](/docs/openshift?topic=openshift-strategy#sizing_manage)
-* [Structuring your OpenShift environment](/docs/openshift?topic=openshift-strategy#kube_env)
+* [Structuring your {{site.data.keyword.openshiftshort}} environment](/docs/openshift?topic=openshift-strategy#kube_env)
   * [What type of cluster and flavors should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
   * [Do I use multiple clusters, or just add more workers to an existing cluster?](/docs/openshift?topic=openshift-strategy#env_multicluster)
   * [How can I set up my resources within the cluster?](/docs/openshift?topic=openshift-strategy#env_resources)
@@ -353,8 +342,14 @@ subcollection: openshift
 [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes)
 * [Available hardware for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node)
 * [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
+  * [Planning considerations for VMs](/docs/openshift?topic=openshift-planning_worker_nodes#vm-planning)
+  * [Available flavors for VMs](/docs/openshift?topic=openshift-planning_worker_nodes#vm-table)
 * [Physical machines (bare metal)](/docs/openshift?topic=openshift-planning_worker_nodes#bm)
+  * [Planning considerations for bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm-planning)
+  * [Available flavors for bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm-table)
 * [Software-defined storage (SDS) machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds)
+  * [Planning considerations for SDS](/docs/openshift?topic=openshift-planning_worker_nodes#sds-planning)
+  * [Available flavors for SDS](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table)
 * [Worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node)
 
 
@@ -406,6 +401,7 @@ subcollection: openshift
   * [Setting up the API key in most cases](/docs/openshift?topic=openshift-users#api_key_most_cases)
   * [Understanding other options than the API key](/docs/openshift?topic=openshift-users#api_key_other)
   * [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#understand_infra)
+  * [Accessing the portfolio with the API key](/docs/openshift?topic=openshift-users#api_key_about)
   * [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions)
   * [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-users#default_account)
   * [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-users#credentials)
@@ -1392,17 +1388,17 @@ subcollection: openshift
   * [`ibmcloud oc ingress alb enable classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure)
   * [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get)
   * [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_albs)
-  * [`ibmcloud oc ingress alb migrate clean`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_clean)
-  * [`ibmcloud oc ingress alb migrate start`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_start)
-  * [`ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status)
+  * [Beta: `ibmcloud oc ingress alb migrate clean`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_clean)
+  * [Beta: `ibmcloud oc ingress alb migrate start`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_start)
+  * [Beta: `ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status)
   * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
   * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
-* [`ingress secret` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-commands)
-  * [`ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create)
-  * [`ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_get)
-  * [`ibmcloud oc ingress secret ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_ls)
-  * [`ibmcloud oc ingress secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_rm)
-  * [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
+* [Beta: `ingress secret` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-commands)
+  * [Beta: `ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create)
+  * [Beta: `ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_get)
+  * [Beta: `ibmcloud oc ingress secret ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_ls)
+  * [Beta: `ibmcloud oc ingress secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_rm)
+  * [Beta: `ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
   * [`ingress status` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
 * [`logging` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#logging_commands)
   * [`ibmcloud oc logging autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_disable)
@@ -1485,10 +1481,14 @@ subcollection: openshift
   * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
   * [`ibmcloud ob logging config delete`](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
   * [`ibmcloud ob logging config list`](/docs/openshift?topic=openshift-observability_cli#logging_config_list)
+  * [`ibmcloud ob logging config enable public-endpoint|private-endpoint`](/docs/openshift?topic=openshift-observability_cli#logging_config_enable)
+  * [`ibmcloud ob logging config replace`](/docs/openshift?topic=openshift-observability_cli#logging_config_replace)
   * [`ibmcloud ob logging config show`](/docs/openshift?topic=openshift-observability_cli#logging_config_show)
   * [`ibmcloud ob monitoring config create`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_create)
   * [`ibmcloud ob monitoring config delete`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
   * [`ibmcloud ob monitoring config list`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_list)
+  * [`ibmcloud ob monitoring config enable public-endpoint|private-endpoint`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_enable)
+  * [`ibmcloud ob monitoring config replace`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_replace)
   * [`ibmcloud ob monitoring config show`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_show)
 
 
