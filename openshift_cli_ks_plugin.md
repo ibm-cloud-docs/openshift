@@ -4776,16 +4776,13 @@ View information about the API key for a cluster or reset it to a new key.
 ### `ibmcloud oc api-key info`
 {: #cs_api_key_info}
 
-View the name and email address for the owner of the {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) API key in an {{site.data.keyword.containerlong_notm}} resource group.
+View the name and email address for the owner of the {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) API key that {{site.data.keyword.openshiftlong_notm}} uses to authenticate certain requests like infrastructure in the region and resource group. For more information, see [Accessing the portfolio with the API key](/docs/openshift?topic=openshift-users#api_key_about).
 {: shortdesc}
 
-The {{site.data.keyword.cloud_notm}} API key is automatically set for a resource group and region when the first action that requires the {{site.data.keyword.containerlong_notm}} admin access policy is performed. For example, one of your admin users creates the first cluster in the `default` resource group in the `us-south` region. By doing that, the {{site.data.keyword.cloud_notm}} IAM API key for this user is stored in the account for this resource group and region. The API key is used to order resources in IBM Cloud infrastructure, such as new worker nodes or VLANs. A different API key can be set for each region within a resource group.
+To create a different API key for the resource group and region, use the [`ibmcloud oc api-key reset`](#cs_api_key_reset) command.
 
-When a different user performs an action in this resource group and region that requires interaction with the IBM Cloud infrastructure portfolio, such as creating a new cluster or reloading a worker node, the stored API key is used to determine whether sufficient permissions exist to perform that action. To make sure that infrastructure-related actions in your cluster can be successfully performed, assign your {{site.data.keyword.containerlong_notm}} admin users the **Super user** classic infrastructure access policy  and **Administrator** platform role to VPC infrastructure in {{site.data.keyword.cloud_notm}} IAM. For more information, see [Managing user access](/docs/openshift?topic=openshift-users#infra_access).
-
-If you find that you need to update the API key that is stored for a resource group and region, you can do so by running the [ibmcloud oc api-key reset](#cs_api_key_reset) command. This command requires the {{site.data.keyword.containerlong_notm}} admin access policy and stores the API key of the user that executes this command in the account.
-
-**Tip:** The API key that is returned in this command might not be used if IBM Cloud infrastructure credentials were manually set by using the [ibmcloud oc credential set](#cs_credentials_set) command.
+If you manually set IBM Cloud infrastructure credentials by using the [`ibmcloud oc credential set`](#cs_credentials_set) command, the API key that is returned in this command is not used for infrastructure permissions.
+{: note}
 
 ```
 ibmcloud oc api-key info --cluster CLUSTER [--output json] [-q]
@@ -4822,10 +4819,8 @@ ibmcloud oc api-key info --cluster my_cluster
 ### `ibmcloud oc api-key reset`
 {: #cs_api_key_reset}
 
-Replace the current {{site.data.keyword.cloud_notm}} IAM API key in an {{site.data.keyword.cloud_notm}} resource group and {{site.data.keyword.containershort_notm}} region.
+Create an {{site.data.keyword.cloud_notm}} IAM API key that impersonates the user's permissions to authenticate requests for all clusters in the current resource group and region. The previous API key that was used, if any, is deleted. For more information, see [Accessing the portfolio with the API key](/docs/openshift?topic=openshift-users#api_key_about).
 {: shortdesc}
-
-This command requires the {{site.data.keyword.containerlong_notm}} admin access policy and stores the API key of the user that executes this command in the account. The {{site.data.keyword.cloud_notm}} IAM API key is required to order infrastructure from the IBM Cloud infrastructure portfolio. Once stored, the API key is used for every action in a region that requires infrastructure permissions independent of the user that executes this command. For more information about how {{site.data.keyword.cloud_notm}} IAM API keys work, see the [`ibmcloud oc api-key info` command](#cs_api_key_info).
 
 Before you use this command, make sure that the user who executes this command has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/openshift?topic=openshift-users#users). Target the resource group and region that you want to set the API key for.
 {: important}

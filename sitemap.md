@@ -401,6 +401,7 @@ subcollection: openshift
   * [Setting up the API key in most cases](/docs/openshift?topic=openshift-users#api_key_most_cases)
   * [Understanding other options than the API key](/docs/openshift?topic=openshift-users#api_key_other)
   * [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#understand_infra)
+  * [Accessing the portfolio with the API key](/docs/openshift?topic=openshift-users#api_key_about)
   * [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions)
   * [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-users#default_account)
   * [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-users#credentials)

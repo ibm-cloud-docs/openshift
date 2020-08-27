@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-27"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -219,7 +219,7 @@ To successfully provision and work with clusters, you must ensure that your {{si
 ### Setting up the API key in most cases
 {: #api_key_most_cases}
 
-Your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account is already set up with access to {{site.data.keyword.cloud_notm}} infrastructure. To use this infrastructure in {{site.data.keyword.openshiftlong_notm}}, the **account owner** must make sure that the [API key](#api_key_about) is set up for each region and resource group.
+Your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account is already set up with access to {{site.data.keyword.cloud_notm}} infrastructure. To use this infrastructure in {{site.data.keyword.openshiftlong_notm}}, the **account owner** must make sure that an [API key](#api_key_about) is created with appropriate permissions for each region and resource group.
 {: shortdesc}
 
 The quickest way to set up the API key is to ask the account owner, who already has the required infrastructure permissions. However, the account owner might want to create a functional ID with all the required infrastructure permissions. Then, if the account owner is unavailable or changes, the API key owner remains the functional ID.
@@ -237,17 +237,19 @@ The quickest way to set up the API key is to ask the account owner, who already 
     ibmcloud target -g <resource_group_name>
     ```
     {:pre}
-5. Set the API key for the region and resource group.
+5. Create an API key that impersonates your infrastructure permissions. {{site.data.keyword.openshiftlong_notm}} uses this API key to authenticate requests to manage infrastructure in the region and resource group. The previous API key for the region and resource group, if any, is deleted.
     ```
     ibmcloud oc api-key reset --region <region>
     ```
     {: pre}    
-6. Verify that the API key is set.
+6. Verify that the API key is set up.
     ```
     ibmcloud oc api-key info --cluster <cluster_name_or_ID>
     ```
     {: pre}
 7. Repeat these steps for each region and resource group that you want to create clusters in.
+
+Now that the API key is set up for the region and resource group, you can [assign users {{site.data.keyword.cloud_notm}} IAM platform roles](#platform) to restrict what cluster infrastructure actions they can perform.
 
 ### Understanding other options than the API key
 {: #api_key_other}
@@ -306,26 +308,20 @@ To access the IBM Cloud infrastructure portfolio, you use an {{site.data.keyword
   </tbody>
   </table>
 
-**Now that my infrastructure portfolio is set up, how does {{site.data.keyword.openshiftlong_notm}} access the portfolio?**</br>
+### Accessing the portfolio with the API key
 {: #api_key_about}
 
-{{site.data.keyword.openshiftlong_notm}} accesses the IBM Cloud infrastructure portfolio by using an [API key](/docs/account?topic=account-manapikey). The API key impersonates, or stores the credentials of, a user with access to an IBM Cloud infrastructure account. API keys are set by region within a resource group, and are shared by users in that region. To check if an API key is already set for the region and resource group, you can use the following command.
+{{site.data.keyword.openshiftlong_notm}} accesses the IBM Cloud infrastructure portfolio by using an [API key](/docs/account?topic=account-manapikey). The API key impersonates, or stores the credentials of, a user with access to an IBM Cloud infrastructure account. {{site.data.keyword.openshiftlong_notm}} uses the API key to order resources in IBM Cloud infrastructure, such as new worker nodes or VLANs. You have a different API key for each region within a resource group.
+{: shortdesc}
+
+To check if an API key is already set up for the region and resource group, you can use the following command.
 
 ```
 ibmcloud oc api-key info --cluster <cluster_name_or_ID>
 ```
 {: pre}
 
-To enable all users to access the infrastructure portfolio, the user whose credentials are stored in the API key, such as a functional ID, must have the appropriate permissions to the [infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers).
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters: **Super User** role or the [minimum required permissions](/docs/openshift?topic=openshift-access_reference#infra) for classic infrastructure.
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters: [**Administrator** platform role for VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
-
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters: **Super User** role or the [minimum required permissions](/docs/openshift?topic=openshift-access_reference#infra) for classic infrastructure.
-* [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}} at the account level.
-* [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}.
-* [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for Container Registry at the account level.
-
-Then, log in as the user or functional ID and perform the first admin action in a region and resource group or [reset the API key](#api_key_most_cases). The user's infrastructure credentials are stored in an API key for that region and resource group.
+To enable all users to access the infrastructure portfolio, the user whose credentials are stored in the [API key must have the correct permissions](#owner_permissions). Then, log in as the user or functional ID and perform the first admin action in a region and resource group or [reset the API key](#api_key_most_cases). For example, one of your admin users creates the first cluster in the `default` resource group in the `us-south` region. As a result, the {{site.data.keyword.cloud_notm}} IAM API key for this admin user is created in the account for this resource group and region.
 
 Other users within the account share the API key for accessing the infrastructure. When users log in to the {{site.data.keyword.cloud_notm}} account, an {{site.data.keyword.cloud_notm}} IAM token that is based on the API key is generated for the CLI session and enables infrastructure-related commands to be run in a cluster.
 
@@ -345,7 +341,7 @@ To audit the actions that users in your account run, you can use [{{site.data.ke
 
 For compliance, security, or billing reasons, you might not want to give the **Super User** infrastructure role to the user who sets the API key or whose credentials are set with the `ibmcloud oc credential set` command. However, if this user doesn't have the **Super User** role, then infrastructure-related actions, such as creating a cluster or reloading a worker node, can fail. Instead of using {{site.data.keyword.cloud_notm}} IAM platform roles to control users' infrastructure access, you must [set specific IBM Cloud infrastructure permissions](#infra_access) for users.
 
-**What happens if the user who set the API key for a region and resource group leaves the company?**
+**What happens if the user who set up the API key for a region and resource group leaves the company?**
 
 If the user is leaving your organization, the {{site.data.keyword.cloud_notm}} account owner can remove that user's permissions. However, before you remove a user's specific access permissions or remove a user from your account completely, you must reset the API key with another user's infrastructure credentials. Otherwise, the other users in the account might lose access to the IBM Cloud infrastructure portal and infrastructure-related commands might fail. For more information, see [Removing user permissions](#removing).
 
@@ -393,31 +389,31 @@ Be sure that you want to reset the key and understand the impact to your app. Th
 {: note}
 
 **Before you begin**:
-- If the account owner does not set the API key, [ensure that the user who sets the API key has the correct permissions](#owner_permissions).
+- If the account owner does not set up the API key, [ensure that the user who sets the API key has the correct permissions](#owner_permissions).
 - Consider using a functional ID user for the API key owner instead of a personal user. In case the person leaves the team, the functional ID user remains the API key owner.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To set the API key to access the IBM Cloud infrastructure portfolio:
+To set up the API key to access the IBM Cloud infrastructure portfolio:
 
-1.  Set the API key for the region and resource group that the cluster is in.
+1.  Create an API key for the region and resource group that the cluster is in.
     1.  Log in to the terminal with the user whose infrastructure permissions you want to use.
     2.  Target the resource group where you want to set the API key. If you do not target a resource group, the API key is set for the default resource group.
         ```
         ibmcloud target -g <resource_group_name>
         ```
         {:pre}
-    4.  Set the user's API key for the region.
+    4.  Set up the API key that has the user's permissions for the region.
         ```
         ibmcloud oc api-key reset --region <region>
         ```
         {: pre}    
-    5.  Verify that the API key is set.
+    5.  Verify that the API key is set up.
         ```
         ibmcloud oc api-key info --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-2. [Create a cluster](/docs/openshift?topic=openshift-clusters). To create the cluster, the API key credentials that you set for the region and resource group are used.
+2. [Create a cluster](/docs/openshift?topic=openshift-clusters). To create the cluster, the API key credentials that you set up for the region and resource group are used.
 
 ### Accessing a different classic infrastructure account
 {: #credentials}
