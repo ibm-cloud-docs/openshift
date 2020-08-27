@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-08-27"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -139,8 +139,6 @@ With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API]
    <li>[`zone add classic`](#cs_zone_add)</li></ul>
    </td>
    <td>Uses the v2 API.<ul>
-   <li>[`ingress alb create vpc-gen2`](#cli_alb-create-vpc-gen2)</li>
-   <li>[`ingress alb enable vpc-gen2`](#cli_alb_configure_vpc_gen2)</li>
    <li>[`cluster create vpc-gen2`](#cli_cluster-create-vpc-gen2)</li>
    <li>[`nlb-dns create vpc-gen2`](#cs_nlb-dns-create-vpc-gen2)</li>
    <li>[`nlb-dns rm vpc-gen2`](#cs_nlb-dns-rm-vpc-gen2)</li>

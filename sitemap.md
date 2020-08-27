@@ -298,18 +298,18 @@ subcollection: openshift
 {: #sitemap_planning_your_cluster_environment}
 
 
-[Moving your environment to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-strategy)
+[Moving your environment to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-strategy)
 * [Moving your workloads to the {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-strategy#cloud_workloads)
   * [Can I automate my infrastructure deployments?](/docs/openshift?topic=openshift-strategy#infra_packaging)
   * [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-strategy#app_kinds)
-  * [What knowledge and technical skills are good to have before I move my apps to Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-strategy#knowledge)
-* [Sizing your OpenShift cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing)
+  * [What knowledge and technical skills are good to have before I move my apps to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-strategy#knowledge)
+* [Sizing your {{site.data.keyword.openshiftshort}} cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing)
   * [How many resources does my app require?](/docs/openshift?topic=openshift-strategy#sizing_resources)
   * [What else besides my app might use resources in the cluster?](/docs/openshift?topic=openshift-strategy#sizing_other)
   * [What type of availability do I want my workload to have?](/docs/openshift?topic=openshift-strategy#sizing_availability)
   * [How many worker nodes do I need to handle my workload?](/docs/openshift?topic=openshift-strategy#sizing_workers)
   * [How do I monitor resource usage and capacity in my cluster?](/docs/openshift?topic=openshift-strategy#sizing_manage)
-* [Structuring your OpenShift environment](/docs/openshift?topic=openshift-strategy#kube_env)
+* [Structuring your {{site.data.keyword.openshiftshort}} environment](/docs/openshift?topic=openshift-strategy#kube_env)
   * [What type of cluster and flavors should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
   * [Do I use multiple clusters, or just add more workers to an existing cluster?](/docs/openshift?topic=openshift-strategy#env_multicluster)
   * [How can I set up my resources within the cluster?](/docs/openshift?topic=openshift-strategy#env_resources)
