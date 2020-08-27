@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-25"
+lastupdated: "2020-08-27"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -176,7 +176,6 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Reserved instances | [Reserved capacity and reserved instances](/docs/virtual-servers?topic=virtual-servers-provisioning-reserved-capacity-and-instances) are not supported. |
 | Worker node flavors | Worker nodes are available in [select flavors](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node) of compute resources. |
 | Worker node host access | For security, you cannot SSH into the worker node compute host. |
-| Worker node instances | You cannot exceed 500 worker nodes across all clusters in a region. If you see an IBM Cloud infrastructure capacity limit on the number of instances per data center or that are ordered each month, [contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support).  |
 {: summary="This table contains information on compute limitations for classic clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Classic cluster compute limitations"}
 
@@ -233,7 +232,6 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | v2 API | VPC clusters use the [{{site.data.keyword.openshiftlong_notm}} v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about). The v2 API is currently under development, with only a limited number of API operations currently available. You can run certain v1 API operations against the VPC cluster, such as `GET /v1/clusters` or `ibmcloud oc cluster ls`, but not all the information that a Classic cluster has is returned or you might experience unexpected results. For supported VPC v2 operations, see the [CLI reference topic for VPC commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about). |
 | Worker node flavors | Only certain flavors are available for worker node [virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm). Bare metal machines are not supported.|
 | Worker node host access | For security, you cannot SSH into the worker node compute host. |
-| Worker node instances | You can have up to 100 worker nodes per VPC cluster. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-getting-customer-support).|
 | Worker node updates | You cannot update or reload worker nodes. Instead, you can delete the worker node and rebalance the worker pool with the `ibmcloud oc worker replace` command. If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes. |
 {: summary="This table contains information on compute limitations for VPC Gen 2 clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="VPC Gen 2 cluster compute limitations"}

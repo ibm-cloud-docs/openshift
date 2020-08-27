@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-27"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -284,7 +284,7 @@ Change your ALBs from the {{site.data.keyword.openshiftlong_notm}} Ingress image
 
 The following steps use the Ingress resource migration tool to help you create Ingress resources, including annotations, for the Kubernetes Ingress format. The migration tool also creates a new configmap resource that is formatted for the Kubernetes Ingress implementation. Then, you change the version of your ALBs to use the community Kubernetes Ingress image.
 
-<p class="important">The migration tool is intended to help you prepare your Ingress resources and configmap. However, you must verify, test, and modify your Ingress resources and configmap to ensure that they work correctly with the Kubernetes Ingress image.</br></br>To change your ALB from one type of image to another, your ALB must first be disabled, and traffic to your apps might be disrupted. Make sure that you have at least two worker nodes per zone or [add more ALBs in a zone](#create_alb) so that other ALBs can continue to route traffic while one ALB is disabled at a time.</p>
+<p class="important">The migration tool is intended to help you prepare your Ingress resources and configmap. However, you must verify, test, and modify your Ingress resources and configmap to ensure that they work correctly with the Kubernetes Ingress image.</br></br>After you run the migration tool, you must change your ALBs from the {{site.data.keyword.openshiftlong_notm}} Ingress image to the Kubernetes Ingress image. To change the image type, an ALB must first be disabled, and traffic to your apps might be disrupted. Make sure that you have at least two worker nodes per zone or [add more ALBs in a zone](#create_alb) so that other ALBs can continue to route traffic while one ALB is disabled at a time.</p>
 
 ### Step 1: Copy TLS secrets
 {: #alb-migrate-1}

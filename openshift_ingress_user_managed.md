@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-27"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -241,7 +241,7 @@ In classic clusters, bringing your own Ingress controller is supported only for 
 7. Deploy any other resources that are required by your custom Ingress controller, such as the configmap. If you used the cloud-generic NGINX community Ingress controller in step 1, you can skip this step because the resources are already included in the `mandatory.yaml` file.
 
 8. Create Ingress resources for your apps. You can use the Kubernetes documentation to create [an Ingress resource file](https://kubernetes.io/docs/concepts/services-networking/ingress/){: external} and use [annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/){: external}.
-  <p class="tip">If you continue to use IBM-provided ALBs concurrently with your custom Ingress controller in one cluster, you can create separate Ingress resources for your ALBs and custom controller. In the [Ingress resource that you create to apply to the IBM ALBs only](/docs/openshift?topic=openshift-ingress#ingress_expose_public), add the annotation <code>kubernetes.io/ingress.class: "iks-nginx"</code>.</p>
+  <p class="important">If you continue to use IBM-provided ALBs concurrently with your custom Ingress controller in one cluster, create separate Ingress resources for your ALBs and custom controller. In the [Ingress resource that you create to apply to the IBM ALBs only](/docs/openshift?topic=openshift-ingress#ingress_expose_public), you must add the annotation <code>kubernetes.io/ingress.class: "iks-nginx"</code>.</p>
 
 9. Access your app by using the subdomain you configured in step 6 and the path that your app listens on that you specified in the Ingress resource file.
   ```
