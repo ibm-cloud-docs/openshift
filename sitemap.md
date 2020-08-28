@@ -470,6 +470,8 @@ subcollection: openshift
 
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update)
 * [Updating the master](/docs/openshift?topic=openshift-update#master)
+  * [About updating the master](/docs/openshift?topic=openshift-update#master-about)
+  * [Steps to update the cluster master](/docs/openshift?topic=openshift-update#master-steps)
 * [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node)
   * [Prerequisites](/docs/openshift?topic=openshift-update#worker-up-prereqs)
   * [Updating classic worker nodes in the CLI with a configmap](/docs/openshift?topic=openshift-update#worker-up-configmap)
@@ -1498,11 +1500,11 @@ subcollection: openshift
 
 [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
-* [OpenShift versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
+* [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
-* [OpenShift 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
+* [{{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
-* [OpenShift 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
+* [{{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 * [Migrating from version 3.11 to 4 clusters](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration)
   * [Prerequisites](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-prereqs)
   * [Step 1: Deploy the migration operator to the source cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-source)

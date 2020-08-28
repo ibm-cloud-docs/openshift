@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-28"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -106,6 +106,9 @@ You must update your cluster by using the {{site.data.keyword.openshiftlong_notm
 Periodically, {{site.data.keyword.openshiftshort}} releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
 {: shortdesc}
 
+### About updating the master
+{: #master-about}
+
 **How do I know when to update the master?**</br>
 You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when updates are available, and can also check the [supported versions](/docs/openshift?topic=openshift-openshift_versions) page.
 
@@ -135,17 +138,39 @@ The following diagram shows the process that you can take to update your master.
 Figure 1. Updating Kubernetes master process diagram
 {: #update_master}
 
+### Steps to update the cluster master
+{: #master-steps}
+
 Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
 
 To update the Kubernetes master _major_ or _minor_ version:
 
 1.  Review the [Kubernetes changes](/docs/containers?topic=containers-cs_versions) and make any updates marked _Update before master_.
+2.  Check the add-ons and plug-ins that are installed in your cluster for any impact that might be caused by updating the cluster version.
+    
+    * **Checking add-ons**
+    1.  List the add-ons in the cluster.
+        ```
+        ibmcloud oc addon ls -c <cluster_name_or_ID>
+        ```
+        {: pre}
+    2.  Check the supported {{site.data.keyword.openshiftshort}} version for each add-on that is installed.
+        ```
+        ibmcloud oc addon-versions
+        ```
+        {: pre}
+    3.  If the add-on must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, [update the add-on](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
 
-2.  Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).
+    * **Checking plug-ins**
+    1.  In the [Helm catalog](https://cloud.ibm.com/kubernetes/helm){: external}, find the plug-ins that you installed in your cluster.
+    2.  From the side menu, expand the **SOURCES & TAR FILE** section.
+    3.  Download and open the source code.
+    4.  Check the `README.md` or `RELEASENOTES.md` files for supported versions.
+    5.  If the plug-in must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, update the plug-in by following the plug-in instructions.
 
-3.  Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
-
-4.  Install the version of the [`oc cli`](/docs/containers?topic=containers-cs_cli_install#kubectl) that matches the API server version that runs in the master. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are two or more versions apart from the server version (n +/- 2).
+3.  Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).
+4.  Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
+5.  Install the version of the [`oc cli`](/docs/containers?topic=containers-cs_cli_install#kubectl) that matches the API server version that runs in the master. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are two or more versions apart from the server version (n +/- 2).
 
 When the master update is complete, you can update your worker nodes, depending on the type of cluster infrastructure provider that you have.
 *  [Updating classic worker nodes](#worker_node).
