@@ -488,9 +488,9 @@ subcollection: openshift
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
   * [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
   * [Changing the Calico MTU for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-311)
-* [Disabling the portmap plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
-  * [Disabling the portmap plug-in for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
-  * [Disabling the portmap plug-in for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-311)
+* [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
+  * [Disabling the port map plug-in for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
+  * [Disabling the port map plug-in for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-311)
 
 [Removing clusters](/docs/openshift?topic=openshift-remove)
 
