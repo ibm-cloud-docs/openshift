@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-28"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -169,7 +169,7 @@ If you previously disabled the public endpoint, you can re-enable it.
    ```
    ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker1,worker2>
    ```
-  {: pre}
+   {: pre}
    </br>
 
 

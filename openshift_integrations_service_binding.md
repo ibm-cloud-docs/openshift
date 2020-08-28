@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-28"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -453,6 +453,7 @@ You can add the service credentials and other key value pairs from your Kubernet
    {: screen}
 
 3. Create a YAML file for your Kubernetes deployment and specify an environment variable that references the `binding` key.
+   
    ```yaml
    apiVersion: apps/v1
    kind: Deployment
@@ -479,8 +480,8 @@ You can add the service credentials and other key value pairs from your Kubernet
                secretKeyRef:
                  name: binding-<service_instance_name>
                  key: binding
-     ```
-     {: codeblock}
+   ```
+   {: codeblock}
 
      <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
      <caption>Understanding the YAML file components</caption>
