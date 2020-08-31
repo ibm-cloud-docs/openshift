@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-08-31"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -182,19 +182,25 @@ When the master update is complete, you can update your worker nodes, depending 
 ## Updating classic worker nodes
 {: #worker_node}
 
-You received a notification to update your worker nodes in a [classic infrastructure](/docs/openshift?topic=openshift-infrastructure_providers) cluster. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync.
+You notice that an update is available for your worker nodes in a [classic infrastructure](/docs/openshift?topic=openshift-infrastructure_providers) cluster. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
 {: shortdesc}
 
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Applies to only classic clusters. Have a VPC cluster? See [Updating VPC worker nodes](#vpc_worker_node) instead.
 {: note}
 
+* **Patch**: A worker node patch update includes security fixes. You can update the classic worker node to the latest patch by using the `ibmcloud oc worker reload` or `update` commands. Keep in mind that the `update` command also updates the worker node to the same `major.minor` version as the master and latest patch version, if a `major.minor` version update is also available.
+* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. You can update the classic worker node to the same patch by using the `ibmcloud oc worker update` command.
+
+For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
+{: shortdesc}
+
 **What happens to my apps during an update?**</br>
 If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
 
-**How can I control how many worker nodes go down at a time during the update?**</br>
+**How can I control how many worker nodes go down at a time during an update or reload?**</br>
 If you need all your worker nodes to be up and running, consider [resizing your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [adding stand-alone worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) to add more worker nodes. You can remove the additional worker nodes after the update is completed.
 
-In addition, you can create a Kubernetes config map that specifies the maximum number of worker nodes that can be unavailable at a time during the update. Worker nodes are identified by the worker node labels. You can use IBM-provided labels or custom labels that you added to the worker node.
+In addition, you can create a Kubernetes config map that specifies the maximum number of worker nodes that can be unavailable at a time, such as during an update or reload. Worker nodes are identified by the worker node labels. You can use IBM-provided labels or custom labels that you added to the worker node.
 
 **What if I choose not to define a config map?**</br>
 When the config map is not defined, the default is used. By default, a maximum of 20% of all of your worker nodes in each cluster can be unavailable during the update process.
@@ -389,7 +395,7 @@ To update worker nodes from the console:
 ## Updating VPC worker nodes
 {: #vpc_worker_node}
 
-You received a notification to update your worker nodes in a [VPC infrastructure cluster](/docs/openshift?topic=openshift-infrastructure_providers). What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
+You notice that an update is available for your worker nodes in a [VPC infrastructure cluster](/docs/openshift?topic=openshift-infrastructure_providers). What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
 {: shortdesc}
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/>  Applies to only VPC clusters. Have a classic cluster? See [Updating classic worker nodes](#worker_node) instead.
