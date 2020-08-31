@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-08-31"
 
 keywords: openshift
 subcollection: openshift
@@ -825,7 +825,7 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_routes}
 
 
-[Exposing apps with routes in OpenShift version 4](/docs/openshift?topic=openshift-openshift_routes)
+[Exposing apps with routes in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-openshift_routes)
 * [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)

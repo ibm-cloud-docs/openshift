@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-31"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -663,14 +663,37 @@ When you create a standard cluster, a private ALB is created in each zone that y
     The field **Status** for private ALBs is _disabled_.
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal10   ingress:411/ingress-auth:315   2234947       -
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.xx.xxx.xxx  dal10   ingress:411/ingress-auth:315   2234945       -
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal10   ingress:645/ingress-auth:421   2234947       -
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.xx.xxx.xxx  dal10   ingress:647/ingress-auth:421   2234945       -
     ```
     {: screen}
 
-2. Enable the private ALBs. Run this command for the ID of each private ALB that you want to enable. If you want to specify an IP address for the ALB, include the IP address in the `--ip` flag.
+2. Get the default version of the {{site.data.keyword.openshiftlong_notm}} Ingress image.
   ```
-  ibmcloud oc ingress alb enable classic --alb <private_ALB_ID> -c <cluster_name_or_ID>
+  ibmcloud oc ingress alb versions
+  ```
+  {: pre}
+
+  In the following example output, the default {{site.data.keyword.openshiftlong_notm}} Ingress version is `647`:
+  ```
+  IBM Cloud Ingress: 'auth' version
+  421
+
+  IBM Cloud Ingress versions
+  647 (default)
+  645
+  642
+
+  Kubernetes Ingress versions
+  0.34.1_391_iks
+  0.33.0_390_iks (default)
+  0.32.0_392_iks
+  ```
+  {: screen}
+
+3. Enable the private ALBs. Run this command for the ID of each private ALB that you want to enable. If you want to specify an IP address for the ALB, include the IP address in the `--ip` flag.
+  ```
+  ibmcloud oc ingress alb enable classic --alb <private_ALB_ID> -c <cluster_name_or_ID> --version <version>
   ```
   {: pre}
   </br>
@@ -1031,7 +1054,9 @@ As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two type
 - The {{site.data.keyword.openshiftlong_notm}} Ingress image is built on a custom implementation of the NGINX Ingress controller.
 - The Kubernetes Ingress image is built on the community Kubernetes project's implementation of the NGINX Ingress controller.
 
-The latest three versions of each image type are supported for ALBs. When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag. To list the currently supported versions for each type of image, run the following command:
+The latest three versions of each image type are supported for ALBs. When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this flag, the ALB runs the default version of the Kubernetes Ingress image type.
+
+To list the currently supported versions for each type of image, run the following command:
 ```
 ibmcloud oc ingress alb versions
 ```

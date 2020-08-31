@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-31"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -271,13 +271,13 @@ Previous {{site.data.keyword.openshiftlong_notm}} Ingress fields:
     {: screen}
 
 Kubernetes Ingress fields:
-* `ibm-ingress-deploy-config` configmap [fields](#comm-customize-deploy):
+1. `ibm-ingress-deploy-config` configmap [fields](#comm-customize-deploy):
     ```
     httpPort=8080
     httpsPort=8443
     ```
     {: screen}
-* [Modify each ALB service](#comm-customize-deploy)</li></ul>
+2. [Modify each ALB service](#comm-customize-deploy) to add the ports.
 
 
 ### Custom request header
@@ -733,15 +733,14 @@ ingress.bluemix.net/tcp-ports: "serviceName=app1 ingressPort=8080 servicePort=90
 ```
 {: screen}
 
-Kubernetes `ibm-ingress-deploy-config` configmap [field](#comm-customize-deploy):
+Kubernetes Ingress fields:
+1. `ibm-ingress-deploy-config` configmap [field](#comm-customize-deploy). For the requirements of the `tcp-services-configmap`, see [this blog](https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/){:external}.
+  ```
+  tcp-services-configmap=<configMap>
+  ```
+  {: screen}
 
-```
-tcp-services-configmap=<configMap>
-```
-{: screen}
-
-For the requirements of the `tcp-services-configmap`, see [this blog](https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/){:external}.
-
+2. [Modify each ALB service](#comm-customize-deploy) to add the ports.
 
 ### Upstream fail timeout
 
@@ -873,7 +872,7 @@ The following options are specific to ALBs that run the Kubernetes Ingress image
     ```
     {: pre}
 
-3. If you specified non-standard HTTP or HTTPS ports, you must open the ports on each ALB service.
+3. If you specified non-standard HTTP, HTTPS, or TCP ports, you must open the ports on each ALB service.
   1. For each ALB service that you found in step 1, edit the YAML file.
     ```
     oc edit svc -n kube-system <alb_svc_name>
