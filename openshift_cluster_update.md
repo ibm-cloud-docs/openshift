@@ -149,24 +149,24 @@ To update the Kubernetes master _major_ or _minor_ version:
 2.  Check the add-ons and plug-ins that are installed in your cluster for any impact that might be caused by updating the cluster version.
     
     * **Checking add-ons**
-    1.  List the add-ons in the cluster.
-        ```
-        ibmcloud oc addon ls -c <cluster_name_or_ID>
-        ```
-        {: pre}
-    2.  Check the supported {{site.data.keyword.openshiftshort}} version for each add-on that is installed.
-        ```
-        ibmcloud oc addon-versions
-        ```
-        {: pre}
-    3.  If the add-on must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, [update the add-on](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
+      1.  List the add-ons in the cluster.
+          ```
+          ibmcloud oc addon ls -c <cluster_name_or_ID>
+          ```
+          {: pre}
+      2.  Check the supported {{site.data.keyword.openshiftshort}} version for each add-on that is installed.
+          ```
+          ibmcloud oc addon-versions
+          ```
+          {: pre}
+      3.  If the add-on must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, [update the add-on](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
 
     * **Checking plug-ins**
-    1.  In the [Helm catalog](https://cloud.ibm.com/kubernetes/helm){: external}, find the plug-ins that you installed in your cluster.
-    2.  From the side menu, expand the **SOURCES & TAR FILE** section.
-    3.  Download and open the source code.
-    4.  Check the `README.md` or `RELEASENOTES.md` files for supported versions.
-    5.  If the plug-in must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, update the plug-in by following the plug-in instructions.
+      1.  In the [Helm catalog](https://cloud.ibm.com/kubernetes/helm){: external}, find the plug-ins that you installed in your cluster.
+      2.  From the side menu, expand the **SOURCES & TAR FILE** section.
+      3.  Download and open the source code.
+      4.  Check the `README.md` or `RELEASENOTES.md` files for supported versions.
+      5.  If the plug-in must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, update the plug-in by following the plug-in instructions.
 
 3.  Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).
 4.  Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
