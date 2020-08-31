@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-08-31"
 
 keywords: openshift
 subcollection: openshift
@@ -470,6 +470,8 @@ subcollection: openshift
 
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update)
 * [Updating the master](/docs/openshift?topic=openshift-update#master)
+  * [About updating the master](/docs/openshift?topic=openshift-update#master-about)
+  * [Steps to update the cluster master](/docs/openshift?topic=openshift-update#master-steps)
 * [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node)
   * [Prerequisites](/docs/openshift?topic=openshift-update#worker-up-prereqs)
   * [Updating classic worker nodes in the CLI with a configmap](/docs/openshift?topic=openshift-update#worker-up-configmap)
@@ -823,7 +825,7 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_routes}
 
 
-[Exposing apps with routes in OpenShift version 4](/docs/openshift?topic=openshift-openshift_routes)
+[Exposing apps with routes in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-openshift_routes)
 * [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
@@ -1498,11 +1500,11 @@ subcollection: openshift
 
 [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
-* [OpenShift versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
+* [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
-* [OpenShift 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
+* [{{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
-* [OpenShift 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
+* [{{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 * [Migrating from version 3.11 to 4 clusters](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration)
   * [Prerequisites](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-prereqs)
   * [Step 1: Deploy the migration operator to the source cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-source)
@@ -1513,12 +1515,14 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.18_1516_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4418_1516)
   * [Changelog for master fix pack 4.4.17_1515_openshift, released 21 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4417_1515)
   * [Changelog for master fix pack 4.4.16_1513_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4416_1513_master)
   * [Changelog for worker node fix pack 4.4.16_1513_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4416_1513)
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.33_1537_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4333_1537)
   * [Changelog for master fix pack 4.3.31_1536_openshift, released 21 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4331_1536)
   * [Changelog for master fix pack 4.3.31_1534_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4331_1534_master)
   * [Changelog for worker node fix pack 4.3.31_1534_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4331_1534)
@@ -1536,6 +1540,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.272_1565_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1565)
   * [Changelog for master fix pack 3.11.248_1564_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561_master)
   * [Changelog for worker node fix pack 3.11.248_1564_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1564)
   * [Changelog for worker node fix pack 3.11.248_1561_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561)
@@ -1781,6 +1786,7 @@ subcollection: openshift
 * [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)
 * [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_rate_limit)
 * [Classic clusters: Cannot connect to an app via Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_fails)
+* [No Ingress secret exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_secret)
 * [Version 4 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4)
   * [Step 1: Check your app deployment and Ingress resource configuration](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress-43)
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-43)

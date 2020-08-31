@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -107,8 +107,13 @@ While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
-Check the overall health and status of your cluster's Ingress components by running the `ibmcloud oc ingress status` command.
+To check the overall health and status of your cluster's Ingress components:
 {: shortdesc}
+
+```
+ibmcloud oc ingress status -c <cluster_name_or_ID>
+```
+{: pre}
 
 The state of the Ingress components are reported in an **Ingress Status** and **Ingress Message**. Example output:
 ```
@@ -143,7 +148,9 @@ The **Ingress Status** reflects the overall health of the Ingress components. Th
 |`ALBs cannot be created because no portable subnet is available`|Each ALB is created with a portable public or private IP address from the public or private subnet on the VLANs that your cluster is connected to. If no portable IP address is available, the ALB is not created. You might need to add a new subnet to your cluster or order a new VLAN. For troubleshooting information, see [Classic clusters: ALB does not deploy in a zone](#cs_subnet_limit).|
 |`All Ingress components are healthy`|The Ingress components are successfully deployed and are healthy.|
 |`Creating Ingress ALBs`|3.11 clusters: Your ALBs are currently deploying. Wait until your ALBs are fully deployed to review the health of your Ingress components. Note that ALB creation can take up to 15 minutes to complete. |
-|`Creating TLS certificate for Ingress subdomain`|The default Ingress subdomain for your cluster is created with a default TLS certificate, which is stored in the **Ingress Secret**. The certificate is currently being created. If you specify the default TLS secret in your Ingress resources, you cannot use HTTPS to access your apps through your ALBs until the secret is fully deployed. |
+|`Creating TLS certificate for Ingress subdomain. Ensure you have the correct IAM permissions.` |The default Ingress subdomain for your cluster is created with a default TLS certificate, which is stored in the **Ingress Secret**. The certificate is currently being created and stored in the default {{site.data.keyword.cloudcerts_long_notm}} instance for your cluster.<p class="note">When the creation of the {{site.data.keyword.cloudcerts_short}} instance is triggered, the {{site.data.keyword.cloudcerts_short}} instance might take up to an hour to become visible in the {{site.data.keyword.cloud_notm}} console. If this message continues to be displayed, see [No Ingress secret exists after cluster creation](#ingress_secret).</p>|
+|`Could not create a Certificate Manager instance. Ensure you have the correct IAM platform permissions.` | A default {{site.data.keyword.cloudcerts_long_notm}} instance for your cluster was not created to store the TLS certificate for the Ingress subdomain. The API key for the resource group and region that your cluster is in does not have the correct IAM permissions for {{site.data.keyword.cloudcerts_short}}. For troubleshooting steps, see [No Ingress secret exists after cluster creation](#ingress_secret).|
+|`Could not upload certificates to Certificate Manager instance. Ensure you have the correct IAM service permissions.`|The TLS certificate for your cluster's default Ingress subdomain is created, but cannot be stored in the default {{site.data.keyword.cloudcerts_long_notm}} instance for your cluster. The API key for the resource group and region that your cluster is in does not have the correct IAM permissions for {{site.data.keyword.cloudcerts_short}}. For troubleshooting steps, see [No Ingress secret exists after cluster creation](#ingress_secret).|
 |`Deploying router for Ingress controller`|4.3 clusters: The router and router service that expose your Ingress controller are currently deploying to the cluster. If this message continues to be displayed, a router pod might be unable to deploy because only 1 worker node exists in the zone. Two worker nodes are required per zone so that the 2 replicas of the router can be deployed and updated correctly. For more information, see [Adding worker nodes to clusters](/docs/openshift?topic=openshift-add_workers). |
 |`Ingress status is not supported for cluster type`|Ingress health reporting is currently not supported for {{site.data.keyword.openshiftshort}} clusters.|
 |`Load balancer service for ALB or router is not ready`|<ul><li>4.3 clusters: The router and router service that expose your Ingress controller did not correctly deploy to your cluster. For troubleshooting information, see [4.3 clusters: Router for Ingress controller does not deploy in a zone](#cs_subnet_limit_43).</li><li>3.11 clusters: The load balancer service that exposes your ALB did not correctly deploy to your cluster. For troubleshooting information, see [3.11 clusters: ALB does not deploy in a zone](#cs_subnet_limit).</li></ul>|
@@ -403,6 +410,52 @@ Version 3.11 clusters: If you recently restarted your ALB pods or enabled an ALB
 {: note}
 
 <br />
+
+
+## No Ingress secret exists after cluster creation
+{: #ingress_secret}
+
+{: tsSymptoms}
+When you run `ibmcloud oc ingress status -c <cluster_name_or_ID>`, one of the following messages continues to be displayed:
+```
+Creating TLS certificate for Ingress subdomain. Ensure you have the correct IAM permissions.
+```
+{: screen}
+```
+Could not upload certificates to Certificate Manager instance. Ensure you have the correct IAM service permissions.
+```
+{: screen}
+```
+Could not create a Certificate Manager instance. Ensure you have the correct IAM platform permissions.
+```
+{: screen}
+
+When you run `ibmcloud oc ingress secret ls`, no secrets are listed.
+
+{: tsCauses}
+As of 24 August 2020, an [{{site.data.keyword.cloudcerts_long}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager) instance is automatically created for each cluster that you can use to manage the cluster's Ingress TLS certificates.
+
+For an {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, the API key for the region and resource group that the cluster is created in must have the correct IAM permissions. The API key that your cluster uses does not have the correct IAM permissions to create and access an {{site.data.keyword.cloudcerts_short}} instance.
+
+{: tsResolve}
+1. For the user or functional user who sets the API key, [assign the user](/docs/openshift?topic=openshift-users#add_users) the following IAM permissions:
+  * The **Administrator** or **Editor** platform role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**
+  * The **Manager** service role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**
+2. The user must [reset the API key for the region and resource group](/docs/openshift?topic=openshift-users#api_key_most_cases).
+3. After the cluster has access to the updated permissions in the API key, the creation of the {{site.data.keyword.cloudcerts_short}} instance is automatically triggered. Note that the {{site.data.keyword.cloudcerts_short}} instance might take up to an hour to become visible in the {{site.data.keyword.cloud_notm}} console.
+4. Verify that your cluster is automatically assigned an {{site.data.keyword.cloudcerts_short}} instance.
+  1. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
+  2. Expand the **Services** row.
+  3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
+  4. Click the instance's name. The **Your certificates** details page opens.
+5. Verify that the TLS secret for your cluster's Ingress subdomain is created and listed in your cluster.
+  ```
+  ibmcloud oc ingress secret ls -c <cluster_name_or_ID>
+  ```
+  {: pre}
+
+For more information, see [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-types#manage_certs).
+
 
 
 ## Version 4 clusters: Debugging Ingress

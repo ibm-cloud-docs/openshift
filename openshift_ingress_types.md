@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-27"
+lastupdated: "2020-08-31"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -432,25 +432,25 @@ In the Kubernetes Ingress implementation, the ALB cannot access secrets that are
 {: #alb-migrate-3}
 
 1. Change the image type of one ALB to test traffic flow. When you change the ALB's image type, the ALB now only reads the Ingress resources and configmap that are formatted for Kubernetes Ingress, and begins to forward traffic according to those resources.
-    1. Choose the version for the ALB image that you want to use.
-      ```
-      ibmcloud oc ingress alb versions
-      ```
-      {: pre}
-
-    2. List your ALB IDs. In the output, copy the ID and IP address for one ALB.
+    1. List your ALB IDs. In the output, copy the ID and IP address for one ALB.
       ```
       ibmcloud oc ingress alb ls -c <cluster>
       ```
       {: pre}
 
-    3. Disable the ALB.
+    2. Disable the ALB.
         ```
         ibmcloud oc ingress alb disable classic --alb <ALB_ID> -c <cluster_name_or_ID>
         ```
         {: pre}
 
-    4. Re-enable the ALB. Specify the image version that you chose in the `--version` flag.
+    3. Choose the version for Kubernetes Ingress image that you want to use.<p class="note">To choose a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command.</p>
+      ```
+      ibmcloud oc ingress alb versions
+      ```
+      {: pre}
+
+    4. Re-enable the ALB. Specify the image version that you chose in the `--version` flag. If you omit this flag, the ALB runs the default version of the Kubernetes Ingress image.
         ```
         ibmcloud oc ingress alb enable classic --alb <ALB_ID> -c <cluster_name_or_ID> --version <image_version>
         ```
@@ -498,13 +498,16 @@ As of 24 August 2020, an [{{site.data.keyword.cloudcerts_long}}](/docs/certifica
 {: shortdesc}
 
 For an {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, ensure that the API key for the region and resource group that the cluster is created in has the correct permissions.
-  * If the account owner set the API key, then your cluster is assigned an {{site.data.keyword.cloudcerts_short}} instance.
-  * If another user or a functional user set the API key, first [assign the user](/docs/openshift?topic=openshift-users#add_users) the **Administrator** or **Editor** platform role and the **Manager** service role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**. Then, the user must [reset the API key for the region and resource group](/docs/openshift?topic=openshift-users#api_key_most_cases). After the cluster has access to the updated permissions in the API key, your cluster is automatically assigned an {{site.data.keyword.cloudcerts_short}} instance.
+* If the account owner set the API key, then your cluster is assigned an {{site.data.keyword.cloudcerts_short}} instance.
+* If another user or a functional ID set the API key, first [assign the user](/docs/openshift?topic=openshift-users#add_users) the **Administrator** or **Editor** platform role _and_ the **Manager** service role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**. Then, the user must [reset the API key for the region and resource group](/docs/openshift?topic=openshift-users#api_key_most_cases). After the cluster has access to the updated permissions in the API key, your cluster is automatically assigned an {{site.data.keyword.cloudcerts_short}} instance.
+
+When the creation of the {{site.data.keyword.cloudcerts_short}} instance is triggered, the {{site.data.keyword.cloudcerts_short}} instance might take up to an hour to become visible in the {{site.data.keyword.cloud_notm}} console.
+{: note}
 
 The IBM-generated certificate for the default Ingress subdomain that exists in your cluster's {{site.data.keyword.cloudcerts_short}} instance. However, you have full control over your cluster's {{site.data.keyword.cloudcerts_short}} instance and can use {{site.data.keyword.cloudcerts_short}} to upload your own TLS certificates or order TLS certificates for your custom domains.
 
 To view your {{site.data.keyword.cloudcerts_short}} instance:
-1. Go to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
+1. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
 2. Expand the **Services** row.
 3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
 4. Click the instance's name. The **Your certificates** details page opens.
@@ -601,7 +604,9 @@ As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two type
 - The {{site.data.keyword.openshiftlong_notm}} Ingress image is built on a custom implementation of the NGINX Ingress controller.
 - The Kubernetes Ingress image is built on the community Kubernetes project's implementation of the NGINX Ingress controller.
 
-The latest three versions of each image type are supported for ALBs. When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag. To list the currently supported versions for each type of image, run the following command:
+The latest three versions of each image type are supported for ALBs. When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this flag, the ALB runs the default version of the Kubernetes Ingress image type.
+
+To list the currently supported versions for each type of image, run the following command:
 ```
 ibmcloud oc ingress alb versions
 ```
