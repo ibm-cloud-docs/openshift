@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -417,7 +417,7 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 
 2. List the details of your volume. Note the **Size**, **Zone**, and **IOPS**. These values are used to create your PV.
   ```
-  ibmcloud volume <volume_id>
+  ibmcloud is volume <volume_id>
   ```
   {: pre}
 
@@ -442,7 +442,7 @@ You can attach a volume to one worker node only. Make sure that the volume is in
       {: pre}
 
 5.  Create a configuration file for your PV. Include the **ID**, **Size**, **Zone**, and **IOPS** that you retrieved earlier.
-    
+
     ```yaml
     apiVersion: v1
     kind: PersistentVolume
