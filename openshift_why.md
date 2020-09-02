@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-25"
+lastupdated: "2020-09-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -213,6 +213,7 @@ You cannot update from an {{site.data.keyword.openshiftshort}} 3.11 to 4 cluster
 | CRI-O runtime version | 1.11 | 1.16 |
 | Worker node DNS | `dnsmasq` daemon set | `openshift-dns` operator (CoreDNS) |
 | App service integration tool | Service catalog | Operators |
+| Virtual private cloud (VPC) support | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Managed {{site.data.keyword.openshiftshort}} master | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Provided version and security patch updates | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Encryption with {{site.data.keyword.keymanagementservicelong_notm}} | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |

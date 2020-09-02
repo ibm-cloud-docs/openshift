@@ -117,7 +117,7 @@ subcollection: openshift
 
 
 [Overview](/docs/openshift?topic=openshift-roks-overview)
-* [Understanding Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-roks-overview#service-concepts)
+* [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-roks-overview#service-concepts)
 * [Docker containers](/docs/openshift?topic=openshift-roks-overview#docker_containers)
   * [Key concepts](/docs/openshift?topic=openshift-roks-overview#docker-concepts)
   * [Benefits](/docs/openshift?topic=openshift-roks-overview#docker-benefits)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-02"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -105,6 +105,7 @@ After [getting started](/docs/containers?topic=containers-getting-started), you 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change). Instead, you can create a version 4 cluster.
 {: deprecated}
+
 
 <br />
 
@@ -468,8 +469,6 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC Generation 2 compute cluster, and customize your cluster to meet the high availability and security requirements of your apps.
 {: shortdesc}
-
-
 
 ### Creating a standard VPC Gen 2 compute cluster in the console
 {: #clusters_vpcg2_ui}
