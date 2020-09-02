@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-02"
 
 keywords: openshift
 subcollection: openshift
@@ -117,7 +117,7 @@ subcollection: openshift
 
 
 [Overview](/docs/openshift?topic=openshift-roks-overview)
-* [Understanding Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-roks-overview#service-concepts)
+* [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-roks-overview#service-concepts)
 * [Docker containers](/docs/openshift?topic=openshift-roks-overview#docker_containers)
   * [Key concepts](/docs/openshift?topic=openshift-roks-overview#docker-concepts)
   * [Benefits](/docs/openshift?topic=openshift-roks-overview#docker-benefits)
@@ -1155,7 +1155,7 @@ subcollection: openshift
 [Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage)
 * [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
 * [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
-* [Setting up encryption for {{site.data.keyword.blockstorageshort}} (experimental)](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
+* [Setting up encryption for {{site.data.keyword.blockstorageshort}} (beta)](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
   * [Encrypting volume data by using a custom storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
   * [Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret](/docs/openshift?topic=openshift-block_storage#pvc_encrypt_label)
   * [Verifying the encryption of your {{site.data.keyword.blockstorageshort}} volumes](/docs/openshift?topic=openshift-block_storage#block_encrypt)

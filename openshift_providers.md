@@ -3,7 +3,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-09-02"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -120,7 +120,6 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster from the foll
 |Troubleshooting and support|Both classic and VPC clusters are supported through the same {{site.data.keyword.cloud_notm}} Support processes. For cluster issues, check out the [Debugging your clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide. For questions, try posting in the [Slack channel](https://cloud.ibm.com/kubernetes/slack){: external}.|Both classic and VPC clusters are supported through the same {{site.data.keyword.cloud_notm}} Support processes. For cluster issues, check out the [troubleshooting documentation](/docs/openshift?topic=openshift-cs_troubleshoot) for VPC-specific topics. For questions, try posting in the [Slack channel](https://cloud.ibm.com/kubernetes/slack){: external}.|
 {: caption="Infrastructure providers for {{site.data.keyword.openshiftlong_notm}} clusters"}
 {: summary="The rows are read from left to right, with the area of comparison in column one, classic infrastructure provider in column two, and VPC infrastructure provider in column three."}
-
 
 
 
