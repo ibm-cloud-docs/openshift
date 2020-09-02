@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-02"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -562,7 +562,7 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: pre}
 
-7. Optional: If you plan to expose apps by using load balancers or Ingress, create rules to allow inbound and outbound traffic through TCP ports `56501`, `443`, `8834`, and `10514`. For more information, see the [VPC load balancer documentation](/docs/vpc?topic=vpc-load-balancers#configuring-acls-for-use-with-load-balancers).
+7. Optional: If you plan to expose apps by using load balancers or Ingress, create rules to allow inbound and outbound traffic through TCP ports `56501`, `443`, `8834`, and `10514`.
 
   ```
   ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-outbound1 --source-port-min 56501 --source-port-max 56501
