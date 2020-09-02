@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -320,13 +320,14 @@ Make sure to choose your storage configuration carefully to have enough capacity
 <br />
 
 
-## Setting up encryption for {{site.data.keyword.blockstorageshort}} (experimental)
+## Setting up encryption for {{site.data.keyword.blockstorageshort}} (beta)
 {: #block_encryption_setup}
+
 You can set up encryption for {{site.data.keyword.blockstorageshort}} by using {{site.data.keyword.keymanagementservicelong_notm}}.
 {: shortdesc}
 
-Encryption for {{site.data.keyword.blockstorageshort}} is an experimental feature. This feature might be unavailable or change without prior notification. You should not use this feature for production workloads.
-{: important}
+Encryption for {{site.data.keyword.blockstorageshort}} is a beta feature. This feature might be unavailable or change without prior notification. Do not use this feature for production workloads.
+{: beta}
 
 The following example explains how to create a service ID with the required access roles for {{site.data.keyword.keymanagementserviceshort}} and your cluster. The credentials of this service ID are used to enable encryption for your {{site.data.keyword.blockstorageshort}} volumes.
 
