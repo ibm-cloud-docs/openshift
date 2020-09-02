@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-02"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -96,6 +96,16 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {: shortdesc}
+
+## September 2020
+{: #sep20}
+
+| Date | Description |
+| ---- | ----------- |
+| 03 September 2020 | **CA certificate rotation**: Added steps to [revoke existing Certificate Authority (CA) certificates in your cluster and issue new CA certificates](/docs/openshift?topic=openshift-security#cert-rotate).|
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in September 2020"}
+
 
 ## August 2020
 {: #aug20}
