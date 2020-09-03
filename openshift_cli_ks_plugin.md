@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-02"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -400,6 +400,120 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 </br>
 
 
+
+### `ibmcloud oc cluster ca create`
+{: #cs_cluster_ca_create}
+
+Create a new Certificate Authority (CA) for your cluster. After the CA is created and new CA certificates are issued for components in your cluster, the API server of the cluster is automatically refreshed.
+{: shortdesc}
+
+After you run this command and before you run the `ibmcloud oc cluster ca rotate` command, follow the steps in [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate) to ensure that any tooling that uses certificates that are signed by the old CA is updated to use the new certificates and to update your worker nodes.
+{: important}
+
+```
+ibmcloud oc cluster ca create --cluster CLUSTER [-f] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc cluster ca create --cluster my_cluster
+```
+{: pre}
+
+</br>
+
+### `ibmcloud oc cluster ca rotate`
+{: #cs_cluster_ca_rotate}
+
+Rotate the Certificate Authority (CA) certificates of a cluster. Rotating invalidates certificates signed by the cluster's previous CA and issues certificates signed by the cluster's new CA to worker nodes.
+{: shortdesc}
+
+Before you run this command, follow the steps in [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate) to ensure that any tooling that uses the old CA certificates is updated to use the new certificates and to update your worker nodes.
+{: important}
+
+```
+ibmcloud oc cluster ca rotate --cluster CLUSTER [-f] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc cluster ca rotate --cluster my_cluster
+```
+{: pre}
+
+</br>
+
+### `ibmcloud oc cluster ca status`
+{: #cs_cluster_ca_status}
+
+After you run [`ibmcloud oc cluster ca rotate`](#cs_cluster_ca_rotate), view the rotation status of Certificate Authority (CA) certificates for a cluster.
+{: shortdesc}
+
+```
+ibmcloud oc cluster ca status --cluster CLUSTER [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc cluster ca status --cluster my_cluster
+```
+{: pre}
+
+</br>
 
 ### `ibmcloud oc cluster config`
 {: #cs_cluster_config}

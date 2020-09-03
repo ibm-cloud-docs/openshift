@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-27"
+lastupdated: "2020-09-03"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -284,10 +284,10 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 | -------- | ----------- |
 | Cluster autoscaler | The [cluster autoscaler](/docs/openshift?topic=openshift-ca) is not supported.|
 | Locations | You must create your own [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) that is managed from [select {{site.data.keyword.cloud_notm}} multizone metros](/docs/satellite?topic=satellite-sat-regions). |
-| Network | <ul><li>The private service endpoint is not supported for {{site.data.keyword.satelliteshort}} clusters.</li><li>Your {{site.data.keyword.satelliteshort}} clusters cannot use Kubernetes load balancers.</li><li>The hosts that run the worker nodes for your cluster must meet the [host networking](/docs/satellite?topic=satellite-limitations#limits-host-network) and [provider-specific](/docs/satellite?topic=satellite-providers) requirements. For example, depending on your provider, you might have to manually register the host IP addresses in the DNS for the location or cluster subdomains.</li></ul>|
-| Storage for worker node hosts | See [Host storage and attached devices](/docs/satellite?topic=satellite-limitations#limits-host-storage). |
+| Network | <ul><li>The private service endpoint is not supported for {{site.data.keyword.satelliteshort}} clusters.</li><li>Your {{site.data.keyword.satelliteshort}} clusters cannot use Kubernetes load balancers.</li><li>The hosts that run the worker nodes for your cluster must meet the [host networking](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and [provider-specific](/docs/satellite?topic=satellite-providers) requirements. For example, depending on your provider, you might have to manually register the host IP addresses in the DNS for the location or cluster subdomains.</li></ul>|
+| Storage for worker node hosts | See [Host storage and attached devices](/docs/satellite?topic=satellite-host-reqs#reqs-host-storage). |
 | Storage for apps | <ul><li>No location-wide storage solution is provided to store your application data.</li><li>No storage provider is installed in your {{site.data.keyword.satelliteshort}} clusters by default. Therefore, no pre-configured Kubernetes storage classes are set up by default in your clusters to store your application data in a Kubernetes persistent volume that is backed by storage device.</li><li>You can [install your own storage driver in your {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage) to store your application data in Kubernetes persistent volumes that are backed by a storage provider.</li></ul> |
-| Worker nodes | Worker nodes run on hosts in your own infrastructure environments. The hosts must meet [host](/docs/satellite?topic=satellite-limitations#limits-host) and [provider-specific](/docs/satellite?topic=satellite-providers) requirements. You are responsible for [managing the lifecycle of your hosts](/docs/satellite?topic=satellite-hosts), including adding and updating worker nodes. As such, operations such as `ibmcloud oc worker update, replace, reload` commands are not supported. |
+| Worker nodes | Worker nodes run on hosts in your own infrastructure environments. The hosts must meet [host](/docs/satellite?topic=satellite-host-reqs) and [provider-specific](/docs/satellite?topic=satellite-providers) requirements. You are responsible for [managing the lifecycle of your hosts](/docs/satellite?topic=satellite-hosts), including adding and updating worker nodes. As such, operations such as `ibmcloud oc worker update, replace, reload` commands are not supported. |
 | Worker pools | When you assign hosts to a {{site.data.keyword.satelliteshort}} cluster, the hosts are added to the `default` worker pool. You cannot add, resize, rebalance, or delete worker pools. |
 {: summary="This table contains information on storage limitations for {{site.data.keyword.satelliteshort}} clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="{{site.data.keyword.satelliteshort}} cluster limitations"}

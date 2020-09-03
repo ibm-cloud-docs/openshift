@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-03"
 
 keywords: openshift
 subcollection: openshift
@@ -218,6 +218,7 @@ subcollection: openshift
 
 [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security)
 * [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
+  * [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate)
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 * [Network](/docs/openshift?topic=openshift-security#network)
   * [Network segmentation and privacy](/docs/openshift?topic=openshift-security#network_segmentation)
@@ -1338,6 +1339,9 @@ subcollection: openshift
   * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
   * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
   * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
+  * [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_create)
+  * [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_rotate)
+  * [`ibmcloud oc cluster ca status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_status)
   * [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config)
   * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
   * [Beta: `ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
@@ -1845,6 +1849,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[September 2020](/docs/openshift?topic=openshift-iks-release#sep20)
 
 [August 2020](/docs/openshift?topic=openshift-iks-release#aug20)
 
