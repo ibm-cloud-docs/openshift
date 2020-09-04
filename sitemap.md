@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-04"
 
 keywords: openshift
 subcollection: openshift
@@ -135,11 +135,11 @@ subcollection: openshift
 
 [Service architecture and dependencies](/docs/openshift?topic=openshift-service-arch)
 * [Classic cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
-  * [OpenShift version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
-  * [OpenShift version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
+  * [{{site.data.keyword.openshiftshort}} version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
+  * [{{site.data.keyword.openshiftshort}} version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
 * [VPC cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc)
 * [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-arch#ibm-data)
-  * [What information is stored with IBM when using Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-service-arch#pi-info)
+  * [What information is stored with IBM when using {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-service-arch#pi-info)
   * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-arch#pi-storage)
   * [Where is my information stored?](/docs/openshift?topic=openshift-service-arch#pi-location)
   * [How can I remove my information?](/docs/openshift?topic=openshift-service-arch#pi-removal)
@@ -1252,18 +1252,18 @@ subcollection: openshift
 {: #sitemap_enhancing_your_cluster_with_cloud_paks,_operators,_and_integrations}
 
 
-[Red Hat OpenShift on IBM Cloud partners](/docs/openshift?topic=openshift-service-partners)
+[{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
 * [LogDNA](/docs/openshift?topic=openshift-service-partners#logdna-partner)
   * [Benefits](/docs/openshift?topic=openshift-service-partners#logdna-benefits)
-  * [Integration with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-partners#logdna-integration)
+  * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#logdna-integration)
   * [Billing and support](/docs/openshift?topic=openshift-service-partners#logdna-billing-support)
 * [Sysdig](/docs/openshift?topic=openshift-service-partners#sydig-partner)
   * [Benefits](/docs/openshift?topic=openshift-service-partners#sydig-benefits)
-  * [Integration with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-partners#sysdig-integration)
+  * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#sysdig-integration)
   * [Billing and support](/docs/openshift?topic=openshift-service-partners#sysdig-billing-support)
 * [Portworx](/docs/openshift?topic=openshift-service-partners#portworx-parter)
   * [Benefits](/docs/openshift?topic=openshift-service-partners#portworx-benefits)
-  * [Integration with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-partners#portworx-integration)
+  * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#portworx-integration)
   * [Billing and support](/docs/openshift?topic=openshift-service-partners#portworx-billing-support)
 
 [IBM Cloud services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-09-04"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -10,37 +10,91 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
-# Red Hat OpenShift on IBM Cloud partners
+# {{site.data.keyword.openshiftlong_notm}} partners
 {: #service-partners}
 
-IBM is dedicated to make {{site.data.keyword.openshiftlong}} the best OpenShift service that helps you migrate, operate, and administer your containerized workloads. To provide you with all the capabilities that you need to run production workloads in the cloud, Red Hat OpenShift on IBM Cloud partners with other third-party service providers to enhance your cluster with top-notch logging, monitoring, and storage tools.
+IBM is dedicated to make {{site.data.keyword.openshiftlong}} the best {{site.data.keyword.openshiftshort}} service that helps you migrate, operate, and administer your containerized workloads. To provide you with all the capabilities that you need to run production workloads in the cloud, {{site.data.keyword.openshiftlong_notm}} partners with other third-party service providers to enhance your cluster with top-notch logging, monitoring, and storage tools.
 {: shortdesc}
 
 Review our partners and the benefits of each solution that they provide. To find other proprietary {{site.data.keyword.cloud_notm}} and third-party open source services that you can use in your cluster, see [Understanding {{site.data.keyword.cloud_notm}} and 3rd party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations).
@@ -64,7 +118,7 @@ Review the following table to find a list of key benefits that you can get by us
 |Custom alerts and log views|You can use the dashboard to find the logs that match your search criteria, save these logs in a view, and share this view with other users to simplify debugging across team members. You can also use this view to create an alert that you can send to downstream systems, like PagerDuty, Slack, or email.   |
 |Out-of-the-box and custom dashboards|You can choose between a variety of existing dashboards or create your own dashboard to visualize logs in the way you need it. |
 
-### Integration with Red Hat OpenShift on IBM Cloud
+### Integration with {{site.data.keyword.openshiftlong_notm}}
 {: #logdna-integration}
 
 LogDNA is provided by {{site.data.keyword.la_full_notm}}, an {{site.data.keyword.cloud_notm}} platform service that you can use with your cluster. {{site.data.keyword.la_full_notm}} is operated by LogDNA in partnership with IBM.
@@ -77,7 +131,7 @@ For more information, see [Managing Kubernetes cluster logs with {{site.data.key
 ### Billing and support
 {: #logdna-billing-support}
 
-{{site.data.keyword.la_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.la_full_notm}}, post a question in the `logdna-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
+{{site.data.keyword.la_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.la_full_notm}}, post a question in the `logdna-on-iks` channel in the [{{site.data.keyword.openshiftlong_notm}} Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-using-avatar). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
 
 ## Sysdig
 {: #sydig-partner}
@@ -99,7 +153,7 @@ Review the following table to find a list of key benefits that you can get by us
 |Out-of-the-box and custom dashboards|You can choose between a variety of existing dashboards or create your own dashboard to visualize metrics of your microservices in the way you need it. |
 {: caption="Benefits of using Sysdig Monitor" caption-side="top"}
 
-### Integration with Red Hat OpenShift on IBM Cloud
+### Integration with {{site.data.keyword.openshiftlong_notm}}
 {: #sysdig-integration}
 
 Sysdig Monitor is provided by {{site.data.keyword.mon_full_notm}}, an {{site.data.keyword.cloud_notm}} platform service that you can use with your cluster. {{site.data.keyword.mon_full_notm}} is operated by Sysdig in partnership with IBM.
@@ -114,7 +168,7 @@ For more information, see [Analyze metrics for an app that is deployed in a Kube
 
 Because Sysdig Monitor is provided by {{site.data.keyword.mon_full_notm}}, your usage is included in the {{site.data.keyword.cloud_notm}} bill for platform services. For pricing information, review available plans in the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/observe/monitoring/create).
 
-{{site.data.keyword.mon_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.mon_full_notm}}, post a question in the `sysdig-monitoring` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
+{{site.data.keyword.mon_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.mon_full_notm}}, post a question in the `sysdig-monitoring` channel in the [{{site.data.keyword.openshiftlong_notm}} Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-using-avatar). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
 
 ## Portworx
 {: #portworx-parter}
@@ -141,22 +195,22 @@ Review the following table to find a list of key benefits that you can get by us
 |Integrated monitoring with Lighthouse|[Lighthouse ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/reference/lighthouse/) is an intuitive, graphical tool to help you manage and monitor your Portworx clusters and volume snapshots. With Lighthouse, you can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in Prometheus, Grafana, or Kibana.|
 {: caption="Benefits of using Portworx" caption-side="top"}
 
-### Integration with Red Hat OpenShift on IBM Cloud
+### Integration with {{site.data.keyword.openshiftlong_notm}}
 {: #portworx-integration}
 
-If you have a classic Red Hat OpenShift on IBM Cloud cluster, you can choose worker node flavors that are optimized for SDS usage and that come with one or more raw, unformatted, and unmounted local disks that you can use to store your data. Portworx offers best performance when you use [SDS worker node machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds) that come with 10Gbps network speed. However, you can install Portworx on non-SDS worker node flavors in classic clusters, but you might not get the performance benefits that your app requires.
+If you have a classic {{site.data.keyword.openshiftlong_notm}} cluster, you can choose worker node flavors that are optimized for SDS usage and that come with one or more raw, unformatted, and unmounted local disks that you can use to store your data. Portworx offers best performance when you use [SDS worker node machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds) that come with 10Gbps network speed. However, you can install Portworx on non-SDS worker node flavors in classic clusters, but you might not get the performance benefits that your app requires.
 {: shortdesc}
 
 Portworx is installed by using a [Helm chart](/docs/openshift?topic=openshift-portworx#install_portworx). When you install the Helm chart, Portworx automatically analyzes the local persistent storage that is available in your cluster and adds the storage to the Portworx storage layer. To add storage from your Portworx storage layer to your apps, you must use [Kubernetes persistent volume claims](/docs/openshift?topic=openshift-portworx#add_portworx_storage).
 
-For more information about how to install and use Portworx with Red Hat OpenShift on IBM Cloud, see [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
+For more information about how to install and use Portworx with {{site.data.keyword.openshiftlong_notm}}, see [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
 
 ### Billing and support
 {: #portworx-billing-support}
 
-Classic SDS worker node machines that come with local disks, and classic virtual machines that you use for Portworx are included in your monthly Red Hat OpenShift on IBM Cloud bill. For pricing information, see the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/about). The Portworx license is a separate cost and is not included in your monthly bill.
+Classic SDS worker node machines that come with local disks, and classic virtual machines that you use for Portworx are included in your monthly {{site.data.keyword.openshiftlong_notm}} bill. For pricing information, see the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/about). The Portworx license is a separate cost and is not included in your monthly bill.
 {: shortdesc}
 
-If you run into an issue with using Portworx or you want to chat about Portworx configurations for your specific use case, post a question in the `portworx-on-iks` channel in the [Red Hat OpenShift on IBM Cloud Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
+If you run into an issue with using Portworx or you want to chat about Portworx configurations for your specific use case, post a question in the `portworx-on-iks` channel in the [{{site.data.keyword.openshiftlong_notm}} Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
 
 

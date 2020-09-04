@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -588,7 +588,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
 
     4. Get the logs for the Ingress controller and look for error messages in the logs.
         ```
-        oc logs deployments/ingress-operator --namespace=openshift-ingress-operator
+        oc logs deployments/ingress-operator -n openshift-ingress-operator -c ingress-operator
         ```
         {: pre}
 
