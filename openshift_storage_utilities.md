@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1227,6 +1227,6 @@ When an alert is triggered, review the alert details in {{site.data.keyword.mon_
 * [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 * [Troubleshooting apps](/docs/openshift?topic=openshift-cs_troubleshoot_app).
 * [Troubleshooting clusters](/docs/openshift?topic=openshift-cs_troubleshoot).
-* [Open a support case](/docs/get-support?topic=get-support-getting-customer-support).
+* [Open a support case](/docs/get-support?topic=get-support-using-avatar).
 
 

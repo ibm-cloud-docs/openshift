@@ -97,8 +97,7 @@ subcollection: openshift
 You can use built-in security features in {{site.data.keyword.openshiftlong}} for risk analysis and security protection. These features help you to protect your cluster infrastructure and network communication, isolate your compute resources, and ensure security compliance across your infrastructure components and container deployments.
 {: shortdesc}
 
-For an analysis of security guidelines by product version, see [CIS Kubernetes Benchmark](/docs/containers?topic=containers-cis-benchmark).
-{: tip}
+
 
 ## Overview of security threats for your cluster
 {: #threats}

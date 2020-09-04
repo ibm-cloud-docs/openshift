@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-04"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -353,7 +353,7 @@ For more information about using load balancers for VPC, see the VPC docs for [p
     * `spec.loadBalancerSourceRanges`
     * The `externalTrafficPolicy: Local` setting is supported, but the setting does not preserve the source IP of the request.
 * When you delete a VPC cluster, any VPC load balancers that were automatically created by {{site.data.keyword.openshiftlong_notm}} for the Kubernetes `LoadBalancer` services in that cluster are also automatically deleted. However, any VPC load balancers that you manually created in your VPC are not deleted.
-* You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-getting-customer-support).
+* You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).
 
 
 

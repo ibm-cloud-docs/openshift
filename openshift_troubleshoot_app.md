@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-27"
+lastupdated: "2020-09-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -803,7 +803,7 @@ To bind services to a cluster, you must have the Cloud Foundry developer user ro
 
 4. Wait a few minutes, then let the user try to bind the service again.
 
-5. If this does not resolve the problem, then the {{site.data.keyword.cloud_notm}} IAM permissions are out of sync and you cannot resolve the issue yourself. [Contact IBM support](/docs/get-support?topic=get-support-getting-customer-support) by opening a support case. Make sure to provide the cluster ID, the user ID, and the service instance ID.
+5. If this does not resolve the problem, then the {{site.data.keyword.cloud_notm}} IAM permissions are out of sync and you cannot resolve the issue yourself. [Contact IBM support](/docs/get-support?topic=get-support-using-avatar) by opening a support case. Make sure to provide the cluster ID, the user ID, and the service instance ID.
    1. Retrieve the cluster ID.
       ```
       ibmcloud oc cluster ls
