@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-27"
+lastupdated: "2020-09-09"
 
 keywords: openshift, roks, rhoks, rhos, nginx, iks multiple ingress controllers, byo controller
 
@@ -229,7 +229,7 @@ In classic clusters, bringing your own Ingress controller is supported only for 
 
           2. Disable each ALB.
             ```
-            ibmcloud oc ingress alb disable --id <ALB_ID> -c <cluster_name_or_ID>
+            ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
             ```
             {: pre}
 
