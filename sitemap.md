@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-09"
 
 keywords: openshift
 subcollection: openshift
@@ -900,7 +900,7 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_ingress_in_openshift_version_4}
 
 
-[Quick start for Ingress in OpenShift 4](/docs/openshift?topic=openshift-ingress-qs-roks4)
+[Quick start for Ingress in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-ingress-qs-roks4)
 
 [About Ingress in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-ingress-about-roks4)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#ingress_roks4_components)

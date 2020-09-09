@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-09"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -1271,7 +1271,7 @@ Note that all public ALBs in your cluster share the same IBM-assigned Ingress su
 
 4. Disable each ALB that is connected to the old VLANs.
   ```
-  ibmcloud oc ingress alb disable --id <old_ALB_ID> -c <cluster_name_or_ID>
+  ibmcloud oc ingress alb disable --alb <old_ALB_ID> -c <cluster_name_or_ID>
   ```
   {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-09-04"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -1379,7 +1379,7 @@ This table refers to the cluster autoscaler Helm chart parameters. For add-on va
 </tr>
 <tr>
 <td>`workerpools` parameter</td>
-<td>The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone. These settings are mirrored in the [cluster autoscaler config map](#ca_cm). To set the worker pool, format the option as follows: <code>--set workerpools[0].<pool_name>.max=<number_of_workers>,workerpools[0].<pool_name>.min=<number_of_workers>,workerpools[0].<pool_name>.enabled=(true|false)</code><br><br>
+<td>The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone. These settings are mirrored in the [cluster autoscaler config map](#ca_cm). To set the worker pool, format the option as follows: <code>--set workerpools[0].&lt;pool_name&gt;.max=&lt;number_of_workers&gt;,workerpools[0].&lt;pool_name&gt;.min=&lt;number_of_workers&gt;,workerpools[0].&lt;pool_name&gt;.enabled=(true|false)</code><br><br>
 Understanding the `--set workerpools` options:
   <ul><li>**`workerpools[0]`**: The first worker pool to enable or disable for autoscaling. You must include three parameters for each worker pool for the command to succeed: the maximum number of worker nodes (`max`), the minimum number of worker nodes (`min`), and whether you want to enable (`true`) or disable (`false`) autoscaling for this worker pool. To include multiple worker pools, include a comma-separated list and increase the number in brackets, such as: `workerpools[0].default...,workerpools[1].pool1...,workerpools[2].pool2...`.</li>
   <li>**`<pool_name>`**: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.</li>

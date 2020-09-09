@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-09-09"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -152,7 +206,7 @@ subcollection: openshift
 # Learning path for administrators
 {: #learning-path-admin}
 
-Following a curated learning path through {{site.data.keyword.openshiftlong}} to create an OpenShift cluster, manage the cluster's resources and lifecycle, and use the powerful tools of Red Hat OpenShift on IBM Cloud to secure, manage, and monitor your cluster workloads.
+Following a curated learning path through {{site.data.keyword.openshiftlong}} to create an {{site.data.keyword.openshiftshort}} cluster, manage the cluster's resources and lifecycle, and use the powerful tools of {{site.data.keyword.openshiftlong_notm}} to secure, manage, and monitor your cluster workloads.
 {: shortdesc}
 
 <div class=solutionBoxContainer>
@@ -204,7 +258,7 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
   <div class="solutionBox">
     <a href = "#admin_registry">
       <div>
-        <img src="images/path.svg" alt="Health icon" style="height:50px; border-style: none"/>
+        <img src="images/path.svg" alt="CI/CD icon" style="height:50px; border-style: none"/>
         <p><strong>Add a registry and CI/CD</strong></p>
         <p class="bx--type-caption">Set up an image registry and a continuous integration and delivery pipeline.</p>
       </div>
@@ -264,7 +318,7 @@ Start by designing a cluster for maximum availability and capacity for your work
 Create a cluster with infrastructure, network, and availability setups that are customized to your use case and cloud environment.
 {: shortdesc}
 
-1. **Firewall**: If you have corporate firewalls, make sure that you [open the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#corporate) to work with Red Hat OpenShift on IBM Cloud.
+1. **Firewall**: If you have corporate firewalls, make sure that you [open the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#corporate) to work with {{site.data.keyword.openshiftlong_notm}}.
 2. **CLI and API**:
   1. [Set up the CLIs](/docs/openshift?topic=openshift-openshift-cli) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog).
   2. Optionally set up [automated deployments with the API](/docs/openshift?topic=openshift-cs_api_install). As you work with your cluster, refer to the [IBM Cloud Kubernetes Service API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/) and [Community Kubernetes API reference](https://kubernetes.io/docs/reference/).
@@ -276,7 +330,7 @@ Create a cluster with infrastructure, network, and availability setups that are 
   1. Make sure that your authorized cluster users can now also access the cluster by planning your user access strategy.
     1. [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-users#access_roles).
     2. [Understand access roles for individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#iam_individuals_groups).
-    3. [Choose the scope of user access to cluster instances, OpenShift project, or resource groups](/docs/openshift?topic=openshift-users#resource_groups).
+    3. [Choose the scope of user access to cluster instances, {{site.data.keyword.openshiftshort}} project, or resource groups](/docs/openshift?topic=openshift-users#resource_groups).
   2. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-users#platform). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/openshift?topic=openshift-access_reference).
 
 </br>Need help? Check out [Troubleshooting clusters and masters](/docs/openshift?topic=openshift-cs_troubleshoot) and [Troubleshooting worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters).
@@ -343,7 +397,7 @@ Set up an image registry and a continuous integration and delivery (CI/CD) pipel
 {: shortdesc}
 
 1.  **Registry**: Choose and set up an [image registry](/docs/openshift?topic=openshift-registry) so that developers can pull images from the registry in their app deployment YAML files. Your cluster comes with the following default configurations that your developers can use.
-    *  **Internal OpenShift container registry**: The [internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry) is set up by default, with the images stored in an attached storage device. You can also choose to [pull an image from a private registry](/docs/openshift?topic=openshift-registry#imagestream_registry) like {{site.data.keyword.registrylong_notm}} into the image stream of the internal registry so that the image is available locally to all the projects in the cluster.
+    *  **Internal {{site.data.keyword.openshiftshort}} container registry**: The [internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry) is set up by default, with the images stored in an attached storage device. You can also choose to [pull an image from a private registry](/docs/openshift?topic=openshift-registry#imagestream_registry) like {{site.data.keyword.registrylong_notm}} into the image stream of the internal registry so that the image is available locally to all the projects in the cluster.
     * **Private registry**: Your cluster is set up to pull images from [{{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr) in the `default` project only. To pull images from a private registry in other projects, [create an image pull secret](/docs/openshift?topic=openshift-registry#other) in the other projects or [import an image from your private registry into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry).
 2.  **CI/CD**:
   * Review available [options for automating app deployment](/docs/openshift?topic=openshift-cicd).
@@ -372,7 +426,7 @@ Enhance cluster capabilities by integrating various external services and catalo
 
 1. **Review supported integrations**:
   * [All supported integrations](/docs/openshift?topic=openshift-supported_integrations)
-  * [Red Hat OpenShift on IBM Cloud partners](/docs/openshift?topic=openshift-service-partners)
+  * [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
   * [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
 2. **Add services to your cluster**:
   * [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
