@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-10"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -764,7 +764,7 @@ For more information, see the following Kubernetes docs:
     ```
     {: codeblock}
 
-4.  Deploy the pod. Because of the matching label, the pod is scheduled onto a worker node that is in the labeled worker pool. Beacuse of the matching toleration, the pod can run on the tainted worker pool.
+4.  Deploy the pod. Because of the matching label, the pod is scheduled onto a worker node that is in the labeled worker pool. Because of the matching toleration, the pod can run on the tainted worker pool.
     ```
     oc apply -f pod.yaml
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -982,7 +982,7 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
       </tr>
       <tr>
       <td><code>sizeRange</code></td>
-      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPs profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is withithis range. </td>
+      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPS profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range. </td>
       </tr>
       <tr>
       <td><code>csi.storage.k8s.io/fstype</code></td>
@@ -994,23 +994,23 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
       </tr>
       <tr>
       <td><code>encryptionKey</code></td>
-      <td>If you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.datkeyword.blockstorageshort}} volume. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+      <td>If you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
       </tr>
       <tr>
       <td><code>zone</code></td>
-      <td>In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make surthat you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.</td>
+      <td>In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.</td>
       </tr>
       <tr>
       <td><code>tags</code></td>
-      <td>In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyworblock_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based ocommon characteristics, such as the app or the environment that it is used for. </td>
+      <td>In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyworblock_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. </td>
       </tr>
       <tr>
       <td><code>reclaimPolicy</code></td>
-      <td>Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device anyour data when you remove the PVC, enter `Retain`. If you want to delete the PV, the physical storage device anyour data when you remove the PVC, enter `Delete`.</td>
+      <td>Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device and your data when you remove the PVC, enter `Retain`. If you want to delete the PV, the physical storage device and your data when you remove the PVC, enter `Delete`.</td>
       </tr>
       <tr>
       <td><code>volumeBindingMode</code></td>
-      <td>Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until thfirst pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.</td>
+      <td>Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.</td>
       </tr>
    </tbody>
    </table>
