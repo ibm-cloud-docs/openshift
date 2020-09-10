@@ -36,7 +36,7 @@ Red Hat OpenShift on IBM Cloud
 
     {: .topicgroup}
     Tutorials
-        openshift_tutorial_ov.md
+        [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20)
         openshift_tutorial.md
         openshift_tutorial_vpc.md
         [Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift)

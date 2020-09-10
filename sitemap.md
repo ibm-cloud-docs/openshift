@@ -240,9 +240,7 @@ subcollection: openshift
 {: #sitemap_tutorials}
 
 
-[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov)
-* [Create a cluster and deploy apps](/docs/openshift?topic=openshift-tutorials-ov#tutorials-create-cluster-deploy-app)
-* [Dive deeper into OpenShift technology](/docs/openshift?topic=openshift-tutorials-ov#tutorials-deep-dive)
+[Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 [Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial)
 * [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
