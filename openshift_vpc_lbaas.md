@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-11"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -170,10 +170,6 @@ Expose your app to the public or to the private network by setting up a Kubernet
   <th>Description</th>
   </thead>
   <tbody>
-  <tr>
-    <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`</td>
-    <td>VPC Gen 2 and Kubernetes version 1.18 and later only: Annotation to preserve the source IP address of requests to apps in your cluster.</td>
-  </tr>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`</td>
     <td>Annotation to specify a service that accepts public or private requests. If you do not include this annotation, a public `LoadBalancer` is created.</td>
