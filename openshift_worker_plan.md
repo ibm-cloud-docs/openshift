@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-11"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -289,6 +289,24 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 </thead>
 <tbody>
 <tr>
+<td><strong>RAM-intensive bare metal, mb4c.20x64</strong>: Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
+<td>20 / 64 GB</td>
+<td>2 TB HDD / 960 GB SSD</td>
+<td>10000 Mbps</td>
+</tr>
+<tr>
+<td><strong>RAM-intensive bare metal, mb4c.20x192</strong>: Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
+<td>20 / 192 GB</td>
+<td>2 TB HDD / 960 GB SSD</td>
+<td>10000 Mbps</td>
+</tr>
+<tr>
+<td><strong>RAM-intensive bare metal, mb4c.20x384</strong>: Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
+<td>20 / 384 GB</td>
+<td>2 TB HDD / 960 GB SSD</td>
+<td>10000 Mbps</td>
+</tr>
+<tr>
 <td><strong>RAM-intensive bare metal, mr3c.28x512</strong>: Maximize the RAM available to your worker nodes.</td>
 <td>28 / 512 GB</td>
 <td>2 TB SATA / 960 GB SSD</td>
@@ -313,12 +331,17 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 <td>10000 Mbps</td>
 </tr>
 <tr>
+<td><strong>Balanced bare metal, me4c.4x32</strong>: Use for balanced workloads that require more compute resources than virtual machines offer. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
+<td>4 / 32 GB</td>
+<td>2 TB HDD / 2 TB HDD</td>
+<td>10000 Mbps</td>
+</tr>
+<tr>
 <td><strong>Balanced bare metal, mb3c.16x64</strong>: Use for balanced workloads that require more compute resources than virtual machines offer.</td>
 <td>16 / 64 GB</td>
 <td>2 TB SATA / 960 GB SSD</td>
 <td>10000 Mbps</td>
 </tr>
-<tr>
 </tbody>
 </table>
 
