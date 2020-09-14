@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-14"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -322,8 +322,8 @@ Before you begin:
    {: pre}
 
 
-### Allowing igress from a cluster to another service
-{: #vpc-allowlist_workers_egress}
+### Allowing ingress from a cluster to another service
+{: #vpc-allowlist_workers_ingress}
 
 To permit ingress from your cluster to another service, modify that service's firewall or your on-premises firewall.
 {: shortdesc}
