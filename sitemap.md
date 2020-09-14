@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-14"
 
 keywords: openshift
 subcollection: openshift
@@ -240,9 +240,7 @@ subcollection: openshift
 {: #sitemap_tutorials}
 
 
-[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov)
-* [Create a cluster and deploy apps](/docs/openshift?topic=openshift-tutorials-ov#tutorials-create-cluster-deploy-app)
-* [Dive deeper into OpenShift technology](/docs/openshift?topic=openshift-tutorials-ov#tutorials-deep-dive)
+[Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 [Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial)
 * [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
@@ -572,8 +570,10 @@ subcollection: openshift
   * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
   * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
   * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
-  * [Allowing access to the OpenShift image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
+  * [Allowing access to the {{site.data.keyword.openshiftshort}} image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
 * [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
+  * [Allowing ingress from a cluster to another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_ingress)
+  * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
 
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
 * [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#overview)
@@ -1245,7 +1245,7 @@ subcollection: openshift
   * [Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-utilities#backup_restore_setup_object_storage)
   * [Using {{site.data.keyword.cos_full_notm}} to back up and restore PVC data](/docs/openshift?topic=openshift-utilities#backup-restore-pvc)
 * [Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
-  * [Troubleshooting persistant storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
+  * [Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
 
 
 ## Enhancing your cluster with Cloud Paks, Operators, and integrations
@@ -1519,6 +1519,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.20_1517_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4420_1517)
   * [Changelog for worker node fix pack 4.4.18_1516_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4418_1516)
   * [Changelog for master fix pack 4.4.17_1515_openshift, released 21 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4417_1515)
   * [Changelog for master fix pack 4.4.16_1513_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4416_1513_master)
@@ -1526,6 +1527,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.35_1538_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4335_1538)
   * [Changelog for worker node fix pack 4.3.33_1537_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4333_1537)
   * [Changelog for master fix pack 4.3.31_1536_openshift, released 21 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4331_1536)
   * [Changelog for master fix pack 4.3.31_1534_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4331_1534_master)
@@ -1544,6 +1546,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.272_1566_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1566)
   * [Changelog for worker node fix pack 3.11.272_1565_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1565)
   * [Changelog for master fix pack 3.11.248_1564_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561_master)
   * [Changelog for worker node fix pack 3.11.248_1564_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1564)

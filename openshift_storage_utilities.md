@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -326,7 +326,7 @@ Use this option if you want to add different block storage configurations, add b
    Type                       performance_block_storage   
    Capacity (GB)              20   
    LUN Id                     0   
-   IOPs                       100   
+   IOPS                       100   
    Datacenter                 dal10   
    Target IP                  161.12.34.123   
    # of Active Transactions   0   
@@ -1217,13 +1217,13 @@ When a storage volume is down, your app pods that are using storage have a low f
   10. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a pod availability alert for when the number of available pods is less than 3 for 5 minutes, edit your alert threshold to be less than 4 pods for 5 minutes and select the `at least once` option.
   11. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
 
-### Troubleshooting persistant storage when a {{site.data.keyword.mon_full_notm}} alert is triggered
+### Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered
 {: #monitor_storage_ts}
 When an alert is triggered, review the alert details in {{site.data.keyword.mon_full_notm}} and review troubleshooting guides for persistent storage, apps, worker nodes, and clusters to find the root cause of the alert. The alerts that you set up might not be related to a storage volume issue, but to issues that occurred within your app, on the worker node, or in the cluster.
 {: shortdesc}
 
 
-* [Troubleshooting persistant storage volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage).
+* [Troubleshooting persistent storage volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage).
 * [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 * [Troubleshooting apps](/docs/openshift?topic=openshift-cs_troubleshoot_app).
 * [Troubleshooting clusters](/docs/openshift?topic=openshift-cs_troubleshoot).

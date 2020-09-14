@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-11"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -144,6 +144,7 @@ Expose your app to the public or to the private network by setting up a Kubernet
   metadata:
     name: myloadbalancer
     annotations:
+      service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"
       service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: <public_or_private>
       service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
   spec:

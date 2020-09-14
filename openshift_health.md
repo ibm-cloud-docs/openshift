@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-27"
+lastupdated: "2020-09-10"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -703,7 +703,7 @@ To create a cluster logging instance with the `ibmc-block-gold` storage class:
 2.  From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > Installed Operators**.
 3.  Click **Cluster Logging**.
 3.  In the **Provided APIs** section, **Cluster Logging** tile, click **Create Instance**.
-4.  Modify the configuration YAML to change the storage class for the Elasticsearch log storage from `gp2` to `ibmc-block-gold`.
+4.  Modify the configuration YAML to change the storage class for the ElasticSearch log storage from `gp2` to `ibmc-block-gold`.
     ```
     ...
         elasticsearch:
