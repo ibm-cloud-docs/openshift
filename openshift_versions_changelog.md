@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-14"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -110,16 +110,30 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.4 patch updates.
 {: shortdesc}
 
+### Changelog for worker node fix pack 4.4.20_1517_openshift, released 14 September 2020
+{: #4420_1517}
+
+The following table shows the changes that are included in the worker node fix pack update `4.4.20_1517_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| CRI-O | 1.17.4 | 1.17.5 | See the [CRI-O release notes](https://github.com/cri-o/cri-o/releases/tag/v1.17.5){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.4.18 | 4.4.20 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-20){: external}.|
+| RHEL 7 packages | N/A | N/A | Updated worker node image with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.4.18_1516_openshift" caption-side="top"}
+
 ### Changelog for worker node fix pack 4.4.18_1516_openshift, released 31 August 2020
 {: #4418_1516}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.18_1516_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.4.18_1516_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | HAProxy | 1.8.25-384f42 | 1.8.26-561f1a | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. |
-| {{site.data.keyword.openshiftshort}} | 4.4.16 | 4.4.18 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-18){: external}.|
+| {{site.data.keyword.openshiftshort}} | 4.4.16 | 4.4.18 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-18){: external}.|
 | RHEL 7 packages | 3.10.0-1127.18.2.el7 | 3.10.0-1127.19.1.el7 | Updated worker node image with kernel and package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.4.16_1513_openshift" caption-side="top"}
@@ -164,12 +178,12 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.16_1513_openshift, released 17 August 2020
 {: #4416_1513}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.16_1513_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.4.16_1513_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}} | 4.4.14 | 4.4.16 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-16){: external}.|
+| {{site.data.keyword.openshiftshort}} | 4.4.14 | 4.4.16 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-16){: external}.|
 | RHEL 7 packages | N/A | N/A | Updated worker node images with package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.4.14_1512_openshift" caption-side="top"}
@@ -177,12 +191,12 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020
 {: #4414_1512}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.14_1512_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.4.14_1512_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}} | 4.4.11 | 4.4.14 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-14){: external}. The update resolves CVE-2020-8558 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6319989){: external}).|
+| {{site.data.keyword.openshiftshort}} | 4.4.11 | 4.4.14 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-14){: external}. The update resolves CVE-2020-8558 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6319989){: external}).|
 | RHEL 7 Packages | 3.10.0-1127.13.1.el7 | 3.10.0-1127.18.2.el7 | Updated worker node images with package updates for [CVE-2020-10713](https://nvd.nist.gov/vuln/detail/CVE-2020-10713){: external}, [CVE-2020-14308](https://nvd.nist.gov/vuln/detail/CVE-2020-14308){: external}, [CVE-2020-14309](https://nvd.nist.gov/vuln/detail/CVE-2020-14309){: external}, [CVE-2020-14310](https://nvd.nist.gov/vuln/detail/CVE-2020-14310){: external}, [CVE-2020-14311](https://nvd.nist.gov/vuln/detail/CVE-2020-14311){: external}, [CVE-2020-15705](https://nvd.nist.gov/vuln/detail/CVE-2020-15705){: external}, [CVE-2020-15706](https://nvd.nist.gov/vuln/detail/CVE-2020-15706){: external}, [CVE-2020-15707](https://nvd.nist.gov/vuln/detail/CVE-2020-15707){: external}, [CVE-2019-19527](https://nvd.nist.gov/vuln/detail/CVE-2019-19527){: external}, [CVE-2020-10757](https://nvd.nist.gov/vuln/detail/CVE-2020-10757){: external}, [CVE-2020-12653](https://nvd.nist.gov/vuln/detail/CVE-2020-12653){: external}, and [CVE-2020-12654](https://nvd.nist.gov/vuln/detail/CVE-2020-12654){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.4.11_1511_openshift" caption-side="top"}
@@ -211,16 +225,29 @@ The following table shows the changes that are included in the `4.4.11_1511_open
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.3 patch updates.
 {: shortdesc}
 
+### Changelog for worker node fix pack 4.3.35_1538_openshift, released 14 September 2020
+{: #4335_1538}
+
+The following table shows the changes that are included in the worker node fix pack update `4.3.35_1538_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}} | 4.3.33 | 4.3.35 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-35){: external}.|
+| RHEL 7 packages | N/A | N/A | Updated worker node image with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.33_1537_openshift" caption-side="top"}
+
 ### Changelog for worker node fix pack 4.3.33_1537_openshift, released 31 August 2020
 {: #4333_1537}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.33_1537_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.3.33_1537_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | HAProxy | 1.8.25-384f42 | 1.8.26-561f1a | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. |
-| {{site.data.keyword.openshiftshort}} | 4.3.31 | 4.3.33 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-33){: external}.|
+| {{site.data.keyword.openshiftshort}} | 4.3.31 | 4.3.33 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-33){: external}.|
 | RHEL 7 packages |  3.10.0-1127.18.2.el7 | 3.10.0-1127.19.1.el7 | Updated worker node image with kernel and package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.31_1534_openshift" caption-side="top"}
@@ -263,12 +290,12 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.3.31_1534_openshift, released 17 August 2020
 {: #4331_1534}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.31_1534_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.3.31_1534_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}} | 4.3.29 | 4.3.31 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-31){: external}. The update resolves CVE-2020-8558 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6319989){: external}).|
+| {{site.data.keyword.openshiftshort}} | 4.3.29 | 4.3.31 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-31){: external}. The update resolves CVE-2020-8558 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6319989){: external}).|
 | RHEL 7 packages | N/A | N/A | Updated worker node images with package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.29_1533_openshift" caption-side="top"}
@@ -276,7 +303,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.29_1533_openshift, released 3 August 2020
 {: #4329_1533}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.29_1533_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.3.29_1533_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -306,28 +333,28 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 4.3.29_1532_openshift, released 20 July 2020
 {: #4329_1532}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.29_1532_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.3.29_1532_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | HAProxy | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
 | RHEL 7 Packages |  N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}.|
-| {{site.data.keyword.openshiftshort}} | 4.3.27 | 4.3.29 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-29){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.3.27 | 4.3.29 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-29){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.27_1528_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.3.27_1528_openshift, released 6 July 2020
 {: #4327_1528}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.27_1528_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.3.27_1528_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | HAProxy | 1.8.25-30b675 | 2.0.15-afe432 | See the [HAProxy changelogs](https://www.haproxy.org/download/2.0/src/CHANGELOG){: external}. |
 | RHEL 7 Packages | 3.10.0-1127.10.1.el7 | 3.10.0-1127.13.1.el7 | Updated worker node images with kernel package updates for [CVE-2020-10749](https://nvd.nist.gov/vuln/detail/CVE-2020-10749){: external}, [CVE-2020-1702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1702){: external}, [CVE-2016-8867](https://nvd.nist.gov/vuln/detail/CVE-2016-8867){: external}, [CVE-2020-14298](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14298){: external}, [CVE-2020-14300](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14300){: external}, [CVE-2020-12888](https://nvd.nist.gov/vuln/detail/CVE-2020-12888){: external}, [CVE-2020-11868](https://nvd.nist.gov/vuln/detail/CVE-2020-11868){: external}, and [CVE-2020-13817](https://nvd.nist.gov/vuln/detail/CVE-2020-13817){: external}. |
-| {{site.data.keyword.openshiftshort}} | 4.3.25 | 4.3.27 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-27){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.3.25 | 4.3.27 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-27){: external}. |
 | Worker node `drain` automation | N/A | N/A | Fixes a race condition that can cause worker node `drain` automation to fail. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.25_1527_openshift" caption-side="top"}
@@ -335,7 +362,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.23_1527_openshift and worker node fix pack 4.3.25_1527_openshift, released 22 June 2020
 {: #4323_1527_master}
 
-The following table shows the changes that are included in the master fix pack update `4.3.23_1527_openshift` and in worker node fix pack update `4.3.25_1527_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are included in the master fix pack update `4.3.23_1527_openshift` and in worker node fix pack update `4.3.25_1527_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |
@@ -375,26 +402,26 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 4.3.23_1524_openshift, released 8 June 2020
 {: #4323_1524}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.23_1524_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.3.23_1524_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages | 3.10.0-1127.8.2.el7 | 3.10.0-1127.10.1.el7 | Updated worker node images with kernel package updates for [CVE-2020-8616](https://nvd.nist.gov/vuln/detail/CVE-2020-8616){: external} and [CVE-2020-8617](https://nvd.nist.gov/vuln/detail/CVE-2020-8617){: external}. |
-| {{site.data.keyword.openshiftshort}} | 4.3.21 | 4.3.23 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-23){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.3.21 | 4.3.23 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-23){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.21_1523_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.3.21_1523_openshift, released 26 May 2020
 {: #4321_1523}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.21_1523_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.3.21_1523_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages | 3.10.0-1127.el7 | 3.10.0-1127.8.2.el7 | Updated worker node images with kernel package updates for [CVE-2017-18595](https://nvd.nist.gov/vuln/detail/CVE-2017-18595){: external}, [CVE-2019-19768](https://nvd.nist.gov/vuln/detail/CVE-2019-19768){: external}, and [CVE-2020-10711](https://nvd.nist.gov/vuln/detail/CVE-2020-10711){: external}. |
-| {{site.data.keyword.openshiftshort}} | 4.3.18 | 4.3.21 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-21){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.3.18 | 4.3.21 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-21){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.13_1521_openshift" caption-side="top"}
 
@@ -442,27 +469,27 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 4.3.14_1522_openshift, released 11 May 2020
 {: #4314_1522}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.13_1522_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.3.13_1522_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | CRI-O | 1.16.5 | 1.16.6 | See the [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.16.6){: external}. |
-| {{site.data.keyword.openshiftshort}} | 4.3.13 | 4.3.18 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-18){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.3.13 | 4.3.18 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-18){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.13_1521_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020
 {: #4313_1521}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.13_1521_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `4.3.13_1521_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | CRI-O | 1.16.4 | 1.16.5 | See the [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.16.5){: external}. |
 | HA proxy | 1.8.25-30b675 | 1.8.25-adb65d | Update addresses [CVE-2020-1967](https://nvd.nist.gov/vuln/detail/CVE-2020-1967){: external}. |
-| {{site.data.keyword.openshiftshort}} | 4.3.10 | 4.3.13 | See the [{{site.data.keyword.openshiftshort}} changelogs](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-13){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.3.10 | 4.3.13 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-13){: external}. |
 | RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2019-19921](https://nvd.nist.gov/vuln/detail/CVE-2019-19921){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.10_1518_openshift" caption-side="top"}
@@ -470,7 +497,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020
 {: #4312_1520_master}
 
-The following table shows the changes that are included in the master fix pack update `4.3.12_1520_openshift` and in worker node fix pack update `4.3.10_1518_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are included in the master fix pack update `4.3.12_1520_openshift` and in worker node fix pack update `4.3.10_1518_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |
@@ -500,10 +527,23 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change).
 {: deprecated}
 
+### Changelog for worker node fix pack 3.11.272_1566_openshift, released 14 September 2020
+{: #311272_1566}
+
+The following table shows the changes that are included in the worker node fix pack update `3.11.272_1566_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| HAProxy | 1.8.25-384f42 | 1.8.26-561f1a | See the [HAProxy changelog](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. |
+| RHEL 7 packages | N/A | N/A | Updated worker node image with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.272_1565_openshift" caption-side="top"}
+
 ### Changelog for worker node fix pack 3.11.272_1565_openshift, released 31 August 2020
 {: #311272_1565}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.272_1565_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.272_1565_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -532,7 +572,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 3.11.248_1564_openshift, released 17 August 2020
 {: #311248_1564}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.248_1564_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.248_1564_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -544,7 +584,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 3.11.248_1561_openshift, released 3 August 2020
 {: #311248_1561}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.248_1561_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.248_1561_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -585,7 +625,7 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 3.11.232_1558_openshift, released 20 July 2020
 {: #311232_1558}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.232_1558_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.232_1558_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -598,7 +638,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 3.11.232_1555_openshift, released 6 July 2020
 {: #311232_1555}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.232_1555_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.232_1555_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -612,7 +652,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 3.11.219_1554_openshift and worker node fix pack 3.11.232_1554_openshift, released 22 June 2020
 {: #311219_1554_master}
 
-The following table shows the changes that are included in the master fix pack update `3.11.219_1554_openshift` and in worker node fix pack update `3.11.232_1554_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are included in the master fix pack update `3.11.219_1554_openshift` and in worker node fix pack update `3.11.232_1554_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |
@@ -632,7 +672,7 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 3.11.219_1552_openshift, released 8 June 2020
 {: #311219_1552}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.219_1552_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.219_1552_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -644,7 +684,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for 3.11.216_1551_openshift, released 26 May 2020
 {: #311216_1551}
 
-The following table shows the changes that are included in the master and worker node update `3.11.216_1551_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node. For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
+The following table shows the changes that are included in the master and worker node update `3.11.216_1551_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |
@@ -663,7 +703,7 @@ The following table shows the changes that are included in the master and worker
 ### Changelog for worker node fix pack 3.11.216_1550_openshift, released 11 May 2020
 {: #311216_1550}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.216_1550_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.216_1550_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -675,7 +715,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 3.11.200_1549_openshift, released 27 April 2020
 {: #311200_1549}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.200_1549_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.200_1549_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -706,7 +746,7 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 3.11.200_1546_openshift, released 13 April 2020
 {: #311200_1546_worker}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.200_1546_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.200_1546_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -720,7 +760,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 3.11.188_1545_openshift, released 30 March 2020
 {: #311188_1545_worker}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.188_1545_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.188_1545_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -733,7 +773,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for 3.11.170_1544_openshift, released 16 March 2020
 {: #311170_1544}
 
-The following table shows the changes that are included in the master and worker node update `3.11.170_1544_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are included in the master and worker node update `3.11.170_1544_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |
@@ -748,7 +788,7 @@ The following table shows the changes that are included in the master and worker
 ### Changelog for worker node fix pack 3.11.170_1543_openshift, released 17 February 2020
 {: #311170_1543_worker}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.170_1543_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.170_1543_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -774,7 +814,7 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 3.11.161_1542_openshift, released 17 February 2020
 {: #311161_1542_worker}
 
-The following table shows the changes that are included in the worker node fix pack update `3.11.161_1542_openshift`. Worker node patch updates can be applied by updating or reloading the worker node.
+The following table shows the changes that are included in the worker node fix pack update `3.11.161_1542_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
 {: shortdesc}
 
 | Component | Previous | Current | Description |

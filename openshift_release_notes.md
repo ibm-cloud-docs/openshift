@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-14"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -102,6 +102,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 14 September 2020 | **Versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.20_1517_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4420_1517), [`4.3.35_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4335_1538), and [`3.11.272_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1566). |
 | 03 September 2020 | **CA certificate rotation**: Added steps to [revoke existing Certificate Authority (CA) certificates in your cluster and issue new CA certificates](/docs/openshift?topic=openshift-security#cert-rotate).|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in September 2020"}
