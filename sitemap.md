@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-15"
 
 keywords: openshift
 subcollection: openshift
@@ -1231,6 +1231,7 @@ subcollection: openshift
   * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc)
   * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster)
 * [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help)
+* [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities)
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
