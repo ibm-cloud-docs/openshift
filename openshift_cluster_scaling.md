@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -1366,6 +1366,7 @@ This table refers to the cluster autoscaler Helm chart parameters. For add-on va
 <tr>
 <td>`customImageVersion`</td>
 <td>To override the default installation version, specify the version of the cluster autoscaler Helm chart that you want to install.</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>`maxRetryGap`</td>
