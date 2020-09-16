@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -491,7 +491,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 
         ```
         {: screen}
-    2.  <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4 only**: Get the token endpoint of the {{site.data.keyword.openshiftshort}} `oauth` server.
+    2.  <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4 only**: Get the token endpoint of the {{site.data.keyword.openshiftshort}} `oauth` server.
         ```
         curl <master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
         ```
@@ -502,7 +502,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         <token_endpoint>/oauth/token
         ```
     3.  Log in to the cluster with the endpoint that you previously retrieved.
-        * <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
+        * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
         * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 3.11**: Replace `<URL>` with the master URL.
 
         Example curl request:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -162,7 +162,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of the {{site.data.keyword.openshiftlong}} components and global settings that you manually set up in OpenShift Container Platform are set up for you by default in {{site.data.keyword.openshiftlong_notm}}. Review the following differences between {{site.data.keyword.openshiftlong_notm}} clusters and a standard installation of OpenShift Container Platform on your own infrastructure. You can also review the [service architecture](/docs/openshift?topic=openshift-service-arch) for an overview of how {{site.data.keyword.openshiftshort}} components are set up in the cluster master and worker nodes, or the [global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or cannot configure.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> The following comparison applies to clusters that run {{site.data.keyword.openshiftshort}} version 4. For version 3.11 clusters, the general principles are similar, such as that IBM provides a managed master, but the implementation details differ due to the changes in the underlying OCP version. For more information, see [Comparison between {{site.data.keyword.openshiftshort}} 3.11 and 4 clusters](#3.11_vs_4.3).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The following comparison applies to clusters that run {{site.data.keyword.openshiftshort}} version 4. For version 3.11 clusters, the general principles are similar, such as that IBM provides a managed master, but the implementation details differ due to the changes in the underlying OCP version. For more information, see [Comparison between {{site.data.keyword.openshiftshort}} 3.11 and 4 clusters](#3.11_vs_4.3).
 {: note}
 
 |Characteristics|Standard OCP|{{site.data.keyword.openshiftlong_notm}}|

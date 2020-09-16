@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -97,7 +97,7 @@ subcollection: openshift
 Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by creating Ingress resources that are managed by the Ingress controller.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. To set up Ingress for clusters that run {{site.data.keyword.openshiftshort}} version 3.11, see [Setting up Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. To set up Ingress for clusters that run {{site.data.keyword.openshiftshort}} version 3.11, see [Setting up Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress).
 {: note}
 
 ## Prerequisites
