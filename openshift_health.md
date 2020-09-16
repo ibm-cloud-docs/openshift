@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-16"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -158,7 +158,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
           <li>Highly available, scalable, and compliant with industry security standards.</li>
           <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
           <li>Free trial to try out the capabilities.</li></ul>
-          <br>To get started, see [Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_sysdig).</td>
+          <br>To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_sysdig).</td>
     </tr>
     </tbody>
 </table>
@@ -411,7 +411,7 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 <br />
 
 
-## Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}
+## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_sysdig}
 
 Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster, and use this monitoring configuration to automatically collect and forward metrics to {{site.data.keyword.mon_full_notm}}.

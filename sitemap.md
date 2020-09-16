@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-09-16"
 
 keywords: openshift
 subcollection: openshift
@@ -684,7 +684,7 @@ subcollection: openshift
 
 [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
 
-[Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig)
+[Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig)
 
 [Viewing cluster states](/docs/openshift?topic=openshift-health#states)
 * [Cluster states](/docs/openshift?topic=openshift-health#states_cluster)
