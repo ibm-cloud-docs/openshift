@@ -1549,7 +1549,7 @@ subcollection: openshift
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
   * [Changelog for worker node fix pack 3.11.272_1566_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1566)
   * [Changelog for worker node fix pack 3.11.272_1565_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1565)
-  * [Changelog for master fix pack 3.11.248_1564_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561_master)
+  * [Changelog for master fix pack 3.11.248_1564_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1564_master)
   * [Changelog for worker node fix pack 3.11.248_1564_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1564)
   * [Changelog for worker node fix pack 3.11.248_1561_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561)
   * [Changelog for master fix pack 3.11.232_1560_openshift, released 24 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1560)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -49,7 +103,7 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} b
 An Open-Government Data Program Executive needs to share public data with the community and private sector, but the data is locked in an on-premises monolithic system.  
 {: shortdesc}
 
-Why {{site.data.keyword.cloud_notm}}: With Red Hat OpenShift on IBM Cloud, the Exec delivers the transformative value of combined public-private data. Likewise, the service provides the public cloud platform to refactor and expose microservices from monolithic on-premises apps. Also, the public cloud allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools.
+Why {{site.data.keyword.cloud_notm}}: With {{site.data.keyword.openshiftlong_notm}}, the Exec delivers the transformative value of combined public-private data. Likewise, the service provides the public cloud platform to refactor and expose microservices from monolithic on-premises apps. Also, the public cloud allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools.
 
 Key technologies:    
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
@@ -77,7 +131,7 @@ To start, the government uses {{site.data.keyword.cos_full_notm}} to store its p
 
 The government’s next step for the public-private partnerships was to establish an API economy that is hosted in {{site.data.keyword.apiconnect_long}}. There, community and enterprise Developers make data easily accessible in API form. Their goals are to have publicly available REST APIs, to enable interoperability, and to accelerate app integration. They use IBM {{site.data.keyword.SecureGateway}} to connect back to private data sources on-premises.
 
-Finally, apps based on those shared APIs are hosted in Red Hat OpenShift on IBM Cloud, where it’s easy to spin up clusters. Then, Developers across the community, private sector, and the government can co-create apps easily. In short, Developers need to focus on coding instead of managing the infrastructure. Thus, they chose Red Hat OpenShift on IBM Cloud because IBM simplifies infrastructure management:
+Finally, apps based on those shared APIs are hosted in {{site.data.keyword.openshiftlong_notm}}, where it’s easy to spin up clusters. Then, Developers across the community, private sector, and the government can co-create apps easily. In short, Developers need to focus on coding instead of managing the infrastructure. Thus, they chose {{site.data.keyword.openshiftlong_notm}} because IBM simplifies infrastructure management:
 * Managing Kubernetes master, IaaS, and operational components, such as Ingress and storage
 * Monitoring health and recovery for worker nodes
 * Providing global compute, so Developers don’t have to stand up infrastructure in worldwide regions where they need workloads and data to be located
@@ -91,7 +145,7 @@ Much of the CI/CD process itself is automated with {{site.data.keyword.contdeliv
 On-demand compute, storage, and API tools run in the public cloud with secure access to and from on-premises data sources.
 
 Technical solution:
-* Red Hat OpenShift on IBM Cloud
+* {{site.data.keyword.openshiftlong_notm}}
 * {{site.data.keyword.cos_full_notm}} and {{site.data.keyword.cloudant}}
 * {{site.data.keyword.apiconnect_long}}
 * IBM {{site.data.keyword.SecureGateway}}
@@ -105,8 +159,8 @@ Technical solution:
 **Step 2: Provide access to data with APIs**
 * Use {{site.data.keyword.apiconnect_long}} for the API economy platform. APIs allow the public and private sectors to combine data into their apps.
 * Create clusters for public-private apps, which are driven by the APIs.
-* Structure apps into a set of cooperative microservices that run within Red Hat OpenShift on IBM Cloud, which is based on functional areas of apps and their dependencies.
-* Deploy the apps to containers that run in Red Hat OpenShift on IBM Cloud. Built-in HA tools in Red Hat OpenShift on IBM Cloud balance the workloads, including self-healing and load balancing.
+* Structure apps into a set of cooperative microservices that run within {{site.data.keyword.openshiftlong_notm}}, which is based on functional areas of apps and their dependencies.
+* Deploy the apps to containers that run in {{site.data.keyword.openshiftlong_notm}}. Built-in HA tools in {{site.data.keyword.openshiftlong_notm}} balance the workloads, including self-healing and load balancing.
 * Provide standardized DevOps dashboards through Kubernetes, open-source tools familiar to all types of Developers.
 
 **Step 3: Innovate with IBM Garage and cloud services**
@@ -127,13 +181,13 @@ Technical solution:
 IT Execs for a private shipping company and the government-operated port need to connect, provide visibility, and securely exchange port information. But no unified system existed to connect public port information and private shipping manifests.
 {: shortdesc}
 
-Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools. The containers provided a shareable platform where both the port and shipping company felt assured that the shared information was hosted on a secure platform. And that platform scales as they went from small Dev-Test systems to production-sized systems. Open toolchains further accelerated development by automating build, test, and deployments.
+Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools. The containers provided a shareable platform where both the port and shipping company felt assured that the shared information was hosted on a secure platform. And that platform scales as they went from small Dev-Test systems to production-sized systems. Open toolchains further accelerated development by automating build, test, and deployments.
 
 Key technologies:    
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Container security and isolation](/docs/openshift?topic=openshift-security#security)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
-* [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-nodejs_runtime)
+* [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
 
 **Context: Port secures exchange of port data and shipping manifests that connects public and private organizations.**
 
@@ -151,9 +205,9 @@ So they create a partnership that is dedicated to solutions for the trade system
 * TARIFFS – App to calculate tariffs, submit charges electronically to shipper, and receive digital payments
 * REGULATIONS – Flexible and configurable app that feeds previous two apps with ever-changing policies and regulations that affect imports, exports, and tariff processing
 
-Developers started by deploying their apps in containers with Red Hat OpenShift on IBM Cloud. They created clusters for a shared Dev environment that allow worldwide Developers to collaboratively deploy app improvements quickly. Containers allow each development team to use the language of their choice.
+Developers started by deploying their apps in containers with {{site.data.keyword.openshiftlong_notm}}. They created clusters for a shared Dev environment that allow worldwide Developers to collaboratively deploy app improvements quickly. Containers allow each development team to use the language of their choice.
 
-Security first: The IT Execs chose bare metal clusters. With bare metal for Red Hat OpenShift on IBM Cloud, the sensitive customs workloads now have familiar isolation but within the flexibility of public cloud.
+Security first: The IT Execs chose bare metal clusters. With bare metal for {{site.data.keyword.openshiftlong_notm}}, the sensitive customs workloads now have familiar isolation but within the flexibility of public cloud.
 
 Because the shipping company also wants to work with other ports, app security is crucial. Shipping manifests and customs information are highly confidential. From that secure core, Vulnerability Advisor provides these scans:
 * Image vulnerability scans
@@ -168,32 +222,32 @@ Developers focus on domain problems, by using existing tools: Instead of Develop
 On-demand compute, storage, and Node starter kits that run in the public cloud with secure access to shipping data across the globe, as needed. Compute in clusters is tamper-proof and isolated to bare metal.  
 
 Technical solution:
-* Red Hat OpenShift on IBM Cloud
+* {{site.data.keyword.openshiftlong_notm}}
 * {{site.data.keyword.openwhisk}}
 * {{site.data.keyword.cloudant}}
 * IBM {{site.data.keyword.SecureGateway}}
 
 **Step 1: Containerize apps, by using microservices**
 * Use the Node.js starter kit from IBM to jump start development.
-* Structure apps into a set of cooperative microservices that run within Red Hat OpenShift on IBM Cloud based on functional areas of the app and its dependencies.
-* Deploy the manifest and shipment apps to container that run in Red Hat OpenShift on IBM Cloud.
+* Structure apps into a set of cooperative microservices that run within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
+* Deploy the manifest and shipment apps to container that run in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
 * Use IBM {{site.data.keyword.SecureGateway}} to maintain secure connections to existing on-premises databases.
 
 **Step 2: Ensure global availability**
 * After Developers deploy the apps in their Dev and Test clusters, they use the {{site.data.keyword.contdelivery_full}} toolchains and Helm to deploy country-specific apps into clusters across the globe.
 * Workloads and data can then meet regional regulations.
-* Built-in HA tools in Red Hat OpenShift on IBM Cloud balance the workload within each geographic region, including self-healing and load balancing.
+* Built-in HA tools in {{site.data.keyword.openshiftlong_notm}} balance the workload within each geographic region, including self-healing and load balancing.
 
 **Step 3: Data sharing**
 * {{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query.
 * To minimize queries to the regional databases, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps.
 * This configuration improves the front-end app usability and performance across apps on {{site.data.keyword.containershort}}.
-* While worker apps in Red Hat OpenShift on IBM Cloud analyze on-premises data and store results in {{site.data.keyword.cloudant}}, {{site.data.keyword.openwhisk}} reacts to changes and automatically sanitizes data on the incoming feeds of data.
+* While worker apps in {{site.data.keyword.openshiftlong_notm}} analyze on-premises data and store results in {{site.data.keyword.cloudant}}, {{site.data.keyword.openwhisk}} reacts to changes and automatically sanitizes data on the incoming feeds of data.
 * Similarly, notifications of shipments in one region can be triggered through data uploads so that all down-stream consumers can access new data.
 
 **Results**
-* With IBM starter kits, Red Hat OpenShift on IBM Cloud, and {{site.data.keyword.contdelivery_full}} tools, global Developers work together across organizations and governments. They collaboratively develop customs apps, with familiar and interoperable tools.
+* With IBM starter kits, {{site.data.keyword.openshiftlong_notm}}, and {{site.data.keyword.contdelivery_full}} tools, global Developers work together across organizations and governments. They collaboratively develop customs apps, with familiar and interoperable tools.
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequently 10 times per week.
 * Shipping customers and government officials have access to manifest data and can share customs data, while they comply with local regulations.
 * The shipping company benefits from improved logistics management in the supply chain: reduced costs and faster clearance times.

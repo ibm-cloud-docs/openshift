@@ -456,7 +456,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
     <li>[Common app modification scenarios](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for moving apps from community Kubernetes to {{site.data.keyword.openshiftshort}}.</li>
     <li>Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#charges) to explain the monthly license in more detail.</li>
     <li>[Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry).</li>
-    <li>[Tutorial overview](/docs/openshift?topic=openshift-tutorials-ov) with links to tutorials.</li>
+    <li>Tutorial overview with links to tutorials.</li>
     <li>[Using the internal registry in {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-registry#openshift_internal_registry)</ul>
   </li>
     <li><strong>Entitled software</strong>: If you have licensed products from your [MyIBM.com ![External link icon](../icons/launch-glyph.svg "External link icon")](https://myibm.ibm.com) container software library, you can [set up your cluster to pull images from the entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li>
@@ -660,7 +660,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
   <td>14 June 2019</td>
   <td><ul>
   <li><strong>`kubectl` troubleshooting</strong>: Added a [troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot#kubectl_fails) for when you have a `kubectl` client version that is 2 or more versions apart from the server version or the {{site.data.keyword.openshiftshort}} version of `kubectl`, which does not work with community Kubernetes clusters.</li>
-  <li><strong>Tutorials landing page</strong>: Replaced the related links page with a new [tutorials landing page](/docs/containers?topic=containers-tutorials-ov) for all tutorials that are specific to {{site.data.keyword.containershort_notm}}.</li>
+  <li><strong>Tutorials landing page</strong>: Replaced the related links page with a new tutorials landing page for all tutorials that are specific to {{site.data.keyword.containershort_notm}}.</li>
   <li><strong>Using existing subnets to create a cluster</strong>: To [reuse subnets from an unneeded cluster when you create a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom), the subnets must be user-managed subnets that you manually added from an on-premises network. All subnets that were automatically ordered during cluster creation are immediately deleted after you delete a cluster, and you cannot reuse these subnets to create a new cluster.</li>
   </ul></td>
 </tr>

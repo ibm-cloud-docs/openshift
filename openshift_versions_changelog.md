@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -554,7 +554,7 @@ The following table shows the changes that are included in the worker node fix p
 {: caption="Changes since version 3.11.248_1564_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 3.11.248_1564_openshift, released 18 August 2020
-{: #311248_1561_master}
+{: #311248_1564_master}
 
 The following table shows the changes that are included in the master fix pack patch update `3.11.248_1564_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
