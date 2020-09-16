@@ -730,10 +730,10 @@ subcollection: openshift
 
 
 [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy)
-* [Moving workloads to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-plan_deploy#moving)
-  * [What kind of apps can I run in Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-plan_deploy#app_types)
+* [Moving workloads to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-plan_deploy#moving)
+  * [What kind of apps can I run in {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-plan_deploy#app_types)
   * [What are some guidelines for developing stateless, cloud-native apps?](/docs/openshift?topic=openshift-plan_deploy#12factor)
-  * [I already have an app. How can I migrate it to Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-plan_deploy#migrate_containerize)
+  * [I already have an app. How can I migrate it to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-plan_deploy#migrate_containerize)
 * [Common app modification scenarios](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios)
   * [Example steps for giving a deployment privileged access](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_example_scc)
 * [Understanding Kubernetes objects for apps](/docs/openshift?topic=openshift-plan_deploy#kube-objects)
