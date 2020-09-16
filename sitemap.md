@@ -841,7 +841,7 @@ subcollection: openshift
   * [Setting up private routes in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-private-vpc-privse)
 * [Moving router services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
 
-[Exposing apps with routes in OpenShift 3.11](/docs/openshift?topic=openshift-routes-311)
+[Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311)
 * [Overview](/docs/openshift?topic=openshift-routes-311#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-routes-311#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-routes-311#route_multi)
