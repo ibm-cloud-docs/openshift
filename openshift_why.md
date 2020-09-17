@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -143,6 +143,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Create a cluster in an IBM Virtual Private Cloud (VPC)|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Ability to create free clusters|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Latest community Kubernetes distribution|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
+|Scope {{site.data.keyword.cloud_notm}} IAM access policies to access groups for service roles that sync to cluster RBAC |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 |Classic infrastructure cluster on only the private network|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
 | GPU bare metal worker nodes | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
 |Integrated IBM Cloud Paks and middleware| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
