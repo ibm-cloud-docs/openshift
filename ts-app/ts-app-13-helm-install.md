@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-17"
 
-keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
+keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
@@ -90,60 +90,39 @@ subcollection: openshift
 {:video: .video}
 
 
+# Why can't I install a Helm chart with updated configuration values?
+{: #ts-app-helm-install}
 
-# Quick start for Ingress in {{site.data.keyword.openshiftshort}} 4
-{: #ingress-qs-roks4}
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
-Quickly expose your app to the Internet by creating an Ingress resource.
-{: shortdesc}
+{: tsSymptoms}
+When you try to install an updated Helm chart by running `helm install <release_name> <helm_repo>/<chart_name> -f config.yaml`, you get the `Error: failed to download "<helm_repo>/<chart_name>"` error message.
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. For clusters that run {{site.data.keyword.openshiftshort}} version 3.11, see [Quick start for Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress-qs).
-{: note}
+{: tsCauses}
+You might need to update your Helm installation because of the following reasons:
+* The URL to the {{site.data.keyword.cloud_notm}} Helm repository that is configured on your local machine might be incorrect.
+* The name of your local Helm repository might not match the Helm repository name or URL of the installation command that you copied from the Helm chart instructions.
+* The Helm chart that you want to install does not support the version of Helm that you installed on your local machine.
 
-1. Create a Kubernetes `ClusterIP` service for your app so that it can be included in the router load balancing.
-  ```
-  oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <project>
-  ```
-  {: pre}
+{: tsResolve}
+To troubleshoot your Helm chart:
 
-2. Get the Ingress subdomain for your cluster.
+1.  List the {{site.data.keyword.cloud_notm}} Helm repositories currently available in your Helm instance.
     ```
-    ibmcloud oc cluster get -c <cluster_name_or_ID> | grep Ingress
+    helm repo list
     ```
     {: pre}
-    Example output:
+2.  Remove the {{site.data.keyword.cloud_notm}} Helm repositories.
     ```
-    Ingress Subdomain:      mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud
-    Ingress Secret:         mycluster-a1b2cdef345678g9hi012j3kl4567890-0000
+    helm repo remove <helm_repo>
     ```
-    {: screen}
+    {: pre}
+3.  Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories.
+    * **Helm v3**: See [Installing Helm v3 in your cluster](/docs/containers?topic=containers-helm#install_v3).
+    * **Helm v2**: See [Installing Helm v2 in your cluster](/docs/containers?topic=containers-helm#install_v2).
 
-3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
-  ```yaml
-  apiVersion: extensions/v1beta1
-  kind: Ingress
-  metadata:
-    name: myingressresource
-  spec:
-    rules:
-    - host: <ingress_subdomain>
-      http:
-        paths:
-        - path: /<app_path>
-          backend:
-            serviceName: my-app-svc
-            servicePort: 80
-  ```
-  {: codeblock}
+Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 
-4. Create the Ingress resource in the same project as your app service.
-  ```
-  oc apply -f myingressresource.yaml -n <project>
-  ```
-  {: pre}
-
-5. In a web browser, enter the Ingress subdomain and the path for your app.
-  ```
-  https://<ingress_subdomain>/<app_path>
-  ```
-  {: codeblock}
+<br />

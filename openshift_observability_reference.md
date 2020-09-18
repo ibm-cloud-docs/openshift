@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-27"
+lastupdated: "2020-09-16"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logdna commands, sysdig commands, logging config, monitoring config
 
@@ -403,7 +403,7 @@ ibmcloud ob monitoring agent discover --cluster CLUSTER [--instance SYSDIG_INSTA
 Create a monitoring configuration for your cluster to automatically collect cluster and pod metrics, and send them to {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
-This command deploys a Sysdig agent as a Kubernetes daemonset in your cluster. The agent collects cluster and pod metrics, such as the worker node CPU and memory usage, and the amount of incoming and outgoing network traffic for your pods. For more information, see [Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig).
+This command deploys a Sysdig agent as a Kubernetes daemonset in your cluster. The agent collects cluster and pod metrics, such as the worker node CPU and memory usage, and the amount of incoming and outgoing network traffic for your pods. For more information, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig).
 
 ```
 ibmcloud ob monitoring config create --cluster CLUSTER --instance SYSDIG_INSTANCE [--sysdig-access-key ACCESS_KEY] [--private-endpoint]

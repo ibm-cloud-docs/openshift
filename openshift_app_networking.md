@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -118,7 +118,7 @@ To securely expose your apps to external traffic, you can use choose from the fo
 
 <dt>Ingress</dt>
 <dd>The Ingress service type is implemented differently depending on your cluster's {{site.data.keyword.openshiftshort}} version.<ul>
-<li><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4 clusters**: Expose multiple apps in a cluster by setting up routing with the [{{site.data.keyword.openshiftshort}} Ingress controller](/docs/openshift?topic=openshift-ingress-roks4). The Ingress controller uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
+<li><img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4 clusters**: Expose multiple apps in a cluster by setting up routing with the [{{site.data.keyword.openshiftshort}} Ingress controller](/docs/openshift?topic=openshift-ingress-roks4). The Ingress controller uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. Ingress consists of three components:<ul>
   <li>The Ingress controller is a HAProxy-based Kubernetes service that manages all incoming traffic for the apps in your cluster by implementing routing rules for the apps. This controller is managed by the Ingress operator.</li>
   <li>The router listens for incoming HTTP, HTTPS, or TCP service requests, and then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.</li>
   <li>The Ingress resource defines the rules for how to route and load balance incoming requests for an app.</li></ul></li>
@@ -350,7 +350,7 @@ Check out the following methods for private app networking:
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> To make an app available over a private network only in a VPC cluster, choose a load balancing deployment pattern based on your cluster's service endpoint setup: public and private service endpoint, or private service endpoint only. For each service endpoint setup, the following table describes each possible app exposure method, why you might use it, and how to set it up.
 {: shortdesc}
 
-<p class="note"> <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Only version 4 clusters can be created on VPC infrastructure. The following methods do not apply to version 3.11 clusters, which can be created on classic infrastructure only.</br></br>You cannot use multiple app exposure methods for one app.</p>
+<p class="note"> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Only version 4 clusters can be created on VPC infrastructure. The following methods do not apply to version 3.11 clusters, which can be created on classic infrastructure only.</br></br>You cannot use multiple app exposure methods for one app.</p>
 
 |Name|Load-balancing method|Use case|Implementation|
 |----|---------------------|--------|--------------|

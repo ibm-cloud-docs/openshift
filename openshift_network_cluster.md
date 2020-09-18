@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -100,7 +100,7 @@ After you initially set up your network when you [create a cluster](/docs/opensh
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
 
-<p class="important">Your options for service endpoints vary with the {{site.data.keyword.openshiftshort}} version.<br><br><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **Version 3.11**: You must enable the public service endpoint during cluster creation, and you cannot later disable it. If no public service endpoint for the cluster exists, a subdomain for the router is not generated. You can optionally enable a private service endpoint.<br><br><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **Version 4**: You must enable the public service endpoint during cluster creation, and you cannot later disable it. Also, you cannot use the private service endpoint. If your cluster does have a private service endpoint, you must delete the cluster and re-create it without a private service endpoint. For information about service endpoints for version 4 clusters VPC Gen 2 compute, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).</p>
+<p class="important">Your options for service endpoints vary with the {{site.data.keyword.openshiftshort}} version.<br><br><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **Version 3.11**: You must enable the public service endpoint during cluster creation, and you cannot later disable it. If no public service endpoint for the cluster exists, a subdomain for the router is not generated. You can optionally enable a private service endpoint.<br><br><img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **Version 4**: You must enable the public service endpoint during cluster creation, and you cannot later disable it. Also, you cannot use the private service endpoint. If your cluster does have a private service endpoint, you must delete the cluster and re-create it without a private service endpoint. For information about service endpoints for version 4 clusters VPC Gen 2 compute, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).</p>
 
 ## 3.11 clusters only: Setting up the private service endpoint
 {: #set-up-private-se}

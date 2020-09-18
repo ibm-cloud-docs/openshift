@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -94,7 +94,7 @@ subcollection: openshift
 # About Ingress in {{site.data.keyword.openshiftshort}} version 4
 {: #ingress-about-roks4}
 
-<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 3.11 clusters, see [About Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress-about).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 3.11 clusters, see [About Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress-about).
 {: note}
 
 Ingress is a service that balances network traffic workloads in your cluster by forwarding public or private requests to your apps. You can use Ingress to expose multiple app services to the public or to a private network by using a unique public or private domain.

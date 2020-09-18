@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-18"
 
 keywords: openshift
 subcollection: openshift
@@ -260,7 +260,7 @@ subcollection: openshift
 * [Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
-[Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift){: external}
+[Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
 
 [OpenShift interactive learning portal](https://learn.openshift.com/){: external}
 
@@ -684,7 +684,7 @@ subcollection: openshift
 
 [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
 
-[Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig)
+[Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig)
 
 [Viewing cluster states](/docs/openshift?topic=openshift-health#states)
 * [Cluster states](/docs/openshift?topic=openshift-health#states_cluster)
@@ -730,10 +730,10 @@ subcollection: openshift
 
 
 [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy)
-* [Moving workloads to Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-plan_deploy#moving)
-  * [What kind of apps can I run in Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-plan_deploy#app_types)
+* [Moving workloads to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-plan_deploy#moving)
+  * [What kind of apps can I run in {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-plan_deploy#app_types)
   * [What are some guidelines for developing stateless, cloud-native apps?](/docs/openshift?topic=openshift-plan_deploy#12factor)
-  * [I already have an app. How can I migrate it to Red Hat OpenShift on IBM Cloud?](/docs/openshift?topic=openshift-plan_deploy#migrate_containerize)
+  * [I already have an app. How can I migrate it to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-plan_deploy#migrate_containerize)
 * [Common app modification scenarios](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios)
   * [Example steps for giving a deployment privileged access](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_example_scc)
 * [Understanding Kubernetes objects for apps](/docs/openshift?topic=openshift-plan_deploy#kube-objects)
@@ -841,7 +841,7 @@ subcollection: openshift
   * [Setting up private routes in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-private-vpc-privse)
 * [Moving router services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
 
-[Exposing apps with routes in OpenShift 3.11](/docs/openshift?topic=openshift-routes-311)
+[Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311)
 * [Overview](/docs/openshift?topic=openshift-routes-311#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-routes-311#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-routes-311#route_multi)
@@ -1231,6 +1231,7 @@ subcollection: openshift
   * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc)
   * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster)
 * [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help)
+* [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities)
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
@@ -1548,7 +1549,7 @@ subcollection: openshift
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
   * [Changelog for worker node fix pack 3.11.272_1566_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1566)
   * [Changelog for worker node fix pack 3.11.272_1565_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1565)
-  * [Changelog for master fix pack 3.11.248_1564_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561_master)
+  * [Changelog for master fix pack 3.11.248_1564_openshift, released 18 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1564_master)
   * [Changelog for worker node fix pack 3.11.248_1564_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1564)
   * [Changelog for worker node fix pack 3.11.248_1561_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311248_1561)
   * [Changelog for master fix pack 3.11.232_1560_openshift, released 24 July 2020](/docs/openshift?topic=openshift-openshift_changelog#311232_1560)

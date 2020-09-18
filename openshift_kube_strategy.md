@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-27"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -120,7 +120,7 @@ You can use the open source [Terraform](/docs/terraform?topic=terraform-getting-
 ### What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?
 {: #app_kinds}
 
-Your containerized app must be able to run on the supported operating system, Ubuntu 16.64, 18.64. You also want to consider the statefulness of your app. For more information about the kinds of apps that can run in {{site.data.keyword.openshiftlong_notm}}, see [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy#app_types).
+Your containerized app must be able to run on the supported operating system, RHEL 7. You also want to consider the statefulness of your app. For more information about the kinds of apps that can run in {{site.data.keyword.openshiftlong_notm}}, see [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy#app_types).
 
 If you already have an app, you can [migrate it to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-plan_deploy#migrate_containerize). If you want to develop a new app, check out the [guidelines for developing stateless, cloud-native apps](/docs/openshift?topic=openshift-plan_deploy#12factor)
 

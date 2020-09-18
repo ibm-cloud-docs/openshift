@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -110,7 +110,7 @@ In {{site.data.keyword.openshiftlong_notm}}, your clusters comprise an IBM-manag
 ### {{site.data.keyword.openshiftshort}} version 4 architecture
 {: #service-architecture-4}
 
-<img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Review the architecture diagram and then scroll through the following tables for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on classic infrastructure. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/architecture/architecture.html){: external}.
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Review the architecture diagram and then scroll through the following tables for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on classic infrastructure. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/architecture/architecture.html){: external}.
 {: shortdesc}
 
 When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and do not include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
@@ -232,7 +232,7 @@ In OpenShift Container Platform 4, many components are configured by a correspon
 ## VPC cluster service architecture
 {: #service-architecture_vpc}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> The following architectural overviews are specific to the VPC infrastructure provider, which is available for clusters that run version 4 only. For an architectural overview for the classic infrastructure provider, see [Classic cluster service architecture](#service-architecture).
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The following architectural overviews are specific to the VPC infrastructure provider, which is available for clusters that run version 4 only. For an architectural overview for the classic infrastructure provider, see [Classic cluster service architecture](#service-architecture).
 {: note}
 
 Review the architecture diagrams and then scroll through the following table for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on virtual private cloud (VPC) compute infrastructure.
@@ -344,7 +344,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.op
 |{{site.data.keyword.cloud_notm}} Command Line (CLI)|When {{site.data.keyword.openshiftlong_notm}} runs CLI commands, the service connects to the service API endpoint over the public service endpoint.|
 |{{site.data.keyword.registrylong_notm}}|This service is used to store the container images that {{site.data.keyword.openshiftlong_notm}} uses to run the service.|
 | {{site.data.keyword.la_full_notm}} | {{site.data.keyword.openshiftlong_notm}} sends service logs to {{site.data.keyword.la_full_notm}}. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. You can also use {{site.data.keyword.la_full_notm}} to manage your own pod container logs. To use {{site.data.keyword.la_full_notm}}, you must deploy a logging agent to every worker node in your cluster. This agent collects pod logs from all namespaces, including `kube-system`, and forwards the logs to {{site.data.keyword.la_full_notm}}. To get started, see [Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna).  |
-| {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.openshiftlong_notm}} sends service metrics to {{site.data.keyword.mon_full_notm}}. These metrics are monitored by the service team to identify capacity and performance issues of the service. You can also use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the performance and health of your apps. For more information, see [Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig).|
+| {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.openshiftlong_notm}} sends service metrics to {{site.data.keyword.mon_full_notm}}. These metrics are monitored by the service team to identify capacity and performance issues of the service. You can also use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the performance and health of your apps. For more information, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig).|
 | {{site.data.keyword.cloudaccesstraillong_notm}} | {{site.data.keyword.openshiftlong_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward cluster audit events to the {{site.data.keyword.at_full_notm}} service instance that is set up and owned by the {{site.data.keyword.openshiftlong_notm}} user. For more information, see [{{site.data.keyword.cloudaccesstraillong_notm}} events](/docs/containers?topic=containers-at_events).|
 | IBMid profile service | The IBMid component is used to look up the IBMid from an email address. The IBMid is used to authenticate with {{site.data.keyword.cloud_notm}} via Identity and Access Management (IAM). |
 | Identity and Access Management (IAM) | To authenticate requests to the service and authorize user actions, {{site.data.keyword.openshiftlong_notm}} implements platform and service access roles in Identity and Access Management (IAM). For more information about required IAM permissions to work with the service, see [Assigning cluster access](/docs/containers?topic=containers-users). |

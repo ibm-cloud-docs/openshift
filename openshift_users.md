@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-17"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -167,7 +167,8 @@ When you set {{site.data.keyword.cloud_notm}} IAM policies, you can assign roles
 <dt>Individual users</dt>
 <dd>You might have a specific user that needs more or less permissions than the rest of your team. You can customize permissions on an individual basis so that each person has the permissions that they need to complete their tasks. You can assign more than one {{site.data.keyword.cloud_notm}} IAM role to each user.</dd>
 <dt>Multiple users in an access group</dt>
-<dd>You can create a group of users and then assign permissions to that group. For example, you can group all team leaders and assign administrator access to the group. Then, you can group all developers and assign only write access to that group. You can assign more than one {{site.data.keyword.cloud_notm}} IAM role to each access group. When you assign permissions to a group, any user that is added or removed from that group is affected. If you add a user to the group, then they also have the additional access. If they are removed, their access is revoked.</dd>
+<dd>You can create a group of users and then assign permissions to that group. For example, you can group all team leaders and assign administrator access to the group. Then, you can group all developers and assign only write access to that group. You can assign more than one {{site.data.keyword.cloud_notm}} IAM role to each access group. When you assign permissions to a group, any user that is added or removed from that group is affected. If you add a user to the group, then they also have the additional access. If they are removed, their access is revoked.<p class="note">You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.4/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still scope IAM platform roles to IAM access groups to control actions like ordering worker nodes, because platform roles are never synced to RBAC roles.</p>
+</dd>
 </dl>
 
 {{site.data.keyword.cloud_notm}} IAM roles can't be assigned to a service account. Instead, you can directly [assign RBAC roles to service accounts](#rbac).
@@ -658,7 +659,12 @@ Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by 
 **To assign {{site.data.keyword.cloud_notm}} IAM _service_ roles from the CLI:**
 {: #add_users_cli_service}
 
-1.  Get the user information for the individual user or access group that you want to assign the service role to.
+
+You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.4/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still manage individual users and service accounts with IAM service roles. You can also still scope IAM platform roles to IAM access groups to control actions like ordering worker nodes, because platform roles are never synced to RBAC roles.
+{:note}
+
+
+1.  Get the user information for the individual user that you want to assign the service role to.
 
     1.  Get your **Account ID**.
         ```
@@ -670,11 +676,6 @@ Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by 
         ibmcloud account users --account-id <account_ID> --output JSON
         ```
         {: pre}
-    3.  For access groups, get the **Name** and **ID**.
-        ```
-        ibmcloud iam access-groups
-        ```
-        {: pre}
 
 2.  Create a `policy.json` file that scopes the service access role to a Kubernetes namespace in your cluster.
 
@@ -684,8 +685,8 @@ Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by 
             {
                 "attributes": [
                     {
-                        "name": "(iam_id|access_group_id)",
-                        "value": "<user_or_group_ID>"
+                        "name": "(iam_id)",
+                        "value": "<user_ID>"
                     }
                 ]
             }
@@ -732,8 +733,7 @@ Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by 
         <tr>
         <td>`subjects.attributes`</td>
         <td>Enter the {{site.data.keyword.cloud_notm}} IAM details for the individual user or access group that you previously retrieved.
-        <ul><li>For individual users, set `iam_id` for the `name` field. Enter the previously retrieved **ibmUniqueId** for the `value` field.</li>
-        <li>For access groups, set `access_group_id` for the `name` field. Enter the previously retrieved **ID** for the `value` field.</li></ul></td>
+        <ul><li>For individual users, set `iam_id` for the `name` field. Enter the previously retrieved **ibmUniqueId** for the `value` field.</li></ul></td>
         </tr>
         <tr>
         <td>`roles.role_id`</td>
@@ -753,15 +753,10 @@ Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by 
       </tbody>
       </table>
 
-3.  Apply the {{site.data.keyword.cloud_notm}} IAM policy to an individual user or access group.
+3.  Apply the {{site.data.keyword.cloud_notm}} IAM policy to an individual user.
     *   For individual users:
         ```
         ibmcloud iam user-policy-create <user@email.com> --file <filepath>/policy.json
-        ```
-        {: pre}
-    *   For access groups:
-        ```
-        ibmcloud iam access-group-policy-create <access_group> --file <filepath>/policy.json
         ```
         {: pre}
 
@@ -847,7 +842,7 @@ If you want users to be able to interact with Kubernetes resources from within a
 
 To learn more about the actions permitted by each RBAC role, check out the [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service) reference topic. To see the permissions that are granted by each RBAC role to individual Kubernetes resources, check out [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref).
 
-All users of an {{site.data.keyword.openshiftshort}} cluster are added to the following {{site.data.keyword.openshiftshort}} RBAC groups by cluster version. <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`. <img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.
+All users of an {{site.data.keyword.openshiftshort}} cluster are added to the following {{site.data.keyword.openshiftshort}} RBAC groups by cluster version. <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`. <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.
 {: note}
 
 **Can I create custom roles or cluster roles?**</br>
@@ -855,6 +850,10 @@ The `view`, `edit`, `admin`, and `cluster-admin` cluster roles are predefined ro
 
 Making your own custom RBAC policies? Be sure not to edit the existing IBM role bindings that are in the cluster, or name new role bindings with the same name. Any changes to IBM-provided RBAC role bindings are overwritten periodically. Instead, create your own role bindings.
 {: tip}
+
+**Can I assign custom RBAC roles to groups of users?**<br>
+You can [manually assign users to groups](https://docs.openshift.com/container-platform/4.4/authentication/understanding-authentication.html){: external} in your cluster, and then assign roles to the group. However, a known issue is that you cannot use {{site.data.keyword.cloud_notm}} IAM access groups.
+
 
 **When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**</br>
 You might want to authorize who can create and update pods in your cluster. With [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs), you can use existing cluster role bindings that come with your cluster, or create your own.

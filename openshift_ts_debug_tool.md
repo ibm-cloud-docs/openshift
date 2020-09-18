@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-17"
 
-keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
+keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
@@ -90,60 +90,63 @@ subcollection: openshift
 {:video: .video}
 
 
+# Running tests with the Diagnostics and Debug Tool
+{: #debug-tool}
+{: troubleshoot}
+{: support}
 
-# Quick start for Ingress in {{site.data.keyword.openshiftshort}} 4
-{: #ingress-qs-roks4}
-
-Quickly expose your app to the Internet by creating an Ingress resource.
+While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run tests and gather pertinent information from your cluster.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. For clusters that run {{site.data.keyword.openshiftshort}} version 3.11, see [Quick start for Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress-qs).
-{: note}
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
-1. Create a Kubernetes `ClusterIP` service for your app so that it can be included in the router load balancing.
+## Prerequisites
+{: #debug-tool-prereqs}
+
+If you previously installed the debug tool by using Helm, first uninstall the `ibmcloud-iks-debug` Helm chart.
+1. Find the installation name of your Helm chart.
   ```
-  oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <project>
+  helm list -n <project> | grep ibmcloud-iks-debug
   ```
   {: pre}
 
-2. Get the Ingress subdomain for your cluster.
-    ```
-    ibmcloud oc cluster get -c <cluster_name_or_ID> | grep Ingress
-    ```
-    {: pre}
-    Example output:
-    ```
-    Ingress Subdomain:      mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud
-    Ingress Secret:         mycluster-a1b2cdef345678g9hi012j3kl4567890-0000
-    ```
-    {: screen}
-
-3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
-  ```yaml
-  apiVersion: extensions/v1beta1
-  kind: Ingress
-  metadata:
-    name: myingressresource
-  spec:
-    rules:
-    - host: <ingress_subdomain>
-      http:
-        paths:
-        - path: /<app_path>
-          backend:
-            serviceName: my-app-svc
-            servicePort: 80
+  Example output:
   ```
-  {: codeblock}
-
-4. Create the Ingress resource in the same project as your app service.
+  <helm_chart_name> 1 Thu Sep 13 16:41:44 2019 DEPLOYED ibmcloud-iks-debug-1.0.0 default
   ```
-  oc apply -f myingressresource.yaml -n <project>
+  {: screen}
+
+2. Uninstall the debug tool installation by deleting the Helm chart.
+  ```
+  helm uninstall <helm_chart_name> -n <project>
   ```
   {: pre}
 
-5. In a web browser, enter the Ingress subdomain and the path for your app.
+3. Verify that the debug tool pods are removed. When the uninstallation is complete, no pods are returned by the following command.
   ```
-  https://<ingress_subdomain>/<app_path>
+  oc get pod --all-namespaces | grep ibmcloud-iks-debug
   ```
-  {: codeblock}
+  {: pre}
+
+## Enabling the Diagnostics and Debug Tool add-on
+{: #debug-tool-enable}
+
+1. In your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the name of the cluster where you want to install the debug tool add-on.
+
+2. Click the **Add-ons** tab.
+
+3. On the Diagnostics and Debug Tool card, click **Install**.
+
+4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/containers?topic=containers-cs_troubleshoot_addons#debug_addons).</p>
+
+5. On the Diagnostics and Debug Tool card, click **Dashboard**.
+
+6. In the debug tool dashboard, select individual tests or a group of tests to run. Some tests check for potential warnings, errors, or issues, and some tests only gather information that you can reference while you troubleshoot. For more information about the function of each test, click the information icon next to the test's name.
+
+7. Click **Run**.
+
+8. Check the results of each test.
+  * If any test fails, click the information icon next to the test's name in the left column for information about how to resolve the issue.
+  * You can also use the results of tests to gather information, such as complete YAMLs, that can help you debug your cluster in the following sections.

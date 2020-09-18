@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-17"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -115,7 +115,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
         <td>**Built-in {{site.data.keyword.openshiftshort}} logging tools**:<ul>
           <li>Built-in view of pod logs in the {{site.data.keyword.openshiftshort}} web console.</li>
           <li>Built-in pod logs are not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available, and manage the logs yourself.</li></ul>
-          <p class="note"><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html) because you cannot modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.</p><p class="note"><img src="images/icon-version-43.png" alt="Version icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html), see [installing the cluster logging operator](#oc_logging_operator).</p></td>
+          <p class="note"><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html) because you cannot modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.</p><p class="note"><img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html), see [installing the cluster logging operator](#oc_logging_operator).</p></td>
         <td>**{{site.data.keyword.la_full_notm}}**:<ul>
           <li>Customizable user interface for live streaming of log tailing, real-time troubleshooting, issue alerts, and log archiving.</li>
           <li>Quick integration with the cluster via a script.</li>
@@ -124,7 +124,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
           <li>Highly available, scalable, and compliant with industry security standards.</li>
           <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
           <li>Flexible plans, including a free `Lite` option.</li></ul>
-          <br>To get started, see [Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](#openshift_logdna).</td>
+          <br>To get started, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](#openshift_logdna).</td>
     </tr>
     <tr>
         <td>**API audit logging**</td>
@@ -158,7 +158,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
           <li>Highly available, scalable, and compliant with industry security standards.</li>
           <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
           <li>Free trial to try out the capabilities.</li></ul>
-          <br>To get started, see [Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_sysdig).</td>
+          <br>To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_sysdig).</td>
     </tr>
     </tbody>
 </table>
@@ -189,7 +189,7 @@ Before you begin:
 To set up a logging configuration for your cluster:
 
 1. Create an [{{site.data.keyword.la_full_notm}} service instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
-2. Set up a logging configuration for your cluster. When you create the logging configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a LogDNA agent is deployed as a daemonset to all worker nodes in your cluster. This agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. The agent then forwards the logs to the {{site.data.keyword.la_full_notm}} service.
+2. Set up a logging configuration for your cluster. When you create the logging configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a LogDNA agent is deployed as a daemon set to all worker nodes in your cluster. This agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. The agent then forwards the logs to the {{site.data.keyword.la_full_notm}} service.
 
    - **From the console:**
      1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a LogDNA logging configuration.
@@ -233,7 +233,7 @@ To set up a logging configuration for your cluster:
 3. Optional: Verify that the LogDNA agent was set up successfully.
    1. If you used the console to create the LogDNA logging configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster)..
 
-   2. Verify that the daemonset for the LogDNA agent was created and all instances are listed as `AVAILABLE`.
+   2. Verify that the daemon set for the LogDNA agent was created and all instances are listed as `AVAILABLE`.
       ```
       oc get daemonsets -n ibm-observe
       ```
@@ -246,7 +246,7 @@ To set up a logging configuration for your cluster:
       ```
       {: screen}
 
-      The number of daemonset instances that are deployed equals the number of worker nodes in your cluster.
+      The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
    3. Review the configmap that was created for your LogDNA agent.
       ```
@@ -411,7 +411,7 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 <br />
 
 
-## Creating a monitoring configuration to forward cluster and app metrics to {{site.data.keyword.mon_full_notm}}
+## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_sysdig}
 
 Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster, and use this monitoring configuration to automatically collect and forward metrics to {{site.data.keyword.mon_full_notm}}.
@@ -435,7 +435,7 @@ Before you begin:
 To set up a monitoring configuration for your cluster:
 
 1. Create an [{{site.data.keyword.mon_full_notm}} service instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
-2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a Sysdig agent is deployed as a Kubernetes daemonset to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
+2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a Sysdig agent is deployed as a Kubernetes daemon set to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
 
    - **From the console: **
      1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a Sysdig monitoring configuration.
@@ -478,9 +478,9 @@ To set up a monitoring configuration for your cluster:
 
 3. Optional: Verify that the Sysdig agent was set up successfully.
    1. If you used the console to create the Sysdig monitoring configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-   2. Verify that the daemonset for the Sysdig agent was created and all instances are listed as `AVAILABLE`.
+   2. Verify that the daemon set for the Sysdig agent was created and all instances are listed as `AVAILABLE`.
       ```
-      oc get daemonsets -n ibm-observe
+      oc get daemon sets -n ibm-observe
       ```
       {: pre}
 
@@ -491,7 +491,7 @@ To set up a monitoring configuration for your cluster:
       ```
       {: screen}
 
-      The number of daemonset instances that are deployed equals the number of worker nodes in your cluster.
+      The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
    3. Review the configmap that was created for your Sysdig agent.
       ```

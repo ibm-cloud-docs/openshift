@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-17"
 
-keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
+keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
@@ -90,60 +90,25 @@ subcollection: openshift
 {:video: .video}
 
 
+# Why does binding a service to a cluster results in service does not support service keys error?
+{: #ts-app-svc-key}
 
-# Quick start for Ingress in {{site.data.keyword.openshiftshort}} 4
-{: #ingress-qs-roks4}
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
-Quickly expose your app to the Internet by creating an Ingress resource.
-{: shortdesc}
+{: tsSymptoms}
+When you run `ibmcloud oc cluster service bind --cluster <cluster_name> --namespace <project> --service <service_instance_name>`, you see the following message.
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. For clusters that run {{site.data.keyword.openshiftshort}} version 3.11, see [Quick start for Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress-qs).
-{: note}
+```
+This service doesn't support creation of keys
+```
+{: screen}
 
-1. Create a Kubernetes `ClusterIP` service for your app so that it can be included in the router load balancing.
-  ```
-  oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <project>
-  ```
-  {: pre}
+{: tsCauses}
 
-2. Get the Ingress subdomain for your cluster.
-    ```
-    ibmcloud oc cluster get -c <cluster_name_or_ID> | grep Ingress
-    ```
-    {: pre}
-    Example output:
-    ```
-    Ingress Subdomain:      mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud
-    Ingress Secret:         mycluster-a1b2cdef345678g9hi012j3kl4567890-0000
-    ```
-    {: screen}
+Some services in {{site.data.keyword.cloud_notm}}, such as {{site.data.keyword.keymanagementservicelong}} do not support the creation of service credentials, also referred to as service keys. Without the support of service keys, the service is not bindable to a cluster. To find a list of services that support the creation of service keys, see [Enabling external apps to use {{site.data.keyword.cloud_notm}} services](/docs/account?topic=account-externalapp#externalapp).
 
-3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
-  ```yaml
-  apiVersion: extensions/v1beta1
-  kind: Ingress
-  metadata:
-    name: myingressresource
-  spec:
-    rules:
-    - host: <ingress_subdomain>
-      http:
-        paths:
-        - path: /<app_path>
-          backend:
-            serviceName: my-app-svc
-            servicePort: 80
-  ```
-  {: codeblock}
 
-4. Create the Ingress resource in the same project as your app service.
-  ```
-  oc apply -f myingressresource.yaml -n <project>
-  ```
-  {: pre}
-
-5. In a web browser, enter the Ingress subdomain and the path for your app.
-  ```
-  https://<ingress_subdomain>/<app_path>
-  ```
-  {: codeblock}
+{: tsResolve}
+To integrate services that do not support service keys, check if the service provides an API that you can use to access the service directly from your app. For example, if you want to use {{site.data.keyword.keymanagementservicelong}}, see the [API reference](https://cloud.ibm.com/apidocs/key-protect){: external}.

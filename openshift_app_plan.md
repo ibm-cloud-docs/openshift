@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -43,16 +97,16 @@ subcollection: openshift
 Before you deploy an app to an {{site.data.keyword.openshiftlong}} cluster, decide how you want to set up your app so that your app can be accessed properly and be integrated with other services in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-## Moving workloads to Red Hat OpenShift on IBM Cloud
+## Moving workloads to {{site.data.keyword.openshiftlong_notm}}
 {: #moving}
 
-Learn what kinds of workloads can be run on Red Hat OpenShift on IBM Cloud, and the optimal way to set up these workloads.
+Learn what kinds of workloads can be run on {{site.data.keyword.openshiftlong_notm}}, and the optimal way to set up these workloads.
 {: shortdesc}
 
-### What kind of apps can I run in Red Hat OpenShift on IBM Cloud?
+### What kind of apps can I run in {{site.data.keyword.openshiftlong_notm}}?
 {: #app_types}
 
-Your containerized app must be able to run on the supported operating system, Ubuntu 16.64, 18.64. You also want to consider the statefulness of your app.
+Your containerized app must be able to run on the supported operating system, RHEL 7. You also want to consider the statefulness of your app.
 {: shortdesc}
 
 <dl>
@@ -79,10 +133,10 @@ Check out the [Twelve-Factor App](https://12factor.net/){: external}, a language
 8.  **Concurrency**: Manage and scale your app through process instances such as replicas and horizontal scaling. Set resource requests and limits for your deployments. Note that Calico network policies cannot limit bandwidth.
 9.  **Disposability**: Design your app to be disposable, with minimal startup, graceful shutdown, and toleration for abrupt process terminations. Remember, containers, pods, and even worker nodes are meant to be disposable, so plan your app accordingly.
 10.  **Dev-to-prod parity**: Set up a [continuous integration](https://www.ibm.com/garage/method/practices/code/practice_continuous_integration) and [continuous delivery](https://www.ibm.com/garage/method/practices/deliver/practice_continuous_delivery) pipeline for your app, with minimal difference between the app in development and the app in prod.
-11.  **Logs**: Treat logs as event streams: the outer or hosting environment processes and routes log files. **Important**: In Red Hat OpenShift on IBM Cloud, logs are not turned on by default. To enable, see [Configuring log forwarding](/docs/containers?topic=containers-health).
+11.  **Logs**: Treat logs as event streams: the outer or hosting environment processes and routes log files. **Important**: In {{site.data.keyword.openshiftlong_notm}}, logs are not turned on by default. To enable, see [Configuring log forwarding](/docs/containers?topic=containers-health).
 12.  **Admin processes**: Keep any one-time admin scripts with your app and run them as a [Kubernetes Job object](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/){: external} to ensure that the admin scripts run with the same environment as the app itself. For orchestration of larger packages that you want to run in your Kubernetes clusters, consider using a package manager such as [Helm](https://helm.sh/){: external}.
 
-### I already have an app. How can I migrate it to Red Hat OpenShift on IBM Cloud?
+### I already have an app. How can I migrate it to {{site.data.keyword.openshiftlong_notm}}?
 {: #migrate_containerize}
 
 You can take some general steps to containerize your app as follows.
@@ -109,17 +163,17 @@ For more, see the following tutorials:
 ## Common app modification scenarios
 {: #openshift_move_apps_scenarios}
 
-OpenShift has different default settings than community Kubernetes, such as stricter security context constraints. Review the following common scenarios where you might need to modify your apps so that you can deploy them on OpenShift clusters.
+{{site.data.keyword.openshiftshort}} has different default settings than community Kubernetes, such as stricter security context constraints. Review the following common scenarios where you might need to modify your apps so that you can deploy them on {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
 |Scenario|Steps you can take|
 |--------|------------------|
-| Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status | The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the OpenShift documentation for [Managing Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}. |
-| Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories. | In OpenShift, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html){: external}. |
+| Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status | The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the {{site.data.keyword.openshiftshort}} documentation for [Managing Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}. |
+| Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories. | In {{site.data.keyword.openshiftshort}}, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html){: external}. |
 | You deploy your app by using Helm. You might see an error similar to `User "system:serviceaccount:tiller:tiller" cannot create <resource>.rbac.authorization.k8s.io: RBAC: <resource>.rbac.authorization.k8s.io "<resource>.rbac.authorization.k8s.io" not found` | Make sure that you [set up Tiller](/docs/openshift?topic=openshift-helm#public_helm_install) with a privileged security account. Note that instead of using Tiller, you can update [Helm to version 3](/docs/openshift?topic=openshift-helm#migrate_v3), in which Tiller is removed.  |
 | Your app uses persistent file storage with a non-root user ID that cannot write to the mounted storage device. | [Adjust the security context](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot) for the app deployment so that `runAsUser` is set to `0`. |
 | Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error. | Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions:<ul><li>Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port.</li><li>Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc).</li><li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding](https://docs.openshift.com/container-platform/4.3/nodes/containers/nodes-containers-port-forwarding.html){: external}.</li></ul> |
-| Other use cases and scenarios | Review the OpenShift documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 2 to version 3](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html){: external}, or [from OCP version 3 to version 4](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration). |
+| Other use cases and scenarios | Review the {{site.data.keyword.openshiftshort}} documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 2 to version 3](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html){: external}, or [from OCP version 3 to version 4](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration). |
 {: summary="The rows are read from left to right. The first column is the scenario that might require changes. The second column is the description of the steps that you can take to modify your app."}
 {: caption="Common scenarios that require app modifications" caption-side="top"}
 {: summary="The first column describes an app scenario. The second column explains the steps that you can take to address the app scenario."}
@@ -127,10 +181,10 @@ OpenShift has different default settings than community Kubernetes, such as stri
 ### Example steps for giving a deployment privileged access
 {: #openshift_move_apps_example_scc}
 
-If you have an app that runs with root permissions, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your OpenShift cluster. For example, you might set up your project with a service account to control privileged access, and then modify your deployment to use this service account.
+If you have an app that runs with root permissions, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your {{site.data.keyword.openshiftshort}} cluster. For example, you might set up your project with a service account to control privileged access, and then modify your deployment to use this service account.
 {: shortdesc}
 
-Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  As a cluster administrator, create a project.
     ```
@@ -147,7 +201,7 @@ Before you begin: [Access your OpenShift cluster](/docs/openshift?topic=openshif
     oc create serviceaccount <sa_name>
     ```
     {: pre}
-4.  Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are included in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}.</p>
+4.  Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are included in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}.</p>
     ```
     oc adm policy add-scc-to-user privileged -n <project_name> -z <sa_name>
     ```
@@ -466,7 +520,7 @@ If you want to run your app in multiple clusters, public and private environment
 ## Setting up service discovery
 {: #service_discovery}
 
-Each of your pods in your OpenShift cluster has an IP address. But when you deploy an app to your cluster, you don't want to rely on the pod IP address for service discovery and networking. Pods are removed and replaced frequently and dynamically. Instead, use a Kubernetes service, which represents a group of pods and provides a stable entry point through the service's virtual IP address, called its `cluster IP`. For more information, see the Kubernetes documentation on [Services](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services){: external}.
+Each of your pods in your {{site.data.keyword.openshiftshort}} cluster has an IP address. But when you deploy an app to your cluster, you don't want to rely on the pod IP address for service discovery and networking. Pods are removed and replaced frequently and dynamically. Instead, use a Kubernetes service, which represents a group of pods and provides a stable entry point through the service's virtual IP address, called its `cluster IP`. For more information, see the Kubernetes documentation on [Services](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services){: external}.
 {: shortdesc}
 
 ### How can I make sure that my services are connected to the right deployments and ready to go?
@@ -517,7 +571,7 @@ After you deploy your app, you can control who can access the app, and monitor t
 ### How can I control who has access to my app deployments?
 {: #app_plan_logmet_access}
 
-The account and cluster administrators can control access on many different levels: the cluster, OpenShift project, pod, and container.
+The account and cluster administrators can control access on many different levels: the cluster, {{site.data.keyword.openshiftshort}} project, pod, and container.
 {: shortdesc}
 
 With {{site.data.keyword.cloud_notm}} IAM, you can assign permissions to individual users, groups, or service accounts at the cluster-instance level.  You can scope cluster access down further by restricting users to particular namespaces within the cluster. For more information, see [Assigning cluster access](/docs/openshift?topic=openshift-users#users).

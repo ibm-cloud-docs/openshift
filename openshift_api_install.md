@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-09-16"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -119,7 +119,7 @@ You can use the version two (`v2`) API to manage both classic and VPC clusters. 
  </thead>
  <tbody>
  <tr>
-   <td>API endpoint</td>
+   <td>API endpoint prefix</td>
    <td><code>https://containers.cloud.ibm.com/global/v1</code></td>
    <td><code>https://containers.cloud.ibm.com/global/v2</code></td>
  </tr>
