@@ -4,9 +4,9 @@ copyright:
   years: 2014, 2020
 lastupdated: "2020-09-22"
 
-keywords: kubernetes, iks, compliance, security standards, faq, kubernetes pricing, kubernetes service pricing, ibm cloud kubernetes service pricing, iks pricing, kubernetes charges, kubernetes service charges, ibm cloud kubernetes service charges, iks charges, kubernetes price, kubernetes service price, ibm cloud kubernetes service price, iks price, kubernetes billing, kubernetes service billing, ibm cloud kubernetes service billing, iks billing, kubernetes costs, kubernetes service costs, ibm cloud kubernetes service costs, iks costs
+keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
