@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -202,7 +202,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
    Example output:
    ```
    ID                                                     Public IP         Private IP      Flavor              State     Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.17.11
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.17.12
    ```
    {: screen}
 
@@ -305,8 +305,8 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         Example output:
         ```
         ALB ID                                Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-        private-crbmnj1b1d09lpvv3oof0g-alb1   false     disabled   private   -               dal10   ingress:584/ingress-auth:344   2234947       2.0
-        public-crbmnj1b1d09lpvv3oof0g-alb1    true      enabled    public    169.XX.XXX.XX   dal10   ingress:584/ingress-auth:344   2234945       2.0
+        private-crbmnj1b1d09lpvv3oof0g-alb1   false     disabled   private   -               dal10   ingress:651/ingress-auth:423   2234947       2.0
+        public-crbmnj1b1d09lpvv3oof0g-alb1    true      enabled    public    169.XX.XXX.XX   dal10   ingress:651/ingress-auth:423   2234945       2.0
         ```
         {: screen}
 
@@ -964,7 +964,7 @@ Start by checking for error messages in the Ingress resource deployment events a
       {: note}
       * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
         ```
-        ibmcloud oc ingress alb disable classic --alb <ALB_ID> -c <cluster_name_or_ID>
+        ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
         ```
         {: pre}
 
@@ -974,7 +974,7 @@ Start by checking for error messages in the Ingress resource deployment events a
         {: pre}
       * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen1.png" alt="VPC Generation 1 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 1 clusters:
         ```
-        ibmcloud oc ingress alb disable vpc-classic --alb <ALB_ID> -c <cluster_name_or_ID>
+        ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
         ```
         {: pre}
         ```
@@ -983,7 +983,7 @@ Start by checking for error messages in the Ingress resource deployment events a
         {: pre}
       * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters:
         ```
-        ibmcloud oc ingress alb disable vpc-gen2 --alb <ALB_ID> -c <cluster_name_or_ID>
+        ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
         ```
         {: pre}
         ```
@@ -1022,10 +1022,10 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses. 
 
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-    private-cr24a9f2caf6554648836337d240064935-alb1   false     disabled   private   -               dal13   ingress:411/ingress-auth:315   2294021       -
-    private-cr24a9f2caf6554648836337d240064935-alb2   false     disabled   private   -               dal10   ingress:411/ingress-auth:315   2234947       -
-    public-cr24a9f2caf6554648836337d240064935-alb1    true      enabled    public    169.62.196.238  dal13   ingress:411/ingress-auth:315   2294019       -
-    public-cr24a9f2caf6554648836337d240064935-alb2    true      enabled    public    169.46.52.222   dal10   ingress:411/ingress-auth:315   2234945       -
+    private-cr24a9f2caf6554648836337d240064935-alb1   false     disabled   private   -               dal13   ingress:651/ingress-auth:423   2294021       -
+    private-cr24a9f2caf6554648836337d240064935-alb2   false     disabled   private   -               dal10   ingress:651/ingress-auth:423   2234947       -
+    public-cr24a9f2caf6554648836337d240064935-alb1    true      enabled    public    169.62.196.238  dal13   ingress:651/ingress-auth:423   2294019       -
+    public-cr24a9f2caf6554648836337d240064935-alb2    true      enabled    public    169.46.52.222   dal10   ingress:651/ingress-auth:423   2234945       -
     ```
     {: screen}
 
@@ -1149,7 +1149,7 @@ For example, say you have a multizone cluster in 2 zones, and the 2 public ALBs 
     For example, the unreachable IP `169.62.196.238` belongs to the ALB `public-cr24a9f2caf6554648836337d240064935-alb1`:
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP           Zone    Build                          ALB VLAN ID   NLB Version
-    public-cr24a9f2caf6554648836337d240064935-alb1    false     disabled   private   169.62.196.238   dal13   ingress:411/ingress-auth:315   2294021       -
+    public-cr24a9f2caf6554648836337d240064935-alb1    false     disabled   private   169.62.196.238   dal13   ingress:651/ingress-auth:423   2294021       -
     ```
     {: screen}
 
@@ -1387,11 +1387,11 @@ After the new worker nodes deploy, the ALB pods are automatically scheduled to d
 When you have a multizone cluster and run `ibmcloud oc ingress alb ls --cluster <cluster>`, no ALB is deployed in a zone. For example, if you have worker nodes in 3 zones, you might see an output similar to the following in which a public ALB did not deploy to the third zone.
 ```
 ALB ID                                            Enabled    Status     Type      ALB IP           Zone    Build                          ALB VLAN ID   NLB Version
-private-cr96039a75fddb4ad1a09ced6699c88888-alb1   false      disabled   private   -                dal10   ingress:411/ingress-auth:315   2294021       -
-private-cr96039a75fddb4ad1a09ced6699c88888-alb2   false      disabled   private   -                dal12   ingress:411/ingress-auth:315   2234947       -
-private-cr96039a75fddb4ad1a09ced6699c88888-alb3   false      disabled   private   -                dal13   ingress:411/ingress-auth:315   2234943       -
-public-cr96039a75fddb4ad1a09ced6699c88888-alb1    true       enabled    public    169.xx.xxx.xxx   dal10   ingress:411/ingress-auth:315   2294019       -
-public-cr96039a75fddb4ad1a09ced6699c88888-alb2    true       enabled    public    169.xx.xxx.xxx   dal12   ingress:411/ingress-auth:315   2234945       -
+private-cr96039a75fddb4ad1a09ced6699c88888-alb1   false      disabled   private   -                dal10   ingress:651/ingress-auth:423   2294021       -
+private-cr96039a75fddb4ad1a09ced6699c88888-alb2   false      disabled   private   -                dal12   ingress:651/ingress-auth:423   2234947       -
+private-cr96039a75fddb4ad1a09ced6699c88888-alb3   false      disabled   private   -                dal13   ingress:651/ingress-auth:423   2234943       -
+public-cr96039a75fddb4ad1a09ced6699c88888-alb1    true       enabled    public    169.xx.xxx.xxx   dal10   ingress:651/ingress-auth:423   2294019       -
+public-cr96039a75fddb4ad1a09ced6699c88888-alb2    true       enabled    public    169.xx.xxx.xxx   dal12   ingress:651/ingress-auth:423   2234945       -
 ```
 {: screen}
 
