@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-23"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -176,7 +176,7 @@ With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API]
    <li>[`zone ls`](#cs_datacenters)</li></ul></td>
  </tr>
  <tr>
-   <td>**Agnostic**: **You do not need to specify an infrastructure provider for the remaining commands.** </td>
+   <td>**Neutral**: **You do not need to specify an infrastructure provider for the remaining commands.** </td>
    <td>The commands use and return the v1 API responses.</td>
    <td>The commands use and return the v1 API responses.</td>
  </tr>
@@ -374,7 +374,7 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 ### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}
 
-List managed add-ons that are enabled in a cluster.
+List any managed add-ons that are enabled in a cluster.
 {: shortdesc}
 
 ```
@@ -404,7 +404,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 ### `ibmcloud oc cluster ca create`
 {: #cs_cluster_ca_create}
 
-Create a new Certificate Authority (CA) for your cluster. After the CA is created and new CA certificates are issued for components in your cluster, the API server of the cluster is automatically refreshed.
+Create a new certificate authority (CA) for your cluster. After the CA is created and new CA certificates are issued for components in your cluster, the API server of the cluster is automatically refreshed.
 {: shortdesc}
 
 After you run this command and before you run the `ibmcloud oc cluster ca rotate` command, follow the steps in [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate) to ensure that any tooling that uses certificates that are signed by the old CA is updated to use the new certificates and to update your worker nodes.
@@ -444,7 +444,7 @@ ibmcloud oc cluster ca create --cluster my_cluster
 ### `ibmcloud oc cluster ca rotate`
 {: #cs_cluster_ca_rotate}
 
-Rotate the Certificate Authority (CA) certificates of a cluster. Rotating invalidates certificates signed by the cluster's previous CA and issues certificates signed by the cluster's new CA to worker nodes.
+Rotate the certificate authority (CA) certificates of a cluster. Rotating invalidates certificates signed by the cluster's previous CA and issues certificates signed by the cluster's new CA to worker nodes.
 {: shortdesc}
 
 Before you run this command, follow the steps in [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate) to ensure that any tooling that uses the old CA certificates is updated to use the new certificates and to update your worker nodes.
@@ -484,7 +484,7 @@ ibmcloud oc cluster ca rotate --cluster my_cluster
 ### `ibmcloud oc cluster ca status`
 {: #cs_cluster_ca_status}
 
-After you run [`ibmcloud oc cluster ca rotate`](#cs_cluster_ca_rotate), view the rotation status of Certificate Authority (CA) certificates for a cluster.
+After you run [`ibmcloud oc cluster ca rotate`](#cs_cluster_ca_rotate), view the rotation status of certificate authority (CA) certificates for a cluster.
 {: shortdesc}
 
 ```
@@ -523,7 +523,7 @@ After logging in to {{site.data.keyword.cloud_notm}}, download the Kubernetes co
 
 The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your terminal session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).
 
-{{site.data.keyword.openshiftlong_notm}} plug-in CLI versions 0.4 and earlier are deprecated or unsupported. In these earlier versions, the `cluster config` command downloaded the `kubeconfig` file to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`. With the relase of version 1.0 on 16 March 2020, the `cluster config` behavior changes permanently and is not backwards compatible. To maintain CLI functionality, update and test any automation that you built with earlier CLI versions now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in. If you still need a separate `kubeconfig` file per cluster instead of the new merged `kubeconfig` file behavior, see [Creating a temporary `kubeconfig` file](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig).
+{{site.data.keyword.openshiftlong_notm}} plug-in CLI versions 0.4 and earlier are deprecated or unsupported. In these earlier versions, the `cluster config` command downloaded the `kubeconfig` file to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`. With the release of version 1.0 on 16 March 2020, the `cluster config` behavior changes permanently and is not compatible with earlier versions. To maintain CLI functionality, update and test any automation that you built with earlier CLI versions now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in. If you still need a separate `kubeconfig` file per cluster instead of the new merged `kubeconfig` file behavior, see [Creating a temporary `kubeconfig` file](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig).
 {: deprecated}
 
 ```
@@ -537,7 +537,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac]
 
 **Minimum required permissions**: **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform role or only a service role, additional constraints apply.
 * **Platform**: If you have only a platform role, you can perform this command, but you need a [service role](/docs/openshift?topic=openshift-users#platform) or a [custom RBAC policy](/docs/openshift?topic=openshift-users#role-binding) to perform Kubernetes actions in the cluster.
-* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name, ID, and master URL because you cannot run the `ibmcloud oc cluster ls` command or launch the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can launch the {{site.data.keyword.openshiftshort}} web console by opening your browser to `<master_URL>/console`.
+* **Service**: If you have only a service role, you can perform this command. However, your cluster admin must give you the cluster name, ID, and master URL because you cannot run the `ibmcloud oc cluster ls` command or open the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can open the {{site.data.keyword.openshiftshort}} web console by opening your browser to `<master_URL>/console`.
 
 **Command options**:
 <dl>
@@ -548,7 +548,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac]
 <dd>Optional: Download the TLS certificates and permission files for the Super User role. You can use the certs to automate tasks in a cluster without having to reauthenticate. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`.</dd>
 
 <dt><code>--network</code></dt>
-<dd>Optional: Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. **Note**: This option cannot be used in conjunction with the <code>--yaml</code> option.</dd>
+<dd>Optional: Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. **Note**: This option cannot be used with the <code>--yaml</code> option.</dd>
 
 <dt><code>--skip-rbac</code></dt>
 <dd>Skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) to manage all your RBAC users, do not include this option.</dd>
@@ -579,7 +579,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To create a VPC Generation 2 compute cluster, use the [`ibmcloud oc cluster create vpc-gen2` command](#cli_cluster-create-vpc-gen2) instead.
+**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic.  To create a VPC Generation 2 compute cluster, use the [`ibmcloud oc cluster create vpc-gen2` command](#cli_cluster-create-vpc-gen2) instead.
 
 **Minimum required permissions**:
 * **Administrator** platform role for {{site.data.keyword.containerlong_notm}} at the account level
@@ -650,7 +650,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 <dd>Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/openshift?topic=openshift-security#encrypted_disk). To disable encryption, include this option.</dd>
 
 <dt id="pod-subnet"><code><strong>--pod-subnet <em>SUBNET</em></strong></code></br></dt>
-<dd>**Standard clusters that run Kubernetes 1.15 or later**: All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+<dd>All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
 <p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pod IP addresses for eight worker nodes, <code>/21</code> to have enough pod IP addresses for 16 worker nodes, and so on.</p>
 <p>The subnet that you choose must be within one of the following ranges:
 <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
@@ -659,7 +659,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The service subnet is in the 172.21.0.0/16 range by default.</p></dd>
 
 <dt id="service-subnet"><code><strong>--service-subnet <em>SUBNET</em></strong></code></br>
-<dd>**Standard clusters that run Kubernetes 1.15 or later**: All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
+<dd>All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
 <p>The subnet must be specified in CIDR format with a size of at least <code>/24</code>, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
 <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
 <li><code>172.21.0.0 - 172.31.255.255</code></li>
@@ -714,7 +714,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: beta}
 
-Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
+Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least three hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```
 ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [-q]
@@ -2629,7 +2629,7 @@ Before you remove a zone, make sure that you have enough worker nodes in other z
 {: tip}
 
 ```
-ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--pool WORKER_POOL] [-f] [-q]
+ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--worker-pool WORKER_POOL] [-f] [-q]
 ```
 {: pre}
 
@@ -2815,7 +2815,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type (PUBLIC|PRIVATE)
 
 **Example**:
 ```
-ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 647
+ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 651
 ```
 {: pre}
 
@@ -2895,7 +2895,7 @@ ibmcloud oc ingress alb enable classic --alb ALB_ID --cluster CLUSTER [--ip IP_A
 <dd>Optional: Specify an IP address that is on a VLAN in the zone that the ALB was created in. The ALB is enabled with and uses this public or private IP address.<p class="note">This IP address must not be in use by another load balancer or ALB in the cluster. If no IP address is provided, the ALB is deployed with a public or private IP address from the portable public or private subnet that was provisioned automatically when you created the cluster, or if you re-enable an ALB that was previously enabled, the public or private IP address that was previously assigned to the ALB.</p></dd>
 
 <dt><code>--version <em>IMAGE_VERSION</em></code></dt>
-<dd>Optional: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc ingress alb versions`. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this flag, the ALB runs the default version of the Kubernetes Ingress image type.</dd>
+<dd>Optional: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc ingress alb versions`. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this flag, the ALB runs the default version of the same image that the ALB previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -3021,7 +3021,7 @@ ibmcloud oc ingress alb migrate clean --cluster CLUSTER [--generated-resources] 
 <dd>Delete automatically generated and manually created Ingress resources of class `public-iks-k8s-nginx` or `private-iks-k8s-nginx` for public or private ALBs that run the Kubernetes Ingress image.</dd>
 
 <dt><code>--reset-kube-controller-configmap</code></dt>
-<dd>Reset the `ibm-k8s-controller-config` configmap to the default settings. The configmap is deleted and re-deployed.</dd>
+<dd>Reset the `ibm-k8s-controller-config` configmap to the default settings. The configmap is deleted and redeployed.</dd>
 
 <dt><code>--test-ingresses</code></dt>
 <dd>Delete automatically generated and manually created Ingress resources of class `test` for the test ALB service running the Kubernetes Ingress image.</dd>
@@ -3163,12 +3163,12 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 **Example commands:**
 * To update all ALB pods in the cluster:
   ```
-  ibmcloud oc ingress alb update -c mycluster --version 647
+  ibmcloud oc ingress alb update -c mycluster --version 651
   ```
   {: pre}
 * To update the ALB pods for one or more specific ALBs:
   ```
-  ibmcloud oc ingress alb update -c mycluster --version 647 --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
+  ibmcloud oc ingress alb update -c mycluster --version 651 --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
   ```
   {: pre}
 
@@ -3250,7 +3250,7 @@ ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER -
 <dd>Optional: Specify the project that your Ingress resource is deployed to. If your ALB runs the Kubernetes Ingress image, this value is required, because the ALB can identify secrets only in the same project as your Ingress resource. If your ALB runs the {{site.data.keyword.openshiftlong_notm}} Ingress image, and you do not specify a project, the certificate secret is created in a project called `ibm-cert-store`. A reference to this secret is then created in the `default` project, which any Ingress resource in any project can access. While processing requests, the ALB follows the reference to pick up and use the certificate secret from the `ibm-cert-store` project.</dd>
 
 <dt><code>--persist</code></dt>
-<dd>Optional: Persist the secret data in your cluster. If the secret is later deleted from the CLI or {{site.data.keyword.openshiftshort}} web console, the secret is automatically recreated in your cluster. To permanently delete the secret, you must use the [`/ingress/v2/secret/deleteSecret` API](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/DeleteIngressSecret).</dd>
+<dd>Optional: Persist the secret data in your cluster. If the secret is later deleted from the CLI or {{site.data.keyword.openshiftshort}} web console, the secret is automatically re-created in your cluster. To permanently delete the secret, you must use the [`/ingress/v2/secret/deleteSecret` API](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/DeleteIngressSecret).</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -3605,7 +3605,7 @@ ibmcloud oc logging collect --cluster CLUSTER --cos-bucket BUCKET_NAME --cos-end
 <dd>The HMAC key for your {{site.data.keyword.cos_short}} instance.</dd>
 
 <dt><code>--type <em>LOG_TYPE</em></code></dt>
-<dd>Optional: The type of logs that you want to create a snapshot of. Currently, `master` is the only option, as well as the default.</dd>
+<dd>Optional: The type of logs that you want to create a snapshot of. Currently, `master` is the default and only option.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -3699,7 +3699,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --typ
 <dd>The path on the container that the apps are logging to. To forward logs with source type <code>application</code>, you must provide a path. Wildcards, such as '/var/log/*.log', can be used, but recursive globs, such as '/var/log/**/test.log', cannot be used. To specify more than one path, use multiple flags, such as `-p /var/log/myApp1/&ast; -p /var/log/myApp2/&ast;`. This value is required for log source <code>application</code>.</dd>
 
 <dt><code>--syslog-protocol</code></dt>
-<dd>The transfer layer protocol that is used when the logging type is <code>syslog</code>. Supported values are <code>tcp</code>, <code>tls</code>, and the default <code>udp</code>. When forwarding to a rsyslog server with the <code>udp</code> protocol, logs that are over 1KB are truncated.</dd>
+<dd>The transfer layer protocol that is used when the logging type is <code>syslog</code>. Supported values are <code>tcp</code>, <code>tls</code>, and the default <code>udp</code>. When forwarding to a rsyslog server with the <code>udp</code> protocol, logs that are over 1 KB are truncated.</dd>
 
 <dt><code>-C, --app-container</code></dt>
 <dd>To forward logs from apps, you can specify the name of the container that contains your app. To specify more than one container, use multiple flags, such as `-C /var/log/myApp1/&ast; -C /var/log/myApp2/&ast;`. If no containers are specified, logs are forwarded from all of the containers that contain the paths that you provided. This option is only valid for log source <code>application</code>.</dd>
@@ -3708,7 +3708,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOG_SOURCE --typ
 <dd>Optional: Skip validation of the org and space names when they are specified. Skipping validation decreases processing time, but an invalid logging configuration does not correctly forward logs.</dd>
 
 <dt><code>--force-update</code></dt>
-<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
+<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version to change your logging configurations.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -3808,7 +3808,7 @@ ibmcloud oc logging config rm --cluster CLUSTER (--namespace NAMESPACE --id LOG_
 <dd>The flag to remove all logging configurations in a cluster.</dd>
 
 <dt><code>--force-update</code></dt>
-<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
+<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version to change your logging configurations.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -3878,7 +3878,7 @@ ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LO
 <dd>Optional: Skip validation of the org and space names when they are specified. Skipping validation decreases processing time, but an invalid logging configuration does not correctly forward logs.</dd>
 
 <dt><code>--force-update</code></dt>
-<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
+<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version to change your logging configurations.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -3944,7 +3944,7 @@ ibmcloud oc logging filter create --cluster CLUSTER --type LOG_TYPE [--logging-c
 <dd>Optional: Filters out any logs that contain a specified message that is written as a regular expression anywhere in the log. Example: The pattern "hello [0-9]" would apply to "hello 1", "hello 2", and "hello 9".</dd>
 
 <dt><code>--force-update</code></dt>
-<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
+<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version to change your logging configurations.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -4044,7 +4044,7 @@ ibmcloud oc logging filter rm --cluster CLUSTER [--id FILTER_ID] [--all] [--forc
 <dd>Optional: Delete all of your log forwarding filters.</dd>
 
 <dt><code>--force-update</code></dt>
-<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
+<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version to change your logging configurations.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -4105,7 +4105,7 @@ ibmcloud oc logging filter update --cluster CLUSTER --id FILTER_ID --type LOG_TY
 <dd>Optional: Filters out any logs that contain a specified message that is written as a regular expression anywhere in the log. Example: The pattern "hello [0-9]" would apply to "hello 1", "hello 2", and "hello 9"</dd>
 
 <dt><code>--force-update</code></dt>
-<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
+<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version to change your logging configurations.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -4156,7 +4156,7 @@ ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-q]
 <dd>Required: The name or ID of the cluster.</dd>
 
 <dt><code>--force-update</code></dt>
-<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version in order to change your logging configurations.</dd>
+<dd>Force your Fluentd pods to update to the latest version. Fluentd must be at the latest version to change your logging configurations.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -4247,7 +4247,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 <dd>The {{site.data.keyword.openshiftshort}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
 
 <dt><code>--type public</code></dt>
-<dd>The subdomain type. Currently only `public` is supported.</dd>
+<dd>The subdomain type. Currently, only `public` is supported.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -4360,7 +4360,7 @@ Configure and optionally enable a health check monitor for an existing NLB subdo
 
 You can use this command to create and enable a health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` flag and the flags for all settings that you want to configure.
 
-To update an existing monitor, you must include all the flags for the settings that you want, including exsting settings.
+To update an existing monitor, you must include all the flags for the settings that you want, including existing settings.
 {: note}
 
 ```
@@ -4626,7 +4626,7 @@ ibmcloud oc nlb-dns monitor status --cluster mycluster
 ### `ibmcloud oc nlb-dns replace`
 {: #cs_nlb-dns-replace}
 
-Replace the load balancer hostname that is registered with a DNS subdomain. For example, if you create a new VPC load balancer for your app, but you do not want to create a new DNS subdomain through which users can access your app, you can simply replace the hostname of the old load balancer with the hostname of the new load balancer.
+Replace the load balancer hostname that is registered with a DNS subdomain. For example, if you create a new VPC load balancer for your app, but you do not want to create a new DNS subdomain through which users can access your app, you can replace the hostname of the old load balancer with the hostname of the new load balancer.
 {: shortdesc}
 
 ```
@@ -4936,7 +4936,7 @@ ibmcloud oc api-key info --cluster my_cluster
 Create an {{site.data.keyword.cloud_notm}} IAM API key that impersonates the user's permissions to authenticate requests for all clusters in the current resource group and region. For more information, see [Accessing the portfolio with the API key](/docs/openshift?topic=openshift-users#api_key_about).
 {: shortdesc}
 
-<p class="important">Before you use this command, make sure that the user who executes this command has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). Target the resource group and region that you want to set the API key for.</br></br>When the API key is reset, the previous API key that was used, if any, for the region and resource group is deleted. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) or the [default {{site.data.keyword.cloudcerts_long}} service instance for your cluster](/docs/openshift?topic=openshift-ingress#manage_certs_about).</p>
+<p class="important">Before you use this command, make sure that the user who runs this command has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). Target the resource group and region that you want to set the API key for.</br></br>When the API key is reset, the previous API key that was used, if any, for the region and resource group is deleted. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) or the [default {{site.data.keyword.cloudcerts_long}} service instance for your cluster](/docs/openshift?topic=openshift-ingress#manage_certs_about).</p>
 
 
 
@@ -5018,7 +5018,7 @@ ibmcloud oc credential get --region us-south
 Set credentials for a resource group and region so that you can access the IBM Cloud infrastructure portfolio through your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-If you have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account, you have access to the IBM Cloud infrastructure portfolio by default. However, you might want to use a different IBM Cloud infrastructure account that you already have to order infrastructure. You can link this infrastructure account to your {{site.data.keyword.cloud_notm}} account by using this command.
+If you have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account, you have access to the IBM Cloud infrastructure portfolio by default. However, you might want to use a different, existing IBM Cloud infrastructure account to order infrastructure. You can link this infrastructure account to your {{site.data.keyword.cloud_notm}} account by using this command.
 
 If IBM Cloud infrastructure credentials are manually set for a region and a resource group, these credentials are used to order infrastructure for all clusters within that region in the resource group. These credentials are used to determine infrastructure permissions, even if an [{{site.data.keyword.cloud_notm}} IAM API key](#cs_api_key_info) exists for the resource group and region. If the user whose credentials are stored does not have the required permissions to order infrastructure, then infrastructure-related actions, such as creating a cluster or reloading a worker node can fail.
 
@@ -5643,7 +5643,7 @@ ibmcloud oc messages
 List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations).
 {: shortdesc}
 
-In [CLI plug-in version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta), `supported-locations` is replaced by the `locations` command. Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior change to this command is not backwards compatible. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
+In [CLI plug-in version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta), `supported-locations` is replaced by the `locations` command. Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior change to this command is not compatible with earlier versions. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
 
 ```
@@ -5845,10 +5845,10 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-q]
 ### `ibmcloud oc script update`
 {: #script_update}
 
-Rewrite scripts that call kubernetes-service commands. Legacy-structured commands are replaced with beta-structured commands. For a list of all changes between the legacy and beta formats, see the comparison table in [Using the beta {{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).
+Rewrite scripts that call `kubernetes-service` commands. Legacy-structured commands are replaced with beta-structured commands. For a list of all changes between the legacy and beta formats, see the comparison table in [Using the beta {{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).
 {: shortdesc}
 
-<p class="important">Most command behavior and syntax changes in version 1.0. These changes are not backwards compatible. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run. Do not change the `IKS_BETA_VERSION` environment variable to a different version.</p>
+<p class="important">Most command behavior and syntax changes in version 1.0. These changes are not compatible with earlier versions. After you update your scripts, you must continue to use version `1.0` of the plug-in within the script or the environment where the script is run. Do not change the `IKS_BETA_VERSION` environment variable to a different version.</p>
 
 ```
 ibmcloud oc script update [--in-place] FILE [FILE ...]
@@ -5879,7 +5879,7 @@ To use this command to prepare your automation scripts for the release of versio
     ibmcloud oc script update ./mytestscript.sh
     ```
     {: pre}
-2.  Review the proposed changes to the script in the difference that is shown in the terminal STDOUT.Example output:
+2.  Review the proposed changes to the script in the difference that is shown in the terminal STDOUT. Example output:
     ```
     --- a/script-test-2
     +++ b/script-test-2

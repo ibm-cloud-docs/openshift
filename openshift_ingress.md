@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-23"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -103,6 +103,74 @@ Expose multiple apps in your {{site.data.keyword.openshiftshort}} cluster by cre
 
 This information is for ALBs that run the custom {{site.data.keyword.openshiftlong_notm}} Ingress image. To use the community Kubernetes implementation of Ingress, see [Beta: Setting up community Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types).
 {: note}
+
+## Quick start
+{: #ingress-qs}
+{: help}
+{: support}
+
+Quickly expose your app to the Internet by creating an Ingress resource.
+{: shortdesc}
+
+First time setting up Ingress? Check out the other sections on this page for prerequisite, planning, and detailed setup steps. Come back to these quick start steps for a brief refresher the next time you set up an Ingress resource.
+{: tip}
+
+
+
+This quick start is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. For clusters that run {{site.data.keyword.openshiftshort}} version 4, see [Quick start for Ingress in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-ingress-qs-roks4).
+{: important}
+
+1. Create a Kubernetes ClusterIP service for your app so that it can be included in the Ingress application load balancing.
+  ```
+  oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+  ```
+  {: pre}
+
+2. Get the Ingress subdomain and secret for your cluster.
+    ```
+    ibmcloud oc cluster get -c <cluster_name_or_ID> | grep Ingress
+    ```
+    {: pre}
+    Example output:
+    ```
+    Ingress Subdomain:      mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud
+    Ingress Secret:         mycluster-a1b2cdef345678g9hi012j3kl4567890-0000
+    ```
+    {: screen}
+
+3. Using the Ingress subdomain and secret, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
+  ```yaml
+  apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    name: myingressresource
+  spec:
+    tls:
+    - hosts:
+      - <ingress_subdomain>
+      secretName: <ingress_secret>
+    rules:
+    - host: <ingress_subdomain>
+      http:
+        paths:
+        - path: /<app_path>
+          backend:
+            serviceName: my-app-svc
+            servicePort: 80
+  ```
+  {: codeblock}
+
+4. Create the Ingress resource.
+  ```
+  oc apply -f myingressresource.yaml
+  ```
+  {: pre}
+
+5. In a web browser, enter the Ingress subdomain and the path for your app.
+  ```
+  https://<ingress_subdomain>/<app_path>
+  ```
+  {: codeblock}
 
 
 ## Prerequisites
@@ -663,8 +731,8 @@ When you create a standard cluster, a private ALB is created in each zone that y
     The field **Status** for private ALBs is _disabled_.
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal10   ingress:645/ingress-auth:421   2234947       -
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.xx.xxx.xxx  dal10   ingress:647/ingress-auth:421   2234945       -
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal10   ingress:651/ingress-auth:423   2234947       -
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.xx.xxx.xxx  dal10   ingress:651/ingress-auth:423   2234945       -
     ```
     {: screen}
 
@@ -674,15 +742,15 @@ When you create a standard cluster, a private ALB is created in each zone that y
   ```
   {: pre}
 
-  In the following example output, the default {{site.data.keyword.openshiftlong_notm}} Ingress version is `647`:
+  In the following example output, the default {{site.data.keyword.openshiftlong_notm}} Ingress version is `651`:
   ```
   IBM Cloud Ingress: 'auth' version
-  421
+  423
 
   IBM Cloud Ingress versions
-  647 (default)
+  651 (default)
+  647
   645
-  642
 
   Kubernetes Ingress versions
   0.34.1_391_iks
@@ -693,7 +761,7 @@ When you create a standard cluster, a private ALB is created in each zone that y
 
 3. Enable the private ALBs. Run this command for the ID of each private ALB that you want to enable. If you want to specify an IP address for the ALB, include the IP address in the `--ip` flag.
   ```
-  ibmcloud oc ingress alb enable classic --alb <private_ALB_ID> -c <cluster_name_or_ID> --version <version>
+  ibmcloud oc ingress alb enable classic --alb <private_ALB_ID> -c <cluster_name_or_ID> --version 651
   ```
   {: pre}
   </br>
@@ -1054,7 +1122,10 @@ As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two type
 - The {{site.data.keyword.openshiftlong_notm}} Ingress image is built on a custom implementation of the NGINX Ingress controller.
 - The Kubernetes Ingress image is built on the community Kubernetes project's implementation of the NGINX Ingress controller.
 
-The latest three versions of each image type are supported for ALBs. When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this flag, the ALB runs the default version of the Kubernetes Ingress image type.
+The latest three versions of each image type are supported for ALBs.
+* When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag.
+* To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command.
+* If you omit the `--version` flag when you enable or update an existing ALB, the ALB runs the default version of the same image that the ALB previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 To list the currently supported versions for each type of image, run the following command:
 ```
@@ -1065,12 +1136,12 @@ ibmcloud oc ingress alb versions
 Example output:
 ```
 IBM Cloud Ingress: 'auth' version
-421
+423
 
 IBM Cloud Ingress versions
-647 (default)
+651 (default)
+647
 645
-642
 
 Kubernetes Ingress versions
 0.34.1_391_iks
@@ -1079,7 +1150,7 @@ Kubernetes Ingress versions
 ```
 {: screen}
 
-The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.33.0_390_iks` indicates the most recent build of the `0.33.0` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
+The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.34.1_391_iks` indicates the most recent build of the `0.34.1` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
 
 For the changes that are included in each version of the Ingress images, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
@@ -1103,7 +1174,7 @@ You can disable or enable the automatic updates for all Ingress ALBs in your clu
   ```
   {: pre}
 
-If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. Note that you can use this command to update your ALB image to a different version, but you cannot use this command to change your ALB from one type of image to another. After you force a one-time update, automatic updates remain disabled.
+If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. Note that you can use this command to update your ALB image to a different version, but you cannot use this command to change your ALB from one type of image to another. Your ALB continues to run the image that it previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image. After you force a one-time update, automatic updates remain disabled.
 * To update all ALB pods in the cluster:
   ```
   ibmcloud oc ingress alb update -c <cluster_name_or_ID> --version <image_version>
@@ -1213,7 +1284,7 @@ You can also use these steps to create more ALBs across zones in your cluster. W
 
 3. If you later decide to scale down your ALBs, you can disable an ALB. For example, you might want to disable an ALB to use less compute resources on your worker nodes. The ALB is disabled and does not route traffic in your cluster. You can re-enable an ALB at any time by running `ibmcloud oc ingress alb enable classic --alb <ALB_ID> -c <cluster_name_or_ID>`.
   ```
-  ibmcloud oc ingress alb disable classic --alb <ALB_ID> -c <cluster_name_or_ID>
+  ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
   ```
   {: pre}
   </br>

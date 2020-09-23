@@ -975,7 +975,7 @@ subcollection: openshift
   * [Similarities between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-same)
   * [Differences between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-diff)
 * [Creating ALBs that run the Kubernetes Ingress image](/docs/openshift?topic=openshift-ingress-types#alb-comm-create)
-* [Changing existing ALBs to run Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types#alb-type-migration)
+* [Migrating your existing Ingress ALB setup to run Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types#alb-type-migration)
   * [Step 1: Copy TLS secrets](/docs/openshift?topic=openshift-ingress-types#alb-migrate-1)
   * [Step 2: Update Ingress resources](/docs/openshift?topic=openshift-ingress-types#alb-migrate-2)
   * [Step 3: Change ALB images](/docs/openshift?topic=openshift-ingress-types#alb-migrate-3)
@@ -1006,6 +1006,7 @@ subcollection: openshift
   * [Changing the number of open files for worker processes](/docs/openshift?topic=openshift-comm-ingress-annotations#max-worker-files)
 
 [Setting up {{site.data.keyword.openshiftlong_notm}} Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress)
+* [Quick start](/docs/openshift?topic=openshift-ingress#ingress-qs)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress#config_prereqs)
 * [Planning networking for single or multiple namespaces](/docs/openshift?topic=openshift-ingress#multiple_namespaces)
   * [All apps are in one namespace](/docs/openshift?topic=openshift-ingress#one-ns)
