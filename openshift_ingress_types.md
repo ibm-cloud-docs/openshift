@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-23"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -108,6 +108,9 @@ As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two type
 
 Depending on which image type you choose, the ALB behaves according to that implementation of the NGINX Ingress controller.
 
+
+Not ready to switch your ALBs to the Kubernetes Ingress image yet? When you enable or update an existing ALB, the ALB continues to run the same image that the ALB previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image. Your existing ALBs do not begin to run the Kubernetes Ingress image until you specify the Kubernetes Ingress image version in the `--version` flag when you enable them.
+{: tip}
 
 ## Comparison of the ALB image types
 {: #about-alb-images}
@@ -251,11 +254,11 @@ Create ALBs that run the community Kubernetes Ingress image in your cluster.
 
 3. Create at least one ALB in each zone that runs the Kubernetes Ingress image.
       ```
-      ibmcloud oc ingress alb create classic --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> --version  0.34.1_391_iks
+      ibmcloud oc ingress alb create classic --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> --version 0.34.1_391_iks
       ```
       {: pre}
 
-4. Verify that the new ALBs are created. In the output, copy the IP address for one ALB that has a **Build** of ` 0.34.1_391_iks`.
+4. Verify that the new ALBs are created. In the output, copy the IP address for one ALB that has a **Build** of `0.34.1_391_iks`.
   ```
   ibmcloud oc ingress alb ls -c <cluster>
   ```
@@ -276,7 +279,7 @@ Create ALBs that run the community Kubernetes Ingress image in your cluster.
 <br />
 
 
-## Changing existing ALBs to run Kubernetes Ingress
+## Migrating your existing Ingress ALB setup to run Kubernetes Ingress
 {: #alb-type-migration}
 
 Change your ALBs from the {{site.data.keyword.openshiftlong_notm}} Ingress image to the Kubernetes Ingress image.
@@ -284,7 +287,8 @@ Change your ALBs from the {{site.data.keyword.openshiftlong_notm}} Ingress image
 
 The following steps use the Ingress resource migration tool to help you create Ingress resources, including annotations, for the Kubernetes Ingress format. The migration tool also creates a new configmap resource that is formatted for the Kubernetes Ingress implementation. Then, you change the version of your ALBs to use the community Kubernetes Ingress image.
 
-<p class="important">The migration tool is intended to help you prepare your Ingress resources and configmap. However, you must verify, test, and modify your Ingress resources and configmap to ensure that they work correctly with the Kubernetes Ingress image.</br></br>After you run the migration tool, you must change your ALBs from the {{site.data.keyword.openshiftlong_notm}} Ingress image to the Kubernetes Ingress image. To change the image type, an ALB must first be disabled, and traffic to your apps might be disrupted. Make sure that you have at least two worker nodes per zone or [add more ALBs in a zone](#create_alb) so that other ALBs can continue to route traffic while one ALB is disabled at a time.</p>
+The migration tool is intended to help you prepare your Ingress resources and configmap. However, you must verify, test, and modify your Ingress resources and configmap to ensure that they work correctly with the Kubernetes Ingress image.
+{: important}
 
 ### Step 1: Copy TLS secrets
 {: #alb-migrate-1}
@@ -431,6 +435,103 @@ In the Kubernetes Ingress implementation, the ALB cannot access secrets that are
 ### Step 3: Change ALB images
 {: #alb-migrate-3}
 
+Decide whether to [create new ALBs](#alb-migrate-3-new) that run the Kubernetes Ingress and delete old ALBs, or to [migrate your existing ALBs](#alb-migrate-3-existing) to use the Kubernetes Ingress imag. If you do not have a specific requirement to keep your existing ALBs, you can prevent downtime by creating new ALBs and deleting old ALBs.
+{: shortdesc}
+
+#### Create new ALBs and delete old ALBs
+{: #alb-migrate-3-new}
+
+1. Choose the version for Kubernetes Ingress image that you want to use.<p class="note">To choose a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command.</p>
+  ```
+  ibmcloud oc ingress alb versions
+  ```
+  {: pre}
+
+2. <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Optional for classic clusters: If you do not want traffic to immediately be routed to the ALBs that you create in the next step, you can first remove the new ALBs from the DNS registration for the ALB health check subdomain.
+  1. Open the health check resource for ALBs that run the Kubernetes Ingress image.
+    ```
+    kubectl edit ing k8s-alb-health -n kube-system
+    ```
+    {: pre}
+  2. In the `spec.rules` section, change the `host` by adding any character to the health subdomain. For example, if the health subdomain is listed as `albhealth.mycluster.us-south.containers.appdomain.cloud`, you could add a `x` to the subdomain such as `xalbhealth.mycluster.us-south.containers.appdomain.cloud`. The added character ensures that the Cloudflare health check that uses this subdomain fails, and that any IP addresses for ALBs that run the Kubernetes Ingress image are consequently removed from the DNS registration for your Ingress subdomain. Because your ALBs that run the {{site.data.keyword.openshiftlong_notm}} use a different health check resource than this resource, they continue to receive traffic. After you test your new ALBs in subsequent steps, you can remove the added character to ensure that the new ALBs are included in the DNS registration again.
+  3. Save and close the file. Your changes are applied automatically.
+
+3. Create at least one ALB in each zone that runs the Kubernetes Ingress image. These ALBs read only the Ingress resources and configmap that are formatted for Kubernetes Ingress, and begin to forward traffic according to those resources.<p class="note"><img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> In VPC clusters, one VPC load balancer exposes all ALBs in your cluster. When you run one of the following commands to create an ALB, the new ALB immediately begins to receive traffic that is routed by the VPC load balancer. Consider creating only one ALB that runs the Kubernetes Ingres image and testing that ALB in the following steps before you create more ALBs.</p>
+    ```
+    ibmcloud oc ingress alb create classic --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> --version <version>
+    ```
+    {: pre}
+
+4. Verify that the new ALBs are created.
+  ```
+  ibmcloud oc ingress alb ls -c <cluster>
+  ```
+  {: pre}
+
+5. If you made any changes to the test ALB service during your test migration, such as opening non-standard ports, make those changes to these ALB services.
+  ```
+  oc edit -n kube-system svc <ALB_ID>
+  ```
+  {: pre}
+
+6. Copy the IP address for one ALB that has the Kubernetes Ingress version that you specified in the **Build** column, such as `0.34.1_391_iks`.
+  ```
+  ibmcloud oc ingress alb ls -c <cluster>
+  ```
+  {: pre}
+
+7. Using the ALB's IP address, the app path, and your domain, verify that you can successfully send traffic to your app through this ALB.
+  ```
+  curl http://<ALB_IP>/<app_path> -H "Host: ingress.subdomain.containers.appdomain.cloud"
+  ```
+  {: pre}
+
+  For example, to send a request to "myapp" by using a default Ingress subdomain:
+  ```
+  curl http://8.8.8.8/myapp -H "Host: mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud"
+  ```
+  {: pre}
+
+8. <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Optional for classic clusters: If you changed the ALB health check subdomain in step 2, remove the added character to ensure that the new ALBs are included in the DNS registration again.
+  1. Open the health check resource for ALBs that run the Kubernetes Ingress image.
+    ```
+    kubectl edit ing k8s-alb-health -n kube-system
+    ```
+    {: pre}
+  2. In the `spec.rules` section, change the `host` by removing the extra character from the health subdomain. The Cloudflare health check for this subdomain can now resume, and the IP addresses for the new ALBs are added back to the DNS registration.
+  3. Save and close the file. Your changes are applied automatically.
+
+9. After you verify that traffic is flowing correctly through your new ALBs, remove the old ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image, and clean up your original Ingress resource files that were formatted for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+  * Original ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image:
+    1. List your ALB IDs. In the output, copy the IDs for ALBs that have the {{site.data.keyword.openshiftlong_notm}} Ingress version in the **Build** column, such as `651`.
+      ```
+      ibmcloud oc ingress alb ls -c <cluster>
+      ```
+      {: pre}
+
+    2. Disable each of the old ALBs.
+      ```
+      ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
+      ```
+      {: pre}
+
+  * Original {{site.data.keyword.openshiftlong_notm}} Ingress resources:
+    ```
+    ibmcloud oc ingress alb migrate clean -c <cluster_name_or_ID> --iks-ingresses -f
+    ```
+    {: pre}
+  * Original {{site.data.keyword.openshiftlong_notm}} Ingress configmap:
+    ```
+    oc delete cm ibm-cloud-provider-ingress-cm -n kube-system
+    ```
+    {: pre}
+
+#### Migrate existing ALBs
+{: #alb-migrate-3-existing}
+
+If you choose to change your existing ALBs to the Kubernetes Ingress image, an ALB must first be disabled, and traffic to your apps might be disrupted. Make sure that you have at least two worker nodes per zone or [add more ALBs in a zone](#create_alb) so that other ALBs can continue to route traffic while one ALB is disabled at a time.
+{: important}
+
 1. Change the image type of one ALB to test traffic flow. When you change the ALB's image type, the ALB now only reads the Ingress resources and configmap that are formatted for Kubernetes Ingress, and begins to forward traffic according to those resources.
     1. List your ALB IDs. In the output, copy the ID and IP address for one ALB.
       ```
@@ -439,30 +540,36 @@ In the Kubernetes Ingress implementation, the ALB cannot access secrets that are
       {: pre}
 
     2. Disable the ALB.
-        ```
-        ibmcloud oc ingress alb disable classic --alb <ALB_ID> -c <cluster_name_or_ID>
-        ```
-        {: pre}
+      ```
+      ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
+      ```
+      {: pre}
 
-    3. Choose the version for Kubernetes Ingress image that you want to use.<p class="note">To choose a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command.</p>
+    3. Before continuing to the next step, verify that the ALB IP address is removed from the DNS registration for the Ingress subdomain.
+      ```
+      nslookup <ingress_subdomain>
+      ```
+      {: pre}
+
+    4. Choose the version for Kubernetes Ingress image that you want to use.<p class="note">To choose a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command.</p>
       ```
       ibmcloud oc ingress alb versions
       ```
       {: pre}
 
-    4. Re-enable the ALB. Specify the image version that you chose in the `--version` flag. If you omit this flag, the ALB runs the default version of the Kubernetes Ingress image.
+    5. Re-enable the ALB. Specify the image version that you chose in the `--version` flag.
         ```
         ibmcloud oc ingress alb enable classic --alb <ALB_ID> -c <cluster_name_or_ID> --version <image_version>
         ```
         {: pre}
 
-    5. If you made any changes to the test ALB service during your test migration, such as opening non-standard ports, make those changes to this ALB service.
+    6. If you made any changes to the test ALB service during your test migration, such as opening non-standard ports, make those changes to this ALB service.
       ```
       oc edit -n kube-system svc <ALB_ID>
       ```
       {: pre}
 
-    6. Using the ALB's IP address, the app path, and your domain, verify that you can successfully send traffic to your app through this ALB.
+    7. Using the ALB's IP address, the app path, and your domain, verify that you can successfully send traffic to your app through this ALB.
       ```
       curl http://<ALB_IP>/<app_path> -H "Host: ingress.subdomain.containers.appdomain.cloud"
       ```
@@ -474,7 +581,7 @@ In the Kubernetes Ingress implementation, the ALB cannot access secrets that are
       ```
       {: pre}
 
-    7. After you verify that traffic is flowing correctly through one ALB, repeat these steps for each ALB in your cluster. <p class="note">To ensure that the implementation of Ingress is consistent across your apps, make sure that you change the image for all of your ALBs in the cluster.</p>
+    8. After you verify that traffic is flowing correctly through one ALB, repeat these steps for each ALB in your cluster. <p class="note">To ensure that the implementation of Ingress is consistent across your apps, make sure that you change the image for all of your ALBs in the cluster.</p>
 
 2. Optional: Clean up your original Ingress resource files that were formatted for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
   * Original {{site.data.keyword.openshiftlong_notm}} Ingress resources:
@@ -604,7 +711,10 @@ As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two type
 - The {{site.data.keyword.openshiftlong_notm}} Ingress image is built on a custom implementation of the NGINX Ingress controller.
 - The Kubernetes Ingress image is built on the community Kubernetes project's implementation of the NGINX Ingress controller.
 
-The latest three versions of each image type are supported for ALBs. When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this flag, the ALB runs the default version of the Kubernetes Ingress image type.
+The latest three versions of each image type are supported for ALBs.
+* When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag.
+* To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command.
+* If you omit the `--version` flag when you enable or update an existing ALB, the ALB runs the default version of the same image that the ALB previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 To list the currently supported versions for each type of image, run the following command:
 ```
@@ -615,12 +725,12 @@ ibmcloud oc ingress alb versions
 Example output:
 ```
 IBM Cloud Ingress: 'auth' version
-421
+423
 
 IBM Cloud Ingress versions
-647 (default)
+651 (default)
+647
 645
-642
 
 Kubernetes Ingress versions
 0.34.1_391_iks
@@ -629,7 +739,7 @@ Kubernetes Ingress versions
 ```
 {: screen}
 
-The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.33.0_390_iks` indicates the most recent build of the `0.33.0` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
+The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.34.1_391_iks` indicates the most recent build of the `0.34.1` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
 
 For the changes that are included in each version of the Ingress images, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
@@ -653,7 +763,7 @@ You can disable or enable the automatic updates for all Ingress ALBs in your clu
   ```
   {: pre}
 
-If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. Note that you can use this command to update your ALB image to a different version, but you cannot use this command to change your ALB from one type of image to another. After you force a one-time update, automatic updates remain disabled.
+If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. Note that you can use this command to update your ALB image to a different version, but you cannot use this command to change your ALB from one type of image to another. Your ALB continues to run the image that it previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image. After you force a one-time update, automatic updates remain disabled.
 * To update all ALB pods in the cluster:
   ```
   ibmcloud oc ingress alb update -c <cluster_name_or_ID> --version <image_version>
@@ -752,18 +862,18 @@ You can also use these steps to create more ALBs across zones in your cluster. W
   Example output for a cluster in which new public ALBs with IDs of `public-crdf253b6025d64944ab99ed63bb4567b6-alb3` and `public-crdf253b6025d64944ab99ed63bb4567b6-alb4` are created in `dal10` and `dal12`:
   ```
   ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-  private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:411/ingress-auth:315   2294021       -
-  private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:411/ingress-auth:315   2234947       -
-  public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.48.228.78   dal12   ingress:411/ingress-auth:315   2294019       -
-  public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.46.17.6     dal10   ingress:411/ingress-auth:315   2234945       -
-  public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:411/ingress-auth:315   2294019       -
-  public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:411/ingress-auth:315   2234945       -
+  private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:651/ingress-auth:423   2294021       -
+  private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:651/ingress-auth:423   2234947       -
+  public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.48.228.78   dal12   ingress:651/ingress-auth:423   2294019       -
+  public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.46.17.6     dal10   ingress:651/ingress-auth:423   2234945       -
+  public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:651/ingress-auth:423   2294019       -
+  public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:651/ingress-auth:423   2234945       -
   ```
   {: screen}
 
 3. If you later decide to scale down your ALBs, you can disable an ALB. For example, you might want to disable an ALB to use less compute resources on your worker nodes. The ALB is disabled and does not route traffic in your cluster. You can re-enable an ALB at any time by running `ibmcloud oc ingress alb enable classic --alb <ALB_ID> -c <cluster_name_or_ID>`.
   ```
-  ibmcloud oc ingress alb disable classic --alb <ALB_ID> -c <cluster_name_or_ID>
+  ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
   ```
   {: pre}
   </br>
@@ -810,12 +920,12 @@ Note that all public ALBs in your cluster share the same IBM-assigned Ingress su
     Example output for a cluster in which new public ALBs are created on VLAN `2294030` in `dal12` and `2234940` in `dal10`:
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:411/ingress-auth:315   2294021
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:411/ingress-auth:315   2234947
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.48.228.78   dal12   ingress:411/ingress-auth:315   2294019
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.46.17.6     dal10   ingress:411/ingress-auth:315   2234945
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:411/ingress-auth:315   2294030
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:411/ingress-auth:315   2234940
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:651/ingress-auth:423   2294021
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:651/ingress-auth:423   2234947
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.48.228.78   dal12   ingress:651/ingress-auth:423   2294019
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.46.17.6     dal10   ingress:651/ingress-auth:423   2234945
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:651/ingress-auth:423   2294030
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:651/ingress-auth:423   2234940
     ```
     {: screen}
 
@@ -834,12 +944,12 @@ Note that all public ALBs in your cluster share the same IBM-assigned Ingress su
     Example output for a cluster in which the default public ALBs on VLAN `2294019` in `dal12` and `2234945` in `dal10`: are disabled:
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:411/ingress-auth:315   2294021
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:411/ingress-auth:315   2234947
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    false     disabled   public    169.48.228.78   dal12   ingress:411/ingress-auth:315   2294019
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    false     disabled   public    169.46.17.6     dal10   ingress:411/ingress-auth:315   2234945
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:411/ingress-auth:315   2294030
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:411/ingress-auth:315   2234940
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:651/ingress-auth:423   2294021
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:651/ingress-auth:423   2234947
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    false     disabled   public    169.48.228.78   dal12   ingress:651/ingress-auth:423   2294019
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    false     disabled   public    169.46.17.6     dal10   ingress:651/ingress-auth:423   2234945
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:651/ingress-auth:423   2294030
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:651/ingress-auth:423   2234940
     ```
     {: screen}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-09-23"
 
 keywords: openshift
 subcollection: openshift
@@ -955,8 +955,6 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_ingress_in_openshift_version_3.11_clusters}
 
 
-[Quick start for Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress-qs)
-
 [About Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress-about)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about#ingress_components)
   * [Ingress resource](/docs/openshift?topic=openshift-ingress-about#ingress-resource)
@@ -977,7 +975,7 @@ subcollection: openshift
   * [Similarities between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-same)
   * [Differences between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-diff)
 * [Creating ALBs that run the Kubernetes Ingress image](/docs/openshift?topic=openshift-ingress-types#alb-comm-create)
-* [Changing existing ALBs to run Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types#alb-type-migration)
+* [Migrating your existing Ingress ALB setup to run Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types#alb-type-migration)
   * [Step 1: Copy TLS secrets](/docs/openshift?topic=openshift-ingress-types#alb-migrate-1)
   * [Step 2: Update Ingress resources](/docs/openshift?topic=openshift-ingress-types#alb-migrate-2)
   * [Step 3: Change ALB images](/docs/openshift?topic=openshift-ingress-types#alb-migrate-3)
@@ -1008,6 +1006,7 @@ subcollection: openshift
   * [Changing the number of open files for worker processes](/docs/openshift?topic=openshift-comm-ingress-annotations#max-worker-files)
 
 [Setting up {{site.data.keyword.openshiftlong_notm}} Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress)
+* [Quick start](/docs/openshift?topic=openshift-ingress#ingress-qs)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress#config_prereqs)
 * [Planning networking for single or multiple namespaces](/docs/openshift?topic=openshift-ingress#multiple_namespaces)
   * [All apps are in one namespace](/docs/openshift?topic=openshift-ingress#one-ns)
@@ -1225,6 +1224,7 @@ subcollection: openshift
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
+* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
 * [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-portworx#px-dr)
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
 * [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
