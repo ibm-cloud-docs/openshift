@@ -481,7 +481,7 @@ To review how much compute resources are currently used on your worker node, run
 {: class="simple-tab-table"}
 {: caption="Worker node PID reserves by tier" caption-side="top"}
 {: #worker-pid-reserves}
-{: tab-title="<strong>{{site.data.keyword.openshiftshort}} 4.3 or later</strong>: Worker node PID reserves by tier"}
+{: tab-title="{{site.data.keyword.openshiftshort}} 4.3 or later: Worker node PID reserves by tier"}
 {: tab-group="Worker Node"}
 
 Sample worker node values are provided for example only. Your actual usage might vary slightly.
