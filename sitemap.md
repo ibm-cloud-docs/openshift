@@ -955,8 +955,6 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_ingress_in_openshift_version_3.11_clusters}
 
 
-[Quick start for Ingress in OpenShift 3.11](/docs/openshift?topic=openshift-ingress-qs)
-
 [About Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress-about)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about#ingress_components)
   * [Ingress resource](/docs/openshift?topic=openshift-ingress-about#ingress-resource)
