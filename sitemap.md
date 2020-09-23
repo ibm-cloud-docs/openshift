@@ -1223,6 +1223,7 @@ subcollection: openshift
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
+* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
 * [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-portworx#px-dr)
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
 * [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
