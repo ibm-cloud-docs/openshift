@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-24"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -820,9 +820,6 @@ Kubernetes Ingress field: Currently, no configuration option for the Kubernetes 
 Customize the deployment for ALBs that run the Kubernetes Ingress image by creating an `ibm-ingress-deploy-config` configmap.
 {: shortdesc}
 
-The following options are specific to ALBs that run the Kubernetes Ingress image. To modify default Ingress settings that apply to ALBs regardless of image type, such as to enable source IP preservation or configure SSL protocols, see [Modifying default Ingress settings](/docs/openshift?topic=openshift-ingress_annotation).
-{: tip}
-
 1. Get the names of the services that expose each ALB.
   ```
   oc get svc -n kube-system | grep alb
@@ -916,7 +913,7 @@ The following options are specific to ALBs that run the Kubernetes Ingress image
 Enforce authentication for your apps by configuring Ingress with [{{site.data.keyword.appid_full_notm}}](https://cloud.ibm.com/catalog/services/app-id){: external}.
 {: shortdesc}
 
-1. Choose an existing or create a new {{site.data.keyword.appid_short_notm}} instance.
+1. Choose an existing or create a new {{site.data.keyword.appid_short_notm}} instance. <p class="note">An {{site.data.keyword.appid_short_notm}} instance can be used only in one namespace in your cluster. If you want to configure {{site.data.keyword.appid_short_notm}} for Ingress resources in multiple namespaces, repeat the steps in this section to specify a unique {{site.data.keyword.appid_short_notm}} instance for the Ingress resources in each namespace.</p>
   * To use an existing instance, ensure that the service instance name contains only alphanumeric characters or hyphens (`-`), and doesn't contain spaces. To change the name, select **Rename service** from the more options menu on your service instance details page.
   * To provision a [new {{site.data.keyword.appid_short_notm}} instance](https://cloud.ibm.com/catalog/services/app-id):
       1. Replace the auto-filled **Service name** with your own unique name for the service instance. The service instance name must contain only alphanumeric characters or hyphens (`-`), and can't contain spaces.
@@ -999,7 +996,7 @@ Enforce authentication for your apps by configuring Ingress with [{{site.data.ke
        ...
        ```
        {: codeblock}
-  3. Optional: If your app accepts web requests instead of API requests, add the `nginx.ingress.kubernetes.io/auth-signin: https://$host/oauth2-<App_ID_service_instance_name>/start?rd=$escaped_request_uri` annotation.
+  3. Optional: If your app supports the [web app strategy](/docs/appid?topic=appid-key-concepts#term-web-strategy) in addition to or instead of the [API strategy](/docs/appid?topic=appid-key-concepts#term-api-strategy), add the `nginx.ingress.kubernetes.io/auth-signin: https://$host/oauth2-<App_ID_service_instance_name>/start?rd=$escaped_request_uri` annotation.
 
 6. Re-apply your Ingress resources to enforce {{site.data.keyword.appid_short_notm}} authentication.
   ```
@@ -1008,50 +1005,56 @@ Enforce authentication for your apps by configuring Ingress with [{{site.data.ke
   {: pre}
 
 7. Verify that {{site.data.keyword.appid_short_notm}} authentication is enforced for your apps.
-  * If your apps accept web requests: Access your app's URL in a web browser. If {{site.data.keyword.appid_short_notm}} is correctly applied, you are redirected to an {{site.data.keyword.appid_short_notm}} authentication log-in page.
-  * If your apps accept API requests: Use an API key to curl your app's URL. If {{site.data.keyword.appid_short_notm}} is correctly applied, your app accepts the request and returns a `200` response. If you curl your apps without an API key in the request, or if the API key is not accepted by {{site.data.keyword.appid_short_notm}}, then your app rejects the request.
+  * If your apps supports the [web app strategy](/docs/appid?topic=appid-key-concepts#term-web-strategy): Access your app's URL in a web browser. If {{site.data.keyword.appid_short_notm}} is correctly applied, you are redirected to an {{site.data.keyword.appid_short_notm}} authentication log-in page.
+  * If your apps supports the [API strategy](/docs/appid?topic=appid-key-concepts#term-api-strategy): Specify your `Bearer` access token in the Authorization header of requests to the apps. To get your access token, see the [{{site.data.keyword.appid_short_notm}} documentation](/docs/appid?topic=appid-obtain-tokens#obtain-tokens-api). If {{site.data.keyword.appid_short_notm}} is correctly applied, the request is successfully authenticated and is routed to your app. If you send requests to your apps without an access token in the Authorization header, or if the access token is not accepted by {{site.data.keyword.appid_short_notm}}, then the request is rejected.
 
-8. Optional: You can customize the default behavior of the OAuth proxy add-on by creating a custom resource.
-    1. Check the default values for the OAuth proxy settings.
-        ```
-        oc describe crd oauthproxyconfigs.cloud.ibm.com
-        ```
-        {: pre}
-    2. Create a YAML file that specifies values for the OAuth proxy settings that you want to change. If you do not want to change a setting, you can comment it out of the following YAML file. For more information about each field, see the field descriptions in the output of the previous command.
-       ```
-       apiVersion: cloud.ibm.com/v1
-       kind: OAuthProxyConfig
-       metadata:
-         name: oauth2-<App_ID_service_instance_name>
-         namespace: <project>
-       spec:
-         auth-logging: <true|false>
-         auth-logging-format: "<format>"
-         cookie-domain:
-           - <onedomain.com>
-           - <twodomain.com>
-         cookie-expire: 168h0m0s
-         cookie-samesite: "none"
-         email-domain: <[one@domain.com,two@domain.com]>
-         pass-access-token: <true|false>
-         request-logging: <true|false>
-         request-logging-format: "<format>"
-         scope: "<scope>"
-         set-xauthrequest: <true|false>
-         set-authorization-header: <true|false>
-         standard-logging: <true|false>
-         standard-logging-format: "<format>"
-         tls-secret-name: "<secret_name>"
-       ```
-       {: codeblock}
-    3. Apply the custom resource to your add-on. Your changes are applied automatically.
+8. Optional: You can customize the default behavior of the OAuth2-Proxy by creating a Kubernetes ConfigMap.
+    1. Create a ConfigMap YAML file that specifies values for the OAuth2-Proxy settings that you want to change.
+    ```yaml
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: oauth2-<App_ID_service_instance_name>
+      namespace: <ingress_resource_namespace>
+    data:
+      auth_logging: <true|false>
+      # Log all authentication attempts.
+      auth_logging_format:
+      # Format for authentication logs. For more info, see https://oauth2-proxy.github.io/oauth2-proxy/configuration#auth-log-format
+      cookie_domains:
+      # A list of optional domains to force cookies to. The longest domain that matches the request’s host is used. If there is no match for the request’s host, the shortest domain is used. Example: sub.domain.com,example.com
+      cookie_expire: "168h0m0s"
+      # Expiration timeframe for cookies. Default: "168h0m0s".
+      cookie_samesite: ""
+      # SameSite attribute for cookies. Supported values: "lax", "strict", "none", or "".
+      email_domains: ""
+      # Authenticate IDs that use the specified email domain. To authenticate IDs that use any email domain, use "*". Default: "". Example: example.com,example2.com
+      pass_access_token: <true|false>
+      # Pass the OAuth access token to the backend app via the X-Forwarded-Access-Token header.
+      request_logging: <true|false>
+      # Log all requests to the backend app.
+      request_logging_format:
+      # Format for request logs. For more info, see https://oauth2-proxy.github.io/oauth2-proxy/configuration#request-log-format
+      scope:
+      # Scope of the OAuth authentication. For more info, see https://oauth.net/2/scope/
+      set_authorization_header: <true|false>
+      # Set the Authorization Bearer response header when the app responds to the Ingress ALB, such when using the NGINX auth_request mode.
+      set_xauthrequest: <true|false>
+      # Set X-Auth-Request-User, X-Auth-Request-Email, and X-Auth-Request-Preferred-Username response headers when the app responds to the Ingress ALB, such as when using the NGINX auth_request mode.
+      standard_logging: <true|false>
+      # Log standard runtime information.
+      standard_logging_format:
+      # Format for standard logs. For more info, see https://oauth2-proxy.github.io/oauth2-proxy/configuration#standard-log-format
+      tls_secret_name:
+      # The name of a secret that contains the server-side TLS certificate and key to enable TLS between the OAuth2-Proxy and the Ingress ALB. By default, the TLS secret defined in your Ingress resources is used.
+    ```
+    {: codeblock}
+    
+    2. Apply the ConfigMap resource to your add-on. Your changes are applied automatically.
       ```
-      oc apply -f oauth2-proxy-app-id.yaml
+      oc apply -f oauth2-<App_ID_service_instance_name>.yaml
       ```
       {: pre}
-
-
-
 
 ## Preserving the source IP address
 {: #preserve_source_ip}
