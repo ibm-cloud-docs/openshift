@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-09-24"
 
 keywords: openshift, roks, rhoks, rhos, ips, vlans, networking, public gateway
 
@@ -10,30 +10,84 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -46,10 +100,10 @@ Change the pool of available portable public or private IP addresses by adding s
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to VPC clusters. For information about classic clusters, see [Configuring subnets and IP addresses for classic clusters](/docs/openshift?topic=openshift-subnets).
 {: note}
 
-## Overview of VPC networking in Red Hat OpenShift on IBM Cloud
+## Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}
 {: #vpc_basics}
 
-Understand the basic concepts of VPC networking in Red Hat OpenShift on IBM Cloud clusters.
+Understand the basic concepts of VPC networking in {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
 ### Subnets
@@ -87,6 +141,8 @@ If you plan to connect your cluster to on-premises networks through {{site.data.
 
 To specify custom pod and service subnets during cluster creation, use the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` CLI command.
 
+To see the pod and service subnets that your cluster uses, look for the `Pod Subnet` and `Service Subnet` fields in the output of `ibmcloud oc cluster get`.
+
 **Pods**:
 * Default range: In the first cluster that you create in a Gen 2 VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet.
 * Size requirements: When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
@@ -108,7 +164,7 @@ To specify custom pod and service subnets during cluster creation, use the `--po
 ### Public gateways
 {: #vpc_basics_pgw}
 
-A public gateway enables a subnet and all worker nodes that are attached to the subnet to establish outbound connections to the internet. Enable a [public gateway](/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity) on the VPC subnets that worker nodes are deployed to so that they can run default OpenShift components.
+A public gateway enables a subnet and all worker nodes that are attached to the subnet to establish outbound connections to the internet. Enable a [public gateway](/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity) on the VPC subnets that worker nodes are deployed to so that they can run default {{site.data.keyword.openshiftshort}} components.
 {: shortdesc}
 
 For example, default components such as the web console and OperatorHub use a secure, public connection to complete actions such as pulling images from remote, private registries. Also, if an {{site.data.keyword.cloud_notm}} service does not support private service endpoints, your worker nodes must be connected to a subnet that has a public gateway attached to it. The pods on those worker nodes can securely communicate with the services over the public network through the subnet's public gateway. Note that a public gateway is not required on your subnets to allow inbound network traffic from the internet to `LoadBalancer` services or ALBs.
@@ -161,7 +217,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create a VPC subnet for your
 4. Specify the number of IP addresses to create.
   * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
   * If you enter a specific IP range, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
-5. To run default OpenShift components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public service endpoints only, you must attach a public gateway to your subnet.
+5. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public service endpoints only, you must attach a public gateway to your subnet.
 6. Click **Create subnet**.
 7. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
 

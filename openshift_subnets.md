@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -162,7 +162,7 @@ To specify custom pod and service subnets during cluster creation, use the `--po
 **Pods**:
 * Default range: All services that are deployed to the cluster are assigned a private IP address in the `172.30.0.0/16` range by default.
 * Size requirements: When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
-* Range requirements: The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the VPC subnets for your worker nodes. The subnet that you choose must be within one of the following ranges:
+* Range requirements: The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the subnets for your worker nodes. The subnet that you choose must be within one of the following ranges:
     * `172.17.0.0 - 172.17.255.255`
     * `172.21.0.0 - 172.31.255.255`
     * `192.168.0.0 - 192.168.254.255`
@@ -260,7 +260,7 @@ Before you begin:
 
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          dal10     1.17.11      Default             classic
+    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          dal10     1.17.12      Default             classic
     ```
     {: screen}
 
@@ -275,7 +275,7 @@ Before you begin:
 
     ```
     ID                                                  Public IP        Private IP     Machine Type   State      Status   Zone     Version
-    prod-dal10-pa8dfcc5223804439c87489886dbbc9c07-w1    169.xx.xxx.xxx   10.xxx.xx.xxx  free           normal     Ready    dal10      1.17.11
+    prod-dal10-pa8dfcc5223804439c87489886dbbc9c07-w1    169.xx.xxx.xxx   10.xxx.xx.xxx  free           normal     Ready    dal10      1.17.12
     ```
     {: screen}
 

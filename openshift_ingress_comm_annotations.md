@@ -1010,46 +1010,45 @@ Enforce authentication for your apps by configuring Ingress with [{{site.data.ke
 
 8. Optional: You can customize the default behavior of the OAuth2-Proxy by creating a Kubernetes ConfigMap.
     1. Create a ConfigMap YAML file that specifies values for the OAuth2-Proxy settings that you want to change.
-    ```yaml
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: oauth2-<App_ID_service_instance_name>
-      namespace: <ingress_resource_namespace>
-    data:
-      auth_logging: <true|false>
-      # Log all authentication attempts.
-      auth_logging_format:
-      # Format for authentication logs. For more info, see https://oauth2-proxy.github.io/oauth2-proxy/configuration#auth-log-format
-      cookie_domains:
-      # A list of optional domains to force cookies to. The longest domain that matches the request’s host is used. If there is no match for the request’s host, the shortest domain is used. Example: sub.domain.com,example.com
-      cookie_expire: "168h0m0s"
-      # Expiration timeframe for cookies. Default: "168h0m0s".
-      cookie_samesite: ""
-      # SameSite attribute for cookies. Supported values: "lax", "strict", "none", or "".
-      email_domains: ""
-      # Authenticate IDs that use the specified email domain. To authenticate IDs that use any email domain, use "*". Default: "". Example: example.com,example2.com
-      pass_access_token: <true|false>
-      # Pass the OAuth access token to the backend app via the X-Forwarded-Access-Token header.
-      request_logging: <true|false>
-      # Log all requests to the backend app.
-      request_logging_format:
-      # Format for request logs. For more info, see https://oauth2-proxy.github.io/oauth2-proxy/configuration#request-log-format
-      scope:
-      # Scope of the OAuth authentication. For more info, see https://oauth.net/2/scope/
-      set_authorization_header: <true|false>
-      # Set the Authorization Bearer response header when the app responds to the Ingress ALB, such when using the NGINX auth_request mode.
-      set_xauthrequest: <true|false>
-      # Set X-Auth-Request-User, X-Auth-Request-Email, and X-Auth-Request-Preferred-Username response headers when the app responds to the Ingress ALB, such as when using the NGINX auth_request mode.
-      standard_logging: <true|false>
-      # Log standard runtime information.
-      standard_logging_format:
-      # Format for standard logs. For more info, see https://oauth2-proxy.github.io/oauth2-proxy/configuration#standard-log-format
-      tls_secret_name:
-      # The name of a secret that contains the server-side TLS certificate and key to enable TLS between the OAuth2-Proxy and the Ingress ALB. By default, the TLS secret defined in your Ingress resources is used.
-    ```
-    {: codeblock}
-
+       ```yaml
+       apiVersion: v1
+       kind: ConfigMap
+       metadata:
+         name: oauth2-<App_ID_service_instance_name>
+         namespace: <ingress_resource_namespace>
+       data:
+         auth_logging: <true|false>
+         # Log all authentication attempts.
+         auth_logging_format:
+         # Format for authentication logs. For more info, see https://oauth2-proxy.github.io/oauth2-proxy/configuration#auth-log-format
+         cookie_domains:
+         # A list of optional domains to force cookies to. The longest domain that matches the request’s host is used. If there is no match for the request’s host, the shortest domain is used. Example: sub.domain.com,example.com
+         cookie_expire: "168h0m0s"
+         # Expiration timeframe for cookies. Default: "168h0m0s".
+         cookie_samesite: ""
+         # SameSite attribute for cookies. Supported values: "lax", "strict", "none", or "".
+         email_domains: ""
+         # Authenticate IDs that use the specified email domain. To authenticate IDs that use any email domain, use "*". Default: "". Example: example.com,example2.com
+         pass_access_token: <true|false>
+         # Pass the OAuth access token to the backend app via the X-Forwarded-Access-Token header.
+         request_logging: <true|false>
+         # Log all requests to the backend app.
+         request_logging_format:
+         # Format for request logs. For more info, see https://oauth2-proxy.github.io/oauth2-proxy/configuration#request-log-format
+         scope:
+         # Scope of the OAuth authentication. For more info, see https://oauth.net/2/scope/
+         set_authorization_header: <true|false>
+         # Set the Authorization Bearer response header when the app responds to the Ingress ALB, such when using the NGINX auth_request mode.
+         set_xauthrequest: <true|false>
+         # Set X-Auth-Request-User, X-Auth-Request-Email, and X-Auth-Request-Preferred-Username response headers when the app responds to the Ingress ALB, such as when using the NGINX auth_request mode.
+         standard_logging: <true|false>
+         # Log standard runtime information.
+         standard_logging_format:
+         # Format for standard logs. For more info, see https://oauth2-proxy.github.io/oauth2-proxy/configuration#standard-log-format
+         tls_secret_name:
+         # The name of a secret that contains the server-side TLS certificate and key to enable TLS between the OAuth2-Proxy and the Ingress ALB. By default, the TLS secret defined in your Ingress resources is used.
+       ```
+       {: codeblock}
     2. Apply the ConfigMap resource to your add-on. Your changes are applied automatically.
       ```
       oc apply -f oauth2-<App_ID_service_instance_name>.yaml

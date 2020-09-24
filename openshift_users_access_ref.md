@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -298,8 +298,9 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | List managed add-ons, such as the Kubernetes web terminal, that are enabled in a cluster. | [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons) | [`GET /v1/clusters/{idOrName}/addons`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterAddons) |
 | Create a free or standard cluster on classic infrastructure. **Note**: The Administrator platform role for {{site.data.keyword.registrylong_notm}} and the Super User infrastructure role are also required. | [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) | [`POST /v1/clusters`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/CreateCluster) |
 | Create a classic cluster in your Virtual Private Cloud (VPC). **Note**: The Administrator platform role for VPC Infrastructure, the Administrator platform role for {{site.data.keyword.registrylong_notm}} at the account level, and the Writer or Manager service role for {{site.data.keyword.containerlong_notm}} are also required. | [`ibmcloud oc cluster create vpc-classic`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cli_cluster-create-vpc-classic) | [`POST /v2/vpc/createCluster`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcCreateCluster) |
-| Disable a specified feature for a cluster, such as the public service endpoint for the cluster master. | [`ibmcloud oc cluster feature disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_disable) | - |
-| Enable a specified feature for a cluster, such as the private service endpoint for the cluster master. | [`ibmcloud oc cluster feature enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_enable) | - |
+| Enable the private service endpoint for the cluster master. | [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable) | [`POST ​/v2​/enablePrivateServiceEndpoint`](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/v2EnablePrivateServiceEndpoint) |
+| Disable the public service endpoint for the cluster master. | [`ibmcloud oc master public-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_disable) | [`POST ​/v2​/disablePublicServiceEndpoint`](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/v2DisablePublicServiceEndpoint) |
+| Enable the public service endpoint for the cluster master. | [`ibmcloud oc master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_enable) | [`POST ​/v2​/enablePublicServiceEndpoint`](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/v2EnablePublicServiceEndpoint) |
 | Delete a cluster. | [`ibmcloud oc cluster rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_rm) | [`DELETE /v1/clusters/{idOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/RemoveCluster) |
 | Set infrastructure credentials for the {{site.data.keyword.cloud_notm}} account to access a different classic infrastructure portfolio. | [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) | [`POST /v1/credentials`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/accounts/StoreUserCredentials) |
 | Remove infrastructure credentials for the {{site.data.keyword.cloud_notm}} account to access a different classic infrastructure portfolio. | [`ibmcloud oc credential unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) | [`DELETE /v1/credentials`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/accounts/RemoveUserCredentials) |

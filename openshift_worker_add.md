@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -141,10 +141,10 @@ To resize the worker pool, change the number of worker nodes that the worker poo
     Example output for a worker pool that is in two zones, `dal10` and `dal12`, and is resized to two worker nodes per zone:
     ```
     ID                                                 Public IP        Private IP      Machine Type      State    Status  Zone    Version
-    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal10   1.17.11
-    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w8   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal10   1.17.11
-    kube-dal12-crb20b637238ea471f8d4a8b881aae4962-w9   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal12   1.17.11
-    kube-dal12-crb20b637238ea471f8d4a8b881aae4962-w10  169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal12   1.17.11
+    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal10   1.17.12
+    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w8   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal10   1.17.12
+    kube-dal12-crb20b637238ea471f8d4a8b881aae4962-w9   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal12   1.17.12
+    kube-dal12-crb20b637238ea471f8d4a8b881aae4962-w10  169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal12   1.17.12
     ```
     {: screen}
 
@@ -222,7 +222,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
    ```
    ID                                                     Primary IP     Flavor   State          Status                                        Zone       Version   
    kube-<ID_string>-<cluster_name>-<pool_name>-00000002   10.xxx.xx.xxx   c2.2x4   provisioning   Infrastructure instance status is 'pending'   us-south-1   -   
-   kube-<ID_string>-<cluster_name>-<pool_name>-00000003   10.xxx.xx.xxx   c2.2x4   normal   Ready   us-south-1   1.15.1_1511   
+   kube-<ID_string>-<cluster_name>-<pool_name>-00000003   10.xxx.xx.xxx   c2.2x4   normal   Ready   us-south-1   1.17.12_1511   
    ```
    {: screen}
 
@@ -369,8 +369,8 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
    Example output:
    ```
    ID                                                 Public IP        Private IP      Machine Type      State    Status  Zone    Version
-   kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.17.11
-   kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w8   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.17.11
+   kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.17.12
+   kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w8   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.17.12
    ```
    {: screen}
 
@@ -435,8 +435,11 @@ To add a zone with worker nodes to your worker pool:
   Name:                           mycluster
   ID:                             df253b6025d64944ab99ed63bb4567b6
   State:                          normal
+  Status:                         healthy cluster
   Created:                        2018-09-28T15:43:15+0000
   Location:                       dal10
+  Pod Subnet:                     172.30.0.0/16
+  Service Subnet:                 172.21.0.0/16
   Master URL:                     https://c3.<region>.containers.cloud.ibm.com:30426
   Public Service Endpoint URL:    https://c3.<region>.containers.cloud.ibm.com:30426
   Private Service Endpoint URL:   https://c3-private.<region>.containers.cloud.ibm.com:31140
@@ -446,7 +449,7 @@ To add a zone with worker nodes to your worker pool:
   Ingress Secret:                 mycluster-<hash>-0000
   Workers:                        6
   Worker Zones:                   dal10, dal12
-  Version:                        1.17.11_1524
+  Version:                        1.17.12_1524
   Owner:                          owner@email.com
   Resource Group ID:              a8a12accd63b437bbd6d58fb6a462ca7
   Resource Group Name:            Default

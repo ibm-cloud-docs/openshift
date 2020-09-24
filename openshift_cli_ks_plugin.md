@@ -847,91 +847,6 @@ ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.3_openshift --z
 
 </br>
 
-### `ibmcloud oc cluster feature enable`
-{: #cs_cluster_feature_enable}
-
-Enable a feature on an existing cluster. This command must be combined with one of the following subcommands for the feature that you want to enable.
-{: shortdesc}
-
-#### `ibmcloud oc cluster feature enable private-service-endpoint`
-{: #cs_cluster_feature_enable_private_service_endpoint}
-
-Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to make your cluster master privately accessible.
-{: shortdesc}
-
-To run this command:
-1. Enable [VRF](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) in your IBM Cloud infrastructure account. To check whether a VRF is already enabled, use the `ibmcloud account show` command.
-2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
-3. Run `ibmcloud oc cluster feature enable private-service-endpoint --cluster <cluster_name>`.
-4. Follow the prompt in the CLI to refresh the Kubernetes master API server.
-5. [Reload all the worker nodes](#cs_worker_reload) in your cluster to pick up the private endpoint configuration.
-
-```
-ibmcloud oc cluster feature enable private-service-endpoint --cluster CLUSTER [-q]
-```
-{: pre}
-
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. The private service endpoint is permanently enabled by default for VPC clusters.
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>Required: The name or ID of the cluster.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional: Do not show the message of the day or update reminders.</dd>
-
-<dt><code>-y</code></dt>
-<dd>Optional: Refresh the cluster master and reload worker nodes with no user prompts.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc cluster feature enable private-service-endpoint --cluster my_cluster
-```
-{: pre}
-
-#### `ibmcloud oc cluster feature enable public-service-endpoint`
-{: #cs_cluster_feature_enable_public_service_endpoint}
-
-Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to make your cluster master publicly accessible.
-{: shortdesc}
-
-After you run this command, you must refresh the API server to use the service endpoint by following the prompt in the CLI.
-
-```
-ibmcloud oc cluster feature enable public-service-endpoint --cluster CLUSTER [-q]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
-
-**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>Required: The name or ID of the cluster.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional: Do not show the message of the day or update reminders.</dd>
-
-<dt><code>-y</code></dt>
-<dd>Optional: Refresh the cluster master with no user prompts.</dd>
-</dl>
-
-**Example**:
-```
-ibmcloud oc cluster feature enable public-service-endpoint --cluster my_cluster
-```
-{: pre}
-
-</br>
-
 ### `ibmcloud oc cluster get`
 {: #cs_cluster_get}
 
@@ -1014,10 +929,91 @@ ibmcloud oc cluster ls -l ams03 -l wdc -l ap
 
 </br>
 
+### `ibmcloud oc cluster master private-service-endpoint enable`
+{: #cs_cluster_master_pse_enable}
+
+Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to make your cluster master privately accessible.
+{: shortdesc}
+
+To run this command:
+1. Enable [VRF](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) in your IBM Cloud infrastructure account. To check whether a VRF is already enabled, use the `ibmcloud account show` command.
+2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
+3. Run `ibmcloud oc cluster master private-service-endpoint enable --cluster <cluster_name>`.
+4. Follow the prompt in the CLI to refresh the Kubernetes master API server.
+5. [Reload all the worker nodes](#cs_worker_reload) in your cluster to pick up the private endpoint configuration.
+
+```
+ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. The private service endpoint is permanently enabled by default for VPC clusters.
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+
+<dt><code>-y</code></dt>
+<dd>Optional: Refresh the cluster master and reload worker nodes with no user prompts.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc cluster master private-service-endpoint enable --cluster my_cluster
+```
+{: pre}
+
+
+
+### `ibmcloud oc cluster master public-service-endpoint enable`
+{: #cs_cluster_master_pub_se_enable}
+
+Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to make your cluster master publicly accessible.
+{: shortdesc}
+
+After you run this command, you must refresh the API server to use the service endpoint by following the prompt in the CLI.
+
+```
+ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+
+<dt><code>-y</code></dt>
+<dd>Optional: Refresh the cluster master with no user prompts.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc cluster master public-service-endpoint enable --cluster my_cluster
+```
+{: pre}
+
+</br>
+
 ### `ibmcloud oc cluster master refresh`
 {: #cs_apiserver_refresh}
 
-Apply configuration changes for the Kubernetes master that are requested with the `ibmcloud oc cluster master audit-webhook set`, `cluster master audit-webhook unset`, `cluster feature enable`, or `cluster feature disable` commands. The highly available Kubernetes master components are restarted in a rolling restart. Your worker nodes, apps, and resources are not modified and continue to run.
+Apply configuration changes for the Kubernetes master that are requested with the `ibmcloud oc cluster master` commands. The highly available Kubernetes master components are restarted in a rolling restart. Your worker nodes, apps, and resources are not modified and continue to run.
 {: shortdesc}
 
 The `apiserver-refresh` and `cluster-refresh` aliases for this command are deprecated.
