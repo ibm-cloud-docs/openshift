@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-24"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -113,7 +113,7 @@ Periodically, {{site.data.keyword.openshiftshort}} releases [major, minor, or pa
 You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when updates are available, and can also check the [supported versions](/docs/openshift?topic=openshift-openshift_versions) page.
 
 **Can my worker nodes run a later version than the master?**</br>
-Your worker nodes cannot run a later `major.minor` Kubernetes version than the master. First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.
+Your worker nodes cannot run a later `major.minor` Kubernetes version than the master. Additionally, your worker nodes can be only up to two versions behind the master version (`n-2`). First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.
 
 Worker nodes can run later patch versions than the master, such as patch versions that are specific to worker nodes for security updates.
 <br>
@@ -189,7 +189,7 @@ You notice that an update is available for your worker nodes in a [classic infra
 {: note}
 
 * **Patch**: A worker node patch update includes security fixes. You can update the classic worker node to the latest patch by using the `ibmcloud oc worker reload` or `update` commands. Keep in mind that the `update` command also updates the worker node to the same `major.minor` version as the master and latest patch version, if a `major.minor` version update is also available.
-* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. You can update the classic worker node to the same patch by using the `ibmcloud oc worker update` command.
+* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can be only up to two versions behind the master version (`n-2`). You can update the classic worker node to the same patch by using the `ibmcloud oc worker update` command.
 
 For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 {: shortdesc}
@@ -402,7 +402,7 @@ You notice that an update is available for your worker nodes in a [VPC infrastru
 {: note}
 
 * **Patch**: A worker node patch update includes security fixes. You can update the VPC worker node to the latest patch by using the `ibmcloud oc worker replace` command.
-* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` flag.
+* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can be only up to two versions behind the master version (`n-2`). You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` flag.
 
 For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 
@@ -460,6 +460,9 @@ Before you update your VPC worker nodes, review the prerequisite steps.
        {: pre}
 6.  Repeat these steps for each worker node that you must update.
 7.  Optional: After the replaced worker nodes are in a **Ready** status, [resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to meet the cluster capacity that you want.
+
+If you are running Portworx in your VPC cluster, you must [manually attach your {{site.data.keyword.block_storage_is_short}} volume to your new worker node.](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
+{: note}
 
 ### Updating VPC worker nodes in the console
 {: #vpc_worker_ui}
