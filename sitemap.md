@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-23"
+lastupdated: "2020-09-25"
 
 keywords: openshift
 subcollection: openshift
@@ -652,7 +652,7 @@ subcollection: openshift
 
 
 [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets)
-* [Overview of VPC networking in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics)
+* [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics)
   * [Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets)
   * [Public gateways](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw)
   * [Network segmentation](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_segmentation)
@@ -1347,9 +1347,10 @@ subcollection: openshift
   * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
   * [Beta: `ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
   * [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2)
-  * [`ibmcloud oc cluster feature enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_feature_enable)
   * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get)
   * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
+  * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
+  * [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_enable)
   * [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh)
   * [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update)
   * [`ibmcloud oc cluster pull-secret apply`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_pull_secret_apply)

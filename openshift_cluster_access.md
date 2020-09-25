@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -202,8 +202,11 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
   Name:                           setest
   ID:                             b8dcc56743394fd19c9f3db7b990e5e3
   State:                          normal
+  Status:                         healthy cluster
   Created:                        2019-04-25T16:03:34+0000
   Location:                       wdc04
+  Pod Subnet:                     172.30.0.0/16
+  Service Subnet:                 172.21.0.0/16
   Master URL:                     https://c1-e.us-east.containers.cloud.ibm.com:31144
   Public Service Endpoint URL:    https://c1-e.us-east.containers.cloud.ibm.com:31144
   Private Service Endpoint URL:   https://c1.private.us-east.containers.cloud.ibm.com:31144
@@ -262,7 +265,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
       {: screen}
 
 6. On the client machines where you or your users run `oc` commands, add the NLB IP address and the private service endpoint URL to the `/etc/hosts` file. Do not include any ports in the IP address and URL and do not include `https://` in the URL.
-  * For OSX and Linux users:
+  * For macOS and Linux users:
     ```
     sudo nano /etc/hosts
     ```
@@ -334,8 +337,11 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
   Name:                           setest
   ID:                             b8dcc56743394fd19c9f3db7b990e5e3
   State:                          normal
+  Status:                         healthy cluster
   Created:                        2019-04-25T16:03:34+0000
   Location:                       wdc04
+  Pod Subnet:                     172.30.0.0/16
+  Service Subnet:                 172.21.0.0/16
   Master URL:                     https://c1-e.us-east.containers.cloud.ibm.com:31144
   Public Service Endpoint URL:    https://c1-e.us-east.containers.cloud.ibm.com:31144
   Private Service Endpoint URL:   https://c1.private.us-east.containers.cloud.ibm.com:31144

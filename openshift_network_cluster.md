@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-24"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -117,7 +117,7 @@ The private service endpoint makes your Kubernetes master privately accessible. 
 2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 3. Enable the private service endpoint.
    ```
-   ibmcloud oc cluster feature enable private-service-endpoint --cluster <cluster_name_or_ID>
+   ibmcloud oc cluster master private-service-endpoint enable --cluster <cluster_name_or_ID>
    ```
    {: pre}
 4. Refresh the Kubernetes master API server to use the private service endpoint. You can follow the prompt in the CLI, or manually run the following command. It might take several minutes for the master to refresh.
@@ -156,7 +156,7 @@ The public service endpoint makes your Kubernetes master publicly accessible. Yo
 If you previously disabled the public endpoint, you can re-enable it.
 1. Enable the public service endpoint.
    ```
-   ibmcloud oc cluster feature enable public-service-endpoint --cluster <cluster_name_or_ID>
+   ibmcloud oc cluster master public-service-endpoint enable --cluster <cluster_name_or_ID>
    ```
    {: pre}
 2. Refresh the Kubernetes master API server to use the public service endpoint. You can follow the prompt in the CLI, or manually run the following command. It might take several minutes for the master to refresh.
