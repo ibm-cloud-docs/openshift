@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-09-25"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -107,7 +107,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
-| 24 September 2020 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.170](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
+| 24 September 2020 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
 | 23 September 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` build to 651 and the `ingress-auth` build to 423](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li><li>**New! Reservations and limits for PIDs**: Worker nodes that run {{site.data.keyword.openshiftshort}} 4.3 or later or later set [process ID (PID) reservations and limits that vary by flavor](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.</li></ul> |
 | 22 September 2020 | **Unsupported: Kubernetes version 1.15**: Clusters that run version 1.15 are unsupported. To continue receiving important security updates and support, you must [update the cluster to a supported version](/docs/containers?topic=containers-cs_versions#prep-up) immediately.|
 | 21 September 2020 | **Versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.20_1518_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4420_1518), [`4.3.35_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4335_1539), and [`3.11.272_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1567). |
