@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,10 +94,8 @@ subcollection: openshift
 # Classic: Opening required ports and IP addresses in your firewall
 {: #firewall}
 
-
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This firewall information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your firewall for VPC clusters](/docs/openshift?topic=openshift-vpc-firewall).
 {: note}
-
 
 <br>
 
@@ -352,7 +350,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
           <tr>
             <td>UK South</td>
             <td>lon02, lon04, lon05, lon06</td>
-            <td><code>141.125.77.58, 158.175.65.170, 158.175.111.42, 158.175.125.194, 158.176.71.242, 158.176.94.26, 158.176.95.146, 159.122.224.242, 159.122.242.78</code></td>
+            <td><code>141.125.66.26, 141.125.77.58, 158.175.65.170, 158.175.77.178, 158.175.111.42, 158.175.125.194, 158.176.71.242, 158.176.94.26, 158.176.95.146, 158.176.123.130, 159.122.224.242, 159.122.242.78</code></td>
           </tr>
           <tr>
             <td>US East</td>
@@ -362,7 +360,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
           <tr>
             <td>US South</td>
             <td>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
-            <td><code>169.57.13.10, 169.57.100.18</code><br><code>169.57.151.10, 169.57.154.98</code><br><code>169.45.67.210, 169.45.88.98</code><br><code>169.62.82.197, 169.62.87.170</code><br><br><code>52.116.254.234, 52.117.232.194, 52.117.240.106, 169.46.7.238, 169.46.24.210, 169.46.27.234, 169.46.68.234, 169.46.110.218, 169.47.70.10, 169.47.71.138, 169.47.109.34, 169.47.232.210, 169.47.239.34, 169.48.110.250, 169.48.143.218, 169.48.161.242, 169.48.230.146, 169.48.244.66, 169.59.219.90, 169.60.128.2, 169.60.170.234, 169.61.29.194, 169.61.60.130, 169.61.175.106, 169.61.177.2, 169.61.228.138, 169.62.166.98, 169.62.189.26, 169.62.206.234, 169.63.47.250</code></td>
+            <td><code>169.57.13.10, 169.57.100.18</code><br><code>169.57.151.10, 169.57.154.98</code><br><code>169.45.67.210, 169.45.88.98</code><br><code>169.62.82.197, 169.62.87.170</code><br><br><code>52.116.231.210, 52.116.254.234, 52.117.28.138, 52.117.232.194, 52.117.240.106, 169.46.7.238, 169.46.24.210, 169.46.27.234, 169.46.68.234, 169.46.110.218, 169.47.70.10, 169.47.71.138, 169.47.109.34, 169.47.229.90, 169.47.232.210, 169.47.239.34, 169.48.110.250, 169.48.143.218, 169.48.161.242, 169.48.230.146, 169.48.244.66, 169.59.219.90, 169.60.128.2, 169.60.170.234, 169.61.29.194, 169.61.60.130, 169.61.175.106, 169.61.177.2, 169.61.228.138, 169.62.166.98, 169.62.189.26, 169.62.206.234, 169.63.47.250</code></td>
           </tr>
           </tbody>
         </table>
@@ -477,7 +475,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
           <tr>
             <td>UK South</td>
             <td>lon02, lon04, lon05, lon06</td>
-            <td><code>166.9.34.5, 166.9.34.6, 166.9.34.17, 166.9.34.42, 166.9.36.10, 166.9.36.11, 166.9.36.12, 166.9.36.13, 166.9.36.23, 166.9.36.54, 166.9.38.6, 166.9.38.7, 166.9.38.18, 166.9.38.47</code></td>
+            <td><code>166.9.34.5, 166.9.34.6, 166.9.34.17, 166.9.34.42, 166.9.34.50, 166.9.36.10, 166.9.36.11, 166.9.36.12, 166.9.36.13, 166.9.36.23, 166.9.36.54, 166.9.36.65, 166.9.38.6, 166.9.38.7, 166.9.38.18, 166.9.38.47, 166.9.38.54</code></td>
           </tr>
           <tr>
             <td>US East</td>
@@ -487,7 +485,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
           <tr>
             <td>US South</td>
             <td>hou02<br>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
-            <td><code>166.9.15.74</code><br><code>166.9.15.76, 166.9.16.38</code><br><code>166.9.12.143, 166.9.16.5</code><br><code>166.9.12.144, 166.9.16.39</code><br><code>166.9.15.75, 166.9.12.26</code><br><br><code>166.9.12.140, 166.9.12.141, 166.9.12.142, 166.9.12.151, 166.9.12.193, 166.9.12.196, 166.9.12.99, 166.9.13.31, 166.9.13.93, 166.9.13.94, 166.9.14.122, 166.9.14.125, 166.9.14.202, 166.9.14.204, 166.9.14.205, 166.9.14.95, 166.9.15.130, 166.9.15.69, 166.9.15.70, 166.9.15.71, 166.9.15.72, 166.9.15.73, 166.9.16.113, 166.9.16.137, 166.9.16.149, 166.9.16.183, 166.9.16.184, 166.9.16.185, 166.9.17.2, 166.9.17.35, 166.9.17.37, 166.9.17.39</code></td>
+            <td><code>166.9.15.74</code><br><code>166.9.15.76, 166.9.16.38</code><br><code>166.9.12.143, 166.9.16.5</code><br><code>166.9.12.144, 166.9.16.39</code><br><code>166.9.15.75, 166.9.12.26</code><br><br><code>166.9.12.140, 166.9.12.141, 166.9.12.142, 166.9.12.151, 166.9.12.193, 166.9.12.196, 166.9.12.99, 166.9.13.31, 166.9.13.93, 166.9.13.94, 166.9.14.122, 166.9.14.125, 166.9.14.202, 166.9.14.204, 166.9.14.205, 166.9.14.95, 166.9.15.130, 166.9.15.69, 166.9.15.70, 166.9.15.71, 166.9.15.72, 166.9.15.73, 166.9.16.113, 166.9.16.137, 166.9.16.149, 166.9.16.183, 166.9.16.184, 166.9.16.185, 166.9.17.2, 166.9.17.35, 166.9.17.37, 166.9.17.39, 166.9.48.50, 166.9.51.16, 166.9.58.11</code></td>
           </tr>
           </tbody>
         </table>
@@ -558,10 +556,10 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
         ```
         ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.17.11   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.17.11  
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.17.11   
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.17.11  
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.17.12   
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.17.12  
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.17.12   
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.17.12  
         ```
         {: screen}
     3.  List the VLAN subnets for each unique network ID.
