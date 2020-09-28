@@ -1129,25 +1129,25 @@ Message: 50% throttling of CPU in namespace kube-system for container ibmcloud-b
 {: tsCauses}
 The default Block storage plug-in resource requests are not sufficient. The Block storage plug-in and driver are installed with the following default resource request and limit values.
 
-   ```yaml
-   plugin:
-      resources:
-         requests:
-            memory: 100Mi
-            cpu: 50m
-         limits:
-            memory: 300Mi
-            cpu: 300m
-   driver:
-      resources:
-         requests:
-            memory: 50Mi
-            cpu: 25m
-         limits:
-            memory: 200Mi
-            cpu: 100m
-   ```
-   {: codeblock}
+```yaml
+plugin:
+  resources:
+    requests:
+      memory: 100Mi
+      cpu: 50m
+    limits:
+      memory: 300Mi
+      cpu: 300m
+driver:
+  resources:
+    requests:
+      memory: 50Mi
+      cpu: 25m
+    limits:
+      memory: 200Mi
+      cpu: 100m
+```
+{: codeblock}
 
 {: tsResolve}
 Remove and reinstall the Helm chart with increased resource requests and limits.
