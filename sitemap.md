@@ -995,7 +995,6 @@ subcollection: openshift
 [Beta: Kubernetes Ingress annotations](/docs/openshift?topic=openshift-comm-ingress-annotations)
 * [Customizing routing with annotations](/docs/openshift?topic=openshift-comm-ingress-annotations#annotations)
 * [Customizing the ALB deployment](/docs/openshift?topic=openshift-comm-ingress-annotations#comm-customize-deploy)
-* [Adding {{site.data.keyword.appid_short_notm}} authentication to apps](/docs/openshift?topic=openshift-comm-ingress-annotations#app-id)
 * [Preserving the source IP address](/docs/openshift?topic=openshift-comm-ingress-annotations#preserve_source_ip)
 * [Configuring SSL protocols and SSL ciphers at the HTTP level](/docs/openshift?topic=openshift-comm-ingress-annotations#ssl_protocols_ciphers)
 * [Sending your custom certificate to legacy clients](/docs/openshift?topic=openshift-comm-ingress-annotations#default_server_cert)
