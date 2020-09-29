@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-09-28"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -388,6 +388,8 @@ To update worker nodes from the console:
 3.  From the **Clusters** page, click your cluster.
 4.  From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
 5.  From the action bar, click **Update**.
+
+If you have Portworx installed in your cluster, you must restart the Portworx pods on updated worker nodes. For more information, see [Portworx limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations).
 
 <br />
 

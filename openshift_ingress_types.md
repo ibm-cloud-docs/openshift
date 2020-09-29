@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-23"
+lastupdated: "2020-09-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -155,29 +155,22 @@ Review the following important differences between the {{site.data.keyword.opens
 Create ALBs that run the community Kubernetes Ingress image in your cluster.
 {: shortdesc}
 
-1. To use TLS termination, copy your TLS secrets. In the Kubernetes Ingress implementation, the ALB cannot access secrets that are in a different project than the Ingress resource. If you use the default Ingress secret and your Ingress resources are deployed in projects other than `default`, or if you import a secret from {{site.data.keyword.cloudcerts_long_notm}} and your Ingress resources are deployed in projects other than `ibm-cert-store`, you must copy the secret to those projects.<p class="tip">The next time that you import a certificate from {{site.data.keyword.cloudcerts_long_notm}}, you can use the `--namespace` flag in the `ibmcloud oc ingress secret create` command to create the secret directly in the correct namespace. For more information about TLS certificates, see [Managing TLS certificates and secrets](#manage_certs).</p>
-  * **Default secret for your cluster**:
-    1. Get the name of the secret.
+1. To use TLS termination, re-create your TLS secrets. In the Kubernetes Ingress implementation, the ALB cannot access secrets that are in a different project than the Ingress resource. If you use the default Ingress secret and your Ingress resources are deployed in projects other than `default`, or if you import a secret from {{site.data.keyword.cloudcerts_long_notm}} and your Ingress resources are deployed in projects other than `ibm-cert-store`, you must re-create the secret in those projects. For more information, see [Managing TLS certificates and secrets](#manage_certs).
+    1. Get the CRN of the secret for your subdomain.
       ```
-      ibmcloud oc cluster get -c <cluster> | grep Ingress
-      ```
-      {: pre}
-    2. Copy the secret to the project where your Ingress resources are deployed. If you have Ingress resources in multiple projects, repeat this command for each project.
-      ```
-      oc get secret <secret_name> -n default -o yaml | sed 's/default/<new-project>/g' | oc -n <new-project> create -f -
+      ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace default
       ```
       {: pre}
-  * **Imported secret from {{site.data.keyword.cloudcerts_long_notm}}**:
-    1. Get the name of the secret.
+    2. Using the CRN, create a secret for the certificate in the project where your Ingress resources are deployed. If you have Ingress resources in multiple projects, repeat this command for each project.
       ```
-      ibmcloud oc ingress secret ls -c <cluster>
-      ```
-      {: pre}
-    2. Copy the secret to the project where your Ingress resources are deployed. If you have Ingress resources in multiple projects, repeat this command for each project.
-      ```
-      oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/ibm-cert-store/<new-project>/g' | oc -n <new-project> create -f -
+      ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project
       ```
       {: pre}
+  6. Using the CRN, create a secret for the certificate in the project where your Ingress resources are deployed. If you have Ingress resources in multiple projects, repeat this command for each project.
+    ```
+    ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project
+    ```
+    {: pre}
 
 2. Create an Ingress resource that is formatted for use with ALBs that run the Kubernetes Ingress image.
   1. Define an Ingress resource file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
@@ -293,32 +286,19 @@ The migration tool is intended to help you prepare your Ingress resources and co
 ### Step 1: Copy TLS secrets
 {: #alb-migrate-1}
 
-To use TLS termination, copy your TLS secrets.
+To use TLS termination, re-create your TLS secrets.
 {: shortdesc}
 
-In the Kubernetes Ingress implementation, the ALB cannot access secrets that are in a different project than the Ingress resource. If you use the default Ingress secret and your Ingress resources are deployed in projects other than `default`, or if you import a secret from {{site.data.keyword.cloudcerts_long_notm}} and your Ingress resources are deployed in projects other than `ibm-cert-store`, you must copy the secret to those projects. For more information about TLS certificates, see [Managing TLS certificates and secrets](#manage_certs).
+In the Kubernetes Ingress implementation, the ALB cannot access secrets that are in a different project than the Ingress resource. If you use the default Ingress secret and your Ingress resources are deployed in projects other than `default`, or if you import a secret from {{site.data.keyword.cloudcerts_long_notm}} and your Ingress resources are deployed in projects other than `ibm-cert-store`, you must re-create the secret in those projects. For more information, see [Managing TLS certificates and secrets](#manage_certs).
 
-**Default secret for your cluster**:
-1. Get the name of the secret.
+1. Get the CRN of the Ingress secret for your default Ingress subdomain. To get the name of the default secret, run `ibmcloud oc cluster get -c <cluster> | grep Ingress`.
   ```
-  ibmcloud oc cluster get -c <cluster> | grep Ingress
-  ```
-  {: pre}
-2. Copy the secret to the project where your Ingress resources are deployed. If you have Ingress resources in multiple projects, repeat this command for each project.
-  ```
-  oc get secret <secret_name> -n default -o yaml | sed 's/default/<new-project>/g' | oc -n <new-project> create -f -
+  ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace default
   ```
   {: pre}
-
-**Imported secret from {{site.data.keyword.cloudcerts_long_notm}}**:
-1. Get the name of the secret.
+2. Using the CRN, create a secret for the certificate in the project where your Ingress resources are deployed. If you have Ingress resources in multiple projects, repeat this command for each project.
   ```
-  ibmcloud oc ingress secret ls -c <cluster>
-  ```
-  {: pre}
-2. Copy the secret to the project where your Ingress resources are deployed. If you have Ingress resources in multiple projects, repeat this command for each project.
-  ```
-  oc get secret <secret_name> -n ibm-cert-store -o yaml | sed 's/ibm-cert-store/<new-project>/g' | oc -n <new-project> create -f -
+  ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project
   ```
   {: pre}
 
@@ -611,15 +591,25 @@ For an {{site.data.keyword.cloudcerts_short}} instance to be created for your ne
 When the creation of the {{site.data.keyword.cloudcerts_short}} instance is triggered, the {{site.data.keyword.cloudcerts_short}} instance might take up to an hour to become visible in the {{site.data.keyword.cloud_notm}} console.
 {: note}
 
-The IBM-generated certificate for the default Ingress subdomain that exists in your cluster's {{site.data.keyword.cloudcerts_short}} instance. However, you have full control over your cluster's {{site.data.keyword.cloudcerts_short}} instance and can use {{site.data.keyword.cloudcerts_short}} to upload your own TLS certificates or order TLS certificates for your custom domains.
-
 To view your {{site.data.keyword.cloudcerts_short}} instance:
 1. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
 2. Expand the **Services** row.
 3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
 4. Click the instance's name. The **Your certificates** details page opens.
 
-To manage the secrets for TLS certificates in your cluster, you can use the `ibmcloud oc ingress secret` set of commands. For example, you can use the `ibmcloud oc ingress secret create` command to import a certificate from {{site.data.keyword.cloudcerts_short}} to a Kubernetes secret in your cluster, or the `ibmcloud oc ingress secret ls -c <cluster>` command to view all Ingress secrets for TLS certificates in your cluster.
+The IBM-generated certificate for the default Ingress subdomain exists in your cluster's {{site.data.keyword.cloudcerts_short}} instance. However, you have full control over your cluster's {{site.data.keyword.cloudcerts_short}} instance and can use {{site.data.keyword.cloudcerts_short}} to upload your own TLS certificates or order TLS certificates for your custom domains.
+
+To manage the secrets for TLS certificates in your cluster, you can use the `ibmcloud oc ingress secret` set of commands.
+* For example, you can import a certificate from {{site.data.keyword.cloudcerts_short}} to a Kubernetes secret in your cluster:
+  ```
+  ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <crn> --name <secret_name> --namespace project
+  ```
+  {: pre}
+* To view all Ingress secrets for TLS certificates in your cluster:
+  ```
+  ibmcloud oc ingress secret ls -c <cluster>
+  ```
+  {: pre}
 
 Do not delete your cluster's {{site.data.keyword.cloudcerts_short}} instance. When you delete your cluster, the {{site.data.keyword.cloudcerts_short}} instance for your cluster is also automatically deleted. Any certificates that are stored in the {{site.data.keyword.cloudcerts_short}} instance for your cluster are deleted when the {{site.data.keyword.cloudcerts_short}} instance is deleted.
 {: important}
@@ -646,7 +636,7 @@ ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace def
 ```
 {: pre}
 
-In the Kubernetes Ingress implementation, ALBs can access TLS secrets only in the same project that the Ingress resource is deployed to. If your Ingress resources are deployed in projects other than `default`, you must copy the default TLS secret to those projects by running `oc get secret <default_Ingress_secret_name> -n default -o yaml | sed 's/default/<new-project>/g' | oc -n <new-project> create -f -` in each project.
+In the Kubernetes Ingress implementation, ALBs can access TLS secrets only in the same project that the Ingress resource is deployed to. If your Ingress resources are deployed in projects other than `default`, you must create a secret for the default TLS certificate in those projects by running `ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project` in each project.
 {: note}
 
 The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain.

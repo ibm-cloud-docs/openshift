@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -226,8 +226,8 @@ Review the options to debug persistent storage and find the root causes for fail
 
       Example output:
       ```
-      Client Version: version.Info{Major:"1", Minor:"1.17", GitVersion:"v1.17.11", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
-      Server Version: version.Info{Major:"1", Minor:"1.17", GitVersion:"v1.17.11+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+      Client Version: version.Info{Major:"1", Minor:"1.17", GitVersion:"v1.17.12", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
+      Server Version: version.Info{Major:"1", Minor:"1.17", GitVersion:"v1.17.12+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
       ```
       {: screen}
 
@@ -1112,6 +1112,61 @@ If you see a `permission denied` error, you do not have the required `read`, `wr
 
 3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos).
 
+## Block storage: Installing the Block storage plug-in Helm chart gives CPU throttling warnings
+{: #block_helm_cpu}
+
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
+{: tsSymptoms}
+When you install the Block storage Helm chart, the installation gives a warning similar to the following:
+
+```
+Message: 50% throttling of CPU in namespace kube-system for container ibmcloud-block-storage-driver-container in pod ibmcloud-block-storage-driver-1abab.
+```
+{: screen}
+
+{: tsCauses}
+The default Block storage plug-in resource requests are not sufficient. The Block storage plug-in and driver are installed with the following default resource request and limit values.
+
+```yaml
+plugin:
+  resources:
+    requests:
+      memory: 100Mi
+      cpu: 50m
+    limits:
+      memory: 300Mi
+      cpu: 300m
+driver:
+  resources:
+    requests:
+      memory: 50Mi
+      cpu: 25m
+    limits:
+      memory: 200Mi
+      cpu: 100m
+```
+{: codeblock}
+
+{: tsResolve}
+Remove and reinstall the Helm chart with increased resource requests and limits.
+
+1. Remove the Helm chart.
+   ```
+   helm uninstall <release_name> iks-charts/ibmcloud-block-storage-plugin -n <namespace>
+   ```
+   {: pre}
+
+2. Reinstall the Helm chart and increase the resource requests and limits by using the `--set` flag when running `helm install`. The following example command sets the `plugin.resources.requests.memory` value to `200Mi` and the `plugin.resources.requests.cpu` value to `100m`. You can pass multiple values by using the `--set` flag for each value that you want to pass.
+
+   ```
+   helm install <release_name> iks-charts/ibmcloud-block-storage-plugin -n <namespace> --set plugin.resources.requests.memory=200Mi --set plugin.resources.requests.cpu=100m
+   ```
+   {: pre}
+
+
+
 ## Object storage: Installing the Object storage plug-in fails
 {: #cos_plugin_fails}
 
@@ -1394,7 +1449,7 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
    ```
    {: pre}
 
-2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [recreate your secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret).
+2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret).
 
 3. Check your YAML configuration file for your PVC and pod to verify that you used the correct secret.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-25"
+lastupdated: "2020-09-29"
 
 keywords: openshift
 subcollection: openshift
@@ -995,7 +995,6 @@ subcollection: openshift
 [Beta: Kubernetes Ingress annotations](/docs/openshift?topic=openshift-comm-ingress-annotations)
 * [Customizing routing with annotations](/docs/openshift?topic=openshift-comm-ingress-annotations#annotations)
 * [Customizing the ALB deployment](/docs/openshift?topic=openshift-comm-ingress-annotations#comm-customize-deploy)
-* [Adding {{site.data.keyword.appid_short_notm}} authentication to apps](/docs/openshift?topic=openshift-comm-ingress-annotations#app-id)
 * [Preserving the source IP address](/docs/openshift?topic=openshift-comm-ingress-annotations#preserve_source_ip)
 * [Configuring SSL protocols and SSL ciphers at the HTTP level](/docs/openshift?topic=openshift-comm-ingress-annotations#ssl_protocols_ciphers)
 * [Sending your custom certificate to legacy clients](/docs/openshift?topic=openshift-comm-ingress-annotations#default_server_cert)
@@ -1521,6 +1520,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.23_1519_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4423_1519)
   * [Changelog for master fix pack 4.4.20_1518_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4420_1518)
   * [Changelog for worker node fix pack 4.4.20_1517_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4420_1517)
   * [Changelog for worker node fix pack 4.4.18_1516_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4418_1516)
@@ -1530,6 +1530,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.38_1540_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1540)
   * [Changelog for master fix pack 4.3.35_1539_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4335_1539)
   * [Changelog for worker node fix pack 4.3.35_1538_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4335_1538)
   * [Changelog for worker node fix pack 4.3.33_1537_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4333_1537)
@@ -1550,6 +1551,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.286_1568_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1568)
   * [Changelog for master fix pack 3.11.272_1567_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1567)
   * [Changelog for worker node fix pack 3.11.272_1566_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1566)
   * [Changelog for worker node fix pack 3.11.272_1565_openshift, released 31 August 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1565)
@@ -1830,6 +1832,7 @@ subcollection: openshift
   * [Block storage: Block storage changes to read-only](/docs/openshift?topic=openshift-cs_troubleshoot_storage#readonly_block)
   * [Block storage: Mounting existing block storage to a pod fails due to the wrong file system](/docs/openshift?topic=openshift-cs_troubleshoot_storage#block_filesystem)
 * [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_helm_fails)
+* [Block storage: Installing the Block storage plug-in Helm chart gives CPU throttling warnings](/docs/openshift?topic=openshift-cs_troubleshoot_storage#block_helm_cpu)
 * [Object storage: Installing the Object storage plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_plugin_fails)
 * [Object storage: PVC remains in a pending state](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_pvc_pending)
   * [Object storage: PVC or pod creation fails due to not finding the Kubernetes secret](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_secret_access_fails)
