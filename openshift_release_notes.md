@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-28"
+lastupdated: "2020-09-29"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -108,6 +108,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 | Date | Description |
 | ---- | ----------- |
 | XX September 2020 | <ul><li>**Gateway firewalls and Calico policies**: For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.</li></ul> |
+| 28 September 2020 | **Versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.23_1519_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4423_1519), [`4.3.38_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1540), and [`3.11.286_1568_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1568). |
 | 24 September 2020 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
 | 23 September 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` build to 651 and the `ingress-auth` build to 423](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li><li>**New! Reservations and limits for PIDs**: Worker nodes that run {{site.data.keyword.openshiftshort}} 4.3 or later or later set [process ID (PID) reservations and limits that vary by flavor](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.</li></ul> |
 | 22 September 2020 | **Unsupported: Kubernetes version 1.15**: Clusters that run version 1.15 are unsupported. To continue receiving important security updates and support, you must [update the cluster to a supported version](/docs/containers?topic=containers-cs_versions#prep-up) immediately.|
