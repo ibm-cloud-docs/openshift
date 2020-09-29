@@ -106,7 +106,7 @@ The following table shows the changes that are included in version 1.0.1 of the 
 
 | Previous | Current | Description |
 | -------- | ------- | ----------- |
-| N/A | 1.0.1 | <ul><li>The cluster autoscaler is available as a [managed add-on](/docs/openshift?topic=openshift-ca).</li><li>The add-on can be used with the following {{site.data.keyword.openshiftlong_notm}} versions: OpenShift versions 3.11. - 4.x.</li></ul> |
+| N/A | 1.0.1 | <ul><li>The cluster autoscaler is available as a [managed add-on](/docs/openshift?topic=openshift-ca).</li><li>The add-on can be used with the following {{site.data.keyword.openshiftlong_notm}} versions: OpenShift versions 3.11.</li></ul> |
 {: summary="The rows are read from left to right. The first column is the previous version number of the component. The second column is the current version number of the component. The third column contains a brief description of the change made to the component."}
 {: caption="Cluster autoscaler 1.0.1" caption-side="top"}
 
