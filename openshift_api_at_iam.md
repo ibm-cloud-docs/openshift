@@ -338,7 +338,7 @@ Review the following observability logging API methods, their required actions i
 |	GET​/v2​/observe​/logging​/getConfig	|	Show the details of an existing LogDNA logging configuration.	|	containers-kubernetes.cluster.read	|	-	|
 |	GET​/v2​/observe​/logging​/getConfigs	|	List all LogDNA logging configurations for a cluster.	|	containers-kubernetes.cluster.read	|	-	|
 |	POST​/v2​/observe​/logging​/createConfig	|	Create a LogDNA logging configuration for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.logging.create 	|
-|	POST​/v2​/observe​/logging​/discoverAgent	|	Discover a LogDNA agent previously deployed in the cluster.	|	containers-kubernetes.cluster.create	|	sent an event, but no name	|
+|	POST​/v2​/observe​/logging​/discoverAgent	|	Discover a LogDNA agent previously deployed in the cluster.	|	containers-kubernetes.cluster.create	|	-	|
 |	POST​/v2​/observe​/logging​/modifyConfig	|	Update a LogDNA logging configuration in the cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.logging.modify 	|
 |	POST​/v2​/observe​/logging​/removeConfig	|	Remove a LogDNA logging configuration from a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.logging.remove 	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
@@ -358,7 +358,7 @@ Review the following observability monitoring API methods, their required action
 |	GET​/v2​/observe​/monitoring​/getConfig	|	Show the details of an existing Sysdig monitoring configuration.	|	containers-kubernetes.cluster.read	|	-	|
 |	GET​/v2​/observe​/monitoring​/getConfigs	|	List all Sysdig monitoring configurations for a cluster.	|	containers-kubernetes.cluster.read	|	-	|
 |	POST​/v2​/observe​/monitoring​/createConfig	|	Create a Sysdig monitoring configuration for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.monitoring.create 	|
-|	POST​/v2​/observe​/monitoring​/discoverAgent	|	Discover a Sysdig agent previously deployed in the cluster.	|	containers-kubernetes.cluster.create	|	sent an event, but no name	|
+|	POST​/v2​/observe​/monitoring​/discoverAgent	|	Discover a Sysdig agent previously deployed in the cluster.	|	containers-kubernetes.cluster.create	|	-	|
 |	POST​/v2​/observe​/monitoring​/modifyConfig	|	Update a Sysdig monitoring configuration in the cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.monitoring.modify 	|
 |	POST​/v2​/observe​/monitoring​/removeConfig	|	Remove a Sysdig monitoring configuration from a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.monitoring.remove 	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
