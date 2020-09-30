@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-09-30"
 
 keywords: openshift
 subcollection: openshift
@@ -1601,6 +1601,41 @@ subcollection: openshift
 * [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101)
 
 
+## IAM and Activity Tracker events
+{: #sitemap_iam_and_activity_tracker_events}
+
+
+[User access permissions](/docs/openshift?topic=openshift-access_reference)
+* [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
+* [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
+* [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
+* [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
+* [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
+* [Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
+* [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
+
+[{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
+* [Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
+* [Tracking private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
+* [Tracking storage resource events](/docs/openshift?topic=openshift-at_events#storage-events)
+* [Tracking logging and monitoring configuration events](/docs/openshift?topic=openshift-at_events#at-lm)
+* [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
+
+[IAM and {{site.data.keyword.cloudaccesstrailshort}} action by API method](/docs/openshift?topic=openshift-api-at-iam)
+* [Account](/docs/openshift?topic=openshift-api-at-iam#ks-account)
+* [Cluster](/docs/openshift?topic=openshift-api-at-iam#ks-cluster)
+* [Ingress](/docs/openshift?topic=openshift-api-at-iam#ks-ingress)
+* [Ingress ALB](/docs/openshift?topic=openshift-api-at-iam#ks-alb)
+* [Fluentd logging](/docs/openshift?topic=openshift-api-at-iam#ks-logging)
+* [NLB DNS](/docs/openshift?topic=openshift-api-at-iam#ks-nlb-dns)
+* [Observability: {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-api-at-iam#ks-observability-logging)
+* [Observability: {{site.data.keyword.mon_short}}](/docs/openshift?topic=openshift-api-at-iam#ks-observability-monitoring)
+* [Private service endpoint allowlist](/docs/openshift?topic=openshift-api-at-iam#ks-acl)
+* [Satellite](/docs/openshift?topic=openshift-api-at-iam#sat-api)
+* [Storage](/docs/openshift?topic=openshift-api-at-iam#ks-storage)
+* [Worker nodes and worker pools](/docs/openshift?topic=openshift-api-at-iam#ks-workers)
+
+
 ## Locations
 {: #sitemap_locations}
 
@@ -1623,38 +1658,6 @@ subcollection: openshift
 
 
 [Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations)
-
-
-## User access permissions
-{: #sitemap_user_access_permissions}
-
-
-[User access permissions](/docs/openshift?topic=openshift-access_reference)
-
-[Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
-
-[{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
-
-[{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
-
-[Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
-
-[{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
-
-[Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
-
-[Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
-
-
-## {{site.data.keyword.at_full_notm}} events
-{: #sitemap__events}
-
-
-[{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
-
-[Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
-
-[Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
 
 
 ## Default service settings for OpenShift components
@@ -1737,8 +1740,10 @@ subcollection: openshift
   * [`kubectl` or `oc` commands do not work](/docs/openshift?topic=openshift-cs_troubleshoot#kubectl_fails)
   * [Time out when trying to connect to a pod](/docs/openshift?topic=openshift-cs_troubleshoot#roks_timeout)
   * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_admin_config)
-* [Unable to create a cluster or manage worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot#cs_credentials)
-* [Unable to create a cluster or manage worker nodes due to paid account error](/docs/openshift?topic=openshift-cs_troubleshoot#cs_totp)
+* [Unable to create or delete worker nodes or clusters](/docs/openshift?topic=openshift-cs_troubleshoot#infra_errors)
+  * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot#cs_credentials)
+  * [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-cs_troubleshoot#orphaned)
+  * [Unable to create or delete worker nodes due to paid account error](/docs/openshift?topic=openshift-cs_troubleshoot#cs_totp)
 * [Unable to create a cluster in the console due to `No VPC is available` error](/docs/openshift?topic=openshift-cs_troubleshoot#ts_no_vpc)
 * [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create)
 * [Cluster create error cannot pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-cs_troubleshoot#ts_image_pull_create)
@@ -1751,11 +1756,12 @@ subcollection: openshift
 [Worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters)
 * [Debugging worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes)
 * [Common issues with worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#common_worker_nodes_issues)
-* [Unable to create a cluster or manage worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_credentials)
-* [Unable to create a cluster or manage worker nodes due to paid account error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_totp)
+* [Unable to create or delete worker nodes or clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#infra_errors)
+  * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_credentials)
+  * [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned)
+  * [Unable to create or delete worker nodes due to paid account error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_totp)
 * [Cannot add worker nodes due to an invalid VLAN ID](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#suspended)
 * [Replacing a worker node does not create a worker node](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off)
-* [Unable to modify or delete infrastructure in an orphaned cluster](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned)
 * [Accessing your worker node with SSH fails](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_ssh_worker)
 * [Bare metal instance ID is inconsistent with worker records](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#bm_machine_id)
 * [After a worker node updates or reloads, duplicate nodes and pods appear](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_duplicate_nodes)
