@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -279,19 +279,26 @@ Review common error messages and learn how to resolve them. Messages might begin
 <br />
 
 
-## Unable to create a cluster or manage worker nodes due to permission errors
-{: #cs_credentials}
+## Unable to create or delete worker nodes or clusters
+{: #infra_errors}
 {: troubleshoot}
 {: support}
 
-{: tsSymptoms}
-You try to manage worker nodes for a new or an existing cluster by running one of the following commands.
-* Provision workers: `ibmcloud oc cluster create classic`, `ibmcloud oc worker-pool rebalance`, or `ibmcloud oc worker-pool resize`
-* Reload workers: `ibmcloud oc worker reload` or `ibmcloud oc worker update`
-* Reboot workers: `ibmcloud oc worker reboot`
-* Delete workers: `ibmcloud oc cluster rm`, `ibmcloud oc worker rm`, `ibmcloud oc worker-pool rebalance`, or `ibmcloud oc worker-pool resize`
+You cannot perform infrastructure-related commands on your cluster, such as:
+* Adding worker nodes in an existing cluster or when creating a new cluster
+* Removing worker nodes
+* Reloading or rebooting worker nodes
+* Resizing worker pools
+* Updating your cluster
+* Deleting your cluster
 
-However, you receive an error message similar to one of the following.
+Review the error messages in the following sections to troubleshoot infrastructure-related issues that are caused by [incorrect cluster permissions](#cs_credentials), [orphaned clusters in other infrastructure accounts](#orphaned), or [a time-based one-time passcode (TOTP) on the account](#cs_totp).
+
+### Unable to create or delete worker nodes due to permission errors
+{: #cs_credentials}
+
+{: tsSymptoms}
+You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
 
 ```
 We were unable to connect to your IBM Cloud infrastructure account.
@@ -334,7 +341,7 @@ The cluster could not be configured with the registry. Make sure that you have t
 {: screen}
 
 {: tsCauses}
-The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials). If you use a different classic IBM Cloud infrastructure account to provision infrastructure resources, you might also have [orphaned clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned) in your account.
+The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials).
 
 {: tsResolve}
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
@@ -406,22 +413,66 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         {: screen}
 
     3.  If the worker node is not removed, review that [**State** and **Status** fields](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes) and the [common issues with worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#common_worker_nodes_issues) to continue debugging.
-    4.  If you manually set credentials and still cannot see the cluster's worker nodes in your infrastructure account, you might check whether the [cluster is orphaned](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned).
+    4.  If you manually set credentials and still cannot see the cluster's worker nodes in your infrastructure account, you might check whether the [cluster is orphaned](#orphaned).
 
-<br />
+### Unable to create or delete worker nodes due to incorrect account error
+{: #orphaned}
 
-
-## Unable to create a cluster or manage worker nodes due to paid account error
-{: #cs_totp}
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 {: tsSymptoms}
-You try to manage worker nodes for a new or an existing cluster by running one of the following commands.
-* Provision clusters and workers: `ibmcloud oc cluster create classic`, `ibmcloud oc worker-pool rebalance`, or `ibmcloud oc worker-pool resize`
-* Reload workers: `ibmcloud oc worker reload` or `ibmcloud oc worker update`
-* Reboot workers: `ibmcloud oc worker reboot`
-* Delete clusters and workers: `ibmcloud oc cluster rm`, `ibmcloud oc worker rm`, `ibmcloud oc worker-pool rebalance`, or `ibmcloud oc worker-pool resize`
+You cannot manage worker nodes for your cluster, or view the cluster worker nodes in your classic IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
 
-However, you receive an error message similar to the following.
+Further, you verified that you have the [proper infrastructure credentials](#cs_credentials).
+
+You might receive an error message in your worker node status similar to the following.
+```
+Incorrect account for worker - The 'classic' infrastructure user credentials changed and no longer match the worker node instance infrastructure account.
+```
+{: screen}
+
+{: tsCauses}
+The cluster might be provisioned in a classic IBM Cloud infrastructure account that is no longer linked to your {{site.data.keyword.openshiftlong_notm}} account. The cluster is orphaned. Because the resources are in a different account, you do not have the infrastructure credentials to modify the resources.
+
+Consider the following example scenario to understand how clusters might become orphaned.
+1.  You have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account.
+2.  You create a cluster named `Cluster1`. The worker nodes and other infrastructure resources are provisioned into the infrastructure account that comes with your Pay-As-You-Go account.
+3.  Later, you find out that your team uses a legacy or shared classic IBM Cloud infrastructure account. You use the `ibmcloud oc credential set` command to change the IBM Cloud infrastructure credentials to use your team account.
+4.  You create another cluster named `Cluster2`. The worker nodes and other infrastructure resources are provisioned into the team infrastructure account.
+5.  You notice that `Cluster1` needs a worker node update, a worker node reload, or you just want to clean it up by deleting it. However, because `Cluster1` was provisioned into a different infrastructure account, you cannot modify its infrastructure resources. `Cluster1` is orphaned.
+6.  You follow the resolution steps in the following section, but do not set your infrastructure credentials back to your team account. You can delete `Cluster1`, but now `Cluster2` is orphaned.
+7.  You change your infrastructure credentials back to the team account that created `Cluster2`. Now, you no longer have an orphaned cluster!
+
+<br>
+
+{: tsResolve}
+1.  Check which infrastructure account the region that your cluster is in currently uses to provision clusters.
+    1.  Log in to the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+    2.  From the table, select your cluster.
+    3.  In the **Overview** tab, check for an **Infrastructure User** field. This field helps you determine if your {{site.data.keyword.openshiftlong_notm}} account uses a different infrastructure account than the default.
+        * If you do not see the **Infrastructure User** field, you have a linked Pay-As-You-Go account that uses the same credentials for your infrastructure and platform accounts. The cluster that cannot be modified might be provisioned in a different infrastructure account.
+        * If you see an **Infrastructure User** field, you use a different infrastructure account than the one that came with your Pay-As-You-Go account. These different credentials apply to all clusters within the region. The cluster that cannot be modified might be provisioned in your Pay-As-You-Go or a different infrastructure account.
+2.  Check which infrastructure account was used to provision the cluster.
+    1.  In the **Worker Nodes** tab, select a worker node and note its **ID**.
+    2.  Open the menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon") and click **Classic Infrastructure**.
+    3.  From the infrastructure navigation pane, click **Devices > Device List**.
+    4.  Search for the worker node ID that you previously noted.
+    5.  If you do not find the worker node ID, the worker node is not provisioned into this infrastructure account. Switch to a different infrastructure account and try again.
+3.  Use the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, which you found in the previous step.
+    If you no longer have access to the infrastructure credentials, you can open an {{site.data.keyword.cloud_notm}} support case to determine an email address for the administrator of the other infrastructure account. However, {{site.data.keyword.cloud_notm}} Support cannot remove the orphaned cluster for you, and you must contact the administrator of the other account to get the infrastructure credentials.
+    {: note}
+4.  [Delete the cluster](/docs/openshift?topic=openshift-remove).
+5.  If you want, reset the infrastructure credentials to the previous account. Note that if you created clusters with a different infrastructure account than the account that you switch to, you might orphan those clusters.
+    * If you did not see the **Infrastructure User** field in step 1, you can use the `ibmcloud oc credential unset --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to resume using the default credentials that come with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go account.
+    * If you did see the **Infrastructure User** field in step 1, you can use the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) to set credentials to that infrastructure account.
+
+### Unable to create or delete worker nodes due to paid account error
+{: #cs_totp}
+
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
+{: tsSymptoms}
+You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
 ```
 Unable to connect to the IBM Cloud account. Ensure that you have a paid account.
 ```
@@ -431,10 +482,9 @@ Unable to connect to the IBM Cloud account. Ensure that you have a paid account.
 Your {{site.data.keyword.cloud_notm}} account uses its own automatically linked infrastructure through a Pay-as-you-Go account. However, the account administrator enabled the time-based one-time passcode (TOTP) option so that users are prompted for a time-based one-time passcode (TOTP) at login. This type of [multifactor authentication (MFA)](/docs/account?topic=account-types#account-based) is account-based, and affects all access to the account. TOTP MFA also affects the access that {{site.data.keyword.containerlong_notm}} requires to make calls to {{site.data.keyword.cloud_notm}} infrastructure. If TOTP is enabled for the account, you cannot create and manage clusters and worker nodes in {{site.data.keyword.containerlong_notm}}.
 
 {: tsResolve}
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters only: The {{site.data.keyword.cloud_notm}} account owner or an account administrator must either:
+The {{site.data.keyword.cloud_notm}} account owner or an account administrator must either:
 * Disable TOTP for the account, and continue to use the automatically linked infrastructure credentials for {{site.data.keyword.containerlong_notm}}.
 * Continue to use TOTP, but create an infrastructure API key that {{site.data.keyword.containerlong_notm}} can use to make direct calls to the {{site.data.keyword.cloud_notm}} infrastructure API.
-**Note**: You cannot use TOTP if you want to use VPC clusters, because {{site.data.keyword.containerlong_notm}} does not support manually setting infrastructure credentials for VPC clusters.
 
 **To disable TOTP MFA for the account:**
 1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}. From the menu bar, select **Manage > Access (IAM)**.
@@ -557,57 +607,6 @@ You might also have issued the `remove` command shortly after the `replace` comm
 {: tsResolve}
 To enable automatical rebalancing, [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) or [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) your worker pool. Now, when you replace a worker node, another worker node is created for you.
 
-## Unable to modify or delete infrastructure in an orphaned cluster
-{: #orphaned}
-
-**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-
-{: tsSymptoms}
-You cannot perform infrastructure-related commands on your cluster, such as:
-* Adding or removing worker nodes
-* Reloading or rebooting worker nodes
-* Resizing worker pools
-* Updating your cluster
-
-You cannot view the cluster worker nodes in your classic IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
-
-Further, you verified that you have the [proper infrastructure credentials](#cs_credentials).
-
-{: tsCauses}
-The cluster might be provisioned in a classic IBM Cloud infrastructure account that is no longer linked to your {{site.data.keyword.openshiftlong_notm}} account. The cluster is orphaned. Because the resources are in a different account, you do not have the infrastructure credentials to modify the resources.
-
-Consider the following scenario to understand how clusters might become orphaned.
-1.  You have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account.
-2.  You create a cluster named `Cluster1`. The worker nodes and other infrastructure resources are provisioned into the infrastructure account that comes with your Pay-As-You-Go account.
-3.  Later, you find out that your team uses a legacy or shared classic IBM Cloud infrastructure account. You use the `ibmcloud oc credential set` command to change the IBM Cloud infrastructure credentials to use your team account.
-4.  You create another cluster named `Cluster2`. The worker nodes and other infrastructure resources are provisioned into the team infrastructure account.
-5.  You notice that `Cluster1` needs a worker node update, a worker node reload, or you just want to clean it up by deleting it. However, because `Cluster1` was provisioned into a different infrastructure account, you cannot modify its infrastructure resources. `Cluster1` is orphaned.
-6.  You follow the resolution steps in the following section, but do not set your infrastructure credentials back to your team account. You can delete `Cluster1`, but now `Cluster2` is orphaned.
-7.  You change your infrastructure credentials back to the team account that created `Cluster2`. Now, you no longer have an orphaned cluster!
-
-<br>
-
-{: tsResolve}
-1.  Check which infrastructure account the region that your cluster is in currently uses to provision clusters.
-    1.  Log in to the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
-    2.  From the table, select your cluster.
-    3.  In the **Overview** tab, check for an **Infrastructure User** field. This field helps you determine if your {{site.data.keyword.openshiftlong_notm}} account uses a different infrastructure account than the default.
-        * If you do not see the **Infrastructure User** field, you have a linked Pay-As-You-Go account that uses the same credentials for your infrastructure and platform accounts. The cluster that cannot be modified might be provisioned in a different infrastructure account.
-        * If you see an **Infrastructure User** field, you use a different infrastructure account than the one that came with your Pay-As-You-Go account. These different credentials apply to all clusters within the region. The cluster that cannot be modified might be provisioned in your Pay-As-You-Go or a different infrastructure account.
-2.  Check which infrastructure account was used to provision the cluster.
-    1.  In the **Worker Nodes** tab, select a worker node and note its **ID**.
-    2.  Open the menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon") and click **Classic Infrastructure**.
-    3.  From the infrastructure navigation pane, click **Devices > Device List**.
-    4.  Search for the worker node ID that you previously noted.
-    5.  If you do not find the worker node ID, the worker node is not provisioned into this infrastructure account. Switch to a different infrastructure account and try again.
-3.  Use the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, which you found in the previous step.
-    If you no longer have access to and cannot get the infrastructure credentials, you must open an {{site.data.keyword.cloud_notm}} support case to remove the orphaned cluster.
-    {: note}
-4.  [Delete the cluster](/docs/openshift?topic=openshift-remove).
-5.  If you want, reset the infrastructure credentials to the previous account. Note that if you created clusters with a different infrastructure account than the account that you switch to, you might orphan those clusters.
-    * To set credentials to a different infrastructure account, use the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set).
-    * To use the default credentials that come with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go account, use the `ibmcloud oc credential unset --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset).
-
 <br />
 
 
@@ -701,8 +700,8 @@ Manually update the reference of the private IP address to point to the correct 
 
   ```
   ID                                                 Public IP       Private IP       Machine Type   State     Status   Zone   Version
-  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w1   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       normal    Ready    dal10      1.17.11
-  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w2   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       deleted    -       dal10      1.17.11
+  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w1   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       normal    Ready    dal10      1.17.12
+  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w2   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       deleted    -       dal10      1.17.12
   ```
   {: screen}
 
