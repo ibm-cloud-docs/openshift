@@ -1628,7 +1628,7 @@ subcollection: openshift
 * [Ingress ALB](/docs/openshift?topic=openshift-api-at-iam#ks-alb)
 * [Fluentd logging](/docs/openshift?topic=openshift-api-at-iam#ks-logging)
 * [NLB DNS](/docs/openshift?topic=openshift-api-at-iam#ks-nlb-dns)
-* [Observability: {{site.data.keyword.la_short}](/docs/openshift?topic=openshift-api-at-iam#ks-observability-logging)
+* [Observability: {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-api-at-iam#ks-observability-logging)
 * [Observability: {{site.data.keyword.mon_short}}](/docs/openshift?topic=openshift-api-at-iam#ks-observability-monitoring)
 * [Private service endpoint allowlist](/docs/openshift?topic=openshift-api-at-iam#ks-acl)
 * [Satellite](/docs/openshift?topic=openshift-api-at-iam#sat-api)

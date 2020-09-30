@@ -99,7 +99,10 @@ When you use {{site.data.keyword.openshiftlong}} such as through the command lin
 
 Review the following list of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) actions and {{site.data.keyword.at_full_notm}} events that correspond to each API method in {{site.data.keyword.openshiftlong_notm}}.
 
-For more information, see [{{site.data.keyword.openshiftlong_notm}} API docs](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}, [User access permissions](/docs/openshift?topic=openshift-access_reference), and [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events).
+For more information, see the following topics.
+* [{{site.data.keyword.openshiftlong_notm}} API docs](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}
+* [User access permissions](/docs/openshift?topic=openshift-access_reference)
+* [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events).
 
 ## Account
 {: #ks-account}
@@ -324,7 +327,7 @@ Review the following network load balancer (NLB) domain name system (DNS) API me
 <br />
 
 
-## Observability: {{site.data.keyword.la_short}
+## Observability: {{site.data.keyword.la_short}}
 {: #ks-observability-logging}
 
 Review the following observability logging API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
