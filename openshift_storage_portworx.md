@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -206,7 +206,7 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 Decide on the key-value store that you want to use to store Portworx metadata.
 {: shortdesc}
 
-Before you begin, review the [Planning your Portworx setup section](#portworx_setup)
+Before you begin, review the [Planning your Portworx setup section](#portworx_planning)
 {: important}
 
 The Portworx key-value store serves as the single source of truth for your Portworx cluster. If the key-value store is not available, then you cannot work with your Portworx cluster to access or store your data. Existing data is not changed or removed when the Portworx database is unavailable.
