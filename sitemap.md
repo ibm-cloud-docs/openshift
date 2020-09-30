@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-09-30"
 
 keywords: openshift
 subcollection: openshift
@@ -1601,6 +1601,41 @@ subcollection: openshift
 * [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101)
 
 
+## IAM and Activity Tracker events
+{: #sitemap_iam_and_activity_tracker_events}
+
+
+[User access permissions](/docs/openshift?topic=openshift-access_reference)
+* [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
+* [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
+* [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
+* [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
+* [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
+* [Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
+* [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
+
+[{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
+* [Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
+* [Tracking private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
+* [Tracking storage resource events](/docs/openshift?topic=openshift-at_events#storage-events)
+* [Tracking logging and monitoring configuration events](/docs/openshift?topic=openshift-at_events#at-lm)
+* [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
+
+[IAM and {{site.data.keyword.cloudaccesstrailshort}} action by API method](/docs/openshift?topic=openshift-api-at-iam)
+* [Account](/docs/openshift?topic=openshift-api-at-iam#ks-account)
+* [Cluster](/docs/openshift?topic=openshift-api-at-iam#ks-cluster)
+* [Ingress](/docs/openshift?topic=openshift-api-at-iam#ks-ingress)
+* [Ingress ALB](/docs/openshift?topic=openshift-api-at-iam#ks-alb)
+* [Fluentd logging](/docs/openshift?topic=openshift-api-at-iam#ks-logging)
+* [NLB DNS](/docs/openshift?topic=openshift-api-at-iam#ks-nlb-dns)
+* [Observability: {{site.data.keyword.la_short}](/docs/openshift?topic=openshift-api-at-iam#ks-observability-logging)
+* [Observability: {{site.data.keyword.mon_short}}](/docs/openshift?topic=openshift-api-at-iam#ks-observability-monitoring)
+* [Private service endpoint allowlist](/docs/openshift?topic=openshift-api-at-iam#ks-acl)
+* [Satellite](/docs/openshift?topic=openshift-api-at-iam#sat-api)
+* [Storage](/docs/openshift?topic=openshift-api-at-iam#ks-storage)
+* [Worker nodes and worker pools](/docs/openshift?topic=openshift-api-at-iam#ks-workers)
+
+
 ## Locations
 {: #sitemap_locations}
 
@@ -1623,38 +1658,6 @@ subcollection: openshift
 
 
 [Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations)
-
-
-## User access permissions
-{: #sitemap_user_access_permissions}
-
-
-[User access permissions](/docs/openshift?topic=openshift-access_reference)
-
-[Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
-
-[{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
-
-[{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
-
-[Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
-
-[{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
-
-[Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
-
-[Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
-
-
-## {{site.data.keyword.at_full_notm}} events
-{: #sitemap__events}
-
-
-[{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
-
-[Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
-
-[Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
 
 
 ## Default service settings for OpenShift components

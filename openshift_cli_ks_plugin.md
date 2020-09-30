@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-09-30"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -3883,7 +3883,7 @@ ibmcloud oc logging config update --cluster CLUSTER --id LOG_CONFIG_ID --type LO
 **Example for log type `ibm`**:
 
   ```
-  ibmcloud oc logging config update my_cluster --id f4bc77c0-ee7d-422d-aabf-a4e6b977264e --type ibm
+  ibmcloud oc logging config update --cluster my_cluster --id f4bc77c0-ee7d-422d-aabf-a4e6b977264e --type ibm
   ```
   {: pre}
 

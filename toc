@@ -205,10 +205,14 @@ Red Hat OpenShift on IBM Cloud
         openshift_versions_changelog.md
         openshift_versions_autoscaler.md
 
+    {: .topicgroup}
+    IAM and Activity Tracker events
+        openshift_users_access_ref.md
+        openshift_at_events.md
+        openshift_api_at_iam.md
+
     openshift_locations.md
     openshift_integrations_overview.md
-    openshift_users_access_ref.md
-    openshift_at_events.md
     openshift_service_settings.md
     {: .navgroup-end}
 
