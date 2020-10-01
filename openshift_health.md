@@ -540,7 +540,7 @@ You can view the current cluster state by running the `ibmcloud oc cluster ls` c
         </tr>
        <tr>
          <td>`Delete failed`</td>
-         <td>The Kubernetes master or at least one worker node cannot be deleted. See [Unable to create or delete worker nodes](#infra_errors).</td>
+         <td>The Kubernetes master or at least one worker node cannot be deleted. List worker nodes by running `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`. If worker nodes are listed, see [Unable to create or delete worker nodes](#infra_errors). If no workers are listed, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</td>
        </tr>
        <tr>
          <td>`Deleted`</td>
