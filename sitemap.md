@@ -1210,6 +1210,7 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-object_storage#cos_limitations)
 
 [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx)
+* [Planning your Portworx setup](/docs/openshift?topic=openshift-portworx#portworx_planning)
 * [Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
   * [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb)
