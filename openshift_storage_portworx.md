@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -151,7 +151,7 @@ All set? Let's start with [creating a cluster with an SDS worker pool of at leas
 
 
 ## Planning your Portworx setup
-(: #portworx_planning)
+{: #portworx_planning}
 
 Before you create your cluster and install Portworx, review the following planning steps.
 {: shortdesc}

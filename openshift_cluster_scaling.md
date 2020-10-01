@@ -345,7 +345,7 @@ Before you install the {{site.data.keyword.cloud_notm}} cluster autoscaler add-o
 
       2. Verify that the add-on is installed and `Ready`.
         ```
-        ibmcloud oc addon ls
+        ibmcloud oc cluster addon ls --cluster <cluster_name>
         ```
         {: pre}
 
@@ -1053,7 +1053,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
   2. Verify the add-on is disabled.
     ```
-    ibmcloud oc cluster addon ls -c <cluster_name>
+    ibmcloud oc cluster addon ls --cluster <cluster_name>
     ```
     {: pre}
 

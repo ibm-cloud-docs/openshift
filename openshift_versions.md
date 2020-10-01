@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-10-01"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -137,8 +137,8 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
-* **Latest**: 4.4, which includes Kubernetes 1.17
-* **Default**: 4.3, which includes Kubernetes 1.16
+* **Latest and default**: 4.4, which includes Kubernetes 1.17
+* **Other**: 4.3, which includes Kubernetes 1.16
 * **Deprecated**: 3.11, which includes Kubernetes 1.11
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
@@ -150,9 +150,9 @@ oc version
 
 Example output:
 ```
-Client Version: 4.3.3
-Server Version: 4.3.12
-Kubernetes Version: v1.16.2
+Client Version: 4.4.3
+Server Version: 4.4.12
+Kubernetes Version: v1.17.2
 ```
 {: screen}
 

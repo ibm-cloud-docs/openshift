@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -442,71 +442,78 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     helm install --set env.IBMC_FEATURE_GATES=KeyManagementBYOK=true iks-charts/ibmcloud-block-storage-plugin
     ```
     {: pre}
+  
+  13. Create a role binding for the block storage plug-in.
+      ```
+      oc create rolebinding ibmcloud-block-storage-plugin-byok --clusterrole=ibmcloud-block-storage-plugin-byok --serviceaccount=kube-system:ibmcloud-block-storage-plugin --group system:nodes --namespace=ibm-block-secrets
+      ```
+      {: pre}
     
-  13. Create a Kubernetes secret that is named `secret.yaml` and that includes the credentials to access your root key in your {{site.data.keyword.keymanagementserviceshort}} service instance.
-    ```yaml
-    apiVersion: v1
-    kind: Secret
-    metadata: 
-      labels: 
-        kmsConfig: kpc-secretLabel
-      name: <secret_name> # Example: my_secret
-      namespace: <namespace> # Example: default
-    stringData: 
-      config: |-
-          {
-            "api_key":"<service_id_api_key>", # Example: "AA1aAAaA1a21AAaA1aAAaAa-AA-1AAaaA1aA1aAaaaAA"
-            "iam_endpoint":"https://iam.cloud.ibm.com",
-            "key_protect_endpoint":"https://<region>.kms.cloud.ibm.com", # Example: "https://us-east.kms.cloud.ibm.com" 
-            "root_key_crn":"<rook_key_crn>", # Example: "crn:v1:bluemix:public:kms:<region>:a/1ab011ab2b11111aaa1a1111aa1aa111:11aa111a-1111-11a1-a111-a11a111aa111:key:11a11111-1a1a-111a-111a-11111a1a1aa1",
-            "version":""
-          }
-    type: ibm.io/kms-config
-    ```
-    {: codeblock}
+  14. Create a Kubernetes secret that is named `secret.yaml` and that includes the credentials to access your root key in your {{site.data.keyword.keymanagementserviceshort}} service instance.
+      1.  Create a configuration file for the secret.
+          ```yaml
+          apiVersion: v1
+          kind: Secret
+          metadata: 
+            labels: 
+              kmsConfig: kpc-secretLabel
+            name: <secret_name> # Example: my_secret
+            namespace: <namespace> # Example: default
+          stringData: 
+            config: |-
+                {
+                  "api_key":"<service_id_api_key>", # Example: "AA1aAAaA1a21AAaA1aAAaAa-AA-1AAaaA1aA1aAaaaAA"
+                  "iam_endpoint":"https://iam.cloud.ibm.com",
+                  "key_protect_endpoint":"https://<region>.kms.cloud.ibm.com", # Example: "https://us-east.kms.cloud.ibm.com" 
+                  "root_key_crn":"<rook_key_crn>", # Example: "crn:v1:bluemix:public:kms:<region>:a/1ab011ab2b11111aaa1a1111aa1aa111:11aa111a-1111-11a1-a111-a11a111aa111:key:11a11111-1a1a-111a-111a-11111a1a1aa1",
+                  "version":""
+                }
+          type: ibm.io/kms-config
+          ```
+          {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>metadata.name</code></td>
-    <td>Enter a name for your secret.</td>
-    </tr>
-    <tr>
-    <td><code>metadata.namespace</code></td>
-    <td>Enter the name of the namespace where you want to create the secret. The secret must be in same namespace where your app is deployed.
-    </tr>
-    <tr>
-    <td><code>stringData.config.api_key</code></td>
-    <td>Enter the API key for the service ID that you created.</td>
-    </tr>	    
-    <tr>
-    <td><code>stringData.config.key_protect_endpoint</code></td>
-    <td>Enter the regional endpoint of your {{site.data.keyword.keymanagementserviceshort}} instance. For a list of Key Protect endpoints, see [Regions and endpoints](/docs/key-protect?topic=key-protect-regions).</td>
-    </tr>
-    <tr>
-    <td><code>stringData.config.root_key_crn</code></td>
-    <td>Enter the CRN of the root key that you created. To retrieve your root key CRN: <li>Navigate to the resource list in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/resources){:external}.</li><li>Click <strong>Services</strong>, then click your {{site.data.keyword.keymanagementserviceshort}} instance.</li><li>Find your root key on the <strong>Actions Menu</strong>, then click <strong>View CRN</strong>.</li><li>Click the <strong>Copy</strong> button to copy the CRN.</li></td>
-    </tr>
-    </tbody>
-    </table>
+          <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
+          <caption>Understanding the YAML file components</caption>
+          <col width="25%">
+          <thead>
+          <th>Component</th>
+          <th>Description</th>
+          </thead>
+          <tbody>
+          <tr>
+          <td><code>metadata.name</code></td>
+          <td>Enter a name for your secret.</td>
+          </tr>
+          <tr>
+          <td><code>metadata.namespace</code></td>
+          <td>Enter the name of the namespace where you want to create the secret. The secret must be in same namespace where your app is deployed.
+          </tr>
+          <tr>
+          <td><code>stringData.config.api_key</code></td>
+          <td>Enter the API key for the service ID that you created.</td>
+          </tr>	    
+          <tr>
+          <td><code>stringData.config.key_protect_endpoint</code></td>
+          <td>Enter the regional endpoint of your {{site.data.keyword.keymanagementserviceshort}} instance. For a list of Key Protect endpoints, see [Regions and endpoints](/docs/key-protect?topic=key-protect-regions).</td>
+          </tr>
+          <tr>
+          <td><code>stringData.config.root_key_crn</code></td>
+          <td>Enter the CRN of the root key that you created. To retrieve your root key CRN: <li>Navigate to the resource list in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/resources){:external}.</li><li>Click <strong>Services</strong>, then click your {{site.data.keyword.keymanagementserviceshort}} instance.</li><li>Find your root key on the <strong>Actions Menu</strong>, then click <strong>View CRN</strong>.</li><li>Click the <strong>Copy</strong> button to copy the CRN.</li></td>
+          </tr>
+          </tbody>
+          </table>
 
-    2. Create the secret in your cluster.
-      ```
-      oc apply -f secret.yaml
-      ```
-      {: pre}
+      2.  Create the secret in your cluster.
+          ```
+          oc apply -f secret.yaml
+          ```
+          {: pre}
 
-    3. Verify that your secret was created.
-      ```
-      oc get secrets
-      ```
-      {: pre}
+      3.  Verify that your secret was created.
+          ```
+          oc get secrets
+          ```
+          {: pre}
 
 **Next steps**
 Choose between the following options to create a {{site.data.keyword.blockstorageshort}} instance that encrypts data with your root key: 
@@ -574,7 +581,7 @@ The following steps explain how to create a custom, encrypted storage class that
 
   3. Create the storage class in your cluster.
     ```
-    oc storageclass.yaml
+    oc apply -f storageclass.yaml
     ```
     {: pre}
 
@@ -728,7 +735,7 @@ To add block storage:
          name: mypvc
          labels:
            billingType: "hourly"
-         region: us-south
+           region: us-south
            zone: dal13
        spec:
          accessModes:
@@ -750,7 +757,7 @@ To add block storage:
          name: mypvc
          labels:
            billingType: "hourly"
-         region: us-south
+           region: us-south
            zone: dal13
        spec:
          accessModes:

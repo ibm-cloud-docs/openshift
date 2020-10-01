@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-01"
 
 keywords: openshift
 subcollection: openshift
@@ -278,7 +278,7 @@ subcollection: openshift
 * [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc)
 * [Updating the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade)
 * [Uninstalling the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_uninstall)
-* [Using the {{site.data.keyword.cloud-shell_notm}} in your web browser (beta)](/docs/openshift?topic=openshift-openshift-cli#cloud-shell)
+* [Using the {{site.data.keyword.cloud-shell_notm}} in your web browser](/docs/openshift?topic=openshift-openshift-cli#cloud-shell)
 
 [Setting up the API](/docs/openshift?topic=openshift-cs_api_install)
 * [About the API](/docs/openshift?topic=openshift-cs_api_install#api_about)
@@ -1210,6 +1210,7 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-object_storage#cos_limitations)
 
 [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx)
+* [Planning your Portworx setup](/docs/openshift?topic=openshift-portworx#portworx_planning)
 * [Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
   * [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb)
@@ -1520,6 +1521,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.23_1520_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4423_1520)
   * [Changelog for worker node fix pack 4.4.23_1519_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4423_1519)
   * [Changelog for master fix pack 4.4.20_1518_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4420_1518)
   * [Changelog for worker node fix pack 4.4.20_1517_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4420_1517)
@@ -1530,6 +1532,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.38_1541_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1541)
   * [Changelog for worker node fix pack 4.3.38_1540_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1540)
   * [Changelog for master fix pack 4.3.35_1539_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4335_1539)
   * [Changelog for worker node fix pack 4.3.35_1538_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4335_1538)
@@ -1551,6 +1554,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.286_1569_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1569)
   * [Changelog for worker node fix pack 3.11.286_1568_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1568)
   * [Changelog for master fix pack 3.11.272_1567_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1567)
   * [Changelog for worker node fix pack 3.11.272_1566_openshift, released 14 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1566)
@@ -1866,6 +1870,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[October 2020](/docs/openshift?topic=openshift-iks-release#oct20)
 
 [September 2020](/docs/openshift?topic=openshift-iks-release#sep20)
 
