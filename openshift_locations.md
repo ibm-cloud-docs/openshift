@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-10-01"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -104,7 +104,7 @@ _{{site.data.keyword.openshiftlong_notm}} locations_
 ## {{site.data.keyword.openshiftlong_notm}} locations
 {: #locations}
 
-{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. {{site.data.keyword.openshiftlong_notm}} is available in a subset of these locations, including all six worldwide multizone-capable regions and select single zone regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location.
+{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. {{site.data.keyword.openshiftlong_notm}} is available in a subset of these locations, including worldwide multizone regions and single zone regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location.
 {: shortdesc}
 
 ```
@@ -144,7 +144,8 @@ The following tables list the available single and multizone locations in {{site
 
 | Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
-| Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
+| Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |<ff-jp-osa>
+| Asia Pacific | Japan | Osaka`†` | osa21, osa22, osa23 | `jp-osa` |</ff-jp-osa>
 | Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
 | Europe | Germany | Frankfurt | fra02, fra04, fra05 | EU Central (`eu-central`, `eu-de`) |
 | Europe | United Kingdom | London | lon04, lon05, lon06 | UK South (`uk-south`, `eu-gb`) |
@@ -163,7 +164,8 @@ The following tables list the available single and multizone locations in {{site
 | Asia Pacific | Australia | Melbourne | mel01 | AP South (`ap-south`, `au-syd`) |
 | Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
 | Asia Pacific | China | Hong Kong<br>SAR of the PRC | hkg02 | AP North (`ap-north`, `jp-tok`) |
-| Asia Pacific | India | Chennai | che01 | AP North (`ap-north`, `jp-tok`) |
+| Asia Pacific | India | Chennai | che01 | AP North (`ap-north`, `jp-tok`) |<ff-jp-osa>
+| Asia Pacific | Japan | Osaka`‡` | osa21, osa22, osa23 | `jp-osa` |</ff-jp-osa>
 | Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Korea | Seoul | seo01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng01 | AP North (`ap-north`, `jp-tok`) |
@@ -184,7 +186,7 @@ The following tables list the available single and multizone locations in {{site
 {: caption="Available single zone data center locations for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the IBM Cloud geography of the location. The second column is where the country of the location. The third column is the metro that the location is in. The fourth column is the data center of the location. The fifth column is the name of the IBM Cloud region that the location is in."}
 
-<p class="note">`*` hou02 supports free clusters that are created in US South, and is not available for standard, production clusters.</p>
+<p class="note">`*` hou02 supports free clusters that are created in US South, and is not available for standard, production clusters.<ff-jp-osa>`‡` **Internal-only**: The Osaka multizone region is under development and not available for use.</ff-jp-osa></p>
 
 
 #### <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC multizone metro locations
