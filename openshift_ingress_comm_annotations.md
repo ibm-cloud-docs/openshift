@@ -148,18 +148,6 @@ kubernetes.io/ingress.class: "private-iks-k8s-nginx"
 ```
 {: screen}
 
-### {{site.data.keyword.appid_short_notm}} authentication
-
-Configure Ingress with [{{site.data.keyword.appid_full_notm}}](https://cloud.ibm.com/catalog/services/app-id){: external} to enforce authentication for your apps.
-{: shortdesc}
-
-Previous {{site.data.keyword.openshiftlong_notm}} Ingress resource [annotation](/docs/openshift?topic=openshift-ingress_annotation#appid-auth):
-
-```
-ingress.bluemix.net/appid-auth: "bindSecret=bind_secret namespace=default requestType=web serviceName=app1 idToken=true"
-```
-{: screen}
-
 
 
 
