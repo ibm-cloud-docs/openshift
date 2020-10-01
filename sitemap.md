@@ -1870,6 +1870,8 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
 
+[October 2020](/docs/openshift?topic=openshift-iks-release#oct20)
+
 [September 2020](/docs/openshift?topic=openshift-iks-release#sep20)
 
 [August 2020](/docs/openshift?topic=openshift-iks-release#aug20)
