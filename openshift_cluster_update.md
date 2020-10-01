@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-01"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -151,7 +151,7 @@ To update the Kubernetes master _major_ or _minor_ version:
     * **Checking add-ons**
       1.  List the add-ons in the cluster.
           ```
-          ibmcloud oc addon ls --cluster <cluster_name_or_ID>
+          ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
           ```
           {: pre}
       2.  Check the supported {{site.data.keyword.openshiftshort}} version for each add-on that is installed.
