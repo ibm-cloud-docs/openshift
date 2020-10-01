@@ -278,7 +278,7 @@ subcollection: openshift
 * [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc)
 * [Updating the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade)
 * [Uninstalling the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_uninstall)
-* [Using the {{site.data.keyword.cloud-shell_notm}} in your web browser (beta)](/docs/openshift?topic=openshift-openshift-cli#cloud-shell)
+* [Using the {{site.data.keyword.cloud-shell_notm}} in your web browser](/docs/openshift?topic=openshift-openshift-cli#cloud-shell)
 
 [Setting up the API](/docs/openshift?topic=openshift-cs_api_install)
 * [About the API](/docs/openshift?topic=openshift-cs_api_install#api_about)
