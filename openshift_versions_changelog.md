@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-01"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -109,6 +109,18 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.4 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.4.23_1520_openshift, released 30 September 2020
+{: #4423_1520}
+
+The following table shows the changes that are included in the worker node fix pack update `4.4.23_1520_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Automation for provisioning and reloading | N/A	| N/A | Fixes an issue that prevented SDS worker nodes with unified extensible firmware interface (UEFI) bootstrapping from provisioning or reloading.|
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.4.23_1519_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.4.23_1519_openshift, released 28 September 2020
 {: #4423_1519}
@@ -257,6 +269,18 @@ The following table shows the changes that are included in the `4.4.11_1511_open
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.3 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.3.38_1541_openshift, released 30 September 2020
+{: #4338_1541}
+
+The following table shows the changes that are included in the worker node fix pack update `4.3.38_1541_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Automation for provisioning and reloading | N/A	| N/A | Fixes an issue that prevented SDS worker nodes with unified extensible firmware interface (UEFI) bootstrapping from provisioning or reloading.|
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.38_1540_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.3.38_1540_openshift, released 28 September 2020
 {: #4338_1540}
@@ -591,6 +615,18 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change).
 {: deprecated}
+
+### Changelog for worker node fix pack 3.11.286_1569_openshift, released 30 September 2020
+{: #311286_1569}
+
+The following table shows the changes that are included in the worker node fix pack update `3.11.286_1569_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Automation for provisioning and reloading | N/A	| N/A | Fixes an issue that prevented SDS worker nodes with unified extensible firmware interface (UEFI) bootstrapping from provisioning or reloading.|
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.286_1568_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.286_1568_openshift, released 28 September 2020
 {: #311286_1568}

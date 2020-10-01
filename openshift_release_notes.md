@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-01"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -107,6 +107,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 30 September 2020 | **Versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.23_1520_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4423_1520), [`4.3.38_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1541), and [`3.11.286_1569_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1569).|
 | 29 September 2020 | **Gateway firewalls and Calico policies**: For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}. |
 | 28 September 2020 | **Versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.23_1519_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4423_1519), [`4.3.38_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1540), and [`3.11.286_1568_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1568). |
 | 24 September 2020 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
