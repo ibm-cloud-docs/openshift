@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-28"
+lastupdated: "2020-10-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -160,7 +160,7 @@ ingress.bluemix.net/appid-auth: "bindSecret=bind_secret namespace=default reques
 ```
 {: screen}
 
-Kubernetes Ingress field: See [Adding {{site.data.keyword.appid_short_notm}} authentication to apps](#app-id).
+
 
 
 ### Client request body size
