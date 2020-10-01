@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-10-01"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -251,7 +251,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
       ```
       OK
       ID                                                  Public IP        Private IP     Machine Type           State    Status   Zone    Version
-      kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.17.11_1523*
+      kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.17.12_1523*
       ```
       {: screen}
 
@@ -288,7 +288,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 6. Download the Helm charts and unpack the charts in your current directory.
 
   ```
-  helm fetch --untar ibm-helm/ibm-object-storage-plugin && cd ibm-object-storage-plugin
+  helm fetch --untar ibm-helm/ibm-object-storage-plugin
   ```
   {: pre}
 
@@ -298,7 +298,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 7. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
   1. Install the Helm plug-in.
     ```
-    helm plugin install ./helm-ibmc
+    helm plugin install ./ibm-object-storage-plugin/helm-ibmc
     ```
     {: pre}
 
