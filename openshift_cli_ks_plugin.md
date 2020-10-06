@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-06"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -4950,7 +4950,7 @@ ibmcloud oc api-key reset --region REGION [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: <ff-jp-osa>`jp-osa`, </ff-jp-osa>`jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -4991,7 +4991,7 @@ ibmcloud oc credential get --region REGION [-q] [--output json]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: <ff-jp-osa>`jp-osa`, </ff-jp-osa>`jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -5041,7 +5041,7 @@ ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastruc
 <dd>Required: IBM Cloud infrastructure account API key. To view or generate an infrastructure API key, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).</dd>
 
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: <ff-jp-osa>`jp-osa`, </ff-jp-osa>`jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -5075,7 +5075,7 @@ ibmcloud oc credential unset --region REGION [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: <ff-jp-osa>`jp-osa`, </ff-jp-osa>`jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -5135,7 +5135,7 @@ ibmcloud oc infra-permissions get --region REGION [--output json] [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Required: Specify a region in {{site.data.keyword.openshiftlong_notm}}: <ff-jp-osa>`jp-osa`, </ff-jp-osa>`jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`. </dd>
+<dd>Required: Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`. </dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -5455,7 +5455,7 @@ ibmcloud oc vlan spanning get --region REGION [--output json] [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: <ff-jp-osa>`jp-osa`, </ff-jp-osa>`jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -5715,14 +5715,12 @@ Region-specific endpoints are deprecated. Use the [global endpoint](/docs/opensh
 If you need to list and work with resources from one region only, you can use the `ibmcloud oc api` command to target a regional endpoint instead of the global endpoint.
 * Dallas (US South, us-south): `https://us-south.containers.cloud.ibm.com`
 * Frankfurt (EU Central, eu-de): `https://eu-de.containers.cloud.ibm.com`
-* London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`<ff-jp-osa>
-* Osaka`*` (jp-osa): `https://jp-osa.containers.cloud.ibm.com`</ff-jp-osa>
+* London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`
 * Sydney (AP South, au-syd): `https://au-syd.containers.cloud.ibm.com`
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Washington, D.C. (US East, us-east): `https://us-east.containers.cloud.ibm.com`
 
-<ff-jp-osa>`*` **Internal-only**: The Osaka multizone region is under development and not available for use.
-{: note}</ff-jp-osa>
+
 
 To use the global functionality, you can use the `ibmcloud oc api` command again to target the global endpoint: `https://containers.cloud.ibm.com`
 
@@ -5787,14 +5785,12 @@ If you need to list and work with resources from one region only, you can use th
 
 * Dallas (US South, us-south): `https://us-south.containers.cloud.ibm.com`
 * Frankfurt (EU Central, eu-de): `https://eu-de.containers.cloud.ibm.com`
-* London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`<ff-jp-osa>
-* Osaka`*` (jp-osa): `https://jp-osa.containers.cloud.ibm.com`</ff-jp-osa>
+* London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`
 * Sydney (AP South, au-syd): `https://au-syd.containers.cloud.ibm.com`
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Washington, D.C. (US East, us-east): `https://us-east.containers.cloud.ibm.com`
 
-<ff-jp-osa>`*` **Internal-only**: The Osaka multizone region is under development and not available for use.
-{: note}</ff-jp-osa>
+
 
 To use the global functionality, you can use the `ibmcloud oc init` command again to target the global endpoint: `https://containers.cloud.ibm.com`
 
