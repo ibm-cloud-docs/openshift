@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-06"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -5720,6 +5720,8 @@ If you need to list and work with resources from one region only, you can use th
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Washington, D.C. (US East, us-east): `https://us-east.containers.cloud.ibm.com`
 
+
+
 To use the global functionality, you can use the `ibmcloud oc api` command again to target the global endpoint: `https://containers.cloud.ibm.com`
 
 ```
@@ -5787,6 +5789,8 @@ If you need to list and work with resources from one region only, you can use th
 * Sydney (AP South, au-syd): `https://au-syd.containers.cloud.ibm.com`
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Washington, D.C. (US East, us-east): `https://us-east.containers.cloud.ibm.com`
+
+
 
 To use the global functionality, you can use the `ibmcloud oc init` command again to target the global endpoint: `https://containers.cloud.ibm.com`
 

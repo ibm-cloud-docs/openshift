@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-06"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -173,6 +173,8 @@ Your images in your {{site.data.keyword.openshiftshort}} cluster internal regist
 However, if the bucket fails to create when you create your cluster, you must manually create a bucket and set up your cluster to use the bucket. In the meantime, the internal registry uses an `emptyDir` Kubernetes volume that stores your container images on the secondary disk of your worker node. The `emptyDir` volumes are not considered persistent highly available storage, and if you delete the pods that use the image, the image is automatically deleted.
 
 To manually create a bucket for your internal registry, see [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create).
+
+For clusters that run {{site.data.keyword.openshiftshort}} version 4.3 or 4.4, you might need to [modify the default configuration](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push) so that external sources outside the VPC, such as a CI/CD process, can push images to the internal registry.
 
 ### Classic: Storing images in the internal registry
 {: #storage_internal_registry}

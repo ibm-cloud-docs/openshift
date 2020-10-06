@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -159,6 +159,7 @@ The **Ingress Status** reflects the overall health of the Ingress components. Th
 |`Pending update or enable operation for ALB in progress`|3.11 clusters: Your ALB is currently updating to a new version, or your ALB that was previously disabled is enabling. For information about updating ALBs, see [Updating ALBs](/docs/containers?topic=containers-ingress#alb-update). For information about enabling ALBs, see the [`ibmcloud oc ingress alb enable` CLI command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).|
 |`Registering Ingress subdomain`|The default **Ingress Subdomain** for your cluster is currently being created. The Ingress subdomain and secret creation follows a process that might take more than 15 minutes to complete. For troubleshooting information, see [No Ingress subdomain exists after cluster creation](#ingress_subdomain).|
 |`Router service is unhealthy or unreachable`|4.3 clusters: The external IP address for one or more router services that expose Ingress controllers was reported as unhealthy or was unreachable, or one or more router services did not correctly deploy to your cluster. For troubleshooting information, see [Ping the Ingress subdomain and router public IP address](#ping-43).|
+|`The expiration dates reported by Ingress secrets are out of sync across namespaces.`| To resynchronize the expiration dates, [regenerate the secrets for your Ingress subdomain certificate](#sync_cert_dates).|
 {: caption="Ingress messages"}
 {: summary="Table rows read from left to right, with the Ingress message in column one and a description in column two."}
 
@@ -1508,6 +1509,76 @@ If you complete one of the above options but the `keepalived` pods are still not
 3. Describe each `keepalived` pod and look for the **Events** section. Address any error or warning messages that are listed.
     ```
     oc describe pod ibm-cloud-provider-ip-169-61-XX-XX-55967b5b8c-7zv9t -n ibm-system
+    ```
+    {: pre}
+
+<br />
+
+
+## Ingress secret expiration date is not updated
+{: #sync_cert_dates}
+
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+{: tsSymptoms}
+When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>` or `ibmcloud oc ingress status -c <cluster_name_or_ID>`, you see the following **Ingress Message**:
+
+```
+The expiration date reported by the Ingress secret is out of sync with actual certificate expiration date. See http://ibm.biz/ingress-secret-sync
+```
+{: screen}
+
+When you run `ibmcloud oc ingress secret ls -c <cluster_name_or_ID>`, you notice that old expiration dates are listed for some certificates.
+
+{: tsCauses}
+In some cases, the expiration date that is reported by the secrets in some namespaces in your cluster can become out of sync with the expiration date of secrets for the same certificate in other namespaces. Even though your actual certificate is renewed, a secret in your cluster can show an older expiration date that is not updated to the most recent expiration date for the certificate. However, a secret for this certificate in another namespace might show the correct expiration date.
+
+{: tsResolve}
+To resynchronize the expiration dates, you can regenerate the secrets for your Ingress subdomain certificate.
+
+1. Get your **Ingress Subdomain**.
+  ```
+  ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep 'Ingress Subdomain'
+  ```
+  {: pre}
+
+2. Regenerate the Ingress subdomain secret. The certificate is renewed, a new expiration date is generated, and the updates are synchronizeed across the secret in different namespaces.<p class="note">It might take up to 30 minutes for the secret regeneration to complete.</p>
+  ```
+  ibmcloud oc nlb-dns secret regenerate -c <cluster_name_or_ID> --nlb-subdomain <ingress_subdomain>
+  ```
+  {: pre}
+
+3. List all secrets associated with the certificate for your Ingress subdomain. In the output, verify that the **Expiration date** for the secrets are more than 30 days later than today.
+  ```
+  ibmcloud oc ingress secret ls -c <cluster_name_or_ID> | grep <ingress_subdomain>
+  ```
+  {: pre}
+
+  Example output:
+  ```
+  Name                                              Namespace        CRN                                                                                                                                                           Expires On                 Domain                                                                                  Status
+  mycluster-35366fb2d3d90fd50548180f69e7d12a-0000   default          crn:v1:bluemix:public:cloudcerts:eu-de:a/6ef045fd2b43266cfe8e6388dd2ec098:4ebc1d51-8a74-4675-8c4c-b2922ceba2d4:certificate:70f08c8a0fc1eed1f147b28443ba6dcd   2020-12-10T18:00:58+0000   mycluster-35366fb2d3d90fd50548180f69e7d12a-0000.eu-de.containers.appdomain.cloud     created
+  mycluster-35366fb2d3d90fd50548180f69e7d12a-0000   ibm-cert-store   crn:v1:bluemix:public:cloudcerts:eu-de:a/6ef045fd2b43266cfe8e6388dd2ec098:4ebc1d51-8a74-4675-8c4c-b2922ceba2d4:certificate:70f08c8a0fc1eed1f147b28443ba6dcd   2020-12-10T18:00:58+0000   *.mycluster-35366fb2d3d90fd50548180f69e7d12a-0000.eu-de.containers.appdomain.cloud   created
+  mycluster-35366fb2d3d90fd50548180f69e7d12a-0000   kube-system      crn:v1:bluemix:public:cloudcerts:eu-de:a/6ef045fd2b43266cfe8e6388dd2ec098:4ebc1d51-8a74-4675-8c4c-b2922ceba2d4:certificate:70f08c8a0fc1eed1f147b28443ba6dcd   2020-12-10T18:00:58+0000   *.mycluster-35366fb2d3d90fd50548180f69e7d12a-0000.eu-de.containers.appdomain.cloud   created
+  ```
+  {: screen}
+
+4. Optional: Other secrets for network load balancer (NLB) subdomains in your cluster might report expiration dates that are out of sync with the certificate's expiration date. You can run the following steps to resynchronize the expiration dates for other secrets in your cluster.
+  1. List all NLB subdomains in your cluster.
+    ```
+    ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
+  2. For each subdomain besides the Ingress subdomain, regenerate its secret. The certificate is renewed, a new expiration date is generated, and the updates are synchronized across the secret in different namespaces.<p class="note">It might take up to 30 minutes for the secret regeneration to complete.</p>
+    ```
+    ibmcloud oc nlb-dns secret regenerate -c <cluster_name_or_ID> --nlb-subdomain <NLB_DNS_subdomain>
+    ```
+    {: pre}
+  3. List all secrets associated with the certificate for your Ingress subdomain. In the output, verify that the **Expiration date** for the secrets are more than 30 days later than today.
+    ```
+    ibmcloud oc ingress secret ls -c <cluster_name_or_ID> | grep <ingress_subdomain>
     ```
     {: pre}
 
