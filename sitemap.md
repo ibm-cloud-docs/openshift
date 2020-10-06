@@ -1478,12 +1478,13 @@ subcollection: openshift
   * [`ibmcloud oc storage volume ls `](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
 
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog)
-* [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta)
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
-* [Version 0.4](/docs/openshift?topic=openshift-cs_cli_changelog#04)
-* [Version 0.3](/docs/openshift?topic=openshift-cs_cli_changelog#03)
-* [Version 0.2](/docs/openshift?topic=openshift-cs_cli_changelog#02)
-* [Version 0.1](/docs/openshift?topic=openshift-cs_cli_changelog#01)
+* [Deprecated versions](/docs/openshift?topic=openshift-cs_cli_changelog#deprecated)
+  * [Updating to version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta)
+  * [Version 0.4](/docs/openshift?topic=openshift-cs_cli_changelog#04)
+  * [Version 0.3](/docs/openshift?topic=openshift-cs_cli_changelog#03)
+  * [Version 0.2](/docs/openshift?topic=openshift-cs_cli_changelog#02)
+  * [Version 0.1](/docs/openshift?topic=openshift-cs_cli_changelog#01)
 
 [Observability plug-in CLI](/docs/openshift?topic=openshift-observability_cli)
   * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
