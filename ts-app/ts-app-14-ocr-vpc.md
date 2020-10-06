@@ -95,7 +95,7 @@ subcollection: openshift
 {: troubleshoot}
 
 **Infrastructure provider and applicable versions**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src=\"../images/icon-vpc.png\" alt=\"VPC infrastructure provider icon\" width=\"15\" style=\"width:15px; border-style: none\"/> VPC Generation 2 compute
   * {{site.data.keyword.openshiftshort}} version 4.3 or 4.4
 
 {: tsSymptoms}
