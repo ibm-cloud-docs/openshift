@@ -169,7 +169,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
 
 3. Install the Calico CLI, `calicoctl`, according to your operating system.
     * **Linux and OS X**:
-      1. [Download the version of the Calico CLI that matches your operating system](https://github.com/projectcalico/calicoctl/releases){: external}.
+      1. [Download the version of the Calico CLI that matches your operating system](https://github.com/projectcalico/calicoctl/releases){: external}.<p class="tip">For OS X, you might need to manually allow the downloaded file to be opened and run by navigating to **System Preferences** > **Security & Privacy** > **General**.</p>
 
       2. Move the file to the `/usr/local/bin` directory.
           ```
