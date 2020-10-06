@@ -1516,7 +1516,7 @@ If you complete one of the above options but the `keepalived` pods are still not
 
 
 ## Ingress secret expiration date is not updated
-{: #sync_cert_dates
+{: #sync_cert_dates}
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic

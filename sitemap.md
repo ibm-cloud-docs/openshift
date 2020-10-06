@@ -1830,7 +1830,7 @@ subcollection: openshift
 * [3.11 clusters: ALB does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit)
 * [3.11 clusters: Ingress ALB cannot be enabled due to subnet errors](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_alb_subnet)
 * [3.11 clusters: Source IP preservation fails when using tainted nodes](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_source_ip_fails)
-* [Ingress secret expiration date is not updated](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#sync_cert_dates
+* [Ingress secret expiration date is not updated](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#sync_cert_dates)
 * [Connection via WebSocket closes after 60 seconds](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_websocket)
 
 [Persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage)
