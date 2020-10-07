@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -660,7 +660,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     If a router has no external IP address (classic) or hostname (VPC), see [4.3 clusters: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43).
     {: note}
 
-2. If you use Calico pre-DNAT network policies, VPC access control lists (ACLs), or another custom firewall to block incoming traffic to router or Ingress services, you must allow inbound access from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare's IPv4 IPs to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your routers from [the ports and IP addresses in step 2 of this section](/docs/openshift?topic=openshift-firewall#firewall_outbound) and [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} that are used to check the health of your routers.
+2. If you use Calico pre-DNAT network policies, VPC access control lists (ACLs), or another custom firewall to block incoming traffic to router or Ingress services, you must allow inbound access from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare's IPv4 IPs to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your routers from [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} that are used to check the health of your routers on port 80 and [the ports and IP addresses in step 2 of this section](/docs/openshift?topic=openshift-firewall#firewall_outbound).
 
 3. Check the health of your router by pinging its IP address (classic) or hostname (VPC).
   * Single-zone clusters:
@@ -1032,7 +1032,7 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses. 
 
     * If a public ALB has no IP address, see [Ingress ALB does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit).
 
-2. If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to Ingress ALBs, you must allow inbound access from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare's IPv4 IPs to the IP addresses of your ALBs so that your ALBs can be health checked. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your ALBs from [the ports and IP addresses in step 2 of this section](/docs/openshift?topic=openshift-firewall#firewall_outbound) and [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} that are used to check the health of your ALBs.
+2. If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to Ingress ALBs, you must allow inbound access from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare's IPv4 IPs to the IP addresses of your ALBs so that your ALBs can be health checked. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your ALBs from [the ports and IP addresses in step 2 of this section](/docs/openshift?topic=openshift-firewall#firewall_outbound) and [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} that are used to check the health of your ALBs on port 80.
 
 3. Check the health of your ALB IPs.
 
@@ -1526,7 +1526,7 @@ If you complete one of the above options but the `keepalived` pods are still not
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>` or `ibmcloud oc ingress status -c <cluster_name_or_ID>`, you see the following **Ingress Message**:
 
 ```
-The expiration date reported by the Ingress secret is out of sync with actual certificate expiration date. See http://ibm.biz/ingress-secret-sync
+The expiration dates reported by Ingress secrets are out of sync across namespaces. To resynchronize the expiration dates, see http://ibm.biz/ingress-secret-sync
 ```
 {: screen}
 

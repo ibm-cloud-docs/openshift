@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-07"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -247,11 +247,11 @@ Create ALBs that run the community Kubernetes Ingress image in your cluster.
 
 3. Create at least one ALB in each zone that runs the Kubernetes Ingress image.
       ```
-      ibmcloud oc ingress alb create classic --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> --version 0.34.1_391_iks
+      ibmcloud oc ingress alb create classic --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> --version 0.35.0_474_iks
       ```
       {: pre}
 
-4. Verify that the new ALBs are created. In the output, copy the IP address for one ALB that has a **Build** of `0.34.1_391_iks`.
+4. Verify that the new ALBs are created. In the output, copy the IP address for one ALB that has a **Build** of `0.35.0_474_iks`.
   ```
   ibmcloud oc ingress alb ls -c <cluster>
   ```
@@ -454,7 +454,7 @@ Decide whether to [create new ALBs](#alb-migrate-3-new) that run the Kubernetes 
   ```
   {: pre}
 
-6. Copy the IP address for one ALB that has the Kubernetes Ingress version that you specified in the **Build** column, such as `0.34.1_391_iks`.
+6. Copy the IP address for one ALB that has the Kubernetes Ingress version that you specified in the **Build** column, such as `0.35.0_474_iks`.
   ```
   ibmcloud oc ingress alb ls -c <cluster>
   ```
@@ -723,13 +723,13 @@ IBM Cloud Ingress versions
 647
 
 Kubernetes Ingress versions
-0.34.1_391_iks
-0.33.0_390_iks (default)
-0.32.0_392_iks
+0.35.0_474_iks
+0.34.1_391_iks (default)
+0.33.0_390_iks
 ```
 {: screen}
 
-The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.34.1_391_iks` indicates the most recent build of the `0.34.1` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
+The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.35.0_474_iks` indicates the most recent build of the `0.34.1` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
 
 For the changes that are included in each version of the Ingress images, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
