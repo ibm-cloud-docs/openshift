@@ -185,8 +185,10 @@ Using both community Kubernetes and {{site.data.keyword.openshiftshort}} cluster
 
 1.  Download the latest {{site.data.keyword.openshiftshort}} CLI (`oc`) for your local operating system and {{site.data.keyword.openshiftshort}} version. The current default {{site.data.keyword.openshiftshort}} version is 4.4. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
-    *   [OpenShift Container Platform 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
-    *   [OpenShift Container Platform 4 `oc` download link](https://mirror.openshift.com/pub/openshift-v4/clients/oc/){: external}
+    *   [OpenShift Container Platform version 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
+    *   OpenShift Container Platform version 4 `oc` download links
+        * [4.4](https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.4/){: external}
+        * [4.3](https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.3/){: external}
 
 2.  Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.openshiftshort}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.18.9.
 
