@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -186,7 +187,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Migrating clusters | You can use the cluster migrator operator to migrate clusters from one major version to another. Migration requires separate clusters; you cannot update a cluster from one major version to another. | As with standard OpenShift Container Platform, you cannot update a cluster from one major version to another. You can use the cluster migrator operator as an open source tool. However, certain features such as the migration UI are not available. For more information, see [Migrating from version 3.11 to 4 clusters](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration). |
 | Container-native virtualization | You can install a [container-native virtualization add-on](https://docs.openshift.com/container-platform/4.3/cnv/cnv-about-cnv.html){: external} to run VM workloads alongside container workloads. | You can set up container-native virtualization on bare metal machines, but not on virtual machines.|
 | Serverless workloads | You can set up [{{site.data.keyword.openshiftshort}} Serverless](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}. | You can also set up {{site.data.keyword.openshiftshort}} Serverless. |
-| Service mesh | You can set up the [Red Hat {{site.data.keyword.openshiftshort}} Service Mesh](https://docs.openshift.com/container-platform/4.3/service_mesh/service_mesh_install/preparing-ossm-installation.html){: external}. | You can also set up the Red Hat {{site.data.keyword.openshiftshort}} Service Mesh, but you must [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external} for the service mesh ingress to work.|
+| Service mesh | You can set up the [Red Hat {{site.data.keyword.openshiftshort}} Service Mesh](https://docs.openshift.com/container-platform/4.3/service_mesh/v1x/installing-ossm.html){: external}. | You can also set up the Red Hat {{site.data.keyword.openshiftshort}} Service Mesh, but you must [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external} for the service mesh ingress to work.|
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and {{site.data.keyword.openshiftshort}} API resources. You can also install command line tools such as `oc` and `odo`. | {{site.data.keyword.openshiftlong_notm}} clusters come with the same capabilities to use the Kubernetes and {{site.data.keyword.openshiftshort}} API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-openshift-cli) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
 {: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="top"}
 {: summary="The rows are read from left to right. In the first column is the characteristic that differs between standard OpenShift Container Platform installations in the second column and {{site.data.keyword.openshiftlong_notm}} clusters in the third column."}
