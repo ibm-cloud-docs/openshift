@@ -294,38 +294,6 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     {: screen}
 
 4. Verify that the ALB (version 3.11 clusters) or router for the Ingress controller (version 4 clusters) is successfully created.
-  * **Version Version 3.11 clusters:**
-    1. Check whether an ALB exists for your cluster and that the ALB has a public IP address (classic clusters) or a hostname (VPC clusters) assigned.
-      * If a public ALB is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no ALBs are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
-
-        ```
-        ibmcloud oc ingress alb ls -c <cluster_name_or_ID>
-        ```
-        {: pre}
-
-        Example output:
-        ```
-        ALB ID                                Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-        private-crbmnj1b1d09lpvv3oof0g-alb1   false     disabled   private   -               dal10   ingress:652/ingress-auth:424   2234947       2.0
-        public-crbmnj1b1d09lpvv3oof0g-alb1    true      enabled    public    169.XX.XXX.XX   dal10   ingress:652/ingress-auth:424   2234945       2.0
-        ```
-        {: screen}
-
-    2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address (classic clusters) or a hostname (VPC clusters) as the public ALB.
-      * If a `LoadBalancer` service is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
-
-        ```
-        kubectl get svc -n kube-system | grep LoadBalancer
-        ```
-        {: pre}
-
-        Example output:
-        ```
-        public-crbmnj1b1d09lpvv3oof0g-alb1   LoadBalancer   172.21.XXX.XXX   169.XX.XXX.XX   80:30723/TCP,443:31241/TCP   1d
-        ```
-        {: screen}
   * **Version 4 clusters:**
     1. Check whether a router deployment exists for your cluster.
       * If a router deployment is listed, continue to the next step.
@@ -357,6 +325,38 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
         router-default            LoadBalancer   172.21.47.119   169.XX.XX.XX   80:31182/TCP,443:31154/TCP   27m
         router-internal-default   ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
+        ```
+        {: screen}
+  * **Version Version 3.11 clusters:**
+    1. Check whether an ALB exists for your cluster and that the ALB has a public IP address (classic clusters) or a hostname (VPC clusters) assigned.
+      * If a public ALB is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
+      * If no ALBs are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
+
+        ```
+        ibmcloud oc ingress alb ls -c <cluster_name_or_ID>
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        ALB ID                                Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
+        private-crbmnj1b1d09lpvv3oof0g-alb1   false     disabled   private   -               dal10   ingress:652/ingress-auth:424   2234947       2.0
+        public-crbmnj1b1d09lpvv3oof0g-alb1    true      enabled    public    169.XX.XXX.XX   dal10   ingress:652/ingress-auth:424   2234945       2.0
+        ```
+        {: screen}
+
+    2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address (classic clusters) or a hostname (VPC clusters) as the public ALB.
+      * If a `LoadBalancer` service is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
+      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
+
+        ```
+        kubectl get svc -n kube-system | grep LoadBalancer
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        public-crbmnj1b1d09lpvv3oof0g-alb1   LoadBalancer   172.21.XXX.XXX   169.XX.XXX.XX   80:30723/TCP,443:31241/TCP   1d
         ```
         {: screen}
 
