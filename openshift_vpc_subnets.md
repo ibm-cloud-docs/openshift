@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-10-08"
 
 keywords: openshift, roks, rhoks, rhos, ips, vlans, networking, public gateway
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -121,7 +122,7 @@ Do not delete the subnets that you attach to your cluster during cluster creatio
 When you [create your VPC subnet](https://cloud.ibm.com/vpc/provision/network){: external}, make sure to create a subnet with enough IP addresses for your cluster, such as 256. You cannot change the number of IP addresses that a VPC subnet has later.
 
 Keep in mind the following IP address reservations.
-* 5 IP addresses are [reserved by VPC](/docs/vpc?topic=vpc-about-networking-for-vpc#reserved-ip-addresses) from each subnet by default.
+* 5 IP addresses are [reserved by VPC](/docs/vpc?topic=vpc-about-networking-for-vpc#addresses-reserved-by-the-system) from each subnet by default.
 * 1 IP address is required per worker node in your cluster.
 * 1 IP address is required each time that you update or replace a worker node. These IP addresses are eventually reclaimed and available for reuse.
 * 2 IP addresses are used each time that you create a public or private load balancer. If you have a multizone cluster, these 2 IP addresses are spread across zones, so the subnet might not have an IP address reserved.
