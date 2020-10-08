@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-07"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -522,9 +522,6 @@ After logging in to {{site.data.keyword.cloud_notm}}, download the Kubernetes co
 {: shortdesc}
 
 The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your terminal session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).
-
-{{site.data.keyword.openshiftlong_notm}} plug-in CLI versions 0.4 and earlier are deprecated or unsupported. In these earlier versions, the `cluster config` command downloaded the `kubeconfig` file to `user_home_directory/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>`. With the release of version 1.0 on 16 March 2020, the `cluster config` behavior changes permanently and is not compatible with earlier versions. To maintain CLI functionality, update and test any automation that you built with earlier CLI versions now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in. If you still need a separate `kubeconfig` file per cluster instead of the new merged `kubeconfig` file behavior, see [Creating a temporary `kubeconfig` file](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig).
-{: deprecated}
 
 ```
 ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac] [-q] [--yaml]
@@ -2899,7 +2896,7 @@ ibmcloud oc ingress alb enable classic --alb ALB_ID --cluster CLUSTER [--ip IP_A
 
 **Example**:
 ```
-ibmcloud oc ingress alb enable classic --alb private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --cluster mycluster --ip 169.XX.XXX.XX --version 0.34.1_391_iks
+ibmcloud oc ingress alb enable classic --alb private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --cluster mycluster --ip 169.XX.XXX.XX --version 0.35.0_474_iks
 ```
 {: pre}
 
@@ -5638,9 +5635,6 @@ ibmcloud oc messages
 
 List the locations that are supported by {{site.data.keyword.containerlong_notm}}. For more information about the locations that are returned, see [{{site.data.keyword.containerlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations).
 {: shortdesc}
-
-In [CLI plug-in version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta), `supported-locations` is replaced by the `locations` command. Version 1.0 of the CLI plug-in was released on 16 March 2020. In version 1.0, the permanent behavior change to this command is not compatible with earlier versions. To maintain all CLI functionality, update and test any automation now by checking out the [`ibmcloud oc script update` command](#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
-{: important}
 
 ```
 ibmcloud oc locations [--output json]

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-08"
 
 keywords: autoscaler, add-on, autoscaler changelog
 
@@ -44,6 +44,7 @@ subcollection: openshift, cluster autoscaler, add-on, scale
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -112,7 +113,6 @@ ibmcloud oc addon-versions
 
 | Previous | Current | Description |
 | -------- | ------- | ----------- |
-| N/A | 1.0.1 | <ul><li>The cluster autoscaler is available as a [managed add-on](/docs/openshift?topic=openshift-ca).</li><li>The add-on can be used with the following versions: {{site.data.keyword.openshiftshort}} minimum version 4.3. |
+| N/A | 1.0.1 | <ul><li>The cluster autoscaler is available as a [managed add-on](/docs/openshift?topic=openshift-ca).</li><li>The add-on can be used with the following versions: {{site.data.keyword.openshiftshort}} minimum version 4.3.</li></ul> |
 {: summary="The rows are read from left to right. The first column is the previous version number of the component. The second column is the current version number of the component. The third column contains a brief description of the change made to the component."}
 {: caption="Cluster autoscaler 1.0.1" caption-side="top"}
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-07"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -753,9 +753,9 @@ When you create a standard cluster, a private ALB is created in each zone that y
   647
 
   Kubernetes Ingress versions
-  0.34.1_391_iks
-  0.33.0_390_iks (default)
-  0.32.0_392_iks
+  0.35.0_474_iks
+  0.34.1_391_iks (default)
+  0.33.0_390_iks
   ```
   {: screen}
 
@@ -1154,13 +1154,13 @@ IBM Cloud Ingress versions
 647
 
 Kubernetes Ingress versions
-0.34.1_391_iks
-0.33.0_390_iks (default)
-0.32.0_392_iks
+0.35.0_474_iks
+0.34.1_391_iks (default)
+0.33.0_390_iks
 ```
 {: screen}
 
-The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.34.1_391_iks` indicates the most recent build of the `0.34.1` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
+The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.35.0_474_iks` indicates the most recent build of the `0.34.1` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
 
 For the changes that are included in each version of the Ingress images, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog).
 

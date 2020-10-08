@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-08"
 
 keywords: openshift
 subcollection: openshift
@@ -43,6 +43,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -791,9 +792,6 @@ subcollection: openshift
 * [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity)
 * [Deploying Cloud Paks, licensed software, and other integrations](/docs/openshift?topic=openshift-deploy_app#openshift_app_cloud_paks)
 * [Accessing the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
-* [Accessing built-in OpenShift services](/docs/openshift?topic=openshift-deploy_app#openshift_access_oc_services)
-  * [Accessing built-in OpenShift services from the console](/docs/openshift?topic=openshift-deploy_app#openshift_services_console)
-  * [Accessing built-in OpenShift services from the CLI](/docs/openshift?topic=openshift-deploy_app#openshift_services_cli)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport)
 * [About NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport_planning)
@@ -1478,12 +1476,13 @@ subcollection: openshift
   * [`ibmcloud oc storage volume ls `](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
 
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog)
-* [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta)
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
-* [Version 0.4](/docs/openshift?topic=openshift-cs_cli_changelog#04)
-* [Version 0.3](/docs/openshift?topic=openshift-cs_cli_changelog#03)
-* [Version 0.2](/docs/openshift?topic=openshift-cs_cli_changelog#02)
-* [Version 0.1](/docs/openshift?topic=openshift-cs_cli_changelog#01)
+* [Deprecated versions](/docs/openshift?topic=openshift-cs_cli_changelog#deprecated)
+  * [Updating to version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta)
+  * [Version 0.4](/docs/openshift?topic=openshift-cs_cli_changelog#04)
+  * [Version 0.3](/docs/openshift?topic=openshift-cs_cli_changelog#03)
+  * [Version 0.2](/docs/openshift?topic=openshift-cs_cli_changelog#02)
+  * [Version 0.1](/docs/openshift?topic=openshift-cs_cli_changelog#01)
 
 [Observability plug-in CLI](/docs/openshift?topic=openshift-observability_cli)
   * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)

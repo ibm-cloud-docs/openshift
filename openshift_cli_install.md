@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-07"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -115,8 +115,8 @@ If you want to use the {{site.data.keyword.cloud_notm}} console instead, you can
 <br>
 To install the CLIs:
 
-1.  Install the stand-alone [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli) (`ibmcloud`). 
-    
+1.  Install the stand-alone [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli) (`ibmcloud`).
+
     Plan to use the CLI often? Try [Enabling shell autocompletion for {{site.data.keyword.cloud_notm}} CLI (Linux/macOS only)](/docs/cli/reference/ibmcloud?topic=cli-shell-autocomplete#shell-autocomplete-linux).
     {: tip}
 
@@ -185,8 +185,10 @@ Using both community Kubernetes and {{site.data.keyword.openshiftshort}} cluster
 
 1.  Download the latest {{site.data.keyword.openshiftshort}} CLI (`oc`) for your local operating system and {{site.data.keyword.openshiftshort}} version. The current default {{site.data.keyword.openshiftshort}} version is 4.4. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
-    *   [OpenShift Container Platform 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
-    *   [OpenShift Container Platform 4 `oc` download link](https://mirror.openshift.com/pub/openshift-v4/clients/oc/){: external}
+    *   [OpenShift Container Platform version 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
+    *   OpenShift Container Platform version 4 `oc` download links
+        * [4.4](https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.4/){: external}
+        * [4.3](https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.3/){: external}
 
 2.  Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.openshiftshort}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.18.9.
 
@@ -246,10 +248,6 @@ This task includes the information for updating the following CLIs:
 -   {{site.data.keyword.openshiftlong_notm}} plug-in
 -   {{site.data.keyword.openshiftshort}} CLI
 -   {{site.data.keyword.registrylong_notm}} plug-in
-
-
-[Version 1.0 of the CLI plug-in was released on 16 March 2020](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta). This version contains permanent syntax and behavior changes that are not compatible with earlier versions.</br></br>To maintain all CLI functionality, update and test any automation before you update to 1.0 by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
-{: important}
 
 
 <br>

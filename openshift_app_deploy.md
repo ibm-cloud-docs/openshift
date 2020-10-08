@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-08"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -357,69 +358,4 @@ For more information about the console, see the [{{site.data.keyword.openshiftsh
 
 
 <br />
-
-
-## Accessing built-in OpenShift services
-{: #openshift_access_oc_services}
-
-{{site.data.keyword.openshiftlong_notm}} comes with built-in services that you can use to help operate your cluster, such as the {{site.data.keyword.openshiftshort}} console, Prometheus, and Grafana. You can access these services by using the local host of a [route](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external}. The default route domain names follow a cluster-specific pattern of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.
-{: shortdesc}
-
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This topic is specific to {{site.data.keyword.openshiftshort}} version 3.11.
-{: note}
-
-You can access the built-in {{site.data.keyword.openshiftshort}} service routes from the [console](#openshift_services_console) or [CLI](#openshift_services_cli). You might want to use the console to navigate through Kubernetes resources in one project. By using the CLI, you can list resources such as routes across projects.
-
-### Accessing built-in OpenShift services from the console
-{: #openshift_services_console}
-1.  From the {{site.data.keyword.openshiftshort}} web console, in the dropdown menu in the {{site.data.keyword.openshiftshort}} container platform menu bar, click **Application Console**.
-2.  Select the **default** project, then in the navigation pane, click **Applications > Pods**.
-3.  Verify that the **router** pods are in a **Running** status. The router functions as the ingress point for external network traffic. You can use the router to publicly expose the services in your cluster on the router's external IP address by using a route. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
-4.  From the **default** project navigation pane, click **Applications > Deployments** and then click the **registry-console** deployment. Your {{site.data.keyword.openshiftshort}} cluster comes with an internal registry that you can use to manage local images for your deployments. To view your images, click **Applications > Routes** and open the registry console **Hostname** URL.
-5.  In the {{site.data.keyword.openshiftshort}} container platform menu bar, from the dropdown menu, click **Cluster Console**.
-6.  From the navigation pane, expand **Monitoring**.
-7.  Click the built-in monitoring tool that you want to access, such as **Dashboards**. The Grafana route opens in the following format: `https://grafana-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.<p class="note">The first time that you access the hostname, you might need to authenticate, such as by clicking **Log in with OpenShift** and authorizing access to your IAM identity.</p>
-
-### Accessing built-in OpenShift services from the CLI
-{: #openshift_services_cli}
-
-1.  From the **Application Console** or **Service Console** view in the {{site.data.keyword.openshiftshort}}  web console, click your profile **IAM#user.name@email.com > Copy Login Command** and paste the login command into your terminal to authenticate.
-    ```
-    oc login https://c1-e.<region>.containers.cloud.ibm.com:<port> --token=<access_token>
-    ```
-    {: pre}
-2.  Verify that your router is deployed. The router functions as the ingress point for external network traffic. You can use the router to publicly expose the services in your cluster on the router's external IP address by using a route. The router listens on the public host network interface, unlike your app pods that listen only on private IPs. The router proxies external requests for route hostnames that you associate with services. Requests are sent to the IPs of the app pods that are identified by the service.
-    ```
-    oc get svc router -n default
-    ```
-    {: pre}
-
-    Example output:
-    ```
-    NAME      TYPE           CLUSTER-IP               EXTERNAL-IP     PORT(S)                      AGE
-    router    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xxx   80:30399/TCP,443:32651/TCP                      5h
-    ```
-    {: screen}
-2.  Get the **Host/Port** hostname of the service route that you want to access. For example, you might want to access your Grafana dashboard to check metrics on your cluster's resource usage. The default route domain names follow a cluster-specific pattern of `<service_name>-<namespace>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`.
-    ```
-    oc get route --all-namespaces
-    ```
-    {: pre}
-
-    Example output:
-    ```
-    NAMESPACE                          NAME                HOST/PORT                                                                    PATH                  SERVICES            PORT               TERMINATION          WILDCARD
-    default                            registry-console    registry-console-default.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                              registry-console    registry-console   passthrough          None
-    kube-service-catalog               apiserver           apiserver-kube-service-catalog.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                        apiserver           secure             passthrough          None
-    openshift-ansible-service-broker   asb-1338            asb-1338-openshift-ansible-service-broker.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud            asb                 1338               reencrypt            None
-    openshift-console                  console             console.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                                              console             https              reencrypt/Redirect   None
-    openshift-monitoring               alertmanager-main   alertmanager-main-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                alertmanager-main   web                reencrypt            None
-    openshift-monitoring               grafana             grafana-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                          grafana             https              reencrypt            None
-    openshift-monitoring               prometheus-k8s      prometheus-k8s-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud                   prometheus-k8s      web                reencrypt
-    ```
-    {: screen}
-3.  In your web browser, open the route that you want to access, for example: `https://grafana-openshift-monitoring.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. The first time that you access the hostname, you might need to authenticate, such as by clicking **Log in with OpenShift** and authorizing access to your IAM identity.
-
-<br>
-Now you're in the built-in {{site.data.keyword.openshiftshort}} app! For example, if you're in Grafana, you might check out your namespace CPU usage or other graphs. To access other built-in tools, open their route hostnames.
 
