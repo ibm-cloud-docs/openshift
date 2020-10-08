@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-07"
+lastupdated: "2020-10-08"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -742,7 +743,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 **Example:**
 ```
-ibmcloud sat cluster create satellite --name mysatcluster --location mylocation --version 4.3_openshift
+ibmcloud sat cluster create satellite --name mysatcluster --location mylocation --version 4.4_openshift
 ```
 {: pre}
 
@@ -761,7 +762,7 @@ Free clusters are not available in VPC.
 {: note}
 
 ```
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--version 4.3_openshift] --cos-instance COS_ID [--workers NUMBER_WORKERS_PER_ZONE] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--skip-advance-permissions-check] [-q]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--version 4.4_openshift] --cos-instance COS_ID [--workers NUMBER_WORKERS_PER_ZONE] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--skip-advance-permissions-check] [-q]
 ```
 {: pre}
 
@@ -792,7 +793,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <dt><code>--subnet-id <em>VPC_SUBNET_ID</em></code></dt>
 <dd>Required: The VPC subnet to assign the cluster. To list available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2`.</dd>
 
-<dt><code>--version 4.3_openshift</code></dt>
+<dt><code>--version 4.4_openshift</code></dt>
 <dd>VPC Gen 2 clusters are supported for {{site.data.keyword.openshiftshort}} version 4 only.</dd>
 
 <dt><code>--flavor <em>FLAVOR</em></code></dt>
@@ -838,7 +839,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 **Example**:
 ```
-ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.3_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
+ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.4_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
 ```
 {: pre}
 
