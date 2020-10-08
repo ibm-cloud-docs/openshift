@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-07"
+lastupdated: "2020-10-08"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -107,7 +108,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
-| 08 October 2020 | <ul><li>**Ingress ALB changelog**: Updated the [Kubernetes Ingress image build to `0.35.0_474_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_35_0).</li></ul> |
+| 08 October 2020 | **Ingress ALB changelog**: Updated the [Kubernetes Ingress image build to `0.35.0_474_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_35_0). |
 | 06 October 2020 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**Ingress secret expiration synchronization**: Added a troubleshooting topic for when [Ingress secret expiration dates are out of sync or are not updated](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#sync_cert_dates).</li><li>**Internal {{site.data.keyword.openshiftshort}} container image registry**: Added a troubleshooting topic for when you [cannot push images to the internal registry from outside the VPC network](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push).</li></ul> |
 | 01 October 2020 | <ul><li>**Default version**: The default version for clusters is now {{site.data.keyword.openshiftshort}} 4.4.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` build to 652 and the `ingress-auth` build to 424](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}

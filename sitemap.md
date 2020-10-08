@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-07"
+lastupdated: "2020-10-08"
 
 keywords: openshift
 subcollection: openshift
@@ -43,6 +43,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -791,9 +792,6 @@ subcollection: openshift
 * [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity)
 * [Deploying Cloud Paks, licensed software, and other integrations](/docs/openshift?topic=openshift-deploy_app#openshift_app_cloud_paks)
 * [Accessing the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
-* [Accessing built-in OpenShift services](/docs/openshift?topic=openshift-deploy_app#openshift_access_oc_services)
-  * [Accessing built-in OpenShift services from the console](/docs/openshift?topic=openshift-deploy_app#openshift_services_console)
-  * [Accessing built-in OpenShift services from the CLI](/docs/openshift?topic=openshift-deploy_app#openshift_services_cli)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport)
 * [About NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport_planning)
