@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-09"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -49,6 +49,7 @@ completion-time: 45m
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -436,23 +437,23 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
     ```
     {: screen}
 
-3.  Verify that the VPC load balancer is created successfully in your VPC. In the output, verify that the VPC load balancer has an **Operating Status** of `online` and a **Provision Status** of `active`.
+3.  Verify that the VPC load balancer is created successfully in your VPC. In the output, verify that the VPC load balancer has a **Provision Status** of `active` and an **Operating Status** of `online`.
 
-    The VPC load balancer is named in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc hw-lb-svc -o yaml` and look for the **metadata.uid** field in the output.
+    The VPC load balancer is named in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `kubectl get svc hw-lb-svc -o yaml` and look for the **metadata.uid** field in the output.
     {: tip}
     ```
     ibmcloud is load-balancers
     ```
     {: pre}
 
-    In the following example CLI output, the VPC load balancer that is named `kube-bh077ne10vqpekt0domg-046e0f754d624dca8b287a033d55f96e` is created for the `hw-lb-svc` Kubernetes `LoadBalancer` service:
+    In the following example CLI output, the VPC load balancer that is named `kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306` is created for the Kubernetes `LoadBalancer` service:
     ```
-    ID                                     Name                                                         Created          Host Name                              Is Public   Listeners                               Operating Status   Pools                                   Private IPs              Provision Status   Public IPs                    Subnets                                Resource Group
-    06496f64-a689-4693-ba23-320959b7b677   kube-bh077ne10vqpekt0domg-046e0f754d624dca8b287a033d55f96e   8 minutes ago    1234abcd-us-south.lb.appdomain.cloud   yes         95482dcf-6b9b-4c6a-be54-04d3c46cf017    online             717f2122-5431-403c-b21d-630a12fc3a5a    10.1.1.1,10.1.1.2        active             169.1.1.1,169.1.1.2   c6540331-1c1c-40f4-9c35-aa42a98fe0d9   00809211b934565df546a95f86160f62
+    ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
+    r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-3   true        active             online             default
     ```
     {: screen}
 
-4. Send a request to your app by curling the hostname and port of the Kubernetes `LoadBalancer` service that you found in step 2. Example:
+4. Send a request to your app by curling the hostname and port of the Kubernetes `LoadBalancer` service that is assigned by the VPC load balancer that you found in step 2. Example:
     ```
     curl 1234abcd-us-south.lb.appdomain.cloud:8080
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-09"
 
 keywords: openshift
 subcollection: openshift
@@ -1816,8 +1816,9 @@ subcollection: openshift
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-43)
   * [Step 3: Check the health of the Ingress controller's router](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#errors-43)
   * [Step 4: Ping the Ingress subdomain and router public IP address](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43)
-* [Version 4 clusters: Router for Ingress controller does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43)
-* [Version Version 3.11 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug)
+* [Version 4 VPC clusters: VPC load balancer for router only routes to one zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#router-mzr-error)
+* [Version 4 classic clusters: Router for Ingress controller does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43)
+* [ 3.11 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug)
   * [Step 1: Check your app deployment](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress)
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-ingress)
   * [Step 3: Check for error messages in your Ingress deployment and the ALB pod logs](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#errors)
