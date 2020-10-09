@@ -143,23 +143,23 @@ The **Ingress Status** reflects the overall health of the Ingress components. Th
 
 |Ingress message|Description|
 |--- |--- |
-|`ALB is disabled`|Version 3.11 clusters: Your public ALBs were manually disabled. For more information, see the [`ibmcloud oc ingress alb enable` CLI command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).|
-|`ALB is unhealthy or unreachable`|Version 3.11 clusters: One or more ALB IP addresses cannot be reached. For troubleshooting information, see [Ping the ALB subdomain and public IP addresses](#ping).|
+|`ALB is disabled`|Version 4: Your public ALBs were manually disabled. For more information, see the [`ibmcloud oc ingress alb enable` CLI command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).|
+|`ALB is unhealthy or unreachable`|Version 4: One or more ALB IP addresses cannot be reached. For troubleshooting information, see [Ping the ALB subdomain and public IP addresses](#ping).|
 |`ALBs are not health checked in clusters created with no subnets`|Ingress health reporting is not supported for clusters that were created with the `--no-subnet` flag.|
 |`ALBs cannot be created because no portable subnet is available`|Each ALB is created with a portable public or private IP address from the public or private subnet on the VLANs that your cluster is connected to. If no portable IP address is available, the ALB is not created. You might need to add a new subnet to your cluster or order a new VLAN. For troubleshooting information, see [Classic clusters: ALB does not deploy in a zone](#cs_subnet_limit).|
 |`All Ingress components are healthy`|The Ingress components are successfully deployed and are healthy.|
-|`Creating Ingress ALBs`|Version 3.11 clusters: Your ALBs are currently deploying. Wait until your ALBs are fully deployed to review the health of your Ingress components. Note that ALB creation can take up to 15 minutes to complete. |
+|`Creating Ingress ALBs`|Version 4: Your ALBs are currently deploying. Wait until your ALBs are fully deployed to review the health of your Ingress components. Note that ALB creation can take up to 15 minutes to complete. |
 |`Creating TLS certificate for Ingress subdomain. Ensure you have the correct IAM permissions.` |The default Ingress subdomain for your cluster is created with a default TLS certificate, which is stored in the **Ingress Secret**. The certificate is currently being created and stored in the default {{site.data.keyword.cloudcerts_long_notm}} instance for your cluster.<p class="note">When the creation of the {{site.data.keyword.cloudcerts_short}} instance is triggered, the {{site.data.keyword.cloudcerts_short}} instance might take up to an hour to become visible in the {{site.data.keyword.cloud_notm}} console. If this message continues to be displayed, see [No Ingress secret exists after cluster creation](#ingress_secret).</p>|
 |`Could not create a Certificate Manager instance. Ensure you have the correct IAM platform permissions.` | A default {{site.data.keyword.cloudcerts_long_notm}} instance for your cluster was not created to store the TLS certificate for the Ingress subdomain. The API key for the resource group and region that your cluster is in does not have the correct IAM permissions for {{site.data.keyword.cloudcerts_short}}. For troubleshooting steps, see [No Ingress secret exists after cluster creation](#ingress_secret).|
 |`Could not upload certificates to Certificate Manager instance. Ensure you have the correct IAM service permissions.`|The TLS certificate for your cluster's default Ingress subdomain is created, but cannot be stored in the default {{site.data.keyword.cloudcerts_long_notm}} instance for your cluster. The API key for the resource group and region that your cluster is in does not have the correct IAM permissions for {{site.data.keyword.cloudcerts_short}}. For troubleshooting steps, see [No Ingress secret exists after cluster creation](#ingress_secret).|
-|`Deploying router for Ingress controller`|Version 4 clusters: The router and router service that expose your Ingress controller are currently deploying to the cluster. If this message continues to be displayed, a router pod might be unable to deploy because only 1 worker node exists in the zone. Two worker nodes are required per zone so that the 2 replicas of the router can be deployed and updated correctly. For more information, see [Adding worker nodes to clusters](/docs/openshift?topic=openshift-add_workers). |
+|`Deploying router for Ingress controller`|Version 4: The router and router service that expose your Ingress controller are currently deploying to the cluster. If this message continues to be displayed, a router pod might be unable to deploy because only 1 worker node exists in the zone. Two worker nodes are required per zone so that the 2 replicas of the router can be deployed and updated correctly. For more information, see [Adding worker nodes to clusters](/docs/openshift?topic=openshift-add_workers). |
 |`Ingress status is not supported for cluster type`|Ingress health reporting is currently not supported for {{site.data.keyword.openshiftshort}} clusters.|
-|`Load balancer service for ALB or router is not ready`|<ul><li>Version 4 clusters: The router and router service that expose your Ingress controller did not correctly deploy to your cluster. For troubleshooting information, see [Version 4 clusters: Router for Ingress controller does not deploy in a zone](#cs_subnet_limit_43).</li><li>Version 3.11 clusters: The load balancer service that exposes your ALB did not correctly deploy to your cluster. For troubleshooting information, see [Version 3.11 clusters: ALB does not deploy in a zone](#cs_subnet_limit).</li></ul>|
-|`One or more ALBs are unhealthy`|Version 3.11 clusters: The external IP address for one or more of your ALBs was reported as unhealthy. For troubleshooting information, see [Ping the ALB subdomain and public IP addresses](#ping).|
-|`One or more routers are unhealthy`|Version 4 clusters: The external IP address for one or more routers was reported as unhealthy. For troubleshooting information, see [Check the health of the Ingress controller's router](#errors-43).|
-|`Pending update or enable operation for ALB in progress`|Version 3.11 clusters: Your ALB is currently updating to a new version, or your ALB that was previously disabled is enabling. For information about updating ALBs, see [Updating ALBs](/docs/containers?topic=containers-ingress#alb-update). For information about enabling ALBs, see the [`ibmcloud oc ingress alb enable` CLI command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).|
+|`Load balancer service for ALB or router is not ready`|<ul><li>Version 4: The router and router service that expose your Ingress controller did not correctly deploy to your cluster. For troubleshooting information, see [Version 4: Router for Ingress controller does not deploy in a zone](#cs_subnet_limit_43).</li><li>Version 4: The load balancer service that exposes your ALB did not correctly deploy to your cluster. For troubleshooting information, see [Version 4: ALB does not deploy in a zone](#cs_subnet_limit).</li></ul>|
+|`One or more ALBs are unhealthy`|Version 4: The external IP address for one or more of your ALBs was reported as unhealthy. For troubleshooting information, see [Ping the ALB subdomain and public IP addresses](#ping).|
+|`One or more routers are unhealthy`|Version 4: The external IP address for one or more routers was reported as unhealthy. For troubleshooting information, see [Check the health of the Ingress controller's router](#errors-43).|
+|`Pending update or enable operation for ALB in progress`|Version 4: Your ALB is currently updating to a new version, or your ALB that was previously disabled is enabling. For information about updating ALBs, see [Updating ALBs](/docs/containers?topic=containers-ingress#alb-update). For information about enabling ALBs, see the [`ibmcloud oc ingress alb enable` CLI command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).|
 |`Registering Ingress subdomain`|The default **Ingress Subdomain** for your cluster is currently being created. The Ingress subdomain and secret creation follows a process that might take more than 15 minutes to complete. For troubleshooting information, see [No Ingress subdomain exists after cluster creation](#ingress_subdomain).|
-|`Router service is unhealthy or unreachable`|Version 4 clusters: The external IP address for one or more router services that expose Ingress controllers was reported as unhealthy or was unreachable, or one or more router services did not correctly deploy to your cluster. For troubleshooting information, see [Ping the Ingress subdomain and router public IP address](#ping-43).|
+|`Router service is unhealthy or unreachable`|Version 4: The external IP address for one or more router services that expose Ingress controllers was reported as unhealthy or was unreachable, or one or more router services did not correctly deploy to your cluster. For troubleshooting information, see [Ping the Ingress subdomain and router public IP address](#ping-43).|
 |`The expiration dates reported by Ingress secrets are out of sync across namespaces.`| To resynchronize the expiration dates, [regenerate the secrets for your Ingress subdomain certificate](#sync_cert_dates).|
 {: caption="Ingress messages"}
 {: summary="Table rows read from left to right, with the Ingress message in column one and a description in column two."}
@@ -297,7 +297,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     {: screen}
 
 4. Verify that the ALB (version 3.11 clusters) or router for the Ingress controller (version 4 clusters) is successfully created.
-  * **Version 4 clusters:**
+  * **Version 4:**
     1. Check whether a router deployment exists for your cluster.
       * If a router deployment is listed, continue to the next step.
       * If no router deployment is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
@@ -330,7 +330,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         router-internal-default   ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
         ```
         {: screen}
-  * **Version 3.11 clusters:**
+  * **Version 4:**
     1. Check whether an ALB exists for your cluster and that the ALB has a public IP address (classic clusters) or a hostname (VPC clusters) assigned.
       * If a public ALB is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
       * If no ALBs are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
@@ -416,10 +416,13 @@ For an {{site.data.keyword.cloudcerts_short}} instance to be created for your ne
 
 For more information, see [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-types#manage_certs).
 
-## Classic clusters: Cannot connect to an app via Ingress
+## Cannot connect to an app via Ingress
 {: #cs_ingress_fails}
 
-**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**:
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 1 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 {: tsSymptoms}
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You publicly exposed your app by creating an Ingress resource for your app in your classic cluster. When you tried to connect to your app by using the public IP address or Ingress subdomain, the connection failed or timed out.
@@ -434,9 +437,9 @@ ibmcloud oc worker ls --cluster <cluster_name_or_ID>
 In your CLI output, make sure that the **Status** of your worker nodes displays **Ready** and that the **Machine Type** shows a flavor other than **free**.
 
 * If your standard cluster is fully deployed and has at least 2 worker nodes per zone, but no **Ingress Subdomain** is available, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
-* For other issues, troubleshoot your Ingress setup by following the steps in [Version 3.11 clusters: Debugging Ingress](#ingress-debug)or [Version 4 clusters: Debugging Ingress](#ingress-debug-roks4).
+* For other issues, troubleshoot your Ingress setup by following the steps in [Version 3.11: Debugging Ingress](#ingress-debug)or [Version 4: Debugging Ingress](#ingress-debug-roks4).
 
-Version 3.11 clusters: If you recently restarted your ALB pods or enabled an ALB, a [readiness check](/docs/openshift?topic=openshift-ingress#readiness-check) prevents ALB pods from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss and can take up to 5 minutes.
+Version 4: If you recently restarted your ALB pods or enabled an ALB, a [readiness check](/docs/openshift?topic=openshift-ingress#readiness-check) prevents ALB pods from attempting to route traffic requests until all of the Ingress resource files are parsed. This readiness check prevents request loss and can take up to 5 minutes.
 {: note}
 
 <br />
@@ -444,7 +447,7 @@ Version 3.11 clusters: If you recently restarted your ALB pods or enabled an ALB
 
 
 
-## Version 4 clusters: Debugging Ingress
+## Version 4: Debugging Ingress
 {: #ingress-debug-roks4}
 {: troubleshoot}
 {: support}
@@ -453,7 +456,7 @@ Version 3.11 clusters: If you recently restarted your ALB pods or enabled an ALB
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 4. For 3.11 clusters, see [Version 3.11 clusters: Debugging Ingress](#ingress-debug).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 4. For 3.11 clusters, see [Version 3.11: Debugging Ingress](#ingress-debug).
 {: note}
 
 {: tsSymptoms}
@@ -642,7 +645,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     ```
     {: screen}
 
-    If a router has no external IP address (classic) or hostname (VPC), see [Version 4 clusters: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43).
+    If a router has no external IP address (classic) or hostname (VPC), see [Version 4: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43).
     {: note}
 
 2. If you use Calico pre-DNAT network policies, VPC access control lists (ACLs), or another custom firewall to block incoming traffic to router or Ingress services, you must allow inbound access from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare's IPv4 IPs to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your routers from [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} that are used to check the health of your routers on port 80 and [the ports and IP addresses in step 2 of this section](/docs/openshift?topic=openshift-firewall#firewall_outbound).
@@ -719,7 +722,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
 <br />
 
 
-## Version 4 VPC clusters: VPC load balancer for router only routes to one zone
+## Version 4: VPC load balancer for router only routes to one zone
 {: #router-mzr-error}
 
 **Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
@@ -822,7 +825,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
 <br />
 
 
-## Version 4 classic clusters: Router for Ingress controller does not deploy in a zone
+## Version 4: Router for Ingress controller does not deploy in a zone
 {: #cs_subnet_limit_43}
 
 **Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
@@ -851,6 +854,7 @@ When you run `oc get svc -n openshift-ingress`, one or more zones has no public 
   {: screen}
 
 {: tsCauses}
+Router services may deploy for one of the following reasons:
 
 * **If no router services are deployed or router services are not assigned an external IP address**: In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. In that zone, 1 public portable subnet is requested on the public VLAN that you specify and 1 private portable subnet is requested on the private VLAN that you specify. For {{site.data.keyword.openshiftlong_notm}}, VLANs have a limit of 40 subnets. If the cluster's VLAN in a zone already reached that limit, the **Ingress Subdomain** fails to provision and the default public router for the Ingress controller fails to provision. To view how many subnets a VLAN has, from the [IBM Cloud infrastructure console](https://cloud.ibm.com/classic?), select **Network** > **IP Management** > **VLANs**. Click the **VLAN Number** of the VLAN that you used to create your cluster. Review the **Subnets** section to see whether 40 or more subnets exist.
 
@@ -945,7 +949,7 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 <br />
 
 
-##  3.11 clusters: Debugging Ingress
+## Version 3.11: Debugging Ingress
 {: #ingress-debug}
 {: troubleshoot}
 {: support}
@@ -953,7 +957,7 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 **Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 3.11. For version 4 clusters, see [Version 4 clusters: Debugging Ingress](#ingress-debug-roks4).
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 3.11. For version 4 clusters, see [Version 4: Debugging Ingress](#ingress-debug-roks4).
 {: note}
 
 
@@ -1371,7 +1375,7 @@ For example, say you have a multizone cluster in 2 zones, and the 2 public ALBs 
 <br />
 
 
-## Version 3.11 clusters: Ingress application load balancer (ALB) secret issues
+## Version 3.11: Ingress application load balancer (ALB) secret issues
 {: #cs_albsecret_fails}
 
 **Infrastructure provider**:
@@ -1433,7 +1437,7 @@ Review the following reasons why the ALB secret might fail and the corresponding
 <br />
 
 
-## Version 3.11 clusters: ALB pods do not deploy to worker nodes
+## Version 3.11: ALB pods do not deploy to worker nodes
 {: #alb-pod-affinity}
 
 **Infrastructure provider**:
@@ -1526,7 +1530,7 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 <br />
 
 
-## Version 3.11 clusters: Ingress ALB cannot be enabled due to subnet errors
+## Version 3.11: Ingress ALB cannot be enabled due to subnet errors
 {: #cs_alb_subnet}
 
 **Infrastructure provider**:
@@ -1552,7 +1556,7 @@ Your ALBs and your worker nodes might not exist on the same VLANs. This can occu
 {: tsResolve}
 Move your ALBs to the same VLANs that your worker nodes exist on by following the steps in [Moving ALBs across VLANs](/docs/containers?topic=containers-ingress#migrate-alb-vlan).
 
-## Version 3.11 clusters: Source IP preservation fails when using tainted nodes
+## Version 3.11: Source IP preservation fails when using tainted nodes
 {: #cs_source_ip_fails}
 
 **Infrastructure provider**:
