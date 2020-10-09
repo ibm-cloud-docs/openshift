@@ -820,7 +820,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
   Subdomain                                                                             Load Balancer Hostname                 SSL Cert Status   SSL Cert Secret Name                            Secret Namespace   
   mycluster-d84d4d2137685d8446c88eacf59b5038-0000.us-south.containers.appdomain.cloud   1234abcd-us-south.lb.appdomain.cloud   created           cluster-d84d4d2137685d8446c88eacf59b5038-0000   openshift-ingress
   ```
-  {: pre}
+  {: screen}
 
 <br />
 
@@ -895,7 +895,7 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 **To resolve multizone router service deployment issues**: Create a router service in the zone where a router service did not deploy. If a duplicate router service was initially created in a different zone, do **not** delete that router service.
 
 1. Create a YAML for a router service in the zone where a router service did not deploy. Name the router service `router-<zone>`.
-   ```
+  ```yaml
    apiVersion: v1
    kind: Service
    metadata:
