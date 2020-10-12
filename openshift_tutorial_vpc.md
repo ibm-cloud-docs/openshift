@@ -194,7 +194,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
         ```
         {: pre}
 
-3. VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 and earlier only: To allow any traffic requests to apps that you deploy on your worker nodes, modify the VPC's default security group.
+3. VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: To allow any traffic requests to apps that you deploy on your worker nodes, modify the VPC's default security group.
     1. List your security groups. For the **VPC** that you created, note the ID of the default security group.
       ```
       ibmcloud is security-groups
