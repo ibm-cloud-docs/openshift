@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-09"
+lastupdated: "2020-10-12"
 
 keywords: openshift
 subcollection: openshift
@@ -577,13 +577,15 @@ subcollection: openshift
   * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
 
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
-* [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#overview)
+* [Overview](/docs/openshift?topic=openshift-vpc-network-policy#overview)
+  * [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
+  * [Do I use ACLs or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
+* [Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
+  * [Creating security group rules in the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
+  * [Creating security group rules from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
 * [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
   * [Creating ACLs in the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
   * [Creating ACLs from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
-* [Opening required ports in the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
-  * [Opening required ports in the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
-  * [Opening required ports from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
 * [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
   * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-network-policy#services_one_ns)
   * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-network-policy#services_across_ns)
@@ -1274,7 +1276,7 @@ subcollection: openshift
   * [Integrations operated in partnership](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#open-source-partners)
   * [Managed add-ons](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#cluster-add-ons)
   * [Other third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-helm)
-  * [Extending OpenShift API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
+  * [Extending {{site.data.keyword.openshiftshort}} API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
 
 [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
 * [Overview of Cloud Pak offerings](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_pak_ov)
@@ -1520,6 +1522,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.26_1521_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4426_1521)
   * [Changelog for worker node fix pack 4.4.23_1520_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4423_1520)
   * [Changelog for worker node fix pack 4.4.23_1519_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4423_1519)
   * [Changelog for master fix pack 4.4.20_1518_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4420_1518)
@@ -1531,6 +1534,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.38_1542_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1542)
   * [Changelog for worker node fix pack 4.3.38_1541_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1541)
   * [Changelog for worker node fix pack 4.3.38_1540_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1540)
   * [Changelog for master fix pack 4.3.35_1539_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4335_1539)
@@ -1553,6 +1557,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.286_1570_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1570)
   * [Changelog for worker node fix pack 3.11.286_1569_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1569)
   * [Changelog for worker node fix pack 3.11.286_1568_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1568)
   * [Changelog for master fix pack 3.11.272_1567_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1567)
