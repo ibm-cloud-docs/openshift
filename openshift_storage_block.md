@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -433,17 +434,23 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     If you installed the plug-in without using Helm, you must manually remove the block storage plug-in deployment and all associated resources before installing a new version.
     {: note}
     ```
-    helm uninstall iks-charts/ibmcloud-block-storage-plugin
+    helm uninstall <release_name> <namespace>
     ```
     {: pre}
   
-  12. Install the `ibmcloud-block-storage-plugin` Helm chart with the `BYOK` environment variable set to `true`.
+  12. Install the `ibmcloud-block-storage-plugin` Helm chart.
     ```
-    helm install --set env.IBMC_FEATURE_GATES=KeyManagementBYOK=true iks-charts/ibmcloud-block-storage-plugin
+    helm install <release_name> iks-charts/ibmcloud-block-storage-plugin
+    ```
+    {: pre}
+
+  12. Create an `ibm-block-secrets` namespace.
+    ```
+    oc create ns ibm-block-secrets
     ```
     {: pre}
   
-  13. Create a role binding for the block storage plug-in.
+  13. Create a role binding in the `ibm-block-secrets` namespace for the block storage plug-in.
       ```
       oc create rolebinding ibmcloud-block-storage-plugin-byok --clusterrole=ibmcloud-block-storage-plugin-byok --serviceaccount=kube-system:ibmcloud-block-storage-plugin --group system:nodes --namespace=ibm-block-secrets
       ```
