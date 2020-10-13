@@ -1673,11 +1673,11 @@ subcollection: openshift
 [Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations)
 
 
-## Default service settings for OpenShift components
-{: #sitemap_default_service_settings_for_openshift_components}
+## Default service settings for {{site.data.keyword.openshiftshort}} components
+{: #sitemap_default_service_settings_for__components}
 
 
-[Default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings)
+[Default service settings for {{site.data.keyword.openshiftshort}} components](/docs/openshift?topic=openshift-service-settings)
 
 [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
