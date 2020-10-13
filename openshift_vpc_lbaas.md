@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-13"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -115,7 +115,7 @@ By default, when you create a Kubernetes `LoadBalancer` service for an app in yo
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC application load balancer.
 
-<img src="images/vpc_alb.png" width="800" alt="VPC load balancing for a cluster" style="width:600px; border-style: none"/>
+<img src="images/vpc_alb.png" alt="VPC load balancing for a cluster"/>
 
 1. A request to your app uses the hostname that is assigned to the Kubernetes `LoadBalancer` service by the VPC application load balancer, such as `1234abcd-<region>.lb.appdomain.cloud`.
 2. The request is automatically forwarded by the VPC application load balancer to one of the node ports on the worker node, and then to the private IP address of the app pod.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-13"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -115,8 +115,8 @@ The following table describes the basic characteristics of each network security
 
 |Policy type|Application level|Default behavior|Use case|Limitations|
 |-----------|-----------------|----------------|--------|-----------|
-|[VPC security groups](#security_groups)|Worker node|In {{site.data.keyword.openshiftshort}} version 4.5 and later, the security group for your cluster allows incoming traffic requests to the 30000 - 32767 port range on your worker nodes. In {{site.data.keyword.openshiftshort}} version 4.4 and earlier, the default security group for your VPC denies all incoming traffic requests to your worker nodes.|Allow inbound traffic to node ports on your worker nodes.|You can add rules to the default security group that is applied to your worker nodes. However, because your worker nodes exist in a service account and are not listed in the VPC infrastructure dashboard, you cannot add more security groups and apply them to your worker nodes.|
-|[VPC access control lists (ACLs)](#acls)|VPC subnet|The default ACL for the VPC, `allow-all-network-acl-<VPC_ID>`, allows all traffic to and from your subnets.|Control inbound and outbound traffic to your cluster. Inbound rules allow or deny traffic from a source IP range with specified protocols and ports to the subnet that you attach the ACL to. Outbound rules allow or deny traffic to a destination IP range with specified protocols and ports from the subnet that you attach the ACL to.|Cannot be used to control traffic between the clusters that share the same VPC subnets. Instead, you can [create Calico policies](/docs/openshift?topic=openshift-network_policies#isolate_workers) to isolate your clusters on the private network.|
+|[VPC security groups](#security_groups)|Worker node|VPC Gen 2, version 4.5 and later: The default security groups for your cluster allow incoming traffic requests to the 30000 - 32767 port range on your worker nodes.</br>VPC Gen 2, version 4.4 and earlier: The default security group for your VPC denies all incoming traffic requests to your worker nodes.|Control inbound and outbound traffic to and from your worker nodes. Rules allow or deny traffic to or from an IP range with specified protocols and ports. |You can add rules to the default security group that is applied to your worker nodes. However, because your worker nodes exist in a service account and are not listed in the VPC infrastructure dashboard, you cannot add more security groups and apply them to your worker nodes.|
+|[VPC access control lists (ACLs)](#acls)|VPC subnet|The default ACL for the VPC, `allow-all-network-acl-<VPC_ID>`, allows all traffic to and from your subnets.|Control inbound and outbound traffic to and from the cluster subnet that you attach the ACL to. Rules allow or deny traffic to or from an IP range with specified protocols and ports.|Cannot be used to control traffic between the clusters that share the same VPC subnets. Instead, you can [create Calico policies](/docs/openshift?topic=openshift-network_policies#isolate_workers) to isolate your clusters on the private network.|
 |[Kubernetes network policies](#kubernetes_policies)|Worker node host endpoint|None|Control traffic within the cluster at the pod level by using pod and namespace labels. Protect pods from internal network traffic, such as isolating app microservices from each other within a namespace or across namespaces.|None|
 {: caption="Network security options for VPC clusters"}
 
@@ -161,12 +161,9 @@ The default rules of the security group for your cluster differs with your clust
 * <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later:
   * Modify the default security group that is applied to the entire VPC (not unique to your cluster).
   * Do **not** modify or delete the unique `kube-<cluster_ID>` security group that is automatically created for the cluster.
-* <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier: Modify the default security group that is applied to the entire VPC (not unique to your cluster). You must modify the default security group to allow inbound traffic to the `30000 - 32767` node port range to allow any incoming requests to apps that run on your worker nodes.<p class="important">You must modify your default security group to allow inbound traffic to ports `30000 - 32767` of your worker nodes, even if you allowed inbound traffic in your ACLs. ACLs are applied at the level of the VPC subnet, but the default security group allows the necessary inbound traffic for each worker node interface.</p>
+* <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier: Modify the default security group that is applied to the entire VPC (not unique to your cluster). You **must** modify the default security group to allow inbound traffic to the `30000 - 32767` node port range to allow any incoming requests to apps that run on your worker nodes.
 
 **Limitations**: Because the worker nodes of your VPC cluster exist in a service account and are not listed in the VPC infrastructure dashboard, you cannot create a security group and apply it to your worker node instances. You can only modify the existing security group that is created for you.
-
-When you modify the default security group, do not remove or modify the existing default rules.
-{: important}
 
 For more information, see the [VPC documentation](/docs/vpc?topic=vpc-using-security-groups){: external}.
 
@@ -179,11 +176,11 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
 1. From the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}, click the name of the **Default Security Group** for the VPC that your cluster is in.
 2. Click the **Rules** tab.
 3. VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: Add a rule to allow incoming traffic requests through the `30000 - 32767` node port range on your worker nodes.
-  1. In the **Inbound rules** section, click **New rule**.
+  1. In the **Inbound rules** section, click **Create**.
   2. Choose the **TCP** protocol, enter `30000` for the **Port min** and `32767` for the **Port max**, and leave the **Any** source enter selected.
   3. Click **Save**.
   4. If you require VPC VPN access or classic infrastructure access into this cluster, repeat these steps to add a rule that uses the **UDP** protocol, `30000` for the **Port min**, `32767` for the **Port max**, and the **Any** source type.
-4. To create new rules to control inbound traffic to your worker nodes, in the **Inbound rules** section, click **Add**. Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary inbound traffic to your cluster.
+4. To create new rules to control inbound traffic to your worker nodes, in the **Inbound rules** section, click **Create**. Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary inbound traffic to your cluster.
     <table summary="The columns are read from left to right. The first column describes the purpose of the inbound rule. The second column states is the protocol type. The third column is the range of ports to allow traffic through. The fourth column is the type of source.">
     <caption>Required inbound rules</caption>
     <col width="25%">
@@ -221,7 +218,7 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     </tbody>
     </table>
 5. To create new rules to control outbound traffic to your worker nodes, in the **Outbound rules** section, delete the default rule that allows all outbound traffic.
-6. In the **Outbound rules** section, click **Add**. Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary outbound traffic from your cluster.
+6. In the **Outbound rules** section, click **Create**. Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary outbound traffic from your cluster.
     <table summary="The columns are read from left to right. The first column describes the purpose of the outbound rule. The second column states is the protocol type. The third column is the range of ports to allow traffic through. The fourth column is the type of source.">
     <caption>Required outbound rules</caption>
     <col width="25%">
@@ -475,7 +472,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
 2. In the [Access control lists for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/acl){: external}, click **New access control list**.
 3. Give your ACL a name and choose the VPC and resource group that your subnets are in.
 4. In the **Rules** section, delete the default inbound rule and outbound rule that allow all inbound and outbound traffic.
-5. In the **Inbound rules** section, create the following rules by clicking **New rule**.
+5. In the **Inbound rules** section, create the following rules by clicking **Create**.
 
    <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
 
@@ -625,7 +622,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    </tr>
    </tbody>
    </table>
-6. In the **Outbound rules** section, create the following rules by clicking **New rule**.
+6. In the **Outbound rules** section, create the following rules by clicking **Create**.
 
    <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
 
