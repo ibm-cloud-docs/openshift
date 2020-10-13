@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -359,7 +360,7 @@ If these components fail, review the following debug steps.
 
             **4.3**:
             ```
-            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.3_openshift -f
+            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.4_openshift -f
             ```
             {: pre}
 

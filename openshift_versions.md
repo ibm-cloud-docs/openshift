@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-13"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -98,6 +99,7 @@ Review information about the supported {{site.data.keyword.openshiftshort}} vers
 {: shortdesc}
 
 For more information about the {{site.data.keyword.openshiftshort}} and Kubernetes project versions, review the following information.
+* [{{site.data.keyword.openshiftshort}} 4.5 release notes overview](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.4 release notes overview](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.3 release notes overview](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
@@ -120,9 +122,9 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 {: caption="Impacts of {{site.data.keyword.openshiftshort}} updates" caption-side="top"}
 
 <dl>
-  <dt>**Major and minor updates (3.11)**</dt>
-  <dd><p>First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes cannot run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only up to two versions behind the master version (`n-2`).</p><p class="note">If you use an `oc` or `kubectl` CLI version that does match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-openshift-cli#cli_oc) up-to-date.</p></dd>
-  <dt>**Patch updates (x.x.104_1507)**</dt>
+  <dt>**Major and minor updates (4.4)**</dt>
+  <dd><p>First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes cannot run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).</p><p class="note">If you use an `oc` or `kubectl` CLI version that does match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-openshift-cli#cli_oc) up-to-date.</p></dd>
+  <dt>**Patch updates (4.4.26_xxxx_openshift)**</dt>
   <dd><p>Changes across patches are documented in the [Version changelog](/docs/openshift?topic=openshift-openshift_versions). Master patches are applied automatically, but you initiate worker node patches updates. Worker nodes can also run patch versions that are greater than the masters. As updates become available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the following commands: `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get`.</p>
   <p>Patches can be for worker nodes, masters, or both.</p>
   <ul><li>**Worker node patches**: Check monthly to see whether an update is available, and use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) or the `ibmcloud oc worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to apply these security and operating system patches. During an update or reload, your worker node machine is reimaged, and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).</li>
@@ -137,7 +139,8 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
-* **Latest and default**: 4.4, which includes Kubernetes 1.17
+* **Latest**: 4.5, which includes Kubernetes 1.18
+* **Default**: 4.4, which includes Kubernetes 1.17
 * **Other**: 4.3, which includes Kubernetes 1.16
 * **Deprecated**: 3.11, which includes Kubernetes 1.11
 
@@ -191,24 +194,72 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 <tbody>
 <tr>
   <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
+  <td>4.5 / 1.18</td>
+  <td>13 Oct 2020</td>
+  <td>August 2021 `†`</td>
+</tr>
+<tr>
+  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
   <td>4.4 / 1.17</td>
-  <td>21 Jul 2020 at 12:00 UTC</td>
-  <td>July 2021 `†`</td>
+  <td>21 Jul 2020</td>
+  <td>May 2021 `†`</td>
 </tr>
 <tr>
   <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
   <td>4.3 / 1.16</td>
-  <td>20 Apr 2020 at 12:00 UTC</td>
-  <td>April 2021 `†`</td>
+  <td>20 Apr 2020</td>
+  <td>February 2021 `†`</td>
 </tr>
 <tr>
   <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>3.11 / 1.11</td>
-  <td>01 Aug 2019 at 0:00 UTC</td>
+  <td>01 Aug 2019</td>
   <td>June 2022 `†`</td>
 </tr>
 </tbody>
 </table>
+
+<br />
+
+
+## {{site.data.keyword.openshiftshort}} 4.5
+{: #ocp45}
+
+<img src="images/certified_kubernetes_1x18.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.18 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.18 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+
+Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.4 to {{site.data.keyword.openshiftshort}} 4.5.
+{: shortdesc}
+
+You cannot update a cluster that runs 3.11 to a version 4 cluster. For more information, see [Migrating from version 3.11 to 4 clusters](#ocp-3-to-4-migration).
+{: important}
+
+### Update before master
+{: #45_before}
+
+The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
+{: shortdesc}
+
+| Type | Description |
+| ---- | ----------- |
+| {{site.data.keyword.openshiftshort}} update requirements | {{site.data.keyword.openshiftlong_notm}} cluster master updates require worker nodes to be at most 1 minor version behind the cluster master version (`n-1`). Additionally, for cluster master updates to version 4.5, all worker nodes in the cluster must run at least version `4.4.23`. Ensure your workers nodes are running the latest patch version before updating your cluster master. |
+| **Unsupported:** Deprecated and removed {{site.data.keyword.openshiftshort}} features | For more information, review the [OpenShift version 4.5 deprecated and removed features](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-deprecated-removed-features){: external}. |
+{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.5" caption-side="top"}
+{: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
+
+### Update after master
+{: #45_after}
+
+The following table shows the actions that you must take after you [update the cluster master](/docs/openshift?topic=openshift-update#master).
+{: shortdesc}
+
+| Type | Description |
+| ---- | ----------- |
+| Image registry configuration | New version 4.5 clusters that run on the VPC Gen 2 infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push). |
+| Elasticsearch version upgrade for cluster logging | For more information, see the the Elasticsearch version upgrade notes in the [{{site.data.keyword.openshift}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-elasticsearch-6){: external}. |
+| `oc adm policy` | The `oc adm policy` commands now manage role-based access control (RBAC) resources rather than modifying security context constraints (SCCs) directly for managing permissions within the cluster. Update any components that rely on direct changes to SCCs to use RBAC to manage permissions. |
+| `oc new-app` | For more information, see the `oc new-app` deployment resources notes in the [{{site.data.keyword.openshift}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-oc-new-app-deployment-resources){: external}. | 
+{: caption="Changes to make after you update the master to {{site.data.keyword.openshiftshort}} 4.5" caption-side="top"}
+{: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
 <br />
 
@@ -224,12 +275,12 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 With {{site.data.keyword.openshiftshort}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
 You cannot update a cluster that runs 3.11 to a version 4 cluster. For more information, see [Migrating from version 3.11 to 4 clusters](#ocp-3-to-4-migration).
-{: note}
+{: important}
 
 ### Update before master
 {: #44_before}
 
-The following table shows the actions that you must take before you [update the your cluster master](/docs/openshift?topic=openshift-update#master).
+The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
 {: shortdesc}
 
 | Type | Description |

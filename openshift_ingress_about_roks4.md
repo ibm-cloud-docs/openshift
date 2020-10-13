@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-09"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -126,7 +127,7 @@ One HAProxy-based {{site.data.keyword.openshiftshort}} router is created for eac
 
 The Ingress operator configures the router with the same domain that is specified in the Ingress controller. The router listens for incoming HTTP, HTTPS, or TCP service requests through that domain. The router's load balancer service component then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
 
-If you have a multizone cluster, one high-availability router is deployed to your cluster, and one router service is created in each zone. Two worker nodes are required per zone so that the two replicas of the router can be deployed and updated correctly.
+If you have a multizone cluster, one high-availability router is deployed to your cluster and is configured with a multizone VPC load balancer. Two worker nodes are required per zone so that the two replicas of the router can be deployed and updated correctly.
 
 If you manually create a router, the router is not managed by the Ingress operator and is not automatically registered with the Ingress subdomain or an app in your cluster.
 {: note}
@@ -137,13 +138,11 @@ To find the IP addresses of the default Ingress controller router services, run 
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters: Router hostnames**
 
-When you create a VPC cluster, one public VPC load balancer is automatically created outside of your cluster in your VPC. The public VPC load balancer puts the external IP addresses of your routers behind one hostname. In VPC clusters, a hostname is assigned to the routers because the router IP addresses are not static and might change over time. Note that this router hostname is different than the default Ingress subdomain for your cluster.
+When you create a VPC cluster, one public and one private multizone VPC load balancer are automatically created outside of your cluster in your VPC. The public VPC load balancer creates a hostname to register the public router, and the private VPC load balancer creates a hostname to register the private router. In VPC clusters, a hostname is assigned to the routers because external IP addresses are not static and might change over time. Note that this router hostname is different than the default Ingress subdomain for your cluster.
 
-When you create a VPC cluster, one public and one private VPC load balancer are automatically created outside of your cluster in your VPC. The public VPC load balancer puts the public IP addresses of your public router services behind one hostname, and the private VPC load balancer puts the private IP addresses of your private router services behind one hostname. In VPC clusters, a hostname is assigned to the router services because the router service IP addresses are not static and might change over time.
+The Ingress subdomain for your cluster is automatically linked to the VPC load balancer hostname for your public router. Note that the Ingress subdomain for your cluster, which looks like `<cluster_name>.<hash>-0000.<region>.containers.appdomain.cloud`, is different than the VPC load balancer-assigned hostname for your public router, which looks like `01ab23cd-<region>.lb.appdomain.cloud`. The Ingress subdomain is the public route through which users access your app from the internet, and can be configured to use TLS termination. The assigned hostname for your public router is what the VPC load balancer uses to forward traffic to the router service.
 
-The Ingress subdomain for your cluster is automatically linked to the VPC load balancer hostname for your public router services. Note that the Ingress subdomain for your cluster, which looks like `<cluster_name>.<hash>-0000.<region>.containers.appdomain.cloud`, is different than the VPC load balancer-assigned hostname for your public router services, which looks like `01ab23cd-<region>.lb.appdomain.cloud`. The Ingress subdomain is the public route through which users access your app from the internet, and can be configured to use TLS termination. The assigned hostname for your public router services is what the VPC load balancer uses to manages your router service IPs.
-
-You can find the hostname that is assigned to your public routers and the hostname that is assigned to your private routers by running `oc get svc -n openshift-ingress` and looking for the **EXTERNAL IP** field.
+You can find the hostname that is assigned to your public router and the hostname that is assigned to your private router by running `oc get svc -n openshift-ingress` and looking for the **EXTERNAL IP** field.
 
 In your VPC infrastructure dashboard, the VPC load balancer reports as healthy only the two worker nodes that run the router replica pods, because these worker nodes are configured as the listeners for the VPC load balancer. Even though only the listener worker nodes are reported as healthy, the listeners' backend pool of worker nodes is kept up-to-date by {{site.data.keyword.openshiftlong_notm}} so that all worker nodes in your cluster can still receive requests from the VPC load balancer.
 {: note}
@@ -220,9 +219,9 @@ If you want to customize routing rules for your app, you can use [HAProxy annota
 
 1. A user sends a request to your app by accessing your app's URL. This URL is the Ingress subdomain for your cluster for your exposed app appended with the Ingress resource path, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`.
 
-2. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the services for the router. In VPC clusters, your router services' external IP addresses are floating, and are kept behind a VPC-assigned hostname.
+2. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the router. In VPC clusters, the external IP addresses are floating, and are kept behind a VPC-assigned hostname.
 
-3. The VPC load balancer resolves the VPC hostname to an available external IP address of a router service that was reported as healthy. The VPC load balancer continuously checks the external IP addresses of the router services in each zone in your cluster.
+3. The VPC load balancer resolves the VPC hostname to an available IP address in a zone for the router that was reported as healthy. The VPC load balancer continuously checks the external IP addresses for the router in each zone in your cluster.
 
 4. Based on the resolved IP address, the VPC load balancer sends the request to a router.
 

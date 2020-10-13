@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-13"
 
 keywords: openshift
 subcollection: openshift
@@ -577,13 +577,15 @@ subcollection: openshift
   * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
 
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
-* [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#overview)
+* [Overview](/docs/openshift?topic=openshift-vpc-network-policy#overview)
+  * [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
+  * [Do I use ACLs or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
+* [Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
+  * [Creating security group rules in the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
+  * [Creating security group rules from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
 * [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
   * [Creating ACLs in the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
   * [Creating ACLs from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
-* [Opening required ports in the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
-  * [Opening required ports in the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
-  * [Opening required ports from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
 * [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
   * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-network-policy#services_one_ns)
   * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-network-policy#services_across_ns)
@@ -857,9 +859,9 @@ subcollection: openshift
 * [Exposing an app by using an NLB in a classic cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_classic)
 * [Exposing an app by using a VPC load balancer in a VPC cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_vpc)
 
-[VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas)
+[VPC: Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas)
 * [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
-* [Setting up a Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
+* [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
 * [Registering a VPC load balancer hostname with a DNS subdomain](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
 
@@ -1274,7 +1276,7 @@ subcollection: openshift
   * [Integrations operated in partnership](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#open-source-partners)
   * [Managed add-ons](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#cluster-add-ons)
   * [Other third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-helm)
-  * [Extending OpenShift API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
+  * [Extending {{site.data.keyword.openshiftshort}} API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
 
 [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
 * [Overview of Cloud Pak offerings](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_pak_ov)
@@ -1507,6 +1509,9 @@ subcollection: openshift
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
 * [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
+* [{{site.data.keyword.openshiftshort}} 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45)
+  * [Update before master](/docs/openshift?topic=openshift-openshift_versions#45_before)
+  * [Update after master](/docs/openshift?topic=openshift-openshift_versions#45_after)
 * [{{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
 * [{{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
@@ -1519,7 +1524,10 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+* [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.26_1521_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4426_1521)
   * [Changelog for worker node fix pack 4.4.23_1520_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4423_1520)
   * [Changelog for worker node fix pack 4.4.23_1519_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4423_1519)
   * [Changelog for master fix pack 4.4.20_1518_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4420_1518)
@@ -1531,6 +1539,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.38_1542_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1542)
   * [Changelog for worker node fix pack 4.3.38_1541_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1541)
   * [Changelog for worker node fix pack 4.3.38_1540_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1540)
   * [Changelog for master fix pack 4.3.35_1539_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4335_1539)
@@ -1553,6 +1562,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.286_1570_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1570)
   * [Changelog for worker node fix pack 3.11.286_1569_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1569)
   * [Changelog for worker node fix pack 3.11.286_1568_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1568)
   * [Changelog for master fix pack 3.11.272_1567_openshift, released 21 September 2020](/docs/openshift?topic=openshift-openshift_changelog#311272_1567)
@@ -1663,11 +1673,11 @@ subcollection: openshift
 [Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations)
 
 
-## Default service settings for OpenShift components
-{: #sitemap_default_service_settings_for_openshift_components}
+## Default service settings for {{site.data.keyword.openshiftshort}} components
+{: #sitemap_default_service_settings_for__components}
 
 
-[Default service settings for OpenShift components](/docs/openshift?topic=openshift-service-settings)
+[Default service settings for {{site.data.keyword.openshiftshort}} components](/docs/openshift?topic=openshift-service-settings)
 
 [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
@@ -1808,27 +1818,28 @@ subcollection: openshift
 [Debugging Ingress and routers](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress)
 * [Checking the status of Ingress components](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-status)
 * [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain)
-* [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_rate_limit)
-* [Classic clusters: Cannot connect to an app via Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_fails)
 * [No Ingress secret exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_secret)
-* [Version 4 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4)
+* [Cannot connect to an app via Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_fails)
+* [Version 4: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug-roks4)
   * [Step 1: Check your app deployment and Ingress resource configuration](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress-43)
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-43)
   * [Step 3: Check the health of the Ingress controller's router](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#errors-43)
   * [Step 4: Ping the Ingress subdomain and router public IP address](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43)
-* [Version 4 clusters: Router for Ingress controller does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43)
-* [Version 3.11 clusters: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug)
+* [Version 4: VPC load balancer for router only routes to one zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#router-mzr-error)
+* [Version 4: Router for Ingress controller does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43)
+* [Version 3.11: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug)
   * [Step 1: Check your app deployment](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress)
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-ingress)
   * [Step 3: Check for error messages in your Ingress deployment and the ALB pod logs](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#errors)
   * [Step 4: Ping the ALB subdomain and public IP addresses](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping)
   * [Step 5: Check your domain mappings and Ingress resource configuration](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ts_ingress_config)
   * [Removing an ALB from DNS for debugging](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#one_alb)
-* [3.11 clusters: Ingress application load balancer (ALB) secret issues](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_albsecret_fails)
-* [3.11 clusters: ALB pods do not deploy to worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#alb-pod-affinity)
+* [Version 3.11: Ingress application load balancer (ALB) secret issues](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_albsecret_fails)
+* [Version 3.11: ALB pods do not deploy to worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#alb-pod-affinity)
 * [3.11 clusters: ALB does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit)
-* [3.11 clusters: Ingress ALB cannot be enabled due to subnet errors](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_alb_subnet)
-* [3.11 clusters: Source IP preservation fails when using tainted nodes](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_source_ip_fails)
+* [Version 3.11: Ingress ALB cannot be enabled due to subnet errors](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_alb_subnet)
+* [Version 3.11: Source IP preservation fails when using tainted nodes](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_source_ip_fails)
+* [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_rate_limit)
 * [Ingress secret expiration date is not updated](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#sync_cert_dates)
 * [Connection via WebSocket closes after 60 seconds](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_ingress_websocket)
 
