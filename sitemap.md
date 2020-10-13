@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-13"
 
 keywords: openshift
 subcollection: openshift
@@ -1509,6 +1509,9 @@ subcollection: openshift
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
 * [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
+* [{{site.data.keyword.openshiftshort}} 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45)
+  * [Update before master](/docs/openshift?topic=openshift-openshift_versions#45_before)
+  * [Update after master](/docs/openshift?topic=openshift-openshift_versions#45_after)
 * [{{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
 * [{{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
@@ -1521,6 +1524,8 @@ subcollection: openshift
   * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+* [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
   * [Changelog for worker node fix pack 4.4.26_1521_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4426_1521)
   * [Changelog for worker node fix pack 4.4.23_1520_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4423_1520)

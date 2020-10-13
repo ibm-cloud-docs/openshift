@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-13"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -104,6 +104,39 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+## Version 4.5 changelog
+{: #version-45}
+
+Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.5 patch updates.
+{: shortdesc}
+
+### Changelog for 4.5.13_1515_openshift, released 13 October 2020
+{: #4513_1515}
+
+The following table shows the changes that are included in the `4.5.13_1515_openshift` version update.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.13.3 | v3.16.1 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. In addition, Calico pods in the `calico-system` namespace now set CPU and memory requests. |
+| Calico Operator | v1.3.4 | v1.10.3 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.10.3){: external}. |
+| Cluster health image | v1.1.11 | v1.2.1 | When a cluster has a Kubernetes key management service (KMS) provider enabled and a disabled [Key Protect](/docs/containers?topic=containers-encryption#keyprotect) key, a warning is now returned in the cluster health state. Fixed check to determine if an add-on is unsupported. In addition, updated to use `Go` version 1.15.2.  |
+| Cluster master HA configuration | N/A | N/A | Updated configuration to improve availability during cluster master operations. |
+| Gateway-enabled cluster controller | 1082 | 1105 | Updated to use `Go` version 1.15.2. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | 1.17.1 | 1.17.2 | Updated to use `Go` version 1.13.15. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.12-1 | v1.18.9-2 | Updated to support the Kubernetes 1.18.9 release and to use `calicoctl` version 3.13.4. Updated network load balancer (NLB) events to use the latest {{site.data.keyword.cloud_notm}} troubleshooting documentation.  For VPC load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation was added to preserve the source IP address of requests to apps in your cluster. |
+|{{site.data.keyword.cloud_notm}} RBAC Operator | 4b47693 | 31c794a | Updated to use `Go` version 1.15.2. |
+| Key Management Service provider | v2.0.4 | v2.1.0 | Updated to use the key management service (KMS) provider secret to identify when a [Key Protect](/docs/containers?topic=containers-encryption#keyprotect) key is enabled and disabled so that encryption and decryption requests are updated accordingly.  |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 208 | 234 | Improved startup performance of version 2.0 private network load balancers (NLBs). Updated to use `Go` version 1.15.2. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.4.0+20200821 | v4.5.0+20201009 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201009){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.4.20 | 4.5.13 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-13){: external}. |
+| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | New version 4.5 clusters that run on the VPC Gen 2 infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push). |
+| OpenVPN Operator image | v1.0.8 | v1.0.9 | Updated to improve OpenVPN availability. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | N/A | v4.5.0-20201009 | **New!**: {{site.data.keyword.openshiftlong_notm}} now provides custom cluster metrics. See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201009){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.4.0+20200821 | 4.5.0+20201009 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201009){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.4.20_1518_openshift" caption-side="top"}
 
 ## Version 4.4 changelog
 {: #version-44}
