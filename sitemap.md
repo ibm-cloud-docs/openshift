@@ -1198,6 +1198,7 @@ subcollection: openshift
 * [Installing the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
   * [Updating the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
   * [Removing the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#remove_cos_plugin)
+* [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_auth_ip)
 * [Deciding on the object storage configuration](/docs/openshift?topic=openshift-object_storage#configure_cos)
 * [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos)
 * [Using object storage in a stateful set](/docs/openshift?topic=openshift-object_storage#cos_statefulset)

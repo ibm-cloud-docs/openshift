@@ -390,7 +390,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
     <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Understanding the <code>helm install</code> command for Windows.</caption>
-    <col width="25%">
+    <col width="30%">
     <thead>
     <th>Parameter</th>
     <th>Description</th>
@@ -405,7 +405,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     <td>The infrastructure provider. To retrieve this value, run <code>oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"</code>. If the output from the previous step contains <code>softlayer</code>, then set the <code>CLUSTER_PROVIDER</code> to <code>"IBMC"</code>. If the output contains <code>gc</code>, <code>ng</code>, or <code>g2</code>, then set the <code>CLUSTER_PROVIDER</code> to <code>"IBM-VPC"</code>. Store the infrastructure provider in an environment variable. For example: <code>SET CLUSTER_PROVIDER="IBM-VPC"</code>.</td>
     </tr>
     <tr>
-    <td><code>WORKER_OS</code> and <code>PlATFORM</code><td>
+    <td><code>WORKER_OS</code> and <code>PLATFORM</code><td>
     <td>The operating system of the worker nodes. To retrieve these values, run <code>oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"</code>. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run <code>SET WORKER_OS="redhat"</code> and <code>SET PLATFORM="openshift"</code>.</td>
     </tr>
     </tbody>
@@ -612,12 +612,16 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     <br />
 
 
-## VPC: Allowing IP addresses for {{site.data.keyword.cos_full_notm}}
+## VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}
+{: #cos_auth_ip}
+
+You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to access your {{site.data.keyword.cos_full_notm}} bucket. When you set up authorized IP addresses, you can only access your bucket data from those IP addresses; for example, in an app pod.
+{: shortdesc}
 
 **Supported infrastructure provider**:
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
-1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set `bucketAccessPolicy` flag to `true`.
+1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
 
 2. Create one `Manager` HMAC service credential and one `Writer` HMAC service credential for your {{site.data.keyword.cos_full_notm}} instance.
   * [Creating HMAC credentials from the console](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
@@ -657,7 +661,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
   ```
   {: pre}
 
-7. Verify the secret is created.
+7. Verify that the secret is created.
   ```
   oc get secrets
   ```
@@ -710,52 +714,50 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     ```
     {: screen}
 
-  3. Verify that the Cloud Service Endpoint source IP addresses of your VPC are authorized in your {{site.data.keyword.cos_full_notm}} bucket.
-    1. [From your {{site.data.keyword.cos_full_notm}} resource list](https://cloud.ibm.com/resources), select your {{site.data.keyword.cos_full_notm}} instance and select the bucket that you specified in your PVC.
-    2. Select **Access Policies** > **Authorized IPs** and verify that the Cloud Service Endpoint source IP addresses of your VPC are displayed.
+10. Verify that the Cloud Service Endpoint source IP addresses of your VPC are authorized in your {{site.data.keyword.cos_full_notm}} bucket.
+  1. [From your {{site.data.keyword.cos_full_notm}} resource list](https://cloud.ibm.com/resources), select your {{site.data.keyword.cos_full_notm}} instance and select the bucket that you specified in your PVC.
+  2. Select **Access Policies** > **Authorized IPs** and verify that the Cloud Service Endpoint source IP addresses of your VPC are displayed.
 
   You cannot read or write to your bucket from the console. You can only access your bucket from within an app pod on your cluster.
   {: note}
 
-10. [Create a deployment YAML that references the PVC you created](#cos_app_volume_mount).
+11. [Create a deployment YAML that references the PVC you created](#cos_app_volume_mount).
 
-11. Create the app in your cluster.
+12. Create the app in your cluster.
   ```
   oc create -f app.yaml
   ```
   {: pre}
 
-12. Verify that your app pod is `Running`.
+13. Verify that your app pod is `Running`.
   ```
   oc get pods | grep <app_name>
   ```
   {: pre}
 
-12. Verify that your COS bucket is mounted from your app pod and that you can read and write to your COS bucket. 
+14. Verify that your COS bucket is mounted from your app pod and that you can read and write to your COS bucket. Run the disk free `df` command to see available disks in your system. Your COS bucket displays the `s3fs` file system type and the mount path that you specified in your PVC.
+  ```
+  df
+  ```
+  {: pre}
 
-  1. Run the disk free `df` command to see available disks in your system. Your COS bucket displays the `s3fs` file system type and the mount path that you specified in your PVC.
-    ```
-    df
-    ```
-    {: pre}
-
-    **Example output:** In this example, the COS bucket is mounted at `/cos-vpc`.
-    ```sh
-    Filesystem        1K-blocks    Used    Available Use% Mounted on
-    overlay           102048096 9071556     87786140  10% /
-    tmpfs                 65536       0        65536   0% /dev
-    tmpfs               7565792       0      7565792   0% /sys/fs/cgroup
-    shm                   65536       0        65536   0% /dev/shm
-    /dev/vda2         102048096 9071556     87786140  10% /etc/hosts
-    s3fs           274877906944       0 274877906944   0% /cos-vpc
-    tmpfs               7565792      44      7565748   1% /run/secrets/kubernetes.io/serviceaccount
-    tmpfs               7565792       0      7565792   0% /proc/acpi
-    tmpfs               7565792       0      7565792   0% /proc/scsi
-    tmpfs               7565792       0      7565792   0% /sys/firmware
-    ```
-    {: screen}
+  **Example output:** In this example, the COS bucket is mounted at `/cos-vpc`.
+  ```sh
+  Filesystem        1K-blocks    Used    Available Use% Mounted on
+  overlay           102048096 9071556     87786140  10% /
+  tmpfs                 65536       0        65536   0% /dev
+  tmpfs               7565792       0      7565792   0% /sys/fs/cgroup
+  shm                   65536       0        65536   0% /dev/shm
+  /dev/vda2         102048096 9071556     87786140  10% /etc/hosts
+  s3fs           274877906944       0 274877906944   0% /cos-vpc
+  tmpfs               7565792      44      7565748   1% /run/secrets/kubernetes.io/serviceaccount
+  tmpfs               7565792       0      7565792   0% /proc/acpi
+  tmpfs               7565792       0      7565792   0% /proc/scsi
+  tmpfs               7565792       0      7565792   0% /sys/firmware
+  ```
+  {: screen}
   
-13. Verify that you can read and write to your COS bucket.
+15. Verify that you can read and write to your COS bucket.
   1. Log in to your app pod.
     ```
     oc exec -it <pod_name> bash
