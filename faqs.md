@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
@@ -237,9 +237,9 @@ Keep in mind that some services such as Ingress or Knative might require multipl
 
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
-* **Latest and default**: 4.5, which includes Kubernetes 1.18
-* **Other**: 4.3, which includes Kubernetes 1.16
-* **Deprecated**: 3.11, which includes Kubernetes 1.11
+* **Latest**: 4.5 (Kubernetes 1.18)
+* **Default**: 4.4 (Kubernetes 1.17)
+* **Deprecated**: 3.11 (Kubernetes 1.11), 4.3 (Kubernetes 1.16)
 
 
 ## Where is the service available?

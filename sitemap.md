@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: openshift
 subcollection: openshift
@@ -1514,7 +1514,7 @@ subcollection: openshift
   * [Update after master](/docs/openshift?topic=openshift-openshift_versions#45_after)
 * [{{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
-* [{{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
+* [Deprecated: {{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 * [Migrating from version 3.11 to 4 clusters](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration)
   * [Prerequisites](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-prereqs)
   * [Step 1: Deploy the migration operator to the source cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-source)
@@ -1538,7 +1538,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.16_1513_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4416_1513)
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
-* [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+* [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
   * [Changelog for worker node fix pack 4.3.38_1542_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1542)
   * [Changelog for worker node fix pack 4.3.38_1541_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1541)
   * [Changelog for worker node fix pack 4.3.38_1540_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1540)

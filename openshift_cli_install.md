@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -188,8 +188,8 @@ Using both community Kubernetes and {{site.data.keyword.openshiftshort}} cluster
 
     *   [OpenShift Container Platform version 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
     *   OpenShift Container Platform version 4 `oc` download links
+        * [4.5](https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.5/){: external}
         * [4.4](https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.4/){: external}
-        * [4.3](https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.3/){: external}
 
 2.  Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.openshiftshort}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.19.2.
 
