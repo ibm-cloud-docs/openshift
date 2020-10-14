@@ -552,7 +552,7 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-      name: my_pod
+      name: my-pod
     spec:
       replicas: 1
       selector:
@@ -588,7 +588,7 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
 5.  Create the pod and mount the PVC to your pod.
 
     ```
-    oc apply -f my_pod.yaml
+    oc apply -f my-pod.yaml
     ```
     {: pre}
 
@@ -597,7 +597,7 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
 
 6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path.
    ```
-   oc describe pod <my_pod>
+   oc describe pod <my-pod>
    ```
    {: pre}
 
@@ -638,7 +638,7 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
 
 7.  Log in to the pod by using the pod name that you previously noted.
     ```
-    oc exec -it <my_pod-123456789> /bin/bash
+    oc exec -it <my-pod-123456789> /bin/bash
     ```
     {: pre}
 
