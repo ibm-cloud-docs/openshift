@@ -381,6 +381,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         {: pre}
 
   - **For Windows:**
+  
       **VPC Gen 2 clusters** To enable authorized IPs on VPC Gen 2, set the `--set bucketAccessPolicy=true` flag.
       {: note}
         ```
