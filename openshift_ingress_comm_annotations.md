@@ -397,7 +397,27 @@ ingress.bluemix.net/keepalive-requests: "serviceName=app1 requests=75"
 Kubernetes `ibm-k8s-controller-config` configmap [field](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#keep-alive-requests){:external}:
 
 ```
-keep-alive: 75
+keep-alive-requests: 75
+```
+{: screen}
+
+### Keepalive request timeout
+
+Set the maximum time that a keepalive connection stays open between the client and the ALB proxy server.
+{: shortdesc}
+
+Previous {{site.data.keyword.openshiftlong_notm}} Ingress resource [annotation](/docs/openshift?topic=openshift-ingress_annotation#keepalive-timeout):
+
+```
+ingress.bluemix.net/keepalive-timeout: "serviceName=app1 timeout=60s"
+```
+{: screen}
+
+
+Kubernetes `ibm-k8s-controller-config` configmap [field](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#keep-alive){:external}:
+
+```
+keep-alive: 60s
 ```
 {: screen}
 
