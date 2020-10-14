@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -722,13 +723,31 @@ ingress.bluemix.net/tcp-ports: "serviceName=app1 ingressPort=8080 servicePort=90
 {: screen}
 
 Kubernetes Ingress fields:
-1. `ibm-ingress-deploy-config` configmap [field](#comm-customize-deploy). For the requirements of the `tcp-services-configmap`, see [this blog](https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/){:external}.
+1.  Create a `tcp-services` configmap to specify your TCP port, such as the following example ports. For the requirements of the `tcp-services` configmap, see [this blog](https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/){:external}.
+    ```yaml
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: tcp-services
+      namespace: kube-system
+    data:
+      9000: "<project>/<service>:8080"
+    ```
+    {: codeblock}
+
+2. Create the configmap in the `kube-system` project.
   ```
-  tcp-services-configmap=<configMap>
+  oc apply -f tcp-services.yaml -n kube-system
+  ```
+  {: pre}
+
+3. Specify the `tcp-services` configmap as a field in the [`ibm-ingress-deploy-config` configmap](#comm-customize-deploy).
+  ```
+  tcpServicesConfig=tcp-services
   ```
   {: screen}
 
-2. [Modify each ALB service](#comm-customize-deploy) to add the ports.
+4. [Modify each ALB service](#comm-customize-deploy) to add the ports.
 
 ### Upstream fail timeout
 
@@ -824,8 +843,8 @@ Customize the deployment for ALBs that run the Kubernetes Ingress image by creat
        name: ibm-ingress-deploy-config
        namespace: kube-system
      data:
-       <alb1-id>: '{"defaultCertificate":"<namespace>/<secret_name>", "enableSslPassthrough":"<true|false>", "httpPort":"<port>", "httpsPort":"<port>", "ingressClass":"<class>", "replicas":<number_of_replicas>}'
-       <alb2-id>: '{"defaultCertificate":"<namespace>/<secret_name>", "enableSslPassthrough":"<true|false>", "httpPort":"<port>", "httpsPort":"<port>", "ingressClass":"<class>", "replicas":<number_of_replicas>}'
+       <alb1-id>: '{"defaultCertificate":"<namespace>/<secret_name>", "enableSslPassthrough":"<true|false>", "httpPort":"<port>", "httpsPort":"<port>", "ingressClass":"<class>", "replicas":<number_of_replicas>, "tcpServicesConfig":"<tcp-services>"}'
+       <alb2-id>: '{"defaultCertificate":"<namespace>/<secret_name>", "enableSslPassthrough":"<true|false>", "httpPort":"<port>", "httpsPort":"<port>", "ingressClass":"<class>", "replicas":<number_of_replicas>, "tcpServicesConfig":"<tcp-services>"}'
        ...
      ```
      {: screen}
@@ -843,6 +862,7 @@ Customize the deployment for ALBs that run the Kubernetes Ingress image by creat
      <tr><td>`httpPort`, `httpsPort`</td><td>Expose non-default ports for the Ingress ALB by adding the HTTP or HTTPS ports that you want to open.</td></tr>
      <tr><td>`ingressClass`</td><td>If you specified a class other than `public-iks-k8s-nginx` or `private-iks-k8s-nginx` in your Ingress resource, specify the class.</td></tr>
      <tr><td>`replicas`</td><td>By default, each ALB has 2 replicas. Scale up your ALB processing capabilities by increasing the number of ALB pods.</td></tr>
+     <tr><td>`tcpServicesConfig`</td><td>Specify a [configmap, such as `tcp-services`](#tcp-ports), that contains information about accessing your app service through a non-standard TCP port.</td></tr>
      </tbody>
      </table>
 
