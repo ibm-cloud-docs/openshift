@@ -1863,6 +1863,7 @@ subcollection: openshift
   * [Object storage: Cannot access an existing bucket](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_access_bucket_fails)
 * [Object storage: Changing the ownership of the mount path fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_mountpath_error)
 * [Object storage: Accessing files with a non-root user fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_nonroot_access)
+* [Object Storage: App pod fails because of an `Operation not permitted` error](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_operation_not_permitted)
 * [PVC creation fails because of missing permissions](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions)
 * [Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug-portworx)
   * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-catalog)
