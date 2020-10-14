@@ -389,17 +389,19 @@ Set the maximum number of requests that can be served through one keepalive conn
 Previous {{site.data.keyword.openshiftlong_notm}} Ingress resource [annotation](/docs/openshift?topic=openshift-ingress_annotation#keepalive-requests):
 
 ```
-ingress.bluemix.net/keepalive-requests: "serviceName=app1 requests=75"
+ingress.bluemix.net/keepalive-requests: "serviceName=app1 requests=100"
 ```
 {: screen}
-
 
 Kubernetes `ibm-k8s-controller-config` configmap [field](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#keep-alive-requests){:external}:
 
 ```
-keep-alive-requests: 75
+keep-alive-requests: 100
 ```
 {: screen}
+
+The default value for `keep-alive-requests` in Kubernetes Ingress is `100`, which is much lower than the default value of `4096` in {{site.data.keyword.openshiftlong_notm}} Ingress. If you migrated your Ingress setup from {{site.data.keyword.openshiftlong_notm}} Ingress to Kubernetes Ingress, you might need to change `keep-alive-requests` to pass existing performance tests.
+{: note}
 
 ### Keepalive request timeout
 
@@ -420,7 +422,6 @@ Kubernetes `ibm-k8s-controller-config` configmap [field](https://kubernetes.gith
 keep-alive: 60s
 ```
 {: screen}
-
 
 ### Large client header buffers
 
