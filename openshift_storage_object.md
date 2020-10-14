@@ -613,176 +613,6 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     <br />
 
 
-## VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}
-{: #cos_auth_ip}
-
-You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to access your {{site.data.keyword.cos_full_notm}} bucket. When you set up authorized IP addresses, you can only access your bucket data from those IP addresses; for example, in an app pod.
-{: shortdesc}
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
-
-1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
-
-2. Create one `Manager` HMAC service credential and one `Writer` HMAC service credential for your {{site.data.keyword.cos_full_notm}} instance.
-  * [Creating HMAC credentials from the console](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
-  * [Creating HMAC credentials from the CLI](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main#uhc-create-hmac-credentials-cli).
-
-3. Encode the `apikey` from your {{site.data.keyword.cos_full_notm}} Manager credentials to base64.
-
-  ```
-  echo -n "<cos_manager_API_key>" | base64
-  ```
-  {: pre}
-
-4. Encode the `access-key` and `secret-key` from your {{site.data.keyword.cos_full_notm}} Writer credentials to base64.
-  ```
-  echo -n "<cos_writer_access-key>" | base64
-  echo -n "<cos_writer_secret-key>" | base64
-  ```
-  {: pre}
-
-5. Create a secret configuration file with the values that you encoded. For the `access-key` and `secret-key`, enter the base64 encoded `access-key` and `secret-key` from the Writer HMAC credentials that you created. For the `res-conf-apikey`, enter the base64 encoded `apikey` from your Manager HMAC credentials.
-  ```yaml
-  apiVersion: v1
-  kind: Secret
-  metadata: 
-    name: <secret_name>
-  type: ibm/ibmc-s3fs
-  data:
-    access-key: # Enter your base64 encoded COS Writer access-key
-    secret-key: # Enter your base64 encoded COS Writer secret-key
-    res-conf-apikey: # Enter your base64 encoded COS Manager api-key
-  ```
-  {: codeblock}
-
-6. Create the secret in your cluster.
-  ```
-  oc create -f secret.yaml
-  ```
-  {: pre}
-
-7. Verify that the secret is created.
-  ```
-  oc get secrets
-  ```
-  {: pre}
-
-8. Create a PVC that uses the secret you created. Set the `ibm.io/auto-create-bucket: "true"` and `ibm.io/auto_cache: "true"` annotations to automatically create a bucket that caches your data.
-
-  ```yaml
-  kind: PersistentVolumeClaim
-  apiVersion: v1
-  metadata:
-    name: <pvc_name>
-    annotations:
-      ibm.io/auto-create-bucket: "true"
-      ibm.io/auto-delete-bucket: "false"
-      ibm.io/auto_cache: "true"
-      ibm.io/bucket: "<bucket_name>"
-      ibm.io/secret-name: "<secret_name>"
-  spec:
-    accessModes:
-      - ReadWriteMany
-    resources:
-      requests:
-        storage: 8Gi
-    storageClassName: ibmc-s3fs-standard-regional
-    volumeMode: Filesystem
-  ```
-  {: codeblock}
-
-9. Get a list of the Cloud Service Endpoint source IP addresses of your VPC.
-  1. Get a list of your VPCs.
-    ```
-    ibmcloud is vpcs
-    ```
-    {: pre}
-
-  2. Get the details of your VPC and make a note of your Cloud Service Endpoint source IP addresses.
-    ```
-    ibmcloud is vpc <vpc_ID>
-    ```
-    {: pre}
-
-    **Example output**
-    ```                                               
-    ...                                              
-    Cloud Service Endpoint source IP addresses:    Zone         Address      
-                                                  us-south-1   10.249.XXX.XX      
-                                                  us-south-2   10.249.XXX.XX     
-                                                  us-south-3   10.249.XXX.XX
-    ```
-    {: screen}
-
-10. Verify that the Cloud Service Endpoint source IP addresses of your VPC are authorized in your {{site.data.keyword.cos_full_notm}} bucket.
-  1. [From your {{site.data.keyword.cos_full_notm}} resource list](https://cloud.ibm.com/resources), select your {{site.data.keyword.cos_full_notm}} instance and select the bucket that you specified in your PVC.
-  2. Select **Access Policies** > **Authorized IPs** and verify that the Cloud Service Endpoint source IP addresses of your VPC are displayed.
-
-  You cannot read or write to your bucket from the console. You can only access your bucket from within an app pod on your cluster.
-  {: note}
-
-11. [Create a deployment YAML that references the PVC you created](#cos_app_volume_mount).
-
-12. Create the app in your cluster.
-  ```
-  oc create -f app.yaml
-  ```
-  {: pre}
-
-13. Verify that your app pod is `Running`.
-  ```
-  oc get pods | grep <app_name>
-  ```
-  {: pre}
-
-14. Verify that your COS bucket is mounted from your app pod and that you can read and write to your COS bucket. Run the disk free `df` command to see available disks in your system. Your COS bucket displays the `s3fs` file system type and the mount path that you specified in your PVC.
-  ```
-  df
-  ```
-  {: pre}
-
-  **Example output:** In this example, the COS bucket is mounted at `/cos-vpc`.
-  ```sh
-  Filesystem        1K-blocks    Used    Available Use% Mounted on
-  overlay           102048096 9071556     87786140  10% /
-  tmpfs                 65536       0        65536   0% /dev
-  tmpfs               7565792       0      7565792   0% /sys/fs/cgroup
-  shm                   65536       0        65536   0% /dev/shm
-  /dev/vda2         102048096 9071556     87786140  10% /etc/hosts
-  s3fs           274877906944       0 274877906944   0% /cos-vpc
-  tmpfs               7565792      44      7565748   1% /run/secrets/kubernetes.io/serviceaccount
-  tmpfs               7565792       0      7565792   0% /proc/acpi
-  tmpfs               7565792       0      7565792   0% /proc/scsi
-  tmpfs               7565792       0      7565792   0% /sys/firmware
-  ```
-  {: screen}
-  
-15. Verify that you can read and write to your COS bucket.
-  1. Log in to your app pod.
-    ```
-    oc exec -it <pod_name> bash
-    ```
-    {: pre}
-  
-  2. Change directories to the directory where your COS bucket is mounted. In this example the bucket is mounted at `/cos-vpc`.
-    ```
-    cd cos-vpc
-    ```
-    {: pre}
-  
-  3. Write a `test.txt` file to your COS bucket and list files to verify that the file was written.
-    ```
-    touch test.txt && ls
-    ```
-    {: pre}
-
-  4. Remove the file and log out of your app pod.
-    ```
-    rm test.txt && exit
-    ```
-    {: pre}
-
 ## Deciding on the object storage configuration
 {: #configure_cos}
 
@@ -915,6 +745,176 @@ Now that you decided on the configuration that you want, you are ready to [creat
 
 <br />
 
+
+## VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}
+{: #cos_auth_ip}
+
+You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to access your {{site.data.keyword.cos_full_notm}} bucket. When you set up authorized IP addresses, you can only access your bucket data from those IP addresses; for example, in an app pod.
+{: shortdesc}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
+
+2. Create one `Manager` HMAC service credential and one `Writer` HMAC service credential for your {{site.data.keyword.cos_full_notm}} instance.
+  * [Creating HMAC credentials from the console](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
+  * [Creating HMAC credentials from the CLI](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main#uhc-create-hmac-credentials-cli).
+
+3. Encode the `apikey` from your {{site.data.keyword.cos_full_notm}} Manager credentials to base64.
+
+  ```
+  echo -n "<cos_manager_API_key>" | base64
+  ```
+  {: pre}
+
+4. Encode the `access-key` and `secret-key` from your {{site.data.keyword.cos_full_notm}} Writer credentials to base64.
+  ```
+  echo -n "<cos_writer_access-key>" | base64
+  echo -n "<cos_writer_secret-key>" | base64
+  ```
+  {: pre}
+
+5. Create a secret configuration file with the values that you encoded. For the `access-key` and `secret-key`, enter the base64 encoded `access-key` and `secret-key` from the Writer HMAC credentials that you created. For the `res-conf-apikey`, enter the base64 encoded `apikey` from your Manager HMAC credentials.
+  ```yaml
+  apiVersion: v1
+  kind: Secret
+  metadata: 
+    name: <secret_name>
+  type: ibm/ibmc-s3fs
+  data:
+    access-key: # Enter your base64 encoded COS Writer access-key
+    secret-key: # Enter your base64 encoded COS Writer secret-key
+    res-conf-apikey: # Enter your base64 encoded COS Manager api-key
+  ```
+  {: codeblock}
+
+6. Create the secret in your cluster.
+  ```
+  oc create -f secret.yaml
+  ```
+  {: pre}
+
+7. Verify that the secret is created.
+  ```
+  oc get secrets
+  ```
+  {: pre}
+
+8. Create a PVC that uses the secret you created. Set the `ibm.io/auto-create-bucket: "true"` and `ibm.io/auto_cache: "true"` annotations to automatically create a bucket that caches your data.
+
+  ```yaml
+  kind: PersistentVolumeClaim
+  apiVersion: v1
+  metadata:
+    name: <pvc_name>
+    annotations:
+      ibm.io/auto-create-bucket: "true"
+      ibm.io/auto-delete-bucket: "false"
+      ibm.io/auto_cache: "true"
+      ibm.io/bucket: "<bucket_name>"
+      ibm.io/secret-name: "<secret_name>"
+  spec:
+    accessModes:
+      - ReadWriteMany
+    resources:
+      requests:
+        storage: 8Gi
+    storageClassName: ibmc-s3fs-standard-regional
+    volumeMode: Filesystem
+  ```
+  {: codeblock}
+
+9. Get a list of the Cloud Service Endpoint source IP addresses of your VPC.
+  1. Get a list of your VPCs.
+    ```
+    ibmcloud is vpcs
+    ```
+    {: pre}
+
+  2. Get the details of your VPC and make a note of your Cloud Service Endpoint source IP addresses.
+    ```
+    ibmcloud is vpc <vpc_ID>
+    ```
+    {: pre}
+
+    **Example output**
+    ```                                               
+    ...                                              
+    Cloud Service Endpoint source IP addresses:    Zone         Address      
+                                                  us-south-1   10.249.XXX.XX      
+                                                  us-south-2   10.249.XXX.XX     
+                                                  us-south-3   10.249.XXX.XX
+    ```
+    {: screen}
+
+10. Verify that the Cloud Service Endpoint source IP addresses of your VPC are authorized in your {{site.data.keyword.cos_full_notm}} bucket.
+  1. [From your {{site.data.keyword.cos_full_notm}} resource list](https://cloud.ibm.com/resources), select your {{site.data.keyword.cos_full_notm}} instance and select the bucket that you specified in your PVC.
+  2. Select **Access Policies** > **Authorized IPs** and verify that the Cloud Service Endpoint source IP addresses of your VPC are displayed.
+
+  You cannot read or write to your bucket from the console. You can only access your bucket from within an app pod on your cluster.
+  {: note}
+
+11. [Create a deployment YAML that references the PVC you created](#cos_app_volume_mount).
+
+12. Create the app in your cluster.
+  ```
+  oc create -f app.yaml
+  ```
+  {: pre}
+
+13. Verify that your app pod is `Running`.
+  ```
+  oc get pods | grep <app_name>
+  ```
+  {: pre}
+  
+14. Verify that your volume is mounted and that you can read and write to your COS bucket.
+  1. Log in to your app pod.
+    ```
+    oc exec -it <pod_name> bash
+    ```
+    {: pre}
+
+  2. Verify that your COS bucket is mounted from your app pod and that you can read and write to your COS bucket. Run the disk free `df` command to see available disks in your system. Your COS bucket displays the `s3fs` file system type and the mount path that you specified in your PVC.
+  ```
+  df
+  ```
+  {: pre}
+
+  **Example output:** In this example, the COS bucket is mounted at `/cos-vpc`.
+  ```sh
+  Filesystem        1K-blocks    Used    Available Use% Mounted on
+  overlay           102048096 9071556     87786140  10% /
+  tmpfs                 65536       0        65536   0% /dev
+  tmpfs               7565792       0      7565792   0% /sys/fs/cgroup
+  shm                   65536       0        65536   0% /dev/shm
+  /dev/vda2         102048096 9071556     87786140  10% /etc/hosts
+  s3fs           274877906944       0 274877906944   0% /cos-vpc
+  tmpfs               7565792      44      7565748   1% /run/secrets/kubernetes.io/serviceaccount
+  tmpfs               7565792       0      7565792   0% /proc/acpi
+  tmpfs               7565792       0      7565792   0% /proc/scsi
+  tmpfs               7565792       0      7565792   0% /sys/firmware
+  ```
+  {: screen}
+  
+  3. Change directories to the directory where your COS bucket is mounted. In this example the bucket is mounted at `/cos-vpc`.
+    ```
+    cd cos-vpc
+    ```
+    {: pre}
+  
+  4. Write a `test.txt` file to your COS bucket and list files to verify that the file was written.
+    ```
+    touch test.txt && ls
+    ```
+    {: pre}
+
+  5. Remove the file and log out of your app pod.
+    ```
+    rm test.txt && exit
+    ```
+    {: pre}
 
 ## Adding object storage to apps
 {: #add_cos}
