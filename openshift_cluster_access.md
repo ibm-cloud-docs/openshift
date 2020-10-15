@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-10-15"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -408,13 +409,15 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 
 7. [Create an API key](#access_api_key) with the private service endpoint so that you can log in to the cluster.
 
-8.  Log in to the cluster with the API key. Include `https://` and the port in the private service endpoint URL, such as `https://c100.private.us-east.containers.cloud.ibm.com:30113`.
+8. Verify that you are connected to the private network through your {{site.data.keyword.vpc_short}} VPN connection.
+
+9. Log in to the cluster with the API key. Include `https://` and the port in the private service endpoint URL, such as `https://c100.private.us-east.containers.cloud.ibm.com:30113`.
     ```
     oc login -u apikey -p <API_key> --server=<private_service_endpoint>
     ```
     {: pre}
 
-9. Verify that the `oc` commands run properly with your cluster through the private service endpoint by checking the version.
+10. Verify that the `oc` commands run properly with your cluster through the private service endpoint by checking the version.
     ```
     oc version
     ```
@@ -432,7 +435,6 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
     kubernetes v1.11.0+d4cacc0
     ```
     {: screen}
-
 
 
 <br />

@@ -967,7 +967,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster my_cluster
 ```
 {: pre}
 
-
+</br>
 
 ### `ibmcloud oc cluster master public-service-endpoint enable`
 {: #cs_cluster_master_pub_se_enable}
