@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-15"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -211,7 +211,7 @@ The following table shows the changes that are included in the worker node fix p
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | CRI-O | 1.17.4 | 1.17.5 | See the [CRI-O release notes](https://github.com/cri-o/cri-o/releases/tag/v1.17.5){: external}. |
-| {{site.data.keyword.openshiftshort}} | 4.4.18 | 4.4.20 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-20){: external}.|
+| {{site.data.keyword.openshiftshort}} | 4.4.18 | 4.4.20 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-20){: external}. The update resolves CVE-2020-8557 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6343881){: external}).|
 | RHEL 7 packages | N/A | N/A | Updated worker node image with package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.4.18_1516_openshift" caption-side="top"}
@@ -352,7 +352,7 @@ The following table shows the changes that are included in the worker node fix p
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}} | 4.3.35	| 4.3.38 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-38){: external}.|
+| {{site.data.keyword.openshiftshort}} | 4.3.35	| 4.3.38 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-38){: external}. The update resolves CVE-2020-8557 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6343881){: external}).|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.35_1538_openshift" caption-side="top"}
 
