@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-15"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -764,7 +764,7 @@ You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to a
 3. Encode the `apikey` from your {{site.data.keyword.cos_full_notm}} Manager credentials to base64.
 
   ```
-  echo -n "<cos_manager_API_key>" | base64
+  echo -n "<cos_manager_apikey>" | base64
   ```
   {: pre}
 
