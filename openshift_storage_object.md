@@ -877,26 +877,26 @@ You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to a
     {: pre}
 
   2. Verify that your COS bucket is mounted from your app pod and that you can read and write to your COS bucket. Run the disk free `df` command to see available disks in your system. Your COS bucket displays the `s3fs` file system type and the mount path that you specified in your PVC.
-  ```
-  df
-  ```
-  {: pre}
+    ```
+    df
+    ```
+    {: pre}
 
-  **Example output:** In this example, the COS bucket is mounted at `/cos-vpc`.
-  ```sh
-  Filesystem        1K-blocks    Used    Available Use% Mounted on
-  overlay           102048096 9071556     87786140  10% /
-  tmpfs                 65536       0        65536   0% /dev
-  tmpfs               7565792       0      7565792   0% /sys/fs/cgroup
-  shm                   65536       0        65536   0% /dev/shm
-  /dev/vda2         102048096 9071556     87786140  10% /etc/hosts
-  s3fs           274877906944       0 274877906944   0% /cos-vpc
-  tmpfs               7565792      44      7565748   1% /run/secrets/kubernetes.io/serviceaccount
-  tmpfs               7565792       0      7565792   0% /proc/acpi
-  tmpfs               7565792       0      7565792   0% /proc/scsi
-  tmpfs               7565792       0      7565792   0% /sys/firmware
-  ```
-  {: screen}
+    **Example output:** In this example, the COS bucket is mounted at `/cos-vpc`.
+    ```sh
+    Filesystem        1K-blocks    Used    Available Use% Mounted on
+    overlay           102048096 9071556     87786140  10% /
+    tmpfs                 65536       0        65536   0% /dev
+    tmpfs               7565792       0      7565792   0% /sys/fs/cgroup
+    shm                   65536       0        65536   0% /dev/shm
+    /dev/vda2         102048096 9071556     87786140  10% /etc/hosts
+    s3fs           274877906944       0 274877906944   0% /cos-vpc
+    tmpfs               7565792      44      7565748   1% /run/secrets/kubernetes.io/serviceaccount
+    tmpfs               7565792       0      7565792   0% /proc/acpi
+    tmpfs               7565792       0      7565792   0% /proc/scsi
+    tmpfs               7565792       0      7565792   0% /sys/firmware
+    ```
+    {: screen}
   
   3. Change directories to the directory where your COS bucket is mounted. In this example the bucket is mounted at `/cos-vpc`.
     ```
