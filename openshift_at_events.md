@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-15"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -109,7 +110,7 @@ The following list of the cluster management events are sent to {{site.data.keyw
 |------|-----------|
 | `containers-kubernetes.account.create` | A classic infrastructure account is set for a region and resource group. This event is created when you run the [`ibmcloud oc credential set classic`](/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#cs_logging_create) command. |
 | `containers-kubernetes.account.delete` | A classic infrastructure account is removed for a region and resource group. This event is created when you run the [`ibmcloud oc ks credential unset`](/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#cs_credentials_unset) command. |
-| `containers-kubernetes.account.get` | The Kubernetes configuration file for a cluster (`kubeconfig`) is requested. | 
+| `containers-kubernetes.account.get` | The Kubernetes configuration file for a cluster (`kubeconfig`) is requested. |
 | `containers-kubernetes.account.update` | Various account updates for a cluster are requested, such as setting the autoupdate policy for a cluster or integrating the cluster with a key management service (KMS). For more details on the action, review the target host address for the API method in the event. |
 | `containers-kubernetes.cluster.config` | A `kubeconfig` file that contains the certificates and secrets to access a cluster is requested. |
 | `containers-kubernetes.cluster.create` | A classic or VPC cluster is created or failed to create. |
@@ -130,7 +131,7 @@ The following list of the cluster management events are sent to {{site.data.keyw
 | `containers-kubernetes.subnet.add` | An existing IBM Cloud infrastructure subnet is added to a cluster. |
 | `containers-kubernetes.subnet.create` | A subnet is created. |
 | `containers-kubernetes.subnet.update` | Attach or detach a public or private portable subnet with a cluster. |
-| `containers-kubernetes.vlan.create` | Deprecated: A user-managed subnet is added to a cluster.| 
+| `containers-kubernetes.vlan.create` | Deprecated: A user-managed subnet is added to a cluster.|
 | `containers-kubernetes.vlan.delete` | Deprecated: A user-managed subnet is removed from a cluster.|
 | `containers-kubernetes.worker.create` | A worker node is created. |
 | `containers-kubernetes.worker.delete` | A worker node is deleted. |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -94,7 +95,7 @@ subcollection: openshift
 # IAM and {{site.data.keyword.cloudaccesstrailshort}} action by API method
 {: #api-at-iam}
 
-When you use {{site.data.keyword.openshiftlong}} such as through the command line or console, the service calls application programming interface (API) methods to complete your requests. You might need certain permissions to call these API methods, and you can keep track of the requests that you make with an {{site.data.keyword.at_full_notm}} instance. 
+When you use {{site.data.keyword.openshiftlong}} such as through the command line or console, the service calls application programming interface (API) methods to complete your requests. You might need certain permissions to call these API methods, and you can keep track of the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
 {: shortdesc}
 
 Review the following list of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) actions and {{site.data.keyword.at_full_notm}} events that correspond to each API method in {{site.data.keyword.openshiftlong_notm}}.
@@ -215,10 +216,10 @@ Review the following Ingress API methods, their required actions in {{site.data.
 
 |	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	GET​/ingress​/v2​/secret​/getSecret	|	View Ingress secret details.	|	containers-kubernetes.cluster.create	|	-	|
+|	GET​/ingress​/v2​/secret​/getSecret	|	View Ingress secret details. |	containers-kubernetes.cluster.create	|	-	|
 |	GET​/ingress​/v2​/secret​/getSecrets	|	View Ingress secrets for a cluster.	|	containers-kubernetes.cluster.create	|	-	|
 |	POST​/ingress​/v2​/secret​/createSecret	|	Create an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/ingress​/v2​/secret​/deleteSecret	|	Delete an Ingress secret from the cluster.	|	containers-kubernetes.cluster.create	|	-	|
+|	POST​/ingress​/v2​/secret​/deleteSecret	|	Delete an Ingress secret from the cluster. |	containers-kubernetes.cluster.create	|	-	|
 |	POST​/ingress​/v2​/secret​/updateSecret	|	Update an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	-	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Ingress API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
@@ -269,7 +270,7 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 {: #ks-logging}
 
 Review the following Fluentd logging configuration API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}	
+{: shortdesc}
 
 |	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
@@ -303,7 +304,7 @@ Review the following Fluentd logging configuration API methods, their required a
 
 Review the following network load balancer (NLB) domain name system (DNS) API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}									
-								
+
 |	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	DELETE​/v1​/nlb-dns​/clusters​/{idOrName}​/host​/{nlbHost}​/ip​/{nlbIP}​/remove	|	Remove an IP address from an NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
@@ -332,7 +333,7 @@ Review the following network load balancer (NLB) domain name system (DNS) API me
 
 Review the following observability logging API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}								
-								
+
 |	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	GET​/v2​/observe​/logging​/getConfig	|	Show the details of an existing LogDNA logging configuration.	|	containers-kubernetes.cluster.read	|	-	|
@@ -351,8 +352,8 @@ Review the following observability logging API methods, their required actions i
 {: #ks-observability-monitoring}
 
 Review the following observability monitoring API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}	
-								
+{: shortdesc}
+
 |	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	GET​/v2​/observe​/monitoring​/getConfig	|	Show the details of an existing Sysdig monitoring configuration.	|	containers-kubernetes.cluster.read	|	-	|
@@ -391,7 +392,7 @@ Review the following access control list (ACL) API methods, their required actio
 
 Review the following API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}									
-								
+
 |	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	GET​/v2​/nlb-dns​/getSatLocationSubdomains	|	List registered NLB subdomains in a Satellite location.	|	containers-kubernetes.cluster.read	|	-	|
@@ -418,7 +419,7 @@ Review the following API methods, their required actions in {{site.data.keyword.
 
 Review the following storage API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}									
-								
+
 |	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	GET​/v2​/storage​/getAttachment	|	Get details of a storage attachment.	|	containers-kubernetes.cluster.read	|	containers-kubernetes.containers-kubernetes.storage.attachment.read 	|
