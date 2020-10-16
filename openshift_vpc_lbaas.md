@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-16"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -200,6 +200,9 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
       <li>`ibm-cloud.kubernetes.io/worker-pool-id`</li>
       <li>`ibm-cloud.kubernetes.io/worker-pool-name`</li>
       <li>`ibm-cloud.kubernetes.io/zone`</li>
+      <li>1.19 and later only: `kubernetes.io/arch`</li>
+      <li>1.19 and later only: `kubernetes.io/hostname`</li>
+      <li>1.19 and later only: `kubernetes.io/os`</li>
       <li>`node.kubernetes.io/instance-type`</li>
       <li>`topology.kubernetes.io/region`</li>
       <li>`topology.kubernetes.io/zone`</li></ul>
@@ -214,7 +217,7 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
     <td>Annotation to specify a VPC zone that your cluster is attached to. When you specify a zone in this annotation, two processes occur:<ul>
     <li>The VPC application load balancer is deployed to the same subnet in that zone that your worker nodes are connected to.</li>
     <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC application load balancer.</li></ul>
-    To see zones, run `ibmcloud oc zone ls --provider vpc-gen2`.<p class="note">To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</br></br>If you set the `dedicated: edge` label on worker nodes, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone do not receive traffic from the load balancer.</p></td>
+    To see zones, run `ibmcloud oc zone ls --provider vpc-gen2`.<p class="note">To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</br></br>If the `dedicated: edge` label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone do not receive traffic from the load balancer.</p></td>
   </tr>
   <tr>
     <td>`selector`</td>
@@ -247,27 +250,27 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
 
   Example CLI output for a public `LoadBalancer` service:
   ```
-  Name:                     myloadbalancer
+  Name:                     myvpcalb
   Namespace:                default
   Labels:                   <none>
-  Annotations:              kubectl.kubernetes.io/last-applied-configuration:
-                              {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type":"public"},...
-                            service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
-  Selector:                 run=webserver
+  Annotations:              
+  Selector:                 app=echo-server
   Type:                     LoadBalancer
-  IP:                       172.21.106.166
+  IP:                       172.21.XX.XX
   LoadBalancer Ingress:     1234abcd-us-south.lb.appdomain.cloud
-  Port:                     <unset>  8080/TCP
+  Port:                     tcp-80  80/TCP
   TargetPort:               8080/TCP
-  NodePort:                 <unset>  30532/TCP
-  Endpoints:
+  NodePort:                 tcp-80  30610/TCP
+  Endpoints:                172.17.17.133:8080,172.17.22.68:8080,172.17.34.18:8080 + 3 more...
   Session Affinity:         None
-  External Traffic Policy:  Cluster
+  External Traffic Policy:  Local
+  HealthCheck NodePort:     31438
   Events:
-    Type    Reason                Age   From                Message
-    ----    ------                ----  ----                -------
-    Normal  EnsuringLoadBalancer  52s   service-controller  Ensuring load balancer
-    Normal  EnsuredLoadBalancer   35s   service-controller  Ensured load balancer
+    Type    Reason                           Age   From                Message
+    ----    ------                           ----  ----                -------
+    Normal  EnsuringLoadBalancer             16m   service-controller  Ensuring load balancer
+    Normal  EnsuredLoadBalancer              15m   service-controller  Ensured load balancer
+    Normal  CloudVPCLoadBalancerNormalEvent  13m   ibm-cloud-provider  Event on cloud load balancer myvpcalb for service default/myvpcalb with UID 08cbacf0-2c93-4186-84b6-c4ab88a2faf9: The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is currently online/active.
   ```
   {: screen}
 
@@ -382,7 +385,9 @@ Review the following default settings and limitations.
 * All VPC load balancers do not currently support UDP.
 * Private VPC application load balancers do not accept all traffic, only RFC 1918 traffic.
 * One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only. Across all of your VPC clusters in your VPC, a maximum of 20 VPC load balancers can be created.
-* The VPC load balancer can route requests to pods that are deployed on a maximum of 50 worker nodes in a cluster. If your cluster has more than 50 worker nodes, create one load balancer per zone. In the YAML file for each load balancer, add the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"` annotation. Each load balancer can forward requests to apps on the worker nodes in that zone only.
+* The VPC load balancer can route requests to pods that are deployed on a maximum of 50 worker nodes in a cluster.
+  * If your cluster has more than 50 worker nodes and you set `externalTrafficPolicy: Cluster` when you configured the Kubernetes `LoadBalancer` service, the VPC load balancer can only route to the first 50 worker nodes that are returned in the cluster's API call to the VPC load balancer.
+  * If your cluster has more than 50 worker nodes and you set `externalTrafficPolicy: Local` when you configured the Kubernetes `LoadBalancer` service, the VPC load balancer fails and cannot forward traffic to any worker nodes. Instead, create one load balancer per zone. In each Kubernetes `LoadBalancer` service that you create, include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"` annotation. Each load balancer can forward requests to apps on the worker nodes in that zone only, and can forwards requests to a maximum of 50 worker nodes in that zone.
 * When you define the configuration YAML file for a Kubernetes `LoadBalancer` service, the following annotations and settings are not supported:
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "<vlan_id>"`
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"`
