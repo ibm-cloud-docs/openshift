@@ -982,6 +982,7 @@ subcollection: openshift
 * [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-types#manage_certs)
   * [Using the default TLS certificate for the IBM-provided Ingress subdomain](/docs/openshift?topic=openshift-ingress-types#manage_certs_ibm)
   * [Using a TLS certificate for a custom subdomain](/docs/openshift?topic=openshift-ingress-types#manage_certs_custom)
+* [Customizing the Ingress class](/docs/openshift?topic=openshift-ingress-types#ingress-class)
 * [Customizing routing and settings by using annotations and configmaps](/docs/openshift?topic=openshift-ingress-types#cm-annotations)
 * [Updating ALBs](/docs/openshift?topic=openshift-ingress-types#alb-update)
   * [Choosing a supported image version](/docs/openshift?topic=openshift-ingress-types#alb-version-choose)

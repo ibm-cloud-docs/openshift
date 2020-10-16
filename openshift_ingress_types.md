@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-16"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -207,7 +207,7 @@ Create ALBs that run the community Kubernetes Ingress image in your cluster.
       <tbody>
       <tr>
       <td><code>annotations</code></td>
-      <td><ul><li>`kubernetes.io/ingress.class`: Specify `public-iks-k8s-nginx` or `private-iks-k8s-nginx` to apply this Ingress resource to the public ALBs or private ALBs that run the Kubernetes Ingress image in your cluster.<p class="note">For configurations in which another component manages your Ingress ALBs, such as if Ingress is deployed as part of a Helm chart, you can specify your own class. You must also specify this custom class in an [`ibm-ingress-deploy-config` configmap](/docs/openshift?topic=openshift-comm-ingress-annotations#comm-customize-deploy).</p></li><li>To customize routing for Ingress, you can add [Kubernetes NGINX annotations](/docs/openshift?topic=openshift-comm-ingress-annotations#annotations) (`nginx.ingress.kubernetes.io/<annotation>`). Custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) are **not** supported.</li></ul></td>
+      <td><ul><li>`kubernetes.io/ingress.class`: Specify `public-iks-k8s-nginx` or `private-iks-k8s-nginx` to apply this Ingress resource to the public ALBs or private ALBs that run the Kubernetes Ingress image in your cluster.<p class="note">For configurations in which another component manages your Ingress ALBs, such as if Ingress is deployed as part of a Helm chart, do not specify this annotation. Instead, you can specify your own class in a `spec.spec.ingressClassName: :<class_name>` field. You must also specify this custom class in an [`IngressClass` resource and a `ibm-ingress-deploy-config` configmap](#ingress-class).</p></li><li>To customize routing for Ingress, you can add [Kubernetes NGINX annotations](/docs/openshift?topic=openshift-comm-ingress-annotations#annotations) (`nginx.ingress.kubernetes.io/<annotation>`). Custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) are **not** supported.</li></ul></td>
       </tr>
       <tr>
       <td><code>tls.hosts</code></td>
@@ -411,17 +411,20 @@ In the Kubernetes Ingress implementation, the ALB cannot access secrets that are
 ### Step 3: Change ALB images
 {: #alb-migrate-3}
 
-Decide whether to [create new ALBs](#alb-migrate-3-new) that run the Kubernetes Ingress and delete old ALBs, or to [migrate your existing ALBs](#alb-migrate-3-existing) to use the Kubernetes Ingress imag. If you do not have a specific requirement to keep your existing ALBs, you can prevent downtime by creating new ALBs and deleting old ALBs.
+Decide whether to [create new ALBs](#alb-migrate-3-new) that run Kubernetes Ingress, or to [migrate your existing ALBs](#alb-migrate-3-existing) to use the Kubernetes Ingress image. If you do not have a specific requirement to keep your existing ALBs, you can prevent downtime by creating new ALBs.
 {: shortdesc}
 
-#### Create new ALBs and delete old ALBs
+#### Create new ALBs
 {: #alb-migrate-3-new}
 
-1. Choose the version for Kubernetes Ingress image that you want to use.<p class="note">To choose a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command.</p>
-  ```
-  ibmcloud oc ingress alb versions
-  ```
-  {: pre}
+Create new ALBs that run the Kubernetes Ingress image. After you create the new ALBs, you can either delete the old ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image, or you can run the new Kubernetes Ingress ALBs and old {{site.data.keyword.openshiftlong_notm}} Ingress ALBs alongside each other in your cluster.
+{: shortdesc}
+
+1. Optional: To continue running old {{site.data.keyword.openshiftlong_notm}} Ingress ALBs alongside any new Kubernetes Ingress ALBs in your cluster, add the `kubernetes.io/ingress.class: "iks-nginx"` annotation to any Ingress resource that you want to apply only to the ALBs that run {{site.data.keyword.openshiftlong_notm}} Ingress. This annotation ensures that your existing Ingress resources are applied only to the {{site.data.keyword.openshiftlong_notm}} Ingress ALBs, while the `kubernetes.io/ingress.class: "<public|private>-iks-k8s-nginx"` annotations in your migrated Ingress resources ensure that they are applied only to the new Kubernetes Ingress ALBs that you create.
+    ```
+    oc edit ingress <ingress_resource>
+    ```
+    {: pre}
 
 2. <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Optional for classic clusters: If you do not want traffic to immediately be routed to the ALBs that you create in the next step, you can first remove the new ALBs from the DNS registration for the ALB health check subdomain.
   1. Open the health check resource for ALBs that run the Kubernetes Ingress image.
@@ -432,31 +435,37 @@ Decide whether to [create new ALBs](#alb-migrate-3-new) that run the Kubernetes 
   2. In the `spec.rules` section, change the `host` by adding any character to the health subdomain. For example, if the health subdomain is listed as `albhealth.mycluster.us-south.containers.appdomain.cloud`, you could add a `x` to the subdomain such as `xalbhealth.mycluster.us-south.containers.appdomain.cloud`. The added character ensures that the Cloudflare health check that uses this subdomain fails, and that any IP addresses for ALBs that run the Kubernetes Ingress image are consequently removed from the DNS registration for your Ingress subdomain. Because your ALBs that run the {{site.data.keyword.openshiftlong_notm}} use a different health check resource than this resource, they continue to receive traffic. After you test your new ALBs in subsequent steps, you can remove the added character to ensure that the new ALBs are included in the DNS registration again.
   3. Save and close the file. Your changes are applied automatically.
 
-3. Create at least one ALB in each zone that runs the Kubernetes Ingress image. These ALBs read only the Ingress resources and configmap that are formatted for Kubernetes Ingress, and begin to forward traffic according to those resources.<p class="note"><img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> In VPC clusters, one VPC load balancer exposes all ALBs in your cluster. When you run one of the following commands to create an ALB, the new ALB immediately begins to receive traffic that is routed by the VPC load balancer. Consider creating only one ALB that runs the Kubernetes Ingres image and testing that ALB in the following steps before you create more ALBs.</p>
+3. Choose the version for Kubernetes Ingress image that you want to use.<p class="note">To choose a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command.</p>
+  ```
+  ibmcloud oc ingress alb versions
+  ```
+  {: pre}
+
+4. Create at least one ALB in each zone that runs the Kubernetes Ingress image. These ALBs read only the Ingress resources and configmap that are formatted for Kubernetes Ingress, and begin to forward traffic according to those resources.<p class="note"><img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> In VPC clusters, one VPC load balancer exposes all ALBs in your cluster. When you run one of the following commands to create an ALB, the new ALB immediately begins to receive traffic that is routed by the VPC load balancer. Consider creating only one ALB that runs the Kubernetes Ingres image and testing that ALB in the following steps before you create more ALBs.</p>
     ```
     ibmcloud oc ingress alb create classic --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> --version <version>
     ```
     {: pre}
 
-4. Verify that the new ALBs are created.
+5. Verify that the new ALBs are created.
   ```
   ibmcloud oc ingress alb ls -c <cluster>
   ```
   {: pre}
 
-5. If you made any changes to the test ALB service during your test migration, such as opening non-standard ports, make those changes to these ALB services.
+6. If you made any changes to the test ALB service during your test migration, such as opening non-standard ports, make those changes to these ALB services.
   ```
   oc edit -n kube-system svc <ALB_ID>
   ```
   {: pre}
 
-6. Copy the IP address for one ALB that has the Kubernetes Ingress version that you specified in the **Build** column, such as `0.35.0_474_iks`.
+7. Copy the IP address for one ALB that has the Kubernetes Ingress version that you specified in the **Build** column, such as `0.35.0_474_iks`.
   ```
   ibmcloud oc ingress alb ls -c <cluster>
   ```
   {: pre}
 
-7. Using the ALB's IP address, the app path, and your domain, verify that you can successfully send traffic to your app through this ALB.
+8. Using the ALB's IP address, the app path, and your domain, verify that you can successfully send traffic to your app through this ALB.
   ```
   curl http://<ALB_IP>/<app_path> -H "Host: ingress.subdomain.containers.appdomain.cloud"
   ```
@@ -468,7 +477,7 @@ Decide whether to [create new ALBs](#alb-migrate-3-new) that run the Kubernetes 
   ```
   {: pre}
 
-8. <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Optional for classic clusters: If you changed the ALB health check subdomain in step 2, remove the added character to ensure that the new ALBs are included in the DNS registration again.
+9. <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Optional for classic clusters: If you changed the ALB health check subdomain in step 2, remove the added character to ensure that the new ALBs are included in the DNS registration again.
   1. Open the health check resource for ALBs that run the Kubernetes Ingress image.
     ```
     kubectl edit ing k8s-alb-health -n kube-system
@@ -477,7 +486,7 @@ Decide whether to [create new ALBs](#alb-migrate-3-new) that run the Kubernetes 
   2. In the `spec.rules` section, change the `host` by removing the extra character from the health subdomain. The Cloudflare health check for this subdomain can now resume, and the IP addresses for the new ALBs are added back to the DNS registration.
   3. Save and close the file. Your changes are applied automatically.
 
-9. After you verify that traffic is flowing correctly through your new ALBs, remove the old ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image, and clean up your original Ingress resource files that were formatted for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+10. Optional: If you do not want to run the new Kubernetes Ingress ALBs alongside the old {{site.data.keyword.openshiftlong_notm}} Ingress ALBs, remove the old {{site.data.keyword.openshiftlong_notm}} Ingress ALBs and clean up your original Ingress resource files that were formatted for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
   * Original ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image:
     1. List your ALB IDs. In the output, copy the IDs for ALBs that have the {{site.data.keyword.openshiftlong_notm}} Ingress version in the **Build** column, such as `652`.
       ```
@@ -672,6 +681,41 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
 
 <br />
 
+
+## Customizing the Ingress class
+{: #ingress-class}
+
+
+
+If you want to configure your own Ingress classes, as of Kubernetes version 1.18, you can create [`IngressClass` resources](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class){: external}.
+{: shortdesc}
+
+An `IngressClass` resource associates a class name with an Ingress controller type. Then, in the Ingress resources that you create to define routing for your app service paths, you specify the class name in the `spec.ingressClassName` field to apply the Ingress resource to the Ingress controllers that are associated with that class.
+
+By default, the `public-iks-k8s-nginx` and `private-iks-k8s-nginx` Ingress classes are defined for public and private ALBs that run the Kubernetes Ingress image, and the `iks-nginx` class is defined for all ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image. These classes are currently not defined in `IngressClass` resources by default within your cluster, and these classes are specified in Ingress resources by using the `kubernetes.io/ingress.class` annotation. However, if you create `IngressClass` resources in your cluster, the `spec.ingressClassName` field replaces the deprecated `kubernetes.io/ingress.class` annotation.
+
+1. Create an `IngressClass` resource. If you want this class to be the default class for your cluster, include the `ingressclass.kubernetes.io/is-default-class: "true"` annotation so that any Ingress resources that do not specify an Ingress class use this class by default.<p class="tip">For configurations in which another component manages your Ingress ALBs, such as if Ingress is deployed as part of a Helm chart, a class might already be created. In this case, you can continue to step 3.</p>
+  ```yaml
+  apiVersion: networking.k8s.io/v1
+  kind: IngressClass
+  metadata:
+    name: <class_name>
+    annotations:
+      ingressclass.kubernetes.io/is-default-class: "true"
+  spec:
+    controller: "k8s.io/ingress-nginx"
+  ```
+  {: codeblock}
+
+2. Deploy the `IngressClass` to your cluster.
+  ```
+  kubectl apply -f <class_name>.yaml -n <namespace>
+  ```
+  {: pre}
+
+3. If you want the Kubernetes Ingress ALBs in your cluster to process Ingress resources of this class, [specify the custom class in an `ibm-ingress-deploy-config` configmap and update your ALBs to pick up the changes](/docs/openshift?topic=openshift-comm-ingress-annotations#comm-customize-deploy).
+
+4. In your Ingress resources, specify the `ingressClassName: "<class_name>"` field in the `spec` section of your Ingress resource. Do not include the deprecated `kubernetes.io/ingress.class` annotation. Note that if you do not specify an Ingress class in an Ingress resource, then the default class is applied.
 
 ## Customizing routing and settings by using annotations and configmaps
 {: #cm-annotations}
