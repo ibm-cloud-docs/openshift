@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-10-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -255,12 +255,11 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Action | CLI command | API call |
 |----|----|----|
 | Refresh the Kubernetes master. | [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) | [`PUT /v1/clusters/{idOrName}/masters`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/HandleMasterAPIServer) |
+| Update a cluster. | [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) | [`PUT /v1/clusters/{idOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/UpdateCluster) |
 | Make an {{site.data.keyword.cloud_notm}} IAM service ID for the cluster, create a policy for the service ID that assigns the **Reader** service access role in {{site.data.keyword.registrylong_notm}}, and then create an API key for the service ID. | [`ibmcloud oc cluster pull-secret apply`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_pull_secret_apply) | - |
 | Add a subnet to a cluster. | [`ibmcloud oc cluster subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_add) | [`PUT /v1/clusters/{idOrName}/subnets/{subnetId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/AddClusterSubnet) |
 | Create a subnet and add it to a cluster. | [`ibmcloud oc cluster subnet create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_create) | [`POST /v1/clusters/{idOrName}/vlans/{vlanId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/CreateClusterSubnet) |
 | Detach a subnet from a cluster. | [`ibmcloud oc cluster subnet detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_detach) | [`DELETE /v1/clusters/{idOrName}/subnets/{subnetId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/DetachClusterSubnet) |
-| Update a cluster. | [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) | [`PUT /v1/clusters/{idOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/UpdateCluster) |
-| Remove a user-managed subnet from a cluster. | [`ibmcloud oc cluster user-subnet rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_rm) | [`DELETE /v1/clusters/{idOrName}/usersubnets/{subnetId}/vlans/{vlanId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/RemoveClusterUserSubnet) |
 | Add worker nodes. | [`ibmcloud oc worker add (deprecated)`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) | [`POST /v1/clusters/{idOrName}/workers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/AddClusterWorkers) |
 | Create a worker pool in a classic cluster. | [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) | [`POST /v1/clusters/{idOrName}/workerpools`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/CreateWorkerPool) |
 | Create a worker pool in a VPC cluster. | [`ibmcloud oc worker-pool create vpc-classic`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cli_worker_pool_create_vpc_classic) | [`POST ​/v2​/vpc​/createWorkerPool`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcCreateWorkerPool) |
