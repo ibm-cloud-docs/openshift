@@ -200,9 +200,6 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
       <li>`ibm-cloud.kubernetes.io/worker-pool-id`</li>
       <li>`ibm-cloud.kubernetes.io/worker-pool-name`</li>
       <li>`ibm-cloud.kubernetes.io/zone`</li>
-      <li>1.19 and later only: `kubernetes.io/arch`</li>
-      <li>1.19 and later only: `kubernetes.io/hostname`</li>
-      <li>1.19 and later only: `kubernetes.io/os`</li>
       <li>`node.kubernetes.io/instance-type`</li>
       <li>`topology.kubernetes.io/region`</li>
       <li>`topology.kubernetes.io/zone`</li></ul>
