@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-10-16"
 
 keywords: openshift
 subcollection: openshift
@@ -542,7 +542,7 @@ subcollection: openshift
   * [Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.openshiftshort}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
 * [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#allowlist_workers)
-* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_allowlist)
+* [Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_allowlist)
 
 [Classic: Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge)
 * [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
