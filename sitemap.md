@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-16"
 
 keywords: openshift
 subcollection: openshift
@@ -542,7 +542,7 @@ subcollection: openshift
   * [Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.openshiftshort}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
 * [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#allowlist_workers)
-* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_allowlist)
+* [Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_allowlist)
 
 [Classic: Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge)
 * [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
@@ -982,6 +982,7 @@ subcollection: openshift
 * [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-types#manage_certs)
   * [Using the default TLS certificate for the IBM-provided Ingress subdomain](/docs/openshift?topic=openshift-ingress-types#manage_certs_ibm)
   * [Using a TLS certificate for a custom subdomain](/docs/openshift?topic=openshift-ingress-types#manage_certs_custom)
+* [Customizing the Ingress class](/docs/openshift?topic=openshift-ingress-types#ingress-class)
 * [Customizing routing and settings by using annotations and configmaps](/docs/openshift?topic=openshift-ingress-types#cm-annotations)
 * [Updating ALBs](/docs/openshift?topic=openshift-ingress-types#alb-update)
   * [Choosing a supported image version](/docs/openshift?topic=openshift-ingress-types#alb-version-choose)
@@ -1199,6 +1200,7 @@ subcollection: openshift
   * [Updating the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
   * [Removing the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#remove_cos_plugin)
 * [Deciding on the object storage configuration](/docs/openshift?topic=openshift-object_storage#configure_cos)
+* [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_auth_ip)
 * [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos)
 * [Using object storage in a stateful set](/docs/openshift?topic=openshift-object_storage#cos_statefulset)
 * [Backing up and restoring data](/docs/openshift?topic=openshift-object_storage#cos_backup_restore)
@@ -1387,7 +1389,7 @@ subcollection: openshift
   * [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters)
   * [`ibmcloud oc zone network-set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set)
   * [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm)
-* [`ingress alb` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands)
+* [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands)
   * [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
   * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)
   * [`ibmcloud oc ingress alb autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_get)
@@ -1401,13 +1403,12 @@ subcollection: openshift
   * [Beta: `ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status)
   * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
   * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
-* [Beta: `ingress secret` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-commands)
   * [Beta: `ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create)
   * [Beta: `ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_get)
   * [Beta: `ibmcloud oc ingress secret ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_ls)
   * [Beta: `ibmcloud oc ingress secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_rm)
   * [Beta: `ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
-  * [`ingress status` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
+  * [`ibmcloud oc ingress status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
 * [`logging` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#logging_commands)
   * [`ibmcloud oc logging autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_disable)
   * [`ibmcloud oc logging autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_enable)
@@ -1514,7 +1515,7 @@ subcollection: openshift
   * [Update after master](/docs/openshift?topic=openshift-openshift_versions#45_after)
 * [{{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
-* [{{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
+* [Deprecated: {{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 * [Migrating from version 3.11 to 4 clusters](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration)
   * [Prerequisites](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-prereqs)
   * [Step 1: Deploy the migration operator to the source cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-source)
@@ -1538,7 +1539,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.16_1513_openshift, released 17 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4416_1513)
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
-* [Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+* [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
   * [Changelog for worker node fix pack 4.3.38_1542_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1542)
   * [Changelog for worker node fix pack 4.3.38_1541_openshift, released 30 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1541)
   * [Changelog for worker node fix pack 4.3.38_1540_openshift, released 28 September 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1540)
@@ -1863,6 +1864,7 @@ subcollection: openshift
   * [Object storage: Cannot access an existing bucket](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_access_bucket_fails)
 * [Object storage: Changing the ownership of the mount path fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_mountpath_error)
 * [Object storage: Accessing files with a non-root user fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_nonroot_access)
+* [Object Storage: App pod fails because of an `Operation not permitted` error](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_operation_not_permitted)
 * [PVC creation fails because of missing permissions](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions)
 * [Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug-portworx)
   * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-catalog)

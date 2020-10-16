@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-15"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -967,7 +967,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster my_cluster
 ```
 {: pre}
 
-
+</br>
 
 ### `ibmcloud oc cluster master public-service-endpoint enable`
 {: #cs_cluster_master_pub_se_enable}
@@ -1073,7 +1073,7 @@ ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH
 <dd>Optional: Attempt the update even if the change is greater than two minor versions from the worker node version.</dd>
 
 <dt><code>-f</code></dt>
-<dd>Optional: Force the command to run without user prompts.</dd>
+<dd>Optional: Force the command to run with no user prompts.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -1150,7 +1150,7 @@ ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [--skip-advanc
 <dd>Optional: Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before deleting the cluster. Note that if you do not have the correct infrastructure permissions, the cluster deletion might only partially succeed, such as the IBM-managed master being removed but the worker nodes unable to be removed from your infrastructure account. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
 
 <dt><code>-f</code></dt>
-<dd>Optional: Use this option to force the removal of a cluster without user prompts.</dd>
+<dd>Optional: Force the command to run with no user prompts.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -1775,7 +1775,7 @@ ibmcloud oc worker reload --cluster CLUSTER --worker WORKER_ID [--skip-master-he
 <dd>Skip a health check of your master before reloading or rebooting your worker nodes.</dd>
 
 <dt><code>-f</code></dt>
-<dd>Optional: Use this option to force the reload of a worker node without user prompts.</dd>
+<dd>Optional: Force the command to run with no user prompts.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -1890,7 +1890,7 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-q]
 <dd>Specify a worker node ID. To reload multiple worker nodes, use multiple flags, such as `-w worker1_id -w worker2_id`.</dd>
 
 <dt><code>-f</code></dt>
-<dd>Optional: Use this option to force the removal of a worker node without user prompts.</dd>
+<dd>Optional: Force the command to run with no user prompts.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -1933,7 +1933,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-q]
 <dd>Specify a worker node ID. To reload multiple worker nodes, use multiple flags, such as `-w worker1_id -w worker2_id`.</dd>
 
 <dt><code>-f</code></dt>
-<dd>Optional: Use this option to force the update of the worker node without user prompts.</dd>
+<dd>Optional: Force the command to run with no user prompts.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -2566,7 +2566,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 <dd>The ID of the public VLAN. This value is required only if you want to change the public VLAN for the zone. To change the public VLAN, you must always provide a compatible private VLAN. New worker nodes are added to the VLAN that you specify, but the VLANs for any existing worker nodes are not changed.<p class="note">The private and public VLANs must be compatible, which you can determine from the **Router** ID prefix.</p></dd>
 
 <dt><code>-f</code></dt>
-<dd>Optional: Force the command to run without user prompts.</dd>
+<dd>Optional: Force the command to run with no user prompts.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -2645,7 +2645,7 @@ ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--worker-pool WORKER_POOL] [-
 <dd>The name of the worker pool to remove the zone from. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`. To remove the zone from all worker pools in the cluster, do not include this flag.</dd>
 
 <dt><code>-f</code></dt>
-<dd>Optional: Force the update without user prompts.</dd>
+<dd>Optional: Force the command to run with no user prompts.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -2660,13 +2660,13 @@ ibmcloud oc zone rm --zone dal10 --cluster my_cluster
 <br />
 
 
-## `ingress alb` commands
+## `ingress` commands
 {: #alb-commands}
 
 View and configure Ingress application load balancers (ALBs).
 {: shortdesc}
 
-Previously, the following commands were listed in the `ibmcloud oc alb` category. In CLI version 1.0.157 and later, the `ibmcloud oc alb` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress alb` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+In CLI version 1.0.157 and later, the `ibmcloud oc alb` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress alb` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: important}
 
 ### `ibmcloud oc ingress alb autoupdate disable`
@@ -3064,7 +3064,7 @@ ibmcloud oc ingress alb migrate start --cluster CLUSTER --type (test | test-with
 <dd>The type of migration: a test migration for public Ingress routing, a test migration with private Ingress routing, or a production migration of all Ingress routing. To see the resources that are created by and the processes for each type of migration, see [Changing the image of existing ALBs](/docs/openshift?topic=openshift-ingress-types#alb-type-migration).</dd>
 
 <dt><code>-f</code></dt>
-<dd>Force the migration to start without confirmation prompts.</dd>
+<dd>Optional: Force the command to run with no user prompts./dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -3114,8 +3114,6 @@ ibmcloud oc ingress alb migrate status --cluster my_cluster --output json
 {: pre}
 
 </br>
-
-
 
 ### `ibmcloud oc ingress alb update`
 {: #cs_alb_update}
@@ -3196,25 +3194,15 @@ ibmcloud oc ingress alb versions [--output json] [-q]
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
 </dl>
 
-<br />
-
-
-## Beta: `ingress secret` commands
-{: #ingress-commands}
-
-View and modify TLS secrets for Ingress services in your cluster.
-{: shortdesc}
-
-Previously, the following commands were listed in the `ibmcloud oc ingress alb cert` subcategory. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
-{: important}
+</br>
 
 ### Beta: `ibmcloud oc ingress secret create`
 {: #cs_ingress_secret_create}
 
-Create an Ingress secret in a cluster for a certificate stored in {{site.data.keyword.cloudcerts_long}}.
+Create an Ingress secret in a cluster for a certificate that is stored in {{site.data.keyword.cloudcerts_long}}.
 {: shortdesc}
 
-The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated.
+The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: note}
 
 ```
@@ -3264,7 +3252,7 @@ ibmcloud oc ingress secret create --cert-crn crn:v1:staging:public:cloudcerts:us
 View information about Ingress secrets in your cluster, including secrets that you imported for a certificate from {{site.data.keyword.cloudcerts_long_notm}}.
 {: shortdesc}
 
-The previous alias for this command, `ibmcloud oc ingress alb cert get`, is deprecated.
+The previous alias for this command, `ibmcloud oc ingress alb cert get`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: note}
 
 ```
@@ -3355,7 +3343,7 @@ ibmcloud oc ingress secret ls --cluster my_cluster
 Delete an Ingress secret from your cluster. If you created a secret for a certificate from {{site.data.keyword.cloudcerts_long_notm}}, only the secret in the cluster is deleted and the certificate remains in your {{site.data.keyword.cloudcerts_long_notm}} instance.
 {: shortdesc}
 
-The previous alias for this command, `ibmcloud oc ingress alb cert rm`, is deprecated.
+The previous alias for this command, `ibmcloud oc ingress alb cert rm`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: note}
 
 ```
@@ -3441,7 +3429,7 @@ ibmcloud oc ingress secret update --cluster my_cluster --name my_alb_secret --na
 
 </br>
 
-### `ingress status` command
+### `ibmcloud oc ingress status`
 {: #cs_ingress_status}
 
 Get the status of the health of Ingress resources for a cluster.

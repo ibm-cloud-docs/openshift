@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -360,7 +361,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
           <tr>
             <td>US South</td>
             <td>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
-            <td><code>169.57.13.10, 169.57.100.18</code><br><code>169.57.151.10, 169.57.154.98</code><br><code>169.45.67.210, 169.45.88.98</code><br><code>169.62.82.197, 169.62.87.170</code><br><br><code>52.116.231.210, 52.116.254.234, 52.117.28.138, 52.117.232.194, 52.117.240.106, 169.46.7.238, 169.46.24.210, 169.46.27.234, 169.46.68.234, 169.46.110.218, 169.47.70.10, 169.47.71.138, 169.47.109.34, 169.47.229.90, 169.47.232.210, 169.47.239.34, 169.48.110.250, 169.48.143.218, 169.48.161.242, 169.48.230.146, 169.48.244.66, 169.59.219.90, 169.60.128.2, 169.60.170.234, 169.61.29.194, 169.61.60.130, 169.61.175.106, 169.61.177.2, 169.61.228.138, 169.62.166.98, 169.62.189.26, 169.62.206.234, 169.63.47.250</code></td>
+            <td><code>169.57.13.10, 169.57.100.18</code><br><code>169.57.151.10, 169.57.154.98</code><br><code>169.45.67.210, 169.45.88.98</code><br><code>169.62.82.197, 169.62.87.170</code><br><br><code>50.22.129.34, 52.116.231.210, 52.116.254.234, 52.117.28.138, 52.117.197.210, 52.117.232.194, 52.117.240.106, 169.46.7.238, 169.46.24.210, 169.46.27.234, 169.46.68.234, 169.46.110.218, 169.47.70.10, 169.47.71.138, 169.47.109.34, 169.47.209.66, 169.47.229.90, 169.47.232.210, 169.47.239.34, 169.48.110.250, 169.48.143.218, 169.48.161.242, 169.48.230.146, 169.48.244.66, 169.59.219.90, 169.60.128.2, 169.60.170.234, 169.61.29.194, 169.61.60.130, 169.61.175.106, 169.61.177.2, 169.61.228.138, 169.62.166.98, 169.62.189.26, 169.62.206.234, 169.63.47.250</code></td>
           </tr>
           </tbody>
         </table>
@@ -485,7 +486,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
           <tr>
             <td>US South</td>
             <td>hou02<br>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
-            <td><code>166.9.15.74</code><br><code>166.9.15.76, 166.9.16.38</code><br><code>166.9.12.143, 166.9.16.5</code><br><code>166.9.12.144, 166.9.16.39</code><br><code>166.9.15.75, 166.9.12.26</code><br><br><code>166.9.12.140, 166.9.12.141, 166.9.12.142, 166.9.12.151, 166.9.12.193, 166.9.12.196, 166.9.12.99, 166.9.13.31, 166.9.13.93, 166.9.13.94, 166.9.14.122, 166.9.14.125, 166.9.14.202, 166.9.14.204, 166.9.14.205, 166.9.14.95, 166.9.15.130, 166.9.15.69, 166.9.15.70, 166.9.15.71, 166.9.15.72, 166.9.15.73, 166.9.16.113, 166.9.16.137, 166.9.16.149, 166.9.16.183, 166.9.16.184, 166.9.16.185, 166.9.17.2, 166.9.17.35, 166.9.17.37, 166.9.17.39, 166.9.48.50, 166.9.51.16, 166.9.58.11</code></td>
+            <td><code>166.9.15.74</code><br><code>166.9.15.76, 166.9.16.38</code><br><code>166.9.12.143, 166.9.16.5</code><br><code>166.9.12.144, 166.9.16.39</code><br><code>166.9.15.75, 166.9.12.26</code><br><br><code>166.9.12.140, 166.9.12.141, 166.9.12.142, 166.9.12.151, 166.9.12.193, 166.9.12.196, 166.9.12.99, 166.9.13.31, 166.9.13.93, 166.9.13.94, 166.9.14.122, 166.9.14.125, 166.9.14.202, 166.9.14.204, 166.9.14.205, 166.9.14.95, 166.9.15.130, 166.9.15.69, 166.9.15.70, 166.9.15.71, 166.9.15.72, 166.9.15.73, 166.9.16.113, 166.9.16.137, 166.9.16.149, 166.9.16.183, 166.9.16.184, 166.9.16.185, 166.9.17.2, 166.9.17.35, 166.9.17.37, 166.9.17.39, 166.9.48.50, 166.9.48.76, 166.9.51.16, 166.9.51.54, 166.9.58.11, 166.9.58.16</code></td>
           </tr>
           </tbody>
         </table>
@@ -516,9 +517,9 @@ You can allow incoming access to NodePort, load balancer, and Ingress services, 
   <dt>Load balancer service</dt>
   <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
   <dt>Ingress</dt>
-  <dd>Open port 80 for HTTP or port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.</dd>
+  <dd>Open port 80 for HTTP and port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.</dd>
   <dt>Route</dt>
-  <dd>Open port 80 for HTTP or port 443 for HTTPS to the router's public IP address.</dd>
+  <dd>Open port 80 for HTTP and port 443 for HTTPS to the router's public IP address.</dd>
 </dl>
 
 <br />
@@ -589,10 +590,10 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 <br />
 
 
-## Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses
+## Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses
 {: #iam_allowlist}
 
-By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted. If you use an IAM allowlist, you must allow the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located. You must allow these CIDRs so that {{site.data.keyword.openshiftlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
+By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can generate a firewall by [creating an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted. If you use an IAM firewall, you must add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist. You must allow these CIDRs so that {{site.data.keyword.openshiftlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
 {: shortdesc}
 
 **Before you begin**: The following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform role for the [User Management service](/docs/account?topic=account-account-services), you can update the restricted IP addresses for the credentials owner.

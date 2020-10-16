@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -108,7 +108,7 @@ Create a cluster with worker nodes that come installed with {{site.data.keyword.
 
 With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the {{site.data.keyword.openshiftlong_notm}} Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.openshiftshort}} tooling and catalog](https://docs.openshift.com/container-platform/4.3/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 
-{{site.data.keyword.openshiftshort}} worker nodes are available for paid accounts and standard clusters only. You can create {{site.data.keyword.openshiftshort}} clusters that run version 4.4 or 3.11 (**deprecated**). The operating system is Red Hat Enterprise Linux 7.
+{{site.data.keyword.openshiftshort}} worker nodes are available for paid accounts and standard clusters only. In this tutorial, you create a cluster that runs version 4.5. The operating system is Red Hat Enterprise Linux 7.
 {: note}
 
 ## Objectives

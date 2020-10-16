@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -101,8 +101,8 @@ Review information about the supported {{site.data.keyword.openshiftshort}} vers
 For more information about the {{site.data.keyword.openshiftshort}} and Kubernetes project versions, review the following information.
 * [{{site.data.keyword.openshiftshort}} 4.5 release notes overview](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.4 release notes overview](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html){: external}
-* [{{site.data.keyword.openshiftshort}} 4.3 release notes overview](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html){: external}
-* [{{site.data.keyword.openshiftshort}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
+* Deprecated: [{{site.data.keyword.openshiftshort}} 4.3 release notes overview](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html){: external}
+* Deprecated: [{{site.data.keyword.openshiftshort}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
 * [Kubernetes changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
 
 ## Update types
@@ -139,10 +139,9 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
-* **Latest**: 4.5, which includes Kubernetes 1.18
-* **Default**: 4.4, which includes Kubernetes 1.17
-* **Other**: 4.3, which includes Kubernetes 1.16
-* **Deprecated**: 3.11, which includes Kubernetes 1.11
+* **Latest**: 4.5 (Kubernetes 1.18)
+* **Default**: 4.4 (Kubernetes 1.17)
+* **Deprecated**: 3.11 (Kubernetes 1.11), 4.3 (Kubernetes 1.16)
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
 
@@ -292,10 +291,13 @@ The following table shows the actions that you must take before you [update the 
 {: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.4" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
-## {{site.data.keyword.openshiftshort}} 4.3
+## Deprecated: {{site.data.keyword.openshiftshort}} 4.3
 {: #ocp43}
 
 <img src="images/certified_kubernetes_1x16.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.16 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.16 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+
+{{site.data.keyword.openshiftshort}} version 4.3 is deprecated, and becomes unsupported in February 2021 (date subject to change). [Update your clusters](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version 4.4 as soon as possible.
+{: deprecated}
 
 With the release of OpenShift Container Platform 4.3, you get a new experience and capabilities for managing your cluster and its workloads. For more information, see the [{{site.data.keyword.openshiftshort}} blog](https://www.openshift.com/blog/introducing-red-hat-openshift-4-3-to-enhance-kubernetes-security/){: external}.
 {: shortdesc}

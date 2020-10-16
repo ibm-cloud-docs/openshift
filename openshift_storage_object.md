@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-15"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -327,11 +327,20 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 8. Optional: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in is authorized to access all Kubernetes secrets in your cluster.
    1. [Create your {{site.data.keyword.cos_full_notm}} service instance](#create_cos_service).
    2. [Store your {{site.data.keyword.cos_full_notm}} service credentials in a Kubernetes secret](#create_cos_secret).
-   3. From the `ibm-object-storage-plugin`, navigate to the `templates` directory and list available files.  
+   3. From the `ibm-object-storage-plugin`, navigate to the `templates` directory and list available files.
+    **OS X and Linux**
       ```
       cd templates && ls
       ```
       {: pre}
+
+    **Windows**
+      ```
+      chdir templates && dir
+      ```
+      {: pre}
+    
+
 
    4. Open the `provisioner-sa.yaml` file and look for the `ibmcloud-object-storage-secret-reader` `ClusterRole` definition.
    5. Add the name of the secret that you created earlier to the list of secrets that the plug-in is authorized to access in the `resourceNames` section.
@@ -348,12 +357,19 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
       ```
       {: codeblock}
    6. Save your changes and navigate to your working directory.
-    ```
-    cd ../..
-    ```
-    {: pre}
+    **OS X and Linux**
+      ```
+      cd ../..
+      ```
+      {: pre}
 
-9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory with the `cd ../..` command.
+    **Windows**
+      ```
+      chdir ../..
+      ```
+      {: pre}
+
+9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory.
 
   - **For OS X and Linux:** 
 
@@ -365,6 +381,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         {: pre}
 
   - **For Windows:**
+  
       **VPC Gen 2 clusters** To enable authorized IPs on VPC Gen 2, set the `--set bucketAccessPolicy=true` flag.
       {: note}
         ```
@@ -374,7 +391,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
     <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Understanding the <code>helm install</code> command for Windows.</caption>
-    <col width="25%">
+    <col width="30%">
     <thead>
     <th>Parameter</th>
     <th>Description</th>
@@ -389,7 +406,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     <td>The infrastructure provider. To retrieve this value, run <code>oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"</code>. If the output from the previous step contains <code>softlayer</code>, then set the <code>CLUSTER_PROVIDER</code> to <code>"IBMC"</code>. If the output contains <code>gc</code>, <code>ng</code>, or <code>g2</code>, then set the <code>CLUSTER_PROVIDER</code> to <code>"IBM-VPC"</code>. Store the infrastructure provider in an environment variable. For example: <code>SET CLUSTER_PROVIDER="IBM-VPC"</code>.</td>
     </tr>
     <tr>
-    <td><code>WORKER_OS</code> and <code>PlATFORM</code><td>
+    <td><code>WORKER_OS</code> and <code>PLATFORM</code><td>
     <td>The operating system of the worker nodes. To retrieve these values, run <code>oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"</code>. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run <code>SET WORKER_OS="redhat"</code> and <code>SET PLATFORM="openshift"</code>.</td>
     </tr>
     </tbody>
@@ -447,73 +464,69 @@ If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug
 You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the latest version.
 {: shortdesc}
 
-1. If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
-  1. Check whether the old version of the {{site.data.keyword.cos_full_notm}} Helm chart is installed in your cluster.  
+**Before you begin**:<br>
+Check the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release and the version of the plug-in that is installed in your cluster.
+  ```
+  helm ls -A | grep object
+  ```
+  {: pre}
+
+  Example output:
+  ```
+  NAME        	  NAMESPACE  	REVISION	UPDATED                             	  STATUS  	CHART                              	APP VERSION	           
+  <release_name>  <namespace> 	1       	2020-02-13 16:05:58.599679 -0500 EST	deployed	ibm-object-storage-plugin-1.1.2    	1.1.2
+  ```
+  {: screen}
+
+**Version 1.0.4 and earlier**: If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
+  1. Remove the Helm chart from your cluster.
     ```
-    helm ls -A | grep ibm-object-storage-plugin
+    helm uninstall <release_name> -n <namespace>
     ```
     {: pre}
 
-    Example output:
-    ```
-    NAME        	  NAMESPACE  	REVISION	UPDATED                             	  STATUS  	CHART                              	APP VERSION	           
-    <release_name>  <namespace> 	1       	2020-02-13 16:05:58.599679 -0500 EST	deployed	ibm-object-storage-plugin-1.1.2    	1.1.2
-    ```
-    {: screen}
+  2. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
 
-  2. If you have version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove the Helm chart from your cluster. If you have version 1.0.5 or later of the Helm chart that is named `ibm-object-storage-plugin`, continue with Step 2.
+**Version 1.0.5 and later**
+  1. Update the {{site.data.keyword.cloud_notm}} Helm repo to retrieve the latest version of all Helm charts in this repo.
     ```
-    helm uninstall ibmcloud-object-storage-plugin -n <namespace>
+    helm repo update
     ```
     {: pre}
 
-  3. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
+  2. Update the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in to the latest version.
+    ```
+    helm ibmc --update
+    ```
+    {: pre}
 
-2. Update the {{site.data.keyword.cloud_notm}} Helm repo to retrieve the latest version of all Helm charts in this repo.
-  ```
-  helm repo update
-  ```
-  {: pre}
+  3. Install the latest version of the `ibm-object-storage-plugin`. </br>
+    ```
+    helm ibmc upgrade <release_name> ibm-helm/ibm-object-storage-plugin --force --set license=true
+    ```
+    {: pre}
 
-3. If you use OS X or a Linux distribution, update the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in to the latest version.
-  ```
-  helm ibmc --update
-  ```
-  {: pre}
+  4. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded.  
+    ```
+    oc rollout status deployment/ibmcloud-object-storage-plugin -n kube-system
+    ```
+    {: pre}
 
-4. Download the latest {{site.data.keyword.cos_full_notm}} Helm chart to your local machine and extract the package to review the `release.md` file to find the latest release information.
-  ```
-  helm pull --untar ibm-helm/ibm-object-storage-plugin
-  ```
-  {: pre}
+    The upgrade of the plug-in is successful when you see `deployment "ibmcloud-object-storage-plugin" successfully rolled out` in your CLI output.
 
-5. Install the latest version of the plug-in. </br>
-  ```
-  helm ibmc upgrade <release_name> ibm-helm/ibm-object-storage-plugin --force --set license=true
-  ```
-  {: pre}
+  5. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded.
+    ```
+    oc rollout status ds/ibmcloud-object-storage-driver -n kube-system
+    ```
+    {: pre}
 
-6. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded.  
-  ```
-  oc rollout status deployment/ibmcloud-object-storage-plugin -n kube-system
-  ```
-  {: pre}
+    The upgrade is successful when you see `daemon set "ibmcloud-object-storage-driver" successfully rolled out` in your CLI output.
 
-   The upgrade of the plug-in is successful when you see `deployment "ibmcloud-object-storage-plugin" successfully rolled out` in your CLI output.
-
-7. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded.
-  ```
-  oc rollout status ds/ibmcloud-object-storage-driver -n kube-system
-  ```
-  {: pre}
-
-   The upgrade is successful when you see `daemon set "ibmcloud-object-storage-driver" successfully rolled out` in your CLI output.
-
-8. Verify that the {{site.data.keyword.cos_full_notm}} pods are in a `Running` state.
-   ```
-   oc get pods -n <namespace> -o wide | grep object-storage
-   ```
-   {: pre}
+  6. Verify that the {{site.data.keyword.cos_full_notm}} pods are in a `Running` state.
+    ```
+    oc get pods -n <namespace> -o wide | grep object-storage
+    ```
+    {: pre}
 
 If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_helm_fails) and [Object storage: Installing the Object storage plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_plugin_fails).
 {: tip}
@@ -599,174 +612,6 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
 
     <br />
 
-
-## VPC: Allowing IP addresses for {{site.data.keyword.cos_full_notm}}
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
-
-1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set `bucketAccessPolicy` flag to `true`.
-
-2. Create one `Manager` HMAC service credential and one `Writer` HMAC service credential for your {{site.data.keyword.cos_full_notm}} instance.
-  * [Creating HMAC credentials from the console](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
-  * [Creating HMAC credentials from the CLI](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main#uhc-create-hmac-credentials-cli).
-
-3. Encode the `apikey` from your {{site.data.keyword.cos_full_notm}} Manager credentials to base64.
-
-  ```
-  echo -n "<cos_manager_API_key>" | base64
-  ```
-  {: pre}
-
-4. Encode the `access-key` and `secret-key` from your {{site.data.keyword.cos_full_notm}} Writer credentials to base64.
-  ```
-  echo -n "<cos_writer_access-key>" | base64
-  echo -n "<cos_writer_secret-key>" | base64
-  ```
-  {: pre}
-
-5. Create a secret configuration file with the values that you encoded. For the `access-key` and `secret-key`, enter the base64 encoded `access-key` and `secret-key` from the Writer HMAC credentials that you created. For the `res-conf-apikey`, enter the base64 encoded `apikey` from your Manager HMAC credentials.
-  ```yaml
-  apiVersion: v1
-  kind: Secret
-  metadata: 
-    name: <secret_name>
-  type: ibm/ibmc-s3fs
-  data:
-    access-key: # Enter your base64 encoded COS Writer access-key
-    secret-key: # Enter your base64 encoded COS Writer secret-key
-    res-conf-apikey: # Enter your base64 encoded COS Manager api-key
-  ```
-  {: codeblock}
-
-6. Create the secret in your cluster.
-  ```
-  oc create -f secret.yaml
-  ```
-  {: pre}
-
-7. Verify the secret is created.
-  ```
-  oc get secrets
-  ```
-  {: pre}
-
-8. Create a PVC that uses the secret you created. Set the `ibm.io/auto-create-bucket: "true"` and `ibm.io/auto_cache: "true"` annotations to automatically create a bucket that caches your data.
-
-  ```yaml
-  kind: PersistentVolumeClaim
-  apiVersion: v1
-  metadata:
-    name: <pvc_name>
-    annotations:
-      ibm.io/auto-create-bucket: "true"
-      ibm.io/auto-delete-bucket: "false"
-      ibm.io/auto_cache: "true"
-      ibm.io/bucket: "<bucket_name>"
-      ibm.io/secret-name: "<secret_name>"
-  spec:
-    accessModes:
-      - ReadWriteMany
-    resources:
-      requests:
-        storage: 8Gi
-    storageClassName: ibmc-s3fs-standard-regional
-    volumeMode: Filesystem
-  ```
-  {: codeblock}
-
-9. Get a list of the Cloud Service Endpoint source IP addresses of your VPC.
-  1. Get a list of your VPCs.
-    ```
-    ibmcloud is vpcs
-    ```
-    {: pre}
-
-  2. Get the details of your VPC and make a note of your Cloud Service Endpoint source IP addresses.
-    ```
-    ibmcloud is vpc <vpc_ID>
-    ```
-    {: pre}
-
-    **Example output**
-    ```                                               
-    ...                                              
-    Cloud Service Endpoint source IP addresses:    Zone         Address      
-                                                  us-south-1   10.249.XXX.XX      
-                                                  us-south-2   10.249.XXX.XX     
-                                                  us-south-3   10.249.XXX.XX
-    ```
-    {: screen}
-
-  3. Verify that the Cloud Service Endpoint source IP addresses of your VPC are authorized in your {{site.data.keyword.cos_full_notm}} bucket.
-    1. [From your {{site.data.keyword.cos_full_notm}} resource list](https://cloud.ibm.com/resources), select your {{site.data.keyword.cos_full_notm}} instance and select the bucket that you specified in your PVC.
-    2. Select **Access Policies** > **Authorized IPs** and verify that the Cloud Service Endpoint source IP addresses of your VPC are displayed.
-
-  You cannot read or write to your bucket from the console. You can only access your bucket from within an app pod on your cluster.
-  {: note}
-
-10. [Create a deployment YAML that references the PVC you created](#cos_app_volume_mount).
-
-11. Create the app in your cluster.
-  ```
-  oc create -f app.yaml
-  ```
-  {: pre}
-
-12. Verify that your app pod is `Running`.
-  ```
-  oc get pods | grep <app_name>
-  ```
-  {: pre}
-
-12. Verify that your COS bucket is mounted from your app pod and that you can read and write to your COS bucket. 
-
-  1. Run the disk free `df` command to see available disks in your system. Your COS bucket displays the `s3fs` file system type and the mount path that you specified in your PVC.
-    ```
-    df
-    ```
-    {: pre}
-
-    **Example output:** In this example, the COS bucket is mounted at `/cos-vpc`.
-    ```sh
-    Filesystem        1K-blocks    Used    Available Use% Mounted on
-    overlay           102048096 9071556     87786140  10% /
-    tmpfs                 65536       0        65536   0% /dev
-    tmpfs               7565792       0      7565792   0% /sys/fs/cgroup
-    shm                   65536       0        65536   0% /dev/shm
-    /dev/vda2         102048096 9071556     87786140  10% /etc/hosts
-    s3fs           274877906944       0 274877906944   0% /cos-vpc
-    tmpfs               7565792      44      7565748   1% /run/secrets/kubernetes.io/serviceaccount
-    tmpfs               7565792       0      7565792   0% /proc/acpi
-    tmpfs               7565792       0      7565792   0% /proc/scsi
-    tmpfs               7565792       0      7565792   0% /sys/firmware
-    ```
-    {: screen}
-  
-13. Verify that you can read and write to your COS bucket.
-  1. Log in to your app pod.
-    ```
-    oc exec -it <pod_name> bash
-    ```
-    {: pre}
-  
-  2. Change directories to the directory where your COS bucket is mounted. In this example the bucket is mounted at `/cos-vpc`.
-    ```
-    cd cos-vpc
-    ```
-    {: pre}
-  
-  3. Write a `test.txt` file to your COS bucket and list files to verify that the file was written.
-    ```
-    touch test.txt && ls
-    ```
-    {: pre}
-
-  4. Remove the file and log out of your app pod.
-    ```
-    rm test.txt && exit
-    ```
-    {: pre}
 
 ## Deciding on the object storage configuration
 {: #configure_cos}
@@ -900,6 +745,176 @@ Now that you decided on the configuration that you want, you are ready to [creat
 
 <br />
 
+
+## VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}
+{: #cos_auth_ip}
+
+You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to access your {{site.data.keyword.cos_full_notm}} bucket. When you set up authorized IP addresses, you can only access your bucket data from those IP addresses; for example, in an app pod.
+{: shortdesc}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
+
+2. Create one `Manager` HMAC service credential and one `Writer` HMAC service credential for your {{site.data.keyword.cos_full_notm}} instance.
+  * [Creating HMAC credentials from the console](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
+  * [Creating HMAC credentials from the CLI](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main#uhc-create-hmac-credentials-cli).
+
+3. Encode the `apikey` from your {{site.data.keyword.cos_full_notm}} Manager credentials to base64.
+
+  ```
+  echo -n "<cos_manager_apikey>" | base64
+  ```
+  {: pre}
+
+4. Encode the `access-key` and `secret-key` from your {{site.data.keyword.cos_full_notm}} Writer credentials to base64.
+  ```
+  echo -n "<cos_writer_access-key>" | base64
+  echo -n "<cos_writer_secret-key>" | base64
+  ```
+  {: pre}
+
+5. Create a secret configuration file with the values that you encoded. For the `access-key` and `secret-key`, enter the base64 encoded `access-key` and `secret-key` from the Writer HMAC credentials that you created. For the `res-conf-apikey`, enter the base64 encoded `apikey` from your Manager HMAC credentials.
+  ```yaml
+  apiVersion: v1
+  kind: Secret
+  metadata: 
+    name: <secret_name>
+  type: ibm/ibmc-s3fs
+  data:
+    access-key: # Enter your base64 encoded COS Writer access-key
+    secret-key: # Enter your base64 encoded COS Writer secret-key
+    res-conf-apikey: # Enter your base64 encoded COS Manager api-key
+  ```
+  {: codeblock}
+
+6. Create the secret in your cluster.
+  ```
+  oc create -f secret.yaml
+  ```
+  {: pre}
+
+7. Verify that the secret is created.
+  ```
+  oc get secrets
+  ```
+  {: pre}
+
+8. Create a PVC that uses the secret you created. Set the `ibm.io/auto-create-bucket: "true"` and `ibm.io/auto_cache: "true"` annotations to automatically create a bucket that caches your data.
+
+  ```yaml
+  kind: PersistentVolumeClaim
+  apiVersion: v1
+  metadata:
+    name: <pvc_name>
+    annotations:
+      ibm.io/auto-create-bucket: "true"
+      ibm.io/auto-delete-bucket: "false"
+      ibm.io/auto_cache: "true"
+      ibm.io/bucket: "<bucket_name>"
+      ibm.io/secret-name: "<secret_name>"
+  spec:
+    accessModes:
+      - ReadWriteMany
+    resources:
+      requests:
+        storage: 8Gi
+    storageClassName: ibmc-s3fs-standard-regional
+    volumeMode: Filesystem
+  ```
+  {: codeblock}
+
+9. Get a list of the Cloud Service Endpoint source IP addresses of your VPC.
+  1. Get a list of your VPCs.
+    ```
+    ibmcloud is vpcs
+    ```
+    {: pre}
+
+  2. Get the details of your VPC and make a note of your Cloud Service Endpoint source IP addresses.
+    ```
+    ibmcloud is vpc <vpc_ID>
+    ```
+    {: pre}
+
+    **Example output**
+    ```                                               
+    ...                                              
+    Cloud Service Endpoint source IP addresses:    Zone         Address      
+                                                  us-south-1   10.249.XXX.XX      
+                                                  us-south-2   10.249.XXX.XX     
+                                                  us-south-3   10.249.XXX.XX
+    ```
+    {: screen}
+
+10. Verify that the Cloud Service Endpoint source IP addresses of your VPC are authorized in your {{site.data.keyword.cos_full_notm}} bucket.
+  1. [From your {{site.data.keyword.cos_full_notm}} resource list](https://cloud.ibm.com/resources), select your {{site.data.keyword.cos_full_notm}} instance and select the bucket that you specified in your PVC.
+  2. Select **Access Policies** > **Authorized IPs** and verify that the Cloud Service Endpoint source IP addresses of your VPC are displayed.
+
+  You cannot read or write to your bucket from the console. You can only access your bucket from within an app pod on your cluster.
+  {: note}
+
+11. [Create a deployment YAML that references the PVC you created](#cos_app_volume_mount).
+
+12. Create the app in your cluster.
+  ```
+  oc create -f app.yaml
+  ```
+  {: pre}
+
+13. Verify that your app pod is `Running`.
+  ```
+  oc get pods | grep <app_name>
+  ```
+  {: pre}
+  
+14. Verify that your volume is mounted and that you can read and write to your COS bucket.
+  1. Log in to your app pod.
+    ```
+    oc exec -it <pod_name> bash
+    ```
+    {: pre}
+
+  2. Verify that your COS bucket is mounted from your app pod and that you can read and write to your COS bucket. Run the disk free `df` command to see available disks in your system. Your COS bucket displays the `s3fs` file system type and the mount path that you specified in your PVC.
+    ```
+    df
+    ```
+    {: pre}
+
+    **Example output:** In this example, the COS bucket is mounted at `/cos-vpc`.
+    ```sh
+    Filesystem        1K-blocks    Used    Available Use% Mounted on
+    overlay           102048096 9071556     87786140  10% /
+    tmpfs                 65536       0        65536   0% /dev
+    tmpfs               7565792       0      7565792   0% /sys/fs/cgroup
+    shm                   65536       0        65536   0% /dev/shm
+    /dev/vda2         102048096 9071556     87786140  10% /etc/hosts
+    s3fs           274877906944       0 274877906944   0% /cos-vpc
+    tmpfs               7565792      44      7565748   1% /run/secrets/kubernetes.io/serviceaccount
+    tmpfs               7565792       0      7565792   0% /proc/acpi
+    tmpfs               7565792       0      7565792   0% /proc/scsi
+    tmpfs               7565792       0      7565792   0% /sys/firmware
+    ```
+    {: screen}
+  
+  3. Change directories to the directory where your COS bucket is mounted. In this example the bucket is mounted at `/cos-vpc`.
+    ```
+    cd cos-vpc
+    ```
+    {: pre}
+  
+  4. Write a `test.txt` file to your COS bucket and list files to verify that the file was written.
+    ```
+    touch test.txt && ls
+    ```
+    {: pre}
+
+  5. Remove the file and log out of your app pod.
+    ```
+    rm test.txt && exit
+    ```
+    {: pre}
 
 ## Adding object storage to apps
 {: #add_cos}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-16"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -361,7 +361,7 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
 
 1.  Create a Kubernetes `LoadBalancer` service in your cluster to publicly expose the hello world app.
     ```
-    oc expose deployment/hello-world --type=LoadBalancer --name=hw-lb-svc  --port=8080 --target-port=8080
+    oc expose dc/hello-world --type=LoadBalancer --name=hw-lb-svc  --port=8080 --target-port=8080 -n hello-world
     ```
     {: pre}
 
@@ -385,7 +385,7 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
     <td>Expose a Kubernetes resource, such as a deployment, as a service so that users can access the resource by using the VPC load balancer hostname.</td>
     </tr>
     <tr>
-    <td><code>deployment/<em>&lt;hello-world-deployment&gt;</em></code></td>
+    <td><code>dc/<em>&lt;hello-world-deployment&gt;</em></code></td>
     <td>The resource type and the name of the resource to expose with this service.</td>
     </tr>
     <tr>
@@ -404,12 +404,16 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
     <td><code>--target-port=<em>&lt;8080&gt;</em></code></td>
     <td>The port that your app listens on and to which the service directs incoming network traffic. In this example, the `target-port` is the same as the `port`, but other apps that you create might use a different port.</td>
     </tr>
+    <tr>
+    <td><code>-n <em>hello-world</em></code></td>
+    <td>The namespace that your deployment is in.</td>
+    </tr>
     </tbody></table>
 
 2.  Verify that the Kubernetes `LoadBalancer` service is created successfully in your cluster. When you create the Kubernetes `LoadBalancer` service, a VPC load balancer is automatically created for you. The VPC load balancer assigns a hostname to your Kubernetes `LoadBalancer` service that you can see in the **LoadBalancer Ingress** field of your CLI output. In VPC, services in your cluster are assigned a hostname because the external IP address for the service is not stable.<p class="note">The VPC load balancer takes a few minutes to provision in your VPC. Until the VPC load balancer is ready, you cannot access the Kubernetes `LoadBalancer` service through its hostname.</p>
 
     ```
-    oc describe service hw-lb-svc
+    oc describe service hw-lb-svc -n hello-world
     ```
     {: pre}
 

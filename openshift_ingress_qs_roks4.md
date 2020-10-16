@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-10-16"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -125,6 +126,10 @@ Quickly expose your app to the Internet by creating an Ingress resource.
   metadata:
     name: myingressresource
   spec:
+    tls:
+    - hosts:
+      - <ingress_subdomain>
+      secretName: <ingress_secret_name>
     rules:
     - host: <ingress_subdomain>
       http:
