@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-19"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -109,13 +109,12 @@ Quickly expose your app to the Internet by creating an Ingress resource.
 
 2. Get the Ingress subdomain for your cluster.
     ```
-    ibmcloud oc cluster get -c <cluster_name_or_ID> | grep Ingress
+    ibmcloud oc cluster get -c <cluster_name_or_ID> | grep 'Ingress Subdomain'
     ```
     {: pre}
     Example output:
     ```
     Ingress Subdomain:      mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud
-    Ingress Secret:         mycluster-a1b2cdef345678g9hi012j3kl4567890-0000
     ```
     {: screen}
 
@@ -126,10 +125,6 @@ Quickly expose your app to the Internet by creating an Ingress resource.
   metadata:
     name: myingressresource
   spec:
-    tls:
-    - hosts:
-      - <ingress_subdomain>
-      secretName: <ingress_secret_name>
     rules:
     - host: <ingress_subdomain>
       http:
@@ -149,6 +144,6 @@ Quickly expose your app to the Internet by creating an Ingress resource.
 
 5. In a web browser, enter the Ingress subdomain and the path for your app.
   ```
-  https://<ingress_subdomain>/<app_path>
+  http://<ingress_subdomain>/<app_path>
   ```
   {: codeblock}

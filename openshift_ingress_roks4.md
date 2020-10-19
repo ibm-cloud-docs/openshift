@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-09"
+lastupdated: "2020-10-19"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -229,7 +229,17 @@ For more information about TLS certificates, see [Managing TLS certificates and 
   ```
   {: screen}
 
-2. The Ingress controller can access TLS secrets only in the same project that the Ingress resource is deployed to. If your app is deployed in a project other than `openshift-ingress`, you must copy the default TLS secret from `openshift-ingress` to that project by running `oc get secret <default_Ingress_secret_name> -n openshift-ingress -o yaml | sed 's/openshift-ingress/<new-project>/g' | oc -n <new-project> create -f -`.
+2. The Ingress controller can access TLS secrets only in the same project that the Ingress resource is deployed to. If your app is deployed in a project other than `openshift-ingress`, you must copy the default TLS secret from `openshift-ingress` to that project.
+    1. Get the CRN of the secret for your subdomain.
+      ```
+      ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace openshift-ingress
+      ```
+      {: pre}
+    2. Using the CRN, create a secret for the certificate in the project where your app is deployed.
+      ```
+      ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project
+      ```
+      {: pre}
 
 **To use a custom domain and TLS secret:**
 
@@ -280,8 +290,8 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     spec:
       tls:
       - hosts:
-        - <custom_domain>
-        secretName: <custom_secret_name>
+        - <domain>
+        secretName: <secret_name>
       rules:
       - host: <domain>
         http:
@@ -1037,7 +1047,17 @@ For more information about TLS certificates, see [Managing TLS certificates and 
   ```
   {: screen}
 
-2. The Ingress controller can access TLS secrets only in the same project that the Ingress resource is deployed to. If your app is deployed in a project other than `openshift-ingress`, you must copy the default TLS secret from `openshift-ingress` to that project by running `oc get secret <default_Ingress_secret_name> -n openshift-ingress -o yaml | sed 's/openshift-ingress/<new-project>/g' | oc -n <new-project> create -f -`.
+2. The Ingress controller can access TLS secrets only in the same project that the Ingress resource is deployed to. If your app is deployed in a project other than `openshift-ingress`, you must copy the default TLS secret from `openshift-ingress` to that project.
+    1. Get the CRN of the secret for your subdomain.
+      ```
+      ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace openshift-ingress
+      ```
+      {: pre}
+    2. Using the CRN, create a secret for the certificate in the project where your app is deployed.
+      ```
+      ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project
+      ```
+      {: pre}
 
 **To use a custom domain and TLS secret:**
 
@@ -1235,7 +1255,7 @@ ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace ope
 ```
 {: pre}
 
-The Ingress controller can access TLS secrets only in the same project that the Ingress resource is deployed to. If your Ingress resources are deployed in projects other than `openshift-ingress`, you must copy the default TLS secret to those projects by running `oc get secret <default_Ingress_secret_name> -n openshift-ingress -o yaml | sed 's/openshift-ingress/<new-project>/g' | oc -n <new-project> create -f -` in each project.
+The Ingress controller can access TLS secrets only in the same project that the Ingress resource is deployed to. If your Ingress resources are deployed in projects other than `openshift-ingress`, you must copy the default TLS secret to those projects by running `ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project`.
 {: note}
 
 The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain.
