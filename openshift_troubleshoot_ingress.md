@@ -1656,7 +1656,8 @@ To resynchronize the expiration dates, you can regenerate the secrets for your I
   ```
   {: pre}
 
-2. Regenerate the Ingress subdomain secret. The certificate is renewed, a new expiration date is generated, and the updates are synchronizeed across the secret in different namespaces.<p class="note">It might take up to 30 minutes for the secret regeneration to complete.</p>
+2. Regenerate the Ingress subdomain secret. The certificate is renewed, a new expiration date is generated, and the updates are synchronizeed across the secret in different namespaces.
+  <p class="note">It might take up to 30 minutes for the secret regeneration to complete.</p>
   ```
   ibmcloud oc nlb-dns secret regenerate -c <cluster_name_or_ID> --nlb-subdomain <ingress_subdomain>
   ```
