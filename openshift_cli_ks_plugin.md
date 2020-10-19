@@ -2809,7 +2809,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type (PUBLIC|PRIVATE)
 
 **Example**:
 ```
-ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 652
+ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 653
 ```
 {: pre}
 
@@ -3155,12 +3155,12 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 **Example commands:**
 * To update all ALB pods in the cluster:
   ```
-  ibmcloud oc ingress alb update -c mycluster --version 652
+  ibmcloud oc ingress alb update -c mycluster --version 653
   ```
   {: pre}
 * To update the ALB pods for one or more specific ALBs:
   ```
-  ibmcloud oc ingress alb update -c mycluster --version 652 --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
+  ibmcloud oc ingress alb update -c mycluster --version 653 --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
   ```
   {: pre}
 
