@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-19"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -920,7 +921,7 @@ To set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in 
 
 2. Add the {{site.data.keyword.cloud_notm}} Helm repositories to your Helm instance.
    
-   If you enabled [VRF](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, add the {{site.data.keyword.cloud_notm}} Helm repositories by using the public registry domain: `helm repo add iks-charts https://icr.io/helm/iks-charts`.
+   If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, add the {{site.data.keyword.cloud_notm}} Helm repositories by using the public registry domain: `helm repo add iks-charts https://icr.io/helm/iks-charts`.
    {: note}
    
    ```
