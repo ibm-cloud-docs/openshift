@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -396,7 +396,7 @@ Wondering if you have the correct permissions to run a certain `oc` command on a
 
 The following table shows the permissions that are granted by each RBAC role to individual Kubernetes resources. Permissions are shown as which verbs a user with that role can complete against the resource, such as "get", "list", "describe", "create", or "delete".
 
-<table summary="The columns are read from left to right. The first column has the Kubernetes resource that an RBAC role authorizes actions to. The second column describes the actions that the view role authorizes actions to for the resource. The third column describes the actions that the edit role authorizes actions to for the resource. The second column describes the actions that the admin and cluster admin roles authorize actions to for the resource.">
+<table summary="The columns are read from left to right. The first column has the Kubernetes resource that an RBAC role authorizes actions to. The second column describes the actions that the view role authorizes actions to for the resource. The third column describes the actions that the edit role authorizes actions to for the resource. The fourth column describes the actions that the admin and cluster admin roles authorize actions to for the resource.">
  <caption>Kubernetes resource permissions granted by each predefined RBAC role</caption>
  <col width="25%">
  <thead>
