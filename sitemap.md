@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-20"
 
 keywords: openshift
 subcollection: openshift
@@ -374,6 +374,7 @@ subcollection: openshift
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli)
 * [Accessing and working with your {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
+* [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry)
 * [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
 * [Storing application data in persistent storage](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage)
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
@@ -706,6 +707,7 @@ subcollection: openshift
 * [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
   * [VPC: Backing up your {{site.data.keyword.openshiftshort}} internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
   * [Classic: Storing images in the internal registry](/docs/openshift?topic=openshift-registry#storage_internal_registry)
+  * [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry)
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
 * [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
 * [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)
