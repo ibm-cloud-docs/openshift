@@ -619,7 +619,7 @@ subcollection: openshift
 * [Removing subnets from a cluster](/docs/openshift?topic=openshift-subnets#remove-subnets)
 
 [Classic: Changing service endpoints or VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster)
-* [3.11 clusters only: Setting up the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
+* [Setting up the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
 * [Setting up the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
 
