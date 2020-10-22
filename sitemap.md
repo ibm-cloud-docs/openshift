@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-21"
+lastupdated: "2020-10-22"
 
 keywords: openshift
 subcollection: openshift
@@ -232,9 +232,6 @@ subcollection: openshift
 * [Container isolation and security](/docs/openshift?topic=openshift-security#container)
 * [Storing personal information](/docs/openshift?topic=openshift-security#pi)
 * [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
-
-[High availability for {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-ha)
-* [Overview of potential points of failure in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-ha#fault_domains)
 
 
 ## Tutorials
@@ -1315,6 +1312,23 @@ subcollection: openshift
   * [Mounting the secret as a volume to your pod](/docs/openshift?topic=openshift-service-binding#mount_secret)
   * [Referencing the secret in environment variables](/docs/openshift?topic=openshift-service-binding#reference_secret)
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
+
+
+## Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
+
+
+[Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha)
+
+[About high availability](/docs/openshift?topic=openshift-ha#ha-about)
+
+[Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha#fault_domains)
+* [1. Container or pod availability](/docs/openshift?topic=openshift-ha#ha-container)
+* [2. Worker node availability](/docs/openshift?topic=openshift-ha#ha-worker)
+* [3. Cluster availability](/docs/openshift?topic=openshift-ha#ha-cluster)
+* [4. Zone availability](/docs/openshift?topic=openshift-ha#ha-zone)
+* [5. Region availability](/docs/openshift?topic=openshift-ha#ha-region)
+* [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
 
 
 ## OpenShift Container Platform documentation
