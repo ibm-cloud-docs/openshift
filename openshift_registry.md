@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -315,7 +315,6 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
 
 <br />
 
-
 ## Setting up a secure external route for the internal registry
 {: #route_internal_registry}
 
@@ -474,7 +473,6 @@ Now that you set up the internal registry with an accessible route, you can log 
 
 <br />
 
-
 ## Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream
 {: #imagestream_registry}
 
@@ -564,7 +562,6 @@ Now, your developers can [use the image stream in an app deployment](/docs/opens
 
 <br />
 
-
 ## Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}
 {: #builds_registry}
 
@@ -642,7 +639,6 @@ Your {{site.data.keyword.openshiftshort}} build can now pull images from and pus
 
 <br />
 
-
 ## Using {{site.data.keyword.registrylong_notm}}
 {: #openshift_iccr}
 
@@ -658,7 +654,6 @@ By default, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to p
 * [Adding the image pull secret](#use_imagePullSecret) to your deployment configuration or to the project service account.
 
 <br />
-
 
 ## Understanding how to authorize your cluster to pull images from a private registry
 {: #cluster_registry_auth}
@@ -722,7 +717,7 @@ When you set up your {{site.data.keyword.cloud_notm}} account to use service end
 {: shortdesc}
 
 **What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**<br>
-1.  Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. 
+1.  Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. 
 2.  [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 
 Now, {{site.data.keyword.registrylong_notm}} automatically uses the private service endpoint. You do not need to enable the private service endpoint for your {{site.data.keyword.openshiftlong_notm}} clusters.
@@ -731,7 +726,6 @@ Now, {{site.data.keyword.registrylong_notm}} automatically uses the private serv
 Yes, if you [sign your images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent), the signatures contain the registry domain name. If you want to use the private `icr.io` domain for your signed images, resign your images with the private `icr.io` domains.
 
 <br />
-
 
 ## Updating existing clusters to use the API key image pull secret
 {: #imagePullSecret_migrate_api_key}
@@ -792,7 +786,6 @@ New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image
     2.  [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/account?topic=account-serviceids#update_serviceid) for the service ID, or [create another image pull secret](#other_registry_accounts).
 
 <br />
-
 
 ## Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default {{site.data.keyword.openshiftshort}} projects
 {: #other}
@@ -1070,7 +1063,6 @@ To create an image pull secret:
 
 <br />
 
-
 ## Using the image pull secret to deploy containers
 {: #use_imagePullSecret}
 
@@ -1146,7 +1138,6 @@ Every {{site.data.keyword.openshiftshort}} project has a Kubernetes service acco
 
 <br />
 
-
 ## Setting up a cluster to pull entitled software
 {: #secret_entitled_software}
 
@@ -1188,7 +1179,6 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 
 
 <br />
-
 
 ## Adding a private registry to the global pull secret
 {: #cluster_global_pull_secret}
@@ -1338,6 +1328,5 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
         vi /.docker/config.json
         ```
         {: pre}
-
 
 

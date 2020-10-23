@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-23"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -166,7 +166,6 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 
 <br />
 
-
 ## Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}
 {: #openshift_logdna}
 
@@ -261,7 +260,6 @@ To set up a logging configuration for your cluster:
    3. Review the pod logs that the LogDNA agent collected from your cluster. It might take a few minutes for your first logs to show.
 
 5. Review how you can [search and filter logs in the LogDNA dashboard](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs).
-
 
 ## Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}
 {: #openshift_logdna_audit}
@@ -411,7 +409,6 @@ You cannot modify the default `kube-audit` policy or apply your own custom polic
 
 <br />
 
-
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_sysdig}
 
@@ -505,8 +502,7 @@ To set up a monitoring configuration for your cluster:
    2. On the cluster **Overview** page, click **Launch**. The Sysdig dashboard opens.
    3. Review the pod and cluster metrics that the Sysdig agent collected from your cluster. It might take a few minutes for your first metrics to show.
 
-5. Review how you can work with the [Sysdig dashboard](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-dashboards#dashboards) to further analyze your metrics.
-
+5. Review how you can work with the [Sysdig dashboard](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-panels) to further analyze your metrics.
 
 
 ## Viewing cluster states
@@ -588,7 +584,6 @@ You can view the current cluster state by running the `ibmcloud oc cluster ls` c
        </tbody>
      </table>
 
-
 ### Master states
 {: #states_master}
 
@@ -617,7 +612,6 @@ The **Master Status** provides details of what operation from the master state i
 |`update_failed`|The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). IBM Support might identify other issues in your cluster that you must fix before the master can be updated.|
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
-
 
 ### Worker node states
 {: #states_workers}
@@ -693,9 +687,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
       </tbody>
     </table>
 
-
 <br />
-
 
 ## Using the cluster logging operator
 {: #oc_logging_operator}

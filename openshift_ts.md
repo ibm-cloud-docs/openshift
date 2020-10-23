@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -256,13 +256,10 @@ Review the options to debug your clusters and find the root causes for failures.
        </tbody>
      </table>
 
-
 <p>The [{{site.data.keyword.openshiftshort}} master](/docs/openshift?topic=openshift-service-arch) is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The {{site.data.keyword.openshiftshort}} API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources.<br><br>If a master failure occurs, your workloads continue to run on the worker nodes, but you cannot use `oc` commands to work with your cluster resources or view the cluster health until the {{site.data.keyword.openshiftshort}} API server in the master is back up. If a pod goes down during the master outage, the pod cannot be rescheduled until the worker node can reach the {{site.data.keyword.openshiftshort}} API server again.<br><br>During a master outage, you can still run `ibmcloud oc` commands against the {{site.data.keyword.containerlong_notm}} API to work with your infrastructure resources, such as worker nodes or VLANs. If you change the current cluster configuration by adding or removing worker nodes to the cluster, your changes do not happen until the master is back up.</p>
 <p class="important">Do not restart or reboot a worker node during a master outage. This action removes the pods from your worker node. Because the Kubernetes API server is unavailable, the pods cannot be rescheduled onto other worker nodes in the cluster.</p>
 
-
 <br />
-
 
 ## Reviewing master health
 {: #debug_master}
@@ -299,9 +296,7 @@ The **Master Status** provides details of what operation from the master state i
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
 
-
 <br />
-
 
 
 
@@ -480,7 +475,6 @@ If these components fail, review the following debug steps.
 
 
 
-
 ## Common CLI issues
 {: #ts_clis}
 {: troubleshoot}
@@ -506,7 +500,6 @@ You might have corporate network policies that prevent access from your local sy
 [Allow TCP access for the CLI commands to work](/docs/openshift?topic=openshift-firewall#firewall_bx). This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
 
 <br />
-
 
 ### `kubectl` or `oc` commands do not work
 {: #kubectl_fails}
@@ -541,7 +534,6 @@ To check your client `kubectl` version against the cluster server version, run `
 If you have multiple clusters at different Kubernetes versions or different container platforms such as {{site.data.keyword.openshiftshort}}, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local terminal profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
 
 <br />
-
 
 
 ### Time out when trying to connect to a pod
@@ -592,7 +584,6 @@ Run `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` and try 
 
 
 <br />
-
 
 ## Unable to create or delete worker nodes or clusters
 {: #infra_errors}
@@ -831,8 +822,6 @@ The {{site.data.keyword.cloud_notm}} account owner or an account administrator m
 
 
 
-
-
 ## Unable to create a cluster in the console due to `No VPC is available` error
 {: #ts_no_vpc}
 
@@ -872,7 +861,6 @@ To set an API key for the `default` resource group, use the {{site.data.keyword.
 4. In the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/catalog/create){: external}, click **Refresh VPCs**. Your available VPCs are now listed in a drop-down menu.
 
 <br />
-
 
 
 
@@ -961,7 +949,6 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
 
 
 
-
 ## Cluster create error cannot pull images from {{site.data.keyword.registrylong_notm}}
 {: #ts_image_pull_create}
 
@@ -994,7 +981,6 @@ Steps:
 2.  [Use the `ibmcloud oc cluster pull-secret apply` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_pull_secret_apply) to re-create an image pull secret with the appropriate registry credentials.
 
 <br />
-
 
 ## Cluster cannot update because of broken webhook
 {: #webhooks_update}
@@ -1113,7 +1099,6 @@ Identify and restore the resource that causes the broken webhook.
 
 <br />
 
-
 ## Cluster remains in a pending State
 {: #cs_cluster_pending}
 
@@ -1134,7 +1119,6 @@ You can try one of the following solutions:
   - Check to see whether your VLAN is valid. To be valid, a VLAN must be associated with infrastructure that can host a worker with local disk storage. You can [list your VLANs](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlans) by running `ibmcloud oc vlan ls --zone <zone>` if the VLAN does not show in the list, then it is not valid. Choose a different VLAN.
 
 <br />
-
 
 
 ## Unable to view or work with a cluster
@@ -1266,7 +1250,6 @@ To check your user access permissions:
 
 
 
-
 ## No resources found
 {: #rhoks_ts_not_found}
 {: troubleshoot}
@@ -1292,7 +1275,6 @@ Re-authenticate with the {{site.data.keyword.openshiftshort}} token by [copying 
 
 <br />
 
-
 ## VPN server error due to infrastructure credentials
 {: #rhoks_ts_openvpn_login}
 
@@ -1312,7 +1294,6 @@ The infrastructure credentials that are associated with the resource group that 
 
 {: tsResolve}
 [Complete the troubleshooting guide](/docs/containers?topic=containers-cs_troubleshoot_clusters#cs_credentials) to check and update the infrastructure credentials that are used for the resource group.
-
 
 
 

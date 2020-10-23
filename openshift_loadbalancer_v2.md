@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -121,7 +121,7 @@ Before you create an NLB 2.0, you must complete the following prerequisite steps
     4. Add the following information to the description: "Please set up the network to allow capacity aggregation on the public and private VLANs associated with my account.". Note that if you want to allow capacity aggregation on specific VLANs, such as the public VLANs for one cluster only, you can specify those VLAN IDs in the description.
     5. Click **Submit**.
 
-3. Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
+3. Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
 
 4. If you use [Calico pre-DNAT network policies](/docs/openshift?topic=openshift-network_policies#block_ingress) to manage traffic to an NLB 2.0, you must add the `applyOnForward: true` and `doNotTrack: true` fields to and remove the `preDNAT: true` from the `spec` section in the policies. `applyOnForward: true` ensures that the Calico policy is applied to the traffic as it is encapsulated and forwarded. `doNotTrack: true` ensures that the worker nodes can use DSR to return a response packet directly to the client without needing the connection to be tracked. For example, if you use a Calico policy to allow traffic from only specific IP addresses to your NLB IP address, the policy looks similar to the following:
     ```
@@ -153,7 +153,6 @@ Before you create an NLB 2.0, you must complete the following prerequisite steps
 Next, you can follow the steps in [Setting up an NLB 2.0 in a multizone cluster](#ipvs_multi_zone_config) or [in a single-zone cluster](#ipvs_single_zone_config).
 
 <br />
-
 
 ## Setting up an NLB 2.0 in a multizone cluster
 {: #ipvs_multi_zone_config}
@@ -322,7 +321,6 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 
 <br />
 
-
 ## Setting up an NLB 2.0 in a single-zone cluster
 {: #ipvs_single_zone_config}
 
@@ -459,7 +457,6 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 
 <br />
 
-
 ## Scheduling algorithms
 {: #scheduling}
 
@@ -510,4 +507,3 @@ You can find the complete example in [this IBM Cloud deployment pattern blog](ht
 <dd>The following algorithms depend on weighted app pods. However, in {{site.data.keyword.openshiftlong_notm}}, all app pods are assigned equal weight for load balancing.<ul>
 <li>Weighted Least Connection (<code>wlc</code>)</li>
 <li>Weighted Round Robin (<code>wrr</code>)</li></ul></dd></dl>
-

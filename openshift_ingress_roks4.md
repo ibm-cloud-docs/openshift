@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -114,10 +114,9 @@ Before you get started with Ingress, review the following prerequisites.
 - To ensure high availability, at least two worker nodes per zone are recommended.
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups).
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#router-mzr-error) to include subnets for all zones in your cluster.
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
 <br />
-
 
 ## Planning networking for single or multiple projects
 {: #multiple_projects}
@@ -176,7 +175,6 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 
 <br />
 
-
 ## Exposing apps to the public in classic clusters or in VPC clusters with a public service endpoint
 {: #ingress-roks4-public}
 
@@ -194,13 +192,11 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
 1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
-
 2.   For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
       ```
       oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
       ```
       {: pre}
-
 
 ### Step 2: Select an app domain and TLS termination
 {: #ingress-roks4-public-2}
@@ -351,7 +347,6 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     ```
     {: pre}
 
-
 Your Ingress resource is created in the same project as your app services, and your apps are registered with the Ingress controller.
 
 ### Step 4: Access your app from the internet
@@ -384,11 +379,9 @@ http://<subdomain2>.<domain>/<app1_path>
 ```
 {: codeblock}
 
-
 <p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress).</p>
 
 <br />
-
 
 ## Exposing apps to the public in VPC clusters with a private service endpoint only
 {: #priv-se-pub-controller}
@@ -407,13 +400,11 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
 1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
-
 2.   For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
       ```
       oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
       ```
       {: pre}
-
 
 </br>
 
@@ -609,7 +600,6 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     ```
     {: pre}
 
-
 Your Ingress resource is created in the same project as your app services, and your apps are registered with the Ingress controller.
 
 </br>
@@ -644,11 +634,9 @@ http://<subdomain2>.<domain>/<app1_path>
 ```
 {: codeblock}
 
-
 <p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress).</p>
 
 <br />
-
 
 ## Exposing apps that are outside your cluster to the public
 {: #ingress-roks4-external}
@@ -726,7 +714,6 @@ To expose apps that are outside of your cluster to the public:
 
 <br />
 
-
 ## Exposing apps to a private network in classic clusters or in VPC clusters with a public service endpoint
 {: #ingress-roks4-private}
 
@@ -744,13 +731,11 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
 1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
-
 2.   For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
       ```
       oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
       ```
       {: pre}
-
 
 </br>
 
@@ -953,7 +938,6 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     ```
     {: pre}
 
-
 Your Ingress resource is created in the same project as your app services, and your apps are registered with the Ingress controller.
 
 </br>
@@ -989,11 +973,9 @@ http://<subdomain2>.<domain>/<app1_path>
 ```
 {: codeblock}
 
-
 <p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress).</p>
 
 <br />
-
 
 ## Exposing apps to a private network in VPC clusters with a private service endpoint only
 {: #priv-se-priv-controller}
@@ -1012,13 +994,11 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
 1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
-
 2.   For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
       ```
       oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
       ```
       {: pre}
-
 
 ### Step 2: Select an app domain and TLS termination
 {: #priv-se-priv-controller-2}
@@ -1169,7 +1149,6 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     ```
     {: pre}
 
-
 Your Ingress resource is created in the same project as your app services, and your apps are registered with the Ingress controller.
 
 </br>
@@ -1204,11 +1183,9 @@ http://<subdomain2>.<domain>/<app1_path>
 ```
 {: codeblock}
 
-
 <p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress).</p>
 
 <br />
-
 
 ## Managing TLS certificates and secrets
 {: #manage_certs}
@@ -1294,7 +1271,6 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
   {: pre}
 
 <br />
-
 
 ## Customizing Ingress routing with annotations
 {: #annotations-roks4}
