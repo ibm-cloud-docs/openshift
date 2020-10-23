@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -165,7 +165,6 @@ The **Ingress Status** reflects the overall health of the Ingress components. Th
 {: summary="Table rows read from left to right, with the Ingress message in column one and a description in column two."}
 
 <br />
-
 
 
 ## No Ingress subdomain exists after cluster creation
@@ -371,7 +370,6 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
 <br />
 
-
 ## No Ingress secret exists after cluster creation
 {: #ingress_secret}
 
@@ -396,6 +394,8 @@ When you run `ibmcloud oc ingress secret ls`, no secrets are listed.
 As of 24 August 2020, an [{{site.data.keyword.cloudcerts_long}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager) instance is automatically created for each cluster that you can use to manage the cluster's Ingress TLS certificates.
 
 For an {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, the API key for the region and resource group that the cluster is created in must have the correct IAM permissions. The API key that your cluster uses does not have the correct IAM permissions to create and access an {{site.data.keyword.cloudcerts_short}} instance.
+
+Also, if you used the same cluster name repeatedly, you might have a rate limiting issue. For more information, see [No Ingress subdomain exists after you create clusters of the same or similar name](#cs_rate_limit).
 
 {: tsResolve}
 1. For the user or functional user who sets the API key, [assign the user](/docs/openshift?topic=openshift-users#add_users) the following IAM permissions:
@@ -443,7 +443,6 @@ Version 4: If you recently restarted your ALB pods or enabled an ALB, a [readine
 {: note}
 
 <br />
-
 
 
 
@@ -721,7 +720,6 @@ Check the availability of the public IP addresses of the Ingress controller's ro
 
 <br />
 
-
 ## Version 4: VPC load balancer for router only routes to one zone
 {: #router-mzr-error}
 
@@ -823,7 +821,6 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
   {: screen}
 
 <br />
-
 
 ## Version 4: Router for Ingress controller does not deploy in a zone
 {: #cs_subnet_limit_43}
@@ -947,7 +944,6 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
   {: pre}
 
 <br />
-
 
 ## Version 3.11: Debugging Ingress
 {: #ingress-debug}
@@ -1374,7 +1370,6 @@ For example, say you have a multizone cluster in 2 zones, and the 2 public ALBs 
 
 <br />
 
-
 ## Version 3.11: Ingress application load balancer (ALB) secret issues
 {: #cs_albsecret_fails}
 
@@ -1436,7 +1431,6 @@ Review the following reasons why the ALB secret might fail and the corresponding
 
 <br />
 
-
 ## Version 3.11: ALB pods do not deploy to worker nodes
 {: #alb-pod-affinity}
 
@@ -1465,7 +1459,6 @@ The method to increase the number of worker nodes per zone depends on whether yo
 
 After the new worker nodes deploy, the ALB pods are automatically scheduled to deploy to those worker nodes.
 <br />
-
 
 ## 3.11 clusters: ALB does not deploy in a zone
 {: #cs_subnet_limit}
@@ -1528,7 +1521,6 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
   * **An ALB does not deploy in a zone**: Run `ibmcloud oc ingress alb ls --cluster <cluster>` to verify that the missing ALB is deployed.
 
 <br />
-
 
 ## Version 3.11: Ingress ALB cannot be enabled due to subnet errors
 {: #cs_alb_subnet}
@@ -1607,7 +1599,6 @@ If you complete one of the above options but the `keepalived` pods are still not
 
 <br />
 
-
 ## No Ingress subdomain exists after you create clusters of the same or similar name
 {: #cs_rate_limit}
 
@@ -1625,7 +1616,6 @@ When you create and delete a cluster that uses the same name multiple times, the
 If you need to continue testing, you can change the name of the cluster so that when you create the new cluster a new, different Ingress subdomain and secret are registered.
 
 <br />
-
 
 ## Ingress secret expiration date is not updated
 {: #sync_cert_dates}
@@ -1696,7 +1686,6 @@ To resynchronize the expiration dates, you can regenerate the secrets for your I
 
 <br />
 
-
 ## Connection via WebSocket closes after 60 seconds
 {: #cs_ingress_websocket}
 
@@ -1723,4 +1712,3 @@ To prevent the connection from closing after 60 seconds of inactivity:
 <dd>Increase the value of the `proxy-read-timeout` in your ALB configuration. For example, to change the timeout from `60s` to a larger value like `300s`, add this [annotation](/docs/openshift?topic=openshift-ingress_annotation#connection) to your Ingress resource file: `ingress.bluemix.net/proxy-read-timeout: "serviceName=<service_name> timeout=300s"`. The timeout is changed for all public ALBs in your cluster.</dd>
 <dt>Set up a heartbeat</dt>
 <dd>If you don't want to change the ALB's default read timeout value, set up a heartbeat in your WebSocket app. When you set up a heartbeat protocol by using a framework like [WAMP ![External link icon](../icons/launch-glyph.svg "External link icon")](https://wamp-proto.org/), the app's upstream server periodically sends a "ping" message on a timed interval and the client responds with a "pong" message. Set the heartbeat interval to 58 seconds or less so that the "ping/pong" traffic keeps the connection open before the 60-second timeout is enforced.</dd></dl>
-
