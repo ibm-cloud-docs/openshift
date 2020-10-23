@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -177,7 +178,7 @@ In OpenShift Container Platform 4, many components are configured by a correspon
 | `openshift-ingress`, `openshift-ingress-operator` | {{site.data.keyword.openshiftshort}} uses [routes](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external} to directly expose an app's service on a hostname so that external clients can reach the service. To create routes, the cluster uses the Ingress operator.</br></br>You can also use [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4) to expose apps externally and customize routing. Ingress consists of three components: the Ingress controller, router, and Ingress resources. The router maps the service to the hostname. By default, the router includes two replicas. Make sure that your cluster has at least two worker nodes so that the router can run on separate compute hosts for higher availability.|
 | `openshift-marketplace` | The marketplace includes the [OperatorHub](https://docs.openshift.com/container-platform/4.3/operators/olm-understanding-operatorhub.html){: external} that comes with the {{site.data.keyword.openshiftshort}} cluster by default. The OperatorHub includes operators from Red Hat and 3rd-party providers. Keep in mind that these operators are provided by the community, might not integrate with your cluster, and are not supported by IBM. You can [enable operators](/docs/openshift?topic=openshift-operators) from the OperatorHub in {{site.data.keyword.openshiftshort}} web console. |
 | `openshift-monitoring` | OpenShift Container Platform includes a [built-in monitoring stack](http://docs.openshift.com/container-platform/4.3/monitoring/cluster_monitoring/about-cluster-monitoring.html){: external} for your cluster, that includes metrics and alert managing capabilities. For a comparison of the built-in monitoring stack and other options such as {{site.data.keyword.mon_full_notm}}, see [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health). |
-| `openshift-multus` | OpenShift Container Platform uses the Multus container network interface (CNI) plug-in to allow [multiple pod networks](https://docs.openshift.com/container-platform/4.3/networking/multiple_networks/understanding-multiple-networks.html){: external}. However, you cannot configure the cluster to use multiple pod networks. {{site.data.keyword.openshiftlong_notm}} clusters support only Calico, which is set up for your cluster by default. If enabled, [Service Mesh](https://docs.openshift.com/container-platform/4.3/service_mesh/servicemesh-release-notes.html){: external} uses the Multus plug-in. |
+| `openshift-multus` | OpenShift Container Platform uses the Multus container network interface (CNI) plug-in to allow [multiple pod networks](https://docs.openshift.com/container-platform/4.3/networking/multiple_networks/understanding-multiple-networks.html){: external}. However, you cannot configure the cluster to use multiple pod networks. {{site.data.keyword.openshiftlong_notm}} clusters support only Calico, which is set up for your cluster by default. If enabled, [Service Mesh](https://docs.openshift.com/container-platform/4.3/service_mesh/v1x/servicemesh-release-notes.htmll){: external} uses the Multus plug-in. |
 | `openshift-network-operator` | The [cluster network operator (CNO)](https://docs.openshift.com/container-platform/4.3/networking/cluster-network-operator.html){: external} manages the cluster network components that are set up by default, such as the CNI pod network provider plug-in and DNS operator.|
 | `openshift-operator-lifecycle-manager` | The [operator lifecycle manager (OLM)](https://docs.openshift.com/container-platform/4.3/operators/understanding_olm/olm-understanding-olm.html){: external} manages the lifecycle of all operators and the catalog that run in the cluster, including the operators for the default components and any custom operators that you add.|
 | `openshift-service-ca`, `openshift-service-ca-operator` | The certificate authority (CA) operator runs certificate signing and injects certificates into API server resources and configmaps in the cluster. For more information, see the [GitHub project](https://github.com/openshift/service-ca-operator){: external}.|
@@ -228,7 +229,6 @@ In OpenShift Container Platform 4, many components are configured by a correspon
 
 
 
-
 ## VPC cluster service architecture
 {: #service-architecture_vpc}
 
@@ -273,7 +273,6 @@ The following diagram shows the components of your cluster and how they interact
 <br />
 
 
-
 ## Overview of personal and sensitive data storage and removal options
 {: #ibm-data}
 
@@ -288,7 +287,7 @@ For each cluster that you create with {{site.data.keyword.openshiftlong_notm}}, 
 |Information type|Data|
 |-------|----------|
 |Personal information|The email address of the {{site.data.keyword.cloud_notm}} account that created the cluster.|
-|Sensitive information|<ul><li>The TLS certificate and secret that is used for the assigned Ingress subdomain. </li><li>The Certificate Authority that is used for the TLS certificate. </li><li>The Certificate Authority, private keys, and TLS certificates for the {{site.data.keyword.openshiftshort}} master components, including the {{site.data.keyword.openshiftshort}} API server, etcd data store, and VPN.</li><li>A customer root key in {{site.data.keyword.keymanagementservicelong_notm}} for each {{site.data.keyword.cloud_notm}} account that is used to encrypt personal and sensitive information.</li></ul>|
+|Sensitive information|<ul><li>The TLS certificate and secret that is used for the assigned Ingress subdomain. </li><li>The certificate authority that is used for the TLS certificate. </li><li>The certificate authority, private keys, and TLS certificates for the {{site.data.keyword.openshiftshort}} master components, including the {{site.data.keyword.openshiftshort}} API server, etcd data store, and VPN.</li><li>A customer root key in {{site.data.keyword.keymanagementservicelong_notm}} for each {{site.data.keyword.cloud_notm}} account that is used to encrypt personal and sensitive information.</li></ul>|
 
 
 ### How is my information stored and encrypted?
@@ -327,7 +326,6 @@ To remove that data that IBM stores, choose between the following options. Note 
 
 
 
-
 ## Dependencies to other {{site.data.keyword.cloud_notm}} services
 {: #dependencies-ibmcloud}
 
@@ -343,7 +341,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.op
 | Hypersync and hyperwarp | This {{site.data.keyword.cloud_notm}} component is used to provide information about clusters so that the cluster is visible to other {{site.data.keyword.cloud_notm}} services and cluster information can be searched and displayed. |
 |{{site.data.keyword.cloud_notm}} Command Line (CLI)|When {{site.data.keyword.openshiftlong_notm}} runs CLI commands, the service connects to the service API endpoint over the public service endpoint.|
 |{{site.data.keyword.registrylong_notm}}|This service is used to store the container images that {{site.data.keyword.openshiftlong_notm}} uses to run the service.|
-| {{site.data.keyword.la_full_notm}} | {{site.data.keyword.openshiftlong_notm}} sends service logs to {{site.data.keyword.la_full_notm}}. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. You can also use {{site.data.keyword.la_full_notm}} to manage your own pod container logs. To use {{site.data.keyword.la_full_notm}}, you must deploy a logging agent to every worker node in your cluster. This agent collects pod logs from all namespaces, including `kube-system`, and forwards the logs to {{site.data.keyword.la_full_notm}}. To get started, see [Creating a logging configuration to forward cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna).  |
+| {{site.data.keyword.la_full_notm}} | {{site.data.keyword.openshiftlong_notm}} sends service logs to {{site.data.keyword.la_full_notm}}. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. You can also use {{site.data.keyword.la_full_notm}} to manage your own pod container logs. To use {{site.data.keyword.la_full_notm}}, you must deploy a logging agent to every worker node in your cluster. This agent collects pod logs from all namespaces, including `kube-system`, and forwards the logs to {{site.data.keyword.la_full_notm}}. To get started, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna).  |
 | {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.openshiftlong_notm}} sends service metrics to {{site.data.keyword.mon_full_notm}}. These metrics are monitored by the service team to identify capacity and performance issues of the service. You can also use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the performance and health of your apps. For more information, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig).|
 | {{site.data.keyword.cloudaccesstraillong_notm}} | {{site.data.keyword.openshiftlong_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward cluster audit events to the {{site.data.keyword.at_full_notm}} service instance that is set up and owned by the {{site.data.keyword.openshiftlong_notm}} user. For more information, see [{{site.data.keyword.cloudaccesstraillong_notm}} events](/docs/containers?topic=containers-at_events).|
 | IBMid profile service | The IBMid component is used to look up the IBMid from an email address. The IBMid is used to authenticate with {{site.data.keyword.cloud_notm}} via Identity and Access Management (IAM). |
@@ -367,4 +365,3 @@ Review the list of 3rd party services that {{site.data.keyword.openshiftlong_not
 | Let's Encrypt | This service is used as the Certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_short}}.|
 | Razee | [Razee](https://razee.io/){: external} is an open-source project that was developed by IBM to automate and manage the deployment of Kubernetes resources, versions, features, and security patches across {{site.data.keyword.openshiftlong_notm}} environments, and to visualize deployment information. Razee integrates with Launch Darkly to control the visibility of these features to the {{site.data.keyword.openshiftlong_notm}} user base. You can also use Razee to manage the rollout of your own deployments across multiple clusters. For more information, see the [Razee documentation](https://github.com/razee-io/Razee){: external}.   |
 | Slack | Slack is used as the IBM-internal communication medium to troubleshoot cluster issues and bring together internal SMEs to resolve customer issues. Diagnostic information about clusters are sent to a private Slack channel and include the customer account ID, cluster ID, and details about the worker nodes. |
-

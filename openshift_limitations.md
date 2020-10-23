@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -137,7 +137,6 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 
 
 
-
 ### Version 4 cluster limitations
 {: #ocp4_limitations}
 
@@ -150,11 +149,11 @@ Review limitations that are specific to {{site.data.keyword.openshiftshort}} ver
 | Cluster updates | You must [update your cluster](/docs/openshift?topic=openshift-update) by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.openshiftshort}} web console. |
 | Container logs | If you use a container logging operator such as Fluentd to send logs to an ElasticSearch stack, you must [update the cluster logging deployment to use the `ibmc-block-gold` storage class](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Key management service (KMS) provider | You can use a KMS provider such as {{site.data.keyword.keymanagementservicelong}} to encrypt secrets in your cluster only in clusters that run version 4.4 or later, not in clusters that run version 4.3. |
-| Private clusters | Depending on the infrastructure provider, your options for private clusters are limited.<ul><li><img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC**: When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private service endpoint. If you want only a private service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</li><li>**Classic**:You cannot create classic {{site.data.keyword.openshiftshort}} clusters with a private service endpoint. Version 4 clusters must have only the public service endpoint enabled. Also, as with version 3.11, you cannot create clusters with only private VLAN connectivity.</li></ul> |
+| Private clusters | Depending on the infrastructure provider, your options for private clusters are limited.<ul><li><img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC**: When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private service endpoint. If you want only a private service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</li><li>**Classic**:You cannot create classic {{site.data.keyword.openshiftshort}} clusters with only a private service endpoint or only private VLAN connectivity.</li></ul> |
 | Logging | To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Service catalog | The service catalog is not supported. Use [Operators](/docs/openshift?topic=openshift-operators#operators_4) instead. Do not use the OperatorHub to install the service catalog. |
 | Serverless | The Knative managed add-on is not supported. Instead, try out the tech preview for the [{{site.data.keyword.openshiftshort}} Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}. |
-| Service mesh | The Istio managed add-on is not supported. Instead, use the [Red Hat service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/servicemesh-release-notes.html){: external}. **Note**: The default {{site.data.keyword.cloud_notm}} configuration of the routers enables host networking, which is not compatible with the service mesh network policy. For the service mesh ingress to work, [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external}.|
+| Service mesh | The Istio managed add-on is not supported. Instead, use the [Red Hat service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/v1x/servicemesh-release-notes.htmll){: external}. **Note**: The default {{site.data.keyword.cloud_notm}} configuration of the routers enables host networking, which is not compatible with the service mesh network policy. For the service mesh ingress to work, [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external}.|
 {: summary="This table contains information on limitations for OpenShift Container Platform version 4 clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="OpenShift Container Platform version 4 cluster limitations"}
 
@@ -212,7 +211,6 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 {: caption="Classic cluster storage limitations"}
 
 <br />
-
 
 ## VPC Gen 2 compute cluster limitations
 {: #ks_vpc_gen2_limits}
@@ -295,7 +293,6 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 | Worker pools | When you assign hosts to a {{site.data.keyword.satelliteshort}} cluster, the hosts are added to the `default` worker pool. You cannot add, resize, rebalance, or delete worker pools. |
 {: summary="This table contains information on storage limitations for {{site.data.keyword.satelliteshort}} clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="{{site.data.keyword.satelliteshort}} cluster limitations"}
-
 
 
 

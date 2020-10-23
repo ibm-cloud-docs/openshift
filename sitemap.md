@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-23"
 
 keywords: openshift
 subcollection: openshift
@@ -233,9 +233,6 @@ subcollection: openshift
 * [Storing personal information](/docs/openshift?topic=openshift-security#pi)
 * [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
 
-[High availability for {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-ha)
-* [Overview of potential points of failure in Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-ha#fault_domains)
-
 
 ## Tutorials
 {: #sitemap_tutorials}
@@ -374,6 +371,7 @@ subcollection: openshift
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli)
 * [Accessing and working with your {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
+* [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry)
 * [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
 * [Storing application data in persistent storage](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage)
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
@@ -397,12 +395,12 @@ subcollection: openshift
   * [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-users#access_roles)
   * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#iam_individuals_groups)
   * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-users#resource_groups)
-* [Setting up the API key to enable access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#api_key)
+* [Setting up the API key to enable access to the infrastructure portfolio and other services](/docs/openshift?topic=openshift-users#api_key)
   * [Setting up the API key in most cases](/docs/openshift?topic=openshift-users#api_key_most_cases)
   * [Understanding other options than the API key](/docs/openshift?topic=openshift-users#api_key_other)
-  * [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#understand_infra)
-  * [Accessing the portfolio with the API key](/docs/openshift?topic=openshift-users#api_key_about)
+  * [Understanding how the API key works](/docs/openshift?topic=openshift-users#api_key_about)
   * [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions)
+  * [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#understand_infra)
   * [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-users#default_account)
   * [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-users#credentials)
 * [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#platform)
@@ -618,7 +616,7 @@ subcollection: openshift
 * [Removing subnets from a cluster](/docs/openshift?topic=openshift-subnets#remove-subnets)
 
 [Classic: Changing service endpoints or VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster)
-* [3.11 clusters only: Setting up the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
+* [Setting up the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
 * [Setting up the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
 
@@ -706,6 +704,7 @@ subcollection: openshift
 * [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
   * [VPC: Backing up your {{site.data.keyword.openshiftshort}} internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
   * [Classic: Storing images in the internal registry](/docs/openshift?topic=openshift-registry#storage_internal_registry)
+  * [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry)
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
 * [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
 * [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)
@@ -1313,6 +1312,23 @@ subcollection: openshift
   * [Mounting the secret as a volume to your pod](/docs/openshift?topic=openshift-service-binding#mount_secret)
   * [Referencing the secret in environment variables](/docs/openshift?topic=openshift-service-binding#reference_secret)
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
+
+
+## Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
+
+
+[Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha)
+
+[About high availability](/docs/openshift?topic=openshift-ha#ha-about)
+
+[Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha#fault_domains)
+* [1. Container or pod availability](/docs/openshift?topic=openshift-ha#ha-container)
+* [2. Worker node availability](/docs/openshift?topic=openshift-ha#ha-worker)
+* [3. Cluster availability](/docs/openshift?topic=openshift-ha#ha-cluster)
+* [4. Zone availability](/docs/openshift?topic=openshift-ha#ha-zone)
+* [5. Region availability](/docs/openshift?topic=openshift-ha#ha-region)
+* [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
 
 
 ## OpenShift Container Platform documentation

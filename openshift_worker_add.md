@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-09"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -150,7 +150,6 @@ To resize the worker pool, change the number of worker nodes that the worker poo
     {: screen}
 
 <br />
-
 
 
 ## Adding worker nodes in VPC clusters
@@ -301,7 +300,6 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 <br />
 
-
 ## Adding worker nodes in classic clusters
 {: #classic_pools}
 
@@ -380,7 +378,6 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 <br />
 
-
 ### Adding a zone to a worker pool
 {: #add_zone}
 
@@ -394,7 +391,7 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
 Before you begin:
 *  To add a zone to your worker pool, your worker pool must be in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones). If your worker pool is not in a multizone-capable zone, consider [creating a new worker pool](#add_pool).
 *  Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
-*  In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
+*  In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
 
 To add a zone with worker nodes to your worker pool:
 
@@ -462,7 +459,6 @@ To add a zone with worker nodes to your worker pool:
 
 <br />
 
-
 ## Deprecated: Adding stand-alone worker nodes
 {: #standalone}
 
@@ -503,7 +499,6 @@ If you have a cluster that was created after worker pools were introduced, you c
    {: pre}
 
 <br />
-
 
 
 ## Installing SGX drivers and platform software on SGX-capable worker nodes
@@ -578,7 +573,6 @@ To uninstall the drivers and platform software, you can follow the same steps, b
 
 
 
-
 ## Adding tags to existing clusters
 {: #cluster_tags}
 
@@ -616,7 +610,6 @@ Choose among the following options:
 {: class="simple-tab-table"}
 
 <br />
-
 
 ## Adding labels to existing worker pools
 {: #worker_pool_labels}
@@ -708,6 +701,5 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
             {: screen}
 
 After you label your worker pool, you can use the [label in your app deployments](/docs/openshift?topic=openshift-openshift_apps#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
-
 
 

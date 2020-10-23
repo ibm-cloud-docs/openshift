@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -160,6 +161,7 @@ Your app's images must be stored in a container registry that your cluster can a
 
 - <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **Classic clusters**: Your {{site.data.keyword.openshiftshort}} cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} File Storage as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.openshiftshort}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}.
 - <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **VPC clusters (version 4 only)**: The internal registry of your {{site.data.keyword.openshiftshort}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster.
+- **Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters**: You can optionally choose to set up the internal registry to store data in the `emptyDir` of the worker node where the internal registry pod runs. Keep in mind that this data is not persistent, and if the pod or worker node is restarted, the stored data is deleted and irrecoverable. You might store the images locally in the `emptyDir` to increase performance if you build containers from large images regularly.
 
 ### VPC: Backing up your {{site.data.keyword.openshiftshort}} internal image registry to {{site.data.keyword.cos_full_notm}}
 {: #cos_image_registry}
@@ -222,8 +224,96 @@ Mounted By:    image-registry-<ID_string>
 If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `openshift-image-registry` ({{site.data.keyword.openshiftshort}} 4) or `docker-registry` ({{site.data.keyword.openshiftshort}} 3.11) pod that uses the `registry-backing` PVC to verify that the volume is resized.
 {: note}
 
-<br />
+### Storing images in the worker node empty directory
+{: #emptydir_internal_registry}
 
+You might store the internal registry images locally in the `emptyDir` of the worker node, such as a bare metal worker node, to increase performance if you build containers from large images regularly. 
+{: shortdesc}
+
+Keep in mind that this data is not persistent, and if the pod or worker node is restarted, the stored data is deleted and irrecoverable.
+{: important}
+
+1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2.  [Update the image registry operator configmap](https://docs.openshift.com/container-platform/4.5/registry/configuring_registry_storage/configuring-registry-storage-baremetal.html#installation-registry-storage-non-production_configuring-registry-storage-baremetal){: external} to set the storage to use the `emptyDir` of the worker node.
+    ```
+    oc patch configs.imageregistry.operator.openshift.io/cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
+    ```
+    {: pre}
+3.  If the [image registry operator management state](https://docs.openshift.com/container-platform/4.5/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`, such as in {{site.data.keyword.satelliteshort}} clusters, update the management state to `Managed`. Now, the operator updates the internal registry pod.
+    ```
+    oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'
+    ```
+    {: pre}
+4.  Get the details of the internal registry pod so that you can verify your updates.
+    1.  Check that the `image-registry` pod is running and that a pod runs per worker node in the cluster.
+        ```
+        oc get pods -n openshift-image-registry
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        NAME                                               READY   STATUS    RESTARTS   AGE
+        cluster-image-registry-operator-695bf78ffc-zvkhd   2/2     Running   0          33m
+        image-registry-6774598589-65cnx                    1/1     Running   0          112s
+        node-ca-gg66r                                      1/1     Running   0          113s
+        node-ca-n8jpq                                      1/1     Running   0          113s
+        node-ca-p2d7j                                      1/1     Running   0          113s
+        ```
+        {: screen}
+    2.  Get the public IP address of the **Node** that the `image-registry` pod runs on.
+        ```
+        oc describe pod -n openshift-image-registry <image-registry-pod> | grep Node
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        Node:               169.xx.xxx.xxx/169.xx.xxx.xxx
+        ```
+        {: screen}
+
+        If the worker node IP address is private, run `ibmcloud oc worker ls -c <cluster> | grep <private_IP>` and note the corresponding public IP address.
+        {: tip}
+    
+    3.  Get the **UID** of the `image-registry` pod in the `metadata.uid` section in the pod YAML (not the UID of the replica set in the `metadata.ownerReferences.uid` section).
+        ```
+        oc get pod -n openshift-image-registry <image-registry-pod> -o yaml
+        ```
+        {: pre}  
+
+        Example output:
+        ```
+        apiVersion: v1
+        kind: Pod
+        metadata:
+            uid: e8d7718d-b0bd-47e2-9aaa-05f3a608fd9b
+        ...
+        ```
+        {: screen}
+5.  Verify that the internal registry stores data to the `emptyDir` of the worker node.
+    1.  [Access the registry directly from the cluster](https://docs.openshift.com/container-platform/4.5/registry/accessing-the-registry.html#registry-accessing-directly_accessing-the-registry){: external}, using the worker node that you previously retrieved. Follow the steps to push a test image to the internal registry.
+
+        To complete these steps in the {{site.data.keyword.openshiftshort}} documentation, you need the `podman` CLI tool. Your worker nodes might not have this CLI tool by default. See the [Podman installation guide](https://podman.io/getting-started/installation.html){: external} for RHEL 7.
+        {: tip}
+    2.  Navigate to the internal registry pod folder that saves to the `emptyDir`. For `<pod_uid>`, use the pod **UID** that you previously retrieved.
+        ```
+        cd var/lib/kubelet/pods/<pod_uid>/volumes/kubernetes.io~empty-dir/registry-storage/docker/registry/v2/repositories/openshift
+        ```
+        {: pre}
+    3.  Verify that your image is in repository directory.
+        ```
+        ls
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        <myimage>  nginx  ...
+        ```
+        {: screen}
+
+<br />
 
 ## Setting up a secure external route for the internal registry
 {: #route_internal_registry}
@@ -383,7 +473,6 @@ Now that you set up the internal registry with an accessible route, you can log 
 
 <br />
 
-
 ## Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream
 {: #imagestream_registry}
 
@@ -473,7 +562,6 @@ Now, your developers can [use the image stream in an app deployment](/docs/opens
 
 <br />
 
-
 ## Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}
 {: #builds_registry}
 
@@ -551,7 +639,6 @@ Your {{site.data.keyword.openshiftshort}} build can now pull images from and pus
 
 <br />
 
-
 ## Using {{site.data.keyword.registrylong_notm}}
 {: #openshift_iccr}
 
@@ -567,7 +654,6 @@ By default, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to p
 * [Adding the image pull secret](#use_imagePullSecret) to your deployment configuration or to the project service account.
 
 <br />
-
 
 ## Understanding how to authorize your cluster to pull images from a private registry
 {: #cluster_registry_auth}
@@ -631,7 +717,7 @@ When you set up your {{site.data.keyword.cloud_notm}} account to use service end
 {: shortdesc}
 
 **What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**<br>
-1.  Enable a [Virtual Router Function (VRF)](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#benefits-of-moving-to-vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. 
+1.  Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. 
 2.  [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 
 Now, {{site.data.keyword.registrylong_notm}} automatically uses the private service endpoint. You do not need to enable the private service endpoint for your {{site.data.keyword.openshiftlong_notm}} clusters.
@@ -640,7 +726,6 @@ Now, {{site.data.keyword.registrylong_notm}} automatically uses the private serv
 Yes, if you [sign your images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent), the signatures contain the registry domain name. If you want to use the private `icr.io` domain for your signed images, resign your images with the private `icr.io` domains.
 
 <br />
-
 
 ## Updating existing clusters to use the API key image pull secret
 {: #imagePullSecret_migrate_api_key}
@@ -701,7 +786,6 @@ New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image
     2.  [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/account?topic=account-serviceids#update_serviceid) for the service ID, or [create another image pull secret](#other_registry_accounts).
 
 <br />
-
 
 ## Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default {{site.data.keyword.openshiftshort}} projects
 {: #other}
@@ -979,7 +1063,6 @@ To create an image pull secret:
 
 <br />
 
-
 ## Using the image pull secret to deploy containers
 {: #use_imagePullSecret}
 
@@ -1055,7 +1138,6 @@ Every {{site.data.keyword.openshiftshort}} project has a Kubernetes service acco
 
 <br />
 
-
 ## Setting up a cluster to pull entitled software
 {: #secret_entitled_software}
 
@@ -1097,7 +1179,6 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 
 
 <br />
-
 
 ## Adding a private registry to the global pull secret
 {: #cluster_global_pull_secret}
@@ -1247,6 +1328,5 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
         vi /.docker/config.json
         ```
         {: pre}
-
 
 

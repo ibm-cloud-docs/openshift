@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -139,7 +140,6 @@ When the components fully provision, a public router subdomain is available for 
     * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**:
       * In the output of Step 2, check that your cluster has a **Public Service Endpoint URL** and does not have a **Private Service Endpoint URL**.
          * If your cluster does not have a public service endpoint, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
-         * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4**: If your cluster does have a private service endpoint, you must delete the cluster and re-create it without a private service endpoint.
       * Check that at least some of the worker nodes in your cluster have a **Public IP** address. If no worker node does, you must [set up public VLANs for at least one worker pool](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
           ```
           ibmcloud oc workers -c <cluster_name_or_ID>

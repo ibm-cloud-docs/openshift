@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-10-20"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -128,6 +129,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads.
 9. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
 10.   If the hosts that you assigned to the cluster are from an Amazon Web Services or Google Cloud Platform cloud provider, you must manually register the cluster DNS. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics in the {{site.data.keyword.satelliteshort}} documentation.
+11. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
 ## Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI
 {: #satcluster-create-cli}
@@ -155,7 +157,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
 
 3. Create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet. To add worker nodes, you must later assign compute hosts from your location to your {{site.data.keyword.openshiftshort}} cluster.
    ```
-   ibmcloud oc cluster create satellite --name <cluster_name> --location <location_name_or_ID> --version 4.3_openshift
+   ibmcloud oc cluster create satellite --name <cluster_name> --location <location_name_or_ID> --version 4.4_openshift
    ```
    {: pre}
 
@@ -221,6 +223,8 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
 
 7. If the hosts that you assigned to the cluster are from an Amazon Web Services or Google Cloud Platform cloud provider, you must manually register the cluster DNS. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics in the {{site.data.keyword.satelliteshort}} documentation.
 
+8. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
+
 <br />
 
 
@@ -237,6 +241,18 @@ Review common tasks that you might be interested in:
 
 <br />
 
+
+## Setting up the internal container image registry
+{: #satcluster-internal-registry}
+
+By default, the internal registry does not run in your {{site.data.keyword.satelliteshort}} cluster because no backing storage is set up for the internal registry. Review the following options to set up the internal registry. 
+{: shortdesc}
+
+*  **Non-persistent data on the worker node**: See [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry).
+*  **Persistent data in {{site.data.keyword.cos_full_notm}}**: See the resolution steps in [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create).
+
+By default, the [image registry operator management state](https://docs.openshift.com/container-platform/4.5/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`. After you change the storage section in the configmap to use a different solution such as the `emptyDir`, you must update the management state to `Managed`. Then, the operator creates the internal registry pod. Use the following command: `oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'`
+{: note}
 
 ## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
 {: #satcluster-limitations}

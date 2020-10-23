@@ -32,7 +32,6 @@ Red Hat OpenShift on IBM Cloud
     Cluster strategy
         openshift_responsibilities.md
         openshift_secure.md
-        openshift_ha.md
 
     {: .topicgroup}
     Tutorials
@@ -182,6 +181,8 @@ Red Hat OpenShift on IBM Cloud
         openshift_integrations_operators.md
         openshift_integrations_helm.md
         openshift_integrations_service_binding.md
+
+    openshift_ha.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
