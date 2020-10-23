@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -127,7 +127,6 @@ Ready to get started? Try out the [creating a {{site.data.keyword.openshiftlong_
 <br />
 
 
-
 ## Comparison between {{site.data.keyword.openshiftshort}} and community Kubernetes clusters
 {: #openshift_kubernetes}
 
@@ -219,7 +218,7 @@ You cannot update from an {{site.data.keyword.openshiftshort}} 3.11 to 4 cluster
 | Managed {{site.data.keyword.openshiftshort}} master | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Provided version and security patch updates | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Encryption with {{site.data.keyword.keymanagementservicelong_notm}} | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Istio | | [Service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/servicemesh-release-notes.html){: external} |
+| Istio | | [Service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/v1x/servicemesh-release-notes.htmll){: external} |
 | Knative | | [Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}|
 | Debug tool | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Cluster autoscaler | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
@@ -231,7 +230,6 @@ You cannot update from an {{site.data.keyword.openshiftshort}} 3.11 to 4 cluster
 | Ingress resources with {{site.data.keyword.openshiftlong_notm}} ALBs | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
 | Ingress resources with {{site.data.keyword.openshiftshort}} Ingress controllers | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: caption="Supported features in {{site.data.keyword.openshiftshort}} 3.11 and 4 clusters" caption-side="top"}
-
 
 
 
