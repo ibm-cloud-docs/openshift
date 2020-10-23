@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-23"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -108,6 +108,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 22 October 2020 | <ul><li>**API key**: Added more information about [how the {{site.data.keyword.openshiftlong_notm}} API key is used](/docs/openshift?topic=openshift-users#api_key_about).</li></ul> |
 | 16 October 2020 | <ul><li>**Gateway firewalls and Calico policies**: For classic clusters in Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.</li><li>**Ingress classes**: Added information about [specifying Ingress classes](/docs/openshift?topic=openshift-ingress-types#ingress-class) to apply Ingress resources to specific ALBs.</li><li>**{{site.data.keyword.cos_short}}**: Added steps to help you [decide on the object storage configuration](/docs/openshift?topic=openshift-object_storage#configure_cos), and added troubleshooting steps for when [app pods fail because of an `Operation not permitted` error](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_operation_not_permitted)].</li></ul> |
 | 13 October 2020 | <ul><li>**New! Certified {{site.data.keyword.openshiftshort}} version 4.5**: You can now create clusters that run {{site.data.keyword.openshiftshort}} version 4.5. To update an existing cluster, see the [Version 4.5 preparation actions](/docs/openshift?topic=openshift-openshift_versions#ocp45). The {{site.data.keyword.openshiftshort}} 4.5 release is also certified for Kubernetes 1.18.</li><li>**Deprecated: {{site.data.keyword.openshiftshort}} version 4.3**: With the release of version 4.5, clusters that run version 4.3 are deprecated. Update your clusters to at least [version 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44) today.<li>**Version changelogs**: Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [4.5.13_1515](/docs/openshift?topic=openshift-openshift_changelog#4513_1515).</li><li>**VPC load balancer**: Added support for setting the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` and `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnet` annotations when you create new VPC load balancers in clusters that run {{site.data.keyword.openshiftshort}} version 4.5.</li><li>**VPC security groups**: Expanded the list of required rules based on the cluster version for default VPC security groups.</li><li>**{{site.data.keyword.cos_short}} in VPC Gen 2**: Added support for authorized IP addresses in {{site.data.keyword.cos_full_notm}} for VPC Gen 2. For more information, see [Allowing IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_auth_ip).</li></ul> |
 | 12 October 2020 | **Versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.26_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4426_1521), [`4.3.38_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1542), and [`3.11.286_1570_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1570). |
@@ -434,7 +435,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 <br />
 
-
 ## September 2019
 {: #sept19}
 
@@ -516,7 +516,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 </tbody></table>
 
 <br />
-
 
 ## August 2019
 {: #aug19}
@@ -719,4 +718,3 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
   </ul></td>
 </tr>
 </tbody></table>
-
