@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-26"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -267,7 +268,6 @@ Further, if you do not disable the worker pools before you disable the `cluster-
 
 <br />
 
-
 ## Preparing your cluster for autoscaling
 {: #ca_prepare_cluster}
 
@@ -301,7 +301,7 @@ Before you install the {{site.data.keyword.cloud_notm}} cluster autoscaler add-o
   ```
   {: screen}
 
-7. [Taint the worker pools](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) that you want to autoscale so that the worker pool does not accept workloads except the ones that you want to run on the autoscaled worker pool. You can learn more about taints and tolerations in the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/). As an example, you might set a taint of `use=autoscale:NoExecute`. In this example, the `NoExecute` toleration evicts and pods that do not have the matching the toleration.
+7. [Taint the worker pools](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) that you want to autoscale so that the worker pool does not accept workloads except the ones that you want to run on the autoscaled worker pool. You can learn more about taints and tolerations in the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/). As an example, you might set a taint of `use=autoscale:NoExecute`. In this example, the `NoExecute` toleration evicts pods that do not have the matching the toleration.
 
 8. [Install the cluster autoscaler add-on](#ca_addon).
 
@@ -309,7 +309,6 @@ Before you install the {{site.data.keyword.cloud_notm}} cluster autoscaler add-o
     {: deprecated}
 
 <br />
-
 
 ## Installing the cluster autoscaler add-on in your cluster
 {: #ca_addon}
@@ -494,7 +493,6 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 8.  Optional: If you did not set any worker pools for autoscaling with the installation, you can [Update the cluster autoscaler configuration](#ca_cm).
 
 <br />
-
 
 ## Updating the cluster autoscaler configmap to enable scaling
 {: #ca_cm}
@@ -772,7 +770,6 @@ For more information, see the following Kubernetes docs:
 
 <br />
 
-
 ## Scaling up worker nodes before the worker pool has insufficient resources
 {: #ca_scaleup}
 
@@ -790,7 +787,6 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 </dl>
 
 <br />
-
 
 ## Upgrading the cluster autoscaler add-on
 {: #ca_addon_up}
@@ -997,7 +993,6 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
 
 <br />
 
-
 ## Removing the cluster autoscaler
 {: #ca_rm}
 
@@ -1070,7 +1065,6 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
       {: pre}
 
 <br />
-
 
 ## Cluster autoscaler add-on parameter reference
 {: #ca_addon_ref}
@@ -1391,6 +1385,5 @@ Understanding the `--set workerpools` options:
   <br><br>By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.</td><td>Disabled</td>
 </tbody>
 </table>
-
 
 
