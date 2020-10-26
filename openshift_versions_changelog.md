@@ -177,7 +177,7 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.4 p
 {: shortdesc}
 
 ### Changelog for worker node fix pack 4.4.27_1523_openshift, released 26 October 2020
-{: #4427_1523}
+{: #4427_1523_worker}
 
 The following table shows the changes that are included in the worker node fix pack update `4.4.27_1523_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
