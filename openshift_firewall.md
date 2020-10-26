@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -109,7 +109,6 @@ Review these situations in which you might need to open specific ports and IP ad
 * [Other services or network firewalls](#allowlist_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by a firewall, you must add the IP addresses of your worker nodes in that firewall.
 
 <br />
-
 
 ## Opening ports in a corporate firewall
 {: #corporate}
@@ -299,7 +298,6 @@ Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`
 3. Allow access for the Calico policies via the master URL IP address and the etcd port.
 
 <br />
-
 
 ## Opening ports in gateway appliance firewalls
 {: #vyatta_firewall}
@@ -524,7 +522,6 @@ You can allow incoming access to NodePort, load balancer, and Ingress services, 
 
 <br />
 
-
 ## Allowing the cluster to access resources through Calico network policies
 {: #firewall_calico_egress}
 
@@ -535,7 +532,6 @@ Instead of setting up a gateway firewall device, you can choose to use [Calico n
 * [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
 
 <br />
-
 
 ## Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls
 {: #allowlist_workers}
@@ -557,10 +553,10 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
         ```
         ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.18.9   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.18.9  
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.18.9   
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.18.9  
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.18.10   
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.18.10  
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.18.10   
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.18.10  
         ```
         {: screen}
     3.  List the VLAN subnets for each unique network ID.
@@ -588,7 +584,6 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 5.  Repeat these steps for each cluster that you want to allow traffic to or from.
 
 <br />
-
 
 ## Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses
 {: #iam_allowlist}
@@ -678,6 +673,5 @@ By default, all IP addresses can be used to log in to the {{site.data.keyword.cl
     </tbody>
   </table>
 7. Click **Apply**.
-
 
 

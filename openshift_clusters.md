@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-26"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -110,7 +110,6 @@ After [getting started](/docs/containers?topic=containers-getting-started), you 
 
 <br />
 
-
 ## Sample commands
 {: #cluster_create_samples}
 
@@ -158,7 +157,6 @@ Have you created a cluster before and are just looking for quick example command
 
 <br />
 
-
 ## Preparing to create clusters at the account level
 {: #cluster_prepare}
 
@@ -188,7 +186,6 @@ Prepare your {{site.data.keyword.cloud_notm}} account for {{site.data.keyword.co
 
 <br />
 
-
 ## Deciding on your cluster setup
 {: #prepare_cluster_level}
 {: help}
@@ -217,7 +214,6 @@ After you set up your account to create clusters, decide on the setup for your c
 
 <br />
 
-
 ## Creating a standard classic cluster
 {: #clusters_standard}
 
@@ -235,7 +231,7 @@ After you set up your account to create clusters, decide on the setup for your c
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
 2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster environment.
-   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster, such as 4.4.26.
+   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster, such as 4.4.27.
    3. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
 4. Configure the **Location** details for your cluster.
    1. Select the **Resource group** that you want to create your cluster in.
@@ -267,7 +263,6 @@ After you set up your account to create clusters, decide on the setup for your c
 10. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster). For more possibilities, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
 
 <br />
-
 
 ### Creating a standard classic cluster in the CLI
 {: #clusters_cli_steps}
@@ -371,8 +366,7 @@ After you set up your account to create clusters, decide on the setup for your c
    </tr>
    <tr>
    <td><code>--name <em>&lt;name&gt;</em></code></td>
-   <td>Specify a name for your cluster. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
-</td>
+   <td>Specify a name for your cluster. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.</td>
    </tr>
    <tr>
    <td><code>--workers <em>&lt;number&gt;</em></code></td>
@@ -380,8 +374,7 @@ After you set up your account to create clusters, decide on the setup for your c
    </tr>
    <tr>
    <td><code>--version <em>&lt;major.minor.patch&gt;</em></code></td>
-   <td>The {{site.data.keyword.openshiftshort}} version for the cluster master node. This value is required. When the version is not specified, the cluster is created with the default supported Kubernetes version. If you do not specify a supported {{site.data.keyword.openshiftshort}} version, your cluster is created as a community Kubernetes cluster. To see available versions, run <code>ibmcloud oc versions</code>.
-</td>
+   <td>The {{site.data.keyword.openshiftshort}} version for the cluster master node. This value is required. When the version is not specified, the cluster is created with the default supported Kubernetes version. If you do not specify a supported {{site.data.keyword.openshiftshort}} version, your cluster is created as a community Kubernetes cluster. To see available versions, run <code>ibmcloud oc versions</code>.</td>
    </tr>
    <tr>
    <td><code>--public-service-endpoint</code></td>
@@ -428,7 +421,7 @@ After you set up your account to create clusters, decide on the setup for your c
    When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the **State** of your cluster changes to `deployed`. After your {{site.data.keyword.openshiftshort}} master is ready, the provisioning of your worker nodes is initiated.
    ```
    Name         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     4.4.26_xxxx_openshift      Default             classic
+   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     4.4.27_xxxx_openshift      Default             classic
    ```
    {: screen}
 
@@ -444,7 +437,7 @@ After you set up your account to create clusters, decide on the setup for your c
    When the worker nodes are ready, the worker node state changes to **normal** and the status changes to **Ready**. When the node status is **Ready**, you can then access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process. Note that if you created your cluster with a private VLAN only, no **Public IP** addresses are assigned to your worker nodes.
    ```
    ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.18.9
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.18.10
    ```
    {: screen}
 
@@ -461,9 +454,7 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 
 
 
-
 <br />
-
 
 ## Creating a standard VPC Gen 2 compute cluster
 {: #clusters_vpcg2}
@@ -583,8 +574,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
     <tbody>
     <tr>
     <td><code>--name <em>&lt;cluster_name&gt;</em></code></td>
-    <td>Specify a name for your cluster. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
-</td>
+    <td>Specify a name for your cluster. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.</td>
     </tr>
     <tr>
     <td><code>--zone <em>&lt;zone&gt;</em></code></td>
@@ -651,7 +641,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
     When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the status of your cluster changes to **deployed**. After the {{site.data.keyword.openshiftshort}} master is ready, your worker nodes are set up.
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          mil01     1.18.9      Default               vpc-classic
+    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          mil01     1.18.10      Default               vpc-classic
     ```
     {: screen}
 
@@ -667,7 +657,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
    When the worker nodes are ready, the worker node **State** changes to `deployed` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
    ```
    ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.18.9
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.18.10
    ```
    {: screen}
 
@@ -709,7 +699,6 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 
 
 
-
 ## Next steps
 {: #next_steps}
 
@@ -731,7 +720,6 @@ Then, you can check out the following network configuration steps for your clust
   * Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access).
   * Connect your cluster with services in private networks outside of your {{site.data.keyword.cloud_notm}} account or with resources in other VPCs by [setting up the {{site.data.keyword.vpc_short}} VPN](/docs/openshift?topic=openshift-vpc-vpnaas).
   * [Add rules to the security group for your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy) to control ingress and egress traffic to your VPC subnets.
-
 
 
 

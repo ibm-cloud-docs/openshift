@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-26"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -113,7 +113,6 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 
 <br />
 
-
 ## Accessing {{site.data.keyword.openshiftshort}} clusters through the public service endpoint
 {: #access_public_se}
 
@@ -173,7 +172,6 @@ Choose from the following options.
 
 
 <br />
-
 
 ## Accessing clusters through the private service endpoint
 {: #access_private_se}
@@ -440,7 +438,6 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 <br />
 
 
-
 ## Accessing {{site.data.keyword.openshiftshort}} clusters from automation tools by using an API key
 {: #access_automation}
 
@@ -651,7 +648,6 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 
 <br />
 
-
 ## Accessing the cluster master via admission controllers and webhooks
 {: #access_webhooks}
 
@@ -684,6 +680,5 @@ Many cluster add-ons, plug-ins, and other third-party extensions create custom a
 
 **I need help with a broken webhook. What can I do?**<br>
 See [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update).
-
 
 

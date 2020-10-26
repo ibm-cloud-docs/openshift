@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-26"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -100,8 +100,6 @@ If you have specific performance optimization requirements, you can change the d
 
 If you choose to change the default settings, you are doing so at your own risk. You are responsible for running tests against any changed settings and for any potential disruptions caused by the changed settings in your environment.
 {: important}
-
-
 
 ## Changing the Calico maximum transmission unit (MTU)
 {: #calico-mtu}
@@ -269,7 +267,6 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 
 <br />
 
-
 ## Disabling the port map plug-in
 {: #calico-portmap}
 
@@ -379,4 +376,3 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
       oc delete pods -n kube-system <pod1> <pod2> ...
       ```
       {: pre}
-

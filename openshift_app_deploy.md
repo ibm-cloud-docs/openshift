@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-26"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -136,7 +136,6 @@ The `new-app` command creates a build configuration and app image from the sourc
 
 <br />
 
-
 ## Deploying apps to specific worker nodes by using labels
 {: #node_affinity}
 
@@ -187,7 +186,7 @@ To deploy apps to specific worker nodes:
                         ibm-cloud.kubernetes.io/machine-type=b3c.4x16.encrypted
                         ibm-cloud.kubernetes.io/sgx-enabled=false
                         ibm-cloud.kubernetes.io/worker-pool-id=00a11aa1a11aa11a1111a1111aaa11aa-11a11a
-                        ibm-cloud.kubernetes.io/worker-version=1.18.9_1534
+                        ibm-cloud.kubernetes.io/worker-version=1.18.10_1534
                         kubernetes.io/hostname=10.xxx.xx.xxx
                         privateVLAN=1234567
                         publicVLAN=7654321
@@ -274,10 +273,7 @@ To deploy apps to specific worker nodes:
 
 
 
-
-
 <br />
-
 
 ## Deploying Cloud Paks, licensed software, and other integrations
 {: #openshift_app_cloud_paks}
@@ -286,7 +282,6 @@ You can deploy IBM Cloud Paks&trade;, licensed software, and other 3rd party int
 {: shortdesc}
 
 <br />
-
 
 ## Accessing the {{site.data.keyword.openshiftshort}} web console
 {: #openshift_console}
@@ -356,6 +351,4 @@ For more information about the console, see the [{{site.data.keyword.openshiftsh
     </table><p></p>
 3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.
 
-
 <br />
-

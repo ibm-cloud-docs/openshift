@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-26"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -256,7 +256,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 
 1.  Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
 2.  From the **Catalog**, click [**{{site.data.keyword.openshiftlong_notm}}**](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}.
-3.  Review the platform version details, **{{site.data.keyword.openshiftshort}} 4.4.26**.
+3.  Review the platform version details, **{{site.data.keyword.openshiftshort}} 4.4.27**.
 4.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
 5.  For the **Infrastructure**, select **Classic**.
 6.  Configure the **Location** details for your cluster.
@@ -274,7 +274,6 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 Now that your cluster is ready, [deploying your first app](#deploy-app)!
 
 <br />
-
 
 
 
@@ -296,7 +295,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
   6. Click **Create virtual private cloud**.
 2. From the [{{site.data.keyword.openshiftlong_notm}} dashboard](https://cloud.ibm.com/kubernetes/landing?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster's VPC environment.
-  1.  Review the platform version details, **{{site.data.keyword.openshiftshort}} 4.4.26**.
+  1.  Review the platform version details, **{{site.data.keyword.openshiftshort}} 4.4.27**.
   2.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
   3.  For the **Infrastructure**, select **VPC**.
   4.  From the **Virtual private cloud** drop-down menu, select the **Gen 2** VPC that you created earlier.
@@ -321,7 +320,6 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 The worker node can take a few minutes to provision, but you can see the progress in the **Worker nodes** tab. When the status reaches `Ready`, you can start working with your cluster by [deploying your first app](#deploy-app)!
 
 <br />
-
 
 ## Deploying an app with the {{site.data.keyword.openshiftshort}} service catalog
 {: #deploy-app}
@@ -354,7 +352,6 @@ From the {{site.data.keyword.openshiftshort}} console, you can deploy one of the
 10.  **Optional**: To clean up the resources that you created, select **Administrator** from the perspective switcher, navigate to **Home > Projects**, click your project's action menu, and click **Delete Project**.
 
 <br />
-
 
 ## What's next?
 {: #whats-next}
