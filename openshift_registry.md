@@ -703,7 +703,7 @@ The default cluster setup creates a service ID to store {{site.data.keyword.clou
 **I see image pull secrets for the regional registry domains and all registry domains. Which one do I use?**<br>
 Previously, {{site.data.keyword.openshiftlong_notm}} created separate image pull secrets for each regional, public `icr.io` registry domain. Now, all the public and private `icr.io` registry domains for all regions are stored in a single `all-icr-io` image pull secret that is automatically created in the `default` Kubernetes project of your cluster.
 
-For workloads in other Kubernetes namespaces in the cluster to pull container images from a private registry, you can now copy only the `all-icr-io` image pull secret to that Kubernetes project. Then, specify the `all-icr-io` secret in your service account or deployment. You do not need to copy the image pull secret that matches the regional registry of your image anymore.
+For workloads in other Kubernetes namespaces in the cluster to pull container images from a private registry, you can now copy only the `all-icr-io` image pull secret to that Kubernetes project. Then, specify the `all-icr-io` secret in your service account or deployment. You do not need to copy the image pull secret that matches the regional registry of your image anymore. Also, keep in mind that you do not need image pull secrets for public registries, which do not require authentication.
 
 
 
