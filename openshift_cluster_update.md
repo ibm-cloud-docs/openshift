@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-26"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -179,7 +179,6 @@ When the master update is complete, you can update your worker nodes, depending 
 *  [Updating VPC worker nodes](#vpc_worker_node).
 
 <br />
-
 
 ## Updating classic worker nodes
 {: #worker_node}
@@ -395,7 +394,6 @@ If you have Portworx installed in your cluster, you must restart the Portworx po
 
 <br />
 
-
 ## Updating VPC worker nodes
 {: #vpc_worker_node}
 
@@ -481,7 +479,6 @@ You can update your VPC worker nodes in the console. Before you begin, consider 
 5.  From the action bar, click **Update**.
 
 <br />
-
 
 ## Updating flavors (machine types)
 {: #machine_type}
@@ -672,12 +669,10 @@ Control when the Ingress application load balancer (ALB) component is updated. F
 
 <br />
 
-
 ## Updating managed add-ons
 {: #addons}
 
 Managed {{site.data.keyword.containerlong_notm}} add-ons are an easy way to enhance your cluster with open-source capabilities, such as Istio or Knative. The version of the open-source tool that you add to your cluster is tested by IBM and approved for use in {{site.data.keyword.containerlong_notm}}. To update managed add-ons that you enabled in your cluster to the latest versions, see [Updating managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
-
 
 
 

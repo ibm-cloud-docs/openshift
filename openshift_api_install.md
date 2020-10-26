@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-26"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -167,7 +168,6 @@ You can use the version two (`v2`) API to manage both classic and VPC clusters. 
 
 
 <br />
-
 
 ## Automating cluster deployments with the API
 {: #cs_api}
@@ -467,7 +467,6 @@ When you use the API for automation, be sure to rely on the responses from the A
 
 <br />
 
-
 ## Working with your cluster by using the Kubernetes API
 {: #kube_api}
 
@@ -633,8 +632,8 @@ The following instructions require public network access in your cluster to conn
    ```
    {
     "major": "1",
-    "minor": "1.18.9",
-    "gitVersion": "v1.18.9+IKS",
+    "minor": "1.18.10",
+    "gitVersion": "v1.18.10+IKS",
     "gitCommit": "c35166bd86eaa91d17af1c08289ffeab3e71e11e",
     "gitTreeState": "clean",
     "buildDate": "2019-03-21T10:08:03Z",
@@ -726,7 +725,6 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
 
 <br />
 
-
 ## Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI
 {: #cs_cli_refresh}
 
@@ -736,4 +734,3 @@ When you start a new CLI session, or if 24 hours has expired in your current CLI
 **ID token**: Every IAM ID token that is issued via the CLI expires after one hour. When the ID token expires, the refresh token is sent to the token provider to refresh the ID token. Your authentication is refreshed, and you can continue to run commands against your cluster.
 
 **Refresh token**: Refresh tokens expire every 30 days. If the refresh token is expired, the ID token cannot be refreshed, and you are not able to continue running commands in the CLI. You can get a new refresh token by running `ibmcloud oc cluster config --cluster <cluster_name>`. This command also refreshes your ID token.
-

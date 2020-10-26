@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -227,8 +227,8 @@ Review the options to debug persistent storage and find the root causes for fail
 
       Example output:
       ```
-      Client Version: version.Info{Major:"1", Minor:"1.18", GitVersion:"v1.18.9", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
-      Server Version: version.Info{Major:"1", Minor:"1.18", GitVersion:"v1.18.9+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+      Client Version: version.Info{Major:"1", Minor:"1.18", GitVersion:"v1.18.10", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
+      Server Version: version.Info{Major:"1", Minor:"1.18", GitVersion:"v1.18.10+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
       ```
       {: screen}
 
@@ -438,7 +438,6 @@ The file system on the worker node is read-only.
 For a long-term fix, [update the flavor of your worker pool](/docs/openshift?topic=openshift-update#machine_type).
 
 <br />
-
 
 
 ### File storage: App fails when a non-root user owns the NFS file storage mount path
@@ -662,7 +661,6 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
 
 <br />
 
-
 ### File storage: Adding non-root user access to persistent storage fails
 {: #cs_storage_nonroot}
 
@@ -879,7 +877,6 @@ If you need to change the ownership of the mount path from `nobody`, see [App fa
 
 
 
-
 ## Block Storage: App cannot access or write to PVC
 {: #block_app_failures}
 
@@ -982,7 +979,6 @@ If a network error occurs while a pod writes to a volume, IBM Cloud infrastructu
 
 <br />
 
-
 ### Block storage: Mounting existing block storage to a pod fails due to the wrong file system
 {: #block_filesystem}
 
@@ -1042,7 +1038,6 @@ Update the file system in the existing PV from `ext4` to `XFS`.
    {: screen}
 
 <br />
-
 
 
 ## Object storage: Installing the Object storage `ibmc` Helm plug-in fails
@@ -1283,7 +1278,6 @@ During the installation, many different tasks are executed by the {{site.data.ke
 
 <br />
 
-
 ## Object storage: PVC remains in a pending state
 {: #cos_pvc_pending}
 
@@ -1508,7 +1502,6 @@ The {{site.data.keyword.cos_full_notm}} service credentials that you use to acce
 
 <br />
 
-
 ### Object storage: PVC creation fails due to wrong s3fs or IAM API endpoint
 {: #cos_api_endpoint_failure}
 
@@ -1553,7 +1546,6 @@ The s3fs API endpoint for the bucket that you want to use might have the wrong f
 
 <br />
 
-
 ### Object storage: Cannot access an existing bucket
 {: #cos_access_bucket_fails}
 
@@ -1584,7 +1576,6 @@ You might have used the wrong storage class to access your existing bucket, or y
 5. Make sure that you provide the correct name of your existing bucket.
 
 <br />
-
 
 ## Object storage: Changing the ownership of the mount path fails
 {: #cos_mountpath_error}
@@ -1771,7 +1762,6 @@ After you set the correct file permissions in your {{site.data.keyword.cos_full_
 
 <br />
 
-
 ## Object Storage: App pod fails because of an `Operation not permitted` error
 {: #cos_operation_not_permitted}
 
@@ -1951,7 +1941,6 @@ If you still experience issues with persistent storage in your cluster, review t
 
 - For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/openshift?topic=openshift-get-help) to find information about how to contact the IBM team on Slack or open an {{site.data.keyword.cloud_notm}} support case.
 - For issues with Portworx, open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an e-mail to `support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@portworx.com`.
-
 
 
 
