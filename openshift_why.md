@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-10-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -218,7 +218,7 @@ You cannot update from an {{site.data.keyword.openshiftshort}} 3.11 to 4 cluster
 | Managed {{site.data.keyword.openshiftshort}} master | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Provided version and security patch updates | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Encryption with {{site.data.keyword.keymanagementservicelong_notm}} | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Istio | | [Service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/v1x/servicemesh-release-notes.htmll){: external} |
+| Istio | | [Service mesh operator](https://docs.openshift.com/container-platform/4.3/service_mesh/v1x/servicemesh-release-notes.html){: external} |
 | Knative | | [Serverless operator](https://docs.openshift.com/container-platform/4.3/serverless/serverless-getting-started.html){: external}|
 | Debug tool | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Cluster autoscaler | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
