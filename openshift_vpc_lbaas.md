@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-27"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -122,7 +122,6 @@ The following diagram illustrates how a user accesses an app from the internet t
 3. If app instances are deployed to multiple worker nodes in the cluster, the load balancer routes the requests between the app pods on various worker nodes. Additionally, if you have a multizone cluster, the VPC application load balancer routes requests to worker nodes across all subnets and zones in your cluster.
 
 <br />
-
 
 ## Setting up an Application Load Balancer for VPC
 {: #setup_vpc_ks_vpc_lb}
@@ -310,7 +309,6 @@ Do not delete the subnets that you attached to your cluster during cluster creat
 
 <br />
 
-
 ## Registering a VPC load balancer hostname with a DNS subdomain
 {: #vpc_lb_dns}
 
@@ -372,7 +370,6 @@ To use the SSL certificate to access your app via HTTPS, ensure that you defined
 
 <br />
 
-
 ## Limitations
 {: #lbaas_limitations}
 
@@ -394,7 +391,6 @@ Review the following default settings and limitations.
     * The `externalTrafficPolicy: Local` setting is supported, but the setting does not preserve the source IP of the request.
 * When you delete a VPC cluster, any VPC load balancers that were automatically created by {{site.data.keyword.openshiftlong_notm}} for the Kubernetes `LoadBalancer` services in that cluster are also automatically deleted. However, any VPC load balancers that you manually created in your VPC are not deleted.
 * You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).
-
 
 
 
