@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-10-27"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -116,6 +116,7 @@ The following list of the cluster management events are sent to {{site.data.keyw
 | `containers-kubernetes.cluster.create` | A classic or VPC cluster is created or failed to create. |
 | `containers-kubernetes.cluster.delete` | A cluster is deleted. |
 | `containers-kubernetes.cluster.update` | Various updates to a cluster are requested, such as refreshing the master API server or enabling an add-on. For more details on the action, review the target host address for the API method in the event.|
+| `containers-kubernetes.credentials.ready-to-use` | The cluster's control plane is updated to use a stored API key that authorizes underlying actions to other {{site.data.keyword.cloud_notm}} services, such as compute, networking, and storage infrastructure resources. |
 | `containers-kubernetes.logging-config.create` | A log forwarding configuration is created. |
 | `containers-kubernetes.logging-config.delete` | A log forwarding configuration is deleted. |
 | `containers-kubernetes.logging-config.refresh` | A log forwarding configuration is refreshed. |
@@ -239,6 +240,5 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 {: #atlocationvpc}
 {: tab-title="Locations for VPC clusters"}
 {: tab-group="at-locations"}
-
 
 
