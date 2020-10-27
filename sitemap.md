@@ -1194,6 +1194,7 @@ subcollection: openshift
 
 [Storing data on IBM Cloud Object Storage](/docs/openshift?topic=openshift-object_storage)
 * [Creating your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service)
+* [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-object_storage#service_credentials)
 * [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret)
 * [Installing the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
   * [Updating the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
@@ -1203,6 +1204,7 @@ subcollection: openshift
 * [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos)
 * [Using object storage in a stateful set](/docs/openshift?topic=openshift-object_storage#cos_statefulset)
 * [Backing up and restoring data](/docs/openshift?topic=openshift-object_storage#cos_backup_restore)
+* [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-object_storage#storage_class_custom)
 * [Storage class reference](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
   * [Standard](/docs/openshift?topic=openshift-object_storage#standard)
   * [Vault](/docs/openshift?topic=openshift-object_storage#Vault)
