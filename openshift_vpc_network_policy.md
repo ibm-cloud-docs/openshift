@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-28"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -137,7 +137,6 @@ To simplify your VPC security setup, configure inbound and outbound rules either
 {: tip}
 
 <br />
-
 
 ## Controlling traffic with the default security group
 {: #security_groups}
@@ -436,7 +435,6 @@ To simplify your VPC security setup, leave your default ACL for the VPC as-is. I
 
 <br />
 
-
 ## Controlling traffic with ACLs
 {: #acls}
 
@@ -476,21 +474,17 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
 
    <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
 
-   <table summary="The columns are read from left to right. The first column describes the purpose of the inbound rule. The second column states whether to allow or deny. The third column is the source type of the source IP or CIDR. The fourth column is the source IP or CIDR to set for the inbound rule. The fifth column is the source port minimum. The sixth column is the source port maximum. The seventh column is the destination type of the destination IP or CIDR. The eigth column is the destination IP or CIDR to set for the inbound rule. The ninth column is the destination port minimum. The tenth column is the destination port maximum. The eleventh column is the priority for the inbound rule.">
-   <caption>Inbound rule</caption>
+   <table summary="The columns are read from left to right. The first column describes the purpose of the inbound rule. The second column states whether to allow or deny. The third column is the source IP or CIDR. The fourth column is the source port minimum and maximum. The fifth column is the destination IP or CIDR. The sixth column is the destination port minimum and maximum. The seventh column is the priority for the inbound rule.">
+   <caption>Required inbound rules</caption>
    <col width="25%">
    <thead>
    <th>Rule purpose</th>
    <th>Allow/Deny</th>
    <th>Protocol</th>
-   <th>Source Type</th>
    <th>Source IP or CIDR</th>
-   <th>Source Port min</th>
-   <th>Source Port max</th>
-   <th>Destination Type</th>
+   <th>Source Port</th>
    <th>Destination IP or CIDR</th>
-   <th>Destination Port min</th>
-   <th>Destination Port max</th>
+   <th>Destination Port</th>
    <th>Priority</th>
    </thead>
    <tbody>
@@ -498,13 +492,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow worker nodes to be created in your cluster.</td>
    <td>Allow</td>
    <td>ALL</td>
-   <td>IP or CIDR</td>
    <td>161.26.0.0/16</td>
-   <td>-</td>    
    <td>-</td>
    <td>Any</td>
-   <td>-</td>   
-   <td>-</td>   
    <td>-</td>
    <td>Set to top</td>
    </tr>
@@ -512,13 +502,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow worker nodes to communicate with the cluster master through the private service endpoint and with other {{site.data.keyword.cloud_notm}} services that support private service endpoints.</td>
    <td>Allow</td>
    <td>ALL</td>
-   <td>IP or CIDR</td>
    <td>166.8.0.0/14</td>
-   <td>-</td>    
    <td>-</td>
    <td>Any</td>
-   <td>-</td>   
-   <td>-</td>   
    <td>-</td>
    <td>After 1</td>
    </tr>
@@ -526,13 +512,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in other subnets within the cluster. Create one rule for each subnet that you want to connect to.</td>
    <td>Allow</td>
    <td>ALL</td>
-   <td>IP or CIDR</td>
    <td>Other subnet's CIDR</td>
-   <td>-</td>  
    <td>-</td>
    <td>Any</td>
-   <td>-</td>   
-   <td>-</td>   
    <td>-</td>
    <td>After 2</td>
    </tr>
@@ -542,11 +524,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>TCP</td>
    <td>Any</td>
    <td>-</td>
-   <td>-</td>
-   <td>-</td>
    <td>Any</td>
-   <td>-</td>
-   <td>56501</td>
    <td>56501</td>
    <td>After 3</td>
    </tr>
@@ -555,12 +533,8 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
-   <td>-</td>
-   <td>443</td>
    <td>443</td>
    <td>Any</td>
-   <td>-</td>
-   <td>-</td>
    <td>-</td>
    <td>After 4</td>
    </tr>
@@ -569,12 +543,8 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
-   <td>-</td>
-   <td>8834</td>
    <td>8834</td>
    <td>Any</td>
-   <td>-</td>
-   <td>-</td>
    <td>-</td>
    <td>After 5</td>
    </tr>
@@ -583,12 +553,8 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
-   <td>-</td>
-   <td>10514</td>
    <td>10514</td>
    <td>Any</td>
-   <td>-</td>
-   <td>-</td>
    <td>-</td>
    <td>After 6</td>
    </tr>
@@ -598,11 +564,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>TCP</td>
    <td>Any</td>
    <td>-</td>
-   <td>-</td>
-   <td>-</td>
    <td>Any</td>
-   <td>-</td>
-   <td>443</td>
    <td>443</td>
    <td>After 7</td>
    </tr>
@@ -612,11 +574,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>ALL</td>
    <td>Any</td>
    <td>-</td>
-   <td>-</td>
-   <td>-</td>
    <td>Any</td>
-   <td>-</td>
-   <td>-</td>
    <td>-</td>
    <td>Set to bottom</td>
    </tr>
@@ -626,21 +584,17 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
 
    <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
 
-   <table summary="The columns are read from left to right. The first column describes the purpose of the inbound rule. The second column states whether to allow or deny. The third column is the source type of the source IP or CIDR. The fourth column is the source IP or CIDR to set for the inbound rule. The fifth column is the source port minimum. The sixth column is the source port maximum. The seventh column is the destination type of the destination IP or CIDR. The eigth column is the destination IP or CIDR to set for the inbound rule. The ninth column is the destination port minimum. The tenth column is the destination port maximum. The eleventh column is the priority for the inbound rule.">
-   <caption>Inbound rule</caption>
+   <table summary="The columns are read from left to right. The first column describes the purpose of the outbound rule. The second column states whether to allow or deny. The third column is the source IP or CIDR. The fourth column is the source port minimum and maximum. The fifth column is the destination IP or CIDR. The sixth column is the destination port minimum and maximum. The seventh column is the priority for the outbound rule.">
+   <caption>Required outbound rules</caption>
    <col width="25%">
    <thead>
    <th>Rule purpose</th>
    <th>Allow/Deny</th>
    <th>Protocol</th>
-   <th>Source Type</th>
    <th>Source IP or CIDR</th>
-   <th>Source Port min</th>
-   <th>Source Port max</th>
-   <th>Destination Type</th>
+   <th>Source Port</th>
    <th>Destination IP or CIDR</th>
-   <th>Destination Port min</th>
-   <th>Destination Port max</th>
+   <th>Destination Port</th>
    <th>Priority</th>
    </thead>
    <tbody>
@@ -648,13 +602,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow worker nodes to be created in your cluster.</td>
    <td>Allow</td>
    <td>ALL</td>
-   <td>IP or CIDR</td>
-   <td>Any</td>
-   <td>-</td>    
+   <td>ALL</td>
    <td>-</td>
    <td>161.26.0.0/16</td>
-   <td>-</td>   
-   <td>-</td>   
    <td>-</td>
    <td>Set to top</td>
    </tr>
@@ -662,13 +612,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow worker nodes to communicate with the cluster master through the private service endpoint and to communicate with other {{site.data.keyword.cloud_notm}} services that support private service endpoints, such as {{site.data.keyword.registrylong_notm}}.</td>
    <td>Allow</td>
    <td>ALL</td>
-   <td>IP or CIDR</td>
    <td>Any</td>
-   <td>-</td>    
    <td>-</td>
    <td>166.8.0.0/14</td>
-   <td>-</td>   
-   <td>-</td>   
    <td>-</td>
    <td>After 1</td>
    </tr>
@@ -676,13 +622,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in all other subnets within the cluster. Create one rule for each subnet that you want to connect to.</td>
    <td>Allow</td>
    <td>ALL</td>
-   <td>IP or CIDR</td>
    <td>Any</td>
-   <td>-</td>  
    <td>-</td>
    <td>Other subnet's CIDR</td>
-   <td>-</td>
-   <td>-</td>  
    <td>-</td>
    <td>After 2</td>
    </tr>
@@ -691,12 +633,8 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
-   <td>-</td>
-   <td>56501</td>
    <td>56501</td>
    <td>Any</td>
-   <td>-</td>
-   <td>-</td>
    <td>-</td>
    <td>After 3</td>
    </tr>
@@ -706,11 +644,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>TCP</td>
    <td>Any</td>
    <td>-</td>
-   <td>-</td>
-   <td>-</td>
    <td>Any</td>
-   <td>-</td>
-   <td>443</td>
    <td>443</td>
    <td>After 4</td>
    </tr>
@@ -720,11 +654,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>TCP</td>
    <td>Any</td>
    <td>-</td>
-   <td>-</td>
-   <td>-</td>
    <td>Any</td>
-   <td>-</td>
-   <td>8834</td>
    <td>8834</td>
    <td>After 5</td>
    </tr>
@@ -734,11 +664,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>TCP</td>
    <td>Any</td>
    <td>-</td>
-   <td>-</td>
-   <td>-</td>
    <td>Any</td>
-   <td>-</td>
-   <td>10514</td>
    <td>10514</td>
    <td>After 6</td>
    </tr>
@@ -747,12 +673,8 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
-   <td>-</td>
-   <td>443</td>
    <td>443</td>
    <td>Any</td>
-   <td>-</td>
-   <td>-</td>
    <td>-</td>
    <td>After 7</td>
    </tr>
@@ -762,11 +684,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>ALL</td>
    <td>Any</td>
    <td>-</td>
-   <td>-</td>
-   <td>-</td>
    <td>Any</td>
-   <td>-</td>
-   <td>-</td>
    <td>-</td>
    <td>Set to bottom</td>
    </tr>
@@ -962,7 +880,6 @@ If you create specific rules to block incoming traffic to the IP addresses of In
 
 <br />
 
-
 ## Controlling traffic between pods with Kubernetes policies
 {: #kubernetes_policies}
 
@@ -1074,7 +991,5 @@ The `spec.podSelector.matchLabels` section lists the labels for the Srv1 back-en
 Traffic can now flow from finance microservices to the accounts Srv1 back end. The accounts Srv1 back end can respond to finance microservices, but can't establish a reverse traffic connection.
 
 In this example, all traffic from all microservices in the finance namespace is permitted. You can't allow traffic from specific app pods in another namespace because `podSelector` and `namespaceSelector` can't be combined.
-
-
 
 
