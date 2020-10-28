@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-10-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1401,6 +1401,11 @@ During the PVC creation and binding, many different tasks are executed by the {{
    <td><code>TokenManagerRetrieveError: error retrieving the token</code></td>
    <td>This error occurs when you create a PVC with IAM credentials on a cluster that does not have public outbound access.</td>
    <td>If your cluster does not have public outbound access, [create a {{site.data.keyword.cos_full_notm}} instance that uses HMAC credentials](/docs/openshift?topic=openshift-object_storage#create_cos_service).</td>
+   </tr>
+   <tr>
+   <td><code>set-access-policy not supported for classic cluster</code></td>
+   <td>This error occurs when you install the <code>ibm-object-storage-plugin</code> in a Classic cluster and set the <code>bucketAccessPolicy=true</code> flag. The <code>bucketAccessPolicy=true</code> flag is only used with VPC Gen 2 clusters.</td>
+   <td>[Install the plug-in](/docs/openshift?topic=openshift-object_storage#install_cos) and set the <code>bucketAccessPolicy=false</code> flag.</td>
    </tr>
    </tbody>
    </table>
