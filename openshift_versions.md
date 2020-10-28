@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-10-28"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -123,7 +123,7 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 
 <dl>
   <dt>**Major and minor updates (4.4)**</dt>
-  <dd><p>First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes cannot run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).</p><p class="note">If you use an `oc` or `kubectl` CLI version that does match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-openshift-cli#cli_oc) up-to-date.</p></dd>
+  <dd><p>First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes cannot run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).</p><p class="note">If you use an `oc` or `oc` CLI version that does match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-openshift-cli#cli_oc) up-to-date.</p></dd>
   <dt>**Patch updates (4.4.27_xxxx_openshift)**</dt>
   <dd><p>Changes across patches are documented in the [Version changelog](/docs/openshift?topic=openshift-openshift_versions). Master patches are applied automatically, but you initiate worker node patches updates. Worker nodes can also run patch versions that are greater than the masters. As updates become available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the following commands: `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get`.</p>
   <p>Patches can be for worker nodes, masters, or both.</p>
@@ -160,7 +160,7 @@ Kubernetes Version: v1.17.2
 ## Release history
 {: #openshift_release_history}
 
-The following table records {{site.data.keyword.openshiftlong_notm}} version release history. You can use this information for planning purposes, such as to estimate general time frames when a certain release might become unsupported. 
+The following table records {{site.data.keyword.openshiftlong_notm}} version release history. You can use this information for planning purposes, such as to estimate general time frames when a certain release might become unsupported.
 {: shortdesc}
 
 **How soon after an OCP release is the version available in {{site.data.keyword.cloud_notm}}?**<br>
@@ -253,8 +253,9 @@ The following table shows the actions that you must take after you [update the c
 | ---- | ----------- |
 | Image registry configuration | New version 4.5 clusters that run on the VPC Gen 2 infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push). |
 | Elasticsearch version upgrade for cluster logging | For more information, see the the Elasticsearch version upgrade notes in the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-elasticsearch-6){: external}. |
+| Temporary `oc` and `kubectl` latency | RBAC operations are now performed asynchronously. After you run `ibmcloud oc cluster config` for the first time after the update, `oc` and `kubectl` commands might fail for a few seconds while RBAC synchronizes for the first time. Afterward, `oc` and `kubectl` commands perform as expected. If you use automation to access the cluster with `oc` and `kubectl` commands, add retry logic for `oc` and `kubectl` commands after a `kubeconfig` file is successfully retrieved. |
 | `oc adm policy` | The `oc adm policy` commands now manage role-based access control (RBAC) resources rather than modifying security context constraints (SCCs) directly for managing permissions within the cluster. Update any components that rely on direct changes to SCCs to use RBAC to manage permissions. |
-| `oc new-app` | For more information, see the `oc new-app` deployment resources notes in the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-oc-new-app-deployment-resources){: external}. | 
+| `oc new-app` | For more information, see the `oc new-app` deployment resources notes in the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-oc-new-app-deployment-resources){: external}. |
 {: caption="Changes to make after you update the master to {{site.data.keyword.openshiftshort}} 4.5" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
@@ -282,6 +283,7 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | ---- | ----------- |
 | Add-ons and plug-ins | For each add-on and plug-in that you installed in your cluster, check for any impacts that might be caused by updating the cluster version. For instructions, see [Steps to update the cluster master](/docs/containers?topic=containers-update#master-steps) and refer to the add-on and plug-in documentation. |
+| Temporary `oc` and `kubectl` latency | RBAC operations are now performed asynchronously. After you run `ibmcloud oc cluster config` for the first time after the update, `oc` and `kubectl` commands might fail for a few seconds while RBAC synchronizes for the first time. Afterward, `oc` and `kubectl` commands perform as expected. If you use automation to access the cluster with `oc` and `kubectl` commands, add retry logic for `oc` and `kubectl` commands after a `kubeconfig` file is successfully retrieved. |
 | **Unsupported:** Deprecated Kubernetes APIs are removed | Although Kubernetes version 1.16 removed several common, deprecated Kubernetes APIs, {{site.data.keyword.openshiftshort}} version 4.3, which is based on Kubernetes version 1.16, kept these APIs enabled. Now, {{site.data.keyword.openshiftshort}} version 4.4, which is based on Kubernetes version 1.17, removes these Kubernetes APIs that were removed in the Kubernetes 1.16 project. You can take the following steps to mitigate impact to your Kubernetes resources. Note that the blog was written specifically for {{site.data.keyword.containerlong_notm}} clusters, but the tips apply to {{site.data.keyword.openshiftlong_notm}}, too.<ol><li>Follow the [blog update tips](https://www.ibm.com/cloud/blog/announcements/kubernetes-version-1-16-removes-deprecated-apis){: external}.</li><li>Update the configuration files for any impacted Kubernetes resources, such as daemon sets, deployments, replica sets, stateful sets, and network policies.</li><li>If you [add services to your cluster by using Helm charts](/docs/openshift?topic=openshift-helm), update to Helm version 2.15.2 or later.</li></ol>|
 | **Unsupported:** Deprecated and removed {{site.data.keyword.openshiftshort}} features | For more information, review the [{{site.data.keyword.openshiftshort}} version 4.4 deprecated and removed features](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-deprecated-removed-features). |
 | Kubernetes API server checks client certificates before tokens | For more information, review [`kube-apiserver` checks client certificates before tokens](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-kube-apiserver-check-certs-before-tokens). |
