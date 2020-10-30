@@ -1236,6 +1236,8 @@ subcollection: openshift
 * [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help)
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
+[Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br)
+
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities)
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
   * [Updating the IBM Cloud Block Storage Attacher plug-in](/docs/openshift?topic=openshift-utilities#update_block_attacher)
