@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-11-02"
 
 keywords: openshift
 subcollection: openshift
@@ -969,7 +969,7 @@ subcollection: openshift
 * [How can I customize routing?](/docs/openshift?topic=openshift-ingress-about#custom-routing)
 * [How do I manage the lifecycle of my ALBs?](/docs/openshift?topic=openshift-ingress-about#alb-lifecycle)
 
-[Beta: Setting up Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types)
+[Setting up Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types)
 * [Comparison of the ALB image types](/docs/openshift?topic=openshift-ingress-types#about-alb-images)
   * [Similarities between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-same)
   * [Differences between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-diff)
@@ -992,7 +992,7 @@ subcollection: openshift
   * [Creating more ALBs](/docs/openshift?topic=openshift-ingress-types#create_alb)
 * [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress-types#migrate-alb-vlan)
 
-[Beta: Kubernetes Ingress annotations](/docs/openshift?topic=openshift-comm-ingress-annotations)
+[Kubernetes Ingress annotations](/docs/openshift?topic=openshift-comm-ingress-annotations)
 * [Customizing routing with annotations](/docs/openshift?topic=openshift-comm-ingress-annotations#annotations)
 * [Customizing the ALB deployment](/docs/openshift?topic=openshift-comm-ingress-annotations#comm-customize-deploy)
 * [Preserving the source IP address](/docs/openshift?topic=openshift-comm-ingress-annotations#preserve_source_ip)
@@ -1095,7 +1095,7 @@ subcollection: openshift
   * [Changing the number or duration of keepalive connections](/docs/openshift?topic=openshift-ingress_annotation#keepalive_time)
   * [Changing the pending connections backlog](/docs/openshift?topic=openshift-ingress_annotation#backlog)
 
-[Logging and monitoring Ingress](/docs/openshift?topic=openshift-ingress_health)
+[Logging and monitoring {{site.data.keyword.openshiftlong_notm}} Ingress](/docs/openshift?topic=openshift-ingress_health)
 * [Viewing Ingress logs](/docs/openshift?topic=openshift-ingress_health#ingress_logs)
 * [Customizing Ingress log content and format](/docs/openshift?topic=openshift-ingress_health#ingress_log_format)
 * [Monitoring the Ingress ALB](/docs/openshift?topic=openshift-ingress_health#ingress_monitoring)
@@ -1912,6 +1912,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[November 2020](/docs/openshift?topic=openshift-iks-release#nov20)
 
 [October 2020](/docs/openshift?topic=openshift-iks-release#oct20)
 
