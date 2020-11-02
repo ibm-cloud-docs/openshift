@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-02"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -102,6 +102,15 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
+
+## November 2020
+{: #nov20}
+
+| Date | Description |
+| ---- | ----------- |
+| 02 November 2020 | <ul><li>**General availability of Kubernetes Ingress support:** The Kubernetes Ingress image, which is built on the community Kubernetes project's implementation of the NGINX Ingress controller, is now generally available for the Ingress ALBs in your version 3.11 cluster. To get started, see [Creating ALBs that run the Kubernetes Ingress image](/docs/openshift?topic=openshift-ingress-types#alb-comm-create) or [Changing existing ALBs to run Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types#alb-type-migration).</li><li>**Persistent storage**: Added the following topics:<ul><li>[Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-object_storage#service_credentials)</li><li>[Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-object_storage#storage_class_custom)</li><li>[Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br)</li></ul></li>**Version 4 Ingress**: Added a troubleshooting topic for [VPC load balancer health status failures](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#vpc_lb_healthcheck) in version 4 VPC clusters.</ul> |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in November 2020"}
 
 ## October 2020
 {: #oct20}

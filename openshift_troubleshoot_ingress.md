@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -723,10 +723,9 @@ Check the availability of the public IP addresses of the Ingress controller's ro
 ## Version 4: VPC load balancer for router only routes to one zone
 {: #router-mzr-error}
 
-**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} version 4 clusters on VPC infrastructure.
-{: note}
+**Supported infrastructure provider and versions**:
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2
+* <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4 clusters
 
 {: tsSymptoms}
 You create a multizone VPC Gen 2 cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the router, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`.
@@ -944,6 +943,24 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
   {: pre}
 
 <br />
+
+## Version 4: VPC load balancer health status failures
+{: #vpc_lb_healthcheck}
+
+**Supported infrastructure provider and versions**:
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2
+* <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4 clusters
+
+{: tsSymptoms}
+In the [Load balancers for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/loadBalancers){: external}, you view the details of the VPC load balancer that exposes your cluster's router. Although traffic to your apps is flowing correctly in your cluster, the **Health status** of the VPC load balancer shows that at most 2 instances (worker nodes) are **Passing**, while all other instances are **Failing**. For example, if you have 4 worker nodes in your cluster, the health status shows `2/4`.
+
+{: tsCauses}
+In VPC Gen 2 clusters, the router is created with a Kubernetes `LoadBalancer` service in front of it. Based on the configuration for this Kubernetes `LoadBalancer` service, a VPC load balancer that exposes the router is automatically created outside of your cluster. In the load balancer configuration, `externalTrafficPolicy` is set to `Local`, which offers better routing performance than `Cluster`. This `externalTrafficPolicy: Local` setting indicates that when the VPC load balancer receives a request to your app service's node port, the load balancer forwards the traffic only to router pods that are also on the same worker node as the app service's node port. The router pod then forwards the traffic to your app according to your routing rules.
+
+By default in the OpenShift Container Platform Ingress controller, only 2 router pods are deployed to your cluster, so only 2 worker nodes have router pods. The VPC load balancer is automatically configured to forward traffic to each worker node in your cluster. However, because the load balancer is also configured to forward traffic only to worker nodes that contain router pods, the load balancer's health check only reports the 2 worker nodes that have the router pods as **Passing**, and the other worker nodes as **Failing**. For this reason, the failures are expected, and do not indicate that your VPC load balancer is unable to forward traffic to your cluster.
+
+<br />
+
 
 ## Version 3.11: Debugging Ingress
 {: #ingress-debug}

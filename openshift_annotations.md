@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-11-02"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, annotations
 
@@ -100,7 +100,10 @@ To add capabilities to your Ingress application load balancer (ALB), you can spe
 
 
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> These custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and Kubernetes NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.openshiftshort}} version 4, you can use [HAProxy annotations for the {{site.data.keyword.openshiftshort}} router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. To add annotations to the router, run `oc edit svc router-default -n openshift-ingress`.</br></br><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> In {{site.data.keyword.openshiftshort}} version 3.11 clusters, these custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) are applicable for ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image only. If your ALBs run the [Kubernetes Ingress image instead](/docs/openshift?topic=openshift-ingress-types), these custom annotations are not supported. You must instead use [Kubernetes NGINX annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/){: external} (`nginx.ingress.kubernetes.io/<annotation>`) in your Ingress resources.
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> These custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and Kubernetes NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.openshiftshort}} version 4, you can use [HAProxy annotations for the {{site.data.keyword.openshiftshort}} router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`. To add annotations to the router, run `oc edit svc router-default -n openshift-ingress`.
+{: important}
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> In {{site.data.keyword.openshiftshort}} version 3.11 clusters, these custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) are applicable for ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image only. If your ALBs run the [Kubernetes Ingress image instead](/docs/openshift?topic=openshift-ingress-types), these custom annotations are not supported. You must instead use [Kubernetes NGINX annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/){: external} (`nginx.ingress.kubernetes.io/<annotation>`) in your Ingress resources.
 {: important}
 
 
@@ -257,7 +260,6 @@ metadata:
 
 <br />
 
-
 ### Location snippets (`location-snippets`)
 {: #location-snippets}
 
@@ -318,7 +320,6 @@ spec:
 
 <br />
 
-
 ### Private ALB routing (`ALB-ID`)
 {: #alb-id}
 
@@ -360,7 +361,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ### Server snippets (`server-snippets`)
 {: #server-snippets}
@@ -423,7 +423,6 @@ annotations:
 
 <br />
 
-
 ## Connection annotations
 {: #connection}
 
@@ -482,7 +481,6 @@ spec:
 
 <br />
 
-
 ### Keepalive requests (`keepalive-requests`)
 {: #keepalive-requests}
 
@@ -524,7 +522,6 @@ spec:
 
 <br />
 
-
 ### Keepalive timeout (`keepalive-timeout`)
 {: #keepalive-timeout}
 
@@ -565,7 +562,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ### Proxy next upstream (`proxy-next-upstream-config`)
 {: #proxy-next-upstream-config}
@@ -620,7 +616,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ### Session-affinity with cookies (`sticky-cookie-services`)
 {: #sticky-cookie-services}
@@ -682,7 +677,6 @@ spec:
 
 <br />
 
-
 ### Upstream fail timeout (`upstream-fail-timeout`)
 {: #upstream-fail-timeout}
 
@@ -725,7 +719,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ### Upstream keepalive (`upstream-keepalive`)
 {: #upstream-keepalive}
@@ -771,7 +764,6 @@ spec:
 
 <br />
 
-
 ### Upstream keepalive timeout (`upstream-keepalive-timeout`)
 {: #upstream-keepalive-timeout}
 
@@ -812,7 +804,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ### Upstream max fails (`upstream-max-fails`)
 {: #upstream-max-fails}
@@ -856,7 +847,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ## HTTPS and TLS/SSL authentication annotations
 {: #https-auth}
@@ -972,7 +962,6 @@ spec:
 
 <br />
 
-
 ### HTTP redirects to HTTPS (`redirect-to-https`)
 {: #redirect-to-https}
 
@@ -1012,7 +1001,6 @@ spec:
 {: codeblock}
 
 <br />
-
 
 ### HTTP Strict Transport Security (`hsts`)
 {: #hsts}
@@ -1058,7 +1046,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ### Mutual authentication (`mutual-auth`)
 {: #mutual-auth}
@@ -1136,7 +1123,6 @@ spec:
    {: pre}
 
 <br />
-
 
 ### SSL services support (`ssl-services`)
 {: #ssl-services}
@@ -1241,7 +1227,6 @@ spec:
    {: pre}
 
 <br />
-
 
 ### TCP ports (`tcp-ports`)
 {: #tcp-ports}
@@ -1351,7 +1336,6 @@ spec:
 
 <br />
 
-
 ## Path routing annotations
 {: #path-routing}
 
@@ -1397,7 +1381,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ### Location modifier (`location-modifier`)
 {: #location-modifier}
@@ -1455,7 +1438,6 @@ spec:
 
 <br />
 
-
 ### Rewrite paths (`rewrite-path`)
 {: #rewrite-path}
 
@@ -1498,7 +1480,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ## Proxy buffer annotations
 {: #proxy-buffer}
@@ -1549,7 +1530,6 @@ spec:
 
 <br />
 
-
 ### Client response data buffering (`proxy-buffering`)
 {: #proxy-buffering}
 
@@ -1597,7 +1577,6 @@ spec:
 
 <br />
 
-
 ### Proxy buffers (`proxy-buffers`)
 {: #proxy-buffers}
 
@@ -1642,7 +1621,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ### Proxy buffer size (`proxy-buffer-size`)
 {: #proxy-buffer-size}
@@ -1690,7 +1668,6 @@ spec:
 
 <br />
 
-
 ### Proxy busy buffers size (`proxy-busy-buffers-size`)
 {: #proxy-busy-buffers-size}
 
@@ -1733,7 +1710,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ## Request and response annotations
 {: #request-response}
@@ -1783,7 +1759,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ### Additional client request or response header (`proxy-add-headers`, `response-add-headers`)
 {: #proxy-add-headers}
@@ -1862,7 +1837,6 @@ spec:
 
 <br />
 
-
 ### Client response header removal (`response-remove-headers`)
 {: #response-remove-headers}
 
@@ -1918,7 +1892,6 @@ spec:
 
 <br />
 
-
 ### Client request body size (`client-max-body-size`)
 {: #client-max-body-size}
 
@@ -1966,7 +1939,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ## Service limit annotations
 {: #service-limit}
@@ -2018,7 +1990,6 @@ spec:
 
 <br />
 
-
 ### Service rate limits (`service-rate-limit`)
 {: #service-rate-limit}
 
@@ -2063,7 +2034,6 @@ spec:
 {: caption="Understanding the annotation components" caption-side="top"}
 
 <br />
-
 
 ## User authentication annotations
 {: #user-authentication}
@@ -2257,7 +2227,6 @@ To enable source IP preservation, edit the load balancer service that exposes an
 
 <br />
 
-
 ## Configuring SSL protocols and SSL ciphers at the HTTP level
 {: #ssl_protocols_ciphers}
 
@@ -2303,7 +2272,6 @@ To edit the configmap to enable SSL protocols and ciphers:
 
 <br />
 
-
 ## Sending your custom certificate to legacy clients
 {: #default_server_cert}
 
@@ -2341,13 +2309,11 @@ When you create a classic cluster, a Let's Encrypt certificate is generated for 
 
 <br />
 
-
 ## Tuning ALB performance
 {: #perf_tuning}
 
 To optimize performance of your Ingress ALBs, you can change the default settings according to your needs.
 {: shortdesc}
-
 
 ### Adding ALB socket listeners for each NGINX worker process
 {: #reuse-port}
@@ -2499,7 +2465,6 @@ In the `ibm-cloud-provider-ingress-cm` Ingress configmap, the `backlog` field se
    oc get cm ibm-cloud-provider-ingress-cm -n kube-system -o yaml
    ```
    {: pre}
-
 
 
 

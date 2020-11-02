@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-10-28"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -116,7 +116,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
         <td>**Built-in {{site.data.keyword.openshiftshort}} logging tools**:<ul>
           <li>Built-in view of pod logs in the {{site.data.keyword.openshiftshort}} web console.</li>
           <li>Built-in pod logs are not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available, and manage the logs yourself.</li></ul>
-          <p class="note"><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html) because you cannot modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.</p><p class="note"><img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html), see [installing the cluster logging operator](#oc_logging_operator).</p></td>
+          <p class="note"><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html) because you cannot modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.</p><p class="note"><img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html), see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and 32 GB memory to run the cluster logging stack.</p></td>
         <td>**{{site.data.keyword.la_full_notm}}**:<ul>
           <li>Customizable user interface for live streaming of log tailing, real-time troubleshooting, issue alerts, and log archiving.</li>
           <li>Quick integration with the cluster via a script.</li>
@@ -692,25 +692,81 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 ## Using the cluster logging operator
 {: #oc_logging_operator}
 
-To deploy the OpenShift Container Platform cluster logging operator on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}. Additionally, you must update the cluster logging instance to use the {{site.data.keyword.cloud_notm}} Block Storage `ibmc-block-gold` storage class.
+To deploy the OpenShift Container Platform cluster logging operator and stack on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html){: external}. Additionally, you must update the cluster logging instance to use a {{site.data.keyword.cloud_notm}} Block Storage storage class.
 {: shortdesc}
 
-To create a cluster logging instance with the `ibmc-block-gold` storage class:
-1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2.  From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > Installed Operators**.
-3.  Click **Cluster Logging**.
-3.  In the **Provided APIs** section, **Cluster Logging** tile, click **Create Instance**.
-4.  Modify the configuration YAML to change the storage class for the ElasticSearch log storage from `gp2` to `ibmc-block-gold`.
+1.  Prepare your worker pool to run the operator.
+    1.  Create a [VPC](/docs/openshift?topic=openshift-add_workers#vpc_pools) or [classic](/docs/openshift?topic=openshift-add_workers#classic_pools) worker pool with a flavor of **at least 4 cores and 32 GB memory** and 3 worker nodes.
+    2.  [Label the worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
+    3.  [Taint the worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) so that other workloads cannot run on the worker pool.
+2.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+3.  From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > Installed Operators**.
+4.  Click **Cluster Logging**.
+5.  In the **Provided APIs** section, **Cluster Logging** tile, click **Create Instance**.
+6.  Modify the configuration YAML to change the storage class for the ElasticSearch log storage from `gp2` to one of the following storage classes that vary with your cluster infrastructure provider.
+    * **Classic clusters**: `ibmc-block-gold` 
+    * **VPC clusters**: `ibmc-vpc-block-10iops-tier`
+
     ```
     ...
         elasticsearch:
           nodeCount: 3
           redundancyPolicy: SingleRedundancy
           storage:
-            storageClassName: ibmc-block-gold
+            storageClassName: ibmc-block-gold #or ibmc-vpc-block-10iops-tier for VPC clusters
             size: 200G
     ...
     ```
     {: copyblock}
-5.  Click **Create**.
-6.  Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.
+7.  Modify the configuration YAML with the node selector and toleration for the worker pool label and taint that you previously created. For more information and examples, see the following {{site.data.keyword.openshiftshort}} documents. The examples use a label and toleration of `logging: clo-efk`.
+    * [Node selector](https://docs.openshift.com/container-platform/4.5/logging/config/cluster-logging-moving-nodes.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
+      ```
+      spec:
+        logStore:
+          elasticsearch:
+            nodeSelector:
+              logging: clo-efk
+        ...
+        visualization:
+          kibana:
+            nodeSelector:
+              logging: clo-efk
+        ...
+        collection:
+          logs:
+            fluentd:
+              nodeSelector:
+                logging: clo-efk
+      ```
+      {: codeblock}
+    * [Toleration](https://docs.openshift.com/container-platform/4.5/logging/config/cluster-logging-tolerations.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
+      ```
+      spec:
+        logStore:
+          elasticsearch:
+            tolerations:
+            - key: app
+              value: clo-efk
+              operator: "Exists"
+              effect: "NoExecute"
+        ...
+        visualization:
+          kibana:
+            tolerations:
+            - key: app
+              value: clo-efk
+              operator: "Exists"
+              effect: "NoExecute"
+        ...
+        collection:
+          logs:
+            fluentd:
+              tolerations:
+              - key: app
+                value: clo-efk
+                operator: "Exists"
+                effect: "NoExecute"
+      ```
+      {: codeblock}
+8.  Click **Create**.
+9.  Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.

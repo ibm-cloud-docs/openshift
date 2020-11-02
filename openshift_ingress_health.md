@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-11-02"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -91,7 +92,7 @@ subcollection: openshift
 
 
 
-# Logging and monitoring Ingress
+# Logging and monitoring {{site.data.keyword.openshiftlong_notm}} Ingress
 {: #ingress_health}
 
 Customize logging and set up monitoring to help you troubleshoot issues and improve the performance of your Ingress configuration.
@@ -132,7 +133,7 @@ Logs are automatically collected for your Ingress ALBs. To view the ALB logs, ch
 |Field in the default Ingress log format|Value|
 |---|---|
 |"time_date": "$time_iso8601"|The local time in the ISO 8601 standard format when the log is written.|
-|"client": "$remote_addr"|The IP address of the request package that the client sent to your app. This IP can change based on the following situations:When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the request package is changed to the public IP address of the worker node where the app pod is running.If [source IP preservation is enabled](/docs/containers?topic=containers-ingress_annotation#preserve_source_ip), the original IP address of the client request to your app is recorded instead.|
+|"client": "$remote_addr"|The IP address of the request package that the client sent to your app. This IP can change based on the following situations:When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the request package is changed to the public IP address of the worker node where the app pod is running.If [source IP preservation is enabled](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip), the original IP address of the client request to your app is recorded instead.|
 |"host": "$http_host"|The host, or subdomain, that your apps are accessible through. This subdomain is configured in the Ingress resource files for your ALBs.|
 |"scheme": "$scheme"|The kind of request: HTTP or HTTPS.|
 |"request_method": "$request_method"|The method of the request call to the back-end app, such as GET or POST.|
@@ -264,7 +265,6 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
             {: pre}
 
 <br />
-
 
 ## Monitoring the Ingress ALB
 {: #ingress_monitoring}
@@ -517,7 +517,6 @@ The following table lists the supported upstream type 2 metric names.
 
 <br />
 
-
 ## Increasing the shared memory zone size for Ingress metrics collection
 {: #vts_zone_size}
 
@@ -556,6 +555,5 @@ Before you begin, ensure that you have the [**Writer** or **Manager** {{site.dat
    oc get cm ibm-cloud-provider-ingress-cm -n kube-system -o yaml
    ```
    {: pre}
-
 
 

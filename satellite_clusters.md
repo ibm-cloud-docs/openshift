@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-27"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -108,10 +108,9 @@ Before you can create clusters on your own infrastructure, you must set up an {{
 
 1. [Create an {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-locations#location-create).
 2. [Set up the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
-3. [Add at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
+3. [Attach at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
 
 <br />
-
 
 ## Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console
 {: #satcluster-create-console}
@@ -126,7 +125,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 5. Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer.
 6. Click **Create**. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet.
 7. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
-8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads.
+8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
 9. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
 10.   If the hosts that you assigned to the cluster are from an Amazon Web Services or Google Cloud Platform cloud provider, you must manually register the cluster DNS. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics in the {{site.data.keyword.satelliteshort}} documentation.
 11. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
@@ -205,7 +204,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    ```
    {: screen}
 
-5. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads.
+5. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
 
 6. Verify that your cluster reaches a **normal** state.
    ```
@@ -227,7 +226,6 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
 
 <br />
 
-
 ## Accessing and working with your {{site.data.keyword.openshiftshort}} clusters
 {: #satcluster-access}
 
@@ -240,7 +238,6 @@ Review common tasks that you might be interested in:
 - [Assigning cluster access](/docs/openshift?topic=openshift-users)
 
 <br />
-
 
 ## Setting up the internal container image registry
 {: #satcluster-internal-registry}
@@ -262,7 +259,6 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 
 <br />
 
-
 ## Storing application data in persistent storage
 {: #satcluster-storage}
 
@@ -274,7 +270,6 @@ Unlike standard {{site.data.keyword.openshiftshort}} clusters that are created o
 *  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.4/storage/persistent_storage/persistent-storage-local.html){: external}.
 
 <br />
-
 
 ## Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters
 {: #satcluster-rm}

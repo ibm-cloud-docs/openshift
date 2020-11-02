@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-11-02"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -101,8 +101,7 @@ Expose multiple apps in your {{site.data.keyword.openshiftshort}} cluster by cre
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To set up Ingress for {{site.data.keyword.openshiftshort}} version 4, see [Setting up Ingress in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-ingress-roks4).
 {: important}
 
-
-This information is for ALBs that run the custom {{site.data.keyword.openshiftlong_notm}} Ingress image. To use the community Kubernetes implementation of Ingress, see [Beta: Setting up community Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types).
+This information is for ALBs that run the custom {{site.data.keyword.openshiftlong_notm}} Ingress image. To use the community Kubernetes implementation of Ingress, see [Setting up community Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types).
 {: note}
 
 ## Quick start
@@ -1109,18 +1108,23 @@ Choose the image type and image version for your ALBs, and keep the image versio
 ### Choosing a supported image version
 {: #alb-version-choose}
 
-As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two types of NGINX Ingress controller images for the ALB: the {{site.data.keyword.openshiftlong_notm}} Ingress image, and the Kubernetes Ingress image.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 4, see [About Ingress in {{site.data.keyword.openshiftshort}} version 4 or later](/docs/openshift?topic=openshift-ingress-about-roks4).
+{: important}
+
+As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two types of NGINX Ingress controller images for the Ingress application load balancers (ALBs) in your cluster: the {{site.data.keyword.openshiftlong_notm}} Ingress image, and the Kubernetes Ingress image.
 {: shortdesc}
 
-- The {{site.data.keyword.openshiftlong_notm}} Ingress image is built on a custom implementation of the NGINX Ingress controller.
-- The Kubernetes Ingress image is built on the community Kubernetes project's implementation of the NGINX Ingress controller.
+- The **{{site.data.keyword.openshiftlong_notm}} Ingress image** is built on a custom implementation of the NGINX Ingress controller.
+- The **Kubernetes Ingress image** is built on the community Kubernetes project's implementation of the NGINX Ingress controller.
 
-The latest three versions of each image type are supported for ALBs.
+Depending on which image type you choose, the ALB behaves according to that implementation of the NGINX Ingress controller.
+
+You can manage the versions of your ALBs in the following ways:
 * When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag.
 * To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command.
 * If you omit the `--version` flag when you enable or update an existing ALB, the ALB runs the default version of the same image that the ALB previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
-To list the currently supported versions for each type of image, run the following command:
+To list the latest three versions that are supported for each type of image, run the following command:
 ```
 ibmcloud oc ingress alb versions
 ```
@@ -1143,7 +1147,7 @@ Kubernetes Ingress versions
 ```
 {: screen}
 
-The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.35.0_474_iks` indicates the most recent build of the `0.34.1` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
+The Kubernetes Ingress version follows the format `<community_version>_<ibm_build>_iks`. The IBM build number indicates the most recent build of the Kubernetes Ingress NGINX release that {{site.data.keyword.openshiftlong_notm}} released. For example, the version `0.35.0_474_iks` indicates the most recent build of the `0.35.0` Ingress NGINX version. {{site.data.keyword.openshiftlong_notm}} might release builds of the community image version to address vulnerabilities.
 
 For the changes that are included in each version of the Ingress images, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
@@ -1153,7 +1157,7 @@ For the changes that are included in each version of the Ingress images, see the
 Manage automatic updates of all Ingress ALB pods in a cluster.
 {: shortdesc}
 
-By default, automatic updates to Ingress ALBs are enabled. ALB pods are automatically updated by IBM when a new image version is available. If your ALBs run the Kubernetes Ingress image, your ALBs are automatically updated to the latest version of the Kubernetes Ingress NGINX image. For example, if your ALBs run version `0.33.0_217_iks`, and the Kubernetes Ingress NGINX image `0.33.1` is released, your ALBs are automatically updated to the latest build of the latest community version, such as `0.33.1_1_iks`.
+By default, automatic updates to Ingress ALBs are enabled. ALB pods are automatically updated by IBM when a new image version is available. If your ALBs run the Kubernetes Ingress image, your ALBs are automatically updated to the latest version of the Kubernetes Ingress NGINX image. For example, if your ALBs run version `0.34.1_391_iks`, and the Kubernetes Ingress NGINX image `0.35.0` is released, your ALBs are automatically updated to the latest build of the latest community version, such as `0.35.0_474_iks`.
 
 You can disable or enable the automatic updates for all Ingress ALBs in your cluster.
 * To disable automatic updates:

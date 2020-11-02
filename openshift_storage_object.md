@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-10-28"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -113,21 +113,26 @@ The {{site.data.keyword.cos_full_notm}} plug-in is configured to work with any s
 
 Follow these steps to create an {{site.data.keyword.cos_full_notm}} service instance. If you plan to use a local Cloud Object Storage server or a different s3 API endpoint, refer to the provider documentation to set up your Cloud Object Storage instance.
 
-1. Deploy an {{site.data.keyword.cos_full_notm}} service instance.
-  1.  Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/catalog/services/cloud-object-storage).
-  2.  Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
-  3.  Review the [plan options](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external} for pricing information and select a plan.
-  4.  Click **Create**. The service details page opens.
-2. {: #service_credentials}Retrieve the {{site.data.keyword.cos_full_notm}} service credentials.
-  1.  In the navigation on the service details page, click **Service Credentials**.
-  2.  Click **New credential**. A dialog box displays.
-  3.  Enter a name for your credentials.
-  4.  From the **Role** drop-down, select `Writer` or `Manager`. When you select `Reader`, then you cannot use the credentials to create buckets in {{site.data.keyword.cos_full_notm}} and write data to it.
-  5.  Optional: In **Add Inline Configuration Parameters (Optional)**, enter `{"HMAC":true}` to create additional HMAC credentials for the {{site.data.keyword.cos_full_notm}} service. HMAC authentication adds an extra layer of security to the OAuth2 authentication by preventing the misuse of expired or randomly created OAuth2 tokens.
-  6.  Click **Add**. Your new credentials are listed in the **Service Credentials** table.
-  7.  Click **View credentials**.
-  8.  Make note of the **apikey** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **cos_hmac_keys** section, note the **access_key_id** and the **secret_access_key**.
-3. [Store your service credentials in a Kubernetes secret inside the cluster](#create_cos_secret) to enable access to your {{site.data.keyword.cos_full_notm}} service instance.
+1. Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/catalog/services/cloud-object-storage).
+2. Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
+3. Review the [plan options](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external} for pricing information and select a plan.
+4. Click **Create**. The service details page opens.
+5. To continue to set up {{site.data.keyword.cos_short}} to use with your cluster, see [Creating service credentials](#service_credentials).
+
+## Creating {{site.data.keyword.cos_full_notm}} service credentials
+{: #service_credentials}
+
+Before you begin, [Create your object storage service instance](#create_cos_service).
+
+1. In the navigation on the service details page for your {{site.data.keyword.cos_short}} instance, click **Service Credentials**.
+2. Click **New credential**. A dialog box opens.
+3. Enter a name for your credentials.
+4. From the **Role** drop-down list, select the [{{site.data.keyword.cos_short}} access role](/docs/cloud-object-storage?topic=cloud-object-storage-iam#iam-roles) for the actions that you want storage users in your cluster to have access to. You must select at least **Writer** service access role to use the `auto-create-bucket` dynamic provisioning feature. If you select `Reader`, then you cannot use the credentials to create buckets in {{site.data.keyword.cos_full_notm}} and write data to it.
+5. Optional: In **Add Inline Configuration Parameters (Optional)**, enter `{"HMAC":true}` to create additional HMAC credentials for the {{site.data.keyword.cos_full_notm}} service. HMAC authentication adds an extra layer of security to the OAuth2 authentication by preventing the misuse of expired or randomly created OAuth2 tokens.
+6. Click **Add**. Your new credentials are listed in the **Service Credentials** table.
+7. Click **View credentials**.
+8. Make note of the **apikey** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **cos_hmac_keys** section, note the **access_key_id** and the **secret_access_key**.
+9. [Store your service credentials in a Kubernetes secret inside the cluster](#create_cos_secret) to enable access to your {{site.data.keyword.cos_full_notm}} service instance.
 
 <br />
 
@@ -139,9 +144,13 @@ To access your {{site.data.keyword.cos_full_notm}} service instance to read and 
 
 Follow these steps to create a Kubernetes secret for the credentials of an {{site.data.keyword.cos_full_notm}} service instance. If you plan to use a local Cloud Object Storage server or a different s3 API endpoint, create a Kubernetes secret with the appropriate credentials.
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin:
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* Make sure that you have the **Manager** service access role for the cluster.
 
-1. Retrieve the **apikey**, or the **access_key_id** and the **secret_access_key** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials).
+To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
+
+1. Retrieve the **apikey**, or the **access_key_id** and the **secret_access_key** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials). Note that the service credentials that you refer to in your sercret must be sufficient for the bucket operations that your app needs to perform. For example, if your app reads data from a bucket, the service credentials you refer to in your secret must have **Reader** permissions at minimum.
 
 2. Get the **GUID** of your {{site.data.keyword.cos_full_notm}} service instance.
    ```
@@ -206,6 +215,8 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: screen}
 
 5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos), or if you already installed the plug-in, [decide on the configuration]( #configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
+
+6. **Optional**: [Add your secret to the default storage classes](#storage_class_custom).
 
 <br />
 
@@ -365,14 +376,14 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
       ```
       {: pre}
 
-9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory.
+9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. 
 
   - **For OS X and Linux:** 
 
       **VPC Gen 2 clusters** To enable authorized IPs on VPC Gen 2, set the `--set bucketAccessPolicy=true` flag.
       {: note}
         ```
-        helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=true]
+        helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
         ```
         {: pre}
 
@@ -381,7 +392,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
       **VPC Gen 2 clusters** To enable authorized IPs on VPC Gen 2, set the `--set bucketAccessPolicy=true` flag.
       {: note}
         ```
-        helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=true]
+        helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
         ```
         {: pre}
 
@@ -746,6 +757,10 @@ Now that you decided on the configuration that you want, you are ready to [creat
 You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to access your {{site.data.keyword.cos_full_notm}} bucket. When you set up authorized IP addresses, you can only access your bucket data from those IP addresses; for example, in an app pod.
 {: shortdesc}
 
+**Minimum required permissions**: 
+ * **Manager** service role for the {{site.data.keyword.openshiftlong_notm}} service.
+ * **Writer** service role for the {{site.data.keyword.cos_full_notm}} service.
+
 **Supported infrastructure provider**:
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
@@ -928,6 +943,10 @@ Before you begin:
 To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
 1. Create a configuration file to define your persistent volume claim (PVC).
+
+  If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](#storage_class_custom), you do not need to refer to your secret in the PVC.
+  {: tip}
+
    ```yaml
    kind: PersistentVolumeClaim
    apiVersion: v1
@@ -968,7 +987,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
    </tr>
    <tr>
    <td><code>ibm.io/auto-create-bucket</code></td>
-   <td>Choose between the following options: <ul><li><strong>true</strong>: When you create the PVC, the PV and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created. Choose this option to create a new bucket in your {{site.data.keyword.cos_full_notm}} service instance. </li><li><strong>false</strong>: Choose this option if you want to access data in an existing bucket. When you create the PVC, the PV is automatically created and linked to the bucket that you specify in <code>ibm.io/bucket</code>.</td>
+   <td>Choose between the following options: <ul><li><strong>true</strong>: When you create the PVC, the PV and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created. Choose this option to create a new bucket in your {{site.data.keyword.cos_full_notm}} service instance. Note that the service credentials you refer to your secret must have <strong>Writer</strong> permissions to automatically create the bucket.</li><li><strong>false</strong>: Choose this option if you want to access data in an existing bucket. When you create the PVC, the PV is automatically created and linked to the bucket that you specify in <code>ibm.io/bucket</code>.</td>
    </tr>
    <tr>
    <td><code>ibm.io/auto-delete-bucket</code></td>
@@ -983,7 +1002,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
    </tr>
    <tr>
    <td><code>ibm.io/secret-name</code></td>
-   <td>Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. </td>
+   <td>Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](#storage_class_custom), you do not need to refer to your secret in the PVC.</td>
    </tr>
    <tr>
   <td><code>ibm.io/endpoint</code></td>
@@ -1324,7 +1343,7 @@ To deploy a stateful set that uses object storage:
     </tr>
     <tr>
     <td><code>ibm.io/auto-create-bucket</code></td>
-    <td>In the spec volume claim templates metadata section, set an annotation to configure how buckets are created. Choose between the following options: <ul><li><strong>true: </strong>Choose this option to automatically create a bucket for each stateful set replica. </li><li><strong>false: </strong>Choose this option if you want to share an existing bucket across your stateful set replicas. Make sure to define the name of the bucket in the <code>spec.volumeClaimTemplates.metadata.annotions.ibm.io/bucket</code> section of your stateful set YAML.</li></ul></td>
+    <td>In the spec volume claim templates metadata section, set an annotation to configure how buckets are created. Choose between the following options: <ul><li><strong>true: </strong>Choose this option to automatically create a bucket for each stateful set replica. Note that the service credentials you refer to your secret must have <strong>Writer</strong> permissions to automatically create the bucket.</li><li><strong>false: </strong>Choose this option if you want to share an existing bucket across your stateful set replicas. Make sure to define the name of the bucket in the <code>spec.volumeClaimTemplates.metadata.annotions.ibm.io/bucket</code> section of your stateful set YAML.</li></ul></td>
     </tr>
     <tr>
     <td><code>ibm.io/auto-delete-bucket</code></td>
@@ -1336,7 +1355,7 @@ To deploy a stateful set that uses object storage:
     </tr>
     <tr>
     <td><code>ibm.io/secret-name</code></td>
-    <td>In the spec volume claim templates metadata annotations section, enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier.</td>
+    <td>In the spec volume claim templates metadata annotations section, enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](#storage_class_custom), you do not need to refer to your secret in the PVC.</td>
     </tr>
     <tr>
     <td style="text-align:left"><code>kubernetes.io/storage-class</code></td>
@@ -1365,6 +1384,75 @@ To deploy a stateful set that uses object storage:
 {: note}
 
 <br />
+
+## Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes
+{: #storage_class_custom}
+
+You can create a [Kubernetes secret with your {{site.data.keyword.cos_full_notm}} Administrator credentials](#create_cos_secret) and refer to the secret in your storage classes. By adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes, users in your cluster do not need to provide COS credentials in their PVCs. Note that storage classes are available across namespaces.
+
+Before you begin:
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* Have the **Manager** service role for the cluster.
+* Have the **Writer** service role for the {{site.data.keyword.cos_full_notm}} service instance.
+
+To add a secret to a storage class:
+
+1. Create a [Kubernetes secret with your {{site.data.keyword.cos_full_notm}} credentials](#create_cos_secret). Note that your secret and app pods must be in the same namespace. Note that the service credentials you refer to your secret must have at least <strong>Writer</strong> permission to use the `auto-create-bucket` dynamic provisioning feature.
+
+2. List the default storage classes that are installed when you deploy the `ibm-object-storage-plugin`. 
+  ```sh
+  oc get sc | grep s3fs
+  ```
+  {: pre}
+
+3. Export the details for the default storage class that you want to edit in `YAML` form, or use `oc edit` to edit the storage class in your terminal.
+  * Edit the storage class in your terminal
+    ```sh
+    oc edit sc ibmc-s3fs-flex-regional
+    ```
+    {: pre}
+  
+  * Export the storage class details to `YAML` and save them in a file.
+    ```sh
+    oc get sc ibmc-s3fs-flex-regional -o yaml
+    ```
+    {: pre}
+
+4. Add the `ibm.io/secret-name: "<secret_name>"` parameter to the `parameters` field of the storage class.
+  ```yaml
+  ...
+  parameters:
+    ibm.io/secret-name: "<secret_name>" # Enter the name the secret that you created.
+  ...
+  ```
+  {: codeblock}
+
+5. Save and close the file. If you saved the storage class details to a `YAML` file and did not use the `oc edit`, apply the storage class in your cluster.
+  ```sh
+  oc apply -f <storage_class.yaml>
+  ```
+  {: pre}
+
+6. Create a PVC that refers to the storage class that you customized. Note that you do not need to provide secret details in your PVC.
+  ```yaml
+  kind: PersistentVolumeClaim
+  apiVersion: v1
+  metadata:
+    name: <pvc-name>
+    namespace: <namespace>
+    annotations:
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 10Gi
+    storageClassName: ibmc-s3fs-flex-regional
+    volumeMode: Filesystem
+  ```
+  {: codeblock}
+
+7. Repeat these steps for any of the default storage classes that you want customize.
 
 
 ## Storage class reference

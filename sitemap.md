@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-02"
 
 keywords: openshift
 subcollection: openshift
@@ -969,7 +969,7 @@ subcollection: openshift
 * [How can I customize routing?](/docs/openshift?topic=openshift-ingress-about#custom-routing)
 * [How do I manage the lifecycle of my ALBs?](/docs/openshift?topic=openshift-ingress-about#alb-lifecycle)
 
-[Beta: Setting up Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types)
+[Setting up Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types)
 * [Comparison of the ALB image types](/docs/openshift?topic=openshift-ingress-types#about-alb-images)
   * [Similarities between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-same)
   * [Differences between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-diff)
@@ -992,7 +992,7 @@ subcollection: openshift
   * [Creating more ALBs](/docs/openshift?topic=openshift-ingress-types#create_alb)
 * [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress-types#migrate-alb-vlan)
 
-[Beta: Kubernetes Ingress annotations](/docs/openshift?topic=openshift-comm-ingress-annotations)
+[Kubernetes Ingress annotations](/docs/openshift?topic=openshift-comm-ingress-annotations)
 * [Customizing routing with annotations](/docs/openshift?topic=openshift-comm-ingress-annotations#annotations)
 * [Customizing the ALB deployment](/docs/openshift?topic=openshift-comm-ingress-annotations#comm-customize-deploy)
 * [Preserving the source IP address](/docs/openshift?topic=openshift-comm-ingress-annotations#preserve_source_ip)
@@ -1095,7 +1095,7 @@ subcollection: openshift
   * [Changing the number or duration of keepalive connections](/docs/openshift?topic=openshift-ingress_annotation#keepalive_time)
   * [Changing the pending connections backlog](/docs/openshift?topic=openshift-ingress_annotation#backlog)
 
-[Logging and monitoring Ingress](/docs/openshift?topic=openshift-ingress_health)
+[Logging and monitoring {{site.data.keyword.openshiftlong_notm}} Ingress](/docs/openshift?topic=openshift-ingress_health)
 * [Viewing Ingress logs](/docs/openshift?topic=openshift-ingress_health#ingress_logs)
 * [Customizing Ingress log content and format](/docs/openshift?topic=openshift-ingress_health#ingress_log_format)
 * [Monitoring the Ingress ALB](/docs/openshift?topic=openshift-ingress_health#ingress_monitoring)
@@ -1194,6 +1194,7 @@ subcollection: openshift
 
 [Storing data on IBM Cloud Object Storage](/docs/openshift?topic=openshift-object_storage)
 * [Creating your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service)
+* [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-object_storage#service_credentials)
 * [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret)
 * [Installing the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
   * [Updating the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
@@ -1203,6 +1204,7 @@ subcollection: openshift
 * [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos)
 * [Using object storage in a stateful set](/docs/openshift?topic=openshift-object_storage#cos_statefulset)
 * [Backing up and restoring data](/docs/openshift?topic=openshift-object_storage#cos_backup_restore)
+* [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-object_storage#storage_class_custom)
 * [Storage class reference](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
   * [Standard](/docs/openshift?topic=openshift-object_storage#standard)
   * [Vault](/docs/openshift?topic=openshift-object_storage#Vault)
@@ -1233,6 +1235,8 @@ subcollection: openshift
   * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster)
 * [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help)
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
+
+[Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities)
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
@@ -1852,6 +1856,7 @@ subcollection: openshift
   * [Step 4: Ping the Ingress subdomain and router public IP address](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43)
 * [Version 4: VPC load balancer for router only routes to one zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#router-mzr-error)
 * [Version 4: Router for Ingress controller does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43)
+* [Version 4: VPC load balancer health status failures](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#vpc_lb_healthcheck)
 * [Version 3.11: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug)
   * [Step 1: Check your app deployment](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress)
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-ingress)
@@ -1908,6 +1913,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[November 2020](/docs/openshift?topic=openshift-iks-release#nov20)
 
 [October 2020](/docs/openshift?topic=openshift-iks-release#oct20)
 

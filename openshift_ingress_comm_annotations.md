@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-11-02"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -92,14 +92,11 @@ subcollection: openshift
 
 
 
-# Beta: Kubernetes Ingress annotations
+# Kubernetes Ingress annotations
 {: #comm-ingress-annotations}
 
 Modify default ALB settings and add annotations to your Ingress resources for ALBs that run the Kubernetes Ingress image.
 {: shortdesc}
-
-Using the Kubernetes Ingress image for your ALBs is a beta feature. Beta features might experience intermittent errors.
-{: beta}
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 4, see [About Ingress in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-ingress-about-roks4).
 {: important}
@@ -841,7 +838,6 @@ Kubernetes Ingress field: Currently, no configuration option for the Kubernetes 
 
 <br />
 
-
 ## Customizing the ALB deployment
 {: #comm-customize-deploy}
 
@@ -936,7 +932,6 @@ Customize the deployment for ALBs that run the Kubernetes Ingress image by creat
 
 <br />
 
-
 ## Preserving the source IP address
 {: #preserve_source_ip}
 
@@ -1025,7 +1020,6 @@ To enable source IP preservation, edit the load balancer service that exposes an
 
 <br />
 
-
 ## Configuring SSL protocols and SSL ciphers at the HTTP level
 {: #ssl_protocols_ciphers}
 
@@ -1071,7 +1065,6 @@ To edit the configmap to enable SSL protocols and ciphers:
 
 <br />
 
-
 ## Sending your custom certificate to legacy clients
 {: #default_server_cert}
 
@@ -1109,13 +1102,11 @@ When you create a classic cluster, a Let's Encrypt certificate is generated for 
 
 <br />
 
-
 ## Tuning ALB performance
 {: #perf_tuning}
 
 To optimize performance of your Ingress ALBs, you can change the default settings according to your needs.
 {: shortdesc}
-
 
 ### Enabling log buffering and flush timeout
 {: #access-log}
@@ -1261,7 +1252,6 @@ Each ALB has NGINX worker processes that process the client connections and comm
    oc get cm ibm-k8s-controller-config -n kube-system -o yaml
    ```
    {: pre}
-
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-10-27"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -110,7 +111,6 @@ Still having issues with your cluster? Review different ways to get help and sup
 
 <br />
 
-
 ## Reviewing issues and status
 {: #help-cloud-status}
 
@@ -120,7 +120,6 @@ Still having issues with your cluster? Review different ways to get help and sup
 4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 
 <br />
-
 
 ## Feedback and questions
 {: #feedback-qs}
@@ -132,7 +131,6 @@ Still having issues with your cluster? Review different ways to get help and sup
    * See [Getting help](/docs/get-support?topic=get-support-using-avatar) for more details about using the forums.
 
 <br />
-
 
 ## Contacting support
 {: #help-support}
@@ -159,7 +157,6 @@ Still having issues with your cluster? Review different ways to get help and sup
    You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
    {: tip}
 
-2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
-3.  In your support case, for **Category**, select **Containers**.
-4.  For the **Offering**, select your {{site.data.keyword.openshiftshort}} cluster. Include the relevant information that you previously gathered.
-
+2.  Contact IBM Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
+3.  For the **Problem type**, search for or select **{{site.data.keyword.openshiftlong_notm}}**.
+4.  For the **Case details**, provide a descriptive title and include the details that you previously gathered. From the **Resources**, you can also select the cluster that the issue is related to.
