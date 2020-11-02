@@ -1856,6 +1856,7 @@ subcollection: openshift
   * [Step 4: Ping the Ingress subdomain and router public IP address](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43)
 * [Version 4: VPC load balancer for router only routes to one zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#router-mzr-error)
 * [Version 4: Router for Ingress controller does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43)
+* [Version 4: VPC load balancer health status failures](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#vpc_lb_healthcheck)
 * [Version 3.11: Debugging Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress-debug)
   * [Step 1: Check your app deployment](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#app-debug-ingress)
   * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#debug-tool-ingress)
