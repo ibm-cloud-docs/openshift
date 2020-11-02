@@ -285,7 +285,7 @@ Depending on which image type you choose, the ALB behaves according to that impl
 * To manage how requests are routed to your app, specify [Kubernetes NGINX annotations](/docs/openshift?topic=openshift-comm-ingress-annotations#annotations) (`nginx.ingress.kubernetes.io/<annotation>`) in your Ingress resources.
 * To modify default Ingress settings, such as to enable source IP preservation or configure SSL protocols, [change the `ibm-cloud-provider-ingress-cm`, `ibm-k8s-controller-config`, or `ibm-ingress-deploy-config` configmap resources](/docs/openshift?topic=openshift-ingress_annotation) for your Ingress ALBs.
 
-**ALBs that run the custom {{site.data.keyword.openshiftlong_notm}} image (deprecated)**:
+**ALBs that run the custom {{site.data.keyword.openshiftlong_notm}} image**:
 * To manage how requests are routed to your app, specify [custom {{site.data.keyword.openshiftlong_notm}} annotations](/docs/openshift?topic=openshift-ingress_annotation) (`ingress.bluemix.net/<annotation>`) in your Ingress resources.
 * To modify default Ingress settings, such as to enable source IP preservation or configure SSL protocols, [change the `ibm-cloud-provider-ingress-cm` configmap resource](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip) for your Ingress ALBs.
 
