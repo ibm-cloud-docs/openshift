@@ -815,7 +815,7 @@ To create your own storage class:
 
 1. Review the [Storage class reference](#vpc-block-reference) to determine the `profile` that you want to use for your storage class. You can also review the [custom profiles]((/docs/vpc?topic=vpc-block-storage-profiles#custom)) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
 
-  If you want to use a pre-installed storage class as a template, you can get the details of a storage class by using the `oc get sc <storageclass>` command.
+  If you want to use a pre-installed storage class as a template, you can get the details of a storage class by using the `oc get sc <storageclass> -o yaml` command.
   {: tip}
 
 2. Create a customized storage class configuration file.
