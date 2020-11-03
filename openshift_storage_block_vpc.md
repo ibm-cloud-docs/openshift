@@ -801,13 +801,14 @@ When you want to set up encryption for your {{site.data.keyword.blockstorageshor
 
 ### Creating a custom storage class
 {: #vpc-customize-storage-class}
+{: #vpc-block-xfs}
 
 Create your own customized storage class with the preferred settings for your {{site.data.keyword.blockstorageshort}} instance.
 {: shortdesc}
 
 You might create a custom storage class if you want to:
 * Set a custom IOPs value.
-* Set up {{site.data.keyword.block_storage_is_short}} with a file system type other than `ext4`.{: #vpc-block-xfs}
+* Set up {{site.data.keyword.block_storage_is_short}} with a file system type other than `ext4`.
 * Set up encryption.
 * Set a custom size range.
 
