@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-11-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -398,7 +399,6 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
 
    <br />
 
-
 ## Using an existing {{site.data.keyword.block_storage_is_short}} instance
 {: #vpc-block-static}
 
@@ -565,7 +565,6 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 
 <br />
 
-
 ## Updating the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-update}
 
@@ -629,98 +628,6 @@ You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabl
   vpc-block-csi-driver   2.0.0     normal         Addon Ready
   ```
   {: screen}
-
-
-
-## Creating {{site.data.keyword.block_storage_is_short}} with a different file system
-{: #vpc-block-xfs}
-
-You can create a customized storage class to provision {{site.data.keyword.block_storage_is_short}} with a different file system, such as `xfs` or `ext3`. By default, all {{site.data.keyword.block_storage_is_short}} instances are provisioned with an `ext4` file system.
-{: shortdesc}
-
-1. Follow the steps to [create a customized storage class](#vpc-customize-storage-class) with the file system that you want to use.
-
-   Example storage class:
-   ```yaml
-   apiVersion: storage.k8s.io/v1
-   kind: StorageClass
-   metadata:
-     name: <storage_class_name>
-   parameters:
-     billingType: hourly
-     classVersion: "1"
-     csi.storage.k8s.io/fstype: <file_system_type>
-     encrypted: "false"
-     encryptionKey: ""
-     generation: gc
-     profile: general-purpose
-     resourceGroup: ""
-     sizeRange: '[10-2000]GiB'
-     tags: ""
-     zone: ""
-   provisioner: vpc.block.csi.ibm.io
-   reclaimPolicy: Delete
-   volumeBindingMode: Immediate
-   ```
-   {: codeblock}
-
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>name</code></td>
-    <td>Enter a name for your storage class.</td>
-    </tr>
-    <tr>
-    <td><code>cs.storage.k8s.io/fstype</code></td>
-    <td>In the parameters, enter the file system for your {{site.data.keyword.block_storage_is_short}} instance. Choose `xfs` or `ext3`.</td>
-    </tr>
-    </tbody>
-    </table>
-
-2. Follow step 4-9 in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC with your customized storage class to provision {{site.data.keyword.blockstorageshort}} with a different file system. Then, mount this storage to a sample app.
-
-   Your app might take a few minutes to mount the storage and get into a **Running** state.
-   {: note}
-
-6. Verify that your storage is mounted with the correct file system.
-   1. List the pods in your cluster and note the **Name** of the pod that you used to mount your storage.
-      ```
-      oc get pod
-      ```
-      {: pre}
-
-   2. Log in to your pod.
-      ```
-      oc exec <pod_name> -it bash
-      ```
-      {: pre}
-
-   3. List the mount paths inside your pod.  
-      ```
-      mount | grep /dev/xvdg
-      ```
-      {: pre}
-
-      Example output for `xfs`:
-      ```
-      /dev/xvdg on /test type xfs (rw,relatime,attr2,inode64,noquota)
-      ```
-      {: pre}
-
-   4. Exit your pod.
-      ```
-      exit
-      ```
-      {: pre}
-
-      <br />
-
 
 ## Setting up encryption for {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block-encryption}
@@ -830,12 +737,12 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
     </tr>
     <tr>
     <td><code>encryptionKey</code></td>
-    <td>In the parameters, enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base64 by running `echo  -n "<root_key_CRN>" | base64`. </td>
+    <td>In the parameters, enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base64 by running <code>echo  -n "<root_key_CRN>" | base64</code>. </td>
     </tr>
     </tbody>
     </table>
 
-6. Follow step 4-9 in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC with your customized storage class to provision {{site.data.keyword.block_storage_is_short}} that is configured for encryption with your {{site.data.keyword.keymanagementserviceshort}} root key. Then, mount this storage to a sample app.
+6. Follow steps 4-9 in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC with your customized storage class to provision {{site.data.keyword.block_storage_is_short}} that is configured for encryption with your {{site.data.keyword.keymanagementserviceshort}} root key. Then, mount this storage to an app pod.
 
     Your app might take a few minutes to mount the storage and get into a **Running** state.
     {: note}
@@ -879,8 +786,6 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
 
       <br />
 
-
-
 ## Customizing the default storage settings
 {: #vpc-customize-default}
 
@@ -892,59 +797,28 @@ As a cluster admin, [create a customized storage class](#vpc-customize-storage-c
 
 However, when multiple configurations are required and you don't want to create a customized storage class for every possible PVC configuration, you can create one customized storage class with the default PVC settings and a reference to a generic [Kubernetes secret](#vpc-block-storageclass-secret). If your cluster users must override the default settings of your customized storage class, they can do so by creating a Kubernetes secret that holds their custom settings.
 
-When you want to set up encryption for your {{site.data.keyword.blockstorageshort}} instance, you can also use a Kubernetes secret if you want to encode the {{site.data.keyword.keymanagementserviceshort}} root key CRN to base64 instead of providing the key directly in the customized storage class.  
+When you want to set up encryption for your {{site.data.keyword.blockstorageshort}} instance, you can also use a Kubernetes secret if you want to encode the {{site.data.keyword.keymanagementserviceshort}} root key CRN to base64 instead of providing the key directly in the customized storage class.
 
-
-### Customizing a storage class
+### Creating a custom storage class
 {: #vpc-customize-storage-class}
 
-Use one of the IBM-provided storage classes as a basis to create your own customized storage class with the preferred settings for your {{site.data.keyword.blockstorageshort}} instance.
+Create your own customized storage class with the preferred settings for your {{site.data.keyword.blockstorageshort}} instance.
 {: shortdesc}
 
-1. Review step 1 and 2 in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to find the pre-defined storage class that best meets the performance and capacity requirements of your app. This storage class is used as the basis to create your own customized storage class.
-2. Retrieve the YAML file for the storage class that you want to use as the basis to create your own customized storage class. For example, the following command retrieves the YAML file for the `ibmc-vpc-block-5iops-tier` storage class.
-   ```
-   oc get storageclass ibmc-vpc-block-5iops-tier -o yaml
-   ```
-   {: pre}
+You might create a custom storage class if you want to:
+* Set a custom IOPs value.
+* Set up {{site.data.keyword.block_storage_is_short}} with a file system type other than `ext4`.{: #vpc-block-xfs}
+* Set up encryption.
+* Set a custom size range.
 
-   Example output:
-   ```
-   apiVersion: storage.k8s.io/v1
-   kind: StorageClass
-   metadata:
-     annotations:
-       armada-service: addon-vpc-block-csi-driver
-       kubectl.kubernetes.io/last-applied-configuration: |
-         {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{"armada-service":"addon-vpc-block-csi-driver","version":"0.0.1_57"},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","app":"ibm-vpc-block-csi-driver"},"name":"ibmc-vpc-block-5iops-tier"},"parameters":{"billingType":"hourly","classVersion":"1","csi.storage.k8s.io/fstype":"ext4","encrypted":"false","encryptionKey":"","generation":"gc","profile":"5iops-tier","resourceGroup":"","sizeRange":"[10-2000]GiB","tags":"","zone":""},"provisioner":"vpc.block.csi.ibm.io","reclaimPolicy":"Delete"}
-       version: 0.0.1_57
-     creationTimestamp: "2019-08-02T20:29:29Z"
-     labels:
-       addonmanager.kubernetes.io/mode: Reconcile
-       app: ibm-vpc-block-csi-driver
-     name: ibmc-vpc-block-5iops-tier
-     resourceVersion: "458548"
-     selfLink: /apis/storage.k8s.io/v1/storageclasses/ibmc-vpc-block-5iops-tier
-     uid: 94a920c6-cfda-4a57-9332-1f9b78881d50
-   parameters:
-     billingType: hourly
-     classVersion: "1"
-     csi.storage.k8s.io/fstype: ext4
-     encrypted: "false"
-     encryptionKey: ""
-     generation: gc
-     profile: 5iops-tier
-     resourceGroup: ""
-     sizeRange: '[10-2000]GiB'
-     tags: ""
-     zone: ""
-   provisioner: vpc.block.csi.ibm.io
-   reclaimPolicy: Delete
-   volumeBindingMode: Immediate
-   ```
-   {: screen}
+To create your own storage class:
 
-3. Create a customized storage class YAML file that is based on the YAML file that you retrieved. You can streamline your YAML file by removing all of the information from the `metadata` section, except for the `name`.
+1. Review the [Storage class reference](#vpc-block-reference) to determine the `profile` that you want to use for your storage class. You can also review the [custom profiles]((/docs/vpc?topic=vpc-block-storage-profiles#custom)) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
+
+  If you want to use a pre-installed storage class as a template, you can get the details of a storage class by using the `oc get sc <storageclass>` command.
+  {: tip}
+
+2. Create a customized storage class configuration file.
    ```yaml
    apiVersion: storage.k8s.io/v1
    kind: StorageClass
@@ -952,7 +826,7 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
      name: <storage_class_name>
    provisioner: vpc.block.csi.ibm.io
    parameters:
-     profile: "5iops-tier"
+     profile: "<profile>"
      sizeRange: "<size_range>"
      csi.storage.k8s.io/fstype: "<file_system_type>"
      billingType: "hourly"
@@ -963,6 +837,7 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
      tags: "<tags>"
      generation: "gc"
      classVersion: "1"
+     iops: "<iops>" # Only specify this parameter if you are using the "custom" profile.
    reclaimPolicy: "<reclaim_policy>"
    volumeBindingMode: <volume_binding_mode>
    ```
@@ -981,16 +856,20 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
       <td>Enter a name for your storage class.</td>
       </tr>
       <tr>
+      <td><code>profile</code></td>
+      <td>Enter the profile that you selected in the previous step, or enter <code>custom</code> to use a custom IOPs value.</td>
+      </tr>
+      <tr>
       <td><code>sizeRange</code></td>
-      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPS profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range. </td>
+      <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPS profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range.</td>
       </tr>
       <tr>
       <td><code>csi.storage.k8s.io/fstype</code></td>
-      <td>In the parameters, enter the file system for your {{site.data.keyword.blockstorageshort}} instance. Choose `xfs`, `ext3`, or `ext4`. The default value is `ext4` and is used if you do not specify a file system.</td>
+      <td>In the parameters, enter the file system for your {{site.data.keyword.blockstorageshort}} instance. Choose <code>xfs</code>, <code>ext3</code>, or <code>ext4</code>. The default value is <code>ext4</code> and is used if you do not specify a file system.</td>
       </tr>
       <tr>
       <td><code>encrypted</code></td>
-      <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyworblockstorageshort}} volume. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameterencryptionKey</code>. For more information about encrypting your data, see [Setting up encryption for your {{sitdata.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+      <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyworblockstorageshort}} volume. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameterencryptionKey</code>. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
       </tr>
       <tr>
       <td><code>encryptionKey</code></td>
@@ -998,37 +877,41 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
       </tr>
       <tr>
       <td><code>zone</code></td>
-      <td>In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.</td>
+      <td>In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;</code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.</td>
       </tr>
       <tr>
       <td><code>tags</code></td>
       <td>In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyworblock_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. </td>
       </tr>
       <tr>
+      <td><code>iops</code></td>
+      <td>If you entered <code>custom</code> for the <code>profile</code>, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the [{{site.data.keyword.block_storage_is_short}} custom IOPs profile](/docs/vpc?topic=vpc-block-storage-profiles#custom) table for a list of supported IOPs ranges by volume size.</td>
+      </tr>
+      <tr>
       <td><code>reclaimPolicy</code></td>
-      <td>Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device and your data when you remove the PVC, enter `Retain`. If you want to delete the PV, the physical storage device and your data when you remove the PVC, enter `Delete`.</td>
+      <td>Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device and your data when you remove the PVC, enter <code>Retain</code>. If you want to delete the PV, the physical storage device and your data when you remove the PVC, enter <code>Delete</code>.</td>
       </tr>
       <tr>
       <td><code>volumeBindingMode</code></td>
-      <td>Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.</td>
+      <td>Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter <code>WaitForFirstConsumer</code>. To create the instance when you create the PVC, enter <code>Immediate</code>.</td>
       </tr>
    </tbody>
    </table>
 
 4. Create the customized storage class in your cluster.
    ```
-   oc apply -f custom_storageclass.yaml
+   oc apply -f custom-storageclass.yaml
    ```
    {: pre}
 
 5. Verify that your storage class is available in the cluster.
    ```
-   oc get storageclasses
+   oc get storageclasses 
    ```
    {: pre}
 
    Example output:
-   ```
+   ```sh
    NAME                                    PROVISIONER            AGE
    ibmc-vpc-block-10iops-tier              vpc.block.csi.ibm.io   4d21h
    ibmc-vpc-block-5iops-tier               vpc.block.csi.ibm.io   4d21h
@@ -1038,13 +921,57 @@ Use one of the IBM-provided storage classes as a basis to create your own custom
    ibmc-vpc-block-retain-5iops-tier        vpc.block.csi.ibm.io   4d21h
    ibmc-vpc-block-retain-custom            vpc.block.csi.ibm.io   4d21h
    ibmc-vpc-block-retain-general-purpose   vpc.block.csi.ibm.io   4d21h
-   custom_storageclass                     vpc.block.csi.ibm.io   4m26s
+   &lt;custom-storageclass&gt;             vpc.block.csi.ibm.io   4m26s
    ```
    {: screen}
 
 6. Follow the steps in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC with your customized storage class to provision {{site.data.keyword.block_storage_is_short}}. Then, mount this storage to a sample app.
 
-</br>
+7. **Optional**: [Verify your {{site.data.keyword.block_storage_is_short}} file system type](#vpc-block-fs-verify).
+
+### Verifying your {{site.data.keyword.block_storage_is_short}} file system
+{: #vpc-block-fs-verify}
+
+You can create a customized storage class to provision {{site.data.keyword.block_storage_is_short}} with a different file system, such as `xfs` or `ext3`. By default, all {{site.data.keyword.block_storage_is_short}} instances are provisioned with an `ext4` file system.
+{: shortdesc}
+
+1. Follow the steps to [create a customized storage class](#vpc-customize-storage-class) with the file system that you want to use.
+
+2. Follow steps 4-9 in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC with your customized storage class to provision {{site.data.keyword.blockstorageshort}} with a different file system. Then, mount this storage to an app pod.
+
+   Your app might take a few minutes to mount the storage and get into a **Running** state.
+   {: note}
+
+3. Verify that your storage is mounted with the correct file system.
+   1. List the pods in your cluster and note the **Name** of the pod that you used to mount your storage.
+      ```sh
+      oc get pods
+      ```
+      {: pre}
+
+   2. Log in to your pod.
+      ```sh
+      oc exec <pod_name> -it bash
+      ```
+      {: pre}
+
+   3. List the mount paths inside your pod.  
+      ```sh
+      mount | grep /dev/xvdg
+      ```
+      {: pre}
+
+      Example output for `xfs`:
+      ```sh
+      /dev/xvdg on /test type xfs (rw,relatime,attr2,inode64,noquota)
+      ```
+      {: pre}
+
+   4. Exit your pod.
+      ```sh
+      exit
+      ```
+      {: pre}
 
 ### Storing your custom PVC settings in a Kubernetes secret
 {: #vpc-block-storageclass-secret}
@@ -1062,7 +989,7 @@ As a cluster admin, you can choose if you want to allow each cluster user to ove
 **What do I need to be aware of before I start using the Kubernetes secret for my PVC settings?** </br>
 Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeBindingMode` cannot be set in the Kubernetes secret and must be set in the storage class. As the cluster admin, if you want to enable your cluster users to override your default settings, you must ensure that you set up enough customized storage classes that reference a generic Kubernetes secret so that your users can provision {{site.data.keyword.block_storage_is_short}} with different `reclaimPolicy`, `fstype`, and `volumeBindingMode` settings.
 
-#### Enabling every user to customize the default PVC settings
+### Enabling every user to customize the default PVC settings
 {: #customize-with-secret}
 
 1. As the cluster admin, follow the steps to [create a customized storage class](#vpc-customize-storage-class). In the customized storage class YAML file, reference the Kubernetes secret in the `metadata.annotation` section as follows. Make sure to add the code as-is and not to change variables names.
@@ -1142,8 +1069,7 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 
 4. Follow the steps in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC with your custom settings. Make sure to create the PVC with the customized storage class that the cluster admin created and use the same name for your PVC that you used for your secret. Using the same name for the secret and the PVC triggers the storage provider to apply the settings of the secret in your PVC.
 
-
-#### Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN
+### Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN
 {: #static-secret}
 
 1. As the cluster admin, create a Kubernetes secret that includes the base64 encoded value for your {{site.data.keyword.keymanagementserviceshort}} root key CRN. To retrieve the root key CRN, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption).
@@ -1206,7 +1132,6 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 
 <br />
 
-
 ## Backing up and restoring data
 {: #vpc-block-backup-restore}
 
@@ -1239,13 +1164,11 @@ To back up or restore data, choose between the following options:
 
   <br />
 
-
 ## Storage class reference
 {: #vpc-block-reference}
 
 Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that do not have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
 {: tip}
-
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
@@ -1435,6 +1358,5 @@ To clean up persistent data:
    oc get pv
    ```
    {: pre}
-
 
 
