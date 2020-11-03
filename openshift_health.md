@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-28"
+lastupdated: "2020-11-03"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -770,3 +770,42 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
       {: codeblock}
 8.  Click **Create**.
 9.  Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.
+
+## Disabling remote health reporting
+{: #oc_disable_telemetry_reports}
+
+OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.5/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster. 
+{: shortdesc}
+
+You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all of the worker nodes.
+
+1.  Check that the telemetry reporting pod runs in your cluster.
+    ```
+    oc get pods -n openshift-monitoring
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    NAMESPACE                                          NAME                                                         READY   STATUS      RESTARTS   AGE
+    telemeter-client-7cfd7cb85-lm9dt                             3/3     Running     0          4d13h
+    ...
+    ```
+    {: screen}
+2.  Follow the {{site.data.keyword.openshiftshort}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.5/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
+3.  To pick up the global configuration changes, reload all of the worker nodes in your cluster.
+    1.  Note the **ID** of the worker nodes in your cluster.
+        ```
+        ibmcloud oc worker ls -c <cluster_name_or_ID>
+        ```
+        {: pre}
+    2.  Reload each worker node. You can reload multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
+        ```
+        ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
+        ```
+        {: pre}
+4.  After the worker nodes are back in a healthy state, verify that the telemetry reporting pod no longer runs in your cluster.
+    ```
+    oc get pods -n openshift-monitoring
+    ```
+    {: pre}

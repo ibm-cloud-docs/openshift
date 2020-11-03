@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-03"
 
 keywords: openshift
 subcollection: openshift
@@ -144,6 +144,7 @@ subcollection: openshift
   * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-arch#pi-storage)
   * [Where is my information stored?](/docs/openshift?topic=openshift-service-arch#pi-location)
   * [How can I remove my information?](/docs/openshift?topic=openshift-service-arch#pi-removal)
+  * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-arch#pi-rh-telemetry)
 * [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-service-arch#dependencies-ibmcloud)
 * [Dependencies to 3rd party services](/docs/openshift?topic=openshift-service-arch#dependencies-3rd-party)
 
@@ -693,6 +694,8 @@ subcollection: openshift
 * [Worker node states](/docs/openshift?topic=openshift-health#states_workers)
 
 [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
+
+[Disabling remote health reporting](/docs/openshift?topic=openshift-health#oc_disable_telemetry_reports)
 
 
 ## Setting up an image build pipeline

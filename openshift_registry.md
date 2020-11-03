@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-03"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -1307,12 +1307,12 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
         ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
-    2.  Reload each worker node.
+    2.  Reload each worker node. You can reload multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
         ```
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}
-7.  After the worker node are back in a healthy state, verify that the global pull secret is updated on a worker node. 
+7.  After the worker nodes are back in a healthy state, verify that the global pull secret is updated on a worker node. 
     1.  Start a debugging pod to log in to a worker node. Use the **Private IP** that you retrieved earlier for the `<node_name>`. 
         ```
         oc debug node/<node_name>
