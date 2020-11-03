@@ -787,8 +787,8 @@ You might want to disable this remote health reporting to comply with privacy la
 
     Example output:
     ```
-    NAMESPACE                                          NAME                                                         READY   STATUS      RESTARTS   AGE
-    telemeter-client-7cfd7cb85-lm9dt                             3/3     Running     0          4d13h
+    NAME                              READY   STATUS      RESTARTS   AGE
+    telemeter-client-7cfd7cb85-lm9dt  3/3     Running     0          4d13h
     ...
     ```
     {: screen}
