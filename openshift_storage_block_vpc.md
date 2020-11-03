@@ -838,7 +838,7 @@ To create your own storage class:
      tags: "<tags>"
      generation: "gc"
      classVersion: "1"
-     iops: "<iops>" # Only specify this parameter if you are using the "custom" profile.
+     iops: "<iops>" # Only specify this parameter if you are using a "custom" profile.
    reclaimPolicy: "<reclaim_policy>"
    volumeBindingMode: <volume_binding_mode>
    ```
