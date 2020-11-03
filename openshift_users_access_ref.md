@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-11-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -114,6 +114,8 @@ Review the minimum permissions in {{site.data.keyword.cloud_notm}} IAM that the 
   <li>**Administrator** platform role for **Cloud Object Storage** in the console (**cos** in the API or CLI) for the standard instance that you want to use to back up the internal registry images in a VPC cluster.</li>
   <li>If you plan to [expose apps with Ingress](/docs/openshift?topic=openshift-ingress-about), assign the user **Administrator** or **Editor** platform role and the **Manager** service role for **{{site.data.keyword.cloudcerts_short}}** in **All resource groups**.</li>
   <li>**Viewer** platform role for the resource group access.</li>
+  <li>If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), the **Service ID creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).</li>
+  <li>If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), the **User API key creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).</li>
   <li>If you plan to [encrypt your cluster](/docs/openshift?topic=openshift-encryption#keyprotect), assign the user the appropriate permission to the key management service (KMS) provider, such as the **Administrator** platform role for {{site.data.keyword.keymanagementserviceshort}}.</li>
   <li>**Viewer** platform role for the resource group access.</li></ul>
 <li>**Infrastructure**</li><ul>
