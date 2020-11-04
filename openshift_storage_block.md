@@ -320,14 +320,11 @@ Make sure to choose your storage configuration carefully to have enough capacity
 
 <br />
 
-## Setting up encryption for {{site.data.keyword.blockstorageshort}} (beta)
+## Setting up encryption for {{site.data.keyword.blockstorageshort}}
 {: #block_encryption_setup}
 
 You can set up encryption for {{site.data.keyword.blockstorageshort}} by using {{site.data.keyword.keymanagementservicelong_notm}}.
 {: shortdesc}
-
-Encryption for {{site.data.keyword.blockstorageshort}} is a beta feature. This feature might be unavailable or change without prior notification. Do not use this feature for production workloads.
-{: beta}
 
 The following example explains how to create a service ID with the required access roles for {{site.data.keyword.keymanagementserviceshort}} and your cluster. The credentials of this service ID are used to enable encryption for your {{site.data.keyword.blockstorageshort}} volumes.
 
