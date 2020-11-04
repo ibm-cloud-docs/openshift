@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-04"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -331,9 +331,9 @@ From the {{site.data.keyword.openshiftshort}} console, you can deploy one of the
 2.  From the side navigation menu in the **Administrator** perspective, click **Home > Projects** and then click **Create Project**. Enter a name for your project, and click **Create**. Now that your project is created by the administrator, you can switch to the Developer perspective to create an app.
 3.  From the side navigation menu, select **Developer** from the perspective switcher.
 4.  Click **+Add**. From the **Add** pane menu bar, make sure that the **Project** is the one that you just created.
-5.  Click **From Catalog**. The **Developer Catalog** opens in the pane.
+5.  Click **From Catalog**. The **Developer Catalog** opens in the pane. 
 6.  From the navigation menu in the pane, click **Languages > JavaScript**.
-7.  Click **Node.js**, and then click **Create Application**. The **Create Source-to-Image Application** pane opens.
+7.  Click **Node.js**, and then click **Create Application**. Note that you might need to click **Clear All Filters** to display the **Node.js** option. After you select **Node.js**, the **Create Source-to-Image Application** pane opens.
 8.  In the **Git** section, click **Try Sample**.
 9.  Scroll to confirm that **Deployment** and **Create a route to the application** are selected, and then click **Create**.
 8.  Wait a few minutes for the pods to deploy. To check the status of the pods, from the **Topology** pane, click your **nodejs** app and review its sidebar. You must see that the `nodejs` build is complete, and that the `nodejs` pod is in a **Running** state to continue.
