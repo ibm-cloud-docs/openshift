@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -433,13 +433,13 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     If you installed the plug-in without using Helm, you must manually remove the block storage plug-in deployment and all associated resources before installing a new version.
     {: note}
     ```
-    helm uninstall <release_name> <namespace>
+    helm uninstall <name> <namespace>
     ```
     {: pre}
   
   12. Install the `ibmcloud-block-storage-plugin` Helm chart.
     ```
-    helm install <release_name> iks-charts/ibmcloud-block-storage-plugin
+    helm install <name> iks-charts/ibmcloud-block-storage-plugin
     ```
     {: pre}
 
