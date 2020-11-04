@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-04"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -1157,13 +1157,13 @@ Keepalive connections can have a major impact on performance by reducing the CPU
     {: pre}
 
 2. Change the values of `keep-alive-requests` and `keep-alive`.
-    * `keep-alive-requests`: The number of keepalive client connections that can stay open to the Ingress ALB. The default is `4096`.
-    * `keep-alive`: The timeout, in seconds, during which the keepalive client connection stays open to the Ingress ALB. The default is `8`.
+    * `keep-alive-requests`: The number of keepalive client connections that can stay open to the Ingress ALB. The default is `100`.
+    * `keep-alive`: The timeout, in seconds, during which the keepalive client connection stays open to the Ingress ALB. The default is `75`.
    ```yaml
    apiVersion: v1
    data:
-     keep-alive-requests: 4096
-     keep-alive: 8
+     keep-alive-requests: 100
+     keep-alive: 75
    kind: ConfigMap
    metadata:
      name: ibm-k8s-controller-config
@@ -1175,7 +1175,7 @@ Keepalive connections can have a major impact on performance by reducing the CPU
 
 4. Verify that the configmap changes were applied.
    ```
-   oc get cm ibm-cloud-provider-ingress-cm -n kube-system -o yaml
+   oc get cm ibm-k8s-controller-config -n kube-system -o yaml
    ```
    {: pre}
 

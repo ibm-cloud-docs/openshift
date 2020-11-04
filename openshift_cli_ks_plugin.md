@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-11-04"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -4719,7 +4719,7 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster mycluster --nlb-subdomain mycluster-a1
 ### Experimental: `ibmcloud oc nlb-dns secret regenerate`
 {: #cs_nlb-dns-secret-regenerate}
 
-Regenerate the certificate and secret for an NLB subdomain.
+Regenerate the certificate and secret for an NLB subdomain. Secret regeneration is not disruptive, and traffic continues to flow uninterruptedly while the secret regenerates.
 {: shortdesc}
 
 If the Let’s Encrypt certificate creation fails during secret regeneration, a 10 minute wait period must pass before the regeneration is automatically attempted again. The regeneration of the secret takes another 5 minutes to complete, making it a total of 15 minutes before the process is completed.
