@@ -92,8 +92,8 @@ Red Hat OpenShift on IBM Cloud
 
         {: .topicgroup}
         VPC clusters
-            openshift_vpc_firewall.md
             openshift_vpc_network_policy.md
+            openshift_vpc_firewall.md
 
     {: .topicgroup}
     Managing the cluster network
