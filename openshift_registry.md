@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-03"
+lastupdated: "2020-11-05"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -664,7 +664,7 @@ To pull images from a registry, your {{site.data.keyword.openshiftlong_notm}} cl
 The container registry can be:
 * A private namespace in your own {{site.data.keyword.registrylong_notm}}.
 * A private namespace in {{site.data.keyword.registrylong_notm}} that belongs to a different {{site.data.keyword.cloud_notm}} account.
-* Any other private registry such as Docker. 
+* Any other private registry such as Docker.
 
 However, by default, your cluster is set up to pull images from only your account's namespaces in {{site.data.keyword.registrylong_notm}}, and deploy containers from these images to the `default` {{site.data.keyword.openshiftshort}} project in your cluster. If you need to pull images in other projects of the cluster or from other container registries, then you must set up your own image pull secrets.
 
@@ -677,7 +677,7 @@ Generally, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to pu
 **How is my cluster set up to pull images from the `default` {{site.data.keyword.openshiftshort}} project?**<br>
 When you create a cluster, the cluster has an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM **Reader** service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are impersonated in a non-expiring API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and the list of secrets in the `default` service account for this {{site.data.keyword.openshiftshort}} project. By using image pull secrets, your deployments can pull images (read-only access) from the [global and regional {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_overview#registry_regions) to deploy containers in the `default` {{site.data.keyword.openshiftshort}} project.
 
-* The global registry securely stores public images that are provided by IBM. You can refer to these public images across your deployments instead of having different references for images that are stored in each regional registry. 
+* The global registry securely stores public images that are provided by IBM. You can refer to these public images across your deployments instead of having different references for images that are stored in each regional registry.
 * The regional registry securely stores your own private Docker images.
 
 **What if I don't have image pull secrets in the `default` {{site.data.keyword.openshiftshort}} project?**<br>
@@ -717,7 +717,7 @@ When you set up your {{site.data.keyword.cloud_notm}} account to use service end
 {: shortdesc}
 
 **What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**<br>
-1.  Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. 
+1.  Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private service endpoint. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command.
 2.  [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 
 Now, {{site.data.keyword.registrylong_notm}} automatically uses the private service endpoint. You do not need to enable the private service endpoint for your {{site.data.keyword.openshiftlong_notm}} clusters.
@@ -979,7 +979,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tr>
     <tr>
     <td><code>--docker-username iamapikey</code></td>
-    <td>Required. Enter the username to log in to your private registry. For {{site.data.keyword.registrylong_notm}}, the username is set to the value <strong><code>iamapikey</code></strong>.</td>
+    <td>Required. Enter the username to log in to your private registry. If you use {{site.data.keyword.registrylong_notm}}, enter <strong><code>iamapikey</code></strong>.</td>
     </tr>
     <tr>
     <td><code>--docker-password <em>&lt;token_value&gt;</em></code></td>
@@ -1183,7 +1183,7 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 ## Adding a private registry to the global pull secret
 {: #cluster_global_pull_secret}
 
-With OpenShift Container Platform, you can set up a global image pull secret that each worker node in the cluster can use to pull images from a private registry. 
+With OpenShift Container Platform, you can set up a global image pull secret that each worker node in the cluster can use to pull images from a private registry.
 {: shortdesc}
 
 By default, your {{site.data.keyword.openshiftlong_notm}} cluster has a global image pull secret for the following registries, so that default {{site.data.keyword.openshiftshort}} components can be deployed.
@@ -1312,8 +1312,8 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}
-7.  After the worker nodes are back in a healthy state, verify that the global pull secret is updated on a worker node. 
-    1.  Start a debugging pod to log in to a worker node. Use the **Private IP** that you retrieved earlier for the `<node_name>`. 
+7.  After the worker nodes are back in a healthy state, verify that the global pull secret is updated on a worker node.
+    1.  Start a debugging pod to log in to a worker node. Use the **Private IP** that you retrieved earlier for the `<node_name>`.
         ```
         oc debug node/<node_name>
         ```
