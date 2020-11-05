@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-11-05"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -130,7 +130,9 @@ Subnets provide a channel for connectivity among the worker nodes within the clu
 
 To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, you must attach a public gateway to one or more subnets that the worker nodes are deployed to.
 
-The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. For a list of IP address ranges per VPC zone, see the [VPC default address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes). If you enable your VPC with classic access, or access to classic infrastructure resources, the default IP ranges per VPC zone are different. For more information, see [Classic access VPC default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes).
+The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. For a list of IP address ranges per VPC zone, see the [VPC default address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes).
+
+If you enable classic access when you create your VPC, [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) automatically determine the IP ranges of any subnets that you create. However, the default IP ranges for classic access VPC subnets conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. Instead, you must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for you cluster](/docs/containers?topic=containers-vpc-subnets#classic_access_subnets).
 
 Need to create your cluster by using custom-range subnets? Check out this guidance on [custom address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes). If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets do not overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range).
 {: tip}
@@ -225,7 +227,6 @@ You can use public Kubernetes networking services, such as creating [`LoadBalanc
 
 <br />
 
-
 ## Example scenarios for VPC cluster network setups
 {: #vpc-scenarios}
 
@@ -268,7 +269,6 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 <br />
 
 
-
 ### Scenario: Extend your on-premises data center to a VPC cluster
 {: #vpc-vpn}
 
@@ -303,7 +303,6 @@ After you test your app, you can expose it to the private network by creating a 
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-ha_clusters) and [worker node](/docs/openshift?topic=openshift-planning_worker_nodes) setups, see [Creating VPC Gen 2 compute clusters](/docs/openshift?topic=openshift-clusters).
 
 <br />
-
 
 ## Understanding network basics of classic clusters
 {: #plan_basics}
@@ -410,7 +409,6 @@ Edge worker nodes can improve the security of your cluster by allowing fewer wor
 
 <br />
 
-
 ## Example scenarios for classic cluster network setups
 {: #classic-scenarios}
 
@@ -457,7 +455,6 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 
 <br />
 
-
 ### Scenario: Extend your on-premises data center to a classic cluster and add limited public access
 {: #limited-public}
 
@@ -498,7 +495,5 @@ To provide private access to an app in your cluster, you can create a private ne
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-ha_clusters) and [worker node](/docs/openshift?topic=openshift-planning_worker_nodes) setups, see [Creating clusters](/docs/openshift?topic=openshift-clusters).
 
 <br />
-
-
 
 
