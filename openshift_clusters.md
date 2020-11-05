@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-05"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -195,6 +195,8 @@ After you set up your account to create clusters, decide on the setup for your c
 {: shortdesc}
 
 <p class="note">{{site.data.keyword.openshiftshort}} clusters are available only as standard clusters. You cannot get a [free](/docs/openshift?topic=openshift-faqs#faq_free) {{site.data.keyword.openshiftshort}} cluster.</p>
+
+The following image walks you through choosing the setup that you want for your cluster.
 
 
 <img usemap="#cluster-plan-map" border="0" class="image" src="images/cluster-plan-dt-vpc.png" alt="This image walks you through choosing the setup that you want for your cluster."/>
