@@ -235,39 +235,6 @@ subcollection: openshift
 * [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
 
 
-## Tutorials
-{: #sitemap_tutorials}
-
-
-[Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
-
-[Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial)
-* [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
-* [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
-* [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
-* [Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
-* [Navigating the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
-* [Deploying an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
-* [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
-
-[Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial)
-* [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
-* [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
-* [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
-* [Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
-* [Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
-* [Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
-* [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
-
-[Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
-
-[OpenShift interactive learning portal](https://learn.openshift.com/){: external}
-
-[Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: external}
-
-[IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/){: external}
-
-
 ## Installing the CLI and API
 {: #sitemap_installing_the_cli_and_api}
 
