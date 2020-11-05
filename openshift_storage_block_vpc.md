@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-03"
+lastupdated: "2020-11-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -814,7 +814,7 @@ You might create a custom storage class if you want to:
 
 To create your own storage class:
 
-1. Review the [Storage class reference](#vpc-block-reference) to determine the `profile` that you want to use for your storage class. You can also review the [custom profiles]((/docs/vpc?topic=vpc-block-storage-profiles#custom)) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
+1. Review the [Storage class reference](#vpc-block-reference) to determine the `profile` that you want to use for your storage class. You can also review the [custom profiles](/docs/vpc?topic=vpc-block-storage-profiles#custom) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
 
   If you want to use a pre-installed storage class as a template, you can get the details of a storage class by using the `oc get sc <storageclass> -o yaml` command.
   {: tip}
@@ -907,7 +907,7 @@ To create your own storage class:
 
 5. Verify that your storage class is available in the cluster.
    ```
-   oc get storageclasses 
+   oc get storageclasses
    ```
    {: pre}
 
