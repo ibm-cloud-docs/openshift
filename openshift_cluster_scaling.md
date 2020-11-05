@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-05"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -1042,7 +1042,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
   **Add-on**
   1. Disable the add-on.
     ```
-    ibmcloud oc addon disable cluster-autoscaler --cluster <cluster_name>
+    ibmcloud oc cluster addon disable cluster-autoscaler --cluster <cluster_name>
     ```
     {: pre}
 
