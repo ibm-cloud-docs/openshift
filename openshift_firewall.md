@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -319,7 +319,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
     ```
     {: pre}
 
-2. To allow worker nodes to communicate with the cluster master over the public service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_publicIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
+2. To allow worker nodes to communicate with the cluster master over the public service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_publicIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups. Additionally, if you plan to use Ingress or routes to expose apps in your cluster, allow incoming network traffic through these ports to your worker node IP addresses as well so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
    - `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
    -  Replace <em>&lt;public_IPs&gt;</em> with the public IP addresses of the zones in the region that your cluster is located.<p class="important">You must allow outgoing traffic to port 443 for **all of the zones within the region** to balance the load during the bootstrapping process.</p>
     {: #master_ips}
@@ -344,7 +344,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
           <tr>
              <td>EU Central</td>
              <td>ams03<br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
-             <td><code>169.50.146.82, 169.50.169.110, 169.50.184.18</code><br><code>159.122.150.2, 159.122.141.69</code><br><code>169.51.73.50, 169.51.91.162</code><br><code>159.8.79.250, 159.8.86.149</code><br><br><code>149.81.78.114, 149.81.104.122, 149.81.113.154, 149.81.123.18, 149.81.142.90, 158.177.138.138, 158.177.151.2, 158.177.156.178, 158.177.198.138, 161.156.65.42, 161.156.65.82, 161.156.79.26, 161.156.115.138, 161.156.120.74, 169.50.56.174</code></td>
+             <td><code>169.50.146.82, 169.50.169.110, 169.50.184.18</code><br><code>159.122.150.2, 159.122.141.69</code><br><code>169.51.73.50, 169.51.91.162</code><br><code>159.8.79.250, 159.8.86.149</code><br><br><code>149.81.78.114, 149.81.103.98, 149.81.104.122, 149.81.113.154, 149.81.123.18, 149.81.142.90, 158.177.112.146, 158.177.138.138, 158.177.151.2, 158.177.156.178, 158.177.198.138, 161.156.65.42, 161.156.65.82, 161.156.79.26, 161.156.115.138, 161.156.120.74, 161.156.187.226, 169.50.56.174</code></td>
             </tr>
           <tr>
             <td>UK South</td>
@@ -359,7 +359,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
           <tr>
             <td>US South</td>
             <td>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
-            <td><code>169.57.13.10, 169.57.100.18</code><br><code>169.57.151.10, 169.57.154.98</code><br><code>169.45.67.210, 169.45.88.98</code><br><code>169.62.82.197, 169.62.87.170</code><br><br><code>50.22.129.34, 52.116.231.210, 52.116.254.234, 52.117.28.138, 52.117.197.210, 52.117.232.194, 52.117.240.106, 169.46.7.238, 169.46.24.210, 169.46.27.234, 169.46.68.234, 169.46.110.218, 169.47.70.10, 169.47.71.138, 169.47.109.34, 169.47.209.66, 169.47.229.90, 169.47.232.210, 169.47.239.34, 169.48.110.250, 169.48.143.218, 169.48.161.242, 169.48.230.146, 169.48.244.66, 169.59.219.90, 169.60.128.2, 169.60.170.234, 169.61.29.194, 169.61.60.130, 169.61.175.106, 169.61.177.2, 169.61.228.138, 169.62.166.98, 169.62.189.26, 169.62.206.234, 169.63.47.250</code></td>
+            <td><code>169.57.13.10, 169.57.100.18</code><br><code>169.57.151.10, 169.57.154.98</code><br><code>169.45.67.210, 169.45.88.98</code><br><code>169.62.82.197, 169.62.87.170</code><br><br><code>50.22.129.34, 52.116.231.210, 52.116.254.234, 52.117.28.138, 52.117.197.210, 52.117.232.194, 52.117.240.106, 169.46.7.238, 169.46.24.210, 169.46.27.234, 169.46.68.234, 169.46.89.50, 169.46.110.218, 169.47.70.10, 169.47.71.138, 169.47.109.34, 169.47.209.66, 169.47.229.90, 169.47.232.210, 169.47.239.34, 169.48.110.250, 169.48.143.218, 169.48.161.242, 169.48.230.146, 169.48.244.66, 169.59.219.90, 169.60.128.2, 169.60.170.234, 169.61.29.194, 169.61.60.130, 169.61.28.66, 169.61.175.106, 169.61.177.2, 169.61.228.138, 169.62.166.98, 169.62.189.26, 169.62.206.234, 169.63.39.66, 169.63.47.250</code></td>
           </tr>
           </tbody>
         </table>
@@ -382,8 +382,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
       </tr>
       <tr>
         <td>AP North</td>
-        <td><code>jp.icr.io</code><br><br>
-        Deprecated: <code>registry.au-syd.bluemix.net</code></td>
+        <td><code>jp.icr.io</code></td>
         <td><code>161.202.146.86/29</code></br><code>128.168.71.70/29</code></br><code>165.192.71.222/29</code></td>
       </tr>
       <tr>
@@ -427,6 +426,8 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 7. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. {{site.data.keyword.openshiftlong_notm}} uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
+8. If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} on port 80 to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
+
 </br>
 
 ### Opening required ports in a private firewall
@@ -469,7 +470,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
           <tr>
              <td>EU Central</td>
              <td>ams03<br><br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
-             <td><code>166.9.28.17, 166.9.28.95, 166.9.30.11, 166.9.32.26</code><br><code>166.9.28.20, 166.9.30.12, 166.9.32.27</code><br><code>166.9.32.8, 166.9.32.28</code><br><code>166.9.28.19, 166.9.28.22, 166.9.28.24</code><br><br><code>166.9.28.23, 166.9.28.43, 166.9.28.59, 166.9.28.92, 166.9.28.94, 166.9.30.13, 166.9.30.22, 166.9.30.43, 166.9.30.55, 166.9.30.56, 166.9.32.20, 166.9.32.45, 166.9.32.53, 166.9.32.56, 166.9.32.9</code></td>
+             <td><code>166.9.28.17, 166.9.28.95, 166.9.30.11, 166.9.32.26</code><br><code>166.9.28.20, 166.9.30.12, 166.9.32.27</code><br><code>166.9.32.8, 166.9.32.9, 166.9.32.28</code><br><code>166.9.28.19, 166.9.28.22, 166.9.28.24</code><br><br><code>166.9.28.23, 166.9.28.43, 166.9.28.59, 166.9.28.92, 166.9.28.94, 166.9.28.107, 166.9.30.13, 166.9.30.22, 166.9.30.43, 166.9.30.55, 166.9.30.56, 166.9.30.100, 166.9.32.20, 166.9.32.45, 166.9.32.53, 166.9.32.56, 166.9.32.88</code></td>
           </tr>
           <tr>
             <td>UK South</td>
@@ -484,7 +485,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
           <tr>
             <td>US South</td>
             <td>hou02<br>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
-            <td><code>166.9.15.74</code><br><code>166.9.15.76, 166.9.16.38</code><br><code>166.9.12.143, 166.9.16.5</code><br><code>166.9.12.144, 166.9.16.39</code><br><code>166.9.15.75, 166.9.12.26</code><br><br><code>166.9.12.140, 166.9.12.141, 166.9.12.142, 166.9.12.151, 166.9.12.193, 166.9.12.196, 166.9.12.99, 166.9.13.31, 166.9.13.93, 166.9.13.94, 166.9.14.122, 166.9.14.125, 166.9.14.202, 166.9.14.204, 166.9.14.205, 166.9.14.95, 166.9.15.130, 166.9.15.69, 166.9.15.70, 166.9.15.71, 166.9.15.72, 166.9.15.73, 166.9.16.113, 166.9.16.137, 166.9.16.149, 166.9.16.183, 166.9.16.184, 166.9.16.185, 166.9.17.2, 166.9.17.35, 166.9.17.37, 166.9.17.39, 166.9.48.50, 166.9.48.76, 166.9.51.16, 166.9.51.54, 166.9.58.11, 166.9.58.16</code></td>
+            <td><code>166.9.15.74</code><br><code>166.9.15.76, 166.9.16.38</code><br><code>166.9.12.143, 166.9.16.5</code><br><code>166.9.12.144, 166.9.16.39</code><br><code>166.9.15.75, 166.9.12.26</code><br><br><code>166.9.12.140, 166.9.12.141, 166.9.12.142, 166.9.12.151, 166.9.12.193, 166.9.12.196, 166.9.12.99, 166.9.13.31, 166.9.13.93, 166.9.13.94, 166.9.14.122, 166.9.14.125, 166.9.14.202, 166.9.14.204, 166.9.14.205, 166.9.14.95, 166.9.15.130, 166.9.15.69, 166.9.15.70, 166.9.15.71, 166.9.15.72, 166.9.15.73, 166.9.16.113, 166.9.16.137, 166.9.16.149, 166.9.16.183, 166.9.16.184, 166.9.16.185, 166.9.17.2, 166.9.17.35, 166.9.17.37, 166.9.17.39, 166.9.48.50, 166.9.48.76, 166.9.48.124, 166.9.51.16, 166.9.51.54, 166.9.51.74, 166.9.58.11, 166.9.58.16, 166.9.58.65</code></td>
           </tr>
           </tbody>
         </table>

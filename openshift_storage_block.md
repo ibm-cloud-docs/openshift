@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -320,14 +320,11 @@ Make sure to choose your storage configuration carefully to have enough capacity
 
 <br />
 
-## Setting up encryption for {{site.data.keyword.blockstorageshort}} (beta)
+## Setting up encryption for {{site.data.keyword.blockstorageshort}}
 {: #block_encryption_setup}
 
 You can set up encryption for {{site.data.keyword.blockstorageshort}} by using {{site.data.keyword.keymanagementservicelong_notm}}.
 {: shortdesc}
-
-Encryption for {{site.data.keyword.blockstorageshort}} is a beta feature. This feature might be unavailable or change without prior notification. Do not use this feature for production workloads.
-{: beta}
 
 The following example explains how to create a service ID with the required access roles for {{site.data.keyword.keymanagementserviceshort}} and your cluster. The credentials of this service ID are used to enable encryption for your {{site.data.keyword.blockstorageshort}} volumes.
 
@@ -433,13 +430,13 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     If you installed the plug-in without using Helm, you must manually remove the block storage plug-in deployment and all associated resources before installing a new version.
     {: note}
     ```
-    helm uninstall <release_name> <namespace>
+    helm uninstall <name> <namespace>
     ```
     {: pre}
   
   12. Install the `ibmcloud-block-storage-plugin` Helm chart.
     ```
-    helm install <release_name> iks-charts/ibmcloud-block-storage-plugin
+    helm install <name> iks-charts/ibmcloud-block-storage-plugin
     ```
     {: pre}
 

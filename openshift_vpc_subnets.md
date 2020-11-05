@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-11-05"
 
 keywords: openshift, roks, rhoks, rhos, ips, vlans, networking, public gateway
 
@@ -130,11 +130,14 @@ Keep in mind the following IP address reservations.
 
 **What IP ranges can I use for my VPC subnets?**<br>
 {: #vpc-ip-range}
-The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. For a list of IP address ranges per VPC zone, see the [VPC default address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes). If you enable your VPC with classic access, or access to classic infrastructure resources, the default IP ranges per VPC zone are different. For more information, see [Classic access VPC default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes).
+The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. For a list of IP address ranges per VPC zone, see the [VPC default address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes).
 
 If you need to create your cluster by using custom-range subnets, see the guidance for [custom address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes). However, if you use custom-range subnets for your worker nodes, you must ensure that the IP range for the worker node subnets do not overlap with your cluster's pod subnet.
 * If you specified your own pod subnet in the `--pod-subnet` flag during cluster creation, your pods are assigned IP addresses from this range.
-* If you did not specify a custom pod subnet during cluster creation, your cluster uses the default pod subnet. In the first cluster that you create in a Gen 2 VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet.
+* If you did not specify a custom pod subnet during cluster creation, your cluster uses the default pod subnet.In the first cluster that you create in a Gen 2 VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet.
+
+**How do I create subnets for classic infrastructure access?**<br>
+If you enable classic access when you create your VPC, [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) automatically determine the IP ranges of any subnets that you create. However, the default IP ranges for classic access VPC subnets conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. Instead, you must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for you cluster](#classic_access_subnets).
 
 **Can I specify subnets for pods and services in my cluster?**
 
@@ -196,9 +199,9 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 * If you have worker nodes that are attached to an existing subnet in a zone, you cannot change the subnet for that zone in the cluster.
 * The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 * Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone.
+* The [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. You must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for you cluster](#classic_access_subnets).
 
 <br />
-
 
 ## Creating a VPC subnet and attaching a public gateway
 {: #create_vpc_subnet}
@@ -212,7 +215,7 @@ Create a VPC subnet for your cluster and optionally attach a public gateway to t
 Use the {{site.data.keyword.cloud_notm}} console to create a VPC subnet for your cluster and optionally attach a public gateway to the subnet.
 {: shortdesc}
 
-1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets), click **New subnet**.
+1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets), click **Create**.
 2. Enter a name for your subnet and select the name of the VPC that you created.
 3. Select the location and zone where you want to create the subnet.
 4. Specify the number of IP addresses to create.
@@ -316,5 +319,4 @@ Use the {{site.data.keyword.cloud_notm}} CLI to create a VPC subnet for your clu
 
 
 5. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
-
 

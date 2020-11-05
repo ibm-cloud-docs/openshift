@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-05"
 
 keywords: openshift
 subcollection: openshift
@@ -144,6 +144,7 @@ subcollection: openshift
   * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-arch#pi-storage)
   * [Where is my information stored?](/docs/openshift?topic=openshift-service-arch#pi-location)
   * [How can I remove my information?](/docs/openshift?topic=openshift-service-arch#pi-removal)
+  * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-arch#pi-rh-telemetry)
 * [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-service-arch#dependencies-ibmcloud)
 * [Dependencies to 3rd party services](/docs/openshift?topic=openshift-service-arch#dependencies-3rd-party)
 
@@ -232,39 +233,6 @@ subcollection: openshift
 * [Container isolation and security](/docs/openshift?topic=openshift-security#container)
 * [Storing personal information](/docs/openshift?topic=openshift-security#pi)
 * [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
-
-
-## Tutorials
-{: #sitemap_tutorials}
-
-
-[Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
-
-[Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial)
-* [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
-* [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
-* [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
-* [Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
-* [Navigating the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
-* [Deploying an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
-* [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
-
-[Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial)
-* [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
-* [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
-* [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
-* [Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
-* [Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
-* [Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
-* [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
-
-[Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
-
-[OpenShift interactive learning portal](https://learn.openshift.com/){: external}
-
-[Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: external}
-
-[IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/){: external}
 
 
 ## Installing the CLI and API
@@ -564,16 +532,6 @@ subcollection: openshift
 {: #sitemap_vpc_clusters}
 
 
-[VPC: Opening required ports and IP addresses in other network firewalls](/docs/openshift?topic=openshift-vpc-firewall)
-* [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
-  * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
-  * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
-  * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
-  * [Allowing access to the {{site.data.keyword.openshiftshort}} image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
-* [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
-  * [Allowing ingress from a cluster to another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_ingress)
-  * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
-
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
 * [Overview](/docs/openshift?topic=openshift-vpc-network-policy#overview)
   * [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
@@ -587,6 +545,16 @@ subcollection: openshift
 * [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
   * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-network-policy#services_one_ns)
   * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-network-policy#services_across_ns)
+
+[VPC: Opening required ports and IP addresses in other network firewalls](/docs/openshift?topic=openshift-vpc-firewall)
+* [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
+  * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
+  * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
+  * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
+  * [Allowing access to the {{site.data.keyword.openshiftshort}} image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
+* [Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
+  * [Allowing ingress from a cluster to another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_ingress)
+  * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
 
 
 ## Managing the cluster network
@@ -693,6 +661,8 @@ subcollection: openshift
 * [Worker node states](/docs/openshift?topic=openshift-health#states_workers)
 
 [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
+
+[Disabling remote health reporting](/docs/openshift?topic=openshift-health#oc_disable_telemetry_reports)
 
 
 ## Setting up an image build pipeline
@@ -1154,7 +1124,7 @@ subcollection: openshift
 [Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage)
 * [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
 * [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
-* [Setting up encryption for {{site.data.keyword.blockstorageshort}} (beta)](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
+* [Setting up encryption for {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
   * [Encrypting volume data by using a custom storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
   * [Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret](/docs/openshift?topic=openshift-block_storage#pvc_encrypt_label)
   * [Verifying the encryption of your {{site.data.keyword.blockstorageshort}} volumes](/docs/openshift?topic=openshift-block_storage#block_encrypt)
@@ -1181,11 +1151,13 @@ subcollection: openshift
 * [Adding {{site.data.keyword.block_storage_is_short}} to your apps](/docs/openshift?topic=openshift-vpc-block#vpc-block-add)
 * [Using an existing {{site.data.keyword.block_storage_is_short}} instance](/docs/openshift?topic=openshift-vpc-block#vpc-block-static)
 * [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
-* [Creating {{site.data.keyword.block_storage_is_short}} with a different file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-xfs)
 * [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
 * [Customizing the default storage settings](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default)
-  * [Customizing a storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
+  * [Creating a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
+  * [Verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify)
   * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
+  * [Enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret)
+  * [Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/openshift?topic=openshift-vpc-block#static-secret)
 * [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
 * [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
 * [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup)
@@ -1785,7 +1757,7 @@ subcollection: openshift
 * [Unable to create or delete worker nodes or clusters](/docs/openshift?topic=openshift-cs_troubleshoot#infra_errors)
   * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot#cs_credentials)
   * [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-cs_troubleshoot#orphaned)
-  * [Unable to create or delete worker nodes due to paid account error](/docs/openshift?topic=openshift-cs_troubleshoot#cs_totp)
+  * [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-cs_troubleshoot#cs_totp)
 * [Unable to create a cluster in the console due to `No VPC is available` error](/docs/openshift?topic=openshift-cs_troubleshoot#ts_no_vpc)
 * [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create)
 * [Cluster create error cannot pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-cs_troubleshoot#ts_image_pull_create)
@@ -1801,7 +1773,7 @@ subcollection: openshift
 * [Unable to create or delete worker nodes or clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#infra_errors)
   * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_credentials)
   * [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned)
-  * [Unable to create or delete worker nodes due to paid account error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_totp)
+  * [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_totp)
 * [Cannot add worker nodes due to an invalid VLAN ID](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#suspended)
 * [Replacing a worker node does not create a worker node](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off)
 * [Accessing your worker node with SSH fails](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_ssh_worker)
