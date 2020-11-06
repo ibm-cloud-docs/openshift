@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-06"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -136,7 +136,6 @@ This tutorial is for cluster administrators who want to learn how to create a {{
 
 <br />
 
-
 ## Creating a {{site.data.keyword.openshiftlong_notm}} cluster
 {: #openshift_create_cluster}
 {: step}
@@ -186,7 +185,6 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     {: tip}
 
 <br />
-
 
 ## Navigating the {{site.data.keyword.openshiftshort}} console
 {: #openshift_oc_console}
@@ -255,9 +253,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     </table><p></p>
 3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.
 
-
 <br />
-
 
 ## Deploying an app to your {{site.data.keyword.openshiftshort}} cluster
 {: #openshift_deploy_app}
@@ -362,7 +358,6 @@ If you took a break from the last lesson and started a new terminal, make sure t
 
 
 <br />
-
 
 ## What's next?
 {: #openshift_next}

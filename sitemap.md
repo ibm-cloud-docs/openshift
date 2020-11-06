@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-06"
 
 keywords: openshift
 subcollection: openshift
@@ -715,7 +715,7 @@ subcollection: openshift
   * [What if I want my app configuration to use variables? How do I add these to the YAML?](/docs/openshift?topic=openshift-plan_deploy#variables)
   * [How can I make sure that my app has the right resources?](/docs/openshift?topic=openshift-plan_deploy#resources)
   * [How can I add capabilities to my app configuration?](/docs/openshift?topic=openshift-plan_deploy#capabilities)
-  * [How can I add IBM services to my app, such as Watson?](/docs/openshift?topic=openshift-plan_deploy#services_ibm)
+  * [How can I add IBM services to my app, such as {{site.data.keyword.watson}}?](/docs/openshift?topic=openshift-plan_deploy#services_ibm)
 * [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
   * [How can I increase the availability of my app?](/docs/openshift?topic=openshift-plan_deploy#increase_availability)
 * [Versioning and updating apps](/docs/openshift?topic=openshift-plan_deploy#updating)
@@ -1259,9 +1259,9 @@ subcollection: openshift
 * [Overview of Cloud Pak offerings](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_pak_ov)
 * [Adding IBM Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_add)
 * [Assigning a Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_assign)
-* [FAQs for Cloud Pak on Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-openshift_cloud_paks#faq_cloud_paks)
-  * [How do I install a Cloud Pak in my Red Hat OpenShift on IBM Cloud cluster? How do I access it later?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_manage)
-  * [Can I use the OpenShift entitlement that comes with my Cloud Pak for my cluster?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_byo_entitlement)
+* [FAQs for Cloud Pak on {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_cloud_paks#faq_cloud_paks)
+  * [How do I install a Cloud Pak in my {{site.data.keyword.openshiftlong_notm}} cluster? How do I access it later?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_manage)
+  * [Can I use the {{site.data.keyword.openshiftshort}} entitlement that comes with my Cloud Pak for my cluster?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_byo_entitlement)
   * [What is included in a Cloud Pak?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_included)
   * [What else do I need to know to use Cloud Paks?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_paks_other)
 

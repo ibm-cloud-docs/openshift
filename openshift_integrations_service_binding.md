@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-11-06"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -94,7 +95,7 @@ subcollection: openshift
 # Adding services by using IBM Cloud service binding
 {: #service-binding}
 
-Add {{site.data.keyword.cloud_notm}} services to enhance your {{site.data.keyword.openshiftshort}} cluster with extra capabilities in areas such as Watson AI, data, security, and Internet of Things (IoT).
+Add {{site.data.keyword.cloud_notm}} services to enhance your {{site.data.keyword.openshiftshort}} cluster with extra capabilities in areas such as {{site.data.keyword.watson}} AI, data, security, and Internet of Things (IoT).
 {: shortdesc}
 
 **What types of services can I bind to my cluster?** </br>
@@ -682,5 +683,4 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
      ibmcloud service delete <service_name>
      ```
      {: pre}
-
 

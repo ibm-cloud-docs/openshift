@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-11-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -94,7 +95,7 @@ subcollection: openshift
 # Government use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_gov}
 
-These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} benefit from the public cloud. These workloads are isolated in global regions for data sovereignty, use Watson machine learning instead of net-new code, and connect to on-premises databases.
+These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} benefit from the public cloud. These workloads are isolated in global regions for data sovereignty, use {{site.data.keyword.watson}} machine learning instead of net-new code, and connect to on-premises databases.
 {: shortdesc}
 
 ## Regional government improves collaboration and velocity with community Developers who combine public-private data
@@ -167,7 +168,7 @@ Technical solution:
 * Adopt the agile and iterative development practices from the IBM Garage Method to enable frequent releases of features, patches, and fixes without downtime.
 * Whether developers are in the public or private sector, {{site.data.keyword.contdelivery_full}} helps them to quickly provision an integrated toolchain, by using customizable, shareable templates.
 * After Developers build and test the apps in their Dev and Test clusters, they use the {{site.data.keyword.contdelivery_full}} toolchains to deploy apps into production clusters.
-* With Watson AI, machine learning, and deep learning tools available from the {{site.data.keyword.cloud_notm}} catalog, Developers focus on domain problems. Instead of custom unique ML code, ML logic is snapped into apps with service bindings.
+* With {{site.data.keyword.watson}} AI, machine learning, and deep learning tools available from the {{site.data.keyword.cloud_notm}} catalog, Developers focus on domain problems. Instead of custom unique ML code, ML logic is snapped into apps with service bindings.
 
 **Results**
 * Normally slow public-private partnerships now quickly spin up apps in weeks instead of months. These development partnerships now deliver features and bug fixes up to 10 times per week.
@@ -252,6 +253,5 @@ Technical solution:
 * Shipping customers and government officials have access to manifest data and can share customs data, while they comply with local regulations.
 * The shipping company benefits from improved logistics management in the supply chain: reduced costs and faster clearance times.
 * 99% are digital declarations, and 90% of imports processed without human intervention.
-
 
 

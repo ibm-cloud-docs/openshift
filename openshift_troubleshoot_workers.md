@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-04"
+lastupdated: "2020-11-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -150,12 +150,20 @@ Review the options to debug your worker nodes and find the root causes for failu
         </td>
        </tr>
        <tr>
+       <td>`Deleting`</td>
+       <td>You requested to delete the worker node, possibly as part of resizing a worker pool or autoscaling the cluster. Other operations cannot be issued against the worker node while the worker node deletes. You cannot reverse the deletion process. When the deletion process completes, you are no longer billed for the worker nodes.</td>
+       </tr>
+       <tr>
+       <td>`Deleted`</td>
+       <td>Your worker node is deleted, and no longer is listed in the cluster or billed. This state cannot be undone. Any data that was stored only on the worker node, such as container images, are also deleted.</td>
+       </tr>
+       <tr>
        <td>`Deployed`</td>
        <td>Updates are successfully deployed to your worker node. After updates are deployed, {{site.data.keyword.openshiftlong_notm}} starts a health check on the worker node. After the health check is successful, the worker node goes into a <code>Normal</code> state. Worker nodes in a <code>Deployed</code> state usually are ready to receive workloads, which you can check by running <code>oc get nodes</code> and confirming that the state shows <code>Normal</code>. </td>
        </tr>
         <tr>
           <td>`Deploying`</td>
-          <td>When you update the Kubernetes version of your worker node, your worker node is redeployed to install the updates. If you reload or reboot your worker node, the worker node is redeployed to automatically install the latest patch version. If your worker node is stuck in this state for a long time, continue with the next step to see whether a problem occurred during the deployment. </td>
+          <td>When you update the Kubernetes version of your worker node, your worker node is redeployed to install the updates. If you reload or reboot your worker node, the worker node is redeployed to automatically install the latest patch version. If your worker node is stuck in this state for a long time, check whether a problem occurred during the deployment. </td>
        </tr>
        <tr>
          <td>`Deploy_failed`</td>
@@ -166,12 +174,17 @@ Review the options to debug your worker nodes and find the root causes for failu
           <td>Your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. **Note**: Although the worker nodes might be normal, other infrastructure resources, such as [networking](/docs/openshift?topic=openshift-cs_troubleshoot_network) and [storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage), might still need attention.</td>
        </tr>
      <tr>
+          <td>`Provisioned`</td>
+          <td>Your worker node completed provisioning and is part of the cluster. Billing for the worker node begins. The worker node state soon reports a regular health state and status, such as `normal` and `ready`.</td>
+        </tr>
+     <tr>
+     <tr>
           <td>`Provisioning`</td>
-          <td>Your worker node is being provisioned and is not available in the cluster yet. You can monitor the provisioning process in the <strong>Status</strong> column of your CLI output. If your worker node is stuck in this state for a long time, continue with the next step to see whether a problem occurred during the provisioning.</td>
+          <td>Your worker node is being provisioned and is not available in the cluster yet. You can monitor the provisioning process in the <strong>Status</strong> column of your CLI output. If your worker node is stuck in this state for a long time, check whether a problem occurred during the provisioning.</td>
         </tr>
      <tr>
           <td>`Provision pending`</td>
-          <td>Another process is completing before the worker node provisioning process starts. You can monitor the other process that must complete first in the <strong>Status</strong> column of your CLI output. For example, in VPC clusters, the `Pending security group creation` indicates that the security group for your worker nodes is creating first before the worker nodes can be provisioned. If your worker node is stuck in this state for a long time, continue with the next step to see whether a problem occurred during the other process.</td>
+          <td>Another process is completing before the worker node provisioning process starts. You can monitor the other process that must complete first in the <strong>Status</strong> column of your CLI output. For example, in VPC clusters, the `Pending security group creation` indicates that the security group for your worker nodes is creating first before the worker nodes can be provisioned. If your worker node is stuck in this state for a long time, check whether a problem occurred during the other process.</td>
      </tr>
         <tr>
           <td>`Provision_failed`</td>
@@ -179,7 +192,7 @@ Review the options to debug your worker nodes and find the root causes for failu
         </tr>
      <tr>
           <td>`Reloading`</td>
-          <td>Your worker node is being reloaded and is not available in the cluster. You can monitor the reloading process in the <strong>Status</strong> column of your CLI output. If your worker node is stuck in this state for a long time, continue with the next step to see whether a problem occurred during the reloading.</td>
+          <td>Your worker node is being reloaded and is not available in the cluster. You can monitor the reloading process in the <strong>Status</strong> column of your CLI output. If your worker node is stuck in this state for a long time, check whether a problem occurred during the reloading.</td>
          </tr>
          <tr>
           <td>`Reloading_failed`</td>

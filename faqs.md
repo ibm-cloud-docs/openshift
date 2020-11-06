@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-06"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
@@ -311,7 +311,7 @@ To find detailed pricing information for the service, see [{{site.data.keyword.o
 {: faq}
 {: support}
 
-With {{site.data.keyword.openshiftlong_notm}} clusters, you can use IBM Cloud infrastructure compute, networking, and storage resources with platform services such as Watson AI or Compose Database-as-a-Service. Each resource might entail its own charges that can be [fixed, metered, tiered, or reserved](/docs/billing-usage?topic=billing-usage-charges#charges).
+With {{site.data.keyword.openshiftlong_notm}} clusters, you can use IBM Cloud infrastructure compute, networking, and storage resources with platform services such as {{site.data.keyword.watson}} AI or Compose Database-as-a-Service. Each resource might entail its own charges that can be [fixed, metered, tiered, or reserved](/docs/billing-usage?topic=billing-usage-charges#charges).
 * [Worker nodes](#nodes)
 * [Compute licenses](#licenses)
 * [Outbound networking](#bandwidth)
@@ -414,3 +414,4 @@ You can check your current usage and estimated monthly totals for your {{site.da
 {: faq}
 
 Yes, you can add tags to your cluster to help organize your {{site.data.keyword.cloud_notm}} resources such as for billing purposes. For more information, see [Adding tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags).
+
