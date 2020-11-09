@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-03"
+lastupdated: "2020-11-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -126,7 +126,7 @@ Review the minimum permissions in {{site.data.keyword.cloud_notm}} IAM that the 
 <dd>In addition to the API key, each individual user must have the following permissions to create a cluster.<ul>
 <li>**Administrator** platform role for **Kubernetes Service** in the console (**containers-kubernetes** in the API or CLI). If your access is scoped to a resource group or region, you must also have the **Viewer** platform role at the **Account** level to view the account's VLANs.</li>
 <li>**Administrator** platform role for **Container Registry** in the console (**container-registry** in the API or CLI) at the **Account** level.</li>
-  <li>**Administrator** platform role for **Cloud Object Storage** in the console (**cos** in the API or CLI) for the standard instance that you want to use to back up the internal registry images in a VPC cluster.</li>
+<li>**Administrator** platform role for **Cloud Object Storage** in the console (**cos** in the API or CLI) for the standard instance that you want to use to back up the internal registry images in a VPC cluster.</li>
 <li>**Viewer** platform role for the resource group access.</li></ul></dd>
 </dl>
 
