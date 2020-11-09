@@ -293,7 +293,7 @@ The following steps present a general process to manage costs for your {{site.da
     * [Size your cluster to support your workloads](/docs/openshift?topic=openshift-strategy#sizing), including the network bandwidth that your workloads need.
     * [Decide the cluster environment that you want](/docs/openshift?topic=openshift-strategy#kube_env).
     * [Consider the availability that you want for your cluster](/docs/openshift?topic=openshift-ha_clusters). For example, a basic high availability setup is one multizone cluster with three worker nodes in each of three zones, for a minimum total of nine worker nodes.
-3.  Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](costs-for-clusters).
+3.  Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
 4.  [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.openshiftlong_notm}} Pricing plans](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}. 
 5.  Manage the lifecycle of your cluster to control costs.
     * Consider [enabling the cluster autoscaler](/docs/openshift?topic=openshift-ca) to automatically add or remove worker nodes in response to your cluster workload resource requets.
