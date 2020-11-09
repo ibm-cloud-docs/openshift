@@ -1307,6 +1307,28 @@ subcollection: openshift
 * [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
 
 
+## Managing costs for your clusters
+{: #sitemap_managing_costs_for_your_clusters}
+
+
+[Managing costs for your clusters](/docs/openshift?topic=openshift-costs)
+
+[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs#costs-for-clusters)
+* [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
+* [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
+* [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
+* [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
+* [Default storage for images](/docs/openshift?topic=openshift-costs#storage_images)
+* [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
+* [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
+* [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
+* [VPC Generation 2 compute worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
+
+[Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
+
+[Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
+
+
 ## OpenShift Container Platform documentation
 
 [OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
@@ -1729,19 +1751,7 @@ subcollection: openshift
 
 [Does IBM support third-party and open source tools that I use with my cluster?](/docs/openshift?topic=openshift-faqs#faq_thirdparty_oss)
 
-[Where can I find more information about {{site.data.keyword.openshiftlong_notm}} pricing models?](/docs/openshift?topic=openshift-faqs#pricing)
-
-[What am I charged for when I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#charges)
-
-[What are the regional uplift charges and sustained usage discounts for VPC Generation 2 compute worker nodes?](/docs/openshift?topic=openshift-faqs#charges_vpc_gen2)
-
-[Are my platform and infrastructure resources consolidated in one bill?](/docs/openshift?topic=openshift-faqs#bill)
-
-[Can I estimate my costs?](/docs/openshift?topic=openshift-faqs#cost_estimate)
-
-[Can I view my current usage?](/docs/openshift?topic=openshift-faqs#usage)
-
-[Can I add tags to my cluster?](/docs/openshift?topic=openshift-faqs#faq_tags)
+[What am I charged for? Can I estimate and control costs in my cluster?](/docs/openshift?topic=openshift-faqs#charges)
 
 
 ## Troubleshooting clusters
