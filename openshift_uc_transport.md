@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-11-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -95,7 +96,7 @@ subcollection: openshift
 {: #cs_uc_transport}
 
 These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} can
-take advantage of toolchains for rapid app updates and multiregion deployments across the globe. At the same time, these workloads can connect to existing back-end systems, use Watson AI for personalization, and access IOT data with {{site.data.keyword.messagehub_full}}.
+take advantage of toolchains for rapid app updates and multiregion deployments across the globe. At the same time, these workloads can connect to existing back-end systems, use {{site.data.keyword.watson}} AI for personalization, and access IOT data with {{site.data.keyword.messagehub_full}}.
 
 {: shortdesc}
 
@@ -131,7 +132,7 @@ The solution is made up of these primary components:
 
 For the shipping company to work with global partners, the routing and scheduling systems required local modifications to fit each region’s language, regulations, and unique port logistics. {{site.data.keyword.openshiftlong_notm}} offers global coverage in multiple regions, including North America, Europe, Asia, and Australia so that the apps reflected the needs of its partners, in each country.
 
-IoT devices stream data that {{site.data.keyword.messagehub_full}} distributes to the regional port apps and associated Customs and Container manifest data stores. {{site.data.keyword.messagehub_full}} is landing point for IoT events. It  distributes the events based on the managed connectivity that the Watson IoT Platform offers to {{site.data.keyword.messagehub_full}}.
+IoT devices stream data that {{site.data.keyword.messagehub_full}} distributes to the regional port apps and associated Customs and Container manifest data stores. {{site.data.keyword.messagehub_full}} is landing point for IoT events. It  distributes the events based on the managed connectivity that the {{site.data.keyword.watson}} IoT Platform offers to {{site.data.keyword.messagehub_full}}.
 
 After events are in {{site.data.keyword.messagehub_full}}, they're persisted for immediate use in port transit apps and for any point in the future. Apps that require the lowest latency directly consume in real time from the event stream ({{site.data.keyword.messagehub_full}}). Other future apps, such as analytics tools, can choose to consume in a batch mode from the event store with {{site.data.keyword.cos_full}}.
 
@@ -194,11 +195,11 @@ Technical solution:
 An HR Exec (CHRO) needs a new HR benefits site with an innovative chatbot, but current Development tools and platform mean long lead times for apps to go live. This situation includes long waits for hardware procurement.
 {: shortdesc}
 
-Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} provides easy spin-up of compute. Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their traditional software development tools get a boost when they add on IBM Watson Assistant. The new benefits site was created in less than 3 weeks.
+Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} provides easy spin-up of compute. Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their traditional software development tools get a boost when they add on IBM {{site.data.keyword.watson}} Assistant. The new benefits site was created in less than 3 weeks.
 
 Key technologies:    
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [Chatbot service powered by Watson](https://developer.ibm.com/patterns/create-cognitive-banking-chatbot/)
+* [Chatbot service powered by {{site.data.keyword.watson}}](https://developer.ibm.com/patterns/create-cognitive-banking-chatbot/)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
 
@@ -221,7 +222,7 @@ They need a solution that helps the Developers and their users:
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
-* IBM Watson Assistant and Tone Analyzer
+* IBM {{site.data.keyword.watson}} Assistant and Tone Analyzer
 * {{site.data.keyword.contdelivery_full}}
 * IBM Logging and Monitoring
 * {{site.data.keyword.SecureGatewayfull}}
@@ -245,8 +246,8 @@ With {{site.data.keyword.openshiftlong_notm}}, they went from over-built hardwar
 * Chatbot conversations fed back into HR policies, allowing the benefits site to reflect which benefits were most and least popular, including targeted improvements to poorly performing initiatives.
 
 **Step 3: Chatbot and personalization**
-* IBM Watson Assistant provides tools to quickly scaffold a chatbot that can provide the right benefits information to users.
-* Watson Tone Analyzer ensures that customers are satisfied with the chatbot conversations and take human intervention when necessary.
+* IBM {{site.data.keyword.watson}} Assistant provides tools to quickly scaffold a chatbot that can provide the right benefits information to users.
+* {{site.data.keyword.watson}} Tone Analyzer ensures that customers are satisfied with the chatbot conversations and take human intervention when necessary.
 
 **Step 4: Deliver continuously across the globe**
 * {{site.data.keyword.contdelivery_full}} helps Developers to quickly provision an integrated toolchain, by using customizable, shareable templates with tools from IBM, third parties, and open source. Automate builds and tests, controlling quality with analytics.
@@ -259,6 +260,5 @@ With {{site.data.keyword.openshiftlong_notm}}, they went from over-built hardwar
 * Authenticity with personalization in the site addressed the changing expectations of the airline’s workforce today.
 * Last-minute updates to the HR site, including ones that driven by the employees chatbot conversations, went live quickly because Developers were pushing changes at least 10 times daily.
 * With infrastructure management taken care of by IBM, the Development team was freed up to deliver the site in only 3 weeks.
-
 
 

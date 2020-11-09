@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-11-06"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -120,7 +121,7 @@ Your containerized app must be able to run on the supported operating system, RH
 ### What are some guidelines for developing stateless, cloud-native apps?
 {: #12factor}
 
-Check out the [Twelve-Factor App](https://12factor.net/){: external}, a language-agnostic methodology for considering how to develop your app across 12 factors, summarized as follows.
+Check out the [Twelve-Factor App](https://12factor.net/){: external}, a language-neutral methodology for considering how to develop your app across 12 factors, summarized as follows.
 {: shortdesc}
 
 1.  **Codebase**: Use a single codebase in a version control system for your deployments. When you pull an image for your container deployment, specify a tested image tag instead of using `latest`.
@@ -244,7 +245,6 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 
 <br />
-
 
 ## Understanding Kubernetes objects for apps
 {: #kube-objects}
@@ -383,13 +383,12 @@ See [Specifying your app requirements in your YAML file](/docs/openshift?topic=o
 * [Secrets](/docs/openshift?topic=openshift-openshift_apps#secret) to set container environment variables
 * [Persistent volumes](/docs/openshift?topic=openshift-openshift_apps#pv) that are mounted to the container for storage
 
-### How can I add IBM services to my app, such as Watson?
+### How can I add IBM services to my app, such as {{site.data.keyword.watson}}?
 {: #services_ibm}
 
 See [Adding services to apps](/docs/openshift?topic=openshift-service-binding#adding_app).
 
 <br />
-
 
 ## Planning highly available deployments
 {: #highly_available_apps}
@@ -447,7 +446,6 @@ If you want to dynamically add and remove apps in response to workload usage, se
 {: shortdesc}
 
 <br />
-
 
 ## Versioning and updating apps
 {: #updating}
@@ -515,7 +513,6 @@ If you want to run your app in multiple clusters, public and private environment
 </dl>
 
 <br />
-
 
 ## Setting up service discovery
 {: #service_discovery}
@@ -588,6 +585,5 @@ Want to control access at the application level? To create a sign-on flow that y
 
 You can set up {{site.data.keyword.cloud_notm}} [logging and monitoring](/docs/containers?topic=containers-health) for your cluster.
 {: shortdesc}
-
 
 

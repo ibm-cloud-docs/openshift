@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-09"
 
 keywords: openshift
 subcollection: openshift
@@ -715,7 +715,7 @@ subcollection: openshift
   * [What if I want my app configuration to use variables? How do I add these to the YAML?](/docs/openshift?topic=openshift-plan_deploy#variables)
   * [How can I make sure that my app has the right resources?](/docs/openshift?topic=openshift-plan_deploy#resources)
   * [How can I add capabilities to my app configuration?](/docs/openshift?topic=openshift-plan_deploy#capabilities)
-  * [How can I add IBM services to my app, such as Watson?](/docs/openshift?topic=openshift-plan_deploy#services_ibm)
+  * [How can I add IBM services to my app, such as {{site.data.keyword.watson}}?](/docs/openshift?topic=openshift-plan_deploy#services_ibm)
 * [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
   * [How can I increase the availability of my app?](/docs/openshift?topic=openshift-plan_deploy#increase_availability)
 * [Versioning and updating apps](/docs/openshift?topic=openshift-plan_deploy#updating)
@@ -1259,9 +1259,9 @@ subcollection: openshift
 * [Overview of Cloud Pak offerings](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_pak_ov)
 * [Adding IBM Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_add)
 * [Assigning a Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_assign)
-* [FAQs for Cloud Pak on Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-openshift_cloud_paks#faq_cloud_paks)
-  * [How do I install a Cloud Pak in my Red Hat OpenShift on IBM Cloud cluster? How do I access it later?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_manage)
-  * [Can I use the OpenShift entitlement that comes with my Cloud Pak for my cluster?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_byo_entitlement)
+* [FAQs for Cloud Pak on {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_cloud_paks#faq_cloud_paks)
+  * [How do I install a Cloud Pak in my {{site.data.keyword.openshiftlong_notm}} cluster? How do I access it later?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_manage)
+  * [Can I use the {{site.data.keyword.openshiftshort}} entitlement that comes with my Cloud Pak for my cluster?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_byo_entitlement)
   * [What is included in a Cloud Pak?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_included)
   * [What else do I need to know to use Cloud Paks?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_paks_other)
 
@@ -1305,6 +1305,28 @@ subcollection: openshift
 * [4. Zone availability](/docs/openshift?topic=openshift-ha#ha-zone)
 * [5. Region availability](/docs/openshift?topic=openshift-ha#ha-region)
 * [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
+
+
+## Managing costs for your clusters
+{: #sitemap_managing_costs_for_your_clusters}
+
+
+[Managing costs for your clusters](/docs/openshift?topic=openshift-costs)
+
+[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs#costs-for-clusters)
+* [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
+* [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
+* [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
+* [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
+* [Default storage for images](/docs/openshift?topic=openshift-costs#storage_images)
+* [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
+* [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
+* [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
+* [VPC Generation 2 compute worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
+
+[Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
+
+[Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
 
 
 ## OpenShift Container Platform documentation
@@ -1518,10 +1540,12 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for worker node fix pack 4.5.17_1519_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4517_1519)
   * [Changelog for worker node fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518_worker)
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.29_1524_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1524)
   * [Changelog for worker node fix pack 4.4.27_1523_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4427_1523_worker)
   * [Changelog for master fix pack 4.4.27_1523_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4427_1523)
   * [Changelog for worker node fix pack 4.4.26_1521_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4426_1521)
@@ -1536,6 +1560,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.40_1545_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1545)
   * [Changelog for worker node fix pack 4.3.40_1544_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1544)
   * [Changelog for master fix pack 4.3.38_1544_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1544)
   * [Changelog for worker node fix pack 4.3.38_1542_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1542)
@@ -1561,6 +1586,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.306_1572_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1572)
   * [Changelog for worker node fix pack 3.11.306_1571_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1571)
   * [Changelog for master fix pack 3.11.286_1571_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1571)
   * [Changelog for worker node fix pack 3.11.286_1570_openshift, released 12 October 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1570)
@@ -1725,19 +1751,7 @@ subcollection: openshift
 
 [Does IBM support third-party and open source tools that I use with my cluster?](/docs/openshift?topic=openshift-faqs#faq_thirdparty_oss)
 
-[Where can I find more information about {{site.data.keyword.openshiftlong_notm}} pricing models?](/docs/openshift?topic=openshift-faqs#pricing)
-
-[What am I charged for when I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#charges)
-
-[What are the regional uplift charges and sustained usage discounts for VPC Generation 2 compute worker nodes?](/docs/openshift?topic=openshift-faqs#charges_vpc_gen2)
-
-[Are my platform and infrastructure resources consolidated in one bill?](/docs/openshift?topic=openshift-faqs#bill)
-
-[Can I estimate my costs?](/docs/openshift?topic=openshift-faqs#cost_estimate)
-
-[Can I view my current usage?](/docs/openshift?topic=openshift-faqs#usage)
-
-[Can I add tags to my cluster?](/docs/openshift?topic=openshift-faqs#faq_tags)
+[What am I charged for? Can I estimate and control costs in my cluster?](/docs/openshift?topic=openshift-faqs#charges)
 
 
 ## Troubleshooting clusters

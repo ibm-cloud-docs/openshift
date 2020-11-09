@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-09"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -746,6 +746,8 @@ New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image
         ibmcloud iam user-policy-create <your_user_email> --service-name container-registry --roles Administrator
         ```
         {: pre}
+    *   If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), add the **Service ID creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).</li>
+    *   If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), add the **User API key creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).</li>
 
 **To update your cluster image pull secret in the `default` Kubernetes namespace**:
 1.  Get your cluster ID.

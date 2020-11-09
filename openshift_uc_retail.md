@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-11-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,30 +10,85 @@ subcollection: openshift
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -49,9 +104,9 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} c
 A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail system is closed off in an on-premises data center. The competition has global business partners to cross-sell and upsell permutations of their goods: across brick-and-mortar and online sites.  
 {: shortdesc}
 
-Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud provides a public-cloud ecosystem, where containers enable new business partners and other external players to co-develop apps and data, through APIs. Now that the retail system is on the public cloud, APIs also streamline data sharing and jump-start new app development. App deployments increase when Developers experiment easily, pushing changes to Development and Test systems quickly with toolchains.
+Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} provides a public-cloud ecosystem, where containers enable new business partners and other external players to co-develop apps and data, through APIs. Now that the retail system is on the public cloud, APIs also streamline data sharing and jump-start new app development. App deployments increase when Developers experiment easily, pushing changes to Development and Test systems quickly with toolchains.
 
-Red Hat OpenShift on IBM Cloud and key technologies:
+{{site.data.keyword.openshiftlong_notm}} and key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [{{site.data.keyword.cos_full}} to persist and sync data across apps](/docs/solution-tutorials?topic=solution-tutorials-pub-sub-object-storage#pub-sub-object-storage)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
@@ -74,16 +129,16 @@ The solution is made up of these primary components:
 * CROSS- AND UP-SALES: App that surfaces cross-sell and up-sell opportunities with APIs that can be used in various e-commerce and mobile apps
 * DEVELOPMENT ENVIRONMENT: Kubernetes clusters for Dev, Test, and Production systems increase collaboration and data sharing among the retailer and its business partners
 
-For the retailer to work with global business partners, the inventory APIs required changes to fit each region’s language and market preferences. Red Hat OpenShift on IBM Cloud offers coverage in multiple regions, including North America, Europe, Asia, and Australia, so that the APIs reflected the needs of each country and ensured low latency for API calls.
+For the retailer to work with global business partners, the inventory APIs required changes to fit each region’s language and market preferences. {{site.data.keyword.openshiftlong_notm}} offers coverage in multiple regions, including North America, Europe, Asia, and Australia, so that the APIs reflected the needs of each country and ensured low latency for API calls.
 
 Another requirement is that inventory data must be shareable with the business partners and customers of the company. With the inventory APIs, Developers can surface information in apps, such as mobile inventory apps or web e-commerce solutions. The Developers are also busy with building and maintaining the primary e-commerce site. In short, they need to focus on coding instead of managing the infrastructure.
 
-Thus, they chose Red Hat OpenShift on IBM Cloud because IBM simplifies infrastructure management:
+Thus, they chose {{site.data.keyword.openshiftlong_notm}} because IBM simplifies infrastructure management:
 * Managing Kubernetes master, IaaS, and operational components, such as Ingress and storage
 * Monitoring health and recovery for worker nodes
 * Providing global compute, so Developers own hardware infrastructure in regions where they need workloads and data to reside
 
-Moreover logging and monitoring for the API microservices, especially how they pull personalized data out of back-end systems, easily integrates with Red Hat OpenShift on IBM Cloud. Developers don’t waste time building complex logging systems, just to be able to troubleshoot live systems.
+Moreover logging and monitoring for the API microservices, especially how they pull personalized data out of back-end systems, easily integrates with {{site.data.keyword.openshiftlong_notm}}. Developers don’t waste time building complex logging systems, just to be able to troubleshoot live systems.
 
 {{site.data.keyword.messagehub_full}} acts as the just-in-time events platform to bring in the rapidly changing information from the business partners’ inventory systems to {{site.data.keyword.cos_full}}.
 
@@ -92,7 +147,7 @@ Moreover logging and monitoring for the API microservices, especially how they p
 On-demand compute, storage, and event management that runs in public cloud with access to retail inventories across the globe, as needed
 
 Technical solution:
-* Red Hat OpenShift on IBM Cloud
+* {{site.data.keyword.openshiftlong_notm}}
 * {{site.data.keyword.messagehub_full}}
 * {{site.data.keyword.cos_full}}
 * {{site.data.keyword.contdelivery_full}}
@@ -100,13 +155,13 @@ Technical solution:
 * {{site.data.keyword.appid_short_notm}}
 
 **Step 1: Containerize apps by using microservices**
-* Structure apps into a set of cooperative microservices that run within Red Hat OpenShift on IBM Cloud based on functional areas of the app and its dependencies.
-* Deploy apps to container images that run in Red Hat OpenShift on IBM Cloud.
+* Structure apps into a set of cooperative microservices that run within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
+* Deploy apps to container images that run in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
 * Enable on-demand scaling of compute for batch and other inventory workloads that run infrequently.
 
 **Step 2: Ensure global availability**
-* Built-in HA tools in Red Hat OpenShift on IBM Cloud balance the workload within each geographic region, including self-healing and load balancing.
+* Built-in HA tools in {{site.data.keyword.openshiftlong_notm}} balance the workload within each geographic region, including self-healing and load balancing.
 * Load-balancing, firewalls, and DNS are handled by IBM Cloud Internet Services.
 * Using the toolchains and Helm deployment tools, the apps are also deployed to clusters across the globe, so workloads and data meet regional requirements, especially personalization.
 
@@ -122,13 +177,13 @@ Technical solution:
 * Debugging the co-developed APIs becomes simpler when they add on IBM Cloud Logging and Monitoring tools, cloud-based ones that are accessible to the various Developers.
 * {{site.data.keyword.contdelivery_full}} helps Developers to quickly provision an integrated toolchain by using customizable, shareable templates with tools from IBM, third parties, and open source. Automate builds and tests, controlling quality with analytics.
 * After Developers build and test the apps in their Development and Test clusters, they use the IBM continuous integration and delivery (CI and CD) toolchains to deploy apps into clusters across the globe.
-* Red Hat OpenShift on IBM Cloud provides easy roll-out and roll-back of apps; tailored apps are deployed to test campaigns through the intelligent routing and load balancing of Istio.
+* {{site.data.keyword.openshiftlong_notm}} provides easy roll-out and roll-back of apps; tailored apps are deployed to test campaigns through the intelligent routing and load balancing of Istio.
 
 **Results**
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial worldwide development is fast, and updates are as frequent as 40 times a week.
 * The retailer and its business partners have immediate access to inventory availability and delivery schedules, by using the APIs.
-* With Red Hat OpenShift on IBM Cloud and IBM CI and CD tools, A-B versions of apps are ready to test campaigns.
-* Red Hat OpenShift on IBM Cloud provides scalable compute, so that the inventory and cross-sales API workloads can grow during high-volume periods of the year, such as the fall holidays.
+* With {{site.data.keyword.openshiftlong_notm}} and IBM CI and CD tools, A-B versions of apps are ready to test campaigns.
+* {{site.data.keyword.openshiftlong_notm}} provides scalable compute, so that the inventory and cross-sales API workloads can grow during high-volume periods of the year, such as the fall holidays.
 
 ## Traditional grocer increases customer traffic and sales with digital insights
 {: #uc_grocer}
@@ -136,12 +191,12 @@ Technical solution:
 A Chief Marketing Officer (CMO) needs to increase customer traffic by 20% in stores by making the stores a differentiating asset. Large retail competitors and online retailers are stealing sales. At the same time, the CMO needs to reduce inventory without markdowns because holding inventory too long locks up millions in capital.
 {: shortdesc}
 
-Why {{site.data.keyword.cloud_notm}}: Red Hat OpenShift on IBM Cloud provides easy spin-up of more compute, where Developers quickly add Cloud Analytics services for sales behavior insights and digital market adaptability.
+Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} provides easy spin-up of more compute, where Developers quickly add Cloud Analytics services for sales behavior insights and digital market adaptability.
 
 Key technologies:    
 * [Horizontal scaling to accelerate development](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [Insights to market trends with Watson Discovery](https://www.ibm.com/cloud/watson-discovery)
+* [Insights to market trends with {{site.data.keyword.watson}} Discovery](https://www.ibm.com/cloud/watson-discovery)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [Inventory management with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-about#about)
 
@@ -169,11 +224,11 @@ Back-end inventory systems for product inventory, store replenishment, and produ
 
 {{site.data.keyword.messagehub_full}} acts as the just-in-time events platform to bring in the rapidly changing information from the inventory systems to IBM Streaming Analytics.
 
-Social media analytics with Watson Discovery (personality and tone insights) also feed in trends to the inventory analysis to improve product forecasting.
+Social media analytics with {{site.data.keyword.watson}} Discovery (personality and tone insights) also feed in trends to the inventory analysis to improve product forecasting.
 
 The loyalty mobile app provides detailed personalization information, especially when customers use its social sharing features, such as posting recipes.
 
-In addition to the mobile app, the Developers are busy with building and maintaining the existing loyalty app that’s tied to traditional check-out coupons. In short, they need to focus on coding instead of managing the infrastructure. Thus, they chose Red Hat OpenShift on IBM Cloud because IBM simplifies infrastructure management:
+In addition to the mobile app, the Developers are busy with building and maintaining the existing loyalty app that’s tied to traditional check-out coupons. In short, they need to focus on coding instead of managing the infrastructure. Thus, they chose {{site.data.keyword.openshiftlong_notm}} because IBM simplifies infrastructure management:
 * Managing Kubernetes master, IaaS, and operational components, such as Ingress and storage
 * Monitoring health and recovery for worker nodes
 * Providing global compute, so Developers aren't responsible for infrastructure setup in data centers
@@ -183,21 +238,21 @@ In addition to the mobile app, the Developers are busy with building and maintai
 On-demand compute, storage, and event management that runs in public cloud with access to back-end ERP systems
 
 Technical solution:
-* Red Hat OpenShift on IBM Cloud
+* {{site.data.keyword.openshiftlong_notm}}
 * {{site.data.keyword.messagehub_full}}
 * {{site.data.keyword.cloudant}}
 * IBM Streaming Analytics
-* IBM Watson Discovery
+* IBM {{site.data.keyword.watson}} Discovery
 
 **Step 1: Containerize apps, by using microservices**
 
-* Structure inventory analysis and mobile apps into microservices and deploy them to containers in Red Hat OpenShift on IBM Cloud.
+* Structure inventory analysis and mobile apps into microservices and deploy them to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
 * Scale the compute on-demand for batch and other inventory workloads that run less frequently.
 
 **Step 2: Analyze inventory and trends**
 * {{site.data.keyword.messagehub_full}} acts as the just-in-time events platform to bring in the rapidly changing information from inventory systems to IBM Streaming Analytics.
-* Social media analysis with Watson Discovery and inventory systems data is integrated with IBM Streaming Analytics to deliver merchandising and marketing advice.
+* Social media analysis with {{site.data.keyword.watson}} Discovery and inventory systems data is integrated with IBM Streaming Analytics to deliver merchandising and marketing advice.
 
 **Step 3: Deliver promotions with mobile loyalty app**
 * Jump-start development of mobile app with the IBM Mobile Starter Kit and other IBM Mobile services, such as {{site.data.keyword.appid_full_notm}}.
@@ -205,10 +260,9 @@ Technical solution:
 * Storage of promotion recipes on mobile app and conversions (redeemed check-out coupons) are fed back to ERP systems for further analysis.
 
 **Results**
-* With Red Hat OpenShift on IBM Cloud, microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.
+* With {{site.data.keyword.openshiftlong_notm}}, microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.
 * Customer traffic and sales increased in stores by making the stores themselves a differentiating asset.
 * At the same time, new insights from social and cognitive analysis improved reduced inventory OpEx (operating expenses).
 * Social sharing in the mobile app also helps to identify and market to new customers.
-
 
 

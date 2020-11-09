@@ -184,6 +184,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_integrations_service_binding.md
 
     openshift_ha.md
+    openshift_costs.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
