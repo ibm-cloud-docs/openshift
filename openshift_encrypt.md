@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-11-09"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -129,7 +130,6 @@ _Figure: Overview of data encryption in a cluster_
 
 <br />
 
-
 ## Understanding Key Management Service (KMS) providers
 {: #kms}
 
@@ -161,7 +161,6 @@ Review the following known limitations:
 
 
 <br />
-
 
 ## Encrypting the Kubernetes master's local disk and secrets by using a KMS provider
 {: #keyprotect}
@@ -293,83 +292,48 @@ You can enable a KMS provider or update the instance or root key that encrypts s
 ## Verifying secret encryption
 {: #verify_kms}
 
-After you enable a KMS provider in your cluster, you can verify that your cluster secrets are encrypted by querying information that is in `etcd` in the master. If the returned information is encrypted, you know that the KMS provider works in your cluster.
+After you enable a KMS provider in your {{site.data.keyword.openshiftlong_notm}} cluster, you can verify that your cluster secrets are encrypted by disabling the root key. When you disable the root key, the cluster can no longer decrypt the secrets and becomes unusable, which signifies that your secrets were encrypted.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin:
+* Consider [updating your cluster](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version `4.5`. If you do not update your cluster to this version, changes to the root key are not reported in the cluster health status and take longer to take effect in your cluster.
+* Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform and **Manager** service role for the cluster.
 
-1.  Install the etcd CLI (`etcdctl`) version 3 or higher.
-    1.  Download the release package for your operating system from the [etcd project](https://github.com/etcd-io/etcd/releases){: external}.
-    2.  Extract and move the `etcdctl` binary file to the location of your binary files, such as the following example.
-        ```
-        mv Downloads/etcd-v3.4.6-darwin-amd64/etcdctl /usr/local/bin/etcdctl
-        ```
-        {: pre}
-    3.  Verify that `etcdctl` is installed.
-        ```
-        etcdctl version
-        ```
-        {: screen}
-2.  Set your terminal session context to use the appropriate `etcdctl` API version.
+To verify secret encryption by disabling a root key:
+1.  [Enable KMS encryption in your cluster](#keyprotect). To check that KMS encryption is enabled, verify that the **Key Protect** status is set to `enabled` in the output of the following command.
     ```
-    export ETCDCTL_API=3
+    ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
-3.  Run the `ibmcloud oc cluster config` command and include the `--admin` option, which downloads the `etcd` certificates and keys for your cluster, and the `--output zip > <cluster_name_or_ID>.zip` option, which saves your cluster configuration files to a compressed folder.
+2.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+3.  Verify that you can list the secrets in your cluster. 
     ```
-    ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --output zip > <cluster_name_or_ID>.zip
+    oc get secrets --all-namespaces
     ```
     {: pre}
-4. Unzip the compressed folder.
-
-5. Get the `server` field for your cluster. In the output, copy only the master URL, without the `https://` and node port. For example, in the following output, copy the `c2.us-south.containers.cloud.ibm.com` master URL only.
+4.  In your {{site.data.keyword.keymanagementserviceshort}} instance, [disable the root key](/docs/key-protect?topic=key-protect-disable-keys) that is used to encrypt your cluster.
+5.  Wait for the cluster to detect the change to your root key. 
+    
+    In clusters that run a version earlier than `4.5`, you might need to wait for an hour or longer.
+    {: note}
+    
+6.  Try to list your secrets. You get a timeout error because you can no longer connect to your cluster. If you try to set the context for your cluster by running `ibmcloud oc cluster config`, the command fails.
     ```
-    cat ./<cluster_name_or_ID>/kube-config.yaml | grep server
+    oc get secrets --all-namespaces
     ```
     {: pre}
 
     Example output:
     ```
-        server: https://c2.us-south.containers.cloud.ibm.com:30426
+    Unable to connect to the server: dial tcp 169.48.110.250:32346: i/o timeout
     ```
     {: screen}
-
-5. Get the `etcdPort` for your cluster.
+7.  For clusters that run {{site.data.keyword.openshiftshort}} version `4.5` or later, check that your cluster is in a **warning** state. Your cluster remains in this state and is unusable until you enable your root key again.
     ```
-    ibmcloud oc cluster get -c <cluster_name_or_ID> --output json | grep etcdPort
-    ```
-    {: pre}
-
-    Example output:
-    ```
-        "etcdPort": "31593",
-    ```
-    {: screen}
-
-6. Get the name of a secret in your cluster.
-    ```
-    oc get secrets [-n <namespace>]
+    ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
-
-7.  Confirm that the Kubernetes secrets for the cluster are encrypted. Replace the `secret_name`, `master_url`, and `etcd_port` fields with the values that you previously retrieved, and replace `<cluster_name_or_ID>` with the name of the cluster in your compressed folder file path.
-    ```
-    etcdctl get /kubernetes.io/secrets/<secret_namespace>/<secret_name> --endpoints https://<master_url>:<etcd_port> --key="./<cluster_name_or_ID>/admin-key.pem" --cert="./<cluster_name_or_ID>/admin.pem" --cacert="./<cluster_name_or_ID>/ca.pem"
-    ```
-    {: pre}
-
-    The output is unreadable and scrambled, indicating that the secrets are encrypted. Example output of encrypted secrets:
-    ```
-    k8s:enc:kms:v1:ibm:...=a?u???T?fE?pC?/?f|???'?z
-    ?nI?a,)?
-            9??O?{2??]="g?۳o??\5
-    ?,a??AW??6Mx??x?5???7       dwX@DG8Dd?԰?ۭ#??[Y?ρF??????a$??9????_ˌ??m??Ɵϭ8?7????????c4L??q1?$0? ??yfzgl?}
-                        ??Aynw#?$?J???p?x??pΝ???]ؖE6I?ө?o??t]??p?s?#0%BׇB?????k*֊ؖ??~?B??????V??
-    ```
-    {: screen}
-
-    If you see a `context deadline exceeded` error, you might have a temporary connectivity issue. Check that your local `etcdctl` version matches the remote `etcd` version. Run the `etcdctl get` command with the `--debug=true` flag to see any additional information. Then wait a few minutes and try again.
-    {: tip}
+8.  In your {{site.data.keyword.keymanagementserviceshort}} instance, [enable the root key](/docs/key-protect?topic=key-protect-disable-keys) so that your cluster returns to a **normal** state and becomes usable again.
 
 ## Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)
 {: #datashield}
@@ -389,6 +353,5 @@ If you or your company require data sensitivity due to internal policies, govern
 To get started, provision an SGX-enabled bare metal worker cluster with a [supported flavor for {{site.data.keyword.datashield_short}}](/docs/data-shield?topic=data-shield-getting-started).
 
 <br>
-
 
 
