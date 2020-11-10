@@ -35,13 +35,14 @@ Red Hat OpenShift on IBM Cloud
     {: .navgroup-end}
 
     {: .topicgroup id="tutorial"}
-    [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20)
-    openshift_tutorial.md
-    openshift_tutorial_vpc.md
-    [Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift)
-    [OpenShift interactive learning portal](https://learn.openshift.com/)
-    [Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift)
-    [IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/)
+    Tutorials
+        [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20)
+        openshift_tutorial.md
+        openshift_tutorial_vpc.md
+        [Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift)
+        [OpenShift interactive learning portal](https://learn.openshift.com/)
+        [Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift)
+        [IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
