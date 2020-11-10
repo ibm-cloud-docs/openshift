@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-23"
+lastupdated: "2020-11-10"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -133,17 +134,53 @@ Kubernetes limits the maximum number of worker nodes that you can have in a clus
 
 [Reserved capacity and reserved instances](/docs/virtual-servers?topic=virtual-servers-provisioning-reserved-capacity-and-instances) are not supported.
 
-
-**Why do my worker nodes have the `master` role?**
-
-When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In {{site.data.keyword.openshiftshort}} clusters, operators use the `master` role as a `nodeSelector` so that the operators can deploy properly to your worker nodes. No master node processes occur on your worker nodes.
-
-
-
 {{site.data.keyword.openshiftlong_notm}} also sets compute resource reserves that limit available compute resources on each worker node. For more information, see [worker node resource reserves](#resource_limit_node).
 
 Want to be sure that you always have enough worker nodes to cover your workload? Try out [the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca).
 {: tip}
+
+
+
+**Why do my worker nodes have the `master` role?**<br>
+When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.openshiftshort}} architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4).
+
+
+
+**How can I check the operating system that my worker nodes run?**<br>
+When you create a worker pool, you choose the flavor, which describes the operating system along with the compute resources of the worker nodes. Supported operating systems are RHEL 7. 
+
+You can also log in to your cluster to check the operating system of the worker nodes.
+1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+2.  List your worker nodes.
+    ```
+    oc get nodes
+    ```
+    {: pre}
+3.  Describe your worker node and check for the operating system label that IBM applies, or the **OS Image** and **Operating System** fields in the **System Info** section.
+    ```
+    oc describe node <node>
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    Name:               10.xxx.xx.xxx
+    Roles:              <none>
+    Labels:             arch=amd64
+                        ...
+                        ibm-cloud.kubernetes.io/os=UBUNTU_18_64
+                        ...
+                        kubernetes.io/arch=amd64
+                        kubernetes.io/hostname=10.189.33.198
+                        kubernetes.io/os=linux
+    ...
+    System Info:
+        OS Image:                   Ubuntu 18.04.5 LTS
+        Operating System:           linux
+        Architecture:               amd64
+        ...
+    ```
+    {: screen}
 
 ## Virtual machines
 {: #vm}
@@ -233,7 +270,6 @@ If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker nod
 
 <br />
 
-
 ## Physical machines (bare metal)
 {: #bm}
 
@@ -276,7 +312,6 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 * **SSD**: A solid-state drive storage device for high-performance data.
 * **Raw**: The storage device is unformatted and the full capacity is available for use.
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
-
 
 <table summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and secondary disk that are attached to the worker nodes for the flavor. The fourth column has the network speed for the worker nodes of the flavor.">
 <caption>Available bare metal flavors in {{site.data.keyword.openshiftlong_notm}}.</caption>
@@ -347,7 +382,6 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 
 <br />
 
-
 ## Software-defined storage (SDS) machines
 {: #sds}
 
@@ -381,7 +415,6 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 * **SSD**: A solid-state drive storage device for high-performance data.
 * **Raw**: The storage device is unformatted and the full capacity is available for use.
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
-
 
 <table summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and secondary disk that are attached to the worker nodes for the flavor. The fourth column has the network speed for the worker nodes of the flavor.">
 <caption>Available SDS flavors in {{site.data.keyword.openshiftlong_notm}}.</caption>
@@ -426,7 +459,6 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 </table>
 
 <br />
-
 
 ## Worker node resource reserves
 {: #resource_limit_node}
@@ -485,6 +517,5 @@ To review how much compute resources are currently used on your worker node, run
 {: tab-group="Worker Node"}
 
 <p class="note">Worker node PID reserves are for {{site.data.keyword.openshiftshort}} 4.3 or later only.</br></br>Sample worker node values are provided for example only. Your actual usage might vary slightly.</p>
-
 
 
