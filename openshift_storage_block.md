@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-04"
+lastupdated: "2020-11-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -102,7 +102,6 @@ Keep in mind the following requirements when you use the {{site.data.keyword.clo
 {: important}
 - {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in is available only for standard {{site.data.keyword.openshiftlong_notm}} clusters that are provisioned on classic infrastructure.
 - {{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
-- If you installed the {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}  with Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3).
 
 <br>
 
