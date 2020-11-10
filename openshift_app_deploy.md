@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-10"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -113,7 +113,7 @@ Seeing errors when you deploy your app? {{site.data.keyword.openshiftshort}} has
 You can create apps through various methods in the {{site.data.keyword.openshiftshort}} console by using the **Developer** perspective. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.2/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
 
-1.  From the [Cluster](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) page, select your cluster.
+1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
 2.  Click **{{site.data.keyword.openshiftshort}} web console**.
 3.  From the perspective switcher, select **Developer**. The {{site.data.keyword.openshiftshort}} web console switches to the Developer perspective, and the menu now offers items such as **+Add**, **Topology**, and **Builds**.
 4.  Click **+Add**.
