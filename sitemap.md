@@ -1257,7 +1257,7 @@ subcollection: openshift
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
   * [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb)
   * [Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-portworx#databases-for-etcd)
-* [Setting up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
+* [Setting up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
   * [Portworx per-volume encryption workflow](/docs/openshift?topic=openshift-portworx#px_encryption)
   * [Portworx per-volume decryption workflow](/docs/openshift?topic=openshift-portworx#decryption)
   * [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-portworx#setup_encryption)
