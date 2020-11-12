@@ -214,11 +214,11 @@ Review the following Ingress API methods, their corresponding actions in {{site.
 
 |	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	GET​/ingress​/v2​/secret​/getSecret	|	View Ingress secret details. |	containers-kubernetes.cluster.create	|	-	|
-|	GET​/ingress​/v2​/secret​/getSecrets	|	View Ingress secrets for a cluster.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/ingress​/v2​/secret​/createSecret	|	Create an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/ingress​/v2​/secret​/deleteSecret	|	Delete an Ingress secret from the cluster. |	containers-kubernetes.cluster.create	|	-	|
-|	POST​/ingress​/v2​/secret​/updateSecret	|	Update an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	-	|
+|	GET​/ingress​/v2​/secret​/getSecret	|	View Ingress secret details. |	containers-kubernetes.cluster.create	|	cluster-ingress-secret.get	|
+|	GET​/ingress​/v2​/secret​/getSecrets	|	View Ingress secrets for a cluster.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.list	|
+|	POST​/ingress​/v2​/secret​/createSecret	|	Create an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.create	|
+|	POST​/ingress​/v2​/secret​/deleteSecret	|	Delete an Ingress secret from the cluster. |	containers-kubernetes.cluster.create	|	cluster-ingress-secret.delete	|
+|	POST​/ingress​/v2​/secret​/updateSecret	|	Update an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.update	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Ingress API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
@@ -232,31 +232,31 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 
 |	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	DELETE​/v1​/alb​/albs​/{albID}	|	Disable an ALB in your cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	DELETE​/v1​/alb​/clusters​/{idOrName}​/albsecrets	|	Delete an ALB secret that is imported from {{site.data.keyword.cloudcerts_short}} from a cluster.	|	containers-kubernetes.cluster.create	|	-	|
-|	GET​/v1​/alb​/albs​/{albID}	|	View details of an ALB.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/alb​/albtypes	|	List the ALB types that are supported.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/alb​/clusters​/{idOrName}	|	List all ALBs in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/alb​/clusters​/{idOrName}​/albsecrets	|	View details of an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}}.	|	containers-kubernetes.cluster.create	|	-	|
-|	GET​/v1​/alb​/clusters​/{idOrName}​/updatepolicy	|	Check if automatic updates for Ingress ALBs are enabled in a cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	GET​/v2​/alb​/getAlb	|	View details of an ALB.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/alb​/getAlbImages	|	List supported Ingress controller images.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/alb​/getClusterAlbs	|	List all ALBs in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/alb​/getMigrationStatus	|	Get the status of the migration process.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/alb​/getStatus	|	Get the status of the ingress resources in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	POST​/v1​/alb​/albs	|	Enable an existing ALB in a cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v1​/alb​/albsecrets	|	Import an ALB secret from {{site.data.keyword.cloudcerts_short}}.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/v1​/alb​/clusters​/{idOrName}​/zone​/{zoneId}	|	Create a public or private ALB in a specified zone and VLAN.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/alb​/cleanupMigration	|	Clean up any Ingress resources and ConfigMaps that are no longer needed after an Ingress migration.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/v2​/alb​/startMigration	|	Start a migration of your {{site.data.keyword.cloud_notm}} Ingress ConfigMap and Ingress resources to the Kubernetes Ingress format.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/v2​/alb​/updateAlb	|	Update ALBs in a cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/alb​/vpc​/createAlb	|	Create a public or private ALB in a specified zone and VPC cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/alb​/vpc​/disableAlb	|	Disable an ALB in your VPC cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/alb​/vpc​/enableAlb	|	Enable an existing ALB in a VPC cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/alb​/albsecrets	|	Update an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}}.	|	containers-kubernetes.cluster.create	|	-	|
-|	PUT​/v1​/alb​/clusters​/{idOrName}​/update	|	Force a one-time update of all ALB pods to the latest build.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/alb​/clusters​/{idOrName}​/updatepolicy	|	Enable or disable automatic updates for the Ingress ALBs in a cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/alb​/clusters​/{idOrName}​/updaterollback	|	Roll back all ALB pods in a cluster to their previously running build.	|	containers-kubernetes.cluster.update	|	-	|
+|	DELETE​/v1​/alb​/albs​/{albID}	|	Disable an ALB in a classic cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.delete |
+|	DELETE​/v1​/alb​/clusters​/{idOrName}​/albsecrets	|	Delete an ALB secret that is imported from {{site.data.keyword.cloudcerts_short}} from a classic cluster.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.delete |
+|	GET​/v1​/alb​/albs​/{albID}	|	View details of an ALB in a classic cluster.	|	containers-kubernetes.cluster.read	|	cluster-alb.get |
+|	GET​/v1​/alb​/albtypes	|	List the ALB types that are supported in classic clusters. |	containers-kubernetes.cluster.read	|	- | |
+|	GET​/v1​/alb​/clusters​/{idOrName}	|	List all ALBs in a classic cluster.	|	containers-kubernetes.cluster.read	|	cluster-alb.list |
+|	GET​/v1​/alb​/clusters​/{idOrName}​/albsecrets	|	View details of an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}} to a classic cluster.	|	containers-kubernetes.cluster.create	| cluster-ingress-secret.list |
+|	GET​/v1​/alb​/clusters​/{idOrName}​/updatepolicy	|	Check if automatic updates for Ingress ALBs are enabled in a classic cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb-policy.get |
+|	GET​/v2​/alb​/getAlb	|	View details of an ALB.	|	containers-kubernetes.cluster.read	|	cluster-alb.get |
+|	GET​/v2​/alb​/getAlbImages	|	List supported Ingress controller images.	|	containers-kubernetes.cluster.read	|	alb-image.list |
+|	GET​/v2​/alb​/getClusterAlbs	|	List all ALBs in a cluster.	|	containers-kubernetes.cluster.read	|	cluster-alb.list |
+|	GET​/v2​/alb​/getMigrationStatus	|	Get the status of the Ingress migration process.	|	containers-kubernetes.cluster.read	|	cluster-alb-migration-status.get |
+|	GET​/v2​/alb​/getStatus	|	Get the status of the Ingress resources in a cluster.	|	containers-kubernetes.cluster.read	|	cluster-ingress-status.get |
+|	POST​/v1​/alb​/albs	|	Enable an existing ALB in a classic cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.enable |
+|	POST​/v1​/alb​/albsecrets	|	Import an ALB secret from {{site.data.keyword.cloudcerts_short}} to a cluster.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.create |
+|	POST​/v1​/alb​/clusters​/{idOrName}​/zone​/{zoneId}	|	Create a public or private ALB in a classic cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.create |
+|	POST​/v2​/alb​/cleanupMigration	|	Clean up any Ingress resources and configmaps that are no longer needed after an Ingress migration.	|	containers-kubernetes.cluster.create	|	cluster-alb-migration.cleanup |
+|	POST​/v2​/alb​/startMigration	|	Start a migration of your {{site.data.keyword.cloud_notm}} Ingress configmap and Ingress resources to the Kubernetes Ingress format.	|	containers-kubernetes.cluster.create	|	cluster-alb-migration.start |
+|	POST​/v2​/alb​/updateAlb	|	Update ALBs in a cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.update |
+|	POST​/v2​/alb​/vpc​/createAlb	|	Create a public or private ALB in a VPC cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.create |
+|	POST​/v2​/alb​/vpc​/disableAlb	|	Disable an ALB in a VPC cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.delete |
+|	POST​/v2​/alb​/vpc​/enableAlb	|	Enable an existing ALB in a VPC cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.enable |
+|	PUT​/v1​/alb​/albsecrets	|	Update an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}}.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.update |
+|	PUT​/v1​/alb​/clusters​/{idOrName}​/update	|	Force a one-time update of all ALB pods to the latest build.	|	containers-kubernetes.cluster.update	|	cluster-alb.update |
+|	PUT​/v1​/alb​/clusters​/{idOrName}​/updatepolicy	|	Enable or disable automatic updates for the Ingress ALBs in a cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb-policy.update |
+|	PUT​/v1​/alb​/clusters​/{idOrName}​/updaterollback	|	Roll back all ALB pods in a cluster to their previously running build.	|	containers-kubernetes.cluster.update	|	cluster-alb-policy.update |
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="ALB API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
@@ -302,21 +302,21 @@ Review the following network load balancer (NLB) domain name system (DNS) API me
 
 |	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	DELETE​/v1​/nlb-dns​/clusters​/{idOrName}​/host​/{nlbHost}​/ip​/{nlbIP}​/remove	|	Remove an IP address from an NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
-|	GET​/v1​/nlb-dns​/clusters​/{idOrName}​/list	|	List registered NLB subdomains and NLB IP addresses.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/host​/{nlbHost}​/config	|	View the health check monitor settings for an NLB subdomain.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/list	|	List the health check monitor settings for all NLB subdomains.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/status	|	List the health check status for the IPs behind NLB subdomains in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/nlb-dns​/getNlbDNSList	|	List registered NLB subdomains in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	PATCH​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/config	|	Configure a health check monitor for an NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v1​/nlb-dns​/clusters​/{idOrName}​/register	|	Create a NLB subdomain and associate one or more NLB IP addresses with it.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/deleteSecret	|	Remove a secret from an NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/regenerateCert	|	Regenerate certificates for a secret.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/vpc​/createNlbDNS	|	Create a NLB subdomain in a VPC cluster and associate a load balancer hostname with it.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/vpc​/removeLBHostname	|	Remove the load balancer hostname from the DNS record for an existing NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/vpc​/ReplaceLBHostname	|	Update the DNS record for an NLB subdomain by replacing the load balancer hostname.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/add	|	Update a DNS record by adding an NLB IP address.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/health	|	Enable or disable a health check monitor for an NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
+|	DELETE​/v1​/nlb-dns​/clusters​/{idOrName}​/host​/{nlbHost}​/ip​/{nlbIP}​/remove	|	Remove an IP address from an NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns.delete |
+|	GET​/v1​/nlb-dns​/clusters​/{idOrName}​/list	|	List registered NLB subdomains and NLB IP addresses.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns.list |
+|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/host​/{nlbHost}​/config	|	View the health check monitor settings for an NLB subdomain.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns-monitor.get |
+|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/list	|	List the health check monitor settings for all NLB subdomains.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns-monitor.list |
+|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/status	|	List the health check status for the IPs behind NLB subdomains in a cluster.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns-monitor-status.list |
+|	GET​/v2​/nlb-dns​/getNlbDNSList	|	List registered NLB subdomains in a cluster.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns.list |
+|	PATCH​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/config	|	Configure a health check monitor for an NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns-monitor.create |
+|	POST​/v1​/nlb-dns​/clusters​/{idOrName}​/register	|	Create a NLB subdomain and associate one or more NLB IP addresses with it.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns.update |
+|	POST​/v2​/nlb-dns​/deleteSecret	|	Remove a secret from an NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-ingress-secret.delete |
+|	POST​/v2​/nlb-dns​/regenerateCert	|	Regenerate certificates for a secret.	|	containers-kubernetes.cluster.update	|	cluster-ingress-secret.update |
+|	POST​/v2​/nlb-dns​/vpc​/createNlbDNS	|	Create a NLB subdomain in a VPC cluster and associate a load balancer hostname with it.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns.create |
+|	POST​/v2​/nlb-dns​/vpc​/removeLBHostname	|	Remove the load balancer hostname from the DNS record for an existing NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-lb-hostname.delete |
+|	POST​/v2​/nlb-dns​/vpc​/ReplaceLBHostname	|	Update the DNS record for an NLB subdomain by replacing the load balancer hostname.	|	containers-kubernetes.cluster.update	|	cluster-lb-hostname.update |
+|	PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/add	|	Update a DNS record by adding an NLB IP address.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns.update |
+|	PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/health	|	Enable or disable a health check monitor for an NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns-monitor.update |
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="NLB DNS API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 

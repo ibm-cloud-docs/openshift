@@ -1723,6 +1723,9 @@ subcollection: openshift
 
 [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
 * [Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
+* [Tracking Ingress ALB events](/docs/openshift?topic=openshift-at_events#ingress-alb-events)
+* [Tracking Ingress secret events](/docs/openshift?topic=openshift-at_events#ingress-secret-events)
+* [Tracking NLB DNS events](/docs/openshift?topic=openshift-at_events#ingress-alb-events)
 * [Tracking private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
 * [Tracking storage resource events](/docs/openshift?topic=openshift-at_events#storage-events)
 * [Tracking logging and monitoring configuration events](/docs/openshift?topic=openshift-at_events#at-lm)
