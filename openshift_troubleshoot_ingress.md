@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -959,7 +959,7 @@ In the [Load balancers for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/
 {: tsCauses}
 In VPC Gen 2 clusters, a VPC load balancer that exposes the router is automatically created outside of your cluster. In the configuration for the load balancer, `externalTrafficPolicy` is set to `Local`, which offers better routing performance than `Cluster`. This `externalTrafficPolicy: Local` setting indicates that when the VPC load balancer receives a request to your app service's node port, the load balancer forwards the traffic only to router pods that are also on the same worker node as the app service's node port.
 
-By default in the OpenShift Container Platform Ingress controller, only 2 router pods are deployed to your cluster, so only 2 worker nodes have router pods. The VPC load balancer is automatically configured to forward traffic to each worker node in your cluster. However, because traffic is forwarded only to worker nodes that contain router pods, the load balancer's health check only reports the 2 worker nodes that have the router pods as **Passing**, and the other worker nodes as **Failing**. For this reason, the failures are expected, and do not indicate that your VPC load balancer is unable to forward traffic to your cluster.
+By default in the OpenShift Container Platform Ingress controller, only 2 router pods are deployed to your cluster, so only 2 worker nodes have router pods. Because the VPC load balancer forwards traffic only to worker nodes that contain router pods, the load balancer's health check only reports the 2 worker nodes that have the router pods as **Passing**, and the other worker nodes as **Failing**. For this reason, the failures are expected, and do not indicate that your VPC load balancer is unable to forward traffic to your cluster.
 
 <br />
 
