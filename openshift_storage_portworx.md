@@ -331,14 +331,14 @@ If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} or 
 {: tip}
 
 Review the following information:
-- Overview of the [Portworx volume encryption workflow](#px_encryption) with {{site.data.keyword.keymanagementservicelong_notm}} for per-volume encryption
-- Overview of the [Portworx volume decryption workflow](#decryption) with {{site.data.keyword.keymanagementservicelong_notm}} for per-volume encryption
+- Overview of the [Portworx volume encryption workflow](#px_encryption) for per-volume encryption
+- Overview of the [Portworx volume decryption workflow](#decryption) for per-volume encryption
 - [Setting up per-volume encryption](#setup_encryption) for your Portworx volumes.
 
 ### Portworx per-volume encryption workflow
 {: #px_encryption}
 
-The following image illustrates the encryption workflow in Portworx with {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} when you set up per-volume encryption.
+The following image illustrates the encryption workflow in Portworx when you set up per-volume encryption.
 {: shortdesc}
 
 <img src="images/cs_portworx_volume_encryption.png" alt="Encrypting Portworx volumes" width="600" style="width: 600px; border-style: none"/>
@@ -352,7 +352,7 @@ The following image illustrates the encryption workflow in Portworx with {{site.
 ### Portworx per-volume decryption workflow
 {: #decryption}
 
-The following image illustrates the decryption workflow in Portworx with {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} when you set up per-volume encryption.
+The following image illustrates the decryption workflow in Portworx when you set up per-volume encryption.
 
 <img src="images/cs_portworx_volume_decryption.png" alt="Decrypting Portworx volumes" width="600" style="width: 600px; border-style: none"/>
 
