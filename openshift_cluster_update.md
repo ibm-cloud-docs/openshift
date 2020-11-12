@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-12"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -134,9 +134,7 @@ No, you cannot roll back a cluster to a previous version after the update proces
 **What process can I follow to update the master?**</br>
 The following diagram shows the process that you can take to update your master.
 
-![Master update best practice](/images/update-tree.png)
-
-Figure 1. Updating Kubernetes master process diagram
+![Master update process diagram](/images/update-tree.png){: caption="Figure 1. Updating Kubernetes master process diagram" caption-side="bottom"}
 {: #update_master}
 
 ### Steps to update the cluster master
