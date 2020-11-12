@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -882,7 +882,7 @@ To create your own storage class:
       </tr>
       <tr>
       <td><code>tags</code></td>
-      <td>In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyworblock_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. </td>
+      <td>In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. </td>
       </tr>
       <tr>
       <td><code>iops</code></td>
