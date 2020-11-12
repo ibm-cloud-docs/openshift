@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-11-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -467,7 +467,7 @@ Follow these steps to set up encryption for your Portworx volumes.
        </tr>
        <tr>
        <td><code>data.IBM_BASE_URL</code></td>
-       <td><ul><li><b>{{site.data.keyword.keymanagementservicelong_notm}}</b>: Enter the base64 encoded API endpoint of your service instance.</li><li><b>{{site.data.keyword.hscrypto}}</b>: Enter the base64 encoded Key Management public endpoint.</td>
+       <td><ul><li><b>{{site.data.keyword.keymanagementservicelong_notm}}</b>: Enter the base64 encoded API endpoint of your service instance.</li><li><b>{{site.data.keyword.hscrypto}}</b>: Enter the base64 encoded Key Management public endpoint.</li></ul></td>
        </tr>
        </tbody>
        </table>
