@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-11-13"
 
 keywords: openshift
 subcollection: openshift
@@ -233,6 +233,73 @@ subcollection: openshift
 * [Container isolation and security](/docs/openshift?topic=openshift-security#container)
 * [Storing personal information](/docs/openshift?topic=openshift-security#pi)
 * [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
+
+
+## Tutorials library for OpenShift
+
+[Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
+
+
+## Creating {{site.data.keyword.openshiftlong_notm}} clusters
+{: #sitemap_creating__clusters}
+
+
+[Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial)
+
+[Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
+
+[Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
+
+[Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
+
+[Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
+
+[Navigating the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+
+[Deploying an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
+
+[What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
+
+
+## Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)
+{: #sitemap_creating_an__cluster_in_your_virtual_private_cloud_(vpc)}
+
+
+[Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial)
+
+[Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
+
+[Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
+
+[Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
+
+[Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
+
+[Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
+
+[Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
+
+[What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
+
+
+## Scalable web application on OpenShift
+
+[Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
+
+
+## OpenShift interactive learning portal
+
+[OpenShift interactive learning portal](https://learn.openshift.com/){: external}
+
+
+## Katacoda interactive OpenShift tutorials
+
+[Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: external}
+
+
+## IBM Developer OpenShift tutorials
+
+[IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/){: external}
 
 
 ## Installing the CLI and API
@@ -1190,7 +1257,7 @@ subcollection: openshift
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
   * [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb)
   * [Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-portworx#databases-for-etcd)
-* [Setting up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
+* [Setting up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
   * [Portworx per-volume encryption workflow](/docs/openshift?topic=openshift-portworx#px_encryption)
   * [Portworx per-volume decryption workflow](/docs/openshift?topic=openshift-portworx#decryption)
   * [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-portworx#setup_encryption)
@@ -1656,6 +1723,9 @@ subcollection: openshift
 
 [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
 * [Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
+* [Tracking Ingress ALB events](/docs/openshift?topic=openshift-at_events#ingress-alb-events)
+* [Tracking Ingress secret events](/docs/openshift?topic=openshift-at_events#ingress-secret-events)
+* [Tracking NLB DNS events](/docs/openshift?topic=openshift-at_events#ingress-nlb-dns-events)
 * [Tracking private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
 * [Tracking storage resource events](/docs/openshift?topic=openshift-at_events#storage-events)
 * [Tracking logging and monitoring configuration events](/docs/openshift?topic=openshift-at_events#at-lm)

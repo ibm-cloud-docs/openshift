@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-11-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -267,7 +268,6 @@ If you do not want to provision and use the {{site.data.keyword.cloud_notm}} Blo
 
 
 
-
 ## Classic: Manually adding block storage to specific worker nodes
 {: #manual_block}
 
@@ -367,7 +367,6 @@ Use this option if you want to add different block storage configurations, add b
 <br />
 
 
-
 ## Classic: Attaching raw block storage to non-SDS worker nodes
 {: #attach_block}
 
@@ -380,6 +379,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 **Before you begin**:
 - Make sure that you [manually](#manual_block) added raw, unformatted, and unmounted block storage to your non-SDS worker nodes.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- Install the [block storage attacher plug-in](#block_storage_attacher).
 
 **To attach raw block storage to non-SDS worker nodes**:
 1. Prepare the PV creation.  
@@ -527,7 +527,6 @@ If you want to detach a volume, delete the PV. Detached volumes are still author
 {: note}
 
 <br />
-
 
 
 
@@ -806,7 +805,6 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
 
 
 <br />
-
 
 ## Backing up and restoring PVC data for file and block storage
 {: #ibmcloud-backup-restore}
@@ -1228,5 +1226,4 @@ When an alert is triggered, review the alert details in {{site.data.keyword.mon_
 * [Troubleshooting apps](/docs/openshift?topic=openshift-cs_troubleshoot_app).
 * [Troubleshooting clusters](/docs/openshift?topic=openshift-cs_troubleshoot).
 * [Open a support case](/docs/get-support?topic=get-support-using-avatar).
-
 

@@ -34,7 +34,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_secure.md
     {: .navgroup-end}
 
-    {: .topicgroup id="tutorial"}
+    {: .navgroup id="tutorial"}
     [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20)
     openshift_tutorial.md
     openshift_tutorial_vpc.md

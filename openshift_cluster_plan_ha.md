@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-11"
 
 keywords: openshift, roks, rhos, rhoks, multi az, multi-az, szr, mzr
 
@@ -138,7 +138,7 @@ In a multizone cluster, the worker nodes in your worker pools are replicated acr
 <p class="note">You can create a multizone cluster in one of the supported [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones) only.</p>
 
 **Why do I need worker nodes in three zones?** </br>
-Distributing your work load across three zones ensures high availability for your app in case one or two zones are not available. You must have your worker nodes spread evenly across all three availability zones to meet the [{{site.data.keyword.cloud_notm}} service level agreement (SLA)](/docs/overview/terms-of-use?topic=overview-terms#terms) for HA configuration. This setup also makes your cluster more cost-efficient. Why is that, you ask? Here is an example.
+Distributing your work load across three zones ensures high availability for your app in case one or two zones are not available. You must have your worker nodes spread evenly across all three availability zones to meet the [{{site.data.keyword.cloud_notm}} service level agreement (SLA)](/docs/overview?topic=overview-slas) for HA configuration. This setup also makes your cluster more cost-efficient. Why is that, you ask? Here is an example.
 
 Let's say you need a worker node with six cores to handle the workload for your app. To make your cluster more available, you have the following options:
 

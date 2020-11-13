@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-11-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -150,7 +150,6 @@ All set? Let's start with [creating a cluster with an SDS worker pool of at leas
 
 <br />
 
-
 ## Planning your Portworx setup
 {: #portworx_planning}
 
@@ -199,7 +198,6 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 2. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
 <br />
-
 
 ## Setting up a key-value store for Portworx metadata
 {: #portworx_database}
@@ -321,75 +319,65 @@ Databases for etcd is a managed etcd service that securely stores and replicates
 
 <br />
 
-
-## Setting up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}
+## Setting up volume encryption
 {: #encrypt_volumes}
 
-To protect your data in a Portworx volume, you can encrypt your cluster's volumes with {{site.data.keyword.keymanagementservicelong_notm}}.
+To protect your data in a Portworx volume, you can encrypt your cluster's volumes with {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}}.
 {: shortdesc}
 
 {{site.data.keyword.keymanagementservicelong_notm}} helps you to provision encrypted keys that are secured by FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs). You can use these keys to securely protect your data from unauthorized users. You can choose between using one encryption key to encrypt all your volumes in a cluster or using one encryption key for each volume. Portworx uses this key to encrypt data at rest and during transit when data is sent to a different worker node. For more information, see [Volume encryption](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/create-encrypted-pvcs/#volume-encryption){: external}. For higher security, set up per-volume encryption.
 
-If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} root keys to encrypt your volumes, you can select **Kubernetes Secret** as your Portworx secret store type during the Portworx installation. This setting gives you the option to store your own custom encryption key in a Kubernetes secret after you install Portworx. For more information, see the [Portworx documentation](https://docs.portworx.com/key-management/kubernetes-secrets/#configuring-kubernetes-secrets-with-portworx){: external}.
+If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} root keys to encrypt your volumes, you can select **Kubernetes Secret** as your Portworx secret store type during the Portworx installation. This setting gives you the option to store your own custom encryption key in a Kubernetes secret after you install Portworx. For more information, see the [Portworx documentation](https://docs.portworx.com/key-management/kubernetes-secrets/#configuring-kubernetes-secrets-with-portworx){: external}.
 {: tip}
 
 Review the following information:
-- Overview of the [Portworx volume encryption workflow](#px_encryption) with {{site.data.keyword.keymanagementservicelong_notm}} for per-volume encryption
-- Overview of the [Portworx volume decryption workflow](#decryption) with {{site.data.keyword.keymanagementservicelong_notm}} for per-volume encryption
+- Overview of the [Portworx volume encryption workflow](#px_encryption) for per-volume encryption
+- Overview of the [Portworx volume decryption workflow](#decryption) for per-volume encryption
 - [Setting up per-volume encryption](#setup_encryption) for your Portworx volumes.
 
 ### Portworx per-volume encryption workflow
 {: #px_encryption}
 
-The following image illustrates the encryption workflow in Portworx with {{site.data.keyword.keymanagementservicelong_notm}} when you set up per-volume encryption.
+The following image illustrates the encryption workflow in Portworx when you set up per-volume encryption.
 {: shortdesc}
 
-<img src="images/cs_portworx_volume_encryption.png" alt="Encrypting Portworx volumes by using {{site.data.keyword.keymanagementservicelong_notm}}" width="600" style="width: 600px; border-style: none"/>
+<img src="images/cs_portworx_volume_encryption.png" alt="Encrypting Portworx volumes" width="600" style="width: 600px; border-style: none"/>
 
 1. The user creates a PVC with a Portworx storage class and requests the storage to be encrypted.
-2. Portworx invokes the {{site.data.keyword.keymanagementservicelong_notm}} API `WrapCreateDEK` to create a passphrase by using the customer root key (CRK) that is stored in the Portworx secret.
-3. The {{site.data.keyword.keymanagementservicelong_notm}} service instance generates a 256-bit passphrase and wraps the passphrase in the DEK. The DEK is returned to the Portworx cluster.
+2. Portworx invokes the {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} API `WrapCreateDEK` to create a passphrase by using the customer root key (CRK) that is stored in the Portworx secret.
+3. The {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} service instance generates a 256-bit passphrase and wraps the passphrase in the DEK. The DEK is returned to the Portworx cluster.
 4. The Portworx cluster uses the passphrase to encrypt the volume.
 5. The Portworx cluster stores the DEK in plain text in the Portworx etcd database, associates the volume ID with the DEK, and removes the passphrase from its memory.
 
 ### Portworx per-volume decryption workflow
 {: #decryption}
 
-The following image illustrates the decryption workflow in Portworx with {{site.data.keyword.keymanagementservicelong_notm}} when you set up per-volume encryption.
+The following image illustrates the decryption workflow in Portworx when you set up per-volume encryption.
 
-<img src="images/cs_portworx_volume_decryption.png" alt="Decrypting Portworx volumes by using {{site.data.keyword.keymanagementservicelong_notm}}" width="600" style="width: 600px; border-style: none"/>
+<img src="images/cs_portworx_volume_decryption.png" alt="Decrypting Portworx volumes" width="600" style="width: 600px; border-style: none"/>
 
 1. Kubernetes sends a request to decrypt an encrypted volume.
 2. Portworx requests the DEK for the volume from the Portworx etcd database.
 3. The Portworx etcd looks up the DEK and returns the DEK to the Portworx cluster.
-4. The Portworx cluster calls the {{site.data.keyword.keymanagementservicelong_notm}} API `UnWrapDEK` by providing the DEK and the root key (CRK) that is stored in the Portworx secret.
-5. {{site.data.keyword.keymanagementservicelong_notm}} unwraps the DEK to extract the passphrase and returns the passphrase to the Portworx cluster.
+4. The Portworx cluster calls the {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} API `UnWrapDEK` by providing the DEK and the root key (CRK) that is stored in the Portworx secret.
+5. {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} unwraps the DEK to extract the passphrase and returns the passphrase to the Portworx cluster.
 6. The Portworx cluster uses the passphrase to decrypt the volume. After the volume is decrypted, the passphrase is removed from the Portworx cluster.  
 
 ### Enabling per-volume encryption for your Portworx volumes
 {: #setup_encryption}
 
-Follow these steps to set up encryption for your Portworx volumes with {{site.data.keyword.keymanagementservicelong_notm}}.
+Follow these steps to set up encryption for your Portworx volumes.
 {: shortdesc}
 
-1. Make sure that you are [assigned the `Editor` platform access role and the `Writer` service access role](/docs/key-protect?topic=key-protect-manage-access#manage-access) in {{site.data.keyword.cloud_notm}} Identity and Access Management for {{site.data.keyword.keymanagementservicelong_notm}}.
+1. Make sure that you are [assigned the `Editor` platform access role and the `Writer` service access role](/docs/key-protect?topic=key-protect-manage-access#manage-access) in {{site.data.keyword.cloud_notm}} Identity and Access Management for the KMS provider that you want to use.
 
-2. Create an {{site.data.keyword.keymanagementservicelong_notm}} service instance.
-   1. Open the [{{site.data.keyword.keymanagementservicelong_notm}} catalog page](https://cloud.ibm.com/catalog/services/key-protect).
-   2. In the **Service name** field, enter a name for your service instance.
-   3. Select the region where you want to deploy your service instance. For optimal performance, choose the region that your cluster is in.
-   4. Select the resource group that your cluster is in.
-   5. Review the pricing plan.
-   6. Click **Create** to create your service instance. When the creation is finished, the service details page opens.
-
-3. Create an {{site.data.keyword.keymanagementservicelong_notm}} root key.
-   1. From the service details page, select **Manage**.
-   2. Click **Add key**.
-   3. Enter the **Name** of your key and select **Root key** from the **Key type** drop-down list.
-   4. Click **Create key**.
-   5. Note the ID of the root key that you created.
-
-4. Retrieve the **GUID** of your service instance.
+2. Create a service instance of the KMS provider that you want to use. Note the name of the service instance that you created.
+   * **[{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-provision)**
+   * **[{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-provision)**
+3. Create a root key. Note the ID of the root key that you created.
+   * [Create a **{{site.data.keyword.keymanagementservicelong_notm}}** root key](/docs/key-protect?topic=key-protect-create-root-keys).
+   * [Create a **{{site.data.keyword.hscrypto}}** root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys).
+4. Retrieve the **GUID** of the service instance that you created.
    ```
    ibmcloud resource service-instance <service_instance_name_or_ID>
    ```
@@ -397,34 +385,33 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
 
    Example output:
    ```
-   Retrieving service instance portworx in resource group default under account IBM as nspies@us.ibm.com...
+   Retrieving service instance <name> in resource group default under account IBM as <user>...
    OK
 
-   Name:                  portworx   
+   Name:                  <name>   
    ID:                    crn:v1:bluemix:public:kms:us-south:a/1ab123ab3c456789cde1f1234ab1cd123:a1a2b345-1d12-12ab-a12a-1abc2d3e1234::   
-   GUID:                  a1a2b345-1d12-12ab-a12a-1abc2d3e1234  
-   Location:              us-south   
-   Service Name:          kms   
-   Service Plan Name:     tiered-pricing   
-   Resource Group Name:   default   
-   State:                 active   
-   Type:                  service_instance   
-   Sub Type:                 
-   Tags:                     
-   Created at:            2018-10-30T20:24:54Z   
-   Updated at:            2018-10-30T20:24:54Z  
+   GUID:                  a1a2b345-1d12-12ab-a12a-1abc2d3e1234 
+   ...
    ```
    {: screen}
 
 5. [Create a service ID for your account](/docs/account?topic=account-serviceids#serviceids).  
 
-6. [Assign your service ID permissions](/docs/account?topic=account-serviceids) to your {{site.data.keyword.keymanagementservicelong_notm}} service instance.
+6. [Assign your service ID permissions](/docs/account?topic=account-serviceids) to your **{{site.data.keyword.keymanagementservicelong_notm}}** or **{{site.data.keyword.hscrypto}}** service instance.
 
-7. [Create an API key for your service ID](/docs/account?topic=account-serviceidapikeys#serviceidapikeys). This API key is used by Portworx to access the {{site.data.keyword.keymanagementservicelong_notm}} API.
+7. [Create an API key for your service ID](/docs/account?topic=account-serviceidapikeys#serviceidapikeys). This API key is used by Portworx to access the **{{site.data.keyword.keymanagementservicelong_notm}}** or **{{site.data.keyword.hscrypto}}** API.
 
-8. [Retrieve the {{site.data.keyword.keymanagementservicelong_notm}} API endpoint](/docs/key-protect?topic=key-protect-regions#regions) for the region where you created your service instance. Make sure that you note your API endpoint in the format `https://<api_endpoint>`.
+8. If you are using {{site.data.keyword.keymanagementservicelong_notm}}, retrieve the API endpoint. If you are using {{site.data.keyword.hscrypto}}, retrieve the Key Management endpoint URL:
+   * **{{site.data.keyword.keymanagementservicelong_notm}}**: [Retrieve the region](/docs/key-protect?topic=key-protect-regions#regions) where you created your service instance. Make sure that you note your API endpoint in the format `https://<api_endpoint>`. Example: `https://us-south.kms.cloud.ibm.com`.
+   * **{{site.data.keyword.hscrypto}}**: [Retrieve the Key Management public endpoint URL](/docs/hs-crypto?topic=hs-crypto-regions#service-endpoints). Make sure that you note your endpoint in the format `https://<endpoint>`. Example: `https://api.us-south.hs-crypto.cloud.ibm.com:<port>`. For more information, see the [{{site.data.keyword.hscrypto}} API documentation](https://cloud.ibm.com/apidocs/hs-crypto#getinstance).
 
-9. Encode the {{site.data.keyword.keymanagementservicelong_notm}} GUID, API key, root key, and {{site.data.keyword.keymanagementservicelong_notm}} API endpoint to base64 and note all the base64 encoded values. Repeat this command for each parameter to retrieve the base64 encoded value.
+
+### Creating a secret to store the KMS credentials
+{: px_create_km_secret}
+
+**Before you begin:** [Set up encryption](#setup_encryption)
+
+1. Encode the credentials that you retrieved in the previous section to base64 and note all the base64 encoded values. Repeat this command for each parameter to retrieve the base64 encoded value.
    ```
    echo -n "<value>" | base64
    ```
@@ -449,7 +436,7 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
          IBM_SERVICE_API_KEY: <base64_apikey>
          IBM_INSTANCE_ID: <base64_guid>
          IBM_CUSTOMER_ROOT_KEY: <base64_rootkey>
-         IBM_BASE_URL: <base64_kp_api_endpoint>
+         IBM_BASE_URL: <base64_endpoint>
        ```
        {: codeblock}
 
@@ -468,19 +455,19 @@ Follow these steps to set up encryption for your Portworx volumes with {{site.da
        </tr>
        <tr>
        <td><code>data.IBM_SERVICE_API_KEY</code></td>
-       <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} API key that you retrieved earlier.  </td>
+       <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} API key that you retrieved earlier.  </td>
        </tr>
        <tr>
        <td><code>data.IBM_INSTANCE_ID</code></td>
-       <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} GUID that you retrieved earlier. </td>
+       <td>Enter the base64 encoded service instance GUID that you retrieved earlier. </td>
        </tr>
        <tr>
        <td><code>data.IBM_CUSTOMER_ROOT_KEY</code></td>
-       <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} root key that you retrieved earlier. </td>
+       <td>Enter the base64 encoded root key that you retrieved earlier. </td>
        </tr>
        <tr>
        <td><code>data.IBM_BASE_URL</code></td>
-       <td>Enter the base64 encoded API endpoint of your {{site.data.keyword.keymanagementservicelong_notm}} service instance. </td>
+       <td><ul><li><b>{{site.data.keyword.keymanagementservicelong_notm}}</b>: Enter the base64 encoded API endpoint of your service instance.</li><li><b>{{site.data.keyword.hscrypto}}</b>: Enter the base64 encoded Key Management public endpoint.</li></ul></td>
        </tr>
        </tbody>
        </table>
@@ -583,7 +570,6 @@ Check out how to [encrypt the secrets in your cluster](/docs/openshift?topic=ope
 {: tip}
 
 <br />
-
 
 
 ## Installing Portworx in your cluster
@@ -786,7 +772,6 @@ To stop billing for Portworx, you must remove the Portworx Helm installation fro
 
 <br />
 
-
 ## Creating a Portworx volume
 {: #add_portworx_storage}
 
@@ -920,7 +905,6 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
       {: pre}
 
       <br />
-
 
 ## Mounting the volume to your app
 {: #mount_pvc}
@@ -1068,7 +1052,6 @@ To access the storage from your app, you must mount the PVC to your app.
 
       <br />
 
-
 ## VPC: Updating worker nodes with Portworx volumes
 {: #portworx_vpc_up}
 
@@ -1142,7 +1125,6 @@ To include your cluster in a Portworx disaster recovery configuration:
 </dl>
 
 <br />
-
 
 ## Cleaning up your Portworx volumes and cluster
 {: #portworx_cleanup}
@@ -1260,7 +1242,6 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 
 <br />
 
-
 ## Getting help and support
 {: #portworx_help}
 
@@ -1279,7 +1260,6 @@ Review the following Portworx limitations.
 | The Portworx experimental `InitializerConfiguration` feature is not supported. | {{site.data.keyword.openshiftlong_notm}} does not support the [Portworx experimental `InitializerConfiguration` admission controller](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/hyperconvergence/#initializer-experimental-feature-in-stork-v1-1). |
 {: summary="This table contains information on limitations for Portworx on {{site.data.keyword.openshiftlong_notm}} clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Portworx limitations"}
-
 
 
 

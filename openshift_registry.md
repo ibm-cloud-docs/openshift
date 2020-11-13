@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-11-13"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -713,7 +713,7 @@ Not quite. Your containers must be authorized to pull images by using the secret
 ### Private network connection to `icr.io` registries
 {: #cluster_registry_auth_private}
 
-When you set up your {{site.data.keyword.cloud_notm}} account to use service endpoints, you can use a private network connection to push images to and to pull images from {{site.data.keyword.registrylong_notm}}. When you use the private network to pull images, your image pull traffic is not charged as [public bandwidth](/docs/openshift?topic=openshift-faqs#bandwidth), because the traffic is on the private network. For more information, see the [{{site.data.keyword.registrylong_notm}} private network documentation](/docs/Registry?topic=Registry-registry_private).
+When you set up your {{site.data.keyword.cloud_notm}} account to use service endpoints, you can use a private network connection to push images to and to pull images from {{site.data.keyword.registrylong_notm}}. When you use the private network to pull images, your image pull traffic is not charged as [public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth), because the traffic is on the private network. For more information, see the [{{site.data.keyword.registrylong_notm}} private network documentation](/docs/Registry?topic=Registry-registry_private).
 {: shortdesc}
 
 **What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**<br>

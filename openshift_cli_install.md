@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-10"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -177,16 +177,28 @@ For reference information about these CLIs, see the documentation for those tool
 {: support}
 {: help}
 
-To view a local version of the {{site.data.keyword.openshiftshort}} dashboard and to deploy apps into your {{site.data.keyword.openshiftlong_notm}} clusters, install the {{site.data.keyword.openshiftshort}} CLI (`oc`) and Kubernetes CLI (`kubectl`). For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html){: external}.
+To view a local version of the {{site.data.keyword.openshiftshort}} dashboard and to deploy apps into your {{site.data.keyword.openshiftlong_notm}} clusters, install the {{site.data.keyword.openshiftshort}} CLI (`oc`) and Kubernetes CLI (`kubectl`).
 {: shortdesc}
 
 Using both community Kubernetes and {{site.data.keyword.openshiftshort}} clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on {{site.data.keyword.openshiftshort}} and 1.18.10 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} for your cluster `major.minor` {{site.data.keyword.openshiftshort}} and Kubernetes versions. For supported versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
 {: note}
 
-1.  Download the latest {{site.data.keyword.openshiftshort}} CLI (`oc`) for your local operating system and {{site.data.keyword.openshiftshort}} version. The current default {{site.data.keyword.openshiftshort}} version is 4.4. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
+Looking for a simple installation? You can try installing the plug-in with a package manager such as Homebrew. Keep in mind that the version skew might not match your cluster. For example, in Homebrew, you can update Homebrew by running `brew update` and check what version of the plug-in is installed by running `brew info openshift-cli`. Then, install the plug-in by running `brew install openshift-cli`.
+{: tip}
 
+1.  Download the latest {{site.data.keyword.openshiftshort}} CLI (`oc`) for your local operating system and {{site.data.keyword.openshiftshort}} version. The current default {{site.data.keyword.openshiftshort}} version is 4.4. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. You can get the download link for `oc` from the {{site.data.keyword.openshiftshort}} web console, or manually from the `mirror.openshift.com` website.
+
+    **<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters only: Download the `oc` CLI from your cluster.**
+    1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+    2.  Click **{{site.data.keyword.openshiftshort}} web console**.
+    3.  From the menu bar, click the information (question mark) icon.
+    4.  Click **Command Line Tools**.
+    5.  Click the download link for your operating system.
+
+    **<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Version 3 or 4 clusters: Links to manually download the `oc` CLI from `mirror.openshift.com`.**
     *   [OpenShift Container Platform version 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
-    *   OpenShift Container Platform version 4 `oc` download links
+    *   OpenShift Container Platform version 4 `oc` download links.
+        * 
         * [4.5](https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.5/){: external}
         * [4.4](https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.4/){: external}
 
@@ -196,15 +208,15 @@ Using both community Kubernetes and {{site.data.keyword.openshiftshort}} cluster
         -   **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl){: external}
         -   **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl){: external}
         -   **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe){: external}
-    * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> For clusters that run {{site.data.keyword.openshiftshort}} 4: Download `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.openshiftshort}} cluster. For supported versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
+    * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> For clusters that run {{site.data.keyword.openshiftshort}} 4: Download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.openshiftshort}} cluster. For supported versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
         -   **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.18.10/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.18.10/bin/darwin/amd64/kubectl){: external}
         -   **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.18.10/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.18.10/bin/linux/amd64/kubectl){: external}
         -   **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.18.10/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.18.10/bin/windows/amd64/kubectl.exe){: external}
 
     If you have multiple clusters that run different versions of Kubernetes, you can download separate `kubectl` binary files. Then, set up an alias in your local terminal profile to point to the separate binary files that match the version of `kubectl` your cluster needs.
     {: tip}
-
-3.  If you use Mac OS or Linux, complete the following steps to add the binary files to your `PATH` system variable.
+3.  Open the downloaded, compressed files. For example, you might double-click the compressed files in your Downloads folder, or run a command such as `tar -xvf oc.tar.gz`.
+4.  If you use Mac OS or Linux, complete the following steps to add the binary files to your `PATH` system variable.
     1.  Move the `oc` and `kubectl` executable files to the `/usr/local/bin` directory.
         ```
         mv /<filepath>/oc /usr/local/bin/oc
@@ -226,11 +238,11 @@ Using both community Kubernetes and {{site.data.keyword.openshiftshort}} cluster
         /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
         ```
         {: screen}
-4.  **Optional**: [Enable autocompletion for `kubectl` commands](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion){: external}. The steps vary depending on the shell that you use. You can repeat the steps to enable autocompletion for `oc` commands. For example, in bash on Linux, instead of `kubectl completion bash >/etc/bash_completion.d/kubectl`, you can run `oc completion bash >/etc/bash_completion.d/oc_completion`.
+5.  **Optional**: [Enable autocompletion for `kubectl` commands](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion){: external}. The steps vary depending on the shell that you use. You can repeat the steps to enable autocompletion for `oc` commands. For example, in bash on Linux, instead of `kubectl completion bash >/etc/bash_completion.d/kubectl`, you can run `oc completion bash >/etc/bash_completion.d/oc_completion`.
 
 Next, start [Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial).
 
-For more information about the `oc` CLI, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/cli_reference/openshift_cli/getting-started-cli.html){: external}.
+For more information about the `oc` CLI, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.5/cli_reference/openshift_cli/getting-started-cli.html){: external}.
 {: note}
 
 <br />

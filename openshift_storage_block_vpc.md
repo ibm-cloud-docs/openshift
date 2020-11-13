@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -101,7 +101,7 @@ subcollection: openshift
 
 You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://www.ibm.com/cloud/vpc/pricing).
 
-The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled by default on VPC clusters. You can enable or disable the add-on by using the [`addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) or [`addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) command in the CLI.
+The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled by default on VPC clusters. Later, you can disable or reenable the add-on by using the [`addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) or [`addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) command in the CLI.
 {: note}
 
 ## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}
@@ -801,7 +801,6 @@ When you want to set up encryption for your {{site.data.keyword.blockstorageshor
 
 ### Creating a custom storage class
 {: #vpc-customize-storage-class}
-{: #vpc-block-xfs}
 
 Create your own customized storage class with the preferred settings for your {{site.data.keyword.blockstorageshort}} instance.
 {: shortdesc}
@@ -870,7 +869,7 @@ To create your own storage class:
       </tr>
       <tr>
       <td><code>encrypted</code></td>
-      <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyworblockstorageshort}} volume. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameterencryptionKey</code>. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+      <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyword.blockstorageshort}} volume. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameterencryptionKey</code>. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
       </tr>
       <tr>
       <td><code>encryptionKey</code></td>
@@ -882,7 +881,7 @@ To create your own storage class:
       </tr>
       <tr>
       <td><code>tags</code></td>
-      <td>In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyworblock_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. </td>
+      <td>In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. </td>
       </tr>
       <tr>
       <td><code>iops</code></td>

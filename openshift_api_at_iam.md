@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-11-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -95,7 +95,7 @@ subcollection: openshift
 # IAM and {{site.data.keyword.cloudaccesstrailshort}} action by API method
 {: #api-at-iam}
 
-When you use {{site.data.keyword.openshiftlong}} such as through the command line or console, the service calls application programming interface (API) methods to complete your requests. You might need certain permissions to call these API methods, and you can keep track of the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
+When you use {{site.data.keyword.openshiftlong}} such as through the command line or console, the service calls application programming interface (API) methods to complete your requests. In {{site.data.keyword.cloud_notm}} IAM, each API operation is associated with an IAM action that the user must have an access role to use the API operation. You can keep track of the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
 {: shortdesc}
 
 Review the following list of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) actions and {{site.data.keyword.at_full_notm}} events that correspond to each API method in {{site.data.keyword.openshiftlong_notm}}.
@@ -108,10 +108,10 @@ For more information, see the following topics.
 ## Account
 {: #ks-account}
 
-Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following account API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-|	API Method	|	Description	|	Required action in IAM	|	Event sent to {{site.data.keyword.cloudaccesstrailshort}}	|
+|	API Method	|	Description	|	IAM action for the API	|	Event sent to {{site.data.keyword.cloudaccesstrailshort}}	|
 |	---	|	---	|	---	|	---	|
 |	DELETE​/v1​/credentials	|	Remove {{site.data.keyword.cloud_notm}} infrastructure account credentials from your {{site.data.keyword.openshiftlong_notm}} account.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.account.delete	|
 |	GET​/v1​/addons	|	List available add-ons that you can enable in a cluster.	|	-	|	-	|
@@ -141,14 +141,13 @@ Review the following account API methods, their required actions in {{site.data.
 
 <br />
 
-
 ## Cluster
 {: #ks-cluster}
 
-Review the following cluster API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following cluster API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	DELETE​/v1​/clusters​/{idOrName}	|	Delete a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.delete	|
 |	DELETE​/v1​/clusters​/{idOrName}​/apiserverconfigs​/auditwebhook	|	Delete an audit webhook configuration.	|	containers-kubernetes.cluster.operate	|	containers-kubernetes.cluster.delete 	|
@@ -207,72 +206,69 @@ Review the following cluster API methods, their required actions in {{site.data.
 
 <br />
 
-
 ## Ingress
 {: #ks-ingress}
 
-Review the following Ingress API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following Ingress API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	GET​/ingress​/v2​/secret​/getSecret	|	View Ingress secret details. |	containers-kubernetes.cluster.create	|	-	|
-|	GET​/ingress​/v2​/secret​/getSecrets	|	View Ingress secrets for a cluster.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/ingress​/v2​/secret​/createSecret	|	Create an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/ingress​/v2​/secret​/deleteSecret	|	Delete an Ingress secret from the cluster. |	containers-kubernetes.cluster.create	|	-	|
-|	POST​/ingress​/v2​/secret​/updateSecret	|	Update an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	-	|
+|	GET​/ingress​/v2​/secret​/getSecret	|	View Ingress secret details. |	containers-kubernetes.cluster.create	|	cluster-ingress-secret.get	|
+|	GET​/ingress​/v2​/secret​/getSecrets	|	View Ingress secrets for a cluster.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.list	|
+|	POST​/ingress​/v2​/secret​/createSecret	|	Create an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.create	|
+|	POST​/ingress​/v2​/secret​/deleteSecret	|	Delete an Ingress secret from the cluster. |	containers-kubernetes.cluster.create	|	cluster-ingress-secret.delete	|
+|	POST​/ingress​/v2​/secret​/updateSecret	|	Update an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.update	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Ingress API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 <br />
 
-
 ## Ingress ALB
 {: #ks-alb}
 
-Review the following Ingress application load balancer (ALB) API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following Ingress application load balancer (ALB) API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	DELETE​/v1​/alb​/albs​/{albID}	|	Disable an ALB in your cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	DELETE​/v1​/alb​/clusters​/{idOrName}​/albsecrets	|	Delete an ALB secret that is imported from {{site.data.keyword.cloudcerts_short}} from a cluster.	|	containers-kubernetes.cluster.create	|	-	|
-|	GET​/v1​/alb​/albs​/{albID}	|	View details of an ALB.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/alb​/albtypes	|	List the ALB types that are supported.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/alb​/clusters​/{idOrName}	|	List all ALBs in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/alb​/clusters​/{idOrName}​/albsecrets	|	View details of an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}}.	|	containers-kubernetes.cluster.create	|	-	|
-|	GET​/v1​/alb​/clusters​/{idOrName}​/updatepolicy	|	Check if automatic updates for Ingress ALBs are enabled in a cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	GET​/v2​/alb​/getAlb	|	View details of an ALB.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/alb​/getAlbImages	|	List supported Ingress controller images.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/alb​/getClusterAlbs	|	List all ALBs in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/alb​/getMigrationStatus	|	Get the status of the migration process.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/alb​/getStatus	|	Get the status of the ingress resources in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	POST​/v1​/alb​/albs	|	Enable an existing ALB in a cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v1​/alb​/albsecrets	|	Import an ALB secret from {{site.data.keyword.cloudcerts_short}}.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/v1​/alb​/clusters​/{idOrName}​/zone​/{zoneId}	|	Create a public or private ALB in a specified zone and VLAN.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/alb​/cleanupMigration	|	Clean up any Ingress resources and ConfigMaps that are no longer needed after an Ingress migration.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/v2​/alb​/startMigration	|	Start a migration of your {{site.data.keyword.cloud_notm}} Ingress ConfigMap and Ingress resources to the Kubernetes Ingress format.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/v2​/alb​/updateAlb	|	Update ALBs in a cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/alb​/vpc​/createAlb	|	Create a public or private ALB in a specified zone and VPC cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/alb​/vpc​/disableAlb	|	Disable an ALB in your VPC cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/alb​/vpc​/enableAlb	|	Enable an existing ALB in a VPC cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/alb​/albsecrets	|	Update an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}}.	|	containers-kubernetes.cluster.create	|	-	|
-|	PUT​/v1​/alb​/clusters​/{idOrName}​/update	|	Force a one-time update of all ALB pods to the latest build.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/alb​/clusters​/{idOrName}​/updatepolicy	|	Enable or disable automatic updates for the Ingress ALBs in a cluster.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/alb​/clusters​/{idOrName}​/updaterollback	|	Roll back all ALB pods in a cluster to their previously running build.	|	containers-kubernetes.cluster.update	|	-	|
+|	DELETE​/v1​/alb​/albs​/{albID}	|	Disable an ALB in a classic cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.delete |
+|	DELETE​/v1​/alb​/clusters​/{idOrName}​/albsecrets	|	Delete an ALB secret that is imported from {{site.data.keyword.cloudcerts_short}} from a classic cluster.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.delete |
+|	GET​/v1​/alb​/albs​/{albID}	|	View details of an ALB in a classic cluster.	|	containers-kubernetes.cluster.read	|	cluster-alb.get |
+|	GET​/v1​/alb​/albtypes	|	List the ALB types that are supported in classic clusters. |	containers-kubernetes.cluster.read	|	- | |
+|	GET​/v1​/alb​/clusters​/{idOrName}	|	List all ALBs in a classic cluster.	|	containers-kubernetes.cluster.read	|	cluster-alb.list |
+|	GET​/v1​/alb​/clusters​/{idOrName}​/albsecrets	|	View details of an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}} to a classic cluster.	|	containers-kubernetes.cluster.create	| cluster-ingress-secret.list |
+|	GET​/v1​/alb​/clusters​/{idOrName}​/updatepolicy	|	Check if automatic updates for Ingress ALBs are enabled in a classic cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb-policy.get |
+|	GET​/v2​/alb​/getAlb	|	View details of an ALB.	|	containers-kubernetes.cluster.read	|	cluster-alb.get |
+|	GET​/v2​/alb​/getAlbImages	|	List supported Ingress controller images.	|	containers-kubernetes.cluster.read	|	alb-image.list |
+|	GET​/v2​/alb​/getClusterAlbs	|	List all ALBs in a cluster.	|	containers-kubernetes.cluster.read	|	cluster-alb.list |
+|	GET​/v2​/alb​/getMigrationStatus	|	Get the status of the Ingress migration process.	|	containers-kubernetes.cluster.read	|	cluster-alb-migration-status.get |
+|	GET​/v2​/alb​/getStatus	|	Get the status of the Ingress resources in a cluster.	|	containers-kubernetes.cluster.read	|	cluster-ingress-status.get |
+|	POST​/v1​/alb​/albs	|	Enable an existing ALB in a classic cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.enable |
+|	POST​/v1​/alb​/albsecrets	|	Import an ALB secret from {{site.data.keyword.cloudcerts_short}} to a cluster.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.create |
+|	POST​/v1​/alb​/clusters​/{idOrName}​/zone​/{zoneId}	|	Create a public or private ALB in a classic cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.create |
+|	POST​/v2​/alb​/cleanupMigration	|	Clean up any Ingress resources and configmaps that are no longer needed after an Ingress migration.	|	containers-kubernetes.cluster.create	|	cluster-alb-migration.cleanup |
+|	POST​/v2​/alb​/startMigration	|	Start a migration of your {{site.data.keyword.cloud_notm}} Ingress configmap and Ingress resources to the Kubernetes Ingress format.	|	containers-kubernetes.cluster.create	|	cluster-alb-migration.start |
+|	POST​/v2​/alb​/updateAlb	|	Update ALBs in a cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.update |
+|	POST​/v2​/alb​/vpc​/createAlb	|	Create a public or private ALB in a VPC cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.create |
+|	POST​/v2​/alb​/vpc​/disableAlb	|	Disable an ALB in a VPC cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.delete |
+|	POST​/v2​/alb​/vpc​/enableAlb	|	Enable an existing ALB in a VPC cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb.enable |
+|	PUT​/v1​/alb​/albsecrets	|	Update an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}}.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.update |
+|	PUT​/v1​/alb​/clusters​/{idOrName}​/update	|	Force a one-time update of all ALB pods to the latest build.	|	containers-kubernetes.cluster.update	|	cluster-alb.update |
+|	PUT​/v1​/alb​/clusters​/{idOrName}​/updatepolicy	|	Enable or disable automatic updates for the Ingress ALBs in a cluster.	|	containers-kubernetes.cluster.update	|	cluster-alb-policy.update |
+|	PUT​/v1​/alb​/clusters​/{idOrName}​/updaterollback	|	Roll back all ALB pods in a cluster to their previously running build.	|	containers-kubernetes.cluster.update	|	cluster-alb-policy.update |
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="ALB API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 <br />
 
-
 ## Fluentd logging
 {: #ks-logging}
 
-Review the following Fluentd logging configuration API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following Fluentd logging configuration API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	DELETE​/v1​/logging​/{idOrName}​/filterconfigs	|	Deletes all logging filter configurations for the cluster.	|	containers-kubernetes.cluster.update	|	containers-kubernetes.logging-filter.delete 	|
 |	DELETE​/v1​/logging​/{idOrName}​/filterconfigs​/{id}	|	Delete a logging filter configuration.	|	containers-kubernetes.cluster.update	|	containers-kubernetes.logging-filter.delete 	|
@@ -298,43 +294,41 @@ Review the following Fluentd logging configuration API methods, their required a
 
 <br />
 
-
 ## NLB DNS
 {: #ks-nlb-dns}
 
-Review the following network load balancer (NLB) domain name system (DNS) API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following network load balancer (NLB) domain name system (DNS) API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}									
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	DELETE​/v1​/nlb-dns​/clusters​/{idOrName}​/host​/{nlbHost}​/ip​/{nlbIP}​/remove	|	Remove an IP address from an NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
-|	GET​/v1​/nlb-dns​/clusters​/{idOrName}​/list	|	List registered NLB subdomains and NLB IP addresses.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/host​/{nlbHost}​/config	|	View the health check monitor settings for an NLB subdomain.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/list	|	List the health check monitor settings for all NLB subdomains.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/status	|	List the health check status for the IPs behind NLB subdomains in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/nlb-dns​/getNlbDNSList	|	List registered NLB subdomains in a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	PATCH​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/config	|	Configure a health check monitor for an NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v1​/nlb-dns​/clusters​/{idOrName}​/register	|	Create a NLB subdomain and associate one or more NLB IP addresses with it.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/deleteSecret	|	Remove a secret from an NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/regenerateCert	|	Regenerate certificates for a secret.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/vpc​/createNlbDNS	|	Create a NLB subdomain in a VPC cluster and associate a load balancer hostname with it.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/vpc​/removeLBHostname	|	Remove the load balancer hostname from the DNS record for an existing NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
-|	POST​/v2​/nlb-dns​/vpc​/ReplaceLBHostname	|	Update the DNS record for an NLB subdomain by replacing the load balancer hostname.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/add	|	Update a DNS record by adding an NLB IP address.	|	containers-kubernetes.cluster.update	|	-	|
-|	PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/health	|	Enable or disable a health check monitor for an NLB subdomain.	|	containers-kubernetes.cluster.update	|	-	|
+|	DELETE​/v1​/nlb-dns​/clusters​/{idOrName}​/host​/{nlbHost}​/ip​/{nlbIP}​/remove	|	Remove an IP address from an NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns.delete |
+|	GET​/v1​/nlb-dns​/clusters​/{idOrName}​/list	|	List registered NLB subdomains and NLB IP addresses.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns.list |
+|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/host​/{nlbHost}​/config	|	View the health check monitor settings for an NLB subdomain.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns-monitor.get |
+|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/list	|	List the health check monitor settings for all NLB subdomains.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns-monitor.list |
+|	GET​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/status	|	List the health check status for the IPs behind NLB subdomains in a cluster.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns-monitor-status.list |
+|	GET​/v2​/nlb-dns​/getNlbDNSList	|	List registered NLB subdomains in a cluster.	|	containers-kubernetes.cluster.read	|	cluster-nlb-dns.list |
+|	PATCH​/v1​/nlb-dns​/health​/clusters​/{idOrName}​/config	|	Configure a health check monitor for an NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns-monitor.create |
+|	POST​/v1​/nlb-dns​/clusters​/{idOrName}​/register	|	Create a NLB subdomain and associate one or more NLB IP addresses with it.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns.update |
+|	POST​/v2​/nlb-dns​/deleteSecret	|	Remove a secret from an NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-ingress-secret.delete |
+|	POST​/v2​/nlb-dns​/regenerateCert	|	Regenerate certificates for a secret.	|	containers-kubernetes.cluster.update	|	cluster-ingress-secret.update |
+|	POST​/v2​/nlb-dns​/vpc​/createNlbDNS	|	Create a NLB subdomain in a VPC cluster and associate a load balancer hostname with it.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns.create |
+|	POST​/v2​/nlb-dns​/vpc​/removeLBHostname	|	Remove the load balancer hostname from the DNS record for an existing NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-lb-hostname.delete |
+|	POST​/v2​/nlb-dns​/vpc​/ReplaceLBHostname	|	Update the DNS record for an NLB subdomain by replacing the load balancer hostname.	|	containers-kubernetes.cluster.update	|	cluster-lb-hostname.update |
+|	PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/add	|	Update a DNS record by adding an NLB IP address.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns.update |
+|	PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/health	|	Enable or disable a health check monitor for an NLB subdomain.	|	containers-kubernetes.cluster.update	|	cluster-nlb-dns-monitor.update |
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="NLB DNS API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 <br />
 
-
 ## Observability: {{site.data.keyword.la_short}}
 {: #ks-observability-logging}
 
-Review the following observability logging API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following observability logging API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}								
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	GET​/v2​/observe​/logging​/getConfig	|	Show the details of an existing LogDNA logging configuration.	|	containers-kubernetes.cluster.read	|	-	|
 |	GET​/v2​/observe​/logging​/getConfigs	|	List all LogDNA logging configurations for a cluster.	|	containers-kubernetes.cluster.read	|	-	|
@@ -347,14 +341,13 @@ Review the following observability logging API methods, their required actions i
 
 <br />
 
-
 ## Observability: {{site.data.keyword.mon_short}}
 {: #ks-observability-monitoring}
 
-Review the following observability monitoring API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following observability monitoring API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	GET​/v2​/observe​/monitoring​/getConfig	|	Show the details of an existing Sysdig monitoring configuration.	|	containers-kubernetes.cluster.read	|	-	|
 |	GET​/v2​/observe​/monitoring​/getConfigs	|	List all Sysdig monitoring configurations for a cluster.	|	containers-kubernetes.cluster.read	|	-	|
@@ -367,14 +360,13 @@ Review the following observability monitoring API methods, their required action
 
 <br />
 
-
 ## Private service endpoint allowlist
 {: #ks-acl}
 
-Review the following access control list (ACL) API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}} if you use a private service endpoint allowlist.
+Review the following access control list (ACL) API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}} if you use a private service endpoint allowlist.
 {: shortdesc}
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	DELETE​/v1​/acl​/{idOrName}	|	Disable the private service endpoint allowlist feature for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.containers-kubernetes.network.acl.delete 	|
 |	GET​/v1​/acl​/{idOrName}	|	Get the subnets in the private service endpoint allowlist.	|	containers-kubernetes.cluster.read	|	containers-kubernetes.containers-kubernetes.network.acl.get 	|
@@ -386,14 +378,13 @@ Review the following access control list (ACL) API methods, their required actio
 
 <br />
 
-
 ## Satellite
 {: #sat-api}
 
-Review the following API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.satellitelong_notm}}.
+Review the following API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}									
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	GET​/v2​/nlb-dns​/getSatLocationSubdomains	|	List registered NLB subdomains in a Satellite location.	|	containers-kubernetes.cluster.read	|	-	|
 |	POST​/v2​/nlb-dns​/registerMSCDomains	|	Register NLB subdomains `c001`, `c002`, and `c003`, which each correspond to an IP address of a host that is assigned to the {{site.data.keyword.satelliteshort}} location control plane. The `c000` subdomain corresponds to all of the IP addresses for the cluster. Also, register one CNAME, `ce00`, for the specified {{site.data.keyword.satelliteshort}} location control plane.	|	containers-kubernetes.cluster.operate	|	-	|
@@ -413,14 +404,13 @@ Review the following API methods, their required actions in {{site.data.keyword.
 
 <br />
 
-
 ## Storage
 {: #ks-storage}
 
-Review the following storage API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following storage API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}									
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	GET​/v2​/storage​/getAttachment	|	Get details of a storage attachment.	|	containers-kubernetes.cluster.read	|	containers-kubernetes.containers-kubernetes.storage.attachment.read 	|
 |	GET​/v2​/storage​/getAttachments	|	List storage attachments	|	containers-kubernetes.cluster.read	|	containers-kubernetes.containers-kubernetes.storage.attachment.read 	|
@@ -433,14 +423,13 @@ Review the following storage API methods, their required actions in {{site.data.
 
 <br />
 
-
 ## Worker nodes and worker pools
 {: #ks-workers}
 
-Review the following worker node and worker pool API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
+Review the following worker node and worker pool API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-|	API Method	|	Description	|	IAM event	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
+|	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
 |	DELETE​/v1​/clusters​/{idOrName}​/workerpools​/{poolidOrName}	|	Remove a worker pool from a cluster.	|	containers-kubernetes.cluster.operate	|	containers-kubernetes.workerpool.delete	|
 |	DELETE​/v1​/clusters​/{idOrName}​/workerpools​/{poolidOrName}​/zones​/{zoneid}	|	Remove a zone from a worker pool.	|	containers-kubernetes.cluster.operate	|	containers-kubernetes.zone.delete	|
@@ -478,4 +467,3 @@ Review the following worker node and worker pool API methods, their required act
 |	PUT​/v1​/clusters​/{idOrName}​/workers​/{workerId}	|	Reboot, reload, or update a worker node for a cluster.	|	containers-kubernetes.cluster.operate	|	containers-kubernetes.worker.update 	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Worker node and worker pool API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
-

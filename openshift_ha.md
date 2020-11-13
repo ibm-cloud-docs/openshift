@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-22"
+lastupdated: "2020-11-11"
 
 keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
 
@@ -105,12 +105,12 @@ High availability (HA) is a core discipline in an IT infrastructure to keep your
 {: shortdesc}
 
 **What level of availability do I need?**<br>
-You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend. 
+You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
 
 **What level of availability does {{site.data.keyword.cloud_notm}} offer?**<br>
 See [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime).
 
-The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview/terms-of-use?topic=overview-terms#terms). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 9 worker nodes, three worker nodes per zone that are evenly spread across three zones.
+The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 9 worker nodes, three worker nodes per zone that are evenly spread across three zones.
 
 **What other cluster components can I set up in highly available architecture?**<br>
 See [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](#fault_domains).
@@ -127,7 +127,7 @@ See [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](
 The {{site.data.keyword.openshiftlong_notm}} architecture and infrastructure is designed to ensure reliability, low processing latency, and a maximum uptime of the service. However, failures can happen. Depending on the service that you host in {{site.data.keyword.cloud_notm}}, you might not be able to tolerate failures, even if failures last for only a few minutes.
 {: shortdesc}
 
-{{site.data.keyword.openshiftlong_notm}} provides several approaches to add more availability to your cluster by adding redundancy and anti-affinity. Review the following image to learn about potential points of failure and how to eliminate them. 
+{{site.data.keyword.openshiftlong_notm}} provides several approaches to add more availability to your cluster by adding redundancy and anti-affinity. Review the following image to learn about potential points of failure and how to eliminate them.
 
 <img src="images/cs_failure_ov.png" alt="Overview of fault domains in a high availability cluster within an {{site.data.keyword.cloud_notm}} region." width="250" style="width:250px; border-style: none"/>
 
@@ -156,7 +156,6 @@ Worker nodes in one zone are not guaranteed to be on separate physical compute h
 
 <p>The [{{site.data.keyword.openshiftshort}} master](/docs/openshift?topic=openshift-service-arch) is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The {{site.data.keyword.openshiftshort}} API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources.<br><br>If a master failure occurs, your workloads continue to run on the worker nodes, but you cannot use `oc` commands to work with your cluster resources or view the cluster health until the {{site.data.keyword.openshiftshort}} API server in the master is back up. If a pod goes down during the master outage, the pod cannot be rescheduled until the worker node can reach the {{site.data.keyword.openshiftshort}} API server again.<br><br>During a master outage, you can still run `ibmcloud oc` commands against the {{site.data.keyword.containerlong_notm}} API to work with your infrastructure resources, such as worker nodes or VLANs. If you change the current cluster configuration by adding or removing worker nodes to the cluster, your changes do not happen until the master is back up.</p>
 <p class="important">Do not restart or reboot a worker node during a master outage. This action removes the pods from your worker node. Because the Kubernetes API server is unavailable, the pods cannot be rescheduled onto other worker nodes in the cluster.</p>
-
 {: shortdesc}
 
 The cluster masters are highly available and include replicas for your Kubernetes API server, etcd, scheduler, and controller manager on separate hosts to protect against an outage such as during a master update.
@@ -184,7 +183,7 @@ See [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_cl
 
 A multi-region cluster requires several Cloud resources, and depending on your app, can be complex and expensive. Check whether you need a multi-region setup or if you can accommodate a potential service disruption. If you want to set up a multi-region cluster, ensure that your app and the data can be hosted in another region, and that your app can handle global data replication.
 {: note}
-  
+
 ### 6. Storage availability
 {: #ha-storage}
 
@@ -192,6 +191,5 @@ In a stateful app, data plays an important role to keep your app up and running.
 {: shortdesc}
 
 See [Planning highly available data](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
-
 
 

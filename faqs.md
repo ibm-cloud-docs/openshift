@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-11-11"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
@@ -256,7 +256,7 @@ For more information about supported regions, see [Locations](/docs/openshift?to
 
 Yes. By default, {{site.data.keyword.openshiftlong_notm}} sets up many components such as the cluster master with replicas, anti-affinity, and other options to increase the high availability (HA) of the service. You can increase the redundancy and failure toleration of your cluster worker nodes, storage, networking, and workloads by configuring them in a highly available architecture. For an overview of the default setup and your options to increase HA, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha).
 
-For the latest HA service level agreement terms, refer to the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview/terms-of-use?topic=overview-terms#terms). Generally, the SLA availability terms require that when you configure your infrastructure resources in an HA architecture, you must distribute them evenly across three different availability zones. For example, to receive full HA coverage under the SLA terms, you must [set up a multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) with a total of at least 9 worker nodes, three worker nodes per zone that are evenly spread across three zones.
+For the latest HA service level agreement terms, refer to the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas). Generally, the SLA availability terms require that when you configure your infrastructure resources in an HA architecture, you must distribute them evenly across three different availability zones. For example, to receive full HA coverage under the SLA terms, you must [set up a multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) with a total of at least 9 worker nodes, three worker nodes per zone that are evenly spread across three zones.
 
 ## What compliance standards does the service meet?
 {: #standards}
