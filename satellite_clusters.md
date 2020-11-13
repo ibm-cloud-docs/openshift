@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-11-13"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -108,7 +108,7 @@ Before you can create clusters on your own infrastructure, you must set up an {{
 
 1. [Create an {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-locations#location-create).
 2. [Set up the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
-3. [Attach at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
+3. [Attach at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
 
 <br />
 
