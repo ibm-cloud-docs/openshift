@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-12"
+lastupdated: "2020-11-13"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -184,7 +184,7 @@ The following list of Ingress secret events are sent to {{site.data.keyword.at_f
 {: caption="Ingress secret events" caption-side="top"}
 
 ## Tracking NLB DNS events
-{: #ingress-alb-events}
+{: #ingress-nlb-dns-events}
 
 The following list of network load balancer (NLB) DNS events are sent to {{site.data.keyword.at_full_notm}}.
 {: shortdesc}
