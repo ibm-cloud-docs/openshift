@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-13"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -243,7 +243,7 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     </tbody>
     </table>
 
-The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rule in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare IPv4 IP addresses that are used for the router health check is blocked. Because each ACL has a quota of only 50 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43).
+The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rule in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane IPs that are used to health check and report the overall status of your Ingress components and from the Cloudflare IPv4 IPs that are used to health check the IP addresses of your router services is blocked. Because each ACL has a quota of only 50 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43).
 {: important}
 
 To simplify your VPC security setup, leave your default ACL for the VPC as-is. If you configure rules in both ACLs for your subnets and in the default security group for your worker nodes, you might inadvertently block the subnets and ports that are required for necessary traffic to reach your cluster.
@@ -427,7 +427,7 @@ To create rules in your default security group:
   ```
   {: pre}
 
-The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rule in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare IPv4 IP addresses that are used for the router health check is blocked. Because each security group has a quota of only 25 rules, you currently cannot add enough inbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43).
+The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rule in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane IPs that are used to health check and report the overall status of your Ingress components and from the Cloudflare IPv4 IPs that are used to health check the IP addresses of your router services is blocked. Because each ACL has a quota of only 50 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43).
 {: important}
 
 To simplify your VPC security setup, leave your default ACL for the VPC as-is. If you configure rules in both ACLs for your subnets and in the default security group for your worker nodes, you might inadvertently block the subnets and ports that are required for necessary traffic to reach your cluster.
