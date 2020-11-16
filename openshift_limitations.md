@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-16"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -117,7 +117,6 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | App deployment | The apps that you deploy to and services that you integrate with your cluster must be able to run on the operating system of the worker nodes. |
 | Cluster quota | You cannot exceed 100 clusters per region and per [infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers). If you need more than 100 clusters, [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new cluster quota limit for the region and infrastructure provider that you want. |
 | Free clusters | You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then redeploy the apps that you try out in the Kubernetes cluster to your {{site.data.keyword.openshiftshort}} cluster. |
-| GPU bare metal worker nodes | Because GPU is not generally available from the community out of the box, GPU bare metal worker nodes are not available. You can still order [bare metal worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#bm-table) that are tailored to balanced, data-intensive, and RAM-intensive workloads.|
 | IAM access groups | You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.4/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still manage individual users and service accounts with IAM service roles. You can also still scope IAM platform roles to IAM access groups to control actions like ordering worker nodes, because platform roles are never synced to RBAC roles. |
 | Kubernetes | Make sure to review the [Kubernetes project limitations](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external}. |
 | KMS provider | Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementservicefull}} instance is not supported. KMS provider integration is available only in version 3.11 or 4.4 clusters, not for version 4.3 clusters.|

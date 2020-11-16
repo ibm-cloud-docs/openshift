@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-16"
 
 keywords: openshift
 subcollection: openshift
@@ -696,6 +696,9 @@ subcollection: openshift
 * [Creating a VPC subnet and attaching a public gateway](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet)
   * [Creating a VPC subnet in the console](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_ui)
   * [Creating a VPC subnet in the CLI](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_cli)
+* [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#classic_access_subnets)
+  * [Creating VPC subnets for classic access in the console](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_ui)
+  * [Creating VPC subnets for classic access from the CLI](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_cli)
 
 [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas)
 * [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-vpc-vpnaas#onprem)
@@ -828,6 +831,7 @@ subcollection: openshift
   * [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui)
   * [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli)
 * [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity)
+* [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
 * [Deploying Cloud Paks, licensed software, and other integrations](/docs/openshift?topic=openshift-deploy_app#openshift_app_cloud_paks)
 * [Accessing the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
 
@@ -1607,11 +1611,13 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for master fix pack 4.5.17_1520_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4517_1520)
   * [Changelog for worker node fix pack 4.5.17_1519_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4517_1519)
   * [Changelog for worker node fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518_worker)
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for master fix pack 4.4.29_1525_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1525)
   * [Changelog for worker node fix pack 4.4.29_1524_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1524)
   * [Changelog for worker node fix pack 4.4.27_1523_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4427_1523_worker)
   * [Changelog for master fix pack 4.4.27_1523_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4427_1523)
@@ -1627,6 +1633,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for master fix pack 4.3.40_1546_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1546)
   * [Changelog for worker node fix pack 4.3.40_1545_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1545)
   * [Changelog for worker node fix pack 4.3.40_1544_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1544)
   * [Changelog for master fix pack 4.3.38_1544_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4338_1544)
@@ -1653,6 +1660,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.306_1573_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573)
   * [Changelog for worker node fix pack 3.11.306_1572_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1572)
   * [Changelog for worker node fix pack 3.11.306_1571_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1571)
   * [Changelog for master fix pack 3.11.286_1571_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#311286_1571)

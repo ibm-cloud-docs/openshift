@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-11-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -117,7 +118,6 @@ For more information about how to create and use PVCs, PVs, and the physical sto
 
 <br />
 
-
 ## Dynamic provisioning
 {: #dynamic_provisioning}
 
@@ -155,7 +155,6 @@ For more information about how to dynamically provision persistent storage, see:
 - [Portworx](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 
 <br />
-
 
 ## Static provisioning
 {: #static_provisioning}
@@ -195,7 +194,6 @@ For more information about how to statically provision storage, see:
 - [Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume){: external}
 
 <br />
-
 
 ## Storage classes
 {: #storageclasses}
@@ -316,7 +314,6 @@ To change the default storage class for a cluster:
     oc get storageclasses | grep "(default)"
     ```
     {: pre}
-
 
 
 

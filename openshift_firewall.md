@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -554,10 +554,10 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
         ```
         ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.18.10   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.18.10  
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.18.10   
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.18.10  
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.18.12   
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.18.12  
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.18.12   
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.18.12  
         ```
         {: screen}
     3.  List the VLAN subnets for each unique network ID.
@@ -654,7 +654,7 @@ By default, all IP addresses can be used to log in to the {{site.data.keyword.cl
     <tr>
        <td>EU Central</td>
        <td>ams03<br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
-       <td><code>169.50.177.128/25, 169.50.185.32/27, 169.51.161.128/25, 169.51.39.64/26, 169.51.41.64/26</code><br><code>159.122.157.192/26, 159.122.168.128/25, 159.122.169.64/26, 169.51.193.0/24</code><br><code>169.51.84.64/26</code><br><code>159.8.74.64/27, 169.51.22.64/26, 169.51.28.128/25, 169.51.3.64/26</code><br><br><code>158.177.160.0/25, 158.177.84.64/26, 169.50.48.160/28, 169.50.58.160/27, 161.156.102.0/26, 161.156.125.80/28, 161.156.66.224/27, 149.81.105.192/26, 149.81.124.16/28, 149.81.72.192/27</code></td>
+       <td><code>169.50.177.128/25, 169.50.185.32/27, 169.51.161.128/25, 169.51.39.64/26, 169.51.41.64/26</code><br><code>159.122.157.192/26, 159.122.168.128/25, 159.122.169.64/26, 169.51.193.0/24</code><br><code>169.51.84.64/26</code><br><code>159.8.74.64/27, 169.51.22.64/26, 169.51.28.128/25, 169.51.3.64/26</code><br><br><code>158.177.160.0/25, 158.177.84.64/26, 169.50.48.160/28, 169.50.58.160/27, 161.156.102.0/26, 161.156.125.80/28, 161.156.66.224/27, 149.81.105.192/26, 149.81.124.16/28, 149.81.72.192/27, 149.81.141.128/25, 161.156.14.128/25</code></td>
       </tr>
     <tr>
       <td>UK South</td>
@@ -664,12 +664,12 @@ By default, all IP addresses can be used to log in to the {{site.data.keyword.cl
     <tr>
       <td>US East</td>
        <td>mon01<br>tor01<br><br>wdc04, wdc06, wdc07</td>
-       <td><code>169.54.109.192/26</code><br><code>169.53.178.192/26, 169.55.148.128/25</code><br><br><code>169.47.160.0/26, 169.47.160.128/26, 169.60.104.64/26, 169.60.76.192/26, 169.63.137.0/25, 169.61.85.64/26, 169.62.0.64/26</code></td>
+       <td><code>169.54.109.192/26</code><br><code>169.53.178.192/26, 169.55.148.128/25</code><br><br><code>169.47.160.0/26, 169.47.160.128/26, 169.60.104.64/26, 169.60.76.192/26, 169.63.137.0/25, 169.61.85.64/26, 169.62.0.64/26, 52.117.108.128/25</code></td>
     </tr>
     <tr>
       <td>US South</td>
       <td>hou02<br>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
-      <td><code>173.193.93.0/24, 184.172.208.0/25, 184.173.6.0/26</code><br><code>169.57.18.48/28, 169.57.91.0/27</code><br><code>169.57.190.64/26, 169.57.192.128/25</code><br><code>169.44.207.0/26</code><br><code>169.62.73.192/26</code><br><br><code>169.46.30.128/26, 169.48.138.64/26, 169.48.180.128/25, 169.61.206.128/26, 169.63.199.128/25, 169.63.205.0/25, 169.47.126.192/27, 169.47.79.192/26, 169.48.201.64/26, 169.48.212.64/26, 169.48.238.128/25, 169.61.137.64/26, 169.61.176.64/26, 169.61.188.128/25, 169.61.189.128/25, 169.63.18.128/25, 169.63.20.0/25, 169.63.24.0/24, 169.60.131.192/26, 169.62.130.0/26, 169.62.130.64/26, 169.62.216.0/25, 169.62.222.0/25, 169.62.253.0/25</code></td>
+      <td><code>173.193.93.0/24, 184.172.208.0/25, 184.173.6.0/26</code><br><code>169.57.18.48/28, 169.57.91.0/27</code><br><code>169.57.190.64/26, 169.57.192.128/25</code><br><code>169.44.207.0/26</code><br><code>169.62.73.192/26</code><br><br><code>169.46.30.128/26, 169.48.138.64/26, 169.48.180.128/25, 169.61.206.128/26, 169.63.199.128/25, 169.63.205.0/25, 169.47.126.192/27, 169.47.79.192/26, 169.48.201.64/26, 169.48.212.64/26, 169.48.238.128/25, 169.61.137.64/26, 169.61.176.64/26, 169.61.188.128/25, 169.61.189.128/25, 169.63.18.128/25, 169.63.20.0/25, 169.63.24.0/24, 169.60.131.192/26, 169.62.130.0/26, 169.62.130.64/26, 169.62.216.0/25, 169.62.222.0/25, 169.62.253.0/25, 169.59.197.0/24</code></td>
     </tr>
     </tbody>
   </table>
