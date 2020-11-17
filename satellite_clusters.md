@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-17"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -242,7 +242,7 @@ Review common tasks that you might be interested in:
 ## Setting up the internal container image registry
 {: #satcluster-internal-registry}
 
-By default, the internal registry does not run in your {{site.data.keyword.satelliteshort}} cluster because no backing storage is set up for the internal registry. Review the following options to set up the internal registry. 
+By default, the internal registry does not run in your {{site.data.keyword.satelliteshort}} cluster because no backing storage is set up for the internal registry. Review the following options to set up the internal registry.
 {: shortdesc}
 
 *  **Non-persistent data on the worker node**: See [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry).
@@ -263,7 +263,7 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 {: #satcluster-storage}
 
 Unlike standard {{site.data.keyword.openshiftshort}} clusters that are created on {{site.data.keyword.cloud_notm}} infrastructure, your {{site.data.keyword.satelliteshort}} clusters do not come installed with a storage driver that provides Kubernetes storage classes that are ready to use with Kubernetes persistent volumes for your apps. However, you can install your own storage driver to set up your apps to save their data in a backing storage device. Review the following common options.
-{: shortdesc} 
+{: shortdesc}
 
 *  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage) in your cluster.
 *  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
@@ -274,7 +274,7 @@ Unlike standard {{site.data.keyword.openshiftshort}} clusters that are created o
 ## Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters
 {: #satcluster-rm}
 
-When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in a cluster, the hosts the provide the compute capacity for your worker nodes are not automatically deleted. Instead, the hosts remain attached to your {{site.data.keyword.satelliteshort}} location, but require you to reload the host to be able to reassign the hosts to other {{site.data.keyword.satelliteshort}} resources.
+When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in a cluster, the hosts that provide the compute capacity for your worker nodes are not automatically deleted. Instead, the hosts remain attached to your {{site.data.keyword.satelliteshort}} location, but require you to reload the host to be able to reassign the hosts to other {{site.data.keyword.satelliteshort}} resources.
 {: shortdesc}
 
 1. Back up any data that runs in the worker node or cluster that you want to save. For example, you might save a copy of all the data in your cluster and upload these files to a persistent storage solution, such as {{site.data.keyword.cos_full_notm}}.
