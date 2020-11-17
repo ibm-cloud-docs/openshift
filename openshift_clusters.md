@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-16"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -233,7 +233,7 @@ The following image walks you through choosing the setup that you want for your 
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
 2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster environment.
-   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster, such as 4.4.27.
+   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster, such as 4.4.29.
    3. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
 4. Configure the **Location** details for your cluster.
    1. Select the **Resource group** that you want to create your cluster in.
@@ -423,7 +423,7 @@ The following image walks you through choosing the setup that you want for your 
    When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the **State** of your cluster changes to `deployed`. After your {{site.data.keyword.openshiftshort}} master is ready, the provisioning of your worker nodes is initiated.
    ```
    Name         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     4.4.27_xxxx_openshift      Default             classic
+   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     4.4.29_xxxx_openshift      Default             classic
    ```
    {: screen}
 
@@ -439,7 +439,7 @@ The following image walks you through choosing the setup that you want for your 
    When the worker nodes are ready, the worker node state changes to **normal** and the status changes to **Ready**. When the node status is **Ready**, you can then access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process. Note that if you created your cluster with a private VLAN only, no **Public IP** addresses are assigned to your worker nodes.
    ```
    ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.18.10
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.18.12
    ```
    {: screen}
 
@@ -478,7 +478,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
   * Verify that the banner at the beginning of the VPC page is set to **Gen 2 compute**. If **Gen 1 compute** is set, click **Switch to Gen 2 compute**.
   * During the VPC creation, you can create one subnet only. Subnets are specific to a zone. If you want to create a multizone cluster, create the subnet in one of the multizone-capable zones that you want to use. Later, you manually create the subnets for the remaining zones that you want to include in your cluster.<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
   * To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, attach a public gateway to one or more subnets.
-  * If you require access to classic infrastructure resources, you must follow the steps in [Creating VPC subnets for classic access](/docs/containers?topic=containers-vpc-subnets#ca_subnet_ui) to create a classic access VPC and VPC subnets without the automatic default address prefixes.
+  * If you require access to classic infrastructure resources, you must follow the steps in [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_ui) to create a classic access VPC and VPC subnets without the automatic default address prefixes.
   * For more information, see [Creating a VPC using the IBM Cloud console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) and [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
 3. If you want to create a multizone cluster, create the subnets for all of the remaining zones that you want to include in your cluster. You must have one VPC subnet in all of the zones where you want to create your multizone cluster.
    1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets){: external}, click **New subnet**.
@@ -553,7 +553,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
    ```
    {: pre}
 
-3. [Create a Gen 2 VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-vpc-cli) in the same region where you want to create the cluster.<p class="important">Do the clusters of worker nodes in your VPC need to send and receive information to and from IBM Cloud classic infrastructure? Follow the steps in [Creating VPC subnets for classic access](/docs/containers?topic=containers-vpc-subnets#ca_subnet_cli) to create a classic-enabled VPC and VPC subnets without the automatic default address prefixes.<p>
+3. [Create a Gen 2 VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-vpc-cli) in the same region where you want to create the cluster.<p class="important">Do the clusters of worker nodes in your VPC need to send and receive information to and from IBM Cloud classic infrastructure? Follow the steps in [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_cli) to create a classic-enabled VPC and VPC subnets without the automatic default address prefixes.<p>
 4. [Create a Gen 2 subnet for your VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli).
   * If you want to create a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone), repeat this step to create additional subnets in all of the zones that you want to include in your cluster.
   * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
@@ -644,7 +644,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
     When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the status of your cluster changes to **deployed**. After the {{site.data.keyword.openshiftshort}} master is ready, your worker nodes are set up.
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          mil01     1.18.10      Default               vpc-classic
+    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          mil01     1.18.12      Default               vpc-classic
     ```
     {: screen}
 
@@ -660,7 +660,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
    When the worker nodes are ready, the worker node **State** changes to `deployed` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
    ```
    ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.18.10
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.18.12
    ```
    {: screen}
 

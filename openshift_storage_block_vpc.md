@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -185,7 +185,7 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
 
 2. Select the corresponding storage class for your {{site.data.keyword.block_storage_is_short}} profile.
 
-   All IBM pre-defined storage classes set up {{site.data.keyword.block_storage_is_short}} with an `ext4` file system by default. If you want to use a different file system, such as `xfs` or `ext3`, [create a customized storage class](#vpc-block-xfs).
+   All IBM pre-defined storage classes set up {{site.data.keyword.block_storage_is_short}} with an `ext4` file system by default. If you want to use a different file system, such as `xfs` or `ext3`, [create a customized storage class](#vpc-customize-storage-class).
    {: note}
 
    <table summary="The columns are read from left to right. The first column has the storage profile. The second column describes the corresponding storage class for the profile.">

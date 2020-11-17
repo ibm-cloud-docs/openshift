@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -206,7 +206,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
    Example output:
    ```
    ID                                                     Public IP         Private IP      Flavor              State     Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.18.10
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.18.12
    ```
    {: screen}
 
@@ -1141,7 +1141,9 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses. 
 
     * If a public ALB has no IP address, see [Ingress ALB does not deploy in a zone](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit).
 
-2. If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to the IP addresses of Ingress ALBs, you must allow inbound access on port 80 to your ALBs from [the IP addresses in step 6 of this section](/docs/openshift?topic=openshift-firewall#iam_allowlist) and [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your ALBs from [the IP addresses in step 6 of this section](/docs/openshift?topic=openshift-firewall#iam_allowlist) and [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} that are used to check the health of your ALBs on port 80.
+2. Verify that your ALB IP addresses are reachable by the ALB health check.
+  * **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare's IPv4 IP addresses to the IP addresses of your ALBs so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your ALBs. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your ALB IP addresses from [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} on port 80 and [the IP addresses in step 6 of this section](/docs/openshift?topic=openshift-firewall#iam_allowlist).
+  * **VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy#acls) to secure your cluster network, the necessary inbound access for ALB health checks is blocked. The {{site.data.keyword.openshiftshort}} control plane IP addresses are blocked from checking the health and reporting the overall status of your Ingress components. The Cloudflare IPv4 IP addresses are blocked from checking the health of the IP addresses of your ALB services. Because each ACL has a quota of only 50 rules and each security group has a quota of only 25 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your ALBs are unreachable; however, this status does not reflect your ALB services' actual health. If you notice that traffic is not flowing correctly to your apps and you want to manually check your ALB services' health, you can continue to the next step.
 
 3. Check the health of your ALB IPs.
 
