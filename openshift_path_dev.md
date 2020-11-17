@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-11-17"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -316,7 +317,6 @@ Begin working with your cluster by setting up the CLI and accessing the cluster.
 
 <br />
 
-
 ## Plan your deployment
 {: #dev_plan}
 
@@ -327,7 +327,6 @@ Before you deploy an app, decide how you want to set up your app so that your ap
 2. **Highly available**: [Plan your strategy for a highly available deployment](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps).
 
 <br />
-
 
 ## Develop your app
 {: #dev_develop}
@@ -347,7 +346,6 @@ Configure your app in a YAML file that declares the configuration of the Kuberne
 
 <br />
 
-
 ## Deploy your app
 {: #dev_deploy}
 
@@ -364,7 +362,6 @@ Deploy your app to the cluster by running your app configuration file.
 
 <br />
 
-
 ## Test, log, and monitor
 {: #dev_test}
 
@@ -380,7 +377,6 @@ In a test environment, deliberately create various non-ideal scenarios, such as 
 
 <br />
 
-
 ## Update your app
 {: #dev_update}
 
@@ -395,7 +391,6 @@ Perform rolling updates and rollbacks of apps without downtime for your users.
 
 <br />
 
-
 ## Secure your app
 {: #dev_secure}
 
@@ -407,7 +402,6 @@ Use Kubernetes secrets to store confidential information, such as credentials or
 2. **Secret encryption**: [Encrypt secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect) and [verify that secrets are encrypted](/docs/openshift?topic=openshift-encryption#verify_kms).
 
 <br />
-
 
 ## Expose your app
 {: #dev_expose}
@@ -435,7 +429,6 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
 
 <br />
 
-
 ## Add app storage
 {: #dev_storage}
 
@@ -446,7 +439,6 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
 </br>Need help? Check out [Troubleshooting persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_troubleshoot_storage).
 
 <br />
-
 
 ## Add integrations
 {: #dev_integrate}
@@ -464,6 +456,5 @@ Enhance app capabilities by integrating various external services and catalog se
 3. **Access services from your app**: Ensure that your app can access the service. For example, to access an IBM Cloud service instance from your app, you must [make the service credentials that are stored in the Kubernetes secret available to your app](/docs/openshift?topic=openshift-service-binding#adding_app).
 
 </br>Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-cs_troubleshoot_clusters).
-
 
 

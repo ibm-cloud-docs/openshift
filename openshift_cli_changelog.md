@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-11-17"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -152,7 +152,6 @@ Check out the following syntax and behavior changes between each version of the 
 
 <br />
 
-
 ### Version 0.4
 {: #04}
 
@@ -181,7 +180,6 @@ Version 0.4 of the CLI plug-in is deprecated. To update to the latest version, s
 
 <br />
 
-
 ### Version 0.3
 {: #03}
 
@@ -209,7 +207,6 @@ Version 0.3 of the CLI plug-in is deprecated. To update to the latest version, s
 
 <br />
 
-
 ### Version 0.2
 {: #02}
 
@@ -229,14 +226,13 @@ Version 0.2 of the CLI plug-in is deprecated. To update to the latest version, s
 | 0.2.61 | 26 Feb 2019 | <ul><li>Adds the `cluster pull-secret apply` command, which creates an IAM service ID for the cluster, policies, API key, and image pull secrets so that containers that run in the `default` Kubernetes namespace can pull images from IBM Cloud Container Registry. For new clusters, image pull secrets that use IAM credentials are created by default. Use this command to update existing clusters or if your cluster has an image pull secret error during creation. For more information, see [the doc](/docs/openshift?topic=openshift-registry#cluster_registry_auth).</li><li>Fixes a bug where `ibmcloud oc init` failures caused help output to be printed.</li></ul> |
 | 0.2.53 | 19 Feb 2019 | <ul><li>Fixes a bug where the region was ignored for `ibmcloud oc api-key reset`, `ibmcloud oc credential get/set`, and `ibmcloud oc vlan spanning get`.</li><li>Improves performance for `ibmcloud oc worker update`.</li><li>Adds the version of the add-on in `ibmcloud oc cluster addon enable` prompts.</li></ul> |
 | 0.2.44 | 08 Feb 2019 | <ul><li>Adds `--skip-rbac` option to the `ibmcloud oc cluster config` command to skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) to manage all your RBAC users, do not include this option.</li><li>Updates the Go version to 1.11.5.</li></ul> |
-| 0.2.40 | 06 Feb 2019 | <ul><li>Adds the [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons), [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable), and [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) commands for working with managed cluster add-ons such as the [Istio](/docs/containers?topic=containers-istio) and [Knative](/docs/containers?topic=containers-serverless-apps-knative) managed add-ons for {{site.data.keyword.containerlong_notm}}.</li><li>Improves help text for {{site.data.keyword.Bluemix_dedicated_notm}} users of the `ibmcloud oc vlan ls` command.</li></ul> |
+| 0.2.40 | 06 Feb 2019 | <ul><li>Adds the [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons), [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable), and [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) commands for working with managed cluster add-ons such as the [Istio](/docs/containers?topic=containers-istio) managed add-on for {{site.data.keyword.containerlong_notm}}.</li><li>Improves help text for {{site.data.keyword.Bluemix_dedicated_notm}} users of the `ibmcloud oc vlan ls` command.</li></ul> |
 | 0.2.30 | 31 Jan 2019 | Increases the default timeout value for `ibmcloud oc cluster config` to `500s`. |
 | 0.2.19 | 16 Jan 2019 | <ul><li>Adds the `IKS_BETA_VERSION` environment variable to enable the redesigned beta version of the {{site.data.keyword.openshiftlong_notm}} plug-in CLI. To try out the redesigned version, see [Using the beta command structure](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).</li><li>Increases the default timeout value for `ibmcloud oc subnets` to `60s`.</li><li>Fixes a minor bug and updates the help text in various languages.</li></ul> |
 {: caption="Overview of version changes for version 0.2 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
 {: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
 
 <br />
-
 
 ### Version 0.1
 {: #01}
@@ -258,5 +254,4 @@ Version 0.1 of the CLI plug-in is deprecated. To update to the latest version, s
 | 0.1.591 | 02 Oct 2018 | Adds support for [resource groups](/docs/openshift?topic=openshift-clusters#cluster_prepare). |
 | 0.1.590 | 01 Oct 2018 | <ul><li>Adds the [`ibmcloud oc logging collect`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_collect) and [`ibmcloud oc logging collect-status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_collect_status) commands for collecting API server logs in your cluster.</li><li>Adds the [`ibmcloud oc key-protect-enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms) to enable {{site.data.keyword.keymanagementserviceshort}} as a key management service (KMS) provider in your cluster.</li><li>Adds the `--skip-master-health` flag to the [ibmcloud oc worker reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) and [ibmcloud oc worker reload](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) commands to skip the master health check before initiating the reboot or reload.</li><li>Renames `Owner Email` to `Owner` in the output of `ibmcloud oc cluster get`.</li></ul> |
 {: caption="Overview of version changes for version 0.1 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
-{: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
- 
+{: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."} 

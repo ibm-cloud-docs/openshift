@@ -208,7 +208,7 @@ subcollection: openshift
 {: #sitemap_cluster_strategy}
 
 
-[Your responsibilities with using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks)
+[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks)
 * [Overview of shared responsibilities](/docs/openshift?topic=openshift-responsibilities_iks#overview-by-resource)
 * [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-responsibilities_iks#task-responsibilities)
   * [Incident and operations management](/docs/openshift?topic=openshift-responsibilities_iks#incident-and-ops)
@@ -1813,7 +1813,7 @@ subcollection: openshift
 
 [Where can I find a list of security bulletins that affect my cluster?](/docs/openshift?topic=openshift-faqs#faq_security_bulletins)
 
-[Does the service offer support for bare metal?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
+[Does the service offer support for bare metal and GPU?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
 
 [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
 
