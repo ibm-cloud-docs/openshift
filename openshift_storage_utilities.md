@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -573,7 +573,11 @@ Before you begin:
 
     Example request:
     ```sh
-    curl -X POST -H "Authorization: <IAM_token>" "https://<region>.containers.cloud.ibm.com/v2/storage/vpc/createAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeID=<volume_ID>"
+    curl -X POST "https://containers.cloud.ibm.com/v2/storage/createAttachment" --header "X-Auth-Resource-Group-ID: <resource_group_id>" --header "Authorization: <IAM_token>" --data-raw "{
+      "cluster": "&lt;cluster_ID&gt;",
+      "volumeID": "&lt;volume_ID&gt;",
+      "worker": "&lt;worker_ID&gt;"
+    }"
     ```
     {: codeblock}
   <br>
@@ -589,10 +593,6 @@ Before you begin:
       <tr>
       <td><code>IAM_token</code></td>
       <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
-      </tr>
-      <tr>
-      <td><code>region</code></td>
-      <td>The region that your cluster is in. You can retrieve this value by running <code>ibmcloud oc cluster get <cluster_name></code>. Example value: <code>eu-de</code>. </td>
       </tr>
       <tr>
       <td><code>cluster_ID</code></td>
@@ -752,57 +752,48 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
   {: pre}
 
 4. Review a list of existing volume attachments on a worker node.
-
-  Example request:
-
   ```sh
-  curl -X GET -H "Authorization: <IAM_token>" -H "Content-Type: application/json" -H "X-Auth-Resource-Group-ID: <resource_group_ID>" "https://<region>.containers.cloud.ibm.com/v2/storage/clusters/<cluster_ID>/workers/<worker_ID>/volume_attachments"
+  curl -X GET "https://containers.cloud.ibm.com/v2/storage/getAttachments?cluster=<cluster_ID>&worker=<worker_ID>" --header "X-Auth-Resource-Group-ID: <resource_group_ID>" --header "Authorization: <IAM_token>"
   ```
   {: codeblock}
 
 5. Retrieve the details for a specific attachment.
-      ```sh
-      curl -X GET -H "Authorization: <IAM_token>" -H "Content-Type: application/json" -H "X-Auth-Resource-Group-ID: <resource_group_ID>" "https://<region>.containers.cloud.ibm.com/v2/storage/vpc/getAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeAttachmentID=<volume_attachment_ID>"
-      ```
-      {: codeblock}
-
-  <br>
-    <table summary="The columns are read from left to right. The first column has the parameter of the GET request. The second column describes the parameter.">
-      <caption>Understanding the GET request</caption>
-      <col style="width:30%">
-	   <col style="width:70%">
-      <thead>
-	      <th>Parameter</th>
-	      <th>Description</th>
-      </thead>
-      <tbody>
-      <tr>
-      <td><code>IAM_token</code></td>
-      <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
-      </tr>
-      <tr>
-      <td><code>region</code></td>
-      <td>The region that your cluster is in. You can retrieve this value by running <code>ibmcloud oc cluster get <cluster_name></code>. Example value: <code>eu-de</code>. </td>
-      </tr>
-      <tr>
-      <td><code>cluster_ID</code></td>
-      <td>The unique ID that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
-      </tr>
-      <tr>
-      <td><code>worker_ID</code></td>
-      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c <cluster_name></code>. </td>
-      </tr>
-      <tr>
-      <td><code>volume_ID</code></td>
-      <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
-      </tr>
-      <td><code>volume_attachment_ID</code></td>
-      <td>The unique ID that is assigned to your volume attachment. You can retrieve this ID by running <code>ibmcloud is volume <volume_ID></code>.</td>
-      </tr>
-    </tbody>
-  </table>
+  ```sh
+  curl -X GET "https://containers.cloud.ibm.com/v2/storage/getAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeAttachmentID=<volume_attachment_ID>" --header "X-Auth-Resource-Group-ID: <resource_group_ID>" --header "Authorization: <IAM_token>"
 
 
+<br>
+<table summary="The columns are read from left to right. The first column has the parameter of the GET request. The second column describes the parameter.">
+  <caption>Understanding the GET request</caption>
+  <col style="width:30%">
+  <col style="width:70%">
+  <thead>
+    <th>Parameter</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>IAM_token</code></td>
+  <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
+  </tr>
+  <tr>
+  <td><code>cluster_ID</code></td>
+  <td>The unique ID that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
+  </tr>
+  <tr>
+  <td><code>worker_ID</code></td>
+  <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c <cluster_name></code>. </td>
+  </tr>
+  <tr>
+  <td><code>volume_ID</code></td>
+  <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
+  </tr>
+  <tr>
+  <td><code>volume_attachment_ID</code></td>
+  <td>The unique ID that is assigned to your volume attachment. You can retrieve this ID by running <code>ibmcloud is volume <volume_ID></code>.</td>
+  </tr>
+</tbody>
+</table>
 
 <br />
 
