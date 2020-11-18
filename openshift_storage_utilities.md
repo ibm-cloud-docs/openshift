@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-11-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -760,7 +760,8 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
 5. Retrieve the details for a specific attachment.
   ```sh
   curl -X GET "https://containers.cloud.ibm.com/v2/storage/getAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeAttachmentID=<volume_attachment_ID>" --header "X-Auth-Resource-Group-ID: <resource_group_ID>" --header "Authorization: <IAM_token>"
-
+  ```
+  {: codeblock}
 
 <br>
 <table summary="The columns are read from left to right. The first column has the parameter of the GET request. The second column describes the parameter.">
