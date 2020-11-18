@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-16"
+lastupdated: "2020-11-18"
 
 keywords: openshift
 subcollection: openshift
@@ -208,7 +208,7 @@ subcollection: openshift
 {: #sitemap_cluster_strategy}
 
 
-[Your responsibilities with using Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-responsibilities_iks)
+[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks)
 * [Overview of shared responsibilities](/docs/openshift?topic=openshift-responsibilities_iks#overview-by-resource)
 * [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-responsibilities_iks#task-responsibilities)
   * [Incident and operations management](/docs/openshift?topic=openshift-responsibilities_iks#incident-and-ops)
@@ -492,7 +492,7 @@ subcollection: openshift
   * [Customizing the cluster autoscaler Helm chart values](/docs/openshift?topic=openshift-ca#ca_chart_values)
 * [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
 * [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-ca#ca_scaleup)
-* [Upgrading the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up)
+* [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up)
 * [Upgrading a cluster autoscaler Helm chart release](/docs/openshift?topic=openshift-ca#ca_helm_up)
   * [Prerequisites](/docs/openshift?topic=openshift-ca#ca_helm_up_prereqs)
   * [Upgrading the cluster autoscaler release version](/docs/openshift?topic=openshift-ca#ca_helm_up_general)
@@ -1713,7 +1713,10 @@ subcollection: openshift
   * [Changelog for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1517)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog)
-* [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101)
+* [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
+
+[{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
+* [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 
 ## IAM and Activity Tracker events
@@ -1813,7 +1816,7 @@ subcollection: openshift
 
 [Where can I find a list of security bulletins that affect my cluster?](/docs/openshift?topic=openshift-faqs#faq_security_bulletins)
 
-[Does the service offer support for bare metal?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
+[Does the service offer support for bare metal and GPU?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
 
 [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
 

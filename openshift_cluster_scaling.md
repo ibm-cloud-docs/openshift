@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-18"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -273,6 +273,9 @@ Further, if you do not disable the worker pools before you disable the `cluster-
 
 Before you install the {{site.data.keyword.cloud_notm}} cluster autoscaler add-on, you can set up your cluster to prepare the cluster for autoscaling.
 {: shortdesc}
+
+The cluster autoscaler add-on is not supported for baremetal worker nodes.
+{: important}
 
 1.  [Install the required CLI and plug-ins](/docs/cli?topic=cli-getting-started):
     *  {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`)
@@ -788,7 +791,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 
 <br />
 
-## Upgrading the cluster autoscaler add-on
+## Updating the cluster autoscaler add-on
 {: #ca_addon_up}
 
 This topic applies only to the cluster autoscaler add-on.

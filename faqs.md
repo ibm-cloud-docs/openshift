@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-11-17"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
@@ -105,7 +105,7 @@ Review frequently asked questions (FAQs) for using {{site.data.keyword.openshift
 {: faq}
 {: support}
 
-With {{site.data.keyword.openshiftlong_notm}}, you can create your own {{site.data.keyword.openshiftshort}} cluster to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. Your containerized apps are hosted on IBM Cloud infrastructure compute hosts that are called worker nodes. You can choose to provision your compute hosts as [virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm) with shared or dedicated resources, or as [bare metal machines](/docs/openshift?topic=openshift-planning_worker_nodes#bm) that can be optimized for software-defined storage (SDS) usage. Your worker nodes are controlled by a highly available {{site.data.keyword.openshiftshort}} master that is configured, monitored, and managed by IBM. You can use the {{site.data.keyword.containerlong_notm}} API or CLI to work with your cluster infrastructure resources and the Kubernetes API or CLI to manage your deployments and services.
+With {{site.data.keyword.openshiftlong_notm}}, you can create your own {{site.data.keyword.openshiftshort}} cluster to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. Your containerized apps are hosted on IBM Cloud infrastructure compute hosts that are called worker nodes. You can choose to provision your compute hosts as [virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm) with shared or dedicated resources, or as [bare metal machines](/docs/openshift?topic=openshift-planning_worker_nodes#bm) that can be optimized for GPU and software-defined storage (SDS) usage. Your worker nodes are controlled by a highly available {{site.data.keyword.openshiftshort}} master that is configured, monitored, and managed by IBM. You can use the {{site.data.keyword.containerlong_notm}} API or CLI to work with your cluster infrastructure resources and the Kubernetes API or CLI to manage your deployments and services.
 
 For more information about how your cluster resources are set up, see the [Service architecture](/docs/containers?topic=containers-service-arch). To find a list of capabilities and benefits, see [Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov).
 
@@ -207,11 +207,11 @@ If vulnerabilities are found in {{site.data.keyword.openshiftshort}}, {{site.dat
 
 Some CVEs require the latest patch update for a version that you can install as part of the regular [cluster update process](/docs/openshift?topic=openshift-update#update) in {{site.data.keyword.openshiftlong_notm}}. Make sure to apply security patches in time to protect your cluster from malicious attacks. For more information about what is included in a security patch, refer to the [version changelog](/docs/containers?topic=containers-changelog#changelog).
 
-## Does the service offer support for bare metal?
+## Does the service offer support for bare metal and GPU?
 {: #bare_metal_gpu}
 {: faq}
 
-Yes, you can provision your worker node as a single-tenant physical bare metal server. Bare metal servers come with high-performance benefits for workloads such as data and AI. Additionally, all the hardware resources are dedicated to your workloads, so you don't have to worry about "noisy neighbors".
+Yes, you can provision your worker node as a single-tenant physical bare metal server. Bare metal servers come with high-performance benefits for workloads such as data, GPU, and AI. Additionally, all the hardware resources are dedicated to your workloads, so you don't have to worry about "noisy neighbors".
 
 For more information about available bare metal flavors and how bare metal is different from virtual machines, see [Physical machines (bare metal)](/docs/openshift?topic=openshift-planning_worker_nodes#bm).
 
@@ -225,7 +225,7 @@ Your cluster must have at least 2 worker nodes to run default Kubernetes and Ope
 * **Multizone clusters**: You must [create a cluster](/docs/openshift?topic=openshift-clusters) with 2 worker nodes per zone in the worker pool. Later, you can [remove zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm) from the worker pool or [remove individual worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) so that your cluster size reduces to the minimum size of 2.
 * **Worker pools**: For any type of cluster, each worker pool must have at least 1 worker node at all times. For the smallest size cluster possible, you can have only 1 worker pool.
 
-Keep in mind that some services such as Ingress or Knative might require multiple worker nodes for high availability, and you might not be able to run these services or your apps in the smallest size cluster possible.
+Keep in mind that some services such as Ingress might require multiple worker nodes for high availability, and you might not be able to run these services or your apps in the smallest size cluster possible.
 {: important}
 
 ## Which Kubernetes versions does the service support?

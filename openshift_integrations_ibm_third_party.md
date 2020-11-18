@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-11-17"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -190,6 +190,5 @@ Installing third-party open source integrations or Helm charts from the Kubernet
 You might use custom resource definitions (CRDs) to extend the {{site.data.keyword.openshiftshort}} API to create and orchestrate custom objects in your cluster. Operators combine custom resources and controllers to automate the lifecycle of app, such as installing and rolling out updates to a customized app from a catalog in your cluster. 
 
 For more information, see [Operators](/docs/openshift?topic=openshift-operators).
-
 
 

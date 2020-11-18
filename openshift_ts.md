@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-16"
+lastupdated: "2020-11-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -897,51 +897,32 @@ Could not create a bucket in your cloud object storage instance.
 {: screen}
 
 ```
-Your cluster is created, but the internal registry is not backed up to cloud object storage. For more information, see 'http://ibm.biz/roks_cos_ts'.
+Verify your user permissions and the API key permissions to Cloud Object Storage, or use a different instance that you have permissions to, and try again. For more information, see 'http://ibm.biz/roks_cos_ts'.
 ```
 {: screen}
 
 {: tsCauses}
 When you create a {{site.data.keyword.openshiftlong_notm}} version 4 cluster on VPC generation 2 compute infrastructure, a bucket is automatically created in a standard {{site.data.keyword.cos_full_notm}} instance that you select in your account. However, the bucket might not create for several reasons such as:
 * {{site.data.keyword.cos_full_notm}} is temporarily unavailable.
-* No standard {{site.data.keyword.cos_full_notm}} instance exists in your account.
+* No standard {{site.data.keyword.cos_full_notm}} instance exists in your account, or the person whose API key is set for the region and resouce group does not have permissions to view the instance.
 * The person who created your cluster did not have the **Administrator** platform role to {{site.data.keyword.cos_full_notm}} in IAM.
 * The service failed to set up service key access to the object storage instance, such as if the API key lacks permissions or {{site.data.keyword.cloud_notm}} IAM is unavailable.
 * Other conflicts, such as naming conflicts that exhaust the preset number of retries or saving the bucket and service key data in the backend service.
 
-Your cluster is still created, but the internal registry is not backed up to {{site.data.keyword.cos_full_notm}}. Instead, data is saved to the `emptyDir` directory on the local worker nodes, which is not persistent storage.
-
 {: tsResolve}
 Manually set up your cluster to back up the internal registry to an {{site.data.keyword.cos_full_notm}} bucket.
 
-1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+1.  Make sure that the API key for the region and resource group is set and that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
 2. If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, [allow access to the {{site.data.keyword.cos_full_notm}} subdomain](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry).
-3. [Create a standard {{site.data.keyword.cos_full_notm}} service, at least one bucket, and HMAC service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_service).
-4. [Create a Kubernetes secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret) in the `openshift-image-registry` namespace that uses your COS `access_key_id` and `secret_access_key`.
-    ```
-    oc create secret generic image-registry-private-configuration-user --from-literal=REGISTRY_STORAGE_S3_ACCESSKEY=<access_key_id> --from-literal=REGISTRY_STORAGE_S3_SECRETKEY=<secret_access_key> --namespace openshift-image-registry
-    ```
-    {: pre}
-
-5. Edit the {{site.data.keyword.openshiftshort}} Registry Operator to use {{site.data.keyword.cos_full_notm}} as a backing store.
-    ```
-    oc edit configs.imageregistry.operator.openshift.io/cluster
-    ```
-    {: pre}
-
-6. Add the following parameters to the `spec` section of the configmap, then save and close the file. To pick up the configuration change, the `openshift-image-registry` pods automatically restart.
-    ```yaml
-      storage:
-        s3:
-            bucket: <bucket_name> # Example: my-bucket
-            encrypt: false
-            keyID: ""
-            region: <region> # Example: us-east
-            regionEndpoint: s3.<region>.cloud-object-storage.appdomain.cloud
-    ```
-    {: codeblock}
-
-7.  Verify that the internal registry images are backed up to {{site.data.keyword.cos_full_notm}}.
+3.  Identify the {{site.data.keyword.cos_full_notm}} instance to use. You can create an instance or use an existing one.
+    * [Create a standard {{site.data.keyword.cos_full_notm}} service, at least one bucket, and HMAC service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_service).
+    * To use an existing instance, make sure that you and the API key that is set for the region have permissions to the instance.
+4.  Create a cluster with your {{site.data.keyword.cos_full_notm}} instance ID. For more information, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
+      ```
+      ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR --cos-instance COS_ID --workers 3
+      ```
+      {: pre}
+5.  Verify that the internal registry images are backed up to {{site.data.keyword.cos_full_notm}}.
     1.  [Build an image for your app](/docs/openshift?topic=openshift-images) and [push it to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images).
     2.  [Import the image into your internal {{site.data.keyword.openshiftshort}} registry](/docs/openshift?topic=openshift-registry#imagestream_registry).
     3.  [Deploy an app](/docs/openshift?topic=openshift-images#pod_imagePullSecret) that references your image.
