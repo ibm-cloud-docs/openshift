@@ -91,7 +91,7 @@ subcollection: openshift
 {:video: .video}
 
 
-# {{site.data.keyword.block_storage_is_full}} add-on changelog
+# {{site.data.keyword.block_storage_is_short}} add-on changelog
 {: #vpc_bs_changelog}
 
 View information for patch updates to the {{site.data.keyword.block_storage_is_full}} add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
