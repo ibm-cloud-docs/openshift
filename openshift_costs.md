@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-11-18"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -122,7 +122,7 @@ Worker nodes begin to incur charges after successfully complete the `provisionin
 * **Hourly billing only**: Hourly offers more flexibility to order and cancel VMs quickly.
 * **Tiered hours per month**: Hourly billing is [tiered](https://cloud.ibm.com/kubernetes/catalog/about#pricing){: external}. As your VM remains ordered for a tier of hours within a billing month, the hourly rate that you are charged lowers. The tiers of hours are as follows: 0 - 150 hours, 151 - 290 hours, 291 - 540 hours, and 541+ hours.
 
-**Physical machines, or bare metal, (not available for VPC clusters)** yield high-performance benefits for workloads such as data and AI. Additionally, all the hardware resources are dedicated to your workloads, so you don't have "noisy neighbors". Keep in mind these factors that impact your bare metal costs.
+**Physical machines, or bare metal, (not available for VPC clusters)** yield high-performance benefits for workloads such as data, GPU, and AI. Additionally, all the hardware resources are dedicated to your workloads, so you don't have "noisy neighbors". Keep in mind these factors that impact your bare metal costs.
 * **Monthly billing only**: All bare metals are charged monthly.
 * **Longer ordering process**: After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.
 
