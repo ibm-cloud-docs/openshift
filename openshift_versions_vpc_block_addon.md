@@ -4,9 +4,9 @@ copyright:
   years: 2014, 2020
 lastupdated: "2020-11-18"
 
-keywords: autoscaler, add-on, autoscaler changelog
+keywords: vpc block, add-on, vpc block changelog
 
-subcollection: openshift, cluster autoscaler, add-on, scale
+subcollection: openshift
 
 ---
 
@@ -91,26 +91,26 @@ subcollection: openshift, cluster autoscaler, add-on, scale
 {:video: .video}
 
 
-# Cluster autoscaler add-on changelog
-{: #ca_changelog}
+# {{site.data.keyword.block_storage_is_full}} add-on changelog
+{: #vpc_bs_changelog}
 
-View information for patch updates to the cluster autoscaler add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
+View information for patch updates to the {{site.data.keyword.block_storage_is_full}} add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
 * **Patch updates**: Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
-* **Release updates**: Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up).
+* **Release updates**: Release updates contain new features for the {{site.data.keyword.block_storage_is_full}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_full}} add-on. To update your {{site.data.keyword.block_storage_is_full}} add-on, see [Updating the {{site.data.keyword.block_storage_is_full}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 
-Refer to the following tables for a summary of changes for each version of the [cluster autoscaler add-on](/docs/openshift?topic=openshift-ca).
+Refer to the following tables for a summary of changes for each version of the {{site.data.keyword.block_storage_is_full}} add-on.
 
-| Cluster autoscaler add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| {{site.data.keyword.block_storage_is_full}} add-on version | Supported? | {{site.data.keyword.openshiftlong_notm}} version support |
 | -------------------- | -----------|--------------------------- |
-| 1.0.1 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6.</li></ul> |
-{: summary="The rows are read from left to right. The first column is the cluster autoscaler add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the cluster autoscaler version is supported for."}
+| 2.0.3 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.3 - 4.6 |
+{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
 
-## Changelog for 1.0.1, released 15 August 2020
-{: #0101_ca_addon}
+## Changelog for version 2.0.3
+{: #0203_is_block}
 
-The following table shows the changes that are included in version 1.0.1 of the managed cluster autoscaler add-on.
+The following table shows the changes that are included in version 2.0.3 {{site.data.keyword.block_storage_is_full}} add-on.
 {: shortdesc}
 
 To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
@@ -119,10 +119,11 @@ ibmcloud oc addon-versions
 ```
 {: pre}
 
-| Patch version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
-| --- | --- | --- | --- | --- |
-| `1.0.1_128` | <ul><li>`1.15.4-4`</li><li>`1.16.2-6`</li><li>`1.17.0-7`</li><li>`1.18.1-6`</li><li>`1.19.0-1`</li></ul> | 27 October 2020 | 4.3 - 4.6.</li></ul> | Updated to Go version `1.15.2` |
-| `1.0.1_124` | <ul><li>`1.15.4-4`</li><li>`1.16.2-6`</li><li>`1.17.0-7`</li><li>`1.18.1-6`</li><li>`1.19.0-1`</li></ul> | 16 October 2020 | 4.3 - 4.6.</li></ul> | <ul><li>Exposes the `--new-pod-scale-up-delay` flag in the configmap. The default value is </li><li>Added support for Kubernetes 1.19.</li></ul> |
-| `1.0.1_114` | <ul><li>`1.15.4-4`</li><li>`1.16.2-5`</li><li>`1.17.0-6`</li><li>`1.18.1-5`</li></ul> | 10 September 2020 | 4.3 - 4.6.</li></ul> | <ul><li>Includes fixes for `CVE-5188` and `CVE-3180`.</li><li>Unlike the previous Helm chart, you can modify all of the add-on configuration settings via a single configmap.</li></ul> |
-{: summary="The rows are read from left to right. The first column is the patch version of the component. The second column lists the images tags of the component. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
-{: caption="Cluster autoscaler 1.0.1" caption-side="top"}
+| Patch version | `vpc-block-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
+| --- | --- | --- | --- |
+| `2.0.3_375` | `v2.0.6` | 17 September 2020 | 4.3 - 4.6 | Fixed an issue with volume attachment when replacing workers. |
+| `2.0.3_374+` | `v2.0.5` | 29 August 2020 | 4.3 - 4.6 | Added the `/var/lib/kubelet` path for CSI driver calls on OCP 4.4. |
+| `2.0.3_365` | `v2.0.4` | 05 August 2020 | 4.3 - 4.6 | <ul><li>Updated sidecar container images.</li><li>Added liveness probe.</li><li>Enabled parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.</li></ul> |
+{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column is the image tag the component. The third column contains the release date of the patch. The fourth column contains a brief description of the change made to the component."}
+{: caption="Patch updates for version 2.0.3" caption-side="top"}
+{: caption="{{site.data.keyword.block_storage_is_full}}" caption-side="top"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-11-18"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -791,7 +791,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 
 <br />
 
-## Upgrading the cluster autoscaler add-on
+## Updating the cluster autoscaler add-on
 {: #ca_addon_up}
 
 This topic applies only to the cluster autoscaler add-on.

@@ -492,7 +492,7 @@ subcollection: openshift
   * [Customizing the cluster autoscaler Helm chart values](/docs/openshift?topic=openshift-ca#ca_chart_values)
 * [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
 * [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-ca#ca_scaleup)
-* [Upgrading the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up)
+* [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up)
 * [Upgrading a cluster autoscaler Helm chart release](/docs/openshift?topic=openshift-ca#ca_helm_up)
   * [Prerequisites](/docs/openshift?topic=openshift-ca#ca_helm_up_prereqs)
   * [Upgrading the cluster autoscaler release version](/docs/openshift?topic=openshift-ca#ca_helm_up_general)
@@ -1713,7 +1713,10 @@ subcollection: openshift
   * [Changelog for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1517)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog)
-* [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101)
+* [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
+
+[{{site.data.keyword.block_storage_is_full}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
+* [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 
 ## IAM and Activity Tracker events
