@@ -386,7 +386,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
    - **If you used the `mkpvyaml` container:**
      1. Open the `pv-<cluster_name>.yaml` file.
         ```
-        nano pv-<cluster_name>.yaml
+        nano pv-&lt;cluster_name&gt;.yaml
         ```
         {: pre}
 
@@ -474,7 +474,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 2. Create the PV to attach the block storage device to your non-SDS worker node.
    - **If you used the `mkpvyaml` container:**
      ```
-     oc apply -f pv-<cluster_name>.yaml
+     oc apply -f pv-&lt;cluster_name&gt;.yaml
      ```
      {: pre}
 
@@ -548,7 +548,7 @@ Before you begin:
 
 1. Check which region and zone your VPC worker node is in.
   ```
-  ibmcloud oc worker ls <cluster_name>
+  ibmcloud oc worker ls &lt;cluster_name&gt;
   ```
   {: pre}
 
@@ -600,7 +600,7 @@ Before you begin:
       </tr>
       <tr>
       <td><code>worker_ID</code></td>
-      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c <cluster_name></code>. </td>
+      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c &lt;cluster_name&gt;</code>. </td>
       </tr>
       <tr>
       <td><code>volume_ID</code></td>
@@ -705,7 +705,7 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
       </tr>
       <tr>
       <td><code>region</code></td>
-      <td>The region that your cluster is in. You can retrieve this value by running <code>ibmcloud oc cluster get <cluster_name></code>. Example value: <code>eu-de</code>. </td>
+      <td>The region that your cluster is in. You can retrieve this value by running <code>ibmcloud oc cluster get &lt;cluster_name&gt;</code>. Example value: <code>eu-de</code>. </td>
       </tr>
       <tr>
       <td><code>cluster_ID</code></td>
@@ -713,7 +713,7 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
       </tr>
       <tr>
       <td><code>worker_ID</code></td>
-      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c <cluster_name></code>. </td>
+      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c &lt;cluster_name&gt;</code>. </td>
       </tr>
       <tr>
       <td><code>volume_ID</code></td>
@@ -783,7 +783,7 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
   </tr>
   <tr>
   <td><code>worker_ID</code></td>
-  <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c <cluster_name></code>. </td>
+  <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c &lt;cluster_name&gt;</code>. </td>
   </tr>
   <tr>
   <td><code>volume_ID</code></td>
