@@ -4223,7 +4223,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 <dd>The {{site.data.keyword.openshiftshort}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
 
 <dt><code>--type public</code></dt>
-<dd>The subdomain type.</dd>
+<dd>The subdomain type. Currently, only `public` is supported.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
