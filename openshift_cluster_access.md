@@ -277,23 +277,23 @@ oc login -u apikey -p <API_key> --server=<private_service_endpoint>
 {: pre}
 
 6. Verify that the `oc` commands run properly with your cluster through the private service endpoint by checking the version.
-    ```
-    oc version
-    ```
-    {: pre}
+  ```
+  oc version
+  ```
+  {: pre}
 
-    Example output:
+  Example output:
 
-    ```
-    oc v3.11.0+0cbc58b
-    kubernetes v1.11.0+d4cacc0
-    features: Basic-Auth
+  ```
+  oc v3.11.0+0cbc58b
+  kubernetes v1.11.0+d4cacc0
+  features: Basic-Auth
 
-    Server https://c1.private.us-east.containers.cloud.ibm.com:31144
-    openshift v3.11.98
-    kubernetes v1.11.0+d4cacc0
-    ```
-    {: screen}
+  Server https://c1.private.us-east.containers.cloud.ibm.com:31144
+  openshift v3.11.98
+  kubernetes v1.11.0+d4cacc0
+  ```
+  {: screen}
 
 ### Accessing 3.11 clusters through the private service endpoint
 {: #classic_private_se}
@@ -680,34 +680,4 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 
 <br />
 
-## Accessing the cluster master via admission controllers and webhooks
-{: #access_webhooks}
-
-Admission controllers intercept authorized API requests from various Kubernetes resources before the requests reach the API server that runs in your {{site.data.keyword.openshiftlong_notm}} cluster master. Mutating admission webhooks might modify the request, and validating admission webhooks check the request. If either webhook rejects a request, the entire request fails. Advanced features, whether built-in or added on, often require admission controllers as a security precaution and to control what requests are sent to the API server. For more information, see [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} and [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} in the Kubernetes documentation.
-
-
-**Can I create my own admission controllers?**<br>
-Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.openshiftshort}}](https://docs.openshift.com/container-platform/4.3/architecture/admission-plug-ins.html){: external} documentation for more information.
-
-As noted in the Kubernetes documentation, you can use admission controllers for operations that are otherwise handled by the control plane. As such, take great caution when you configure a custom admission controller. You are responsible for any changes that happen in your cluster because of a custom admission controller.
-{: important}
-
-Keep in mind the following considerations when you configure a webhook.
-* Create [replica pods](/docs/containers?topic=containers-app#replicaset) for the webhook so that if one pod goes down, the webhook can still process requests from your resources. Spread the replica pods across zones, if possible.
-* Set appropriate CPU and memory [resource requests and limits](/docs/containers?topic=containers-app#resourcereq) for your webhook.
-* Add [liveness and readiness probes](/docs/containers?topic=containers-app#probe) to help make sure your webhook container is running and ready to serve requests.
-* Set pod [anti-affinity scheduling rules](/docs/containers?topic=containers-app#affinity) to prefer that your webhook pods run on different worker nodes and zones when possible. In clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or later, you might use [pod topology](https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/){: external} instead. However, avoid [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} or forced affinity that might restrict where the webhook pods can be scheduled.
-* [Set pod priority](/docs/containers?topic=containers-pod_priority) to `system-cluster-critical` for the webhook pods so that other pods cannot take resources from your webhook pods.
-* Scope your webhook to the appropriate project. Avoid webhooks that process resources that run in system-critical projects that are set up in your cluster by default, such as `kube-system`, `ibm-system`, `ibm-operators`, `calico-system`, `tigera-operator` and `openshift-*` projects.
-* Make sure that the worker nodes in your cluster are [the right size for running your webhook applications](/docs/containers?topic=containers-strategy#sizing). For example, if your pods request more CPU or memory than the worker node can provide, the pods are not scheduled.
-
-<br>
-
-**What other types of apps use admission controllers?**<br>
-Many cluster add-ons, plug-ins, and other third-party extensions create custom admission controllers. Some common ones include:
-*   [Container image security enforcement](/docs/Registry?topic=Registry-security_enforce)
-
-<br>
-
-**I need help with a broken webhook. What can I do?**<br>
-See [Cluster cannot update because of broken webhook](/docs/containers?topic=containers-cs_troubleshoot#webhooks_update).
+{[cluster-access-adminctrl-webhook.md]}
