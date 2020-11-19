@@ -426,6 +426,7 @@ subcollection: openshift
 * [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
   * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
   * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
+* [Accessing the cluster master via admission controllers and webhooks](/docs/openshift?topic=openshift-access_cluster#access_webhooks)
 
 [Assigning cluster access](/docs/openshift?topic=openshift-users)
 * [Setting up access to your cluster](/docs/openshift?topic=openshift-users#access-checklist)
