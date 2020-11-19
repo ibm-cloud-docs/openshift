@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-19"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -524,7 +525,7 @@ After logging in to {{site.data.keyword.cloud_notm}}, download the Kubernetes co
 The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your terminal session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).
 
 ```
-ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac] [-q] [--yaml]
+ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE] [--network] [--skip-rbac] [-q] [--yaml]
 ```
 {: pre}
 
@@ -542,7 +543,10 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--network] [--skip-rbac]
 <dd>Required: The name or ID of the cluster.</dd>
 
 <dt><code>--admin</code></dt>
-<dd>Optional: Download the TLS certificates and permission files for the Super User role. You can use the certs to automate tasks in a cluster without having to reauthenticate. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`.</dd>
+<dd>Optional: Download the TLS certificates and permission files for the Super User role. You can use the certs to automate tasks in a cluster without having to reauthenticate. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`.<br><br>**Note**: This flag is required when the `--endpoint link` flag is specified.</dd>
+
+<dt><code>--endpoint <em>ENDPOINT_TYPE</em></code></dt>
+<dd>Optional: Specify the type of endpoint to use to connect to the cluster. If you do not specify this flag, the default service endpoint for your cluster is used.<li><code>link</code>: To connect to {{site.data.keyword.satellitelong_notm}} clusters from outside of the location host network, set to `link` to use the Link endpoint URL for the cluster context. If you specify this flag, you must also specify the `--admin` flag. If you are already connected to your location host network, this flag is not required because the cluster service endpoint is used.</li></ul></dd>
 
 <dt><code>--network</code></dt>
 <dd>Optional: Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. **Note**: This option cannot be used with the <code>--yaml</code> option.</dd>
@@ -4219,7 +4223,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 <dd>The {{site.data.keyword.openshiftshort}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
 
 <dt><code>--type public</code></dt>
-<dd>The subdomain type. Currently, only `public` is supported.</dd>
+<dd>The subdomain type.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -4269,7 +4273,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --lb-host VPC_LB_HOSTNAME 
 <dd>The {{site.data.keyword.openshiftshort}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
 
 <dt><code>--type <em>(public|private)</em></code></dt>
-<dd>The subdomain type: public or private.</dd>
+<dd>The VPC load balancer type.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>

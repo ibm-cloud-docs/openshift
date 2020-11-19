@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-18"
+lastupdated: "2020-11-19"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -108,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 19 November 2020 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` build to 653 and the `ingress-auth` build to 425](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li></ul> |
 | 18 November 2020 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**New! {{site.data.keyword.block_storage_is_short}} changelog**: Added a [changelog](/docs/openshift?topic=openshift-vpc_bs_changelog) for the {{site.data.keyword.block_storage_is_short}} add-on.</li></ul>|
 | 16 November 2020 | **New! GPU support in {{site.data.keyword.openshiftshort}} 4**: Now, you can create GPU bare metal worker nodes in your {{site.data.keyword.openshiftlong_notm}} version 4 clusters in select zones. GPU machines are suited for high-performance computing, machine learning, or 3D applications that you might have, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/ibm-maximo-visual-inspection){: external}. To get started with GPU-accelerated workloads:<ol><li>Create a [cluster](/docs/openshift?topic=openshift-clusters#clusters_standard) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor.</li><li>[Install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.</li><li>Verify that you can run GPU workloads by [deploying a sample job](/docs/openshift?topic=openshift-deploy_app#gpu_app).</li></ol><br><br>**Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.5.17_1520_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4517_1520), [`4.4.29_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4429_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1546), and [`3.11.306_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311306_1573). |
 | 13 November 2020 | **{{site.data.keyword.at_full_notm}} and IAM events**: Added [IAM actions and {{site.data.keyword.cloudaccesstrailshort}} events](/docs/openshift?topic=openshift-api-at-iam#ks-ingress) for the Ingress secret, Ingress ALB, and NLB DNS APIs. |

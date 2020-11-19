@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-11-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -346,7 +347,7 @@ The image does not include components that ensure secure end-to-end communicatio
       </tr>
     <tr>
       <td>SELinux</td>
-      <td>Every worker node is set up with security and access policies that are enforced by [Security-Enhanced Linux (SELinux)](https://www.redhat.com/en/topics/linux/what-is-selinux){: external} profiles that are loaded into the worker node during bootstrapping. SELinux profiles cannot be changed by the user or owner of the machine. </td>
+      <td>Every worker node is set up with security and access policies that are enforced by [Security-Enhanced Linux (SELinux) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.redhat.com/en/topics/linux/what-is-selinux) profiles that are loaded into the worker node during bootstrapping. SELinux profiles cannot be changed by the user or owner of the machine. </td>
     </tr>
     <tr>
       <td>SSH disabled</td>
@@ -667,10 +668,10 @@ You are responsible for ensuring the security of your personal information in Ku
 
 <dl>
   <dt>Use a Kubernetes secret to store personal information</dt>
-  <dd>Store personal information only in Kubernetes resources that are designed to hold personal information. For example, do not use your name in the name of an {{site.data.keyword.openshiftshort}} project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external} instead.</dd>
+  <dd>Store personal information only in Kubernetes resources that are designed to hold personal information. For example, do not use your name in the name of an {{site.data.keyword.openshiftshort}} project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/secret/) instead.</dd>
 
   <dt>Use a Kubernetes `imagePullSecret` to store image registry credentials</dt>
-  <dd>Do not store personal information in container images or registry namespaces. For proper protection and encryption, store registry credentials in <a href="/docs/openshift?topic=openshift-registry#other">Kubernetes `imagePullSecrets`</a> and other personal information in [secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external} instead. Remember that if personal information is stored in a previous layer of an image, deleting an image might not be sufficient to delete this personal information.</dd>
+  <dd>Do not store personal information in container images or registry namespaces. For proper protection and encryption, store registry credentials in <a href="/docs/openshift?topic=openshift-registry#other">Kubernetes `imagePullSecrets`</a> and other personal information in [secrets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/secret/) instead. Remember that if personal information is stored in a previous layer of an image, deleting an image might not be sufficient to delete this personal information.</dd>
   </dl>
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-18"
+lastupdated: "2020-11-19"
 
 keywords: openshift
 subcollection: openshift
@@ -12,6 +12,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -20,6 +21,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -37,7 +39,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -71,7 +72,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -83,6 +83,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -416,12 +417,15 @@ subcollection: openshift
 * [Accessing {{site.data.keyword.openshiftshort}} clusters through the public service endpoint](/docs/openshift?topic=openshift-access_cluster#access_public_se)
   * [Connecting to the cluster from the console](/docs/openshift?topic=openshift-access_cluster#access_oc_console)
   * [Connecting to the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli)
-* [Accessing clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se)
-  * [Accessing classic clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
-  * [Accessing VPC clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#vpc_private_se)
-* [Accessing {{site.data.keyword.openshiftshort}} clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
-  * [Using an API key to log in to {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
-  * [Using a service ID to log in to {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
+* [Accessing {{site.data.keyword.openshiftshort}} clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se)
+  * [Accessing version 4 VPC clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#vpc_private_se)
+  * [Accessing 3.11 clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
+* [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat)
+  * [Accessing clusters from within the location network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
+  * [Accessing clusters from outside the location network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_link)
+* [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
+  * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
+  * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
 * [Accessing the cluster master via admission controllers and webhooks](/docs/openshift?topic=openshift-access_cluster#access_webhooks)
 
 [Assigning cluster access](/docs/openshift?topic=openshift-users)
