@@ -1345,6 +1345,11 @@ subcollection: openshift
 * [Using Operators in 3.11 clusters](/docs/openshift?topic=openshift-operators#operators_311)
 * [Using the service catalog in 3.11 clusters](/docs/openshift?topic=openshift-operators#service_catalog)
 
+[Adding services by using managed add-ons](/docs/openshift?topic=openshift-managed-addons)
+* [Adding managed add-ons](/docs/openshift?topic=openshift-managed-addons#adding-managed-add-ons)
+* [Updating managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons)
+* [Reviewing add-on states and statuses](/docs/openshift?topic=openshift-managed-addons#debug_addons_review)
+
 [Adding services by using Helm charts](/docs/openshift?topic=openshift-helm)
 * [About Helm in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-helm#about-helm)
   * [What is Helm and how do I use it?](/docs/openshift?topic=openshift-helm#what-is-helm)

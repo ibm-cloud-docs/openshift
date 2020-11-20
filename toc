@@ -180,6 +180,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_integrations_ibm_third_party.md
         openshift_integrations_cloud_paks.md
         openshift_integrations_operators.md
+        openshift_integrations_addons.md
         openshift_integrations_helm.md
         openshift_integrations_service_binding.md
 
