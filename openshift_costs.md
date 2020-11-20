@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-11-20"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -92,13 +92,13 @@ subcollection: openshift
 {:video: .video}
 
 
-# Managing costs for your clusters
+# Understanding costs for your clusters
 {: #costs}
 
 With {{site.data.keyword.cloud}}, you can plan for, estimate, review, and modify your cluster environment to control costs. Just by using a managed service like {{site.data.keyword.openshiftlong}}, you are saving many expenses that are associated with managing, updating, and maintaining an infrastructure environment.
 {: shortdesc}
 
-## Understanding costs for your clusters
+## Understanding costs by component
 {: #costs-for-clusters}
 
 With {{site.data.keyword.openshiftlong_notm}} clusters, you can use IBM Cloud infrastructure compute, networking, and storage resources with platform services such as {{site.data.keyword.watson}} AI or Compose Database-as-a-Service. Each resource might entail its own charges that can be [fixed, metered, tiered, or reserved](/docs/billing-usage?topic=billing-usage-charges#charges) and billed in various increments such as monthly or hourly.

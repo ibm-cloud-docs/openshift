@@ -533,6 +533,20 @@ subcollection: openshift
 
 [Removing clusters](/docs/openshift?topic=openshift-remove)
 
+[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs)
+* [Understanding costs by component](/docs/openshift?topic=openshift-costs#costs-for-clusters)
+  * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
+  * [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
+  * [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
+  * [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
+  * [Default storage for images](/docs/openshift?topic=openshift-costs#storage_images)
+  * [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
+  * [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
+  * [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
+  * [VPC Generation 2 compute worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
+* [Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
+* [Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
+
 
 ## Securing cluster workloads
 {: #sitemap_securing_cluster_workloads}
@@ -1385,28 +1399,6 @@ subcollection: openshift
 * [4. Zone availability](/docs/openshift?topic=openshift-ha#ha-zone)
 * [5. Region availability](/docs/openshift?topic=openshift-ha#ha-region)
 * [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
-
-
-## Managing costs for your clusters
-{: #sitemap_managing_costs_for_your_clusters}
-
-
-[Managing costs for your clusters](/docs/openshift?topic=openshift-costs)
-
-[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs#costs-for-clusters)
-* [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
-* [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
-* [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
-* [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
-* [Default storage for images](/docs/openshift?topic=openshift-costs#storage_images)
-* [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
-* [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
-* [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
-* [VPC Generation 2 compute worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
-
-[Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
-
-[Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
 
 
 ## OpenShift Container Platform documentation
