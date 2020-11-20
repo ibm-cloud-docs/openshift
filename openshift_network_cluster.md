@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-21"
+lastupdated: "2020-11-18"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -138,7 +138,6 @@ The private service endpoint makes your Kubernetes master privately accessible. 
   * [Allow outbound network traffic to the private IPs](/docs/openshift?topic=openshift-firewall#firewall_outbound) for infrastructure resources and for the {{site.data.keyword.cloud_notm}} services that you plan to use.
 <br />
 
-
 ## Setting up the public service endpoint
 {: #set-up-public-se}
 
@@ -272,4 +271,3 @@ To change the VLANs that a worker pool uses to provision worker nodes:
   * Ingress ALBs ({{site.data.keyword.openshiftshort}} version 3.11 only): Because ALBs cannot be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress#migrate-alb-vlan).
 
 10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
-

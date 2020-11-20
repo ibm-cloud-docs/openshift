@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-11-18"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -149,7 +150,6 @@ Your cluster users can use the strongSwan VPN service to connect to your Kuberne
 
 <br />
 
-
 ## Configuring the strongSwan VPN in a multizone cluster
 {: #vpn_multizone}
 
@@ -231,7 +231,6 @@ After you deploy each Helm chart, each strongSwan VPN deployment starts up as a 
 3. Configure the remote VPN endpoint software to establish a separate VPN connection to the load balancer IP in each zone.
 
 <br />
-
 
 ## Configuring the strongSwan Helm chart
 {: #vpn_configure}
@@ -429,7 +428,6 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
 
     <br />
 
-
 ## Testing and verifying strongSwan VPN connectivity
 {: #vpn_test}
 
@@ -578,7 +576,6 @@ After you deploy your Helm chart, test the VPN connectivity.
 
 <br />
 
-
 ## Limiting strongSwan VPN traffic by namespace or worker node
 {: #limit}
 
@@ -707,7 +704,6 @@ To limit VPN traffic to tainted nodes for each tenant:
 
 <br />
 
-
 ## Upgrading or disabling the strongSwan Helm chart
 {: #vpn_upgrade}
 
@@ -729,7 +725,6 @@ You can disable the VPN connection by deleting the Helm chart.
   {: pre}
 
 <br />
-
 
 ## Using a Virtual Router Appliance
 {: #vyatta}
@@ -761,4 +756,3 @@ To set up a Virtual Router Appliance:
 
 If you have an existing router appliance and then add a cluster, the new portable subnets that are ordered for the cluster are not configured on the router appliance. In order to use networking services, you must enable routing between the subnets on the same VLAN by [enabling VLAN spanning or VRF](/docs/openshift?topic=openshift-plan_clusters#worker-worker).
 {: important}
-

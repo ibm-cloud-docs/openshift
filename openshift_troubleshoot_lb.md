@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-11-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -204,7 +204,6 @@ To troubleshoot your NLB service:
 
 <br />
 
-
 ## Classic clusters: Cannot deploy a load balancer
 {: #cs_subnet_limit_lb}
 
@@ -263,7 +262,6 @@ If you are not using all the subnets in the VLAN, you can reuse subnets on the V
 
 <br />
 
-
 ## Classic clusters: Source IP preservation fails when using tainted nodes
 {: #cs_source_ip_fails_lb}
 
@@ -308,7 +306,6 @@ If you complete one of the above options but the `keepalived` pods are still not
     {: pre}
 
 <br />
-
 
 ## VPC clusters: Cannot connect to an app via load balancer
 {: #vpc_ts_lb}
@@ -357,7 +354,6 @@ Verify that no VPC security groups are blocking traffic to your cluster and that
 
 <br />
 
-
 ## VPC clusters: Kubernetes `LoadBalancer` service fails because no IPs are available
 {: #vpc_no_lb}
 
@@ -400,7 +396,6 @@ After you create a VPC subnet, you cannot resize it or change its IP range. Inst
   {: pre}
 
 <br />
-
 
 ## Classic clusters: OpenVPN server error due to ingress IP address for NLB
 {: #rhoks_ts_openvpn_subnet}
@@ -464,7 +459,6 @@ The OpenVPN server could not be configured because the router IP address that is
 
 <br />
 
-
 ## OpenVPN server error due to NLB DNS
 {: #rhoks_ts_openvpn_dns}
 
@@ -493,4 +487,3 @@ The OpenVPN server could not be configured because a domain name service (DNS) w
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
-

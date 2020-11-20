@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-11-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,6 +44,7 @@ subcollection: openshift
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -318,7 +319,6 @@ To decide on a storage configuration:
 <br />
 
 
-
 ## Adding {{site.data.keyword.filestorage_short}} to apps
 {: #add_file}
 
@@ -567,7 +567,6 @@ To add {{site.data.keyword.filestorage_short}}:
 
 <br />
 
-
 ## Using existing {{site.data.keyword.filestorage_short}} in your cluster
 {: #existing_file}
 
@@ -757,7 +756,6 @@ If you want to use existing storage that you provisioned earlier, but never used
 You successfully created a PV and bound it to a PVC. Cluster users can now [mount the PVC](#file_app_volume_mount) to their deployments and start reading from and writing to the PV object.
 
 <br />
-
 
 
 ## Using {{site.data.keyword.filestorage_short}} in a stateful set
@@ -1119,7 +1117,6 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 <br />
 
-
 ## Changing the size and IOPS of your existing storage device
 {: #file_change_storage_configuration}
 
@@ -1344,7 +1341,6 @@ To apply the latest security updates and for a better performance, use the defau
 
 
 
-
 ## Backing up and restoring data
 {: #file_backup_restore}
 
@@ -1376,13 +1372,11 @@ Review the following backup and restore options for your {{site.data.keyword.fil
 
 <br />
 
-
 ## Storage class reference
 {: #file_storageclass_reference}
 
 Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that do not have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
 {: tip}
-
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
@@ -1455,7 +1449,6 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 {: tab-group="{{site.data.keyword.filestorage_short}} class"}
 
 <br />
-
 
 ## Sample customized storage classes
 {: #file_custom_storageclass}
@@ -1815,6 +1808,5 @@ To clean up persistent data:
     ibmcloud sl file volume-list
     ```
     {: pre}
-
 
 
