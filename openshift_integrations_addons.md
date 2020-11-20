@@ -110,7 +110,7 @@ Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} s
 If the tool that you add to your cluster incurs costs, these costs are automatically integrated and listed as part of your {{site.data.keyword.openshiftlong_notm}} billing. The billing cycle is determined by {{site.data.keyword.cloud_notm}} depending on when you enabled the add-on in your cluster.
 
 **What limitations do I need to account for?** </br>
-If you installed the [container image security enforcer admission controller](/docs/Registry?topic=Registry-security_enforce#security_enforce) in your cluster, you cannot enable managed add-ons in your cluster.
+If you installed an admission controller that blocks unsigned images, such as [Portieris](https://github.com/IBM/portieris){: external}, you cannot enable managed add-ons in your cluster.
 
 ## Adding managed add-ons
 {: #adding-managed-add-ons}
