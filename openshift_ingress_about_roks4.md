@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-20"
+lastupdated: "2020-11-23"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -93,7 +93,7 @@ subcollection: openshift
 
 
 
-# About Ingress in {{site.data.keyword.openshiftshort}} version 4
+# About Ingress in {{site.data.keyword.openshiftshort}} 4
 {: #ingress-about-roks4}
 
 <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 3.11 clusters, see [About Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress-about).
@@ -162,7 +162,7 @@ One Ingress resource is required for each project where you have apps that you w
 
 For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects).
 
-If you want to customize routing rules for your app, you can use [HAProxy annotations for the {{site.data.keyword.openshiftshort}} router](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4.
+If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4.
 {: important}
 
 <br />
@@ -254,7 +254,7 @@ If you want to customize routing rules for your app, you can use [HAProxy annota
 ## How can I customize routing?
 {: #custom-routing}
 
-If you want to customize routing rules for your app, you can use [HAProxy annotations for the {{site.data.keyword.openshiftshort}} router](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
+If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 

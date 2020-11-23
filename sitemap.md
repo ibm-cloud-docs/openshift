@@ -884,7 +884,7 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_routes}
 
 
-[Exposing apps with routes in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-openshift_routes)
+[Exposing apps with routes in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-openshift_routes)
 * [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
@@ -954,13 +954,13 @@ subcollection: openshift
   * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
 
 
-## Exposing apps with Ingress in OpenShift version 4
-{: #sitemap_exposing_apps_with_ingress_in_openshift_version_4}
+## Exposing apps with Ingress in OpenShift 4
+{: #sitemap_exposing_apps_with_ingress_in_openshift_4}
 
 
 [Quick start for Ingress in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-ingress-qs-roks4)
 
-[About Ingress in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-ingress-about-roks4)
+[About Ingress in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-ingress-about-roks4)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#ingress_roks4_components)
   * [Ingress controller](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-controller)
   * [Router](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-router)
@@ -1009,8 +1009,8 @@ subcollection: openshift
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 
-## Exposing apps with Ingress in OpenShift version 3.11 clusters
-{: #sitemap_exposing_apps_with_ingress_in_openshift_version_3.11_clusters}
+## Exposing apps with Ingress in OpenShift 3.11
+{: #sitemap_exposing_apps_with_ingress_in_openshift_3.11}
 
 
 [About Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress-about)
