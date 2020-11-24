@@ -126,10 +126,10 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.5.17_1519_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.5.17_1520_openshift, released 16 November 2020
-{: #4517_1520}
+### Changelog for master fix pack 4.5.18_1521_openshift, released 16 November 2020
+{: #4518_1521}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.17_1520_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are included in the master fix pack patch update `4.5.18_1521_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |

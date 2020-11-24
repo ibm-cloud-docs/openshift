@@ -1613,7 +1613,7 @@ subcollection: openshift
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
   * [Changelog for worker node fix pack 4.5.19_1521_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4519_1521)
-  * [Changelog for master fix pack 4.5.17_1520_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4517_1520)
+  * [Changelog for master fix pack 4.5.18_1521_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4518_1521)
   * [Changelog for worker node fix pack 4.5.17_1519_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4517_1519)
   * [Changelog for worker node fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518_worker)
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
