@@ -307,7 +307,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Add worker nodes to your classic cluster.
 {: shortdesc}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Want to save on your classic worker node costs? [Create a reservation](/docs/containers?topic=containers-reserved-instances) to lock in a discount over 1 or 3 year terms! Then, create your worker pool by using the reserved instances.
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Want to save on your classic worker node costs? [Create a reservation](/docs/openshift?topic=openshift-reservations) to lock in a discount over 1 or 3 year terms! Then, create your worker pool by using the reserved instances.
 {: tip}
 
 ### Creating a new worker pool
