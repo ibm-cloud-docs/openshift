@@ -533,6 +533,11 @@ subcollection: openshift
 
 [Removing clusters](/docs/openshift?topic=openshift-remove)
 
+
+## Managing cluster costs
+{: #sitemap_managing_cluster_costs}
+
+
 [Understanding costs for your clusters](/docs/openshift?topic=openshift-costs)
 * [Understanding costs by component](/docs/openshift?topic=openshift-costs#costs-for-clusters)
   * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
@@ -546,6 +551,14 @@ subcollection: openshift
   * [VPC Generation 2 compute worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
 * [Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
 * [Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
+
+[Using reservations to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations)
+* [Understanding reservations](/docs/openshift?topic=openshift-reservations#ri-about)
+  * [Reservation usage and lifecycle](/docs/openshift?topic=openshift-reservations#ri-usage-lifecycle)
+  * [Billing and discounts](/docs/openshift?topic=openshift-reservations#ri-about-billing)
+* [Creating a reservation](/docs/openshift?topic=openshift-reservations#ri-create)
+* [Using a reservation in a cluster](/docs/openshift?topic=openshift-reservations#ri-use)
+* [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
 
 
 ## Securing cluster workloads

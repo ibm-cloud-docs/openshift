@@ -74,7 +74,11 @@ Red Hat OpenShift on IBM Cloud
             openshift_cluster_update.md
             openshift_performance.md
             openshift_cluster_remove.md
+
+        {: .topicgroup}
+        Managing cluster costs
             openshift_costs.md
+            openshift_costs_reserved.md
 
     {: .topicgroup}
     Securing cluster workloads
