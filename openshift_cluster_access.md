@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-20"
+lastupdated: "2020-11-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -107,10 +107,12 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 2. [Create your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
 3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall#corporate) to the {{site.data.keyword.cloud_notm}} and {{site.data.keyword.openshiftlong_notm}} API endpoints and ports. For private service endpoint-only clusters, you cannot test the connection to your cluster until you expose the private service endpoint of the master to the cluster by using a [private NLB](#access_private_se).
 4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
-5.  In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
-    *  **Public Service Endpoint URL only**: Continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the public service endpoint](#access_public_se).
-    *  **Private Service Endpoint URL only**: If your cluster has only a private service endpoint enabled, continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the private service endpoint](#access_private_se).
-    *  **Both service endpoint URLs**: You can access your cluster either through the [public](#access_public_se) or the [private](#access_private_se) service endpoint.
+5. Find your cluster's service endpoint.
+  * **Classic or VPC clusters**: In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
+      *  Public Service Endpoint URL only: Continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the public service endpoint](#access_public_se).
+      *  Private Service Endpoint URL only: If your cluster has only a private service endpoint enabled, continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the private service endpoint](#access_private_se).
+      *  Both service endpoint URLs: You can access your cluster either through the [public](#access_public_se) or the [private](#access_private_se) service endpoint.
+  * **{{site.data.keyword.satellitelong_notm}} clusters**: Continue with [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](#access_cluster_sat).
 
 <br />
 
