@@ -683,7 +683,7 @@ By default, all IP addresses can be used to log in to the {{site.data.keyword.cl
     <thead>
     <th>Region</th>
     <th>Zone</th>
-    <th>Private IP address</th>
+    <th>IP address</th>
     </thead>
   <tbody>
     <tr>
