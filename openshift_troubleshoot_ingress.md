@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-11-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -873,7 +873,7 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 
 3. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
     ```
-    ibmcloud oc cluster get --show-resources <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster <cluster_name> --show-resources
     ```
     {: pre}
 
@@ -1524,7 +1524,7 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 
 3. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
     ```
-    ibmcloud oc cluster get --show-resources <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster <cluster_name> --show-resources
     ```
     {: pre}
 
