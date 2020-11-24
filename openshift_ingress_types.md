@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-11-24"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -507,6 +507,8 @@ Create new ALBs that run the Kubernetes Ingress image. After you create the new 
     ```
     {: pre}
 
+11. If you use {{site.data.keyword.blockchainfull}}, you must [re-establish connectivity between the {{site.data.keyword.blockchain}} management console and your cluster](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-refresh).
+
 #### Migrate existing ALBs
 {: #alb-migrate-3-existing}
 
@@ -575,6 +577,8 @@ If you choose to change your existing ALBs to the Kubernetes Ingress image, an A
     oc delete cm ibm-cloud-provider-ingress-cm -n kube-system
     ```
     {: pre}
+
+3. If you use {{site.data.keyword.blockchainfull}}, you must [re-establish connectivity between the {{site.data.keyword.blockchain}} management console and your cluster](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-refresh).
 
 <br />
 

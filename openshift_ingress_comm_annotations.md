@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-11-24"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -930,6 +930,8 @@ Customize the deployment for ALBs that run the Kubernetes Ingress image by creat
       {: screen}
 
   3. Save and close the file. Your changes are applied automatically.
+
+4. If you use {{site.data.keyword.blockchainfull}}, you must [re-establish connectivity between the {{site.data.keyword.blockchain}} management console and your cluster](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-refresh).
 
 <br />
 
