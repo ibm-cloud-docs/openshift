@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-20"
+lastupdated: "2020-11-24"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 23 November 2020 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.5.19_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4519_1521), [`4.4.30_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4430_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1546_worker), and [`3.11.313.318_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311318_1573). |
 | 20 November 2020 | **New! Portieris for image security enforcement**: With the [open source Portieris project](https://github.com/IBM/portieris){: external}, you can set up a Kubernetes admission controller to enforce image security policies by namespace or cluster. Use Portieris instead of the [deprecated Container Image Security Enforcement Helm chart](/docs/Registry?topic=Registry-security_enforce). |
 | 19 November 2020 | **Ingress ALB changelog**: Updated the [`nginx-ingress` build to 653 and the `ingress-auth` build to 425](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image. |
 | 18 November 2020 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**New! {{site.data.keyword.block_storage_is_short}} changelog**: Added a [changelog](/docs/openshift?topic=openshift-vpc_bs_changelog) for the {{site.data.keyword.block_storage_is_short}} add-on.</li></ul>|
