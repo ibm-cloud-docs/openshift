@@ -131,7 +131,7 @@ Review the following diagram for an example scenario of how you might set up you
 You can use your reservation to create worker pools in new or existing clusters. Your reservation is account-wide, so you can use the reserved worker nodes in different clusters, worker pools, and even resource groups. However, because prices vary by zone, you cannot use reserved worker nodes across different metros or multizone regions. You also cannot used reserved instances from other {{site.data.keyword.cloud_notm}} infrastructure services, such as virtual server instances, for your worker nodes, but must use the {{site.data.keyword.openshiftlong_notm}} reservations.
 
 **Does a reservation guarantee computing capacity in a zone?**<br>
-Reserving worker nodes does not guarantee compute capacity whenever you want to create a worker pool. Instead, you reserve a certain number of worker nodes for a term so that you lock in the discounted price that is associated with the reservation. 
+Reserving worker nodes does not guarantee compute capacity whenever you want to create a worker pool. Instead, you reserve a certain number of worker nodes for a term so that you lock in the discounted price that is associated with the reservation.
 
 **How do I know how many reserved worker nodes I need?**<br>
 See [Sizing your Kubernetes cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing).
@@ -157,7 +157,7 @@ For example, you might have a reservation with one contract for 10 worker nodes 
 To avoid an unexpected deletion, scale down your worker pools before the contract ends to the remaining capacity in the reservation. Or, add contracts to your reservation so that you continue to have enough reserved capacity for the worker nodes that you need.
 {: important}
 
-### Billing and discounts 
+### Billing and discounts
 {: #ri-about-billing}
 
 **How much is the discount? Can I combine reservations with other discounts?**<br>
@@ -165,7 +165,7 @@ The discounts vary by the flavor, location, and term of the contract, but typica
 *   33% or more for 1 year terms.
 *   Up to 50% for 3 year terms.
 
-These discounted reserved worker nodes are in addition to any current account-level discounts that you might have, such as discounts from an {{site.data.keyword.cloud_notm}} subscription account. 
+These discounted reserved worker nodes are in addition to any current account-level discounts that you might have, such as discounts from an {{site.data.keyword.cloud_notm}} subscription account.
 
 **How am I billed? How are my discounts applied?**<br>
 When you create a contract, a discounted monthly price for the total number of worker nodes is calculated. Then, this cost is applied for each month in the term. You are billed each month for the discounted cost, regardless of how many worker nodes that you use during the month. Keep in mind that the price of each new contract is fixed at the time that the contract is created for the lifetime of the contract.
@@ -191,7 +191,7 @@ Before you begin, make sure that you have the [**Administrator** platform role f
 4.  Select the **Location** for your reservation. Keep in mind that you cannnot change the location later.
     * **Geography**: The geographic area to filter locations by.
     * **Availability**: Choose single zone or multizone. For multizone areas, you select specific zones for your worker nodes when you create the worker pool.
-    * **Metro**: The metro for the location. 
+    * **Metro**: The metro for the location.
 5.  Configure the **Worker nodes** for your reservation.
     * Click **Change flavor** to edit the CPU, memory, and other operating systems details of the worker nodes. Keep in mind that you cannot change the flavor for the reservation later.
     * Enter the **Number of worker nodes** to create a contract for the initial reservation. You can add contracts for additional worker nodes later.
@@ -206,7 +206,7 @@ Before you begin, make sure that you have the [**Administrator** platform role f
     3.  Select the **Number of worker nodes**, **Contract length**, and **Start date** for the contract.
     4.  In the **Summary** pane, review the order summary and then click **Create**. Your contract is added to the reservation and becomes available to use to provision worker nodes on the start date.
 
-Your reservation is created! Now, [use your reservation to provision worker nodes in your cluster](#ri-use) or [review your reservation usage](#ri-usage).
+Your reservation is created! Now, [use your reservation to provision worker nodes in your cluster](#ri-use) or [review your reservation usage](#ri-usage-lifecycle).
 
 <br />
 ## Using a reservation in a cluster
@@ -257,4 +257,5 @@ Before you begin, make sure that you have the following roles in {{site.data.key
 3.  From the **Services** table, find the **Kubernetes Service** row and click **View plans**.
 4.  From the plans table, find the row for your reservation name and click **View details**.
 5.  Review the details for the reserved worker nodes that are associated with the contracts of your reservation.
+
 
