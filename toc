@@ -75,6 +75,11 @@ Red Hat OpenShift on IBM Cloud
             openshift_performance.md
             openshift_cluster_remove.md
 
+        {: .topicgroup}
+        Managing cluster costs
+            openshift_costs.md
+            openshift_costs_reserved.md
+
     {: .topicgroup}
     Securing cluster workloads
         openshift_encrypt.md
@@ -146,13 +151,13 @@ Red Hat OpenShift on IBM Cloud
             openshift_loadbalancer_dns.md
 
         {: .topicgroup}
-        Exposing apps with Ingress in OpenShift version 4
+        Exposing apps with Ingress in OpenShift 4
             openshift_ingress_qs_roks4.md
             openshift_ingress_about_roks4.md
             openshift_ingress_roks4.md
 
         {: .topicgroup}
-        Exposing apps with Ingress in OpenShift version 3.11 clusters
+        Exposing apps with Ingress in OpenShift 3.11
             openshift_ingress_about.md
             openshift_ingress_types.md
             openshift_ingress_comm_annotations.md
@@ -185,7 +190,6 @@ Red Hat OpenShift on IBM Cloud
         openshift_integrations_service_binding.md
 
     openshift_ha.md
-    openshift_costs.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

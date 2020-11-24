@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-06"
+lastupdated: "2020-11-23"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -175,7 +176,7 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 
 <br />
 
-## Exposing apps to the public in classic clusters or in VPC clusters with a public service endpoint
+## Publicly exposing apps in classic clusters or in VPC clusters with a public service endpoint
 {: #ingress-roks4-public}
 
 If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the public service endpoint during cluster creation, you can use the default public Ingress controller to expose apps in your cluster to receive requests that are from the public network.
@@ -383,7 +384,7 @@ http://<subdomain2>.<domain>/<app1_path>
 
 <br />
 
-## Exposing apps to the public in VPC clusters with a private service endpoint only
+## Publicly exposing apps in VPC clusters with a private service endpoint only
 {: #priv-se-pub-controller}
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> If your cluster is created on VPC Gen 2 infrastructure and you enabled only the private service endpoint during cluster creation, your cluster is created with only a private Ingress controller by default. To publicly expose your apps, you must first create a public Ingress controller. Then, you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
@@ -638,7 +639,7 @@ http://<subdomain2>.<domain>/<app1_path>
 
 <br />
 
-## Exposing apps that are outside your cluster to the public
+## Publicly exposing apps that are outside your cluster
 {: #ingress-roks4-external}
 
 Expose apps that are outside your cluster to the public by including them in public Ingress load balancing. Incoming public requests on the IBM-provided or your custom domain are forwarded automatically to the external app.
@@ -714,7 +715,7 @@ To expose apps that are outside of your cluster to the public:
 
 <br />
 
-## Exposing apps to a private network in classic clusters or in VPC clusters with a public service endpoint
+## Privately exposing apps in classic clusters or in VPC clusters with a public service endpoint
 {: #ingress-roks4-private}
 
 If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the public service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private Ingress controller. Then you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
@@ -977,7 +978,7 @@ http://<subdomain2>.<domain>/<app1_path>
 
 <br />
 
-## Exposing apps to a private network in VPC clusters with a private service endpoint only
+## Privately exposing apps in VPC clusters with a private service endpoint only
 {: #priv-se-priv-controller}
 
 If your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the private service endpoint only during cluster creation, you can use the default private Ingress controller to expose apps in your cluster to requests that are from the private network.
@@ -1218,7 +1219,7 @@ If you define the IBM-provided Ingress subdomain in your Ingress resource, you c
 
 IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. The certificates expire every 90 days and are automatically renewed 37 days before they expire. To see the default certificate in your cluster's {{site.data.keyword.cloudcerts_long_notm}} instance, [click on the name of your cluster's {{site.data.keyword.cloudcerts_long_notm}} instance](https://cloud.ibm.com/resources){: external} to open the **Your certificates** page.
 
-The TLS certificate is stored as a `Ingress secret` in the `openshift-ingress` project.
+The TLS certificate is stored as an `Ingress secret` in the `openshift-ingress` project.
 
 To get the secret name:
 ```
@@ -1275,7 +1276,7 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
 ## Customizing Ingress routing with annotations
 {: #annotations-roks4}
 
-If you want to customize routing rules for your app, you can use [HAProxy annotations](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} in the Ingress resources that you define.
+If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} in the Ingress resources that you define.
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.</br></br>{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4.
 {: important}

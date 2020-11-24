@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-16"
+lastupdated: "2020-11-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -422,7 +423,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
         Replace <em>&lt;sysdig_public_IP&gt;</em> with the [Sysdig IP addresses](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-endpoints#endpoints_sysdig).
     *   **{{site.data.keyword.la_full_notm}}**:
         <pre class="screen">TCP port 443, port 80 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logDNA_public_IP&gt;</pre>
-        Replace &gt;<em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service-connection#network_outgoing_traffic).
+        Replace &lt;<em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service-connection#network_outgoing_traffic).
 
 7. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. {{site.data.keyword.openshiftlong_notm}} uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
@@ -498,6 +499,50 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
   - Allow inbound and outbound connections to TCP and UDP port 53 and port 5353 for DNS access.
 
 5. Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEncap traffic between worker nodes on the public and private interfaces. {{site.data.keyword.openshiftlong_notm}} uses the VRRP protocol to manage IP addresses for private load balancers and the IPEncap protocol to permit pod to pod traffic across subnets.
+
+6.  To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
+  - `TCP port 443, port 4443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
+  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
+  <caption>IP addresses to open for Registry traffic</caption>
+    <thead>
+      <th>{{site.data.keyword.openshiftlong_notm}} region</th>
+      <th>Registry address</th>
+      <th>Registry private IP addresses</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Global registry across <br>{{site.data.keyword.openshiftlong_notm}} regions</td>
+        <td><code>private.icr.io</code><br><br>
+        <br><br><code>cp.icr.io</code></td>
+        <td><code>166.9.20.31</code></br><code>166.9.22.22</code></br><code>166.9.24.16</code></td>
+      </tr>
+      <tr>
+        <td>AP North</td>
+        <td><code>private.jp.icr.io</code></td>
+        <td><code>166.9.40.20</code></br><code>166.9.42.21</code></br><code>166.9.44.12</code></td>
+      </tr>
+      <tr>
+        <td>AP South</td>
+        <td><code>private.au.icr.io</code></td>
+        <td><code>166.9.52.20</code></br><code>166.9.54.19</code></br><code>166.9.56.13</code></td>
+      </tr>
+      <tr>
+        <td>EU Central</td>
+        <td><code>private.de.icr.io</code></td>
+        <td><code>166.9.28.35</code></br><code>166.9.30.2</code></br><code>166.9.32.2</code></td>
+       </tr>
+       <tr>
+        <td>UK South</td>
+        <td><code>private.uk.icr.io</code></td>
+        <td><code>166.9.36.19</code></br><code>166.9.38.14</code></br><code>166.9.34.12</code></td>
+       </tr>
+       <tr>
+        <td>US East, US South</td>
+        <td><code>private.us.icr.io</code></td>
+        <td><code>166.9.12.227</code></br><code>166.9.15.116</code></br><code>166.9.16.244</code></td>
+       </tr>
+      </tbody>
+    </table>
 8. Optional: To send logging and metric data, set up firewall rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
    *  [{{site.data.keyword.la_short}} private endpoints](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service-connection#ips_api)
    *  [{{site.data.keyword.mon_short}} private endpoints](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-endpoints#endpoints_sysdig)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-20"
+lastupdated: "2020-11-24"
 
 keywords: openshift
 subcollection: openshift
@@ -534,6 +534,33 @@ subcollection: openshift
 [Removing clusters](/docs/openshift?topic=openshift-remove)
 
 
+## Managing cluster costs
+{: #sitemap_managing_cluster_costs}
+
+
+[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs)
+* [Understanding costs by component](/docs/openshift?topic=openshift-costs#costs-for-clusters)
+  * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
+  * [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
+  * [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
+  * [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
+  * [Default storage for images](/docs/openshift?topic=openshift-costs#storage_images)
+  * [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
+  * [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
+  * [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
+  * [VPC Generation 2 compute worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
+* [Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
+* [Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
+
+[Using reservations to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations)
+* [Understanding reservations](/docs/openshift?topic=openshift-reservations#ri-about)
+  * [Reservation usage and lifecycle](/docs/openshift?topic=openshift-reservations#ri-usage-lifecycle)
+  * [Billing and discounts](/docs/openshift?topic=openshift-reservations#ri-about-billing)
+* [Creating a reservation](/docs/openshift?topic=openshift-reservations#ri-create)
+* [Using a reservation in a cluster](/docs/openshift?topic=openshift-reservations#ri-use)
+* [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
+
+
 ## Securing cluster workloads
 {: #sitemap_securing_cluster_workloads}
 
@@ -870,13 +897,13 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_routes}
 
 
-[Exposing apps with routes in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-openshift_routes)
+[Exposing apps with routes in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-openshift_routes)
 * [Overview](/docs/openshift?topic=openshift-openshift_routes#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-openshift_routes#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-openshift_routes#route_multi)
   * [Traffic flow in a multizone VPC cluster with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#route_vpc)
   * [Traffic flow in a multizone VPC cluster with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private)
-* [Route types](/docs/openshift?topic=openshift-openshift_routes#route-types)
+* [Route types and TLS termination](/docs/openshift?topic=openshift-openshift_routes#route-types)
 * [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
   * [Setting up public routes in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#routes-public-classic)
   * [Setting up public routes in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-public-vpc-privse)
@@ -889,7 +916,7 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-routes-311#routes-overview)
   * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-routes-311#route_single)
   * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-routes-311#route_multi)
-* [Route types](/docs/openshift?topic=openshift-routes-311#route-types)
+* [Route types and TLS termination](/docs/openshift?topic=openshift-routes-311#route-types)
 * [Setting up public routes](/docs/openshift?topic=openshift-routes-311#routes-setup)
 * [Setting up private routes](/docs/openshift?topic=openshift-routes-311#private-routes)
 * [Moving router services across VLANs](/docs/openshift?topic=openshift-routes-311#migrate-router-vlan)
@@ -906,7 +933,7 @@ subcollection: openshift
 [VPC: Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas)
 * [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
 * [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
-* [Registering a VPC load balancer hostname with a DNS subdomain](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+* [Registering a VPC load balancer with a DNS subdomain and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
 
 [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
@@ -940,13 +967,13 @@ subcollection: openshift
   * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
 
 
-## Exposing apps with Ingress in OpenShift version 4
-{: #sitemap_exposing_apps_with_ingress_in_openshift_version_4}
+## Exposing apps with Ingress in OpenShift 4
+{: #sitemap_exposing_apps_with_ingress_in_openshift_4}
 
 
 [Quick start for Ingress in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-ingress-qs-roks4)
 
-[About Ingress in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-ingress-about-roks4)
+[About Ingress in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-ingress-about-roks4)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#ingress_roks4_components)
   * [Ingress controller](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-controller)
   * [Router](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-router)
@@ -966,25 +993,25 @@ subcollection: openshift
   * [All apps are in one project](/docs/openshift?topic=openshift-ingress-roks4#one-project)
   * [Apps are in multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multi-project)
   * [Multiple domains within a project](/docs/openshift?topic=openshift-ingress-roks4#multi-domains-project)
-* [Exposing apps to the public in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public)
+* [Publicly exposing apps in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public)
   * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-1)
   * [Step 2: Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-2)
   * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3)
   * [Step 4: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-4)
-* [Exposing apps to the public in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller)
+* [Publicly exposing apps in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller)
   * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-1)
   * [Step 2: Register a subdomain and TLS certificate](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-2)
   * [Step 3: Create and configure a public Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-3)
   * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-4)
   * [Step 5: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-5)
-* [Exposing apps that are outside your cluster to the public](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-external)
-* [Exposing apps to a private network in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private)
+* [Publicly exposing apps that are outside your cluster](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-external)
+* [Privately exposing apps in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private)
   * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-1)
   * [Step 2: Register a subdomain and TLS certificate](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-2)
   * [Step 3: Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-3)
   * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4)
   * [Step 5: Access your app from your private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-5)
-* [Exposing apps to a private network in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller)
+* [Privately exposing apps in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller)
   * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-1)
   * [Step 2: Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-2)
   * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-3)
@@ -995,8 +1022,8 @@ subcollection: openshift
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 
-## Exposing apps with Ingress in OpenShift version 3.11 clusters
-{: #sitemap_exposing_apps_with_ingress_in_openshift_version_3.11_clusters}
+## Exposing apps with Ingress in OpenShift 3.11
+{: #sitemap_exposing_apps_with_ingress_in_openshift_3.11}
 
 
 [About Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress-about)
@@ -1387,28 +1414,6 @@ subcollection: openshift
 * [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
 
 
-## Managing costs for your clusters
-{: #sitemap_managing_costs_for_your_clusters}
-
-
-[Managing costs for your clusters](/docs/openshift?topic=openshift-costs)
-
-[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs#costs-for-clusters)
-* [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
-* [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
-* [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
-* [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
-* [Default storage for images](/docs/openshift?topic=openshift-costs#storage_images)
-* [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
-* [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
-* [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
-* [VPC Generation 2 compute worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
-
-[Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
-
-[Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
-
-
 ## OpenShift Container Platform documentation
 
 [OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
@@ -1620,12 +1625,14 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
-  * [Changelog for master fix pack 4.5.17_1520_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4517_1520)
+  * [Changelog for worker node fix pack 4.5.19_1521_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4519_1521)
+  * [Changelog for master fix pack 4.5.18_1521_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4518_1521)
   * [Changelog for worker node fix pack 4.5.17_1519_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4517_1519)
   * [Changelog for worker node fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518_worker)
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.30_1525_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4430_1525)
   * [Changelog for master fix pack 4.4.29_1525_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1525)
   * [Changelog for worker node fix pack 4.4.29_1524_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1524)
   * [Changelog for worker node fix pack 4.4.27_1523_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4427_1523_worker)
@@ -1642,6 +1649,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.40_1546_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1546_worker)
   * [Changelog for master fix pack 4.3.40_1546_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1546)
   * [Changelog for worker node fix pack 4.3.40_1545_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1545)
   * [Changelog for worker node fix pack 4.3.40_1544_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1544)
@@ -1669,6 +1677,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.318_1573_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311318_1573)
   * [Changelog for master fix pack 3.11.306_1573_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573)
   * [Changelog for worker node fix pack 3.11.306_1572_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1572)
   * [Changelog for worker node fix pack 3.11.306_1571_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1571)
