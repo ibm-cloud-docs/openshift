@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-11-24"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -140,7 +140,7 @@ Review the following important differences between the {{site.data.keyword.opens
 |Characteristic|Custom {{site.data.keyword.openshiftlong_notm}} image|Kubernetes image|
 |--------------|----------------------------|--------------------|
 |Annotation class| Only [custom {{site.data.keyword.openshiftlong_notm}} annotations](/docs/openshift?topic=openshift-ingress_annotation) (`ingress.bluemix.net/<annotation>`) are supported. | Only [Kubernetes NGINX annotations](/docs/openshift?topic=openshift-comm-ingress-annotations#annotations){: external} (`nginx.ingress.kubernetes.io/<annotation>`) are supported.|
-|Annotation application to services| Within the annotation, specify the app service name that you want to apply the annotation to. | Annotations are always applied to all service paths in the resource, and you cannot specify service names within the annotations.|
+|Annotation application to services| Within the annotation, you can specify the app service name that you want to apply the annotation to. | Annotations are always applied to all service paths in the resource, and you cannot specify service names within the annotations.|
 |Protocols| HTTP/2 and gRPC protocols are not supported.|HTTP/2 and gRPC protocols are supported.|
 |TLS secrets| The ALB can access a TLS secret in the `default` project, in the `ibm-cert-store` project, or in the same project where you deploy the Ingress resource.| The ALB can access a TLS secret in the same project where you deploy the Ingress resource only, and cannot access secrets in any other projects.|
 {: caption="Differences between Ingress images"}
@@ -507,6 +507,8 @@ Create new ALBs that run the Kubernetes Ingress image. After you create the new 
     ```
     {: pre}
 
+11. If you use {{site.data.keyword.blockchainfull}}, you must [re-establish connectivity between the {{site.data.keyword.blockchain}} management console and your cluster](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-refresh).
+
 #### Migrate existing ALBs
 {: #alb-migrate-3-existing}
 
@@ -575,6 +577,8 @@ If you choose to change your existing ALBs to the Kubernetes Ingress image, an A
     oc delete cm ibm-cloud-provider-ingress-cm -n kube-system
     ```
     {: pre}
+
+3. If you use {{site.data.keyword.blockchainfull}}, you must [re-establish connectivity between the {{site.data.keyword.blockchain}} management console and your cluster](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-refresh).
 
 <br />
 

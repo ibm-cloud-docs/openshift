@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-11-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -683,12 +683,16 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
 
 9. Detach storage by using a `DELETE` request.
 
-    Example request:
-
-      ```sh
-      curl -X DELETE -H "Authorization: <IAM_token>" "https://<region>containers.cloud.ibm.com/v2/storage/vpc/deleteAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeAttachmentID=<volume_attachment_ID>"
-      ```
-      {: codeblock}
+  Example request:
+  ```sh
+  curl -X DELETE "https://containers.cloud.ibm.com/v2/storage/deleteAttachment" --header "X-Auth-Resource-Group-ID: <resource_group_id>" --header "Authorization: <IAM_token>" --data-raw "{
+    "cluster": "<cluster_ID>",
+    "volumeID": "<volume_ID>",
+    "worker": "<worker_ID>",
+    "volumeAttachmentID": "<volume_attachment_ID>"
+  }"
+  ```
+  {: codeblock}
 
   <br>
     <table summary="The columns are read from left to right. The first column has the parameter of the DELETE request. The second column describes the parameter.">
@@ -703,10 +707,6 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
       <tr>
       <td><code>IAM_token</code></td>
       <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
-      </tr>
-      <tr>
-      <td><code>region</code></td>
-      <td>The region that your cluster is in. You can retrieve this value by running <code>ibmcloud oc cluster get &lt;cluster_name&gt;</code>. Example value: <code>eu-de</code>. </td>
       </tr>
       <tr>
       <td><code>cluster_ID</code></td>
