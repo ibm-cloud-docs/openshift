@@ -122,7 +122,7 @@ ibmcloud oc addon-versions
 
 | Patch version | `vpc-block-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- |
-| `2.0.3_404` | `v2.0.7` | 25 November 2020 | 4.3 - 4.5 | Planned updates for this patch:<ul><li>Fixed a vulernability scan fix in `v2.0.6` image tag.</li><li>Updated the base image from `alpine` to `UBI`.</li><li>Pods and containers now run as `non-root` except for the `node-server` container.</li></ul> |
+| `2.0.3_404` | `v2.0.7` | 25 November 2020 | 4.3 - 4.5 | Updates in this patch:<ul><li>Fixed a vulernability scan fix in `v2.0.6` image tag.</li><li>Updated the base image from `alpine` to `UBI`.</li><li>Pods and containers now run as `non-root` except for the `node-server` container.</li></ul> |
 | `2.0.3_375` | `v2.0.6` | 17 September 2020 | 4.3 - 4.5 | Fixed an issue with volume attachment when replacing workers. |
 | `2.0.3_374+` | `v2.0.5` | 29 August 2020 | 4.3 - 4.5 | Added the `/var/lib/kubelet` path for CSI driver calls on OCP 4.4. |
 | `2.0.3_365` | `v2.0.4` | 05 August 2020 | 4.3 - 4.5 | <ul><li>Updated sidecar container images.</li><li>Added liveness probe.</li><li>Enabled parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.</li></ul> |
