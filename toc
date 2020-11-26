@@ -139,6 +139,7 @@ Red Hat OpenShift on IBM Cloud
         {: .topicgroup}
         Exposing apps with routes
             openshift_routes.md
+            openshift_hpcs_router.md
             openshift_routes_311.md
 
         {: .topicgroup}

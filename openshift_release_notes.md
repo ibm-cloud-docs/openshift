@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-11-26"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 25 November 2020 | **New! {{site.data.keyword.cloud_notm}} HPCS Router**: In clusters that run {{site.data.keyword.openshiftshort}} version 4.5, you can now deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an {{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance. This can be used by the router in TLS session establishment and in Certificate Signing Request (CSR) signing. To get started, see [Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-#hpcs-router). |
 | 24 November 2020 | <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **New! Reservations to reduce classic worker node costs**: Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to on-demand worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations). |
 | 23 November 2020 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.5.19_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4519_1521), [`4.4.30_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4430_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1546_worker), and [`3.11.313.318_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311318_1573). |
 | 20 November 2020 | **New! Portieris for image security enforcement**: With the [open source Portieris project](https://github.com/IBM/portieris){: external}, you can set up a Kubernetes admission controller to enforce image security policies by namespace or cluster. Use Portieris instead of the [deprecated Container Image Security Enforcement Helm chart](/docs/Registry?topic=Registry-security_enforce). |

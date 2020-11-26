@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-25"
+lastupdated: "2020-11-26"
 
 keywords: openshift
 subcollection: openshift
@@ -911,6 +911,14 @@ subcollection: openshift
   * [Setting up private routes in classic clusters or in VPC clusters with a public service endpoint](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43)
   * [Setting up private routes in VPC clusters with a private service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-private-vpc-privse)
 * [Moving router services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan)
+
+[Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router)
+* [Before you begin](/docs/openshift?topic=openshift-hpcs-router#hpcs-router-prereqs)
+* [Step 1: Set up default router sharding](/docs/openshift?topic=openshift-hpcs-router#sharding)
+* [Step 2: Install the {{site.data.keyword.cloud_notm}} HPCS Router operator](/docs/openshift?topic=openshift-hpcs-router#addon-operatorhub)
+* [Step 3: Create and integrate a router with {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#create-hpcs-router)
+* [Step 4: Create a route certificate that uses a private key from {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#generate-csr)
+* [Step 5: Create an encrypted route with the certificate](/docs/openshift?topic=openshift-hpcs-router#create-route)
 
 [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311)
 * [Overview](/docs/openshift?topic=openshift-routes-311#routes-overview)
