@@ -95,7 +95,7 @@ subcollection: openshift
 # Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}
 {: #hpcs-router}
 
-Deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with private keys that are stored in an [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-get-started).
+Deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-get-started).
 {: shortdesc}
 
 <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.cloud_notm}} HPCS Router support is for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 and later only. To set up routes for {{site.data.keyword.openshiftshort}} version 4.3 or 4.4, you must [use the default router to expose apps](/docs/openshift?topic=openshift-routes). To set up routes for {{site.data.keyword.openshiftshort}} version 3.11, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311).
@@ -417,4 +417,3 @@ After you obtain the certificate from your certificate authority, use the certif
 4. Verify that the TLS session is correctly established by making `https` calls to your app's route.
 
 5. Optional: Customize routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.5/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.5/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
-
