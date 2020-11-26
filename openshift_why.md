@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-11-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -154,6 +154,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Simplified Kubernetes developer experience, with an app console that is suited for beginners| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Supported operating system| Ubuntu 16.04 x86_64, 18.04 x86_64 |Red Hat Enterprise Linux 7|
 |Preferred external traffic networking| Ingress | Router |
+|Secured routes encrypted with {{site.data.keyword.hscrypto}} | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: caption="Characteristics of community Kubernetes and {{site.data.keyword.openshiftshort}} clusters" caption-side="top"}
 
 
