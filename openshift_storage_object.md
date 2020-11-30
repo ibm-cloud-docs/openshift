@@ -414,7 +414,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
       <td>The infrastructure provider. To retrieve this value, run <code>oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"</code>. If the output from the previous step contains <code>softlayer</code>, then set the <code>CLUSTER_PROVIDER</code> to <code>"IBMC"</code>. If the output contains <code>gc</code>, <code>ng</code>, or <code>g2</code>, then set the <code>CLUSTER_PROVIDER</code> to <code>"IBM-VPC"</code>. Store the infrastructure provider in an environment variable. For example: <code>SET CLUSTER_PROVIDER="IBM-VPC"</code>.</td>
     </tr>
     <tr>
-      <td><code>WORKER_OS</code> and <code>PLATFORM</code><td>
+      <td><code>WORKER_OS</code> and <code>PLATFORM</code></td>
       <td>The operating system of the worker nodes. To retrieve these values, run <code>oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"</code>. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run <code>SET WORKER_OS="redhat"</code> and <code>SET PLATFORM="openshift"</code>.</td>
     </tr>
     </tbody>
