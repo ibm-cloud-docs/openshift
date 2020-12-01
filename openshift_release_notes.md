@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-26"
+lastupdated: "2020-12-01"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -103,6 +103,15 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
+
+## December 2020
+{: #dec20}
+
+| Date | Description |
+| ---- | ----------- |
+| 01 December 2020 | **Default Kubernetes Ingress image**: In all new {{site.data.keyword.openshiftlong_notm}} clusters that run version 3.11, default application load balancers (ALBs) now run the Kubernetes Ingress image. In existing clusters, ALBs continue to run the previously supported {{site.data.keyword.openshiftlong_notm}} Ingress image, which is now deprecated. For more information and migration actions, see [Setting up Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types). |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in December 2020"}
 
 ## November 2020
 {: #nov20}

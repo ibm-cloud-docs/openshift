@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -218,13 +218,17 @@ If you use Calico pre-DNAT network policies to block all incoming traffic to Ing
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 4, see [About Ingress in {{site.data.keyword.openshiftshort}} version 4 or later](/docs/openshift?topic=openshift-ingress-about-roks4).
 {: important}
 
-As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two types of NGINX Ingress controller images for the Ingress application load balancers (ALBs) in your cluster: the {{site.data.keyword.openshiftlong_notm}} Ingress image, and the Kubernetes Ingress image.
+As of 01 December 2020, {{site.data.keyword.openshiftlong_notm}} primarily supports the Kubernetes Ingress image for the Ingress application load balancers (ALBs) in your cluster. The Kubernetes Ingress image is built on the community Kubernetes project's implementation of the NGINX Ingress controller. The previously supported {{site.data.keyword.openshiftlong_notm}} Ingress image, which was built on a custom implementation of the NGINX Ingress controller, is deprecated.
 {: shortdesc}
 
-- The **{{site.data.keyword.openshiftlong_notm}} Ingress image** is built on a custom implementation of the NGINX Ingress controller.
-- The **Kubernetes Ingress image** is built on the community Kubernetes project's implementation of the NGINX Ingress controller.
+**Clusters created on or after 01 December 2020**: Default application load balancers (ALBs) run the Kubernetes Ingress image in all new {{site.data.keyword.openshiftlong_notm}} clusters that run version 3.11.
 
-Depending on which image type you choose, the ALB behaves according to that implementation of the NGINX Ingress controller.
+**Clusters created before 01 December 2020**:
+* Existing clusters with ALBs that run the custom IBM Ingress image continue to operate as-is.
+* Support for the custom IBM Ingress image ends in 6 months on 30 April 2021.
+* You must move to the new Kubernetes Ingress by migrating any existing Ingress setups. Your existing ALBs and other Ingress resources are not automatically migrated to the new Kubernetes Ingress image.
+* You can easily migrate to Kubernetes Ingress by using the [migration tool](#alb-type-migration) that is developed and supported by IBM Cloud Kubernetes Service.
+* If you do not move to Kubernetes Ingress before 30 April 2020, ALBs that run the custom IBM Ingress image continue to run, but all support from IBM Cloud for those ALBs is discontinued.
 
 To get started, see [Setting up Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types).
 
