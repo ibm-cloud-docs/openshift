@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-26"
+lastupdated: "2020-12-01"
 
 keywords: openshift
 subcollection: openshift
@@ -1053,7 +1053,7 @@ subcollection: openshift
 * [Comparison of the ALB image types](/docs/openshift?topic=openshift-ingress-types#about-alb-images)
   * [Similarities between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-same)
   * [Differences between Ingress images](/docs/openshift?topic=openshift-ingress-types#alb-image-diff)
-* [Creating ALBs that run the Kubernetes Ingress image](/docs/openshift?topic=openshift-ingress-types#alb-comm-create)
+* [Exposing apps with ALBs that run the Kubernetes Ingress image](/docs/openshift?topic=openshift-ingress-types#alb-comm-create)
 * [Migrating your existing Ingress ALB setup to run Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types#alb-type-migration)
   * [Step 1: Copy TLS secrets](/docs/openshift?topic=openshift-ingress-types#alb-migrate-1)
   * [Step 2: Update Ingress resources](/docs/openshift?topic=openshift-ingress-types#alb-migrate-2)
@@ -1062,6 +1062,8 @@ subcollection: openshift
   * [Using the default TLS certificate for the IBM-provided Ingress subdomain](/docs/openshift?topic=openshift-ingress-types#manage_certs_ibm)
   * [Using a TLS certificate for a custom subdomain](/docs/openshift?topic=openshift-ingress-types#manage_certs_custom)
 * [Customizing the Ingress class](/docs/openshift?topic=openshift-ingress-types#ingress-class)
+  * [Default Ingress classes for public and private ALBs](/docs/openshift?topic=openshift-ingress-types#ingress-class-default)
+  * [Custom Ingress classes](/docs/openshift?topic=openshift-ingress-types#ingress-class-custom)
 * [Customizing routing and settings by using annotations and configmaps](/docs/openshift?topic=openshift-ingress-types#cm-annotations)
 * [Updating ALBs](/docs/openshift?topic=openshift-ingress-types#alb-update)
   * [Choosing a supported image version](/docs/openshift?topic=openshift-ingress-types#alb-version-choose)
@@ -1084,7 +1086,7 @@ subcollection: openshift
   * [Changing the number of simultaneous connections or worker processes](/docs/openshift?topic=openshift-comm-ingress-annotations#worker_processes_connections)
   * [Changing the number of open files for worker processes](/docs/openshift?topic=openshift-comm-ingress-annotations#max-worker-files)
 
-[Setting up {{site.data.keyword.openshiftlong_notm}} Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress)
+[Deprecated: Setting up {{site.data.keyword.openshiftlong_notm}} Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress)
 * [Quick start](/docs/openshift?topic=openshift-ingress#ingress-qs)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress#config_prereqs)
 * [Planning networking for single or multiple namespaces](/docs/openshift?topic=openshift-ingress#multiple_namespaces)
@@ -1123,7 +1125,7 @@ subcollection: openshift
 * [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress#migrate-alb-vlan)
 * [Increasing the restart readiness check time for ALB pods](/docs/openshift?topic=openshift-ingress#readiness-check)
 
-[{{site.data.keyword.openshiftlong_notm}} Ingress annotations](/docs/openshift?topic=openshift-ingress_annotation)
+[Deprecated: {{site.data.keyword.openshiftlong_notm}} Ingress annotations](/docs/openshift?topic=openshift-ingress_annotation)
 * [General annotations](/docs/openshift?topic=openshift-ingress_annotation#general)
   * [Custom error actions (`custom-errors`, `custom-error-actions`)](/docs/openshift?topic=openshift-ingress_annotation#custom-errors)
   * [Location snippets (`location-snippets`)](/docs/openshift?topic=openshift-ingress_annotation#location-snippets)
@@ -1175,7 +1177,7 @@ subcollection: openshift
   * [Changing the number or duration of keepalive connections](/docs/openshift?topic=openshift-ingress_annotation#keepalive_time)
   * [Changing the pending connections backlog](/docs/openshift?topic=openshift-ingress_annotation#backlog)
 
-[Logging and monitoring {{site.data.keyword.openshiftlong_notm}} Ingress](/docs/openshift?topic=openshift-ingress_health)
+[Deprecated: Logging and monitoring {{site.data.keyword.openshiftlong_notm}} Ingress](/docs/openshift?topic=openshift-ingress_health)
 * [Viewing Ingress logs](/docs/openshift?topic=openshift-ingress_health#ingress_logs)
 * [Customizing Ingress log content and format](/docs/openshift?topic=openshift-ingress_health#ingress_log_format)
 * [Monitoring the Ingress ALB](/docs/openshift?topic=openshift-ingress_health#ingress_monitoring)
@@ -1744,6 +1746,9 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
 * [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
+[Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
+* [Changelog for 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
+
 
 ## IAM and Activity Tracker events
 {: #sitemap_iam_and_activity_tracker_events}
@@ -2006,6 +2011,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[December 2020](/docs/openshift?topic=openshift-iks-release#dec20)
 
 [November 2020](/docs/openshift?topic=openshift-iks-release#nov20)
 

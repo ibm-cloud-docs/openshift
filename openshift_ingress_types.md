@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -99,13 +99,17 @@ subcollection: openshift
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 4, see [About Ingress in {{site.data.keyword.openshiftshort}} version 4 or later](/docs/openshift?topic=openshift-ingress-about-roks4).
 {: important}
 
-As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two types of NGINX Ingress controller images for the Ingress application load balancers (ALBs) in your cluster: the {{site.data.keyword.openshiftlong_notm}} Ingress image, and the Kubernetes Ingress image.
+As of 01 December 2020, {{site.data.keyword.openshiftlong_notm}} primarily supports the Kubernetes Ingress image for the Ingress application load balancers (ALBs) in your cluster. The Kubernetes Ingress image is built on the community Kubernetes project's implementation of the NGINX Ingress controller. The previously supported {{site.data.keyword.openshiftlong_notm}} Ingress image, which was built on a custom implementation of the NGINX Ingress controller, is deprecated.
 {: shortdesc}
 
-- The **{{site.data.keyword.openshiftlong_notm}} Ingress image** is built on a custom implementation of the NGINX Ingress controller.
-- The **Kubernetes Ingress image** is built on the community Kubernetes project's implementation of the NGINX Ingress controller.
+**Clusters created on or after 01 December 2020**: Default application load balancers (ALBs) run the Kubernetes Ingress image in all new {{site.data.keyword.openshiftlong_notm}} clusters that run version 3.11.
 
-Depending on which image type you choose, the ALB behaves according to that implementation of the NGINX Ingress controller.
+**Clusters created before 01 December 2020**:
+* Existing clusters with ALBs that run the custom IBM Ingress image continue to operate as-is.
+* Support for the custom IBM Ingress image ends in 6 months on 30 April 2021.
+* You must move to the new Kubernetes Ingress by migrating any existing Ingress setups. Your existing ALBs and other Ingress resources are not automatically migrated to the new Kubernetes Ingress image.
+* You can easily migrate to Kubernetes Ingress by using the [migration tool](#alb-type-migration) that is developed and supported by IBM Cloud Kubernetes Service.
+* If you do not move to Kubernetes Ingress before 30 April 2020, ALBs that run the custom IBM Ingress image continue to run, but all support from IBM Cloud for those ALBs is discontinued.
 
 Not ready to switch your ALBs to the Kubernetes Ingress image yet? When you enable or update an existing ALB, the ALB continues to run the same image that the ALB previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image. Your existing ALBs do not begin to run the Kubernetes Ingress image until you specify the Kubernetes Ingress image version in the `--version` flag when you enable them.
 {: tip}
@@ -147,11 +151,14 @@ Review the following important differences between the {{site.data.keyword.opens
 
 <br />
 
-## Creating ALBs that run the Kubernetes Ingress image
+## Exposing apps with ALBs that run the Kubernetes Ingress image
 {: #alb-comm-create}
 
-Create ALBs that run the community Kubernetes Ingress image in your cluster.
+Create Ingress resources so that ALBs that run the community Kubernetes Ingress image can route traffic to your apps.
 {: shortdesc}
+
+The following steps show you how to expose your apps with the Kubernetes Ingress setup. If you created your cluster on or after 01 December 2020, your ALBs run the Kubernetes Ingress image by default. However, if you created your cluster before 01 December 2020, your ALBs run the deprecated custom IBM Ingress image. In this case, you can use the following steps to create new ALBs that run the Kubernetes Ingress image, and run this new Kubernetes Ingress setup alongside your existing IBM Ingress setup. If you prefer to migrate your existing IBM Ingress setup to the Kubernetes Ingress setup instead, check out [Migrating your existing Ingress ALB setup to run Kubernetes Ingress](#alb-type-migration).
+{: tip}
 
 1. To use TLS termination, re-create your TLS secrets. In the Kubernetes Ingress implementation, the ALB cannot access secrets that are in a different project than the Ingress resource. If you use the default Ingress secret and your Ingress resources are deployed in projects other than `default`, or if you import a secret from {{site.data.keyword.cloudcerts_long_notm}} and your Ingress resources are deployed in projects other than `ibm-cert-store`, you must re-create the secret in those projects. For more information, see [Managing TLS certificates and secrets](#manage_certs).
     1. Get the CRN of the secret for your subdomain.
@@ -232,19 +239,26 @@ Create ALBs that run the community Kubernetes Ingress image in your cluster.
       </tr>
       </tbody></table>
 
-  3.  Create the Ingress resource for your cluster. Ensure that the resource deploys into the same namespace as the app services that you specified in the resource.
+  2.  Create the Ingress resource for your cluster. Ensure that the resource deploys into the same namespace as the app services that you specified in the resource.
       ```
       oc apply -f community-ingress-resource.yaml -n <namespace>
       ```
       {: pre}
 
-3. Create at least one ALB in each zone that runs the Kubernetes Ingress image.
+3. Clusters created before 01 December 2020: Verify that you have at least one ALB in each zone that runs the Kubernetes Ingress image. In the **Build** column of the output, look for versions in the `<community_version>_<ibm_build>_iks` Kubernetes Ingress format.
       ```
-      ibmcloud oc ingress alb create classic --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> --version 0.35.0_474_iks
+      ibmcloud oc alb ls -c <cluster_name_or_ID>
       ```
       {: pre}
 
-4. Verify that the new ALBs are created. In the output, copy the IP address for one ALB that has a **Build** of `0.35.0_474_iks`.
+      * If one ALB per zone runs the Kubernetes Ingress image, continue to step 4.
+      * If you do not have one ALB per zone that runs the Kubernetes Ingress image, create at least one in each zone.
+          ```
+          ibmcloud oc ingress alb create classic --cluster <cluster_name_or_ID> --type <public_or_private> --zone <zone> --vlan <VLAN_ID> --version 0.35.0_474_iks
+          ```
+          {: pre}
+
+4. Copy the IP address for one ALB that runs the Kubernetes Ingress image. In the output, choose an ALB that has a **Build** in the format `<community_version>_<ibm_build>_iks`.
   ```
   ibmcloud oc ingress alb ls -c <cluster>
   ```
@@ -685,12 +699,62 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
 
 
 
-If you want to configure your own Ingress classes, as of Kubernetes version 1.18, you can create [`IngressClass` resources](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class){: external}.
+As of Kubernetes version 1.18, the new [`IngressClass` resource](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class){: external} replaces the deprecated `kubernetes.io/ingress.class` annotation.
 {: shortdesc}
 
-An `IngressClass` resource associates a class name with an Ingress controller type. Then, in the Ingress resources that you create to define routing for your app service paths, you specify the class name in the `spec.ingressClassName` field to apply the Ingress resource to the Ingress controllers that are associated with that class.
+An `IngressClass` resource associates a class name with an Ingress controller type. Within the `IngressClass`, you can optionally set the class as the default Ingress class by including the `ingressclass.kubernetes.io/is-default-class: "true"` annotation. Then, in the Ingress resources that you create to define routing for your app service paths, you specify the class name in the `spec.ingressClassName` field to apply the Ingress resource to the Ingress controllers that are associated with that class.
 
-By default, the `public-iks-k8s-nginx` and `private-iks-k8s-nginx` Ingress classes are defined for public and private ALBs that run the Kubernetes Ingress image, and the `iks-nginx` class is defined for all ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image. These classes are currently not defined in `IngressClass` resources by default within your cluster, and these classes are specified in Ingress resources by using the `kubernetes.io/ingress.class` annotation. However, if you create `IngressClass` resources in your cluster, the `spec.ingressClassName` field replaces the deprecated `kubernetes.io/ingress.class` annotation.
+Note that because the deprecated `kubernetes.io/ingress.class` annotation is still usable, classes that are specified in Ingress resources are applied in the following ways:
+* If a class is specified either in the `spec.ingressClassName` field or in the deprecated `kubernetes.io/ingress.class` annotation, the class is applied.
+* If both the `spec.ingressClassName` field and the `kubernetes.io/ingress.class` annotation and specified, the class in the annotation is used.
+* If neither the `spec.ingressClassName` field nor the `kubernetes.io/ingress.class` annotation are specified, the default class is applied.
+
+
+### Default Ingress classes for public and private ALBs
+{: #ingress-class-default}
+
+In {{site.data.keyword.containerlong_notm}} clusters that run Kubernetes version 1.18 or later and that are created on or after 01 December 2020, `IngressClass` resources are created by default for public and private ALBs.
+{: shortdesc}
+
+**Public ALBs**: The following `IngressClass` is automatically created in the `kube-system` namespace to configure all public ALBs in your cluster with the `public-iks-k8s-nginx` class. To apply an Ingress resource that you create to the public ALBs in your cluster, specify `ingressClassName: "public-iks-k8s-nginx"` in the `spec` section of your Ingress resource.
+
+The `IngressClass` for public ALBs, `public-iks-k8s-nginx`, is set as the default class in your cluster. If you do not specify an `ingressClassName` field (or the deprecated `kubernetes.io/ingress.class` annotation) in your Ingress resource, the resource it applied to the public ALBs in your cluster.
+{: note}
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: public-iks-k8s-nginx
+  annotations:
+    ingressclass.kubernetes.io/is-default-class: "true"
+spec:
+  controller: "k8s.io/ingress-nginx"
+```
+{: screen}
+
+**Private ALBs**: The following `IngressClass` is automatically created in the `kube-system` namespace to configure all public ALBs in your cluster with the `private-iks-k8s-nginx` class. To apply an Ingress resource that you create to the public ALBs in your cluster, specify `ingressClassName: "private-iks-k8s-nginx"` in the `spec` section of your Ingress resource.
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: private-iks-k8s-nginx
+spec:
+  controller: "k8s.io/ingress-nginx"
+```
+{: screen}
+
+The `public-iks-k8s-nginx` and `private-iks-k8s-nginx` `IngressClass` resources are not automatically created for existing 1.18 clusters that were created before 01 December 2020. In these clusters, you can still use the `kubernetes.io/ingress.class` annotation in your Ingress resources to specify `public-iks-k8s-nginx` or `private-iks-k8s-nginx` classes. However, to use the new Ingress class functionality, you can manually create these `IngressClass` resources in your cluster and specify the `ingressClassName` field in your Ingress resources.
+{: important}
+
+### Custom Ingress classes
+{: #ingress-class-custom}
+
+You can configure your own classes by creating custom `IngressClass` resources and changing the ALB deployment.
+{: shortdesc}
+
+
 
 1. Create an `IngressClass` resource. If you want this class to be the default class for your cluster, include the `ingressclass.kubernetes.io/is-default-class: "true"` annotation so that any Ingress resources that do not specify an Ingress class use this class by default.<p class="tip">For configurations in which another component manages your Ingress ALBs, such as if Ingress is deployed as part of a Helm chart, a class might already be created. In this case, you can continue to step 3.</p>
   ```yaml
@@ -736,13 +800,17 @@ Choose the image type and image version for your ALBs, and keep the image versio
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 4, see [About Ingress in {{site.data.keyword.openshiftshort}} version 4 or later](/docs/openshift?topic=openshift-ingress-about-roks4).
 {: important}
 
-As of 24 August 2020, {{site.data.keyword.openshiftlong_notm}} supports two types of NGINX Ingress controller images for the Ingress application load balancers (ALBs) in your cluster: the {{site.data.keyword.openshiftlong_notm}} Ingress image, and the Kubernetes Ingress image.
+As of 01 December 2020, {{site.data.keyword.openshiftlong_notm}} primarily supports the Kubernetes Ingress image for the Ingress application load balancers (ALBs) in your cluster. The Kubernetes Ingress image is built on the community Kubernetes project's implementation of the NGINX Ingress controller. The previously supported {{site.data.keyword.openshiftlong_notm}} Ingress image, which was built on a custom implementation of the NGINX Ingress controller, is deprecated.
 {: shortdesc}
 
-- The **{{site.data.keyword.openshiftlong_notm}} Ingress image** is built on a custom implementation of the NGINX Ingress controller.
-- The **Kubernetes Ingress image** is built on the community Kubernetes project's implementation of the NGINX Ingress controller.
+**Clusters created on or after 01 December 2020**: Default application load balancers (ALBs) run the Kubernetes Ingress image in all new {{site.data.keyword.openshiftlong_notm}} clusters that run version 3.11.
 
-Depending on which image type you choose, the ALB behaves according to that implementation of the NGINX Ingress controller.
+**Clusters created before 01 December 2020**:
+* Existing clusters with ALBs that run the custom IBM Ingress image continue to operate as-is.
+* Support for the custom IBM Ingress image ends in 6 months on 30 April 2021.
+* You must move to the new Kubernetes Ingress by migrating any existing Ingress setups. Your existing ALBs and other Ingress resources are not automatically migrated to the new Kubernetes Ingress image.
+* You can easily migrate to Kubernetes Ingress by using the [migration tool](#alb-type-migration) that is developed and supported by IBM Cloud Kubernetes Service.
+* If you do not move to Kubernetes Ingress before 30 April 2020, ALBs that run the custom IBM Ingress image continue to run, but all support from IBM Cloud for those ALBs is discontinued.
 
 You can manage the versions of your ALBs in the following ways:
 * When you create a new ALB, enable an ALB that was previously disabled, or manually update an ALB, you can specify an image version for your ALB in the `--version` flag.
