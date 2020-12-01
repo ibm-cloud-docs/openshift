@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-01"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -95,7 +95,7 @@ subcollection: openshift
 # Using reservations to reduce classic worker node costs
 {: #reservations}
 
-When you have consistent computing needs over a time period of at least one year, create a reservation to reduce the costs of worker nodes in your {{site.data.keyword.openshiftlong}} clusters. With a reservation, you reserve virtual or physical worker node instances in a contract for a fixed, predictable, and lower price than on-demand instances.
+When you have consistent computing needs over a time period of at least one year, create a reservation to reduce the costs of worker nodes in your {{site.data.keyword.openshiftlong}} clusters. With a reservation, you reserve virtual worker node instances in a contract for a fixed, predictable, and lower price than on-demand instances.
 {: shortdesc}
 
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Reservations are available for classic infrastructure worker nodes only.
