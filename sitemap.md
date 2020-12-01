@@ -1746,6 +1746,9 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
 * [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
+[Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
+* [Changelog for 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
+
 
 ## IAM and Activity Tracker events
 {: #sitemap_iam_and_activity_tracker_events}
