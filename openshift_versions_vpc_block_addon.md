@@ -121,7 +121,7 @@ ibmcloud oc addon-versions
 {: pre}
 
 | Patch version | `vpc-block-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | `2.0.3_404` | `v2.0.7` | 25 November 2020 | 4.3 - 4.5 | Updates in this patch:<ul><li>`v2.0.7` contains a fix for vulnerability scan issues.</li><li>Updates the base image from `alpine` to `UBI`.</li><li>Pods and containers now run as `non-root` except for the `node-server` pod's containers.</li></ul> |
 | `2.0.3_375` | `v2.0.6` | 17 September 2020 | 4.3 - 4.5 | Fixes an issue with volume attachment when replacing workers. |
 | `2.0.3_374+` | `v2.0.5` | 29 August 2020 | 4.3 - 4.5 | Adds the `/var/lib/kubelet` path for CSI driver calls on OCP 4.4. |
@@ -129,4 +129,4 @@ ibmcloud oc addon-versions
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Patch updates for version 2.0.3" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column is the image tag the component. The third column contains the release date of the patch. The fourth column contains a brief description of the change made to the component."}
+{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column is the image tag the component. The third column contains the release date of the patch. The fourth column contains the supported {{site.data.keyword.openshiftshort}} versions. The fifth column contains a brief description of the change made to the component."}
