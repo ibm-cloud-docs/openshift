@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-06"
+lastupdated: "2020-12-02"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -122,9 +123,9 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 {: caption="Impacts of {{site.data.keyword.openshiftshort}} updates" caption-side="top"}
 
 <dl>
-  <dt>**Major and minor updates (4.4)**</dt>
+  <dt>**Major and minor updates (4.5)**</dt>
   <dd><p>First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes cannot run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).</p><p class="note">If you use an `oc` or `oc` CLI version that does match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-openshift-cli#cli_oc) up-to-date.</p></dd>
-  <dt>**Patch updates (4.4.27_xxxx_openshift)**</dt>
+  <dt>**Patch updates (4.5.19_xxxx_openshift)**</dt>
   <dd><p>Changes across patches are documented in the [Version changelog](/docs/openshift?topic=openshift-openshift_versions). Master patches are applied automatically, but you initiate worker node patches updates. Worker nodes can also run patch versions that are greater than the masters. As updates become available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the following commands: `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get`.</p>
   <p>Patches can be for worker nodes, masters, or both.</p>
   <ul><li>**Worker node patches**: Check monthly to see whether an update is available, and use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) or the `ibmcloud oc worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to apply these security and operating system patches. During an update or reload, your worker node machine is reimaged, and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).</li>
@@ -138,8 +139,8 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
-* **Latest**: 4.5 (Kubernetes 1.18)
-* **Default**: 4.4 (Kubernetes 1.17)
+* **Latest and default**: 4.5 (Kubernetes 1.18)
+* **Other**: 4.4 (Kubernetes 1.17)
 * **Deprecated**: 3.11 (Kubernetes 1.11), 4.3 (Kubernetes 1.16)
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
@@ -151,9 +152,9 @@ oc version
 
 Example output:
 ```
-Client Version: 4.4.3
-Server Version: 4.4.12
-Kubernetes Version: v1.17.2
+Client Version: 4.5.3
+Server Version: 4.5.12
+Kubernetes Version: v1.18.2
 ```
 {: screen}
 
@@ -203,7 +204,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td>May 2021 `†`</td>
 </tr>
 <tr>
-  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
+  <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>4.3 / 1.16</td>
   <td>20 Apr 2020</td>
   <td>February 2021 `†`</td>
@@ -251,8 +252,9 @@ The following table shows the actions that you must take after you [update the c
 
 | Type | Description |
 | ---- | ----------- |
-| Image registry configuration | New version 4.5 clusters that run on the VPC Gen 2 infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push). |
 | Elasticsearch version upgrade for cluster logging | For more information, see the Elasticsearch version upgrade notes in the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-elasticsearch-6){: external}. |
+| Image registry configuration | New version 4.5 clusters that run on the VPC Gen 2 infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push). |
+| **Unsupported**: `kubelet` statistics | The `kubelet` statistics that were available via the `/stats` endpoint are unsupported and removed. The cluster insights panel in the cluster console no longer reports statistics from this endpoint. |
 | Temporary `oc` and `kubectl` latency | RBAC operations are now performed asynchronously. After you run `ibmcloud oc cluster config` for the first time after the update, `oc` and `kubectl` commands might fail for a few seconds while RBAC synchronizes for the first time. Afterward, `oc` and `kubectl` commands perform as expected. If you use automation to access the cluster with `oc` and `kubectl` commands, add retry logic for `oc` and `kubectl` commands after a `kubeconfig` file is successfully retrieved. |
 | `oc adm policy` | The `oc adm policy` commands now manage role-based access control (RBAC) resources rather than modifying security context constraints (SCCs) directly for managing permissions within the cluster. Update any components that rely on direct changes to SCCs to use RBAC to manage permissions. |
 | `oc new-app` | For more information, see the `oc new-app` deployment resources notes in the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-oc-new-app-deployment-resources){: external}. |

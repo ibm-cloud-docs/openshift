@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1262,6 +1262,7 @@ Review the following Portworx limitations.
 | **Public network connectivity** | Portworx is available for standard clusters that are set up with public network connectivity and a public service endpoint. If your cluster cannot access the public network, you cannot use Portworx unless you open up all egress network traffic on TCP port 443 or enable the public service endpoint. |
 {: summary="This table contains information on limitations for Portworx on {{site.data.keyword.openshiftlong_notm}} clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Portworx limitations"}
+
 
 
 

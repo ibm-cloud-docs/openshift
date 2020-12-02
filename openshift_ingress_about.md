@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-01"
+lastupdated: "2020-12-02"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -227,7 +227,7 @@ As of 01 December 2020, {{site.data.keyword.openshiftlong_notm}} primarily suppo
 * Existing clusters with ALBs that run the custom IBM Ingress image continue to operate as-is.
 * Support for the custom IBM Ingress image ends in 6 months on 30 April 2021.
 * You must move to the new Kubernetes Ingress by migrating any existing Ingress setups. Your existing ALBs and other Ingress resources are not automatically migrated to the new Kubernetes Ingress image.
-* You can easily migrate to Kubernetes Ingress by using the [migration tool](#alb-type-migration) that is developed and supported by IBM Cloud Kubernetes Service.
+* You can easily migrate to Kubernetes Ingress by using the [migration tool](/docs/openshift?topic=openshift-ingress-types#alb-type-migration) that is developed and supported by IBM Cloud Kubernetes Service.
 * If you do not move to Kubernetes Ingress before 30 April 2020, ALBs that run the custom IBM Ingress image continue to run, but all support from IBM Cloud for those ALBs is discontinued.
 
 To get started, see [Setting up Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types).

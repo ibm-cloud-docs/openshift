@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-18"
+lastupdated: "2020-12-02"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -148,65 +149,7 @@ When you enable the cluster autoscaler for a worker pool, worker nodes are scale
 
 <br>
 
-**Can I see an example of how the cluster autoscaler scales up and down?**<br>
-Consider the following image for an example of scaling the cluster up and down.
 
-_Figure: Autoscaling a cluster up and down._
-![Autoscaling a cluster up and down GIF](images/cluster-autoscaler-x3.mp4){: video controls loop height="400"}
-
-1.  The cluster has four worker nodes in two worker pools that are spread across two zones. Each pool has one worker node per zone, but **Worker Pool A** has a flavor of `u2c.2x4` and **Worker Pool B** has a flavor of `b2c.4x16`. Your total compute resources are roughly 10 cores (2 cores x 2 worker nodes for **Worker Pool A**, and 4 cores x 2 worker nodes for **Worker Pool B**). Your cluster currently runs a workload that requests 6 of these 10 cores. Additional computing resources are taken up on each worker node by the [reserved resources](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node) that are required to run the cluster, worker nodes, and any add-ons such as the cluster autoscaler.
-2.  The cluster autoscaler is configured to manage both worker pools with the following minimum and maximum size-per-zone:
-    *  **Worker Pool A**: `minSize=1`, `maxSize=5`.
-    *  **Worker Pool B**: `minSize=1`, `maxSize=2`.
-3.  You schedule deployments that require 14 additional pod replicas of an app that requests one core of CPU per replica. One pod replica can be deployed on the current resources, but the other 13 are pending.
-4.  The cluster autoscaler scales up your worker nodes within these constraints to support the additional 13 pod replicas resource requests.
-    *  **Worker Pool A**: Seven worker nodes are added in a round-robin method as evenly as possible across the zones. The worker nodes increase the cluster compute capacity by roughly 14 cores (2 cores x 7 worker nodes).
-    *  **Worker Pool B**: Two worker nodes are added evenly across the zones, reaching the `maxSize` of two worker nodes per zone. The worker nodes increase cluster capacity by roughly 8 cores (4 cores x 2 worker node).
-5.  The 20 pods with one-core requests are distributed as follows across the worker nodes. Because worker nodes have resource reserves as well as pods that run to cover default cluster features, the pods for your workload cannot use all the available compute resources of a worker node. For example, although the `b2c.4x16` worker nodes have four cores, only three pods that request a minimum of one core each can be scheduled onto the worker nodes.
-    <table summary="A table that describes the distribution of workload in scaled cluster.">
-    <caption>Distribution of workload in scaled cluster.</caption>
-    <thead>
-    <tr>
-      <th>Worker Pool</th>
-      <th>Zone</th>
-      <th>Type</th>
-      <th># worker nodes</th>
-      <th># pods</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>A</td>
-      <td>dal10</td>
-      <td>u2c.2x4</td>
-      <td>Four nodes</td>
-      <td>Three pods</td>
-    </tr>
-    <tr>
-      <td>A</td>
-      <td>dal12</td>
-      <td>u2c.2x4</td>
-      <td>Five nodes</td>
-      <td>Five pods</td>
-    </tr>
-    <tr>
-      <td>B</td>
-      <td>dal10</td>
-      <td>b2c.4x16</td>
-      <td>Two nodes</td>
-      <td>Six pods</td>
-    </tr>
-    <tr>
-      <td>B</td>
-      <td>dal12</td>
-      <td>b2c.4x16</td>
-      <td>Two nodes</td>
-      <td>Six pods</td>
-    </tr>
-    </tbody>
-    </table>
-6.  You no longer need the additional workload, so you delete the deployment. After a short period of time, the cluster autoscaler detects that your cluster no longer needs all its compute resources and scales down the worker nodes one at a time.
-7.  Your worker pools are scaled down. The cluster autoscaler scans at regular intervals to check for pending pod resource requests and underutilized worker nodes to scale your worker pools up or down.
 
 ## Following scalable deployment practices
 {: #scalable-practices}
