@@ -125,5 +125,7 @@ ibmcloud oc addon-versions
 | `1.0.1_128` | <ul><li>`1.15.4-4`</li><li>`1.16.2-6`</li><li>`1.17.0-7`</li><li>`1.18.1-6`</li><li>`1.19.0-1`</li></ul> | 27 October 2020 | 4.3 - 4.5</li></ul> | Updates the Go version to `1.15.2` |
 | `1.0.1_124` | <ul><li>`1.15.4-4`</li><li>`1.16.2-6`</li><li>`1.17.0-7`</li><li>`1.18.1-6`</li><li>`1.19.0-1`</li></ul> | 16 October 2020 | 4.3 - 4.5</li></ul> | <ul><li>Exposes the `--new-pod-scale-up-delay` flag in the configmap.</li><li>Adds support for Kubernetes 1.19.</li></ul> |
 | `1.0.1_114` | <ul><li>`1.15.4-4`</li><li>`1.16.2-5`</li><li>`1.17.0-6`</li><li>`1.18.1-5`</li></ul> | 10 September 2020 | 4.3 - 4.5</li></ul> | <ul><li>Includes fixes for `CVE-5188` and `CVE-3180`.</li><li>Unlike the previous Helm chart, you can modify all of the add-on configuration settings via a single configmap.</li></ul> |
-{: summary="The rows are read from left to right. The first column is the patch version of the component. The second column lists the images tags of the component. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
+{: row-headers}
+{: class="comparison-table"}
 {: caption="Cluster autoscaler 1.0.1" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the patch version of the component. The second column lists the images tags of the component. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
