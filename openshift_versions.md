@@ -204,7 +204,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td>May 2021 `†`</td>
 </tr>
 <tr>
-  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
+  <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>4.3 / 1.16</td>
   <td>20 Apr 2020</td>
   <td>February 2021 `†`</td>
