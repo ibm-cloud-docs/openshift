@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-25"
+lastupdated: "2020-12-02"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -128,4 +128,3 @@ ibmcloud oc addon-versions
 | `2.0.3_365` | `v2.0.4` | 05 August 2020 | 4.3 - 4.5 | <ul><li>Updates sidecar container images.</li><li>Adds liveness probe.</li><li>Enables parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.</li></ul> |
 {: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column is the image tag the component. The third column contains the release date of the patch. The fourth column contains a brief description of the change made to the component."}
 {: caption="Patch updates for version 2.0.3" caption-side="top"}
-{: caption="{{site.data.keyword.block_storage_is_full}}" caption-side="top"}

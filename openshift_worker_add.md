@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-02"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -521,7 +521,7 @@ Don't have an app that's configured to use Intel SGX but you still want to take 
 ### Installing with a script
 {: #intel-sgx-script}
 
-Before you begin, [create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with SGX-capable worker nodes. To work with Intel SGX, you must use one of the following machine types: `mb3c.4x32` and `ms3c.4x32.1.9tb.ssd`. To see the options, you must filter to the **Ubuntu 16** operating system.
+Before you begin, [create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with SGX-capable worker nodes. To work with Intel SGX, you must use one of the following machine types: `me4c.4x32` and `me4c.4x32.1.9tb.ssd`.
 
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).

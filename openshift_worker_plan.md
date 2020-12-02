@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-02"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -350,24 +350,6 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 <td>10000 Mbps</td>
 </tr>
 <tr>
-<td><strong>RAM-intensive bare metal, mr3c.28x512</strong>: Maximize the RAM available to your worker nodes.</td>
-<td>28 / 512 GB</td>
-<td>2 TB SATA / 960 GB SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>GPU bare metal, mg3c.16x128</strong>: Choose this type for mathematically intensive workloads such as high-performance computing, machine learning, or 3D applications. This flavor has one Tesla K80 physical card that has two graphics processing units (GPUs) per card for a total of two GPUs. For deep learning applications, use the `mg4c.32x384.2xp100` with the larger Tesla P100 physical cards.</td>
-<td>16 / 128 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>GPU bare metal, mg3c.28x256</strong>: Choose this type for mathematically intensive workloads such as high-performance computing, machine learning, or 3D applications. This flavor has two Tesla K80 physical cards that have two GPUs per card for a total of four GPUs. For deep learning applications, use the `mg4c.32x384.2xp100` with the larger Tesla P100 physical cards.</td>
-<td>28 / 256 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
 <td><strong>GPU bare metal, mg4c.32x384.2xp100</strong>: Choose this type for mathematically intensive workloads such as high-performance computing, machine learning, deep learning, or 3D applications. This flavor has two Tesla P100 physical cards that have two GPUs per card for a total of four GPUs. Note that this Pascal GPU flavor does not support the Data Center GPU Manager because of a known issue from NVIDIA.</td>
 <td>32 / 384 GB</td>
 <td>2 TB HDD / 960 GB SSD</td>
@@ -386,21 +368,9 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 <td>10000 Mbps</td>
 </tr>
 <tr>
-<td><strong>Balanced bare metal, mb3c.4x32</strong>: Use for balanced workloads that require more compute resources than virtual machines offer.</td>
-<td>4 / 32 GB</td>
-<td>2 TB SATA / 2 TB SATA</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
 <td><strong>Balanced bare metal, me4c.4x32</strong>: Use for balanced workloads that require more compute resources than virtual machines offer. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
 <td>4 / 32 GB</td>
 <td>2 TB HDD / 2 TB HDD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>Balanced bare metal, mb3c.16x64</strong>: Use for balanced workloads that require more compute resources than virtual machines offer.</td>
-<td>16 / 64 GB</td>
-<td>2 TB SATA / 960 GB SSD</td>
 <td>10000 Mbps</td>
 </tr>
 </tbody>
@@ -454,31 +424,65 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 </thead>
 <tbody>
 <tr>
-<td><strong>Bare metal with SDS, ms3c.4x32.1.9tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS).</td>
-<td>4 / 32 GB</td>
-<td>2 TB SATA / 960 GB SSD</td>
-<td>1.9 TB Raw SSD (device path: `/dev/sdc`)</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>Bare metal with SDS, ms3c.16x64.1.9tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS).</td>
+<td><strong>Virtual with SDS, c3s.16x64.2tb.san</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Includes 2x2 TB Raw SAN local storage.</td>
 <td>16 / 64 GB</td>
-<td>2 TB SATA / 960 GB SSD</td>
-<td>1.9 TB Raw SSD (device path: `/dev/sdc`)</td>
+<td>25 GB / 100 GB</td>
+<td>2 disks, 2 TB Raw SAN</td>
+<td>10000 Mbps</td>
+</tr>
+<td><strong>Virtual with SDS, c3s.32x128.2x2tb.san</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Includes 2x2 TB Raw SAN local storage.</td>
+<td>32 / 128 GB</td>
+<td>25 GB / 100 GB</td>
+<td>2 disks, 2 TB Raw SAN</td>
 <td>10000 Mbps</td>
 </tr>
 <tr>
-<td><strong>Bare metal with SDS, ms3c.28x256.3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS).</td>
-<td>28 / 256 GB</td>
+<td><strong>Data-intensive bare metal with SDS, me4c.4x32.1.9tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
+<td>4 / 32 GB</td>
+<td>2 TB HDD / 960 GB SSD</td>
+<td>1.9 TB Raw SSD (device paths: `/dev/sdc`)</td>
+<td>10000 Mbps</td>
+</tr>
+<tr>
+<td><strong>GPU bare metal with SDS, mgs3c.16x128.3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This flavor has one Tesla K80 physical card that has two GPUs per card for a total of two GPUs.</td>
+<td>16 / 128 GB</td>
 <td>2 TB SATA / 1.9 TB SSD</td>
-<td>3.8 TB Raw SSD (device path: `/dev/sdc`)</td>
+<td>3.8 TB Raw SSD</td>
 <td>10000 Mbps</td>
 </tr>
 <tr>
-<td><strong>Bare metal with SDS, ms3c.28x512.4x3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS).</td>
+<td><strong>GPU bare metal with SDS, mgs3c.28x512.2x3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This flavor has one Tesla K80 physical card that has two GPUs per card for a total of two GPUs.</td>
 <td>28 / 512 GB</td>
 <td>2 TB SATA / 1.9 TB SSD</td>
-<td>4 disks, 3.8 TB Raw SSD (device paths: `/dev/sdc`, `/dev/sdd`, `/dev/sde`, `/dev/sdf`)</td>
+<td>2 disks, 3.8 TB Raw SSD</td>
+<td>10000 Mbps</td>
+</tr>
+<tr>
+<td><strong>RAM-intensive bare metal with SDS, mb4c.20x64.2x1.9tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
+<td>20 / 64 GB</td>
+<td>2 TB HDD / 960 GB SSD</td>
+<td>2 disks, 1.9 TB Raw SSD (device paths: `/dev/sdc`, `/dev/sdd`)</td>
+<td>10000 Mbps</td>
+</tr>
+<tr>
+<td><strong>RAM-intensive bare metal with SDS, mb4c.32x384.3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
+<td>32 / 384 GB</td>
+<td>2 TB HDD / 960 GB SSD</td>
+<td>3.8 TB Raw SSD (device paths: `/dev/sdc`)</td>
+<td>10000 Mbps</td>
+</tr>
+<tr>
+<td><strong>RAM-intensive bare metal with SDS, mb4c.32x384.6x3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
+<td>32 / 384 GB</td>
+<td>2 TB HDD / 960 GB SSD</td>
+<td>6 disks, 3.8 TB Raw SSD (device paths: `/dev/sdc`, `/dev/sdd`, `/dev/sde`, `/dev/sdf`, `/dev/sdg`, `/dev/sdh`)</td>
+<td>10000 Mbps</td>
+</tr>
+<tr>
+<td><strong>RAM-intensive bare metal with SDS, mb4c.32x768.3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
+<td>32 / 768 GB</td>
+<td>2 TB HDD / 960 GB SSD</td>
+<td>3.8 TB Raw SSD (device paths: `/dev/sdc`)</td>
 <td>10000 Mbps</td>
 </tr>
 </tbody>

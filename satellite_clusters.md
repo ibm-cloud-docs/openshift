@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-20"
+lastupdated: "2020-12-02"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -157,7 +157,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
 
 3. Create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet. To add worker nodes, you must later assign compute hosts from your location to your {{site.data.keyword.openshiftshort}} cluster.
    ```
-   ibmcloud oc cluster create satellite --name <cluster_name> --location <location_name_or_ID> --version 4.4_openshift
+   ibmcloud oc cluster create satellite --name <cluster_name> --location <location_name_or_ID> --version 4.5_openshift
    ```
    {: pre}
 

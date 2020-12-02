@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-02"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -249,7 +249,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
 ## Creating a classic {{site.data.keyword.openshiftshort}} cluster
 {: #clusters_gs}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a {{site.data.keyword.openshiftlong_notm}} cluster on classic {{site.data.keyword.cloud_notm}} infrastructure in the {{site.data.keyword.cloud_notm}} console. To get started, create a cluster that runs OpenShift Container Platform version 4.4. The operating system is Red Hat Enterprise Linux 7.
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a {{site.data.keyword.openshiftlong_notm}} cluster on classic {{site.data.keyword.cloud_notm}} infrastructure in the {{site.data.keyword.cloud_notm}} console. To get started, create a cluster that runs OpenShift Container Platform version 4.5. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
 Want to learn more about customizing your cluster setup with the CLI? Check out [Creating an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
@@ -281,7 +281,7 @@ Now that your cluster is ready, [deploying your first app](#deploy-app)!
 ## Creating a VPC Gen 2 compute cluster
 {: #vpc-gen2-gs}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a VPC Generation 2 compute cluster by using the {{site.data.keyword.cloud_notm}} console. VPC {{site.data.keyword.openshiftshort}} clusters run version 4.4, which includes Kubernetes version 1.17. The operating system is Red Hat Enterprise Linux 7.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a VPC Generation 2 compute cluster by using the {{site.data.keyword.cloud_notm}} console. VPC {{site.data.keyword.openshiftshort}} clusters run version 4.5, which includes Kubernetes version 1.18. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
 Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a VPC Gen 2 compute cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2).
