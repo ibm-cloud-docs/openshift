@@ -109,7 +109,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
-| 03 December 2020 | <ul></ul> |
 | 02 December 2020 | **Default version**: {{site.data.keyword.openshiftshort}} 4.5 is now the default version for {{site.data.keyword.openshiftlong_notm}} clusters. |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in December 2020"}
