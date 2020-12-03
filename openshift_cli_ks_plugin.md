@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-03"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -745,7 +745,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 **Example:**
 ```
-ibmcloud sat cluster create satellite --name mysatcluster --location mylocation --version 4.4_openshift
+ibmcloud sat cluster create satellite --name mysatcluster --location mylocation --version 4.5_openshift
 ```
 {: pre}
 
@@ -763,7 +763,7 @@ Free clusters are not available in VPC.
 {: note}
 
 ```
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--version 4.4_openshift] --cos-instance COS_ID [--workers NUMBER_WORKERS_PER_ZONE] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--skip-advance-permissions-check] [-q]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--version 4.5_openshift] --cos-instance COS_ID [--workers NUMBER_WORKERS_PER_ZONE] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--skip-advance-permissions-check] [-q]
 ```
 {: pre}
 
@@ -793,7 +793,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <dt><code>--subnet-id <em>VPC_SUBNET_ID</em></code></dt>
 <dd>Required: The VPC subnet to assign the cluster. To list available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2`.</dd>
 
-<dt><code>--version 4.4_openshift</code></dt>
+<dt><code>--version 4.5_openshift</code></dt>
 <dd>VPC Gen 2 clusters are supported for {{site.data.keyword.openshiftshort}} version 4 only.</dd>
 
 <dt><code>--flavor <em>FLAVOR</em></code></dt>
@@ -839,7 +839,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 **Example**:
 ```
-ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.4_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
+ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.5_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
 ```
 {: pre}
 
@@ -3037,7 +3037,7 @@ ibmcloud oc ingress alb migrate clean -c my_cluster --reset-kube-controller-conf
 ### Beta: `ibmcloud oc ingress alb migrate start`
 {: #cs_alb_migrate_start}
 
-Version 3.11 clusters only: Start a migration of your Ingress configmap and resources that are formatted for use with ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress to instead use with ALBs that run the Kubernetes Ingress image. Note that this command helps you create all the resources for ALBs that run Kubernetes Ingress, but afterward you must still manually change your ALB from one type of image to another. For more information about how to prepare for a migration, see [Changing the image of existing ALBs](/docs/openshift?topic=openshift-ingress-types#alb-type-migration).
+Version 3.11 clusters only: Start a migration of your Ingress configmap and resources that are formatted for use with ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress to instead use with ALBs that run the Kubernetes Ingress image. Note that this command helps you create all the resources for ALBs that run Kubernetes Ingress, but afterward you must still manually change your ALB from one type of image to another. For more information about how to prepare for a migration, see [Changing the image of existing ALBs](/docs/containers?topic=containers-ingress-types#alb-type-migration).
 {: shortdesc}
 
 ```
@@ -3057,7 +3057,7 @@ ibmcloud oc ingress alb migrate start --cluster CLUSTER --type (test | test-with
 <dd>Required: The name or ID of the cluster where you want to start a migration of the Ingress configmap and resources.</dd>
 
 <dt><code>--type <em>(test | test-with-private | production)</em></code></dt>
-<dd>The type of migration: a test migration for public Ingress routing, a test migration with private Ingress routing, or a production migration of all Ingress routing. To see the resources that are created by and the processes for each type of migration, see [Changing the image of existing ALBs](/docs/openshift?topic=openshift-ingress-types#alb-type-migration).</dd>
+<dd>The type of migration: a test migration for public Ingress routing, a test migration with private Ingress routing, or a production migration of all Ingress routing. To see the resources that are created by and the processes for each type of migration, see [Changing the image of existing ALBs](/docs/containers?topic=containers-ingress-types#alb-type-migration).</dd>
 
 <dt><code>-f</code></dt>
 <dd>Optional: Force the command to run with no user prompts./dd>
@@ -3139,7 +3139,7 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 <dd>Optional: The ID of the individual ALB to update. To list ALB IDs, run `ibmcloud oc ingress alb ls -c <cluster>`. To update multiple ALBs, use multiple flags, such as `--alb ALB1_ID --alb ALB2_ID`. If you omit this flag, all ALBs in the cluster are updated.</dd>
 
 <dt><code>--version <em>IMAGE_VERSION</em></code></dt>
-<dd>Optional: The version of the image that you want to update ALBs to. Note that you cannot use this flag to [change your ALB from one type of image to another](/docs/openshift?topic=openshift-ingress-types#alb-type-migration). To list available versions, run `ibmcloud oc ingress alb versions`. If you omit this flag, ALBs are updated to the latest version of the image type.</dd>
+<dd>Optional: The version of the image that you want to update ALBs to. Note that you cannot use this flag to [change your ALB from one type of image to another](/docs/containers?topic=containers-ingress-types#alb-type-migration). To list available versions, run `ibmcloud oc ingress alb versions`. If you omit this flag, ALBs are updated to the latest version of the image type.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -4203,7 +4203,7 @@ Publicly expose your app by creating a DNS subdomain to register a network load 
 {: shortdesc}
 
 ```
-ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] [--type public] [--output json] [-q]
+ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] --type public [--output json] [-q]
 ```
 {: pre}
 

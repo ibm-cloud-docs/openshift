@@ -160,8 +160,6 @@ Red Hat OpenShift on IBM Cloud
         {: .topicgroup}
         Exposing apps with Ingress in OpenShift 3.11
             openshift_ingress_about.md
-            openshift_ingress_types.md
-            openshift_ingress_comm_annotations.md
             openshift_ingress.md
             openshift_annotations.md
             openshift_ingress_health.md
