@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-01"
+lastupdated: "2020-12-03"
 
 keywords: openshift, roks, rhoks, rhos, ingress, alb, health, prometheus
 
@@ -93,14 +93,11 @@ subcollection: openshift
 
 
 
-# Deprecated: Logging and monitoring {{site.data.keyword.openshiftlong_notm}} Ingress
+# Logging and monitoring {{site.data.keyword.openshiftlong_notm}} Ingress
 {: #ingress_health}
 
 Customize logging and set up monitoring to help you troubleshoot issues and improve the performance of your Ingress configuration.
 {: shortdesc}
-
-This information is for ALBs that run the custom {{site.data.keyword.openshiftlong_notm}} Ingress image. As of 01 December 2020, the custom {{site.data.keyword.openshiftlong_notm}} Ingress image is deprecated. To use the community Kubernetes implementation of Ingress, see [Setting up community Kubernetes Ingress](/docs/openshift?topic=openshift-ingress-types).
-{: deprecated}
 
 ## Viewing Ingress logs
 {: #ingress_logs}

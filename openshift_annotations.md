@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-01"
+lastupdated: "2020-12-03"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, annotations
 
@@ -93,20 +93,15 @@ subcollection: openshift
 
 
 
-# Deprecated: {{site.data.keyword.openshiftlong_notm}} Ingress annotations
+# {{site.data.keyword.openshiftlong_notm}} Ingress annotations
 {: #ingress_annotation}
 
 To add capabilities to your Ingress application load balancer (ALB), you can specify annotations as metadata in an Ingress resource.
 {: shortdesc}
 
 
-
 <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> These custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and Kubernetes NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.openshiftshort}} version 4, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}, which are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 {: important}
-
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> In {{site.data.keyword.openshiftshort}} version 3.11 clusters, these custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) are applicable for ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image only, which is deprecated. If your ALBs run the [Kubernetes Ingress image instead](/docs/openshift?topic=openshift-ingress-types), these custom annotations are not supported. You must instead use [Kubernetes NGINX annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/){: external} (`nginx.ingress.kubernetes.io/<annotation>`) in your Ingress resources.
-{: deprecated}
-
 
 
 
