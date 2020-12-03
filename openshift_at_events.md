@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-03"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -101,11 +101,14 @@ You can view, manage, and audit user-initiated activities in your {{site.data.ke
 
 {{site.data.keyword.openshiftlong_notm}} automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
 
-## Tracking cluster management events
+
+
+## Cluster management events
 {: #cluster-events}
 
 The following list of the cluster management events are sent to {{site.data.keyword.at_full_notm}}.
 {: shortdesc}
+
 
 |Action|Description|
 |------|-----------|
@@ -144,8 +147,11 @@ The following list of the cluster management events are sent to {{site.data.keyw
 | `containers-kubernetes.zone.delete` | A zone is deleted from a worker pool. |
 | `containers-kubernetes.zone.update` | The networking attributes for a zone that a worker pool uses are updated. |
 {: caption="Cluster management events" caption-side="top"}
+{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
-## Tracking Ingress ALB events
+
+
+## Ingress ALB events
 {: #ingress-alb-events}
 
 The following list of Ingress application load balancer (ALB) events are sent to {{site.data.keyword.at_full_notm}}.
@@ -153,22 +159,23 @@ The following list of Ingress application load balancer (ALB) events are sent to
 
 |Action|Description|
 |------|-----------|
-| `cluster-alb.create` | A public or private ALB is created in the cluster. |
-| `cluster-alb.delete` | An ALB is disabled. |
-| `cluster-alb.enable` | An existing ALB is enabled in a cluster. |
-| `cluster-alb.get` | Details of an ALB are viewed. |
-| `cluster-alb.list` | ALBs in a cluster are listed. |
-| `cluster-alb.update` | ALB pods are updated. |
-| `cluster-alb-policy.get` | The status of automatic updates for Ingress ALBs is viewed. |
-| `cluster-alb-migration.start` | A migration of {{site.data.keyword.cloud_notm}} Ingress configmap and Ingress resources to the Kubernetes Ingress format is started. |
-| `cluster-alb-migration-status.get` | The status of the migration process is viewed. |
-| `cluster-ingress-status.get` | The status of migrated Ingress resources in a cluster is viewed. |
-| `cluster-alb-migration.cleanup` | Ingress resources and configmaps that are no longer needed after an Ingress migration are deleted. |
-| `cluster-alb-policy.update` | Automatic updates for the ALBs are enabled or disabled, or all ALB pods in a cluster are rolled back to their previously running build. |
-| `alb-image.list` | Supported Ingress controller images are listed. |
+| `containers-kubernetes.cluster-alb.create` | A public or private ALB is created in the cluster. |
+| `containers-kubernetes.cluster-alb.delete` | An ALB is disabled. |
+| `containers-kubernetes.cluster-alb.enable` | An existing ALB is enabled in a cluster. |
+| `containers-kubernetes.cluster-alb.get` | Details of an ALB are viewed. |
+| `containers-kubernetes.cluster-alb.list` | ALBs in a cluster are listed. |
+| `containers-kubernetes.cluster-alb.update` | ALB pods are updated. |
+| `containers-kubernetes.cluster-alb-policy.get` | The status of automatic updates for Ingress ALBs is viewed. |
+| `containers-kubernetes.cluster-alb-migration.start` | A migration of {{site.data.keyword.cloud_notm}} Ingress configmap and Ingress resources to the Kubernetes Ingress format is started. |
+| `containers-kubernetes.cluster-alb-migration-status.get` | The status of the migration process is viewed. |
+| `containers-kubernetes.cluster-ingress-status.get` | The status of migrated Ingress resources in a cluster is viewed. |
+| `containers-kubernetes.cluster-alb-migration.cleanup` | Ingress resources and configmaps that are no longer needed after an Ingress migration are deleted. |
+| `containers-kubernetes.cluster-alb-policy.update` | Automatic updates for the ALBs are enabled or disabled, or all ALB pods in a cluster are rolled back to their previously running build. |
+| `containers-kubernetes.alb-image.list` | Supported Ingress controller images are listed. |
 {: caption="Ingress ALB events" caption-side="top"}
+{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
-## Tracking Ingress secret events
+## Ingress secret events
 {: #ingress-secret-events}
 
 The following list of Ingress secret events are sent to {{site.data.keyword.at_full_notm}}.
@@ -176,68 +183,20 @@ The following list of Ingress secret events are sent to {{site.data.keyword.at_f
 
 |Action|Description|
 |------|-----------|
-| `cluster-ingress-secret.get` | Details for an Ingress secret are viewed. |
-| `cluster-ingress-secret.list` | Ingress secrets for a cluster are listed. |
-| `cluster-ingress-secret.create` | An Ingress secret for a certificate is created. |
-| `cluster-ingress-secret.delete` | An Ingress secret is deleted from the cluster. |
-| `cluster-ingress-secret.update` | The certificate for an Ingress secret is updated. |
-| `cluster-ingress-secret.notify` | When the default {{site.data.keyword.cloudcerts_short}} instance is created for a cluster, the {{site.data.keyword.cloudcerts_short}} notification channel for certificate updates is created. |
+| `containers-kubernetes.cluster-ingress-secret.get` | Details for an Ingress secret are viewed. |
+| `containers-kubernetes.cluster-ingress-secret.list` | Ingress secrets for a cluster are listed. |
+| `containers-kubernetes.cluster-ingress-secret.create` | An Ingress secret for a certificate is created. |
+| `containers-kubernetes.cluster-ingress-secret.delete` | An Ingress secret is deleted from the cluster. |
+| `containers-kubernetes.cluster-ingress-secret.update` | The certificate for an Ingress secret is updated. |
+| `containers-kubernetes.cluster-ingress-secret.notify` | When the default {{site.data.keyword.cloudcerts_short}} instance is created for a cluster, the {{site.data.keyword.cloudcerts_short}} notification channel for certificate updates is created. |
 {: caption="Ingress secret events" caption-side="top"}
+{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
-## Tracking NLB DNS events
-{: #ingress-nlb-dns-events}
 
-The following list of network load balancer (NLB) DNS events are sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
 
-|Action|Description|
-|------|-----------|
-| `cluster-nlb-dns.list` | Registered NLB subdomains and NLB IP addresses are listed. |
-| `cluster-nlb-dns-monitor.get` | The health check monitor settings for an NLB subdomain are viewed. |
-| `cluster-nlb-dns-monitor.list` | The health check monitor settings for all NLB subdomains are listed. |
-| `cluster-nlb-dns-monitor-status.list` | The health check status for the IP addresses behind NLB subdomains in a cluster are listed. |
-| `cluster-nlb-dns-monitor.create` | A health check monitor for an NLB subdomain is configured. |
-| `cluster-ingress-secret.delete` | A secret is removed from an NLB subdomain. |
-| `cluster-ingress-secret.update` | Certificates for a secret are regenerated. |
-| `cluster-nlb-dns.create` | An NLB subdomain is created and associated with one or more NLB IP addresses (classic) or a hostname (VPC). |
-| `cluster-lb-hostname.delete` | The VPC load balancer hostname is removed from the DNS record for an existing NLB subdomain. |
-| `cluster-lb-hostname.update` | The DNS record for an NLB subdomain in a VPC cluster is updated by replacing the load balancer hostname. |
-| `cluster-nlb-dns.update` | A DNS record in a classic cluster is updated by adding an NLB IP address. |
-| `cluster-nlb-dns-monitor.update` | The health check monitor for an NLB subdomain is enabled or disabled. |
-{: caption="NLB DNS events" caption-side="top"}
 
-## Tracking private service endpoint allowlist events
-{: #acl-events}
 
-The following table lists the actions related to access control lists (ACLs) and the generation of events for clusters that use a private service endpoint allowlist.
-{: shortdesc}
-
-| Action  | Description  |
-|---------|--------------|
-| `containers-kubernetes.containers-kubernetes.network.acl.delete ` | The private service endpoint allowlist feature for a cluster is disabled. |
-| `containers-kubernetes.containers-kubernetes.network.acl.get` | The subnet allowlist for the private service endpoint of a cluster is requested.  |
-| `containers-kubernetes.containers-kubernetes.network.acl.update` | The private service endpoint allowlist feature for a cluster is enabled, subnets are added to the allowlist, or subnets are removed from the allowlist. |
-{: caption="ACL events" caption-side="top"}
-
-## Tracking storage resource events
-{: #storage-events}
-
-The following table lists the actions related to storage resources and the generation of events.
-{: shortdesc}
-
-| Action  | Description  |
-|---------|--------------|
-| `containers-kubernetes.storage.volume.create` | A volume is created. |
-| `containers-kubernetes.storage.volume.update` | A volume is updated. |
-| `containers-kubernetes.storage.volume.delete` | A volume is deleted. |
-| `containers-kubernetes.storage.volume.read` | One or more volumes are retrieved. |
-| `containers-kubernetes.storage.attachment.create` | An instance volume attachment is created. |
-| `containers-kubernetes.storage.attachment.update` | An instance volume attachment is deleted. |
-| `containers-kubernetes.storage.attachment.delete` | An instance volume attachment is updated. |
-| `containers-kubernetes.storage.attachment.read` | One or more instance volume attachments are retrieved. |
-{: caption="Storage resource events" caption-side="top"}
-
-## Tracking logging and monitoring configuration events
+## Logging and monitoring configuration events
 {: #at-lm}
 
 The following list of the logging and monitoring configuration events are sent to {{site.data.keyword.at_full_notm}} by the {{site.data.keyword.containerlong_notm}} observability plug-in.
@@ -252,6 +211,71 @@ The following list of the logging and monitoring configuration events are sent t
 | `containers-kubernetes.observe.monitoring.modify` | A Sysdig monitoring configuration is updated. |
 | `containers-kubernetes.observe.monitoring.remove` | A Sysdig monitoring configuration is removed from the cluster. |
 {: caption="Logging and monitoring management events" caption-side="top"}
+{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
+
+
+
+## NLB DNS events
+{: #ingress-nlb-dns-events}
+
+The following list of network load balancer (NLB) DNS events are sent to {{site.data.keyword.at_full_notm}}.
+{: shortdesc}
+
+|Action|Description|
+|------|-----------|
+| `containers-kubernetes.cluster-nlb-dns.list` | Registered NLB subdomains and NLB IP addresses are listed. |
+| `containers-kubernetes.cluster-nlb-dns-monitor.get` | The health check monitor settings for an NLB subdomain are viewed. |
+| `containers-kubernetes.cluster-nlb-dns-monitor.list` | The health check monitor settings for all NLB subdomains are listed. |
+| `containers-kubernetes.cluster-nlb-dns-monitor-status.list` | The health check status for the IP addresses behind NLB subdomains in a cluster are listed. |
+| `containers-kubernetes.cluster-nlb-dns-monitor.create` | A health check monitor for an NLB subdomain is configured. |
+| `containers-kubernetes.cluster-ingress-secret.delete` | A secret is removed from an NLB subdomain. |
+| `containers-kubernetes.cluster-ingress-secret.update` | Certificates for a secret are regenerated. |
+| `containers-kubernetes.cluster-nlb-dns.create` | An NLB subdomain is created and associated with one or more NLB IP addresses (classic) or a hostname (VPC). |
+| `containers-kubernetes.cluster-lb-hostname.delete` | The VPC load balancer hostname is removed from the DNS record for an existing NLB subdomain. |
+| `containers-kubernetes.cluster-lb-hostname.update` | The DNS record for an NLB subdomain in a VPC cluster is updated by replacing the load balancer hostname. |
+| `containers-kubernetes.cluster-nlb-dns.update` | A DNS record in a classic cluster is updated by adding an NLB IP address. |
+| `containers-kubernetes.cluster-nlb-dns-monitor.update` | The health check monitor for an NLB subdomain is enabled or disabled. |
+{: caption="NLB DNS events" caption-side="top"}
+{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
+
+## Private service endpoint allowlist events
+{: #acl-events}
+
+The following table lists the actions related to access control lists (ACLs) and the generation of events for clusters that use a private service endpoint allowlist.
+{: shortdesc}
+
+| Action  | Description  |
+|---------|--------------|
+| `containers-kubernetes.containers-kubernetes.network.acl.delete ` | The private service endpoint allowlist feature for a cluster is disabled. |
+| `containers-kubernetes.containers-kubernetes.network.acl.get` | The subnet allowlist for the private service endpoint of a cluster is requested.  |
+| `containers-kubernetes.containers-kubernetes.network.acl.update` | The private service endpoint allowlist feature for a cluster is enabled, subnets are added to the allowlist, or subnets are removed from the allowlist. |
+{: caption="ACL events" caption-side="top"}
+{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
+
+
+
+## Storage events
+{: #storage-events}
+
+The following table lists the actions related to storage resources and the generation of events.
+{: shortdesc}
+
+| Action  | Description  |
+|---------|--------------|
+| `containers-kubernetes.storage-volume.delete` | A volume is deleted. |
+| `containers-kubernetes.storage-volume.list` | Volumes in the {{site.data.keyword.cloud_notm}} account or as filtered by provider are retrieved. |
+| `containers-kubernetes.storage-volume.read` | A volume is retrieved |
+| `containers-kubernetes.storage-volume.update` | A volume is updated. |
+| `containers-kubernetes.storage-attachment.create` | A volume attachment is created. | 
+| `containers-kubernetes.storage-attachment.delete` | A volume attachment is deleted. |
+| `containers-kubernetes.storage-attachment.list` | Volume attachments are retrieved. |
+| `containers-kubernetes.storage-attachment.read` | A volume attachment is retrieved. |
+{: caption="Storage events" caption-side="top"}
+{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
+
+
+
+
 
 ## Viewing your cluster events
 {: #at-ui}
