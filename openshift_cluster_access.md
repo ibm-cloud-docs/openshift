@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-04"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -273,10 +273,11 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 5. [Create an API key](#access_api_key) with the private service endpoint so that you can log in to the cluster.
 
 6. Log in to the cluster with the API key. Include `https://` and the port in the private service endpoint URL, such as `https://c100.private.us-east.containers.cloud.ibm.com:30113`.
-```
-oc login -u apikey -p <API_key> --server=<private_service_endpoint>
-```
-{: pre}
+  ```
+  oc login -u apikey -p <API_key> --server=<private_service_endpoint>
+  ```
+  {: pre}
+
 
 6. Verify that the `oc` commands run properly with your cluster through the private service endpoint by checking the version.
   ```
@@ -396,10 +397,10 @@ oc login -u apikey -p <API_key> --server=<private_service_endpoint>
 7. [Create an API key](#access_api_key) with the private service endpoint so that you can log in to the cluster.
 
 8. Log in to the cluster with the API key. Include `https://` and the port in the private service endpoint URL, such as `https://c100.private.us-east.containers.cloud.ibm.com:30113`.
-```
-oc login -u apikey -p <API_key> --server=<private_service_endpoint>
-```
-{: pre}
+  ```
+  oc login -u apikey -p <API_key> --server=<private_service_endpoint>
+  ```
+  {: pre}
 
 8. Verify that the `oc` commands run properly with your cluster through the private service endpoint by checking the version.
     ```

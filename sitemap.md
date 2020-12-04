@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-12-03"
+lastupdated: "2020-12-04"
 
 keywords: openshift
 subcollection: openshift
@@ -1724,13 +1724,13 @@ subcollection: openshift
 * [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 
 [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
-* [Tracking cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
-* [Tracking Ingress ALB events](/docs/openshift?topic=openshift-at_events#ingress-alb-events)
-* [Tracking Ingress secret events](/docs/openshift?topic=openshift-at_events#ingress-secret-events)
-* [Tracking NLB DNS events](/docs/openshift?topic=openshift-at_events#ingress-nlb-dns-events)
-* [Tracking private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
-* [Tracking storage resource events](/docs/openshift?topic=openshift-at_events#storage-events)
-* [Tracking logging and monitoring configuration events](/docs/openshift?topic=openshift-at_events#at-lm)
+* [Cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
+* [Ingress ALB events](/docs/openshift?topic=openshift-at_events#ingress-alb-events)
+* [Ingress secret events](/docs/openshift?topic=openshift-at_events#ingress-secret-events)
+* [Logging and monitoring configuration events](/docs/openshift?topic=openshift-at_events#at-lm)
+* [NLB DNS events](/docs/openshift?topic=openshift-at_events#ingress-nlb-dns-events)
+* [Private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
+* [Storage events](/docs/openshift?topic=openshift-at_events#storage-events)
 * [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
 
 [IAM and {{site.data.keyword.cloudaccesstrailshort}} action by API method](/docs/openshift?topic=openshift-api-at-iam)
