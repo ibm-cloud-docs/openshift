@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -211,7 +211,7 @@ When you create a standard cluster, subnets are automatically created for you. H
 
 Use this option to retain stable static IP addresses across cluster removals and creations, or to order larger blocks of IP addresses. If instead you want to get more portable public or private IP addresses to create network load balancer (NLB) or Ingress application load balancer (ALB) services, see [Adding portable IP addresses](#adding_ips).
 
-All subnets that were automatically ordered during cluster creation are immediately deleted after you delete a cluster, and you cannot reuse the subnets to create a new cluster.
+All subnets that were automatically ordered during cluster creation are immediately marked for deletion after you delete a cluster, and you cannot reuse the subnets to create a new cluster.
 {: note}
 
 Before you begin:
