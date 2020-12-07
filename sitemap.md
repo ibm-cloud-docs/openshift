@@ -1957,6 +1957,7 @@ subcollection: openshift
   * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-catalog)
   * [Step 2: Verifying the cluster setup](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-cluster)
   * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-support)
+* [Portworx: Encryption set up fails due to invalid KMS endpoint](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-kms-endpoint)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help_storage)
 
 [Getting help](/docs/openshift?topic=openshift-get-help)
