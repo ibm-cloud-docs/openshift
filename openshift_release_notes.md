@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-07"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 07 December 2020 | **{{site.data.keyword.keymanagementserviceshort}} enhancements**: For clusters that run `4.4.16_1513_openshift` or later, your cluster now [integrates more features from {{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features) when you enable {{site.data.keyword.keymanagementserviceshort}} as the KMS provider for the cluster. When you enable this integration, a **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. If you have a cluster that runs an earlier version, [update your cluster](/docs/openshift?topic=openshift-update) and then [reenable KMS encryption](/docs/openshift?topic=openshift-encryption#keyprotect) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again. |
 | 03 December 2020 | **Cluster autoscaler add-on**: Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog). |
 | 02 December 2020 | **Default version**: {{site.data.keyword.openshiftshort}} 4.5 is now the default version for {{site.data.keyword.openshiftlong_notm}} clusters. |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}

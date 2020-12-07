@@ -570,8 +570,9 @@ subcollection: openshift
 * [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms)
 * [Encrypting the Kubernetes master's local disk and secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
   * [Prerequisites](/docs/openshift?topic=openshift-encryption#kms_prereqs)
-  * [Enabling or rotating KMS encryption through the CLI](/docs/openshift?topic=openshift-encryption#kms_cli)
-  * [Enabling or rotating KMS encryption through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
+  * [Enabling KMS encryption through the CLI](/docs/openshift?topic=openshift-encryption#kms_cli)
+  * [Enabling KMS encryption through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
+  * [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption#kms_rotate)
 * [Verifying secret encryption](/docs/openshift?topic=openshift-encryption#verify_kms)
 * [Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)](/docs/openshift?topic=openshift-encryption#datashield)
 
