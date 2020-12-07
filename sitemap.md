@@ -1874,6 +1874,7 @@ subcollection: openshift
 
 [Cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler)
 * [Debugging the cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler#debug_cluster_autoscaler)
+* [Cluster autoscaler add-on deployment fails and the `ibm-iks-cluster-autoscaler` pod is stuck in the `Init` state](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler#ca_ts_secret)
 
 [Cluster networking](/docs/openshift?topic=openshift-cs_troubleshoot_network)
 * [Missing the public `containers.appdomain.cloud` subdomain](/docs/openshift?topic=openshift-cs_troubleshoot_network#roks_ts_subdomain)
