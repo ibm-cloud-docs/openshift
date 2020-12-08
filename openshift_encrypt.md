@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-03"
+lastupdated: "2020-12-07"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -159,7 +159,35 @@ Yes. When you enable a KMS provider in your cluster, your own KMS root key is us
 Review the following known limitations:
 * Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementserviceshort}} instance is not supported.
 
+**Do the features change depending on my cluster version?**<br>
+{: #kms-keyprotect-features}
 
+Yes. Your cluster version impacts the functionality of the KMS provider. To see what {{site.data.keyword.keymanagementserviceshort}} features are available for different cluster versions of {{site.data.keyword.openshiftlong_notm}}, review the following table. 
+
+To check your cluster version, run the following command.
+```
+ibmcloud oc cluster ls
+```
+{: pre}
+
+To use the additional {{site.data.keyword.keymanagementserviceshort}} features:
+1.  [Update your cluster](/docs/openshift?topic=openshift-update) to at least version `4.4.16_1513_openshift`.
+2.  [Reenable KMS encryption](#keyprotect) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
+
+| {{site.data.keyword.keymanagementserviceshort}} feature | Cluster version earlier than `4.4.16_1513_openshift` | Cluster version `4.4.16_1513_openshift` or later |
+| --- | --- | --- |
+| You can enable the cluster to use {{site.data.keyword.keymanagementserviceshort}} root keys to encrypt secrets. | 3.11 and 4.4 only (not 4.3) | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| You must rewrite cluster secrets manually after rotating root keys in {{site.data.keyword.keymanagementserviceshort}}.  | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Cluster secrets are automatically updated after rotating root keys in {{site.data.keyword.keymanagementserviceshort}}. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| You can view clusters that use the root key from the {{site.data.keyword.keymanagementserviceshort}} interface. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Clusters automatically respond if you disable, enable, or restore root keys in {{site.data.keyword.keymanagementserviceshort}}. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Disabling a root key restricts cluster functionality until you reenable the key. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Deleting a root key makes the cluster unusable and irrecoverable. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Root keys cannot be deleted if the key is used by a cluster. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="{{site.data.keyword.keymanagementserviceshort}} features by cluster version." caption-side="top"}
+{: summary="The rows are read from left to right. The first column describes the feature. The second column checks whether the feature available in the older version. The second column checks whether the feature available in the newer version."}
 
 <br />
 
@@ -169,11 +197,11 @@ Review the following known limitations:
 Enable a Kubernetes [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external} to encrypt the Kubernetes secrets and etcd component of your Kubernetes master.
 {: shortdesc}
 
-To rotate your encryption key, repeat the [CLI](#kms_cli) or [console](#kms_ui) steps to enable KMS provider encryption with a new root key ID. The new root key is added to the cluster configuration along with the previous root key so that existing encrypted data is still protected. To encrypt your existing secrets with the new root key, you must rewrite the secrets.
-{: note}
-
 KMS provider integration is available only in version 3.11 or 4.4 clusters, not for version 4.3 clusters.
 {: important}
+
+**Clusters that run version 3.11**: To rotate your encryption key, repeat the [CLI](#kms_cli) or [console](#kms_ui) steps to enable KMS provider encryption with a new root key ID. The new root key is added to the cluster configuration along with the previous root key so that existing encrypted data is still protected. To encrypt your existing secrets with the new root key, you must rewrite the secrets.
+{: note}
 
 ### Prerequisites
 {: #kms_prereqs}
@@ -191,9 +219,12 @@ Before you enable a key management service (KMS) provider in your cluster, creat
     * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
     * Make sure that the API key that is set for the region that your cluster is in is authorized to use the KMS provider. For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service roles for [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-manage-access). To check the API key owner whose credentials are stored for the region, run `ibmcloud oc api-key info -c <cluster_name_or_ID>`.
 
-4.  Enable KMS encryption through the [CLI](#kms_cli) or [console](#kms_ui).
+    **For clusters that run {{site.data.keyword.openshiftshort}} 4.4.16_1513_openshift or later**: An additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster cannot use all the [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
+    {: note}
+4.  Consider [updating your cluster](/docs/openshift?topic=openshift-update) to at least version `4.4.16_1513_openshift` to get the latest [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
+5.  Enable KMS encryption through the [CLI](#kms_cli) or [console](#kms_ui).
 
-### Enabling or rotating KMS encryption through the CLI
+### Enabling KMS encryption through the CLI
 {: #kms_cli}
 
 You can enable a KMS provider or update the instance or root key that encrypts secrets in the cluster through the CLI.
@@ -215,7 +246,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     ibmcloud oc kms enable -c <cluster_name_or_ID> --instance-id <kms_instance_ID> --crk <root_key_ID> [--public-endpoint]
     ```
     {: pre}
-5.  Verify that the KMS enablement process is finished. The process is finished when that the **Master Status** is **Ready**.
+5.  Verify that the KMS enablement process is finished. The process is finished when that the **Master Status** is **Ready** and **Key Protect** is **enabled**.
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
@@ -235,14 +266,16 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     Name:                   <cluster_name>   
     ID:                     <cluster_ID>   
     ...
-    Master Status:          Ready (1 min ago)   
+    Master Status:          Ready (1 min ago)
+    ...
+    Key Protect:            enabled   
     ```
     {: screen}
 
     After the KMS provider is enabled in the cluster, data in `etcd` and new secrets that are created in the cluster are automatically encrypted by using your root key.
     {: note}
 
-6.  To encrypt existing secrets with the root key, rewrite the secrets.
+6.  **Clusters that run version 3.11**: To encrypt existing secrets with the root key, rewrite the secrets.
     1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
     2.  With `cluster-admin` access, rewrite the secrets.
         ```
@@ -253,7 +286,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
 
 <p class="important">Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.<br><br>Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.</p>
 
-### Enabling or rotating KMS encryption through the console
+### Enabling KMS encryption through the console
 {: #kms_ui}
 
 You can enable a KMS provider or update the instance or root key that encrypts secrets in the cluster through the {{site.data.keyword.cloud_notm}} console.
@@ -280,7 +313,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     After the KMS provider is enabled in the cluster, data in `etcd` and new secrets that are created in the cluster are automatically encrypted by using your root key.
     {: note}
 
-6.  If your cluster runs a version earlier than `4.4.16_1513_openshift`: To encrypt existing secrets with the root key, rewrite the secrets.
+6.  **Clusters that run version 3.11**: To encrypt existing secrets with the root key, rewrite the secrets.
     1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
     2.  With `cluster-admin` access, rewrite the secrets.
         ```
@@ -290,6 +323,14 @@ You can enable a KMS provider or update the instance or root key that encrypts s
 7.  Optional: [Verify that your secrets are encrypted](#verify_kms).
 
 <p class="important">Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.<br><br>Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.</p>
+
+### Rotating the root key for your cluster
+{: #kms_rotate}
+
+To rotate the root key that is used to encrypt your cluster, you can repeat the steps to enable KMS encryption from the [CLI](#kms_cli) or [console](#kms_ui). 
+{: shortdesc}
+
+Additionally, if your cluster runs version `4.4.16_1513_openshift` or later, you can also [rotate the root key](/docs/key-protect?topic=key-protect-rotate-keys) from your {{site.data.keyword.keymanagementserviceshort}} instance.
 
 ## Verifying secret encryption
 {: #verify_kms}

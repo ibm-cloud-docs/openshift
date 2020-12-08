@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-08"
 
 keywords: openshift
 subcollection: openshift
@@ -570,8 +570,9 @@ subcollection: openshift
 * [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms)
 * [Encrypting the Kubernetes master's local disk and secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
   * [Prerequisites](/docs/openshift?topic=openshift-encryption#kms_prereqs)
-  * [Enabling or rotating KMS encryption through the CLI](/docs/openshift?topic=openshift-encryption#kms_cli)
-  * [Enabling or rotating KMS encryption through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
+  * [Enabling KMS encryption through the CLI](/docs/openshift?topic=openshift-encryption#kms_cli)
+  * [Enabling KMS encryption through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
+  * [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption#kms_rotate)
 * [Verifying secret encryption](/docs/openshift?topic=openshift-encryption#verify_kms)
 * [Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)](/docs/openshift?topic=openshift-encryption#datashield)
 
@@ -1595,6 +1596,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for worker node fix pack 4.5.21_1522_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4521_1522)
   * [Changelog for worker node fix pack 4.5.19_1521_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4519_1521)
   * [Changelog for master fix pack 4.5.18_1521_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4518_1521)
   * [Changelog for worker node fix pack 4.5.17_1519_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4517_1519)
@@ -1602,6 +1604,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.31_1526_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4431_1526)
   * [Changelog for worker node fix pack 4.4.30_1525_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4430_1525)
   * [Changelog for master fix pack 4.4.29_1525_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1525)
   * [Changelog for worker node fix pack 4.4.29_1524_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1524)
@@ -1619,6 +1622,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for worker node fix pack 4.3.40_1547_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1547)
   * [Changelog for worker node fix pack 4.3.40_1546_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1546_worker)
   * [Changelog for master fix pack 4.3.40_1546_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1546)
   * [Changelog for worker node fix pack 4.3.40_1545_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1545)
@@ -1647,6 +1651,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.318_1574_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311318_1574)
   * [Changelog for worker node fix pack 3.11.318_1573_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311318_1573)
   * [Changelog for master fix pack 3.11.306_1573_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573)
   * [Changelog for worker node fix pack 3.11.306_1572_openshift, released 9 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1572)
@@ -1869,6 +1874,7 @@ subcollection: openshift
 
 [Cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler)
 * [Debugging the cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler#debug_cluster_autoscaler)
+* [Cluster autoscaler add-on deployment fails and the `ibm-iks-cluster-autoscaler` pod is stuck in the `Init` state](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler#ca_ts_secret)
 
 [Cluster networking](/docs/openshift?topic=openshift-cs_troubleshoot_network)
 * [Missing the public `containers.appdomain.cloud` subdomain](/docs/openshift?topic=openshift-cs_troubleshoot_network#roks_ts_subdomain)
@@ -1957,6 +1963,7 @@ subcollection: openshift
   * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-catalog)
   * [Step 2: Verifying the cluster setup](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-cluster)
   * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-support)
+* [Portworx: Encryption set up fails due to invalid KMS endpoint](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-kms-endpoint)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help_storage)
 
 [Getting help](/docs/openshift?topic=openshift-get-help)

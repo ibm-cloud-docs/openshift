@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -117,7 +117,7 @@ Review the minimum permissions in {{site.data.keyword.cloud_notm}} IAM that the 
   <li>**Viewer** platform role for the resource group access.</li>
   <li>If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), the **Service ID creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).</li>
   <li>If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), the **User API key creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).</li>
-  <li>If you plan to [encrypt your cluster](/docs/openshift?topic=openshift-encryption#keyprotect), assign the user the appropriate permission to the key management service (KMS) provider, such as the **Administrator** platform role for {{site.data.keyword.keymanagementserviceshort}}.</li>
+  <li>If you plan to [encrypt your cluster](/docs/openshift?topic=openshift-encryption#keyprotect):<ul><li>Assign the user the appropriate permission to the key management service (KMS) provider, such as the **Administrator** platform role for {{site.data.keyword.keymanagementserviceshort}}.</li><li>For clusters that run {{site.data.keyword.openshiftshort}} 4.4.16_1513_openshift or later: When you enable KMS encryption, an additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster cannot use all the [{{site.data.keyword.keymanagementserviceshort}} features](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features).</li></ul></li>
   <li>**Viewer** platform role for the resource group access.</li></ul>
 <li>**Infrastructure**</li><ul>
   <li>Classic clusters only: **Super User** role or the [minimum required permissions](#infra) for classic infrastructure.</li>
