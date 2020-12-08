@@ -1250,12 +1250,7 @@ subcollection: openshift
 * [About Helm in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-helm#about-helm)
   * [What is Helm and how do I use it?](/docs/openshift?topic=openshift-helm#what-is-helm)
   * [What Helm charts are supported in {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-helm#supported-charts)
-  * [Do I install Helm v2 or v3?](/docs/openshift?topic=openshift-helm#helm-v2-v3)
 * [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3)
-* [Migrating from Helm v2 to v3](/docs/openshift?topic=openshift-helm#migrate_v3)
-* [Installing Helm v2 in your cluster](/docs/openshift?topic=openshift-helm#install_v2)
-  * [Setting up Helm v2 in a cluster with public access](/docs/openshift?topic=openshift-helm#public_helm_install)
-  * [Installing Tiller with a different version than your cluster](/docs/openshift?topic=openshift-helm#tiller_version)
 * [Related Helm links](/docs/openshift?topic=openshift-helm#helm_links)
 
 [Adding services by using IBM Cloud service binding](/docs/openshift?topic=openshift-service-binding)
