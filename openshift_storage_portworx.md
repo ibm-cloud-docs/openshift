@@ -343,7 +343,7 @@ The following image illustrates the encryption workflow in Portworx when you set
 {: shortdesc}
 
 
-<img src="images/cs_portworx_volume_encryption.png" alt="Encrypting Portworx volumes" width="600" style="width: 600px; border-style: none"/>
+<img src="images/cs_px_volume_encryption.png" alt="Encrypting Portworx volumes" width="600" style="width: 600px; border-style: none"/>
 
 
 1. The user creates a PVC with a Portworx storage class and requests the storage to be encrypted.
@@ -358,7 +358,7 @@ The following image illustrates the encryption workflow in Portworx when you set
 The following image illustrates the decryption workflow in Portworx when you set up per-volume encryption.
 
 
-<img src="images/cs_portworx_volume_decryption.png" alt="Decrypting Portworx volumes" width="600" style="width: 600px; border-style: none"/>
+<img src="images/cs_px_volume_decryption.png" alt="Decrypting Portworx volumes" width="600" style="width: 600px; border-style: none"/>
 
 
 1. Kubernetes sends a request to decrypt an encrypted volume.
