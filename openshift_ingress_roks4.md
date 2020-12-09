@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-09"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -280,7 +280,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1.  Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
       name: myingressresource
@@ -533,7 +533,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1.  Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
       name: myingressresource
@@ -871,7 +871,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1.  Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
       name: myingressresource
@@ -1082,7 +1082,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1.  Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
       name: myingressresource
