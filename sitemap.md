@@ -135,15 +135,19 @@ subcollection: openshift
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
 
-[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks)
-* [Overview of shared responsibilities](/docs/openshift?topic=openshift-responsibilities_iks#overview-by-resource)
-* [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-responsibilities_iks#task-responsibilities)
-  * [Incident and operations management](/docs/openshift?topic=openshift-responsibilities_iks#incident-and-ops)
-  * [Change management](/docs/openshift?topic=openshift-responsibilities_iks#change-management)
-  * [Identity and access management](/docs/openshift?topic=openshift-responsibilities_iks#iam-responsibilities)
-  * [Security and regulation compliance](/docs/openshift?topic=openshift-responsibilities_iks#security-compliance)
-  * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery)
-  * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
+[Service architecture and dependencies](/docs/openshift?topic=openshift-service-arch)
+* [Classic cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
+  * [{{site.data.keyword.openshiftshort}} version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
+  * [{{site.data.keyword.openshiftshort}} version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
+* [VPC cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc)
+* [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-arch#ibm-data)
+  * [What information is stored with IBM when using {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-service-arch#pi-info)
+  * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-arch#pi-storage)
+  * [Where is my information stored?](/docs/openshift?topic=openshift-service-arch#pi-location)
+  * [How can I remove my information?](/docs/openshift?topic=openshift-service-arch#pi-removal)
+  * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-arch#pi-rh-telemetry)
+* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-service-arch#dependencies-ibmcloud)
+* [Dependencies to 3rd party services](/docs/openshift?topic=openshift-service-arch#dependencies-3rd-party)
 
 
 ## Use cases
@@ -199,6 +203,37 @@ subcollection: openshift
 * [Expose your app](/docs/openshift?topic=openshift-learning-path-dev#dev_expose)
 * [Add app storage](/docs/openshift?topic=openshift-learning-path-dev#dev_storage)
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
+
+
+## Cluster strategy
+{: #sitemap_cluster_strategy}
+
+
+[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks)
+* [Overview of shared responsibilities](/docs/openshift?topic=openshift-responsibilities_iks#overview-by-resource)
+* [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-responsibilities_iks#task-responsibilities)
+  * [Incident and operations management](/docs/openshift?topic=openshift-responsibilities_iks#incident-and-ops)
+  * [Change management](/docs/openshift?topic=openshift-responsibilities_iks#change-management)
+  * [Identity and access management](/docs/openshift?topic=openshift-responsibilities_iks#iam-responsibilities)
+  * [Security and regulation compliance](/docs/openshift?topic=openshift-responsibilities_iks#security-compliance)
+  * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery)
+  * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
+
+[Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security)
+* [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
+  * [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate)
+* [Worker node](/docs/openshift?topic=openshift-security#workernodes)
+* [Network](/docs/openshift?topic=openshift-security#network)
+  * [Network segmentation and privacy](/docs/openshift?topic=openshift-security#network_segmentation)
+  * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
+  * [Expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
+  * [Expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
+* [Persistent storage](/docs/openshift?topic=openshift-security#storage)
+* [Monitoring and logging](/docs/openshift?topic=openshift-security#monitoring_logging)
+* [Image and registry](/docs/openshift?topic=openshift-security#images_registry)
+* [Container isolation and security](/docs/openshift?topic=openshift-security#container)
+* [Storing personal information](/docs/openshift?topic=openshift-security#pi)
+* [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
 
 
 ## Tutorials library for OpenShift
@@ -424,39 +459,105 @@ subcollection: openshift
   * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
 
 
-## Enhancing security
-{: #sitemap_enhancing_security}
+## Managing the cluster lifecycle
+{: #sitemap_managing_the_cluster_lifecycle}
 
 
-[Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security)
-* [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
-  * [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate)
-* [Worker node](/docs/openshift?topic=openshift-security#workernodes)
-* [Network](/docs/openshift?topic=openshift-security#network)
-  * [Network segmentation and privacy](/docs/openshift?topic=openshift-security#network_segmentation)
-  * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
-  * [Expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
-  * [Expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
-* [Persistent storage](/docs/openshift?topic=openshift-security#storage)
-* [Monitoring and logging](/docs/openshift?topic=openshift-security#monitoring_logging)
-* [Image and registry](/docs/openshift?topic=openshift-security#images_registry)
-* [Container isolation and security](/docs/openshift?topic=openshift-security#container)
-* [Storing personal information](/docs/openshift?topic=openshift-security#pi)
-* [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
+[Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add_workers)
+* [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool)
+* [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add_workers#vpc_pools)
+  * [Creating a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool)
+  * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone)
+* [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools)
+  * [Creating a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool)
+  * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#add_zone)
+* [Deprecated: Adding stand-alone worker nodes](/docs/openshift?topic=openshift-add_workers#standalone)
+* [Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-add_workers#install-sgx)
+  * [Installing with a script](/docs/openshift?topic=openshift-add_workers#intel-sgx-script)
+* [Adding tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags)
+* [Adding labels to existing worker pools](/docs/openshift?topic=openshift-add_workers#worker_pool_labels)
 
-[Service architecture and dependencies](/docs/openshift?topic=openshift-service-arch)
-* [Classic cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
-  * [{{site.data.keyword.openshiftshort}} version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
-  * [{{site.data.keyword.openshiftshort}} version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
-* [VPC cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc)
-* [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-arch#ibm-data)
-  * [What information is stored with IBM when using {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-service-arch#pi-info)
-  * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-arch#pi-storage)
-  * [Where is my information stored?](/docs/openshift?topic=openshift-service-arch#pi-location)
-  * [How can I remove my information?](/docs/openshift?topic=openshift-service-arch#pi-removal)
-  * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-arch#pi-rh-telemetry)
-* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-service-arch#dependencies-ibmcloud)
-* [Dependencies to 3rd party services](/docs/openshift?topic=openshift-service-arch#dependencies-3rd-party)
+[Autoscaling clusters](/docs/openshift?topic=openshift-ca)
+* [Understanding scale-up and scale-down](/docs/openshift?topic=openshift-ca#ca_about)
+* [Following scalable deployment practices](/docs/openshift?topic=openshift-ca#scalable-practices)
+  * [Can I autoscale multiple worker pools at once?](/docs/openshift?topic=openshift-ca#scalable-practices-multiple)
+  * [How can I make sure that the cluster autoscaler responds to what resources my app needs?](/docs/openshift?topic=openshift-ca#scalable-practices-resrequests)
+  * [Can I scale down a worker pool to zero (0) nodes?](/docs/openshift?topic=openshift-ca#scalable-practices-zero)
+  * [Can I optimize my deployments for autoscaling?](/docs/openshift?topic=openshift-ca#scalable-practices-apps)
+  * [Can I use taints and tolerations with autoscaled worker pools?](/docs/openshift?topic=openshift-ca#scalable-practices-taints)
+  * [Why are my autoscaled worker pools unbalanced?](/docs/openshift?topic=openshift-ca#scalable-practices-unbalanced)
+  * [Why can't I resize or rebalance my worker pool?](/docs/openshift?topic=openshift-ca#scalable-practices-resize)
+* [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-ca#ca_prepare_cluster)
+* [Installing the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-ca#ca_addon)
+* [Installing the cluster autoscaler Helm chart in your cluster](/docs/openshift?topic=openshift-ca#ca_helm)
+* [Updating the cluster autoscaler configmap to enable scaling](/docs/openshift?topic=openshift-ca#ca_cm)
+* [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-ca#ca_customize)
+  * [Customizing the cluster autoscaler add-on configmap](/docs/openshift?topic=openshift-ca#ca_addon_values)
+  * [Customizing the cluster autoscaler Helm chart values](/docs/openshift?topic=openshift-ca#ca_chart_values)
+* [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
+* [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-ca#ca_scaleup)
+* [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up)
+* [Upgrading a cluster autoscaler Helm chart release](/docs/openshift?topic=openshift-ca#ca_helm_up)
+  * [Prerequisites](/docs/openshift?topic=openshift-ca#ca_helm_up_prereqs)
+  * [Upgrading the cluster autoscaler release version](/docs/openshift?topic=openshift-ca#ca_helm_up_general)
+* [Removing the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm)
+* [Cluster autoscaler add-on parameter reference](/docs/openshift?topic=openshift-ca#ca_addon_ref)
+* [Cluster autoscaler Helm chart parameter reference](/docs/openshift?topic=openshift-ca#ca_helm_ref)
+
+[Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update)
+* [Updating the master](/docs/openshift?topic=openshift-update#master)
+  * [About updating the master](/docs/openshift?topic=openshift-update#master-about)
+  * [Steps to update the cluster master](/docs/openshift?topic=openshift-update#master-steps)
+* [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node)
+  * [Prerequisites](/docs/openshift?topic=openshift-update#worker-up-prereqs)
+  * [Updating classic worker nodes in the CLI with a configmap](/docs/openshift?topic=openshift-update#worker-up-configmap)
+  * [Updating classic worker nodes in the console](/docs/openshift?topic=openshift-update#worker_up_console)
+* [Updating VPC worker nodes](/docs/openshift?topic=openshift-update#vpc_worker_node)
+  * [Prerequisites](/docs/openshift?topic=openshift-update#vpc_worker_prereqs)
+  * [Updating VPC worker nodes in the CLI](/docs/openshift?topic=openshift-update#vpc_worker_cli)
+  * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update#vpc_worker_ui)
+* [Updating flavors (machine types)](/docs/openshift?topic=openshift-update#machine_type)
+* [Updating cluster components](/docs/openshift?topic=openshift-update#components)
+  * [Managing automatic updates for Fluentd](/docs/openshift?topic=openshift-update#logging-up)
+  * [Managing automatic updates for Ingress ALBs](/docs/openshift?topic=openshift-update#alb)
+* [Updating managed add-ons](/docs/openshift?topic=openshift-update#addons)
+
+[Tuning performance](/docs/openshift?topic=openshift-kernel)
+* [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
+  * [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
+  * [Changing the Calico MTU for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-311)
+* [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
+  * [Disabling the port map plug-in for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
+  * [Disabling the port map plug-in for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-311)
+
+[Removing clusters](/docs/openshift?topic=openshift-remove)
+
+
+## Managing cluster costs
+{: #sitemap_managing_cluster_costs}
+
+
+[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs)
+* [Understanding costs by component](/docs/openshift?topic=openshift-costs#costs-for-clusters)
+  * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
+  * [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
+  * [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
+  * [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
+  * [Default storage for images](/docs/openshift?topic=openshift-costs#storage_images)
+  * [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
+  * [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
+  * [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
+  * [VPC Generation 2 compute worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
+* [Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
+* [Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
+
+[Using reservations to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations)
+* [Understanding reservations](/docs/openshift?topic=openshift-reservations#ri-about)
+  * [Reservation usage and lifecycle](/docs/openshift?topic=openshift-reservations#ri-usage-lifecycle)
+  * [Billing and discounts](/docs/openshift?topic=openshift-reservations#ri-about-billing)
+* [Creating a reservation](/docs/openshift?topic=openshift-reservations#ri-create)
+* [Using a reservation in a cluster](/docs/openshift?topic=openshift-reservations#ri-use)
+* [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
 
 
 ## Securing cluster workloads
@@ -489,6 +590,11 @@ subcollection: openshift
 {: #sitemap_securing_the_cluster_network}
 
 
+
+## Classic clusters
+{: #sitemap_classic_clusters}
+
+
 [Classic: Opening required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall)
 * [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-firewall#corporate)
   * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-firewall#firewall_bx)
@@ -519,6 +625,11 @@ subcollection: openshift
   * [Isolate app services between namespaces](/docs/openshift?topic=openshift-network_policies#services_across_ns)
 * [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
 
+
+## VPC clusters
+{: #sitemap_vpc_clusters}
+
+
 [VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy)
 * [Overview](/docs/openshift?topic=openshift-vpc-network-policy#overview)
   * [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
@@ -544,23 +655,13 @@ subcollection: openshift
   * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
 
 
-## Managing security and compliance with {{site.data.keyword.openshiftshort}}
-{: #sitemap_managing_security_and_compliance_with_}
-
-
-[Managing security and compliance with {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-manage-security-compliance)
-
-[Monitoring security and compliance posture with {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-manage-security-compliance#monitor-clusters)
-* [Available goals for {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-manage-security-compliance#clusters-available-goals)
-
-
 ## Managing the cluster network
 {: #sitemap_managing_the_cluster_network}
 
 
 
 ## Classic clusters
-{: #sitemap_classic_clusters}
+{: #sitemap_classic_clusters_}
 
 
 [Classic: Configuring subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
@@ -614,7 +715,7 @@ subcollection: openshift
 
 
 ## VPC clusters
-{: #sitemap_vpc_clusters}
+{: #sitemap_vpc_clusters_}
 
 
 [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets)
