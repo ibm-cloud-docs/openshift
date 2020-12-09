@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-07"
+lastupdated: "2020-12-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1787,8 +1787,7 @@ EPERM: operation not permitted
 IAM has introduced a `refresh_token_expiration` key which causes an issue with the IAM credential response parser, where the parser was not able to differentiate between `expiration` and `refresh_token_expiration`. This issue is resolved in the [community repo](https://github.com/s3fs-fuse/s3fs-fuse/pull/1421) and in the {{site.data.keyword.cos_full_notm}} plug-in. 
 
 {: tsResolve}
-1. If you are using Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3) before installing the {{site.data.keyword.cos_full_notm}} plug-in.
-2. Follow the steps to [update your {{site.data.keyword.cos_full_notm}} plug-in to the latest version](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
+Follow the steps to [update your {{site.data.keyword.cos_full_notm}} plug-in to the latest version](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 
 
 ## PVC creation fails because of missing permissions
@@ -1931,7 +1930,6 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 1. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}.
 2. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.
 3. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics).
-4. Verify that Helm version 2.14.3 or higher is correctly installed in your cluster. For more information, see [Setting up Helm in a cluster with public access](/docs/openshift?topic=openshift-helm#public_helm_install).
 
 
 
@@ -1954,13 +1952,28 @@ When you provision Portworx and set up encryption, you receive an error similar 
 {: screen}
 
 {: tsCauses}
-If the KMS endpoint is entered incorrectly, Portworx cannot access the KMS provider that you configured.
+The endpoint that you entered in your Kubernetes secret is incorrect. If the KMS endpoint is entered incorrectly, Portworx cannot access the KMS provider that you configured. For more information about enabling encryption on your Portworx volumes, see [Setting up encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes).
 
 {: tsResolve}
-[Follow the guide to set up encryption for Portworx](/docs/openshift?topic=openshift-portworx#encrypt_volumes) and ensure that you enter the correct endpoint for the KMS that you use.
+1. Retrieve the correct endpoint for your KMS provider.
 
    * **{{site.data.keyword.keymanagementservicelong_notm}}**: [Retrieve the region](/docs/key-protect?topic=key-protect-regions#regions) where you created your service instance. Make sure that you note your API endpoint in the correct format. Example: `https://us-south.kms.cloud.ibm.com`.
    * **{{site.data.keyword.hscrypto}}**: [Retrieve the Key Management public endpoint URL](/docs/hs-crypto?topic=hs-crypto-regions#service-endpoints). Make sure that you note your endpoint in the correct format. Example: `https://api.us-south.hs-crypto.cloud.ibm.com:<port>`. For more information, see the [{{site.data.keyword.hscrypto}} API documentation](https://cloud.ibm.com/apidocs/hs-crypto#getinstance).
+
+2. Encode the endpoint to base64.
+   ```sh
+   echo -n "<endpoint>" | base64
+   ```
+   {: pre}
+
+3. [Edit the Kubernetes secret that you created to include the correct endpoint for your KMS provider](/docs/openshift?topic=openshift-portworx#creating-a-secret-to-store-the-kms-credentials).
+   ```sh
+   oc edit <secret-name> -n portworx
+   ```
+   {: pre}
+
+4. Save and close your Kubernetes secret to reapply it to your cluster.
+
 
 If you find information that you entered incorrectly or you must change the setup of your cluster, correct the information or the cluster setup.
 

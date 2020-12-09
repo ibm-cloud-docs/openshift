@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-30"
+lastupdated: "2020-12-08"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -227,9 +227,6 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 
 Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set up pre-defined storage classes for {{site.data.keyword.cos_full_notm}}. You can use these storage classes to create a PVC to provision {{site.data.keyword.cos_full_notm}} for your apps.
 {: shortdesc}
-
-If you are using Helm version 2, [migrate to Helm version 3](/docs/openshift?topic=openshift-helm#migrate_v3) before installing the {{site.data.keyword.cos_full_notm}} plug-in.
-{: important}
 
 Looking for instructions for how to update or remove the {{site.data.keyword.cos_full_notm}} plug-in? See [Updating the plug-in](#update_cos_plugin) and [Removing the plug-in](#remove_cos_plugin).
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-12-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,12 +40,12 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -71,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -83,6 +84,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -181,7 +183,6 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
 
 
 
-
 ## Build error due to image pull authentication
 {: #ts_build_img_pull}
 {: troubleshoot}
@@ -246,7 +247,6 @@ Set up the build with access to the image, either by pulling the image from the 
 
 <br />
 
-
 ## Cannot push or pull images from local machine to Docker registry
 {: #rhoks_ts_docker_local}
 {: troubleshoot}
@@ -262,7 +262,6 @@ By default, the Docker registry is available internally within the cluster. You 
 Create a route for the image registry service. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry).
 
 <br />
-
 
 ## Time out when pushing to the internal registry
 {: #roks_timeout_docker}
@@ -286,7 +285,6 @@ When you resize the volume in your IBM Cloud infrastructure account, the attache
 {: note}
 
 <br />
-
 
 ## Cannot push images to the internal registry from outside the VPC network
 {: #ts-app-ocr-vpc-push}
@@ -318,7 +316,6 @@ oc patch configs.imageregistry.operator.openshift.io/cluster --patch '{"spec":{"
 {: pre}
 
 <br />
-
 
 ## Pod cannot complete operation with a permission denied error because of SCC
 {: #ts_scc}
@@ -391,7 +388,6 @@ Change the pod's SCC permissions.
     {: pre}
 
 <br />
-
 
 
 
@@ -614,7 +610,6 @@ This method of using a token to authorize cluster access to {{site.data.keyword.
 
 <br />
 
-
 ## Containers do not start
 {: #containers_do_not_start}
 
@@ -628,7 +623,6 @@ Containers might not start when the registry quota is reached.
 [Free up storage in {{site.data.keyword.registrylong_notm}}.](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
 
 <br />
-
 
 
 
@@ -695,7 +689,6 @@ If this cluster is an existing one, check your cluster capacity.
 <br />
 
 
-
 ## Pods in `CrashLoopBackOff` status
 {: #rhoks_ts_pods_crashloop}
 {: troubleshoot}
@@ -711,7 +704,6 @@ When you try to deploy an app that works on community Kubernetes platforms, you 
 Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) and follow the docs in the [Moving your apps to OpenShift topic](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps).
 
 <br />
-
 
 
 ## Pods repeatedly fail to restart or are unexpectedly removed
@@ -783,7 +775,6 @@ To see if your pod is being replaced by higher priority pods:
 
 <br />
 
-
 ## Binding a service to a cluster results in service not found error
 {: #cs_not_found_services}
 
@@ -851,7 +842,6 @@ To bind services to a cluster, you must have the Cloud Foundry developer user ro
 
 <br />
 
-
 ## Binding a service to a cluster results in service does not support service keys error
 {: #cs_service_keys}
 
@@ -872,7 +862,6 @@ Some services in {{site.data.keyword.cloud_notm}}, such as {{site.data.keyword.k
 To integrate services that do not support service keys, check if the service provides an API that you can use to access the service directly from your app. For example, if you want to use {{site.data.keyword.keymanagementservicelong}}, see the [API reference](https://cloud.ibm.com/apidocs/key-protect){: external}.
 
 <br />
-
 
 ## Cannot install a Helm chart with updated configuration values
 {: #cs_helm_install}
@@ -899,9 +888,8 @@ To troubleshoot your Helm chart:
     helm repo remove <helm_repo>
     ```
     {: pre}
-3.  Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories.
-    * **Helm v3**: See [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3).
-    * **Helm v2**: See [Installing Helm v2 in your cluster](/docs/openshift?topic=openshift-helm#install_v2).
+3.  Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories. For more information, see [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3).
+
 
 Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 

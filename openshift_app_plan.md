@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-06"
+lastupdated: "2020-12-08"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -171,7 +172,6 @@ For more, see the following tutorials:
 |--------|------------------|
 | Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status | The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the {{site.data.keyword.openshiftshort}} documentation for [Managing Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.3/authentication/managing-security-context-constraints.html){: external}. |
 | Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories. | In {{site.data.keyword.openshiftshort}}, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html){: external}. |
-| You deploy your app by using Helm. You might see an error similar to `User "system:serviceaccount:tiller:tiller" cannot create <resource>.rbac.authorization.k8s.io: RBAC: <resource>.rbac.authorization.k8s.io "<resource>.rbac.authorization.k8s.io" not found` | Make sure that you [set up Tiller](/docs/openshift?topic=openshift-helm#public_helm_install) with a privileged security account. Note that instead of using Tiller, you can update [Helm to version 3](/docs/openshift?topic=openshift-helm#migrate_v3), in which Tiller is removed.  |
 | Your app uses persistent file storage with a non-root user ID that cannot write to the mounted storage device. | [Adjust the security context](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_storage_nonroot) for the app deployment so that `runAsUser` is set to `0`. |
 | Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error. | Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions:<ul><li>Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port.</li><li>Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc).</li><li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding](https://docs.openshift.com/container-platform/4.3/nodes/containers/nodes-containers-port-forwarding.html){: external}.</li></ul> |
 | Other use cases and scenarios | Review the {{site.data.keyword.openshiftshort}} documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 2 to version 3](https://docs.openshift.com/container-platform/3.11/dev_guide/migrating_applications/index.html){: external}, or [from OCP version 3 to version 4](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration). |

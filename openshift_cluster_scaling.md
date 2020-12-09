@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-02"
+lastupdated: "2020-12-08"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -247,7 +247,7 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
   ```
   {: screen}
 
-7. [Taint the worker pools](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) that you want to autoscale so that the worker pool does not accept workloads except the ones that you want to run on the autoscaled worker pool. You can learn more about taints and tolerations in the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/). As an example, you might set a taint of `use=autoscale:NoExecute`. In this example, the `NoExecute` toleration evicts pods that do not have the matching the toleration.
+7. [Taint the worker pools](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) that you want to autoscale so that the worker pool does not accept workloads except the ones that you want to run on the autoscaled worker pool. You can learn more about taints and tolerations in the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/). As an example, you might set a taint of `use=autoscale:NoExecute`. In this example, the `NoExecute` taint evicts pods that do not have the toleration corresponding to this taint.
 
 8. [Install the cluster autoscaler add-on](#ca_addon).
 
@@ -340,39 +340,12 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     * **`enabled=(true|false)`**: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap.
 
 5.  Install the cluster autoscaler Helm chart in the `kube-system` namespace of your cluster. In the example command, the `autoscale` worker pool is enabled for autoscaling with the Helm chart installation. The worker pool details are added to the cluster autoscaler config map.
+   ``` 
+   helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].autoscale.min=2,workerpools[0].default.enabled=true
+   ```
+   {: pre}
 
-    <table class="simple-tab-table" id="helm3" tab-title="Helm 3 install command" tab-group="helm-install" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
-    <caption caption-side="top">
-      Install the cluster autoscaler chart in Helm version 3<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The row contains the installation command.</span>
-    </caption>
-    <thead>
-    <tr>
-    <th>Command</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td><p><pre class="pre"><code>helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].autoscale.min=2,workerpools[0].default.enabled=true</code></pre></p></td>
-    </tr>
-    </tbody>
-    </table>
-    <table class="simple-tab-table" id="helm2" tab-title="Helm 2 install command" tab-group="helm-install" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9034">
-    <caption caption-side="top">
-      Install the cluster autoscaler chart in Helm version 2<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9034">The row contains the installation command.</span>
-    </caption>
-    <thead>
-    <tr>
-    <th>Command</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td><p><pre class="pre"><code>helm install iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --name ibm-iks-cluster-autoscaler --set workerpools[0].autoscale.max=5,workerpools[0].default.min=2,workerpools[0].default.enabled=true</code></pre></p></td>
-    </tr>
-    </tbody>
-    </table><p>Example output:</p>
+
     ```
     NAME: ibm-iks-cluster-autoscaler
     LAST DEPLOYED: Fri Jan 17 12:20:30 2020
@@ -805,7 +778,7 @@ This topic applies only to the cluster autoscaler Helm chart.
 This topic applies only to the cluster autoscaler Helm chart.
 {: important}
 
-To upgrade your cluster autoscaler release, you can update the Helm chart repo and re-create the cluster autoscaler pods. Use the same version of Helm that you used to install the initial Helm chart and release. For example, if you installed the release with Helm version 2, these upgrade steps might not work if you now have Helm version 3. Instead, see [Upgrading a release from Helm version 2 to version 3](#ca_helm_up_2to3).
+To upgrade your cluster autoscaler release, you can update the Helm chart repo and re-create the cluster autoscaler pods. Use the same version of Helm that you used to install the initial Helm chart and release.
 
 Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
 
@@ -863,81 +836,6 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
     Events:  <none>
     ```
     {: screen}
-
-### Upgrading a release from Helm v2 to v3
-{: #ca_helm_up_2to3}
-
-This topic applies only to the cluster autoscaler Helm chart.
-{: important}
-
-When you upgrade a release of the cluster autoscaler, you must use the same version of Helm that you used to install the initial Helm chart and release. The cluster autoscaler Helm chart supports both Helm version 2.15 and 3.0. If you installed the Helm chart and release with Helm v2 and then try to upgrade from a Helm v3 client, you might experience errors. Instead, uninstall the release and reinstall the latest release with Helm v3. For more information, see [Migrating from Helm v2 to v3](/docs/openshift?topic=openshift-helm#migrate_v3).
-{: shortdesc}
-
-Additionally, if you have release version 1.0.2 or earlier, you must uninstall that release before you install the latest release.
-
-Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
-
-1.  [Migrate to](/docs/openshift?topic=openshift-helm#migrate_v3) or [install](/docs/openshift?topic=openshift-helm#install_v3) Helm version 3.
-2.  Get your cluster autoscaler configmap.
-    ```
-    oc get cm iks-ca-configmap -n kube-system -o yaml > iks-ca-configmap.yaml
-    ```
-    {: pre}
-3.  Remove all worker pools from the configmap by setting the `"enabled"` value to `false`.
-    ```
-    oc edit cm iks-ca-configmap -n kube-system
-    ```
-    {: pre}
-4.  If you applied custom settings to the Helm chart, note your custom settings.
-    ```
-    helm get values ibm-iks-cluster-autoscaler -a
-    ```
-    {: pre}
-5.  Uninstall your current Helm chart.
-    ```
-    helm uninstall ibm-iks-cluster-autoscaler -n <namespace>
-    ```
-    {: pre}
-6.  Update the Helm chart repo to get the latest cluster autoscaler Helm chart version.
-    ```
-    helm repo update
-    ```
-    {: pre}
-7.  Install the latest cluster autoscaler Helm chart. Apply any custom settings that you previously used with the `--set` flag, such as `scanInterval=2m`.
-    ```
-    helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system [--set <custom_settings>]
-    ```
-    {: pre}
-8.  Apply the cluster autoscaler configmap that you previously retrieved to enable autoscaling for your worker pools.
-    ```
-    oc apply -f iks-ca-configmap.yaml
-    ```
-    {: pre}
-9.  Get your cluster autoscaler pod.
-    ```
-    oc get pods -n kube-system
-    ```
-    {: pre}
-10.  Review the **`Events`** section of the cluster autoscaler pod and look for a **`ConfigUpdated`** event to verify that the configmap is successfully updated. The event message for your configmap is in the following format: `minSize:maxSize:PoolName:<SUCCESS|FAILED>:error message`.
-    ```
-    oc describe pod -n kube-system <cluster_autoscaler_pod>
-    ```
-    {: pre}
-
-    Example output:
-    ```
-		Name:               ibm-iks-cluster-autoscaler-857c4d9d54-gwvc6
-		Namespace:          kube-system
-		...
-		Events:
-		Type     Reason         Age   From                                        Message
-		----     ------         ----  ----                                        -------
-
-		Normal  ConfigUpdated  3m    ibm-iks-cluster-autoscaler-857c4d9d54-gwvc6  {"1:3:default":"SUCCESS:"}
-    ```
-    {: screen}
-
-<br />
 
 ## Removing the cluster autoscaler
 {: #ca_rm}
