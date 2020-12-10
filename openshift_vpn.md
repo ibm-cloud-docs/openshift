@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-18"
+lastupdated: "2020-12-10"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +84,11 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -144,6 +145,7 @@ Before using the strongSwan Helm chart, review the following considerations and 
 * The strongSwan Helm chart runs as a Kubernetes pod inside of the cluster. The VPN performance is affected by the memory and network usage of Kubernetes and other pods that are running in the cluster. If you have a performance-critical environment, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
 * The strongSwan Helm chart runs a single VPN pod as the IPSec tunnel endpoint. If the pod fails, the cluster restarts the pod. However, you might experience a short down time while the new pod starts and the VPN connection is re-established. If you require faster error recovery or a more elaborate high availability solution, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
 * The strongSwan Helm chart does not provide metrics or monitoring of the network traffic flowing over the VPN connection. For a list of supported monitoring tools, see [Logging and monitoring services](/docs/openshift?topic=openshift-health).
+* Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade) for the latest features and security fixes.
 
 Your cluster users can use the strongSwan VPN service to connect to your Kubernetes master through the private service endpoint. However, communication with the Kubernetes master over the private service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection. You can expose the private service endpoint of the master for your cluster users by [using a private network load balancer (NLB)](/docs/openshift?topic=openshift-access_cluster#access_private_se). The private NLB exposes the private service endpoint of the master as an internal `172.21.x.x` cluster IP address that the strongSwan VPN pod can access. If you enable only the private service endpoint, you can use the Kubernetes dashboard or temporarily enable the public service endpoint to create the private NLB.
 {: tip}
@@ -426,7 +428,10 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
     ```
     {: pre}
 
-    <br />
+Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade) for the latest features and security fixes.
+{: important}
+
+<br />
 
 ## Testing and verifying strongSwan VPN connectivity
 {: #vpn_test}
@@ -707,8 +712,15 @@ To limit VPN traffic to tainted nodes for each tenant:
 ## Upgrading or disabling the strongSwan Helm chart
 {: #vpn_upgrade}
 
-Make sure your strongSwan Helm chart is up-to-date by upgrading it.
+Ensure that you consistently upgrade your strongSwan Helm chart for the latest features and security fixes.
 {: shortdesc}
+
+Review the supported versions of the strongSwan Helm chart. Typically, a chart version becomes deprecated 6 months after its release date.
+* **Supported**: 2.6.7, 2.6.6, 2.6.5, 2.6.4
+* **Deprecated**: 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.9, 2.5.8
+* **Unsupported**: 2.5.7 and earlier
+
+For release dates and changelogs for each strongSwan Helm chart version, [download the latest version of the strongSwan chart locally](https://github.ibm.com/alchemy-registry/public-helm-charts/tree/production/stable){: external} and open the `RELEASENOTES.md` file.
 
 To upgrade your strongSwan Helm chart to the latest version:
 
