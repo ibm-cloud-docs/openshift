@@ -1130,7 +1130,6 @@ subcollection: openshift
   * [{{site.data.keyword.appid_short_notm}} Authentication (`appid-auth`)](/docs/openshift?topic=openshift-ingress_annotation#appid-auth)
 * [Preserving the source IP address](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip)
   * [Enabling the PROXY protocol in VPC clusters](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip_vpc)
-* [Preserving the source IP address](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip)2. Confirm that the PROXY protocol is enabled for the load balancers that expose ALBs in your cluster.
   * [Changing the `externalTrafficPolicy` in classic clusters](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip_classic)
 * [Configuring SSL protocols and SSL ciphers at the HTTP level](/docs/openshift?topic=openshift-ingress_annotation#ssl_protocols_ciphers)
 * [Sending your custom certificate to legacy clients](/docs/openshift?topic=openshift-ingress_annotation#default_server_cert)
