@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-12-10"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -110,6 +110,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.206 | 10 Dec 2020 | <ul><li>Adds the `ibmcloud oc ingress lb get`, `ibmcloud oc ingress lb proxy-protocol disable`, and `ibmcloud oc ingress lb proxy-protocol disable` [beta commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable) to manage the configuration of load balancers that expose Ingress ALBs in your cluster. For example, you can enable the NGINX PROXY protocol so that client connection information is passed in request headers to ALBs.</li><li>Adds the optional `--endpoint` flag to the `ibmcloud oc cluster config` command to specify a type of endpoint for the cluster context, such as the cluster's private service endpoint.</li><li>Updates the help text in various languages.</li><li>Updates the Go version to 1.15.6.</li></ul> |
 | 1.0.197 | 18 Nov 2020 | <ul><li>Adds a warning message to the `ibmcloud oc cluster config` command about temporary `oc` command failures due to RBAC synchronization.</li><li>Ensures that incident IDs are returned with 500-level messages.</li><li>In `ibmcloud oc cluster storage` commands, the cluster name is now accepted in the `--cluster` flag in addition to the cluster ID.</li><li>Updates the output of the `ibmcloud oc ingress alb migrate` command to be more readable.</li><li>Updates the help text in various languages.</li></ul> |
 | 1.0.178 | 06 Oct 2020 | <ul><li>Updates the Go version to 1.15.2.</li><li>Updates the help text in various languages.</li></ul> |
 | 1.0.171 | 24 Sep 2020 | <ul><li>Shifts all existing `ibmcloud oc cluster feature` commands into the [`ibmcloud oc cluster master`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable) subcategory.</li><li>Adds the cluster `Status`, the `Pod Subnet`, and the `Service Subnet` fields to the output of the `ibmcloud oc cluster get` command.</li><li>Updates the help text in various languages.</li></ul> |

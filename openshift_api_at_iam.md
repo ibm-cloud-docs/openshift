@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -220,6 +220,8 @@ Review the following Ingress API methods, their corresponding actions in {{site.
 |	POST​/ingress​/v2​/secret​/createSecret	|	Create an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.create	|
 |	POST​/ingress​/v2​/secret​/deleteSecret	|	Delete an Ingress secret from the cluster. |	containers-kubernetes.cluster.create	|	cluster-ingress-secret.delete	|
 |	POST​/ingress​/v2​/secret​/updateSecret	|	Update an Ingress secret for a certificate.	|	containers-kubernetes.cluster.create	|	cluster-ingress-secret.update	|
+| GET/ingress/v2/load-balancer/configuration | Get the configuration of load balancers for Ingress ALBs. | containers-kubernetes.cluster.read |  |
+| PATCH/ingress/v2/load-balancer/configuration | Update the configuration of load balancers for Ingress ALBs. | containers-kubernetes.cluster.operate |  |
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Ingress API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 

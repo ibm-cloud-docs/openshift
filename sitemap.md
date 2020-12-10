@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-12-09"
+lastupdated: "2020-12-10"
 
 keywords: openshift
 subcollection: openshift
@@ -87,7 +87,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -1129,6 +1129,9 @@ subcollection: openshift
 * [User authentication annotations](/docs/openshift?topic=openshift-ingress_annotation#user-authentication)
   * [{{site.data.keyword.appid_short_notm}} Authentication (`appid-auth`)](/docs/openshift?topic=openshift-ingress_annotation#appid-auth)
 * [Preserving the source IP address](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip)
+  * [Enabling the PROXY protocol in VPC clusters](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip_vpc)
+* [Preserving the source IP address](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip)2. Confirm that the PROXY protocol is enabled for the load balancers that expose ALBs in your cluster.
+  * [Changing the `externalTrafficPolicy` in classic clusters](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip_classic)
 * [Configuring SSL protocols and SSL ciphers at the HTTP level](/docs/openshift?topic=openshift-ingress_annotation#ssl_protocols_ciphers)
 * [Sending your custom certificate to legacy clients](/docs/openshift?topic=openshift-ingress_annotation#default_server_cert)
 * [Tuning ALB performance](/docs/openshift?topic=openshift-ingress_annotation#perf_tuning)
@@ -1467,6 +1470,9 @@ subcollection: openshift
   * [Beta: `ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status)
   * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
   * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
+  * [Beta: `ibmcloud oc ingress lb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_get)
+  * [Beta: `ibmcloud oc ingress lb proxy-protocol disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_disable)
+  * [Beta: `ibmcloud oc ingress lb proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable)
   * [Beta: `ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create)
   * [Beta: `ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_get)
   * [Beta: `ibmcloud oc ingress secret ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_ls)

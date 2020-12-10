@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-10"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -270,14 +270,32 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
     4. Paste the contents of the `kube-api-via-nlb.yaml` file, and click **Create**.
     5. In the **Overview** page, verify that the `kube-api-via-nlb` service is created and copy the `10.x.x.x` address. This IP address exposes the private service endpoint for the cluster master on the port that you specified in your YAML file.
 
-5. [Create an API key](#access_api_key) with the private service endpoint so that you can log in to the cluster.
-
-6. Log in to the cluster with the API key. Include `https://` and the port in the private service endpoint URL, such as `https://c100.private.us-east.containers.cloud.ibm.com:30113`.
-  ```
-  oc login -u apikey -p <API_key> --server=<private_service_endpoint>
-  ```
-  {: pre}
-
+5. To log in to your cluster, choose from the following options.
+  * **Log in as admin**:
+      1.  Make sure that you have the [**Administrator** platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+      2.  Set your terminal context for the cluster and download the TLS certificates and permission files for the administrator.
+          ```
+          ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
+          ```
+          {: pre}
+  * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+  * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
+      1.  Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
+          ```
+          ibmcloud oc cluster get -c <cluster_name_or_ID>
+          ```
+          {: pre}
+      2.  In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
+          ```
+          https://iam.cloud.ibm.com/identity/passcode
+          ```
+          {: codeblock}
+      3.  Log in with your IBMid and copy the passcode.
+      4.  Log in to your cluster with the passcode.
+          ```
+          oc login -u passcode -p <iam_passcode> --server=<private_service_endpoint_URL>
+          ```
+          {: pre}
 
 6. Verify that the `oc` commands run properly with your cluster through the private service endpoint by checking the version.
   ```
@@ -394,13 +412,32 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 
 6. Verify that you are connected to the private network through a [VPN](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) connection.
 
-7. [Create an API key](#access_api_key) with the private service endpoint so that you can log in to the cluster.
-
-8. Log in to the cluster with the API key. Include `https://` and the port in the private service endpoint URL, such as `https://c100.private.us-east.containers.cloud.ibm.com:30113`.
-  ```
-  oc login -u apikey -p <API_key> --server=<private_service_endpoint>
-  ```
-  {: pre}
+7. Log in to your cluster by choosing from one of the following options.
+  * **Log in as admin**:
+      1.  Make sure that you have the [**Administrator** platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+      2.  Set your terminal context for the cluster and download the TLS certificates and permission files for the administrator.
+          ```
+          ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
+          ```
+          {: pre}
+  * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+  * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
+      1.  Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
+          ```
+          ibmcloud oc cluster get -c <cluster_name_or_ID>
+          ```
+          {: pre}
+      2.  In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
+          ```
+          https://iam.cloud.ibm.com/identity/passcode
+          ```
+          {: codeblock}
+      3.  Log in with your IBMid and copy the passcode.
+      4.  Log in to your cluster with the passcode.
+          ```
+          oc login -u passcode -p <iam_passcode> --server=<private_service_endpoint_URL>
+          ```
+          {: pre}
 
 8. Verify that the `oc` commands run properly with your cluster through the private service endpoint by checking the version.
     ```
@@ -493,17 +530,17 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ibmcloud login --apikey <API_key>
         ```
         {: pre}
-    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable.
+    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable. **Note**: If you enabled the private service endpoint and want to use it for the cluster context, include the `--endpoint private` flag. To use the private service endpoint to connect to your cluster, you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
         ```
-        ibmcloud oc cluster config -c <cluster_name_or_ID>
+        ibmcloud oc cluster config -c <cluster_name_or_ID> [--endpoint private]
         ```
         {: pre}
 3.  Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an {{site.data.keyword.openshiftshort}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
 
     **Log in by using the `oc` CLI**:
-    Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value.
+    Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value. To use the private service endpoint, include the `--server=<private_service_endpoint>` flag.
     ```
-    oc login -u apikey -p <API_key>
+    oc login -u apikey -p <API_key> [--server=<private_service_endpoint>]
     ```
     {: pre}
 
@@ -644,14 +681,14 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
         ibmcloud login --apikey <API_key>
         ```
         {: pre}
-    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable.
+    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable. **Note**: If you enabled the private service endpoint and want to use it for the cluster context, include the `--endpoint private` flag. To use the private service endpoint to connect to your cluster, you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
         ```
-        ibmcloud oc cluster config -c <cluster_name_or_ID>
+        ibmcloud oc cluster config -c <cluster_name_or_ID> [--endpoint private]
         ```
         {: pre}
-5.  [Use the service ID's API key to log in to your {{site.data.keyword.openshiftshort}} cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value.
+5.  [Use the service ID's API key to log in to your {{site.data.keyword.openshiftshort}} cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value. To use the private service endpoint, include the `--server=<private_service_endpoint>` flag.
     ```
-    oc login -u apikey -p <API_key>
+    oc login -u apikey -p <API_key> [--server=<private_service_endpoint>]
     ```
     {: pre}
 6.  Verify that the service ID can perform the actions that you authorized.
