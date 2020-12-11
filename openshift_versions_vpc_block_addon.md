@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-02"
+lastupdated: "2020-12-11"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -105,7 +105,7 @@ Refer to the following tables for a summary of changes for each version of the {
 
 | {{site.data.keyword.block_storage_is_full}} add-on version | Supported? | {{site.data.keyword.openshiftlong_notm}} version support |
 | -------------------- | -----------|--------------------------- |
-| 2.0.3 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.3 - 4.5 |
+| 2.0.3 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.3 - 4.6 |
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
 
 ## Changelog for version 2.0.3
@@ -120,9 +120,10 @@ ibmcloud oc addon-versions
 ```
 {: pre}
 
-| Patch version | `vpc-block-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
+| Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| `2.0.3_404` | `v2.0.7` | 25 November 2020 | 4.3 - 4.5 | Updates in this patch:<ul><li>`v2.0.7` contains a fix for vulnerability scan issues.</li><li>Updates the base image from `alpine` to `UBI`.</li><li>Pods and containers now run as `non-root` except for the `node-server` pod's containers.</li></ul> |
+| `2.0.3_464` | `v2.0.8` | 10 December 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li>New metro storage classes with the `volumeBindingMode:WaitForFirstConsumer` specification.</li><li>Resources that are deployed by the add-on now contain a label which links the source code URL and the build URL.</li><li>The `v2.0.8` image is signed.</li><li>Updates the Go version from `1.15.2` to `1.15.5`.</li></ul> |
+| `2.0.3_404` | `v2.0.7` | 25 November 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li>`v2.0.7` contains a fix for vulnerability scan issues.</li><li>Updates the base image from `alpine` to `UBI`.</li><li>Pods and containers now run as `non-root` except for the `node-server` pod's containers.</li></ul> |
 | `2.0.3_375` | `v2.0.6` | 17 September 2020 | 4.3 - 4.5 | Fixes an issue with volume attachment when replacing workers. |
 | `2.0.3_374+` | `v2.0.5` | 29 August 2020 | 4.3 - 4.5 | Adds the `/var/lib/kubelet` path for CSI driver calls on OCP 4.4. |
 | `2.0.3_365` | `v2.0.4` | 05 August 2020 | 4.3 - 4.5 | <ul><li>Updates sidecar container images.</li><li>Adds liveness probe.</li><li>Enables parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.</li></ul> |

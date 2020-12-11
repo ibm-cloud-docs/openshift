@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-02"
+lastupdated: "2020-12-11"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -128,8 +128,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 7. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
 8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
 9. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
-10.   If the hosts that you assigned to the cluster are from an Amazon Web Services or Google Cloud Platform cloud provider, you must manually register the cluster DNS. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics in the {{site.data.keyword.satelliteshort}} documentation.
-11. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
+10. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
 ## Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI
 {: #satcluster-create-cli}

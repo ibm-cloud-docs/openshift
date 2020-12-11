@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-12-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +84,11 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -172,7 +173,7 @@ Now let's add some other features that you might use.
 
 1.  Keep in mind that the [worker nodes reserve certain amounts of CPU and memory resources](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node) to run required components, such as the operating system or container runtime.
 2.  Consider whether your app pulls large or many images, which can take up local storage on the worker node.
-3.  Decide whether you want to [integrate services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations) into your cluster, such as [Helm](/docs/openshift?topic=openshift-helm#public_helm_install) or [Prometheus](https://github.com/prometheus-operator/kube-prometheus){: external}. These integrated services and add-ons spin up pods that consume cluster resources.
+3.  Decide whether you want to [integrate services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations) into your cluster, such as [Helm](/docs/openshift?topic=openshift-helm) or [Prometheus](https://github.com/prometheus-operator/kube-prometheus){: external}. These integrated services and add-ons spin up pods that consume cluster resources.
 
 ### What type of availability do I want my workload to have?
 {: #sizing_availability}
