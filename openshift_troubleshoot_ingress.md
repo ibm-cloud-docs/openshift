@@ -809,7 +809,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
   ```
   {: pre}
 
-7. Verify that the Ingress subdomain DNS registration is updated to the new VPC load balancer hostname for your router.
+7. Verify that the ingress subdomain DNS registration is updated to include the new VPC load balancer hostname for your router.
   ```
   ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
   ```
