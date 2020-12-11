@@ -574,11 +574,7 @@ Before you begin:
 
     Example request:
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/v2/storage/createAttachment" --header "X-Auth-Resource-Group-ID: <resource_group_id>" --header "Authorization: <IAM_token>" --data-raw "{
-      "cluster": "<cluster_ID>",
-      "volumeID": "<volume_ID>",
-      "worker": "<worker_ID>"
-    }"
+    curl -X POST "https://containers.cloud.ibm.com/v2/storage/createAttachment?cluster=<cluster_name_or_ID>&volumeID=<volume_ID>&worker=<worker_ID>" --header "X-Auth-Resource-Group-ID: <resource_group_id>" --header "Authorization: <IAM_token>"
     ```
     {: codeblock}
   <br>
@@ -596,8 +592,8 @@ Before you begin:
       <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
       </tr>
       <tr>
-      <td><code>cluster_ID</code></td>
-      <td>The unique ID that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
+      <td><code>cluster_name_or_ID</code></td>
+      <td>The unique ID or the name that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
       </tr>
       <tr>
       <td><code>worker_ID</code></td>
@@ -609,6 +605,24 @@ Before you begin:
       </tr>
     </tbody>
   </table>
+  
+  **Example response**
+  ```sh
+  {
+    "id": "0111-1aaa11a1-aa1a-111a-111b-1111a1dad1bc",
+    "volume": {
+        "name": "my-vol",
+        "id": "r001-11aa0d59-a1aa-1a11-11ca-ba2bc11e01aa"
+    },
+    "device": {
+        "id": ""
+    },
+    "name": "volume-attachment",
+    "status": "attaching",
+    "type": "data"
+  }
+  ```
+  {: screen}
 
 7. Verify the attachment by [reviewing existing volume attachments for a VPC worker node](#vpc_api_get_worker).
 
@@ -685,12 +699,7 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
 
   Example request:
   ```sh
-  curl -X DELETE "https://containers.cloud.ibm.com/v2/storage/deleteAttachment" --header "X-Auth-Resource-Group-ID: <resource_group_id>" --header "Authorization: <IAM_token>" --data-raw "{
-    "cluster": "<cluster_ID>",
-    "volumeID": "<volume_ID>",
-    "worker": "<worker_ID>",
-    "volumeAttachmentID": "<volume_attachment_ID>"
-  }"
+  curl -X DELETE "https://containers.cloud.ibm.com/v2/storage/deleteAttachment?cluster=<cluster_name_or_ID>&volumeID=<volume_ID>&worker=<worker_ID>&volumeAttachmentID=<attachment_ID>" --header "Authorization: <IAM_token>"
   ```
   {: codeblock}
 
@@ -709,8 +718,8 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
       <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
       </tr>
       <tr>
-      <td><code>cluster_ID</code></td>
-      <td>The unique ID that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
+      <td><code>cluster_name_or_ID</code></td>
+      <td>The unique ID or name that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
       </tr>
       <tr>
       <td><code>worker_ID</code></td>
