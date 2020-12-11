@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -549,7 +549,7 @@ Before you begin:
 
 1. Check which region and zone your VPC worker node is in.
   ```
-  ibmcloud oc worker ls &lt;cluster_name&gt;
+  ibmcloud oc worker ls <cluster_name>
   ```
   {: pre}
 
