@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-10"
+lastupdated: "2020-12-11"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -720,7 +720,7 @@ Review the supported versions of the strongSwan Helm chart. Typically, a chart v
 * **Deprecated**: 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.9, 2.5.8
 * **Unsupported**: 2.5.7 and earlier
 
-For release dates and changelogs for each strongSwan Helm chart version, [download the latest version of the strongSwan chart locally](https://github.ibm.com/alchemy-registry/public-helm-charts/tree/production/stable){: external} and open the `RELEASENOTES.md` file.
+For release dates and changelogs for each strongSwan Helm chart version, [download the latest version of the strongSwan chart locally](https://cloud.ibm.com/kubernetes/helm/iks-charts/strongswan){: external} and open the `RELEASENOTES.md` file.
 
 To upgrade your strongSwan Helm chart to the latest version:
 

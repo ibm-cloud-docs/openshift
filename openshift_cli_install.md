@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-07"
+lastupdated: "2020-12-11"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -198,10 +198,7 @@ Looking for a simple installation? You can try installing the plug-in with a pac
 
     **<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Version 3 or 4 clusters: Links to manually download the `oc` CLI from `mirror.openshift.com`.**
     *   [OpenShift Container Platform version 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
-    *   OpenShift Container Platform version 4 `oc` download links.
-        * 
-        * [4.5](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.5/){: external}
-        * [4.5](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.5/){: external}
+    *   [OpenShift Container Platform version 4 `oc` download links](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/){: external}.
 
 2.  Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.openshiftshort}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.19.4.
 
