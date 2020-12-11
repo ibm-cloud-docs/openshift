@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -124,7 +124,7 @@ These components include:
 <br />
 
 
-##{{site.data.keyword.openshiftshort}} API server and etcd
+## {{site.data.keyword.openshiftshort}} API server and etcd
 {: #apiserver}
 
 The {{site.data.keyword.openshiftshort}} API server and etcd data store are the most sensitive components that run in your {{site.data.keyword.openshiftshort}} master. If an unauthorized user or system gets access to your {{site.data.keyword.openshiftshort}} API server, the user or system can change settings, manipulate, or take control of your cluster, which puts your cluster at risk for malicious attacks.

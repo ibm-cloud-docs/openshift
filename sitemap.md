@@ -221,6 +221,7 @@ subcollection: openshift
 
 [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security)
 * [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
+* [{{site.data.keyword.openshiftshort}} API server and etcd](/docs/openshift?topic=openshift-security#apiserver)
   * [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate)
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 * [Network](/docs/openshift?topic=openshift-security#network)
