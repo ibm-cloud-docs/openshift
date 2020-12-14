@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-11"
+lastupdated: "2020-12-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -502,7 +502,7 @@ After you get your domain and TLS certificate ready, you must create a public In
   ```
   {: pre}
 
-3. Get the VPC hostname in the **EXTERNAL IP** field of the `router-public-ingress-controller` service. In VPC clusters, services' external IP addresses are floating, and are instead kept behind a VPC-assigned hostname.
+3. Get the VPC hostname in the **EXTERNAL IP** field of the `router-public-ingress-controller` service. In VPC clusters, services' external IP addresses are non-static, and are instead kept behind a VPC-assigned hostname.
   ```
   oc get svc router-public-ingress-controller -n openshift-ingress
   ```
