@@ -951,7 +951,7 @@ subcollection: openshift
 * [Components and architecture of an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer-about#v1_planning)
   * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_single)
   * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_multi)
-* [Components and architecture of an NLB 2.0 (beta)](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs)
+* [Components and architecture of an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs)
   * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_single)
   * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_multi)
 
@@ -962,7 +962,7 @@ subcollection: openshift
   * [Adding edge node affinity rules and tolerations](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes)
   * [Adding affinity rules for multiple public or private VLANs](/docs/openshift?topic=openshift-loadbalancer#edge_nodes_multiple_vlans)
 
-[Classic: Setting up DSR load balancing with an NLB 2.0 (beta)](/docs/openshift?topic=openshift-loadbalancer-v2)
+[Classic: Setting up DSR load balancing with an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2)
 * [Prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision)
 * [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
 * [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
