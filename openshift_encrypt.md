@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-07"
+lastupdated: "2020-12-14"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -101,7 +101,7 @@ Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluste
 
 You can create sensitive data on different levels in your cluster that each require appropriate protection.
 - **Cluster-level:** Cluster configuration data is stored in the etcd component of your {{site.data.keyword.openshiftshort}} master. Data in etcd is stored on the local disk of the {{site.data.keyword.openshiftshort}} master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your {{site.data.keyword.openshiftshort}} master by [enabling a key management service provider](#keyprotect) for your cluster.
-- **App-level:** When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, such as an `imagePullSecret` for registry credentials. You can also [encrypt data in Kubernetes secrets](#keyprotect) to prevent unauthorized users from accessing sensitive app information.
+- **App-level:** When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, such as an `imagePullSecret` for registry credentials. You can also [encrypt data in Kubernetes secrets](#keyprotect) to prevent unauthorized users from accessing sensitive app information. Finally, in clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or later, you can [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images).
 
 For more information about securing your cluster and personal information, see [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security) and [Storing personal information](/docs/openshift?topic=openshift-security#pi).
 
@@ -162,7 +162,7 @@ Review the following known limitations:
 **Do the features change depending on my cluster version?**<br>
 {: #kms-keyprotect-features}
 
-Yes. Your cluster version impacts the functionality of the KMS provider. To see what {{site.data.keyword.keymanagementserviceshort}} features are available for different cluster versions of {{site.data.keyword.openshiftlong_notm}}, review the following table. 
+Yes. Your cluster version impacts the functionality of the KMS provider. To see what {{site.data.keyword.keymanagementserviceshort}} features are available for different cluster versions of {{site.data.keyword.openshiftlong_notm}}, review the following table.
 
 To check your cluster version, run the following command.
 ```
@@ -327,7 +327,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
 ### Rotating the root key for your cluster
 {: #kms_rotate}
 
-To rotate the root key that is used to encrypt your cluster, you can repeat the steps to enable KMS encryption from the [CLI](#kms_cli) or [console](#kms_ui). 
+To rotate the root key that is used to encrypt your cluster, you can repeat the steps to enable KMS encryption from the [CLI](#kms_cli) or [console](#kms_ui).
 {: shortdesc}
 
 Additionally, if your cluster runs version `4.4.16_1513_openshift` or later, you can also [rotate the root key](/docs/key-protect?topic=key-protect-rotate-keys) from your {{site.data.keyword.keymanagementserviceshort}} instance.

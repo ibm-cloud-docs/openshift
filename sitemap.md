@@ -835,6 +835,7 @@ subcollection: openshift
 [Building images for your apps](/docs/openshift?topic=openshift-images)
 * [Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy)
 * [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.openshiftshort}} project](/docs/openshift?topic=openshift-images#namespace)
+* [Deploying containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images)
 * [Referring to the image pull secret in your pod deployment](/docs/openshift?topic=openshift-images#pod_imagePullSecret)
 * [Pushing images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images)
 * [Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor](/docs/openshift?topic=openshift-images#va-images)

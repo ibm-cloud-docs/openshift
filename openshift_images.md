@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-03"
+lastupdated: "2020-12-14"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -211,6 +211,148 @@ To deploy a container into the **default** project of your cluster:
     {: pre}
 
 <br />
+
+## Deploying containers from an encrypted image
+{: #encrypted-images}
+
+Deploy containers from an encrypted image to your cluster by using the Image Key Synchronizer cluster add-on.
+{: shortdesc}
+
+In clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or later, [the CRI-O container runtime supports using encrypted container images](https://github.com/cri-o/cri-o/blob/master/tutorials/decryption.md){: external}. Encrypted container images are Open Container Initiative (OCI) images that contain encrypted layer contents. Instead of securing an image for individual developers, such as a developer using image pull secrets to pull images from a registry, you can enable image encryption for a specific cluster. In this way, you can ensure that encrypted images are run only in those specific clusters that have the image decryption key.
+
+To run an app by using an encrypted image, you must share the key for decrypting the image with the container runtime on the worker nodes in the cluster. When you enable the Image Key Synchronizer add-on in your cluster, the synchronizer daemon set is deployed in the `image-key-synchronizer` project. You can then create Kubernetes secrets that contain the image decryption keys in that project. The add-on adds the keys to a specific directory on the worker nodes where the container runtime can access and use the keys to decrypt container images. Note that the Image Key Synchronizer add-on also supports private keys that are first [wrapped by a root key that is stored in an {{site.data.keyword.keymanagementservicelong}} instance](/docs/key-protect?topic=key-protect-envelope-encryption).
+
+**Before you begin:**
+
+1. Download and install the CLI clients for the following open source tools:
+  * [OpenSSL](https://www.openssl.org/source/){: external}, to generate an RSA key pair.
+  * [Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}, to locally pull images from an image registry.
+  * [Skopeo](https://github.com/containers/skopeo/blob/master/install.md){: external}, to encrypt OCI container images.
+
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that encrypted images are supported only for {{site.data.keyword.openshiftshort}} version 4.4 and later.
+
+3. Optional: When you create a public and private key pair for the image encryption, you can provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key. To prepare to wrap the private key:
+    1. [Install the {{site.data.keyword.keymanagementserviceshort}} CLI plug-in](/docs/key-protect?topic=key-protect-set-up-cli).
+    2. [Create a {{site.data.keyword.keymanagementserviceshort}} service instance](/docs/key-protect?topic=key-protect-provision#provision).
+    3. [Create a {{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys).
+    4. Get the following values for your {{site.data.keyword.keymanagementserviceshort}} instance:
+      * [The service instance ID](/docs/key-protect?topic=key-protect-retrieve-instance-ID).
+      * [The API key for the service instance ID](/docs/account?topic=account-serviceidapikeys#create_service_key).
+      * [The service endpoint URL](/docs/key-protect?topic=key-protect-regions#service-endpoints).
+    5. Create a Kubernetes secret named `keyprotect-config` that contains the values that you retrieved. The Image Key Synchronizer add-on uses the environment variables in this secret to authenticate with your {{site.data.keyword.keymanagementserviceshort}} instance.
+        ```yaml
+        apiVersion: v1
+        kind: Secret
+        metadata:
+          name: keyprotect-config
+          namespace: image-key-synchronizer
+        type: Opaque
+        stringData:
+          config.json: |
+              {
+                  "keyprotect-url":"<service_endpoint>",
+                  "instance-id": "<service_instance_ID>",
+                  "apikey": "<service_instance_ID_API_key>"
+              }
+        ```
+        {: codeblock}
+
+To deploy containers that use encrypted images:
+
+1. Enable the Image Key Synchronizer add-on.
+  ```
+  ibmcloud oc cluster addon enable image-key-synchronizer -c <cluster_name_or_ID>
+  ```
+  {: pre}
+
+2. Verify that the `addon-image-key-syncrhonizer` daemon set was successfully created in the `image-key-synchronizer` project in your cluster.
+  ```
+  oc get ds addon-image-key-syncrhonizer -n image-key-synchronizer
+  ```
+  {: pre}
+
+3. Use `openssl` to generate a private and public RSA key pair.
+  ```
+  openssl genrsa --out myprivatekey.pem
+  openssl rsa -in myprivatekey.pem -pubout -out mypubkey.pem
+  ```
+  {: pre}
+
+4. Provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key. After you create the secret in the `image-key-synchronizer` project, the Image Key Synchronizer add-on automatically copies the private key to the `/etc/crio/keys/synced` directory on your worker nodes.
+  * **To provide the private key directly**: Save the private key as a Kubernetes secret in the `image-key-synchronizer` project.
+    ```
+    oc create -n image-key-synchronizer secret generic --type=key --from-file=myprivatekey.pem <secret_name>
+    ```
+    {: codeblock}
+  * **To wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key**:
+    1. Encode your private key in base64, and copy the output.
+        ```
+        cat myprivatekey.pem | base64
+        ```
+        {: pre}
+
+    2. Use the {{site.data.keyword.keymanagementserviceshort}} CLI plug-in to wrap the base64-encoded private key with your root key. In the output, copy the ciphertext of the wrapped private key.
+        ```
+        ibmcloud kp key wrap <root_key_ID> -p <base64_encoded_private_key>
+        ```
+        {: pre}
+
+    3. Save the wrapped private key as a Kubernetes secret in the `image-key-synchronizer` project.
+        ```yaml
+        apiVersion: v1
+        kind: Secret
+        type: kp-key
+        metadata:
+          name: <secret_name>
+          namespace: image-key-synchronizer
+        stringData:
+          rootkeyid: "<root_key_ID>"
+          ciphertext: "<wrapped_private_key_cipertext>"
+        ```
+        {: pre}
+
+    4. Create the secret.
+      ```
+      oc apply -n image-key-synchronizer -f <secret_name>.yaml
+      ```
+      {: pre}
+
+5. Use `docker` to locally pull an OCI image. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as `latest`.
+  ```
+  docker pull <source_image>:<tag>
+  ```
+  {: pre}
+
+6. Use `skopeo` to encrypt the local image. This command copies the OCI image that you previously pulled, uses your public key to encrypt the image, and saves the encrypted image to a different local file. Consider naming the encrypted image `<source_image>_encrypted` for easy identification.
+  ```
+  skopeo copy --encryption-key jwe:./mypubkey.pem <source_image>:<tag> <source_image>_encrypted:<tag>
+  ```
+  {: pre}
+
+7. Optional: To locally verify that the image is encrypted, you can try to decrypt the image with an incorrect key.
+  1. Generate a new private key.
+      ```
+      openssl genrsa -out wrongkey.pem 1024
+      ```
+      {: pre}
+  2. Attempt to use this new key to decrypt the image. The decryption command fails because the incorrect private key was specified.
+    ```
+    skopeo copy --decryption-key ./wrongkey.pem <source_image>_encrypted:<tag> <source_image>_decrypted:<tag>
+    ```
+    {: pre}
+
+8. Optional: [Push the encrypted image to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing), which supports encrypted OCI images.
+
+9. Specify the encrypted image in your app deployment. For example, if you pushed the encrypted image to {{site.data.keyword.registrylong_notm}}, you can follow the example in [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.openshiftshort}} project](/docs/openshift?topic=openshift-images#namespace). When you create the deployment in your cluster, the container runtime uses the private decryption key in the `/etc/crio/keys/synced` directory to decrypt the image before running it.
+
+10. For any subsequent images that you want to encrypt, you can either use the same public key to encrypt the images with Skopeo, or repeat these steps to use a different public and private key pair.
+
+If you later decide to disable the add-on, the `addon-image-key-syncrhonizer` daemon set is removed, but the `image-key-synchronizer` project and any secrets that you created in that project are not removed, and the container runtime can still use the secrets to run encrypted images. If you want to remove the keys from your worker nodes as well, you must delete the corresponding secrets from the `image-key-synchronizer` project before you disable the add-on.
+{: note}
+
+<br />
+
+
 
 ## Referring to the image pull secret in your pod deployment
 {: #pod_imagePullSecret}
