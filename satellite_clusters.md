@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-11"
+lastupdated: "2020-12-14"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -220,9 +220,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    ```
    {: screen}
 
-7. If the hosts that you assigned to the cluster are from an Amazon Web Services or Google Cloud Platform cloud provider, you must manually register the cluster DNS. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics in the {{site.data.keyword.satelliteshort}} documentation.
-
-8. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
+7. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
 <br />
 
