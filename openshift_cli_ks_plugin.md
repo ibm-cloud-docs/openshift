@@ -233,6 +233,38 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
 <dd>Optional: Force the command to run with no user prompts.</dd>
 </dl>
 
+#### `ibmcloud oc cluster addon disable image-key-synchronizer`
+{: #cs_cluster_addon_disable_image-key-synchronizer}
+
+Enable the add-on for the [Image Key synchronizer](/docs/openshift?topic=openshift-images#encrypted-images).
+{: shortdesc}
+
+```
+ibmcloud oc cluster addon Disable image-key-synchronizer --cluster CLUSTER [--version VERSION]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
+</dl>
+
+**Example**:
+```
+ibmcloud oc cluster addon disable image-key-synchronizer --cluster my_cluster
+```
+{: pre}
+
 #### `ibmcloud oc cluster addon disable kube-terminal`
 {: #cs_cluster_addon_disable_kube-terminal}
 
