@@ -739,8 +739,8 @@ When you create a standard cluster, a private ALB is created in each zone that y
   658
 
   Kubernetes Ingress versions
-  0.35.0_767_iks
-  0.34.1_764_iks (default)
+  0.35.0_767_iks (default)
+  0.34.1_764_iks
   0.33.0_768_iks
   ```
   {: screen}
@@ -1128,8 +1128,8 @@ IBM Cloud Ingress versions
 658
 
 Kubernetes Ingress versions
-0.35.0_767_iks
-0.34.1_764_iks (default)
+0.35.0_767_iks (default)
+0.34.1_764_iks
 0.33.0_768_iks
 ```
 {: screen}Note that only the custom {{site.data.keyword.cloud_notm}} Ingress image versions are supported for {{site.data.keyword.openshiftshort}} clusters. For the changes that are included in each version of the {{site.data.keyword.cloud_notm}} Ingress image, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).
