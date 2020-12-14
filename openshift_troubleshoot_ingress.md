@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -343,8 +343,8 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         Example output:
         ```
         ALB ID                                Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-        private-crbmnj1b1d09lpvv3oof0g-alb1   false     disabled   private   -               dal10   ingress:653/ingress-auth:425   2234947       2.0
-        public-crbmnj1b1d09lpvv3oof0g-alb1    true      enabled    public    169.XX.XXX.XX   dal10   ingress:653/ingress-auth:425   2234945       2.0
+        private-crbmnj1b1d09lpvv3oof0g-alb1   false     disabled   private   -               dal10   ingress:2410/ingress-auth:947   2234947       2.0
+        public-crbmnj1b1d09lpvv3oof0g-alb1    true      enabled    public    169.XX.XXX.XX   dal10   ingress:2410/ingress-auth:947   2234945       2.0
         ```
         {: screen}
 
@@ -394,7 +394,7 @@ When you run `ibmcloud oc ingress secret ls`, no secrets are listed.
 {: tsCauses}
 As of 24 August 2020, an [{{site.data.keyword.cloudcerts_long}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager) instance is automatically created for each cluster that you can use to manage the cluster's Ingress TLS certificates.
 
-For an {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, the API key for the region and resource group that the cluster is created in must have the correct IAM permissions. The API key that your cluster uses does not have the correct IAM permissions to create and access an {{site.data.keyword.cloudcerts_short}} instance.
+For a {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, the API key for the region and resource group that the cluster is created in must have the correct IAM permissions. The API key that your cluster uses does not have the correct IAM permissions to create and access a {{site.data.keyword.cloudcerts_short}} instance.
 
 Also, if you used the same cluster name repeatedly, you might have a rate limiting issue. For more information, see [No Ingress subdomain exists after you create clusters of the same or similar name](#cs_rate_limit).
 
@@ -404,7 +404,7 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
   * The **Manager** service role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**
 2. The user must [reset the API key for the region and resource group](/docs/openshift?topic=openshift-users#api_key_most_cases).<p class="warning">When the API key is reset, the previous API key that was used for the region and resource group is deleted. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect).</p>
 3. After the cluster has access to the updated permissions in the API key, the creation of the {{site.data.keyword.cloudcerts_short}} instance is automatically triggered. Note that the {{site.data.keyword.cloudcerts_short}} instance might take up to an hour to become visible in the {{site.data.keyword.cloud_notm}} console.
-4. Verify that your cluster is automatically assigned an {{site.data.keyword.cloudcerts_short}} instance.
+4. Verify that your cluster is automatically assigned a {{site.data.keyword.cloudcerts_short}} instance.
   1. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
   2. Expand the **Services** row.
   3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
@@ -415,7 +415,7 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
   ```
   {: pre}
 
-For more information, see [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-types#manage_certs).
+For more information, see [Managing TLS certificates and secrets](/docs/containers?topic=containers-ingress-types#manage_certs).
 
 ## Cannot connect to an app via Ingress
 {: #cs_ingress_fails}
@@ -809,7 +809,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
   ```
   {: pre}
 
-7. Verify that the Ingress subdomain DNS registration is updated to the new VPC load balancer hostname for your router.
+7. Verify that the ingress subdomain DNS registration is updated to include the new VPC load balancer hostname for your router.
   ```
   ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
   ```
@@ -1133,10 +1133,10 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses. 
 
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-    private-cr24a9f2caf6554648836337d240064935-alb1   false     disabled   private   -               dal13   ingress:653/ingress-auth:425   2294021       -
-    private-cr24a9f2caf6554648836337d240064935-alb2   false     disabled   private   -               dal10   ingress:653/ingress-auth:425   2234947       -
-    public-cr24a9f2caf6554648836337d240064935-alb1    true      enabled    public    169.62.196.238  dal13   ingress:653/ingress-auth:425   2294019       -
-    public-cr24a9f2caf6554648836337d240064935-alb2    true      enabled    public    169.46.52.222   dal10   ingress:653/ingress-auth:425   2234945       -
+    private-cr24a9f2caf6554648836337d240064935-alb1   false     disabled   private   -               dal13   ingress:2410/ingress-auth:947   2294021       -
+    private-cr24a9f2caf6554648836337d240064935-alb2   false     disabled   private   -               dal10   ingress:2410/ingress-auth:947   2234947       -
+    public-cr24a9f2caf6554648836337d240064935-alb1    true      enabled    public    169.62.196.238  dal13   ingress:2410/ingress-auth:947   2294019       -
+    public-cr24a9f2caf6554648836337d240064935-alb2    true      enabled    public    169.46.52.222   dal10   ingress:2410/ingress-auth:947   2234945       -
     ```
     {: screen}
 
@@ -1262,7 +1262,7 @@ For example, say you have a multizone cluster in 2 zones, and the 2 public ALBs 
     For example, the unreachable IP `169.62.196.238` belongs to the ALB `public-cr24a9f2caf6554648836337d240064935-alb1`:
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP           Zone    Build                          ALB VLAN ID   NLB Version
-    public-cr24a9f2caf6554648836337d240064935-alb1    false     disabled   private   169.62.196.238   dal13   ingress:653/ingress-auth:425   2294021       -
+    public-cr24a9f2caf6554648836337d240064935-alb1    false     disabled   private   169.62.196.238   dal13   ingress:2410/ingress-auth:947   2294021       -
     ```
     {: screen}
 
@@ -1496,11 +1496,11 @@ After the new worker nodes deploy, the ALB pods are automatically scheduled to d
 When you have a multizone classic cluster and run `ibmcloud oc ingress alb ls --cluster <cluster>`, no ALB is deployed in a zone. For example, if you have worker nodes in 3 zones, you might see an output similar to the following in which a public ALB did not deploy to the third zone.
 ```
 ALB ID                                            Enabled    Status     Type      ALB IP           Zone    Build                          ALB VLAN ID   NLB Version
-private-cr96039a75fddb4ad1a09ced6699c88888-alb1   false      disabled   private   -                dal10   ingress:653/ingress-auth:425   2294021       -
-private-cr96039a75fddb4ad1a09ced6699c88888-alb2   false      disabled   private   -                dal12   ingress:653/ingress-auth:425   2234947       -
-private-cr96039a75fddb4ad1a09ced6699c88888-alb3   false      disabled   private   -                dal13   ingress:653/ingress-auth:425   2234943       -
-public-cr96039a75fddb4ad1a09ced6699c88888-alb1    true       enabled    public    169.xx.xxx.xxx   dal10   ingress:653/ingress-auth:425   2294019       -
-public-cr96039a75fddb4ad1a09ced6699c88888-alb2    true       enabled    public    169.xx.xxx.xxx   dal12   ingress:653/ingress-auth:425   2234945       -
+private-cr96039a75fddb4ad1a09ced6699c88888-alb1   false      disabled   private   -                dal10   ingress:2410/ingress-auth:947   2294021       -
+private-cr96039a75fddb4ad1a09ced6699c88888-alb2   false      disabled   private   -                dal12   ingress:2410/ingress-auth:947   2234947       -
+private-cr96039a75fddb4ad1a09ced6699c88888-alb3   false      disabled   private   -                dal13   ingress:2410/ingress-auth:947   2234943       -
+public-cr96039a75fddb4ad1a09ced6699c88888-alb1    true       enabled    public    169.xx.xxx.xxx   dal10   ingress:2410/ingress-auth:947   2294019       -
+public-cr96039a75fddb4ad1a09ced6699c88888-alb2    true       enabled    public    169.xx.xxx.xxx   dal12   ingress:2410/ingress-auth:947   2234945       -
 ```
 {: screen}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-12-11"
+lastupdated: "2020-12-14"
 
 keywords: openshift
 subcollection: openshift
@@ -221,6 +221,7 @@ subcollection: openshift
 
 [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security)
 * [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
+* [{{site.data.keyword.openshiftshort}} API server and etcd](/docs/openshift?topic=openshift-security#apiserver)
   * [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate)
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 * [Network](/docs/openshift?topic=openshift-security#network)
@@ -834,6 +835,7 @@ subcollection: openshift
 [Building images for your apps](/docs/openshift?topic=openshift-images)
 * [Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy)
 * [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.openshiftshort}} project](/docs/openshift?topic=openshift-images#namespace)
+* [Deploying containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images)
 * [Referring to the image pull secret in your pod deployment](/docs/openshift?topic=openshift-images#pod_imagePullSecret)
 * [Pushing images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images)
 * [Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor](/docs/openshift?topic=openshift-images#va-images)
@@ -949,7 +951,7 @@ subcollection: openshift
 * [Components and architecture of an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer-about#v1_planning)
   * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_single)
   * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_multi)
-* [Components and architecture of an NLB 2.0 (beta)](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs)
+* [Components and architecture of an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs)
   * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_single)
   * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_multi)
 
@@ -960,7 +962,7 @@ subcollection: openshift
   * [Adding edge node affinity rules and tolerations](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes)
   * [Adding affinity rules for multiple public or private VLANs](/docs/openshift?topic=openshift-loadbalancer#edge_nodes_multiple_vlans)
 
-[Classic: Setting up DSR load balancing with an NLB 2.0 (beta)](/docs/openshift?topic=openshift-loadbalancer-v2)
+[Classic: Setting up DSR load balancing with an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2)
 * [Prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision)
 * [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
 * [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
@@ -1595,6 +1597,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for master fix pack 4.5.18_1523_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4518_1523)
   * [Changelog for worker node fix pack 4.5.21_1522_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4521_1522)
   * [Changelog for worker node fix pack 4.5.19_1521_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4519_1521)
   * [Changelog for master fix pack 4.5.18_1521_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4518_1521)
@@ -1603,6 +1606,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for master fix pack 4.4.29_1527_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1527)
   * [Changelog for worker node fix pack 4.4.31_1526_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4431_1526)
   * [Changelog for worker node fix pack 4.4.30_1525_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4430_1525)
   * [Changelog for master fix pack 4.4.29_1525_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1525)
@@ -1621,6 +1625,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for master fix pack 4.3.40_1548_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1548)
   * [Changelog for worker node fix pack 4.3.40_1547_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1547)
   * [Changelog for worker node fix pack 4.3.40_1546_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1546_worker)
   * [Changelog for master fix pack 4.3.40_1546_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1546)
@@ -1650,6 +1655,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.318_1575_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573)
   * [Changelog for worker node fix pack 3.11.318_1574_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311318_1574)
   * [Changelog for worker node fix pack 3.11.318_1573_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311318_1573)
   * [Changelog for master fix pack 3.11.306_1573_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573)
