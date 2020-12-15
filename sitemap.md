@@ -1737,7 +1737,7 @@ subcollection: openshift
 * [Cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
 * [Ingress ALB events](/docs/openshift?topic=openshift-at_events#ingress-alb-events)
 * [Ingress secret events](/docs/openshift?topic=openshift-at_events#ingress-secret-events)
-* [Logging and monitoring configuration events](/docs/openshift?topic=openshift-at_events#at-lm)
+* [Observability events for logging and monitoring](/docs/openshift?topic=openshift-at_events#at-lm)
 * [NLB DNS events](/docs/openshift?topic=openshift-at_events#ingress-nlb-dns-events)
 * [Private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
 * [Storage events](/docs/openshift?topic=openshift-at_events#storage-events)
