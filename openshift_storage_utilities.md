@@ -547,6 +547,7 @@ Before you begin:
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
+
 1. Check which region and zone your VPC worker node is in.
   ```
   ibmcloud oc worker ls -c <cluster_name>
