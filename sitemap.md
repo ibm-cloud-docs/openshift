@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-12-14"
+lastupdated: "2020-12-15"
 
 keywords: openshift
 subcollection: openshift
@@ -1292,7 +1292,7 @@ subcollection: openshift
   * [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
 * [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
 * [Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
-* [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
+* [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
   * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
   * [Reviewing volume attachment details for a VPC worker node](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
 * [Backing up and restoring PVC data for file and block storage](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore)
@@ -1737,7 +1737,7 @@ subcollection: openshift
 * [Cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
 * [Ingress ALB events](/docs/openshift?topic=openshift-at_events#ingress-alb-events)
 * [Ingress secret events](/docs/openshift?topic=openshift-at_events#ingress-secret-events)
-* [Logging and monitoring configuration events](/docs/openshift?topic=openshift-at_events#at-lm)
+* [Observability events for logging and monitoring](/docs/openshift?topic=openshift-at_events#at-lm)
 * [NLB DNS events](/docs/openshift?topic=openshift-at_events#ingress-nlb-dns-events)
 * [Private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
 * [Storage events](/docs/openshift?topic=openshift-at_events#storage-events)

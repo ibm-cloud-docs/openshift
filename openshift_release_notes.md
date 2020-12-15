@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-14"
+lastupdated: "2020-12-15"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 15 December 2020 | **Cluster autoscaler**: Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog). |
 | 14 December 2020 | <ul><li>**Encrypted images**: In clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or later, you can now [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images) by enabling the Image Key Synchronizer cluster add-on.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` build to 2410 and the `ingress-auth` build to 947](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li><li>**Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.18_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4518_1523), [`4.4.29_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4429_1527), [`4.3.40_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1548), and [`3.11.318_1575_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311318_1575).</li></ul> |
 | 11 December 2020 | <ul><li>**Storage add-ons**: Cluster autoscaler add-on patch update `1.0.1_195` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog). {{site.data.keyword.block_storage_is_short}} add-on patch update `2.0.3_464` is released. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog).</li><li>**strongSwan versions** Added information about which [strongSwan Helm chart versions](/docs/openshift?topic=openshift-vpn#vpn_upgrade) are supported.</li></ul> |
 | 09 December 2020 | <ul><li>**Accessing clusters**: Updated the steps for [accessing clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se) to use the `--endpoint private` flag in the `ibmcloud oc cluster config` command.</li><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**Proxy protocol for Ingress:** In VPC clusters, you can now [enable the PROXY protocol](/docs/containers?topic=containers-comm-ingress-annotations#preserve_source_ip_vpc) for all load balancers that expose Ingress ALBs in your cluster. The PROXY protocol enables load balancers to pass client connection information that is contained in headers on the client request, including the client IP address, the proxy server IP address, and both port numbers, to ALBs.</li></ul> |

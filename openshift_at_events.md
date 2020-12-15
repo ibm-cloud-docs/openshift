@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-12-10"
+lastupdated: "2020-12-15"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -192,11 +192,7 @@ The following list of Ingress secret events are sent to {{site.data.keyword.at_f
 {: caption="Ingress secret events" caption-side="top"}
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
-
-
-
-
-## Logging and monitoring configuration events
+## Observability events for logging and monitoring
 {: #at-lm}
 
 The following list of the logging and monitoring configuration events are sent to {{site.data.keyword.at_full_notm}} by the {{site.data.keyword.containerlong_notm}} observability plug-in.
@@ -204,16 +200,18 @@ The following list of the logging and monitoring configuration events are sent t
 
 |Action|Description|
 |------|-----------|
-| `containers-kubernetes.observe.logging.create` | A LogDNA logging configuration is created for the cluster. |
-| `containers-kubernetes.observe.logging.modify` | A LogDNA logging configuration is updated. |
-| `containers-kubernetes.observe.logging.remove` | A LogDNA logging configuration is removed from the cluster. |
-| `containers-kubernetes.observe.monitoring.create` | A Sysdig monitoring configuration is created for the cluster. |
-| `containers-kubernetes.observe.monitoring.modify` | A Sysdig monitoring configuration is updated. |
-| `containers-kubernetes.observe.monitoring.remove` | A Sysdig monitoring configuration is removed from the cluster. |
-{: caption="Logging and monitoring management events" caption-side="top"}
+| `containers-kubernetes.observe-logging.create` | A LogDNA logging configuration is created for the cluster. | 
+| `containers-kubernetes.observe-logging.get` | The details of a LogDNA logging configuration are returned. | 
+| `containers-kubernetes.observe-logging.list` | LogDNA logging configurations for a cluster are listed. | 
+| `containers-kubernetes.observe-logging.modify` | A LogDNA logging configuration is updated. | 
+| `containers-kubernetes.observe-logging.remove` | A LogDNA logging configuration is removed from the cluster.| 
+| `containers-kubernetes.observe-monitoring.create` | A Sysdig monitoring configuration is created for the cluster. | 
+| `containers-kubernetes.observe-monitoring.get` | The details of a Sysdig monitoring configuration are returned. | 
+| `containers-kubernetes.observe-monitoring.list` | Sysdig monitoring configurations for a cluster are listed. | 
+| `containers-kubernetes.observe-monitoring.modify` | A Sysdig monitoring configuration is updated. |
+| `containers-kubernetes.observe-monitoring.remove` | A Sysdig monitoring configuration is removed from the cluster. |
+{: caption="Observability events for logging and monitoring" caption-side="top"}
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
-
-
 
 ## NLB DNS events
 {: #ingress-nlb-dns-events}
