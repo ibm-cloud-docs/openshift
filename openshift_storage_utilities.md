@@ -531,7 +531,7 @@ If you want to detach a volume, delete the PV. Detached volumes are still author
 
 
 
-## VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes
+## VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API
 {: #vpc_api_attach}
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You can use the {{site.data.keyword.containershort_notm}} API to attach and detach raw, unformatted [{{site.data.keyword.blockstorageshort}}](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/GetClassicVolume) to a worker node in your VPC cluster.
@@ -539,6 +539,9 @@ If you want to detach a volume, delete the PV. Detached volumes are still author
 
 You can attach a volume to one worker node only. Make sure that the volume is in the same zone as the worker node for the attachment to succeed.
 {: note}
+
+You can also attach, detach, and list the volume attachments of your worker nodes by using the CLI. For more information, see the [storage CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage).
+{: tip}
 
 The instructions in this topic are available for VPC worker nodes only. If you want to attach raw, unformatted block storage to a classic worker node, you must install the [{{site.data.keyword.cloud_notm}} Block Storage attacher plug-in](#block_storage_attacher).
 {: note}

@@ -1292,7 +1292,7 @@ subcollection: openshift
   * [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
 * [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
 * [Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
-* [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
+* [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
   * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
   * [Reviewing volume attachment details for a VPC worker node](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
 * [Backing up and restoring PVC data for file and block storage](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore)
