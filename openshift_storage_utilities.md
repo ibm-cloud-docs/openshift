@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-11"
+lastupdated: "2020-12-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -549,7 +549,7 @@ Before you begin:
 
 1. Check which region and zone your VPC worker node is in.
   ```
-  ibmcloud oc worker ls <cluster_name>
+  ibmcloud oc worker ls -c <cluster_name>
   ```
   {: pre}
 
