@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-20"
+lastupdated: "2020-12-16"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -157,7 +157,7 @@ New OCP licenses include reduced pricing from Red Hat. An {{site.data.keyword.op
 * **Virtual machines (VMs)**: The OCP licenses are billed hourly. For example, you create a worker pool with VMs, test an app for 3 days, and then delete the worker pool. You are billed for only the hours that your worker nodes were deployed.
 * **Physical machines (bare metal)**: The OCP licenses are prorated for the first month that you create the worker nodes in, and then billed monthly for the remaining lifecycle of the worker node. For example, you create a cluster with bare metal worker nodes on 15 August and delete the cluster on 14 September. You are charged a prorated monthly cost for the first month of August, but the full monthly cost for September.
 
-When you estimate the cost of a new cluster or worker node, the OCP licenses are included as part of the worker node cost. The OCP licenses are also part of the worker node plan and listed as a sub-item of the worker nodes in your {{site.data.keyword.cloud_notm}} bill. 
+When you estimate the cost of a new cluster or worker node, the OCP licenses are included as part of the worker node cost. The OCP licenses are also part of the worker node plan and listed as a sub-item of the worker nodes in your {{site.data.keyword.cloud_notm}} bill.
 
 ##### Deprecated: Old OCP licenses for existing worker nodes before 9 November 2020 or deprecated bare metal flavors
 {: #licenses-on-demand-old}
@@ -166,7 +166,7 @@ An {{site.data.keyword.openshiftshort}} license is billed for every four virtual
 * If you delete your worker node before the end of the month, your monthly license is available for other worker nodes in the same cluster. If the other worker nodes are not the same CPU size, you need additional licenses.
 * If you delete the cluster before the end of the month, you are still charged the entire monthly price for the {{site.data.keyword.openshiftshort}} license.
 
-When you estimate the cost of a new cluster or worker node, the OCP licenses are included as a separate line item. The OCP licenses are also listed as separate plans in your {{site.data.keyword.cloud_notm}} bill. 
+When you estimate the cost of a new cluster or worker node, the OCP licenses are included as a separate line item. The OCP licenses are also listed as separate plans in your {{site.data.keyword.cloud_notm}} bill.
 
 **How can I migrate from the old to new OCP licenses?**
 {: #licenses-on-demand-migrate}
@@ -213,7 +213,7 @@ Subnets for {{site.data.keyword.openshiftlong_notm}} clusters vary by infrastruc
 ### Multizone load balancer
 {: #mzlb_pricing}
 
-When you create a multizone cluster or add zones to a single zone cluster, you must have a load balancer to health check Ingress and load balancer IP addresses in each zone, and forward requests to your apps across zones in the region. 
+When you create a multizone cluster or add zones to a single zone cluster, you must have a load balancer to health check Ingress and load balancer IP addresses in each zone, and forward requests to your apps across zones in the region.
 {: shortdesc}
 
 The type of load balancer that is automatically created varies depending on the type of cluster. For more information, see [Multizone load balancer (MZLB) or Load Balancer for VPC](/docs/openshift?topic=openshift-ingress-about#mzlb).
@@ -227,7 +227,7 @@ The type of load balancer that is automatically created varies depending on the 
 
 To store images in the internal registry, {{site.data.keyword.openshiftlong_notm}} creates a storage instance that varies by infrastructure provider.
 {: shortdesc}
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**: A classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost. For more information, see [Billing in the File Storage documentation](/docs/FileStorage?topic=FileStorage-about).
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**: A classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost. For more information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**: A bucket in an existing {{site.data.keyword.cos_full_notm}} instance is created for you. For more information, see [Billing and pricing in the {{site.data.keyword.cos_short_notm}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-billing).
 
 
@@ -235,7 +235,7 @@ To store images in the internal registry, {{site.data.keyword.openshiftlong_notm
 ### Storage for apps
 {: #persistent_storage}
 
-When you provision storage, you can choose the storage type and storage class that is right for your use case. Charges vary depending on the type of storage, the location, and the specs of the storage instance. Some storage solutions, such as file and block storage offer hourly and monthly plans that you can choose from. 
+When you provision storage, you can choose the storage type and storage class that is right for your use case. Charges vary depending on the type of storage, the location, and the specs of the storage instance. Some storage solutions, such as file and block storage offer hourly and monthly plans that you can choose from.
 {: shortdesc}
 
 To choose the right storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning). For more information, see:
@@ -276,7 +276,7 @@ For virtual server instances that are billed hourly, discounted prices depend on
 ## Estimating costs
 {: #costs-estimate}
 
-See [Estimating your costs](/docs/billing-usage?topic=billing-usage-cost#cost). 
+See [Estimating your costs](/docs/billing-usage?topic=billing-usage-cost#cost).
 
 Keep in mind that some charges are not reflected in the estimate, such as tiered pricing for increased hourly usage. For more information, see [Understanding costs for your clusters](#costs-for-clusters).
 
@@ -295,7 +295,7 @@ The following steps present a general process to manage costs for your {{site.da
     * [Decide the cluster environment that you want](/docs/openshift?topic=openshift-strategy#kube_env).
     * [Consider the availability that you want for your cluster](/docs/openshift?topic=openshift-ha_clusters). For example, a basic high availability setup is one multizone cluster with three worker nodes in each of three zones, for a minimum total of nine worker nodes.
 3.  Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
-4.  [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.openshiftlong_notm}} Pricing plans](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}. 
+4.  [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.openshiftlong_notm}} Pricing plans](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
 5.  Manage the lifecycle of your cluster to control costs.
     * Consider [enabling the cluster autoscaler](/docs/openshift?topic=openshift-ca) to automatically add or remove worker nodes in response to your cluster workload resource requets.
     * Manually [resize your worker pool](/docs/openshift?topic=openshift-add_workers) to remove worker nodes that you do not need. Keep in mind that you cannot scale a worker pool down to zero worker nodes.

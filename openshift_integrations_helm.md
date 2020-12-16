@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-08"
+lastupdated: "2020-12-16"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -137,10 +137,10 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 1. Install the latest release of the version 3 [Helm CLI](https://github.com/helm/helm/releases){: external} on your local machine.
 
 2. Add the {{site.data.keyword.cloud_notm}} Helm repositories to your Helm instance.
-   
+
    If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public registry domain: `helm repo add iks-charts https://icr.io/helm/iks-charts`.
    {: note}
-   
+
    ```
    helm repo add iks-charts https://private.icr.io/helm/iks-charts
    ```
@@ -199,18 +199,6 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
    {: pre}
 
 5. Identify the Helm chart that you want to install and follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
-
-<br />
-
-## Related Helm links
-{: #helm_links}
-
-Review the following links to find additional Helm information.
-{: shortdesc}
-
-* View the available Helm charts that you can use in {{site.data.keyword.openshiftlong_notm}} in the [Helm Charts Catalog](https://cloud.ibm.com/kubernetes/helm){: external}.
-* Learn more about how you can [increase deployment velocity with Kubernetes Helm Charts](https://developer.ibm.com/recipes/tutorials/increase-deployment-velocity-with-kubernetes-helm-charts/){: external}.
-
 
 
 

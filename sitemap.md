@@ -1356,7 +1356,6 @@ subcollection: openshift
   * [What is Helm and how do I use it?](/docs/openshift?topic=openshift-helm#what-is-helm)
   * [What Helm charts are supported in {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-helm#supported-charts)
 * [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3)
-* [Related Helm links](/docs/openshift?topic=openshift-helm#helm_links)
 
 [Adding services by using IBM Cloud service binding](/docs/openshift?topic=openshift-service-binding)
 * [Adding IBM Cloud services to clusters](/docs/openshift?topic=openshift-service-binding#bind-services)
