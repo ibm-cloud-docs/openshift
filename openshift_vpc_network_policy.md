@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-12-16"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +84,11 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -243,7 +244,7 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     </tbody>
     </table>
 
-The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rules in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components and from the Cloudflare IPv4 IP addresses that are used to health check the IP addresses of your router services is blocked. Because each ACL has a quota of only 50 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43).
+The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rules in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components and from the Cloudflare IPv4 IP addresses that are used to health check the IP addresses of your router services is blocked. Because each security group has a quota of only 25 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43). Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.
 {: important}
 
 To simplify your VPC security setup, leave your default ACL for the VPC as-is. If you configure rules in both ACLs for your subnets and in the default security group for your worker nodes, you might inadvertently block the subnets and ports that are required for necessary traffic to reach your cluster.
@@ -427,7 +428,7 @@ To create rules in your default security group:
   ```
   {: pre}
 
-The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rules in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components and from the Cloudflare IPv4 IP addresses that are used to health check the IP addresses of your router services is blocked. Because each ACL has a quota of only 50 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43).
+The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rules in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components and from the Cloudflare IPv4 IP addresses that are used to health check the IP addresses of your router services is blocked. Because each security group has a quota of only 25 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43). Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.
 {: important}
 
 To simplify your VPC security setup, leave your default ACL for the VPC as-is. If you configure rules in both ACLs for your subnets and in the default security group for your worker nodes, you might inadvertently block the subnets and ports that are required for necessary traffic to reach your cluster.
@@ -569,6 +570,16 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>After 7</td>
    </tr>
    <tr>
+   <td>**Optional**: To allow Ingress router services to be healthchecked, allow traffic on port 80. For more information, see the **Important** note at the end of these steps.</td>
+   <td>Allow</td>
+   <td>TCP</td>
+   <td>Any</td>
+   <td>80</td>
+   <td>Any</td>
+   <td>-</td>
+   <td>After 7</td>
+   </tr>
+   <tr>
    <td>Deny all other traffic that does not match the previous rules.</td>
    <td>Deny</td>
    <td>ALL</td>
@@ -696,8 +707,8 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
 
 9. Multizone clusters: Repeat steps 2 - 8 to create an ACL for each subnet that your cluster is attached to.
 
-If you create specific rules to block incoming traffic to the IP addresses of Ingress routers, you must allow inbound access from [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} on port 80 and the `166.8.0.0/14` {{site.data.keyword.openshiftshort}} control plane to the IP addresses of your routers so they can be health checked.
-{: note}
+The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rules in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components and from the Cloudflare IPv4 IP addresses that are used to health check the IP addresses of your router services is blocked. Because each ACL has a quota of only 50 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43). Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.
+{: important}
 
 ### Creating ACLs from the CLI
 {: #acls_cli}
@@ -823,7 +834,14 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: pre}
 
-8. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
+8. Optional: To allow Ingress router services to be healthchecked, allow traffic on port 80. For more information, see the **Important** note at the end of these steps.
+  ```
+  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-hc-outbound --destination-port-min 80 --destination-port-max 80
+  ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-hc-inbound --destination-port-min 80 --destination-port-max 80
+  ```
+  {: pre}
+
+9. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
 
   <p class="note">When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#network-acl-rule-add).</p>
 
@@ -839,14 +857,14 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: screen}
 
-9. Create rules to deny all other egress from and ingress to worker nodes that is not permitted by the previous rules that you created. Because these rules are created last in the chain of rules, they deny an incoming or outgoing connection only if the connection does not match any other rule that is earlier in the rule chain.
+10. Create rules to deny all other egress from and ingress to worker nodes that is not permitted by the previous rules that you created. Because these rules are created last in the chain of rules, they deny an incoming or outgoing connection only if the connection does not match any other rule that is earlier in the rule chain.
   ```
   ibmcloud is network-acl-rule-add $acl_id deny outbound all 0.0.0.0/0 0.0.0.0/0 --name deny-all-outbound
   ibmcloud is network-acl-rule-add $acl_id deny inbound all 0.0.0.0/0 0.0.0.0/0 --name deny-all-inbound
   ```
   {: pre}
 
-10. Apply this ACL to the subnet. When you apply this ACL, the rules that you defined are immediately applied to the worker nodes on the subnet.
+11. Apply this ACL to the subnet. When you apply this ACL, the rules that you defined are immediately applied to the worker nodes on the subnet.
   ```
   ibmcloud is subnet-update <subnet_ID> --network-acl-id $acl_id
   ```
@@ -870,13 +888,13 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: screen}
 
-11. Repeat steps 2 - 10 for each subnet that you found in step 1.
+12. Repeat steps 2 - 10 for each subnet that you found in step 1.
 
 ACL rules are applied to traffic in a specific order. If you want to add a rule after you complete these steps, ensure that you add the rule before the `deny-all-inbound` or `deny-all-outbound` rule. If you add a rule after these rules, your rule is ignored, because the packet matches the `deny-all-inbound` and `deny-all-outbound` rules and is blocked and removed before it can reach your rule. Create your rule in the proper order by including the `--before-rule-name deny-all-(inbound|outbound)` flag.
 {: note}
 
-If you create specific rules to block incoming traffic to the IP addresses of Ingress routers, you must allow inbound access from [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} on port 80 and the `166.8.0.0/14` {{site.data.keyword.openshiftshort}} control plane to the IP addresses of your routers so they can be health checked.
-{: note}
+The default router services in your cluster are automatically health checked by the {{site.data.keyword.openshiftshort}} control plane. When you apply the rules in this security group, the necessary inbound access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components and from the Cloudflare IPv4 IP addresses that are used to health check the IP addresses of your router services is blocked. Because each ACL has a quota of only 50 rules, you currently cannot add enough inbound and outbound rules for each {{site.data.keyword.openshiftshort}} control plane and Cloudflare IP address. Due to this known limitation your Ingress status shows that your routers are unreachable; however, this status does not reflect your router services' actual health. If you notice that traffic is not flowing correctly to your apps, you can [manually check your router services' health](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ping-43). Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.
+{: important}
 
 <br />
 
