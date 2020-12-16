@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-18"
+lastupdated: "2020-12-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +84,11 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -95,7 +96,7 @@ subcollection: openshift
 # Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}
 {: #file_storage}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Billing](/docs/FileStorage?topic=FileStorage-about#billing).
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
 {: shortdesc}
 
 {{site.data.keyword.filestorage_full_notm}} is available only in classic {{site.data.keyword.openshiftlong_notm}} clusters, and is not supported for VPC clusters. NFS {{site.data.keyword.filestorage_short}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
@@ -145,7 +146,7 @@ First time using {{site.data.keyword.filestorage_short}} in your cluster? Come b
     metadata:
       name: my-deployment
       labels:
-        app: 
+        app:
     spec:
       selector:
         matchLabels:
@@ -178,7 +179,7 @@ For more information, see:
   * [Adding {{site.data.keyword.filestorage_short}} to apps](#add_file).
   * [Storage class reference](#file_storageclass_reference).
   * [Custom storage classes](#file_custom_storageclass).
-  
+
 ## Deciding on the {{site.data.keyword.filestorage_short}} configuration
 {: #file_predefined_storageclass}
 
@@ -224,9 +225,9 @@ To decide on a storage configuration:
    For more information about each storage class, see the [storage class reference](#file_storageclass_reference). If you do not find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](#file_custom_storageclass).
    {: tip}
 
-3. Choose the type of {{site.data.keyword.filestorage_short}} that you want to provision.
-   - **Bronze, silver, and gold storage classes:** These storage classes provision [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers). Endurance storage lets you choose the size of the storage in gigabytes at predefined IOPS tiers.
-   - **Custom storage class:** This storage class provisions [Performance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-performance). With performance storage, you have more control over the size of the storage and the IOPS.
+3. Choose the [type of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-getting-started#prereqs) that you want to provision.
+   - **Bronze, silver, and gold storage classes:** These storage classes provision Endurance storage. Endurance storage lets you choose the size of the storage in gigabytes at predefined IOPS tiers.
+   - **Custom storage class:** This storage class provisions Performance storage. With performance storage, you have more control over the size of the storage and the IOPS.
 
 4. Choose the size and IOPS for your {{site.data.keyword.filestorage_short}}. The size and the number of IOPS define the total number of IOPS (input/ output operations per second) that serves as an indicator for how fast your storage is. The more total IOPS your storage has, the faster it processes read and write operations.
    - **Bronze, silver, and gold storage classes:** These storage classes come with a fixed number of IOPS per gigabyte and are provisioned on SSD hard disks. The total number of IOPS depends on the size of the storage that you choose. You can select any whole number of gigabyte within the allowed size range, such as 20 Gi, 256 Gi, or 11854 Gi. To determine the total number of IOPS, you must multiply the IOPS with the selected size. For example, if you select a 1000Gi {{site.data.keyword.filestorage_short}} size in the silver storage class that comes with 4 IOPS per GB, your storage has a total of 4000 IOPS.
@@ -1247,8 +1248,8 @@ For questions about billing and to find the steps for how to use the {{site.data
       fsf-dal1001g-fz.adn.networklayer.com:/IBM01SEV1234567_6/data01   40G     0   40G   0% /myvol
       ```
       {: screen}
-      
-   Although the size and IOPS of your physical storage changed, these values are not reflected in your PV or PVC. If you describe your PV or PVC, the old size and IOPS continue to display. You have the option to manually update the size and IOPS in your PV by using the `oc patch pv` command. However, this command cannot be used to change the size or IOPS in the PVC. To prevent having different sizes and IOPS in your PVC and PV, leave both your PVC and PV as-is. 
+
+   Although the size and IOPS of your physical storage changed, these values are not reflected in your PV or PVC. If you describe your PV or PVC, the old size and IOPS continue to display. You have the option to manually update the size and IOPS in your PV by using the `oc patch pv` command. However, this command cannot be used to change the size or IOPS in the PVC. To prevent having different sizes and IOPS in your PVC and PV, leave both your PVC and PV as-is.
    {: important}
 
 ## Changing the default NFS version
@@ -1381,7 +1382,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Characteristics | Setting|
 |:-----------------|:-----------------|
 | Name | <code>ibmc-file-bronze</code></br><code>ibmc-file-retain-bronze</code></br><code>ibmc-file-bronze-gid</code> |
-| Type | [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers)|
+| Type | Endurance storage|
 | File system | NFS|
 | IOPS per gigabyte | 2|
 | Size range in gigabytes | 20-12000 Gi|
@@ -1399,7 +1400,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Characteristics | Setting|
 |:-----------------|:-----------------|
 | Name | <code>ibmc-file-silver</code></br><code>ibmc-file-retain-silver</code></br><code>ibmc-file-silver-gid</code> |
-| Type | [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers)|
+| Type | Endurance storage|
 | File system | NFS|
 | IOPS per gigabyte | 4|
 | Size range in gigabytes | 20-12000 Gi|
@@ -1417,7 +1418,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Characteristics | Setting|
 |:-----------------|:-----------------|
 | Name | <code>ibmc-file-gold</code></br><code>ibmc-file-retain-gold</code></br><code>ibmc-file-gold-gid</code>  |
-| Type | [Endurance storage](/docs/FileStorage?topic=FileStorage-about#provisioning-with-endurance-tiers)|
+| Type | Endurance storage|
 | File system | NFS|
 | IOPS per gigabyte | 10|
 | Size range in gigabytes | 20-4000 Gi|
@@ -1435,7 +1436,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Characteristics | Setting|
 |:-----------------|:-----------------|
 | Name | <code>ibmc-file-custom</code></br><code>ibmc-file-retain-custom</code> |
-| Type | [Performance](/docs/FileStorage?topic=FileStorage-about#provisioning-with-performance)|
+| Type | Performance|
 | File system | NFS|
 | IOPS and size | <p><strong>Size range in gigabytes / IOPS range in multiples of 100</strong></p><ul><li>20-39 Gi / 100-1000 IOPS</li><li>40-79 Gi / 100-2000 IOPS</li><li>80-99 Gi / 100-4000 IOPS</li><li>100-499 Gi / 100-6000 IOPS</li><li>500-999 Gi / 100-10000 IOPS</li><li>1000-1999 Gi / 100-20000 IOPS</li><li>2000-2999 Gi / 200-40000 IOPS</li><li>3000-3999 Gi / 200-48000 IOPS</li><li>4000-7999 Gi / 300-48000 IOPS</li><li>8000-9999 Gi / 500-48000 IOPS</li><li>10000-12000 Gi / 1000-48000 IOPS</li></ul>|
 | Hard disk | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage. </br></br>Example: </br>You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi). </br></br><strong>Overview of hard disk types per ratio:</strong><ul><li>Less than or equal to 0.3: SATA</li><li>Greater than 0.3: SSD</li></ul>|
