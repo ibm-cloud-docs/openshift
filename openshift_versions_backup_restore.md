@@ -119,4 +119,4 @@ The following table shows the changes that are included in version 1.0.5 of the 
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Back up and restore Helm chart version 1.0.5" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the version of the component. The second column  contains the release date of the component. The third column contains the supported {{site.data.keyword.openshiftshort}} versions. The fourth column contains a brief description of the change made to the component."}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains the release date of the component. The third column contains the supported {{site.data.keyword.openshiftshort}} versions. The fourth column contains a brief description of the change made to the component."}
