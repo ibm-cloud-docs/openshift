@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-11"
+lastupdated: "2020-12-17"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -130,4 +130,4 @@ ibmcloud oc addon-versions
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Patch updates for version 2.0.3" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column is the image tag the component. The third column contains the release date of the patch. The fourth column contains the supported {{site.data.keyword.openshiftshort}} versions. The fifth column contains a brief description of the change made to the component."}
+{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column is the image tag the component. The third column contains the release date of the patch. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
