@@ -1029,7 +1029,7 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 {: deprecated}
 
 ### Changelog for master fix pack 3.11.318_1575_openshift, released 14 December 2020
-{: #311306_1573}
+{: #311306_1573_master}
 
 The following table shows the changes that are included in the master fix pack patch update `3.11.318_1575_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
