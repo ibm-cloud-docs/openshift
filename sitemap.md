@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-12-16"
+lastupdated: "2020-12-17"
 
 keywords: openshift
 subcollection: openshift
@@ -743,28 +743,34 @@ subcollection: openshift
 * [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
 
 
-## Logging and monitoring cluster health
-{: #sitemap_logging_and_monitoring_cluster_health}
+## Logging and monitoring
+{: #sitemap_logging_and_monitoring}
 
 
-[Logging and monitoring cluster health](/docs/openshift?topic=openshift-health)
+[Logging for clusters](/docs/openshift?topic=openshift-health)
+* [Understanding options for logging](/docs/openshift?topic=openshift-health#oc_logmet_options)
+* [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
+* [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 
-[Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
+[Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor)
+* [Understanding options for monitoring](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options)
+* [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig)
+* [Viewing cluster states](/docs/openshift?topic=openshift-health-monitor#states)
+  * [Cluster states](/docs/openshift?topic=openshift-health-monitor#states_cluster)
+  * [Master states](/docs/openshift?topic=openshift-health-monitor#states_master)
+  * [Worker node states](/docs/openshift?topic=openshift-health-monitor#states_workers)
+* [Disabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_disable_telemetry_reports)
 
-[Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
-
-[Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
-
-[Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig)
-
-[Viewing cluster states](/docs/openshift?topic=openshift-health#states)
-* [Cluster states](/docs/openshift?topic=openshift-health#states_cluster)
-* [Master states](/docs/openshift?topic=openshift-health#states_master)
-* [Worker node states](/docs/openshift?topic=openshift-health#states_workers)
-
-[Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
-
-[Disabling remote health reporting](/docs/openshift?topic=openshift-health#oc_disable_telemetry_reports)
+[Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit)
+* [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
+  * [Understanding the Kubernetes API audit configuration](/docs/openshift?topic=openshift-health-audit#api-server-config)
+  * [Forwarding Kubernetes API audit logs to LogDNA](/docs/openshift?topic=openshift-health-audit#audit-api-server-logdna)
+  * [Managing API server log forwarding](/docs/openshift?topic=openshift-health-audit#audit-api-server-manage)
+  * [Taking a snapshot of API server logs](/docs/openshift?topic=openshift-health-audit#audit-api-server-snapshot)
+* [Worker node audit logs](/docs/openshift?topic=openshift-health-audit#audit-worker)
+  * [Understanding the worker node audit configuration](/docs/openshift?topic=openshift-health-audit#audit-worker-config)
+  * [Setting up log forwarding for worker nodes](/docs/openshift?topic=openshift-health-audit#audit-worker-setup)
+* [Service audit logs](/docs/openshift?topic=openshift-health-audit#audit-service)
 
 
 ## Setting up an image build pipeline
@@ -1654,7 +1660,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
-  * [Changelog for master fix pack 3.11.318_1575_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573)
+  * [Changelog for master fix pack 3.11.318_1575_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573_master)
   * [Changelog for worker node fix pack 3.11.318_1574_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311318_1574)
   * [Changelog for worker node fix pack 3.11.318_1573_openshift, released 23 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311318_1573)
   * [Changelog for master fix pack 3.11.306_1573_openshift, released 16 November 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573)
@@ -1717,6 +1723,9 @@ subcollection: openshift
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
 * [Changelog for 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
+
+[Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog)
+* [Changelog for 1.0.5](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
 
 
 ## IAM and Activity Tracker events
