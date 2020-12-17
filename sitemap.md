@@ -1718,8 +1718,8 @@ subcollection: openshift
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
 * [Changelog for 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
-[Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
-* [Changelog for 1.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_br_chart)
+[Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog)
+* [Changelog for 1.0.5](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
 
 
 ## IAM and Activity Tracker events
