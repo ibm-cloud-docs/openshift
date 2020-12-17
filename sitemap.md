@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-12-16"
+lastupdated: "2020-12-17"
 
 keywords: openshift
 subcollection: openshift
@@ -1717,6 +1717,9 @@ subcollection: openshift
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
 * [Changelog for 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
+
+[Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
+* [Changelog for 1.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_br_chart)
 
 
 ## IAM and Activity Tracker events

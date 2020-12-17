@@ -4,9 +4,9 @@ copyright:
   years: 2014, 2020
 lastupdated: "2020-12-17"
 
-keywords: object storage, plug-in, changelog
+keywords: back up, restore, changelog
 
-subcollection: openshift, object storage
+subcollection: openshift
 
 ---
 
@@ -92,32 +92,31 @@ subcollection: openshift, object storage
 {:video: .video}
 
 
-
 # Object storage plug-in 
 {: #cos_plugin_changelog}
 
-View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in in your {{site.data.keyword.openshiftlong}} clusters.
+View information for updates to the back up and restore Helm chart in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-Refer to the following tables for a summary of changes for each version of the [Object Storage plug-in](/docs/openshift?topic=openshift-object_storage).
+Refer to the following tables for a summary of changes for each version of the [back up and restore Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore).
 
-| Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| `ibmcloud-backup-restore` Helm chart version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
 | 2.0.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.5 |
-{: caption="Object Storage plug-in versions" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the Object Storage plug-in version is supported for."}
+{: caption="Back up and restore Helm chart versions" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the back up and restore Helm chart version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the back up and restore Helm chart version is supported for."}
 
-## Changelog for 2.0.5
-{: #0205_object_plugin}
+## Changelog for 1.0.5
+{: #0205_br_chart}
 
-The following table shows the changes that are included in version 2.0.5 of the Object Storage plug-in.
+The following table shows the changes that are included in version 2.0.5 of the `ibmcloud-backup-restore` Helm chart.
 {: shortdesc}
 
 
 | Version | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- |
-| `2.0.5` | 25 November 2020 | 4.3 - 4.6 | Fixes a `NilPointer` error and the following CVEs: `CVE-2018-20843`, `CVE-2019-13050`, `CVE-2019-13627`, `CVE-2019-14889`, `CVE-2019-1551`, `CVE-2019-15903`, `,CVE-2019-16168`, `CVE-2019-16935`, `CVE-2019-19221`, `CVE-2019-19906`, `CVE-2019-19956`, `CVE-2019-20218`, `CVE-2019-20386`, `CVE-2019-20387`, `CVE-2019-20388`, `CVE-2019-20454`, `CVE-2019-20907`, `CVE-2019-5018`, `CVE-2020-10029`, `CVE-2020-13630`, `CVE-2020-13631`, `CVE-2020-13632`, `CVE-2020-14422`, `CVE-2020-1730`, `CVE-2020-1751`, `CVE-2020-1752`, `CVE-2020-6405`, `CVE-2020-7595`, and `CVE-2020-8177`. |
+| `1.0.5` | 17 December 2020 | 4.3 - 4.6 | Updates in this release:<ul><li>Image signing</li><li>Artifactory</li><li>Resources that are deployed by the `ibmcloud-backup-restore` Helm chart are now linked with the corresponding source code and build urls.</li> |
 {: row-headers}
 {: class="comparison-table"}
-{: caption="Object Storage plug-in version 2.0.5" caption-side="top"}
+{: caption="Back up and restore Helm chart version 2.0.5" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the version of the component. The second column  contains the release date of the component. The third column contains the supported {{site.data.keyword.openshiftshort}} versions. The fourth column contains a brief description of the change made to the component."}
