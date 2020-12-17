@@ -131,4 +131,4 @@ ibmcloud oc addon-versions
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Cluster autoscaler 1.0.1" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the patch version of the component. The second column lists the images tags of the component. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
+{: summary="The rows are read from left to right. The first column is the patch version of the component. The second column lists the image tags of the component. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
