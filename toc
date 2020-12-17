@@ -116,7 +116,11 @@ Red Hat OpenShift on IBM Cloud
             openshift_vpc_vpn.md
             openshift_static_routes.md
 
-    openshift_health.md
+    {: .topicgroup}
+    Logging and monitoring
+        openshift_health_log.md
+        openshift_health_monitor.md
+        openshift_health_audit.md
 
     {: .topicgroup}
     Setting up an image build pipeline

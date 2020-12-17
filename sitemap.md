@@ -743,28 +743,34 @@ subcollection: openshift
 * [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
 
 
-## Logging and monitoring cluster health
-{: #sitemap_logging_and_monitoring_cluster_health}
+## Logging and monitoring
+{: #sitemap_logging_and_monitoring}
 
 
-[Logging and monitoring cluster health](/docs/openshift?topic=openshift-health)
+[Logging for clusters](/docs/openshift?topic=openshift-health)
+* [Understanding options for logging](/docs/openshift?topic=openshift-health#oc_logmet_options)
+* [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
+* [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 
-[Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
+[Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor)
+* [Understanding options for monitoring](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options)
+* [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig)
+* [Viewing cluster states](/docs/openshift?topic=openshift-health-monitor#states)
+  * [Cluster states](/docs/openshift?topic=openshift-health-monitor#states_cluster)
+  * [Master states](/docs/openshift?topic=openshift-health-monitor#states_master)
+  * [Worker node states](/docs/openshift?topic=openshift-health-monitor#states_workers)
+* [Disabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_disable_telemetry_reports)
 
-[Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
-
-[Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna_audit)
-
-[Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health#openshift_sysdig)
-
-[Viewing cluster states](/docs/openshift?topic=openshift-health#states)
-* [Cluster states](/docs/openshift?topic=openshift-health#states_cluster)
-* [Master states](/docs/openshift?topic=openshift-health#states_master)
-* [Worker node states](/docs/openshift?topic=openshift-health#states_workers)
-
-[Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
-
-[Disabling remote health reporting](/docs/openshift?topic=openshift-health#oc_disable_telemetry_reports)
+[Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit)
+* [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
+  * [Understanding the Kubernetes API audit configuration](/docs/openshift?topic=openshift-health-audit#api-server-config)
+  * [Forwarding Kubernetes API audit logs to LogDNA](/docs/openshift?topic=openshift-health-audit#audit-api-server-logdna)
+  * [Managing API server log forwarding](/docs/openshift?topic=openshift-health-audit#audit-api-server-manage)
+  * [Taking a snapshot of API server logs](/docs/openshift?topic=openshift-health-audit#audit-api-server-snapshot)
+* [Worker node audit logs](/docs/openshift?topic=openshift-health-audit#audit-worker)
+  * [Understanding the worker node audit configuration](/docs/openshift?topic=openshift-health-audit#audit-worker-config)
+  * [Setting up log forwarding for worker nodes](/docs/openshift?topic=openshift-health-audit#audit-worker-setup)
+* [Service audit logs](/docs/openshift?topic=openshift-health-audit#audit-service)
 
 
 ## Setting up an image build pipeline
