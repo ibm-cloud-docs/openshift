@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-17"
+lastupdated: "2020-12-18"
 
 keywords: object storage, plug-in, changelog
 
@@ -103,11 +103,25 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
-| 2.0.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.5 |
+| 2.0.6 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.0.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 {: caption="Object Storage plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the Object Storage plug-in version is supported for."}
 
-## Changelog for 2.0.5
+## Changelog for version 2.0.6
+{: #0206_object_plugin}
+
+| Version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
+| --- | --- | --- | --- |
+| `2.0.6` | `1.8.23` | 18 December 2020 | 4.3 - 4.6 | Updates in this version: <ul><li>The `1.8.23` image is signed.</li><li>Updates the Go version to `1.15.5`.</li><li>Fixes `CVE-2020-28362`, `CVE-2020-28367`, and `CVE-2020-28366`.</li><li>Resources that are deployed by the Object Storage plug-in are now linked with the corresponding source code and build URLs.</li><li>The Object Storage plug-in now pulls the universal base image (UBI) from the proxy image registry.</li><ul> |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Object Storage plug-in version 2.0.6" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains image tag. The third column contains the release date of the component. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
+
+
+<br />
+## Changelog for version 2.0.5
 {: #0205_object_plugin}
 
 The following table shows the changes that are included in version 2.0.5 of the Object Storage plug-in.
