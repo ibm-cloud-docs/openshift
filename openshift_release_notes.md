@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-17"
+lastupdated: "2020-12-18"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 18 December 2020 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**Object Storage plug-in**: Version `2.0.6` of the Object Storage plug-in is released. For more information, see the [Object Storage plug-in changelog](/docs/openshift?topic=openshift-cos_plugin_changelog).</li></ul> |
 | 17 December 2020 | <ul><li>**Audit documentation**: Reorganized information about the configuration and forwarding of Kubernetes API server and worker node [audit logs](/docs/openshift?topic=openshift-health-audit).</li><li>**Back up and restore**: Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart changelog](/docs/openshift?topic=openshift-backup_restore_changelog).</li><li>**Ingress ALB changelog**: Updated the [`ingress-auth` build to 954](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li></ul> |
 | 15 December 2020 | **Cluster autoscaler**: Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog). |
 | 14 December 2020 | <ul><li>**Encrypted images**: In clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or later, you can now [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images) by enabling the Image Key Synchronizer cluster add-on.</li><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` build to 2410 and the `ingress-auth` build to 947](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li><li>**Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.18_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4518_1523), [`4.4.29_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4429_1527), [`4.3.40_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1548), and [`3.11.318_1575_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311318_1575).</li></ul> |

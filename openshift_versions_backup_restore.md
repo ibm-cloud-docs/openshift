@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-17"
+lastupdated: "2020-12-18"
 
 keywords: back up, restore, changelog, roks, openshift
 
@@ -106,6 +106,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: caption="Back up and restore Helm chart versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the back up and restore Helm chart version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the back up and restore Helm chart version is supported for."}
 
+<br />
 ## Changelog for 1.0.5
 {: #0105_br_chart}
 
@@ -117,5 +118,7 @@ The following table shows the changes that are included in version 1.0.5 of the 
 | --- | --- | --- | --- | --- |
 | `1.0.5` | `v100` | 17 December 2020 | 4.3 - 4.6 | Updates in this release:<ul><li>Images are now signed.</li><li>The `ibmcloud-backup-restore` Helm chart now pulls the universal base image (UBI) from the proxy image registry.</li><li>Resources that are deployed by the `ibmcloud-backup-restore` Helm chart are now linked with the corresponding source code and build URLs.</li></ul> |
 {: row-headers}
-{: caption="Back up restore Helm chart 1.0.5" caption-side="top"}
+{: class="comparison-table"}
+{: caption="Back up and restore Helm chart version 1.0.5" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the version of the component. The second column lists the images tags of the component. The third column contains the release date of the component. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
+
