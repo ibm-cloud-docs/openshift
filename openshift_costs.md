@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-16"
+lastupdated: "2020-12-18"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -114,7 +114,7 @@ Clusters can have two main types of worker nodes: virtual or physical (bare meta
 {: shortdesc}
 
 **When do worker nodes begin to incur charges?**<br>
-Worker nodes begin to incur charges after successfully complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/containers?topic=containers-health#states_workers).
+Worker nodes begin to incur charges after successfully complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/containers?topic=containers-health-monitor#states_workers).
 
 **What is the difference between virtual and physical machines?**<br>
 
