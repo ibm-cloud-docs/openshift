@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-17"
+lastupdated: "2020-12-18"
 
 keywords: back up, restore, changelog, roks, openshift
 
@@ -106,6 +106,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: caption="Back up and restore Helm chart versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the back up and restore Helm chart version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the back up and restore Helm chart version is supported for."}
 
+{[whitespace.md]}
 ## Changelog for 1.0.5
 {: #0105_br_chart}
 
