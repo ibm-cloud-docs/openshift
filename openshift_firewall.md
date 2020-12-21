@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-03"
+lastupdated: "2020-12-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -384,7 +384,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
       <tr>
         <td>AP North</td>
         <td><code>jp.icr.io</code></td>
-        <td><code>161.202.146.86/29</code></br><code>128.168.71.70/29</code></br><code>165.192.71.222/29</code></td>
+        <td><code>161.202.146.80/29</code></br><code>128.168.71.64/29</code></br><code>165.192.71.216/29</code></td>
       </tr>
       <tr>
         <td>AP South</td>
