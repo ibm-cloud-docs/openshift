@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-12-21"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +84,11 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -147,7 +148,7 @@ You and IBM share responsibilities for the set up and maintenance of your {{site
 | Worker nodes | <ul><li>Deploy a fully managed, highly available dedicated master in a secured, IBM-owned infrastructure account for each cluster.</li><li>Provision worker nodes in your IBM Cloud infrastructure account.</li><li>Ensure that worker nodes successfully provision when the user account and permissions are correctly set up, and sufficient quota exists.</li><li>Fulfill requests for more infrastructure, such as adding, reloading, updating, and removing worker nodes.</li><li>Provide tools, such as the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca), to extend your cluster infrastructure.</li><li>Integrate ordered infrastructure resources to work automatically with your cluster architecture and become available to your deployed apps and workloads.</li><li>Fulfill automation requests to help recover worker nodes.</li></ul> |<ul><li>Use the provided API, CLI, or console tools to adjust [compute](/docs/openshift?topic=openshift-add_workers) and [storage](/docs/openshift?topic=openshift-storage_planning) capacity to meet the needs of your workload.</li><li>Request that worker nodes are rebooted, reloaded, or replaced, and troubleshoot issues such as when the worker nodes are in an [unhealthy state](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes).</li></ul> |
 | Cluster networking | <ul><li>Set up cluster management components, such as public or private service endpoints, VLANs, and load balancers.</li><li>Fulfill requests for more infrastructure, such as attaching worker nodes to existing VLANs or subnets upon resizing a worker pool.</li><li>Create clusters with subnet IP addresses reserved to use to expose apps externally.</li><li>Set up an OpenVPN connection between the master and worker nodes when the cluster is created.</li><li>Provide the ability to set up a VPN connection with on-premises resources such as through the strongSwan IPSec VPN service or the {{site.data.keyword.vpc_short}} VPN.</li><li>Provide the ability to isolate network traffic with edge nodes.</li></ul> | <ul><li>Use the provided API, CLI, or console tools to adjust [cluster networking configuration](/docs/openshift?topic=openshift-cs_network_cluster) to meet the needs of your workload, such as configuring service endpoints, adding VLANs to provide IP addresses for more worker nodes, setting up a VPN connection, or edge node worker pools.</li></ul> |
 | App networking | <ul><li>Set up a public application load balancer (ALB) that is multizone, if applicable. Provide the ability to set up private ALBs and public or private network load balancers (NLBs).</li><li>Support native Kubernetes public and private load balancers and Ingress routes for exposing services externally.</li><li>Install Calico as the container networking interface, and set up default Calico network policies to control basic cluster traffic.</li></ul> | <ul><li>Set up any additional app networking capabilities that are needed, such as private ALBs, public or private NLBs, or additional Calico network policies.</li></ul>|
-| Observability | <ul><li>Provide {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} as managed add-ons to enable observability of your cluster and container environments. Maintenance is simplified for you because IBM provides the installation and updates for the managed add-ons.</li><li>Provide cluster integration with {{site.data.keyword.at_short}} and send {{site.data.keyword.openshiftlong_notm}} API events for auditability.</li></ul> | <ul><li>[Set up and monitor the health](/docs/containers?topic=containers-health) of your container logs and cluster metrics.</li><li>Set up and, if applicable, [configure `kube-audit` logs](/docs/containers?topic=containers-health#audit_enable) to be sent to [{{site.data.keyword.at_short}}](/docs/openshift?topic=openshift-at_events).</li></ul>|
+| Observability | <ul><li>Provide {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} as managed add-ons to enable observability of your cluster and container environments. Maintenance is simplified for you because IBM provides the installation and updates for the managed add-ons.</li><li>Provide cluster integration with {{site.data.keyword.at_short}} and send {{site.data.keyword.openshiftlong_notm}} API events for auditability.</li></ul> | <ul><li>[Set up and monitor the health](/docs/containers?topic=containers-health) of your container logs and cluster metrics.</li><li>Set up and, if applicable, [configure `kube-audit` logs](/docs/openshift?topic=openshift-health-audit) to be sent to [{{site.data.keyword.at_short}}](/docs/openshift?topic=openshift-at_events).</li></ul>|
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 2. Responsibilities for incident and operations management" caption-side="top"}
 
