@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-18"
+lastupdated: "2020-12-21"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 21 December 2020 | <ul><li>**Gateway firewalls and Calico policies**: For classic clusters in Tokyo, updated the {{site.data.keyword.openshiftlong_notm}} IP addresses that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound) or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external}.</li></ul> |
 | 18 December 2020 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**Object Storage plug-in**: Version `2.0.6` of the Object Storage plug-in is released. For more information, see the [Object Storage plug-in changelog](/docs/openshift?topic=openshift-cos_plugin_changelog).</li></ul> |
 | 17 December 2020 | <ul><li>**Audit documentation**: Reorganized information about the configuration and forwarding of Kubernetes API server and worker node [audit logs](/docs/openshift?topic=openshift-health-audit).</li><li>**Back up and restore**: Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart changelog](/docs/openshift?topic=openshift-backup_restore_changelog).</li><li>**Ingress ALB changelog**: Updated the [`ingress-auth` build to 954](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li></ul> |
 | 15 December 2020 | **Cluster autoscaler**: Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog). |
