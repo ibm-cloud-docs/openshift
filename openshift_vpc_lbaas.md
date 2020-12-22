@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-22"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -207,7 +207,7 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
   </tr>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnet`</td>
-    <td>{{site.data.keyword.openshiftshort}} version 4.5 only: Annotation to specify one or more subnets that the VPC application load balancer service deploys to. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC application load balancer deploys to a different subnet in the same VPC, the VPC application load balancer can still route traffic to your worker nodes on the cluster subnets. To see subnets, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.</td>
+    <td>{{site.data.keyword.openshiftshort}} version 4.5 only: Annotation to specify one or more subnets that the VPC application load balancer service deploys to. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC application load balancer deploys to a different subnet in the same VPC, the VPC application load balancer can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.</td>
   </tr>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`</td>

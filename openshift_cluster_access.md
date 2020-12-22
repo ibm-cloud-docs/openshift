@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-10"
+lastupdated: "2020-12-22"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -535,7 +535,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ibmcloud oc cluster config -c <cluster_name_or_ID> [--endpoint private]
         ```
         {: pre}
-3.  Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an {{site.data.keyword.openshiftshort}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/authentication/configuring-internal-oauth.html){: external}.
+3.  Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an {{site.data.keyword.openshiftshort}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.5/authentication/configuring-internal-oauth.html){: external}.
 
     **Log in by using the `oc` CLI**:
     Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value. To use the private service endpoint, include the `--server=<private_service_endpoint>` flag.
@@ -722,7 +722,7 @@ Admission controllers intercept authorized API requests from various Kubernetes 
 
 
 **Can I create my own admission controllers?**<br>
-Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.openshiftshort}}](https://docs.openshift.com/container-platform/4.3/architecture/admission-plug-ins.html){: external} documentation for more information.
+Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.openshiftshort}}](https://docs.openshift.com/container-platform/4.5/architecture/admission-plug-ins.html){: external} documentation for more information.
 
 As noted in the Kubernetes documentation, you can use admission controllers for operations that are otherwise handled by the control plane. As such, take great caution when you configure a custom admission controller. You are responsible for any changes that happen in your cluster because of a custom admission controller.
 {: important}

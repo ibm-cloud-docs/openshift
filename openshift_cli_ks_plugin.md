@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-17"
+lastupdated: "2020-12-22"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -5509,7 +5509,7 @@ ibmcloud oc quota ls
 ## `subnets` command
 {: #cs_subnets}
 
-List available subnets in your IBM Cloud infrastructure account.
+List available subnets in all resource groups in your IBM Cloud infrastructure account.
 {: shortdesc}
 
 ```

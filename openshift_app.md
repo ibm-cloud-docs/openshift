@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-12-22"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +84,11 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -516,7 +517,6 @@ spec:
 
 <br />
 
-
 ## Complete example deployment YAML
 {: #yaml-example}
 
@@ -675,8 +675,6 @@ spec:
 {: codeblock}
 
 <br />
-
-
 
 ## Packaging apps in version 4 clusters for reuse in multiple environments with Kustomize
 {: #kustomize}
@@ -900,15 +898,13 @@ To set up configuration files with Kustomize:
 
 <br />
 
-
-
 ## Packaging apps in {{site.data.keyword.openshiftshort}} 3.11 clusters by using Helm charts
 {: #roks_helm}
 
 You can add complex {{site.data.keyword.openshiftshort}} apps to your cluster by using Helm charts.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> In {{site.data.keyword.openshiftshort}} clusters that run version 4, instead of Helm charts, use [Operators](/docs/openshift?topic=openshift-operators) to package, deploy, and update apps or [Kustomize](#kustomize) to package apps for reuse. If you have custom Helm charts, you can create a [Helm-based Operator](https://docs.openshift.com/container-platform/4.2/operators/operator_sdk/osdk-helm.html){: external} instead.
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> In {{site.data.keyword.openshiftshort}} clusters that run version 4, instead of Helm charts, use [Operators](/docs/openshift?topic=openshift-operators) to package, deploy, and update apps or [Kustomize](#kustomize) to package apps for reuse. If you have custom Helm charts, you can create a [Helm-based Operator](https://docs.openshift.com/container-platform/4.5/operators/operator_sdk/osdk-helm.html){: external} instead.
 {: tip}
 
 [Helm](https://helm.sh){: external} is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
@@ -978,4 +974,3 @@ To set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in 
 5. Identify the Helm chart that you want to install and follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 
 <br />
-

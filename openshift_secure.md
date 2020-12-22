@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-17"
+lastupdated: "2020-12-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -444,7 +444,7 @@ Depending on the network that you want to connect your worker nodes to, you can 
 ### Expose apps with routes
 {: #expose-apps-with-routes}
 
-If you want to allow incoming network traffic from the internet, you can expose your apps by using [routes](https://docs.openshift.com/container-platform/4.3/networking/routes/route-configuration.html){: external}.  
+If you want to allow incoming network traffic from the internet, you can expose your apps by using [routes](https://docs.openshift.com/container-platform/4.5/networking/routes/route-configuration.html){: external}.  
 {: shortdesc}
 
 Every {{site.data.keyword.openshiftshort}} cluster is automatically set up with an {{site.data.keyword.openshiftshort}} router that is assigned a unique domain name and secured with a TLS certificate. When you expose your app by using a route, your app is assigned a URL from the {{site.data.keyword.openshiftshort}} router.
@@ -522,7 +522,7 @@ By default, {{site.data.keyword.openshiftlong_notm}} automatically collects logs
 To access the logs of your cluster components, set up [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna). {{site.data.keyword.la_full_notm}} provides access to all your logs and you can aggregate logs and build your own customized views across multiple clusters.
 
 **How can I monitor the health and performance of my cluster?**</br>
-You can verify the health, capacity, and performance of your apps, services, and worker nodes by monitoring your cluster components and compute resources from the {{site.data.keyword.openshiftlong_notm}} console or CLI, such as the CPU and memory usage. To view more in-depth metrics for your cluster, you can use the built-in monitoring capabilities that are based on open source technologies, such as [Prometheus and Grafana](http://docs.openshift.com/container-platform/4.3/monitoring/cluster_monitoring/about-cluster-monitoring.html){: external}. Prometheus is automatically installed when you create the cluster and you can use the tool to access real-time cluster and app metrics. Prometheus metrics are not stored persistently. To access historic metrics and to compare metrics across multiple clusters, use [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig) instead.
+You can verify the health, capacity, and performance of your apps, services, and worker nodes by monitoring your cluster components and compute resources from the {{site.data.keyword.openshiftlong_notm}} console or CLI, such as the CPU and memory usage. To view more in-depth metrics for your cluster, you can use the built-in monitoring capabilities that are based on open source technologies, such as [Prometheus and Grafana](http://docs.openshift.com/container-platform/4.5/monitoring/cluster_monitoring/about-cluster-monitoring.html){: external}. Prometheus is automatically installed when you create the cluster and you can use the tool to access real-time cluster and app metrics. Prometheus metrics are not stored persistently. To access historic metrics and to compare metrics across multiple clusters, use [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig) instead.
 
 To set up a host-based intrusion detection system (HIDS) and security event log monitoring (SELM), install third-party tools that are designed to monitor your cluster and containerized apps to detect intrusion or misuse, such as [Twistlock](https://www.paloaltonetworks.com/prisma/cloud){: external} or the [Sysdig Falco project](https://sysdig.com/opensource/falco/){: external}. Sysdig Falco is a separate tool and is not included if you choose to install the IBM-provided [Sysdig add-on](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster){: external} in your cluster.  
 
@@ -553,7 +553,7 @@ Every deployment is based on an image that holds the instructions for how to spi
 {: shortdesc}
 
 **Should I use a public or a private registry to store my images?** </br>
-Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external} that is automatically set up in your {{site.data.keyword.openshiftshort}} cluster, and make sure to control access to the registry and the image content that can be pushed.
+Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.openshift.com/container-platform/4.5/registry/architecture-component-imageregistry.html){: external} that is automatically set up in your {{site.data.keyword.openshiftshort}} cluster, and make sure to control access to the registry and the image content that can be pushed.
 
 **Why is it important to check images against vulnerabilities?** </br>
 Research shows that most malicious attacks leverage known software vulnerabilities and weak system configurations. When you deploy a container from an image, the container spins up with the OS and extra binaries that you described in the image. Just like you protect your virtual or physical machine, you must eliminate known vulnerabilities in the OS and binaries that you use inside the container to protect your app from being accessed by unauthorized users. </br>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-17"
+lastupdated: "2020-12-22"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -124,7 +124,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 <li>At-a-glance, real-time view of how your pods consume cluster resources that caaccessed from the {{site.data.keyword.openshiftshort}} **Cluster Console**.</li>
 <li>Monitoring is on a per-cluster basis.</li>
 <li>The `openshift-monitoring` project stack is set up in a single zone only. No persisstorage is available to back up or view metric history.</li></ul>
-<br>For more information, see [the {{site.data.keyword.openshiftshort}} documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.openshift.com/container-platform/4.3/monitoring/cluster_monitoring/about-cluster-monitoring.html).</dd>
+<br>For more information, see [the {{site.data.keyword.openshiftshort}} documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.openshift.com/container-platform/4.5/monitoring/cluster_monitoring/about-cluster-monitoring.html).</dd>
 
 </dl>
 

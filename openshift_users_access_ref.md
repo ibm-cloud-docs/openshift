@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-10"
+lastupdated: "2020-12-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -193,7 +193,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | List all services that are bound to a specific namespace. | - | [`GET /v1/clusters/{idOrName}/services/{namespace}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/ListServicesInNamespace) |
 | List all IBM Cloud infrastructure subnets that are bound to a cluster. | - | [`GET /v1/clusters/{idOrName}/subnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterSubnets) |
 | List all user-managed subnets that are bound to a cluster. | - | [`GET /v1/clusters/{idOrName}/usersubnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterUserSubnet) |
-| List available subnets. | [`ibmcloud oc subnets`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets) | <ul><li>Classic: [`GET /v1/subnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/properties/ListSubnets)</li><li>VPC: [`GET /v2/vpc/getSubnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getSubnets)</li></ul> |
+| List available subnets in all resource groups. | [`ibmcloud oc subnets`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets) | <ul><li>Classic: [`GET /v1/subnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/properties/ListSubnets)</li><li>VPC: [`GET /v2/vpc/getSubnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getSubnets)</li></ul> |
 | View the VLAN spanning status for the infrastructure account. | [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get) | [`GET /v1/subnets/vlan-spanning`](https://containers.cloud.ibm.com/global/swagger-global-api/#/accounts/GetVlanSpanning) |
 | When set for one cluster: List VLANs that the cluster is connected to in a zone.</br>When set for all clusters in the account: List all available VLANs in a zone. | [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlans) | [`GET /v1/datacenters/{datacenter}/vlans`](https://containers.cloud.ibm.com/global/swagger-global-api/#/properties/GetDatacenterVLANs) |
 | List all VPCs in the targeted resource group. | [`ibmcloud oc vpcs`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs) | [`GET /v2​/vpc​/getVPCs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getVPCs) |
@@ -380,7 +380,7 @@ The following table shows the Kubernetes resource permissions that are granted b
     <td><ul>
       <li>Get basic information about projects that the user has access to.</li>
       <li>Create authorized resources in the projects that the user has access to.</li>
-      <li>For more information, see the [{{site.data.keyword.openshiftshort}} docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html).</li></ul></td>
+      <li>For more information, see the [{{site.data.keyword.openshiftshort}} docs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.5/authentication/using-rbac.html).</li></ul></td>
   </tr>
 </tbody>
 </table>
@@ -674,7 +674,7 @@ The following table shows the permissions that are granted by each RBAC role to 
 ## {{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users
 {: #iam_issuer_users}
 
-Users with a service role to {{site.data.keyword.openshiftlong_notm}} in IAM are given [corresponding user roles in RBAC](#rbac_ref). The RBAC user details include a unique issuer ID, subject identifier claim, and {{site.data.keyword.openshiftshort}} username. These details vary with the {{site.data.keyword.openshiftshort}} version of the cluster. When you update a cluster from a previous version, the details are automatically updated. RBAC usernames are prefixed by `IAM#`, such as in the output of `oc get users`. For more information about how OpenID authentication works, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/authentication/identity_providers/configuring-oidc-identity-provider.html){: external}.
+Users with a service role to {{site.data.keyword.openshiftlong_notm}} in IAM are given [corresponding user roles in RBAC](#rbac_ref). The RBAC user details include a unique issuer ID, subject identifier claim, and {{site.data.keyword.openshiftshort}} username. These details vary with the {{site.data.keyword.openshiftshort}} version of the cluster. When you update a cluster from a previous version, the details are automatically updated. RBAC usernames are prefixed by `IAM#`, such as in the output of `oc get users`. For more information about how OpenID authentication works, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.5/authentication/identity_providers/configuring-oidc-identity-provider.html){: external}.
 {: shortdesc}
 
 You might use this information if you build automation tooling within the cluster that relies on the user details to authenticate with the {{site.data.keyword.openshiftshort}} API server.

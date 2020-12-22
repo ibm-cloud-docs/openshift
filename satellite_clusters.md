@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-14"
+lastupdated: "2020-12-22"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -265,7 +265,7 @@ Unlike standard {{site.data.keyword.openshiftshort}} clusters that are created o
 
 *  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage) in your cluster.
 *  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
-*  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.4/storage/persistent_storage/persistent-storage-local.html){: external}.
+*  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.5/storage/persistent_storage/persistent-storage-local.html){: external}.
 
 <br />
 

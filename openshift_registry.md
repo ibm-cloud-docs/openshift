@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-12-22"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +84,11 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -159,7 +160,7 @@ Your app's images must be stored in a container registry that your cluster can a
 {{site.data.keyword.openshiftshort}} clusters are set up by default with an internal registry. The images in the internal registry are backed up, but vary depending on the infrastructure provider of your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
-- <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **Classic clusters**: Your {{site.data.keyword.openshiftshort}} cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} File Storage as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.openshiftshort}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}.
+- <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **Classic clusters**: Your {{site.data.keyword.openshiftshort}} cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} File Storage as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.openshiftshort}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.5/registry/architecture-component-imageregistry.html){: external}.
 - <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **VPC clusters (version 4 only)**: The internal registry of your {{site.data.keyword.openshiftshort}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 - **Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters**: You can optionally choose to set up the internal registry to store data in the `emptyDir` of the worker node where the internal registry pod runs. Keep in mind that this data is not persistent, and if the pod or worker node is restarted, the stored data is deleted and irrecoverable. You might store the images locally in the `emptyDir` to increase performance if you build containers from large images regularly.
 
@@ -469,20 +470,20 @@ To use the internal registry, set up a public route to access the registry. Then
         {: pre}
     6.  Repeat these steps for each project that you want to pull images from the internal registry.
 
-Now that you set up the internal registry with an accessible route, you can log in, push, and pull images to the registry. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/registry/accessing-the-registry.html){: external}.
+Now that you set up the internal registry with an accessible route, you can log in, push, and pull images to the registry. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.5/registry/accessing-the-registry.html){: external}.
 
 <br />
 
 ## Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream
 {: #imagestream_registry}
 
-By default, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to pull images from the remote, private {{site.data.keyword.registrylong_notm}} `icr.io` domains in the `default` project. You can import an image from {{site.data.keyword.registrylong_notm}} into the internal registry of your {{site.data.keyword.openshiftshort}} cluster by tagging the image as an [image stream](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html){: external}. With this setup, you can deploy apps from the image by using the local cache of the internal registry, which can make your app deployments build faster. Also, deployments in other projects can refer to the image stream so that you do not have to create image pull secret credentials to {{site.data.keyword.registrylong_notm}} in each project.
+By default, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to pull images from the remote, private {{site.data.keyword.registrylong_notm}} `icr.io` domains in the `default` project. You can import an image from {{site.data.keyword.registrylong_notm}} into the internal registry of your {{site.data.keyword.openshiftshort}} cluster by tagging the image as an [image stream](https://docs.openshift.com/container-platform/4.5/openshift_images/image-streams-manage.html){: external}. With this setup, you can deploy apps from the image by using the local cache of the internal registry, which can make your app deployments build faster. Also, deployments in other projects can refer to the image stream so that you do not have to create image pull secret credentials to {{site.data.keyword.registrylong_notm}} in each project.
 {: shortdesc}
 
-If you update your image in {{site.data.keyword.registrylong_notm}}, the image is not pulled automatically into the internal registry of your {{site.data.keyword.openshiftshort}} cluster. Instead, [configure periodic importing](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}, or repeat these steps to tag the image. Depending on the image pull policy that you use in your deployment, you might also need to restart your deployment.
+If you update your image in {{site.data.keyword.registrylong_notm}}, the image is not pulled automatically into the internal registry of your {{site.data.keyword.openshiftshort}} cluster. Instead, [configure periodic importing](https://docs.openshift.com/container-platform/4.5/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}, or repeat these steps to tag the image. Depending on the image pull policy that you use in your deployment, you might also need to restart your deployment.
 {: note}
 
-Want to learn more about how builds, image streams, and the internal registry work together? Read the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.3/registry/architecture-component-imageregistry.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}.
+Want to learn more about how builds, image streams, and the internal registry work together? Read the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.5/registry/architecture-component-imageregistry.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}.
 {: tip}
 
 1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -496,7 +497,7 @@ Want to learn more about how builds, image streams, and the internal registry wo
     ibmcloud cr images
     ```
     {: pre}
-4.  Tag the image to pull it from your {{site.data.keyword.registrylong_notm}} namespace into the internal registry as an image stream. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html){: external} or run `oc tag --help`.
+4.  Tag the image to pull it from your {{site.data.keyword.registrylong_notm}} namespace into the internal registry as an image stream. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.5/openshift_images/image-streams-manage.html){: external} or run `oc tag --help`.
     ```
     oc tag <region>.icr.io/<namespace>/<image>:<tag> default/<image>:<tag> --reference-policy=local [--scheduled]
     ```
@@ -524,7 +525,7 @@ Want to learn more about how builds, image streams, and the internal registry wo
     </tr>
     <tr>
     <td><code>--scheduled</code></td>
-    <td>Set this optional flag to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}.</td>
+    <td>Set this optional flag to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.5/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}.</td>
     </tr>
     </tbody></table>
 5.  Verify that your image stream is created.
@@ -565,7 +566,7 @@ Now, your developers can [use the image stream in an app deployment](/docs/opens
 ## Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}
 {: #builds_registry}
 
-When you create a [build](https://docs.openshift.com/container-platform/4.3/builds/understanding-image-builds.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster, you can [set up the internal registry to push the image to your external repository](https://docs.openshift.com/container-platform/4.3/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external} in {{site.data.keyword.registrylong_notm}}. By default, the image pull secret in the `default` project of your cluster only has read access to pull images from {{site.data.keyword.registrylong_notm}}. To push images, you must add a secret with write access.
+When you create a [build](https://docs.openshift.com/container-platform/4.5/builds/understanding-image-builds.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster, you can [set up the internal registry to push the image to your external repository](https://docs.openshift.com/container-platform/4.5/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external} in {{site.data.keyword.registrylong_notm}}. By default, the image pull secret in the `default` project of your cluster only has read access to pull images from {{site.data.keyword.registrylong_notm}}. To push images, you must add a secret with write access.
 {: shortdesc}
 
 1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -578,7 +579,7 @@ When you create a [build](https://docs.openshift.com/container-platform/4.3/buil
     Keep in mind that any user with access to the project can use this secret to push images to your private registry. You might want to set up [logging and monitoring](/docs/openshift?topic=openshift-health) tools so that you can observe who does what actions in your cluster.
     {: note}
 4.  Repeat the previous step for each `icr.io` region that you want to push images to.
-5.  Add the secret to the build service account and refer to the secrets in the build configuration file. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.3/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
+5.  Add the secret to the build service account and refer to the secrets in the build configuration file. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.5/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
     1.  Add the secret to the build service account by linking the secret that you just created to the `builder` role that all builds in the cluster use.
         ```
         oc secrets link builder <secret_name>

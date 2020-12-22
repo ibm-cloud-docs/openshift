@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -147,7 +147,7 @@ The following subnets are automatically provisioned on the default public and pr
 * The primary private subnet determines the private IP addresses that are assigned to worker nodes during cluster creation. Multiple clusters on the same VLAN can share one primary private subnet.
 * The portable private subnet is bound to one cluster only and provides the cluster with 8 private IP addresses. 3 IPs are reserved for IBM Cloud infrastructure functions. 1 IP is used by the default private Ingress ALB and 4 IPs can be used to create private network load balancer (NLB) services or more private ALBs. Portable private IPs are permanent, fixed IP addresses that can be used to access NLBs or ALBs over a private network. If you need more than 4 IPs for private NLBs or ALBs, see [Adding portable IP addresses](/docs/openshift?topic=openshift-subnets#adding_ips). Note that these IP addresses are intended for use in {{site.data.keyword.openshiftlong_notm}}. Do not use these IP addresses for other purposes outside of {{site.data.keyword.openshiftlong_notm}}.
 
-To see all of the subnets provisioned in your account, run `ibmcloud oc subnets --provider classic`. To see the portable public and portable private subnets that are bound to one cluster, you can run `ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources` and look for the **Subnet VLANs** section.
+To see all of the subnets provisioned in all resource groups of your account, run `ibmcloud oc subnets --provider classic`. To see the portable public and portable private subnets that are bound to one cluster, you can run `ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources` and look for the **Subnet VLANs** section.
 
 In {{site.data.keyword.openshiftlong_notm}}, VLANs have a limit of 40 subnets. If you reach this limit, first check to see whether you can [reuse subnets in the VLAN to create new clusters](/docs/openshift?topic=openshift-subnets#subnets_custom). If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) that uses this new VLAN.
 {: note}

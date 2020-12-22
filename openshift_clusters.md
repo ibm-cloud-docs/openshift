@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-07"
+lastupdated: "2020-12-22"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -592,7 +592,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
     </tr>
     <tr>
     <td><code>--subnet-id <em>&lt;subnet_ID&gt;</em></code></td>
-    <td>Enter the ID of the VPC subnet that you created earlier. When you create a VPC cluster from the CLI, you can initially create your cluster in one zone with one subnet only. To create a multizone cluster, [add more zones](/docs/openshift?topic=openshift-add_workers) with the subnets that you created earlier to your cluster after the cluster is created. To list the IDs of your subnets, run <code> ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt,VPC_ID&gt; --zone &lt;subnet_zone&gt; </code>.  </td>
+    <td>Enter the ID of the VPC subnet that you created earlier. When you create a VPC cluster from the CLI, you can initially create your cluster in one zone with one subnet only. To create a multizone cluster, [add more zones](/docs/openshift?topic=openshift-add_workers) with the subnets that you created earlier to your cluster after the cluster is created. To list the IDs of your subnets in all resource groups, run <code> ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt,VPC_ID&gt; --zone &lt;subnet_zone&gt; </code>.  </td>
     </tr>
     <tr>
     <td><code>--flavor <em>&lt;worker_flavor&gt;</em></code></td>
