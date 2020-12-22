@@ -1888,7 +1888,7 @@ subcollection: openshift
 * [Accessing your worker node with SSH fails](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_ssh_worker)
 * [Bare metal instance ID is inconsistent with worker records](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#bm_machine_id)
 * [After a worker node updates or reloads, duplicate nodes and pods appear](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_duplicate_nodes)
-* [After deleting all worker nodes and adding ones, several pods do not start](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#zero_nodes_calico_failure)
+* [After deleting all worker nodes, several pods do not start on new worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#zero_nodes_calico_failure)
 * [Accessing a pod on a new worker node fails with a timeout](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_nodes_duplicate_ip)
 
 [Cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler)

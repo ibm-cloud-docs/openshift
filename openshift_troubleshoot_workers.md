@@ -690,7 +690,7 @@ Service is not disrupted due to these duplicates, but you can remove the old wor
 
 <br />
 
-## After deleting all worker nodes and adding ones, several pods do not start
+## After deleting all worker nodes, several pods do not start on new worker nodes
 {: #zero_nodes_calico_failure}
 
 **Infrastructure provider**:
@@ -719,7 +719,7 @@ Delete the existing `calico-node` worker node entries so that new pods can be cr
   ```
   {: pre}
 
-3. Delete the worker node entries. After you delete the worker node entries, the Calico controller reschedules the calico-node pods on the new worker nodes.
+3. Delete the worker node entries. After you delete the worker node entries, the Calico controller reschedules the `calico-node` pods on the new worker nodes.
   ```
   calicoctl delete node <node_ID>
   ```
