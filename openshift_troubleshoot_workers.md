@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-18"
+lastupdated: "2020-12-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -687,6 +687,52 @@ Service is not disrupted due to these duplicates, but you can remove the old wor
   oc delete node <node_name1> <node_name2>
   ```
   {: pre}
+
+<br />
+
+## After deleting all worker nodes and adding ones, several pods do not start
+{: #zero_nodes_calico_failure}
+
+**Infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+{: tsSymptoms}
+You deleted all worker nodes in your cluster so that zero worker nodes exist. Then, you added one or more worker nodes. When you run the following command, several pods for Kubernetes components are stuck in the `ContainerCreating` status, and the `calico-node` pods are stuck in the `CrashLoopBackOff` status.
+
+```
+oc -n kube-system get pods
+```
+{: pre}
+
+{: tsCauses}
+When you delete all worker nodes in your cluster, no worker node exists for the `calico-kube-controllers` pod to run on. The Calico controller pod's data cannot be updated to remove the data of the deleted worker nodes. When the Calico controller pod begins to run again on the new worker nodes, its data is not updated for the new worker nodes, and it does not start the `calico-node` pods.
+
+{: tsResolve}
+Delete the existing `calico-node` worker node entries so that new pods can be created.
+
+1. Install the [Calico CLI](/docs/openshift?topic=openshift-network_policies#adding_network_policies).
+
+2. Get the IDs of any existing `calico-node` worker node entries.
+  ```
+  calicoctl get nodes -o wide
+  ```
+  {: pre}
+
+3. Delete the worker node entries. After you delete the worker node entries, the Calico controller reschedules the calico-node pods on the new worker nodes.
+  ```
+  calicoctl delete node <node_ID>
+  ```
+  {: pre}
+
+4. Verify that the Kubernetes component pods, including the `calico-node` pods, are now running. It might take a few minutes for the `calico-node` pods to be scheduled and for new component pods to be created.
+  ```
+  oc -n kube-system get pods
+  ```
+  {: pre}
+
+To prevent this error in the future, never delete all worker nodes in your cluster. Always run at least one worker node in your cluster, and if you use Ingress or routers to expose apps, run at least two worker nodes per zone.
+{: note}
 
 <br />
 
