@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-22"
+lastupdated: "2020-12-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -711,27 +711,49 @@ When you delete all worker nodes in your cluster, no worker node exists for the 
 {: tsResolve}
 Delete the existing `calico-node` worker node entries so that new pods can be created.
 
-1. Install the [Calico CLI](/docs/openshift?topic=openshift-network_policies#adding_network_policies).
+**Before you begin**: Install the [Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
 
-2. Get the IDs of any existing `calico-node` worker node entries.
+1. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
+  ```
+  ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
+  ```
+  {: pre}
+
+2. For the `calico-node` pods that are stuck in the `CrashLoopBackOff` status, note the `NODE` IP addresses.
+  ```
+  oc -n kube-system get pods -o wide
+  ```
+  {: pre}
+
+  In this example output, the `calico-node` pod cannot start on worker node `10.176.48.106`.
+  ```
+  NAME                                           READY   STATUS              RESTARTS   AGE     IP              NODE            NOMINATED NODE   READINESS GATES
+  ...
+  calico-kube-controllers-656c5785dd-kc9x2       1/1     Running             0          25h     10.176.48.107   10.176.48.107   <none>           <none>
+  calico-node-mkqbx                              0/1     CrashLoopBackOff    1851       25h     10.176.48.106   10.176.48.106   <none>           <none>
+  coredns-7b56dd58f7-7gtzr                       0/1     ContainerCreating   0          25h     172.30.99.82    10.176.48.106   <none>           <none>
+  ```
+  {: screen}
+
+3. Get the IDs of the `calico-node` worker node entries. Copy the IDs for **only** the worker node IP addresses that you retrieved in the previous step.
   ```
   calicoctl get nodes -o wide
   ```
   {: pre}
 
-3. Delete the worker node entries. After you delete the worker node entries, the Calico controller reschedules the `calico-node` pods on the new worker nodes.
+4. Use the IDs to delete the worker node entries. After you delete the worker node entries, the Calico controller reschedules the `calico-node` pods on the new worker nodes.
   ```
   calicoctl delete node <node_ID>
   ```
   {: pre}
 
-4. Verify that the Kubernetes component pods, including the `calico-node` pods, are now running. It might take a few minutes for the `calico-node` pods to be scheduled and for new component pods to be created.
+5. Verify that the Kubernetes component pods, including the `calico-node` pods, are now running. It might take a few minutes for the `calico-node` pods to be scheduled and for new component pods to be created.
   ```
   oc -n kube-system get pods
   ```
   {: pre}
 
-To prevent this error in the future, never delete all worker nodes in your cluster. Always run at least one worker node in your cluster, and if you use Ingress or routers to expose apps, run at least two worker nodes per zone.
+To prevent this error in the future, never delete all worker nodes in your cluster. Always run at least one worker node in your cluster, and if you use Ingress or routes to expose apps, run at least two worker nodes per zone.
 {: note}
 
 <br />
@@ -764,7 +786,7 @@ Manually update the reference of the private IP address to point to the correct 
   ```
   {: screen}
 
-2.  Install the [Calico CLI](/docs/openshift?topic=openshift-network_policies#adding_network_policies).
+2.  Install the [Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
 3.  List the available worker nodes in Calico. Replace <path_to_file> with the local path to the Calico configuration file.
 
   ```

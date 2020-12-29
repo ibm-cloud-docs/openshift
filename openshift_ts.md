@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-11-20"
+lastupdated: "2020-12-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -251,7 +251,7 @@ Review the options to debug your clusters and find the root causes for failures.
         <tr>
            <td>`Warning`</td>
            <td><ul><li>At least one worker node in the cluster is not available, but other worker nodes are available and can take over the workload. Try to [reload](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) the unavailable worker nodes.</li>
-           <li>Your cluster has zero worker nodes, such as if you created a cluster without any worker nodes or manually removed all the worker nodes from the cluster. [Resize your worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to add worker nodes to recover from a `Warning` state.</li>
+           <li>Your cluster has zero worker nodes, such as if you created a cluster without any worker nodes or manually removed all the worker nodes from the cluster. [Resize your worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to add worker nodes to recover from a `Warning` state, and then [update the Calico node entries for your worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#zero_nodes_calico_failure).</li>
            <li>A control plane operation for your cluster failed. View the cluster in the console or run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` to [check the **Master Status** for further debugging](/docs/openshift?topic=openshift-cs_troubleshoot#debug_master).</li></ul></td>
         </tr>
        </tbody>
@@ -356,7 +356,7 @@ If these components fail, review the following debug steps.
 
             **4.3**:
             ```
-            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.4_openshift -f
+            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.5_openshift -f
             ```
             {: pre}
 
