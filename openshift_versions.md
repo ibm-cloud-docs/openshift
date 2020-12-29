@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2020
-lastupdated: "2020-12-18"
+lastupdated: "2020-12-29"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -171,7 +171,7 @@ After the Red Hat OpenShift Container Platform community releases a version upda
 In general, the last minor version of a major version is supported longer than other minor versions. Because you cannot update a cluster from one major version to another (such as version 3 to 4), this longer support period gives you time to create clusters at a more recent version. Minor versions of a more recent major version might become unsupported before the last minor version of a deprecated major version because the more recent major version has subsequent minor releases that are supported. For example, version 4.3 becomes unsupported before the deprecated version 3.11 because version 4 has future minor releases, but 3.11 is the last minor version of version 3.
 
 **What is different for deprecated versions?**<br>
-Your apps still run, and you can log in to the cluster to manage your {{site.data.keyword.openshiftshort}} resources. You can still manage your cluster lifecycle, such as by adding and reloading worker nodes. However, security patch updates might not be provided. To continue receiving important security updates and the latest functionality, create a cluster at a supported version.
+Your apps still run, and you can log in to the cluster to manage your {{site.data.keyword.openshiftshort}} resources. You can still manage your cluster lifecycle, such as by adding and reloading worker nodes. However, security patch updates might not be provided. To continue receiving important security updates and the latest functionality, create a cluster at a supported version. You receive a notification in the console and CLI to update your cluster to a supported version about 45 days before the deprecated version becomes unsupported.
 
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: important}
