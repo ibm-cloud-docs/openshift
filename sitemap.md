@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-12-29"
+  years: 2017, 2021
+lastupdated: "2021-01-04"
 
 keywords: openshift
 subcollection: openshift
@@ -1267,6 +1267,13 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-object_storage#cos_limitations)
 
 [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx)
+  * [What is software-defined storage (SDS)?](/docs/openshift?topic=openshift-portworx#about-px-sds)
+  * [How does Portworx work?](/docs/openshift?topic=openshift-portworx#about-px-work)
+  * [What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the right one for Portworx?](/docs/openshift?topic=openshift-portworx#about-px-flavors)
+  * [What if I want to run Portworx in a classic cluster with non-SDS worker nodes?](/docs/openshift?topic=openshift-portworx#about-px-non-sds)
+  * [How can I make sure that my data is stored highly available?](/docs/openshift?topic=openshift-portworx#about-px-ha)
+  * [What volume topology offers the best performance for my pods?](/docs/openshift?topic=openshift-portworx#about-px-topology)
+  * [What's next?](/docs/openshift?topic=openshift-portworx#about-px-next)
 * [Planning your Portworx setup](/docs/openshift?topic=openshift-portworx#portworx_planning)
 * [Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)

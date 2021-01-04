@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-01-04"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -354,7 +354,7 @@ Both resources define key-value pairs, but you use them for different situations
 <li>**Credentials**: Put credentials such as passwords, keys, and tokens in a secret to reduce the risk of accidental exposure. For example, when you [bind a service](/docs/openshift?topic=openshift-service-binding) to your cluster, the credentials are stored in a secret.</li></ul></dd>
 </dl>
 
-Want to make your secrets even more secured? Ask your cluster admin to [enable {{site.data.keyword.keymanagementservicefull}}](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt new and existing secrets.
+Want to make your secrets even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt new and existing secrets.
 {: tip}
 
 ### How can I make sure that my app has the right resources?

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-01-04"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -601,10 +601,6 @@ Your VPC cluster is created with both a public and a private service endpoint. W
     <tr>
     <td><code>--version 4.5_openshift</code></td>
     <td>VPC Gen 2 clusters are supported for {{site.data.keyword.openshiftshort}} version 4 only.</td>
-    </tr>  
-    <tr>
-    <td><code>--provider <em>&lt;vpc-gen2&gt;</em></code></td>
-    <td>Enter the generation of {{site.data.keyword.cloud_notm}} infrastructure that you want to use. To create a VPC Generation 2 compute cluster, you must enter <strong>vpc-gen2</strong>.</td>
     </tr>
     <tr>
     <td><code>--cos-instance <em>&lt;cos_ID&gt;</em></code></td>
