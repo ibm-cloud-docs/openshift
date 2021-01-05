@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-01-05"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -130,6 +130,8 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 9. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
 10. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
+<br />
+
 ## Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI
 {: #satcluster-create-cli}
 
@@ -222,6 +224,9 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
 
 7. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
+After you [access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat) and run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. The {{site.data.keyword.satelliteshort}} hosts that you assigned to your cluster function as worker nodes only, and no master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes.
+{: note}
+
 <br />
 
 ## Accessing and working with your {{site.data.keyword.openshiftshort}} clusters
@@ -248,6 +253,8 @@ By default, the internal registry does not run in your {{site.data.keyword.satel
 
 By default, the [image registry operator management state](https://docs.openshift.com/container-platform/4.5/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`. After you change the storage section in the configmap to use a different solution such as the `emptyDir`, you must update the management state to `Managed`. Then, the operator creates the internal registry pod. Use the following command: `oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'`
 {: note}
+
+<br />
 
 ## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
 {: #satcluster-limitations}
