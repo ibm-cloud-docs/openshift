@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-12-21"
+  years: 2017, 2021
+lastupdated: "2021-01-06"
 
 keywords: openshift
 subcollection: openshift
@@ -1267,6 +1267,13 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-object_storage#cos_limitations)
 
 [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx)
+  * [What is software-defined storage (SDS)?](/docs/openshift?topic=openshift-portworx#about-px-sds)
+  * [How does Portworx work?](/docs/openshift?topic=openshift-portworx#about-px-work)
+  * [What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the right one for Portworx?](/docs/openshift?topic=openshift-portworx#about-px-flavors)
+  * [What if I want to run Portworx in a classic cluster with non-SDS worker nodes?](/docs/openshift?topic=openshift-portworx#about-px-non-sds)
+  * [How can I make sure that my data is stored highly available?](/docs/openshift?topic=openshift-portworx#about-px-ha)
+  * [What volume topology offers the best performance for my pods?](/docs/openshift?topic=openshift-portworx#about-px-topology)
+  * [What's next?](/docs/openshift?topic=openshift-portworx#about-px-next)
 * [Planning your Portworx setup](/docs/openshift?topic=openshift-portworx#portworx_planning)
 * [Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
@@ -1401,7 +1408,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.3/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.5/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -1602,6 +1609,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for master fix pack 4.5.24_1525_openshift, released 6 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4524_1525)
   * [Changelog for worker node fix pack 4.5.22_1524_openshift, released 21 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4522_1524)
   * [Changelog for master fix pack 4.5.18_1523_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4518_1523)
   * [Changelog for worker node fix pack 4.5.21_1522_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4521_1522)
@@ -1612,6 +1620,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for master fix pack 4.4.31_1529_openshift, released 6 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4431_1529)
   * [Changelog for worker node fix pack 4.4.31_1528_openshift, released 21 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4431_1528)
   * [Changelog for master fix pack 4.4.29_1527_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1527)
   * [Changelog for worker node fix pack 4.4.31_1526_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4431_1526)
@@ -1632,6 +1641,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for master fix pack 4.3.40_1550_openshift, released 6 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1550)
   * [Changelog for worker node fix pack 4.3.40_1549_openshift, released 21 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1549)
   * [Changelog for master fix pack 4.3.40_1548_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1548)
   * [Changelog for worker node fix pack 4.3.40_1547_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1547)
@@ -1663,6 +1673,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.346_1577_openshift, released 6 January 2021](/docs/openshift?topic=openshift-openshift_changelog#311346_1577)
   * [Changelog for worker node fix pack 3.11.346_1576_openshift, released 21 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311346_1576_master)
   * [Changelog for master fix pack 3.11.318_1575_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573_master)
   * [Changelog for worker node fix pack 3.11.318_1574_openshift, released 7 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311318_1574)
@@ -1888,6 +1899,7 @@ subcollection: openshift
 * [Accessing your worker node with SSH fails](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_ssh_worker)
 * [Bare metal instance ID is inconsistent with worker records](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#bm_machine_id)
 * [After a worker node updates or reloads, duplicate nodes and pods appear](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_duplicate_nodes)
+* [After deleting all worker nodes, several pods do not start on new worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#zero_nodes_calico_failure)
 * [Accessing a pod on a new worker node fails with a timeout](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_nodes_duplicate_ip)
 
 [Cluster autoscaler](/docs/openshift?topic=openshift-troubleshoot_cluster_autoscaler)
@@ -1996,6 +2008,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[January 2021](/docs/openshift?topic=openshift-iks-release#jan21)
 
 [December 2020](/docs/openshift?topic=openshift-iks-release#dec20)
 

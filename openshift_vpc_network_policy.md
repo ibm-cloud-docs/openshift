@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-16"
+  years: 2014, 2021
+lastupdated: "2021-01-06"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -241,6 +241,12 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     <td> - </td>
     <td>CIDR block `166.8.0.0/14`</td>
     </tr>
+    <tr>
+    <td>Allow all worker nodes in this cluster to communicate with each other.</td>
+    <td>ALL</td>
+    <td> - </td>
+    <td>Security group `<SG_name>`</td>
+    </tr>
     </tbody>
     </table>
 
@@ -418,6 +424,12 @@ To create rules in your default security group:
     <td>ALL</td>
     <td> - </td>
     <td>CIDR block `166.8.0.0/14`</td>
+    </tr>
+    <tr>
+    <td>Allow all worker nodes in this cluster to communicate with each other.</td>
+    <td>ALL</td>
+    <td> - </td>
+    <td>Security group `kube-<cluster_ID>`</td>
     </tr>
     </tbody>
     </table>

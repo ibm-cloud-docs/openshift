@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-17"
+  years: 2014, 2021
+lastupdated: "2021-01-06"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -177,7 +177,7 @@ This quick start is for clusters that run {{site.data.keyword.openshiftshort}} v
 Before you get started with Ingress, review the following prerequisites.
 {: shortdesc}
 
-- Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, [contact your IBM Cloud infrastructure account representative](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the ALB can route packets to various subnets in the account.
+- Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the ALB can route packets to various subnets in the account.
 - Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
     - **Administrator** platform role for the cluster
     - **Manager** service role in all namespaces
@@ -739,9 +739,9 @@ When you create a standard cluster, a private ALB is created in each zone that y
   658
 
   Kubernetes Ingress versions
-  0.35.0_826_iks (default)
-  0.34.1_835_iks
-  0.33.0_834_iks
+  0.35.0_869_iks (default)
+  0.34.1_866_iks
+  0.33.0_865_iks
   ```
   {: screen}
 
@@ -1128,9 +1128,9 @@ IBM Cloud Ingress versions
 658
 
 Kubernetes Ingress versions
-0.35.0_826_iks (default)
-0.34.1_835_iks
-0.33.0_834_iks
+0.35.0_869_iks (default)
+0.34.1_866_iks
+0.33.0_865_iks
 ```
 {: screen}Note that only the custom {{site.data.keyword.cloud_notm}} Ingress image versions are supported for {{site.data.keyword.openshiftshort}} clusters. For the changes that are included in each version of the {{site.data.keyword.cloud_notm}} Ingress image, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-21"
+  years: 2014, 2021
+lastupdated: "2021-01-06"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -104,12 +104,21 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
 
+## January 2021
+{: #jan21}
+
+| Date | Description |
+| ---- | ----------- |
+| 06 January 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.24_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4524_1525), [`4.4.31_1529_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1529), [`4.3.40_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1550), and [`3.11.346_1577_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311346_1577).|
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in January 2021"}
+
 ## December 2020
 {: #dec20}
 
 | Date | Description |
 | ---- | ----------- |
-| 21 December 2020 | <ul><li>**Gateway firewalls and Calico policies**: For classic clusters in Tokyo, updated the {{site.data.keyword.openshiftlong_notm}} IP addresses that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound) or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external}.</li><li>Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.22_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4522_1524), [`4.4.31_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1528), [`4.3.40_1549_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1549), and [`3.11.346_1576_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311346_1576_master).</li></ul> |
+| 21 December 2020 | <ul><li>**Gateway firewalls and Calico policies**: For classic clusters in Tokyo, updated the {{site.data.keyword.openshiftlong_notm}} IP addresses that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound) or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external}.</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.22_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4522_1524), [`4.4.31_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1528), [`4.3.40_1549_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1549), and [`3.11.346_1576_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311346_1576_master).</li></ul> |
 | 18 December 2020 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**Object Storage plug-in**: Version `2.0.6` of the Object Storage plug-in is released. For more information, see the [Object Storage plug-in changelog](/docs/openshift?topic=openshift-cos_plugin_changelog).</li></ul> |
 | 17 December 2020 | <ul><li>**Audit documentation**: Reorganized information about the configuration and forwarding of Kubernetes API server and worker node [audit logs](/docs/openshift?topic=openshift-health-audit).</li><li>**Back up and restore**: Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart changelog](/docs/openshift?topic=openshift-backup_restore_changelog).</li><li>**Ingress ALB changelog**: Updated the [`ingress-auth` build to 954](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li></ul> |
 | 15 December 2020 | **Cluster autoscaler**: Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog). |
