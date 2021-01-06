@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-21"
+  years: 2014, 2021
+lastupdated: "2021-01-06"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -112,6 +112,25 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.5 patch updates.
 {: shortdesc}
 
+### Changelog for master fix pack 4.5.24_1525_openshift, released 6 January 2021
+{: #4524_1525}
+
+The following table shows the changes that are included in the master fix pack patch update `4.5.24_1525_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| IBM Calico extension | 538 | 556 | Updated image to include the `ip` command. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.17.2 | v2.0.0 | Updated to use the universal base image (UBI), to use `Go` version 1.15.5, to run with a least privileged security context, and to improve logging. Updated image to implement additional IBM security controls. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.18.13-1 | v1.18.14-1 | Updated to support the Kubernetes 1.18.14 release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in | N/A | N/A | Updated to run with a privileged security context. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | c148a8a | f859228 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external} and [CVE-2020-24659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24659){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.5.0-20201207 | v4.5.0-20201210 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201210){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.5.18 | 4.5.24 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-24){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.5.0-20201207 | v4.5.0-20201210 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201210){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.5.0+20201207 | 4.5.0+20201210 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201210){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.5.18_1523_openshift" caption-side="top"}
 ### Changelog for worker node fix pack 4.5.22_1524_openshift, released 21 December 2020
 {: #4522_1524}
 
@@ -281,6 +300,25 @@ The following table shows the changes that are included in the `4.5.13_1515_open
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.4 patch updates.
 {: shortdesc}
 
+### Changelog for master fix pack 4.4.31_1529_openshift, released 6 January 2021
+{: #4431_1529}
+
+The following table shows the changes that are included in the master fix pack patch update `4.4.31_1529_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| IBM Calico extension | 538 | 556 | Updated image to include the `ip` command. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.17.2 | v2.0.0 | Updated to use the universal base image (UBI), to use `Go` version 1.15.5, to run with a least privileged security context, and to improve logging. Updated image to implement additional IBM security controls. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.15-1 | v1.17.16-1 | Updated to support the Kubernetes 1.17.16 release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in | N/A | N/A | Updated to run with a privileged security context. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | c148a8a | f859228 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external} and [CVE-2020-24659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24659){: external}. |
+| Key Management Service provider | v2.0.7 | v2.2.2 | Updated the key management service (KMS) provider support as follows.<ul><li>Updated to use `Go` version 1.15.2.</li><li>Added support for [service-to-service authentication](/docs/account?topic=account-serviceauth).</li><li>Updated to use the KMS provider secret to identify when a [Key Protect](/docs/containers?topic=containers-encryption#keyprotect) key is enabled and disabled so that encryption and decryption requests are updated accordingly.</li></ul> |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.4.0-20201207 | v4.4.0-20201210 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20201210){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.4.29 | 4.4.31 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-31){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.4.0+20201207 | 4.4.0+20201210 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20201210){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.4.29_1527_openshift" caption-side="top"}
 ### Changelog for worker node fix pack 4.4.31_1528_openshift, released 21 December 2020
 {: #4431_1528}
 
@@ -587,6 +625,22 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.3 p
 
 {{site.data.keyword.openshiftshort}} version 4.3 is deprecated, and becomes unsupported in February 2021 (date subject to change). [Update your clusters](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version 4.4 as soon as possible.
 {: deprecated}
+
+### Changelog for master fix pack 4.3.40_1550_openshift, released 6 January 2021
+{: #4340_1550}
+
+The following table shows the changes that are included in the master fix pack patch update `4.3.40_1550_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| IBM Calico extension | 538 | 556 | Updated image to include the `ip` command. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.17.2 | v2.0.0 | Updated to use the universal base image (UBI), to use `Go` version 1.15.5, to run with a least privileged security context, and to improve logging. Updated image to implement additional IBM security controls. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.15-1 | v1.17.16-1 | Updated to support the Kubernetes 1.17.16 release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in | N/A | N/A | Updated to run with a privileged security context. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | c148a8a | f859228 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external} and [CVE-2020-24659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24659){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.40_1548_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.3.40_1549_openshift, released 21 December 2020
 {: #4340_1549}
@@ -1068,6 +1122,18 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change).
 {: deprecated}
 
+### Changelog for master fix pack 3.11.346_1577_openshift, released 6 January 2021
+{: #311346_1577}
+
+The following table shows the changes that are included in the master fix pack patch update `3.11.346_1577_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.filestorage_full_notm}} plug-in | N/A | N/A | Updated to run as a root user. |
+| {{site.data.keyword.openshiftshort}} | 3.11.318 | 3.11.346 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-346){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.318_1575_openshift" caption-side="top"}
 ### Changelog for worker node fix pack 3.11.346_1576_openshift, released 21 December 2020
 {: #311346_1576_master}
 
@@ -1090,7 +1156,7 @@ The following table shows the changes that are included in the master fix pack p
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 379 | 384 | Updated to use `Go` version 1.15.5 and updated image to implement additional IBM security controls. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 379 | 384 | Updated to use `Go` version 1.15.5. Updated image to run as a non-root user and to implement additional IBM security controls. |
 | Key management service (KMS) provider | v1.0.4 | v1.0.5 | Updated image to implement additional IBM security controls. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 203 | 1004 | Updated Alpine base image to version 3.12 and to use `Go` version 1.15.5. Updated image for [CVE-2020-8037](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8037){: external} and [CVE-2020-28928](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28928){: external}. Updated image to implement additional IBM security controls. |
 | {{site.data.keyword.openshiftshort}} | 3.11.306 | 3.11.318 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-318){: external}. |
