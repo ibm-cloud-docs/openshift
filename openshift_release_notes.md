@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-21"
+  years: 2014, 2021
+lastupdated: "2021-01-06"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -103,6 +103,15 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
+
+## January 2021
+{: #jan21}
+
+| Date | Description |
+| ---- | ----------- |
+| 06 January 2021 | <ul></ul>|
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in January 2021"}
 
 ## December 2020
 {: #dec20}

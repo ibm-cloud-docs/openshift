@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-06"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2957,7 +2957,7 @@ ibmcloud oc ingress alb enable classic --alb ALB_ID --cluster CLUSTER [--ip IP_A
 
 **Example**:
 ```
-ibmcloud oc ingress alb enable classic --alb private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --cluster mycluster --ip 169.XX.XXX.XX --version 0.35.0_826_iks
+ibmcloud oc ingress alb enable classic --alb private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --cluster mycluster --ip 169.XX.XXX.XX --version 0.35.0_869_iks
 ```
 {: pre}
 

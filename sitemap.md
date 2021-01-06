@@ -2005,6 +2005,8 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
 
+[January 2021](/docs/openshift?topic=openshift-iks-release#jan21)
+
 [December 2020](/docs/openshift?topic=openshift-iks-release#dec20)
 
 [November 2020](/docs/openshift?topic=openshift-iks-release#nov20)

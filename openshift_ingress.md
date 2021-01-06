@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-06"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -739,9 +739,9 @@ When you create a standard cluster, a private ALB is created in each zone that y
   658
 
   Kubernetes Ingress versions
-  0.35.0_826_iks (default)
-  0.34.1_835_iks
-  0.33.0_834_iks
+  0.35.0_869_iks (default)
+  0.34.1_866_iks
+  0.33.0_865_iks
   ```
   {: screen}
 
@@ -1128,9 +1128,9 @@ IBM Cloud Ingress versions
 658
 
 Kubernetes Ingress versions
-0.35.0_826_iks (default)
-0.34.1_835_iks
-0.33.0_834_iks
+0.35.0_869_iks (default)
+0.34.1_866_iks
+0.33.0_865_iks
 ```
 {: screen}Note that only the custom {{site.data.keyword.cloud_notm}} Ingress image versions are supported for {{site.data.keyword.openshiftshort}} clusters. For the changes that are included in each version of the {{site.data.keyword.cloud_notm}} Ingress image, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).
 
