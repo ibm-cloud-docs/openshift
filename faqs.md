@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-18"
+  years: 2014, 2021
+lastupdated: "2021-01-06"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
@@ -275,7 +275,7 @@ To view detailed system requirements, you can run a [software product compatibil
 - International Organization for Standardization (ISO 27001, ISO 27017, ISO 27018)
 - Payment Card Industry Data Security Standard (PCI DSS)
 
-**Classic infrastructure only**: To achieve HIPAA and PCI compliance for your environment, make sure to use [dedicated virtual](/docs/openshift?topic=openshift-planning_worker_nodes#vm) or [bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm) machines for your worker nodes, not shared virtual machines. With dedicated virtual or bare metal machines, all compute resources are dedicated exclusively to you, and you can control the isolation and resource consumption of your workloads.
+**Classic infrastructure only**: To achieve HIPAA and PCI compliance for your environment, make sure to use [dedicated virtual](/docs/openshift?topic=openshift-planning_worker_nodes#vm) or [bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm) classic infrastructure machines for your worker nodes, not shared virtual machines. With dedicated virtual or bare metal machines, all compute resources are dedicated exclusively to you, and you can control the isolation and resource consumption of your workloads.
 {: important}
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC infrastructure**: {{site.data.keyword.openshiftlong_notm}} implements controls commensurate with the following security standards:
