@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-07"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 07 January 2021 | <ul></ul>|
 | 06 January 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.24_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4524_1525), [`4.4.31_1529_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1529), [`4.3.40_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1550), and [`3.11.346_1577_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311346_1577).|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in January 2021"}
