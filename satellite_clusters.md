@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-01-11"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -128,7 +128,19 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 7. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
 8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
 9. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
-10. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
+10. [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+11. **For Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts**: Update the Calico network plug-in to use VXLAN encapsulation.
+    1. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
+      ```
+      export DATASTORE_TYPE=kubernetes
+      ```
+      {: pre}
+    2. Patch the `default-ipv4-ippool` IP pool to use VXLAN encapsulation.
+      ```
+      oc patch ippools.crd.projectcalico.org default-ipv4-ippool --type='merge' -p '{"spec":{"ipipMode":"Never","vxlanMode": "Always"}}'
+      ```
+      {: pre}
+12. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
 <br />
 
@@ -222,7 +234,21 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    ```
    {: screen}
 
-7. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
+7. [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+
+8. **For Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts**: Update the Calico network plug-in to use VXLAN encapsulation.
+   1. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
+     ```
+     export DATASTORE_TYPE=kubernetes
+     ```
+     {: pre}
+   2. Patch the `default-ipv4-ippool` IP pool to use VXLAN encapsulation.
+     ```
+     oc patch ippools.crd.projectcalico.org default-ipv4-ippool --type='merge' -p '{"spec":{"ipipMode":"Never","vxlanMode": "Always"}}'
+     ```
+     {: pre}
+
+9. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
 After you [access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat) and run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. The {{site.data.keyword.satelliteshort}} hosts that you assigned to your cluster function as worker nodes only, and no master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes.
 {: note}
