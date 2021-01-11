@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-12-15"
+  years: 2017, 2021
+lastupdated: "2021-01-11"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -299,7 +299,6 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Paris (par01) | Frankfurt |
 | London (lon02, lon04, lon05, lon06) | London |
 | Sydney (syd01, syd04, syd05) | Sydney |
-| Melbourne (mel01) | Sydney |
 | Chennai (che01) | Tokyo |
 | Hong Kong SAR of the PRC (hkg02) | Tokyo |
 | Seoul (seo01) | Tokyo |
