@@ -282,13 +282,7 @@ By default, the [image registry operator management state](https://docs.openshif
 
 <br />
 
-## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
-{: #satcluster-limitations}
 
-See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
-{: shortdesc}
-
-<br />
 
 ## Storing application data in persistent storage
 {: #satcluster-storage}
@@ -299,6 +293,14 @@ Unlike standard {{site.data.keyword.openshiftshort}} clusters that are created o
 *  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage) in your cluster.
 *  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
 *  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.5/storage/persistent_storage/persistent-storage-local.html){: external}.
+
+<br />
+
+## Updating {{site.data.keyword.satelliteshort}} worker nodes
+{: #satcluster-update}
+
+When a worker node update such as a version patch fix pack becomes available, you can follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+{: shortdesc}
 
 <br />
 
@@ -336,3 +338,11 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
 4. For each worker node that you removed, decide what to do with the corresponding host in your {{site.data.keyword.satelliteshort}} location.
    *  Reload the host operating system so that you can re-attach and re-assign the host to other {{site.data.keyword.satelliteshort}} resources such as the location control plane or other clusters.
    *  Delete the hosts from your underlying infrastructure provider. For more information, refer to the infrastructure provider documentation.
+
+<br />
+
+## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
+{: #satcluster-limitations}
+
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
+{: shortdesc}
