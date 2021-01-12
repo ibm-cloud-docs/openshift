@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-12"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -128,19 +128,34 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 7. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
 8. [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
 9. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
-10. [Access your cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
-11. **For Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts**: Update the Calico network plug-in to use VXLAN encapsulation.
-    1. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
-      ```
-      export DATASTORE_TYPE=kubernetes
-      ```
-      {: pre}
-    2. Patch the `default-ipv4-ippool` IP pool to use VXLAN encapsulation.
-      ```
-      oc patch ippools.crd.projectcalico.org default-ipv4-ippool --type='merge' -p '{"spec":{"ipipMode":"Never","vxlanMode": "Always"}}'
-      ```
-      {: pre}
-12. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
+10. **For Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts**: Update the Calico network plug-in to use VXLAN encapsulation.
+  1. Follow [these steps](/docs/openshift?topic=openshift-network_policies#cli_install) to access your cluster form the CLI, download the keys to run Calico commands, and install the `calicoctl` CLI.
+  2. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
+    ```
+    export DATASTORE_TYPE=kubernetes
+    ```
+    {: pre}
+  3. Create the following `IPPool` YAML file, which sets `ipipMode: Never` and `vxlanMode: Always`.
+    ```yaml
+    apiVersion: projectcalico.org/v3
+    kind: IPPool
+    metadata:
+      name: default-ipv4-ippool
+    spec:
+      blockSize: 26
+      cidr: 172.30.0.0/16
+      ipipMode: Never
+      natOutgoing: true
+      nodeSelector: all()
+      vxlanMode: Always
+    ```
+    {: codeblock}
+  4. Apply the `IPPool` to update the Calico plug-in.
+    ```
+    calicoctl apply -f /<filepath>/pool.yaml
+    ```
+    {: pre}
+11. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
 <br />
 
@@ -234,21 +249,35 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    ```
    {: screen}
 
-7. [Access your cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+7. **For Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts**: Update the Calico network plug-in to use VXLAN encapsulation.
+  1. Follow [these steps](/docs/openshift?topic=openshift-network_policies#cli_install) to access your cluster, download the keys to run Calico commands, and install the `calicoctl` CLI.
+  2. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
+    ```
+    export DATASTORE_TYPE=kubernetes
+    ```
+    {: pre}
+  3. Create the following `IPPool` YAML file, which sets `ipipMode: Never` and `vxlanMode: Always`.
+    ```yaml
+    apiVersion: projectcalico.org/v3
+    kind: IPPool
+    metadata:
+      name: default-ipv4-ippool
+    spec:
+      blockSize: 26
+      cidr: 172.30.0.0/16
+      ipipMode: Never
+      natOutgoing: true
+      nodeSelector: all()
+      vxlanMode: Always
+    ```
+    {: codeblock}
+  4. Apply the `IPPool` to update the Calico plug-in.
+    ```
+    calicoctl apply -f /<filepath>/pool.yaml
+    ```
+    {: pre}
 
-8. **For Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts**: Update the Calico network plug-in to use VXLAN encapsulation.
-   1. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
-     ```
-     export DATASTORE_TYPE=kubernetes
-     ```
-     {: pre}
-   2. Patch the `default-ipv4-ippool` IP pool to use VXLAN encapsulation.
-     ```
-     oc patch ippools.crd.projectcalico.org default-ipv4-ippool --type='merge' -p '{"spec":{"ipipMode":"Never","vxlanMode": "Always"}}'
-     ```
-     {: pre}
-
-9. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
+8. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
 After you [access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat) and run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. The {{site.data.keyword.satelliteshort}} hosts that you assigned to your cluster function as worker nodes only, and no master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes.
 {: note}
@@ -282,7 +311,13 @@ By default, the [image registry operator management state](https://docs.openshif
 
 <br />
 
+## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
+{: #satcluster-limitations}
 
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
+{: shortdesc}
+
+<br />
 
 ## Storing application data in persistent storage
 {: #satcluster-storage}
@@ -293,14 +328,6 @@ Unlike standard {{site.data.keyword.openshiftshort}} clusters that are created o
 *  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage) in your cluster.
 *  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
 *  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.5/storage/persistent_storage/persistent-storage-local.html){: external}.
-
-<br />
-
-## Updating {{site.data.keyword.satelliteshort}} worker nodes
-{: #satcluster-update}
-
-When a worker node update such as a version patch fix pack becomes available, you can follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
-{: shortdesc}
 
 <br />
 
@@ -338,11 +365,3 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
 4. For each worker node that you removed, decide what to do with the corresponding host in your {{site.data.keyword.satelliteshort}} location.
    *  Reload the host operating system so that you can re-attach and re-assign the host to other {{site.data.keyword.satelliteshort}} resources such as the location control plane or other clusters.
    *  Delete the hosts from your underlying infrastructure provider. For more information, refer to the infrastructure provider documentation.
-
-<br />
-
-## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
-{: #satcluster-limitations}
-
-See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
-{: shortdesc}
