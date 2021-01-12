@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-16"
+  years: 2014, 2021
+lastupdated: "2021-01-08"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -138,6 +138,7 @@ Because strongSwan is integrated within your cluster, you don't need an external
 Before using the strongSwan Helm chart, review the following considerations and limitations.
 {: shortdesc}
 
+* The strongSwan Helm chart is supported only for classic clusters, and is not supported for VPC Gen 1 or Gen 2 clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
 * The strongSwan Helm chart requires NAT traversal to be enabled by the remote VPN endpoint. NAT traversal requires UDP port 4500 in addition to the default IPSec UDP port of 500. Both UDP ports need to be allowed through any firewall that is configured.
 * The strongSwan Helm chart does not support route-based IPSec VPNs.
 * The strongSwan Helm chart supports IPSec VPNs that use preshared keys, but does not support IPSec VPNs that require certificates.
@@ -720,7 +721,7 @@ Review the supported versions of the strongSwan Helm chart. Typically, a chart v
 * **Deprecated**: 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.9, 2.5.8
 * **Unsupported**: 2.5.7 and earlier
 
-For release dates and changelogs for each strongSwan Helm chart version, [download the latest version of the strongSwan chart locally](https://cloud.ibm.com/kubernetes/helm/iks-charts/strongswan){: external} and open the `RELEASENOTES.md` file.
+For release dates and changelogs for each strongSwan Helm chart version, run `helm show readme iks-charts/strongswan` and look for the `Version History` section.
 
 To upgrade your strongSwan Helm chart to the latest version:
 

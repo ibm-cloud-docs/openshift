@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-12"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -185,6 +185,7 @@ For clusters that run {{site.data.keyword.openshiftshort}} version 4.3 or 4.4, y
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> By default, your {{site.data.keyword.openshiftshort}} cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}
 
+**Viewing volume details**<br>
 To view volume details including the storage class and size, you can describe the persistent volume claim.
 
 *   **Version 4**:
@@ -198,32 +199,11 @@ To view volume details including the storage class and size, you can describe th
     ```
     {: pre}
 
-Example output:
-```
-Name:          image-registry-storage
-Namespace:     openshift-image-registry
-StorageClass:  ibmc-file-gold
-Status:        Bound
-Volume:        pvc-<ID_string>
-Labels:        billingType=hourly
-               region=us-south
-               zone=dal10
-Annotations:   ibm.io/provisioning-status: complete
-               imageregistry.openshift.io: true
-               pv.kubernetes.io/bind-completed: yes
-               pv.kubernetes.io/bound-by-controller: yes
-               volume.beta.kubernetes.io/storage-provisioner: ibm.io/ibmc-file
-Finalizers:    [kubernetes.io/pvc-protection]
-Capacity:      100Gi
-Access Modes:  RWX
-VolumeMode:    Filesystem
-Events:        <none>
-Mounted By:    image-registry-<ID_string>
-```
-{: screen}
-
+**Changing volume details**:<br>
 If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `openshift-image-registry` ({{site.data.keyword.openshiftshort}} 4) or `docker-registry` ({{site.data.keyword.openshiftshort}} 3.11) pod that uses the `registry-backing` PVC to verify that the volume is resized.
-{: note}
+
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11 only**: Do not change the name of the `registry-backing` PVC, even if you change the volume details. Any master operation, such as patch version update or API server refresh, reverts the PVC name back to `registry-backing`, and the custom-named PVC becomes inaccessible.
+{: important}
 
 ### Storing images in the worker node empty directory
 {: #emptydir_internal_registry}

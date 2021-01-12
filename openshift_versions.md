@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-12"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -348,7 +348,7 @@ Before you migrate your workloads from an {{site.data.keyword.openshiftshort}} v
 
 3.  Prepare an [{{site.data.keyword.cos_full_notm}}](https://cloud.ibm.com/objectstorage/){: external} bucket for the migration backup and restore.
     1.  Identify an existing or create an {{site.data.keyword.cos_short}} instance. When you create the instance, make sure to select **Include HMAC Credential**. For more information, see [Preparing your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service).
-    2.  [Create a bucket](/docs/cloud-object-storage-infrastructure?topic=cloud-object-storage-infrastructure-storing-and-retrieving-data#buckets) in your {{site.data.keyword.cos_short}} instance. Note the bucket's region **Location**, such as `us-south`.
+    2.  [Create a bucket](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage#gs-create-buckets) in your {{site.data.keyword.cos_short}} instance. Note the bucket's region **Location**, such as `us-south`.
     3.  Get your HMAC authentication credentials. From the {{site.data.keyword.cos_full_notm}} instance in the console, click **Service credentials** and find credentials that include a `cos_hmac_keys` object with `access_key_id` and `secret_access_key` values. If you do not have credentials with HMAC keys, click **New credential**. Create credentials that include HMAC credentials.
     4.  Get your {{site.data.keyword.cos_short}} instance endpoint for the same geography as your cluster is in. From the {{site.data.keyword.cos_full_notm}} instance in the console, click **Endpoints** and then select the location that you want to use. For example, `https://s3.us.cloud-object-storage.appdomain.cloud`.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-12"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -120,7 +120,7 @@ This quick start is for clusters that run {{site.data.keyword.openshiftshort}} v
 
 1. Create a Kubernetes ClusterIP service for your app so that it can be included in the Ingress application load balancing.
   ```
-  oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+  oc expose deploy <app_deployment_name> --name my-app-svc --port 80 -n <namespace>
   ```
   {: pre}
 
@@ -137,26 +137,26 @@ This quick start is for clusters that run {{site.data.keyword.openshiftshort}} v
     {: screen}
 
 3. Using the Ingress subdomain and secret, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
-  ```yaml
-  apiVersion: extensions/v1beta1
-  kind: Ingress
-  metadata:
-    name: myingressresource
-  spec:
-    tls:
-    - hosts:
-      - <ingress_subdomain>
-      secretName: <ingress_secret>
-    rules:
-    - host: <ingress_subdomain>
-      http:
-        paths:
-        - path: /<app_path>
-          backend:
-            serviceName: my-app-svc
-            servicePort: 80
-  ```
-  {: codeblock}
+    ```yaml
+    apiVersion: networking.k8s.io/v1beta1
+    kind: Ingress
+    metadata:
+      name: myingressresource
+    spec:
+      tls:
+      - hosts:
+        - <ingress_subdomain>
+        secretName: <ingress_secret>
+      rules:
+      - host: <ingress_subdomain>
+        http:
+          paths:
+          - path: /<app_path>
+            backend:
+              serviceName: my-app-svc
+              servicePort: 80
+    ```
+    {: codeblock}
 
 4. Create the Ingress resource.
   ```
@@ -381,32 +381,8 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
 1. Open your preferred editor and create an Ingress configuration file that is named, for example, `myingressresource.yaml`.
 
 2. Define an Ingress resource in your configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
-
-    Example YAML that does not use TLS:
     ```yaml
-    apiVersion: extensions/v1beta1
-    kind: Ingress
-    metadata:
-      name: myingressresource
-    spec:
-      rules:
-      - host: <domain>
-        http:
-          paths:
-          - path: /<app1_path>
-            backend:
-              serviceName: <app1_service>
-              servicePort: 80
-          - path: /<app2_path>
-            backend:
-              serviceName: <app2_service>
-              servicePort: 80
-    ```
-    {: codeblock}
-
-    Example YAML that uses TLS:
-    ```yaml
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
       name: myingressresource
@@ -795,34 +771,8 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
 1. Open your preferred editor and create an Ingress configuration file that is named, for example, `myingressresource.yaml`.
 
 2.  Define an Ingress resource in your configuration file that uses your custom domain to route incoming network traffic to the services that you created earlier.
-
-    Example YAML that does not use TLS:
     ```yaml
-    apiVersion: extensions/v1beta1
-    kind: Ingress
-    metadata:
-      name: myingressresource
-      annotations:
-        ingress.bluemix.net/ALB-ID: "<private_ALB_ID_1>;<private_ALB_ID_2>"
-    spec:
-      rules:
-      - host: <domain>
-        http:
-          paths:
-          - path: /<app1_path>
-            backend:
-              serviceName: <app1_service>
-              servicePort: 80
-          - path: /<app2_path>
-            backend:
-              serviceName: <app2_service>
-              servicePort: 80
-    ```
-    {: codeblock}
-
-    Example YAML that uses TLS:
-    ```yaml
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
       name: myingressresource
