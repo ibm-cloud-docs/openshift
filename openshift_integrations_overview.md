@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-01-12"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -117,7 +117,7 @@ Learn more about the following {{site.data.keyword.IBM}}, {{site.data.keyword.cl
 | Razee | [Razee](https://razee.io/){: external} is an open-source project that automates and manages the deployment of Kubernetes resources across clusters, environments, and cloud providers, and helps you to visualize deployment information for your resources so that you can monitor the rollout process and find deployment issues more quickly. For more information about Razee and how to set up Razee in your cluster to automate your deployment process, see the [Razee documentation](https://github.com/razee-io/Razee){: external}. |
 | {{site.data.keyword.mon_full_notm}} | Gain operational visibility into the performance and health of your apps by deploying Sysdig as a third-party service to your worker nodes to forward metrics to {{site.data.keyword.mon_full}}. For more information, see the following docs.<ul><li>[About the Sysdig partnership](/docs/openshift?topic=openshift-service-partners#sydig-partner).</li><li>[Setting up Sysdig in an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig).</li><li>[Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster).</li></ul> |
 |{{site.data.keyword.blockchainfull_notm}} Platform v2|Deploy and manage your own {{site.data.keyword.blockchainfull_notm}} Platform on {{site.data.keyword.openshiftlong_notm}}. With {{site.data.keyword.blockchainfull_notm}} Platform v2, you can host {{site.data.keyword.blockchainfull_notm}} networks or create organizations that can join other {{site.data.keyword.blockchainfull_notm}} v2 networks. For more information about how to set up {{site.data.keyword.blockchainfull_notm}} in {{site.data.keyword.openshiftlong_notm}}, see [About {{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp).|
-| Other third-party integrations | You can install many other integrations into your {{site.data.keyword.openshiftshort}} cluster, such as through the {{site.data.keyword.openshiftshort}} catalog, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-openshift_apps) for the installation to succeed. |
+| Other third-party integrations | You can install many other integrations into your {{site.data.keyword.openshiftshort}} cluster, such as through the {{site.data.keyword.openshiftshort}} catalog, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for the installation to succeed. |
 {: summary="The rows are read from left to right. The first column is the service that you might integrate with your cluster. The second column is the description of the service."}
 {: caption="{{site.data.keyword.cloud_notm}} and third-party integrations for {{site.data.keyword.openshiftlong}} clusters"}
 {: summary=""}
