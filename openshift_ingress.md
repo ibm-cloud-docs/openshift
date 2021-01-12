@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-12"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -138,7 +138,7 @@ This quick start is for clusters that run {{site.data.keyword.openshiftshort}} v
 
 3. Using the Ingress subdomain and secret, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
     ```yaml
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
       name: myingressresource
@@ -382,7 +382,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
 
 2. Define an Ingress resource in your configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
       name: myingressresource
@@ -772,7 +772,7 @@ If your cluster has multiple namespaces where apps are exposed, one Ingress reso
 
 2.  Define an Ingress resource in your configuration file that uses your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: extensions/v1beta1
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
       name: myingressresource
