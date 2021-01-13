@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -441,7 +441,7 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 **What if I want to connect my cluster to other networks, like other VPCs, an on-prem data center, or IBM Cloud classic resources?**</br>
 Depending on the network that you want to connect your worker nodes to, you can [choose a VPN solution](/docs/openshift?topic=openshift-vpc-vpnaas).
 
-### Expose apps with routes
+### Securely expose apps with routes
 {: #expose-apps-with-routes}
 
 If you want to allow incoming network traffic from the internet, you can expose your apps by using [routes](https://docs.openshift.com/container-platform/4.5/networking/routes/route-configuration.html){: external}.  
@@ -452,7 +452,7 @@ Every {{site.data.keyword.openshiftshort}} cluster is automatically set up with 
 **How can I create secured routes and control TLS termination?** </br>
 When you create a route for your app, you can decide to create a secured (HTTPS) or unsecured (HTTP) route. For secured routes, you can decide where you want to implement the TLS termination, such as at the router or at the pod. For more information, see [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes).
 
-### Expose apps with LoadBalancer and Ingress services
+### Securely expose apps with LoadBalancer and Ingress services
 {: #network_lb_ingress}
 
 You can use network load balancer (NLB) and Ingress application load balancer (ALB) networking services to connect your apps to the public internet or to external private networks. Review the following optional settings for NLBs and ALBs that you can use to meet back-end app security requirements or encrypt traffic as it moves through your cluster.
@@ -637,7 +637,7 @@ Multi-tenant clusters use {{site.data.keyword.openshiftshort}} projects to isola
 
 - **Access:** When you set up multiple projects, you must configure proper RBAC policies for each project to ensure resource isolation. RBAC policies are complex and require in-depth Kubernetes knowledge.
 - **Privileged pods:** If one tenant in a multi-tenant cluster requires to run privileged pods, this pod can access other projects in the cluster or damage the shared compute host. Controlling privileged pods is a complex task that requires effort and deep technical expertise. Use [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs) to control what resources your tenants can deploy in the cluster.
-- **Network policies:** Because your worker nodes are connected to the same private network, you must make sure that you have strict firewall policies in place to prevent pods from accessing pods in other namespaces.
+- **Network policies:** Because your worker nodes are connected to the same private network, you must make sure that you have strict network policies in place to prevent pods from accessing pods in other namespaces.
 - **Compute resource limitation:** To ensure that every team has the necessary resources to deploy services and run apps in the cluster, you must set up [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for every namespace. Resource quotas determine the deployment constraints for a project, such as the number of Kubernetes resources that you can deploy, and the amount of CPU and memory that can be consumed by those resources. After you set a quota, users must include resource requests and limits in their deployments.
 - **Shared cluster resources:** If you run multiple tenants in one cluster, some cluster resources, such as the  {{site.data.keyword.openshiftshort}} router, Ingress application load balancer (ALB) or available portable IP addresses are shared across tenants. Smaller services might have a hard time using shared resources if they must compete against large services in the cluster.
 - **Updates:** You can run one {{site.data.keyword.openshiftshort}} API version at a time only. All apps that run in a cluster must comply with the current {{site.data.keyword.openshiftshort}} API version independent of the team that owns the app. When you want to update a cluster, you must ensure that all teams are ready to switch to a new {{site.data.keyword.openshiftshort}} API version and that apps are updated accordingly. This also means that individual teams have less control over the {{site.data.keyword.openshiftshort}} API version they want to run.
@@ -646,6 +646,9 @@ Multi-tenant clusters use {{site.data.keyword.openshiftshort}} projects to isola
 
 Although single-tenant and multi-tenant clusters come with roughly the same costs, single-tenant clusters provide a higher level of isolation than the projects in a multi-tenant cluster. For better workload isolation, use single-tenant clusters.
 {: important}
+
+**How can I control pod access to other resources in the cluster?** </br>
+By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster. [Kubernetes network policies](/docs/openshift?topic=openshift-network_policies#isolate_services) protect pods from internal network traffic. For example, if a pod does not require access to a specific service and you want to ensure that the pod cannot access that service, you can create a Kubernetes network policy to block egress from the pod to the specified service. Kubernetes network policies can also help you enforce workload isolation between namespaces by controlling how pods and services in different namespaces can communicate.
 
 **How can I control pod permissions?** </br>
 To control pod permissions within or across projects, {{site.data.keyword.openshiftlong_notm}} uses security context constraints (SCCs). By default, every cluster is set up with [{{site.data.keyword.openshiftshort}} SCCs](/docs/openshift?topic=openshift-openshift_scc#oc_sccs) and a set of [IBM-provided SCCs](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs) that you can assign to service accounts, pods, deployments, or projects to limit the permissions within the cluster. If you do not explicitly assign an SCC, your pods use the `restricted` SCC. {{site.data.keyword.openshiftshort}} SCCs are stricter than the default pod security policies in community Kubernetes clusters. You might need to modify an app that runs in a community Kubernetes cluster so that this app can run in {{site.data.keyword.openshiftshort}}. For more information, see [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc). 

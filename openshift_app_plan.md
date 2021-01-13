@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-13"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -547,7 +547,7 @@ As you plan how many `Service` objects you need in your cluster, keep in mind th
 ## Securing apps
 {: #secure_apps}
 
-As you plan and develop your app, consider the following options to maintain a secure image, ensure that sensitive information is encrypted, and encrypt traffic between app microservices.
+As you plan and develop your app, consider the following options to maintain a secure image, ensure that sensitive information is encrypted, and control traffic between your app pods and other pods and services in the cluster.
 {: shortdesc}
 
 <dl>
@@ -557,6 +557,8 @@ As you plan and develop your app, consider the following options to maintain a s
 <dd>When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](/docs/openshift?topic=openshift-security#pi), such as an image pull secret for registry credentials. You can then reference these secrets in your deployment YAML file.</dd>
 <dt>Secret encryption</dt>
 <dd>You can encrypt the Kubernetes secrets that you create in your cluster by using a key management service (KMS) provider, such as {{site.data.keyword.keymanagementserviceshort}}. To get started, see [Encrypt secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect) and [Verify that secrets are encrypted](/docs/openshift?topic=openshift-encryption#verify_kms).</dd>
+<dt>Pod traffic management</dt>
+<dd>By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster. [Kubernetes network policies](/docs/openshift?topic=openshift-network_policies#isolate_services) protect pods from internal network traffic. For example, if a pod does not require access to a specific service and you want to ensure that the pod cannot access that service, you can create a Kubernetes network policy to block egress from the pod to the specified service. Kubernetes network policies can also help you enforce workload isolation between namespaces by controlling how pods and services in different namespaces can communicate.</dd>
 </dl>
 
 ## Managing access and monitoring app health
