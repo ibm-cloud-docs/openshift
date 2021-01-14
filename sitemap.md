@@ -682,7 +682,7 @@ subcollection: openshift
   * [Managing subnet routing for gateway appliances](/docs/openshift?topic=openshift-subnets#vra-routing)
 * [Removing subnets from a cluster](/docs/openshift?topic=openshift-subnets#remove-subnets)
 
-[Classic: Changing service endpoints or VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster)
+[Classic: Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-cs_network_cluster)
 * [Setting up the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
 * [Setting up the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
