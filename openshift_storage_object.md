@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-14"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -344,7 +344,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
       chdir templates && dir
       ```
       {: pre}
-    
+
 
 
    4. Open the `provisioner-sa.yaml` file and look for the `ibmcloud-object-storage-secret-reader` `ClusterRole` definition.
@@ -374,9 +374,9 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
       ```
       {: pre}
 
-9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. 
+9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory.
 
-  - **For OS X and Linux:** 
+  - **For OS X and Linux:**
 
       **VPC Gen 2 clusters** To enable authorized IPs on VPC Gen 2, set the `--set bucketAccessPolicy=true` flag.
       {: note}
@@ -386,7 +386,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         {: pre}
 
   - **For Windows:**
-  
+
       **VPC Gen 2 clusters** To enable authorized IPs on VPC Gen 2, set the `--set bucketAccessPolicy=true` flag.
       {: note}
         ```
@@ -755,7 +755,7 @@ Now that you decided on the configuration that you want, you are ready to [creat
 You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to access your {{site.data.keyword.cos_full_notm}} bucket. When you set up authorized IP addresses, you can only access your bucket data from those IP addresses; for example, in an app pod.
 {: shortdesc}
 
-**Minimum required permissions**: 
+**Minimum required permissions**:
  * **Manager** service role for the {{site.data.keyword.openshiftlong_notm}} service.
  * **Writer** service role for the {{site.data.keyword.cos_full_notm}} service.
 
@@ -786,7 +786,7 @@ You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to a
   ```yaml
   apiVersion: v1
   kind: Secret
-  metadata: 
+  metadata:
     name: <secret_name>
   type: ibm/ibmc-s3fs
   data:
@@ -875,7 +875,7 @@ You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to a
   oc get pods | grep <app_name>
   ```
   {: pre}
-  
+
 14. Verify that your volume is mounted and that you can read and write to your COS bucket.
   1. Log in to your app pod.
     ```
@@ -904,13 +904,13 @@ You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to a
     tmpfs               7565792       0      7565792   0% /sys/firmware
     ```
     {: screen}
-  
+
   3. Change directories to the directory where your COS bucket is mounted. In this example the bucket is mounted at `/cos-vpc`.
     ```
     cd cos-vpc
     ```
     {: pre}
-  
+
   4. Write a `test.txt` file to your COS bucket and list files to verify that the file was written.
     ```
     touch test.txt && ls
@@ -963,7 +963,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
        - ReadWriteOnce
      resources:
        requests:
-         storage: 8Gi # Enter a fictitious value
+         storage: <size>
      storageClassName: <storage_class>
    ```
    {: codeblock}
@@ -1004,7 +1004,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
    </tr>
    <tr>
   <td><code>ibm.io/endpoint</code></td>
-  <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the <code>ibmc</code> Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private service endpoint that matches your cluster location. If the cluster is in one of the metro city zones, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private service endpoint for the metro city, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass <storageclassname>`. Make sure that you enter your service endpoint in the format `https://<s3fs_private_service_endpoint>` for private service endpoints, or `http://<s3fs_public_service_endpoint>` for public service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the <code>ibm.io/endpoint</code> option in your PVC YAML file. </td>
+  <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the <code>ibmc</code> Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private service endpoint for the multizone metro, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass <storageclassname>`. Make sure that you enter your service endpoint in the format `https://<s3fs_private_service_endpoint>` for private service endpoints, or `http://<s3fs_public_service_endpoint>` for public service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the <code>ibm.io/endpoint</code> option in your PVC YAML file. </td>
   </tr>
    <tr>
    <td><code>storage</code></td>
@@ -1397,7 +1397,7 @@ To add a secret to a storage class:
 
 1. Create a [Kubernetes secret with your {{site.data.keyword.cos_full_notm}} credentials](#create_cos_secret). Note that your secret and app pods must be in the same namespace. Note that the service credentials you refer to your secret must have at least <strong>Writer</strong> permission to use the `auto-create-bucket` dynamic provisioning feature.
 
-2. List the default storage classes that are installed when you deploy the `ibm-object-storage-plugin`. 
+2. List the default storage classes that are installed when you deploy the `ibm-object-storage-plugin`.
   ```sh
   oc get sc | grep s3fs
   ```
@@ -1409,7 +1409,7 @@ To add a secret to a storage class:
     oc edit sc ibmc-s3fs-flex-regional
     ```
     {: pre}
-  
+
   * Export the storage class details to `YAML` and save them in a file.
     ```sh
     oc get sc ibmc-s3fs-flex-regional -o yaml
