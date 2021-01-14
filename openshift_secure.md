@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-01-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -648,7 +648,7 @@ Although single-tenant and multi-tenant clusters come with roughly the same cost
 {: important}
 
 **How can I control pod access to other resources in the cluster?** </br>
-By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster. [Kubernetes network policies](/docs/openshift?topic=openshift-network_policies#isolate_services) protect pods from internal network traffic. For example, if a pod does not require access to a specific service and you want to ensure that the pod cannot access that service, you can create a Kubernetes network policy to block egress from the pod to the specified service. Kubernetes network policies can also help you enforce workload isolation between namespaces by controlling how pods and services in different namespaces can communicate.
+By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster. [Kubernetes network policies](/docs/openshift?topic=openshift-network_policies#isolate_services) protect pods from internal network traffic. For example, if most or all pods do not require access to specific pods or services, and you want to ensure that pods by default cannot access those pods or services, you can create a Kubernetes network policy to block ingress those pods or services. Kubernetes network policies can also help you enforce workload isolation between namespaces by controlling how pods and services in different namespaces can communicate.
 
 **How can I control pod permissions?** </br>
 To control pod permissions within or across projects, {{site.data.keyword.openshiftlong_notm}} uses security context constraints (SCCs). By default, every cluster is set up with [{{site.data.keyword.openshiftshort}} SCCs](/docs/openshift?topic=openshift-openshift_scc#oc_sccs) and a set of [IBM-provided SCCs](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs) that you can assign to service accounts, pods, deployments, or projects to limit the permissions within the cluster. If you do not explicitly assign an SCC, your pods use the `restricted` SCC. {{site.data.keyword.openshiftshort}} SCCs are stricter than the default pod security policies in community Kubernetes clusters. You might need to modify an app that runs in a community Kubernetes cluster so that this app can run in {{site.data.keyword.openshiftshort}}. For more information, see [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc). 

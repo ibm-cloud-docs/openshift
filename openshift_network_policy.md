@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-01-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -579,7 +579,7 @@ Kubernetes policies protect pods from internal network traffic. You can create s
 
 By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster.
 
-If a pod does not require access to a specific service and you want to ensure that the pod cannot access that service, you can create a Kubernetes network policy to block egress from the pod to the specified service.
+If most or all pods do not require access to specific pods or services, and you want to ensure that pods by default cannot access those pods or services, you can create a Kubernetes network policy to block ingress those pods or services.
 
 For more information about how Kubernetes network policies control pod-to-pod traffic and for more example policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.
 {: tip}
