@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -122,7 +122,7 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | Kubernetes | Make sure to review the [Kubernetes project limitations](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external}. |
 | KMS provider | Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementservicefull}} instance is not supported. KMS provider integration is available only in version 3.11 or 4.4 clusters, not for version 4.3 clusters.|
 | {{site.data.keyword.openshiftshort}} | Make sure to review the [OpenShift Container Platform limitations](https://docs.openshift.com/container-platform/4.5/scalability_and_performance/planning-your-environment-according-to-object-maximums.html){: external} for your version.|
-| Kubernetes pod logs | To check the logs for individual app pods, you can use the terminal to run `oc logs <pod name>`. Do not use the Kubernetes dashboard to stream logs for your pods, which might cause a disruption in your access to the Kubernetes dashboard. |
+| Kubernetes pod logs | To check the logs for individual app pods, you can use the command line to run `oc logs <pod name>`. Do not use the Kubernetes dashboard to stream logs for your pods, which might cause a disruption in your access to the Kubernetes dashboard. |
 | Logging | <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11 only**: <ul><li>You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you cannot modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.</li><li>Collecting and forwarding API audit logs to {{site.data.keyword.la_full_notm}} is not supported.</li></ul> |
 | Monitoring | <ul><li>Because IBM manages your cluster master, event alerting for the master is disabled. IBM monitors your cluster master and fixes issues as they are detected. For this reason, in the Administrator perspective of the {{site.data.keyword.openshiftshort}}, you might see a `Not available` message for the control plane status.</li><li>The built-in Prometheus alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are part of the IBM-managed cluster master, so you can ignore these alerts.</li></ul>|
 | {{site.data.keyword.openshiftshort}} Container Storage (OCS) | {{site.data.keyword.openshiftshort}} Container Storage is not supported. |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-01-15"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -1403,8 +1403,8 @@ To add a secret to a storage class:
   ```
   {: pre}
 
-3. Export the details for the default storage class that you want to edit in `YAML` form, or use `oc edit` to edit the storage class in your terminal.
-  * Edit the storage class in your terminal
+3. Export the details for the default storage class that you want to edit in `YAML` form, or use `oc edit` to edit the storage class in your command line.
+  * Edit the storage class in your command line
     ```sh
     oc edit sc ibmc-s3fs-flex-regional
     ```

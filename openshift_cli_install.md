@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -119,7 +119,7 @@ To install the CLIs:
 
 1.  Install the stand-alone [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli) (`ibmcloud`).
 
-    Plan to use the CLI often? Try [Enabling shell autocompletion for {{site.data.keyword.cloud_notm}} CLI (Linux/macOS only)](/docs/cli/reference/ibmcloud?topic=cli-shell-autocomplete#shell-autocomplete-linux).
+    Plan to use the CLI often? Try [Enabling autocompletion for the {{site.data.keyword.cloud_notm}} CLI (Linux/macOS only)](/docs/cli/reference/ibmcloud?topic=cli-shell-autocomplete#shell-autocomplete-linux).
     {: tip}
 
 2.  Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
@@ -211,7 +211,7 @@ Looking for a simple installation? You can try installing the plug-in with a pac
         -   **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.18.14/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.18.14/bin/linux/amd64/kubectl){: external}
         -   **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.18.14/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.18.14/bin/windows/amd64/kubectl.exe){: external}
 
-    If you have multiple clusters that run different versions of Kubernetes, you can download separate `kubectl` binary files. Then, set up an alias in your local terminal profile to point to the separate binary files that match the version of `kubectl` your cluster needs.
+    If you have multiple clusters that run different versions of Kubernetes, you can download separate `kubectl` binary files. Then, set up an alias in your local command-line interface (CLI) profile to point to the separate binary files that match the version of `kubectl` your cluster needs.
     {: tip}
 3.  Open the downloaded, compressed files. For example, you might double-click the compressed files in your Downloads folder, or run a command such as `tar -xvf oc.tar.gz`.
 4.  If you use Mac OS or Linux, complete the following steps to add the binary files to your `PATH` system variable.

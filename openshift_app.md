@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-01-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -751,7 +751,7 @@ To set up configuration files with Kustomize:
 
         The names of the `resources` YAMLs must match the names of the other files in the `base` repo. You might include multiple configurations in the same file, but in the example, the configurations are separate files such as `deployment.yaml`, `service.yaml`, and `pvc.yaml`.
 
-    4.  Build your resource YAML files with the configurations that you defined in the `kustomization` base YAML file. The resources are built by combining the configurations in the `kustomization` and resource YAMLs together. The combined YAML files are returned in `stdout` in the terminal output. Use this same command to build any subsequent changes that you make to the `kustomization` YAML, such adding a label.
+    4.  Build your resource YAML files with the configurations that you defined in the `kustomization` base YAML file. The resources are built by combining the configurations in the `kustomization` and resource YAMLs together. The combined YAML files are returned in `stdout` in the output. Use this same command to build any subsequent changes that you make to the `kustomization` YAML, such adding a label.
         ```
         kustomize build
         ```

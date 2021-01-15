@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -130,9 +130,9 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 
 1.  In the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
 2.  Click **{{site.data.keyword.openshiftshort}} web console**.
-3.  To continue working in the terminal, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the terminal as follows.
-    *  **Version 3.11**: Paste the copied `oc login` command into your terminal.
-    *  **Version 4**: Click **Display Token**, copy the `oc login` command, and paste the command into your terminal.
+3.  To continue working in the command line, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the command line as follows.
+    *  **Version 3.11**: Paste the copied `oc login` command into your command line.
+    *  **Version 4**: Click **Display Token**, copy the `oc login` command, and paste the command into your command line.
 
 **What's next?** Try [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui).
 
@@ -145,7 +145,7 @@ In most cases, you can use the {{site.data.keyword.openshiftshort}} web console 
 Choose from the following options.
 *   **Log in as admin**:
     1.  Make sure that you have the [**Administrator** platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-    2.  Set your terminal context for the cluster and download the TLS certificates and permission files for the administrator.
+    2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
         ```
@@ -273,7 +273,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 5. To log in to your cluster, choose from the following options.
   * **Log in as admin**:
       1.  Make sure that you have the [**Administrator** platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-      2.  Set your terminal context for the cluster and download the TLS certificates and permission files for the administrator.
+      2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
           ```
           ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
           ```
@@ -415,7 +415,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 7. Log in to your cluster by choosing from one of the following options.
   * **Log in as admin**:
       1.  Make sure that you have the [**Administrator** platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-      2.  Set your terminal context for the cluster and download the TLS certificates and permission files for the administrator.
+      2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
           ```
           ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
           ```
@@ -479,12 +479,12 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 2.  Click **{{site.data.keyword.openshiftshort}} web console**.
 3.  Click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**.
 4.  Click **Display Token**, and copy the `oc login` command.
-5.  Paste the command into your terminal.
+5.  Paste the command into your command line.
 
 If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
     1.  Make sure that you have the [**Administrator** IAM platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-    2.  Set your terminal context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
+    2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
         ```
@@ -498,7 +498,7 @@ If you do not use on-premises hosts for your location, you must connect to your 
 {: shortdesc}
 
 1.  Make sure that you have the [**Administrator** IAM platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-2.  Set your terminal context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
+2.  Set your command line context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
     ```
     ibmcloud oc cluster config -c <cluster_name_or_ID> --endpoint link --admin
     ```
@@ -510,7 +510,7 @@ If you do not use on-premises hosts for your location, you must connect to your 
 ## Accessing clusters from automation tools by using an API key
 {: #access_automation}
 
-{{site.data.keyword.openshiftlong_notm}} is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). With IAM, you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the {{site.data.keyword.openshiftshort}} console, your IAM identity is used to generate an {{site.data.keyword.openshiftshort}} login token that you can use to log in to the terminal. You can automate logging in to your cluster by creating an IAM API key or service ID to use for the `oc login` command.
+{{site.data.keyword.openshiftlong_notm}} is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). With IAM, you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the {{site.data.keyword.openshiftshort}} console, your IAM identity is used to generate an {{site.data.keyword.openshiftshort}} login token that you can use to log in to the command line. You can automate logging in to your cluster by creating an IAM API key or service ID to use for the `oc login` command.
 {: shortdesc}
 
 ### Using an API key to log in to clusters

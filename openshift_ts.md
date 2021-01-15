@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -104,7 +104,7 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for ge
    * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
    * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [{{site.data.keyword.openshiftshort}}](/docs/containers?topic=containers-cs_versions).
 2. Make sure that your command line tools are up to date.
-   * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
+   * In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
    * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
 <br>
 
@@ -531,7 +531,7 @@ To check your client `kubectl` version against the cluster server version, run `
 {: tsResolve}
 [Install the version of `kubectl`](/docs/openshift?topic=openshift-openshift-cli#cli_oc) that matches the Kubernetes version of your cluster.
 
-If you have multiple clusters at different Kubernetes versions or different container platforms such as {{site.data.keyword.openshiftshort}}, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local terminal profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
+If you have multiple clusters at different Kubernetes versions or different container platforms such as {{site.data.keyword.openshiftshort}}, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local command-line interface (CLI) profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
 
 <br />
 
@@ -854,7 +854,7 @@ During cluster creation, the {{site.data.keyword.openshiftlong_notm}} console us
 
 {: tsResolve}
 To set an API key for the `default` resource group, use the {{site.data.keyword.openshiftlong_notm}} CLI.
-1. Log in to the terminal as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions).
+1. Log in to the command line as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions).
     ```
     ibmcloud login [--sso]
     ```
