@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-15"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -102,7 +102,7 @@ Refer to these commands to create and manage **both community Kubernetes or {{si
 * **Community Kubernetes**: [Install the CLI plug-in](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps), which uses the `ibmcloud ks` alias.
 * **OpenShift**: [Install the CLI plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
 
-In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
+In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
 
 Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_notm}} CLI reference](/docs/Registry?topic=container-registry-cli-plugin-containerregcli). Looking for `kubectl` commands? See the [Kubernetes documentation](https://kubectl.docs.kubernetes.io/){: external}.
 {:tip}
@@ -268,7 +268,7 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster my_cluster
 #### `ibmcloud oc cluster addon disable kube-terminal`
 {: #cs_cluster_addon_disable_kube-terminal}
 
-Disable the [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on. To use the Kubernetes Terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
+Disable the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on. To use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
 {: shortdesc}
 
 ```sh
@@ -385,7 +385,7 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 #### `ibmcloud oc cluster addon enable kube-terminal`
 {: #cs_cluster_addon_enable_kube-terminal}
 
-Enable the [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on to use the Kubernetes Terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
+Enable the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on to use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
 {: shortdesc}
 
 ```sh
@@ -586,7 +586,7 @@ ibmcloud oc cluster ca status --cluster my_cluster
 After logging in to {{site.data.keyword.cloud_notm}}, download the Kubernetes configuration data and certificates as a `kubeconfig` file to your local machine so that you can connect to your cluster and run `oc` commands.
 {: shortdesc}
 
-The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your terminal session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).
+The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your command line session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).
 
 ```sh
 ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE] [--network] [--skip-rbac] [-q] [--yaml]
@@ -702,7 +702,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 <dd><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11 clusters only in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. After you enable a private service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--public-service-endpoint</code></dt>
-<dd>Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your terminal. For 3.11 clusters only, i you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd>Enable the [public service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your command line. For 3.11 clusters only, i you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 
 <dt><code>--workers WORKER</code></dt>
@@ -734,7 +734,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 <dd>Optional: Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html). After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -778,7 +778,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: beta}
 
-Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least three hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
+Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```sh
 ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [-q]
@@ -891,7 +891,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap.</p></dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html). After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the `default` worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
 <dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
 <dd>Optional: Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
@@ -2048,14 +2048,14 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 <dt><code>--hardware <em>ISOLATION</em></code></dt>
 <dd>Required: The level of hardware isolation for your worker node. Use `dedicated` if you want to have available physical resources that are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. For bare metal flavors, specify `dedicated`.</dd>
 
-<dt><code>--disable-disk-encrpyt</code></dt>
+<dt><code>--disable-disk-encrypt</code></dt>
 <dd>Specifies that the disk is not encrypted. The default value is <code>false</code>.</dd>
 
 <dt><code>-l, --label <em>KEY1=VALUE1</em></code></dt>
 <dd>Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.</ul></dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html). After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -2109,7 +2109,7 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 <dd>Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.</ul></dd>
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
-<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
+<dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html). After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
 
 <dt><code>-q</code>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -2356,7 +2356,7 @@ ibmcloud oc worker-pool taint set --worker-pool WORKER_POOL --cluster CLUSTER --
 <dd>Required: The name or ID of the cluster with the worker pool that you want to taint.</dd>
 
 <dt><code>--taint <em>KEY=VALUE:EFFECT</em></code></dt>
-<dd>Required: The label and effect for the Kubernetes taint that you want to set for the worker pool. Specify the taint in the format <code>key=value:effect</code>. The <code>key=value</code> is a label pair such as <code>env=prod</code> that you use to manage the worker node taint and matching pod tolerations. The <code>effect</code> is a [Kubernetes taint effect](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} such as <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code> that describes how the taint works. Depending on the effect of the taint that you set, pods that are running on your worker nodes might be evicted.</dd>
+<dd>Required: The label and effect for the Kubernetes taint that you want to set for the worker pool. Specify the taint in the format <code>key=value:effect</code>. The <code>key=value</code> is a label pair such as <code>env=prod</code> that you use to manage the worker node taint and matching pod tolerations. The <code>effect</code> is a [Kubernetes taint effect ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) such as <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code> that describes how the taint works. Depending on the effect of the taint that you set, pods that are running on your worker nodes might be evicted.</dd>
 
 <dt><code>-f</code></dt>
 <dd>Optional: Force the command to run with no user prompts.</dd>
@@ -2562,7 +2562,7 @@ The `locations` alias for this command is deprecated.
 {: note}
 
 ```sh
-ibmcloud oc zone ls --provider classic [--location LOCATION] [--region-only] [--output json] [-q]
+ibmcloud oc zone ls --provider (classic |  | vpc-gen2) [--location LOCATION] [--region-only] [--output json] [-q]
 ```
 {: pre}
 
@@ -2570,7 +2570,7 @@ ibmcloud oc zone ls --provider classic [--location LOCATION] [--region-only] [--
 
 **Command options**:
 <dl>
-<dt><code>--provider <em>classic</em></code></dt>
+<dt><code>--provider <em>(classic |  | vpc-gen2)</em></code></dt>
 <dd>The infrastructure provider type to list zones for. This flag is required.</dd>
 
 <dt><code>-l, --location <em>LOCATION</em></code></dt>
@@ -6033,7 +6033,7 @@ To use this command to prepare your automation scripts for the release of versio
     ibmcloud oc script update ./mytestscript.sh
     ```
     {: pre}
-2.  Review the proposed changes to the script in the difference that is shown in the terminal STDOUT. Example output:
+2.  Review the proposed changes to the script in the difference that is shown in the command line STDOUT. Example output:
     ```
     --- a/script-test-2
     +++ b/script-test-2

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: openshift
 subcollection: openshift
@@ -227,8 +227,8 @@ subcollection: openshift
 * [Network](/docs/openshift?topic=openshift-security#network)
   * [Network segmentation and privacy](/docs/openshift?topic=openshift-security#network_segmentation)
   * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
-  * [Expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
-  * [Expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
+  * [Securely expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
+  * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
 * [Persistent storage](/docs/openshift?topic=openshift-security#storage)
 * [Monitoring and logging](/docs/openshift?topic=openshift-security#monitoring_logging)
 * [Image and registry](/docs/openshift?topic=openshift-security#images_registry)
@@ -682,7 +682,7 @@ subcollection: openshift
   * [Managing subnet routing for gateway appliances](/docs/openshift?topic=openshift-subnets#vra-routing)
 * [Removing subnets from a cluster](/docs/openshift?topic=openshift-subnets#remove-subnets)
 
-[Classic: Changing service endpoints or VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster)
+[Classic: Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-cs_network_cluster)
 * [Setting up the private service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
 * [Setting up the public service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
@@ -1977,8 +1977,8 @@ subcollection: openshift
 * [Block Storage: App cannot access or write to PVC](/docs/openshift?topic=openshift-cs_troubleshoot_storage#block_app_failures)
   * [Block storage: Block storage changes to read-only](/docs/openshift?topic=openshift-cs_troubleshoot_storage#readonly_block)
   * [Block storage: Mounting existing block storage to a pod fails due to the wrong file system](/docs/openshift?topic=openshift-cs_troubleshoot_storage#block_filesystem)
-* [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_helm_fails)
 * [Block storage: Installing the Block storage plug-in Helm chart gives CPU throttling warnings](/docs/openshift?topic=openshift-cs_troubleshoot_storage#block_helm_cpu)
+* [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_helm_fails)
 * [Object storage: Installing the Object storage plug-in fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_plugin_fails)
 * [Object storage: PVC remains in a pending state](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_pvc_pending)
   * [Object storage: PVC or pod creation fails due to not finding the Kubernetes secret](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_secret_access_fails)

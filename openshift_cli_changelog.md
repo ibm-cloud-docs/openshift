@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-21"
+  years: 2014, 2021
+lastupdated: "2021-01-15"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -96,7 +96,7 @@ subcollection: openshift
 # CLI changelog
 {: #cs_cli_changelog}
 
-In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
+In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
 {: shortdesc}
 
 <br>

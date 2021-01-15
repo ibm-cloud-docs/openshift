@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -532,6 +532,6 @@ For more information about the console, see the [{{site.data.keyword.openshiftsh
     </tr>
     </tbody>
     </table><p></p>
-3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.
+3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
 
 <br />

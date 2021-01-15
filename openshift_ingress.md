@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -1164,7 +1164,7 @@ By default, each ALB has 2 replicas. Scale up your ALB processing capabilities b
   ```
   {: pre}
 
-4. To pick up the changes, update your ALBs.
+4. To pick up the changes, update your ALBs. Note that it might take up to 5 minutes for the changes to be applied to your ALBs.
   ```
   ibmcloud oc ingress alb update -c <cluster_name_or_ID>
   ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -179,13 +179,13 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    Retrieving locations...
    OK
    Name         ID                     Status            Ready   Created      Hosts (used/total)   Managed From   
-   mylcoation   brhtfum2015a6mgqj16g   normal            yes     4 days ago   3 / 6                Dallas   
+   mylocation   brhtfum2015a6mgqj16g   normal            yes     4 days ago   3 / 6                Dallas   
    ```
    {: screen}
 
-3. Create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet. To add worker nodes, you must later assign compute hosts from your location to your {{site.data.keyword.openshiftshort}} cluster.
+3. Create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet. To add worker nodes, you must later assign compute hosts from your location to your {{site.data.keyword.openshiftshort}} cluster. For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
    ```
-   ibmcloud oc cluster create satellite --name <cluster_name> --location <location_name_or_ID> --version 4.5_openshift
+   ibmcloud oc cluster create satellite --name <cluster_name> --location <location_name_or_ID> --version 4.5_openshift 
    ```
    {: pre}
 
@@ -197,28 +197,6 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    ```
    {: screen}
 
-   <table summary="This table is read from left to right. The first column has the command component. The second column has the description of the component.">
-    <caption>Understanding this command's components</caption>
-      <thead>
-      <th>Component</th>
-      <th>Description</th>
-      </thead>
-      <tbody>
-      <tr>
-      <td><code>--name &lt;cluster_name&gt;</code></td>
-      <td>Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. </td>
-      </tr>
-      <tr>
-      <td><code>--location &lt;location_name_or_ID&gt;</code></td>
-      <td>Enter the name or ID of the location where you want to create the cluster. To retrieve the location name or ID, run <code>ibmcloud sat location ls</code>.</td>
-      </tr>
-      <tr>
-      <td><code>--version</code></td>
-      <td>Enter the {{site.data.keyword.openshiftlong_notm}} version that you want to run in your cluster. For a list of supported versions, run <code>ibmcloud oc versions</code>. </td>
-      </tr>
-      </tbody>
-    </table>
-
 4. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
    ```
    ibmcloud oc cluster ls
@@ -229,7 +207,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    ```
    OK
    Name                ID                     State     Created          Workers   Location           Version                 Resource Group Name   Provider   
-   satcluster          brkhsd220b6ktv7sjl50   warning   12 minutes ago   0         mylocation.        4.3.23_1525_openshift   Default               satellite  
+   satcluster          brkhsd220b6ktv7sjl50   warning   12 minutes ago   0         mylocation         4.3.23_1525_openshift   Default               satellite  
    ```
    {: screen}
 

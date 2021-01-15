@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-01-15"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -168,7 +168,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     ```
     {: pre}
 6.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
-7.  From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
+7.  From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
 8.  Verify that the `oc` commands run properly with your cluster by checking the version.
     ```
     oc version
@@ -252,7 +252,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     </tr>
     </tbody>
     </table><p></p>
-3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.
+3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
 
 <br />
 
@@ -263,7 +263,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 With {{site.data.keyword.openshiftlong_notm}}, you can create a new app and expose your app service via an {{site.data.keyword.openshiftshort}} router for external users to use.
 {: shortdesc}
 
-If you took a break from the last lesson and started a new terminal, make sure that you log back in to your cluster. Open your {{site.data.keyword.openshiftshort}} web console at `https://<master_URL>/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. Then from the menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your terminal to authenticate via the CLI.
+If you took a break from the last lesson and started a new command line, make sure that you log back in to your cluster. Open your {{site.data.keyword.openshiftshort}} web console at `https://<master_URL>/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. Then from the menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
 {: tip}
 
 1.  Create a project for your Hello World app. A project is an {{site.data.keyword.openshiftshort}} version of a Kubernetes namespace with additional annotations.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-11-18"
+  years: 2014, 2021
+lastupdated: "2021-01-14"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,15 +84,16 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
 
-# Classic: Changing service endpoints or VLAN connections
+# Classic: Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11
 {: #cs_network_cluster}
 
 After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-clusters), you can change the service endpoints that your cluster master is accessible through or change the VLAN connections for your worker nodes.
@@ -101,7 +102,9 @@ After you initially set up your network when you [create a cluster](/docs/opensh
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
 
-<p class="important">You must enable the public service endpoint during cluster creation, and you cannot disable it later. If no public service endpoint for the cluster exists, a subdomain for the router is not generated. You can optionally enable a private service endpoint. For a cluster with only a private service endpoint, create your cluster on [VPC Gen 2 compute infrastructure](/docs/openshift?topic=openshift-vpc-subnets) instead.</p>
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The content on this page is specific to clusters that run **{{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public service endpoint during cluster creation, and you cannot disable it later. You can later enable the private service endpoint. However, in classic clusters that run {{site.data.keyword.openshiftshort}} 4.3 or later, only the public service endpoint can be enabled.
+{: important}
+
 
 ## Setting up the private service endpoint
 {: #set-up-private-se}

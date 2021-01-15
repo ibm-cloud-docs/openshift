@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-11-19"
+  years: 2014, 2021
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -209,23 +209,15 @@ Now you can run your Cloud Pak on your {{site.data.keyword.openshiftshort}} clus
 To deploy a Cloud Pak to your {{site.data.keyword.openshiftlong_notm}} cluster, your entitlement to the Cloud Pak must be assigned to your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-1.  Verify that your {{site.data.keyword.cloud_notm}} account ID matches your IBM Passport Advantage ID.
-    1.  Get your {{site.data.keyword.cloud_notm}} account ID.
-        1.  Log in to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external}.
-        2.  From the menu bar, click **Manage > Account**.
-        3.  From the navigation pane, click **Account Settings**, and note your **ID**, such as `1aa111aa1a11111aaa1a1111aa1aa111`.
-    2.  Log in to [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} and check your account ID.
-    3.  Compare the IDs. If the IDs do not match, try using a different {{site.data.keyword.cloud_notm}} or IBM Passport Advantage account that match. If you cannot find matching IDs, contact [eCustomer care](https://www-112.ibm.com/software/howtobuy/passportadvantage/homepage/ecarec){: external}.
-2.  Make sure that the account owner gives you permission to assign entitlements.
+1.  Verify that your Cloud Pak entitlement is in your [**Container software library**](https://myibm.ibm.com/products-services/containerlibrary){: external}. If you do not see the entitlement, the entitlement might be owned by a different user. Verify the user, and if you still have issues, click **Contact IBM** from the container software library page.
+2.  Make sure that the {{site.data.keyword.cloud_notm}} account owner gives you permission to assign entitlements.
     1.  From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click **Manage > Access (IAM)**.
     2.  From the **Users** tab, click the user that you want to assign permissions.
     3.  Click **Access policies > Assign access +**.
     4.  Click **Account management**.
     5.  From the **What type of access do you want to assign?** drop-down menu, select **License and Entitlement**.
     6.  Select at least the **Editor** platform role, then click **Add**.
-3.  Assign the Cloud Pak license to your {{site.data.keyword.cloud_notm}} account.  
-    1.  From the [{{site.data.keyword.cloud_notm}} software catalog](https://cloud.ibm.com/catalog#software){: external}, find the Cloud Pak that you want to assign.
-    2.  From the **Create > Assign a license** section, select the license that you want to use and click **Assign**.
+3.  [Assign the Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-software-license).
 4.  Continue to [create the Cloud Pak instance](#oc_cloud_paks_add).
 
 <br />

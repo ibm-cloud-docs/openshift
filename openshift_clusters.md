@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -384,7 +384,7 @@ The following image walks you through choosing the setup that you want for your 
    </tr>
    <tr>
    <td><code>--public-service-endpoint</code></td>
-   <td>Enable the public service endpoint so that your {{site.data.keyword.openshiftshort}} master can be accessed over the public network, for example to run `oc` commands from your terminal, and so that your {{site.data.keyword.openshiftshort}} master and the worker nodes can communicate over the public VLAN. You must enable the public service endpoint, and cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</td>
+   <td>Enable the public service endpoint so that your {{site.data.keyword.openshiftshort}} master can be accessed over the public network, for example to run `oc` commands from your CLI, and so that your {{site.data.keyword.openshiftshort}} master and the worker nodes can communicate over the public VLAN. You must enable the public service endpoint, and cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</td>
    </tr>
    <tr>
    <td><code>--private-service-endpoint</code></td>
@@ -544,7 +544,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
 
 **To create a VPC cluster from the CLI**:
 
-1. In your terminal, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the --sso flag to log in.
+1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the --sso flag to log in.
    ```
    ibmcloud login -r <region> [-g <resource_group>] [--sso]
    ```

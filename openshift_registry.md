@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -342,7 +342,7 @@ To use the internal registry, set up a public route to access the registry. Then
     image-registry   image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud             image-registry   5000-tcp   reencrypt     None
     ```
     {: screen}
-4.  Edit the route to set the [load balancing strategy](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#load-balancing){: external} to `source` so that the same client IP address reaches the same server, as in a passthrough route setup. You can set the strategy by adding an annotation in the `metadata.annotations` section: `haproxy.router.openshift.io/balance: source`. You can edit the configuration file from the **{{site.data.keyword.openshiftshort}} Application Console** or in your terminal by running the following command.
+4.  Edit the route to set the [load balancing strategy](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#load-balancing){: external} to `source` so that the same client IP address reaches the same server, as in a passthrough route setup. You can set the strategy by adding an annotation in the `metadata.annotations` section: `haproxy.router.openshift.io/balance: source`. You can edit the configuration file from the **{{site.data.keyword.openshiftshort}} Application Console** or in your command line by running the following command.
     ```
     oc edit route image-registry
     ```

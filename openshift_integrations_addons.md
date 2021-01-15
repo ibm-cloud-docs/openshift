@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-11"
+  years: 2014, 2021
+lastupdated: "2021-01-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -99,7 +99,7 @@ Quickly add extra capabilities and open-source technologies to your cluster with
 {: shortdesc}
 
 **What are managed add-ons?** </br>
-Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities and open-source capabilities, such as the Diagnostics and Debug Tool, Kubernetes Terminal, {{site.data.keyword.block_storage_is_short}}, or the Cluster Autoscaler. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
+Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities and open-source capabilities, such as the Diagnostics and Debug Tool, Kubernetes web terminal, {{site.data.keyword.block_storage_is_short}}, or the Cluster Autoscaler. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
 
 The managed add-ons that you can install in your cluster depend on the type of cluster, the container platform, and the infrastructure provider that you choose.
 {: note}
@@ -118,7 +118,7 @@ If you installed an admission controller that blocks unsigned images, such as [P
 To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources are automatically installed in your cluster. Refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet to install the managed add-on.
 
 For more information about the prerequisites for each add-on, see:
-- [Kubernetes Terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
+- [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
 - [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
 - [Static routes](/docs/openshift?topic=openshift-static-routes)

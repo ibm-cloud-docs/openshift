@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -405,7 +405,7 @@ Be sure that you want to reset the key and understand the impact to your app. Th
 To set up the API key to access the IBM Cloud infrastructure portfolio:
 
 1.  Create an API key for the region and resource group that the cluster is in.
-    1.  Log in to the terminal with the user whose infrastructure permissions you want to use.
+    1.  Log in to the command line with the user whose infrastructure permissions you want to use.
     2.  Target the resource group where you want to set the API key. If you do not target a resource group, the API key is set for the default resource group.
         ```
         ibmcloud target -g <resource_group_name>
