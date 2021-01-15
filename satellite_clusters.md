@@ -183,7 +183,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    ```
    {: screen}
 
-3. Create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane. To ensure that hosts are automatically assigned as worker nodes in the default worker pool of your cluster, specify those hosts' labels in `--host-label` flags, and specify the number of worker nodes per zone in the `--workers` flag. For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
+3. Create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane, but no worker nodes are created for your cluster yet. To add worker nodes, you must later assign compute hosts from your location to your {{site.data.keyword.openshiftshort}} cluster. For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
    ```
    ibmcloud oc cluster create satellite --name <cluster_name> --location <location_name_or_ID> --version 4.5_openshift 
    ```
