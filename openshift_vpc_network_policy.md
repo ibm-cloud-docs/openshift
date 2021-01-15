@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-01-15"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -204,13 +204,13 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     <td>Any</td>
     </tr>
     <tr>
-    <td>VPC Gen 2 clusters < 4.5 and VPC Gen 1 clusters: Allow incoming traffic requests to apps that run on your worker nodes.</td>
+    <td>VPC Gen 2 clusters < 4.5: Allow incoming traffic requests to apps that run on your worker nodes.</td>
     <td>TCP</td>
     <td>`30000` - `32767`</td>
     <td>Any</td>
     </tr>
     <tr>
-    <td>VPC Gen 2 clusters < 4.5 and VPC Gen 1 clusters: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
+    <td>VPC Gen 2 clusters < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
     <td>UDP</td>
     <td>`30000` - `32767`</td>
     <td>Any</td>
@@ -356,13 +356,13 @@ To create rules in your default security group:
     <td>Any</td>
     </tr>
     <tr>
-    <td>VPC Gen 2 clusters < 4.5 and VPC Gen 1 clusters: Allow incoming traffic requests to apps that run on your worker nodes.</td>
+    <td>VPC Gen 2 clusters < 4.5: Allow incoming traffic requests to apps that run on your worker nodes.</td>
     <td>TCP</td>
     <td>`30000` - `32767`</td>
     <td>Any</td>
     </tr>
     <tr>
-    <td>VPC Gen 2 clusters < 4.5 and VPC Gen 1 clusters: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
+    <td>VPC Gen 2 clusters < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
     <td>UDP</td>
     <td>`30000` - `32767`</td>
     <td>Any</td>
