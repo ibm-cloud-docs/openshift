@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-19"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -5698,7 +5698,7 @@ ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--output json] [-q]
 **Command options**:
 <dl>
 <dt><code>--addon <em>ADD-ON_NAME</em></code></dt>
-<dd>Optional: Specify an add-on name, such as <code>istio</code> or <code>knative</code>, to filter versions for.</dd>
+<dd>Optional: Specify an add-on name such as <code>istio</code> to filter versions for.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
