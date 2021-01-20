@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-20"
 
 keywords: openshift
 subcollection: openshift
@@ -1609,6 +1609,8 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for master fix pack 4.5.24_1527_openshift, released 19 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4524_1527)
+  * [Changelog for worker node fix pack 4.5.24_1526_openshift, released 18 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4524_1526)
   * [Changelog for master fix pack 4.5.24_1525_openshift, released 6 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4524_1525)
   * [Changelog for worker node fix pack 4.5.22_1524_openshift, released 21 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4522_1524)
   * [Changelog for master fix pack 4.5.18_1523_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4518_1523)
@@ -1620,6 +1622,8 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for master fix pack 4.4.31_1531_openshift, released 19 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4431_1531)
+  * [Changelog for worker node fix pack 4.4.31_1530_openshift, released 18 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4431_1530)
   * [Changelog for master fix pack 4.4.31_1529_openshift, released 6 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4431_1529)
   * [Changelog for worker node fix pack 4.4.31_1528_openshift, released 21 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4431_1528)
   * [Changelog for master fix pack 4.4.29_1527_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4429_1527)
@@ -1641,6 +1645,8 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
+  * [Changelog for master fix pack 4.3.40_1552_openshift, released 19 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1552)
+  * [Changelog for worker node fix pack 4.3.40_1551_openshift, released 18 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1551)
   * [Changelog for master fix pack 4.3.40_1550_openshift, released 6 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1550)
   * [Changelog for worker node fix pack 4.3.40_1549_openshift, released 21 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1549)
   * [Changelog for master fix pack 4.3.40_1548_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#4340_1548)
@@ -1673,6 +1679,8 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.346_1578_openshift, released 19 January 2021](/docs/openshift?topic=openshift-openshift_changelog#311346_1578_master)
+  * [Changelog for worker node fix pack 3.11.346_1578_openshift, released 18 January 2021](/docs/openshift?topic=openshift-openshift_changelog#311346_1578)
   * [Changelog for master fix pack 3.11.346_1577_openshift, released 6 January 2021](/docs/openshift?topic=openshift-openshift_changelog#311346_1577)
   * [Changelog for worker node fix pack 3.11.346_1576_openshift, released 21 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311346_1576_master)
   * [Changelog for master fix pack 3.11.318_1575_openshift, released 14 December 2020](/docs/openshift?topic=openshift-openshift_changelog#311306_1573_master)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-19"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2869,7 +2869,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type (PUBLIC|PRIVATE)
 
 **Example**:
 ```sh
-ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 2410
+ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 2424
 ```
 {: pre}
 
@@ -3215,12 +3215,12 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 **Example commands:**
 * To update all ALB pods in the cluster:
   ```sh
-  ibmcloud oc ingress alb update -c mycluster --version 2410
+  ibmcloud oc ingress alb update -c mycluster --version 2424
   ```
   {: pre}
 * To update the ALB pods for one or more specific ALBs:
   ```sh
-  ibmcloud oc ingress alb update -c mycluster --version 2410 --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
+  ibmcloud oc ingress alb update -c mycluster --version 2424 --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
   ```
   {: pre}
 
@@ -5698,7 +5698,7 @@ ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--output json] [-q]
 **Command options**:
 <dl>
 <dt><code>--addon <em>ADD-ON_NAME</em></code></dt>
-<dd>Optional: Specify an add-on name, such as <code>istio</code> or <code>knative</code>, to filter versions for.</dd>
+<dd>Optional: Specify an add-on name such as <code>istio</code> to filter versions for.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>

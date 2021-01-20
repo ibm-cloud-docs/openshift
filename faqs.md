@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-19"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
@@ -290,7 +290,7 @@ To view detailed system requirements, you can run a [software product compatibil
 
 You can add {{site.data.keyword.cloud_notm}} platform and infrastructure services as well as services from third-party vendors to your {{site.data.keyword.openshiftlong_notm}} cluster to enable automation, improve security, or enhance your monitoring and logging capabilities in the cluster.
 
-For a list of supported services, see [Integrating services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations).
+For a list of supported services, see [Integrating services](/docs/containers?topic=containers-supported_integrations#supported_integrations).
 
 
 ## Does IBM support third-party and open source tools that I use with my cluster?

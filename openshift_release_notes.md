@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-01-19"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 19 January 2021 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` build to 2424](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li><li>**Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.24_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4524_1527), [`4.4.31_1531_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1531), [`4.3.40_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1552), and [`3.11.346_1578_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311346_1578_master).</li></ul> |
+| 18 January 2021 | <ul><li>**Knative add-on is unsupported**: The Knative add-on is automatically removed from your cluster. Instead, use the [Knative open source project](https://knative.dev/docs/install/){: external} or [{{site.data.keyword.codeenginefull}}](/docs/codeengine?topic=codeengine-getting-started), which includes Knative's open-source capabilities.</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.24_1526_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4524_1526), [`4.4.31_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1530), [`4.3.40_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1551), and [`3.11.346_1578_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311346_1578).</li></ul> |
 | 14 January 2021 | **Cluster autoscaler**: Cluster autoscaler add-on patch update `1.0.1_210` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog) |
 | 12 January 2021 | <ul><li>**Kubernetes benchmarks**: Added how to [run the CIS Kubernetes benchmark tests on your own worker nodes](/docs/containers?topic=containers-cis-benchmark#cis-worker-test).</li><li>**Removal of data center support**: Updated the documentation to reflect that Melbourne (`mel01`) is no longer available as an option to create {{site.data.keyword.cloud_notm}} resources in. For more information, see [Withdrawal of support for some data centers](/docs/get-support?topic=get-support-dc-migrate).</li></ul>|
 | 06 January 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.24_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4524_1525), [`4.4.31_1529_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1529), [`4.3.40_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1550), and [`3.11.346_1577_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311346_1577).|
