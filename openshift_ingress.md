@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-21"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -181,10 +181,11 @@ Before you get started with Ingress, review the following prerequisites.
 - Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
     - **Administrator** platform role for the cluster
     - **Manager** service role in all namespaces
-- Ingress is available for standard clusters only and requires at least two worker nodes per zone to ensure high availability and that periodic updates are applied. If you have only one worker in a zone, the ALB cannot receive automatic updates. When automatic updates are rolled out to ALB pods, the pod is reloaded. However, ALB pods have anti-affinity rules to ensure that only one pod is scheduled to each worker node for high availability. Because there is only one ALB pod on one worker, the pod is not restarted so that traffic is not interrupted. The ALB pod is updated to the latest version only when you delete the old pod manually so that the new, updated pod can be scheduled.
+- Ingress is available for standard clusters only and requires at least two worker nodes per zone to ensure high availability and to apply periodic updates. If you have only one worker node in a zone, the ALB cannot receive automatic updates. When automatic updates are rolled out to ALB pods, the pod is reloaded. However, ALB pods have anti-affinity rules to ensure that only one pod is scheduled to each worker node for high availability. If you have only one ALB pod on one worker, the pod is not restarted so that traffic is not interrupted, and the ALB pod is updated to the latest version only when you delete the old pod manually so that an updated pod can be scheduled.
 - If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge) are enabled in each zone so that ALBs deploy uniformly.
 - To be included in Ingress load balancing, the names of the `ClusterIP` services that expose your apps must be unique across all namespaces in your cluster.
 - If a zone fails, you might see intermittent failures in requests to the Ingress ALB in that zone.
+- <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 
 <br />
 
@@ -513,6 +514,7 @@ Forward requests directly to the IP address of your external service by setting 
 * Review the Ingress [prerequisites](#config_prereqs).
 * Ensure that the external app that you want to include into the cluster load balancing can be accessed by using a public IP address.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters: In order to forward requests to the public external endpoint of your app, your VPC subnets must have a public gateway attached.
 
 To expose apps that are outside of your cluster to the public:
 1.  Define a Kubernetes service configuration file for the app that the ALB will expose. This service forwards incoming requests to an external endpoint that you create in subsequent steps.
@@ -698,30 +700,7 @@ When you create a standard cluster, a private ALB is created in each zone that y
     ```
     {: screen}
 
-2. Get the default version of the {{site.data.keyword.openshiftlong_notm}} Ingress image.
-  ```
-  ibmcloud oc ingress alb versions
-  ```
-  {: pre}
-
-  In the following example output, the default {{site.data.keyword.openshiftlong_notm}} Ingress version is `2424`:
-  ```
-  IBM Cloud Ingress: 'auth' version
-  954
-
-  IBM Cloud Ingress versions
-  2424 (default)
-  662
-  658
-
-  Kubernetes Ingress versions
-  0.35.0_869_iks (default)
-  0.34.1_866_iks
-  0.33.0_865_iks
-  ```
-  {: screen}
-
-3. Enable the private ALBs. Run this command for the ID of each private ALB that you want to enable. If you want to specify an IP address for the ALB, include the IP address in the `--ip` flag.
+2. Enable the private ALBs. Run this command for the ID of each private ALB that you want to enable. If you want to specify an IP address for the ALB, include the IP address in the `--ip` flag.
   ```
   ibmcloud oc ingress alb enable classic --alb <private_ALB_ID> -c <cluster_name_or_ID> --version 2424
   ```
@@ -1074,8 +1053,8 @@ IBM Cloud Ingress: 'auth' version
 
 IBM Cloud Ingress versions
 2424 (default)
+2410
 662
-658
 
 Kubernetes Ingress versions
 0.35.0_869_iks (default)
