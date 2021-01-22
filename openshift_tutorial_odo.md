@@ -11,7 +11,7 @@ subcollection: openshift
 content-type: tutorial
 services: containers, openshift
 account-plan:
-completion-time: 30m
+completion-time: 10m
 
 ---
 
@@ -101,7 +101,7 @@ completion-time: 30m
 {: #odo-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="containers, openshift"}
-{: toc-completion-time="30m"}
+{: toc-completion-time="10m"}
 
 Accelerate application development on any Kubernetes cluster with the {{site.data.keyword.openshiftshort}} Do (`odo`) command-line interface (CLI) tool.
 {: shortdesc}
@@ -127,7 +127,7 @@ This tutorial is intended for software developers who have some familiarity with
 * [Install the `odo` CLI](https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/installing-odo.html){: external}.
 * [Create](/docs/containers?topic=containers-getting-started) or identify an existing Kubernetes cluster to use. In the CLI, you can list clusters by running `ibmcloud oc cluster ls`.
 
-## Create a microservice with `odo`
+## Create a microservice
 {: #odo-new-microservice}
 {: step}
 
@@ -195,7 +195,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
         ```
         {: screen}
 
-## Push a microservice to the cluster with `odo`
+## Push a microservice to the cluster
 {: #odo-push-microservice}
 {: step}
 
@@ -258,5 +258,5 @@ Now that you have a microservice running in your cluster, you might wonder what 
     Don't want to remember to push each time? Try the `odo watch` command to monitor for local file changes and automatically push the saved updates to your cluster.
     {: tip}
 
-*   **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.openshiftshort}} Do (`odo`) Documentation]
+*   **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.openshiftshort}} Do CLI Documentation]
 (https://docs.openshift.com/container-platform/4.5/cli_reference/developer_cli_odo/understanding-odo.html){: external}.

@@ -296,9 +296,9 @@ subcollection: openshift
 
 [Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
 
-[Create a microservice with `odo`](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
+[Create a microservice](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
 
-[Push a microservice to the cluster with `odo`](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
+[Push a microservice to the cluster](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
 
 [What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
 
