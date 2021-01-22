@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-01-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -219,6 +219,8 @@ The following image shows the default cluster security settings that address aut
 **What else can I do to secure my {{site.data.keyword.openshiftshort}} API server?**</br>
 
 You can decide how you want your master and worker nodes to communicate and how your cluster users can access the {{site.data.keyword.openshiftshort}} API server by enabling the private service endpoint only, the public service endpoint only, or the public and private service endpoints. Note that your options for service endpoints vary based on your cluster's {{site.data.keyword.openshiftshort}} version and infrastructure provider. For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) and [VPC clusters](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master).
+
+If you enable the private service endpoint, you can create a subnet allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private service endpoint. For more information, see [Creating an allowlist for the private service endpoint](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist).
 
 ### Rotating CA certificates in your cluster
 {: #cert-rotate}
