@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-10"
+  years: 2014, 2021
+lastupdated: "2021-01-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -371,11 +371,11 @@ Review the following access control list (ACL) API methods, their corresponding 
 
 |	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	DELETE​/v1​/acl​/{idOrName}	|	Disable the private service endpoint allowlist feature for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.containers-kubernetes.network.acl.delete 	|
-|	GET​/v1​/acl​/{idOrName}	|	Get the subnets in the private service endpoint allowlist.	|	containers-kubernetes.cluster.read	|	containers-kubernetes.containers-kubernetes.network.acl.get 	|
-|	PATCH​/v1​/acl​/{idOrName}​/add	|	Add subnets to a cluster's private service endpoint allowlist.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.containers-kubernetes.network.acl.update 	|
-|	PATCH​/v1​/acl​/{idOrName}​/rm	|	Remove subnets from a cluster's private service endpoint allowlist.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.containers-kubernetes.network.acl.update 	|
-|	POST​/v1​/acl​/{idOrName}​/enable	|	Enables the private service endpoint allowlist feature for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.containers-kubernetes.network.acl.update	|
+|	DELETE​/v1​/acl​/{idOrName}	|	Disable the private service endpoint allowlist feature for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.delete 	|
+|	GET​/v1​/acl​/{idOrName}	|	Get the subnets in the private service endpoint allowlist.	|	containers-kubernetes.cluster.read	|	containers-kubernetes.network-acl.get 	|
+|	PATCH​/v1​/acl​/{idOrName}​/add	|	Add subnets to a cluster's private service endpoint allowlist.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.update 	|
+|	PATCH​/v1​/acl​/{idOrName}​/rm	|	Remove subnets from a cluster's private service endpoint allowlist.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.update 	|
+|	POST​/v1​/acl​/{idOrName}​/enable	|	Enables the private service endpoint allowlist feature for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.update	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="ACL API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 

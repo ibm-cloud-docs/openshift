@@ -511,7 +511,10 @@ The following instructions require public network access in your cluster to conn
    ```
    {: screen}
 
-4. Retrieve URL of the default service endpoint for your Kubernetes master by using the IAM access token and the name or ID of your cluster. You can find the URL in the **`masterURL`** of your API output.<p class="note">If only the public service endpoint or only the private service endpoint is enabled for your cluster, that endpoint is listed for the `masterURL`. If both the public and private service endpoints are enabled for your cluster, the public service endpoint is listed by default for the `masterURL`. To use the private service endpoint instead, find the URL in the `privateServiceEndpointURL` field of the output.</p>
+4. Retrieve the URL of the default service endpoint for your Kubernetes master by using the IAM access token and the name or ID of your cluster. You can find the URL in the **`masterURL`** of your API output.
+
+  If only the public service endpoint or only the private service endpoint is enabled for your cluster, that endpoint is listed for the `masterURL`. If both the public and private service endpoints are enabled for your cluster, the public service endpoint is listed by default for the `masterURL`. To use the private service endpoint instead, find the URL in the `privateServiceEndpointURL` field of the output.
+  {: note}
    ```
    GET https://containers.cloud.ibm.com/global/v2/getCluster?cluster=<cluster_name_or_ID>
    ```

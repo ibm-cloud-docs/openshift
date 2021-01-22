@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-22"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -316,6 +316,14 @@ To update the CLIs:
         {: pre}
 
         The registry plug-in is displayed in the results as `container-registry`.
+
+<br />
+
+## Installing the `odo` CLI for developers
+{: #cli-odo-install}
+
+Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.openshiftshort}} Do CLI](/docs/openshift?topic=openshift-odo-tutorial) tutorial.
+{: shortdesc}
 
 <br />
 

@@ -254,11 +254,11 @@ subcollection: openshift
 
 [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 
-[Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
+[Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
 
-[Navigating the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+[Navigate the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 
-[Deploying an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
+[Deploy an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
 [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
@@ -275,18 +275,37 @@ subcollection: openshift
 
 [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
 
-[Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
+[Create a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
 
-[Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
+[Deploy an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
 
-[Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
+[Set up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 
 [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 
+## Developing in clusters with the OpenShift Do CLI
+{: #sitemap_developing_in_clusters_with_the_openshift_do_cli}
+
+
+[Developing in clusters with the OpenShift Do CLI](/docs/openshift?topic=openshift-odo-tutorial)
+
+[Objectives](/docs/openshift?topic=openshift-odo-tutorial#odo-objectives)
+
+[Audience](/docs/openshift?topic=openshift-odo-tutorial#odo-audience)
+
+[Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
+
+[Create a microservice with `odo`](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
+
+[Push a microservice to the cluster with `odo`](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
+
+[What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
+
+
 ## Scalable web application on OpenShift
 
-[Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
+[Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
 
 
 ## OpenShift interactive learning portal
@@ -312,6 +331,7 @@ subcollection: openshift
 * [Installing the IBM Cloud CLI and plug-ins](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps)
 * [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc)
 * [Updating the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade)
+* [Installing the `odo` CLI for developers](/docs/openshift?topic=openshift-openshift-cli#cli-odo-install)
 * [Uninstalling the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_uninstall)
 * [Using the {{site.data.keyword.cloud-shell_notm}} in your web browser](/docs/openshift?topic=openshift-openshift-cli#cloud-shell)
 

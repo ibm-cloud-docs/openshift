@@ -38,7 +38,8 @@ Red Hat OpenShift on IBM Cloud
     [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20)
     openshift_tutorial.md
     openshift_tutorial_vpc.md
-    [Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift)
+    openshift_tutorial_odo.md
+    [Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift)
     [OpenShift interactive learning portal](https://learn.openshift.com/)
     [Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift)
     [IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/)
