@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-22"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -694,7 +694,7 @@ The following table shows the changes that are included in the `4.4.11_1511_open
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.3 patch updates.
 {: shortdesc}
 
-{{site.data.keyword.openshiftshort}} version 4.3 is deprecated, and becomes unsupported in February 2021 (date subject to change). [Update your clusters](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version 4.4 as soon as possible.
+{{site.data.keyword.openshiftshort}} version 4.3 is deprecated, and becomes unsupported 7 March 2021 (date subject to change). [Update your clusters](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version 4.4 as soon as possible.
 {: deprecated}
 
 ### Changelog for master fix pack 4.3.40_1552_openshift, released 19 January 2021

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-01-22"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -297,7 +297,7 @@ The following table shows the actions that you must take before you [update the 
 
 <img src="images/certified_kubernetes_1x16.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.16 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.16 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
-{{site.data.keyword.openshiftshort}} version 4.3 is deprecated, and becomes unsupported in February 2021 (date subject to change). [Update your clusters](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version 4.4 as soon as possible.
+{{site.data.keyword.openshiftshort}} version 4.3 is deprecated, and becomes unsupported 7 March 2021 (date subject to change). [Update your clusters](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version 4.4 as soon as possible.
 {: deprecated}
 
 With the release of OpenShift Container Platform 4.3, you get a new experience and capabilities for managing your cluster and its workloads. For more information, see the [{{site.data.keyword.openshiftshort}} blog](https://www.openshift.com/blog/introducing-red-hat-openshift-4-3-to-enhance-kubernetes-security/){: external}.

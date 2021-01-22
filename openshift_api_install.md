@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-22"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -373,76 +373,10 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 
     You can find the {{site.data.keyword.cloud_notm}} IAM token in the **access_token** and the refresh token in the **refresh_token** field of your API output.
 
-4.  List available {{site.data.keyword.openshiftlong_notm}} regions and select the region that you want to work in. Use the IAM access token and refresh token from the previous step to build your header information.
-    ```
-    GET https://containers.cloud.ibm.com/v1/regions
-    ```
-    {: codeblock}
-
-    <table summary="Input parameters to retrieve {{site.data.keyword.openshiftlong_notm}} regions with the input parameter in column 1 and the value in column 2.">
-    <caption>Input parameters to retrieve {{site.data.keyword.openshiftlong_notm}} regions.</caption>
-    <thead>
-    <th>Input parameters</th>
-    <th>Values</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Header</td>
-    <td><ul><li>`Authorization: bearer <iam_token>`</li>
-    <li>`X-Auth-Refresh-Token: <refresh_token>`</li></ul></td>
-    </tr>
-    </tbody>
-    </table>
-
-    Example output:
-    ```
-    {
-    "regions": [
-        {
-            "name": "ap-north",
-            "alias": "jp-tok",
-            "cfURL": "api.au-syd.bluemix.net",
-            "freeEnabled": false
-        },
-        {
-            "name": "ap-south",
-            "alias": "au-syd",
-            "cfURL": "api.au-syd.bluemix.net",
-            "freeEnabled": true
-        },
-        {
-            "name": "eu-central",
-            "alias": "eu-de",
-            "cfURL": "api.eu-de.bluemix.net",
-            "freeEnabled": true
-        },
-        {
-            "name": "uk-south",
-            "alias": "eu-gb",
-            "cfURL": "api.eu-gb.bluemix.net",
-            "freeEnabled": true
-        },
-        {
-            "name": "us-east",
-            "alias": "us-east",
-            "cfURL": "api.ng.bluemix.net",
-            "freeEnabled": false
-        },
-        {
-            "name": "us-south",
-            "alias": "us-south",
-            "cfURL": "api.ng.bluemix.net",
-            "freeEnabled": true
-        }
-    ]
-    }
-    ```
-    {: screen}
-
-5.  List all clusters in the {{site.data.keyword.openshiftlong_notm}} region that you selected. If you want to [run Kubernetes API requests against your cluster](#kube_api), make sure to note the **id** and **region** of your cluster.
-
+4.  List all classic or VPC clusters in your account. If you want to [run Kubernetes API requests against a cluster](#kube_api), make sure to note the name or ID of the cluster that you want to work with.
+  * **Classic**:
      ```
-     GET https://containers.cloud.ibm.com/v1/clusters
+     GET https://containers.cloud.ibm.com/global/v2/classic/getClusters
      ```
      {: codeblock}
 
@@ -455,9 +389,30 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
      <tbody>
      <tr>
      <td>Header</td>
-     <td><ul><li>`Authorization: bearer <iam_token>`</li>
-       <li>`X-Auth-Refresh-Token: <refresh_token>`</li><li>`X-Region: <region>`</li></ul></td>
+     <td><li>`Authorization: bearer <iam_token>`</td>
      </tr>
+     </tbody>
+     </table>
+  * **VPC**:
+     ```
+     GET https://containers.cloud.ibm.com/global/v2/vpc/getClusters?provider=vpc-gen2
+     ```
+     {: codeblock}
+
+     <table summary="Input parameters to work with the {{site.data.keyword.openshiftlong_notm}} API with the input parameter in column 1 and the value in column 2.">
+     <caption>Input parameters to work with the {{site.data.keyword.openshiftlong_notm}} API.</caption>
+     <thead>
+     <th>Input parameters</th>
+     <th>Values</th>
+     </thead>
+     <tbody>
+     <tr>
+     <td>Header</td>
+     <td>`Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token (`bearer <iam_token>`).</td>
+     </tr>
+     <tr>
+     <td>Path</td>
+     <td>`vpc-gen2`: Filter output for VPC Gen 2 clusters. To instead filter for VPC Gen 1 clusters (deprecated), specify `vpc-classic`.</td>
      </tbody>
      </table>
 
@@ -556,9 +511,9 @@ The following instructions require public network access in your cluster to conn
    ```
    {: screen}
 
-4. Retrieve the public URL of your Kubernetes master by using the IAM access token, the IAM ID token, the IAM refresh token, and the {{site.data.keyword.openshiftlong_notm}} region that your cluster is in. You can find the URL in the **`publicServiceEndpointURL`** of your API output.
+4. Retrieve URL of the default service endpoint for your Kubernetes master by using the IAM access token and the name or ID of your cluster. You can find the URL in the **`masterURL`** of your API output.<p class="note">If only the public service endpoint or only the private service endpoint is enabled for your cluster, that endpoint is listed for the `masterURL`. If both the public and private service endpoints are enabled for your cluster, the public service endpoint is listed by default for the `masterURL`. To use the private service endpoint instead, find the URL in the `privateServiceEndpointURL` field of the output.</p>
    ```
-   GET https://containers.cloud.ibm.com/v1/clusters/<cluster_ID>
+   GET https://containers.cloud.ibm.com/global/v2/getCluster?cluster=<cluster_name_or_ID>
    ```
    {: codeblock}
 
@@ -571,43 +526,44 @@ The following instructions require public network access in your cluster to conn
    <tbody>
    <tr>
    <td>Header</td>
-     <td><ul><li>`Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token.</li><li>`X-Auth-Refresh-Token`: Your {{site.data.keyword.cloud_notm}} IAM refresh token.</li><li>`X-Region`: The {{site.data.keyword.openshiftlong_notm}} region of your cluster that you retrieved with the `GET https://containers.cloud.ibm.com/v1/clusters` API in [Automating cluster deployments with the API](#cs_api). </li></ul>
-   </td>
+   <td>`Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token.</td>
    </tr>
    <tr>
    <td>Path</td>
-   <td>`<cluster_ID>:` The ID of your cluster that you retrieved with the `GET https://containers.cloud.ibm.com/v1/clusters` API in [Automating cluster deployments with the API](#cs_api).      </td>
+   <td>`<cluster_name_or_ID>`: The name or ID of your cluster that you retrieved with the `GET https://containers.cloud.ibm.com/global/v2/classic/getClusters` or `GET https://containers.cloud.ibm.com/global/v2/vpc/getClusters?provider=<vpc-gen2|vpc-classic>` API in [Automating cluster deployments with the API](#cs_api).</td>
    </tr>
    </tbody>
    </table>
 
-   Example output:
+   Example output for a public service endpoint:
    ```
-   {
-    "location": "Dallas",
-    "dataCenter": "dal10",
-    "multiAzCapable": true,
-    "vlans": null,
-    "worker_vlans": null,
-    "workerZones": [
-        "dal10"
-    ],
-    "id": "1abc123b123b124ab1234a1a12a12a12",
-    "name": "mycluster",
-    "region": "us-south",
-    ...
-    "publicServiceEndpointURL": "https://c7.us-south.containers.cloud.ibm.com:27078"
-   }
+   ...
+   "etcdPort": "31593",
+   "masterURL": "https://c2.us-south.containers.cloud.ibm.com:30422",
+   "ingress": {
+     ...
    ```
    {: screen}
 
-5. Run Kubernetes API requests against your cluster by using the IAM ID token that you retrieved earlier. For example, list the Kubernetes version that runs in your cluster.
+   Example output for a private service endpoint:
+   ```
+   ...
+   "etcdPort": "31593",
+   "masterURL": "https://c2.private.us-south.containers.cloud.ibm.com:30422",
+   "ingress": {
+     ...
+   ```
+   {: screen}
+
+5. To use a private service endpoint, you must first [expose the private service endpoint with a load balancer IP that is routable from your VPN connection into the private network](/docs/openshift?topic=openshift-access_cluster#access_private_se).
+
+6. Run Kubernetes API requests against your cluster by using the IAM ID token that you retrieved earlier. For example, list the Kubernetes version that runs in your cluster.
 
    If you enabled SSL certificate verification in your API test framework, make sure to disable this feature.
    {: tip}
 
    ```
-   GET <publicServiceEndpointURL>/version
+   GET <masterURL>/version
    ```
    {: codeblock}
 
@@ -624,7 +580,7 @@ The following instructions require public network access in your cluster to conn
    </tr>
    <tr>
    <td>Path</td>
-   <td>`<publicServiceEndpointURL>`: The **`publicServiceEndpointURL`** of your Kubernetes master that you retrieved in the previous step.      </td>
+   <td>`<masterURL>`: The service endpoint of your Kubernetes master that you retrieved in the previous step.</td>
    </tr>
    </tbody>
    </table>
