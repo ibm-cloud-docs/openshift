@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-22"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -155,7 +155,7 @@ Install the command-line tools.
 
 <br />
 
-## Creating a cluster in a VPC
+## Create a cluster in a VPC
 {: #vpc_rh_create_vpc_cluster}
 {: step}
 
@@ -286,7 +286,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
 <br />
 
-## Deploying an app to your cluster
+## Deploy an app to your cluster
 {: #vpc_rh_app}
 {: step}
 
@@ -341,7 +341,7 @@ The components that you deploy by completing this lesson are shown in the follow
 
 <br />
 
-## Setting up a VPC load balancer to expose your app publicly
+## Set up a VPC load balancer to expose your app publicly
 {: #vpc_rh_vpc_lb}
 {: step}
 

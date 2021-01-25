@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-22"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -986,6 +986,201 @@ ibmcloud oc cluster ls [--provider (classic | vpc-gen2)] [--location LOCATION] [
 **Example**:
 ```sh
 ibmcloud oc cluster ls -l ams03 -l wdc -l ap
+```
+{: pre}
+
+</br>
+
+### `ibmcloud oc cluster master private-service-endpoint allowlist`
+{: #cs_master_pse_allowlist}
+
+Manage a private service endpoint allowlist so that authorized users can access your private service endpoint from only the subnets that are specified in the allowlist.
+{: shortdesc}
+
+#### `ibmcloud oc cluster master private-service-endpoint allowlist add`
+{: #cs_master_pse_allowlist_add}
+
+After you enable a private service endpoint allowlist, add subnets from which authorized users can access your private service endpoint to the allowlist.
+{: shortdesc}
+
+For example, to access your cluster's private service endpoint, you must connect to your {{site.data.keyword.cloud_notm}} classic network or your VPC network through a VPN or {{site.data.keyword.dl_full_notm}}. You can add the subnet for the VPN or {{site.data.keyword.dl_full_notm}} tunnel so that authorized users in your organization can only access the private service endpoint from that subnet.
+
+Worker node subnets are automatically added to and removed from your allowlist so that worker nodes can always access the master through the private service endpoint.
+
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>--subnet SUBNET</code></dt>
+<dd>Required: The subnet in CIDR format. Specify more than one subnet by using multiple repeated flags.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist add --cluster mycluster --subnet 1.1.1.1/16
+```
+{: pre}
+
+#### `ibmcloud oc cluster master private-service-endpoint allowlist disable`
+{: #cs_master_pse_allowlist_disable}
+
+Disable the subnet allowlist feature for a cluster's private service endpoint.
+{: shortdesc}
+
+After you disable this feature, authorized requests to your cluster master through the cluster's private service endpoint can originate from any subnet.
+
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster CLUSTER [-f] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run without user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster mycluster
+```
+{: pre}
+
+#### `ibmcloud oc cluster master private-service-endpoint allowlist enable`
+{: #cs_master_pse_allowlist_enable}
+
+Enable the subnet allowlist feature for a cluster's private service endpoint.
+{: shortdesc}
+
+After you run this command, use the [`ibmcloud oc cluster master private-service-endpoint allowlist` command](#cs_master_pse_allowlist_add) to add subnets to the allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private service endpoint. If the public service endpoint is enabled for your cluster, authorized requests are still permitted through the public service endpoint.
+
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster CLUSTER [-f] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run without user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster mycluster
+```
+{: pre}
+
+#### `ibmcloud oc cluster master private-service-endpoint allowlist get`
+{: #cs_master_pse_allowlist_get}
+
+List all subnets in the allowlist for a cluster's private service endpoint.
+{: shortdesc}
+
+This list includes subnets that you manually added by using the `ibmcloud oc cluster master private-service-endpoint allowlist add` command and subnets that are automatically added and managed by IBM, such as worker node subnets.
+
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUSTER [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Viewer** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist add --cluster mycluster
+```
+{: pre}
+
+#### `ibmcloud oc cluster master private-service-endpoint allowlist rm`
+{: #cs_master_pse_allowlist_rm}
+
+Remove subnets that you previously added to the allowlist for a cluster's private service endpoint.
+{: shortdesc}
+
+After a subnet is removed, any requests that originate from this subnet to the cluster master through the private service endpoint are denied.
+
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Editor** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>--subnet SUBNET</code></dt>
+<dd>Required: The subnet CIDR. Specify more than one subnet by using multiple repeated flags.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run without user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster mycluster --subnet 1.1.1.1/16
 ```
 {: pre}
 

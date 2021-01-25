@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-01-25"
 
 keywords: openshift
 subcollection: openshift
@@ -254,11 +254,11 @@ subcollection: openshift
 
 [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 
-[Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
+[Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
 
-[Navigating the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+[Navigate the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 
-[Deploying an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
+[Deploy an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
 [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
@@ -275,18 +275,37 @@ subcollection: openshift
 
 [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
 
-[Creating a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
+[Create a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
 
-[Deploying an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
+[Deploy an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
 
-[Setting up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
+[Set up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 
 [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 
+## Developing in clusters with the OpenShift Do CLI
+{: #sitemap_developing_in_clusters_with_the_openshift_do_cli}
+
+
+[Developing in clusters with the OpenShift Do CLI](/docs/openshift?topic=openshift-odo-tutorial)
+
+[Objectives](/docs/openshift?topic=openshift-odo-tutorial#odo-objectives)
+
+[Audience](/docs/openshift?topic=openshift-odo-tutorial#odo-audience)
+
+[Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
+
+[Create a microservice](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
+
+[Push a microservice to the cluster](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
+
+[What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
+
+
 ## Scalable web application on OpenShift
 
-[Scalable web application on OpenShift](/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
+[Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
 
 
 ## OpenShift interactive learning portal
@@ -312,6 +331,7 @@ subcollection: openshift
 * [Installing the IBM Cloud CLI and plug-ins](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps)
 * [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc)
 * [Updating the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade)
+* [Installing the `odo` CLI for developers](/docs/openshift?topic=openshift-openshift-cli#cli-odo-install)
 * [Uninstalling the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_uninstall)
 * [Using the {{site.data.keyword.cloud-shell_notm}} in your web browser](/docs/openshift?topic=openshift-openshift-cli#cloud-shell)
 
@@ -421,6 +441,7 @@ subcollection: openshift
 * [Accessing {{site.data.keyword.openshiftshort}} clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se)
   * [Accessing version 4 VPC clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#vpc_private_se)
   * [Accessing 3.11 clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
+  * [Creating an allowlist for the private service endpoint](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist)
 * [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat)
   * [Accessing clusters from within the location network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
   * [Accessing clusters from outside the location network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_link)
@@ -1431,6 +1452,7 @@ subcollection: openshift
   * [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2)
   * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get)
   * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
+  * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
   * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
   * [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_enable)
   * [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh)

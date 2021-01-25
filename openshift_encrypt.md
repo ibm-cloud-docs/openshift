@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-14"
+  years: 2014, 2021
+lastupdated: "2021-01-20"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -246,7 +246,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     ibmcloud oc kms enable -c <cluster_name_or_ID> --instance-id <kms_instance_ID> --crk <root_key_ID> [--public-endpoint]
     ```
     {: pre}
-5.  Verify that the KMS enablement process is finished. The process is finished when that the **Master Status** is **Ready** and **Key Protect** is **enabled**.
+5.  Verify that the KMS enablement process is finished. The process is finished when that the **Master Status** is **Ready** and **Key management service** is **enabled**.
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
@@ -257,7 +257,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     Name:                   <cluster_name>   
     ID:                     <cluster_ID>   
     ...
-    Master Status:          Key Protect feature enablement in progress.  
+    Master Status:          Key management service feature enablement in progress.  
     ```
     {: screen}
 
@@ -268,7 +268,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     ...
     Master Status:          Ready (1 min ago)
     ...
-    Key Protect:            enabled   
+    Key Management Service: enabled   
     ```
     {: screen}
 
@@ -343,7 +343,7 @@ Before you begin:
 * Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform and **Manager** service role for the cluster.
 
 To verify secret encryption by disabling a root key:
-1.  [Enable KMS encryption in your cluster](#keyprotect). To check that KMS encryption is enabled, verify that the **Key Protect** status is set to `enabled` in the output of the following command.
+1.  [Enable KMS encryption in your cluster](#keyprotect). To check that KMS encryption is enabled, verify that the **Key Management Service** status is set to `enabled` in the output of the following command.
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```

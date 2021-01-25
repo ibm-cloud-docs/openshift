@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-22"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -137,7 +137,7 @@ This tutorial is for cluster administrators who want to learn how to create a {{
 
 <br />
 
-## Creating a {{site.data.keyword.openshiftlong_notm}} cluster
+## Create a {{site.data.keyword.openshiftlong_notm}} cluster
 {: #openshift_create_cluster}
 {: step}
 
@@ -187,7 +187,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 
 <br />
 
-## Navigating the {{site.data.keyword.openshiftshort}} console
+## Navigate the {{site.data.keyword.openshiftshort}} console
 {: #openshift_oc_console}
 {: step}
 
@@ -256,7 +256,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 
 <br />
 
-## Deploying an app to your {{site.data.keyword.openshiftshort}} cluster
+## Deploy an app to your {{site.data.keyword.openshiftshort}} cluster
 {: #openshift_deploy_app}
 {: step}
 
