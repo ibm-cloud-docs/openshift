@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-01-25"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -491,8 +491,8 @@ Note that even though you create an Ingress controller in the following steps, t
   {: screen}
 
 5. Register the service's external IP address or VPC hostname with the domain that you chose in step 1.
-  * **Custom domain**: Work with your DNS provider to add the service's external IP address as an A record (classic clusters) or VPC hostname as a CNAME (VPC clusters) that maps to your custom domain.
-  * **IBM-provided domain**: Create a DNS entry for the service's VPC hostname. When you run the following command, the subdomain that you specified in step 2 is automatically generated, and is registered with the router service.
+  * **Custom domain, classic or VPC clusters**: Work with your DNS provider to add the service's external IP address as an A record (classic clusters) or VPC hostname as a CNAME (VPC clusters) that maps to your custom domain.
+  * **IBM-provided domain, VPC clusters only**: Create a DNS entry for the service's VPC hostname. When you run the following command, the subdomain that you specified in step 2 is automatically generated, and is registered with the router service.
     ```
     ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <router_VPC_hostname> --type private
     ```
