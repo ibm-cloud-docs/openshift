@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-26"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -228,7 +228,7 @@ The type of load balancer that is automatically created varies depending on the 
 To store images in the internal registry, {{site.data.keyword.openshiftlong_notm}} creates a storage instance that varies by infrastructure provider.
 {: shortdesc}
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**: A classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed hourly. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost. For more information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**: A bucket in an existing {{site.data.keyword.cos_full_notm}} instance is created for you. For more information, see [Billing and pricing in the {{site.data.keyword.cos_short_notm}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-billing).
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**: A bucket in an existing {{site.data.keyword.cos_full_notm}} instance is created for you. For more information, see [Billing and pricing in the {{site.data.keyword.cos_short}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-billing).
 
 
 
@@ -253,7 +253,7 @@ Each service that you integrate with your cluster has its own pricing model. Rev
 ### Operators and other third-party integrations
 {: #operators_pricing}
 
-[Operators](/docs/openshift?topic=openshift-operators) and other [third-party integrations](/docs/openshift?topic=openshift-supported_integrations) are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for additional charges and how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator or third-party integration, work with the appropriate provider to troubleshoot the issue.
+[Operators](/docs/openshift?topic=openshift-operators) and other [third-party integrations](/docs/containers?topic=containers-supported_integrations) are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for additional charges and how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator or third-party integration, work with the appropriate provider to troubleshoot the issue.
 {: shortdesc}
 
 ### VPC Generation 2 compute worker nodes
