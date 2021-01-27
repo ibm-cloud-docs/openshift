@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-18"
+  years: 2014, 2021
+lastupdated: "2021-01-27"
 
 keywords: object storage, plug-in, changelog
 
@@ -113,7 +113,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- |
-| `2.0.6` | `1.8.23` | 18 December 2020 | 4.3 - 4.6 | Updates in this version: <ul><li>The `1.8.23` image is signed.</li><li>Updates the Go version to `1.15.5`.</li><li>Fixes `CVE-2020-28362`, `CVE-2020-28367`, and `CVE-2020-28366`.</li><li>Resources that are deployed by the Object Storage plug-in are now linked with the corresponding source code and build URLs.</li><li>The Object Storage plug-in now pulls the universal base image (UBI) from the proxy image registry.</li><ul> |
+| `2.0.6` | `1.8.23` | 18 December 2020 | 4.3 - 4.6 | Updates in this version: <ul><li>The `1.8.23` image is signed.</li><li>Updates the Go version to `1.15.5`.</li><li>Fixes `CVE-2020-28362`, `CVE-2020-28367`, and `CVE-2020-28366`.</li><li>Resources that are deployed by the Object Storage plug-in are now linked with the corresponding source code and build URLs.</li><li>The Object Storage plug-in now pulls the universal base image (UBI) from the proxy image registry.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Object Storage plug-in version 2.0.6" caption-side="top"}

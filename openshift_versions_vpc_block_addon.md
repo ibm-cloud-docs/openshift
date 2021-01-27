@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-17"
+  years: 2014, 2021
+lastupdated: "2021-01-27"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -122,6 +122,7 @@ ibmcloud oc addon-versions
 
 | Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
+| `2.0.3_471` | `v.2.0.9` | 26 January 2021 | 4.3 - 4.6 | Includes fixes for vulnerability scan issues. The `openssl`, `openssl-libs`, `gnutls` packages are updated to fix [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external} and [CVE-2020-24659](https://nvd.nist.gov/vuln/detail/CVE-2020-24659){: external}. |
 | `2.0.3_464` | `v2.0.8` | 10 December 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li>New metro storage classes with the `volumeBindingMode:WaitForFirstConsumer` specification.</li><li>Resources that are deployed by the add-on now contain a label which links the source code URL and the build URL.</li><li>The `v2.0.8` image is signed.</li><li>Updates the Go version from `1.15.2` to `1.15.5`.</li></ul> |
 | `2.0.3_404` | `v2.0.7` | 25 November 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li>`v2.0.7` contains a fix for vulnerability scan issues.</li><li>Updates the base image from `alpine` to `UBI`.</li><li>Pods and containers now run as `non-root` except for the `node-server` pod's containers.</li></ul> |
 | `2.0.3_375` | `v2.0.6` | 17 September 2020 | 4.3 - 4.5 | Fixes an issue with volume attachment when replacing workers. |
