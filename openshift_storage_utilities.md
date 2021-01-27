@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-15"
+  years: 2014, 2021
+lastupdated: "2021-01-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -578,9 +578,9 @@ Before you begin:
 
     Example request:
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/v2/storage/createAttachment?cluster=<cluster_name_or_ID>&volumeID=<volume_ID>&worker=<worker_ID>" --header "X-Auth-Resource-Group-ID: <resource_group_id>" --header "Authorization: <IAM_token>"
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/createAttachment" -H  "accept: application/json" -H  "Authorization: <IAM_token>" -H  "X-Auth-Resource-Group-ID: <resource_group>" -H  "Content-Type: application/json" -d "{  \"cluster\": \"<cluster_name_or_ID>\",  \"volumeID\": \"<volume_ID>\",  \"worker\": \"<worker_ID>\"}"
     ```
-    {: codeblock}
+    {: pre}
   <br>
   <table summary="The columns are read from left to right. The first column has the parameter of the POST request. The second column describes the parameter.">
       <caption>Understanding the POST request</caption>
@@ -699,13 +699,13 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
   ```
   {: pre}
 
-9. Detach storage by using a `DELETE` request.
+9. Detach storage by using a `POST` request.
 
   Example request:
   ```sh
-  curl -X DELETE "https://containers.cloud.ibm.com/v2/storage/deleteAttachment?cluster=<cluster_name_or_ID>&volumeID=<volume_ID>&worker=<worker_ID>&volumeAttachmentID=<attachment_ID>" --header "Authorization: <IAM_token>"
+  curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/deleteAttachment" -H  "accept: application/json" -H  "Authorization: <IAM_token>" -H  "X-Auth-Resource-Group-ID: <resource_group>" -H  "Content-Type: application/json" -d "{  \"cluster\": \"<cluster_name_or_ID\",  \"volumeAttachmentID\": \"<volume_attachment_ID>\",  \"volumeID\": \"<volume_ID>\",  \"worker\": \"<worker_ID>\"}"
   ```
-  {: codeblock}
+  {: pre}
 
   <br>
     <table summary="The columns are read from left to right. The first column has the parameter of the DELETE request. The second column describes the parameter.">
@@ -738,6 +738,7 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
       </tr>
     </tbody>
   </table>
+
 
 ### Reviewing volume attachment details for a VPC worker node
 {: #vpc_api_get_worker}
