@@ -1416,11 +1416,6 @@ subcollection: openshift
 * [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
 
 
-## OpenShift Container Platform documentation
-
-[OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
-
-
 ## API reference
 {: #sitemap_api_reference}
 
@@ -1845,6 +1840,15 @@ subcollection: openshift
 [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
 [Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
+
+
+## Related links
+{: #sitemap_related_links}
+
+
+[OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
+
+[IBM Developer: Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
 
 
 ## FAQs
