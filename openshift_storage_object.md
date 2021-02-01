@@ -406,7 +406,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     <tbody>
     <tr>
       <td><code>DC_NAME</code></td>
-      <td>The <code>datacenter</code> where your cluster is deployed. To retrieve the datacenter, run <code>oc get cm cluster-info -n kube-system -o jsonpath="{.data.cluster-config\.json}{'\n'}"</code>. Store the <code>datacenter</code> value in an environment variable by running <code>SET DC_NAME=<datacenter></code>. <b>Optional</b> Set the environment variable in Windows PowerShell by running <code>$env:DC_NAME="<datacenter>"</code>.</td>
+      <td>The <code>datacenter</code> where your cluster is deployed. To retrieve the datacenter, run <code>oc get cm cluster-info -n kube-system -o jsonpath="{.data.cluster-config\.json}{'\n'}"</code>. Store the <code>datacenter</code> value in an environment variable by running <code>SET DC_NAME=&lt;datacenter&gt;</code>. <b>Optional</b> Set the environment variable in Windows PowerShell by running <code>$env:DC_NAME="&lt;datacenter&gt;"</code>.</td>
     </tr>
     <tr>
       <td><code>CLUSTER_PROVIDER</code></td>

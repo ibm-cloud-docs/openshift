@@ -137,7 +137,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
 {: shortdesc}
 
 1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-2.  Verify that the `odo` CLI is able to communicate with your cluster by listing the projects your cluster. The projects represent Kubernetes namespaces where your apps and other microservice resources run.
+2.  Verify that the `odo` CLI is able to communicate with your cluster by listing the projects in your cluster. The projects represent Kubernetes namespaces where your apps and other microservice resources run.
     ```
     odo project list
     ```
