@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-22"
+lastupdated: "2021-02-01"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
@@ -78,6 +78,8 @@ completion-time: 10m
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -135,7 +137,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
 {: shortdesc}
 
 1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-2.  Verify that the `odo` CLI is able to communicate with your cluster by listing the projects your cluster. The projects represent Kubernetes namespaces where your apps and other microservice resources run.
+2.  Verify that the `odo` CLI is able to communicate with your cluster by listing the projects in your cluster. The projects represent Kubernetes namespaces where your apps and other microservice resources run.
     ```
     odo project list
     ```
@@ -258,5 +260,4 @@ Now that you have a microservice running in your cluster, you might wonder what 
     Don't want to remember to push each time? Try the `odo watch` command to monitor for local file changes and automatically push the saved updates to your cluster.
     {: tip}
 
-*   **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.openshiftshort}} Do CLI Documentation]
-(https://docs.openshift.com/container-platform/4.5/cli_reference/developer_cli_odo/understanding-odo.html){: external}.
+*   **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.openshiftshort}} Do CLI Documentation](https://docs.openshift.com/container-platform/4.5/cli_reference/developer_cli_odo/understanding-odo.html){: external}.

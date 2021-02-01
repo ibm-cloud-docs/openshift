@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-02-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -73,6 +73,8 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -140,7 +142,7 @@ Review the following default Calico host policies that are automatically applied
 |Calico policy|Description|
 |--- |--- |
 |`allow-all-outbound`|Allows all outbound traffic on the public network.|
-|`allow-all-private-default`|In {{site.data.keyword.openshiftshort}} version 4.3 or later: Allows all inbound and outbound traffic on the private network. **Note**: Before you update your cluster to Kubernetes version 1.16, see [this topic](/docs/containers?topic=containers-cs_versions#116_networkpolicies) for information about updating Calico private host endpoints and network policies.|
+|`allow-all-private-default`|In {{site.data.keyword.openshiftshort}} version 4.3 or later: Allows all inbound and outbound traffic on the private network.|
 |`allow-bigfix-port`|Allows incoming traffic on port 52311 to the BigFix app to allow necessary worker node updates.|
 |`allow-icmp`|Allows incoming ICMP packets (pings).|
 |`allow-node-port-dnat`|Allows incoming network load balancer (NLB), Ingress application load balancer (ALB), and NodePort service traffic to the pods that those services are exposing. Note: You don't need to specify the exposed ports because Kubernetes uses destination network address translation (DNAT) to forward the service requests to the correct pods. That forwarding takes place before the host endpoint policies are applied in Iptables.|
@@ -494,12 +496,11 @@ Whenever new locations for {{site.data.keyword.openshiftlong_notm}} and other {{
 {: note}
 
 **Before you begin:**
+1. [Install and configure the Calico CLI.](#cli_install)
 
-2. [Install and configure the Calico CLI.](#cli_install)
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-4. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
+3. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
   ```
   ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
   ```
