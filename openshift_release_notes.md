@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-02-01"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -73,6 +73,8 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -103,6 +105,15 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
+
+## February 2021
+{: #feb21}
+
+| Date | Description |
+| ---- | ----------- |
+| 01 February 2021 | <ul><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.28_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4528_1528), [`4.4.31_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1532), [`4.3.40_1553_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1553), and [`3.11.374_1579_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311374_1579).</li></ul> |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in February 2021"}
 
 ## January 2021
 {: #jan21}
