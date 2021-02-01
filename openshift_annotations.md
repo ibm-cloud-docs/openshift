@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-02-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, annotations
 
@@ -73,6 +73,8 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -1098,7 +1100,7 @@ spec:
 **To create a mutual authentication secret:**
 
 1. Generate a certificate authority (CA) cert and key from your certificate provider. If you have your own domain, purchase an official TLS certificate for your domain. Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
-    For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external} or this [mutual authentication tutorial, which includes creating your own CA](https://rollout.io/blog/how-to-set-up-mutual-tls-authentication/){: external}.
+    For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external} or this [mutual authentication tutorial, which includes creating your own CA](https://www.cloudbees.com/blog/how-to-set-up-mutual-tls-authentication/){: external}.
     {: tip}
 2. [Convert the cert into base64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using cert.
@@ -1201,7 +1203,7 @@ spec:
 **To create a mutual authentication secret:**
 
 1. Generate a certificate authority (CA) cert and key from your certificate provider. If you have your own domain, purchase an official TLS certificate for your domain. Make sure the [CN](https://support.dnsimple.com/articles/what-is-common-name/){: external} is different for each certificate.
-    For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external} or this [mutual authentication tutorial, which includes creating your own CA](https://rollout.io/blog/how-to-set-up-mutual-tls-authentication/){: external}.
+    For testing purposes, you can create a self-signed certificate by using OpenSSL. For more information, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external} or this [mutual authentication tutorial, which includes creating your own CA](https://www.cloudbees.com/blog/how-to-set-up-mutual-tls-authentication/){: external}.
     {: tip}
 2. [Convert the cert into base64](https://www.base64encode.org/){: external}.
 3. Create a secret YAML file by using the cert.
