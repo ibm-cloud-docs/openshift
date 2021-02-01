@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-11-16"
+  years: 2014, 2021
+lastupdated: "2021-02-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,6 +13,7 @@ subcollection: openshift
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,8 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +86,11 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -285,13 +288,8 @@ When you dynamically provision persistent storage by using a storage class, you 
 ### Changing the default storage class
 {: #default_storageclass}
 
-You can change the default storage class that a persistent volume (PV) uses if no storage class is specified in the persistent volume claim (PVC). You can have only one default storage class. The default storage classes vary by the Kubernetes version of your cluster. When you update a cluster from an earlier version of Kubernetes, the default storage class does not change.
+The default storage class is `ibmc-file-gold`. You can change the default storage class that a persistent volume (PV) uses if no storage class is specified in the persistent volume claim (PVC). You can have only one default storage class.
 {: shortdesc}
-
-*  **Kubernetes 1.17 and later**: `ibmc-file-gold`
-*  **Kubernetes 1.16 and earlier**: `ibmc-file-bronze`
-
-To change the default storage class for a cluster:
 
 1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 2.  List available storage classes. Note the name of the storage class that you want to make the default, and the current default storage class that has `(default)` in the **Name**.
@@ -314,7 +312,6 @@ To change the default storage class for a cluster:
     oc get storageclasses | grep "(default)"
     ```
     {: pre}
-
 
 
 
