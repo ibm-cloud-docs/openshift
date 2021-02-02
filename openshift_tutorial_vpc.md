@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-02"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -181,7 +181,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
         ibmcloud is vpc-create myvpc
         ```
         {: pre}
-    3.  Create a public gateway and note the **ID** in the output. In the next step, you attach the public gateway to a VPC subnet, so that your worker nodes can communicate on the public network. Default {{site.data.keyword.openshiftshort}} components, such as the web console and OperatorHub, require public network access. If you skip this step, these {{site.data.keyword.openshiftshort}} components cannot run.
+    3.  Create a public gateway and note the **ID** in the output. In the next step, you attach the public gateway to a VPC subnet, so that your worker nodes can communicate on the public network. Default {{site.data.keyword.openshiftshort}} components, such as the web console and OperatorHub, require public network access. If you skip this step, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.openshiftshort}} web console or access your cluster with `kubectl` commands.
         ```
         ibmcloud is public-gateway-create gateway-us-south-1 <vpc_ID> us-south-1
         ```
